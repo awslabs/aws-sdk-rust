@@ -9,23 +9,26 @@ pub fn ser_start_wireless_device_import_task_input_input(
     if let Some(var_2) = &input.destination_name {
         object.key("DestinationName").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.sidewalk {
-        #[allow(unused_mut)]
-        let mut object_4 = object.key("Sidewalk").start_object();
-        crate::protocol_serde::shape_sidewalk_start_import_info::ser_sidewalk_start_import_info(&mut object_4, var_3)?;
-        object_4.finish();
+    if let Some(var_3) = &input.positioning {
+        object.key("Positioning").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.tags {
-        let mut array_6 = object.key("Tags").start_array();
-        for item_7 in var_5 {
+    if let Some(var_4) = &input.sidewalk {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("Sidewalk").start_object();
+        crate::protocol_serde::shape_sidewalk_start_import_info::ser_sidewalk_start_import_info(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.tags {
+        let mut array_7 = object.key("Tags").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
     Ok(())
 }

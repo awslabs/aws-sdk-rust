@@ -41,6 +41,10 @@ pub use crate::types::_control_mapping::ControlMapping;
 
 pub use crate::types::_mapping::Mapping;
 
+pub use crate::types::_related_control_mapping_details::RelatedControlMappingDetails;
+
+pub use crate::types::_control_relation_type::ControlRelationType;
+
 pub use crate::types::_common_control_mapping_details::CommonControlMappingDetails;
 
 pub use crate::types::_framework_mapping_details::FrameworkMappingDetails;
@@ -68,6 +72,8 @@ mod _control_mapping;
 mod _control_mapping_filter;
 
 mod _control_parameter;
+
+mod _control_relation_type;
 
 mod _control_scope;
 
@@ -98,6 +104,8 @@ mod _objective_resource_filter;
 mod _objective_summary;
 
 mod _region_configuration;
+
+mod _related_control_mapping_details;
 
 /// Builders
 pub mod builders;

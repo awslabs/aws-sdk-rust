@@ -18,7 +18,7 @@ pub struct DescribeStacksInput {
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     pub stack_name: ::std::option::Option<::std::string::String>,
-    /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStacksInput {
@@ -38,7 +38,7 @@ impl DescribeStacksInput {
     pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -108,17 +108,17 @@ impl DescribeStacksInputBuilder {
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_name
     }
-    /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

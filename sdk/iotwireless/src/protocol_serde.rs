@@ -471,6 +471,8 @@ pub(crate) mod shape_sidewalk_get_device_profile;
 
 pub(crate) mod shape_sidewalk_get_start_import_info;
 
+pub(crate) mod shape_sidewalk_list_devices_for_import_info;
+
 pub(crate) mod shape_sidewalk_single_start_import_info;
 
 pub(crate) mod shape_sidewalk_start_import_info;
@@ -478,6 +480,8 @@ pub(crate) mod shape_sidewalk_start_import_info;
 pub(crate) mod shape_sidewalk_update_account;
 
 pub(crate) mod shape_sidewalk_update_import_info;
+
+pub(crate) mod shape_sidewalk_update_wireless_device;
 
 pub(crate) mod shape_summary_metric_configuration;
 
@@ -602,6 +606,8 @@ pub(crate) mod shape_semtech_gnss_detail;
 pub(crate) mod shape_service_profile;
 
 pub(crate) mod shape_sidewalk_event_notification_configurations;
+
+pub(crate) mod shape_sidewalk_positioning;
 
 pub(crate) mod shape_sidewalk_resource_type_event_configuration;
 

@@ -6,11 +6,23 @@
 pub struct SidewalkCreateWirelessDevice {
     /// <p>The ID of the Sidewalk device profile.</p>
     pub device_profile_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub positioning: ::std::option::Option<crate::types::SidewalkPositioning>,
+    /// <p>The Sidewalk manufacturing serial number.</p>
+    pub sidewalk_manufacturing_sn: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkCreateWirelessDevice {
     /// <p>The ID of the Sidewalk device profile.</p>
     pub fn device_profile_id(&self) -> ::std::option::Option<&str> {
         self.device_profile_id.as_deref()
+    }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn positioning(&self) -> ::std::option::Option<&crate::types::SidewalkPositioning> {
+        self.positioning.as_ref()
+    }
+    /// <p>The Sidewalk manufacturing serial number.</p>
+    pub fn sidewalk_manufacturing_sn(&self) -> ::std::option::Option<&str> {
+        self.sidewalk_manufacturing_sn.as_deref()
     }
 }
 impl SidewalkCreateWirelessDevice {
@@ -25,6 +37,8 @@ impl SidewalkCreateWirelessDevice {
 #[non_exhaustive]
 pub struct SidewalkCreateWirelessDeviceBuilder {
     pub(crate) device_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) positioning: ::std::option::Option<crate::types::SidewalkPositioning>,
+    pub(crate) sidewalk_manufacturing_sn: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkCreateWirelessDeviceBuilder {
     /// <p>The ID of the Sidewalk device profile.</p>
@@ -41,10 +55,40 @@ impl SidewalkCreateWirelessDeviceBuilder {
     pub fn get_device_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_profile_id
     }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn positioning(mut self, input: crate::types::SidewalkPositioning) -> Self {
+        self.positioning = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::SidewalkPositioning>) -> Self {
+        self.positioning = input;
+        self
+    }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::SidewalkPositioning> {
+        &self.positioning
+    }
+    /// <p>The Sidewalk manufacturing serial number.</p>
+    pub fn sidewalk_manufacturing_sn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sidewalk_manufacturing_sn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Sidewalk manufacturing serial number.</p>
+    pub fn set_sidewalk_manufacturing_sn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sidewalk_manufacturing_sn = input;
+        self
+    }
+    /// <p>The Sidewalk manufacturing serial number.</p>
+    pub fn get_sidewalk_manufacturing_sn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sidewalk_manufacturing_sn
+    }
     /// Consumes the builder and constructs a [`SidewalkCreateWirelessDevice`](crate::types::SidewalkCreateWirelessDevice).
     pub fn build(self) -> crate::types::SidewalkCreateWirelessDevice {
         crate::types::SidewalkCreateWirelessDevice {
             device_profile_id: self.device_profile_id,
+            positioning: self.positioning,
+            sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn,
         }
     }
 }

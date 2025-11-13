@@ -155,6 +155,20 @@ impl StartWirelessDeviceImportTaskFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
+        self.inner = self.inner.positioning(input);
+        self
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
+        self.inner = self.inner.set_positioning(input);
+        self
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
+        self.inner.get_positioning()
+    }
     /// <p>The Sidewalk-related parameters for importing wireless devices that need to be provisioned in bulk.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkStartImportInfo) -> Self {
         self.inner = self.inner.sidewalk(input);

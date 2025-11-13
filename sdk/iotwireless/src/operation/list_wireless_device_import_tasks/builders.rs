@@ -22,7 +22,7 @@ impl crate::operation::list_wireless_device_import_tasks::builders::ListWireless
 }
 /// Fluent builder constructing a request to `ListWirelessDeviceImportTasks`.
 ///
-/// <p>List wireless devices that have been added to an import task.</p>
+/// <p>List of import tasks and summary information of onboarding status of devices in each import task.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWirelessDeviceImportTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

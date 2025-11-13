@@ -19,7 +19,7 @@ pub struct CreateWirelessDeviceInput {
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanDevice>,
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
     /// <p>The device configuration information to use to create the Sidewalk device.</p>
     pub sidewalk: ::std::option::Option<crate::types::SidewalkCreateWirelessDevice>,
@@ -57,7 +57,7 @@ impl CreateWirelessDeviceInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn positioning(&self) -> ::std::option::Option<&crate::types::PositioningConfigStatus> {
         self.positioning.as_ref()
     }
@@ -200,17 +200,17 @@ impl CreateWirelessDeviceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
         self.positioning = ::std::option::Option::Some(input);
         self
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
         self.positioning = input;
         self
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
         &self.positioning
     }

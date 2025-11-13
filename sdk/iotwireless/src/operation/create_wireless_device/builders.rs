@@ -217,17 +217,17 @@ impl CreateWirelessDeviceFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
         self.inner = self.inner.positioning(input);
         self
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
         self.inner = self.inner.set_positioning(input);
         self
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
         self.inner.get_positioning()
     }

@@ -9,5 +9,11 @@ pub fn ser_update_browser_settings_input_input(
     if let Some(var_2) = &input.client_token {
         object.key("clientToken").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.web_content_filtering_policy {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("webContentFilteringPolicy").start_object();
+        crate::protocol_serde::shape_web_content_filtering_policy::ser_web_content_filtering_policy(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

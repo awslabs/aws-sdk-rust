@@ -43,6 +43,11 @@ where
                                 crate::protocol_serde::shape_encryption_context_map::de_encryption_context_map(tokens)?,
                             );
                         }
+                        "webContentFilteringPolicy" => {
+                            builder = builder.set_web_content_filtering_policy(
+                                crate::protocol_serde::shape_web_content_filtering_policy::de_web_content_filtering_policy(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

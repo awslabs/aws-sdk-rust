@@ -195,6 +195,18 @@ pub use crate::types::_template_summary_config::TemplateSummaryConfig;
 
 pub use crate::types::_template_stage::TemplateStage;
 
+pub use crate::types::_annotation::Annotation;
+
+pub use crate::types::_annotation_severity_level::AnnotationSeverityLevel;
+
+pub use crate::types::_annotation_status::AnnotationStatus;
+
+pub use crate::types::_hook_target::HookTarget;
+
+pub use crate::types::_hook_target_action::HookTargetAction;
+
+pub use crate::types::_hook_target_type::HookTargetType;
+
 pub use crate::types::_template_format::TemplateFormat;
 
 pub use crate::types::_stack_resource_drift::StackResourceDrift;
@@ -261,8 +273,6 @@ pub use crate::types::_change_set_hook_resource_target_details::ChangeSetHookRes
 
 pub use crate::types::_change_action::ChangeAction;
 
-pub use crate::types::_hook_target_type::HookTargetType;
-
 pub use crate::types::_on_stack_failure::OnStackFailure;
 
 pub use crate::types::_change::Change;
@@ -314,6 +324,12 @@ mod _account_gate_result;
 mod _account_gate_status;
 
 mod _account_limit;
+
+mod _annotation;
+
+mod _annotation_severity_level;
+
+mod _annotation_status;
 
 mod _attribute_change_type;
 
@@ -384,6 +400,10 @@ mod _hook_invocation_point;
 mod _hook_result_summary;
 
 mod _hook_status;
+
+mod _hook_target;
+
+mod _hook_target_action;
 
 mod _hook_target_type;
 

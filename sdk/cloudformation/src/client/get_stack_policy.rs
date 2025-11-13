@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`stack_name(impl Into<String>)`](crate::operation::get_stack_policy::builders::GetStackPolicyFluentBuilder::stack_name) / [`set_stack_name(Option<String>)`](crate::operation::get_stack_policy::builders::GetStackPolicyFluentBuilder::set_stack_name):<br>required: **true**<br><p>The name or unique stack ID that's associated with the stack whose policy you want to get.</p><br>
     /// - On success, responds with [`GetStackPolicyOutput`](crate::operation::get_stack_policy::GetStackPolicyOutput) with field(s):
-    ///   - [`stack_policy_body(Option<String>)`](crate::operation::get_stack_policy::GetStackPolicyOutput::stack_policy_body): <p>Structure that contains the stack policy body. (For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.)</p>
+    ///   - [`stack_policy_body(Option<String>)`](crate::operation::get_stack_policy::GetStackPolicyOutput::stack_policy_body): <p>Structure that contains the stack policy body. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GetStackPolicyError>`](crate::operation::get_stack_policy::GetStackPolicyError)
     pub fn get_stack_policy(&self) -> crate::operation::get_stack_policy::builders::GetStackPolicyFluentBuilder {
         crate::operation::get_stack_policy::builders::GetStackPolicyFluentBuilder::new(self.handle.clone())

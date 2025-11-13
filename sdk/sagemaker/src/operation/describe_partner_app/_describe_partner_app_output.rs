@@ -51,6 +51,12 @@ pub struct DescribePartnerAppOutput {
     pub enable_iam_session_based_identity: ::std::option::Option<bool>,
     /// <p>This is an error field object that contains the error code and the reason for an operation failure.</p>
     pub error: ::std::option::Option<crate::types::ErrorInfo>,
+    /// <p>Indicates whether the SageMaker Partner AI App is configured for automatic minor version upgrades during scheduled maintenance windows.</p>
+    pub enable_auto_minor_version_upgrade: ::std::option::Option<bool>,
+    /// <p>The end-of-life date for the current version of the SageMaker Partner AI App.</p>
+    pub current_version_eol_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A map of available minor version upgrades for the SageMaker Partner AI App. The key is the semantic version number, and the value is a list of release notes for that version. A null value indicates no upgrades are available.</p>
+    pub available_upgrade: ::std::option::Option<crate::types::AvailableUpgrade>,
     _request_id: Option<String>,
 }
 impl DescribePartnerAppOutput {
@@ -134,6 +140,18 @@ impl DescribePartnerAppOutput {
     pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorInfo> {
         self.error.as_ref()
     }
+    /// <p>Indicates whether the SageMaker Partner AI App is configured for automatic minor version upgrades during scheduled maintenance windows.</p>
+    pub fn enable_auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
+        self.enable_auto_minor_version_upgrade
+    }
+    /// <p>The end-of-life date for the current version of the SageMaker Partner AI App.</p>
+    pub fn current_version_eol_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.current_version_eol_date.as_ref()
+    }
+    /// <p>A map of available minor version upgrades for the SageMaker Partner AI App. The key is the semantic version number, and the value is a list of release notes for that version. A null value indicates no upgrades are available.</p>
+    pub fn available_upgrade(&self) -> ::std::option::Option<&crate::types::AvailableUpgrade> {
+        self.available_upgrade.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribePartnerAppOutput {
     fn request_id(&self) -> Option<&str> {
@@ -167,6 +185,9 @@ pub struct DescribePartnerAppOutputBuilder {
     pub(crate) auth_type: ::std::option::Option<crate::types::PartnerAppAuthType>,
     pub(crate) enable_iam_session_based_identity: ::std::option::Option<bool>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorInfo>,
+    pub(crate) enable_auto_minor_version_upgrade: ::std::option::Option<bool>,
+    pub(crate) current_version_eol_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) available_upgrade: ::std::option::Option<crate::types::AvailableUpgrade>,
     _request_id: Option<String>,
 }
 impl DescribePartnerAppOutputBuilder {
@@ -442,6 +463,48 @@ impl DescribePartnerAppOutputBuilder {
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorInfo> {
         &self.error
     }
+    /// <p>Indicates whether the SageMaker Partner AI App is configured for automatic minor version upgrades during scheduled maintenance windows.</p>
+    pub fn enable_auto_minor_version_upgrade(mut self, input: bool) -> Self {
+        self.enable_auto_minor_version_upgrade = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the SageMaker Partner AI App is configured for automatic minor version upgrades during scheduled maintenance windows.</p>
+    pub fn set_enable_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_auto_minor_version_upgrade = input;
+        self
+    }
+    /// <p>Indicates whether the SageMaker Partner AI App is configured for automatic minor version upgrades during scheduled maintenance windows.</p>
+    pub fn get_enable_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.enable_auto_minor_version_upgrade
+    }
+    /// <p>The end-of-life date for the current version of the SageMaker Partner AI App.</p>
+    pub fn current_version_eol_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.current_version_eol_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The end-of-life date for the current version of the SageMaker Partner AI App.</p>
+    pub fn set_current_version_eol_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.current_version_eol_date = input;
+        self
+    }
+    /// <p>The end-of-life date for the current version of the SageMaker Partner AI App.</p>
+    pub fn get_current_version_eol_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.current_version_eol_date
+    }
+    /// <p>A map of available minor version upgrades for the SageMaker Partner AI App. The key is the semantic version number, and the value is a list of release notes for that version. A null value indicates no upgrades are available.</p>
+    pub fn available_upgrade(mut self, input: crate::types::AvailableUpgrade) -> Self {
+        self.available_upgrade = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A map of available minor version upgrades for the SageMaker Partner AI App. The key is the semantic version number, and the value is a list of release notes for that version. A null value indicates no upgrades are available.</p>
+    pub fn set_available_upgrade(mut self, input: ::std::option::Option<crate::types::AvailableUpgrade>) -> Self {
+        self.available_upgrade = input;
+        self
+    }
+    /// <p>A map of available minor version upgrades for the SageMaker Partner AI App. The key is the semantic version number, and the value is a list of release notes for that version. A null value indicates no upgrades are available.</p>
+    pub fn get_available_upgrade(&self) -> &::std::option::Option<crate::types::AvailableUpgrade> {
+        &self.available_upgrade
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -470,6 +533,9 @@ impl DescribePartnerAppOutputBuilder {
             auth_type: self.auth_type,
             enable_iam_session_based_identity: self.enable_iam_session_based_identity,
             error: self.error,
+            enable_auto_minor_version_upgrade: self.enable_auto_minor_version_upgrade,
+            current_version_eol_date: self.current_version_eol_date,
+            available_upgrade: self.available_upgrade,
             _request_id: self._request_id,
         }
     }

@@ -22,7 +22,7 @@ impl crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHoo
 }
 /// Fluent builder constructing a request to `DescribeChangeSetHooks`.
 ///
-/// <p>Returns hook-related information for the change set and a list of changes that CloudFormation makes when you run the change set.</p>
+/// <p>Returns Hook-related information for the change set and a list of changes that CloudFormation makes when you run the change set.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeChangeSetHooksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl DescribeChangeSetHooksFluentBuilder {
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_name()
     }
-    /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

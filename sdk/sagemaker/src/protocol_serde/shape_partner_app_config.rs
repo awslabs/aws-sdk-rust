@@ -22,6 +22,27 @@ pub fn ser_partner_app_config(
         }
         object_5.finish();
     }
+    if let Some(var_8) = &input.assigned_group_patterns {
+        let mut array_9 = object.key("AssignedGroupPatterns").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_11) = &input.role_group_assignments {
+        let mut array_12 = object.key("RoleGroupAssignments").start_array();
+        for item_13 in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_role_group_assignment::ser_role_group_assignment(&mut object_14, item_13)?;
+                object_14.finish();
+            }
+        }
+        array_12.finish();
+    }
     Ok(())
 }
 
@@ -47,6 +68,16 @@ where
                         }
                         "Arguments" => {
                             builder = builder.set_arguments(crate::protocol_serde::shape_partner_app_arguments::de_partner_app_arguments(tokens)?);
+                        }
+                        "AssignedGroupPatterns" => {
+                            builder = builder.set_assigned_group_patterns(
+                                crate::protocol_serde::shape_assigned_group_patterns_list::de_assigned_group_patterns_list(tokens)?,
+                            );
+                        }
+                        "RoleGroupAssignments" => {
+                            builder = builder.set_role_group_assignments(
+                                crate::protocol_serde::shape_role_group_assignments_list::de_role_group_assignments_list(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

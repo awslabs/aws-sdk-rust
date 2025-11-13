@@ -24,7 +24,7 @@ pub struct ListHookResultsInput {
     /// <p><code>HOOK_FAILED</code>: The Hook encountered an error during execution.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::HookStatus>,
-    /// <p>A string that identifies the next page of events that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListHookResultsInput {
@@ -57,7 +57,7 @@ impl ListHookResultsInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::HookStatus> {
         self.status.as_ref()
     }
-    /// <p>A string that identifies the next page of events that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -175,17 +175,17 @@ impl ListHookResultsInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::HookStatus> {
         &self.status
     }
-    /// <p>A string that identifies the next page of events that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string that identifies the next page of events that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A string that identifies the next page of events that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

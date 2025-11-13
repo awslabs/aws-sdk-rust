@@ -203,6 +203,10 @@ pub(crate) mod shape_get_generated_template;
 
 pub(crate) mod shape_get_generated_template_input;
 
+pub(crate) mod shape_get_hook_result;
+
+pub(crate) mod shape_get_hook_result_input;
+
 pub(crate) mod shape_get_stack_policy;
 
 pub(crate) mod shape_get_stack_policy_input;
@@ -475,6 +479,8 @@ pub(crate) mod shape_type_not_found_exception;
 
 pub(crate) mod shape_account_limit_list;
 
+pub(crate) mod shape_annotation_list;
+
 pub(crate) mod shape_batch_describe_type_configurations_errors;
 
 pub(crate) mod shape_capabilities;
@@ -488,6 +494,8 @@ pub(crate) mod shape_changes;
 pub(crate) mod shape_exports;
 
 pub(crate) mod shape_hook_result_summaries;
+
+pub(crate) mod shape_hook_target;
 
 pub(crate) mod shape_imports;
 
@@ -582,6 +590,8 @@ pub(crate) mod shape_unprocessed_type_configurations;
 pub(crate) mod shape_warnings;
 
 pub(crate) mod shape_account_limit;
+
+pub(crate) mod shape_annotation;
 
 pub(crate) mod shape_batch_describe_type_configurations_error;
 

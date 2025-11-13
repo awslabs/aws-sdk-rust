@@ -99,6 +99,10 @@ pub use crate::types::_parameter_constraints::ParameterConstraintsBuilder;
 
 pub use crate::types::_template_summary_config::TemplateSummaryConfigBuilder;
 
+pub use crate::types::_annotation::AnnotationBuilder;
+
+pub use crate::types::_hook_target::HookTargetBuilder;
+
 pub use crate::types::_stack_resource_drift::StackResourceDriftBuilder;
 
 pub use crate::types::_required_activated_type::RequiredActivatedTypeBuilder;

@@ -10,6 +10,8 @@ pub struct WirelessDeviceImportTask {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Sidewalk destination that that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless</p>
     pub destination_name: ::std::option::Option<::std::string::String>,
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
     /// <p>The Sidewalk-related information of the wireless device import task.</p>
     pub sidewalk: ::std::option::Option<crate::types::SidewalkGetStartImportInfo>,
     /// <p>The time at which the import task was created.</p>
@@ -39,6 +41,10 @@ impl WirelessDeviceImportTask {
     /// <p>The name of the Sidewalk destination that that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless</p>
     pub fn destination_name(&self) -> ::std::option::Option<&str> {
         self.destination_name.as_deref()
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn positioning(&self) -> ::std::option::Option<&crate::types::PositioningConfigStatus> {
+        self.positioning.as_ref()
     }
     /// <p>The Sidewalk-related information of the wireless device import task.</p>
     pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkGetStartImportInfo> {
@@ -87,6 +93,7 @@ pub struct WirelessDeviceImportTaskBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
+    pub(crate) positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkGetStartImportInfo>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ImportTaskStatus>,
@@ -138,6 +145,20 @@ impl WirelessDeviceImportTaskBuilder {
     /// <p>The name of the Sidewalk destination that that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless</p>
     pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_name
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
+        self.positioning = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
+        self.positioning = input;
+        self
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
+        &self.positioning
     }
     /// <p>The Sidewalk-related information of the wireless device import task.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkGetStartImportInfo) -> Self {
@@ -257,6 +278,7 @@ impl WirelessDeviceImportTaskBuilder {
             id: self.id,
             arn: self.arn,
             destination_name: self.destination_name,
+            positioning: self.positioning,
             sidewalk: self.sidewalk,
             creation_time: self.creation_time,
             status: self.status,

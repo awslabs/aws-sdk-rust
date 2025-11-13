@@ -8,7 +8,7 @@ pub struct DescribeChangeSetInput {
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
-    /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, the returned changes include detailed changes in the property values.</p>
     pub include_property_values: ::std::option::Option<bool>,
@@ -22,7 +22,7 @@ impl DescribeChangeSetInput {
     pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -77,17 +77,17 @@ impl DescribeChangeSetInputBuilder {
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_name
     }
-    /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

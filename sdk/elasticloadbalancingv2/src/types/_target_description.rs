@@ -15,6 +15,9 @@ pub struct TargetDescription {
     /// <p>For Application Load Balancer target groups with cross-zone load balancing off, if the target type is <code>ip</code> and the IP address is outside of the VPC for the target group, this should be an Availability Zone inside the VPC for the target group.</p>
     /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only supported value is <code>all</code>.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The server ID for the targets. This value is required if the protocol is <code>QUIC</code> or <code>TCP_QUIC</code> and can't be used with other protocols.</p>
+    /// <p>The ID consists of the <code>0x</code> prefix followed by 16 hexadecimal characters. Any letters must be lowercase. The value must be unique at the listener level. You can't modify the server ID for a registered target. You must deregister the target and then provide a new server ID when you register the target again.</p>
+    pub quic_server_id: ::std::option::Option<::std::string::String>,
 }
 impl TargetDescription {
     /// <p>The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type is <code>alb</code>, specify the ARN of the Application Load Balancer target.</p>
@@ -34,6 +37,11 @@ impl TargetDescription {
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
+    /// <p>The server ID for the targets. This value is required if the protocol is <code>QUIC</code> or <code>TCP_QUIC</code> and can't be used with other protocols.</p>
+    /// <p>The ID consists of the <code>0x</code> prefix followed by 16 hexadecimal characters. Any letters must be lowercase. The value must be unique at the listener level. You can't modify the server ID for a registered target. You must deregister the target and then provide a new server ID when you register the target again.</p>
+    pub fn quic_server_id(&self) -> ::std::option::Option<&str> {
+        self.quic_server_id.as_deref()
+    }
 }
 impl TargetDescription {
     /// Creates a new builder-style object to manufacture [`TargetDescription`](crate::types::TargetDescription).
@@ -49,6 +57,7 @@ pub struct TargetDescriptionBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) quic_server_id: ::std::option::Option<::std::string::String>,
 }
 impl TargetDescriptionBuilder {
     /// <p>The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type is <code>alb</code>, specify the ARN of the Application Load Balancer target.</p>
@@ -109,12 +118,30 @@ impl TargetDescriptionBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
+    /// <p>The server ID for the targets. This value is required if the protocol is <code>QUIC</code> or <code>TCP_QUIC</code> and can't be used with other protocols.</p>
+    /// <p>The ID consists of the <code>0x</code> prefix followed by 16 hexadecimal characters. Any letters must be lowercase. The value must be unique at the listener level. You can't modify the server ID for a registered target. You must deregister the target and then provide a new server ID when you register the target again.</p>
+    pub fn quic_server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quic_server_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The server ID for the targets. This value is required if the protocol is <code>QUIC</code> or <code>TCP_QUIC</code> and can't be used with other protocols.</p>
+    /// <p>The ID consists of the <code>0x</code> prefix followed by 16 hexadecimal characters. Any letters must be lowercase. The value must be unique at the listener level. You can't modify the server ID for a registered target. You must deregister the target and then provide a new server ID when you register the target again.</p>
+    pub fn set_quic_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quic_server_id = input;
+        self
+    }
+    /// <p>The server ID for the targets. This value is required if the protocol is <code>QUIC</code> or <code>TCP_QUIC</code> and can't be used with other protocols.</p>
+    /// <p>The ID consists of the <code>0x</code> prefix followed by 16 hexadecimal characters. Any letters must be lowercase. The value must be unique at the listener level. You can't modify the server ID for a registered target. You must deregister the target and then provide a new server ID when you register the target again.</p>
+    pub fn get_quic_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quic_server_id
+    }
     /// Consumes the builder and constructs a [`TargetDescription`](crate::types::TargetDescription).
     pub fn build(self) -> crate::types::TargetDescription {
         crate::types::TargetDescription {
             id: self.id,
             port: self.port,
             availability_zone: self.availability_zone,
+            quic_server_id: self.quic_server_id,
         }
     }
 }

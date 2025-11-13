@@ -235,3 +235,12 @@ pub(crate) fn framework_mapping_details_correct_errors(
     }
     builder
 }
+
+pub(crate) fn related_control_mapping_details_correct_errors(
+    mut builder: crate::types::builders::RelatedControlMappingDetailsBuilder,
+) -> crate::types::builders::RelatedControlMappingDetailsBuilder {
+    if builder.relation_type.is_none() {
+        builder.relation_type = "no value was set".parse::<crate::types::ControlRelationType>().ok()
+    }
+    builder
+}

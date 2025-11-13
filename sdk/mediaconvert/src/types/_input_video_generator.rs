@@ -6,7 +6,7 @@
 pub struct InputVideoGenerator {
     /// Specify the number of audio channels to include in your video generator input. MediaConvert creates these audio channels as silent audio within a single audio track. Enter an integer from 1 to 32.
     pub channels: ::std::option::Option<i32>,
-    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 50 to 86400000.
+    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 1 to 86400000.
     pub duration: ::std::option::Option<i32>,
     /// Specify the denominator of the fraction that represents the frame rate for your video generator input. When you do, you must also specify a value for Frame rate numerator. MediaConvert uses a default frame rate of 29.97 when you leave Frame rate numerator and Frame rate denominator blank.
     pub framerate_denominator: ::std::option::Option<i32>,
@@ -24,7 +24,7 @@ impl InputVideoGenerator {
     pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
-    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 50 to 86400000.
+    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 1 to 86400000.
     pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
@@ -83,17 +83,17 @@ impl InputVideoGeneratorBuilder {
     pub fn get_channels(&self) -> &::std::option::Option<i32> {
         &self.channels
     }
-    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 50 to 86400000.
+    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 1 to 86400000.
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
         self
     }
-    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 50 to 86400000.
+    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 1 to 86400000.
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
     }
-    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 50 to 86400000.
+    /// Specify the duration, in milliseconds, for your video generator input. Enter an integer from 1 to 86400000.
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
         &self.duration
     }

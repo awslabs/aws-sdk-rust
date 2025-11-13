@@ -26,6 +26,7 @@
 ///     Event::SessionStart => { /* ... */ },
 ///     Event::TabClose => { /* ... */ },
 ///     Event::TabOpen => { /* ... */ },
+///     Event::UrlBlockByContentFilter => { /* ... */ },
 ///     Event::UrlLoad => { /* ... */ },
 ///     Event::WebsiteInteract => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -85,6 +86,8 @@ pub enum Event {
     #[allow(missing_docs)] // documentation missing in model
     TabOpen,
     #[allow(missing_docs)] // documentation missing in model
+    UrlBlockByContentFilter,
+    #[allow(missing_docs)] // documentation missing in model
     UrlLoad,
     #[allow(missing_docs)] // documentation missing in model
     WebsiteInteract,
@@ -109,6 +112,7 @@ impl ::std::convert::From<&str> for Event {
             "SessionStart" => Event::SessionStart,
             "TabClose" => Event::TabClose,
             "TabOpen" => Event::TabOpen,
+            "UrlBlockByContentFilter" => Event::UrlBlockByContentFilter,
             "UrlLoad" => Event::UrlLoad,
             "WebsiteInteract" => Event::WebsiteInteract,
             other => Event::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -140,6 +144,7 @@ impl Event {
             Event::SessionStart => "SessionStart",
             Event::TabClose => "TabClose",
             Event::TabOpen => "TabOpen",
+            Event::UrlBlockByContentFilter => "UrlBlockByContentFilter",
             Event::UrlLoad => "UrlLoad",
             Event::WebsiteInteract => "WebsiteInteract",
             Event::Unknown(value) => value.as_str(),
@@ -162,6 +167,7 @@ impl Event {
             "SessionStart",
             "TabClose",
             "TabOpen",
+            "UrlBlockByContentFilter",
             "UrlLoad",
             "WebsiteInteract",
         ]
@@ -201,6 +207,7 @@ impl ::std::fmt::Display for Event {
             Event::SessionStart => write!(f, "SessionStart"),
             Event::TabClose => write!(f, "TabClose"),
             Event::TabOpen => write!(f, "TabOpen"),
+            Event::UrlBlockByContentFilter => write!(f, "UrlBlockByContentFilter"),
             Event::UrlLoad => write!(f, "UrlLoad"),
             Event::WebsiteInteract => write!(f, "WebsiteInteract"),
             Event::Unknown(value) => write!(f, "{value}"),

@@ -183,6 +183,8 @@ pub use crate::types::_pipeline_definition_s3_location::PipelineDefinitionS3Loca
 
 pub use crate::types::_partner_app_config::PartnerAppConfig;
 
+pub use crate::types::_role_group_assignment::RoleGroupAssignment;
+
 pub use crate::types::_partner_app_maintenance_config::PartnerAppMaintenanceConfig;
 
 pub use crate::types::_notebook_instance_lifecycle_hook::NotebookInstanceLifecycleHook;
@@ -1575,6 +1577,8 @@ pub use crate::types::_ownership_settings::OwnershipSettings;
 
 pub use crate::types::_ultra_server_summary::UltraServerSummary;
 
+pub use crate::types::_available_upgrade::AvailableUpgrade;
+
 pub use crate::types::_error_info::ErrorInfo;
 
 pub use crate::types::_partner_app_auth_type::PartnerAppAuthType;
@@ -2202,6 +2206,8 @@ mod _auto_rollback_config;
 mod _autotune;
 
 mod _autotune_mode;
+
+mod _available_upgrade;
 
 mod _aws_managed_human_loop_request_source;
 
@@ -3618,6 +3624,8 @@ mod _retention_policy;
 mod _retention_type;
 
 mod _retry_strategy;
+
+mod _role_group_assignment;
 
 mod _rolling_deployment_policy;
 

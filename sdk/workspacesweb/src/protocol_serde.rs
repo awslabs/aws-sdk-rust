@@ -305,6 +305,8 @@ pub(crate) mod shape_user_settings_list;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_web_content_filtering_policy;
+
 pub(crate) mod shape_arn_list;
 
 pub(crate) mod shape_browser_settings_summary;
@@ -351,6 +353,8 @@ pub(crate) mod shape_user_settings_summary;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_blocked_categories;
+
 pub(crate) mod shape_cookie_specifications;
 
 pub(crate) mod shape_custom_pattern;
@@ -364,5 +368,7 @@ pub(crate) mod shape_hidden_toolbar_item_list;
 pub(crate) mod shape_inline_redaction_patterns;
 
 pub(crate) mod shape_redaction_place_holder;
+
+pub(crate) mod shape_url_pattern_list;
 
 pub(crate) mod shape_inline_redaction_urls;

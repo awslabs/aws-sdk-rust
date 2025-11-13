@@ -170,6 +170,20 @@ impl StartSingleWirelessDeviceImportTaskFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
+        self.inner = self.inner.positioning(input);
+        self
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
+        self.inner = self.inner.set_positioning(input);
+        self
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
+        self.inner.get_positioning()
+    }
     /// <p>The Sidewalk-related parameters for importing a single wireless device.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkSingleStartImportInfo) -> Self {
         self.inner = self.inner.sidewalk(input);

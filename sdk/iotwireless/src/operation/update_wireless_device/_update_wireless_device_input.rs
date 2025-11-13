@@ -15,8 +15,10 @@ pub struct UpdateWirelessDeviceInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated wireless device's configuration.</p>
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanUpdateDevice>,
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
+    /// <p>The updated sidewalk properties.</p>
+    pub sidewalk: ::std::option::Option<crate::types::SidewalkUpdateWirelessDevice>,
 }
 impl UpdateWirelessDeviceInput {
     /// <p>The ID of the resource to update.</p>
@@ -41,9 +43,13 @@ impl UpdateWirelessDeviceInput {
     pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanUpdateDevice> {
         self.lo_ra_wan.as_ref()
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn positioning(&self) -> ::std::option::Option<&crate::types::PositioningConfigStatus> {
         self.positioning.as_ref()
+    }
+    /// <p>The updated sidewalk properties.</p>
+    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkUpdateWirelessDevice> {
+        self.sidewalk.as_ref()
     }
 }
 impl UpdateWirelessDeviceInput {
@@ -63,6 +69,7 @@ pub struct UpdateWirelessDeviceInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanUpdateDevice>,
     pub(crate) positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
+    pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkUpdateWirelessDevice>,
 }
 impl UpdateWirelessDeviceInputBuilder {
     /// <p>The ID of the resource to update.</p>
@@ -142,19 +149,33 @@ impl UpdateWirelessDeviceInputBuilder {
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanUpdateDevice> {
         &self.lo_ra_wan
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
         self.positioning = ::std::option::Option::Some(input);
         self
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
         self.positioning = input;
         self
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
         &self.positioning
+    }
+    /// <p>The updated sidewalk properties.</p>
+    pub fn sidewalk(mut self, input: crate::types::SidewalkUpdateWirelessDevice) -> Self {
+        self.sidewalk = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated sidewalk properties.</p>
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkUpdateWirelessDevice>) -> Self {
+        self.sidewalk = input;
+        self
+    }
+    /// <p>The updated sidewalk properties.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkUpdateWirelessDevice> {
+        &self.sidewalk
     }
     /// Consumes the builder and constructs a [`UpdateWirelessDeviceInput`](crate::operation::update_wireless_device::UpdateWirelessDeviceInput).
     pub fn build(
@@ -168,6 +189,7 @@ impl UpdateWirelessDeviceInputBuilder {
             description: self.description,
             lo_ra_wan: self.lo_ra_wan,
             positioning: self.positioning,
+            sidewalk: self.sidewalk,
         })
     }
 }

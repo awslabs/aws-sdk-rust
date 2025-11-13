@@ -63,6 +63,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Positioning" => {
+                            builder = builder.set_positioning(crate::protocol_serde::shape_sidewalk_positioning::de_sidewalk_positioning(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

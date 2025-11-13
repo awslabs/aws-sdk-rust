@@ -5,11 +5,17 @@
 pub struct DescribePartnerAppInput {
     /// <p>The ARN of the SageMaker Partner AI App to describe.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>When set to <code>TRUE</code>, the response includes available upgrade information for the SageMaker Partner AI App. Default is <code>FALSE</code>.</p>
+    pub include_available_upgrade: ::std::option::Option<bool>,
 }
 impl DescribePartnerAppInput {
     /// <p>The ARN of the SageMaker Partner AI App to describe.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>When set to <code>TRUE</code>, the response includes available upgrade information for the SageMaker Partner AI App. Default is <code>FALSE</code>.</p>
+    pub fn include_available_upgrade(&self) -> ::std::option::Option<bool> {
+        self.include_available_upgrade
     }
 }
 impl DescribePartnerAppInput {
@@ -24,6 +30,7 @@ impl DescribePartnerAppInput {
 #[non_exhaustive]
 pub struct DescribePartnerAppInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) include_available_upgrade: ::std::option::Option<bool>,
 }
 impl DescribePartnerAppInputBuilder {
     /// <p>The ARN of the SageMaker Partner AI App to describe.</p>
@@ -41,11 +48,28 @@ impl DescribePartnerAppInputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>When set to <code>TRUE</code>, the response includes available upgrade information for the SageMaker Partner AI App. Default is <code>FALSE</code>.</p>
+    pub fn include_available_upgrade(mut self, input: bool) -> Self {
+        self.include_available_upgrade = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When set to <code>TRUE</code>, the response includes available upgrade information for the SageMaker Partner AI App. Default is <code>FALSE</code>.</p>
+    pub fn set_include_available_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_available_upgrade = input;
+        self
+    }
+    /// <p>When set to <code>TRUE</code>, the response includes available upgrade information for the SageMaker Partner AI App. Default is <code>FALSE</code>.</p>
+    pub fn get_include_available_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.include_available_upgrade
+    }
     /// Consumes the builder and constructs a [`DescribePartnerAppInput`](crate::operation::describe_partner_app::DescribePartnerAppInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_partner_app::DescribePartnerAppInput, ::aws_smithy_types::error::operation::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::describe_partner_app::DescribePartnerAppInput { arn: self.arn })
+        ::std::result::Result::Ok(crate::operation::describe_partner_app::DescribePartnerAppInput {
+            arn: self.arn,
+            include_available_upgrade: self.include_available_upgrade,
+        })
     }
 }

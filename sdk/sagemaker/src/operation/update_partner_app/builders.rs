@@ -178,6 +178,34 @@ impl UpdatePartnerAppFluentBuilder {
     pub fn get_enable_iam_session_based_identity(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_iam_session_based_identity()
     }
+    /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available.</p>
+    pub fn enable_auto_minor_version_upgrade(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_auto_minor_version_upgrade(input);
+        self
+    }
+    /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available.</p>
+    pub fn set_enable_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_auto_minor_version_upgrade(input);
+        self
+    }
+    /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available.</p>
+    pub fn get_enable_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_auto_minor_version_upgrade()
+    }
+    /// <p>The semantic version to upgrade the SageMaker Partner AI App to. Must be the same semantic version returned in the <code>AvailableUpgrade</code> field from <code>DescribePartnerApp</code>. Version skipping and downgrades are not supported.</p>
+    pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.app_version(input.into());
+        self
+    }
+    /// <p>The semantic version to upgrade the SageMaker Partner AI App to. Must be the same semantic version returned in the <code>AvailableUpgrade</code> field from <code>DescribePartnerApp</code>. Version skipping and downgrades are not supported.</p>
+    pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_app_version(input);
+        self
+    }
+    /// <p>The semantic version to upgrade the SageMaker Partner AI App to. Must be the same semantic version returned in the <code>AvailableUpgrade</code> field from <code>DescribePartnerApp</code>. Version skipping and downgrades are not supported.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_version()
+    }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

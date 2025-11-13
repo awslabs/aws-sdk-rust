@@ -130,6 +130,8 @@ pub struct InstanceRequirements {
     /// <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
     /// <li>
     /// <p>For instance types with Inference accelerators, specify <code>inference</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Media accelerators, specify <code>media</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>,
@@ -163,17 +165,31 @@ pub struct InstanceRequirements {
     /// <li>
     /// <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p></li>
     /// <li>
+    /// <p>For instance types with Amazon Web Services Inferentia2 chips, specify <code>inferentia2</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Habana Gaudi HL-205 GPUs, specify <code>gaudi-hl-205</code>.</p></li>
+    /// <li>
     /// <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA L4 GPUs, specify <code>l4</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA L40S GPUs, specify <code>l40s</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
     /// <li>
     /// <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
     /// <li>
+    /// <p>For instance types with Amazon Web Services Trainium chips, specify <code>trainium</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services Trainium2 chips, specify <code>trainium2</code>.</p></li>
+    /// <li>
     /// <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx U30 cards, specify <code>u30</code>.</p></li>
     /// <li>
     /// <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
     /// <li>
@@ -360,6 +376,8 @@ impl InstanceRequirements {
     /// <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
     /// <li>
     /// <p>For instance types with Inference accelerators, specify <code>inference</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Media accelerators, specify <code>media</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     ///
@@ -403,17 +421,31 @@ impl InstanceRequirements {
     /// <li>
     /// <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p></li>
     /// <li>
+    /// <p>For instance types with Amazon Web Services Inferentia2 chips, specify <code>inferentia2</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Habana Gaudi HL-205 GPUs, specify <code>gaudi-hl-205</code>.</p></li>
+    /// <li>
     /// <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA L4 GPUs, specify <code>l4</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA L40S GPUs, specify <code>l40s</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
     /// <li>
     /// <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
     /// <li>
+    /// <p>For instance types with Amazon Web Services Trainium chips, specify <code>trainium</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services Trainium2 chips, specify <code>trainium2</code>.</p></li>
+    /// <li>
     /// <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx U30 cards, specify <code>u30</code>.</p></li>
     /// <li>
     /// <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
     /// <li>
@@ -982,6 +1014,8 @@ impl InstanceRequirementsBuilder {
     /// <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
     /// <li>
     /// <p>For instance types with Inference accelerators, specify <code>inference</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Media accelerators, specify <code>media</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn accelerator_types(mut self, input: crate::types::AcceleratorType) -> Self {
@@ -998,6 +1032,8 @@ impl InstanceRequirementsBuilder {
     /// <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
     /// <li>
     /// <p>For instance types with Inference accelerators, specify <code>inference</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Media accelerators, specify <code>media</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>) -> Self {
@@ -1012,6 +1048,8 @@ impl InstanceRequirementsBuilder {
     /// <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
     /// <li>
     /// <p>For instance types with Inference accelerators, specify <code>inference</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Media accelerators, specify <code>media</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>> {
@@ -1111,17 +1149,31 @@ impl InstanceRequirementsBuilder {
     /// <li>
     /// <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p></li>
     /// <li>
+    /// <p>For instance types with Amazon Web Services Inferentia2 chips, specify <code>inferentia2</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Habana Gaudi HL-205 GPUs, specify <code>gaudi-hl-205</code>.</p></li>
+    /// <li>
     /// <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA L4 GPUs, specify <code>l4</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA L40S GPUs, specify <code>l40s</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
     /// <li>
     /// <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
     /// <li>
+    /// <p>For instance types with Amazon Web Services Trainium chips, specify <code>trainium</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services Trainium2 chips, specify <code>trainium2</code>.</p></li>
+    /// <li>
     /// <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx U30 cards, specify <code>u30</code>.</p></li>
     /// <li>
     /// <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
     /// <li>
@@ -1145,17 +1197,31 @@ impl InstanceRequirementsBuilder {
     /// <li>
     /// <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p></li>
     /// <li>
+    /// <p>For instance types with Amazon Web Services Inferentia2 chips, specify <code>inferentia2</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Habana Gaudi HL-205 GPUs, specify <code>gaudi-hl-205</code>.</p></li>
+    /// <li>
     /// <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA L4 GPUs, specify <code>l4</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA L40S GPUs, specify <code>l40s</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
     /// <li>
     /// <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
     /// <li>
+    /// <p>For instance types with Amazon Web Services Trainium chips, specify <code>trainium</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services Trainium2 chips, specify <code>trainium2</code>.</p></li>
+    /// <li>
     /// <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx U30 cards, specify <code>u30</code>.</p></li>
     /// <li>
     /// <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
     /// <li>
@@ -1177,17 +1243,31 @@ impl InstanceRequirementsBuilder {
     /// <li>
     /// <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p></li>
     /// <li>
+    /// <p>For instance types with Amazon Web Services Inferentia2 chips, specify <code>inferentia2</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Habana Gaudi HL-205 GPUs, specify <code>gaudi-hl-205</code>.</p></li>
+    /// <li>
     /// <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA L4 GPUs, specify <code>l4</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA L40S GPUs, specify <code>l40s</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
     /// <li>
     /// <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
     /// <li>
+    /// <p>For instance types with Amazon Web Services Trainium chips, specify <code>trainium</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services Trainium2 chips, specify <code>trainium2</code>.</p></li>
+    /// <li>
     /// <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
     /// <li>
     /// <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx U30 cards, specify <code>u30</code>.</p></li>
     /// <li>
     /// <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
     /// <li>

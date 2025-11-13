@@ -12,6 +12,10 @@ pub struct CmfcSettings {
     pub audio_rendition_sets: ::std::option::Option<::std::string::String>,
     /// Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the client player selects which audio track to play. Choose Audio-only variant stream (AUDIO_ONLY_VARIANT_STREAM) for any variant that you want to prohibit the client from playing with video. This causes MediaConvert to represent the variant as an EXT-X-STREAM-INF in the HLS manifest. The other options for this setting determine the values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For more information about these attributes, see the Apple documentation article https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose a value for this setting.
     pub audio_track_type: ::std::option::Option<crate::types::CmfcAudioTrackType>,
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub c2pa_manifest: ::std::option::Option<crate::types::CmfcC2paManifest>,
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub certificate_secret: ::std::option::Option<::std::string::String>,
     /// Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you choose Flag, MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag, MediaConvert leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple documentation.
     pub descriptive_video_service_flag: ::std::option::Option<crate::types::CmfcDescriptiveVideoServiceFlag>,
     /// Choose Include to have MediaConvert generate an HLS child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude.
@@ -24,6 +28,8 @@ pub struct CmfcSettings {
     pub scte35_esam: ::std::option::Option<crate::types::CmfcScte35Esam>,
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
     pub scte35_source: ::std::option::Option<crate::types::CmfcScte35Source>,
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub signing_kms_key: ::std::option::Option<::std::string::String>,
     /// To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
     pub timed_metadata: ::std::option::Option<crate::types::CmfcTimedMetadata>,
     /// Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify Version 1, you must also set ID3 metadata to Passthrough.
@@ -50,6 +56,14 @@ impl CmfcSettings {
     pub fn audio_track_type(&self) -> ::std::option::Option<&crate::types::CmfcAudioTrackType> {
         self.audio_track_type.as_ref()
     }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn c2pa_manifest(&self) -> ::std::option::Option<&crate::types::CmfcC2paManifest> {
+        self.c2pa_manifest.as_ref()
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn certificate_secret(&self) -> ::std::option::Option<&str> {
+        self.certificate_secret.as_deref()
+    }
     /// Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you choose Flag, MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag, MediaConvert leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple documentation.
     pub fn descriptive_video_service_flag(&self) -> ::std::option::Option<&crate::types::CmfcDescriptiveVideoServiceFlag> {
         self.descriptive_video_service_flag.as_ref()
@@ -73,6 +87,10 @@ impl CmfcSettings {
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
     pub fn scte35_source(&self) -> ::std::option::Option<&crate::types::CmfcScte35Source> {
         self.scte35_source.as_ref()
+    }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn signing_kms_key(&self) -> ::std::option::Option<&str> {
+        self.signing_kms_key.as_deref()
     }
     /// To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
     pub fn timed_metadata(&self) -> ::std::option::Option<&crate::types::CmfcTimedMetadata> {
@@ -106,12 +124,15 @@ pub struct CmfcSettingsBuilder {
     pub(crate) audio_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) audio_rendition_sets: ::std::option::Option<::std::string::String>,
     pub(crate) audio_track_type: ::std::option::Option<crate::types::CmfcAudioTrackType>,
+    pub(crate) c2pa_manifest: ::std::option::Option<crate::types::CmfcC2paManifest>,
+    pub(crate) certificate_secret: ::std::option::Option<::std::string::String>,
     pub(crate) descriptive_video_service_flag: ::std::option::Option<crate::types::CmfcDescriptiveVideoServiceFlag>,
     pub(crate) i_frame_only_manifest: ::std::option::Option<crate::types::CmfcIFrameOnlyManifest>,
     pub(crate) klv_metadata: ::std::option::Option<crate::types::CmfcKlvMetadata>,
     pub(crate) manifest_metadata_signaling: ::std::option::Option<crate::types::CmfcManifestMetadataSignaling>,
     pub(crate) scte35_esam: ::std::option::Option<crate::types::CmfcScte35Esam>,
     pub(crate) scte35_source: ::std::option::Option<crate::types::CmfcScte35Source>,
+    pub(crate) signing_kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) timed_metadata: ::std::option::Option<crate::types::CmfcTimedMetadata>,
     pub(crate) timed_metadata_box_version: ::std::option::Option<crate::types::CmfcTimedMetadataBoxVersion>,
     pub(crate) timed_metadata_scheme_id_uri: ::std::option::Option<::std::string::String>,
@@ -173,6 +194,34 @@ impl CmfcSettingsBuilder {
     /// Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the client player selects which audio track to play. Choose Audio-only variant stream (AUDIO_ONLY_VARIANT_STREAM) for any variant that you want to prohibit the client from playing with video. This causes MediaConvert to represent the variant as an EXT-X-STREAM-INF in the HLS manifest. The other options for this setting determine the values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For more information about these attributes, see the Apple documentation article https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose a value for this setting.
     pub fn get_audio_track_type(&self) -> &::std::option::Option<crate::types::CmfcAudioTrackType> {
         &self.audio_track_type
+    }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn c2pa_manifest(mut self, input: crate::types::CmfcC2paManifest) -> Self {
+        self.c2pa_manifest = ::std::option::Option::Some(input);
+        self
+    }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn set_c2pa_manifest(mut self, input: ::std::option::Option<crate::types::CmfcC2paManifest>) -> Self {
+        self.c2pa_manifest = input;
+        self
+    }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn get_c2pa_manifest(&self) -> &::std::option::Option<crate::types::CmfcC2paManifest> {
+        &self.c2pa_manifest
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn certificate_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate_secret = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn set_certificate_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_secret = input;
+        self
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn get_certificate_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_secret
     }
     /// Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you choose Flag, MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag, MediaConvert leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple documentation.
     pub fn descriptive_video_service_flag(mut self, input: crate::types::CmfcDescriptiveVideoServiceFlag) -> Self {
@@ -258,6 +307,20 @@ impl CmfcSettingsBuilder {
     pub fn get_scte35_source(&self) -> &::std::option::Option<crate::types::CmfcScte35Source> {
         &self.scte35_source
     }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn signing_kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signing_kms_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn set_signing_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.signing_kms_key = input;
+        self
+    }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn get_signing_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_kms_key
+    }
     /// To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
     pub fn timed_metadata(mut self, input: crate::types::CmfcTimedMetadata) -> Self {
         self.timed_metadata = ::std::option::Option::Some(input);
@@ -321,12 +384,15 @@ impl CmfcSettingsBuilder {
             audio_group_id: self.audio_group_id,
             audio_rendition_sets: self.audio_rendition_sets,
             audio_track_type: self.audio_track_type,
+            c2pa_manifest: self.c2pa_manifest,
+            certificate_secret: self.certificate_secret,
             descriptive_video_service_flag: self.descriptive_video_service_flag,
             i_frame_only_manifest: self.i_frame_only_manifest,
             klv_metadata: self.klv_metadata,
             manifest_metadata_signaling: self.manifest_metadata_signaling,
             scte35_esam: self.scte35_esam,
             scte35_source: self.scte35_source,
+            signing_kms_key: self.signing_kms_key,
             timed_metadata: self.timed_metadata,
             timed_metadata_box_version: self.timed_metadata_box_version,
             timed_metadata_scheme_id_uri: self.timed_metadata_scheme_id_uri,

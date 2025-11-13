@@ -39,6 +39,11 @@ where
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CommonControl' cannot be null"),
                             )?,
                         )),
+                        "RelatedControl" => Some(crate::types::Mapping::RelatedControl(
+                            crate::protocol_serde::shape_related_control_mapping_details::de_related_control_mapping_details(tokens)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RelatedControl' cannot be null"),
+                            )?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::Mapping::Unknown)

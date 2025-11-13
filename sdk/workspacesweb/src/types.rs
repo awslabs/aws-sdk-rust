@@ -101,6 +101,10 @@ pub use crate::types::_data_protection_settings_summary::DataProtectionSettingsS
 
 pub use crate::types::_browser_settings::BrowserSettings;
 
+pub use crate::types::_web_content_filtering_policy::WebContentFilteringPolicy;
+
+pub use crate::types::_category::Category;
+
 pub use crate::types::_browser_settings_summary::BrowserSettingsSummary;
 
 pub use crate::types::_session_summary::SessionSummary;
@@ -118,6 +122,8 @@ mod _browser_settings;
 mod _browser_settings_summary;
 
 mod _browser_type;
+
+mod _category;
 
 mod _certificate;
 
@@ -222,6 +228,8 @@ mod _validation_exception_field;
 mod _validation_exception_reason;
 
 mod _visual_mode;
+
+mod _web_content_filtering_policy;
 
 /// Builders
 pub mod builders;

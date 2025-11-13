@@ -22,6 +22,11 @@ pub fn ser_target_description(
     if let Some(var_6) = &input.availability_zone {
         scope_5.string(var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("QuicServerId");
+    if let Some(var_8) = &input.quic_server_id {
+        scope_7.string(var_8);
+    }
     Ok(())
 }
 
@@ -34,7 +39,7 @@ pub fn de_target_description(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.elasticloadbalancingv2#TargetDescription$Id */ =>  {
-                let var_7 =
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -43,11 +48,11 @@ pub fn de_target_description(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_7);
+                builder = builder.set_id(var_9);
             }
             ,
             s if s.matches("Port") /* Port com.amazonaws.elasticloadbalancingv2#TargetDescription$Port */ =>  {
-                let var_8 =
+                let var_10 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -58,11 +63,11 @@ pub fn de_target_description(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_8);
+                builder = builder.set_port(var_10);
             }
             ,
             s if s.matches("AvailabilityZone") /* AvailabilityZone com.amazonaws.elasticloadbalancingv2#TargetDescription$AvailabilityZone */ =>  {
-                let var_9 =
+                let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -71,7 +76,20 @@ pub fn de_target_description(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_9);
+                builder = builder.set_availability_zone(var_11);
+            }
+            ,
+            s if s.matches("QuicServerId") /* QuicServerId com.amazonaws.elasticloadbalancingv2#TargetDescription$QuicServerId */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_quic_server_id(var_12);
             }
             ,
             _ => {}

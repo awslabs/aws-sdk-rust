@@ -19,7 +19,7 @@ pub struct DescribeStackResourceDriftsInput {
     /// <p><code>UNKNOWN</code>: CloudFormation could not run drift detection for the resource.</p></li>
     /// </ul>
     pub stack_resource_drift_status_filters: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>>,
-    /// <p>A string that identifies the next page of stack resource drift results.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -47,7 +47,7 @@ impl DescribeStackResourceDriftsInput {
     pub fn stack_resource_drift_status_filters(&self) -> &[crate::types::StackResourceDriftStatus] {
         self.stack_resource_drift_status_filters.as_deref().unwrap_or_default()
     }
-    /// <p>A string that identifies the next page of stack resource drift results.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -147,17 +147,17 @@ impl DescribeStackResourceDriftsInputBuilder {
     pub fn get_stack_resource_drift_status_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackResourceDriftStatus>> {
         &self.stack_resource_drift_status_filters
     }
-    /// <p>A string that identifies the next page of stack resource drift results.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string that identifies the next page of stack resource drift results.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A string that identifies the next page of stack resource drift results.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

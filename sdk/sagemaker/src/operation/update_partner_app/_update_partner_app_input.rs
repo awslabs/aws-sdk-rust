@@ -13,6 +13,10 @@ pub struct UpdatePartnerAppInput {
     pub application_config: ::std::option::Option<crate::types::PartnerAppConfig>,
     /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App sets the Amazon Web Services IAM session name or the authenticated IAM user as the identity of the SageMaker Partner AI App user.</p>
     pub enable_iam_session_based_identity: ::std::option::Option<bool>,
+    /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available.</p>
+    pub enable_auto_minor_version_upgrade: ::std::option::Option<bool>,
+    /// <p>The semantic version to upgrade the SageMaker Partner AI App to. Must be the same semantic version returned in the <code>AvailableUpgrade</code> field from <code>DescribePartnerApp</code>. Version skipping and downgrades are not supported.</p>
+    pub app_version: ::std::option::Option<::std::string::String>,
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
@@ -38,6 +42,14 @@ impl UpdatePartnerAppInput {
     /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App sets the Amazon Web Services IAM session name or the authenticated IAM user as the identity of the SageMaker Partner AI App user.</p>
     pub fn enable_iam_session_based_identity(&self) -> ::std::option::Option<bool> {
         self.enable_iam_session_based_identity
+    }
+    /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available.</p>
+    pub fn enable_auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
+        self.enable_auto_minor_version_upgrade
+    }
+    /// <p>The semantic version to upgrade the SageMaker Partner AI App to. Must be the same semantic version returned in the <code>AvailableUpgrade</code> field from <code>DescribePartnerApp</code>. Version skipping and downgrades are not supported.</p>
+    pub fn app_version(&self) -> ::std::option::Option<&str> {
+        self.app_version.as_deref()
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -66,6 +78,8 @@ pub struct UpdatePartnerAppInputBuilder {
     pub(crate) tier: ::std::option::Option<::std::string::String>,
     pub(crate) application_config: ::std::option::Option<crate::types::PartnerAppConfig>,
     pub(crate) enable_iam_session_based_identity: ::std::option::Option<bool>,
+    pub(crate) enable_auto_minor_version_upgrade: ::std::option::Option<bool>,
+    pub(crate) app_version: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -141,6 +155,34 @@ impl UpdatePartnerAppInputBuilder {
     pub fn get_enable_iam_session_based_identity(&self) -> &::std::option::Option<bool> {
         &self.enable_iam_session_based_identity
     }
+    /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available.</p>
+    pub fn enable_auto_minor_version_upgrade(mut self, input: bool) -> Self {
+        self.enable_auto_minor_version_upgrade = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available.</p>
+    pub fn set_enable_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_auto_minor_version_upgrade = input;
+        self
+    }
+    /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available.</p>
+    pub fn get_enable_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.enable_auto_minor_version_upgrade
+    }
+    /// <p>The semantic version to upgrade the SageMaker Partner AI App to. Must be the same semantic version returned in the <code>AvailableUpgrade</code> field from <code>DescribePartnerApp</code>. Version skipping and downgrades are not supported.</p>
+    pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The semantic version to upgrade the SageMaker Partner AI App to. Must be the same semantic version returned in the <code>AvailableUpgrade</code> field from <code>DescribePartnerApp</code>. Version skipping and downgrades are not supported.</p>
+    pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.app_version = input;
+        self
+    }
+    /// <p>The semantic version to upgrade the SageMaker Partner AI App to. Must be the same semantic version returned in the <code>AvailableUpgrade</code> field from <code>DescribePartnerApp</code>. Version skipping and downgrades are not supported.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_version
+    }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -185,6 +227,8 @@ impl UpdatePartnerAppInputBuilder {
             tier: self.tier,
             application_config: self.application_config,
             enable_iam_session_based_identity: self.enable_iam_session_based_identity,
+            enable_auto_minor_version_upgrade: self.enable_auto_minor_version_upgrade,
+            app_version: self.app_version,
             client_token: self.client_token,
             tags: self.tags,
         })

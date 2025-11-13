@@ -1591,6 +1591,8 @@ pub(crate) mod shape_auto_ml_security_config;
 
 pub(crate) mod shape_autotune;
 
+pub(crate) mod shape_available_upgrade;
+
 pub(crate) mod shape_batch_add_cluster_nodes_error_list;
 
 pub(crate) mod shape_batch_data_capture_config;
@@ -2315,6 +2317,8 @@ pub(crate) mod shape_artifact_source_types;
 
 pub(crate) mod shape_artifact_summary;
 
+pub(crate) mod shape_assigned_group_patterns_list;
+
 pub(crate) mod shape_association_summary;
 
 pub(crate) mod shape_async_inference_client_config;
@@ -2819,6 +2823,8 @@ pub(crate) mod shape_recommendation_job_resource_limit;
 
 pub(crate) mod shape_recommendation_job_vpc_config;
 
+pub(crate) mod shape_release_notes_list;
+
 pub(crate) mod shape_rendering_error;
 
 pub(crate) mod shape_reserved_capacity_summary;
@@ -2830,6 +2836,10 @@ pub(crate) mod shape_resource_limits;
 pub(crate) mod shape_resource_sharing_config;
 
 pub(crate) mod shape_response_mime_types;
+
+pub(crate) mod shape_role_group_assignment;
+
+pub(crate) mod shape_role_group_assignments_list;
 
 pub(crate) mod shape_rolling_deployment_policy;
 
@@ -3350,6 +3360,8 @@ pub(crate) mod shape_execution_role_arns;
 pub(crate) mod shape_fail_step_metadata;
 
 pub(crate) mod shape_filling_transformations;
+
+pub(crate) mod shape_group_patterns_list;
 
 pub(crate) mod shape_grouping_attribute_names;
 

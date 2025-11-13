@@ -179,6 +179,19 @@ pub(crate) fn de_describe_partner_app(
                 "Error" => {
                     builder = builder.set_error(crate::protocol_serde::shape_error_info::de_error_info(tokens)?);
                 }
+                "EnableAutoMinorVersionUpgrade" => {
+                    builder =
+                        builder.set_enable_auto_minor_version_upgrade(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "CurrentVersionEolDate" => {
+                    builder = builder.set_current_version_eol_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "AvailableUpgrade" => {
+                    builder = builder.set_available_upgrade(crate::protocol_serde::shape_available_upgrade::de_available_upgrade(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

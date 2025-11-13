@@ -6,5 +6,8 @@ pub fn ser_describe_partner_app_input_input(
     if let Some(var_1) = &input.arn {
         object.key("Arn").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.include_available_upgrade {
+        object.key("IncludeAvailableUpgrade").boolean(*var_2);
+    }
     Ok(())
 }

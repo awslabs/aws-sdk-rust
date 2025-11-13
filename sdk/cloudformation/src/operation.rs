@@ -136,6 +136,9 @@ pub mod execute_stack_refactor;
 /// Types for the `GetGeneratedTemplate` operation.
 pub mod get_generated_template;
 
+/// Types for the `GetHookResult` operation.
+pub mod get_hook_result;
+
 /// Types for the `GetStackPolicy` operation.
 pub mod get_stack_policy;
 

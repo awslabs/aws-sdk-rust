@@ -5995,6 +5995,18 @@ pub(crate) fn repository_auth_config_correct_errors(
     builder
 }
 
+pub(crate) fn role_group_assignment_correct_errors(
+    mut builder: crate::types::builders::RoleGroupAssignmentBuilder,
+) -> crate::types::builders::RoleGroupAssignmentBuilder {
+    if builder.role_name.is_none() {
+        builder.role_name = Some(Default::default())
+    }
+    if builder.group_patterns.is_none() {
+        builder.group_patterns = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_model_data_source_correct_errors(
     mut builder: crate::types::builders::S3ModelDataSourceBuilder,
 ) -> crate::types::builders::S3ModelDataSourceBuilder {

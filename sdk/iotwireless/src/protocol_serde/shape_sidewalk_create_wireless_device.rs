@@ -6,5 +6,14 @@ pub fn ser_sidewalk_create_wireless_device(
     if let Some(var_1) = &input.device_profile_id {
         object.key("DeviceProfileId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.positioning {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("Positioning").start_object();
+        crate::protocol_serde::shape_sidewalk_positioning::ser_sidewalk_positioning(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.sidewalk_manufacturing_sn {
+        object.key("SidewalkManufacturingSn").string(var_4.as_str());
+    }
     Ok(())
 }

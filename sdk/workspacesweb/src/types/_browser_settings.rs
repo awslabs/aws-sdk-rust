@@ -14,6 +14,8 @@ pub struct BrowserSettings {
     pub customer_managed_key: ::std::option::Option<::std::string::String>,
     /// <p>The additional encryption context of the browser settings.</p>
     pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The policy that specifies which URLs end users are allowed to access or which URLs or domain categories they are restricted from accessing for enhanced security.</p>
+    pub web_content_filtering_policy: ::std::option::Option<crate::types::WebContentFilteringPolicy>,
 }
 impl BrowserSettings {
     /// <p>The ARN of the browser settings.</p>
@@ -39,6 +41,10 @@ impl BrowserSettings {
     pub fn additional_encryption_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_encryption_context.as_ref()
     }
+    /// <p>The policy that specifies which URLs end users are allowed to access or which URLs or domain categories they are restricted from accessing for enhanced security.</p>
+    pub fn web_content_filtering_policy(&self) -> ::std::option::Option<&crate::types::WebContentFilteringPolicy> {
+        self.web_content_filtering_policy.as_ref()
+    }
 }
 impl ::std::fmt::Debug for BrowserSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -48,6 +54,7 @@ impl ::std::fmt::Debug for BrowserSettings {
         formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
+        formatter.field("web_content_filtering_policy", &self.web_content_filtering_policy);
         formatter.finish()
     }
 }
@@ -67,6 +74,7 @@ pub struct BrowserSettingsBuilder {
     pub(crate) browser_policy: ::std::option::Option<::std::string::String>,
     pub(crate) customer_managed_key: ::std::option::Option<::std::string::String>,
     pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) web_content_filtering_policy: ::std::option::Option<crate::types::WebContentFilteringPolicy>,
 }
 impl BrowserSettingsBuilder {
     /// <p>The ARN of the browser settings.</p>
@@ -161,6 +169,20 @@ impl BrowserSettingsBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_encryption_context
     }
+    /// <p>The policy that specifies which URLs end users are allowed to access or which URLs or domain categories they are restricted from accessing for enhanced security.</p>
+    pub fn web_content_filtering_policy(mut self, input: crate::types::WebContentFilteringPolicy) -> Self {
+        self.web_content_filtering_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The policy that specifies which URLs end users are allowed to access or which URLs or domain categories they are restricted from accessing for enhanced security.</p>
+    pub fn set_web_content_filtering_policy(mut self, input: ::std::option::Option<crate::types::WebContentFilteringPolicy>) -> Self {
+        self.web_content_filtering_policy = input;
+        self
+    }
+    /// <p>The policy that specifies which URLs end users are allowed to access or which URLs or domain categories they are restricted from accessing for enhanced security.</p>
+    pub fn get_web_content_filtering_policy(&self) -> &::std::option::Option<crate::types::WebContentFilteringPolicy> {
+        &self.web_content_filtering_policy
+    }
     /// Consumes the builder and constructs a [`BrowserSettings`](crate::types::BrowserSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`browser_settings_arn`](crate::types::builders::BrowserSettingsBuilder::browser_settings_arn)
@@ -176,6 +198,7 @@ impl BrowserSettingsBuilder {
             browser_policy: self.browser_policy,
             customer_managed_key: self.customer_managed_key,
             additional_encryption_context: self.additional_encryption_context,
+            web_content_filtering_policy: self.web_content_filtering_policy,
         })
     }
 }
@@ -187,6 +210,7 @@ impl ::std::fmt::Debug for BrowserSettingsBuilder {
         formatter.field("browser_policy", &"*** Sensitive Data Redacted ***");
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
+        formatter.field("web_content_filtering_policy", &self.web_content_filtering_policy);
         formatter.finish()
     }
 }

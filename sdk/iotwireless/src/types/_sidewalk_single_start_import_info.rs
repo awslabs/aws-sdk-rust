@@ -6,11 +6,17 @@
 pub struct SidewalkSingleStartImportInfo {
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the device added to the import task.</p>
     pub sidewalk_manufacturing_sn: ::std::option::Option<::std::string::String>,
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub positioning: ::std::option::Option<crate::types::SidewalkPositioning>,
 }
 impl SidewalkSingleStartImportInfo {
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the device added to the import task.</p>
     pub fn sidewalk_manufacturing_sn(&self) -> ::std::option::Option<&str> {
         self.sidewalk_manufacturing_sn.as_deref()
+    }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn positioning(&self) -> ::std::option::Option<&crate::types::SidewalkPositioning> {
+        self.positioning.as_ref()
     }
 }
 impl SidewalkSingleStartImportInfo {
@@ -25,6 +31,7 @@ impl SidewalkSingleStartImportInfo {
 #[non_exhaustive]
 pub struct SidewalkSingleStartImportInfoBuilder {
     pub(crate) sidewalk_manufacturing_sn: ::std::option::Option<::std::string::String>,
+    pub(crate) positioning: ::std::option::Option<crate::types::SidewalkPositioning>,
 }
 impl SidewalkSingleStartImportInfoBuilder {
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the device added to the import task.</p>
@@ -41,10 +48,25 @@ impl SidewalkSingleStartImportInfoBuilder {
     pub fn get_sidewalk_manufacturing_sn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sidewalk_manufacturing_sn
     }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn positioning(mut self, input: crate::types::SidewalkPositioning) -> Self {
+        self.positioning = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::SidewalkPositioning>) -> Self {
+        self.positioning = input;
+        self
+    }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::SidewalkPositioning> {
+        &self.positioning
+    }
     /// Consumes the builder and constructs a [`SidewalkSingleStartImportInfo`](crate::types::SidewalkSingleStartImportInfo).
     pub fn build(self) -> crate::types::SidewalkSingleStartImportInfo {
         crate::types::SidewalkSingleStartImportInfo {
             sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn,
+            positioning: self.positioning,
         }
     }
 }

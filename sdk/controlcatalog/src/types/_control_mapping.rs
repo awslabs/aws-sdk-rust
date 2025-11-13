@@ -6,9 +6,9 @@
 pub struct ControlMapping {
     /// <p>The Amazon Resource Name (ARN) that identifies the control in the mapping.</p>
     pub control_arn: ::std::string::String,
-    /// <p>The type of mapping relationship between the control and other entities. Indicates whether the mapping is to a framework or common control.</p>
+    /// <p>The type of mapping relationship between the control and other entities.</p>
     pub mapping_type: crate::types::MappingType,
-    /// <p>The details of the mapping relationship, containing either framework or common control information.</p>
+    /// <p>The details of the mapping relationship, for example, containing framework, common control, or related control information.</p>
     pub mapping: ::std::option::Option<crate::types::Mapping>,
 }
 impl ControlMapping {
@@ -17,11 +17,11 @@ impl ControlMapping {
         use std::ops::Deref;
         self.control_arn.deref()
     }
-    /// <p>The type of mapping relationship between the control and other entities. Indicates whether the mapping is to a framework or common control.</p>
+    /// <p>The type of mapping relationship between the control and other entities.</p>
     pub fn mapping_type(&self) -> &crate::types::MappingType {
         &self.mapping_type
     }
-    /// <p>The details of the mapping relationship, containing either framework or common control information.</p>
+    /// <p>The details of the mapping relationship, for example, containing framework, common control, or related control information.</p>
     pub fn mapping(&self) -> ::std::option::Option<&crate::types::Mapping> {
         self.mapping.as_ref()
     }
@@ -57,33 +57,33 @@ impl ControlMappingBuilder {
     pub fn get_control_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.control_arn
     }
-    /// <p>The type of mapping relationship between the control and other entities. Indicates whether the mapping is to a framework or common control.</p>
+    /// <p>The type of mapping relationship between the control and other entities.</p>
     /// This field is required.
     pub fn mapping_type(mut self, input: crate::types::MappingType) -> Self {
         self.mapping_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of mapping relationship between the control and other entities. Indicates whether the mapping is to a framework or common control.</p>
+    /// <p>The type of mapping relationship between the control and other entities.</p>
     pub fn set_mapping_type(mut self, input: ::std::option::Option<crate::types::MappingType>) -> Self {
         self.mapping_type = input;
         self
     }
-    /// <p>The type of mapping relationship between the control and other entities. Indicates whether the mapping is to a framework or common control.</p>
+    /// <p>The type of mapping relationship between the control and other entities.</p>
     pub fn get_mapping_type(&self) -> &::std::option::Option<crate::types::MappingType> {
         &self.mapping_type
     }
-    /// <p>The details of the mapping relationship, containing either framework or common control information.</p>
+    /// <p>The details of the mapping relationship, for example, containing framework, common control, or related control information.</p>
     /// This field is required.
     pub fn mapping(mut self, input: crate::types::Mapping) -> Self {
         self.mapping = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the mapping relationship, containing either framework or common control information.</p>
+    /// <p>The details of the mapping relationship, for example, containing framework, common control, or related control information.</p>
     pub fn set_mapping(mut self, input: ::std::option::Option<crate::types::Mapping>) -> Self {
         self.mapping = input;
         self
     }
-    /// <p>The details of the mapping relationship, containing either framework or common control information.</p>
+    /// <p>The details of the mapping relationship, for example, containing framework, common control, or related control information.</p>
     pub fn get_mapping(&self) -> &::std::option::Option<crate::types::Mapping> {
         &self.mapping
     }

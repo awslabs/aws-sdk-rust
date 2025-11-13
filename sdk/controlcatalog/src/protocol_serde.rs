@@ -122,3 +122,5 @@ pub(crate) mod shape_mapping;
 pub(crate) mod shape_common_control_mapping_details;
 
 pub(crate) mod shape_framework_mapping_details;
+
+pub(crate) mod shape_related_control_mapping_details;

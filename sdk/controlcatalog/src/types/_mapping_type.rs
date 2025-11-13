@@ -14,6 +14,7 @@
 /// match mappingtype {
 ///     MappingType::CommonControl => { /* ... */ },
 ///     MappingType::Framework => { /* ... */ },
+///     MappingType::RelatedControl => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum MappingType {
     CommonControl,
     #[allow(missing_docs)] // documentation missing in model
     Framework,
+    #[allow(missing_docs)] // documentation missing in model
+    RelatedControl,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for MappingType {
         match s {
             "COMMON_CONTROL" => MappingType::CommonControl,
             "FRAMEWORK" => MappingType::Framework,
+            "RELATED_CONTROL" => MappingType::RelatedControl,
             other => MappingType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl MappingType {
         match self {
             MappingType::CommonControl => "COMMON_CONTROL",
             MappingType::Framework => "FRAMEWORK",
+            MappingType::RelatedControl => "RELATED_CONTROL",
             MappingType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMMON_CONTROL", "FRAMEWORK"]
+        &["COMMON_CONTROL", "FRAMEWORK", "RELATED_CONTROL"]
     }
 }
 impl ::std::convert::AsRef<str> for MappingType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for MappingType {
         match self {
             MappingType::CommonControl => write!(f, "COMMON_CONTROL"),
             MappingType::Framework => write!(f, "FRAMEWORK"),
+            MappingType::RelatedControl => write!(f, "RELATED_CONTROL"),
             MappingType::Unknown(value) => write!(f, "{value}"),
         }
     }

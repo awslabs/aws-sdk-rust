@@ -95,6 +95,22 @@ pub(crate) fn stack_resource_drift_correct_errors(
     builder
 }
 
+pub(crate) fn hook_target_correct_errors(mut builder: crate::types::builders::HookTargetBuilder) -> crate::types::builders::HookTargetBuilder {
+    if builder.target_type.is_none() {
+        builder.target_type = "no value was set".parse::<crate::types::HookTargetType>().ok()
+    }
+    if builder.target_type_name.is_none() {
+        builder.target_type_name = Some(Default::default())
+    }
+    if builder.target_id.is_none() {
+        builder.target_id = Some(Default::default())
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::HookTargetAction>().ok()
+    }
+    builder
+}
+
 pub(crate) fn logging_config_correct_errors(
     mut builder: crate::types::builders::LoggingConfigBuilder,
 ) -> crate::types::builders::LoggingConfigBuilder {

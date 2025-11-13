@@ -234,6 +234,20 @@ impl CreatePartnerAppFluentBuilder {
     pub fn get_enable_iam_session_based_identity(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_iam_session_based_identity()
     }
+    /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available. Default is <code>FALSE</code>.</p>
+    pub fn enable_auto_minor_version_upgrade(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_auto_minor_version_upgrade(input);
+        self
+    }
+    /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available. Default is <code>FALSE</code>.</p>
+    pub fn set_enable_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_auto_minor_version_upgrade(input);
+        self
+    }
+    /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available. Default is <code>FALSE</code>.</p>
+    pub fn get_enable_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_auto_minor_version_upgrade()
+    }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

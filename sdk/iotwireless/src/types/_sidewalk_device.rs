@@ -20,6 +20,8 @@ pub struct SidewalkDevice {
     pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The Sidewalk device status, such as provisioned or registered.</p>
     pub status: ::std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub positioning: ::std::option::Option<crate::types::SidewalkPositioning>,
 }
 impl SidewalkDevice {
     /// <p>The Sidewalk Amazon ID.</p>
@@ -58,6 +60,10 @@ impl SidewalkDevice {
     pub fn status(&self) -> ::std::option::Option<&crate::types::WirelessDeviceSidewalkStatus> {
         self.status.as_ref()
     }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn positioning(&self) -> ::std::option::Option<&crate::types::SidewalkPositioning> {
+        self.positioning.as_ref()
+    }
 }
 impl SidewalkDevice {
     /// Creates a new builder-style object to manufacture [`SidewalkDevice`](crate::types::SidewalkDevice).
@@ -78,6 +84,7 @@ pub struct SidewalkDeviceBuilder {
     pub(crate) device_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
+    pub(crate) positioning: ::std::option::Option<crate::types::SidewalkPositioning>,
 }
 impl SidewalkDeviceBuilder {
     /// <p>The Sidewalk Amazon ID.</p>
@@ -204,6 +211,20 @@ impl SidewalkDeviceBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WirelessDeviceSidewalkStatus> {
         &self.status
     }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn positioning(mut self, input: crate::types::SidewalkPositioning) -> Self {
+        self.positioning = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::SidewalkPositioning>) -> Self {
+        self.positioning = input;
+        self
+    }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::SidewalkPositioning> {
+        &self.positioning
+    }
     /// Consumes the builder and constructs a [`SidewalkDevice`](crate::types::SidewalkDevice).
     pub fn build(self) -> crate::types::SidewalkDevice {
         crate::types::SidewalkDevice {
@@ -215,6 +236,7 @@ impl SidewalkDeviceBuilder {
             device_profile_id: self.device_profile_id,
             certificate_id: self.certificate_id,
             status: self.status,
+            positioning: self.positioning,
         }
     }
 }

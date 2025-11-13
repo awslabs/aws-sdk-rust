@@ -331,6 +331,8 @@ mod execute_stack_refactor;
 
 mod get_generated_template;
 
+mod get_hook_result;
+
 mod get_stack_policy;
 
 mod get_template;

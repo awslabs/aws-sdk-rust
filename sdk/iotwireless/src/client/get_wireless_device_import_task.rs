@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput::id): <p>The identifier of the import task for which information is retrieved.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput::arn): <p>The ARN (Amazon Resource Name) of the import task.</p>
     ///   - [`destination_name(Option<String>)`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput::destination_name): <p>The name of the destination that's assigned to the wireless devices in the import task.</p>
+    ///   - [`positioning(Option<PositioningConfigStatus>)`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput::positioning): <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     ///   - [`sidewalk(Option<SidewalkGetStartImportInfo>)`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput::sidewalk): <p>The Sidewalk-related information about an import task.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput::creation_time): <p>The time at which the import task was created.</p>
     ///   - [`status(Option<ImportTaskStatus>)`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput::status): <p>The import task status.</p>

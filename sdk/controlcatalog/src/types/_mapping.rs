@@ -8,6 +8,8 @@ pub enum Mapping {
     CommonControl(crate::types::CommonControlMappingDetails),
     /// <p>The framework mapping details when the mapping type relates to a compliance framework.</p>
     Framework(crate::types::FrameworkMappingDetails),
+    /// <p>Returns information about controls that are related to the specified control.</p>
+    RelatedControl(crate::types::RelatedControlMappingDetails),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl Mapping {
     /// Returns true if this is a [`Framework`](crate::types::Mapping::Framework).
     pub fn is_framework(&self) -> bool {
         self.as_framework().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RelatedControl`](crate::types::Mapping::RelatedControl), extracting the inner [`RelatedControlMappingDetails`](crate::types::RelatedControlMappingDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_related_control(&self) -> ::std::result::Result<&crate::types::RelatedControlMappingDetails, &Self> {
+        if let Mapping::RelatedControl(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RelatedControl`](crate::types::Mapping::RelatedControl).
+    pub fn is_related_control(&self) -> bool {
+        self.as_related_control().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

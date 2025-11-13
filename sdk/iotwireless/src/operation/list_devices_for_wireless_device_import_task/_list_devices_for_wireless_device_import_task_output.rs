@@ -7,6 +7,10 @@ pub struct ListDevicesForWirelessDeviceImportTaskOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages received from devices in an import task that are onboarded to AWS IoT Wireless.</p>
     pub destination_name: ::std::option::Option<::std::string::String>,
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
+    /// <p>The Sidewalk object containing Sidewalk-related device information.</p>
+    pub sidewalk: ::std::option::Option<crate::types::SidewalkListDevicesForImportInfo>,
     /// <p>List of wireless devices in an import task and their onboarding status.</p>
     pub imported_wireless_device_list: ::std::option::Option<::std::vec::Vec<crate::types::ImportedWirelessDevice>>,
     _request_id: Option<String>,
@@ -19,6 +23,14 @@ impl ListDevicesForWirelessDeviceImportTaskOutput {
     /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages received from devices in an import task that are onboarded to AWS IoT Wireless.</p>
     pub fn destination_name(&self) -> ::std::option::Option<&str> {
         self.destination_name.as_deref()
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn positioning(&self) -> ::std::option::Option<&crate::types::PositioningConfigStatus> {
+        self.positioning.as_ref()
+    }
+    /// <p>The Sidewalk object containing Sidewalk-related device information.</p>
+    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkListDevicesForImportInfo> {
+        self.sidewalk.as_ref()
     }
     /// <p>List of wireless devices in an import task and their onboarding status.</p>
     ///
@@ -46,6 +58,8 @@ impl ListDevicesForWirelessDeviceImportTaskOutput {
 pub struct ListDevicesForWirelessDeviceImportTaskOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
+    pub(crate) positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
+    pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkListDevicesForImportInfo>,
     pub(crate) imported_wireless_device_list: ::std::option::Option<::std::vec::Vec<crate::types::ImportedWirelessDevice>>,
     _request_id: Option<String>,
 }
@@ -77,6 +91,34 @@ impl ListDevicesForWirelessDeviceImportTaskOutputBuilder {
     /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages received from devices in an import task that are onboarded to AWS IoT Wireless.</p>
     pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_name
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
+        self.positioning = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
+        self.positioning = input;
+        self
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
+        &self.positioning
+    }
+    /// <p>The Sidewalk object containing Sidewalk-related device information.</p>
+    pub fn sidewalk(mut self, input: crate::types::SidewalkListDevicesForImportInfo) -> Self {
+        self.sidewalk = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Sidewalk object containing Sidewalk-related device information.</p>
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkListDevicesForImportInfo>) -> Self {
+        self.sidewalk = input;
+        self
+    }
+    /// <p>The Sidewalk object containing Sidewalk-related device information.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkListDevicesForImportInfo> {
+        &self.sidewalk
     }
     /// Appends an item to `imported_wireless_device_list`.
     ///
@@ -112,6 +154,8 @@ impl ListDevicesForWirelessDeviceImportTaskOutputBuilder {
         crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskOutput {
             next_token: self.next_token,
             destination_name: self.destination_name,
+            positioning: self.positioning,
+            sidewalk: self.sidewalk,
             imported_wireless_device_list: self.imported_wireless_device_list,
             _request_id: self._request_id,
         }

@@ -83,6 +83,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Positioning" => {
+                            builder = builder.set_positioning(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PositioningConfigStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

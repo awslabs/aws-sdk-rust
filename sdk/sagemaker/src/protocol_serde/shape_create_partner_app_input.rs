@@ -36,20 +36,23 @@ pub fn ser_create_partner_app_input_input(
     if let Some(var_11) = &input.enable_iam_session_based_identity {
         object.key("EnableIamSessionBasedIdentity").boolean(*var_11);
     }
-    if let Some(var_12) = &input.client_token {
-        object.key("ClientToken").string(var_12.as_str());
+    if let Some(var_12) = &input.enable_auto_minor_version_upgrade {
+        object.key("EnableAutoMinorVersionUpgrade").boolean(*var_12);
     }
-    if let Some(var_13) = &input.tags {
-        let mut array_14 = object.key("Tags").start_array();
-        for item_15 in var_13 {
+    if let Some(var_13) = &input.client_token {
+        object.key("ClientToken").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("Tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
     Ok(())
 }

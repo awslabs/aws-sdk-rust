@@ -1347,6 +1347,28 @@ impl From<crate::operation::get_generated_template::GetGeneratedTemplateError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_hook_result::GetHookResultError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_hook_result::GetHookResultError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_hook_result::GetHookResultError> for Error {
+    fn from(err: crate::operation::get_hook_result::GetHookResultError) -> Self {
+        match err {
+            crate::operation::get_hook_result::GetHookResultError::HookResultNotFoundException(inner) => Error::HookResultNotFoundException(inner),
+            crate::operation::get_hook_result::GetHookResultError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_stack_policy::GetStackPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

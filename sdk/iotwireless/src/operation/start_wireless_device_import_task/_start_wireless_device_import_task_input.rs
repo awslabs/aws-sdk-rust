@@ -9,6 +9,8 @@ pub struct StartWirelessDeviceImportTaskInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
     /// <p>The Sidewalk-related parameters for importing wireless devices that need to be provisioned in bulk.</p>
     pub sidewalk: ::std::option::Option<crate::types::SidewalkStartImportInfo>,
 }
@@ -26,6 +28,10 @@ impl StartWirelessDeviceImportTaskInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn positioning(&self) -> ::std::option::Option<&crate::types::PositioningConfigStatus> {
+        self.positioning.as_ref()
     }
     /// <p>The Sidewalk-related parameters for importing wireless devices that need to be provisioned in bulk.</p>
     pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkStartImportInfo> {
@@ -46,6 +52,7 @@ pub struct StartWirelessDeviceImportTaskInputBuilder {
     pub(crate) destination_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
     pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkStartImportInfo>,
 }
 impl StartWirelessDeviceImportTaskInputBuilder {
@@ -98,6 +105,20 @@ impl StartWirelessDeviceImportTaskInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
+        self.positioning = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
+        self.positioning = input;
+        self
+    }
+    /// <p>The integration status of the Device Location feature for Sidewalk devices.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
+        &self.positioning
+    }
     /// <p>The Sidewalk-related parameters for importing wireless devices that need to be provisioned in bulk.</p>
     /// This field is required.
     pub fn sidewalk(mut self, input: crate::types::SidewalkStartImportInfo) -> Self {
@@ -124,6 +145,7 @@ impl StartWirelessDeviceImportTaskInputBuilder {
             destination_name: self.destination_name,
             client_request_token: self.client_request_token,
             tags: self.tags,
+            positioning: self.positioning,
             sidewalk: self.sidewalk,
         })
     }

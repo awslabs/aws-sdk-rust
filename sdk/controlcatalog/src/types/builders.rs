@@ -33,6 +33,8 @@ pub use crate::types::_objective_resource_filter::ObjectiveResourceFilterBuilder
 
 pub use crate::types::_control_mapping::ControlMappingBuilder;
 
+pub use crate::types::_related_control_mapping_details::RelatedControlMappingDetailsBuilder;
+
 pub use crate::types::_common_control_mapping_details::CommonControlMappingDetailsBuilder;
 
 pub use crate::types::_framework_mapping_details::FrameworkMappingDetailsBuilder;

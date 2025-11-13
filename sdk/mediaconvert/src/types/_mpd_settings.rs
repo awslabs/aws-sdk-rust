@@ -11,8 +11,12 @@ pub struct MpdSettings {
     pub accessibility_caption_hints: ::std::option::Option<crate::types::MpdAccessibilityCaptionHints>,
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub audio_duration: ::std::option::Option<crate::types::MpdAudioDuration>,
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub c2pa_manifest: ::std::option::Option<crate::types::MpdC2paManifest>,
     /// Use this setting only in DASH output groups that include sidecar TTML, IMSC or WEBVTT captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
     pub caption_container_type: ::std::option::Option<crate::types::MpdCaptionContainerType>,
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub certificate_secret: ::std::option::Option<::std::string::String>,
     /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
     pub klv_metadata: ::std::option::Option<crate::types::MpdKlvMetadata>,
     /// To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to Passthrough.
@@ -21,6 +25,8 @@ pub struct MpdSettings {
     pub scte35_esam: ::std::option::Option<crate::types::MpdScte35Esam>,
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
     pub scte35_source: ::std::option::Option<crate::types::MpdScte35Source>,
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub signing_kms_key: ::std::option::Option<::std::string::String>,
     /// To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
     pub timed_metadata: ::std::option::Option<crate::types::MpdTimedMetadata>,
     /// Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify Version 1, you must also set ID3 metadata to Passthrough.
@@ -42,9 +48,17 @@ impl MpdSettings {
     pub fn audio_duration(&self) -> ::std::option::Option<&crate::types::MpdAudioDuration> {
         self.audio_duration.as_ref()
     }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn c2pa_manifest(&self) -> ::std::option::Option<&crate::types::MpdC2paManifest> {
+        self.c2pa_manifest.as_ref()
+    }
     /// Use this setting only in DASH output groups that include sidecar TTML, IMSC or WEBVTT captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
     pub fn caption_container_type(&self) -> ::std::option::Option<&crate::types::MpdCaptionContainerType> {
         self.caption_container_type.as_ref()
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn certificate_secret(&self) -> ::std::option::Option<&str> {
+        self.certificate_secret.as_deref()
     }
     /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
     pub fn klv_metadata(&self) -> ::std::option::Option<&crate::types::MpdKlvMetadata> {
@@ -61,6 +75,10 @@ impl MpdSettings {
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
     pub fn scte35_source(&self) -> ::std::option::Option<&crate::types::MpdScte35Source> {
         self.scte35_source.as_ref()
+    }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn signing_kms_key(&self) -> ::std::option::Option<&str> {
+        self.signing_kms_key.as_deref()
     }
     /// To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
     pub fn timed_metadata(&self) -> ::std::option::Option<&crate::types::MpdTimedMetadata> {
@@ -92,11 +110,14 @@ impl MpdSettings {
 pub struct MpdSettingsBuilder {
     pub(crate) accessibility_caption_hints: ::std::option::Option<crate::types::MpdAccessibilityCaptionHints>,
     pub(crate) audio_duration: ::std::option::Option<crate::types::MpdAudioDuration>,
+    pub(crate) c2pa_manifest: ::std::option::Option<crate::types::MpdC2paManifest>,
     pub(crate) caption_container_type: ::std::option::Option<crate::types::MpdCaptionContainerType>,
+    pub(crate) certificate_secret: ::std::option::Option<::std::string::String>,
     pub(crate) klv_metadata: ::std::option::Option<crate::types::MpdKlvMetadata>,
     pub(crate) manifest_metadata_signaling: ::std::option::Option<crate::types::MpdManifestMetadataSignaling>,
     pub(crate) scte35_esam: ::std::option::Option<crate::types::MpdScte35Esam>,
     pub(crate) scte35_source: ::std::option::Option<crate::types::MpdScte35Source>,
+    pub(crate) signing_kms_key: ::std::option::Option<::std::string::String>,
     pub(crate) timed_metadata: ::std::option::Option<crate::types::MpdTimedMetadata>,
     pub(crate) timed_metadata_box_version: ::std::option::Option<crate::types::MpdTimedMetadataBoxVersion>,
     pub(crate) timed_metadata_scheme_id_uri: ::std::option::Option<::std::string::String>,
@@ -140,6 +161,20 @@ impl MpdSettingsBuilder {
     pub fn get_audio_duration(&self) -> &::std::option::Option<crate::types::MpdAudioDuration> {
         &self.audio_duration
     }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn c2pa_manifest(mut self, input: crate::types::MpdC2paManifest) -> Self {
+        self.c2pa_manifest = ::std::option::Option::Some(input);
+        self
+    }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn set_c2pa_manifest(mut self, input: ::std::option::Option<crate::types::MpdC2paManifest>) -> Self {
+        self.c2pa_manifest = input;
+        self
+    }
+    /// When enabled, a C2PA compliant manifest will be generated, signed and embeded in the output. For more information on C2PA, see https://c2pa.org/specifications/specifications/2.1/index.html
+    pub fn get_c2pa_manifest(&self) -> &::std::option::Option<crate::types::MpdC2paManifest> {
+        &self.c2pa_manifest
+    }
     /// Use this setting only in DASH output groups that include sidecar TTML, IMSC or WEBVTT captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
     pub fn caption_container_type(mut self, input: crate::types::MpdCaptionContainerType) -> Self {
         self.caption_container_type = ::std::option::Option::Some(input);
@@ -153,6 +188,20 @@ impl MpdSettingsBuilder {
     /// Use this setting only in DASH output groups that include sidecar TTML, IMSC or WEBVTT captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
     pub fn get_caption_container_type(&self) -> &::std::option::Option<crate::types::MpdCaptionContainerType> {
         &self.caption_container_type
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn certificate_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate_secret = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn set_certificate_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_secret = input;
+        self
+    }
+    /// Specify the name or ARN of the AWS Secrets Manager secret that contains your C2PA public certificate chain in PEM format. Provide a valid secret name or ARN. Note that your MediaConvert service role must allow access to this secret. The public certificate chain is added to the COSE header (x5chain) for signature validation. Include the signer's certificate and all intermediate certificates. Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+    pub fn get_certificate_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_secret
     }
     /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
     pub fn klv_metadata(mut self, input: crate::types::MpdKlvMetadata) -> Self {
@@ -209,6 +258,20 @@ impl MpdSettingsBuilder {
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
     pub fn get_scte35_source(&self) -> &::std::option::Option<crate::types::MpdScte35Source> {
         &self.scte35_source
+    }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn signing_kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signing_kms_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn set_signing_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.signing_kms_key = input;
+        self
+    }
+    /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
+    pub fn get_signing_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_kms_key
     }
     /// To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
     pub fn timed_metadata(mut self, input: crate::types::MpdTimedMetadata) -> Self {
@@ -271,11 +334,14 @@ impl MpdSettingsBuilder {
         crate::types::MpdSettings {
             accessibility_caption_hints: self.accessibility_caption_hints,
             audio_duration: self.audio_duration,
+            c2pa_manifest: self.c2pa_manifest,
             caption_container_type: self.caption_container_type,
+            certificate_secret: self.certificate_secret,
             klv_metadata: self.klv_metadata,
             manifest_metadata_signaling: self.manifest_metadata_signaling,
             scte35_esam: self.scte35_esam,
             scte35_source: self.scte35_source,
+            signing_kms_key: self.signing_kms_key,
             timed_metadata: self.timed_metadata,
             timed_metadata_box_version: self.timed_metadata_box_version,
             timed_metadata_scheme_id_uri: self.timed_metadata_scheme_id_uri,

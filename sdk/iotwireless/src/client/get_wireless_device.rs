@@ -16,7 +16,7 @@ impl super::Client {
     ///   - [`thing_arn(Option<String>)`](crate::operation::get_wireless_device::GetWirelessDeviceOutput::thing_arn): <p>The ARN of the thing associated with the wireless device.</p>
     ///   - [`lo_ra_wan(Option<LoRaWanDevice>)`](crate::operation::get_wireless_device::GetWirelessDeviceOutput::lo_ra_wan): <p>Information about the wireless device.</p>
     ///   - [`sidewalk(Option<SidewalkDevice>)`](crate::operation::get_wireless_device::GetWirelessDeviceOutput::sidewalk): <p>Sidewalk device object.</p>
-    ///   - [`positioning(Option<PositioningConfigStatus>)`](crate::operation::get_wireless_device::GetWirelessDeviceOutput::positioning): <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    ///   - [`positioning(Option<PositioningConfigStatus>)`](crate::operation::get_wireless_device::GetWirelessDeviceOutput::positioning): <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     /// - On failure, responds with [`SdkError<GetWirelessDeviceError>`](crate::operation::get_wireless_device::GetWirelessDeviceError)
     pub fn get_wireless_device(&self) -> crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder {
         crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder::new(self.handle.clone())

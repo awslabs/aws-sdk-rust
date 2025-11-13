@@ -15,35 +15,44 @@ pub fn ser_cmfc_settings(
     if let Some(var_4) = &input.audio_track_type {
         object.key("audioTrackType").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.descriptive_video_service_flag {
-        object.key("descriptiveVideoServiceFlag").string(var_5.as_str());
+    if let Some(var_5) = &input.c2pa_manifest {
+        object.key("c2paManifest").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.i_frame_only_manifest {
-        object.key("iFrameOnlyManifest").string(var_6.as_str());
+    if let Some(var_6) = &input.certificate_secret {
+        object.key("certificateSecret").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.klv_metadata {
-        object.key("klvMetadata").string(var_7.as_str());
+    if let Some(var_7) = &input.descriptive_video_service_flag {
+        object.key("descriptiveVideoServiceFlag").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.manifest_metadata_signaling {
-        object.key("manifestMetadataSignaling").string(var_8.as_str());
+    if let Some(var_8) = &input.i_frame_only_manifest {
+        object.key("iFrameOnlyManifest").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.scte35_esam {
-        object.key("scte35Esam").string(var_9.as_str());
+    if let Some(var_9) = &input.klv_metadata {
+        object.key("klvMetadata").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.scte35_source {
-        object.key("scte35Source").string(var_10.as_str());
+    if let Some(var_10) = &input.manifest_metadata_signaling {
+        object.key("manifestMetadataSignaling").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.timed_metadata {
-        object.key("timedMetadata").string(var_11.as_str());
+    if let Some(var_11) = &input.scte35_esam {
+        object.key("scte35Esam").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.timed_metadata_box_version {
-        object.key("timedMetadataBoxVersion").string(var_12.as_str());
+    if let Some(var_12) = &input.scte35_source {
+        object.key("scte35Source").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.timed_metadata_scheme_id_uri {
-        object.key("timedMetadataSchemeIdUri").string(var_13.as_str());
+    if let Some(var_13) = &input.signing_kms_key {
+        object.key("signingKmsKey").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.timed_metadata_value {
-        object.key("timedMetadataValue").string(var_14.as_str());
+    if let Some(var_14) = &input.timed_metadata {
+        object.key("timedMetadata").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.timed_metadata_box_version {
+        object.key("timedMetadataBoxVersion").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.timed_metadata_scheme_id_uri {
+        object.key("timedMetadataSchemeIdUri").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.timed_metadata_value {
+        object.key("timedMetadataValue").string(var_17.as_str());
     }
     Ok(())
 }
@@ -91,6 +100,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "c2paManifest" => {
+                            builder = builder.set_c2pa_manifest(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmfcC2paManifest::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "certificateSecret" => {
+                            builder = builder.set_certificate_secret(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "descriptiveVideoServiceFlag" => {
                             builder = builder.set_descriptive_video_service_flag(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -130,6 +153,13 @@ where
                             builder = builder.set_scte35_source(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CmfcScte35Source::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "signingKmsKey" => {
+                            builder = builder.set_signing_kms_key(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

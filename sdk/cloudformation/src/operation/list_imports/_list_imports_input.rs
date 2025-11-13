@@ -5,7 +5,7 @@
 pub struct ListImportsInput {
     /// <p>The name of the exported output value. CloudFormation returns the stack names that are importing this value.</p>
     pub export_name: ::std::option::Option<::std::string::String>,
-    /// <p>A string (provided by the <code>ListImports</code> response output) that identifies the next page of stacks that are importing the specified exported output value.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImportsInput {
@@ -13,7 +13,7 @@ impl ListImportsInput {
     pub fn export_name(&self) -> ::std::option::Option<&str> {
         self.export_name.as_deref()
     }
-    /// <p>A string (provided by the <code>ListImports</code> response output) that identifies the next page of stacks that are importing the specified exported output value.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -48,17 +48,17 @@ impl ListImportsInputBuilder {
     pub fn get_export_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_name
     }
-    /// <p>A string (provided by the <code>ListImports</code> response output) that identifies the next page of stacks that are importing the specified exported output value.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string (provided by the <code>ListImports</code> response output) that identifies the next page of stacks that are importing the specified exported output value.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A string (provided by the <code>ListImports</code> response output) that identifies the next page of stacks that are importing the specified exported output value.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

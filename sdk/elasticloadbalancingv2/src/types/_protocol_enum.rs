@@ -15,7 +15,9 @@
 ///     ProtocolEnum::Geneve => { /* ... */ },
 ///     ProtocolEnum::Http => { /* ... */ },
 ///     ProtocolEnum::Https => { /* ... */ },
+///     ProtocolEnum::Quic => { /* ... */ },
 ///     ProtocolEnum::Tcp => { /* ... */ },
+///     ProtocolEnum::TcpQuic => { /* ... */ },
 ///     ProtocolEnum::TcpUdp => { /* ... */ },
 ///     ProtocolEnum::Tls => { /* ... */ },
 ///     ProtocolEnum::Udp => { /* ... */ },
@@ -54,7 +56,11 @@ pub enum ProtocolEnum {
     #[allow(missing_docs)] // documentation missing in model
     Https,
     #[allow(missing_docs)] // documentation missing in model
+    Quic,
+    #[allow(missing_docs)] // documentation missing in model
     Tcp,
+    #[allow(missing_docs)] // documentation missing in model
+    TcpQuic,
     #[allow(missing_docs)] // documentation missing in model
     TcpUdp,
     #[allow(missing_docs)] // documentation missing in model
@@ -71,7 +77,9 @@ impl ::std::convert::From<&str> for ProtocolEnum {
             "GENEVE" => ProtocolEnum::Geneve,
             "HTTP" => ProtocolEnum::Http,
             "HTTPS" => ProtocolEnum::Https,
+            "QUIC" => ProtocolEnum::Quic,
             "TCP" => ProtocolEnum::Tcp,
+            "TCP_QUIC" => ProtocolEnum::TcpQuic,
             "TCP_UDP" => ProtocolEnum::TcpUdp,
             "TLS" => ProtocolEnum::Tls,
             "UDP" => ProtocolEnum::Udp,
@@ -93,7 +101,9 @@ impl ProtocolEnum {
             ProtocolEnum::Geneve => "GENEVE",
             ProtocolEnum::Http => "HTTP",
             ProtocolEnum::Https => "HTTPS",
+            ProtocolEnum::Quic => "QUIC",
             ProtocolEnum::Tcp => "TCP",
+            ProtocolEnum::TcpQuic => "TCP_QUIC",
             ProtocolEnum::TcpUdp => "TCP_UDP",
             ProtocolEnum::Tls => "TLS",
             ProtocolEnum::Udp => "UDP",
@@ -102,7 +112,7 @@ impl ProtocolEnum {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GENEVE", "HTTP", "HTTPS", "TCP", "TCP_UDP", "TLS", "UDP"]
+        &["GENEVE", "HTTP", "HTTPS", "QUIC", "TCP", "TCP_QUIC", "TCP_UDP", "TLS", "UDP"]
     }
 }
 impl ::std::convert::AsRef<str> for ProtocolEnum {
@@ -128,7 +138,9 @@ impl ::std::fmt::Display for ProtocolEnum {
             ProtocolEnum::Geneve => write!(f, "GENEVE"),
             ProtocolEnum::Http => write!(f, "HTTP"),
             ProtocolEnum::Https => write!(f, "HTTPS"),
+            ProtocolEnum::Quic => write!(f, "QUIC"),
             ProtocolEnum::Tcp => write!(f, "TCP"),
+            ProtocolEnum::TcpQuic => write!(f, "TCP_QUIC"),
             ProtocolEnum::TcpUdp => write!(f, "TCP_UDP"),
             ProtocolEnum::Tls => write!(f, "TLS"),
             ProtocolEnum::Udp => write!(f, "UDP"),

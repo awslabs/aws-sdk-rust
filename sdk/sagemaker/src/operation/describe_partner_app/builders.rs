@@ -122,4 +122,18 @@ impl DescribePartnerAppFluentBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
+    /// <p>When set to <code>TRUE</code>, the response includes available upgrade information for the SageMaker Partner AI App. Default is <code>FALSE</code>.</p>
+    pub fn include_available_upgrade(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_available_upgrade(input);
+        self
+    }
+    /// <p>When set to <code>TRUE</code>, the response includes available upgrade information for the SageMaker Partner AI App. Default is <code>FALSE</code>.</p>
+    pub fn set_include_available_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_available_upgrade(input);
+        self
+    }
+    /// <p>When set to <code>TRUE</code>, the response includes available upgrade information for the SageMaker Partner AI App. Default is <code>FALSE</code>.</p>
+    pub fn get_include_available_upgrade(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_available_upgrade()
+    }
 }

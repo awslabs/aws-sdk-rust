@@ -14,14 +14,21 @@
 /// match acceleratorname {
 ///     AcceleratorName::A100 => { /* ... */ },
 ///     AcceleratorName::A10G => { /* ... */ },
+///     AcceleratorName::GaudiHl205 => { /* ... */ },
 ///     AcceleratorName::H100 => { /* ... */ },
 ///     AcceleratorName::Inferentia => { /* ... */ },
+///     AcceleratorName::Inferentia2 => { /* ... */ },
 ///     AcceleratorName::K520 => { /* ... */ },
 ///     AcceleratorName::K80 => { /* ... */ },
+///     AcceleratorName::L4 => { /* ... */ },
+///     AcceleratorName::L40S => { /* ... */ },
 ///     AcceleratorName::M60 => { /* ... */ },
 ///     AcceleratorName::RadeonProV520 => { /* ... */ },
 ///     AcceleratorName::T4 => { /* ... */ },
 ///     AcceleratorName::T4G => { /* ... */ },
+///     AcceleratorName::Trainium => { /* ... */ },
+///     AcceleratorName::Trainium2 => { /* ... */ },
+///     AcceleratorName::U30 => { /* ... */ },
 ///     AcceleratorName::V100 => { /* ... */ },
 ///     AcceleratorName::Vu9P => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -57,13 +64,21 @@ pub enum AcceleratorName {
     #[allow(missing_docs)] // documentation missing in model
     A10G,
     #[allow(missing_docs)] // documentation missing in model
+    GaudiHl205,
+    #[allow(missing_docs)] // documentation missing in model
     H100,
     #[allow(missing_docs)] // documentation missing in model
     Inferentia,
     #[allow(missing_docs)] // documentation missing in model
+    Inferentia2,
+    #[allow(missing_docs)] // documentation missing in model
     K520,
     #[allow(missing_docs)] // documentation missing in model
     K80,
+    #[allow(missing_docs)] // documentation missing in model
+    L4,
+    #[allow(missing_docs)] // documentation missing in model
+    L40S,
     #[allow(missing_docs)] // documentation missing in model
     M60,
     #[allow(missing_docs)] // documentation missing in model
@@ -72,6 +87,12 @@ pub enum AcceleratorName {
     T4,
     #[allow(missing_docs)] // documentation missing in model
     T4G,
+    #[allow(missing_docs)] // documentation missing in model
+    Trainium,
+    #[allow(missing_docs)] // documentation missing in model
+    Trainium2,
+    #[allow(missing_docs)] // documentation missing in model
+    U30,
     #[allow(missing_docs)] // documentation missing in model
     V100,
     #[allow(missing_docs)] // documentation missing in model
@@ -85,14 +106,21 @@ impl ::std::convert::From<&str> for AcceleratorName {
         match s {
             "a100" => AcceleratorName::A100,
             "a10g" => AcceleratorName::A10G,
+            "gaudi-hl-205" => AcceleratorName::GaudiHl205,
             "h100" => AcceleratorName::H100,
             "inferentia" => AcceleratorName::Inferentia,
+            "inferentia2" => AcceleratorName::Inferentia2,
             "k520" => AcceleratorName::K520,
             "k80" => AcceleratorName::K80,
+            "l4" => AcceleratorName::L4,
+            "l40s" => AcceleratorName::L40S,
             "m60" => AcceleratorName::M60,
             "radeon-pro-v520" => AcceleratorName::RadeonProV520,
             "t4" => AcceleratorName::T4,
             "t4g" => AcceleratorName::T4G,
+            "trainium" => AcceleratorName::Trainium,
+            "trainium2" => AcceleratorName::Trainium2,
+            "u30" => AcceleratorName::U30,
             "v100" => AcceleratorName::V100,
             "vu9p" => AcceleratorName::Vu9P,
             other => AcceleratorName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -112,14 +140,21 @@ impl AcceleratorName {
         match self {
             AcceleratorName::A100 => "a100",
             AcceleratorName::A10G => "a10g",
+            AcceleratorName::GaudiHl205 => "gaudi-hl-205",
             AcceleratorName::H100 => "h100",
             AcceleratorName::Inferentia => "inferentia",
+            AcceleratorName::Inferentia2 => "inferentia2",
             AcceleratorName::K520 => "k520",
             AcceleratorName::K80 => "k80",
+            AcceleratorName::L4 => "l4",
+            AcceleratorName::L40S => "l40s",
             AcceleratorName::M60 => "m60",
             AcceleratorName::RadeonProV520 => "radeon-pro-v520",
             AcceleratorName::T4 => "t4",
             AcceleratorName::T4G => "t4g",
+            AcceleratorName::Trainium => "trainium",
+            AcceleratorName::Trainium2 => "trainium2",
+            AcceleratorName::U30 => "u30",
             AcceleratorName::V100 => "v100",
             AcceleratorName::Vu9P => "vu9p",
             AcceleratorName::Unknown(value) => value.as_str(),
@@ -130,14 +165,21 @@ impl AcceleratorName {
         &[
             "a100",
             "a10g",
+            "gaudi-hl-205",
             "h100",
             "inferentia",
+            "inferentia2",
             "k520",
             "k80",
+            "l4",
+            "l40s",
             "m60",
             "radeon-pro-v520",
             "t4",
             "t4g",
+            "trainium",
+            "trainium2",
+            "u30",
             "v100",
             "vu9p",
         ]
@@ -165,14 +207,21 @@ impl ::std::fmt::Display for AcceleratorName {
         match self {
             AcceleratorName::A100 => write!(f, "a100"),
             AcceleratorName::A10G => write!(f, "a10g"),
+            AcceleratorName::GaudiHl205 => write!(f, "gaudi-hl-205"),
             AcceleratorName::H100 => write!(f, "h100"),
             AcceleratorName::Inferentia => write!(f, "inferentia"),
+            AcceleratorName::Inferentia2 => write!(f, "inferentia2"),
             AcceleratorName::K520 => write!(f, "k520"),
             AcceleratorName::K80 => write!(f, "k80"),
+            AcceleratorName::L4 => write!(f, "l4"),
+            AcceleratorName::L40S => write!(f, "l40s"),
             AcceleratorName::M60 => write!(f, "m60"),
             AcceleratorName::RadeonProV520 => write!(f, "radeon-pro-v520"),
             AcceleratorName::T4 => write!(f, "t4"),
             AcceleratorName::T4G => write!(f, "t4g"),
+            AcceleratorName::Trainium => write!(f, "trainium"),
+            AcceleratorName::Trainium2 => write!(f, "trainium2"),
+            AcceleratorName::U30 => write!(f, "u30"),
             AcceleratorName::V100 => write!(f, "v100"),
             AcceleratorName::Vu9P => write!(f, "vu9p"),
             AcceleratorName::Unknown(value) => write!(f, "{value}"),

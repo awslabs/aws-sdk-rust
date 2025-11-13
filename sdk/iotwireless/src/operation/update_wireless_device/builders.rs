@@ -184,18 +184,32 @@ impl UpdateWirelessDeviceFluentBuilder {
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanUpdateDevice> {
         self.inner.get_lo_ra_wan()
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
         self.inner = self.inner.positioning(input);
         self
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
         self.inner = self.inner.set_positioning(input);
         self
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
         self.inner.get_positioning()
+    }
+    /// <p>The updated sidewalk properties.</p>
+    pub fn sidewalk(mut self, input: crate::types::SidewalkUpdateWirelessDevice) -> Self {
+        self.inner = self.inner.sidewalk(input);
+        self
+    }
+    /// <p>The updated sidewalk properties.</p>
+    pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkUpdateWirelessDevice>) -> Self {
+        self.inner = self.inner.set_sidewalk(input);
+        self
+    }
+    /// <p>The updated sidewalk properties.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkUpdateWirelessDevice> {
+        self.inner.get_sidewalk()
     }
 }

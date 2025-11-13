@@ -21,5 +21,11 @@ pub fn ser_update_wireless_device_input_input(
     if let Some(var_6) = &input.positioning {
         object.key("Positioning").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.sidewalk {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("Sidewalk").start_object();
+        crate::protocol_serde::shape_sidewalk_update_wireless_device::ser_sidewalk_update_wireless_device(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

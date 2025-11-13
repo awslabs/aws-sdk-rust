@@ -34,5 +34,11 @@ pub fn ser_create_browser_settings_input_input(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.web_content_filtering_policy {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("webContentFilteringPolicy").start_object();
+        crate::protocol_serde::shape_web_content_filtering_policy::ser_web_content_filtering_policy(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }

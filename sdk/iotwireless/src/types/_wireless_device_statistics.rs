@@ -28,6 +28,8 @@ pub struct WirelessDeviceStatistics {
     pub multicast_device_status: ::std::option::Option<::std::string::String>,
     /// <p>Id of the multicast group.</p>
     pub mc_group_id: ::std::option::Option<i32>,
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Amazon Sidewalk enabled devices.</p>
+    pub positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
 }
 impl WirelessDeviceStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
@@ -76,6 +78,10 @@ impl WirelessDeviceStatistics {
     pub fn mc_group_id(&self) -> ::std::option::Option<i32> {
         self.mc_group_id
     }
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Amazon Sidewalk enabled devices.</p>
+    pub fn positioning(&self) -> ::std::option::Option<&crate::types::PositioningConfigStatus> {
+        self.positioning.as_ref()
+    }
 }
 impl WirelessDeviceStatistics {
     /// Creates a new builder-style object to manufacture [`WirelessDeviceStatistics`](crate::types::WirelessDeviceStatistics).
@@ -99,6 +105,7 @@ pub struct WirelessDeviceStatisticsBuilder {
     pub(crate) fuota_device_status: ::std::option::Option<crate::types::FuotaDeviceStatus>,
     pub(crate) multicast_device_status: ::std::option::Option<::std::string::String>,
     pub(crate) mc_group_id: ::std::option::Option<i32>,
+    pub(crate) positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
 }
 impl WirelessDeviceStatisticsBuilder {
     /// <p>The Amazon Resource Name of the resource.</p>
@@ -261,6 +268,20 @@ impl WirelessDeviceStatisticsBuilder {
     pub fn get_mc_group_id(&self) -> &::std::option::Option<i32> {
         &self.mc_group_id
     }
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Amazon Sidewalk enabled devices.</p>
+    pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
+        self.positioning = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Amazon Sidewalk enabled devices.</p>
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
+        self.positioning = input;
+        self
+    }
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Amazon Sidewalk enabled devices.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
+        &self.positioning
+    }
     /// Consumes the builder and constructs a [`WirelessDeviceStatistics`](crate::types::WirelessDeviceStatistics).
     pub fn build(self) -> crate::types::WirelessDeviceStatistics {
         crate::types::WirelessDeviceStatistics {
@@ -275,6 +296,7 @@ impl WirelessDeviceStatisticsBuilder {
             fuota_device_status: self.fuota_device_status,
             multicast_device_status: self.multicast_device_status,
             mc_group_id: self.mc_group_id,
+            positioning: self.positioning,
         }
     }
 }

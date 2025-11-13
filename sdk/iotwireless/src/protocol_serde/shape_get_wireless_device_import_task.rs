@@ -205,6 +205,13 @@ pub(crate) fn de_get_wireless_device_import_task(
                             .transpose()?,
                     );
                 }
+                "Positioning" => {
+                    builder = builder.set_positioning(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::PositioningConfigStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "Sidewalk" => {
                     builder =
                         builder.set_sidewalk(crate::protocol_serde::shape_sidewalk_get_start_import_info::de_sidewalk_get_start_import_info(tokens)?);

@@ -9,7 +9,7 @@ pub struct DescribeChangeSetHooksOutput {
     pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>List of Hook objects.</p>
     pub hooks: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetHook>>,
-    /// <p>Provides the status of the change set hook.</p>
+    /// <p>Provides the status of the change set Hook.</p>
     pub status: ::std::option::Option<crate::types::ChangeSetHooksStatus>,
     /// <p>Pagination token, <code>null</code> or empty if no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl DescribeChangeSetHooksOutput {
     pub fn hooks(&self) -> &[crate::types::ChangeSetHook] {
         self.hooks.as_deref().unwrap_or_default()
     }
-    /// <p>Provides the status of the change set hook.</p>
+    /// <p>Provides the status of the change set Hook.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ChangeSetHooksStatus> {
         self.status.as_ref()
     }
@@ -125,17 +125,17 @@ impl DescribeChangeSetHooksOutputBuilder {
     pub fn get_hooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSetHook>> {
         &self.hooks
     }
-    /// <p>Provides the status of the change set hook.</p>
+    /// <p>Provides the status of the change set Hook.</p>
     pub fn status(mut self, input: crate::types::ChangeSetHooksStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the status of the change set hook.</p>
+    /// <p>Provides the status of the change set Hook.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangeSetHooksStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Provides the status of the change set hook.</p>
+    /// <p>Provides the status of the change set Hook.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangeSetHooksStatus> {
         &self.status
     }

@@ -8,6 +8,8 @@ pub struct SidewalkStartImportInfo {
     pub device_creation_file: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>
     pub role: ::std::option::Option<::std::string::String>,
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub positioning: ::std::option::Option<crate::types::SidewalkPositioning>,
 }
 impl SidewalkStartImportInfo {
     /// <p>The CSV file contained in an S3 bucket that's used for adding devices to an import task.</p>
@@ -17,6 +19,10 @@ impl SidewalkStartImportInfo {
     /// <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>
     pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
+    }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn positioning(&self) -> ::std::option::Option<&crate::types::SidewalkPositioning> {
+        self.positioning.as_ref()
     }
 }
 impl SidewalkStartImportInfo {
@@ -32,6 +38,7 @@ impl SidewalkStartImportInfo {
 pub struct SidewalkStartImportInfoBuilder {
     pub(crate) device_creation_file: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
+    pub(crate) positioning: ::std::option::Option<crate::types::SidewalkPositioning>,
 }
 impl SidewalkStartImportInfoBuilder {
     /// <p>The CSV file contained in an S3 bucket that's used for adding devices to an import task.</p>
@@ -62,11 +69,26 @@ impl SidewalkStartImportInfoBuilder {
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.role
     }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn positioning(mut self, input: crate::types::SidewalkPositioning) -> Self {
+        self.positioning = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::SidewalkPositioning>) -> Self {
+        self.positioning = input;
+        self
+    }
+    /// <p>The Positioning object of the Sidewalk device.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::SidewalkPositioning> {
+        &self.positioning
+    }
     /// Consumes the builder and constructs a [`SidewalkStartImportInfo`](crate::types::SidewalkStartImportInfo).
     pub fn build(self) -> crate::types::SidewalkStartImportInfo {
         crate::types::SidewalkStartImportInfo {
             device_creation_file: self.device_creation_file,
             role: self.role,
+            positioning: self.positioning,
         }
     }
 }

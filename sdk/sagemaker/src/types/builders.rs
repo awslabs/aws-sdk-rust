@@ -143,6 +143,8 @@ pub use crate::types::_pipeline_definition_s3_location::PipelineDefinitionS3Loca
 
 pub use crate::types::_partner_app_config::PartnerAppConfigBuilder;
 
+pub use crate::types::_role_group_assignment::RoleGroupAssignmentBuilder;
+
 pub use crate::types::_partner_app_maintenance_config::PartnerAppMaintenanceConfigBuilder;
 
 pub use crate::types::_notebook_instance_lifecycle_hook::NotebookInstanceLifecycleHookBuilder;
@@ -1006,6 +1008,8 @@ pub use crate::types::_space_sharing_settings::SpaceSharingSettingsBuilder;
 pub use crate::types::_ownership_settings::OwnershipSettingsBuilder;
 
 pub use crate::types::_ultra_server_summary::UltraServerSummaryBuilder;
+
+pub use crate::types::_available_upgrade::AvailableUpgradeBuilder;
 
 pub use crate::types::_error_info::ErrorInfoBuilder;
 

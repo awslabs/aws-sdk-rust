@@ -67,6 +67,8 @@ pub use crate::types::_data_protection_settings_summary::DataProtectionSettingsS
 
 pub use crate::types::_browser_settings::BrowserSettingsBuilder;
 
+pub use crate::types::_web_content_filtering_policy::WebContentFilteringPolicyBuilder;
+
 pub use crate::types::_browser_settings_summary::BrowserSettingsSummaryBuilder;
 
 pub use crate::types::_session_summary::SessionSummaryBuilder;

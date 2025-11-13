@@ -237,6 +237,8 @@ pub use crate::types::_passthrough_settings::PassthroughSettings;
 
 pub use crate::types::_video_selector_mode::VideoSelectorMode;
 
+pub use crate::types::_frame_control::FrameControl;
+
 pub use crate::types::_mpeg2_settings::Mpeg2Settings;
 
 pub use crate::types::_mpeg2_temporal_adaptive_quantization::Mpeg2TemporalAdaptiveQuantization;
@@ -481,6 +483,8 @@ pub use crate::types::_mpd_klv_metadata::MpdKlvMetadata;
 
 pub use crate::types::_mpd_caption_container_type::MpdCaptionContainerType;
 
+pub use crate::types::_mpd_c2pa_manifest::MpdC2paManifest;
+
 pub use crate::types::_mpd_audio_duration::MpdAudioDuration;
 
 pub use crate::types::_mpd_accessibility_caption_hints::MpdAccessibilityCaptionHints;
@@ -592,6 +596,8 @@ pub use crate::types::_cmfc_klv_metadata::CmfcKlvMetadata;
 pub use crate::types::_cmfc_i_frame_only_manifest::CmfcIFrameOnlyManifest;
 
 pub use crate::types::_cmfc_descriptive_video_service_flag::CmfcDescriptiveVideoServiceFlag;
+
+pub use crate::types::_cmfc_c2pa_manifest::CmfcC2paManifest;
 
 pub use crate::types::_cmfc_audio_track_type::CmfcAudioTrackType;
 
@@ -1569,6 +1575,8 @@ mod _cmfc_audio_duration;
 
 mod _cmfc_audio_track_type;
 
+mod _cmfc_c2pa_manifest;
+
 mod _cmfc_descriptive_video_service_flag;
 
 mod _cmfc_i_frame_only_manifest;
@@ -1808,6 +1816,8 @@ mod _force_include_rendition_size;
 mod _format;
 
 mod _frame_capture_settings;
+
+mod _frame_control;
 
 mod _frame_metric_type;
 
@@ -2180,6 +2190,8 @@ mod _mp4_settings;
 mod _mpd_accessibility_caption_hints;
 
 mod _mpd_audio_duration;
+
+mod _mpd_c2pa_manifest;
 
 mod _mpd_caption_container_type;
 

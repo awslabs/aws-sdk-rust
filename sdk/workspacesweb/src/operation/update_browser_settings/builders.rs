@@ -153,4 +153,18 @@ impl UpdateBrowserSettingsFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The policy that specifies which URLs end users are allowed to access or which URLs or domain categories they are restricted from accessing for enhanced security.</p>
+    pub fn web_content_filtering_policy(mut self, input: crate::types::WebContentFilteringPolicy) -> Self {
+        self.inner = self.inner.web_content_filtering_policy(input);
+        self
+    }
+    /// <p>The policy that specifies which URLs end users are allowed to access or which URLs or domain categories they are restricted from accessing for enhanced security.</p>
+    pub fn set_web_content_filtering_policy(mut self, input: ::std::option::Option<crate::types::WebContentFilteringPolicy>) -> Self {
+        self.inner = self.inner.set_web_content_filtering_policy(input);
+        self
+    }
+    /// <p>The policy that specifies which URLs end users are allowed to access or which URLs or domain categories they are restricted from accessing for enhanced security.</p>
+    pub fn get_web_content_filtering_policy(&self) -> &::std::option::Option<crate::types::WebContentFilteringPolicy> {
+        self.inner.get_web_content_filtering_policy()
+    }
 }

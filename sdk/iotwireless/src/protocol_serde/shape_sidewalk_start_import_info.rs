@@ -9,5 +9,11 @@ pub fn ser_sidewalk_start_import_info(
     if let Some(var_2) = &input.role {
         object.key("Role").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.positioning {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("Positioning").start_object();
+        crate::protocol_serde::shape_sidewalk_positioning::ser_sidewalk_positioning(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

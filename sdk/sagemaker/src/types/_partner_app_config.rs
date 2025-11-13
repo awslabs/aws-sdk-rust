@@ -8,6 +8,10 @@ pub struct PartnerAppConfig {
     pub admin_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This is a map of required inputs for a SageMaker Partner AI App. Based on the application type, the map is populated with a key and value pair that is specific to the user and application.</p>
     pub arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A list of Amazon Web Services IAM Identity Center group patterns that can access the SageMaker Partner AI App. Group names support wildcard matching using <code>*</code>. An empty list indicates the app will not use Identity Center group features. All groups specified in <code>RoleGroupAssignments</code> must match patterns in this list.</p>
+    pub assigned_group_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A map of in-app roles to Amazon Web Services IAM Identity Center group patterns. Groups assigned to specific roles receive those permissions, while groups in <code>AssignedGroupPatterns</code> but not in this map receive default in-app role depending on app type. Group patterns support wildcard matching using <code>*</code>. Currently supported by Fiddler version 1.3 and later with roles: <code>ORG_MEMBER</code> (default) and <code>ORG_ADMIN</code>.</p>
+    pub role_group_assignments: ::std::option::Option<::std::vec::Vec<crate::types::RoleGroupAssignment>>,
 }
 impl PartnerAppConfig {
     /// <p>The list of users that are given admin access to the SageMaker Partner AI App.</p>
@@ -19,6 +23,18 @@ impl PartnerAppConfig {
     /// <p>This is a map of required inputs for a SageMaker Partner AI App. Based on the application type, the map is populated with a key and value pair that is specific to the user and application.</p>
     pub fn arguments(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.arguments.as_ref()
+    }
+    /// <p>A list of Amazon Web Services IAM Identity Center group patterns that can access the SageMaker Partner AI App. Group names support wildcard matching using <code>*</code>. An empty list indicates the app will not use Identity Center group features. All groups specified in <code>RoleGroupAssignments</code> must match patterns in this list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assigned_group_patterns.is_none()`.
+    pub fn assigned_group_patterns(&self) -> &[::std::string::String] {
+        self.assigned_group_patterns.as_deref().unwrap_or_default()
+    }
+    /// <p>A map of in-app roles to Amazon Web Services IAM Identity Center group patterns. Groups assigned to specific roles receive those permissions, while groups in <code>AssignedGroupPatterns</code> but not in this map receive default in-app role depending on app type. Group patterns support wildcard matching using <code>*</code>. Currently supported by Fiddler version 1.3 and later with roles: <code>ORG_MEMBER</code> (default) and <code>ORG_ADMIN</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_group_assignments.is_none()`.
+    pub fn role_group_assignments(&self) -> &[crate::types::RoleGroupAssignment] {
+        self.role_group_assignments.as_deref().unwrap_or_default()
     }
 }
 impl PartnerAppConfig {
@@ -34,6 +50,8 @@ impl PartnerAppConfig {
 pub struct PartnerAppConfigBuilder {
     pub(crate) admin_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) arguments: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) assigned_group_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) role_group_assignments: ::std::option::Option<::std::vec::Vec<crate::types::RoleGroupAssignment>>,
 }
 impl PartnerAppConfigBuilder {
     /// Appends an item to `admin_users`.
@@ -76,11 +94,53 @@ impl PartnerAppConfigBuilder {
     pub fn get_arguments(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.arguments
     }
+    /// Appends an item to `assigned_group_patterns`.
+    ///
+    /// To override the contents of this collection use [`set_assigned_group_patterns`](Self::set_assigned_group_patterns).
+    ///
+    /// <p>A list of Amazon Web Services IAM Identity Center group patterns that can access the SageMaker Partner AI App. Group names support wildcard matching using <code>*</code>. An empty list indicates the app will not use Identity Center group features. All groups specified in <code>RoleGroupAssignments</code> must match patterns in this list.</p>
+    pub fn assigned_group_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.assigned_group_patterns.unwrap_or_default();
+        v.push(input.into());
+        self.assigned_group_patterns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Web Services IAM Identity Center group patterns that can access the SageMaker Partner AI App. Group names support wildcard matching using <code>*</code>. An empty list indicates the app will not use Identity Center group features. All groups specified in <code>RoleGroupAssignments</code> must match patterns in this list.</p>
+    pub fn set_assigned_group_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.assigned_group_patterns = input;
+        self
+    }
+    /// <p>A list of Amazon Web Services IAM Identity Center group patterns that can access the SageMaker Partner AI App. Group names support wildcard matching using <code>*</code>. An empty list indicates the app will not use Identity Center group features. All groups specified in <code>RoleGroupAssignments</code> must match patterns in this list.</p>
+    pub fn get_assigned_group_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.assigned_group_patterns
+    }
+    /// Appends an item to `role_group_assignments`.
+    ///
+    /// To override the contents of this collection use [`set_role_group_assignments`](Self::set_role_group_assignments).
+    ///
+    /// <p>A map of in-app roles to Amazon Web Services IAM Identity Center group patterns. Groups assigned to specific roles receive those permissions, while groups in <code>AssignedGroupPatterns</code> but not in this map receive default in-app role depending on app type. Group patterns support wildcard matching using <code>*</code>. Currently supported by Fiddler version 1.3 and later with roles: <code>ORG_MEMBER</code> (default) and <code>ORG_ADMIN</code>.</p>
+    pub fn role_group_assignments(mut self, input: crate::types::RoleGroupAssignment) -> Self {
+        let mut v = self.role_group_assignments.unwrap_or_default();
+        v.push(input);
+        self.role_group_assignments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A map of in-app roles to Amazon Web Services IAM Identity Center group patterns. Groups assigned to specific roles receive those permissions, while groups in <code>AssignedGroupPatterns</code> but not in this map receive default in-app role depending on app type. Group patterns support wildcard matching using <code>*</code>. Currently supported by Fiddler version 1.3 and later with roles: <code>ORG_MEMBER</code> (default) and <code>ORG_ADMIN</code>.</p>
+    pub fn set_role_group_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoleGroupAssignment>>) -> Self {
+        self.role_group_assignments = input;
+        self
+    }
+    /// <p>A map of in-app roles to Amazon Web Services IAM Identity Center group patterns. Groups assigned to specific roles receive those permissions, while groups in <code>AssignedGroupPatterns</code> but not in this map receive default in-app role depending on app type. Group patterns support wildcard matching using <code>*</code>. Currently supported by Fiddler version 1.3 and later with roles: <code>ORG_MEMBER</code> (default) and <code>ORG_ADMIN</code>.</p>
+    pub fn get_role_group_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoleGroupAssignment>> {
+        &self.role_group_assignments
+    }
     /// Consumes the builder and constructs a [`PartnerAppConfig`](crate::types::PartnerAppConfig).
     pub fn build(self) -> crate::types::PartnerAppConfig {
         crate::types::PartnerAppConfig {
             admin_users: self.admin_users,
             arguments: self.arguments,
+            assigned_group_patterns: self.assigned_group_patterns,
+            role_group_assignments: self.role_group_assignments,
         }
     }
 }

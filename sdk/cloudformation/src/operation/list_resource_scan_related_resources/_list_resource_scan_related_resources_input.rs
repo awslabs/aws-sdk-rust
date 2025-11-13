@@ -7,7 +7,7 @@ pub struct ListResourceScanRelatedResourcesInput {
     pub resource_scan_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of resources for which you want to get the related resources. Up to 100 resources can be provided.</p>
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::ScannedResourceIdentifier>>,
-    /// <p>A string that identifies the next page of resource scan results.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListResourceScanRelatedResources</code> API action will return up to 100 results in each response. The maximum value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -23,7 +23,7 @@ impl ListResourceScanRelatedResourcesInput {
     pub fn resources(&self) -> &[crate::types::ScannedResourceIdentifier] {
         self.resources.as_deref().unwrap_or_default()
     }
-    /// <p>A string that identifies the next page of resource scan results.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -84,17 +84,17 @@ impl ListResourceScanRelatedResourcesInputBuilder {
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScannedResourceIdentifier>> {
         &self.resources
     }
-    /// <p>A string that identifies the next page of resource scan results.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A string that identifies the next page of resource scan results.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A string that identifies the next page of resource scan results.</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

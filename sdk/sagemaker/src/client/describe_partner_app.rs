@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::describe_partner_app::builders::DescribePartnerAppFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_partner_app::builders::DescribePartnerAppFluentBuilder::set_arn):<br>required: **true**<br><p>The ARN of the SageMaker Partner AI App to describe.</p><br>
+    ///   - [`include_available_upgrade(bool)`](crate::operation::describe_partner_app::builders::DescribePartnerAppFluentBuilder::include_available_upgrade) / [`set_include_available_upgrade(Option<bool>)`](crate::operation::describe_partner_app::builders::DescribePartnerAppFluentBuilder::set_include_available_upgrade):<br>required: **false**<br><p>When set to <code>TRUE</code>, the response includes available upgrade information for the SageMaker Partner AI App. Default is <code>FALSE</code>.</p><br>
     /// - On success, responds with [`DescribePartnerAppOutput`](crate::operation::describe_partner_app::DescribePartnerAppOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_partner_app::DescribePartnerAppOutput::arn): <p>The ARN of the SageMaker Partner AI App that was described.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_partner_app::DescribePartnerAppOutput::name): <p>The name of the SageMaker Partner AI App.</p>
@@ -21,6 +22,9 @@ impl super::Client {
     ///   - [`auth_type(Option<PartnerAppAuthType>)`](crate::operation::describe_partner_app::DescribePartnerAppOutput::auth_type): <p>The authorization type that users use to access the SageMaker Partner AI App.</p>
     ///   - [`enable_iam_session_based_identity(Option<bool>)`](crate::operation::describe_partner_app::DescribePartnerAppOutput::enable_iam_session_based_identity): <p>When set to <code>TRUE</code>, the SageMaker Partner AI App sets the Amazon Web Services IAM session name or the authenticated IAM user as the identity of the SageMaker Partner AI App user.</p>
     ///   - [`error(Option<ErrorInfo>)`](crate::operation::describe_partner_app::DescribePartnerAppOutput::error): <p>This is an error field object that contains the error code and the reason for an operation failure.</p>
+    ///   - [`enable_auto_minor_version_upgrade(Option<bool>)`](crate::operation::describe_partner_app::DescribePartnerAppOutput::enable_auto_minor_version_upgrade): <p>Indicates whether the SageMaker Partner AI App is configured for automatic minor version upgrades during scheduled maintenance windows.</p>
+    ///   - [`current_version_eol_date(Option<DateTime>)`](crate::operation::describe_partner_app::DescribePartnerAppOutput::current_version_eol_date): <p>The end-of-life date for the current version of the SageMaker Partner AI App.</p>
+    ///   - [`available_upgrade(Option<AvailableUpgrade>)`](crate::operation::describe_partner_app::DescribePartnerAppOutput::available_upgrade): <p>A map of available minor version upgrades for the SageMaker Partner AI App. The key is the semantic version number, and the value is a list of release notes for that version. A null value indicates no upgrades are available.</p>
     /// - On failure, responds with [`SdkError<DescribePartnerAppError>`](crate::operation::describe_partner_app::DescribePartnerAppError)
     pub fn describe_partner_app(&self) -> crate::operation::describe_partner_app::builders::DescribePartnerAppFluentBuilder {
         crate::operation::describe_partner_app::builders::DescribePartnerAppFluentBuilder::new(self.handle.clone())

@@ -23,7 +23,7 @@ pub struct GetWirelessDeviceOutput {
     pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanDevice>,
     /// <p>Sidewalk device object.</p>
     pub sidewalk: ::std::option::Option<crate::types::SidewalkDevice>,
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub positioning: ::std::option::Option<crate::types::PositioningConfigStatus>,
     _request_id: Option<String>,
 }
@@ -68,7 +68,7 @@ impl GetWirelessDeviceOutput {
     pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkDevice> {
         self.sidewalk.as_ref()
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn positioning(&self) -> ::std::option::Option<&crate::types::PositioningConfigStatus> {
         self.positioning.as_ref()
     }
@@ -243,17 +243,17 @@ impl GetWirelessDeviceOutputBuilder {
     pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkDevice> {
         &self.sidewalk
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
         self.positioning = ::std::option::Option::Some(input);
         self
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn set_positioning(mut self, input: ::std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
         self.positioning = input;
         self
     }
-    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    /// <p>The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.</p>
     pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
         &self.positioning
     }

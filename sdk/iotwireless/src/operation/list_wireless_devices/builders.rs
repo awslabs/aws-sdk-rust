@@ -142,17 +142,17 @@ impl ListWirelessDevicesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>A filter to list only the wireless devices that use this destination.</p>
+    /// <p>A filter to list only the wireless devices that use as uplink destination.</p>
     pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_name(input.into());
         self
     }
-    /// <p>A filter to list only the wireless devices that use this destination.</p>
+    /// <p>A filter to list only the wireless devices that use as uplink destination.</p>
     pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_name(input);
         self
     }
-    /// <p>A filter to list only the wireless devices that use this destination.</p>
+    /// <p>A filter to list only the wireless devices that use as uplink destination.</p>
     pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_name()
     }

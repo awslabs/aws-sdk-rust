@@ -7,7 +7,7 @@ pub struct ListWirelessDevicesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A filter to list only the wireless devices that use this destination.</p>
+    /// <p>A filter to list only the wireless devices that use as uplink destination.</p>
     pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter to list only the wireless devices that use this device profile.</p>
     pub device_profile_id: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl ListWirelessDevicesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A filter to list only the wireless devices that use this destination.</p>
+    /// <p>A filter to list only the wireless devices that use as uplink destination.</p>
     pub fn destination_name(&self) -> ::std::option::Option<&str> {
         self.destination_name.as_deref()
     }
@@ -103,17 +103,17 @@ impl ListWirelessDevicesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>A filter to list only the wireless devices that use this destination.</p>
+    /// <p>A filter to list only the wireless devices that use as uplink destination.</p>
     pub fn destination_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A filter to list only the wireless devices that use this destination.</p>
+    /// <p>A filter to list only the wireless devices that use as uplink destination.</p>
     pub fn set_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_name = input;
         self
     }
-    /// <p>A filter to list only the wireless devices that use this destination.</p>
+    /// <p>A filter to list only the wireless devices that use as uplink destination.</p>
     pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_name
     }
