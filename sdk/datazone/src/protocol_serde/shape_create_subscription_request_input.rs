@@ -3,47 +3,71 @@ pub fn ser_create_subscription_request_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_subscription_request::CreateSubscriptionRequestInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.metadata_forms {
-        let mut array_3 = object.key("metadataForms").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.asset_permissions {
+        let mut array_2 = object.key("assetPermissions").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_form_input::ser_form_input(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_asset_permission::ser_asset_permission(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.request_reason {
-        object.key("requestReason").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.subscribed_listings {
-        let mut array_8 = object.key("subscribedListings").start_array();
-        for item_9 in var_7 {
+    if let Some(var_5) = &input.asset_scopes {
+        let mut array_6 = object.key("assetScopes").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_subscribed_listing_input::ser_subscribed_listing_input(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_accepted_asset_scope::ser_accepted_asset_scope(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_8.finish();
+        array_6.finish();
     }
-    if let Some(var_11) = &input.subscribed_principals {
-        let mut array_12 = object.key("subscribedPrincipals").start_array();
-        for item_13 in var_11 {
+    if let Some(var_9) = &input.client_token {
+        object.key("clientToken").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.metadata_forms {
+        let mut array_11 = object.key("metadataForms").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_subscribed_principal_input::ser_subscribed_principal_input(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_form_input::ser_form_input(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_12.finish();
+        array_11.finish();
+    }
+    if let Some(var_14) = &input.request_reason {
+        object.key("requestReason").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.subscribed_listings {
+        let mut array_16 = object.key("subscribedListings").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_subscribed_listing_input::ser_subscribed_listing_input(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
+    }
+    if let Some(var_19) = &input.subscribed_principals {
+        let mut array_20 = object.key("subscribedPrincipals").start_array();
+        for item_21 in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_subscribed_principal_input::ser_subscribed_principal_input(&mut object_22, item_21)?;
+                object_22.finish();
+            }
+        }
+        array_20.finish();
     }
     Ok(())
 }

@@ -15,7 +15,12 @@ pub struct ListSubscriptionGrantsInput {
     pub subscription_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the owning project of the subscription grants.</p>
     pub owning_project_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the owning user.</p>
+    pub owning_user_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the owning group.</p>
+    pub owning_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the way of sorting the results of this action.</p>
+    #[deprecated(note = "Results are always sorted by updatedAt", since = "Jan 31 2026")]
     pub sort_by: ::std::option::Option<crate::types::SortKey>,
     /// <p>Specifies the sort order of this action.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -49,7 +54,16 @@ impl ListSubscriptionGrantsInput {
     pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
         self.owning_project_id.as_deref()
     }
+    /// <p>The ID of the owning user.</p>
+    pub fn owning_user_id(&self) -> ::std::option::Option<&str> {
+        self.owning_user_id.as_deref()
+    }
+    /// <p>The ID of the owning group.</p>
+    pub fn owning_group_id(&self) -> ::std::option::Option<&str> {
+        self.owning_group_id.as_deref()
+    }
     /// <p>Specifies the way of sorting the results of this action.</p>
+    #[deprecated(note = "Results are always sorted by updatedAt", since = "Jan 31 2026")]
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortKey> {
         self.sort_by.as_ref()
     }
@@ -83,6 +97,8 @@ pub struct ListSubscriptionGrantsInputBuilder {
     pub(crate) subscribed_listing_id: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_id: ::std::option::Option<::std::string::String>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owning_user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owning_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::SortKey>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -174,17 +190,48 @@ impl ListSubscriptionGrantsInputBuilder {
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owning_project_id
     }
+    /// <p>The ID of the owning user.</p>
+    pub fn owning_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owning_user_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the owning user.</p>
+    pub fn set_owning_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owning_user_id = input;
+        self
+    }
+    /// <p>The ID of the owning user.</p>
+    pub fn get_owning_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owning_user_id
+    }
+    /// <p>The ID of the owning group.</p>
+    pub fn owning_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owning_group_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the owning group.</p>
+    pub fn set_owning_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owning_group_id = input;
+        self
+    }
+    /// <p>The ID of the owning group.</p>
+    pub fn get_owning_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owning_group_id
+    }
     /// <p>Specifies the way of sorting the results of this action.</p>
+    #[deprecated(note = "Results are always sorted by updatedAt", since = "Jan 31 2026")]
     pub fn sort_by(mut self, input: crate::types::SortKey) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the way of sorting the results of this action.</p>
+    #[deprecated(note = "Results are always sorted by updatedAt", since = "Jan 31 2026")]
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortKey>) -> Self {
         self.sort_by = input;
         self
     }
     /// <p>Specifies the way of sorting the results of this action.</p>
+    #[deprecated(note = "Results are always sorted by updatedAt", since = "Jan 31 2026")]
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortKey> {
         &self.sort_by
     }
@@ -244,6 +291,8 @@ impl ListSubscriptionGrantsInputBuilder {
             subscribed_listing_id: self.subscribed_listing_id,
             subscription_id: self.subscription_id,
             owning_project_id: self.owning_project_id,
+            owning_user_id: self.owning_user_id,
+            owning_group_id: self.owning_group_id,
             sort_by: self.sort_by,
             sort_order: self.sort_order,
             max_results: self.max_results,

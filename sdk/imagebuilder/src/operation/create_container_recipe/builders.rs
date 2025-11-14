@@ -214,17 +214,17 @@ impl CreateContainerRecipeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
-    /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components included in the container recipe.</p>
     pub fn components(mut self, input: crate::types::ComponentConfiguration) -> Self {
         self.inner = self.inner.components(input);
         self
     }
-    /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components included in the container recipe.</p>
     pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
         self.inner = self.inner.set_components(input);
         self
     }
-    /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components included in the container recipe.</p>
     pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         self.inner.get_components()
     }

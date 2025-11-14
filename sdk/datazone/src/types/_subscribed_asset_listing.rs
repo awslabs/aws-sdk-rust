@@ -16,6 +16,8 @@ pub struct SubscribedAssetListing {
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
     /// <p>The asset scope of the subscribed asset listing.</p>
     pub asset_scope: ::std::option::Option<crate::types::AssetScope>,
+    /// <p>The asset permissions.</p>
+    pub permissions: ::std::option::Option<crate::types::Permissions>,
 }
 impl SubscribedAssetListing {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
@@ -44,6 +46,10 @@ impl SubscribedAssetListing {
     pub fn asset_scope(&self) -> ::std::option::Option<&crate::types::AssetScope> {
         self.asset_scope.as_ref()
     }
+    /// <p>The asset permissions.</p>
+    pub fn permissions(&self) -> ::std::option::Option<&crate::types::Permissions> {
+        self.permissions.as_ref()
+    }
 }
 impl SubscribedAssetListing {
     /// Creates a new builder-style object to manufacture [`SubscribedAssetListing`](crate::types::SubscribedAssetListing).
@@ -62,6 +68,7 @@ pub struct SubscribedAssetListingBuilder {
     pub(crate) forms: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<crate::types::DetailedGlossaryTerm>>,
     pub(crate) asset_scope: ::std::option::Option<crate::types::AssetScope>,
+    pub(crate) permissions: ::std::option::Option<crate::types::Permissions>,
 }
 impl SubscribedAssetListingBuilder {
     /// <p>The identifier of the published asset for which the subscription grant is created.</p>
@@ -154,6 +161,20 @@ impl SubscribedAssetListingBuilder {
     pub fn get_asset_scope(&self) -> &::std::option::Option<crate::types::AssetScope> {
         &self.asset_scope
     }
+    /// <p>The asset permissions.</p>
+    pub fn permissions(mut self, input: crate::types::Permissions) -> Self {
+        self.permissions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The asset permissions.</p>
+    pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::Permissions>) -> Self {
+        self.permissions = input;
+        self
+    }
+    /// <p>The asset permissions.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<crate::types::Permissions> {
+        &self.permissions
+    }
     /// Consumes the builder and constructs a [`SubscribedAssetListing`](crate::types::SubscribedAssetListing).
     pub fn build(self) -> crate::types::SubscribedAssetListing {
         crate::types::SubscribedAssetListing {
@@ -163,6 +184,7 @@ impl SubscribedAssetListingBuilder {
             forms: self.forms,
             glossary_terms: self.glossary_terms,
             asset_scope: self.asset_scope,
+            permissions: self.permissions,
         }
     }
 }

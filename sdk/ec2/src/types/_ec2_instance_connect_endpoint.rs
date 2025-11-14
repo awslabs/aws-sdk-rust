@@ -45,6 +45,8 @@ pub struct Ec2InstanceConnectEndpoint {
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The public DNS names of the endpoint.</p>
     pub public_dns_names: ::std::option::Option<crate::types::InstanceConnectEndpointPublicDnsNames>,
+    /// <p>The ID of the Availability Zone of the EC2 Instance Connect Endpoint.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl Ec2InstanceConnectEndpoint {
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
@@ -128,6 +130,10 @@ impl Ec2InstanceConnectEndpoint {
     pub fn public_dns_names(&self) -> ::std::option::Option<&crate::types::InstanceConnectEndpointPublicDnsNames> {
         self.public_dns_names.as_ref()
     }
+    /// <p>The ID of the Availability Zone of the EC2 Instance Connect Endpoint.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
 }
 impl Ec2InstanceConnectEndpoint {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceConnectEndpoint`](crate::types::Ec2InstanceConnectEndpoint).
@@ -157,6 +163,7 @@ pub struct Ec2InstanceConnectEndpointBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) public_dns_names: ::std::option::Option<crate::types::InstanceConnectEndpointPublicDnsNames>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl Ec2InstanceConnectEndpointBuilder {
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
@@ -436,6 +443,20 @@ impl Ec2InstanceConnectEndpointBuilder {
     pub fn get_public_dns_names(&self) -> &::std::option::Option<crate::types::InstanceConnectEndpointPublicDnsNames> {
         &self.public_dns_names
     }
+    /// <p>The ID of the Availability Zone of the EC2 Instance Connect Endpoint.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone of the EC2 Instance Connect Endpoint.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone of the EC2 Instance Connect Endpoint.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Consumes the builder and constructs a [`Ec2InstanceConnectEndpoint`](crate::types::Ec2InstanceConnectEndpoint).
     pub fn build(self) -> crate::types::Ec2InstanceConnectEndpoint {
         crate::types::Ec2InstanceConnectEndpoint {
@@ -456,6 +477,7 @@ impl Ec2InstanceConnectEndpointBuilder {
             tags: self.tags,
             ip_address_type: self.ip_address_type,
             public_dns_names: self.public_dns_names,
+            availability_zone_id: self.availability_zone_id,
         }
     }
 }

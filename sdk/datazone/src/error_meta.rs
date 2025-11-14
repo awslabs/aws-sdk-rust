@@ -132,6 +132,9 @@ impl From<crate::operation::accept_subscription_request::AcceptSubscriptionReque
             crate::operation::accept_subscription_request::AcceptSubscriptionRequestError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::accept_subscription_request::AcceptSubscriptionRequestError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::accept_subscription_request::AcceptSubscriptionRequestError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -1260,6 +1263,9 @@ impl From<crate::operation::create_subscription_request::CreateSubscriptionReque
             }
             crate::operation::create_subscription_request::CreateSubscriptionRequestError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_subscription_request::CreateSubscriptionRequestError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::create_subscription_request::CreateSubscriptionRequestError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)

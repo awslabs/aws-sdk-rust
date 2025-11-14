@@ -15,6 +15,10 @@ pub struct CreateSubscriptionRequestInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The metadata form included in the subscription request.</p>
     pub metadata_forms: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>,
+    /// <p>The asset permissions of the subscription request.</p>
+    pub asset_permissions: ::std::option::Option<::std::vec::Vec<crate::types::AssetPermission>>,
+    /// <p>The asset scopes of the subscription request.</p>
+    pub asset_scopes: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>>,
 }
 impl CreateSubscriptionRequestInput {
     /// <p>The ID of the Amazon DataZone domain in which the subscription request is created.</p>
@@ -47,6 +51,18 @@ impl CreateSubscriptionRequestInput {
     pub fn metadata_forms(&self) -> &[crate::types::FormInput] {
         self.metadata_forms.as_deref().unwrap_or_default()
     }
+    /// <p>The asset permissions of the subscription request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_permissions.is_none()`.
+    pub fn asset_permissions(&self) -> &[crate::types::AssetPermission] {
+        self.asset_permissions.as_deref().unwrap_or_default()
+    }
+    /// <p>The asset scopes of the subscription request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_scopes.is_none()`.
+    pub fn asset_scopes(&self) -> &[crate::types::AcceptedAssetScope] {
+        self.asset_scopes.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for CreateSubscriptionRequestInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -57,6 +73,8 @@ impl ::std::fmt::Debug for CreateSubscriptionRequestInput {
         formatter.field("request_reason", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.field("metadata_forms", &"*** Sensitive Data Redacted ***");
+        formatter.field("asset_permissions", &self.asset_permissions);
+        formatter.field("asset_scopes", &self.asset_scopes);
         formatter.finish()
     }
 }
@@ -77,6 +95,8 @@ pub struct CreateSubscriptionRequestInputBuilder {
     pub(crate) request_reason: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_forms: ::std::option::Option<::std::vec::Vec<crate::types::FormInput>>,
+    pub(crate) asset_permissions: ::std::option::Option<::std::vec::Vec<crate::types::AssetPermission>>,
+    pub(crate) asset_scopes: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>>,
 }
 impl CreateSubscriptionRequestInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the subscription request is created.</p>
@@ -183,6 +203,46 @@ impl CreateSubscriptionRequestInputBuilder {
     pub fn get_metadata_forms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormInput>> {
         &self.metadata_forms
     }
+    /// Appends an item to `asset_permissions`.
+    ///
+    /// To override the contents of this collection use [`set_asset_permissions`](Self::set_asset_permissions).
+    ///
+    /// <p>The asset permissions of the subscription request.</p>
+    pub fn asset_permissions(mut self, input: crate::types::AssetPermission) -> Self {
+        let mut v = self.asset_permissions.unwrap_or_default();
+        v.push(input);
+        self.asset_permissions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The asset permissions of the subscription request.</p>
+    pub fn set_asset_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPermission>>) -> Self {
+        self.asset_permissions = input;
+        self
+    }
+    /// <p>The asset permissions of the subscription request.</p>
+    pub fn get_asset_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPermission>> {
+        &self.asset_permissions
+    }
+    /// Appends an item to `asset_scopes`.
+    ///
+    /// To override the contents of this collection use [`set_asset_scopes`](Self::set_asset_scopes).
+    ///
+    /// <p>The asset scopes of the subscription request.</p>
+    pub fn asset_scopes(mut self, input: crate::types::AcceptedAssetScope) -> Self {
+        let mut v = self.asset_scopes.unwrap_or_default();
+        v.push(input);
+        self.asset_scopes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The asset scopes of the subscription request.</p>
+    pub fn set_asset_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>>) -> Self {
+        self.asset_scopes = input;
+        self
+    }
+    /// <p>The asset scopes of the subscription request.</p>
+    pub fn get_asset_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>> {
+        &self.asset_scopes
+    }
     /// Consumes the builder and constructs a [`CreateSubscriptionRequestInput`](crate::operation::create_subscription_request::CreateSubscriptionRequestInput).
     pub fn build(
         self,
@@ -197,6 +257,8 @@ impl CreateSubscriptionRequestInputBuilder {
             request_reason: self.request_reason,
             client_token: self.client_token,
             metadata_forms: self.metadata_forms,
+            asset_permissions: self.asset_permissions,
+            asset_scopes: self.asset_scopes,
         })
     }
 }
@@ -209,6 +271,8 @@ impl ::std::fmt::Debug for CreateSubscriptionRequestInputBuilder {
         formatter.field("request_reason", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.field("metadata_forms", &"*** Sensitive Data Redacted ***");
+        formatter.field("asset_permissions", &self.asset_permissions);
+        formatter.field("asset_scopes", &self.asset_scopes);
         formatter.finish()
     }
 }

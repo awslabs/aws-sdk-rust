@@ -199,9 +199,17 @@ pub use crate::types::_asset_in_data_product_listing_item::AssetInDataProductLis
 
 pub use crate::types::_subscribed_asset_listing::SubscribedAssetListing;
 
+pub use crate::types::_permissions::Permissions;
+
+pub use crate::types::_s3_permission::S3Permission;
+
 pub use crate::types::_asset_scope::AssetScope;
 
 pub use crate::types::_subscribed_principal::SubscribedPrincipal;
+
+pub use crate::types::_subscribed_group::SubscribedGroup;
+
+pub use crate::types::_subscribed_user::SubscribedUser;
 
 pub use crate::types::_subscribed_project::SubscribedProject;
 
@@ -697,9 +705,17 @@ pub use crate::types::_member::Member;
 
 pub use crate::types::_user_type::UserType;
 
+pub use crate::types::_accepted_asset_scope::AcceptedAssetScope;
+
+pub use crate::types::_asset_permission::AssetPermission;
+
 pub use crate::types::_subscribed_listing_input::SubscribedListingInput;
 
 pub use crate::types::_subscribed_principal_input::SubscribedPrincipalInput;
+
+pub use crate::types::_subscribed_group_input::SubscribedGroupInput;
+
+pub use crate::types::_subscribed_user_input::SubscribedUserInput;
 
 pub use crate::types::_subscribed_project_input::SubscribedProjectInput;
 
@@ -740,8 +756,6 @@ pub use crate::types::_authentication_configuration_input::AuthenticationConfigu
 pub use crate::types::_glue_connection_type::GlueConnectionType;
 
 pub use crate::types::_athena_properties_input::AthenaPropertiesInput;
-
-pub use crate::types::_accepted_asset_scope::AcceptedAssetScope;
 
 pub use crate::types::_accept_choice::AcceptChoice;
 
@@ -800,6 +814,8 @@ mod _asset_listing_details;
 mod _asset_listing_item;
 
 mod _asset_listing_item_additional_attributes;
+
+mod _asset_permission;
 
 mod _asset_revision;
 
@@ -1245,6 +1261,8 @@ mod _owner_user_properties;
 
 mod _owner_user_properties_output;
 
+mod _permissions;
+
 mod _physical_connection_requirements;
 
 mod _physical_endpoint;
@@ -1355,6 +1373,8 @@ mod _rule_type;
 
 mod _run_statistics_for_assets;
 
+mod _s3_permission;
+
 mod _s3_properties_input;
 
 mod _s3_properties_output;
@@ -1417,6 +1437,10 @@ mod _subscribed_asset;
 
 mod _subscribed_asset_listing;
 
+mod _subscribed_group;
+
+mod _subscribed_group_input;
+
 mod _subscribed_listing;
 
 mod _subscribed_listing_input;
@@ -1432,6 +1456,10 @@ mod _subscribed_product_listing;
 mod _subscribed_project;
 
 mod _subscribed_project_input;
+
+mod _subscribed_user;
+
+mod _subscribed_user_input;
 
 mod _subscription_grant_overall_status;
 

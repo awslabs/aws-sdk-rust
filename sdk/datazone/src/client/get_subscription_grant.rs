@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`domain_id(String)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the subscription grant exists.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::created_at): <p>The timestamp of when the subscription grant is created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::updated_at): <p>The timestamp of when the subscription grant was upated.</p>
+    ///   - [`environment_id(Option<String>)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::environment_id): <p>The environment ID of the subscription grant.</p>
     ///   - [`subscription_target_id(String)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::subscription_target_id): <p>The subscription target ID associated with the subscription grant.</p>
     ///   - [`granted_entity(Option<GrantedEntity>)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::granted_entity): <p>The entity to which the subscription is granted.</p>
     ///   - [`status(SubscriptionGrantOverallStatus)`](crate::operation::get_subscription_grant::GetSubscriptionGrantOutput::status): <p>The status of the subscription grant.</p>

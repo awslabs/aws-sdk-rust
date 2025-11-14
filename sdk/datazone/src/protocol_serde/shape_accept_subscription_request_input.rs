@@ -3,20 +3,32 @@ pub fn ser_accept_subscription_request_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::accept_subscription_request::AcceptSubscriptionRequestInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.asset_scopes {
-        let mut array_2 = object.key("assetScopes").start_array();
+    if let Some(var_1) = &input.asset_permissions {
+        let mut array_2 = object.key("assetPermissions").start_array();
         for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_accepted_asset_scope::ser_accepted_asset_scope(&mut object_4, item_3)?;
+                crate::protocol_serde::shape_asset_permission::ser_asset_permission(&mut object_4, item_3)?;
                 object_4.finish();
             }
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.decision_comment {
-        object.key("decisionComment").string(var_5.as_str());
+    if let Some(var_5) = &input.asset_scopes {
+        let mut array_6 = object.key("assetScopes").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_accepted_asset_scope::ser_accepted_asset_scope(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.decision_comment {
+        object.key("decisionComment").string(var_9.as_str());
     }
     Ok(())
 }

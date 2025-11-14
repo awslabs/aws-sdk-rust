@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::update_user_profile::UpdateUserProfileOutput::id): <p>The identifier of the user profile.</p>
     ///   - [`r#type(Option<UserProfileType>)`](crate::operation::update_user_profile::UpdateUserProfileOutput::type): <p>The type of the user profile.</p>
     ///   - [`status(Option<UserProfileStatus>)`](crate::operation::update_user_profile::UpdateUserProfileOutput::status): <p>The status of the user profile.</p>
-    ///   - [`details(Option<UserProfileDetails>)`](crate::operation::update_user_profile::UpdateUserProfileOutput::details): <p>The details of the user profile in Amazon DataZone.</p>
+    ///   - [`details(Option<UserProfileDetails>)`](crate::operation::update_user_profile::UpdateUserProfileOutput::details): <p>The results of the UpdateUserProfile action.</p>
     /// - On failure, responds with [`SdkError<UpdateUserProfileError>`](crate::operation::update_user_profile::UpdateUserProfileError)
     pub fn update_user_profile(&self) -> crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder {
         crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::new(self.handle.clone())

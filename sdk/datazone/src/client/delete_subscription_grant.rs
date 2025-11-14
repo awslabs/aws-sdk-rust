@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`domain_id(String)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::domain_id): <p>The ID of the Amazon DataZone domain in which the subscription grant is deleted.</p>
     ///   - [`created_at(DateTime)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::created_at): <p>The timestamp of when the subscription grant that is deleted was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::updated_at): <p>The timestamp of when the subscription grant that is deleted was updated.</p>
+    ///   - [`environment_id(Option<String>)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::environment_id): <p>The ID of the environment in which the subscription grant is deleted.</p>
     ///   - [`subscription_target_id(String)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::subscription_target_id): <p>The ID of the subscription target associated with the subscription grant that is deleted.</p>
     ///   - [`granted_entity(Option<GrantedEntity>)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::granted_entity): <p>The entity to which the subscription is deleted.</p>
     ///   - [`status(SubscriptionGrantOverallStatus)`](crate::operation::delete_subscription_grant::DeleteSubscriptionGrantOutput::status): <p>The status of the subscription grant that is deleted.</p>

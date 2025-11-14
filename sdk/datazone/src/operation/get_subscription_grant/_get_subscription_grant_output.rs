@@ -15,6 +15,8 @@ pub struct GetSubscriptionGrantOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when the subscription grant was upated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The environment ID of the subscription grant.</p>
+    pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The subscription target ID associated with the subscription grant.</p>
     pub subscription_target_id: ::std::string::String,
     /// <p>The entity to which the subscription is granted.</p>
@@ -55,6 +57,10 @@ impl GetSubscriptionGrantOutput {
     /// <p>The timestamp of when the subscription grant was upated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
+    }
+    /// <p>The environment ID of the subscription grant.</p>
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+        self.environment_id.as_deref()
     }
     /// <p>The subscription target ID associated with the subscription grant.</p>
     pub fn subscription_target_id(&self) -> &str {
@@ -103,6 +109,7 @@ pub struct GetSubscriptionGrantOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_target_id: ::std::option::Option<::std::string::String>,
     pub(crate) granted_entity: ::std::option::Option<crate::types::GrantedEntity>,
     pub(crate) status: ::std::option::Option<crate::types::SubscriptionGrantOverallStatus>,
@@ -199,6 +206,20 @@ impl GetSubscriptionGrantOutputBuilder {
     /// <p>The timestamp of when the subscription grant was upated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
+    }
+    /// <p>The environment ID of the subscription grant.</p>
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.environment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The environment ID of the subscription grant.</p>
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_id = input;
+        self
+    }
+    /// <p>The environment ID of the subscription grant.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// <p>The subscription target ID associated with the subscription grant.</p>
     /// This field is required.
@@ -336,6 +357,7 @@ impl GetSubscriptionGrantOutputBuilder {
                     "updated_at was not specified but it is required when building GetSubscriptionGrantOutput",
                 )
             })?,
+            environment_id: self.environment_id,
             subscription_target_id: self.subscription_target_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscription_target_id",

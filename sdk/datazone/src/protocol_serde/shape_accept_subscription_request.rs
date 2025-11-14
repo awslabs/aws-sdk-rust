@@ -80,6 +80,25 @@ pub fn de_accept_subscription_request_http_error(
             };
             tmp
         }),
+        "ServiceQuotaExceededException" => {
+            crate::operation::accept_subscription_request::AcceptSubscriptionRequestError::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::accept_subscription_request::AcceptSubscriptionRequestError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::accept_subscription_request::AcceptSubscriptionRequestError::unhandled)?
+                };
+                tmp
+            })
+        }
         "ThrottlingException" => crate::operation::accept_subscription_request::AcceptSubscriptionRequestError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {

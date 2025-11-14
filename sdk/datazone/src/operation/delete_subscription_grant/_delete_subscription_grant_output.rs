@@ -15,6 +15,8 @@ pub struct DeleteSubscriptionGrantOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when the subscription grant that is deleted was updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The ID of the environment in which the subscription grant is deleted.</p>
+    pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subscription target associated with the subscription grant that is deleted.</p>
     pub subscription_target_id: ::std::string::String,
     /// <p>The entity to which the subscription is deleted.</p>
@@ -55,6 +57,10 @@ impl DeleteSubscriptionGrantOutput {
     /// <p>The timestamp of when the subscription grant that is deleted was updated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
+    }
+    /// <p>The ID of the environment in which the subscription grant is deleted.</p>
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+        self.environment_id.as_deref()
     }
     /// <p>The ID of the subscription target associated with the subscription grant that is deleted.</p>
     pub fn subscription_target_id(&self) -> &str {
@@ -103,6 +109,7 @@ pub struct DeleteSubscriptionGrantOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_target_id: ::std::option::Option<::std::string::String>,
     pub(crate) granted_entity: ::std::option::Option<crate::types::GrantedEntity>,
     pub(crate) status: ::std::option::Option<crate::types::SubscriptionGrantOverallStatus>,
@@ -199,6 +206,20 @@ impl DeleteSubscriptionGrantOutputBuilder {
     /// <p>The timestamp of when the subscription grant that is deleted was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
+    }
+    /// <p>The ID of the environment in which the subscription grant is deleted.</p>
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.environment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the environment in which the subscription grant is deleted.</p>
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_id = input;
+        self
+    }
+    /// <p>The ID of the environment in which the subscription grant is deleted.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// <p>The ID of the subscription target associated with the subscription grant that is deleted.</p>
     /// This field is required.
@@ -338,6 +359,7 @@ impl DeleteSubscriptionGrantOutputBuilder {
                     "updated_at was not specified but it is required when building DeleteSubscriptionGrantOutput",
                 )
             })?,
+            environment_id: self.environment_id,
             subscription_target_id: self.subscription_target_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscription_target_id",

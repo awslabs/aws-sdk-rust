@@ -20,6 +20,8 @@ pub struct SubscribedAsset {
     pub failure_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The asset scope of the subscribed asset.</p>
     pub asset_scope: ::std::option::Option<crate::types::AssetScope>,
+    /// <p>The asset permissions.</p>
+    pub permissions: ::std::option::Option<crate::types::Permissions>,
 }
 impl SubscribedAsset {
     /// <p>The identifier of the asset for which the subscription grant is created.</p>
@@ -56,6 +58,10 @@ impl SubscribedAsset {
     pub fn asset_scope(&self) -> ::std::option::Option<&crate::types::AssetScope> {
         self.asset_scope.as_ref()
     }
+    /// <p>The asset permissions.</p>
+    pub fn permissions(&self) -> ::std::option::Option<&crate::types::Permissions> {
+        self.permissions.as_ref()
+    }
 }
 impl SubscribedAsset {
     /// Creates a new builder-style object to manufacture [`SubscribedAsset`](crate::types::SubscribedAsset).
@@ -76,6 +82,7 @@ pub struct SubscribedAssetBuilder {
     pub(crate) granted_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) asset_scope: ::std::option::Option<crate::types::AssetScope>,
+    pub(crate) permissions: ::std::option::Option<crate::types::Permissions>,
 }
 impl SubscribedAssetBuilder {
     /// <p>The identifier of the asset for which the subscription grant is created.</p>
@@ -193,6 +200,20 @@ impl SubscribedAssetBuilder {
     pub fn get_asset_scope(&self) -> &::std::option::Option<crate::types::AssetScope> {
         &self.asset_scope
     }
+    /// <p>The asset permissions.</p>
+    pub fn permissions(mut self, input: crate::types::Permissions) -> Self {
+        self.permissions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The asset permissions.</p>
+    pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::Permissions>) -> Self {
+        self.permissions = input;
+        self
+    }
+    /// <p>The asset permissions.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<crate::types::Permissions> {
+        &self.permissions
+    }
     /// Consumes the builder and constructs a [`SubscribedAsset`](crate::types::SubscribedAsset).
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_id`](crate::types::builders::SubscribedAssetBuilder::asset_id)
@@ -223,6 +244,7 @@ impl SubscribedAssetBuilder {
             granted_timestamp: self.granted_timestamp,
             failure_timestamp: self.failure_timestamp,
             asset_scope: self.asset_scope,
+            permissions: self.permissions,
         })
     }
 }

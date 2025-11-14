@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::create_user_profile::CreateUserProfileOutput::id): <p>The identifier of the user profile.</p>
     ///   - [`r#type(Option<UserProfileType>)`](crate::operation::create_user_profile::CreateUserProfileOutput::type): <p>The type of the user profile.</p>
     ///   - [`status(Option<UserProfileStatus>)`](crate::operation::create_user_profile::CreateUserProfileOutput::status): <p>The status of the user profile.</p>
-    ///   - [`details(Option<UserProfileDetails>)`](crate::operation::create_user_profile::CreateUserProfileOutput::details): <p>The details of the user profile in Amazon DataZone.</p>
+    ///   - [`details(Option<UserProfileDetails>)`](crate::operation::create_user_profile::CreateUserProfileOutput::details): <p>The user profile details.</p>
     /// - On failure, responds with [`SdkError<CreateUserProfileError>`](crate::operation::create_user_profile::CreateUserProfileError)
     pub fn create_user_profile(&self) -> crate::operation::create_user_profile::builders::CreateUserProfileFluentBuilder {
         crate::operation::create_user_profile::builders::CreateUserProfileFluentBuilder::new(self.handle.clone())

@@ -184,6 +184,13 @@ pub(crate) fn de_delete_subscription_grant(
                             .transpose()?,
                     );
                 }
+                "environmentId" => {
+                    builder = builder.set_environment_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "grantedEntity" => {
                     builder = builder.set_granted_entity(crate::protocol_serde::shape_granted_entity::de_granted_entity(tokens)?);
                 }

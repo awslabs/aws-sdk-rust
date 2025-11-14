@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_user_profile::GetUserProfileOutput::id): <p>The identifier of the user profile.</p>
     ///   - [`r#type(Option<UserProfileType>)`](crate::operation::get_user_profile::GetUserProfileOutput::type): <p>The type of the user profile.</p>
     ///   - [`status(Option<UserProfileStatus>)`](crate::operation::get_user_profile::GetUserProfileOutput::status): <p>The status of the user profile.</p>
-    ///   - [`details(Option<UserProfileDetails>)`](crate::operation::get_user_profile::GetUserProfileOutput::details): <p>The details of the user profile in Amazon DataZone.</p>
+    ///   - [`details(Option<UserProfileDetails>)`](crate::operation::get_user_profile::GetUserProfileOutput::details): <p>The user profile details.</p>
     /// - On failure, responds with [`SdkError<GetUserProfileError>`](crate::operation::get_user_profile::GetUserProfileError)
     pub fn get_user_profile(&self) -> crate::operation::get_user_profile::builders::GetUserProfileFluentBuilder {
         crate::operation::get_user_profile::builders::GetUserProfileFluentBuilder::new(self.handle.clone())

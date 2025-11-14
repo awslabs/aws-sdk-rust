@@ -221,6 +221,19 @@ pub fn de_ec2_instance_connect_endpoint(
                 builder = builder.set_public_dns_names(var_17);
             }
             ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#Ec2InstanceConnectEndpoint$AvailabilityZoneId */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_18);
+            }
+            ,
             _ => {}
         }
     }

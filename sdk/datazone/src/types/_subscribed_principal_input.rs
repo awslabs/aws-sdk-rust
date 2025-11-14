@@ -4,8 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SubscribedPrincipalInput {
+    /// <p>The subscribed group.</p>
+    Group(crate::types::SubscribedGroupInput),
     /// <p>The project that is to be given a subscription grant.</p>
     Project(crate::types::SubscribedProjectInput),
+    /// <p>The subscribed user.</p>
+    User(crate::types::SubscribedUserInput),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +21,19 @@ pub enum SubscribedPrincipalInput {
     Unknown,
 }
 impl SubscribedPrincipalInput {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Group`](crate::types::SubscribedPrincipalInput::Group), extracting the inner [`SubscribedGroupInput`](crate::types::SubscribedGroupInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_group(&self) -> ::std::result::Result<&crate::types::SubscribedGroupInput, &Self> {
+        if let SubscribedPrincipalInput::Group(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Group`](crate::types::SubscribedPrincipalInput::Group).
+    pub fn is_group(&self) -> bool {
+        self.as_group().is_ok()
+    }
     /// Tries to convert the enum instance into [`Project`](crate::types::SubscribedPrincipalInput::Project), extracting the inner [`SubscribedProjectInput`](crate::types::SubscribedProjectInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_project(&self) -> ::std::result::Result<&crate::types::SubscribedProjectInput, &Self> {
@@ -30,6 +46,19 @@ impl SubscribedPrincipalInput {
     /// Returns true if this is a [`Project`](crate::types::SubscribedPrincipalInput::Project).
     pub fn is_project(&self) -> bool {
         self.as_project().is_ok()
+    }
+    /// Tries to convert the enum instance into [`User`](crate::types::SubscribedPrincipalInput::User), extracting the inner [`SubscribedUserInput`](crate::types::SubscribedUserInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_user(&self) -> ::std::result::Result<&crate::types::SubscribedUserInput, &Self> {
+        if let SubscribedPrincipalInput::User(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`User`](crate::types::SubscribedPrincipalInput::User).
+    pub fn is_user(&self) -> bool {
+        self.as_user().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

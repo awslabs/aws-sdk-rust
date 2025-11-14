@@ -11,6 +11,8 @@ pub struct AcceptSubscriptionRequestInput {
     pub decision_comment: ::std::option::Option<::std::string::String>,
     /// <p>The asset scopes of the accept subscription request.</p>
     pub asset_scopes: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>>,
+    /// <p>The asset permissions of the accept subscription request.</p>
+    pub asset_permissions: ::std::option::Option<::std::vec::Vec<crate::types::AssetPermission>>,
 }
 impl AcceptSubscriptionRequestInput {
     /// <p>The Amazon DataZone domain where the specified subscription request is being accepted.</p>
@@ -31,6 +33,12 @@ impl AcceptSubscriptionRequestInput {
     pub fn asset_scopes(&self) -> &[crate::types::AcceptedAssetScope] {
         self.asset_scopes.as_deref().unwrap_or_default()
     }
+    /// <p>The asset permissions of the accept subscription request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_permissions.is_none()`.
+    pub fn asset_permissions(&self) -> &[crate::types::AssetPermission] {
+        self.asset_permissions.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for AcceptSubscriptionRequestInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -39,6 +47,7 @@ impl ::std::fmt::Debug for AcceptSubscriptionRequestInput {
         formatter.field("identifier", &self.identifier);
         formatter.field("decision_comment", &"*** Sensitive Data Redacted ***");
         formatter.field("asset_scopes", &self.asset_scopes);
+        formatter.field("asset_permissions", &self.asset_permissions);
         formatter.finish()
     }
 }
@@ -57,6 +66,7 @@ pub struct AcceptSubscriptionRequestInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) decision_comment: ::std::option::Option<::std::string::String>,
     pub(crate) asset_scopes: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>>,
+    pub(crate) asset_permissions: ::std::option::Option<::std::vec::Vec<crate::types::AssetPermission>>,
 }
 impl AcceptSubscriptionRequestInputBuilder {
     /// <p>The Amazon DataZone domain where the specified subscription request is being accepted.</p>
@@ -123,6 +133,26 @@ impl AcceptSubscriptionRequestInputBuilder {
     pub fn get_asset_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>> {
         &self.asset_scopes
     }
+    /// Appends an item to `asset_permissions`.
+    ///
+    /// To override the contents of this collection use [`set_asset_permissions`](Self::set_asset_permissions).
+    ///
+    /// <p>The asset permissions of the accept subscription request.</p>
+    pub fn asset_permissions(mut self, input: crate::types::AssetPermission) -> Self {
+        let mut v = self.asset_permissions.unwrap_or_default();
+        v.push(input);
+        self.asset_permissions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The asset permissions of the accept subscription request.</p>
+    pub fn set_asset_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPermission>>) -> Self {
+        self.asset_permissions = input;
+        self
+    }
+    /// <p>The asset permissions of the accept subscription request.</p>
+    pub fn get_asset_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPermission>> {
+        &self.asset_permissions
+    }
     /// Consumes the builder and constructs a [`AcceptSubscriptionRequestInput`](crate::operation::accept_subscription_request::AcceptSubscriptionRequestInput).
     pub fn build(
         self,
@@ -135,6 +165,7 @@ impl AcceptSubscriptionRequestInputBuilder {
             identifier: self.identifier,
             decision_comment: self.decision_comment,
             asset_scopes: self.asset_scopes,
+            asset_permissions: self.asset_permissions,
         })
     }
 }
@@ -145,6 +176,7 @@ impl ::std::fmt::Debug for AcceptSubscriptionRequestInputBuilder {
         formatter.field("identifier", &self.identifier);
         formatter.field("decision_comment", &"*** Sensitive Data Redacted ***");
         formatter.field("asset_scopes", &self.asset_scopes);
+        formatter.field("asset_permissions", &self.asset_permissions);
         formatter.finish()
     }
 }

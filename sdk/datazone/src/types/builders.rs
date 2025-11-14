@@ -119,6 +119,10 @@ pub use crate::types::_subscribed_asset_listing::SubscribedAssetListingBuilder;
 
 pub use crate::types::_asset_scope::AssetScopeBuilder;
 
+pub use crate::types::_subscribed_group::SubscribedGroupBuilder;
+
+pub use crate::types::_subscribed_user::SubscribedUserBuilder;
+
 pub use crate::types::_subscribed_project::SubscribedProjectBuilder;
 
 pub use crate::types::_subscribed_asset::SubscribedAssetBuilder;
@@ -441,7 +445,15 @@ pub use crate::types::_lineage_sql_query_run_details::LineageSqlQueryRunDetailsB
 
 pub use crate::types::_connection_credentials::ConnectionCredentialsBuilder;
 
+pub use crate::types::_accepted_asset_scope::AcceptedAssetScopeBuilder;
+
+pub use crate::types::_asset_permission::AssetPermissionBuilder;
+
 pub use crate::types::_subscribed_listing_input::SubscribedListingInputBuilder;
+
+pub use crate::types::_subscribed_group_input::SubscribedGroupInputBuilder;
+
+pub use crate::types::_subscribed_user_input::SubscribedUserInputBuilder;
 
 pub use crate::types::_subscribed_project_input::SubscribedProjectInputBuilder;
 
@@ -472,8 +484,6 @@ pub use crate::types::_glue_connection_input::GlueConnectionInputBuilder;
 pub use crate::types::_authentication_configuration_input::AuthenticationConfigurationInputBuilder;
 
 pub use crate::types::_athena_properties_input::AthenaPropertiesInputBuilder;
-
-pub use crate::types::_accepted_asset_scope::AcceptedAssetScopeBuilder;
 
 pub use crate::types::_accept_choice::AcceptChoiceBuilder;
 

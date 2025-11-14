@@ -60,6 +60,9 @@ where
                         "assetScope" => {
                             builder = builder.set_asset_scope(crate::protocol_serde::shape_asset_scope::de_asset_scope(tokens)?);
                         }
+                        "permissions" => {
+                            builder = builder.set_permissions(crate::protocol_serde::shape_permissions::de_permissions(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

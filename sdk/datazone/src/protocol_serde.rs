@@ -555,6 +555,8 @@ pub(crate) mod shape_asset_filters;
 
 pub(crate) mod shape_asset_listing_details;
 
+pub(crate) mod shape_asset_permission;
+
 pub(crate) mod shape_asset_revisions;
 
 pub(crate) mod shape_asset_target_name_map;
@@ -973,6 +975,8 @@ pub(crate) mod shape_owner_properties_output;
 
 pub(crate) mod shape_owner_user_properties;
 
+pub(crate) mod shape_permissions;
+
 pub(crate) mod shape_physical_endpoint;
 
 pub(crate) mod shape_policy_grant_member;
@@ -1043,11 +1047,19 @@ pub(crate) mod shape_sso_user_profile_details;
 
 pub(crate) mod shape_subscribed_asset;
 
+pub(crate) mod shape_subscribed_group;
+
+pub(crate) mod shape_subscribed_group_input;
+
 pub(crate) mod shape_subscribed_listing_item;
 
 pub(crate) mod shape_subscribed_project;
 
 pub(crate) mod shape_subscribed_project_input;
+
+pub(crate) mod shape_subscribed_user;
+
+pub(crate) mod shape_subscribed_user_input;
 
 pub(crate) mod shape_subscription_grant_summary;
 
@@ -1252,6 +1264,8 @@ pub(crate) mod shape_row_filter_expression;
 pub(crate) mod shape_row_filter_list;
 
 pub(crate) mod shape_s3_location_list;
+
+pub(crate) mod shape_s3_permissions;
 
 pub(crate) mod shape_self_grant_status_detail;
 

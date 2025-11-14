@@ -77,6 +77,15 @@ pub(crate) fn accept_predictions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn accept_subscription_request_output_output_correct_errors(
     mut builder: crate::operation::accept_subscription_request::builders::AcceptSubscriptionRequestOutputBuilder,
 ) -> crate::operation::accept_subscription_request::builders::AcceptSubscriptionRequestOutputBuilder {
@@ -106,15 +115,6 @@ pub(crate) fn accept_subscription_request_output_output_correct_errors(
     }
     if builder.subscribed_listings.is_none() {
         builder.subscribed_listings = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
     }
     builder
 }

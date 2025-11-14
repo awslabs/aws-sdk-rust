@@ -11,7 +11,7 @@ pub struct GetUserProfileOutput {
     pub r#type: ::std::option::Option<crate::types::UserProfileType>,
     /// <p>The status of the user profile.</p>
     pub status: ::std::option::Option<crate::types::UserProfileStatus>,
-    /// <p>The details of the user profile in Amazon DataZone.</p>
+    /// <p>The user profile details.</p>
     pub details: ::std::option::Option<crate::types::UserProfileDetails>,
     _request_id: Option<String>,
 }
@@ -32,7 +32,7 @@ impl GetUserProfileOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::UserProfileStatus> {
         self.status.as_ref()
     }
-    /// <p>The details of the user profile in Amazon DataZone.</p>
+    /// <p>The user profile details.</p>
     pub fn details(&self) -> ::std::option::Option<&crate::types::UserProfileDetails> {
         self.details.as_ref()
     }
@@ -117,17 +117,17 @@ impl GetUserProfileOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UserProfileStatus> {
         &self.status
     }
-    /// <p>The details of the user profile in Amazon DataZone.</p>
+    /// <p>The user profile details.</p>
     pub fn details(mut self, input: crate::types::UserProfileDetails) -> Self {
         self.details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the user profile in Amazon DataZone.</p>
+    /// <p>The user profile details.</p>
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::UserProfileDetails>) -> Self {
         self.details = input;
         self
     }
-    /// <p>The details of the user profile in Amazon DataZone.</p>
+    /// <p>The user profile details.</p>
     pub fn get_details(&self) -> &::std::option::Option<crate::types::UserProfileDetails> {
         &self.details
     }

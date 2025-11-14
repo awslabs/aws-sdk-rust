@@ -169,4 +169,23 @@ impl AcceptSubscriptionRequestFluentBuilder {
     pub fn get_asset_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceptedAssetScope>> {
         self.inner.get_asset_scopes()
     }
+    ///
+    /// Appends an item to `assetPermissions`.
+    ///
+    /// To override the contents of this collection use [`set_asset_permissions`](Self::set_asset_permissions).
+    ///
+    /// <p>The asset permissions of the accept subscription request.</p>
+    pub fn asset_permissions(mut self, input: crate::types::AssetPermission) -> Self {
+        self.inner = self.inner.asset_permissions(input);
+        self
+    }
+    /// <p>The asset permissions of the accept subscription request.</p>
+    pub fn set_asset_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPermission>>) -> Self {
+        self.inner = self.inner.set_asset_permissions(input);
+        self
+    }
+    /// <p>The asset permissions of the accept subscription request.</p>
+    pub fn get_asset_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPermission>> {
+        self.inner.get_asset_permissions()
+    }
 }

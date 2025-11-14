@@ -34,6 +34,14 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'project' cannot be null")
                             })?,
                         )),
+                        "user" => Some(crate::types::SubscribedPrincipal::User(
+                            crate::protocol_serde::shape_subscribed_user::de_subscribed_user(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'user' cannot be null"))?,
+                        )),
+                        "group" => Some(crate::types::SubscribedPrincipal::Group(
+                            crate::protocol_serde::shape_subscribed_group::de_subscribed_group(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'group' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::SubscribedPrincipal::Unknown)

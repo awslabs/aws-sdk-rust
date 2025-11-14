@@ -198,17 +198,48 @@ impl ListSubscriptionGrantsFluentBuilder {
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_owning_project_id()
     }
+    /// <p>The ID of the owning user.</p>
+    pub fn owning_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.owning_user_id(input.into());
+        self
+    }
+    /// <p>The ID of the owning user.</p>
+    pub fn set_owning_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_owning_user_id(input);
+        self
+    }
+    /// <p>The ID of the owning user.</p>
+    pub fn get_owning_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owning_user_id()
+    }
+    /// <p>The ID of the owning group.</p>
+    pub fn owning_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.owning_group_id(input.into());
+        self
+    }
+    /// <p>The ID of the owning group.</p>
+    pub fn set_owning_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_owning_group_id(input);
+        self
+    }
+    /// <p>The ID of the owning group.</p>
+    pub fn get_owning_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owning_group_id()
+    }
     /// <p>Specifies the way of sorting the results of this action.</p>
+    #[deprecated(note = "Results are always sorted by updatedAt", since = "Jan 31 2026")]
     pub fn sort_by(mut self, input: crate::types::SortKey) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
     /// <p>Specifies the way of sorting the results of this action.</p>
+    #[deprecated(note = "Results are always sorted by updatedAt", since = "Jan 31 2026")]
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortKey>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
     /// <p>Specifies the way of sorting the results of this action.</p>
+    #[deprecated(note = "Results are always sorted by updatedAt", since = "Jan 31 2026")]
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortKey> {
         self.inner.get_sort_by()
     }

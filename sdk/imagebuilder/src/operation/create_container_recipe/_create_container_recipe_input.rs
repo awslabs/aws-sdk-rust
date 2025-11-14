@@ -26,7 +26,7 @@ pub struct CreateContainerRecipeInput {
     /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub semantic_version: ::std::option::Option<::std::string::String>,
-    /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components included in the container recipe.</p>
     pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
     pub instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
@@ -83,7 +83,7 @@ impl CreateContainerRecipeInput {
     pub fn semantic_version(&self) -> ::std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
-    /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components included in the container recipe.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
     pub fn components(&self) -> &[crate::types::ComponentConfiguration] {
@@ -271,19 +271,19 @@ impl CreateContainerRecipeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
-    /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components included in the container recipe.</p>
     pub fn components(mut self, input: crate::types::ComponentConfiguration) -> Self {
         let mut v = self.components.unwrap_or_default();
         v.push(input);
         self.components = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components included in the container recipe.</p>
     pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
         self.components = input;
         self
     }
-    /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components included in the container recipe.</p>
     pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         &self.components
     }
