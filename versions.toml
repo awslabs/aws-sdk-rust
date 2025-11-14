@@ -2597,6 +2597,10 @@ source_hash = '79c54aa1c4ff4d7ac22b115b0414cdfbf8995738d94447b4d11f575b26c2ed98'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2f03d9858a328c7dc5aff24d62ac1e98c08a64dfd637a09e6cc98d93d8c84769'
+
+[release]
+tag = 'release-2025-11-14'
+
 [release.crates]
 aws-sdk-datazone = '1.114.0'
 aws-sdk-ec2 = '1.187.0'
