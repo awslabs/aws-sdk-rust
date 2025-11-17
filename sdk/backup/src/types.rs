@@ -21,6 +21,8 @@ pub use crate::types::_calculated_lifecycle::CalculatedLifecycle;
 
 pub use crate::types::_lifecycle::Lifecycle;
 
+pub use crate::types::_lifecycle_delete_after_event::LifecycleDeleteAfterEvent;
+
 pub use crate::types::_index::Index;
 
 pub use crate::types::_index_status::IndexStatus;
@@ -244,6 +246,8 @@ mod _legal_hold;
 mod _legal_hold_status;
 
 mod _lifecycle;
+
+mod _lifecycle_delete_after_event;
 
 mod _mpa_revoke_session_status;
 

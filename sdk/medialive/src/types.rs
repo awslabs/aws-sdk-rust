@@ -383,6 +383,10 @@ pub use crate::types::_video_codec_settings::VideoCodecSettings;
 
 pub use crate::types::_av1_settings::Av1Settings;
 
+pub use crate::types::_av1_temporal_aq::Av1TemporalAq;
+
+pub use crate::types::_av1_spatial_aq::Av1SpatialAq;
+
 pub use crate::types::_av1_rate_control_mode::Av1RateControlMode;
 
 pub use crate::types::_timecode_burnin_settings::TimecodeBurninSettings;
@@ -482,6 +486,8 @@ pub use crate::types::_bandwidth_reduction_filter_strength::BandwidthReductionFi
 pub use crate::types::_bandwidth_reduction_post_filter_sharpening::BandwidthReductionPostFilterSharpening;
 
 pub use crate::types::_h265_color_space_settings::H265ColorSpaceSettings;
+
+pub use crate::types::_hlg2020_settings::Hlg2020Settings;
 
 pub use crate::types::_dolby_vision81_settings::DolbyVision81Settings;
 
@@ -1433,6 +1439,10 @@ mod _av1_scene_change_detect;
 
 mod _av1_settings;
 
+mod _av1_spatial_aq;
+
+mod _av1_temporal_aq;
+
 mod _avail_blanking;
 
 mod _avail_blanking_state;
@@ -1840,6 +1850,8 @@ mod _h265_timecode_insertion_behavior;
 mod _h265_treeblock_size;
 
 mod _hdr10_settings;
+
+mod _hlg2020_settings;
 
 mod _hls_ad_markers;
 

@@ -102,6 +102,12 @@ pub fn ser_av1_settings(
             ::aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
+    if let Some(var_23) = &input.spatial_aq {
+        object.key("spatialAq").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.temporal_aq {
+        object.key("temporalAq").string(var_24.as_str());
+    }
     Ok(())
 }
 
@@ -250,6 +256,20 @@ where
                             builder = builder.set_min_bitrate(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "spatialAq" => {
+                            builder = builder.set_spatial_aq(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Av1SpatialAq::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "temporalAq" => {
+                            builder = builder.set_temporal_aq(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Av1TemporalAq::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

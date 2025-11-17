@@ -5,6 +5,13 @@
 pub struct GetIntegrationResourcePropertyOutput {
     /// <p>The connection ARN of the source, or the database ARN of the target.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The resource ARN created through this create API. The format is something like arn:aws:glue:<region>
+    /// :
+    /// <account_id>
+    /// :integrationresourceproperty/*
+    /// </account_id>
+    /// </region></p>
+    pub resource_property_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource properties associated with the integration source.</p>
     pub source_processing_properties: ::std::option::Option<crate::types::SourceProcessingProperties>,
     /// <p>The resource properties associated with the integration target.</p>
@@ -15,6 +22,15 @@ impl GetIntegrationResourcePropertyOutput {
     /// <p>The connection ARN of the source, or the database ARN of the target.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
+    }
+    /// <p>The resource ARN created through this create API. The format is something like arn:aws:glue:<region>
+    /// :
+    /// <account_id>
+    /// :integrationresourceproperty/*
+    /// </account_id>
+    /// </region></p>
+    pub fn resource_property_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_property_arn.as_deref()
     }
     /// <p>The resource properties associated with the integration source.</p>
     pub fn source_processing_properties(&self) -> ::std::option::Option<&crate::types::SourceProcessingProperties> {
@@ -42,6 +58,7 @@ impl GetIntegrationResourcePropertyOutput {
 #[non_exhaustive]
 pub struct GetIntegrationResourcePropertyOutputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_property_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_processing_properties: ::std::option::Option<crate::types::SourceProcessingProperties>,
     pub(crate) target_processing_properties: ::std::option::Option<crate::types::TargetProcessingProperties>,
     _request_id: Option<String>,
@@ -60,6 +77,35 @@ impl GetIntegrationResourcePropertyOutputBuilder {
     /// <p>The connection ARN of the source, or the database ARN of the target.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
+    }
+    /// <p>The resource ARN created through this create API. The format is something like arn:aws:glue:<region>
+    /// :
+    /// <account_id>
+    /// :integrationresourceproperty/*
+    /// </account_id>
+    /// </region></p>
+    pub fn resource_property_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_property_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The resource ARN created through this create API. The format is something like arn:aws:glue:<region>
+    /// :
+    /// <account_id>
+    /// :integrationresourceproperty/*
+    /// </account_id>
+    /// </region></p>
+    pub fn set_resource_property_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_property_arn = input;
+        self
+    }
+    /// <p>The resource ARN created through this create API. The format is something like arn:aws:glue:<region>
+    /// :
+    /// <account_id>
+    /// :integrationresourceproperty/*
+    /// </account_id>
+    /// </region></p>
+    pub fn get_resource_property_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_property_arn
     }
     /// <p>The resource properties associated with the integration source.</p>
     pub fn source_processing_properties(mut self, input: crate::types::SourceProcessingProperties) -> Self {
@@ -102,6 +148,7 @@ impl GetIntegrationResourcePropertyOutputBuilder {
     pub fn build(self) -> crate::operation::get_integration_resource_property::GetIntegrationResourcePropertyOutput {
         crate::operation::get_integration_resource_property::GetIntegrationResourcePropertyOutput {
             resource_arn: self.resource_arn,
+            resource_property_arn: self.resource_property_arn,
             source_processing_properties: self.source_processing_properties,
             target_processing_properties: self.target_processing_properties,
             _request_id: self._request_id,

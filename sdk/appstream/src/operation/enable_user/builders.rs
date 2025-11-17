@@ -22,7 +22,7 @@ impl crate::operation::enable_user::builders::EnableUserInputBuilder {
 }
 /// Fluent builder constructing a request to `EnableUser`.
 ///
-/// <p>Enables a user in the user pool. After being enabled, users can sign in to AppStream 2.0 and open applications from the stacks to which they are assigned.</p>
+/// <p>Enables a user in the user pool. After being enabled, users can sign in to WorkSpaces Applications and open applications from the stacks to which they are assigned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

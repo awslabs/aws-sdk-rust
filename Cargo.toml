@@ -1,9 +1,9 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/webassembly",
+    "tests/no-default-features",
     "tests/telemetry",
-    "tests/no-default-features"
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -297,6 +297,7 @@ members = [
     "sdk/mq",
     "sdk/mturk",
     "sdk/mwaa",
+    "sdk/mwaaserverless",
     "sdk/neptune",
     "sdk/neptunedata",
     "sdk/neptunegraph",

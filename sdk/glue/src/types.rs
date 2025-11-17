@@ -695,6 +695,10 @@ pub use crate::types::_schema_column::SchemaColumn;
 
 pub use crate::types::_transform_status_type::TransformStatusType;
 
+pub use crate::types::_integration_resource_property::IntegrationResourceProperty;
+
+pub use crate::types::_integration_resource_property_filter::IntegrationResourcePropertyFilter;
+
 pub use crate::types::_entity::Entity;
 
 pub use crate::types::_statistic_summary::StatisticSummary;
@@ -1580,6 +1584,10 @@ mod _integration_error;
 mod _integration_filter;
 
 mod _integration_partition;
+
+mod _integration_resource_property;
+
+mod _integration_resource_property_filter;
 
 mod _integration_status;
 

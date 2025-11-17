@@ -27,5 +27,11 @@ pub fn ser_cluster_slurm_configuration_request(
         crate::protocol_serde::shape_accounting_request::ser_accounting_request(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.slurm_rest {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("slurmRest").start_object();
+        crate::protocol_serde::shape_slurm_rest_request::ser_slurm_rest_request(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }

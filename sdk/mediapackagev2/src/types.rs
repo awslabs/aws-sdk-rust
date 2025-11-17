@@ -115,6 +115,8 @@ pub use crate::types::_ts_encryption_method::TsEncryptionMethod;
 
 pub use crate::types::_scte::Scte;
 
+pub use crate::types::_scte_in_segments::ScteInSegments;
+
 pub use crate::types::_scte_filter::ScteFilter;
 
 pub use crate::types::_container_type::ContainerType;
@@ -268,6 +270,8 @@ mod _scte_dash;
 mod _scte_filter;
 
 mod _scte_hls;
+
+mod _scte_in_segments;
 
 mod _segment;
 

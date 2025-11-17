@@ -201,6 +201,8 @@ pub use crate::types::_doc_db_data_provider_settings::DocDbDataProviderSettings;
 
 pub use crate::types::_microsoft_sql_server_data_provider_settings::MicrosoftSqlServerDataProviderSettings;
 
+pub use crate::types::_sybase_ase_data_provider_settings::SybaseAseDataProviderSettings;
+
 pub use crate::types::_oracle_data_provider_settings::OracleDataProviderSettings;
 
 pub use crate::types::_my_sql_data_provider_settings::MySqlDataProviderSettings;
@@ -246,6 +248,10 @@ pub use crate::types::_orderable_replication_instance::OrderableReplicationInsta
 pub use crate::types::_release_status_values::ReleaseStatusValues;
 
 pub use crate::types::_schema_conversion_request::SchemaConversionRequest;
+
+pub use crate::types::_progress::Progress;
+
+pub use crate::types::_processed_object::ProcessedObject;
 
 pub use crate::types::_export_sql_details::ExportSqlDetails;
 
@@ -489,6 +495,10 @@ mod _postgre_sql_settings;
 
 mod _premigration_assessment_status;
 
+mod _processed_object;
+
+mod _progress;
+
 mod _provision_data;
 
 mod _rds_configuration;
@@ -584,6 +594,8 @@ mod _statement_properties;
 mod _subnet;
 
 mod _supported_endpoint_type;
+
+mod _sybase_ase_data_provider_settings;
 
 mod _sybase_settings;
 

@@ -33,6 +33,12 @@ pub fn ser_h265_color_space_settings(
         crate::protocol_serde::shape_rec709_settings::ser_rec709_settings(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.hlg2020_settings {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("hlg2020Settings").start_object();
+        crate::protocol_serde::shape_hlg2020_settings::ser_hlg2020_settings(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }
 
@@ -69,6 +75,9 @@ where
                         }
                         "rec709Settings" => {
                             builder = builder.set_rec709_settings(crate::protocol_serde::shape_rec709_settings::de_rec709_settings(tokens)?);
+                        }
+                        "hlg2020Settings" => {
+                            builder = builder.set_hlg2020_settings(crate::protocol_serde::shape_hlg2020_settings::de_hlg2020_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

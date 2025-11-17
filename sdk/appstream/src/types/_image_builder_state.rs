@@ -15,6 +15,7 @@
 ///     ImageBuilderState::Deleting => { /* ... */ },
 ///     ImageBuilderState::Failed => { /* ... */ },
 ///     ImageBuilderState::Pending => { /* ... */ },
+///     ImageBuilderState::PendingImageImport => { /* ... */ },
 ///     ImageBuilderState::PendingQualification => { /* ... */ },
 ///     ImageBuilderState::PendingSyncingApps => { /* ... */ },
 ///     ImageBuilderState::Rebooting => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum ImageBuilderState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
+    PendingImageImport,
+    #[allow(missing_docs)] // documentation missing in model
     PendingQualification,
     #[allow(missing_docs)] // documentation missing in model
     PendingSyncingApps,
@@ -89,6 +92,7 @@ impl ::std::convert::From<&str> for ImageBuilderState {
             "DELETING" => ImageBuilderState::Deleting,
             "FAILED" => ImageBuilderState::Failed,
             "PENDING" => ImageBuilderState::Pending,
+            "PENDING_IMAGE_IMPORT" => ImageBuilderState::PendingImageImport,
             "PENDING_QUALIFICATION" => ImageBuilderState::PendingQualification,
             "PENDING_SYNCING_APPS" => ImageBuilderState::PendingSyncingApps,
             "REBOOTING" => ImageBuilderState::Rebooting,
@@ -117,6 +121,7 @@ impl ImageBuilderState {
             ImageBuilderState::Deleting => "DELETING",
             ImageBuilderState::Failed => "FAILED",
             ImageBuilderState::Pending => "PENDING",
+            ImageBuilderState::PendingImageImport => "PENDING_IMAGE_IMPORT",
             ImageBuilderState::PendingQualification => "PENDING_QUALIFICATION",
             ImageBuilderState::PendingSyncingApps => "PENDING_SYNCING_APPS",
             ImageBuilderState::Rebooting => "REBOOTING",
@@ -136,6 +141,7 @@ impl ImageBuilderState {
             "DELETING",
             "FAILED",
             "PENDING",
+            "PENDING_IMAGE_IMPORT",
             "PENDING_QUALIFICATION",
             "PENDING_SYNCING_APPS",
             "REBOOTING",
@@ -172,6 +178,7 @@ impl ::std::fmt::Display for ImageBuilderState {
             ImageBuilderState::Deleting => write!(f, "DELETING"),
             ImageBuilderState::Failed => write!(f, "FAILED"),
             ImageBuilderState::Pending => write!(f, "PENDING"),
+            ImageBuilderState::PendingImageImport => write!(f, "PENDING_IMAGE_IMPORT"),
             ImageBuilderState::PendingQualification => write!(f, "PENDING_QUALIFICATION"),
             ImageBuilderState::PendingSyncingApps => write!(f, "PENDING_SYNCING_APPS"),
             ImageBuilderState::Rebooting => write!(f, "REBOOTING"),

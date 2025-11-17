@@ -1082,6 +1082,15 @@ pub(crate) fn automated_reasoning_policy_definition_quality_report_correct_error
     builder
 }
 
+pub(crate) fn automated_reasoning_policy_generated_test_cases_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyGeneratedTestCasesBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyGeneratedTestCasesBuilder {
+    if builder.generated_test_cases.is_none() {
+        builder.generated_test_cases = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn automated_reasoning_policy_summary_correct_errors(
     mut builder: crate::types::builders::AutomatedReasoningPolicySummaryBuilder,
 ) -> crate::types::builders::AutomatedReasoningPolicySummaryBuilder {
@@ -1947,6 +1956,21 @@ pub(crate) fn automated_reasoning_policy_disjoint_rule_set_correct_errors(
     }
     if builder.rules.is_none() {
         builder.rules = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn automated_reasoning_policy_generated_test_case_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyGeneratedTestCaseBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyGeneratedTestCaseBuilder {
+    if builder.query_content.is_none() {
+        builder.query_content = Some(Default::default())
+    }
+    if builder.guard_content.is_none() {
+        builder.guard_content = Some(Default::default())
+    }
+    if builder.expected_aggregated_findings_result.is_none() {
+        builder.expected_aggregated_findings_result = "no value was set".parse::<crate::types::AutomatedReasoningCheckResult>().ok()
     }
     builder
 }

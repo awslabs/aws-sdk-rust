@@ -25,9 +25,13 @@ pub use crate::types::error::_entitlement_not_found_exception::EntitlementNotFou
 
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
 
+pub use crate::types::error::_dry_run_operation_exception::DryRunOperationException;
+
 pub use crate::types::error::_entitlement_already_exists_exception::EntitlementAlreadyExistsException;
 
 mod _concurrent_modification_exception;
+
+mod _dry_run_operation_exception;
 
 mod _entitlement_already_exists_exception;
 

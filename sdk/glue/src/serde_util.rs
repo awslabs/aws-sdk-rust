@@ -421,6 +421,15 @@ pub(crate) fn integration_correct_errors(mut builder: crate::types::builders::In
     builder
 }
 
+pub(crate) fn integration_resource_property_correct_errors(
+    mut builder: crate::types::builders::IntegrationResourcePropertyBuilder,
+) -> crate::types::builders::IntegrationResourcePropertyBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn json_classifier_correct_errors(
     mut builder: crate::types::builders::JsonClassifierBuilder,
 ) -> crate::types::builders::JsonClassifierBuilder {

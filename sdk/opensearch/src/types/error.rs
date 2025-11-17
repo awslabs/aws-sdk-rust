@@ -19,9 +19,11 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
-pub use crate::types::error::_invalid_type_exception::InvalidTypeException;
+pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_dependency_failure_exception::DependencyFailureException;
+
+pub use crate::types::error::_invalid_type_exception::InvalidTypeException;
 
 pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenException;
 
@@ -48,6 +50,8 @@ mod _resource_already_exists_exception;
 mod _resource_not_found_exception;
 
 mod _slot_not_available_exception;
+
+mod _throttling_exception;
 
 mod _validation_exception;
 

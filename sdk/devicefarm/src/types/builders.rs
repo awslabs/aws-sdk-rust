@@ -43,6 +43,8 @@ pub use crate::types::_counters::CountersBuilder;
 
 pub use crate::types::_remote_access_session::RemoteAccessSessionBuilder;
 
+pub use crate::types::_remote_access_endpoints::RemoteAccessEndpointsBuilder;
+
 pub use crate::types::_device::DeviceBuilder;
 
 pub use crate::types::_resolution::ResolutionBuilder;

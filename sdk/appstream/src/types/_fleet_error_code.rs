@@ -42,6 +42,7 @@
 ///     FleetErrorCode::StsDisabledInRegion => { /* ... */ },
 ///     FleetErrorCode::SubnetHasInsufficientIpAddresses => { /* ... */ },
 ///     FleetErrorCode::SubnetNotFound => { /* ... */ },
+///     FleetErrorCode::ValidationError => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -130,6 +131,8 @@ pub enum FleetErrorCode {
     SubnetHasInsufficientIpAddresses,
     #[allow(missing_docs)] // documentation missing in model
     SubnetNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationError,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -167,6 +170,7 @@ impl ::std::convert::From<&str> for FleetErrorCode {
             "STS_DISABLED_IN_REGION" => FleetErrorCode::StsDisabledInRegion,
             "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES" => FleetErrorCode::SubnetHasInsufficientIpAddresses,
             "SUBNET_NOT_FOUND" => FleetErrorCode::SubnetNotFound,
+            "VALIDATION_ERROR" => FleetErrorCode::ValidationError,
             other => FleetErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -212,6 +216,7 @@ impl FleetErrorCode {
             FleetErrorCode::StsDisabledInRegion => "STS_DISABLED_IN_REGION",
             FleetErrorCode::SubnetHasInsufficientIpAddresses => "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES",
             FleetErrorCode::SubnetNotFound => "SUBNET_NOT_FOUND",
+            FleetErrorCode::ValidationError => "VALIDATION_ERROR",
             FleetErrorCode::Unknown(value) => value.as_str(),
         }
     }
@@ -248,6 +253,7 @@ impl FleetErrorCode {
             "STS_DISABLED_IN_REGION",
             "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES",
             "SUBNET_NOT_FOUND",
+            "VALIDATION_ERROR",
         ]
     }
 }
@@ -303,6 +309,7 @@ impl ::std::fmt::Display for FleetErrorCode {
             FleetErrorCode::StsDisabledInRegion => write!(f, "STS_DISABLED_IN_REGION"),
             FleetErrorCode::SubnetHasInsufficientIpAddresses => write!(f, "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES"),
             FleetErrorCode::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),
+            FleetErrorCode::ValidationError => write!(f, "VALIDATION_ERROR"),
             FleetErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }

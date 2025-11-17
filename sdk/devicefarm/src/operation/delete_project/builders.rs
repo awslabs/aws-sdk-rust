@@ -22,8 +22,9 @@ impl crate::operation::delete_project::builders::DeleteProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteProject`.
 ///
-/// <p>Deletes an AWS Device Farm project, given the project ARN.</p>
-/// <p>Deleting this resource does not stop an in-progress run.</p>
+/// <p>Deletes an AWS Device Farm project, given the project ARN. You cannot delete a project if it has an active run or session.</p><important>
+/// <p>You cannot undo this operation.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

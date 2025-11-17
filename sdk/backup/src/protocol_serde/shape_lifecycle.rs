@@ -33,6 +33,13 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,
                             );
                         }
+                        "DeleteAfterEvent" => {
+                            builder = builder.set_delete_after_event(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LifecycleDeleteAfterEvent::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -68,6 +75,9 @@ pub fn ser_lifecycle(
     }
     if let Some(var_3) = &input.opt_in_to_archive_for_supported_resources {
         object.key("OptInToArchiveForSupportedResources").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.delete_after_event {
+        object.key("DeleteAfterEvent").string(var_4.as_str());
     }
     Ok(())
 }

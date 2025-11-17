@@ -14,6 +14,8 @@
 /// match imagestatechangereasoncode {
 ///     ImageStateChangeReasonCode::ImageBuilderNotAvailable => { /* ... */ },
 ///     ImageStateChangeReasonCode::ImageCopyFailure => { /* ... */ },
+///     ImageStateChangeReasonCode::ImageImportFailure => { /* ... */ },
+///     ImageStateChangeReasonCode::ImageUpdateFailure => { /* ... */ },
 ///     ImageStateChangeReasonCode::InternalError => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +50,10 @@ pub enum ImageStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ImageCopyFailure,
     #[allow(missing_docs)] // documentation missing in model
+    ImageImportFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    ImageUpdateFailure,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +64,8 @@ impl ::std::convert::From<&str> for ImageStateChangeReasonCode {
         match s {
             "IMAGE_BUILDER_NOT_AVAILABLE" => ImageStateChangeReasonCode::ImageBuilderNotAvailable,
             "IMAGE_COPY_FAILURE" => ImageStateChangeReasonCode::ImageCopyFailure,
+            "IMAGE_IMPORT_FAILURE" => ImageStateChangeReasonCode::ImageImportFailure,
+            "IMAGE_UPDATE_FAILURE" => ImageStateChangeReasonCode::ImageUpdateFailure,
             "INTERNAL_ERROR" => ImageStateChangeReasonCode::InternalError,
             other => ImageStateChangeReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +84,21 @@ impl ImageStateChangeReasonCode {
         match self {
             ImageStateChangeReasonCode::ImageBuilderNotAvailable => "IMAGE_BUILDER_NOT_AVAILABLE",
             ImageStateChangeReasonCode::ImageCopyFailure => "IMAGE_COPY_FAILURE",
+            ImageStateChangeReasonCode::ImageImportFailure => "IMAGE_IMPORT_FAILURE",
+            ImageStateChangeReasonCode::ImageUpdateFailure => "IMAGE_UPDATE_FAILURE",
             ImageStateChangeReasonCode::InternalError => "INTERNAL_ERROR",
             ImageStateChangeReasonCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IMAGE_BUILDER_NOT_AVAILABLE", "IMAGE_COPY_FAILURE", "INTERNAL_ERROR"]
+        &[
+            "IMAGE_BUILDER_NOT_AVAILABLE",
+            "IMAGE_COPY_FAILURE",
+            "IMAGE_IMPORT_FAILURE",
+            "IMAGE_UPDATE_FAILURE",
+            "INTERNAL_ERROR",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ImageStateChangeReasonCode {
@@ -107,6 +123,8 @@ impl ::std::fmt::Display for ImageStateChangeReasonCode {
         match self {
             ImageStateChangeReasonCode::ImageBuilderNotAvailable => write!(f, "IMAGE_BUILDER_NOT_AVAILABLE"),
             ImageStateChangeReasonCode::ImageCopyFailure => write!(f, "IMAGE_COPY_FAILURE"),
+            ImageStateChangeReasonCode::ImageImportFailure => write!(f, "IMAGE_IMPORT_FAILURE"),
+            ImageStateChangeReasonCode::ImageUpdateFailure => write!(f, "IMAGE_UPDATE_FAILURE"),
             ImageStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
             ImageStateChangeReasonCode::Unknown(value) => write!(f, "{value}"),
         }

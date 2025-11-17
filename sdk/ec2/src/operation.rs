@@ -937,6 +937,12 @@ pub mod describe_instance_event_windows;
 /// Types for the `DescribeInstanceImageMetadata` operation.
 pub mod describe_instance_image_metadata;
 
+/// Types for the `DescribeInstanceSqlHaHistoryStates` operation.
+pub mod describe_instance_sql_ha_history_states;
+
+/// Types for the `DescribeInstanceSqlHaStates` operation.
+pub mod describe_instance_sql_ha_states;
+
 /// Types for the `DescribeInstanceStatus` operation.
 pub mod describe_instance_status;
 
@@ -1330,6 +1336,9 @@ pub mod disable_image_deprecation;
 /// Types for the `DisableImageDeregistrationProtection` operation.
 pub mod disable_image_deregistration_protection;
 
+/// Types for the `DisableInstanceSqlHaStandbyDetections` operation.
+pub mod disable_instance_sql_ha_standby_detections;
+
 /// Types for the `DisableIpamOrganizationAdminAccount` operation.
 pub mod disable_ipam_organization_admin_account;
 
@@ -1440,6 +1449,9 @@ pub mod enable_image_deprecation;
 
 /// Types for the `EnableImageDeregistrationProtection` operation.
 pub mod enable_image_deregistration_protection;
+
+/// Types for the `EnableInstanceSqlHaStandbyDetections` operation.
+pub mod enable_instance_sql_ha_standby_detections;
 
 /// Types for the `EnableIpamOrganizationAdminAccount` operation.
 pub mod enable_ipam_organization_admin_account;

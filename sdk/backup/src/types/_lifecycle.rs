@@ -13,6 +13,8 @@ pub struct Lifecycle {
     pub delete_after_days: ::std::option::Option<i64>,
     /// <p>If the value is true, your backup plan transitions supported resources to archive (cold) storage tier in accordance with your lifecycle settings.</p>
     pub opt_in_to_archive_for_supported_resources: ::std::option::Option<bool>,
+    /// <p>The event after which a recovery point is deleted. A recovery point with both <code>DeleteAfterDays</code> and <code>DeleteAfterEvent</code> will delete after whichever condition is satisfied first. Not valid as an input.</p>
+    pub delete_after_event: ::std::option::Option<crate::types::LifecycleDeleteAfterEvent>,
 }
 impl Lifecycle {
     /// <p>The number of days after creation that a recovery point is moved to cold storage.</p>
@@ -26,6 +28,10 @@ impl Lifecycle {
     /// <p>If the value is true, your backup plan transitions supported resources to archive (cold) storage tier in accordance with your lifecycle settings.</p>
     pub fn opt_in_to_archive_for_supported_resources(&self) -> ::std::option::Option<bool> {
         self.opt_in_to_archive_for_supported_resources
+    }
+    /// <p>The event after which a recovery point is deleted. A recovery point with both <code>DeleteAfterDays</code> and <code>DeleteAfterEvent</code> will delete after whichever condition is satisfied first. Not valid as an input.</p>
+    pub fn delete_after_event(&self) -> ::std::option::Option<&crate::types::LifecycleDeleteAfterEvent> {
+        self.delete_after_event.as_ref()
     }
 }
 impl Lifecycle {
@@ -42,6 +48,7 @@ pub struct LifecycleBuilder {
     pub(crate) move_to_cold_storage_after_days: ::std::option::Option<i64>,
     pub(crate) delete_after_days: ::std::option::Option<i64>,
     pub(crate) opt_in_to_archive_for_supported_resources: ::std::option::Option<bool>,
+    pub(crate) delete_after_event: ::std::option::Option<crate::types::LifecycleDeleteAfterEvent>,
 }
 impl LifecycleBuilder {
     /// <p>The number of days after creation that a recovery point is moved to cold storage.</p>
@@ -86,12 +93,27 @@ impl LifecycleBuilder {
     pub fn get_opt_in_to_archive_for_supported_resources(&self) -> &::std::option::Option<bool> {
         &self.opt_in_to_archive_for_supported_resources
     }
+    /// <p>The event after which a recovery point is deleted. A recovery point with both <code>DeleteAfterDays</code> and <code>DeleteAfterEvent</code> will delete after whichever condition is satisfied first. Not valid as an input.</p>
+    pub fn delete_after_event(mut self, input: crate::types::LifecycleDeleteAfterEvent) -> Self {
+        self.delete_after_event = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The event after which a recovery point is deleted. A recovery point with both <code>DeleteAfterDays</code> and <code>DeleteAfterEvent</code> will delete after whichever condition is satisfied first. Not valid as an input.</p>
+    pub fn set_delete_after_event(mut self, input: ::std::option::Option<crate::types::LifecycleDeleteAfterEvent>) -> Self {
+        self.delete_after_event = input;
+        self
+    }
+    /// <p>The event after which a recovery point is deleted. A recovery point with both <code>DeleteAfterDays</code> and <code>DeleteAfterEvent</code> will delete after whichever condition is satisfied first. Not valid as an input.</p>
+    pub fn get_delete_after_event(&self) -> &::std::option::Option<crate::types::LifecycleDeleteAfterEvent> {
+        &self.delete_after_event
+    }
     /// Consumes the builder and constructs a [`Lifecycle`](crate::types::Lifecycle).
     pub fn build(self) -> crate::types::Lifecycle {
         crate::types::Lifecycle {
             move_to_cold_storage_after_days: self.move_to_cold_storage_after_days,
             delete_after_days: self.delete_after_days,
             opt_in_to_archive_for_supported_resources: self.opt_in_to_archive_for_supported_resources,
+            delete_after_event: self.delete_after_event,
         }
     }
 }

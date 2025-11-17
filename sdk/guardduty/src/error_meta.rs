@@ -1871,6 +1871,36 @@ impl From<crate::operation::list_trusted_entity_sets::ListTrustedEntitySetsError
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_object_malware_scan::SendObjectMalwareScanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_object_malware_scan::SendObjectMalwareScanError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_object_malware_scan::SendObjectMalwareScanError> for Error {
+    fn from(err: crate::operation::send_object_malware_scan::SendObjectMalwareScanError) -> Self {
+        match err {
+            crate::operation::send_object_malware_scan::SendObjectMalwareScanError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::send_object_malware_scan::SendObjectMalwareScanError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::send_object_malware_scan::SendObjectMalwareScanError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::send_object_malware_scan::SendObjectMalwareScanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_malware_scan::StartMalwareScanError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

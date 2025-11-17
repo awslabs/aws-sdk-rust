@@ -410,4 +410,18 @@ impl ListCopyJobsFluentBuilder {
     pub fn get_by_message_category(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_message_category()
     }
+    /// <p>Filters copy jobs by the specified source recovery point ARN.</p>
+    pub fn by_source_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.by_source_recovery_point_arn(input.into());
+        self
+    }
+    /// <p>Filters copy jobs by the specified source recovery point ARN.</p>
+    pub fn set_by_source_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_by_source_recovery_point_arn(input);
+        self
+    }
+    /// <p>Filters copy jobs by the specified source recovery point ARN.</p>
+    pub fn get_by_source_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_source_recovery_point_arn()
+    }
 }

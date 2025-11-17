@@ -5,6 +5,8 @@
 pub struct StartBackupJobInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of a logically air-gapped vault. ARN must be in the same account and Region. If provided, supported fully managed resources back up directly to logically air-gapped vault, while other supported resources create a temporary (billable) snapshot in backup vault, then copy it to logically air-gapped vault. Unsupported resources only back up to the specified backup vault.</p>
+    pub logically_air_gapped_backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
@@ -45,6 +47,10 @@ impl StartBackupJobInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
         self.backup_vault_name.as_deref()
+    }
+    /// <p>The ARN of a logically air-gapped vault. ARN must be in the same account and Region. If provided, supported fully managed resources back up directly to logically air-gapped vault, while other supported resources create a temporary (billable) snapshot in backup vault, then copy it to logically air-gapped vault. Unsupported resources only back up to the specified backup vault.</p>
+    pub fn logically_air_gapped_backup_vault_arn(&self) -> ::std::option::Option<&str> {
+        self.logically_air_gapped_backup_vault_arn.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
@@ -104,6 +110,7 @@ impl ::std::fmt::Debug for StartBackupJobInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartBackupJobInput");
         formatter.field("backup_vault_name", &self.backup_vault_name);
+        formatter.field("logically_air_gapped_backup_vault_arn", &self.logically_air_gapped_backup_vault_arn);
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("iam_role_arn", &self.iam_role_arn);
         formatter.field("idempotency_token", &self.idempotency_token);
@@ -128,6 +135,7 @@ impl StartBackupJobInput {
 #[non_exhaustive]
 pub struct StartBackupJobInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
+    pub(crate) logically_air_gapped_backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
@@ -153,6 +161,20 @@ impl StartBackupJobInputBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
+    }
+    /// <p>The ARN of a logically air-gapped vault. ARN must be in the same account and Region. If provided, supported fully managed resources back up directly to logically air-gapped vault, while other supported resources create a temporary (billable) snapshot in backup vault, then copy it to logically air-gapped vault. Unsupported resources only back up to the specified backup vault.</p>
+    pub fn logically_air_gapped_backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.logically_air_gapped_backup_vault_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of a logically air-gapped vault. ARN must be in the same account and Region. If provided, supported fully managed resources back up directly to logically air-gapped vault, while other supported resources create a temporary (billable) snapshot in backup vault, then copy it to logically air-gapped vault. Unsupported resources only back up to the specified backup vault.</p>
+    pub fn set_logically_air_gapped_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.logically_air_gapped_backup_vault_arn = input;
+        self
+    }
+    /// <p>The ARN of a logically air-gapped vault. ARN must be in the same account and Region. If provided, supported fully managed resources back up directly to logically air-gapped vault, while other supported resources create a temporary (billable) snapshot in backup vault, then copy it to logically air-gapped vault. Unsupported resources only back up to the specified backup vault.</p>
+    pub fn get_logically_air_gapped_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logically_air_gapped_backup_vault_arn
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     /// This field is required.
@@ -365,6 +387,7 @@ impl StartBackupJobInputBuilder {
     ) -> ::std::result::Result<crate::operation::start_backup_job::StartBackupJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_backup_job::StartBackupJobInput {
             backup_vault_name: self.backup_vault_name,
+            logically_air_gapped_backup_vault_arn: self.logically_air_gapped_backup_vault_arn,
             resource_arn: self.resource_arn,
             iam_role_arn: self.iam_role_arn,
             idempotency_token: self.idempotency_token,
@@ -381,6 +404,7 @@ impl ::std::fmt::Debug for StartBackupJobInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartBackupJobInputBuilder");
         formatter.field("backup_vault_name", &self.backup_vault_name);
+        formatter.field("logically_air_gapped_backup_vault_arn", &self.logically_air_gapped_backup_vault_arn);
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("iam_role_arn", &self.iam_role_arn);
         formatter.field("idempotency_token", &self.idempotency_token);

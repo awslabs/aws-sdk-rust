@@ -493,6 +493,8 @@ pub(crate) mod shape_automated_reasoning_policy_delete_type_annotation;
 
 pub(crate) mod shape_automated_reasoning_policy_delete_variable_annotation;
 
+pub(crate) mod shape_automated_reasoning_policy_generated_test_cases;
+
 pub(crate) mod shape_automated_reasoning_policy_ingest_content_annotation;
 
 pub(crate) mod shape_automated_reasoning_policy_summary;
@@ -659,6 +661,8 @@ pub(crate) mod shape_automated_reasoning_policy_definition_variable_name_list;
 
 pub(crate) mod shape_automated_reasoning_policy_disjoint_rule_set_list;
 
+pub(crate) mod shape_automated_reasoning_policy_generated_test_case_list;
+
 pub(crate) mod shape_automated_reasoning_policy_type_value_annotation;
 
 pub(crate) mod shape_evaluation_bedrock_knowledge_base_identifiers;
@@ -742,6 +746,8 @@ pub(crate) mod shape_automated_reasoning_policy_definition_type_value_pair;
 pub(crate) mod shape_automated_reasoning_policy_delete_type_value;
 
 pub(crate) mod shape_automated_reasoning_policy_disjoint_rule_set;
+
+pub(crate) mod shape_automated_reasoning_policy_generated_test_case;
 
 pub(crate) mod shape_automated_reasoning_policy_type_value_annotation_list;
 

@@ -24,6 +24,8 @@ pub enum DataProviderSettings {
     PostgreSqlSettings(crate::types::PostgreSqlDataProviderSettings),
     /// <p>Provides information that defines an Amazon Redshift data provider.</p>
     RedshiftSettings(crate::types::RedshiftDataProviderSettings),
+    /// <p>Provides information that defines an SAP ASE data provider.</p>
+    SybaseAseSettings(crate::types::SybaseAseDataProviderSettings),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -164,6 +166,19 @@ impl DataProviderSettings {
     /// Returns true if this is a [`RedshiftSettings`](crate::types::DataProviderSettings::RedshiftSettings).
     pub fn is_redshift_settings(&self) -> bool {
         self.as_redshift_settings().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SybaseAseSettings`](crate::types::DataProviderSettings::SybaseAseSettings), extracting the inner [`SybaseAseDataProviderSettings`](crate::types::SybaseAseDataProviderSettings).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_sybase_ase_settings(&self) -> ::std::result::Result<&crate::types::SybaseAseDataProviderSettings, &Self> {
+        if let DataProviderSettings::SybaseAseSettings(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SybaseAseSettings`](crate::types::DataProviderSettings::SybaseAseSettings).
+    pub fn is_sybase_ase_settings(&self) -> bool {
+        self.as_sybase_ase_settings().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

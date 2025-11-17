@@ -9,6 +9,8 @@ pub struct CreateIntegrationResourcePropertyInput {
     pub source_processing_properties: ::std::option::Option<crate::types::SourceProcessingProperties>,
     /// <p>The resource properties associated with the integration target.</p>
     pub target_processing_properties: ::std::option::Option<crate::types::TargetProcessingProperties>,
+    /// <p>Metadata assigned to the resource consisting of a list of key-value pairs.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateIntegrationResourcePropertyInput {
     /// <p>The connection ARN of the source, or the database ARN of the target.</p>
@@ -22,6 +24,12 @@ impl CreateIntegrationResourcePropertyInput {
     /// <p>The resource properties associated with the integration target.</p>
     pub fn target_processing_properties(&self) -> ::std::option::Option<&crate::types::TargetProcessingProperties> {
         self.target_processing_properties.as_ref()
+    }
+    /// <p>Metadata assigned to the resource consisting of a list of key-value pairs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl CreateIntegrationResourcePropertyInput {
@@ -38,6 +46,7 @@ pub struct CreateIntegrationResourcePropertyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_processing_properties: ::std::option::Option<crate::types::SourceProcessingProperties>,
     pub(crate) target_processing_properties: ::std::option::Option<crate::types::TargetProcessingProperties>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateIntegrationResourcePropertyInputBuilder {
     /// <p>The connection ARN of the source, or the database ARN of the target.</p>
@@ -83,6 +92,26 @@ impl CreateIntegrationResourcePropertyInputBuilder {
     pub fn get_target_processing_properties(&self) -> &::std::option::Option<crate::types::TargetProcessingProperties> {
         &self.target_processing_properties
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Metadata assigned to the resource consisting of a list of key-value pairs.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Metadata assigned to the resource consisting of a list of key-value pairs.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Metadata assigned to the resource consisting of a list of key-value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateIntegrationResourcePropertyInput`](crate::operation::create_integration_resource_property::CreateIntegrationResourcePropertyInput).
     pub fn build(
         self,
@@ -95,6 +124,7 @@ impl CreateIntegrationResourcePropertyInputBuilder {
                 resource_arn: self.resource_arn,
                 source_processing_properties: self.source_processing_properties,
                 target_processing_properties: self.target_processing_properties,
+                tags: self.tags,
             },
         )
     }

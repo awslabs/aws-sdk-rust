@@ -22,7 +22,7 @@ impl crate::operation::update_directory_config::builders::UpdateDirectoryConfigI
 }
 /// Fluent builder constructing a request to `UpdateDirectoryConfig`.
 ///
-/// <p>Updates the specified Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
+/// <p>Updates the specified Directory Config object in WorkSpaces Applications. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDirectoryConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

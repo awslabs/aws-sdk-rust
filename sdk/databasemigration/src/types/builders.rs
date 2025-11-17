@@ -123,6 +123,8 @@ pub use crate::types::_doc_db_data_provider_settings::DocDbDataProviderSettingsB
 
 pub use crate::types::_microsoft_sql_server_data_provider_settings::MicrosoftSqlServerDataProviderSettingsBuilder;
 
+pub use crate::types::_sybase_ase_data_provider_settings::SybaseAseDataProviderSettingsBuilder;
+
 pub use crate::types::_oracle_data_provider_settings::OracleDataProviderSettingsBuilder;
 
 pub use crate::types::_my_sql_data_provider_settings::MySqlDataProviderSettingsBuilder;
@@ -164,6 +166,10 @@ pub use crate::types::_pending_maintenance_action::PendingMaintenanceActionBuild
 pub use crate::types::_orderable_replication_instance::OrderableReplicationInstanceBuilder;
 
 pub use crate::types::_schema_conversion_request::SchemaConversionRequestBuilder;
+
+pub use crate::types::_progress::ProgressBuilder;
+
+pub use crate::types::_processed_object::ProcessedObjectBuilder;
 
 pub use crate::types::_export_sql_details::ExportSqlDetailsBuilder;
 

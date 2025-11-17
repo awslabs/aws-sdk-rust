@@ -13,6 +13,7 @@
 /// # let dnsthreatprotection = unimplemented!();
 /// match dnsthreatprotection {
 ///     DnsThreatProtection::Dga => { /* ... */ },
+///     DnsThreatProtection::DictionaryDga => { /* ... */ },
 ///     DnsThreatProtection::DnsTunneling => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum DnsThreatProtection {
     #[allow(missing_docs)] // documentation missing in model
     Dga,
     #[allow(missing_docs)] // documentation missing in model
+    DictionaryDga,
+    #[allow(missing_docs)] // documentation missing in model
     DnsTunneling,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for DnsThreatProtection {
     fn from(s: &str) -> Self {
         match s {
             "DGA" => DnsThreatProtection::Dga,
+            "DICTIONARY_DGA" => DnsThreatProtection::DictionaryDga,
             "DNS_TUNNELING" => DnsThreatProtection::DnsTunneling,
             other => DnsThreatProtection::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl DnsThreatProtection {
     pub fn as_str(&self) -> &str {
         match self {
             DnsThreatProtection::Dga => "DGA",
+            DnsThreatProtection::DictionaryDga => "DICTIONARY_DGA",
             DnsThreatProtection::DnsTunneling => "DNS_TUNNELING",
             DnsThreatProtection::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DGA", "DNS_TUNNELING"]
+        &["DGA", "DICTIONARY_DGA", "DNS_TUNNELING"]
     }
 }
 impl ::std::convert::AsRef<str> for DnsThreatProtection {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for DnsThreatProtection {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DnsThreatProtection::Dga => write!(f, "DGA"),
+            DnsThreatProtection::DictionaryDga => write!(f, "DICTIONARY_DGA"),
             DnsThreatProtection::DnsTunneling => write!(f, "DNS_TUNNELING"),
             DnsThreatProtection::Unknown(value) => write!(f, "{value}"),
         }

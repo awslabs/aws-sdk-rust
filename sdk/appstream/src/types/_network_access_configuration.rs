@@ -6,7 +6,7 @@
 pub struct NetworkAccessConfiguration {
     /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
     pub eni_private_ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>The IPv6 addresses of the elastic network interface that is attached to instances in your VPC.</p>
+    /// <p>The IPv6 addresses assigned to the elastic network interface. This field supports IPv6 connectivity for WorkSpaces Applications instances.</p>
     pub eni_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
     pub eni_id: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl NetworkAccessConfiguration {
     pub fn eni_private_ip_address(&self) -> ::std::option::Option<&str> {
         self.eni_private_ip_address.as_deref()
     }
-    /// <p>The IPv6 addresses of the elastic network interface that is attached to instances in your VPC.</p>
+    /// <p>The IPv6 addresses assigned to the elastic network interface. This field supports IPv6 connectivity for WorkSpaces Applications instances.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eni_ipv6_addresses.is_none()`.
     pub fn eni_ipv6_addresses(&self) -> &[::std::string::String] {
@@ -61,19 +61,19 @@ impl NetworkAccessConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_eni_ipv6_addresses`](Self::set_eni_ipv6_addresses).
     ///
-    /// <p>The IPv6 addresses of the elastic network interface that is attached to instances in your VPC.</p>
+    /// <p>The IPv6 addresses assigned to the elastic network interface. This field supports IPv6 connectivity for WorkSpaces Applications instances.</p>
     pub fn eni_ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.eni_ipv6_addresses.unwrap_or_default();
         v.push(input.into());
         self.eni_ipv6_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IPv6 addresses of the elastic network interface that is attached to instances in your VPC.</p>
+    /// <p>The IPv6 addresses assigned to the elastic network interface. This field supports IPv6 connectivity for WorkSpaces Applications instances.</p>
     pub fn set_eni_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.eni_ipv6_addresses = input;
         self
     }
-    /// <p>The IPv6 addresses of the elastic network interface that is attached to instances in your VPC.</p>
+    /// <p>The IPv6 addresses assigned to the elastic network interface. This field supports IPv6 connectivity for WorkSpaces Applications instances.</p>
     pub fn get_eni_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.eni_ipv6_addresses
     }

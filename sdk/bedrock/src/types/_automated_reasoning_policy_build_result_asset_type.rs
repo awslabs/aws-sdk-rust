@@ -13,6 +13,7 @@
 /// # let automatedreasoningpolicybuildresultassettype = unimplemented!();
 /// match automatedreasoningpolicybuildresultassettype {
 ///     AutomatedReasoningPolicyBuildResultAssetType::BuildLog => { /* ... */ },
+///     AutomatedReasoningPolicyBuildResultAssetType::GeneratedTestCases => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildResultAssetType::PolicyDefinition => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildResultAssetType::QualityReport => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum AutomatedReasoningPolicyBuildResultAssetType {
     #[allow(missing_docs)] // documentation missing in model
     BuildLog,
     #[allow(missing_docs)] // documentation missing in model
+    GeneratedTestCases,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyDefinition,
     #[allow(missing_docs)] // documentation missing in model
     QualityReport,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for AutomatedReasoningPolicyBuildResultAssetType
     fn from(s: &str) -> Self {
         match s {
             "BUILD_LOG" => AutomatedReasoningPolicyBuildResultAssetType::BuildLog,
+            "GENERATED_TEST_CASES" => AutomatedReasoningPolicyBuildResultAssetType::GeneratedTestCases,
             "POLICY_DEFINITION" => AutomatedReasoningPolicyBuildResultAssetType::PolicyDefinition,
             "QUALITY_REPORT" => AutomatedReasoningPolicyBuildResultAssetType::QualityReport,
             other => {
@@ -77,6 +81,7 @@ impl AutomatedReasoningPolicyBuildResultAssetType {
     pub fn as_str(&self) -> &str {
         match self {
             AutomatedReasoningPolicyBuildResultAssetType::BuildLog => "BUILD_LOG",
+            AutomatedReasoningPolicyBuildResultAssetType::GeneratedTestCases => "GENERATED_TEST_CASES",
             AutomatedReasoningPolicyBuildResultAssetType::PolicyDefinition => "POLICY_DEFINITION",
             AutomatedReasoningPolicyBuildResultAssetType::QualityReport => "QUALITY_REPORT",
             AutomatedReasoningPolicyBuildResultAssetType::Unknown(value) => value.as_str(),
@@ -84,7 +89,7 @@ impl AutomatedReasoningPolicyBuildResultAssetType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BUILD_LOG", "POLICY_DEFINITION", "QUALITY_REPORT"]
+        &["BUILD_LOG", "GENERATED_TEST_CASES", "POLICY_DEFINITION", "QUALITY_REPORT"]
     }
 }
 impl ::std::convert::AsRef<str> for AutomatedReasoningPolicyBuildResultAssetType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for AutomatedReasoningPolicyBuildResultAssetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AutomatedReasoningPolicyBuildResultAssetType::BuildLog => write!(f, "BUILD_LOG"),
+            AutomatedReasoningPolicyBuildResultAssetType::GeneratedTestCases => write!(f, "GENERATED_TEST_CASES"),
             AutomatedReasoningPolicyBuildResultAssetType::PolicyDefinition => write!(f, "POLICY_DEFINITION"),
             AutomatedReasoningPolicyBuildResultAssetType::QualityReport => write!(f, "QUALITY_REPORT"),
             AutomatedReasoningPolicyBuildResultAssetType::Unknown(value) => write!(f, "{value}"),

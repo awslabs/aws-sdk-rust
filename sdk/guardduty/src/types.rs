@@ -85,6 +85,8 @@ pub use crate::types::_detector_feature::DetectorFeature;
 
 pub use crate::types::_finding_publishing_frequency::FindingPublishingFrequency;
 
+pub use crate::types::_s3_object_for_send_object_malware_scan::S3ObjectForSendObjectMalwareScan;
+
 pub use crate::types::_destination::Destination;
 
 pub use crate::types::_publishing_status::PublishingStatus;
@@ -1000,6 +1002,8 @@ mod _s3_logs_configuration_result;
 mod _s3_object;
 
 mod _s3_object_detail;
+
+mod _s3_object_for_send_object_malware_scan;
 
 mod _scan;
 

@@ -85,6 +85,24 @@ pub(crate) fn entitlement_correct_errors(mut builder: crate::types::builders::En
     builder
 }
 
+pub(crate) fn export_image_task_correct_errors(
+    mut builder: crate::types::builders::ExportImageTaskBuilder,
+) -> crate::types::builders::ExportImageTaskBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.image_arn.is_none() {
+        builder.image_arn = Some(Default::default())
+    }
+    if builder.ami_name.is_none() {
+        builder.ami_name = Some(Default::default())
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn fleet_correct_errors(mut builder: crate::types::builders::FleetBuilder) -> crate::types::builders::FleetBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())

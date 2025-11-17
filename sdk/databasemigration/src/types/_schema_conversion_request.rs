@@ -14,6 +14,8 @@ pub struct SchemaConversionRequest {
     pub error: ::std::option::Option<crate::types::ErrorDetails>,
     /// <p>Provides information about a metadata model assessment exported to SQL.</p>
     pub export_sql_details: ::std::option::Option<crate::types::ExportSqlDetails>,
+    /// <p>Provides information about the progress of the schema conversion operation.</p>
+    pub progress: ::std::option::Option<crate::types::Progress>,
 }
 impl SchemaConversionRequest {
     /// <p>The schema conversion action status.</p>
@@ -36,6 +38,10 @@ impl SchemaConversionRequest {
     pub fn export_sql_details(&self) -> ::std::option::Option<&crate::types::ExportSqlDetails> {
         self.export_sql_details.as_ref()
     }
+    /// <p>Provides information about the progress of the schema conversion operation.</p>
+    pub fn progress(&self) -> ::std::option::Option<&crate::types::Progress> {
+        self.progress.as_ref()
+    }
 }
 impl SchemaConversionRequest {
     /// Creates a new builder-style object to manufacture [`SchemaConversionRequest`](crate::types::SchemaConversionRequest).
@@ -53,6 +59,7 @@ pub struct SchemaConversionRequestBuilder {
     pub(crate) migration_project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<crate::types::ErrorDetails>,
     pub(crate) export_sql_details: ::std::option::Option<crate::types::ExportSqlDetails>,
+    pub(crate) progress: ::std::option::Option<crate::types::Progress>,
 }
 impl SchemaConversionRequestBuilder {
     /// <p>The schema conversion action status.</p>
@@ -125,6 +132,20 @@ impl SchemaConversionRequestBuilder {
     pub fn get_export_sql_details(&self) -> &::std::option::Option<crate::types::ExportSqlDetails> {
         &self.export_sql_details
     }
+    /// <p>Provides information about the progress of the schema conversion operation.</p>
+    pub fn progress(mut self, input: crate::types::Progress) -> Self {
+        self.progress = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides information about the progress of the schema conversion operation.</p>
+    pub fn set_progress(mut self, input: ::std::option::Option<crate::types::Progress>) -> Self {
+        self.progress = input;
+        self
+    }
+    /// <p>Provides information about the progress of the schema conversion operation.</p>
+    pub fn get_progress(&self) -> &::std::option::Option<crate::types::Progress> {
+        &self.progress
+    }
     /// Consumes the builder and constructs a [`SchemaConversionRequest`](crate::types::SchemaConversionRequest).
     pub fn build(self) -> crate::types::SchemaConversionRequest {
         crate::types::SchemaConversionRequest {
@@ -133,6 +154,7 @@ impl SchemaConversionRequestBuilder {
             migration_project_arn: self.migration_project_arn,
             error: self.error,
             export_sql_details: self.export_sql_details,
+            progress: self.progress,
         }
     }
 }

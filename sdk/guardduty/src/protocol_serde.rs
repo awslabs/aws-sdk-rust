@@ -155,6 +155,8 @@ pub(crate) mod shape_list_threat_intel_sets;
 
 pub(crate) mod shape_list_trusted_entity_sets;
 
+pub(crate) mod shape_send_object_malware_scan;
+
 pub(crate) mod shape_start_malware_scan;
 
 pub(crate) mod shape_start_monitoring_members;
@@ -269,6 +271,8 @@ pub(crate) mod shape_list_findings_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_send_object_malware_scan_input;
+
 pub(crate) mod shape_start_malware_scan_input;
 
 pub(crate) mod shape_start_monitoring_members_input;
@@ -374,6 +378,8 @@ pub(crate) mod shape_organization_details;
 pub(crate) mod shape_organization_feature_configuration;
 
 pub(crate) mod shape_organization_features_configurations_results;
+
+pub(crate) mod shape_s3_object_for_send_object_malware_scan;
 
 pub(crate) mod shape_scan_resource_criteria;
 

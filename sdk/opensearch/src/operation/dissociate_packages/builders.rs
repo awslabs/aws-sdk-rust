@@ -22,7 +22,7 @@ impl crate::operation::dissociate_packages::builders::DissociatePackagesInputBui
 }
 /// Fluent builder constructing a request to `DissociatePackages`.
 ///
-/// <p>Dissociates multiple packages from a domain simulatneously.</p>
+/// <p>Dissociates multiple packages from a domain simultaneously.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DissociatePackagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

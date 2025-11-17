@@ -8,6 +8,8 @@ pub struct BackupRule {
     pub rule_name: ::std::string::String,
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub target_backup_vault_name: ::std::string::String,
+    /// <p>The ARN of a logically air-gapped vault. ARN must be in the same account and Region. If provided, supported fully managed resources back up directly to logically air-gapped vault, while other supported resources create a temporary (billable) snapshot in backup vault, then copy it to logically air-gapped vault. Unsupported resources only back up to the specified backup vault.</p>
+    pub target_logically_air_gapped_backup_vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     /// <p>For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
     /// <p>Two examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take a backup every day at 12 noon UTC).</p>
@@ -47,6 +49,10 @@ impl BackupRule {
     pub fn target_backup_vault_name(&self) -> &str {
         use std::ops::Deref;
         self.target_backup_vault_name.deref()
+    }
+    /// <p>The ARN of a logically air-gapped vault. ARN must be in the same account and Region. If provided, supported fully managed resources back up directly to logically air-gapped vault, while other supported resources create a temporary (billable) snapshot in backup vault, then copy it to logically air-gapped vault. Unsupported resources only back up to the specified backup vault.</p>
+    pub fn target_logically_air_gapped_backup_vault_arn(&self) -> ::std::option::Option<&str> {
+        self.target_logically_air_gapped_backup_vault_arn.as_deref()
     }
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     /// <p>For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
@@ -106,6 +112,10 @@ impl ::std::fmt::Debug for BackupRule {
         let mut formatter = f.debug_struct("BackupRule");
         formatter.field("rule_name", &self.rule_name);
         formatter.field("target_backup_vault_name", &self.target_backup_vault_name);
+        formatter.field(
+            "target_logically_air_gapped_backup_vault_arn",
+            &self.target_logically_air_gapped_backup_vault_arn,
+        );
         formatter.field("schedule_expression", &self.schedule_expression);
         formatter.field("start_window_minutes", &self.start_window_minutes);
         formatter.field("completion_window_minutes", &self.completion_window_minutes);
@@ -132,6 +142,7 @@ impl BackupRule {
 pub struct BackupRuleBuilder {
     pub(crate) rule_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_backup_vault_name: ::std::option::Option<::std::string::String>,
+    pub(crate) target_logically_air_gapped_backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
     pub(crate) start_window_minutes: ::std::option::Option<i64>,
     pub(crate) completion_window_minutes: ::std::option::Option<i64>,
@@ -173,6 +184,20 @@ impl BackupRuleBuilder {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.</p>
     pub fn get_target_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_backup_vault_name
+    }
+    /// <p>The ARN of a logically air-gapped vault. ARN must be in the same account and Region. If provided, supported fully managed resources back up directly to logically air-gapped vault, while other supported resources create a temporary (billable) snapshot in backup vault, then copy it to logically air-gapped vault. Unsupported resources only back up to the specified backup vault.</p>
+    pub fn target_logically_air_gapped_backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_logically_air_gapped_backup_vault_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of a logically air-gapped vault. ARN must be in the same account and Region. If provided, supported fully managed resources back up directly to logically air-gapped vault, while other supported resources create a temporary (billable) snapshot in backup vault, then copy it to logically air-gapped vault. Unsupported resources only back up to the specified backup vault.</p>
+    pub fn set_target_logically_air_gapped_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_logically_air_gapped_backup_vault_arn = input;
+        self
+    }
+    /// <p>The ARN of a logically air-gapped vault. ARN must be in the same account and Region. If provided, supported fully managed resources back up directly to logically air-gapped vault, while other supported resources create a temporary (billable) snapshot in backup vault, then copy it to logically air-gapped vault. Unsupported resources only back up to the specified backup vault.</p>
+    pub fn get_target_logically_air_gapped_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_logically_air_gapped_backup_vault_arn
     }
     /// <p>A cron expression in UTC specifying when Backup initiates a backup job. When no CRON expression is provided, Backup will use the default expression <code>cron(0 5 ? * * *)</code>.</p>
     /// <p>For more information about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
@@ -381,6 +406,7 @@ impl BackupRuleBuilder {
                     "target_backup_vault_name was not specified but it is required when building BackupRule",
                 )
             })?,
+            target_logically_air_gapped_backup_vault_arn: self.target_logically_air_gapped_backup_vault_arn,
             schedule_expression: self.schedule_expression,
             start_window_minutes: self.start_window_minutes,
             completion_window_minutes: self.completion_window_minutes,
@@ -399,6 +425,10 @@ impl ::std::fmt::Debug for BackupRuleBuilder {
         let mut formatter = f.debug_struct("BackupRuleBuilder");
         formatter.field("rule_name", &self.rule_name);
         formatter.field("target_backup_vault_name", &self.target_backup_vault_name);
+        formatter.field(
+            "target_logically_air_gapped_backup_vault_arn",
+            &self.target_logically_air_gapped_backup_vault_arn,
+        );
         formatter.field("schedule_expression", &self.schedule_expression);
         formatter.field("start_window_minutes", &self.start_window_minutes);
         formatter.field("completion_window_minutes", &self.completion_window_minutes);

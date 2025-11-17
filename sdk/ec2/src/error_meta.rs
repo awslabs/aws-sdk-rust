@@ -8235,6 +8235,68 @@ impl From<crate::operation::describe_instances::DescribeInstancesError> for Erro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_instance_sql_ha_history_states::DescribeInstanceSqlHaHistoryStatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_instance_sql_ha_history_states::DescribeInstanceSqlHaHistoryStatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_instance_sql_ha_history_states::DescribeInstanceSqlHaHistoryStatesError> for Error {
+    fn from(err: crate::operation::describe_instance_sql_ha_history_states::DescribeInstanceSqlHaHistoryStatesError) -> Self {
+        match err {
+            crate::operation::describe_instance_sql_ha_history_states::DescribeInstanceSqlHaHistoryStatesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_sql_ha_states::DescribeInstanceSqlHaStatesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_instance_sql_ha_states::DescribeInstanceSqlHaStatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_instance_sql_ha_states::DescribeInstanceSqlHaStatesError> for Error {
+    fn from(err: crate::operation::describe_instance_sql_ha_states::DescribeInstanceSqlHaStatesError) -> Self {
+        match err {
+            crate::operation::describe_instance_sql_ha_states::DescribeInstanceSqlHaStatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_status::DescribeInstanceStatusError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -11826,6 +11888,40 @@ impl From<crate::operation::disable_image_deregistration_protection::DisableImag
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_instance_sql_ha_standby_detections::DisableInstanceSqlHaStandbyDetectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_instance_sql_ha_standby_detections::DisableInstanceSqlHaStandbyDetectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_instance_sql_ha_standby_detections::DisableInstanceSqlHaStandbyDetectionsError> for Error {
+    fn from(err: crate::operation::disable_instance_sql_ha_standby_detections::DisableInstanceSqlHaStandbyDetectionsError) -> Self {
+        match err {
+            crate::operation::disable_instance_sql_ha_standby_detections::DisableInstanceSqlHaStandbyDetectionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountError,
             R,
         >,
@@ -12865,6 +12961,40 @@ impl From<crate::operation::enable_image_deregistration_protection::EnableImageD
     fn from(err: crate::operation::enable_image_deregistration_protection::EnableImageDeregistrationProtectionError) -> Self {
         match err {
             crate::operation::enable_image_deregistration_protection::EnableImageDeregistrationProtectionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_instance_sql_ha_standby_detections::EnableInstanceSqlHaStandbyDetectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_instance_sql_ha_standby_detections::EnableInstanceSqlHaStandbyDetectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_instance_sql_ha_standby_detections::EnableInstanceSqlHaStandbyDetectionsError> for Error {
+    fn from(err: crate::operation::enable_instance_sql_ha_standby_detections::EnableInstanceSqlHaStandbyDetectionsError) -> Self {
+        match err {
+            crate::operation::enable_instance_sql_ha_standby_detections::EnableInstanceSqlHaStandbyDetectionsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

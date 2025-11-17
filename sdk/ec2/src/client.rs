@@ -1018,6 +1018,10 @@ mod describe_instance_event_windows;
 
 mod describe_instance_image_metadata;
 
+mod describe_instance_sql_ha_history_states;
+
+mod describe_instance_sql_ha_states;
+
 mod describe_instance_status;
 
 mod describe_instance_topology;
@@ -1280,6 +1284,8 @@ mod disable_image_deprecation;
 
 mod disable_image_deregistration_protection;
 
+mod disable_instance_sql_ha_standby_detections;
+
 mod disable_ipam_organization_admin_account;
 
 mod disable_route_server_propagation;
@@ -1353,6 +1359,8 @@ mod enable_image_block_public_access;
 mod enable_image_deprecation;
 
 mod enable_image_deregistration_protection;
+
+mod enable_instance_sql_ha_standby_detections;
 
 mod enable_ipam_organization_admin_account;
 

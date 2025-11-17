@@ -931,6 +931,8 @@ pub use crate::types::_client_certificate_revocation_list_status::ClientCertific
 
 pub use crate::types::_transit_gateway_propagation::TransitGatewayPropagationBuilder;
 
+pub use crate::types::_registered_instance::RegisteredInstanceBuilder;
+
 pub use crate::types::_enable_fast_snapshot_restore_error_item::EnableFastSnapshotRestoreErrorItemBuilder;
 
 pub use crate::types::_enable_fast_snapshot_restore_state_error_item::EnableFastSnapshotRestoreStateErrorItemBuilder;

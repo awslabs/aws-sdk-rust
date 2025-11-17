@@ -64,23 +64,29 @@ pub fn ser_create_image_builder_input_input(
         }
         array_19.finish();
     }
-    if let Some(var_22) = &input.softwares_to_install {
-        let mut array_23 = object.key("SoftwaresToInstall").start_array();
-        for item_24 in var_22 {
-            {
-                array_23.value().string(item_24.as_str());
-            }
-        }
-        array_23.finish();
+    if let Some(var_22) = &input.root_volume_config {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("RootVolumeConfig").start_object();
+        crate::protocol_serde::shape_volume_config::ser_volume_config(&mut object_23, var_22)?;
+        object_23.finish();
     }
-    if let Some(var_25) = &input.softwares_to_uninstall {
-        let mut array_26 = object.key("SoftwaresToUninstall").start_array();
-        for item_27 in var_25 {
+    if let Some(var_24) = &input.softwares_to_install {
+        let mut array_25 = object.key("SoftwaresToInstall").start_array();
+        for item_26 in var_24 {
             {
-                array_26.value().string(item_27.as_str());
+                array_25.value().string(item_26.as_str());
             }
         }
-        array_26.finish();
+        array_25.finish();
+    }
+    if let Some(var_27) = &input.softwares_to_uninstall {
+        let mut array_28 = object.key("SoftwaresToUninstall").start_array();
+        for item_29 in var_27 {
+            {
+                array_28.value().string(item_29.as_str());
+            }
+        }
+        array_28.finish();
     }
     Ok(())
 }

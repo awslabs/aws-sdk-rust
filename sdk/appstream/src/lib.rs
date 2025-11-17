@@ -19,11 +19,11 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! This is the _Amazon AppStream 2.0 API Reference_. This documentation provides descriptions and syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0 is a fully managed, secure application streaming service that lets you stream desktop applications to users without rewriting applications. AppStream 2.0 manages the AWS resources that are required to host and run your applications, scales automatically, and provides access to your users on demand.
+//! This is the _Amazon WorkSpaces Applications API Reference_. This documentation provides descriptions and syntax for each of the actions and data types in WorkSpaces Applications. WorkSpaces Applications is a fully managed, secure application streaming service that lets you stream desktop applications to users without rewriting applications. WorkSpaces Applications manages the AWS resources that are required to host and run your applications, scales automatically, and provides access to your users on demand.
 //!
-//! To learn more about AppStream 2.0, see the following resources:
-//!   - [Amazon AppStream 2.0 product page](http://aws.amazon.com/appstream2)
-//!   - [Amazon AppStream 2.0 documentation](http://aws.amazon.com/documentation/appstream2)
+//! To learn more about WorkSpaces Applications, see the following resources:
+//!   - [Amazon WorkSpaces Applications product page](http://aws.amazon.com/appstream2)
+//!   - [Amazon WorkSpaces Applications documentation](http://aws.amazon.com/documentation/appstream2)
 //!
 //! ## Getting Started
 //!
@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-appstream = "1.96.0"
+//! aws-sdk-appstream = "1.97.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

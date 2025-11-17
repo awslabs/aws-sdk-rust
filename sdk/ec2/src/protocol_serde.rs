@@ -1271,6 +1271,14 @@ pub(crate) mod shape_describe_instance_image_metadata;
 
 pub(crate) mod shape_describe_instance_image_metadata_input;
 
+pub(crate) mod shape_describe_instance_sql_ha_history_states;
+
+pub(crate) mod shape_describe_instance_sql_ha_history_states_input;
+
+pub(crate) mod shape_describe_instance_sql_ha_states;
+
+pub(crate) mod shape_describe_instance_sql_ha_states_input;
+
 pub(crate) mod shape_describe_instance_status;
 
 pub(crate) mod shape_describe_instance_status_input;
@@ -1795,6 +1803,10 @@ pub(crate) mod shape_disable_image_deregistration_protection_input;
 
 pub(crate) mod shape_disable_image_input;
 
+pub(crate) mod shape_disable_instance_sql_ha_standby_detections;
+
+pub(crate) mod shape_disable_instance_sql_ha_standby_detections_input;
+
 pub(crate) mod shape_disable_ipam_organization_admin_account;
 
 pub(crate) mod shape_disable_ipam_organization_admin_account_input;
@@ -1942,6 +1954,10 @@ pub(crate) mod shape_enable_image_deregistration_protection;
 pub(crate) mod shape_enable_image_deregistration_protection_input;
 
 pub(crate) mod shape_enable_image_input;
+
+pub(crate) mod shape_enable_instance_sql_ha_standby_detections;
+
+pub(crate) mod shape_enable_instance_sql_ha_standby_detections_input;
 
 pub(crate) mod shape_enable_ipam_organization_admin_account;
 
@@ -3789,6 +3805,8 @@ pub(crate) mod shape_purchased_scheduled_instance_set;
 
 pub(crate) mod shape_region_list;
 
+pub(crate) mod shape_registered_instance_list;
+
 pub(crate) mod shape_replace_root_volume_task;
 
 pub(crate) mod shape_replace_root_volume_tasks;
@@ -4542,6 +4560,8 @@ pub(crate) mod shape_public_ipv4_pool;
 pub(crate) mod shape_purchase;
 
 pub(crate) mod shape_region;
+
+pub(crate) mod shape_registered_instance;
 
 pub(crate) mod shape_reservation;
 

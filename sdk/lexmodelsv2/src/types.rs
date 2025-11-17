@@ -217,6 +217,8 @@ pub use crate::types::_runtime_settings::RuntimeSettings;
 
 pub use crate::types::_nlu_improvement_specification::NluImprovementSpecification;
 
+pub use crate::types::_assisted_nlu_mode::AssistedNluMode;
+
 pub use crate::types::_slot_resolution_improvement_specification::SlotResolutionImprovementSpecification;
 
 pub use crate::types::_bot_locale_status::BotLocaleStatus;
@@ -846,6 +848,8 @@ mod _analytics_utterance_metric_result;
 mod _analytics_utterance_result;
 
 mod _analytics_utterance_sort_by_name;
+
+mod _assisted_nlu_mode;
 
 mod _associated_transcript;
 

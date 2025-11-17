@@ -28,8 +28,14 @@ where
                         "authKey" => {
                             builder = builder.set_auth_key(crate::protocol_serde::shape_slurm_auth_key::de_slurm_auth_key(tokens)?);
                         }
+                        "jwtAuth" => {
+                            builder = builder.set_jwt_auth(crate::protocol_serde::shape_jwt_auth::de_jwt_auth(tokens)?);
+                        }
                         "accounting" => {
                             builder = builder.set_accounting(crate::protocol_serde::shape_accounting::de_accounting(tokens)?);
+                        }
+                        "slurmRest" => {
+                            builder = builder.set_slurm_rest(crate::protocol_serde::shape_slurm_rest::de_slurm_rest(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -59,6 +59,8 @@ pub use crate::types::_detector_feature_configuration::DetectorFeatureConfigurat
 
 pub use crate::types::_detector_additional_configuration::DetectorAdditionalConfigurationBuilder;
 
+pub use crate::types::_s3_object_for_send_object_malware_scan::S3ObjectForSendObjectMalwareScanBuilder;
+
 pub use crate::types::_destination::DestinationBuilder;
 
 pub use crate::types::_admin_account::AdminAccountBuilder;

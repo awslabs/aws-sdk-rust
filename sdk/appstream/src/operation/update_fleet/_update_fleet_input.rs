@@ -62,8 +62,6 @@ pub struct UpdateFleetInput {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -75,12 +73,6 @@ pub struct UpdateFleetInput {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.xlarge</p></li>
     /// <li>
@@ -166,10 +158,10 @@ pub struct UpdateFleetInput {
     pub idle_disconnect_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The fleet attributes to delete.</p>
     pub attributes_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::FleetAttribute>>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     pub stream_view: ::std::option::Option<crate::types::StreamView>,
     /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
@@ -182,6 +174,8 @@ pub struct UpdateFleetInput {
     pub session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
     pub max_sessions_per_instance: ::std::option::Option<i32>,
+    /// <p>The updated configuration for the root volume of fleet instances. Note that volume size cannot be decreased below the image volume size.</p>
+    pub root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
 }
 impl UpdateFleetInput {
     /// <p>The name of the image used to create the fleet.</p>
@@ -249,8 +243,6 @@ impl UpdateFleetInput {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -262,12 +254,6 @@ impl UpdateFleetInput {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.xlarge</p></li>
     /// <li>
@@ -379,12 +365,12 @@ impl UpdateFleetInput {
     pub fn attributes_to_delete(&self) -> &[crate::types::FleetAttribute] {
         self.attributes_to_delete.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     pub fn stream_view(&self) -> ::std::option::Option<&crate::types::StreamView> {
         self.stream_view.as_ref()
@@ -410,6 +396,10 @@ impl UpdateFleetInput {
     /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
     pub fn max_sessions_per_instance(&self) -> ::std::option::Option<i32> {
         self.max_sessions_per_instance
+    }
+    /// <p>The updated configuration for the root volume of fleet instances. Note that volume size cannot be decreased below the image volume size.</p>
+    pub fn root_volume_config(&self) -> ::std::option::Option<&crate::types::VolumeConfig> {
+        self.root_volume_config.as_ref()
     }
 }
 impl UpdateFleetInput {
@@ -445,6 +435,7 @@ pub struct UpdateFleetInputBuilder {
     pub(crate) usb_device_filter_strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) max_sessions_per_instance: ::std::option::Option<i32>,
+    pub(crate) root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
 }
 impl UpdateFleetInputBuilder {
     /// <p>The name of the image used to create the fleet.</p>
@@ -542,8 +533,6 @@ impl UpdateFleetInputBuilder {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -555,12 +544,6 @@ impl UpdateFleetInputBuilder {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.xlarge</p></li>
     /// <li>
@@ -674,8 +657,6 @@ impl UpdateFleetInputBuilder {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -687,12 +668,6 @@ impl UpdateFleetInputBuilder {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.xlarge</p></li>
     /// <li>
@@ -806,8 +781,6 @@ impl UpdateFleetInputBuilder {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -819,12 +792,6 @@ impl UpdateFleetInputBuilder {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.xlarge</p></li>
     /// <li>
@@ -1062,36 +1029,36 @@ impl UpdateFleetInputBuilder {
     pub fn get_attributes_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAttribute>> {
         &self.attributes_to_delete
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role_arn
     }
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     pub fn stream_view(mut self, input: crate::types::StreamView) -> Self {
         self.stream_view = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     pub fn set_stream_view(mut self, input: ::std::option::Option<crate::types::StreamView>) -> Self {
         self.stream_view = input;
         self
     }
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     pub fn get_stream_view(&self) -> &::std::option::Option<crate::types::StreamView> {
         &self.stream_view
@@ -1172,6 +1139,20 @@ impl UpdateFleetInputBuilder {
     pub fn get_max_sessions_per_instance(&self) -> &::std::option::Option<i32> {
         &self.max_sessions_per_instance
     }
+    /// <p>The updated configuration for the root volume of fleet instances. Note that volume size cannot be decreased below the image volume size.</p>
+    pub fn root_volume_config(mut self, input: crate::types::VolumeConfig) -> Self {
+        self.root_volume_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated configuration for the root volume of fleet instances. Note that volume size cannot be decreased below the image volume size.</p>
+    pub fn set_root_volume_config(mut self, input: ::std::option::Option<crate::types::VolumeConfig>) -> Self {
+        self.root_volume_config = input;
+        self
+    }
+    /// <p>The updated configuration for the root volume of fleet instances. Note that volume size cannot be decreased below the image volume size.</p>
+    pub fn get_root_volume_config(&self) -> &::std::option::Option<crate::types::VolumeConfig> {
+        &self.root_volume_config
+    }
     /// Consumes the builder and constructs a [`UpdateFleetInput`](crate::operation::update_fleet::UpdateFleetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_fleet::UpdateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_fleet::UpdateFleetInput {
@@ -1197,6 +1178,7 @@ impl UpdateFleetInputBuilder {
             usb_device_filter_strings: self.usb_device_filter_strings,
             session_script_s3_location: self.session_script_s3_location,
             max_sessions_per_instance: self.max_sessions_per_instance,
+            root_volume_config: self.root_volume_config,
         })
     }
 }

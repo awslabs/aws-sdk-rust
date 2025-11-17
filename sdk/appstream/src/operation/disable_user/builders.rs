@@ -22,7 +22,7 @@ impl crate::operation::disable_user::builders::DisableUserInputBuilder {
 }
 /// Fluent builder constructing a request to `DisableUser`.
 ///
-/// <p>Disables the specified user in the user pool. Users can't sign in to AppStream 2.0 until they are re-enabled. This action does not delete the user.</p>
+/// <p>Disables the specified user in the user pool. Users can't sign in to WorkSpaces Applications until they are re-enabled. This action does not delete the user.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

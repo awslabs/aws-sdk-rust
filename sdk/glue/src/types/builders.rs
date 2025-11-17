@@ -523,6 +523,10 @@ pub use crate::types::_transform_filter_criteria::TransformFilterCriteriaBuilder
 
 pub use crate::types::_schema_column::SchemaColumnBuilder;
 
+pub use crate::types::_integration_resource_property::IntegrationResourcePropertyBuilder;
+
+pub use crate::types::_integration_resource_property_filter::IntegrationResourcePropertyFilterBuilder;
+
 pub use crate::types::_entity::EntityBuilder;
 
 pub use crate::types::_statistic_summary::StatisticSummaryBuilder;

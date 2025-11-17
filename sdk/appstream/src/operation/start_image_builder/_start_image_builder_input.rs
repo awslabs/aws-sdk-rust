@@ -5,7 +5,7 @@
 pub struct StartImageBuilderInput {
     /// <p>The name of the image builder.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify \[LATEST\].</p>
+    /// <p>The version of the WorkSpaces Applications agent to use for this image builder. To use the latest version of the WorkSpaces Applications agent, specify \[LATEST\].</p>
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
 }
 impl StartImageBuilderInput {
@@ -13,7 +13,7 @@ impl StartImageBuilderInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify \[LATEST\].</p>
+    /// <p>The version of the WorkSpaces Applications agent to use for this image builder. To use the latest version of the WorkSpaces Applications agent, specify \[LATEST\].</p>
     pub fn appstream_agent_version(&self) -> ::std::option::Option<&str> {
         self.appstream_agent_version.as_deref()
     }
@@ -48,17 +48,17 @@ impl StartImageBuilderInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify \[LATEST\].</p>
+    /// <p>The version of the WorkSpaces Applications agent to use for this image builder. To use the latest version of the WorkSpaces Applications agent, specify \[LATEST\].</p>
     pub fn appstream_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.appstream_agent_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify \[LATEST\].</p>
+    /// <p>The version of the WorkSpaces Applications agent to use for this image builder. To use the latest version of the WorkSpaces Applications agent, specify \[LATEST\].</p>
     pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.appstream_agent_version = input;
         self
     }
-    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify \[LATEST\].</p>
+    /// <p>The version of the WorkSpaces Applications agent to use for this image builder. To use the latest version of the WorkSpaces Applications agent, specify \[LATEST\].</p>
     pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.appstream_agent_version
     }

@@ -47,6 +47,12 @@ where
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'buildLog' cannot be null"))?
                                 ))
                             }
+                            "generatedTestCases" => {
+                                Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::GeneratedTestCases(
+                                    crate::protocol_serde::shape_automated_reasoning_policy_generated_test_cases::de_automated_reasoning_policy_generated_test_cases(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'generatedTestCases' cannot be null"))?
+                                ))
+                            }
                             _ => {
                                                                               ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                                                                               Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::Unknown)

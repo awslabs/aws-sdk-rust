@@ -67,6 +67,8 @@ pub struct ListCopyJobsInput {
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub by_message_category: ::std::option::Option<::std::string::String>,
+    /// <p>Filters copy jobs by the specified source recovery point ARN.</p>
+    pub by_source_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListCopyJobsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -159,6 +161,10 @@ impl ListCopyJobsInput {
     pub fn by_message_category(&self) -> ::std::option::Option<&str> {
         self.by_message_category.as_deref()
     }
+    /// <p>Filters copy jobs by the specified source recovery point ARN.</p>
+    pub fn by_source_recovery_point_arn(&self) -> ::std::option::Option<&str> {
+        self.by_source_recovery_point_arn.as_deref()
+    }
 }
 impl ListCopyJobsInput {
     /// Creates a new builder-style object to manufacture [`ListCopyJobsInput`](crate::operation::list_copy_jobs::ListCopyJobsInput).
@@ -184,6 +190,7 @@ pub struct ListCopyJobsInputBuilder {
     pub(crate) by_complete_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) by_parent_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) by_message_category: ::std::option::Option<::std::string::String>,
+    pub(crate) by_source_recovery_point_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListCopyJobsInputBuilder {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token.</p>
@@ -482,6 +489,20 @@ impl ListCopyJobsInputBuilder {
     pub fn get_by_message_category(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_message_category
     }
+    /// <p>Filters copy jobs by the specified source recovery point ARN.</p>
+    pub fn by_source_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.by_source_recovery_point_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Filters copy jobs by the specified source recovery point ARN.</p>
+    pub fn set_by_source_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.by_source_recovery_point_arn = input;
+        self
+    }
+    /// <p>Filters copy jobs by the specified source recovery point ARN.</p>
+    pub fn get_by_source_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.by_source_recovery_point_arn
+    }
     /// Consumes the builder and constructs a [`ListCopyJobsInput`](crate::operation::list_copy_jobs::ListCopyJobsInput).
     pub fn build(
         self,
@@ -500,6 +521,7 @@ impl ListCopyJobsInputBuilder {
             by_complete_after: self.by_complete_after,
             by_parent_job_id: self.by_parent_job_id,
             by_message_category: self.by_message_category,
+            by_source_recovery_point_arn: self.by_source_recovery_point_arn,
         })
     }
 }

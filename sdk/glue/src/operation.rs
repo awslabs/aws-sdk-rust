@@ -199,6 +199,9 @@ pub mod delete_glue_identity_center_configuration;
 /// Types for the `DeleteIntegration` operation.
 pub mod delete_integration;
 
+/// Types for the `DeleteIntegrationResourceProperty` operation.
+pub mod delete_integration_resource_property;
+
 /// Types for the `DeleteIntegrationTableProperties` operation.
 pub mod delete_integration_table_properties;
 
@@ -543,6 +546,9 @@ pub mod list_dev_endpoints;
 
 /// Types for the `ListEntities` operation.
 pub mod list_entities;
+
+/// Types for the `ListIntegrationResourceProperties` operation.
+pub mod list_integration_resource_properties;
 
 /// Types for the `ListJobs` operation.
 pub mod list_jobs;

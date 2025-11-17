@@ -45,6 +45,8 @@ pub use crate::types::_image_permissions::ImagePermissions;
 
 pub use crate::types::_fleet::Fleet;
 
+pub use crate::types::_volume_config::VolumeConfig;
+
 pub use crate::types::_platform_type::PlatformType;
 
 pub use crate::types::_stream_view::StreamView;
@@ -111,6 +113,14 @@ pub use crate::types::_image_builder_state_change_reason_code::ImageBuilderState
 
 pub use crate::types::_image_builder_state::ImageBuilderState;
 
+pub use crate::types::_export_image_task::ExportImageTask;
+
+pub use crate::types::_error_details::ErrorDetails;
+
+pub use crate::types::_export_image_task_state::ExportImageTaskState;
+
+pub use crate::types::_filter::Filter;
+
 pub use crate::types::_entitled_application::EntitledApplication;
 
 pub use crate::types::_authentication_type::AuthenticationType;
@@ -129,8 +139,6 @@ pub use crate::types::_usage_report_schedule::UsageReportSchedule;
 
 pub use crate::types::_software_associations::SoftwareAssociations;
 
-pub use crate::types::_error_details::ErrorDetails;
-
 pub use crate::types::_software_deployment_status::SoftwareDeploymentStatus;
 
 pub use crate::types::_session::Session;
@@ -140,6 +148,8 @@ pub use crate::types::_session_connection_state::SessionConnectionState;
 pub use crate::types::_session_state::SessionState;
 
 pub use crate::types::_image::Image;
+
+pub use crate::types::_image_type::ImageType;
 
 pub use crate::types::_image_shared_with_others::ImageSharedWithOthers;
 
@@ -171,6 +181,12 @@ pub use crate::types::_app_block_builder_app_block_association::AppBlockBuilderA
 
 pub use crate::types::_message_action::MessageAction;
 
+pub use crate::types::_application_config::ApplicationConfig;
+
+pub use crate::types::_agent_software_version::AgentSoftwareVersion;
+
+pub use crate::types::_runtime_validation_config::RuntimeValidationConfig;
+
 pub use crate::types::_user_stack_association_error::UserStackAssociationError;
 
 pub use crate::types::_user_stack_association_error_code::UserStackAssociationErrorCode;
@@ -182,6 +198,8 @@ mod _access_endpoint_type;
 mod _action;
 
 mod _admin_app_license_usage_record;
+
+mod _agent_software_version;
 
 mod _app_block;
 
@@ -206,6 +224,8 @@ mod _app_visibility;
 mod _application;
 
 mod _application_attribute;
+
+mod _application_config;
 
 mod _application_fleet_association;
 
@@ -236,6 +256,12 @@ mod _entitlement;
 mod _entitlement_attribute;
 
 mod _error_details;
+
+mod _export_image_task;
+
+mod _export_image_task_state;
+
+mod _filter;
 
 mod _fleet;
 
@@ -269,6 +295,8 @@ mod _image_state_change_reason;
 
 mod _image_state_change_reason_code;
 
+mod _image_type;
+
 mod _last_report_generation_execution_error;
 
 mod _latest_appstream_agent_version;
@@ -286,6 +314,8 @@ mod _platform_type;
 mod _preferred_protocol;
 
 mod _resource_error;
+
+mod _runtime_validation_config;
 
 mod _s3_location;
 
@@ -348,6 +378,8 @@ mod _user_stack_association_error;
 mod _user_stack_association_error_code;
 
 mod _visibility_type;
+
+mod _volume_config;
 
 mod _vpc_config;
 

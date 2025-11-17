@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TargetLogicallyAirGappedBackupVaultArn" => {
+                            builder = builder.set_target_logically_air_gapped_backup_vault_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "ScheduleExpression" => {
                             builder = builder.set_schedule_expression(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

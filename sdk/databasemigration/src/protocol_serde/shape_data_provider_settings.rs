@@ -28,44 +28,50 @@ pub fn ser_data_provider_settings(
             crate::protocol_serde::shape_oracle_data_provider_settings::ser_oracle_data_provider_settings(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::DataProviderSettings::SybaseAseSettings(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_6.key("SybaseAseSettings").start_object();
+            crate::protocol_serde::shape_sybase_ase_data_provider_settings::ser_sybase_ase_data_provider_settings(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::DataProviderSettings::MicrosoftSqlServerSettings(inner) => {
             #[allow(unused_mut)]
-            let mut object_5 = object_6.key("MicrosoftSqlServerSettings").start_object();
+            let mut object_6 = object_6.key("MicrosoftSqlServerSettings").start_object();
             crate::protocol_serde::shape_microsoft_sql_server_data_provider_settings::ser_microsoft_sql_server_data_provider_settings(
-                &mut object_5,
+                &mut object_6,
                 inner,
             )?;
-            object_5.finish();
+            object_6.finish();
         }
         crate::types::DataProviderSettings::DocDbSettings(inner) => {
             #[allow(unused_mut)]
-            let mut object_6 = object_6.key("DocDbSettings").start_object();
-            crate::protocol_serde::shape_doc_db_data_provider_settings::ser_doc_db_data_provider_settings(&mut object_6, inner)?;
-            object_6.finish();
+            let mut object_7 = object_6.key("DocDbSettings").start_object();
+            crate::protocol_serde::shape_doc_db_data_provider_settings::ser_doc_db_data_provider_settings(&mut object_7, inner)?;
+            object_7.finish();
         }
         crate::types::DataProviderSettings::MariaDbSettings(inner) => {
             #[allow(unused_mut)]
-            let mut object_7 = object_6.key("MariaDbSettings").start_object();
-            crate::protocol_serde::shape_maria_db_data_provider_settings::ser_maria_db_data_provider_settings(&mut object_7, inner)?;
-            object_7.finish();
+            let mut object_8 = object_6.key("MariaDbSettings").start_object();
+            crate::protocol_serde::shape_maria_db_data_provider_settings::ser_maria_db_data_provider_settings(&mut object_8, inner)?;
+            object_8.finish();
         }
         crate::types::DataProviderSettings::IbmDb2LuwSettings(inner) => {
             #[allow(unused_mut)]
-            let mut object_8 = object_6.key("IbmDb2LuwSettings").start_object();
-            crate::protocol_serde::shape_ibm_db2_luw_data_provider_settings::ser_ibm_db2_luw_data_provider_settings(&mut object_8, inner)?;
-            object_8.finish();
+            let mut object_9 = object_6.key("IbmDb2LuwSettings").start_object();
+            crate::protocol_serde::shape_ibm_db2_luw_data_provider_settings::ser_ibm_db2_luw_data_provider_settings(&mut object_9, inner)?;
+            object_9.finish();
         }
         crate::types::DataProviderSettings::IbmDb2zOsSettings(inner) => {
             #[allow(unused_mut)]
-            let mut object_9 = object_6.key("IbmDb2zOsSettings").start_object();
-            crate::protocol_serde::shape_ibm_db2z_os_data_provider_settings::ser_ibm_db2z_os_data_provider_settings(&mut object_9, inner)?;
-            object_9.finish();
+            let mut object_10 = object_6.key("IbmDb2zOsSettings").start_object();
+            crate::protocol_serde::shape_ibm_db2z_os_data_provider_settings::ser_ibm_db2z_os_data_provider_settings(&mut object_10, inner)?;
+            object_10.finish();
         }
         crate::types::DataProviderSettings::MongoDbSettings(inner) => {
             #[allow(unused_mut)]
-            let mut object_10 = object_6.key("MongoDbSettings").start_object();
-            crate::protocol_serde::shape_mongo_db_data_provider_settings::ser_mongo_db_data_provider_settings(&mut object_10, inner)?;
-            object_10.finish();
+            let mut object_11 = object_6.key("MongoDbSettings").start_object();
+            crate::protocol_serde::shape_mongo_db_data_provider_settings::ser_mongo_db_data_provider_settings(&mut object_11, inner)?;
+            object_11.finish();
         }
         crate::types::DataProviderSettings::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
@@ -126,6 +132,12 @@ where
                             crate::protocol_serde::shape_oracle_data_provider_settings::de_oracle_data_provider_settings(tokens)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OracleSettings' cannot be null"),
                             )?,
+                        )),
+                        "SybaseAseSettings" => Some(crate::types::DataProviderSettings::SybaseAseSettings(
+                            crate::protocol_serde::shape_sybase_ase_data_provider_settings::de_sybase_ase_data_provider_settings(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SybaseAseSettings' cannot be null")
+                                })?,
                         )),
                         "MicrosoftSqlServerSettings" => Some(crate::types::DataProviderSettings::MicrosoftSqlServerSettings(
                             crate::protocol_serde::shape_microsoft_sql_server_data_provider_settings::de_microsoft_sql_server_data_provider_settings(

@@ -203,8 +203,6 @@ impl CreateFleetFluentBuilder {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -230,12 +228,6 @@ impl CreateFleetFluentBuilder {
     /// <p>stream.graphics.g5.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.24xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g6.xlarge</p></li>
     /// <li>
@@ -335,8 +327,6 @@ impl CreateFleetFluentBuilder {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -362,12 +352,6 @@ impl CreateFleetFluentBuilder {
     /// <p>stream.graphics.g5.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.24xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g6.xlarge</p></li>
     /// <li>
@@ -467,8 +451,6 @@ impl CreateFleetFluentBuilder {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -494,12 +476,6 @@ impl CreateFleetFluentBuilder {
     /// <p>stream.graphics.g5.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.24xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g6.xlarge</p></li>
     /// <li>
@@ -728,7 +704,7 @@ impl CreateFleetFluentBuilder {
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -737,7 +713,7 @@ impl CreateFleetFluentBuilder {
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -746,7 +722,7 @@ impl CreateFleetFluentBuilder {
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
@@ -773,36 +749,36 @@ impl CreateFleetFluentBuilder {
     pub fn get_idle_disconnect_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_idle_disconnect_timeout_in_seconds()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_role_arn()
     }
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     pub fn stream_view(mut self, input: crate::types::StreamView) -> Self {
         self.inner = self.inner.stream_view(input);
         self
     }
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     pub fn set_stream_view(mut self, input: ::std::option::Option<crate::types::StreamView>) -> Self {
         self.inner = self.inner.set_stream_view(input);
         self
     }
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     pub fn get_stream_view(&self) -> &::std::option::Option<crate::types::StreamView> {
         self.inner.get_stream_view()
@@ -881,5 +857,19 @@ impl CreateFleetFluentBuilder {
     /// <p>The maximum number of user sessions on an instance. This only applies to multi-session fleets.</p>
     pub fn get_max_sessions_per_instance(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_sessions_per_instance()
+    }
+    /// <p>The configuration for the root volume of fleet instances. Use this to customize storage capacity from 200 GB up to 500 GB based on your application requirements.</p>
+    pub fn root_volume_config(mut self, input: crate::types::VolumeConfig) -> Self {
+        self.inner = self.inner.root_volume_config(input);
+        self
+    }
+    /// <p>The configuration for the root volume of fleet instances. Use this to customize storage capacity from 200 GB up to 500 GB based on your application requirements.</p>
+    pub fn set_root_volume_config(mut self, input: ::std::option::Option<crate::types::VolumeConfig>) -> Self {
+        self.inner = self.inner.set_root_volume_config(input);
+        self
+    }
+    /// <p>The configuration for the root volume of fleet instances. Use this to customize storage capacity from 200 GB up to 500 GB based on your application requirements.</p>
+    pub fn get_root_volume_config(&self) -> &::std::option::Option<crate::types::VolumeConfig> {
+        self.inner.get_root_volume_config()
     }
 }

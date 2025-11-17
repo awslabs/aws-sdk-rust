@@ -47,6 +47,8 @@ pub use crate::types::_package_type::PackageType;
 
 pub use crate::types::_package_source::PackageSource;
 
+pub use crate::types::_index_status::IndexStatus;
+
 pub use crate::types::_dry_run_progress_status::DryRunProgressStatus;
 
 pub use crate::types::_validation_failure::ValidationFailure;
@@ -564,6 +566,8 @@ mod _inbound_connection;
 mod _inbound_connection_status;
 
 mod _inbound_connection_status_code;
+
+mod _index_status;
 
 mod _initiated_by;
 

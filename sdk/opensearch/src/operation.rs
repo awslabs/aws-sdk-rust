@@ -34,6 +34,9 @@ pub mod create_application;
 /// Types for the `CreateDomain` operation.
 pub mod create_domain;
 
+/// Types for the `CreateIndex` operation.
+pub mod create_index;
+
 /// Types for the `CreateOutboundConnection` operation.
 pub mod create_outbound_connection;
 
@@ -57,6 +60,9 @@ pub mod delete_domain;
 
 /// Types for the `DeleteInboundConnection` operation.
 pub mod delete_inbound_connection;
+
+/// Types for the `DeleteIndex` operation.
+pub mod delete_index;
 
 /// Types for the `DeleteOutboundConnection` operation.
 pub mod delete_outbound_connection;
@@ -135,6 +141,9 @@ pub mod get_direct_query_data_source;
 
 /// Types for the `GetDomainMaintenanceStatus` operation.
 pub mod get_domain_maintenance_status;
+
+/// Types for the `GetIndex` operation.
+pub mod get_index;
 
 /// Types for the `GetPackageVersionHistory` operation.
 pub mod get_package_version_history;
@@ -219,6 +228,9 @@ pub mod update_direct_query_data_source;
 
 /// Types for the `UpdateDomainConfig` operation.
 pub mod update_domain_config;
+
+/// Types for the `UpdateIndex` operation.
+pub mod update_index;
 
 /// Types for the `UpdatePackage` operation.
 pub mod update_package;

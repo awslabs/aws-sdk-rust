@@ -295,6 +295,8 @@ mod list_threat_intel_sets;
 
 mod list_trusted_entity_sets;
 
+mod send_object_malware_scan;
+
 mod start_malware_scan;
 
 mod start_monitoring_members;

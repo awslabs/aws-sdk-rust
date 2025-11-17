@@ -109,5 +109,11 @@ pub fn ser_create_fleet_input_input(
             ::aws_smithy_types::Number::NegInt((*var_31).into()),
         );
     }
+    if let Some(var_32) = &input.root_volume_config {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("RootVolumeConfig").start_object();
+        crate::protocol_serde::shape_volume_config::ser_volume_config(&mut object_33, var_32)?;
+        object_33.finish();
+    }
     Ok(())
 }

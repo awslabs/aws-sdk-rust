@@ -43,6 +43,9 @@ pub mod create_directory_config;
 /// Types for the `CreateEntitlement` operation.
 pub mod create_entitlement;
 
+/// Types for the `CreateExportImageTask` operation.
+pub mod create_export_image_task;
+
 /// Types for the `CreateFleet` operation.
 pub mod create_fleet;
 
@@ -51,6 +54,9 @@ pub mod create_image_builder;
 
 /// Types for the `CreateImageBuilderStreamingURL` operation.
 pub mod create_image_builder_streaming_url;
+
+/// Types for the `CreateImportedImage` operation.
+pub mod create_imported_image;
 
 /// Types for the `CreateStack` operation.
 pub mod create_stack;
@@ -190,6 +196,9 @@ pub mod enable_user;
 /// Types for the `ExpireSession` operation.
 pub mod expire_session;
 
+/// Types for the `GetExportImageTask` operation.
+pub mod get_export_image_task;
+
 /// Types for the `ListAssociatedFleets` operation.
 pub mod list_associated_fleets;
 
@@ -198,6 +207,9 @@ pub mod list_associated_stacks;
 
 /// Types for the `ListEntitledApplications` operation.
 pub mod list_entitled_applications;
+
+/// Types for the `ListExportImageTasks` operation.
+pub mod list_export_image_tasks;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

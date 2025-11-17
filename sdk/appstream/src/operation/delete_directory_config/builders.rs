@@ -22,7 +22,7 @@ impl crate::operation::delete_directory_config::builders::DeleteDirectoryConfigI
 }
 /// Fluent builder constructing a request to `DeleteDirectoryConfig`.
 ///
-/// <p>Deletes the specified Directory Config object from AppStream 2.0. This object includes the information required to join streaming instances to an Active Directory domain.</p>
+/// <p>Deletes the specified Directory Config object from WorkSpaces Applications. This object includes the information required to join streaming instances to an Active Directory domain.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDirectoryConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

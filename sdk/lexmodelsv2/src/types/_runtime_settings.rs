@@ -6,7 +6,7 @@
 pub struct RuntimeSettings {
     /// <p>An object containing specifications for the assisted slot resolution feature.</p>
     pub slot_resolution_improvement: ::std::option::Option<crate::types::SlotResolutionImprovementSpecification>,
-    /// <p>An object containing specifications for the assisted nlu feature.</p>
+    /// <p>An object containing specifications for the Assisted NLU feature within the bot's runtime settings. These settings determine how the bot processes and interprets user utterances during conversations.</p>
     pub nlu_improvement: ::std::option::Option<crate::types::NluImprovementSpecification>,
 }
 impl RuntimeSettings {
@@ -14,7 +14,7 @@ impl RuntimeSettings {
     pub fn slot_resolution_improvement(&self) -> ::std::option::Option<&crate::types::SlotResolutionImprovementSpecification> {
         self.slot_resolution_improvement.as_ref()
     }
-    /// <p>An object containing specifications for the assisted nlu feature.</p>
+    /// <p>An object containing specifications for the Assisted NLU feature within the bot's runtime settings. These settings determine how the bot processes and interprets user utterances during conversations.</p>
     pub fn nlu_improvement(&self) -> ::std::option::Option<&crate::types::NluImprovementSpecification> {
         self.nlu_improvement.as_ref()
     }
@@ -48,17 +48,17 @@ impl RuntimeSettingsBuilder {
     pub fn get_slot_resolution_improvement(&self) -> &::std::option::Option<crate::types::SlotResolutionImprovementSpecification> {
         &self.slot_resolution_improvement
     }
-    /// <p>An object containing specifications for the assisted nlu feature.</p>
+    /// <p>An object containing specifications for the Assisted NLU feature within the bot's runtime settings. These settings determine how the bot processes and interprets user utterances during conversations.</p>
     pub fn nlu_improvement(mut self, input: crate::types::NluImprovementSpecification) -> Self {
         self.nlu_improvement = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object containing specifications for the assisted nlu feature.</p>
+    /// <p>An object containing specifications for the Assisted NLU feature within the bot's runtime settings. These settings determine how the bot processes and interprets user utterances during conversations.</p>
     pub fn set_nlu_improvement(mut self, input: ::std::option::Option<crate::types::NluImprovementSpecification>) -> Self {
         self.nlu_improvement = input;
         self
     }
-    /// <p>An object containing specifications for the assisted nlu feature.</p>
+    /// <p>An object containing specifications for the Assisted NLU feature within the bot's runtime settings. These settings determine how the bot processes and interprets user utterances during conversations.</p>
     pub fn get_nlu_improvement(&self) -> &::std::option::Option<crate::types::NluImprovementSpecification> {
         &self.nlu_improvement
     }

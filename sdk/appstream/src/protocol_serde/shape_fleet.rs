@@ -165,6 +165,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "RootVolumeConfig" => {
+                            builder = builder.set_root_volume_config(crate::protocol_serde::shape_volume_config::de_volume_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

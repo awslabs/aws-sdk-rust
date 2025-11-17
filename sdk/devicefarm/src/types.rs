@@ -73,6 +73,8 @@ pub use crate::types::_test_type::TestType;
 
 pub use crate::types::_remote_access_session::RemoteAccessSession;
 
+pub use crate::types::_remote_access_endpoints::RemoteAccessEndpoints;
+
 pub use crate::types::_interaction_mode::InteractionMode;
 
 pub use crate::types::_device::Device;
@@ -256,6 +258,8 @@ mod _radios;
 mod _recurring_charge;
 
 mod _recurring_charge_frequency;
+
+mod _remote_access_endpoints;
 
 mod _remote_access_session;
 

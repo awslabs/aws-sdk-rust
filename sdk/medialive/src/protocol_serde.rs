@@ -1139,6 +1139,8 @@ pub(crate) mod shape_fec_output_settings;
 
 pub(crate) mod shape_frame_capture_s3_settings;
 
+pub(crate) mod shape_hlg2020_settings;
+
 pub(crate) mod shape_hls_akamai_settings;
 
 pub(crate) mod shape_hls_basic_put_settings;

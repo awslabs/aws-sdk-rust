@@ -274,7 +274,7 @@ pub enum UpdateAppBlockBuilderError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The attempted operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
-    /// <p>AppStream 2.0 can’t process the request right now because the Describe calls from your AWS account are being throttled by Amazon EC2. Try again later.</p>
+    /// <p>WorkSpaces Applications can’t process the request right now because the Describe calls from your AWS account are being throttled by Amazon EC2. Try again later.</p>
     RequestLimitExceededException(crate::types::error::RequestLimitExceededException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),

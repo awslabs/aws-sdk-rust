@@ -51,11 +51,15 @@ pub(crate) mod shape_create_directory_config;
 
 pub(crate) mod shape_create_entitlement;
 
+pub(crate) mod shape_create_export_image_task;
+
 pub(crate) mod shape_create_fleet;
 
 pub(crate) mod shape_create_image_builder;
 
 pub(crate) mod shape_create_image_builder_streaming_url;
+
+pub(crate) mod shape_create_imported_image;
 
 pub(crate) mod shape_create_stack;
 
@@ -149,11 +153,15 @@ pub(crate) mod shape_enable_user;
 
 pub(crate) mod shape_expire_session;
 
+pub(crate) mod shape_get_export_image_task;
+
 pub(crate) mod shape_list_associated_fleets;
 
 pub(crate) mod shape_list_associated_stacks;
 
 pub(crate) mod shape_list_entitled_applications;
+
+pub(crate) mod shape_list_export_image_tasks;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -229,11 +237,15 @@ pub(crate) mod shape_create_directory_config_input;
 
 pub(crate) mod shape_create_entitlement_input;
 
+pub(crate) mod shape_create_export_image_task_input;
+
 pub(crate) mod shape_create_fleet_input;
 
 pub(crate) mod shape_create_image_builder_input;
 
 pub(crate) mod shape_create_image_builder_streaming_url_input;
+
+pub(crate) mod shape_create_imported_image_input;
 
 pub(crate) mod shape_create_stack_input;
 
@@ -319,6 +331,8 @@ pub(crate) mod shape_disassociate_fleet_input;
 
 pub(crate) mod shape_disassociate_software_from_image_builder_input;
 
+pub(crate) mod shape_dry_run_operation_exception;
+
 pub(crate) mod shape_enable_user_input;
 
 pub(crate) mod shape_entitlement_already_exists_exception;
@@ -326,6 +340,8 @@ pub(crate) mod shape_entitlement_already_exists_exception;
 pub(crate) mod shape_entitlement_not_found_exception;
 
 pub(crate) mod shape_expire_session_input;
+
+pub(crate) mod shape_get_export_image_task_input;
 
 pub(crate) mod shape_incompatible_image_exception;
 
@@ -342,6 +358,8 @@ pub(crate) mod shape_list_associated_fleets_input;
 pub(crate) mod shape_list_associated_stacks_input;
 
 pub(crate) mod shape_list_entitled_applications_input;
+
+pub(crate) mod shape_list_export_image_tasks_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
@@ -409,6 +427,8 @@ pub(crate) mod shape_app_blocks;
 
 pub(crate) mod shape_application;
 
+pub(crate) mod shape_application_config;
+
 pub(crate) mod shape_application_fleet_association;
 
 pub(crate) mod shape_application_fleet_association_list;
@@ -435,6 +455,12 @@ pub(crate) mod shape_entitlement_attribute;
 
 pub(crate) mod shape_entitlement_list;
 
+pub(crate) mod shape_export_image_task;
+
+pub(crate) mod shape_export_image_tasks;
+
+pub(crate) mod shape_filter;
+
 pub(crate) mod shape_fleet;
 
 pub(crate) mod shape_fleet_list;
@@ -448,6 +474,8 @@ pub(crate) mod shape_image_builder_list;
 pub(crate) mod shape_image_list;
 
 pub(crate) mod shape_image_permissions;
+
+pub(crate) mod shape_runtime_validation_config;
 
 pub(crate) mod shape_s3_location;
 
@@ -488,6 +516,8 @@ pub(crate) mod shape_user_stack_association;
 pub(crate) mod shape_user_stack_association_error_list;
 
 pub(crate) mod shape_user_stack_association_list;
+
+pub(crate) mod shape_volume_config;
 
 pub(crate) mod shape_vpc_config;
 

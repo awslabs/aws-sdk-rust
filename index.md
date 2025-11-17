@@ -359,6 +359,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AmazonConnectCampaignServiceV2 | [aws-sdk-connectcampaignsv2](https://crates.io/crates/aws-sdk-connectcampaignsv2) ([docs](https://docs.rs/aws-sdk-connectcampaignsv2)) |
 | AmazonMQ | [aws-sdk-mq](https://crates.io/crates/aws-sdk-mq) ([docs](https://docs.rs/aws-sdk-mq)) |
 | AmazonMWAA | [aws-sdk-mwaa](https://crates.io/crates/aws-sdk-mwaa) ([docs](https://docs.rs/aws-sdk-mwaa)) |
+| AmazonMWAAServerless | [aws-sdk-mwaaserverless](https://crates.io/crates/aws-sdk-mwaaserverless) ([docs](https://docs.rs/aws-sdk-mwaaserverless)) |
 | AmplifyBackend | [aws-sdk-amplifybackend](https://crates.io/crates/aws-sdk-amplifybackend) ([docs](https://docs.rs/aws-sdk-amplifybackend)) |
 | AppFabric | [aws-sdk-appfabric](https://crates.io/crates/aws-sdk-appfabric) ([docs](https://docs.rs/aws-sdk-appfabric)) |
 | Application Auto Scaling | [aws-sdk-applicationautoscaling](https://crates.io/crates/aws-sdk-applicationautoscaling) ([docs](https://docs.rs/aws-sdk-applicationautoscaling)) |

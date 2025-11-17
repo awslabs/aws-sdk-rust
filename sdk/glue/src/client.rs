@@ -295,6 +295,8 @@ mod delete_glue_identity_center_configuration;
 
 mod delete_integration;
 
+mod delete_integration_resource_property;
+
 mod delete_integration_table_properties;
 
 mod delete_job;
@@ -524,6 +526,8 @@ mod list_data_quality_statistics;
 mod list_dev_endpoints;
 
 mod list_entities;
+
+mod list_integration_resource_properties;
 
 mod list_jobs;
 

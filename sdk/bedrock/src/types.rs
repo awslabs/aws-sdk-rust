@@ -525,6 +525,10 @@ pub use crate::types::_automated_reasoning_policy_scenario::AutomatedReasoningPo
 
 pub use crate::types::_automated_reasoning_policy_build_result_assets::AutomatedReasoningPolicyBuildResultAssets;
 
+pub use crate::types::_automated_reasoning_policy_generated_test_cases::AutomatedReasoningPolicyGeneratedTestCases;
+
+pub use crate::types::_automated_reasoning_policy_generated_test_case::AutomatedReasoningPolicyGeneratedTestCase;
+
 pub use crate::types::_automated_reasoning_policy_build_log::AutomatedReasoningPolicyBuildLog;
 
 pub use crate::types::_automated_reasoning_policy_build_log_entry::AutomatedReasoningPolicyBuildLogEntry;
@@ -704,6 +708,10 @@ mod _automated_reasoning_policy_delete_variable_annotation;
 mod _automated_reasoning_policy_delete_variable_mutation;
 
 mod _automated_reasoning_policy_disjoint_rule_set;
+
+mod _automated_reasoning_policy_generated_test_case;
+
+mod _automated_reasoning_policy_generated_test_cases;
 
 mod _automated_reasoning_policy_ingest_content_annotation;
 

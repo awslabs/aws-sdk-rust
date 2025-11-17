@@ -44,6 +44,10 @@ pub struct Av1Settings {
     pub rate_control_mode: ::std::option::Option<crate::types::Av1RateControlMode>,
     /// Used for QVBR rate control mode only. Optional. Enter a minimum bitrate if you want to keep the output bitrate about a threshold, in order to prevent the downstream system from de-allocating network bandwidth for this output.
     pub min_bitrate: ::std::option::Option<i32>,
+    /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. Enabled: MediaLive will determine the appropriate level of spatial AQ to apply. Disabled: No spatial AQ. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
+    pub spatial_aq: ::std::option::Option<crate::types::Av1SpatialAq>,
+    /// Temporal AQ makes adjustments within each frame based on variations in content complexity over time. Enabled: MediaLive will determine the appropriate level of temporal AQ to apply. Disabled: No temporal AQ. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
+    pub temporal_aq: ::std::option::Option<crate::types::Av1TemporalAq>,
 }
 impl Av1Settings {
     /// Configures whether MediaLive will write AFD values into the video. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: the AFD value will be the value configured in the fixedAfd parameter. NONE: MediaLive won't write AFD into the video
@@ -126,6 +130,14 @@ impl Av1Settings {
     pub fn min_bitrate(&self) -> ::std::option::Option<i32> {
         self.min_bitrate
     }
+    /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. Enabled: MediaLive will determine the appropriate level of spatial AQ to apply. Disabled: No spatial AQ. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
+    pub fn spatial_aq(&self) -> ::std::option::Option<&crate::types::Av1SpatialAq> {
+        self.spatial_aq.as_ref()
+    }
+    /// Temporal AQ makes adjustments within each frame based on variations in content complexity over time. Enabled: MediaLive will determine the appropriate level of temporal AQ to apply. Disabled: No temporal AQ. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
+    pub fn temporal_aq(&self) -> ::std::option::Option<&crate::types::Av1TemporalAq> {
+        self.temporal_aq.as_ref()
+    }
 }
 impl Av1Settings {
     /// Creates a new builder-style object to manufacture [`Av1Settings`](crate::types::Av1Settings).
@@ -158,6 +170,8 @@ pub struct Av1SettingsBuilder {
     pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) rate_control_mode: ::std::option::Option<crate::types::Av1RateControlMode>,
     pub(crate) min_bitrate: ::std::option::Option<i32>,
+    pub(crate) spatial_aq: ::std::option::Option<crate::types::Av1SpatialAq>,
+    pub(crate) temporal_aq: ::std::option::Option<crate::types::Av1TemporalAq>,
 }
 impl Av1SettingsBuilder {
     /// Configures whether MediaLive will write AFD values into the video. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: the AFD value will be the value configured in the fixedAfd parameter. NONE: MediaLive won't write AFD into the video
@@ -442,6 +456,34 @@ impl Av1SettingsBuilder {
     pub fn get_min_bitrate(&self) -> &::std::option::Option<i32> {
         &self.min_bitrate
     }
+    /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. Enabled: MediaLive will determine the appropriate level of spatial AQ to apply. Disabled: No spatial AQ. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
+    pub fn spatial_aq(mut self, input: crate::types::Av1SpatialAq) -> Self {
+        self.spatial_aq = ::std::option::Option::Some(input);
+        self
+    }
+    /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. Enabled: MediaLive will determine the appropriate level of spatial AQ to apply. Disabled: No spatial AQ. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
+    pub fn set_spatial_aq(mut self, input: ::std::option::Option<crate::types::Av1SpatialAq>) -> Self {
+        self.spatial_aq = input;
+        self
+    }
+    /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. Enabled: MediaLive will determine the appropriate level of spatial AQ to apply. Disabled: No spatial AQ. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
+    pub fn get_spatial_aq(&self) -> &::std::option::Option<crate::types::Av1SpatialAq> {
+        &self.spatial_aq
+    }
+    /// Temporal AQ makes adjustments within each frame based on variations in content complexity over time. Enabled: MediaLive will determine the appropriate level of temporal AQ to apply. Disabled: No temporal AQ. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
+    pub fn temporal_aq(mut self, input: crate::types::Av1TemporalAq) -> Self {
+        self.temporal_aq = ::std::option::Option::Some(input);
+        self
+    }
+    /// Temporal AQ makes adjustments within each frame based on variations in content complexity over time. Enabled: MediaLive will determine the appropriate level of temporal AQ to apply. Disabled: No temporal AQ. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
+    pub fn set_temporal_aq(mut self, input: ::std::option::Option<crate::types::Av1TemporalAq>) -> Self {
+        self.temporal_aq = input;
+        self
+    }
+    /// Temporal AQ makes adjustments within each frame based on variations in content complexity over time. Enabled: MediaLive will determine the appropriate level of temporal AQ to apply. Disabled: No temporal AQ. For more information, see the topic about video adaptive quantization in the MediaLive user guide.
+    pub fn get_temporal_aq(&self) -> &::std::option::Option<crate::types::Av1TemporalAq> {
+        &self.temporal_aq
+    }
     /// Consumes the builder and constructs a [`Av1Settings`](crate::types::Av1Settings).
     pub fn build(self) -> crate::types::Av1Settings {
         crate::types::Av1Settings {
@@ -465,6 +507,8 @@ impl Av1SettingsBuilder {
             bitrate: self.bitrate,
             rate_control_mode: self.rate_control_mode,
             min_bitrate: self.min_bitrate,
+            spatial_aq: self.spatial_aq,
+            temporal_aq: self.temporal_aq,
         }
     }
 }

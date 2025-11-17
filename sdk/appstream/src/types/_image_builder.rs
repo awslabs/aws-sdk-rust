@@ -65,8 +65,6 @@ pub struct ImageBuilder {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -78,12 +76,6 @@ pub struct ImageBuilder {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.xlarge</p></li>
     /// <li>
@@ -130,8 +122,8 @@ pub struct ImageBuilder {
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform of the image builder.</p>
     pub platform: ::std::option::Option<crate::types::PlatformType>,
-    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the image builder.</p>
     pub state: ::std::option::Option<crate::types::ImageBuilderState>,
@@ -147,11 +139,13 @@ pub struct ImageBuilder {
     pub network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     /// <p>The image builder errors.</p>
     pub image_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
-    /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder.</p>
+    /// <p>The version of the WorkSpaces Applications agent that is currently being used by the image builder.</p>
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
-    /// <p>Indicates whether the image builder is using the latest AppStream 2.0 agent version or not.</p>
+    /// <p>The current configuration of the root volume for the image builder, including the storage size in GB.</p>
+    pub root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
+    /// <p>Indicates whether the image builder is using the latest WorkSpaces Applications agent version or not.</p>
     pub latest_appstream_agent_version: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>,
 }
 impl ImageBuilder {
@@ -228,8 +222,6 @@ impl ImageBuilder {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -241,12 +233,6 @@ impl ImageBuilder {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.xlarge</p></li>
     /// <li>
@@ -297,8 +283,8 @@ impl ImageBuilder {
     pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformType> {
         self.platform.as_ref()
     }
-    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
@@ -332,7 +318,7 @@ impl ImageBuilder {
     pub fn image_builder_errors(&self) -> &[crate::types::ResourceError] {
         self.image_builder_errors.as_deref().unwrap_or_default()
     }
-    /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder.</p>
+    /// <p>The version of the WorkSpaces Applications agent that is currently being used by the image builder.</p>
     pub fn appstream_agent_version(&self) -> ::std::option::Option<&str> {
         self.appstream_agent_version.as_deref()
     }
@@ -342,7 +328,11 @@ impl ImageBuilder {
     pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
         self.access_endpoints.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether the image builder is using the latest AppStream 2.0 agent version or not.</p>
+    /// <p>The current configuration of the root volume for the image builder, including the storage size in GB.</p>
+    pub fn root_volume_config(&self) -> ::std::option::Option<&crate::types::VolumeConfig> {
+        self.root_volume_config.as_ref()
+    }
+    /// <p>Indicates whether the image builder is using the latest WorkSpaces Applications agent version or not.</p>
     pub fn latest_appstream_agent_version(&self) -> ::std::option::Option<&crate::types::LatestAppstreamAgentVersion> {
         self.latest_appstream_agent_version.as_ref()
     }
@@ -376,6 +366,7 @@ pub struct ImageBuilderBuilder {
     pub(crate) image_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
     pub(crate) appstream_agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
     pub(crate) latest_appstream_agent_version: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>,
 }
 impl ImageBuilderBuilder {
@@ -513,8 +504,6 @@ impl ImageBuilderBuilder {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -526,12 +515,6 @@ impl ImageBuilderBuilder {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.xlarge</p></li>
     /// <li>
@@ -628,8 +611,6 @@ impl ImageBuilderBuilder {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -641,12 +622,6 @@ impl ImageBuilderBuilder {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.xlarge</p></li>
     /// <li>
@@ -743,8 +718,6 @@ impl ImageBuilderBuilder {
     /// <li>
     /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -756,12 +729,6 @@ impl ImageBuilderBuilder {
     /// <p>stream.graphics.g4dn.12xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.16xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g5.xlarge</p></li>
     /// <li>
@@ -822,20 +789,20 @@ impl ImageBuilderBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformType> {
         &self.platform
     }
-    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role_arn
     }
@@ -943,17 +910,17 @@ impl ImageBuilderBuilder {
     pub fn get_image_builder_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
         &self.image_builder_errors
     }
-    /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder.</p>
+    /// <p>The version of the WorkSpaces Applications agent that is currently being used by the image builder.</p>
     pub fn appstream_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.appstream_agent_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder.</p>
+    /// <p>The version of the WorkSpaces Applications agent that is currently being used by the image builder.</p>
     pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.appstream_agent_version = input;
         self
     }
-    /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder.</p>
+    /// <p>The version of the WorkSpaces Applications agent that is currently being used by the image builder.</p>
     pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.appstream_agent_version
     }
@@ -977,17 +944,31 @@ impl ImageBuilderBuilder {
     pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
-    /// <p>Indicates whether the image builder is using the latest AppStream 2.0 agent version or not.</p>
+    /// <p>The current configuration of the root volume for the image builder, including the storage size in GB.</p>
+    pub fn root_volume_config(mut self, input: crate::types::VolumeConfig) -> Self {
+        self.root_volume_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current configuration of the root volume for the image builder, including the storage size in GB.</p>
+    pub fn set_root_volume_config(mut self, input: ::std::option::Option<crate::types::VolumeConfig>) -> Self {
+        self.root_volume_config = input;
+        self
+    }
+    /// <p>The current configuration of the root volume for the image builder, including the storage size in GB.</p>
+    pub fn get_root_volume_config(&self) -> &::std::option::Option<crate::types::VolumeConfig> {
+        &self.root_volume_config
+    }
+    /// <p>Indicates whether the image builder is using the latest WorkSpaces Applications agent version or not.</p>
     pub fn latest_appstream_agent_version(mut self, input: crate::types::LatestAppstreamAgentVersion) -> Self {
         self.latest_appstream_agent_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the image builder is using the latest AppStream 2.0 agent version or not.</p>
+    /// <p>Indicates whether the image builder is using the latest WorkSpaces Applications agent version or not.</p>
     pub fn set_latest_appstream_agent_version(mut self, input: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>) -> Self {
         self.latest_appstream_agent_version = input;
         self
     }
-    /// <p>Indicates whether the image builder is using the latest AppStream 2.0 agent version or not.</p>
+    /// <p>Indicates whether the image builder is using the latest WorkSpaces Applications agent version or not.</p>
     pub fn get_latest_appstream_agent_version(&self) -> &::std::option::Option<crate::types::LatestAppstreamAgentVersion> {
         &self.latest_appstream_agent_version
     }
@@ -1012,6 +993,7 @@ impl ImageBuilderBuilder {
             image_builder_errors: self.image_builder_errors,
             appstream_agent_version: self.appstream_agent_version,
             access_endpoints: self.access_endpoints,
+            root_volume_config: self.root_volume_config,
             latest_appstream_agent_version: self.latest_appstream_agent_version,
         }
     }

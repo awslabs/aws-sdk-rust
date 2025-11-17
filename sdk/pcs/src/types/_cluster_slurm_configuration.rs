@@ -11,8 +11,12 @@ pub struct ClusterSlurmConfiguration {
     pub slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
     /// <p>The shared Slurm key for authentication, also known as the <b>cluster secret</b>.</p>
     pub auth_key: ::std::option::Option<crate::types::SlurmAuthKey>,
+    /// <p>The JWT authentication configuration for Slurm REST API access.</p>
+    pub jwt_auth: ::std::option::Option<crate::types::JwtAuth>,
     /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
     pub accounting: ::std::option::Option<crate::types::Accounting>,
+    /// <p>The Slurm REST API configuration for the cluster.</p>
+    pub slurm_rest: ::std::option::Option<crate::types::SlurmRest>,
 }
 impl ClusterSlurmConfiguration {
     /// <p>The time (in seconds) before an idle node is scaled down.</p>
@@ -30,9 +34,17 @@ impl ClusterSlurmConfiguration {
     pub fn auth_key(&self) -> ::std::option::Option<&crate::types::SlurmAuthKey> {
         self.auth_key.as_ref()
     }
+    /// <p>The JWT authentication configuration for Slurm REST API access.</p>
+    pub fn jwt_auth(&self) -> ::std::option::Option<&crate::types::JwtAuth> {
+        self.jwt_auth.as_ref()
+    }
     /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
     pub fn accounting(&self) -> ::std::option::Option<&crate::types::Accounting> {
         self.accounting.as_ref()
+    }
+    /// <p>The Slurm REST API configuration for the cluster.</p>
+    pub fn slurm_rest(&self) -> ::std::option::Option<&crate::types::SlurmRest> {
+        self.slurm_rest.as_ref()
     }
 }
 impl ClusterSlurmConfiguration {
@@ -49,7 +61,9 @@ pub struct ClusterSlurmConfigurationBuilder {
     pub(crate) scale_down_idle_time_in_seconds: ::std::option::Option<i32>,
     pub(crate) slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
     pub(crate) auth_key: ::std::option::Option<crate::types::SlurmAuthKey>,
+    pub(crate) jwt_auth: ::std::option::Option<crate::types::JwtAuth>,
     pub(crate) accounting: ::std::option::Option<crate::types::Accounting>,
+    pub(crate) slurm_rest: ::std::option::Option<crate::types::SlurmRest>,
 }
 impl ClusterSlurmConfigurationBuilder {
     /// <p>The time (in seconds) before an idle node is scaled down.</p>
@@ -103,6 +117,20 @@ impl ClusterSlurmConfigurationBuilder {
     pub fn get_auth_key(&self) -> &::std::option::Option<crate::types::SlurmAuthKey> {
         &self.auth_key
     }
+    /// <p>The JWT authentication configuration for Slurm REST API access.</p>
+    pub fn jwt_auth(mut self, input: crate::types::JwtAuth) -> Self {
+        self.jwt_auth = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The JWT authentication configuration for Slurm REST API access.</p>
+    pub fn set_jwt_auth(mut self, input: ::std::option::Option<crate::types::JwtAuth>) -> Self {
+        self.jwt_auth = input;
+        self
+    }
+    /// <p>The JWT authentication configuration for Slurm REST API access.</p>
+    pub fn get_jwt_auth(&self) -> &::std::option::Option<crate::types::JwtAuth> {
+        &self.jwt_auth
+    }
     /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
     pub fn accounting(mut self, input: crate::types::Accounting) -> Self {
         self.accounting = ::std::option::Option::Some(input);
@@ -117,13 +145,29 @@ impl ClusterSlurmConfigurationBuilder {
     pub fn get_accounting(&self) -> &::std::option::Option<crate::types::Accounting> {
         &self.accounting
     }
+    /// <p>The Slurm REST API configuration for the cluster.</p>
+    pub fn slurm_rest(mut self, input: crate::types::SlurmRest) -> Self {
+        self.slurm_rest = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Slurm REST API configuration for the cluster.</p>
+    pub fn set_slurm_rest(mut self, input: ::std::option::Option<crate::types::SlurmRest>) -> Self {
+        self.slurm_rest = input;
+        self
+    }
+    /// <p>The Slurm REST API configuration for the cluster.</p>
+    pub fn get_slurm_rest(&self) -> &::std::option::Option<crate::types::SlurmRest> {
+        &self.slurm_rest
+    }
     /// Consumes the builder and constructs a [`ClusterSlurmConfiguration`](crate::types::ClusterSlurmConfiguration).
     pub fn build(self) -> crate::types::ClusterSlurmConfiguration {
         crate::types::ClusterSlurmConfiguration {
             scale_down_idle_time_in_seconds: self.scale_down_idle_time_in_seconds,
             slurm_custom_settings: self.slurm_custom_settings,
             auth_key: self.auth_key,
+            jwt_auth: self.jwt_auth,
             accounting: self.accounting,
+            slurm_rest: self.slurm_rest,
         }
     }
 }

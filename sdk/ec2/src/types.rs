@@ -1397,6 +1397,12 @@ pub use crate::types::_client_certificate_revocation_list_status_code::ClientCer
 
 pub use crate::types::_transit_gateway_propagation::TransitGatewayPropagation;
 
+pub use crate::types::_registered_instance::RegisteredInstance;
+
+pub use crate::types::_ha_status::HaStatus;
+
+pub use crate::types::_sql_server_license_usage::SqlServerLicenseUsage;
+
 pub use crate::types::_image_block_public_access_enabled_state::ImageBlockPublicAccessEnabledState;
 
 pub use crate::types::_enable_fast_snapshot_restore_error_item::EnableFastSnapshotRestoreErrorItem;
@@ -3337,6 +3343,8 @@ mod _group_by;
 
 mod _group_identifier;
 
+mod _ha_status;
+
 mod _hibernation_options;
 
 mod _hibernation_options_request;
@@ -4307,6 +4315,8 @@ mod _regional_summary;
 
 mod _register_instance_tag_attribute_request;
 
+mod _registered_instance;
+
 mod _remove_ipam_operating_region;
 
 mod _remove_ipam_organizational_unit_exclusion;
@@ -4608,6 +4618,8 @@ mod _spot_placement_score;
 mod _spot_price;
 
 mod _spread_level;
+
+mod _sql_server_license_usage;
 
 mod _sse_type;
 

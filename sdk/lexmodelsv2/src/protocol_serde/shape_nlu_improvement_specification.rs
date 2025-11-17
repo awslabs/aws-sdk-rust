@@ -17,6 +17,13 @@ where
                         "enabled" => {
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "assistedNluMode" => {
+                            builder = builder.set_assisted_nlu_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AssistedNluMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -40,6 +47,9 @@ pub fn ser_nlu_improvement_specification(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("enabled").boolean(input.enabled);
+    }
+    if let Some(var_1) = &input.assisted_nlu_mode {
+        object.key("assistedNluMode").string(var_1.as_str());
     }
     Ok(())
 }

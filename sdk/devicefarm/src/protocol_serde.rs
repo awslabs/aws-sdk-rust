@@ -503,6 +503,8 @@ pub(crate) mod shape_purchased_devices_map;
 
 pub(crate) mod shape_radios;
 
+pub(crate) mod shape_remote_access_endpoints;
+
 pub(crate) mod shape_resolution;
 
 pub(crate) mod shape_rules;

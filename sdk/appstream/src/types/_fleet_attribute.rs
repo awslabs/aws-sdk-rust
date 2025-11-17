@@ -17,6 +17,7 @@
 ///     FleetAttribute::MaxSessionsPerInstance => { /* ... */ },
 ///     FleetAttribute::SessionScriptS3Location => { /* ... */ },
 ///     FleetAttribute::UsbDeviceFilterStrings => { /* ... */ },
+///     FleetAttribute::VolumeConfiguration => { /* ... */ },
 ///     FleetAttribute::VpcConfiguration => { /* ... */ },
 ///     FleetAttribute::VpcConfigurationSecurityGroupIds => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -58,6 +59,8 @@ pub enum FleetAttribute {
     #[allow(missing_docs)] // documentation missing in model
     UsbDeviceFilterStrings,
     #[allow(missing_docs)] // documentation missing in model
+    VolumeConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     VpcConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     VpcConfigurationSecurityGroupIds,
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for FleetAttribute {
             "MAX_SESSIONS_PER_INSTANCE" => FleetAttribute::MaxSessionsPerInstance,
             "SESSION_SCRIPT_S3_LOCATION" => FleetAttribute::SessionScriptS3Location,
             "USB_DEVICE_FILTER_STRINGS" => FleetAttribute::UsbDeviceFilterStrings,
+            "VOLUME_CONFIGURATION" => FleetAttribute::VolumeConfiguration,
             "VPC_CONFIGURATION" => FleetAttribute::VpcConfiguration,
             "VPC_CONFIGURATION_SECURITY_GROUP_IDS" => FleetAttribute::VpcConfigurationSecurityGroupIds,
             other => FleetAttribute::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -95,6 +99,7 @@ impl FleetAttribute {
             FleetAttribute::MaxSessionsPerInstance => "MAX_SESSIONS_PER_INSTANCE",
             FleetAttribute::SessionScriptS3Location => "SESSION_SCRIPT_S3_LOCATION",
             FleetAttribute::UsbDeviceFilterStrings => "USB_DEVICE_FILTER_STRINGS",
+            FleetAttribute::VolumeConfiguration => "VOLUME_CONFIGURATION",
             FleetAttribute::VpcConfiguration => "VPC_CONFIGURATION",
             FleetAttribute::VpcConfigurationSecurityGroupIds => "VPC_CONFIGURATION_SECURITY_GROUP_IDS",
             FleetAttribute::Unknown(value) => value.as_str(),
@@ -108,6 +113,7 @@ impl FleetAttribute {
             "MAX_SESSIONS_PER_INSTANCE",
             "SESSION_SCRIPT_S3_LOCATION",
             "USB_DEVICE_FILTER_STRINGS",
+            "VOLUME_CONFIGURATION",
             "VPC_CONFIGURATION",
             "VPC_CONFIGURATION_SECURITY_GROUP_IDS",
         ]
@@ -138,6 +144,7 @@ impl ::std::fmt::Display for FleetAttribute {
             FleetAttribute::MaxSessionsPerInstance => write!(f, "MAX_SESSIONS_PER_INSTANCE"),
             FleetAttribute::SessionScriptS3Location => write!(f, "SESSION_SCRIPT_S3_LOCATION"),
             FleetAttribute::UsbDeviceFilterStrings => write!(f, "USB_DEVICE_FILTER_STRINGS"),
+            FleetAttribute::VolumeConfiguration => write!(f, "VOLUME_CONFIGURATION"),
             FleetAttribute::VpcConfiguration => write!(f, "VPC_CONFIGURATION"),
             FleetAttribute::VpcConfigurationSecurityGroupIds => write!(f, "VPC_CONFIGURATION_SECURITY_GROUP_IDS"),
             FleetAttribute::Unknown(value) => write!(f, "{value}"),

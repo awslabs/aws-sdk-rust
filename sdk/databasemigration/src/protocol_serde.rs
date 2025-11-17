@@ -799,6 +799,8 @@ pub(crate) mod shape_postgre_sql_data_provider_settings;
 
 pub(crate) mod shape_premigration_assessment_status_list;
 
+pub(crate) mod shape_progress;
+
 pub(crate) mod shape_provision_data;
 
 pub(crate) mod shape_public_ip_address_list;
@@ -841,6 +843,8 @@ pub(crate) mod shape_subnet_list;
 
 pub(crate) mod shape_supported_endpoint_type;
 
+pub(crate) mod shape_sybase_ase_data_provider_settings;
+
 pub(crate) mod shape_table_statistics;
 
 pub(crate) mod shape_target_data_settings;
@@ -872,6 +876,8 @@ pub(crate) mod shape_inventory_data;
 pub(crate) mod shape_pending_maintenance_action;
 
 pub(crate) mod shape_premigration_assessment_status;
+
+pub(crate) mod shape_processed_object;
 
 pub(crate) mod shape_recommendation_data;
 

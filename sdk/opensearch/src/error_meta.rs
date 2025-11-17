@@ -27,6 +27,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An exception for attempting to schedule a domain action during an unavailable time slot.</p>
     SlotNotAvailableException(crate::types::error::SlotNotAvailableException),
+    /// <p>The request was denied due to request throttling. Reduce the frequency of your requests and try again.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -53,6 +55,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::SlotNotAvailableException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -87,6 +90,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceAlreadyExistsException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::SlotNotAvailableException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -444,6 +448,35 @@ impl From<crate::operation::create_domain::CreateDomainError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_index::CreateIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_index::CreateIndexError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_index::CreateIndexError> for Error {
+    fn from(err: crate::operation::create_index::CreateIndexError) -> Self {
+        match err {
+            crate::operation::create_index::CreateIndexError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_index::CreateIndexError::DependencyFailureException(inner) => Error::DependencyFailureException(inner),
+            crate::operation::create_index::CreateIndexError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
+            crate::operation::create_index::CreateIndexError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::create_index::CreateIndexError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::create_index::CreateIndexError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_index::CreateIndexError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_index::CreateIndexError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_index::CreateIndexError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_outbound_connection::CreateOutboundConnectionError, R>>
     for Error
 where
@@ -691,6 +724,34 @@ impl From<crate::operation::delete_inbound_connection::DeleteInboundConnectionEr
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_inbound_connection::DeleteInboundConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_index::DeleteIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_index::DeleteIndexError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_index::DeleteIndexError> for Error {
+    fn from(err: crate::operation::delete_index::DeleteIndexError) -> Self {
+        match err {
+            crate::operation::delete_index::DeleteIndexError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_index::DeleteIndexError::DependencyFailureException(inner) => Error::DependencyFailureException(inner),
+            crate::operation::delete_index::DeleteIndexError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
+            crate::operation::delete_index::DeleteIndexError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::delete_index::DeleteIndexError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_index::DeleteIndexError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_index::DeleteIndexError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_index::DeleteIndexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1512,6 +1573,34 @@ impl From<crate::operation::get_domain_maintenance_status::GetDomainMaintenanceS
                 Error::ValidationException(inner)
             }
             crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_index::GetIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_index::GetIndexError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_index::GetIndexError> for Error {
+    fn from(err: crate::operation::get_index::GetIndexError) -> Self {
+        match err {
+            crate::operation::get_index::GetIndexError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_index::GetIndexError::DependencyFailureException(inner) => Error::DependencyFailureException(inner),
+            crate::operation::get_index::GetIndexError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
+            crate::operation::get_index::GetIndexError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::get_index::GetIndexError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_index::GetIndexError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_index::GetIndexError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_index::GetIndexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2397,6 +2486,34 @@ impl From<crate::operation::update_domain_config::UpdateDomainConfigError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_index::UpdateIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_index::UpdateIndexError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_index::UpdateIndexError> for Error {
+    fn from(err: crate::operation::update_index::UpdateIndexError) -> Self {
+        match err {
+            crate::operation::update_index::UpdateIndexError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_index::UpdateIndexError::DependencyFailureException(inner) => Error::DependencyFailureException(inner),
+            crate::operation::update_index::UpdateIndexError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
+            crate::operation::update_index::UpdateIndexError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_index::UpdateIndexError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_index::UpdateIndexError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_index::UpdateIndexError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_index::UpdateIndexError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_package::UpdatePackageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2565,6 +2682,7 @@ impl ::std::error::Error for Error {
             Error::ResourceAlreadyExistsException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::SlotNotAvailableException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -2585,6 +2703,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceAlreadyExistsException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::SlotNotAvailableException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

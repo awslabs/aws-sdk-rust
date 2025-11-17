@@ -155,6 +155,8 @@ pub(crate) mod shape_delete_glue_identity_center_configuration;
 
 pub(crate) mod shape_delete_integration;
 
+pub(crate) mod shape_delete_integration_resource_property;
+
 pub(crate) mod shape_delete_integration_table_properties;
 
 pub(crate) mod shape_delete_job;
@@ -384,6 +386,8 @@ pub(crate) mod shape_list_data_quality_statistics;
 pub(crate) mod shape_list_dev_endpoints;
 
 pub(crate) mod shape_list_entities;
+
+pub(crate) mod shape_list_integration_resource_properties;
 
 pub(crate) mod shape_list_jobs;
 
@@ -699,6 +703,8 @@ pub(crate) mod shape_delete_dev_endpoint_input;
 
 pub(crate) mod shape_delete_integration_input;
 
+pub(crate) mod shape_delete_integration_resource_property_input;
+
 pub(crate) mod shape_delete_integration_table_properties_input;
 
 pub(crate) mod shape_delete_job_input;
@@ -962,6 +968,8 @@ pub(crate) mod shape_list_data_quality_statistics_input;
 pub(crate) mod shape_list_dev_endpoints_input;
 
 pub(crate) mod shape_list_entities_input;
+
+pub(crate) mod shape_list_integration_resource_properties_input;
 
 pub(crate) mod shape_list_jobs_input;
 
@@ -1356,6 +1364,10 @@ pub(crate) mod shape_integration_config;
 pub(crate) mod shape_integration_error_list;
 
 pub(crate) mod shape_integration_filter;
+
+pub(crate) mod shape_integration_resource_property_filter;
+
+pub(crate) mod shape_integration_resource_property_list;
 
 pub(crate) mod shape_integration_tags_list;
 
@@ -1788,6 +1800,8 @@ pub(crate) mod shape_integration_error;
 pub(crate) mod shape_integration_partition;
 
 pub(crate) mod shape_integration_partition_spec_list;
+
+pub(crate) mod shape_integration_resource_property;
 
 pub(crate) mod shape_integration_source_properties_map;
 

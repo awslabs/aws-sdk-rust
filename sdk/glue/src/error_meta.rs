@@ -2469,6 +2469,61 @@ impl From<crate::operation::delete_integration::DeleteIntegrationError> for Erro
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError> for Error {
+    fn from(err: crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError) -> Self {
+        match err {
+            crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_integration_resource_property::DeleteIntegrationResourcePropertyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_integration_table_properties::DeleteIntegrationTablePropertiesError,
             R,
         >,
@@ -6064,6 +6119,61 @@ impl From<crate::operation::list_entities::ListEntitiesError> for Error {
             crate::operation::list_entities::ListEntitiesError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::list_entities::ListEntitiesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_entities::ListEntitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError> for Error {
+    fn from(err: crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError) -> Self {
+        match err {
+            crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_integration_resource_properties::ListIntegrationResourcePropertiesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

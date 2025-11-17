@@ -37,23 +37,26 @@ pub fn ser_start_backup_job_input_input(
         crate::protocol_serde::shape_lifecycle::ser_lifecycle(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.recovery_point_tags {
+    if let Some(var_12) = &input.logically_air_gapped_backup_vault_arn {
+        object.key("LogicallyAirGappedBackupVaultArn").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.recovery_point_tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("RecoveryPointTags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("RecoveryPointTags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
-    if let Some(var_16) = &input.resource_arn {
-        object.key("ResourceArn").string(var_16.as_str());
+    if let Some(var_17) = &input.resource_arn {
+        object.key("ResourceArn").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.start_window_minutes {
+    if let Some(var_18) = &input.start_window_minutes {
         object.key("StartWindowMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_17).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
     Ok(())

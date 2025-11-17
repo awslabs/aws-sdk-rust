@@ -17,6 +17,13 @@ where
                         "ScteFilter" => {
                             builder = builder.set_scte_filter(crate::protocol_serde::shape_scte_filter_list::de_scte_filter_list(tokens)?);
                         }
+                        "ScteInSegments" => {
+                            builder = builder.set_scte_in_segments(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ScteInSegments::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -46,6 +53,9 @@ pub fn ser_scte(
             }
         }
         array_2.finish();
+    }
+    if let Some(var_4) = &input.scte_in_segments {
+        object.key("ScteInSegments").string(var_4.as_str());
     }
     Ok(())
 }

@@ -117,6 +117,9 @@ where
                             builder =
                                 builder.set_access_endpoints(crate::protocol_serde::shape_access_endpoint_list::de_access_endpoint_list(tokens)?);
                         }
+                        "RootVolumeConfig" => {
+                            builder = builder.set_root_volume_config(crate::protocol_serde::shape_volume_config::de_volume_config(tokens)?);
+                        }
                         "LatestAppstreamAgentVersion" => {
                             builder = builder.set_latest_appstream_agent_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

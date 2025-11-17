@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>An API error occurred. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
+    /// <p>The exception that is thrown when a dry run operation is requested. This indicates that the validation checks have been performed successfully, but no actual resources were created or modified.</p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>The entitlement already exists.</p>
     EntitlementAlreadyExistsException(crate::types::error::EntitlementAlreadyExistsException),
     /// <p>The entitlement can't be found.</p>
@@ -21,7 +23,7 @@ pub enum Error {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The attempted operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
-    /// <p>AppStream 2.0 can’t process the request right now because the Describe calls from your AWS account are being throttled by Amazon EC2. Try again later.</p>
+    /// <p>WorkSpaces Applications can’t process the request right now because the Describe calls from your AWS account are being throttled by Amazon EC2. Try again later.</p>
     RequestLimitExceededException(crate::types::error::RequestLimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
@@ -44,6 +46,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
+            Error::DryRunOperationException(inner) => inner.fmt(f),
             Error::EntitlementAlreadyExistsException(inner) => inner.fmt(f),
             Error::EntitlementNotFoundException(inner) => inner.fmt(f),
             Error::IncompatibleImageException(inner) => inner.fmt(f),
@@ -79,6 +82,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::DryRunOperationException(inner) => inner.meta(),
             Self::EntitlementAlreadyExistsException(inner) => inner.meta(),
             Self::EntitlementNotFoundException(inner) => inner.meta(),
             Self::IncompatibleImageException(inner) => inner.meta(),
@@ -619,6 +623,48 @@ impl From<crate::operation::create_entitlement::CreateEntitlementError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_export_image_task::CreateExportImageTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_export_image_task::CreateExportImageTaskError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_export_image_task::CreateExportImageTaskError> for Error {
+    fn from(err: crate::operation::create_export_image_task::CreateExportImageTaskError) -> Self {
+        match err {
+            crate::operation::create_export_image_task::CreateExportImageTaskError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::create_export_image_task::CreateExportImageTaskError::InvalidAccountStatusException(inner) => {
+                Error::InvalidAccountStatusException(inner)
+            }
+            crate::operation::create_export_image_task::CreateExportImageTaskError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
+            crate::operation::create_export_image_task::CreateExportImageTaskError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_export_image_task::CreateExportImageTaskError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::create_export_image_task::CreateExportImageTaskError::ResourceNotAvailableException(inner) => {
+                Error::ResourceNotAvailableException(inner)
+            }
+            crate::operation::create_export_image_task::CreateExportImageTaskError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_export_image_task::CreateExportImageTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_fleet::CreateFleetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -738,6 +784,47 @@ impl From<crate::operation::create_image_builder_streaming_url::CreateImageBuild
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingURLError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_imported_image::CreateImportedImageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_imported_image::CreateImportedImageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_imported_image::CreateImportedImageError> for Error {
+    fn from(err: crate::operation::create_imported_image::CreateImportedImageError) -> Self {
+        match err {
+            crate::operation::create_imported_image::CreateImportedImageError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
+            crate::operation::create_imported_image::CreateImportedImageError::IncompatibleImageException(inner) => {
+                Error::IncompatibleImageException(inner)
+            }
+            crate::operation::create_imported_image::CreateImportedImageError::InvalidAccountStatusException(inner) => {
+                Error::InvalidAccountStatusException(inner)
+            }
+            crate::operation::create_imported_image::CreateImportedImageError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
+            crate::operation::create_imported_image::CreateImportedImageError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_imported_image::CreateImportedImageError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::create_imported_image::CreateImportedImageError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_imported_image::CreateImportedImageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_imported_image::CreateImportedImageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2109,6 +2196,33 @@ impl From<crate::operation::expire_session::ExpireSessionError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_export_image_task::GetExportImageTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_export_image_task::GetExportImageTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_export_image_task::GetExportImageTaskError> for Error {
+    fn from(err: crate::operation::get_export_image_task::GetExportImageTaskError) -> Self {
+        match err {
+            crate::operation::get_export_image_task::GetExportImageTaskError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::get_export_image_task::GetExportImageTaskError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_export_image_task::GetExportImageTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_associated_fleets::ListAssociatedFleetsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2181,6 +2295,32 @@ impl From<crate::operation::list_entitled_applications::ListEntitledApplications
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_entitled_applications::ListEntitledApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_export_image_tasks::ListExportImageTasksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_export_image_tasks::ListExportImageTasksError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_export_image_tasks::ListExportImageTasksError> for Error {
+    fn from(err: crate::operation::list_export_image_tasks::ListExportImageTasksError) -> Self {
+        match err {
+            crate::operation::list_export_image_tasks::ListExportImageTasksError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::list_export_image_tasks::ListExportImageTasksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2779,6 +2919,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::DryRunOperationException(inner) => inner.source(),
             Error::EntitlementAlreadyExistsException(inner) => inner.source(),
             Error::EntitlementNotFoundException(inner) => inner.source(),
             Error::IncompatibleImageException(inner) => inner.source(),
@@ -2800,6 +2941,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::DryRunOperationException(e) => e.request_id(),
             Self::EntitlementAlreadyExistsException(e) => e.request_id(),
             Self::EntitlementNotFoundException(e) => e.request_id(),
             Self::IncompatibleImageException(e) => e.request_id(),

@@ -199,6 +199,9 @@ pub mod list_threat_intel_sets;
 /// Types for the `ListTrustedEntitySets` operation.
 pub mod list_trusted_entity_sets;
 
+/// Types for the `SendObjectMalwareScan` operation.
+pub mod send_object_malware_scan;
+
 /// Types for the `StartMalwareScan` operation.
 pub mod start_malware_scan;
 

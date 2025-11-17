@@ -41,6 +41,9 @@ where
                         "ExportSqlDetails" => {
                             builder = builder.set_export_sql_details(crate::protocol_serde::shape_export_sql_details::de_export_sql_details(tokens)?);
                         }
+                        "Progress" => {
+                            builder = builder.set_progress(crate::protocol_serde::shape_progress::de_progress(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

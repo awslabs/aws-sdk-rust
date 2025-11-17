@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImageBuilderStreamingUrlOutput {
-    /// <p>The URL to start the AppStream 2.0 streaming session.</p>
+    /// <p>The URL to start the WorkSpaces Applications streaming session.</p>
     pub streaming_url: ::std::option::Option<::std::string::String>,
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
     pub expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl CreateImageBuilderStreamingUrlOutput {
-    /// <p>The URL to start the AppStream 2.0 streaming session.</p>
+    /// <p>The URL to start the WorkSpaces Applications streaming session.</p>
     pub fn streaming_url(&self) -> ::std::option::Option<&str> {
         self.streaming_url.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct CreateImageBuilderStreamingUrlOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateImageBuilderStreamingUrlOutputBuilder {
-    /// <p>The URL to start the AppStream 2.0 streaming session.</p>
+    /// <p>The URL to start the WorkSpaces Applications streaming session.</p>
     pub fn streaming_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.streaming_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL to start the AppStream 2.0 streaming session.</p>
+    /// <p>The URL to start the WorkSpaces Applications streaming session.</p>
     pub fn set_streaming_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.streaming_url = input;
         self
     }
-    /// <p>The URL to start the AppStream 2.0 streaming session.</p>
+    /// <p>The URL to start the WorkSpaces Applications streaming session.</p>
     pub fn get_streaming_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.streaming_url
     }

@@ -44,7 +44,7 @@ pub struct ModifyIntegrationOutput {
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>,
     /// <p>Selects source tables for the integration using Maxwell filter syntax.</p>
     pub data_filter: ::std::option::Option<::std::string::String>,
-    /// <p>Properties associated with the integration.</p>
+    /// <p>The updated configuration settings for the integration.</p>
     pub integration_config: ::std::option::Option<crate::types::IntegrationConfig>,
     _request_id: Option<String>,
 }
@@ -122,7 +122,7 @@ impl ModifyIntegrationOutput {
     pub fn data_filter(&self) -> ::std::option::Option<&str> {
         self.data_filter.as_deref()
     }
-    /// <p>Properties associated with the integration.</p>
+    /// <p>The updated configuration settings for the integration.</p>
     pub fn integration_config(&self) -> ::std::option::Option<&crate::types::IntegrationConfig> {
         self.integration_config.as_ref()
     }
@@ -411,17 +411,17 @@ impl ModifyIntegrationOutputBuilder {
     pub fn get_data_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_filter
     }
-    /// <p>Properties associated with the integration.</p>
+    /// <p>The updated configuration settings for the integration.</p>
     pub fn integration_config(mut self, input: crate::types::IntegrationConfig) -> Self {
         self.integration_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Properties associated with the integration.</p>
+    /// <p>The updated configuration settings for the integration.</p>
     pub fn set_integration_config(mut self, input: ::std::option::Option<crate::types::IntegrationConfig>) -> Self {
         self.integration_config = input;
         self
     }
-    /// <p>Properties associated with the integration.</p>
+    /// <p>The updated configuration settings for the integration.</p>
     pub fn get_integration_config(&self) -> &::std::option::Option<crate::types::IntegrationConfig> {
         &self.integration_config
     }

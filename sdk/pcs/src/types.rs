@@ -21,9 +21,17 @@ pub use crate::types::_network_type::NetworkType;
 
 pub use crate::types::_cluster_slurm_configuration::ClusterSlurmConfiguration;
 
+pub use crate::types::_slurm_rest::SlurmRest;
+
+pub use crate::types::_slurm_rest_mode::SlurmRestMode;
+
 pub use crate::types::_accounting::Accounting;
 
 pub use crate::types::_accounting_mode::AccountingMode;
+
+pub use crate::types::_jwt_auth::JwtAuth;
+
+pub use crate::types::_jwt_key::JwtKey;
 
 pub use crate::types::_slurm_auth_key::SlurmAuthKey;
 
@@ -37,9 +45,13 @@ pub use crate::types::_scheduler_type::SchedulerType;
 
 pub use crate::types::_update_cluster_slurm_configuration_request::UpdateClusterSlurmConfigurationRequest;
 
+pub use crate::types::_update_slurm_rest_request::UpdateSlurmRestRequest;
+
 pub use crate::types::_update_accounting_request::UpdateAccountingRequest;
 
 pub use crate::types::_cluster_slurm_configuration_request::ClusterSlurmConfigurationRequest;
+
+pub use crate::types::_slurm_rest_request::SlurmRestRequest;
 
 pub use crate::types::_accounting_request::AccountingRequest;
 
@@ -125,6 +137,10 @@ mod _error_info;
 
 mod _instance_config;
 
+mod _jwt_auth;
+
+mod _jwt_key;
+
 mod _network_type;
 
 mod _networking;
@@ -159,6 +175,12 @@ mod _slurm_auth_key;
 
 mod _slurm_custom_setting;
 
+mod _slurm_rest;
+
+mod _slurm_rest_mode;
+
+mod _slurm_rest_request;
+
 mod _spot_allocation_strategy;
 
 mod _spot_options;
@@ -170,6 +192,8 @@ mod _update_cluster_slurm_configuration_request;
 mod _update_compute_node_group_slurm_configuration_request;
 
 mod _update_queue_slurm_configuration_request;
+
+mod _update_slurm_rest_request;
 
 mod _validation_exception_field;
 

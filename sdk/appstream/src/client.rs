@@ -198,11 +198,15 @@ mod create_directory_config;
 
 mod create_entitlement;
 
+mod create_export_image_task;
+
 mod create_fleet;
 
 mod create_image_builder;
 
 mod create_image_builder_streaming_url;
+
+mod create_imported_image;
 
 mod create_stack;
 
@@ -323,11 +327,15 @@ mod enable_user;
 
 mod expire_session;
 
+mod get_export_image_task;
+
 mod list_associated_fleets;
 
 mod list_associated_stacks;
 
 mod list_entitled_applications;
+
+mod list_export_image_tasks;
 
 mod list_tags_for_resource;
 

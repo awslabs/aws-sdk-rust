@@ -15,38 +15,23 @@ pub fn ser_create_remote_access_session_input_input(
     if let Some(var_4) = &input.instance_arn {
         object.key("instanceArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.ssh_public_key {
-        object.key("sshPublicKey").string(var_5.as_str());
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.remote_debug_enabled {
-        object.key("remoteDebugEnabled").boolean(*var_6);
-    }
-    if let Some(var_7) = &input.remote_record_enabled {
-        object.key("remoteRecordEnabled").boolean(*var_7);
-    }
-    if let Some(var_8) = &input.remote_record_app_arn {
-        object.key("remoteRecordAppArn").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.client_id {
-        object.key("clientId").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.configuration {
+    if let Some(var_6) = &input.configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("configuration").start_object();
+        let mut object_7 = object.key("configuration").start_object();
         crate::protocol_serde::shape_create_remote_access_session_configuration::ser_create_remote_access_session_configuration(
-            &mut object_12,
-            var_11,
+            &mut object_7,
+            var_6,
         )?;
-        object_12.finish();
+        object_7.finish();
     }
-    if let Some(var_13) = &input.interaction_mode {
-        object.key("interactionMode").string(var_13.as_str());
+    if let Some(var_8) = &input.interaction_mode {
+        object.key("interactionMode").string(var_8.as_str());
     }
-    if let Some(var_14) = &input.skip_app_resign {
-        object.key("skipAppResign").boolean(*var_14);
+    if let Some(var_9) = &input.skip_app_resign {
+        object.key("skipAppResign").boolean(*var_9);
     }
     Ok(())
 }

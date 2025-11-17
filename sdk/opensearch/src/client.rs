@@ -158,6 +158,8 @@ mod create_application;
 
 mod create_domain;
 
+mod create_index;
+
 mod create_outbound_connection;
 
 mod create_package;
@@ -200,6 +202,8 @@ mod delete_direct_query_data_source;
 mod delete_domain;
 
 mod delete_inbound_connection;
+
+mod delete_index;
 
 mod delete_outbound_connection;
 
@@ -252,6 +256,8 @@ mod get_default_application_setting;
 mod get_direct_query_data_source;
 
 mod get_domain_maintenance_status;
+
+mod get_index;
 
 mod get_package_version_history;
 
@@ -308,6 +314,8 @@ mod update_data_source;
 mod update_direct_query_data_source;
 
 mod update_domain_config;
+
+mod update_index;
 
 mod update_package;
 

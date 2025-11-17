@@ -11,6 +11,8 @@ pub struct UpdateClusterSlurmConfigurationRequest {
     pub slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
     /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
     pub accounting: ::std::option::Option<crate::types::UpdateAccountingRequest>,
+    /// <p>The Slurm REST API configuration for the cluster.</p>
+    pub slurm_rest: ::std::option::Option<crate::types::UpdateSlurmRestRequest>,
 }
 impl UpdateClusterSlurmConfigurationRequest {
     /// <p>The time (in seconds) before an idle node is scaled down.</p>
@@ -28,6 +30,10 @@ impl UpdateClusterSlurmConfigurationRequest {
     pub fn accounting(&self) -> ::std::option::Option<&crate::types::UpdateAccountingRequest> {
         self.accounting.as_ref()
     }
+    /// <p>The Slurm REST API configuration for the cluster.</p>
+    pub fn slurm_rest(&self) -> ::std::option::Option<&crate::types::UpdateSlurmRestRequest> {
+        self.slurm_rest.as_ref()
+    }
 }
 impl UpdateClusterSlurmConfigurationRequest {
     /// Creates a new builder-style object to manufacture [`UpdateClusterSlurmConfigurationRequest`](crate::types::UpdateClusterSlurmConfigurationRequest).
@@ -43,6 +49,7 @@ pub struct UpdateClusterSlurmConfigurationRequestBuilder {
     pub(crate) scale_down_idle_time_in_seconds: ::std::option::Option<i32>,
     pub(crate) slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
     pub(crate) accounting: ::std::option::Option<crate::types::UpdateAccountingRequest>,
+    pub(crate) slurm_rest: ::std::option::Option<crate::types::UpdateSlurmRestRequest>,
 }
 impl UpdateClusterSlurmConfigurationRequestBuilder {
     /// <p>The time (in seconds) before an idle node is scaled down.</p>
@@ -96,12 +103,27 @@ impl UpdateClusterSlurmConfigurationRequestBuilder {
     pub fn get_accounting(&self) -> &::std::option::Option<crate::types::UpdateAccountingRequest> {
         &self.accounting
     }
+    /// <p>The Slurm REST API configuration for the cluster.</p>
+    pub fn slurm_rest(mut self, input: crate::types::UpdateSlurmRestRequest) -> Self {
+        self.slurm_rest = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Slurm REST API configuration for the cluster.</p>
+    pub fn set_slurm_rest(mut self, input: ::std::option::Option<crate::types::UpdateSlurmRestRequest>) -> Self {
+        self.slurm_rest = input;
+        self
+    }
+    /// <p>The Slurm REST API configuration for the cluster.</p>
+    pub fn get_slurm_rest(&self) -> &::std::option::Option<crate::types::UpdateSlurmRestRequest> {
+        &self.slurm_rest
+    }
     /// Consumes the builder and constructs a [`UpdateClusterSlurmConfigurationRequest`](crate::types::UpdateClusterSlurmConfigurationRequest).
     pub fn build(self) -> crate::types::UpdateClusterSlurmConfigurationRequest {
         crate::types::UpdateClusterSlurmConfigurationRequest {
             scale_down_idle_time_in_seconds: self.scale_down_idle_time_in_seconds,
             slurm_custom_settings: self.slurm_custom_settings,
             accounting: self.accounting,
+            slurm_rest: self.slurm_rest,
         }
     }
 }

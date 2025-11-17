@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_global_settings::builders::DescribeGlobalSettingsFluentBuilder::send) it.
     /// - On success, responds with [`DescribeGlobalSettingsOutput`](crate::operation::describe_global_settings::DescribeGlobalSettingsOutput) with field(s):
-    ///   - [`global_settings(Option<HashMap::<String, String>>)`](crate::operation::describe_global_settings::DescribeGlobalSettingsOutput::global_settings): <p>The status of the flags <code>isCrossAccountBackupEnabled</code> and <code>isMpaEnabled</code> ('Mpa' refers to multi-party approval).</p>
+    ///   - [`global_settings(Option<HashMap::<String, String>>)`](crate::operation::describe_global_settings::DescribeGlobalSettingsOutput::global_settings): <p>The status of the flags <code>isCrossAccountBackupEnabled</code>, <code>isMpaEnabled</code> ('Mpa' refers to multi-party approval), and <code>isDelegatedAdministratorEnabled</code>.</p>
     ///   - [`last_update_time(Option<DateTime>)`](crate::operation::describe_global_settings::DescribeGlobalSettingsOutput::last_update_time): <p>The date and time that the flag <code>isCrossAccountBackupEnabled</code> was last updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     /// - On failure, responds with [`SdkError<DescribeGlobalSettingsError>`](crate::operation::describe_global_settings::DescribeGlobalSettingsError)
     pub fn describe_global_settings(&self) -> crate::operation::describe_global_settings::builders::DescribeGlobalSettingsFluentBuilder {

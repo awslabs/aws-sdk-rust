@@ -251,6 +251,8 @@ pub use crate::types::_bandwidth_reduction_filter_settings::BandwidthReductionFi
 
 pub use crate::types::_h265_color_space_settings::H265ColorSpaceSettingsBuilder;
 
+pub use crate::types::_hlg2020_settings::Hlg2020SettingsBuilder;
+
 pub use crate::types::_dolby_vision81_settings::DolbyVision81SettingsBuilder;
 
 pub use crate::types::_h264_settings::H264SettingsBuilder;

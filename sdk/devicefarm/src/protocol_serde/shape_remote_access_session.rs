@@ -77,33 +77,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "remoteDebugEnabled" => {
-                            builder = builder.set_remote_debug_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "remoteRecordEnabled" => {
-                            builder = builder.set_remote_record_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "remoteRecordAppArn" => {
-                            builder = builder.set_remote_record_app_arn(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "hostAddress" => {
-                            builder = builder.set_host_address(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "clientId" => {
-                            builder = builder.set_client_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
                         "billingMethod" => {
                             builder = builder.set_billing_method(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -150,6 +123,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "endpoints" => {
+                            builder =
+                                builder.set_endpoints(crate::protocol_serde::shape_remote_access_endpoints::de_remote_access_endpoints(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

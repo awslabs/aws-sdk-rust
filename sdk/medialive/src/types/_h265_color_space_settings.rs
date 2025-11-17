@@ -14,6 +14,8 @@ pub struct H265ColorSpaceSettings {
     pub rec601_settings: ::std::option::Option<crate::types::Rec601Settings>,
     /// Rec709 Settings
     pub rec709_settings: ::std::option::Option<crate::types::Rec709Settings>,
+    /// Hlg2020 Settings
+    pub hlg2020_settings: ::std::option::Option<crate::types::Hlg2020Settings>,
 }
 impl H265ColorSpaceSettings {
     /// Passthrough applies no color space conversion to the output
@@ -36,6 +38,10 @@ impl H265ColorSpaceSettings {
     pub fn rec709_settings(&self) -> ::std::option::Option<&crate::types::Rec709Settings> {
         self.rec709_settings.as_ref()
     }
+    /// Hlg2020 Settings
+    pub fn hlg2020_settings(&self) -> ::std::option::Option<&crate::types::Hlg2020Settings> {
+        self.hlg2020_settings.as_ref()
+    }
 }
 impl H265ColorSpaceSettings {
     /// Creates a new builder-style object to manufacture [`H265ColorSpaceSettings`](crate::types::H265ColorSpaceSettings).
@@ -53,6 +59,7 @@ pub struct H265ColorSpaceSettingsBuilder {
     pub(crate) hdr10_settings: ::std::option::Option<crate::types::Hdr10Settings>,
     pub(crate) rec601_settings: ::std::option::Option<crate::types::Rec601Settings>,
     pub(crate) rec709_settings: ::std::option::Option<crate::types::Rec709Settings>,
+    pub(crate) hlg2020_settings: ::std::option::Option<crate::types::Hlg2020Settings>,
 }
 impl H265ColorSpaceSettingsBuilder {
     /// Passthrough applies no color space conversion to the output
@@ -125,6 +132,20 @@ impl H265ColorSpaceSettingsBuilder {
     pub fn get_rec709_settings(&self) -> &::std::option::Option<crate::types::Rec709Settings> {
         &self.rec709_settings
     }
+    /// Hlg2020 Settings
+    pub fn hlg2020_settings(mut self, input: crate::types::Hlg2020Settings) -> Self {
+        self.hlg2020_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Hlg2020 Settings
+    pub fn set_hlg2020_settings(mut self, input: ::std::option::Option<crate::types::Hlg2020Settings>) -> Self {
+        self.hlg2020_settings = input;
+        self
+    }
+    /// Hlg2020 Settings
+    pub fn get_hlg2020_settings(&self) -> &::std::option::Option<crate::types::Hlg2020Settings> {
+        &self.hlg2020_settings
+    }
     /// Consumes the builder and constructs a [`H265ColorSpaceSettings`](crate::types::H265ColorSpaceSettings).
     pub fn build(self) -> crate::types::H265ColorSpaceSettings {
         crate::types::H265ColorSpaceSettings {
@@ -133,6 +154,7 @@ impl H265ColorSpaceSettingsBuilder {
             hdr10_settings: self.hdr10_settings,
             rec601_settings: self.rec601_settings,
             rec709_settings: self.rec709_settings,
+            hlg2020_settings: self.hlg2020_settings,
         }
     }
 }

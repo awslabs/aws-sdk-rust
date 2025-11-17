@@ -32,13 +32,13 @@ pub struct Image {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>
     pub public_base_image_released_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
+    /// <p>The version of the WorkSpaces Applications agent to use for instances that are launched from this image.</p>
     pub appstream_agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
     pub image_permissions: ::std::option::Option<crate::types::ImagePermissions>,
     /// <p>Describes the errors that are returned when a new image can't be created.</p>
     pub image_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
-    /// <p>Indicates whether the image is using the latest AppStream 2.0 agent version or not.</p>
+    /// <p>Indicates whether the image is using the latest WorkSpaces Applications agent version or not.</p>
     pub latest_appstream_agent_version: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>,
     /// <p>The supported instances families that determine which image a customer can use when the customer launches a fleet or image builder. The following instances families are supported:</p>
     /// <ul>
@@ -60,12 +60,14 @@ pub struct Image {
     /// <p>Graphics G5</p></li>
     /// </ul>
     pub supported_instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0 image or not.</p>
+    /// <p>Indicates whether dynamic app providers are enabled within an WorkSpaces Applications image or not.</p>
     pub dynamic_app_providers_enabled: ::std::option::Option<crate::types::DynamicAppProvidersEnabled>,
     /// <p>Indicates whether the image is shared with another account ID.</p>
     pub image_shared_with_others: ::std::option::Option<crate::types::ImageSharedWithOthers>,
     /// <p>Indicates whether the image includes license-included applications.</p>
     pub managed_software_included: ::std::option::Option<bool>,
+    /// <p>The type of the image. Images created through AMI import have type "custom", while WorkSpaces Applications provided images have type "native". Custom images support additional instance types including GeneralPurpose, MemoryOptimized, ComputeOptimized, and Accelerated instance families.</p>
+    pub image_type: ::std::option::Option<crate::types::ImageType>,
 }
 impl Image {
     /// <p>The name of the image.</p>
@@ -126,7 +128,7 @@ impl Image {
     pub fn public_base_image_released_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.public_base_image_released_date.as_ref()
     }
-    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
+    /// <p>The version of the WorkSpaces Applications agent to use for instances that are launched from this image.</p>
     pub fn appstream_agent_version(&self) -> ::std::option::Option<&str> {
         self.appstream_agent_version.as_deref()
     }
@@ -140,7 +142,7 @@ impl Image {
     pub fn image_errors(&self) -> &[crate::types::ResourceError] {
         self.image_errors.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether the image is using the latest AppStream 2.0 agent version or not.</p>
+    /// <p>Indicates whether the image is using the latest WorkSpaces Applications agent version or not.</p>
     pub fn latest_appstream_agent_version(&self) -> ::std::option::Option<&crate::types::LatestAppstreamAgentVersion> {
         self.latest_appstream_agent_version.as_ref()
     }
@@ -168,7 +170,7 @@ impl Image {
     pub fn supported_instance_families(&self) -> &[::std::string::String] {
         self.supported_instance_families.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0 image or not.</p>
+    /// <p>Indicates whether dynamic app providers are enabled within an WorkSpaces Applications image or not.</p>
     pub fn dynamic_app_providers_enabled(&self) -> ::std::option::Option<&crate::types::DynamicAppProvidersEnabled> {
         self.dynamic_app_providers_enabled.as_ref()
     }
@@ -179,6 +181,10 @@ impl Image {
     /// <p>Indicates whether the image includes license-included applications.</p>
     pub fn managed_software_included(&self) -> ::std::option::Option<bool> {
         self.managed_software_included
+    }
+    /// <p>The type of the image. Images created through AMI import have type "custom", while WorkSpaces Applications provided images have type "native". Custom images support additional instance types including GeneralPurpose, MemoryOptimized, ComputeOptimized, and Accelerated instance families.</p>
+    pub fn image_type(&self) -> ::std::option::Option<&crate::types::ImageType> {
+        self.image_type.as_ref()
     }
 }
 impl Image {
@@ -214,6 +220,7 @@ pub struct ImageBuilder {
     pub(crate) dynamic_app_providers_enabled: ::std::option::Option<crate::types::DynamicAppProvidersEnabled>,
     pub(crate) image_shared_with_others: ::std::option::Option<crate::types::ImageSharedWithOthers>,
     pub(crate) managed_software_included: ::std::option::Option<bool>,
+    pub(crate) image_type: ::std::option::Option<crate::types::ImageType>,
 }
 impl ImageBuilder {
     /// <p>The name of the image.</p>
@@ -419,17 +426,17 @@ impl ImageBuilder {
     pub fn get_public_base_image_released_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.public_base_image_released_date
     }
-    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
+    /// <p>The version of the WorkSpaces Applications agent to use for instances that are launched from this image.</p>
     pub fn appstream_agent_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.appstream_agent_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
+    /// <p>The version of the WorkSpaces Applications agent to use for instances that are launched from this image.</p>
     pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.appstream_agent_version = input;
         self
     }
-    /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image.</p>
+    /// <p>The version of the WorkSpaces Applications agent to use for instances that are launched from this image.</p>
     pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.appstream_agent_version
     }
@@ -467,17 +474,17 @@ impl ImageBuilder {
     pub fn get_image_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
         &self.image_errors
     }
-    /// <p>Indicates whether the image is using the latest AppStream 2.0 agent version or not.</p>
+    /// <p>Indicates whether the image is using the latest WorkSpaces Applications agent version or not.</p>
     pub fn latest_appstream_agent_version(mut self, input: crate::types::LatestAppstreamAgentVersion) -> Self {
         self.latest_appstream_agent_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the image is using the latest AppStream 2.0 agent version or not.</p>
+    /// <p>Indicates whether the image is using the latest WorkSpaces Applications agent version or not.</p>
     pub fn set_latest_appstream_agent_version(mut self, input: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>) -> Self {
         self.latest_appstream_agent_version = input;
         self
     }
-    /// <p>Indicates whether the image is using the latest AppStream 2.0 agent version or not.</p>
+    /// <p>Indicates whether the image is using the latest WorkSpaces Applications agent version or not.</p>
     pub fn get_latest_appstream_agent_version(&self) -> &::std::option::Option<crate::types::LatestAppstreamAgentVersion> {
         &self.latest_appstream_agent_version
     }
@@ -555,17 +562,17 @@ impl ImageBuilder {
     pub fn get_supported_instance_families(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_instance_families
     }
-    /// <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0 image or not.</p>
+    /// <p>Indicates whether dynamic app providers are enabled within an WorkSpaces Applications image or not.</p>
     pub fn dynamic_app_providers_enabled(mut self, input: crate::types::DynamicAppProvidersEnabled) -> Self {
         self.dynamic_app_providers_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0 image or not.</p>
+    /// <p>Indicates whether dynamic app providers are enabled within an WorkSpaces Applications image or not.</p>
     pub fn set_dynamic_app_providers_enabled(mut self, input: ::std::option::Option<crate::types::DynamicAppProvidersEnabled>) -> Self {
         self.dynamic_app_providers_enabled = input;
         self
     }
-    /// <p>Indicates whether dynamic app providers are enabled within an AppStream 2.0 image or not.</p>
+    /// <p>Indicates whether dynamic app providers are enabled within an WorkSpaces Applications image or not.</p>
     pub fn get_dynamic_app_providers_enabled(&self) -> &::std::option::Option<crate::types::DynamicAppProvidersEnabled> {
         &self.dynamic_app_providers_enabled
     }
@@ -597,6 +604,20 @@ impl ImageBuilder {
     pub fn get_managed_software_included(&self) -> &::std::option::Option<bool> {
         &self.managed_software_included
     }
+    /// <p>The type of the image. Images created through AMI import have type "custom", while WorkSpaces Applications provided images have type "native". Custom images support additional instance types including GeneralPurpose, MemoryOptimized, ComputeOptimized, and Accelerated instance families.</p>
+    pub fn image_type(mut self, input: crate::types::ImageType) -> Self {
+        self.image_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the image. Images created through AMI import have type "custom", while WorkSpaces Applications provided images have type "native". Custom images support additional instance types including GeneralPurpose, MemoryOptimized, ComputeOptimized, and Accelerated instance families.</p>
+    pub fn set_image_type(mut self, input: ::std::option::Option<crate::types::ImageType>) -> Self {
+        self.image_type = input;
+        self
+    }
+    /// <p>The type of the image. Images created through AMI import have type "custom", while WorkSpaces Applications provided images have type "native". Custom images support additional instance types including GeneralPurpose, MemoryOptimized, ComputeOptimized, and Accelerated instance families.</p>
+    pub fn get_image_type(&self) -> &::std::option::Option<crate::types::ImageType> {
+        &self.image_type
+    }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
@@ -622,6 +643,7 @@ impl ImageBuilder {
             dynamic_app_providers_enabled: self.dynamic_app_providers_enabled,
             image_shared_with_others: self.image_shared_with_others,
             managed_software_included: self.managed_software_included,
+            image_type: self.image_type,
         }
     }
 }

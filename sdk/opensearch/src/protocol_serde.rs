@@ -45,6 +45,8 @@ pub(crate) mod shape_create_application;
 
 pub(crate) mod shape_create_domain;
 
+pub(crate) mod shape_create_index;
+
 pub(crate) mod shape_create_outbound_connection;
 
 pub(crate) mod shape_create_package;
@@ -60,6 +62,8 @@ pub(crate) mod shape_delete_direct_query_data_source;
 pub(crate) mod shape_delete_domain;
 
 pub(crate) mod shape_delete_inbound_connection;
+
+pub(crate) mod shape_delete_index;
 
 pub(crate) mod shape_delete_outbound_connection;
 
@@ -112,6 +116,8 @@ pub(crate) mod shape_get_default_application_setting;
 pub(crate) mod shape_get_direct_query_data_source;
 
 pub(crate) mod shape_get_domain_maintenance_status;
+
+pub(crate) mod shape_get_index;
 
 pub(crate) mod shape_get_package_version_history;
 
@@ -169,6 +175,8 @@ pub(crate) mod shape_update_direct_query_data_source;
 
 pub(crate) mod shape_update_domain_config;
 
+pub(crate) mod shape_update_index;
+
 pub(crate) mod shape_update_package;
 
 pub(crate) mod shape_update_package_scope;
@@ -212,6 +220,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_create_application_input;
 
 pub(crate) mod shape_create_domain_input;
+
+pub(crate) mod shape_create_index_input;
 
 pub(crate) mod shape_create_outbound_connection_input;
 
@@ -263,6 +273,8 @@ pub(crate) mod shape_start_domain_maintenance_input;
 
 pub(crate) mod shape_start_service_software_update_input;
 
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_update_application_input;
 
 pub(crate) mod shape_update_data_source_input;
@@ -270,6 +282,8 @@ pub(crate) mod shape_update_data_source_input;
 pub(crate) mod shape_update_direct_query_data_source_input;
 
 pub(crate) mod shape_update_domain_config_input;
+
+pub(crate) mod shape_update_index_input;
 
 pub(crate) mod shape_update_package_input;
 

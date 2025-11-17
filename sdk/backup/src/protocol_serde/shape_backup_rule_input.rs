@@ -9,66 +9,69 @@ pub fn ser_backup_rule_input(
     {
         object.key("TargetBackupVaultName").string(input.target_backup_vault_name.as_str());
     }
-    if let Some(var_1) = &input.schedule_expression {
-        object.key("ScheduleExpression").string(var_1.as_str());
+    if let Some(var_1) = &input.target_logically_air_gapped_backup_vault_arn {
+        object.key("TargetLogicallyAirGappedBackupVaultArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.start_window_minutes {
+    if let Some(var_2) = &input.schedule_expression {
+        object.key("ScheduleExpression").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.start_window_minutes {
         object.key("StartWindowMinutes").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
-        );
-    }
-    if let Some(var_3) = &input.completion_window_minutes {
-        object.key("CompletionWindowMinutes").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.lifecycle {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("Lifecycle").start_object();
-        crate::protocol_serde::shape_lifecycle::ser_lifecycle(&mut object_5, var_4)?;
-        object_5.finish();
+    if let Some(var_4) = &input.completion_window_minutes {
+        object.key("CompletionWindowMinutes").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
     }
-    if let Some(var_6) = &input.recovery_point_tags {
+    if let Some(var_5) = &input.lifecycle {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("RecoveryPointTags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_6 = object.key("Lifecycle").start_object();
+        crate::protocol_serde::shape_lifecycle::ser_lifecycle(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.recovery_point_tags {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("RecoveryPointTags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_10) = &input.copy_actions {
-        let mut array_11 = object.key("CopyActions").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.copy_actions {
+        let mut array_12 = object.key("CopyActions").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_copy_action::ser_copy_action(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_copy_action::ser_copy_action(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_14) = &input.enable_continuous_backup {
-        object.key("EnableContinuousBackup").boolean(*var_14);
+    if let Some(var_15) = &input.enable_continuous_backup {
+        object.key("EnableContinuousBackup").boolean(*var_15);
     }
-    if let Some(var_15) = &input.schedule_expression_timezone {
-        object.key("ScheduleExpressionTimezone").string(var_15.as_str());
+    if let Some(var_16) = &input.schedule_expression_timezone {
+        object.key("ScheduleExpressionTimezone").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.index_actions {
-        let mut array_17 = object.key("IndexActions").start_array();
-        for item_18 in var_16 {
+    if let Some(var_17) = &input.index_actions {
+        let mut array_18 = object.key("IndexActions").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_index_action::ser_index_action(&mut object_19, item_18)?;
-                object_19.finish();
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_index_action::ser_index_action(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_17.finish();
+        array_18.finish();
     }
     Ok(())
 }

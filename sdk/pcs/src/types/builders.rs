@@ -13,7 +13,13 @@ pub use crate::types::_networking::NetworkingBuilder;
 
 pub use crate::types::_cluster_slurm_configuration::ClusterSlurmConfigurationBuilder;
 
+pub use crate::types::_slurm_rest::SlurmRestBuilder;
+
 pub use crate::types::_accounting::AccountingBuilder;
+
+pub use crate::types::_jwt_auth::JwtAuthBuilder;
+
+pub use crate::types::_jwt_key::JwtKeyBuilder;
 
 pub use crate::types::_slurm_auth_key::SlurmAuthKeyBuilder;
 
@@ -23,9 +29,13 @@ pub use crate::types::_scheduler::SchedulerBuilder;
 
 pub use crate::types::_update_cluster_slurm_configuration_request::UpdateClusterSlurmConfigurationRequestBuilder;
 
+pub use crate::types::_update_slurm_rest_request::UpdateSlurmRestRequestBuilder;
+
 pub use crate::types::_update_accounting_request::UpdateAccountingRequestBuilder;
 
 pub use crate::types::_cluster_slurm_configuration_request::ClusterSlurmConfigurationRequestBuilder;
+
+pub use crate::types::_slurm_rest_request::SlurmRestRequestBuilder;
 
 pub use crate::types::_accounting_request::AccountingRequestBuilder;
 

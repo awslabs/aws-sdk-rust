@@ -43,6 +43,8 @@ pub struct CopyJob {
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the backup plan and rule that Backup used to initiate the recovery point backup.</p>
     pub created_by: ::std::option::Option<crate::types::RecoveryPointCreator>,
+    /// <p>The backup job ID that initiated this copy job. Only applicable to scheduled copy jobs and automatic copy jobs to logically air-gapped vault.</p>
+    pub created_by_backup_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>This uniquely identifies a request to Backup to copy a resource. The return will be the parent (composite) job ID.</p>
@@ -139,6 +141,10 @@ impl CopyJob {
     pub fn created_by(&self) -> ::std::option::Option<&crate::types::RecoveryPointCreator> {
         self.created_by.as_ref()
     }
+    /// <p>The backup job ID that initiated this copy job. Only applicable to scheduled copy jobs and automatic copy jobs to logically air-gapped vault.</p>
+    pub fn created_by_backup_job_id(&self) -> ::std::option::Option<&str> {
+        self.created_by_backup_job_id.as_deref()
+    }
     /// <p>The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -204,6 +210,7 @@ pub struct CopyJobBuilder {
     pub(crate) backup_size_in_bytes: ::std::option::Option<i64>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<crate::types::RecoveryPointCreator>,
+    pub(crate) created_by_backup_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) parent_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_parent: ::std::option::Option<bool>,
@@ -475,6 +482,20 @@ impl CopyJobBuilder {
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::RecoveryPointCreator> {
         &self.created_by
     }
+    /// <p>The backup job ID that initiated this copy job. Only applicable to scheduled copy jobs and automatic copy jobs to logically air-gapped vault.</p>
+    pub fn created_by_backup_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by_backup_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The backup job ID that initiated this copy job. Only applicable to scheduled copy jobs and automatic copy jobs to logically air-gapped vault.</p>
+    pub fn set_created_by_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_by_backup_job_id = input;
+        self
+    }
+    /// <p>The backup job ID that initiated this copy job. Only applicable to scheduled copy jobs and automatic copy jobs to logically air-gapped vault.</p>
+    pub fn get_created_by_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by_backup_job_id
+    }
     /// <p>The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
@@ -623,6 +644,7 @@ impl CopyJobBuilder {
             backup_size_in_bytes: self.backup_size_in_bytes,
             iam_role_arn: self.iam_role_arn,
             created_by: self.created_by,
+            created_by_backup_job_id: self.created_by_backup_job_id,
             resource_type: self.resource_type,
             parent_job_id: self.parent_job_id,
             is_parent: self.is_parent.unwrap_or_default(),

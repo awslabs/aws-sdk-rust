@@ -387,6 +387,23 @@ pub(crate) fn slurm_auth_key_correct_errors(mut builder: crate::types::builders:
     builder
 }
 
+pub(crate) fn slurm_rest_correct_errors(mut builder: crate::types::builders::SlurmRestBuilder) -> crate::types::builders::SlurmRestBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::SlurmRestMode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn jwt_key_correct_errors(mut builder: crate::types::builders::JwtKeyBuilder) -> crate::types::builders::JwtKeyBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
+    }
+    if builder.secret_version.is_none() {
+        builder.secret_version = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn slurm_custom_setting_correct_errors(
     mut builder: crate::types::builders::SlurmCustomSettingBuilder,
 ) -> crate::types::builders::SlurmCustomSettingBuilder {

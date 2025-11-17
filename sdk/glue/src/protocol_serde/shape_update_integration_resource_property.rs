@@ -197,6 +197,13 @@ pub(crate) fn de_update_integration_resource_property(
                             .transpose()?,
                     );
                 }
+                "ResourcePropertyArn" => {
+                    builder = builder.set_resource_property_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "SourceProcessingProperties" => {
                     builder = builder.set_source_processing_properties(
                         crate::protocol_serde::shape_source_processing_properties::de_source_processing_properties(tokens)?,

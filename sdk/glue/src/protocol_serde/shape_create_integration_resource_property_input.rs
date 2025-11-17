@@ -18,5 +18,17 @@ pub fn ser_create_integration_resource_property_input_input(
         crate::protocol_serde::shape_target_processing_properties::ser_target_processing_properties(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.tags {
+        let mut array_7 = object.key("Tags").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }

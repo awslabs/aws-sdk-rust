@@ -130,6 +130,13 @@ where
                         "CreatedBy" => {
                             builder = builder.set_created_by(crate::protocol_serde::shape_recovery_point_creator::de_recovery_point_creator(tokens)?);
                         }
+                        "CreatedByBackupJobId" => {
+                            builder = builder.set_created_by_backup_job_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "ResourceType" => {
                             builder = builder.set_resource_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

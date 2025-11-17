@@ -52,6 +52,7 @@ pub struct Device {
     pub remote_access_enabled: ::std::option::Option<bool>,
     /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[deprecated(note = "Direct Device Access is no longer available.", since = "2019-09-09")]
     pub remote_debug_enabled: ::std::option::Option<bool>,
     /// <p>The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.</p>
     pub fleet_type: ::std::option::Option<::std::string::String>,
@@ -143,6 +144,7 @@ impl Device {
     }
     /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[deprecated(note = "Direct Device Access is no longer available.", since = "2019-09-09")]
     pub fn remote_debug_enabled(&self) -> ::std::option::Option<bool> {
         self.remote_debug_enabled
     }
@@ -467,18 +469,21 @@ impl DeviceBuilder {
     }
     /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[deprecated(note = "Direct Device Access is no longer available.", since = "2019-09-09")]
     pub fn remote_debug_enabled(mut self, input: bool) -> Self {
         self.remote_debug_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[deprecated(note = "Direct Device Access is no longer available.", since = "2019-09-09")]
     pub fn set_remote_debug_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remote_debug_enabled = input;
         self
     }
     /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    #[deprecated(note = "Direct Device Access is no longer available.", since = "2019-09-09")]
     pub fn get_remote_debug_enabled(&self) -> &::std::option::Option<bool> {
         &self.remote_debug_enabled
     }

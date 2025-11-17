@@ -116,6 +116,7 @@ impl UpdateGlobalSettingsFluentBuilder {
     /// <p>Inputs can include:</p>
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
     /// <p>A value for Multi-party approval, styled as "Mpa": <code>isMpaEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isMpaEnabled=false --region us-west-2</code>.</p>
+    /// <p>A value for Backup Service-Linked Role creation, styled as<code>isDelegatedAdministratorEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isDelegatedAdministratorEnabled=false --region us-west-2</code>.</p>
     pub fn global_settings(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -127,6 +128,7 @@ impl UpdateGlobalSettingsFluentBuilder {
     /// <p>Inputs can include:</p>
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
     /// <p>A value for Multi-party approval, styled as "Mpa": <code>isMpaEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isMpaEnabled=false --region us-west-2</code>.</p>
+    /// <p>A value for Backup Service-Linked Role creation, styled as<code>isDelegatedAdministratorEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isDelegatedAdministratorEnabled=false --region us-west-2</code>.</p>
     pub fn set_global_settings(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -137,6 +139,7 @@ impl UpdateGlobalSettingsFluentBuilder {
     /// <p>Inputs can include:</p>
     /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
     /// <p>A value for Multi-party approval, styled as "Mpa": <code>isMpaEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isMpaEnabled=false --region us-west-2</code>.</p>
+    /// <p>A value for Backup Service-Linked Role creation, styled as<code>isDelegatedAdministratorEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isDelegatedAdministratorEnabled=false --region us-west-2</code>.</p>
     pub fn get_global_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_global_settings()
     }

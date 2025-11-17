@@ -22,7 +22,9 @@ impl crate::operation::delete_remote_access_session::builders::DeleteRemoteAcces
 }
 /// Fluent builder constructing a request to `DeleteRemoteAccessSession`.
 ///
-/// <p>Deletes a completed remote access session and its results.</p>
+/// <p>Deletes a completed remote access session and its results. You cannot delete a remote access session if it is still active.</p><important>
+/// <p>You cannot undo this operation.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRemoteAccessSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -11,6 +11,15 @@ pub(crate) fn authorize_vpc_endpoint_access_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_index_output_output_correct_errors(
+    mut builder: crate::operation::create_index::builders::CreateIndexOutputBuilder,
+) -> crate::operation::create_index::builders::CreateIndexOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IndexStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_vpc_endpoint_output_output_correct_errors(
     mut builder: crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder,
 ) -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder {
@@ -19,6 +28,15 @@ pub(crate) fn create_vpc_endpoint_output_output_correct_errors(
             let builder = crate::types::builders::VpcEndpointBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn delete_index_output_output_correct_errors(
+    mut builder: crate::operation::delete_index::builders::DeleteIndexOutputBuilder,
+) -> crate::operation::delete_index::builders::DeleteIndexOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IndexStatus>().ok()
     }
     builder
 }
@@ -80,6 +98,15 @@ pub(crate) fn describe_vpc_endpoints_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_index_output_output_correct_errors(
+    mut builder: crate::operation::get_index::builders::GetIndexOutputBuilder,
+) -> crate::operation::get_index::builders::GetIndexOutputBuilder {
+    if builder.index_schema.is_none() {
+        builder.index_schema = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_vpc_endpoint_access_output_output_correct_errors(
     mut builder: crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder,
 ) -> crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder {
@@ -124,6 +151,15 @@ pub(crate) fn update_domain_config_output_output_correct_errors(
             let builder = crate::types::builders::DomainConfigBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn update_index_output_output_correct_errors(
+    mut builder: crate::operation::update_index::builders::UpdateIndexOutputBuilder,
+) -> crate::operation::update_index::builders::UpdateIndexOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::IndexStatus>().ok()
     }
     builder
 }

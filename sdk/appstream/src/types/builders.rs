@@ -25,6 +25,8 @@ pub use crate::types::_image_permissions::ImagePermissionsBuilder;
 
 pub use crate::types::_fleet::FleetBuilder;
 
+pub use crate::types::_volume_config::VolumeConfigBuilder;
+
 pub use crate::types::_domain_join_info::DomainJoinInfoBuilder;
 
 pub use crate::types::_fleet_error::FleetErrorBuilder;
@@ -59,6 +61,12 @@ pub use crate::types::_network_access_configuration::NetworkAccessConfigurationB
 
 pub use crate::types::_image_builder_state_change_reason::ImageBuilderStateChangeReasonBuilder;
 
+pub use crate::types::_export_image_task::ExportImageTaskBuilder;
+
+pub use crate::types::_error_details::ErrorDetailsBuilder;
+
+pub use crate::types::_filter::FilterBuilder;
+
 pub use crate::types::_entitled_application::EntitledApplicationBuilder;
 
 pub use crate::types::_user_stack_association::UserStackAssociationBuilder;
@@ -70,8 +78,6 @@ pub use crate::types::_usage_report_subscription::UsageReportSubscriptionBuilder
 pub use crate::types::_last_report_generation_execution_error::LastReportGenerationExecutionErrorBuilder;
 
 pub use crate::types::_software_associations::SoftwareAssociationsBuilder;
-
-pub use crate::types::_error_details::ErrorDetailsBuilder;
 
 pub use crate::types::_session::SessionBuilder;
 
@@ -90,5 +96,9 @@ pub use crate::types::_app_block::AppBlockBuilder;
 pub use crate::types::_script_details::ScriptDetailsBuilder;
 
 pub use crate::types::_app_block_builder_app_block_association::AppBlockBuilderAppBlockAssociationBuilder;
+
+pub use crate::types::_application_config::ApplicationConfigBuilder;
+
+pub use crate::types::_runtime_validation_config::RuntimeValidationConfigBuilder;
 
 pub use crate::types::_user_stack_association_error::UserStackAssociationErrorBuilder;

@@ -60,37 +60,24 @@ pub struct RemoteAccessSession {
     pub device: ::std::option::Option<crate::types::Device>,
     /// <p>The ARN of the instance.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub remote_debug_enabled: ::std::option::Option<bool>,
-    /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
-    pub remote_record_enabled: ::std::option::Option<bool>,
-    /// <p>The ARN for the app to be recorded in the remote access session.</p>
-    pub remote_record_app_arn: ::std::option::Option<::std::string::String>,
-    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub host_address: ::std::option::Option<::std::string::String>,
-    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
     pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
     /// <p>The number of minutes a device is used in a remote access session (including setup and teardown minutes).</p>
     pub device_minutes: ::std::option::Option<crate::types::DeviceMinutes>,
-    /// <p>The endpoint for the remote access sesssion.</p>
+    /// <p>The endpoint for the remote access session. This field is deprecated, and is replaced by the new <code>endpoints.interactiveEndpoint</code> field.</p>
+    #[deprecated(
+        note = "This field is deprecated, and is replaced by the new endpoints.interactiveEndpoint field.",
+        since = "2025-11-17"
+    )]
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Unique device identifier for the remote device. Only returned if remote debugging is enabled for the remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub device_udid: ::std::option::Option<::std::string::String>,
-    /// <p>The interaction mode of the remote access session. Valid values are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
-    /// </ul>
+    /// <p>The interaction mode of the remote access session. Changing the interactive mode of remote access sessions is no longer available.</p>
+    #[deprecated(
+        note = "Changing the interactive mode of Remote Access sessions is no longer available.",
+        since = "2019-09-09"
+    )]
     pub interaction_mode: ::std::option::Option<crate::types::InteractionMode>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
@@ -101,6 +88,8 @@ pub struct RemoteAccessSession {
     pub device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
     /// <p>The ARN for the app to be installed onto your device.</p>
     pub app_upload: ::std::option::Option<::std::string::String>,
+    /// <p>Represents the remote endpoints for viewing and controlling a device during a remote access session.</p>
+    pub endpoints: ::std::option::Option<crate::types::RemoteAccessEndpoints>,
 }
 impl RemoteAccessSession {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
@@ -179,29 +168,6 @@ impl RemoteAccessSession {
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn remote_debug_enabled(&self) -> ::std::option::Option<bool> {
-        self.remote_debug_enabled
-    }
-    /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
-    pub fn remote_record_enabled(&self) -> ::std::option::Option<bool> {
-        self.remote_record_enabled
-    }
-    /// <p>The ARN for the app to be recorded in the remote access session.</p>
-    pub fn remote_record_app_arn(&self) -> ::std::option::Option<&str> {
-        self.remote_record_app_arn.as_deref()
-    }
-    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn host_address(&self) -> ::std::option::Option<&str> {
-        self.host_address.as_deref()
-    }
-    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
-        self.client_id.as_deref()
-    }
     /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
     pub fn billing_method(&self) -> ::std::option::Option<&crate::types::BillingMethod> {
         self.billing_method.as_ref()
@@ -210,7 +176,11 @@ impl RemoteAccessSession {
     pub fn device_minutes(&self) -> ::std::option::Option<&crate::types::DeviceMinutes> {
         self.device_minutes.as_ref()
     }
-    /// <p>The endpoint for the remote access sesssion.</p>
+    /// <p>The endpoint for the remote access session. This field is deprecated, and is replaced by the new <code>endpoints.interactiveEndpoint</code> field.</p>
+    #[deprecated(
+        note = "This field is deprecated, and is replaced by the new endpoints.interactiveEndpoint field.",
+        since = "2025-11-17"
+    )]
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
@@ -219,15 +189,11 @@ impl RemoteAccessSession {
     pub fn device_udid(&self) -> ::std::option::Option<&str> {
         self.device_udid.as_deref()
     }
-    /// <p>The interaction mode of the remote access session. Valid values are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
-    /// </ul>
+    /// <p>The interaction mode of the remote access session. Changing the interactive mode of remote access sessions is no longer available.</p>
+    #[deprecated(
+        note = "Changing the interactive mode of Remote Access sessions is no longer available.",
+        since = "2019-09-09"
+    )]
     pub fn interaction_mode(&self) -> ::std::option::Option<&crate::types::InteractionMode> {
         self.interaction_mode.as_ref()
     }
@@ -247,6 +213,10 @@ impl RemoteAccessSession {
     /// <p>The ARN for the app to be installed onto your device.</p>
     pub fn app_upload(&self) -> ::std::option::Option<&str> {
         self.app_upload.as_deref()
+    }
+    /// <p>Represents the remote endpoints for viewing and controlling a device during a remote access session.</p>
+    pub fn endpoints(&self) -> ::std::option::Option<&crate::types::RemoteAccessEndpoints> {
+        self.endpoints.as_ref()
     }
 }
 impl RemoteAccessSession {
@@ -270,11 +240,6 @@ pub struct RemoteAccessSessionBuilder {
     pub(crate) stopped: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) device: ::std::option::Option<crate::types::Device>,
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) remote_debug_enabled: ::std::option::Option<bool>,
-    pub(crate) remote_record_enabled: ::std::option::Option<bool>,
-    pub(crate) remote_record_app_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) host_address: ::std::option::Option<::std::string::String>,
-    pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) billing_method: ::std::option::Option<crate::types::BillingMethod>,
     pub(crate) device_minutes: ::std::option::Option<crate::types::DeviceMinutes>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
@@ -284,6 +249,7 @@ pub struct RemoteAccessSessionBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
     pub(crate) app_upload: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoints: ::std::option::Option<crate::types::RemoteAccessEndpoints>,
 }
 impl RemoteAccessSessionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
@@ -534,85 +500,6 @@ impl RemoteAccessSessionBuilder {
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
     }
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn remote_debug_enabled(mut self, input: bool) -> Self {
-        self.remote_debug_enabled = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn set_remote_debug_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remote_debug_enabled = input;
-        self
-    }
-    /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn get_remote_debug_enabled(&self) -> &::std::option::Option<bool> {
-        &self.remote_debug_enabled
-    }
-    /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
-    pub fn remote_record_enabled(mut self, input: bool) -> Self {
-        self.remote_record_enabled = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
-    pub fn set_remote_record_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remote_record_enabled = input;
-        self
-    }
-    /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote access session.</p>
-    pub fn get_remote_record_enabled(&self) -> &::std::option::Option<bool> {
-        &self.remote_record_enabled
-    }
-    /// <p>The ARN for the app to be recorded in the remote access session.</p>
-    pub fn remote_record_app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.remote_record_app_arn = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ARN for the app to be recorded in the remote access session.</p>
-    pub fn set_remote_record_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remote_record_app_arn = input;
-        self
-    }
-    /// <p>The ARN for the app to be recorded in the remote access session.</p>
-    pub fn get_remote_record_app_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.remote_record_app_arn
-    }
-    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn host_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.host_address = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn set_host_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_address = input;
-        self
-    }
-    /// <p>IP address of the EC2 host where you need to connect to remotely debug devices. Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn get_host_address(&self) -> &::std::option::Option<::std::string::String> {
-        &self.host_address
-    }
-    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
-    }
-    /// <p>Unique identifier of your client for the remote access session. Only returned if remote debugging is enabled for the remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_id
-    }
     /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm terminology</a>.</p>
     pub fn billing_method(mut self, input: crate::types::BillingMethod) -> Self {
         self.billing_method = ::std::option::Option::Some(input);
@@ -641,17 +528,29 @@ impl RemoteAccessSessionBuilder {
     pub fn get_device_minutes(&self) -> &::std::option::Option<crate::types::DeviceMinutes> {
         &self.device_minutes
     }
-    /// <p>The endpoint for the remote access sesssion.</p>
+    /// <p>The endpoint for the remote access session. This field is deprecated, and is replaced by the new <code>endpoints.interactiveEndpoint</code> field.</p>
+    #[deprecated(
+        note = "This field is deprecated, and is replaced by the new endpoints.interactiveEndpoint field.",
+        since = "2025-11-17"
+    )]
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The endpoint for the remote access sesssion.</p>
+    /// <p>The endpoint for the remote access session. This field is deprecated, and is replaced by the new <code>endpoints.interactiveEndpoint</code> field.</p>
+    #[deprecated(
+        note = "This field is deprecated, and is replaced by the new endpoints.interactiveEndpoint field.",
+        since = "2025-11-17"
+    )]
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }
-    /// <p>The endpoint for the remote access sesssion.</p>
+    /// <p>The endpoint for the remote access session. This field is deprecated, and is replaced by the new <code>endpoints.interactiveEndpoint</code> field.</p>
+    #[deprecated(
+        note = "This field is deprecated, and is replaced by the new endpoints.interactiveEndpoint field.",
+        since = "2025-11-17"
+    )]
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
@@ -672,41 +571,29 @@ impl RemoteAccessSessionBuilder {
     pub fn get_device_udid(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_udid
     }
-    /// <p>The interaction mode of the remote access session. Valid values are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
-    /// </ul>
+    /// <p>The interaction mode of the remote access session. Changing the interactive mode of remote access sessions is no longer available.</p>
+    #[deprecated(
+        note = "Changing the interactive mode of Remote Access sessions is no longer available.",
+        since = "2019-09-09"
+    )]
     pub fn interaction_mode(mut self, input: crate::types::InteractionMode) -> Self {
         self.interaction_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The interaction mode of the remote access session. Valid values are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
-    /// </ul>
+    /// <p>The interaction mode of the remote access session. Changing the interactive mode of remote access sessions is no longer available.</p>
+    #[deprecated(
+        note = "Changing the interactive mode of Remote Access sessions is no longer available.",
+        since = "2019-09-09"
+    )]
     pub fn set_interaction_mode(mut self, input: ::std::option::Option<crate::types::InteractionMode>) -> Self {
         self.interaction_mode = input;
         self
     }
-    /// <p>The interaction mode of the remote access session. Valid values are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
-    /// </ul>
+    /// <p>The interaction mode of the remote access session. Changing the interactive mode of remote access sessions is no longer available.</p>
+    #[deprecated(
+        note = "Changing the interactive mode of Remote Access sessions is no longer available.",
+        since = "2019-09-09"
+    )]
     pub fn get_interaction_mode(&self) -> &::std::option::Option<crate::types::InteractionMode> {
         &self.interaction_mode
     }
@@ -769,6 +656,20 @@ impl RemoteAccessSessionBuilder {
     pub fn get_app_upload(&self) -> &::std::option::Option<::std::string::String> {
         &self.app_upload
     }
+    /// <p>Represents the remote endpoints for viewing and controlling a device during a remote access session.</p>
+    pub fn endpoints(mut self, input: crate::types::RemoteAccessEndpoints) -> Self {
+        self.endpoints = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents the remote endpoints for viewing and controlling a device during a remote access session.</p>
+    pub fn set_endpoints(mut self, input: ::std::option::Option<crate::types::RemoteAccessEndpoints>) -> Self {
+        self.endpoints = input;
+        self
+    }
+    /// <p>Represents the remote endpoints for viewing and controlling a device during a remote access session.</p>
+    pub fn get_endpoints(&self) -> &::std::option::Option<crate::types::RemoteAccessEndpoints> {
+        &self.endpoints
+    }
     /// Consumes the builder and constructs a [`RemoteAccessSession`](crate::types::RemoteAccessSession).
     pub fn build(self) -> crate::types::RemoteAccessSession {
         crate::types::RemoteAccessSession {
@@ -782,11 +683,6 @@ impl RemoteAccessSessionBuilder {
             stopped: self.stopped,
             device: self.device,
             instance_arn: self.instance_arn,
-            remote_debug_enabled: self.remote_debug_enabled,
-            remote_record_enabled: self.remote_record_enabled,
-            remote_record_app_arn: self.remote_record_app_arn,
-            host_address: self.host_address,
-            client_id: self.client_id,
             billing_method: self.billing_method,
             device_minutes: self.device_minutes,
             endpoint: self.endpoint,
@@ -796,6 +692,7 @@ impl RemoteAccessSessionBuilder {
             vpc_config: self.vpc_config,
             device_proxy: self.device_proxy,
             app_upload: self.app_upload,
+            endpoints: self.endpoints,
         }
     }
 }

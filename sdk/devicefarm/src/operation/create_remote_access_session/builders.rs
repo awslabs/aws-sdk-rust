@@ -164,68 +164,6 @@ impl CreateRemoteAccessSessionFluentBuilder {
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_arn()
     }
-    /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn ssh_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.ssh_public_key(input.into());
-        self
-    }
-    /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_ssh_public_key(input);
-        self
-    }
-    /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_ssh_public_key()
-    }
-    /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn remote_debug_enabled(mut self, input: bool) -> Self {
-        self.inner = self.inner.remote_debug_enabled(input);
-        self
-    }
-    /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn set_remote_debug_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_remote_debug_enabled(input);
-        self
-    }
-    /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn get_remote_debug_enabled(&self) -> &::std::option::Option<bool> {
-        self.inner.get_remote_debug_enabled()
-    }
-    /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
-    pub fn remote_record_enabled(mut self, input: bool) -> Self {
-        self.inner = self.inner.remote_record_enabled(input);
-        self
-    }
-    /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
-    pub fn set_remote_record_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_remote_record_enabled(input);
-        self
-    }
-    /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
-    pub fn get_remote_record_enabled(&self) -> &::std::option::Option<bool> {
-        self.inner.get_remote_record_enabled()
-    }
-    /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
-    pub fn remote_record_app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.remote_record_app_arn(input.into());
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
-    pub fn set_remote_record_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_remote_record_app_arn(input);
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
-    pub fn get_remote_record_app_arn(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_remote_record_app_arn()
-    }
     /// <p>The name of the remote access session to create.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -239,23 +177,6 @@ impl CreateRemoteAccessSessionFluentBuilder {
     /// <p>The name of the remote access session to create.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
-    }
-    /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.client_id(input.into());
-        self
-    }
-    /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_client_id(input);
-        self
-    }
-    /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_client_id()
     }
     /// <p>The configuration information for the remote access session request.</p>
     pub fn configuration(mut self, input: crate::types::CreateRemoteAccessSessionConfiguration) -> Self {
@@ -271,41 +192,29 @@ impl CreateRemoteAccessSessionFluentBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration> {
         self.inner.get_configuration()
     }
-    /// <p>The interaction mode of the remote access session. Valid values are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
-    /// </ul>
+    /// <p>The interaction mode of the remote access session. Changing the interactive mode of remote access sessions is no longer available.</p>
+    #[deprecated(
+        note = "Changing the interactive mode of Remote Access sessions is no longer available.",
+        since = "2019-09-09"
+    )]
     pub fn interaction_mode(mut self, input: crate::types::InteractionMode) -> Self {
         self.inner = self.inner.interaction_mode(input);
         self
     }
-    /// <p>The interaction mode of the remote access session. Valid values are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
-    /// </ul>
+    /// <p>The interaction mode of the remote access session. Changing the interactive mode of remote access sessions is no longer available.</p>
+    #[deprecated(
+        note = "Changing the interactive mode of Remote Access sessions is no longer available.",
+        since = "2019-09-09"
+    )]
     pub fn set_interaction_mode(mut self, input: ::std::option::Option<crate::types::InteractionMode>) -> Self {
         self.inner = self.inner.set_interaction_mode(input);
         self
     }
-    /// <p>The interaction mode of the remote access session. Valid values are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
-    /// </ul>
+    /// <p>The interaction mode of the remote access session. Changing the interactive mode of remote access sessions is no longer available.</p>
+    #[deprecated(
+        note = "Changing the interactive mode of Remote Access sessions is no longer available.",
+        since = "2019-09-09"
+    )]
     pub fn get_interaction_mode(&self) -> &::std::option::Option<crate::types::InteractionMode> {
         self.inner.get_interaction_mode()
     }

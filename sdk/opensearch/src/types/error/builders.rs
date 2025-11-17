@@ -19,8 +19,10 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBu
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
 
-pub use crate::types::error::_invalid_type_exception::InvalidTypeExceptionBuilder;
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_dependency_failure_exception::DependencyFailureExceptionBuilder;
+
+pub use crate::types::error::_invalid_type_exception::InvalidTypeExceptionBuilder;
 
 pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenExceptionBuilder;

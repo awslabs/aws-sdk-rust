@@ -22,8 +22,9 @@ impl crate::operation::delete_run::builders::DeleteRunInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteRun`.
 ///
-/// <p>Deletes the run, given the run ARN.</p>
-/// <p>Deleting this resource does not stop an in-progress run.</p>
+/// <p>Deletes the run, given the run ARN. You cannot delete a run if it is still active.</p><important>
+/// <p>You cannot undo this operation.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

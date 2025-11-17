@@ -6,6 +6,15 @@
 pub struct Scte {
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
     pub scte_filter: ::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>>,
+    /// <p>Controls whether SCTE-35 messages are included in segment files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>None – SCTE-35 messages are not included in segments (default)</p></li>
+    /// <li>
+    /// <p>All – SCTE-35 messages are embedded in segment data</p></li>
+    /// </ul>
+    /// <p>For DASH manifests, when set to <code>All</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
+    pub scte_in_segments: ::std::option::Option<crate::types::ScteInSegments>,
 }
 impl Scte {
     /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
@@ -13,6 +22,17 @@ impl Scte {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scte_filter.is_none()`.
     pub fn scte_filter(&self) -> &[crate::types::ScteFilter] {
         self.scte_filter.as_deref().unwrap_or_default()
+    }
+    /// <p>Controls whether SCTE-35 messages are included in segment files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>None – SCTE-35 messages are not included in segments (default)</p></li>
+    /// <li>
+    /// <p>All – SCTE-35 messages are embedded in segment data</p></li>
+    /// </ul>
+    /// <p>For DASH manifests, when set to <code>All</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
+    pub fn scte_in_segments(&self) -> ::std::option::Option<&crate::types::ScteInSegments> {
+        self.scte_in_segments.as_ref()
     }
 }
 impl Scte {
@@ -27,6 +47,7 @@ impl Scte {
 #[non_exhaustive]
 pub struct ScteBuilder {
     pub(crate) scte_filter: ::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>>,
+    pub(crate) scte_in_segments: ::std::option::Option<crate::types::ScteInSegments>,
 }
 impl ScteBuilder {
     /// Appends an item to `scte_filter`.
@@ -49,10 +70,46 @@ impl ScteBuilder {
     pub fn get_scte_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>> {
         &self.scte_filter
     }
+    /// <p>Controls whether SCTE-35 messages are included in segment files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>None – SCTE-35 messages are not included in segments (default)</p></li>
+    /// <li>
+    /// <p>All – SCTE-35 messages are embedded in segment data</p></li>
+    /// </ul>
+    /// <p>For DASH manifests, when set to <code>All</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
+    pub fn scte_in_segments(mut self, input: crate::types::ScteInSegments) -> Self {
+        self.scte_in_segments = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls whether SCTE-35 messages are included in segment files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>None – SCTE-35 messages are not included in segments (default)</p></li>
+    /// <li>
+    /// <p>All – SCTE-35 messages are embedded in segment data</p></li>
+    /// </ul>
+    /// <p>For DASH manifests, when set to <code>All</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
+    pub fn set_scte_in_segments(mut self, input: ::std::option::Option<crate::types::ScteInSegments>) -> Self {
+        self.scte_in_segments = input;
+        self
+    }
+    /// <p>Controls whether SCTE-35 messages are included in segment files.</p>
+    /// <ul>
+    /// <li>
+    /// <p>None – SCTE-35 messages are not included in segments (default)</p></li>
+    /// <li>
+    /// <p>All – SCTE-35 messages are embedded in segment data</p></li>
+    /// </ul>
+    /// <p>For DASH manifests, when set to <code>All</code>, an <code>InbandEventStream</code> tag signals that SCTE messages are present in segments. This setting works independently of manifest ad markers.</p>
+    pub fn get_scte_in_segments(&self) -> &::std::option::Option<crate::types::ScteInSegments> {
+        &self.scte_in_segments
+    }
     /// Consumes the builder and constructs a [`Scte`](crate::types::Scte).
     pub fn build(self) -> crate::types::Scte {
         crate::types::Scte {
             scte_filter: self.scte_filter,
+            scte_in_segments: self.scte_in_segments,
         }
     }
 }
