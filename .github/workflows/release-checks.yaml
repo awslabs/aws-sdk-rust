@@ -15,6 +15,10 @@ jobs:
     name: Check Release config.json
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-branch
       - name: Check smithy-rs version exists
         run: |
           SMITHY_RS_VERSION=$(jq -r ".dependencies.smithyRsVersion" config.json)
@@ -23,11 +27,34 @@ jobs:
           cd smithy-rs
           git init
           git remote add origin https://github.com/smithy-lang/smithy-rs.git
-          
+
           if git fetch origin $SMITHY_RS_VERSION; then
             echo "smithy-rs@$SMITHY_RS_VERSION found"
           else
             echo "::error::no smithy-rs@$SMITHY_RS_VERSION found"
             exit 1
+          fi
+
+      - name: Check for tools changes in smithy-rs
+        run: |
+          CURRENT_SMITHY_RS_VERSION=$(jq -r ".dependencies.smithyRsVersion" config.json)
+          echo "Current branch smithyRsVersion: $CURRENT_SMITHY_RS_VERSION"
+
+          MAIN_SMITHY_RS_VERSION=$(jq -r ".dependencies.smithyRsVersion" main-branch/config.json)
+          echo "Main branch smithyRsVersion: $MAIN_SMITHY_RS_VERSION"
+
+          cd smithy-rs
+          git fetch origin --tags -q
+
+          # Check for tools changes between main branch version and current version
+          CHANGED_FILES=$(git diff --name-only $MAIN_SMITHY_RS_VERSION..$CURRENT_SMITHY_RS_VERSION)
+
+          if echo "$CHANGED_FILES" | grep -q "^tools/"; then
+            echo "::error::Tools changes detected between $MAIN_SMITHY_RS_VERSION and $CURRENT_SMITHY_RS_VERSION"
+            echo "$CHANGED_FILES" | grep "^tools/"
+            echo "::error::Release infrastructure must specify the updated image tag before updating config.json. If the updated image tag has already been specified, use the bot user to force-merge this PR to main."
+            exit 1
+          else
+            echo "No tools changes detected - check passed"
           fi
 
