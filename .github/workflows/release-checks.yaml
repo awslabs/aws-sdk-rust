@@ -47,7 +47,7 @@ jobs:
           git fetch origin --tags -q
 
           # Check for tools changes between main branch version and current version
-          CHANGED_FILES=$(git diff --name-only $MAIN_SMITHY_RS_VERSION..$CURRENT_SMITHY_RS_VERSION)
+          CHANGED_FILES=$(git diff --name-only $CURRENT_SMITHY_RS_VERSION..$MAIN_SMITHY_RS_VERSION)
 
           if echo "$CHANGED_FILES" | grep -q "^tools/"; then
             echo "::error::Tools changes detected between $MAIN_SMITHY_RS_VERSION and $CURRENT_SMITHY_RS_VERSION"
