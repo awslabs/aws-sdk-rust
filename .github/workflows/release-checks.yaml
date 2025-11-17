@@ -52,7 +52,7 @@ jobs:
           if echo "$CHANGED_FILES" | grep -q "^tools/"; then
             echo "::error::Tools changes detected between $MAIN_SMITHY_RS_VERSION and $CURRENT_SMITHY_RS_VERSION"
             echo "$CHANGED_FILES" | grep "^tools/"
-            echo "::error::Release infrastructure must specify the updated image tag before updating config.json. If the updated image tag has already been specified, use the bot user to force-merge this PR to main."
+            echo "::error::Complete an internal release before updating config.json. After completion, use the bot user to force-merge this PR to main."
             exit 1
           else
             echo "No tools changes detected - check passed"
