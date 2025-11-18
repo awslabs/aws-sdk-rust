@@ -79,6 +79,8 @@ pub use crate::types::_vpc_connection::VpcConnection;
 
 pub use crate::types::_vpc_connection_state::VpcConnectionState;
 
+pub use crate::types::_topic_info::TopicInfo;
+
 pub use crate::types::_replicator_summary::ReplicatorSummary;
 
 pub use crate::types::_replication_info_summary::ReplicationInfoSummary;
@@ -168,6 +170,10 @@ pub use crate::types::_error_info::ErrorInfo;
 pub use crate::types::_client_vpc_connection::ClientVpcConnection;
 
 pub use crate::types::_compatible_kafka_version::CompatibleKafkaVersion;
+
+pub use crate::types::_topic_partition_info::TopicPartitionInfo;
+
+pub use crate::types::_topic_state::TopicState;
 
 pub use crate::types::_replication_state_info::ReplicationStateInfo;
 
@@ -383,9 +389,15 @@ mod _target_compression_type;
 
 mod _tls;
 
+mod _topic_info;
+
+mod _topic_partition_info;
+
 mod _topic_replication;
 
 mod _topic_replication_update;
+
+mod _topic_state;
 
 mod _unauthenticated;
 

@@ -98,40 +98,41 @@ pub fn de_resource_change(
                 builder = builder.set_scope(var_7);
             }
             ,
-            s if s.matches("Details") /* Details com.amazonaws.cloudformation#ResourceChange$Details */ =>  {
+            s if s.matches("ResourceDriftStatus") /* ResourceDriftStatus com.amazonaws.cloudformation#ResourceChange$ResourceDriftStatus */ =>  {
                 let var_8 =
+                    Some(
+                        Result::<crate::types::StackResourceDriftStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StackResourceDriftStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_resource_drift_status(var_8);
+            }
+            ,
+            s if s.matches("ResourceDriftIgnoredAttributes") /* ResourceDriftIgnoredAttributes com.amazonaws.cloudformation#ResourceChange$ResourceDriftIgnoredAttributes */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_resource_drift_ignored_attributes::de_resource_drift_ignored_attributes(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_resource_drift_ignored_attributes(var_9);
+            }
+            ,
+            s if s.matches("Details") /* Details com.amazonaws.cloudformation#ResourceChange$Details */ =>  {
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_resource_change_details::de_resource_change_details(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_details(var_8);
+                builder = builder.set_details(var_10);
             }
             ,
             s if s.matches("ChangeSetId") /* ChangeSetId com.amazonaws.cloudformation#ResourceChange$ChangeSetId */ =>  {
-                let var_9 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_change_set_id(var_9);
-            }
-            ,
-            s if s.matches("ModuleInfo") /* ModuleInfo com.amazonaws.cloudformation#ResourceChange$ModuleInfo */ =>  {
-                let var_10 =
-                    Some(
-                        crate::protocol_serde::shape_module_info::de_module_info(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_module_info(var_10);
-            }
-            ,
-            s if s.matches("BeforeContext") /* BeforeContext com.amazonaws.cloudformation#ResourceChange$BeforeContext */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -141,11 +142,21 @@ pub fn de_resource_change(
                         ?
                     )
                 ;
-                builder = builder.set_before_context(var_11);
+                builder = builder.set_change_set_id(var_11);
             }
             ,
-            s if s.matches("AfterContext") /* AfterContext com.amazonaws.cloudformation#ResourceChange$AfterContext */ =>  {
+            s if s.matches("ModuleInfo") /* ModuleInfo com.amazonaws.cloudformation#ResourceChange$ModuleInfo */ =>  {
                 let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_module_info::de_module_info(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_module_info(var_12);
+            }
+            ,
+            s if s.matches("BeforeContext") /* BeforeContext com.amazonaws.cloudformation#ResourceChange$BeforeContext */ =>  {
+                let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -154,7 +165,33 @@ pub fn de_resource_change(
                         ?
                     )
                 ;
-                builder = builder.set_after_context(var_12);
+                builder = builder.set_before_context(var_13);
+            }
+            ,
+            s if s.matches("AfterContext") /* AfterContext com.amazonaws.cloudformation#ResourceChange$AfterContext */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_after_context(var_14);
+            }
+            ,
+            s if s.matches("PreviousDeploymentContext") /* PreviousDeploymentContext com.amazonaws.cloudformation#ResourceChange$PreviousDeploymentContext */ =>  {
+                let var_15 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_previous_deployment_context(var_15);
             }
             ,
             _ => {}

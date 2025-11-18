@@ -150,6 +150,8 @@ mod create_log_group;
 
 mod create_log_stream;
 
+mod create_scheduled_query;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -208,6 +210,8 @@ mod delete_query_definition;
 mod delete_resource_policy;
 
 mod delete_retention_policy;
+
+mod delete_scheduled_query;
 
 mod delete_subscription_filter;
 
@@ -273,6 +277,10 @@ mod get_log_record;
 
 mod get_query_results;
 
+mod get_scheduled_query;
+
+mod get_scheduled_query_history;
+
 mod get_transformer;
 
 mod list_anomalies;
@@ -284,6 +292,8 @@ mod list_log_anomaly_detectors;
 mod list_log_groups;
 
 mod list_log_groups_for_query;
+
+mod list_scheduled_queries;
 
 mod list_tags_for_resource;
 
@@ -344,3 +354,5 @@ mod update_anomaly;
 mod update_delivery_configuration;
 
 mod update_log_anomaly_detector;
+
+mod update_scheduled_query;

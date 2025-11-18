@@ -109,6 +109,7 @@
 ///     ResourceType::VpcEndpointServicePermission => { /* ... */ },
 ///     ResourceType::VpcFlowLog => { /* ... */ },
 ///     ResourceType::VpcPeeringConnection => { /* ... */ },
+///     ResourceType::VpnConcentrator => { /* ... */ },
 ///     ResourceType::VpnConnection => { /* ... */ },
 ///     ResourceType::VpnConnectionDeviceType => { /* ... */ },
 ///     ResourceType::VpnGateway => { /* ... */ },
@@ -335,6 +336,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     VpcPeeringConnection,
     #[allow(missing_docs)] // documentation missing in model
+    VpnConcentrator,
+    #[allow(missing_docs)] // documentation missing in model
     VpnConnection,
     #[allow(missing_docs)] // documentation missing in model
     VpnConnectionDeviceType,
@@ -444,6 +447,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "vpc-endpoint-service-permission" => ResourceType::VpcEndpointServicePermission,
             "vpc-flow-log" => ResourceType::VpcFlowLog,
             "vpc-peering-connection" => ResourceType::VpcPeeringConnection,
+            "vpn-concentrator" => ResourceType::VpnConcentrator,
             "vpn-connection" => ResourceType::VpnConnection,
             "vpn-connection-device-type" => ResourceType::VpnConnectionDeviceType,
             "vpn-gateway" => ResourceType::VpnGateway,
@@ -559,6 +563,7 @@ impl ResourceType {
             ResourceType::VpcEndpointServicePermission => "vpc-endpoint-service-permission",
             ResourceType::VpcFlowLog => "vpc-flow-log",
             ResourceType::VpcPeeringConnection => "vpc-peering-connection",
+            ResourceType::VpnConcentrator => "vpn-concentrator",
             ResourceType::VpnConnection => "vpn-connection",
             ResourceType::VpnConnectionDeviceType => "vpn-connection-device-type",
             ResourceType::VpnGateway => "vpn-gateway",
@@ -665,6 +670,7 @@ impl ResourceType {
             "vpc-endpoint-service-permission",
             "vpc-flow-log",
             "vpc-peering-connection",
+            "vpn-concentrator",
             "vpn-connection",
             "vpn-connection-device-type",
             "vpn-gateway",
@@ -790,6 +796,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::VpcEndpointServicePermission => write!(f, "vpc-endpoint-service-permission"),
             ResourceType::VpcFlowLog => write!(f, "vpc-flow-log"),
             ResourceType::VpcPeeringConnection => write!(f, "vpc-peering-connection"),
+            ResourceType::VpnConcentrator => write!(f, "vpn-concentrator"),
             ResourceType::VpnConnection => write!(f, "vpn-connection"),
             ResourceType::VpnConnectionDeviceType => write!(f, "vpn-connection-device-type"),
             ResourceType::VpnGateway => write!(f, "vpn-gateway"),

@@ -223,6 +223,10 @@ pub(crate) mod shape_get_predictive_scaling_forecast;
 
 pub(crate) mod shape_get_predictive_scaling_forecast_input;
 
+pub(crate) mod shape_launch_instances;
+
+pub(crate) mod shape_launch_instances_input;
+
 pub(crate) mod shape_put_lifecycle_hook;
 
 pub(crate) mod shape_put_lifecycle_hook_input;
@@ -299,6 +303,8 @@ pub(crate) mod shape_desired_configuration;
 
 pub(crate) mod shape_filter;
 
+pub(crate) mod shape_idempotent_parameter_mismatch_error;
+
 pub(crate) mod shape_instance_maintenance_policy;
 
 pub(crate) mod shape_instance_metadata_options;
@@ -369,6 +375,8 @@ pub(crate) mod shape_ebs;
 
 pub(crate) mod shape_failed_scheduled_update_group_action_requests;
 
+pub(crate) mod shape_instance_collections;
+
 pub(crate) mod shape_instance_refreshes;
 
 pub(crate) mod shape_instances;
@@ -376,6 +384,8 @@ pub(crate) mod shape_instances;
 pub(crate) mod shape_instances_distribution;
 
 pub(crate) mod shape_launch_configurations;
+
+pub(crate) mod shape_launch_instances_errors;
 
 pub(crate) mod shape_launch_template;
 
@@ -423,9 +433,13 @@ pub(crate) mod shape_failed_scheduled_update_group_action_request;
 
 pub(crate) mod shape_instance;
 
+pub(crate) mod shape_instance_collection;
+
 pub(crate) mod shape_instance_refresh;
 
 pub(crate) mod shape_launch_configuration;
+
+pub(crate) mod shape_launch_instances_error;
 
 pub(crate) mod shape_launch_template_overrides;
 
@@ -480,6 +494,8 @@ pub(crate) mod shape_block_device_mappings;
 pub(crate) mod shape_classic_link_vpc_security_groups;
 
 pub(crate) mod shape_enabled_metrics;
+
+pub(crate) mod shape_instance_ids;
 
 pub(crate) mod shape_instance_refresh_progress_details;
 

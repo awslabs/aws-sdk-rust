@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReportCreationInput {
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p><code>awsexamplebucket</code></p>
-    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+    /// <p><code>amzn-s3-demo-bucket</code></p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example Amazon S3 bucket policy on this page.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
 }
 impl StartReportCreationInput {
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p><code>awsexamplebucket</code></p>
-    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+    /// <p><code>amzn-s3-demo-bucket</code></p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example Amazon S3 bucket policy on this page.</p>
     pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
@@ -31,23 +31,23 @@ pub struct StartReportCreationInputBuilder {
 }
 impl StartReportCreationInputBuilder {
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p><code>awsexamplebucket</code></p>
-    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+    /// <p><code>amzn-s3-demo-bucket</code></p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example Amazon S3 bucket policy on this page.</p>
     /// This field is required.
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p><code>awsexamplebucket</code></p>
-    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+    /// <p><code>amzn-s3-demo-bucket</code></p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example Amazon S3 bucket policy on this page.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p><code>awsexamplebucket</code></p>
-    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+    /// <p><code>amzn-s3-demo-bucket</code></p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example Amazon S3 bucket policy on this page.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket
     }

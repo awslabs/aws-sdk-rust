@@ -46,7 +46,7 @@ pub fn de_stack_event(
                 builder = builder.set_stack_name(var_3);
             }
             ,
-            s if s.matches("LogicalResourceId") /* LogicalResourceId com.amazonaws.cloudformation#StackEvent$LogicalResourceId */ =>  {
+            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation#StackEvent$OperationId */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -56,10 +56,10 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_logical_resource_id(var_4);
+                builder = builder.set_operation_id(var_4);
             }
             ,
-            s if s.matches("PhysicalResourceId") /* PhysicalResourceId com.amazonaws.cloudformation#StackEvent$PhysicalResourceId */ =>  {
+            s if s.matches("LogicalResourceId") /* LogicalResourceId com.amazonaws.cloudformation#StackEvent$LogicalResourceId */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -69,10 +69,10 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_physical_resource_id(var_5);
+                builder = builder.set_logical_resource_id(var_5);
             }
             ,
-            s if s.matches("ResourceType") /* ResourceType com.amazonaws.cloudformation#StackEvent$ResourceType */ =>  {
+            s if s.matches("PhysicalResourceId") /* PhysicalResourceId com.amazonaws.cloudformation#StackEvent$PhysicalResourceId */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -82,11 +82,24 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_resource_type(var_6);
+                builder = builder.set_physical_resource_id(var_6);
+            }
+            ,
+            s if s.matches("ResourceType") /* ResourceType com.amazonaws.cloudformation#StackEvent$ResourceType */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_resource_type(var_7);
             }
             ,
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudformation#StackEvent$Timestamp */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -96,11 +109,11 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_timestamp(var_7);
+                builder = builder.set_timestamp(var_8);
             }
             ,
             s if s.matches("ResourceStatus") /* ResourceStatus com.amazonaws.cloudformation#StackEvent$ResourceStatus */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         Result::<crate::types::ResourceStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ResourceStatus::from(
@@ -110,23 +123,10 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_resource_status(var_8);
+                builder = builder.set_resource_status(var_9);
             }
             ,
             s if s.matches("ResourceStatusReason") /* ResourceStatusReason com.amazonaws.cloudformation#StackEvent$ResourceStatusReason */ =>  {
-                let var_9 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_resource_status_reason(var_9);
-            }
-            ,
-            s if s.matches("ResourceProperties") /* ResourceProperties com.amazonaws.cloudformation#StackEvent$ResourceProperties */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -136,10 +136,10 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_resource_properties(var_10);
+                builder = builder.set_resource_status_reason(var_10);
             }
             ,
-            s if s.matches("ClientRequestToken") /* ClientRequestToken com.amazonaws.cloudformation#StackEvent$ClientRequestToken */ =>  {
+            s if s.matches("ResourceProperties") /* ResourceProperties com.amazonaws.cloudformation#StackEvent$ResourceProperties */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -149,10 +149,10 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_client_request_token(var_11);
+                builder = builder.set_resource_properties(var_11);
             }
             ,
-            s if s.matches("HookType") /* HookType com.amazonaws.cloudformation#StackEvent$HookType */ =>  {
+            s if s.matches("ClientRequestToken") /* ClientRequestToken com.amazonaws.cloudformation#StackEvent$ClientRequestToken */ =>  {
                 let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -162,11 +162,24 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_hook_type(var_12);
+                builder = builder.set_client_request_token(var_12);
+            }
+            ,
+            s if s.matches("HookType") /* HookType com.amazonaws.cloudformation#StackEvent$HookType */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_hook_type(var_13);
             }
             ,
             s if s.matches("HookStatus") /* HookStatus com.amazonaws.cloudformation#StackEvent$HookStatus */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         Result::<crate::types::HookStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::HookStatus::from(
@@ -176,11 +189,11 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_hook_status(var_13);
+                builder = builder.set_hook_status(var_14);
             }
             ,
             s if s.matches("HookStatusReason") /* HookStatusReason com.amazonaws.cloudformation#StackEvent$HookStatusReason */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -189,11 +202,11 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_hook_status_reason(var_14);
+                builder = builder.set_hook_status_reason(var_15);
             }
             ,
             s if s.matches("HookInvocationPoint") /* HookInvocationPoint com.amazonaws.cloudformation#StackEvent$HookInvocationPoint */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         Result::<crate::types::HookInvocationPoint, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::HookInvocationPoint::from(
@@ -203,11 +216,11 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_hook_invocation_point(var_15);
+                builder = builder.set_hook_invocation_point(var_16);
             }
             ,
             s if s.matches("HookInvocationId") /* HookInvocationId com.amazonaws.cloudformation#StackEvent$HookInvocationId */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -216,11 +229,11 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_hook_invocation_id(var_16);
+                builder = builder.set_hook_invocation_id(var_17);
             }
             ,
             s if s.matches("HookFailureMode") /* HookFailureMode com.amazonaws.cloudformation#StackEvent$HookFailureMode */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         Result::<crate::types::HookFailureMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::HookFailureMode::from(
@@ -230,11 +243,11 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_hook_failure_mode(var_17);
+                builder = builder.set_hook_failure_mode(var_18);
             }
             ,
             s if s.matches("DetailedStatus") /* DetailedStatus com.amazonaws.cloudformation#StackEvent$DetailedStatus */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
                         Result::<crate::types::DetailedStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DetailedStatus::from(
@@ -244,7 +257,7 @@ pub fn de_stack_event(
                         ?
                     )
                 ;
-                builder = builder.set_detailed_status(var_18);
+                builder = builder.set_detailed_status(var_19);
             }
             ,
             _ => {}

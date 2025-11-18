@@ -41,6 +41,8 @@ pub struct InvokeModelInput {
     pub guardrail_version: ::std::option::Option<::std::string::String>,
     /// <p>Model performance settings for the request.</p>
     pub performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub service_tier: ::std::option::Option<crate::types::ServiceTierType>,
 }
 impl InvokeModelInput {
     /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
@@ -97,6 +99,10 @@ impl InvokeModelInput {
     pub fn performance_config_latency(&self) -> ::std::option::Option<&crate::types::PerformanceConfigLatency> {
         self.performance_config_latency.as_ref()
     }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn service_tier(&self) -> ::std::option::Option<&crate::types::ServiceTierType> {
+        self.service_tier.as_ref()
+    }
 }
 impl ::std::fmt::Debug for InvokeModelInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -109,6 +115,7 @@ impl ::std::fmt::Debug for InvokeModelInput {
         formatter.field("guardrail_identifier", &self.guardrail_identifier);
         formatter.field("guardrail_version", &self.guardrail_version);
         formatter.field("performance_config_latency", &self.performance_config_latency);
+        formatter.field("service_tier", &self.service_tier);
         formatter.finish()
     }
 }
@@ -131,6 +138,7 @@ pub struct InvokeModelInputBuilder {
     pub(crate) guardrail_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) guardrail_version: ::std::option::Option<::std::string::String>,
     pub(crate) performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
+    pub(crate) service_tier: ::std::option::Option<crate::types::ServiceTierType>,
 }
 impl InvokeModelInputBuilder {
     /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
@@ -312,6 +320,20 @@ impl InvokeModelInputBuilder {
     pub fn get_performance_config_latency(&self) -> &::std::option::Option<crate::types::PerformanceConfigLatency> {
         &self.performance_config_latency
     }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn service_tier(mut self, input: crate::types::ServiceTierType) -> Self {
+        self.service_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn set_service_tier(mut self, input: ::std::option::Option<crate::types::ServiceTierType>) -> Self {
+        self.service_tier = input;
+        self
+    }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTierType> {
+        &self.service_tier
+    }
     /// Consumes the builder and constructs a [`InvokeModelInput`](crate::operation::invoke_model::InvokeModelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_model::InvokeModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke_model::InvokeModelInput {
@@ -323,6 +345,7 @@ impl InvokeModelInputBuilder {
             guardrail_identifier: self.guardrail_identifier,
             guardrail_version: self.guardrail_version,
             performance_config_latency: self.performance_config_latency,
+            service_tier: self.service_tier,
         })
     }
 }
@@ -337,6 +360,7 @@ impl ::std::fmt::Debug for InvokeModelInputBuilder {
         formatter.field("guardrail_identifier", &self.guardrail_identifier);
         formatter.field("guardrail_version", &self.guardrail_version);
         formatter.field("performance_config_latency", &self.performance_config_latency);
+        formatter.field("service_tier", &self.service_tier);
         formatter.finish()
     }
 }

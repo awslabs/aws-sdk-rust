@@ -17,6 +17,8 @@ pub use crate::types::error::_waf_invalid_operation_exception::WafInvalidOperati
 
 pub use crate::types::error::_waf_internal_error_exception::WafInternalErrorExceptionBuilder;
 
+pub use crate::types::error::_waf_feature_not_included_in_pricing_plan_exception::WafFeatureNotIncludedInPricingPlanExceptionBuilder;
+
 pub use crate::types::error::_waf_expired_managed_rule_group_version_exception::WafExpiredManagedRuleGroupVersionExceptionBuilder;
 
 pub use crate::types::error::_waf_duplicate_item_exception::WafDuplicateItemExceptionBuilder;

@@ -24,6 +24,22 @@ pub fn de_put_logging_configuration_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "WAFFeatureNotIncludedInPricingPlanException" => {
+            crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafFeatureNotIncludedInPricingPlanException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::WafFeatureNotIncludedInPricingPlanExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_waf_feature_not_included_in_pricing_plan_exception::de_waf_feature_not_included_in_pricing_plan_exception_json_err(_response_body, output).map_err(crate::operation::put_logging_configuration::PutLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "WAFInternalErrorException" => crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafInternalErrorException({
             #[allow(unused_mut)]
             let mut tmp = {

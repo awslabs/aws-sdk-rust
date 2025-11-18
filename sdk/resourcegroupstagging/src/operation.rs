@@ -16,6 +16,9 @@ pub mod get_tag_keys;
 /// Types for the `GetTagValues` operation.
 pub mod get_tag_values;
 
+/// Types for the `ListRequiredTags` operation.
+pub mod list_required_tags;
+
 /// Types for the `StartReportCreation` operation.
 pub mod start_report_creation;
 

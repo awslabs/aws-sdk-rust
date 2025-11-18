@@ -69,6 +69,8 @@ impl crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilde
 /// <p>CloudWatch Logs provides default field indexes for all log groups in the Standard log class. Default field indexes are automatically available for the following fields:</p>
 /// <ul>
 /// <li>
+/// <p><code>@logStream</code></p></li>
+/// <li>
 /// <p><code>@aws.region</code></p></li>
 /// <li>
 /// <p><code>@aws.account</code></p></li>

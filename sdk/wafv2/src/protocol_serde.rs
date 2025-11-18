@@ -255,6 +255,8 @@ pub(crate) mod shape_waf_duplicate_item_exception;
 
 pub(crate) mod shape_waf_expired_managed_rule_group_version_exception;
 
+pub(crate) mod shape_waf_feature_not_included_in_pricing_plan_exception;
+
 pub(crate) mod shape_waf_internal_error_exception;
 
 pub(crate) mod shape_waf_invalid_operation_exception;
@@ -300,6 +302,8 @@ pub(crate) mod shape_custom_response_body;
 pub(crate) mod shape_data_protection_config;
 
 pub(crate) mod shape_default_action;
+
+pub(crate) mod shape_disallowed_features;
 
 pub(crate) mod shape_ip_set;
 
@@ -382,6 +386,8 @@ pub(crate) mod shape_block_action;
 pub(crate) mod shape_custom_response_bodies;
 
 pub(crate) mod shape_data_protection;
+
+pub(crate) mod shape_disallowed_feature;
 
 pub(crate) mod shape_field_to_match;
 

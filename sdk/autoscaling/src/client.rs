@@ -302,6 +302,8 @@ mod exit_standby;
 
 mod get_predictive_scaling_forecast;
 
+mod launch_instances;
+
 mod put_lifecycle_hook;
 
 mod put_notification_configuration;

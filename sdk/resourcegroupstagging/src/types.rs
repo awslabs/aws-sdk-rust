@@ -3,6 +3,8 @@ pub use crate::types::_failure_info::FailureInfo;
 
 pub use crate::types::_error_code::ErrorCode;
 
+pub use crate::types::_required_tag::RequiredTag;
+
 pub use crate::types::_resource_tag_mapping::ResourceTagMapping;
 
 pub use crate::types::_compliance_details::ComplianceDetails;
@@ -24,6 +26,8 @@ mod _error_code;
 mod _failure_info;
 
 mod _group_by_attribute;
+
+mod _required_tag;
 
 mod _resource_tag_mapping;
 

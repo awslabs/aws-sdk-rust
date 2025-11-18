@@ -37,6 +37,8 @@ pub(crate) mod shape_create_log_group;
 
 pub(crate) mod shape_create_log_stream;
 
+pub(crate) mod shape_create_scheduled_query;
+
 pub(crate) mod shape_delete_account_policy;
 
 pub(crate) mod shape_delete_data_protection_policy;
@@ -68,6 +70,8 @@ pub(crate) mod shape_delete_query_definition;
 pub(crate) mod shape_delete_resource_policy;
 
 pub(crate) mod shape_delete_retention_policy;
+
+pub(crate) mod shape_delete_scheduled_query;
 
 pub(crate) mod shape_delete_subscription_filter;
 
@@ -133,6 +137,10 @@ pub(crate) mod shape_get_log_record;
 
 pub(crate) mod shape_get_query_results;
 
+pub(crate) mod shape_get_scheduled_query;
+
+pub(crate) mod shape_get_scheduled_query_history;
+
 pub(crate) mod shape_get_transformer;
 
 pub(crate) mod shape_list_anomalies;
@@ -144,6 +152,8 @@ pub(crate) mod shape_list_log_anomaly_detectors;
 pub(crate) mod shape_list_log_groups;
 
 pub(crate) mod shape_list_log_groups_for_query;
+
+pub(crate) mod shape_list_scheduled_queries;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -205,6 +215,8 @@ pub(crate) mod shape_update_delivery_configuration;
 
 pub(crate) mod shape_update_log_anomaly_detector;
 
+pub(crate) mod shape_update_scheduled_query;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -230,6 +242,8 @@ pub(crate) mod shape_create_log_anomaly_detector_input;
 pub(crate) mod shape_create_log_group_input;
 
 pub(crate) mod shape_create_log_stream_input;
+
+pub(crate) mod shape_create_scheduled_query_input;
 
 pub(crate) mod shape_data_already_accepted_exception;
 
@@ -264,6 +278,8 @@ pub(crate) mod shape_delete_query_definition_input;
 pub(crate) mod shape_delete_resource_policy_input;
 
 pub(crate) mod shape_delete_retention_policy_input;
+
+pub(crate) mod shape_delete_scheduled_query_input;
 
 pub(crate) mod shape_delete_subscription_filter_input;
 
@@ -331,7 +347,13 @@ pub(crate) mod shape_get_log_record_input;
 
 pub(crate) mod shape_get_query_results_input;
 
+pub(crate) mod shape_get_scheduled_query_history_input;
+
+pub(crate) mod shape_get_scheduled_query_input;
+
 pub(crate) mod shape_get_transformer_input;
+
+pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_internal_streaming_exception;
 
@@ -352,6 +374,8 @@ pub(crate) mod shape_list_log_anomaly_detectors_input;
 pub(crate) mod shape_list_log_groups_for_query_input;
 
 pub(crate) mod shape_list_log_groups_input;
+
+pub(crate) mod shape_list_scheduled_queries_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
@@ -437,6 +461,8 @@ pub(crate) mod shape_update_delivery_configuration_input;
 
 pub(crate) mod shape_update_log_anomaly_detector_input;
 
+pub(crate) mod shape_update_scheduled_query_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub fn parse_event_stream_error_metadata(
@@ -470,6 +496,8 @@ pub(crate) mod shape_delivery_source;
 pub(crate) mod shape_delivery_sources;
 
 pub(crate) mod shape_destination;
+
+pub(crate) mod shape_destination_configuration;
 
 pub(crate) mod shape_destinations;
 
@@ -541,6 +569,10 @@ pub(crate) mod shape_resource_policy;
 
 pub(crate) mod shape_s3_delivery_configuration;
 
+pub(crate) mod shape_scheduled_query_log_group_identifiers;
+
+pub(crate) mod shape_scheduled_query_summary_list;
+
 pub(crate) mod shape_searched_log_streams;
 
 pub(crate) mod shape_subscription_filters;
@@ -550,6 +582,8 @@ pub(crate) mod shape_suppression_period;
 pub(crate) mod shape_tags;
 
 pub(crate) mod shape_transformed_logs;
+
+pub(crate) mod shape_trigger_history_record_list;
 
 pub(crate) mod shape_add_keys;
 
@@ -637,6 +671,10 @@ pub(crate) mod shape_resource_arns;
 
 pub(crate) mod shape_result_rows;
 
+pub(crate) mod shape_s3_configuration;
+
+pub(crate) mod shape_scheduled_query_summary;
+
 pub(crate) mod shape_searched_log_stream;
 
 pub(crate) mod shape_split_string;
@@ -646,6 +684,8 @@ pub(crate) mod shape_subscription_filter;
 pub(crate) mod shape_substitute_string;
 
 pub(crate) mod shape_transformed_log_record;
+
+pub(crate) mod shape_trigger_history_record;
 
 pub(crate) mod shape_trim_string;
 
@@ -707,6 +747,8 @@ pub(crate) mod shape_rename_key_entry;
 
 pub(crate) mod shape_result_field;
 
+pub(crate) mod shape_scheduled_query_destination_list;
+
 pub(crate) mod shape_split_string_entry;
 
 pub(crate) mod shape_substitute_string_entry;
@@ -742,6 +784,8 @@ pub(crate) mod shape_pattern_token;
 pub(crate) mod shape_record_field;
 
 pub(crate) mod shape_rename_key_entries;
+
+pub(crate) mod shape_scheduled_query_destination;
 
 pub(crate) mod shape_split_string_entries;
 

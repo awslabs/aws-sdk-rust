@@ -3,11 +3,29 @@ pub use crate::types::_count_tokens_input::CountTokensInput;
 
 pub use crate::types::_converse_tokens_request::ConverseTokensRequest;
 
-pub use crate::types::_system_content_block::SystemContentBlock;
+pub use crate::types::_tool_configuration::ToolConfiguration;
+
+pub use crate::types::_tool_choice::ToolChoice;
+
+pub use crate::types::_specific_tool_choice::SpecificToolChoice;
+
+pub use crate::types::_any_tool_choice::AnyToolChoice;
+
+pub use crate::types::_auto_tool_choice::AutoToolChoice;
+
+pub use crate::types::_tool::Tool;
 
 pub use crate::types::_cache_point_block::CachePointBlock;
 
 pub use crate::types::_cache_point_type::CachePointType;
+
+pub use crate::types::_system_tool::SystemTool;
+
+pub use crate::types::_tool_specification::ToolSpecification;
+
+pub use crate::types::_tool_input_schema::ToolInputSchema;
+
+pub use crate::types::_system_content_block::SystemContentBlock;
 
 pub use crate::types::_guardrail_converse_content_block::GuardrailConverseContentBlock;
 
@@ -85,6 +103,8 @@ pub use crate::types::_conversation_role::ConversationRole;
 
 pub use crate::types::_invoke_model_tokens_request::InvokeModelTokensRequest;
 
+pub use crate::types::_service_tier_type::ServiceTierType;
+
 pub use crate::types::_performance_config_latency::PerformanceConfigLatency;
 
 pub use crate::types::_response_stream::ResponseStream;
@@ -104,6 +124,8 @@ pub use crate::types::_bidirectional_input_payload_part::BidirectionalInputPaylo
 pub use crate::types::_converse_stream_output::ConverseStreamOutput;
 
 pub use crate::types::_converse_stream_metadata_event::ConverseStreamMetadataEvent;
+
+pub use crate::types::_service_tier::ServiceTier;
 
 pub use crate::types::_performance_configuration::PerformanceConfiguration;
 
@@ -248,24 +270,6 @@ pub use crate::types::_guardrail_stream_configuration::GuardrailStreamConfigurat
 pub use crate::types::_guardrail_stream_processing_mode::GuardrailStreamProcessingMode;
 
 pub use crate::types::_guardrail_trace::GuardrailTrace;
-
-pub use crate::types::_tool_configuration::ToolConfiguration;
-
-pub use crate::types::_tool_choice::ToolChoice;
-
-pub use crate::types::_specific_tool_choice::SpecificToolChoice;
-
-pub use crate::types::_any_tool_choice::AnyToolChoice;
-
-pub use crate::types::_auto_tool_choice::AutoToolChoice;
-
-pub use crate::types::_tool::Tool;
-
-pub use crate::types::_system_tool::SystemTool;
-
-pub use crate::types::_tool_specification::ToolSpecification;
-
-pub use crate::types::_tool_input_schema::ToolInputSchema;
 
 pub use crate::types::_inference_configuration::InferenceConfiguration;
 
@@ -568,6 +572,10 @@ mod _reasoning_text_block;
 mod _response_stream;
 
 mod _s3_location;
+
+mod _service_tier;
+
+mod _service_tier_type;
 
 mod _sort_async_invocation_by;
 

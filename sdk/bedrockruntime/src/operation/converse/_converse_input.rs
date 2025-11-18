@@ -42,6 +42,8 @@ pub struct ConverseInput {
     pub request_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Model performance settings for the request.</p>
     pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub service_tier: ::std::option::Option<crate::types::ServiceTier>,
 }
 impl ConverseInput {
     /// <p>Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:</p>
@@ -111,6 +113,10 @@ impl ConverseInput {
     pub fn performance_config(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
         self.performance_config.as_ref()
     }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn service_tier(&self) -> ::std::option::Option<&crate::types::ServiceTier> {
+        self.service_tier.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ConverseInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -126,6 +132,7 @@ impl ::std::fmt::Debug for ConverseInput {
         formatter.field("additional_model_response_field_paths", &self.additional_model_response_field_paths);
         formatter.field("request_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("performance_config", &self.performance_config);
+        formatter.field("service_tier", &self.service_tier);
         formatter.finish()
     }
 }
@@ -151,6 +158,7 @@ pub struct ConverseInputBuilder {
     pub(crate) additional_model_response_field_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) request_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
+    pub(crate) service_tier: ::std::option::Option<crate::types::ServiceTier>,
 }
 impl ConverseInputBuilder {
     /// <p>Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:</p>
@@ -401,6 +409,20 @@ impl ConverseInputBuilder {
     pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
         &self.performance_config
     }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn service_tier(mut self, input: crate::types::ServiceTier) -> Self {
+        self.service_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn set_service_tier(mut self, input: ::std::option::Option<crate::types::ServiceTier>) -> Self {
+        self.service_tier = input;
+        self
+    }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTier> {
+        &self.service_tier
+    }
     /// Consumes the builder and constructs a [`ConverseInput`](crate::operation::converse::ConverseInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::converse::ConverseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::converse::ConverseInput {
@@ -415,6 +437,7 @@ impl ConverseInputBuilder {
             additional_model_response_field_paths: self.additional_model_response_field_paths,
             request_metadata: self.request_metadata,
             performance_config: self.performance_config,
+            service_tier: self.service_tier,
         })
     }
 }
@@ -432,6 +455,7 @@ impl ::std::fmt::Debug for ConverseInputBuilder {
         formatter.field("additional_model_response_field_paths", &self.additional_model_response_field_paths);
         formatter.field("request_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("performance_config", &self.performance_config);
+        formatter.field("service_tier", &self.service_tier);
         formatter.finish()
     }
 }

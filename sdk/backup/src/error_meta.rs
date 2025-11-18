@@ -550,6 +550,48 @@ impl From<crate::operation::create_restore_testing_selection::CreateRestoreTesti
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_tiering_configuration::CreateTieringConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_tiering_configuration::CreateTieringConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_tiering_configuration::CreateTieringConfigurationError> for Error {
+    fn from(err: crate::operation::create_tiering_configuration::CreateTieringConfigurationError) -> Self {
+        match err {
+            crate::operation::create_tiering_configuration::CreateTieringConfigurationError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_tiering_configuration::CreateTieringConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_tiering_configuration::CreateTieringConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_tiering_configuration::CreateTieringConfigurationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_tiering_configuration::CreateTieringConfigurationError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::create_tiering_configuration::CreateTieringConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_tiering_configuration::CreateTieringConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_backup_plan::DeleteBackupPlanError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -951,6 +993,42 @@ impl From<crate::operation::delete_restore_testing_selection::DeleteRestoreTesti
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_tiering_configuration::DeleteTieringConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_tiering_configuration::DeleteTieringConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_tiering_configuration::DeleteTieringConfigurationError> for Error {
+    fn from(err: crate::operation::delete_tiering_configuration::DeleteTieringConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_tiering_configuration::DeleteTieringConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_tiering_configuration::DeleteTieringConfigurationError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::delete_tiering_configuration::DeleteTieringConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_tiering_configuration::DeleteTieringConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_tiering_configuration::DeleteTieringConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1966,6 +2044,42 @@ impl From<crate::operation::get_supported_resource_types::GetSupportedResourceTy
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tiering_configuration::GetTieringConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_tiering_configuration::GetTieringConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_tiering_configuration::GetTieringConfigurationError> for Error {
+    fn from(err: crate::operation::get_tiering_configuration::GetTieringConfigurationError) -> Self {
+        match err {
+            crate::operation::get_tiering_configuration::GetTieringConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_tiering_configuration::GetTieringConfigurationError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::get_tiering_configuration::GetTieringConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_tiering_configuration::GetTieringConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_tiering_configuration::GetTieringConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_backup_jobs::ListBackupJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2818,6 +2932,36 @@ impl From<crate::operation::list_tags::ListTagsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tiering_configurations::ListTieringConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tiering_configurations::ListTieringConfigurationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tiering_configurations::ListTieringConfigurationsError> for Error {
+    fn from(err: crate::operation::list_tiering_configurations::ListTieringConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_tiering_configurations::ListTieringConfigurationsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_tiering_configurations::ListTieringConfigurationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_tiering_configurations::ListTieringConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyError, R>>
     for Error
 where
@@ -3563,6 +3707,51 @@ impl From<crate::operation::update_restore_testing_selection::UpdateRestoreTesti
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_tiering_configuration::UpdateTieringConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_tiering_configuration::UpdateTieringConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_tiering_configuration::UpdateTieringConfigurationError> for Error {
+    fn from(err: crate::operation::update_tiering_configuration::UpdateTieringConfigurationError) -> Self {
+        match err {
+            crate::operation::update_tiering_configuration::UpdateTieringConfigurationError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::update_tiering_configuration::UpdateTieringConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_tiering_configuration::UpdateTieringConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_tiering_configuration::UpdateTieringConfigurationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_tiering_configuration::UpdateTieringConfigurationError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::update_tiering_configuration::UpdateTieringConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_tiering_configuration::UpdateTieringConfigurationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_tiering_configuration::UpdateTieringConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

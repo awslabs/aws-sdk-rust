@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-iam = "1.96.0"
+//! aws-sdk-iam = "1.97.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -150,14 +150,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AddClientIDToOpenIDConnectProvider`](crate::operation::add_client_id_to_open_id_connect_provider) operation has
-/// a [`Client::add_client_id_to_open_id_connect_provider`], function which returns a builder for that operation.
+/// For example, the [`AcceptDelegationRequest`](crate::operation::accept_delegation_request) operation has
+/// a [`Client::accept_delegation_request`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.add_client_id_to_open_id_connect_provider()
-///     .open_id_connect_provider_arn("example")
+/// let result = client.accept_delegation_request()
+///     .delegation_request_id("example")
 ///     .send()
 ///     .await;
 /// ```

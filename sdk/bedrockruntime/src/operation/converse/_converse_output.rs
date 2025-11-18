@@ -17,6 +17,8 @@ pub struct ConverseOutput {
     pub trace: ::std::option::Option<crate::types::ConverseTrace>,
     /// <p>Model performance settings for the request.</p>
     pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub service_tier: ::std::option::Option<crate::types::ServiceTier>,
     _request_id: Option<String>,
 }
 impl ConverseOutput {
@@ -48,6 +50,10 @@ impl ConverseOutput {
     pub fn performance_config(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
         self.performance_config.as_ref()
     }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn service_tier(&self) -> ::std::option::Option<&crate::types::ServiceTier> {
+        self.service_tier.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for ConverseOutput {
     fn request_id(&self) -> Option<&str> {
@@ -72,6 +78,7 @@ pub struct ConverseOutputBuilder {
     pub(crate) additional_model_response_fields: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) trace: ::std::option::Option<crate::types::ConverseTrace>,
     pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
+    pub(crate) service_tier: ::std::option::Option<crate::types::ServiceTier>,
     _request_id: Option<String>,
 }
 impl ConverseOutputBuilder {
@@ -177,6 +184,20 @@ impl ConverseOutputBuilder {
     pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
         &self.performance_config
     }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn service_tier(mut self, input: crate::types::ServiceTier) -> Self {
+        self.service_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn set_service_tier(mut self, input: ::std::option::Option<crate::types::ServiceTier>) -> Self {
+        self.service_tier = input;
+        self
+    }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTier> {
+        &self.service_tier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -203,6 +224,7 @@ impl ConverseOutputBuilder {
             additional_model_response_fields: self.additional_model_response_fields,
             trace: self.trace,
             performance_config: self.performance_config,
+            service_tier: self.service_tier,
             _request_id: self._request_id,
         })
     }

@@ -87,8 +87,46 @@ pub fn de_resource_target_definition(
                 builder = builder.set_after_value(var_6);
             }
             ,
-            s if s.matches("AttributeChangeType") /* AttributeChangeType com.amazonaws.cloudformation#ResourceTargetDefinition$AttributeChangeType */ =>  {
+            s if s.matches("BeforeValueFrom") /* BeforeValueFrom com.amazonaws.cloudformation#ResourceTargetDefinition$BeforeValueFrom */ =>  {
                 let var_7 =
+                    Some(
+                        Result::<crate::types::BeforeValueFrom, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::BeforeValueFrom::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_before_value_from(var_7);
+            }
+            ,
+            s if s.matches("AfterValueFrom") /* AfterValueFrom com.amazonaws.cloudformation#ResourceTargetDefinition$AfterValueFrom */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<crate::types::AfterValueFrom, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AfterValueFrom::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_after_value_from(var_8);
+            }
+            ,
+            s if s.matches("Drift") /* Drift com.amazonaws.cloudformation#ResourceTargetDefinition$Drift */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_live_resource_drift::de_live_resource_drift(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_drift(var_9);
+            }
+            ,
+            s if s.matches("AttributeChangeType") /* AttributeChangeType com.amazonaws.cloudformation#ResourceTargetDefinition$AttributeChangeType */ =>  {
+                let var_10 =
                     Some(
                         Result::<crate::types::AttributeChangeType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::AttributeChangeType::from(
@@ -98,7 +136,7 @@ pub fn de_resource_target_definition(
                         ?
                     )
                 ;
-                builder = builder.set_attribute_change_type(var_7);
+                builder = builder.set_attribute_change_type(var_10);
             }
             ,
             _ => {}

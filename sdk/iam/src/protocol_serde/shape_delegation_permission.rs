@@ -22,3 +22,40 @@ pub fn ser_delegation_permission(
     }
     Ok(())
 }
+
+#[allow(clippy::needless_question_mark)]
+pub fn de_delegation_permission(
+    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+) -> ::std::result::Result<crate::types::DelegationPermission, ::aws_smithy_xml::decode::XmlDecodeError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::types::DelegationPermission::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("PolicyTemplateArn") /* PolicyTemplateArn com.amazonaws.iam#DelegationPermission$PolicyTemplateArn */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_policy_template_arn(var_8);
+            }
+            ,
+            s if s.matches("Parameters") /* Parameters com.amazonaws.iam#DelegationPermission$Parameters */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_policy_parameter_list_type::de_policy_parameter_list_type(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_parameters(var_9);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}

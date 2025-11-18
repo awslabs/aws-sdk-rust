@@ -27,3 +27,54 @@ pub fn ser_policy_parameter(
     }
     Ok(())
 }
+
+#[allow(clippy::needless_question_mark)]
+pub fn de_policy_parameter(
+    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+) -> ::std::result::Result<crate::types::PolicyParameter, ::aws_smithy_xml::decode::XmlDecodeError> {
+    #[allow(unused_mut)]
+    let mut builder = crate::types::PolicyParameter::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Name") /* Name com.amazonaws.iam#PolicyParameter$Name */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_name(var_10);
+            }
+            ,
+            s if s.matches("Values") /* Values com.amazonaws.iam#PolicyParameter$Values */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_policy_parameter_values_list_type::de_policy_parameter_values_list_type(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_values(var_11);
+            }
+            ,
+            s if s.matches("Type") /* Type com.amazonaws.iam#PolicyParameter$Type */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<crate::types::PolicyParameterTypeEnum, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PolicyParameterTypeEnum::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_type(var_12);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(builder.build())
+}

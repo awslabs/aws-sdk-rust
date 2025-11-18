@@ -33,7 +33,7 @@ pub fn de_vpn_connection(
                 builder = builder.set_transit_gateway_id(var_2);
             }
             ,
-            s if s.matches("coreNetworkArn") /* CoreNetworkArn com.amazonaws.ec2#VpnConnection$CoreNetworkArn */ =>  {
+            s if s.matches("vpnConcentratorId") /* VpnConcentratorId com.amazonaws.ec2#VpnConnection$VpnConcentratorId */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -43,10 +43,10 @@ pub fn de_vpn_connection(
                         ?
                     )
                 ;
-                builder = builder.set_core_network_arn(var_3);
+                builder = builder.set_vpn_concentrator_id(var_3);
             }
             ,
-            s if s.matches("coreNetworkAttachmentArn") /* CoreNetworkAttachmentArn com.amazonaws.ec2#VpnConnection$CoreNetworkAttachmentArn */ =>  {
+            s if s.matches("coreNetworkArn") /* CoreNetworkArn com.amazonaws.ec2#VpnConnection$CoreNetworkArn */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -56,11 +56,24 @@ pub fn de_vpn_connection(
                         ?
                     )
                 ;
-                builder = builder.set_core_network_attachment_arn(var_4);
+                builder = builder.set_core_network_arn(var_4);
+            }
+            ,
+            s if s.matches("coreNetworkAttachmentArn") /* CoreNetworkAttachmentArn com.amazonaws.ec2#VpnConnection$CoreNetworkAttachmentArn */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_core_network_attachment_arn(var_5);
             }
             ,
             s if s.matches("gatewayAssociationState") /* GatewayAssociationState com.amazonaws.ec2#VpnConnection$GatewayAssociationState */ =>  {
-                let var_5 =
+                let var_6 =
                     Some(
                         Result::<crate::types::GatewayAssociationState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::GatewayAssociationState::from(
@@ -70,63 +83,50 @@ pub fn de_vpn_connection(
                         ?
                     )
                 ;
-                builder = builder.set_gateway_association_state(var_5);
+                builder = builder.set_gateway_association_state(var_6);
             }
             ,
             s if s.matches("options") /* Options com.amazonaws.ec2#VpnConnection$Options */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_vpn_connection_options::de_vpn_connection_options(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_options(var_6);
+                builder = builder.set_options(var_7);
             }
             ,
             s if s.matches("routes") /* Routes com.amazonaws.ec2#VpnConnection$Routes */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_vpn_static_route_list::de_vpn_static_route_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_routes(var_7);
+                builder = builder.set_routes(var_8);
             }
             ,
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#VpnConnection$Tags */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_8);
+                builder = builder.set_tags(var_9);
             }
             ,
             s if s.matches("vgwTelemetry") /* VgwTelemetry com.amazonaws.ec2#VpnConnection$VgwTelemetry */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_vgw_telemetry_list::de_vgw_telemetry_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vgw_telemetry(var_9);
+                builder = builder.set_vgw_telemetry(var_10);
             }
             ,
             s if s.matches("preSharedKeyArn") /* PreSharedKeyArn com.amazonaws.ec2#VpnConnection$PreSharedKeyArn */ =>  {
-                let var_10 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_pre_shared_key_arn(var_10);
-            }
-            ,
-            s if s.matches("vpnConnectionId") /* VpnConnectionId com.amazonaws.ec2#VpnConnection$VpnConnectionId */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -136,11 +136,24 @@ pub fn de_vpn_connection(
                         ?
                     )
                 ;
-                builder = builder.set_vpn_connection_id(var_11);
+                builder = builder.set_pre_shared_key_arn(var_11);
+            }
+            ,
+            s if s.matches("vpnConnectionId") /* VpnConnectionId com.amazonaws.ec2#VpnConnection$VpnConnectionId */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_vpn_connection_id(var_12);
             }
             ,
             s if s.matches("state") /* State com.amazonaws.ec2#VpnConnection$State */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                         Result::<crate::types::VpnState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::VpnState::from(
@@ -150,11 +163,11 @@ pub fn de_vpn_connection(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_12);
+                builder = builder.set_state(var_13);
             }
             ,
             s if s.matches("customerGatewayConfiguration") /* CustomerGatewayConfiguration com.amazonaws.ec2#VpnConnection$CustomerGatewayConfiguration */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -163,11 +176,11 @@ pub fn de_vpn_connection(
                         ?
                     )
                 ;
-                builder = builder.set_customer_gateway_configuration(var_13);
+                builder = builder.set_customer_gateway_configuration(var_14);
             }
             ,
             s if s.matches("type") /* Type com.amazonaws.ec2#VpnConnection$Type */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         Result::<crate::types::GatewayType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::GatewayType::from(
@@ -177,23 +190,10 @@ pub fn de_vpn_connection(
                         ?
                     )
                 ;
-                builder = builder.set_type(var_14);
+                builder = builder.set_type(var_15);
             }
             ,
             s if s.matches("customerGatewayId") /* CustomerGatewayId com.amazonaws.ec2#VpnConnection$CustomerGatewayId */ =>  {
-                let var_15 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_customer_gateway_id(var_15);
-            }
-            ,
-            s if s.matches("vpnGatewayId") /* VpnGatewayId com.amazonaws.ec2#VpnConnection$VpnGatewayId */ =>  {
                 let var_16 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -203,7 +203,20 @@ pub fn de_vpn_connection(
                         ?
                     )
                 ;
-                builder = builder.set_vpn_gateway_id(var_16);
+                builder = builder.set_customer_gateway_id(var_16);
+            }
+            ,
+            s if s.matches("vpnGatewayId") /* VpnGatewayId com.amazonaws.ec2#VpnConnection$VpnGatewayId */ =>  {
+                let var_17 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_vpn_gateway_id(var_17);
             }
             ,
             _ => {}

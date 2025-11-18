@@ -27,5 +27,14 @@ pub fn ser_converse_tokens_request(
         }
         array_6.finish();
     }
+    if let Some(var_9) = &input.tool_config {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("toolConfig").start_object();
+        crate::protocol_serde::shape_tool_configuration::ser_tool_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.additional_model_request_fields {
+        object.key("additionalModelRequestFields").document(var_11);
+    }
     Ok(())
 }

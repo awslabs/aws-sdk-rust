@@ -981,6 +981,8 @@ pub use crate::types::_vpn_gateway::VpnGatewayBuilder;
 
 pub use crate::types::_vpc_attachment::VpcAttachmentBuilder;
 
+pub use crate::types::_vpn_concentrator::VpnConcentratorBuilder;
+
 pub use crate::types::_vpc::VpcBuilder;
 
 pub use crate::types::_block_public_access_states::BlockPublicAccessStatesBuilder;

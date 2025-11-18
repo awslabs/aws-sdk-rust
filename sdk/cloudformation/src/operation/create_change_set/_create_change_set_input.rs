@@ -107,6 +107,13 @@ pub struct CreateChangeSetInput {
     /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the <code>ResourcesToImport</code> parameter instead.</p>
     /// </note>
     pub import_existing_resources: ::std::option::Option<bool>,
+    /// <p>Determines how CloudFormation handles configuration drift during deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>REVERT_DRIFT</code> – Creates a drift-aware change set that brings actual resource states in line with template definitions. Provides a three-way comparison between actual state, previous deployment state, and desired state.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
 }
 impl CreateChangeSetInput {
     /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>
@@ -262,6 +269,15 @@ impl CreateChangeSetInput {
     pub fn import_existing_resources(&self) -> ::std::option::Option<bool> {
         self.import_existing_resources
     }
+    /// <p>Determines how CloudFormation handles configuration drift during deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>REVERT_DRIFT</code> – Creates a drift-aware change set that brings actual resource states in line with template definitions. Provides a three-way comparison between actual state, previous deployment state, and desired state.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn deployment_mode(&self) -> ::std::option::Option<&crate::types::DeploymentMode> {
+        self.deployment_mode.as_ref()
+    }
 }
 impl CreateChangeSetInput {
     /// Creates a new builder-style object to manufacture [`CreateChangeSetInput`](crate::operation::create_change_set::CreateChangeSetInput).
@@ -293,6 +309,7 @@ pub struct CreateChangeSetInputBuilder {
     pub(crate) include_nested_stacks: ::std::option::Option<bool>,
     pub(crate) on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
     pub(crate) import_existing_resources: ::std::option::Option<bool>,
+    pub(crate) deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
 }
 impl CreateChangeSetInputBuilder {
     /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>
@@ -794,6 +811,35 @@ impl CreateChangeSetInputBuilder {
     pub fn get_import_existing_resources(&self) -> &::std::option::Option<bool> {
         &self.import_existing_resources
     }
+    /// <p>Determines how CloudFormation handles configuration drift during deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>REVERT_DRIFT</code> – Creates a drift-aware change set that brings actual resource states in line with template definitions. Provides a three-way comparison between actual state, previous deployment state, and desired state.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn deployment_mode(mut self, input: crate::types::DeploymentMode) -> Self {
+        self.deployment_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines how CloudFormation handles configuration drift during deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>REVERT_DRIFT</code> – Creates a drift-aware change set that brings actual resource states in line with template definitions. Provides a three-way comparison between actual state, previous deployment state, and desired state.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn set_deployment_mode(mut self, input: ::std::option::Option<crate::types::DeploymentMode>) -> Self {
+        self.deployment_mode = input;
+        self
+    }
+    /// <p>Determines how CloudFormation handles configuration drift during deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>REVERT_DRIFT</code> – Creates a drift-aware change set that brings actual resource states in line with template definitions. Provides a three-way comparison between actual state, previous deployment state, and desired state.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn get_deployment_mode(&self) -> &::std::option::Option<crate::types::DeploymentMode> {
+        &self.deployment_mode
+    }
     /// Consumes the builder and constructs a [`CreateChangeSetInput`](crate::operation::create_change_set::CreateChangeSetInput).
     pub fn build(
         self,
@@ -818,6 +864,7 @@ impl CreateChangeSetInputBuilder {
             include_nested_stacks: self.include_nested_stacks,
             on_stack_failure: self.on_stack_failure,
             import_existing_resources: self.import_existing_resources,
+            deployment_mode: self.deployment_mode,
         })
     }
 }

@@ -5,16 +5,16 @@
 pub struct GetOrganizationsAccessReportOutput {
     /// <p>The status of the job.</p>
     pub job_status: crate::types::JobStatusType,
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
     pub job_creation_date: ::aws_smithy_types::DateTime,
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
     pub job_completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of services that the applicable SCPs allow account principals to access.</p>
     pub number_of_services_accessible: ::std::option::Option<i32>,
     /// <p>The number of services that account principals are allowed but did not attempt to access.</p>
     pub number_of_services_not_accessed: ::std::option::Option<i32>,
-    /// <p>An&nbsp;object that contains details about the most recent attempt to access the service.</p>
+    /// <p>An object that contains details about the most recent attempt to access the service.</p>
     pub access_details: ::std::option::Option<::std::vec::Vec<crate::types::AccessDetail>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
@@ -30,11 +30,11 @@ impl GetOrganizationsAccessReportOutput {
     pub fn job_status(&self) -> &crate::types::JobStatusType {
         &self.job_status
     }
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
     pub fn job_creation_date(&self) -> &::aws_smithy_types::DateTime {
         &self.job_creation_date
     }
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
     pub fn job_completion_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.job_completion_date.as_ref()
@@ -47,7 +47,7 @@ impl GetOrganizationsAccessReportOutput {
     pub fn number_of_services_not_accessed(&self) -> ::std::option::Option<i32> {
         self.number_of_services_not_accessed
     }
-    /// <p>An&nbsp;object that contains details about the most recent attempt to access the service.</p>
+    /// <p>An object that contains details about the most recent attempt to access the service.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_details.is_none()`.
     pub fn access_details(&self) -> &[crate::types::AccessDetail] {
@@ -110,34 +110,34 @@ impl GetOrganizationsAccessReportOutputBuilder {
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatusType> {
         &self.job_status
     }
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
     /// This field is required.
     pub fn job_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.job_creation_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
     pub fn set_job_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.job_creation_date = input;
         self
     }
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
     pub fn get_job_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.job_creation_date
     }
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
     pub fn job_completion_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.job_completion_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
     pub fn set_job_completion_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.job_completion_date = input;
         self
     }
-    /// <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
     pub fn get_job_completion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.job_completion_date
@@ -174,19 +174,19 @@ impl GetOrganizationsAccessReportOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_access_details`](Self::set_access_details).
     ///
-    /// <p>An&nbsp;object that contains details about the most recent attempt to access the service.</p>
+    /// <p>An object that contains details about the most recent attempt to access the service.</p>
     pub fn access_details(mut self, input: crate::types::AccessDetail) -> Self {
         let mut v = self.access_details.unwrap_or_default();
         v.push(input);
         self.access_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An&nbsp;object that contains details about the most recent attempt to access the service.</p>
+    /// <p>An object that contains details about the most recent attempt to access the service.</p>
     pub fn set_access_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessDetail>>) -> Self {
         self.access_details = input;
         self
     }
-    /// <p>An&nbsp;object that contains details about the most recent attempt to access the service.</p>
+    /// <p>An object that contains details about the most recent attempt to access the service.</p>
     pub fn get_access_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessDetail>> {
         &self.access_details
     }

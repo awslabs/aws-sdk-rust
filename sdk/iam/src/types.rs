@@ -89,6 +89,16 @@ pub use crate::types::_policy_group::PolicyGroup;
 
 pub use crate::types::_entity_type::EntityType;
 
+pub use crate::types::_delegation_request::DelegationRequest;
+
+pub use crate::types::_state_type::StateType;
+
+pub use crate::types::_delegation_permission::DelegationPermission;
+
+pub use crate::types::_policy_parameter::PolicyParameter;
+
+pub use crate::types::_policy_parameter_type_enum::PolicyParameterTypeEnum;
+
 pub use crate::types::_attached_policy::AttachedPolicy;
 
 pub use crate::types::_access_key_metadata::AccessKeyMetadata;
@@ -125,6 +135,12 @@ pub use crate::types::_sort_key_type::SortKeyType;
 
 pub use crate::types::_login_profile::LoginProfile;
 
+pub use crate::types::_summary_state_type::SummaryStateType;
+
+pub use crate::types::_permission_check_result_type::PermissionCheckResultType;
+
+pub use crate::types::_permission_check_status_type::PermissionCheckStatusType;
+
 pub use crate::types::_report_format_type::ReportFormatType;
 
 pub use crate::types::_summary_key_type::SummaryKeyType;
@@ -144,12 +160,6 @@ pub use crate::types::_user_detail::UserDetail;
 pub use crate::types::_access_key_last_used::AccessKeyLastUsed;
 
 pub use crate::types::_report_state_type::ReportStateType;
-
-pub use crate::types::_delegation_permission::DelegationPermission;
-
-pub use crate::types::_policy_parameter::PolicyParameter;
-
-pub use crate::types::_policy_parameter_type_enum::PolicyParameterTypeEnum;
 
 pub use crate::types::_access_key::AccessKey;
 
@@ -176,6 +186,8 @@ mod _context_entry;
 mod _context_key_type_enum;
 
 mod _delegation_permission;
+
+mod _delegation_request;
 
 mod _deletion_task_failure_reason_type;
 
@@ -218,6 +230,10 @@ mod _open_id_connect_provider_list_entry;
 mod _organizations_decision_detail;
 
 mod _password_policy;
+
+mod _permission_check_result_type;
+
+mod _permission_check_status_type;
 
 mod _permissions_boundary_attachment_type;
 
@@ -291,11 +307,15 @@ mod _ssh_public_key;
 
 mod _ssh_public_key_metadata;
 
+mod _state_type;
+
 mod _statement;
 
 mod _status_type;
 
 mod _summary_key_type;
+
+mod _summary_state_type;
 
 mod _tag;
 

@@ -259,6 +259,16 @@ pub(crate) fn reflens_list_tags_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_tiering_configurations_output_output_next_token(
+    input: &crate::operation::list_tiering_configurations::ListTieringConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_backup_jobs_output_output_backup_jobs(
     input: crate::operation::list_backup_jobs::ListBackupJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BackupJob>> {
@@ -389,5 +399,12 @@ pub(crate) fn lens_list_restore_testing_selections_output_output_restore_testing
     input: crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingSelectionForList>> {
     let input = input.restore_testing_selections;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_tiering_configurations_output_output_tiering_configurations(
+    input: crate::operation::list_tiering_configurations::ListTieringConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TieringConfigurationsListMember>> {
+    let input = input.tiering_configurations?;
     ::std::option::Option::Some(input)
 }

@@ -23,6 +23,7 @@ impl super::Client {
     ///   - [`retain_except_on_create(bool)`](crate::operation::create_stack::builders::CreateStackFluentBuilder::retain_except_on_create) / [`set_retain_except_on_create(Option<bool>)`](crate::operation::create_stack::builders::CreateStackFluentBuilder::set_retain_except_on_create):<br>required: **false**<br><p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code></p><br>
     /// - On success, responds with [`CreateStackOutput`](crate::operation::create_stack::CreateStackOutput) with field(s):
     ///   - [`stack_id(Option<String>)`](crate::operation::create_stack::CreateStackOutput::stack_id): <p>Unique identifier of the stack.</p>
+    ///   - [`operation_id(Option<String>)`](crate::operation::create_stack::CreateStackOutput::operation_id): <p>A unique identifier for this stack operation that can be used to track the operation's progress and events.</p>
     /// - On failure, responds with [`SdkError<CreateStackError>`](crate::operation::create_stack::CreateStackError)
     pub fn create_stack(&self) -> crate::operation::create_stack::builders::CreateStackFluentBuilder {
         crate::operation::create_stack::builders::CreateStackFluentBuilder::new(self.handle.clone())

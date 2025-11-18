@@ -93,6 +93,10 @@ pub use crate::types::_predefined_metric_specification::PredefinedMetricSpecific
 
 pub use crate::types::_step_adjustment::StepAdjustmentBuilder;
 
+pub use crate::types::_launch_instances_error::LaunchInstancesErrorBuilder;
+
+pub use crate::types::_instance_collection::InstanceCollectionBuilder;
+
 pub use crate::types::_capacity_forecast::CapacityForecastBuilder;
 
 pub use crate::types::_load_forecast::LoadForecastBuilder;

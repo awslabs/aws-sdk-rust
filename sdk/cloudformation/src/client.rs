@@ -285,6 +285,8 @@ mod describe_change_set;
 
 mod describe_change_set_hooks;
 
+mod describe_events;
+
 mod describe_generated_template;
 
 mod describe_organizations_access;

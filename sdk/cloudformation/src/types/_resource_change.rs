@@ -20,7 +20,7 @@ pub struct ResourceChange {
     /// <p><code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.</p></li>
     /// </ul>
     pub policy_action: ::std::option::Option<crate::types::PolicyAction>,
-    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
+    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), <code>Dynamic</code> (exact action for the resource can't be determined), or <code>SyncWithActual</code> (resource will not be changed, only CloudFormation metadata will change).</p>
     pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
@@ -33,6 +33,25 @@ pub struct ResourceChange {
     pub replacement: ::std::option::Option<crate::types::Replacement>,
     /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
     pub scope: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
+    /// <p>The drift status of the resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The resource matches its template definition.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED</code> – Resource properties were modified outside CloudFormation.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> – The resource was deleted outside CloudFormation.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code> – CloudFormation doesn’t currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – Drift status could not be determined.</p></li>
+    /// <li>
+    /// <p><code>UNSUPPORTED</code> – Resource type does not support actual state comparison.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub resource_drift_status: ::std::option::Option<crate::types::StackResourceDriftStatus>,
+    /// <p>List of resource attributes for which drift was ignored.</p>
+    pub resource_drift_ignored_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDriftIgnoredAttribute>>,
     /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the changes that CloudFormation will make to the resource.</p>
     pub details: ::std::option::Option<::std::vec::Vec<crate::types::ResourceChangeDetail>>,
     /// <p>The change set ID of the nested change set.</p>
@@ -43,6 +62,8 @@ pub struct ResourceChange {
     pub before_context: ::std::option::Option<::std::string::String>,
     /// <p>An encoded JSON string that contains the context of the resource after the change is executed.</p>
     pub after_context: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the resource's state from the previous CloudFormation deployment.</p>
+    pub previous_deployment_context: ::std::option::Option<::std::string::String>,
 }
 impl ResourceChange {
     /// <p>The action that will be taken on the physical resource when the change set is executed.</p>
@@ -63,7 +84,7 @@ impl ResourceChange {
     pub fn policy_action(&self) -> ::std::option::Option<&crate::types::PolicyAction> {
         self.policy_action.as_ref()
     }
-    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
+    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), <code>Dynamic</code> (exact action for the resource can't be determined), or <code>SyncWithActual</code> (resource will not be changed, only CloudFormation metadata will change).</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
         self.action.as_ref()
     }
@@ -90,6 +111,31 @@ impl ResourceChange {
     pub fn scope(&self) -> &[crate::types::ResourceAttribute] {
         self.scope.as_deref().unwrap_or_default()
     }
+    /// <p>The drift status of the resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The resource matches its template definition.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED</code> – Resource properties were modified outside CloudFormation.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> – The resource was deleted outside CloudFormation.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code> – CloudFormation doesn’t currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – Drift status could not be determined.</p></li>
+    /// <li>
+    /// <p><code>UNSUPPORTED</code> – Resource type does not support actual state comparison.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn resource_drift_status(&self) -> ::std::option::Option<&crate::types::StackResourceDriftStatus> {
+        self.resource_drift_status.as_ref()
+    }
+    /// <p>List of resource attributes for which drift was ignored.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_drift_ignored_attributes.is_none()`.
+    pub fn resource_drift_ignored_attributes(&self) -> &[crate::types::ResourceDriftIgnoredAttribute] {
+        self.resource_drift_ignored_attributes.as_deref().unwrap_or_default()
+    }
     /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the changes that CloudFormation will make to the resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
@@ -112,6 +158,10 @@ impl ResourceChange {
     pub fn after_context(&self) -> ::std::option::Option<&str> {
         self.after_context.as_deref()
     }
+    /// <p>Information about the resource's state from the previous CloudFormation deployment.</p>
+    pub fn previous_deployment_context(&self) -> ::std::option::Option<&str> {
+        self.previous_deployment_context.as_deref()
+    }
 }
 impl ResourceChange {
     /// Creates a new builder-style object to manufacture [`ResourceChange`](crate::types::ResourceChange).
@@ -131,11 +181,14 @@ pub struct ResourceChangeBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) replacement: ::std::option::Option<crate::types::Replacement>,
     pub(crate) scope: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
+    pub(crate) resource_drift_status: ::std::option::Option<crate::types::StackResourceDriftStatus>,
+    pub(crate) resource_drift_ignored_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDriftIgnoredAttribute>>,
     pub(crate) details: ::std::option::Option<::std::vec::Vec<crate::types::ResourceChangeDetail>>,
     pub(crate) change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) module_info: ::std::option::Option<crate::types::ModuleInfo>,
     pub(crate) before_context: ::std::option::Option<::std::string::String>,
     pub(crate) after_context: ::std::option::Option<::std::string::String>,
+    pub(crate) previous_deployment_context: ::std::option::Option<::std::string::String>,
 }
 impl ResourceChangeBuilder {
     /// <p>The action that will be taken on the physical resource when the change set is executed.</p>
@@ -194,17 +247,17 @@ impl ResourceChangeBuilder {
     pub fn get_policy_action(&self) -> &::std::option::Option<crate::types::PolicyAction> {
         &self.policy_action
     }
-    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
+    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), <code>Dynamic</code> (exact action for the resource can't be determined), or <code>SyncWithActual</code> (resource will not be changed, only CloudFormation metadata will change).</p>
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
+    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), <code>Dynamic</code> (exact action for the resource can't be determined), or <code>SyncWithActual</code> (resource will not be changed, only CloudFormation metadata will change).</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
         self.action = input;
         self
     }
-    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
+    /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), <code>Dynamic</code> (exact action for the resource can't be determined), or <code>SyncWithActual</code> (resource will not be changed, only CloudFormation metadata will change).</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
         &self.action
     }
@@ -287,6 +340,88 @@ impl ResourceChangeBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>> {
         &self.scope
     }
+    /// <p>The drift status of the resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The resource matches its template definition.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED</code> – Resource properties were modified outside CloudFormation.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> – The resource was deleted outside CloudFormation.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code> – CloudFormation doesn’t currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – Drift status could not be determined.</p></li>
+    /// <li>
+    /// <p><code>UNSUPPORTED</code> – Resource type does not support actual state comparison.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn resource_drift_status(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
+        self.resource_drift_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The drift status of the resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The resource matches its template definition.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED</code> – Resource properties were modified outside CloudFormation.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> – The resource was deleted outside CloudFormation.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code> – CloudFormation doesn’t currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – Drift status could not be determined.</p></li>
+    /// <li>
+    /// <p><code>UNSUPPORTED</code> – Resource type does not support actual state comparison.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn set_resource_drift_status(mut self, input: ::std::option::Option<crate::types::StackResourceDriftStatus>) -> Self {
+        self.resource_drift_status = input;
+        self
+    }
+    /// <p>The drift status of the resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The resource matches its template definition.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED</code> – Resource properties were modified outside CloudFormation.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> – The resource was deleted outside CloudFormation.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code> – CloudFormation doesn’t currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – Drift status could not be determined.</p></li>
+    /// <li>
+    /// <p><code>UNSUPPORTED</code> – Resource type does not support actual state comparison.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn get_resource_drift_status(&self) -> &::std::option::Option<crate::types::StackResourceDriftStatus> {
+        &self.resource_drift_status
+    }
+    /// Appends an item to `resource_drift_ignored_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_resource_drift_ignored_attributes`](Self::set_resource_drift_ignored_attributes).
+    ///
+    /// <p>List of resource attributes for which drift was ignored.</p>
+    pub fn resource_drift_ignored_attributes(mut self, input: crate::types::ResourceDriftIgnoredAttribute) -> Self {
+        let mut v = self.resource_drift_ignored_attributes.unwrap_or_default();
+        v.push(input);
+        self.resource_drift_ignored_attributes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of resource attributes for which drift was ignored.</p>
+    pub fn set_resource_drift_ignored_attributes(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceDriftIgnoredAttribute>>,
+    ) -> Self {
+        self.resource_drift_ignored_attributes = input;
+        self
+    }
+    /// <p>List of resource attributes for which drift was ignored.</p>
+    pub fn get_resource_drift_ignored_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDriftIgnoredAttribute>> {
+        &self.resource_drift_ignored_attributes
+    }
     /// Appends an item to `details`.
     ///
     /// To override the contents of this collection use [`set_details`](Self::set_details).
@@ -363,6 +498,20 @@ impl ResourceChangeBuilder {
     pub fn get_after_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_context
     }
+    /// <p>Information about the resource's state from the previous CloudFormation deployment.</p>
+    pub fn previous_deployment_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.previous_deployment_context = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Information about the resource's state from the previous CloudFormation deployment.</p>
+    pub fn set_previous_deployment_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.previous_deployment_context = input;
+        self
+    }
+    /// <p>Information about the resource's state from the previous CloudFormation deployment.</p>
+    pub fn get_previous_deployment_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_deployment_context
+    }
     /// Consumes the builder and constructs a [`ResourceChange`](crate::types::ResourceChange).
     pub fn build(self) -> crate::types::ResourceChange {
         crate::types::ResourceChange {
@@ -373,11 +522,14 @@ impl ResourceChangeBuilder {
             resource_type: self.resource_type,
             replacement: self.replacement,
             scope: self.scope,
+            resource_drift_status: self.resource_drift_status,
+            resource_drift_ignored_attributes: self.resource_drift_ignored_attributes,
             details: self.details,
             change_set_id: self.change_set_id,
             module_info: self.module_info,
             before_context: self.before_context,
             after_context: self.after_context,
+            previous_deployment_context: self.previous_deployment_context,
         }
     }
 }

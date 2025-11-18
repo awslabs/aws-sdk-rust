@@ -675,6 +675,8 @@ mod create_vpc_endpoint_service_configuration;
 
 mod create_vpc_peering_connection;
 
+mod create_vpn_concentrator;
+
 mod create_vpn_connection;
 
 mod create_vpn_connection_route;
@@ -871,6 +873,8 @@ mod delete_vpc_endpoint_service_configurations;
 mod delete_vpc_endpoints;
 
 mod delete_vpc_peering_connection;
+
+mod delete_vpn_concentrator;
 
 mod delete_vpn_connection;
 
@@ -1245,6 +1249,8 @@ mod describe_vpc_endpoints;
 mod describe_vpc_peering_connections;
 
 mod describe_vpcs;
+
+mod describe_vpn_concentrators;
 
 mod describe_vpn_connections;
 

@@ -22,6 +22,9 @@ pub mod create_log_group;
 /// Types for the `CreateLogStream` operation.
 pub mod create_log_stream;
 
+/// Types for the `CreateScheduledQuery` operation.
+pub mod create_scheduled_query;
+
 /// Types for the `DeleteAccountPolicy` operation.
 pub mod delete_account_policy;
 
@@ -69,6 +72,9 @@ pub mod delete_resource_policy;
 
 /// Types for the `DeleteRetentionPolicy` operation.
 pub mod delete_retention_policy;
+
+/// Types for the `DeleteScheduledQuery` operation.
+pub mod delete_scheduled_query;
 
 /// Types for the `DeleteSubscriptionFilter` operation.
 pub mod delete_subscription_filter;
@@ -166,6 +172,12 @@ pub mod get_log_record;
 /// Types for the `GetQueryResults` operation.
 pub mod get_query_results;
 
+/// Types for the `GetScheduledQuery` operation.
+pub mod get_scheduled_query;
+
+/// Types for the `GetScheduledQueryHistory` operation.
+pub mod get_scheduled_query_history;
+
 /// Types for the `GetTransformer` operation.
 pub mod get_transformer;
 
@@ -183,6 +195,9 @@ pub mod list_log_groups;
 
 /// Types for the `ListLogGroupsForQuery` operation.
 pub mod list_log_groups_for_query;
+
+/// Types for the `ListScheduledQueries` operation.
+pub mod list_scheduled_queries;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -273,3 +288,6 @@ pub mod update_delivery_configuration;
 
 /// Types for the `UpdateLogAnomalyDetector` operation.
 pub mod update_log_anomaly_detector;
+
+/// Types for the `UpdateScheduledQuery` operation.
+pub mod update_scheduled_query;

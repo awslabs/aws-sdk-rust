@@ -463,6 +463,9 @@ pub mod create_vpc_endpoint_service_configuration;
 /// Types for the `CreateVpcPeeringConnection` operation.
 pub mod create_vpc_peering_connection;
 
+/// Types for the `CreateVpnConcentrator` operation.
+pub mod create_vpn_concentrator;
+
 /// Types for the `CreateVpnConnection` operation.
 pub mod create_vpn_connection;
 
@@ -717,6 +720,9 @@ pub mod delete_vpc_endpoints;
 
 /// Types for the `DeleteVpcPeeringConnection` operation.
 pub mod delete_vpc_peering_connection;
+
+/// Types for the `DeleteVpnConcentrator` operation.
+pub mod delete_vpn_concentrator;
 
 /// Types for the `DeleteVpnConnection` operation.
 pub mod delete_vpn_connection;
@@ -1278,6 +1284,9 @@ pub mod describe_vpc_peering_connections;
 
 /// Types for the `DescribeVpcs` operation.
 pub mod describe_vpcs;
+
+/// Types for the `DescribeVpnConcentrators` operation.
+pub mod describe_vpn_concentrators;
 
 /// Types for the `DescribeVpnConnections` operation.
 pub mod describe_vpn_connections;

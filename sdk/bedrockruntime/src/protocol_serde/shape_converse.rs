@@ -210,6 +210,9 @@ pub(crate) fn de_converse(
                         tokens,
                     )?);
                 }
+                "serviceTier" => {
+                    builder = builder.set_service_tier(crate::protocol_serde::shape_service_tier::de_service_tier(tokens)?);
+                }
                 "stopReason" => {
                     builder = builder.set_stop_reason(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

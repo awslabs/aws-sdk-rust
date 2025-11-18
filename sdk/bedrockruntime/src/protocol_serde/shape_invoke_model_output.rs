@@ -18,3 +18,10 @@ pub(crate) fn de_performance_config_latency_header(
     let headers = header_map.get_all("X-Amzn-Bedrock-PerformanceConfig-Latency");
     ::aws_smithy_http::header::one_or_none(headers)
 }
+
+pub(crate) fn de_service_tier_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<crate::types::ServiceTierType>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("X-Amzn-Bedrock-Service-Tier");
+    ::aws_smithy_http::header::one_or_none(headers)
+}

@@ -67,6 +67,8 @@ pub use crate::types::_broker_ebs_volume_info::BrokerEbsVolumeInfoBuilder;
 
 pub use crate::types::_vpc_connection::VpcConnectionBuilder;
 
+pub use crate::types::_topic_info::TopicInfoBuilder;
+
 pub use crate::types::_replicator_summary::ReplicatorSummaryBuilder;
 
 pub use crate::types::_replication_info_summary::ReplicationInfoSummaryBuilder;
@@ -140,6 +142,8 @@ pub use crate::types::_error_info::ErrorInfoBuilder;
 pub use crate::types::_client_vpc_connection::ClientVpcConnectionBuilder;
 
 pub use crate::types::_compatible_kafka_version::CompatibleKafkaVersionBuilder;
+
+pub use crate::types::_topic_partition_info::TopicPartitionInfoBuilder;
 
 pub use crate::types::_replication_state_info::ReplicationStateInfoBuilder;
 

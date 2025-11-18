@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`retain_except_on_create(bool)`](crate::operation::rollback_stack::builders::RollbackStackFluentBuilder::retain_except_on_create) / [`set_retain_except_on_create(Option<bool>)`](crate::operation::rollback_stack::builders::RollbackStackFluentBuilder::set_retain_except_on_create):<br>required: **false**<br><p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code></p><br>
     /// - On success, responds with [`RollbackStackOutput`](crate::operation::rollback_stack::RollbackStackOutput) with field(s):
     ///   - [`stack_id(Option<String>)`](crate::operation::rollback_stack::RollbackStackOutput::stack_id): <p>Unique identifier of the stack.</p>
+    ///   - [`operation_id(Option<String>)`](crate::operation::rollback_stack::RollbackStackOutput::operation_id): <p>A unique identifier for this rollback operation that can be used to track the operation's progress and events.</p>
     /// - On failure, responds with [`SdkError<RollbackStackError>`](crate::operation::rollback_stack::RollbackStackError)
     pub fn rollback_stack(&self) -> crate::operation::rollback_stack::builders::RollbackStackFluentBuilder {
         crate::operation::rollback_stack::builders::RollbackStackFluentBuilder::new(self.handle.clone())

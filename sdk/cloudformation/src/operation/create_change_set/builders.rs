@@ -602,4 +602,33 @@ impl CreateChangeSetFluentBuilder {
     pub fn get_import_existing_resources(&self) -> &::std::option::Option<bool> {
         self.inner.get_import_existing_resources()
     }
+    /// <p>Determines how CloudFormation handles configuration drift during deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>REVERT_DRIFT</code> – Creates a drift-aware change set that brings actual resource states in line with template definitions. Provides a three-way comparison between actual state, previous deployment state, and desired state.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn deployment_mode(mut self, input: crate::types::DeploymentMode) -> Self {
+        self.inner = self.inner.deployment_mode(input);
+        self
+    }
+    /// <p>Determines how CloudFormation handles configuration drift during deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>REVERT_DRIFT</code> – Creates a drift-aware change set that brings actual resource states in line with template definitions. Provides a three-way comparison between actual state, previous deployment state, and desired state.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn set_deployment_mode(mut self, input: ::std::option::Option<crate::types::DeploymentMode>) -> Self {
+        self.inner = self.inner.set_deployment_mode(input);
+        self
+    }
+    /// <p>Determines how CloudFormation handles configuration drift during deployment.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>REVERT_DRIFT</code> – Creates a drift-aware change set that brings actual resource states in line with template definitions. Provides a three-way comparison between actual state, previous deployment state, and desired state.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn get_deployment_mode(&self) -> &::std::option::Option<crate::types::DeploymentMode> {
+        self.inner.get_deployment_mode()
+    }
 }

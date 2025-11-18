@@ -265,6 +265,8 @@ pub enum UpdateWebACLError {
     WafDuplicateItemException(crate::types::error::WafDuplicateItemException),
     /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
     WafExpiredManagedRuleGroupVersionException(crate::types::error::WafExpiredManagedRuleGroupVersionException),
+    /// <p>The operation failed because the specified WAF feature isn't supported by the CloudFront pricing plan associated with the web ACL.</p>
+    WafFeatureNotIncludedInPricingPlanException(crate::types::error::WafFeatureNotIncludedInPricingPlanException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request.</p>
     WafInternalErrorException(crate::types::error::WafInternalErrorException),
     /// <p>The operation isn't valid.</p>
@@ -329,6 +331,7 @@ impl UpdateWebACLError {
             Self::WafConfigurationWarningException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafDuplicateItemException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafExpiredManagedRuleGroupVersionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::WafFeatureNotIncludedInPricingPlanException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafInternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafInvalidOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafInvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -352,6 +355,10 @@ impl UpdateWebACLError {
     /// Returns `true` if the error kind is `UpdateWebACLError::WafExpiredManagedRuleGroupVersionException`.
     pub fn is_waf_expired_managed_rule_group_version_exception(&self) -> bool {
         matches!(self, Self::WafExpiredManagedRuleGroupVersionException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateWebACLError::WafFeatureNotIncludedInPricingPlanException`.
+    pub fn is_waf_feature_not_included_in_pricing_plan_exception(&self) -> bool {
+        matches!(self, Self::WafFeatureNotIncludedInPricingPlanException(_))
     }
     /// Returns `true` if the error kind is `UpdateWebACLError::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
@@ -396,6 +403,7 @@ impl ::std::error::Error for UpdateWebACLError {
             Self::WafConfigurationWarningException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafDuplicateItemException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafExpiredManagedRuleGroupVersionException(_inner) => ::std::option::Option::Some(_inner),
+            Self::WafFeatureNotIncludedInPricingPlanException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafInternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafInvalidOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafInvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
@@ -415,6 +423,7 @@ impl ::std::fmt::Display for UpdateWebACLError {
             Self::WafConfigurationWarningException(_inner) => _inner.fmt(f),
             Self::WafDuplicateItemException(_inner) => _inner.fmt(f),
             Self::WafExpiredManagedRuleGroupVersionException(_inner) => _inner.fmt(f),
+            Self::WafFeatureNotIncludedInPricingPlanException(_inner) => _inner.fmt(f),
             Self::WafInternalErrorException(_inner) => _inner.fmt(f),
             Self::WafInvalidOperationException(_inner) => _inner.fmt(f),
             Self::WafInvalidParameterException(_inner) => _inner.fmt(f),
@@ -448,6 +457,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateWebACLE
             Self::WafConfigurationWarningException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafDuplicateItemException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafExpiredManagedRuleGroupVersionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::WafFeatureNotIncludedInPricingPlanException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafInternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafInvalidOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafInvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

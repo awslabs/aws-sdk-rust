@@ -325,4 +325,18 @@ impl InvokeModelWithResponseStreamFluentBuilder {
     pub fn get_performance_config_latency(&self) -> &::std::option::Option<crate::types::PerformanceConfigLatency> {
         self.inner.get_performance_config_latency()
     }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn service_tier(mut self, input: crate::types::ServiceTierType) -> Self {
+        self.inner = self.inner.service_tier(input);
+        self
+    }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn set_service_tier(mut self, input: ::std::option::Option<crate::types::ServiceTierType>) -> Self {
+        self.inner = self.inner.set_service_tier(input);
+        self
+    }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTierType> {
+        self.inner.get_service_tier()
+    }
 }

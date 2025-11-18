@@ -16,6 +16,24 @@ pub struct ResourceTargetDefinition {
     pub before_value: ::std::option::Option<::std::string::String>,
     /// <p>The value of the property after the change is executed. Large values can be truncated.</p>
     pub after_value: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates the source of the before value. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTUAL_STATE</code> – The before value represents current actual state.</p></li>
+    /// <li>
+    /// <p><code>PREVIOUS_DEPLOYMENT_STATE</code> – The before value represents the previous CloudFormation deployment state.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub before_value_from: ::std::option::Option<crate::types::BeforeValueFrom>,
+    /// <p>Indicates the source of the after value. Valid value:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>TEMPLATE</code> – The after value comes from the new template.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub after_value_from: ::std::option::Option<crate::types::AfterValueFrom>,
+    /// <p>Detailed drift information for the resource property, including actual values, previous deployment values, and drift detection timestamps.</p>
+    pub drift: ::std::option::Option<crate::types::LiveResourceDrift>,
     /// <p>The type of change to be made to the property if the change is executed.</p>
     /// <ul>
     /// <li>
@@ -24,6 +42,8 @@ pub struct ResourceTargetDefinition {
     /// <p><code>Remove</code> The item will be removed.</p></li>
     /// <li>
     /// <p><code>Modify</code> The item will be modified.</p></li>
+    /// <li>
+    /// <p><code>SyncWithActual</code> The drift status of this item will be reset but the item will not be modified.</p></li>
     /// </ul>
     pub attribute_change_type: ::std::option::Option<crate::types::AttributeChangeType>,
 }
@@ -52,6 +72,30 @@ impl ResourceTargetDefinition {
     pub fn after_value(&self) -> ::std::option::Option<&str> {
         self.after_value.as_deref()
     }
+    /// <p>Indicates the source of the before value. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTUAL_STATE</code> – The before value represents current actual state.</p></li>
+    /// <li>
+    /// <p><code>PREVIOUS_DEPLOYMENT_STATE</code> – The before value represents the previous CloudFormation deployment state.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn before_value_from(&self) -> ::std::option::Option<&crate::types::BeforeValueFrom> {
+        self.before_value_from.as_ref()
+    }
+    /// <p>Indicates the source of the after value. Valid value:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>TEMPLATE</code> – The after value comes from the new template.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn after_value_from(&self) -> ::std::option::Option<&crate::types::AfterValueFrom> {
+        self.after_value_from.as_ref()
+    }
+    /// <p>Detailed drift information for the resource property, including actual values, previous deployment values, and drift detection timestamps.</p>
+    pub fn drift(&self) -> ::std::option::Option<&crate::types::LiveResourceDrift> {
+        self.drift.as_ref()
+    }
     /// <p>The type of change to be made to the property if the change is executed.</p>
     /// <ul>
     /// <li>
@@ -60,6 +104,8 @@ impl ResourceTargetDefinition {
     /// <p><code>Remove</code> The item will be removed.</p></li>
     /// <li>
     /// <p><code>Modify</code> The item will be modified.</p></li>
+    /// <li>
+    /// <p><code>SyncWithActual</code> The drift status of this item will be reset but the item will not be modified.</p></li>
     /// </ul>
     pub fn attribute_change_type(&self) -> ::std::option::Option<&crate::types::AttributeChangeType> {
         self.attribute_change_type.as_ref()
@@ -82,6 +128,9 @@ pub struct ResourceTargetDefinitionBuilder {
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) before_value: ::std::option::Option<::std::string::String>,
     pub(crate) after_value: ::std::option::Option<::std::string::String>,
+    pub(crate) before_value_from: ::std::option::Option<crate::types::BeforeValueFrom>,
+    pub(crate) after_value_from: ::std::option::Option<crate::types::AfterValueFrom>,
+    pub(crate) drift: ::std::option::Option<crate::types::LiveResourceDrift>,
     pub(crate) attribute_change_type: ::std::option::Option<crate::types::AttributeChangeType>,
 }
 impl ResourceTargetDefinitionBuilder {
@@ -169,6 +218,84 @@ impl ResourceTargetDefinitionBuilder {
     pub fn get_after_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_value
     }
+    /// <p>Indicates the source of the before value. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTUAL_STATE</code> – The before value represents current actual state.</p></li>
+    /// <li>
+    /// <p><code>PREVIOUS_DEPLOYMENT_STATE</code> – The before value represents the previous CloudFormation deployment state.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn before_value_from(mut self, input: crate::types::BeforeValueFrom) -> Self {
+        self.before_value_from = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the source of the before value. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTUAL_STATE</code> – The before value represents current actual state.</p></li>
+    /// <li>
+    /// <p><code>PREVIOUS_DEPLOYMENT_STATE</code> – The before value represents the previous CloudFormation deployment state.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn set_before_value_from(mut self, input: ::std::option::Option<crate::types::BeforeValueFrom>) -> Self {
+        self.before_value_from = input;
+        self
+    }
+    /// <p>Indicates the source of the before value. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACTUAL_STATE</code> – The before value represents current actual state.</p></li>
+    /// <li>
+    /// <p><code>PREVIOUS_DEPLOYMENT_STATE</code> – The before value represents the previous CloudFormation deployment state.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn get_before_value_from(&self) -> &::std::option::Option<crate::types::BeforeValueFrom> {
+        &self.before_value_from
+    }
+    /// <p>Indicates the source of the after value. Valid value:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>TEMPLATE</code> – The after value comes from the new template.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn after_value_from(mut self, input: crate::types::AfterValueFrom) -> Self {
+        self.after_value_from = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the source of the after value. Valid value:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>TEMPLATE</code> – The after value comes from the new template.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn set_after_value_from(mut self, input: ::std::option::Option<crate::types::AfterValueFrom>) -> Self {
+        self.after_value_from = input;
+        self
+    }
+    /// <p>Indicates the source of the after value. Valid value:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>TEMPLATE</code> – The after value comes from the new template.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn get_after_value_from(&self) -> &::std::option::Option<crate::types::AfterValueFrom> {
+        &self.after_value_from
+    }
+    /// <p>Detailed drift information for the resource property, including actual values, previous deployment values, and drift detection timestamps.</p>
+    pub fn drift(mut self, input: crate::types::LiveResourceDrift) -> Self {
+        self.drift = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Detailed drift information for the resource property, including actual values, previous deployment values, and drift detection timestamps.</p>
+    pub fn set_drift(mut self, input: ::std::option::Option<crate::types::LiveResourceDrift>) -> Self {
+        self.drift = input;
+        self
+    }
+    /// <p>Detailed drift information for the resource property, including actual values, previous deployment values, and drift detection timestamps.</p>
+    pub fn get_drift(&self) -> &::std::option::Option<crate::types::LiveResourceDrift> {
+        &self.drift
+    }
     /// <p>The type of change to be made to the property if the change is executed.</p>
     /// <ul>
     /// <li>
@@ -177,6 +304,8 @@ impl ResourceTargetDefinitionBuilder {
     /// <p><code>Remove</code> The item will be removed.</p></li>
     /// <li>
     /// <p><code>Modify</code> The item will be modified.</p></li>
+    /// <li>
+    /// <p><code>SyncWithActual</code> The drift status of this item will be reset but the item will not be modified.</p></li>
     /// </ul>
     pub fn attribute_change_type(mut self, input: crate::types::AttributeChangeType) -> Self {
         self.attribute_change_type = ::std::option::Option::Some(input);
@@ -190,6 +319,8 @@ impl ResourceTargetDefinitionBuilder {
     /// <p><code>Remove</code> The item will be removed.</p></li>
     /// <li>
     /// <p><code>Modify</code> The item will be modified.</p></li>
+    /// <li>
+    /// <p><code>SyncWithActual</code> The drift status of this item will be reset but the item will not be modified.</p></li>
     /// </ul>
     pub fn set_attribute_change_type(mut self, input: ::std::option::Option<crate::types::AttributeChangeType>) -> Self {
         self.attribute_change_type = input;
@@ -203,6 +334,8 @@ impl ResourceTargetDefinitionBuilder {
     /// <p><code>Remove</code> The item will be removed.</p></li>
     /// <li>
     /// <p><code>Modify</code> The item will be modified.</p></li>
+    /// <li>
+    /// <p><code>SyncWithActual</code> The drift status of this item will be reset but the item will not be modified.</p></li>
     /// </ul>
     pub fn get_attribute_change_type(&self) -> &::std::option::Option<crate::types::AttributeChangeType> {
         &self.attribute_change_type
@@ -216,6 +349,9 @@ impl ResourceTargetDefinitionBuilder {
             path: self.path,
             before_value: self.before_value,
             after_value: self.after_value,
+            before_value_from: self.before_value_from,
+            after_value_from: self.after_value_from,
+            drift: self.drift,
             attribute_change_type: self.attribute_change_type,
         }
     }

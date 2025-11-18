@@ -28,6 +28,8 @@ impl crate::operation::start_outbound_voice_contact::builders::StartOutboundVoic
 /// <p>UK numbers with a 447 prefix are not allowed by default. Before you can dial these UK mobile numbers, you must submit a service quota increase request. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 /// </note> <note>
 /// <p>Campaign calls are not allowed by default. Before you can make a call with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must submit a service quota increase request to the quota <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon Connect campaigns</a>.</p>
+/// </note> <note>
+/// <p>For Preview dialing mode, only the Amazon Connect outbound campaigns service principal is allowed to assume a role in your account and call this API with OutboundStrategy.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartOutboundVoiceContactFluentBuilder {
@@ -342,5 +344,19 @@ impl StartOutboundVoiceContactFluentBuilder {
     /// <p>Information about the outbound strategy.</p>
     pub fn get_outbound_strategy(&self) -> &::std::option::Option<crate::types::OutboundStrategy> {
         self.inner.get_outbound_strategy()
+    }
+    /// <p>The maximum time the outbound call will wait for the destination to answer the call, in seconds</p>
+    pub fn ring_timeout_in_seconds(mut self, input: i32) -> Self {
+        self.inner = self.inner.ring_timeout_in_seconds(input);
+        self
+    }
+    /// <p>The maximum time the outbound call will wait for the destination to answer the call, in seconds</p>
+    pub fn set_ring_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_ring_timeout_in_seconds(input);
+        self
+    }
+    /// <p>The maximum time the outbound call will wait for the destination to answer the call, in seconds</p>
+    pub fn get_ring_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_ring_timeout_in_seconds()
     }
 }

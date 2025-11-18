@@ -141,6 +141,12 @@ pub use crate::types::_metric_type::MetricType;
 
 pub use crate::types::_step_adjustment::StepAdjustment;
 
+pub use crate::types::_launch_instances_error::LaunchInstancesError;
+
+pub use crate::types::_instance_collection::InstanceCollection;
+
+pub use crate::types::_retry_strategy::RetryStrategy;
+
 pub use crate::types::_capacity_forecast::CapacityForecast;
 
 pub use crate::types::_load_forecast::LoadForecast;
@@ -289,6 +295,8 @@ mod _impaired_zone_health_check_behavior;
 
 mod _instance;
 
+mod _instance_collection;
+
 mod _instance_generation;
 
 mod _instance_maintenance_policy;
@@ -318,6 +326,8 @@ mod _instance_reuse_policy;
 mod _instances_distribution;
 
 mod _launch_configuration;
+
+mod _launch_instances_error;
 
 mod _launch_template;
 
@@ -404,6 +414,8 @@ mod _process_type;
 mod _refresh_preferences;
 
 mod _refresh_strategy;
+
+mod _retry_strategy;
 
 mod _rollback_details;
 

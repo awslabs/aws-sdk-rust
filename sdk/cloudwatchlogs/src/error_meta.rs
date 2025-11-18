@@ -11,6 +11,8 @@ pub enum Error {
     /// <p><code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code> regardless of whether a given batch of log events has already been accepted.</p>
     /// </important>
     DataAlreadyAcceptedException(crate::types::error::DataAlreadyAcceptedException),
+    /// <p>An internal server error occurred while processing the request. This is typically a temporary issue and the request can be retried.</p>
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>An internal error occurred during the streaming of log data. This exception is thrown when there's an issue with the internal streaming mechanism used by the GetLogObject operation.</p>
     InternalStreamingException(crate::types::error::InternalStreamingException),
     /// <p>The operation is not valid on the specified resource.</p>
@@ -63,6 +65,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::DataAlreadyAcceptedException(inner) => inner.fmt(f),
+            Error::InternalServerException(inner) => inner.fmt(f),
             Error::InternalStreamingException(inner) => inner.fmt(f),
             Error::InvalidOperationException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
@@ -104,6 +107,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::DataAlreadyAcceptedException(inner) => inner.meta(),
+            Self::InternalServerException(inner) => inner.meta(),
             Self::InternalStreamingException(inner) => inner.meta(),
             Self::InvalidOperationException(inner) => inner.meta(),
             Self::InvalidParameterException(inner) => inner.meta(),
@@ -333,6 +337,40 @@ impl From<crate::operation::create_log_stream::CreateLogStreamError> for Error {
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::create_log_stream::CreateLogStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scheduled_query::CreateScheduledQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scheduled_query::CreateScheduledQueryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_scheduled_query::CreateScheduledQueryError> for Error {
+    fn from(err: crate::operation::create_scheduled_query::CreateScheduledQueryError) -> Self {
+        match err {
+            crate::operation::create_scheduled_query::CreateScheduledQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_scheduled_query::CreateScheduledQueryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_scheduled_query::CreateScheduledQueryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_scheduled_query::CreateScheduledQueryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_scheduled_query::CreateScheduledQueryError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_scheduled_query::CreateScheduledQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_scheduled_query::CreateScheduledQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_scheduled_query::CreateScheduledQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -859,6 +897,36 @@ impl From<crate::operation::delete_retention_policy::DeleteRetentionPolicyError>
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::delete_retention_policy::DeleteRetentionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_scheduled_query::DeleteScheduledQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_scheduled_query::DeleteScheduledQueryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_scheduled_query::DeleteScheduledQueryError> for Error {
+    fn from(err: crate::operation::delete_scheduled_query::DeleteScheduledQueryError) -> Self {
+        match err {
+            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_scheduled_query::DeleteScheduledQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1861,6 +1929,73 @@ impl From<crate::operation::get_query_results::GetQueryResultsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_scheduled_query::GetScheduledQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_scheduled_query::GetScheduledQueryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_scheduled_query::GetScheduledQueryError> for Error {
+    fn from(err: crate::operation::get_scheduled_query::GetScheduledQueryError) -> Self {
+        match err {
+            crate::operation::get_scheduled_query::GetScheduledQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_scheduled_query::GetScheduledQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_scheduled_query::GetScheduledQueryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_scheduled_query::GetScheduledQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_scheduled_query::GetScheduledQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_scheduled_query::GetScheduledQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_scheduled_query_history::GetScheduledQueryHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_scheduled_query_history::GetScheduledQueryHistoryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_scheduled_query_history::GetScheduledQueryHistoryError> for Error {
+    fn from(err: crate::operation::get_scheduled_query_history::GetScheduledQueryHistoryError) -> Self {
+        match err {
+            crate::operation::get_scheduled_query_history::GetScheduledQueryHistoryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_scheduled_query_history::GetScheduledQueryHistoryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_scheduled_query_history::GetScheduledQueryHistoryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_scheduled_query_history::GetScheduledQueryHistoryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_scheduled_query_history::GetScheduledQueryHistoryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_scheduled_query_history::GetScheduledQueryHistoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_transformer::GetTransformerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2027,6 +2162,33 @@ impl From<crate::operation::list_log_groups_for_query::ListLogGroupsForQueryErro
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::list_log_groups_for_query::ListLogGroupsForQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scheduled_queries::ListScheduledQueriesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scheduled_queries::ListScheduledQueriesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_scheduled_queries::ListScheduledQueriesError> for Error {
+    fn from(err: crate::operation::list_scheduled_queries::ListScheduledQueriesError) -> Self {
+        match err {
+            crate::operation::list_scheduled_queries::ListScheduledQueriesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_scheduled_queries::ListScheduledQueriesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_scheduled_queries::ListScheduledQueriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_scheduled_queries::ListScheduledQueriesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_scheduled_queries::ListScheduledQueriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2910,6 +3072,36 @@ impl From<crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetecto
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_scheduled_query::UpdateScheduledQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_scheduled_query::UpdateScheduledQueryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_scheduled_query::UpdateScheduledQueryError> for Error {
+    fn from(err: crate::operation::update_scheduled_query::UpdateScheduledQueryError) -> Self {
+        match err {
+            crate::operation::update_scheduled_query::UpdateScheduledQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_scheduled_query::UpdateScheduledQueryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_scheduled_query::UpdateScheduledQueryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_scheduled_query::UpdateScheduledQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_scheduled_query::UpdateScheduledQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_scheduled_query::UpdateScheduledQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::GetLogObjectResponseStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2961,6 +3153,7 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::DataAlreadyAcceptedException(inner) => inner.source(),
+            Error::InternalServerException(inner) => inner.source(),
             Error::InternalStreamingException(inner) => inner.source(),
             Error::InvalidOperationException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
@@ -2988,6 +3181,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::DataAlreadyAcceptedException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
             Self::InternalStreamingException(e) => e.request_id(),
             Self::InvalidOperationException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),

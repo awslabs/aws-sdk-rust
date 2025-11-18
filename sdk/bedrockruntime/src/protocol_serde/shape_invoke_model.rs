@@ -196,6 +196,11 @@ pub fn de_invoke_model_http_response(
                 )
             })?,
         );
+        output = output.set_service_tier(
+            crate::protocol_serde::shape_invoke_model_output::de_service_tier_header(_response_headers).map_err(|_| {
+                crate::operation::invoke_model::InvokeModelError::unhandled("Failed to parse serviceTier from header `X-Amzn-Bedrock-Service-Tier")
+            })?,
+        );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         crate::serde_util::invoke_model_output_output_correct_errors(output)
             .build()
@@ -272,6 +277,17 @@ pub fn ser_invoke_model_headers(
             )
         })?;
         builder = builder.header("X-Amzn-Bedrock-PerformanceConfig-Latency", header_value);
+    }
+    if let ::std::option::Option::Some(inner_13) = &input.service_tier {
+        let formatted_14 = inner_13.as_str();
+        let header_value = formatted_14;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "service_tier",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("X-Amzn-Bedrock-Service-Tier", header_value);
     }
     Ok(builder)
 }

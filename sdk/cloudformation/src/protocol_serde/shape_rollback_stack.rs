@@ -91,6 +91,19 @@ pub fn de_rollback_stack(
                 builder = builder.set_stack_id(var_1);
             }
             ,
+            s if s.matches("OperationId") /* OperationId com.amazonaws.cloudformation.synthetic#RollbackStackOutput$OperationId */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_operation_id(var_2);
+            }
+            ,
             _ => {}
         }
         }

@@ -22,6 +22,8 @@ pub struct ResourceChangeDetail {
     /// <p><code>DirectModification</code> entities are changes that are made directly to the template.</p></li>
     /// <li>
     /// <p><code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's template might have changed. Changes to a nested stack's template aren't visible to CloudFormation until you run an update on the parent stack.</p></li>
+    /// <li>
+    /// <p><code>NoModification</code> entities are changes made to the template that matches the actual state of the resource.</p></li>
     /// </ul>
     pub change_source: ::std::option::Option<crate::types::ChangeSource>,
     /// <p>The identity of the entity that triggered this change. This entity is a member of the group that's specified by the <code>ChangeSource</code> field. For example, if you modified the value of the <code>KeyPairName</code> parameter, the <code>CausingEntity</code> is the name of the parameter (<code>KeyPairName</code>).</p>
@@ -51,6 +53,8 @@ impl ResourceChangeDetail {
     /// <p><code>DirectModification</code> entities are changes that are made directly to the template.</p></li>
     /// <li>
     /// <p><code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's template might have changed. Changes to a nested stack's template aren't visible to CloudFormation until you run an update on the parent stack.</p></li>
+    /// <li>
+    /// <p><code>NoModification</code> entities are changes made to the template that matches the actual state of the resource.</p></li>
     /// </ul>
     pub fn change_source(&self) -> ::std::option::Option<&crate::types::ChangeSource> {
         self.change_source.as_ref()
@@ -124,6 +128,8 @@ impl ResourceChangeDetailBuilder {
     /// <p><code>DirectModification</code> entities are changes that are made directly to the template.</p></li>
     /// <li>
     /// <p><code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's template might have changed. Changes to a nested stack's template aren't visible to CloudFormation until you run an update on the parent stack.</p></li>
+    /// <li>
+    /// <p><code>NoModification</code> entities are changes made to the template that matches the actual state of the resource.</p></li>
     /// </ul>
     pub fn change_source(mut self, input: crate::types::ChangeSource) -> Self {
         self.change_source = ::std::option::Option::Some(input);
@@ -141,6 +147,8 @@ impl ResourceChangeDetailBuilder {
     /// <p><code>DirectModification</code> entities are changes that are made directly to the template.</p></li>
     /// <li>
     /// <p><code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's template might have changed. Changes to a nested stack's template aren't visible to CloudFormation until you run an update on the parent stack.</p></li>
+    /// <li>
+    /// <p><code>NoModification</code> entities are changes made to the template that matches the actual state of the resource.</p></li>
     /// </ul>
     pub fn set_change_source(mut self, input: ::std::option::Option<crate::types::ChangeSource>) -> Self {
         self.change_source = input;
@@ -158,6 +166,8 @@ impl ResourceChangeDetailBuilder {
     /// <p><code>DirectModification</code> entities are changes that are made directly to the template.</p></li>
     /// <li>
     /// <p><code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code> resource, CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code> because the nested stack's template might have changed. Changes to a nested stack's template aren't visible to CloudFormation until you run an update on the parent stack.</p></li>
+    /// <li>
+    /// <p><code>NoModification</code> entities are changes made to the template that matches the actual state of the resource.</p></li>
     /// </ul>
     pub fn get_change_source(&self) -> &::std::option::Option<crate::types::ChangeSource> {
         &self.change_source

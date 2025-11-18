@@ -65,11 +65,17 @@ pub fn ser_start_outbound_voice_contact_input_input(
     if let Some(var_22) = &input.related_contact_id {
         object.key("RelatedContactId").string(var_22.as_str());
     }
-    if let Some(var_23) = &input.source_phone_number {
-        object.key("SourcePhoneNumber").string(var_23.as_str());
+    if let Some(var_23) = &input.ring_timeout_in_seconds {
+        object.key("RingTimeoutInSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
+        );
     }
-    if let Some(var_24) = &input.traffic_type {
-        object.key("TrafficType").string(var_24.as_str());
+    if let Some(var_24) = &input.source_phone_number {
+        object.key("SourcePhoneNumber").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.traffic_type {
+        object.key("TrafficType").string(var_25.as_str());
     }
     Ok(())
 }

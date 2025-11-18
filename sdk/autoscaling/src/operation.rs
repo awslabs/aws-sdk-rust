@@ -151,6 +151,9 @@ pub mod exit_standby;
 /// Types for the `GetPredictiveScalingForecast` operation.
 pub mod get_predictive_scaling_forecast;
 
+/// Types for the `LaunchInstances` operation.
+pub mod launch_instances;
+
 /// Types for the `PutLifecycleHook` operation.
 pub mod put_lifecycle_hook;
 

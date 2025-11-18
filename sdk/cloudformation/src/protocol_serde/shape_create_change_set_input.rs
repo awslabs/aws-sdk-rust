@@ -136,6 +136,11 @@ pub fn ser_create_change_set_input_input_input(
     if let Some(var_56) = &input.import_existing_resources {
         scope_55.boolean(*var_56);
     }
+    #[allow(unused_mut)]
+    let mut scope_57 = writer.prefix("DeploymentMode");
+    if let Some(var_58) = &input.deployment_mode {
+        scope_57.string(var_58.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

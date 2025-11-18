@@ -17,6 +17,7 @@
 ///     ChangeAction::Import => { /* ... */ },
 ///     ChangeAction::Modify => { /* ... */ },
 ///     ChangeAction::Remove => { /* ... */ },
+///     ChangeAction::SyncWithActual => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +56,8 @@ pub enum ChangeAction {
     Modify,
     #[allow(missing_docs)] // documentation missing in model
     Remove,
+    #[allow(missing_docs)] // documentation missing in model
+    SyncWithActual,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for ChangeAction {
             "Import" => ChangeAction::Import,
             "Modify" => ChangeAction::Modify,
             "Remove" => ChangeAction::Remove,
+            "SyncWithActual" => ChangeAction::SyncWithActual,
             other => ChangeAction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,12 +91,13 @@ impl ChangeAction {
             ChangeAction::Import => "Import",
             ChangeAction::Modify => "Modify",
             ChangeAction::Remove => "Remove",
+            ChangeAction::SyncWithActual => "SyncWithActual",
             ChangeAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Add", "Dynamic", "Import", "Modify", "Remove"]
+        &["Add", "Dynamic", "Import", "Modify", "Remove", "SyncWithActual"]
     }
 }
 impl ::std::convert::AsRef<str> for ChangeAction {
@@ -120,6 +125,7 @@ impl ::std::fmt::Display for ChangeAction {
             ChangeAction::Import => write!(f, "Import"),
             ChangeAction::Modify => write!(f, "Modify"),
             ChangeAction::Remove => write!(f, "Remove"),
+            ChangeAction::SyncWithActual => write!(f, "SyncWithActual"),
             ChangeAction::Unknown(value) => write!(f, "{value}"),
         }
     }

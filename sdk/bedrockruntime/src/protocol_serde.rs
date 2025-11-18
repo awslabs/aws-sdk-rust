@@ -139,6 +139,8 @@ pub(crate) mod shape_performance_configuration;
 
 pub(crate) mod shape_prompt_variable_values;
 
+pub(crate) mod shape_service_tier;
+
 pub(crate) mod shape_system_content_block;
 
 pub(crate) mod shape_tag;

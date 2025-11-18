@@ -17,11 +17,15 @@ pub use crate::types::error::_active_instance_refresh_not_found_fault::ActiveIns
 
 pub use crate::types::error::_already_exists_fault::AlreadyExistsFault;
 
+pub use crate::types::error::_idempotent_parameter_mismatch_error::IdempotentParameterMismatchError;
+
 pub use crate::types::error::_invalid_next_token::InvalidNextToken;
 
 mod _active_instance_refresh_not_found_fault;
 
 mod _already_exists_fault;
+
+mod _idempotent_parameter_mismatch_error;
 
 mod _instance_refresh_in_progress_fault;
 

@@ -173,6 +173,8 @@ mod get_tag_keys;
 
 mod get_tag_values;
 
+mod list_required_tags;
+
 mod start_report_creation;
 
 mod tag_resources;

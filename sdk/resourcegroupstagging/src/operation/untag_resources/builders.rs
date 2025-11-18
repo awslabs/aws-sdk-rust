@@ -33,10 +33,12 @@ impl crate::operation::untag_resources::builders::UntagResourcesInputBuilder {
 /// <p>In addition to the <code>tag:UntagResources</code> permission required by this operation, you must also have the remove tags permission defined by the service that created the resource. For example, to remove the tags from an Amazon EC2 instance using the <code>UntagResources</code> operation, you must have both of the following permissions:</p>
 /// <ul>
 /// <li>
-/// <p><code>tag:UntagResource</code></p></li>
+/// <p><code>tag:UntagResources</code></p></li>
 /// <li>
 /// <p><code>ec2:DeleteTags</code></p></li>
-/// </ul>
+/// </ul><note>
+/// <p>In addition, some services might have specific requirements for untagging some types of resources. For example, to untag Amazon Web Services Glue Connection, you must also have the <code>glue:GetConnection</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

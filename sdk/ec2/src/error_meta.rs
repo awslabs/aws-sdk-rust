@@ -4063,6 +4063,29 @@ impl From<crate::operation::create_vpc_peering_connection::CreateVpcPeeringConne
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpn_concentrator::CreateVpnConcentratorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpn_concentrator::CreateVpnConcentratorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_vpn_concentrator::CreateVpnConcentratorError> for Error {
+    fn from(err: crate::operation::create_vpn_concentrator::CreateVpnConcentratorError) -> Self {
+        match err {
+            crate::operation::create_vpn_concentrator::CreateVpnConcentratorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpn_connection::CreateVpnConnectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6276,6 +6299,29 @@ impl From<crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConne
     fn from(err: crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError) -> Self {
         match err {
             crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpn_concentrator::DeleteVpnConcentratorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpn_concentrator::DeleteVpnConcentratorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_vpn_concentrator::DeleteVpnConcentratorError> for Error {
+    fn from(err: crate::operation::delete_vpn_concentrator::DeleteVpnConcentratorError) -> Self {
+        match err {
+            crate::operation::delete_vpn_concentrator::DeleteVpnConcentratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -11393,6 +11439,30 @@ impl From<crate::operation::describe_vpcs::DescribeVpcsError> for Error {
     fn from(err: crate::operation::describe_vpcs::DescribeVpcsError) -> Self {
         match err {
             crate::operation::describe_vpcs::DescribeVpcsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_vpn_concentrators::DescribeVpnConcentratorsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_vpn_concentrators::DescribeVpnConcentratorsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_vpn_concentrators::DescribeVpnConcentratorsError> for Error {
+    fn from(err: crate::operation::describe_vpn_concentrators::DescribeVpnConcentratorsError) -> Self {
+        match err {
+            crate::operation::describe_vpn_concentrators::DescribeVpnConcentratorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

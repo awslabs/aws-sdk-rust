@@ -325,6 +325,16 @@ pub fn de_stack(
                 builder = builder.set_detailed_status(var_25);
             }
             ,
+            s if s.matches("LastOperations") /* LastOperations com.amazonaws.cloudformation#Stack$LastOperations */ =>  {
+                let var_26 =
+                    Some(
+                        crate::protocol_serde::shape_last_operations::de_last_operations(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_last_operations(var_26);
+            }
+            ,
             _ => {}
         }
     }

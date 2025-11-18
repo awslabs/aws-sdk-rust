@@ -12,6 +12,8 @@ pub struct CreateVpnConnectionInput {
     pub vpn_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the VPN concentrator to associate with the VPN connection.</p>
+    pub vpn_concentrator_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the VPN connection.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Specifies the storage mode for the pre-shared key (PSK). Valid values are <code>Standard</code>" (stored in the Site-to-Site VPN service) or <code>SecretsManager</code> (stored in Amazon Web Services Secrets Manager).</p>
@@ -37,6 +39,10 @@ impl CreateVpnConnectionInput {
     /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
     pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_id.as_deref()
+    }
+    /// <p>The ID of the VPN concentrator to associate with the VPN connection.</p>
+    pub fn vpn_concentrator_id(&self) -> ::std::option::Option<&str> {
+        self.vpn_concentrator_id.as_deref()
     }
     /// <p>The tags to apply to the VPN connection.</p>
     ///
@@ -72,6 +78,7 @@ pub struct CreateVpnConnectionInputBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpn_concentrator_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) pre_shared_key_storage: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -135,6 +142,20 @@ impl CreateVpnConnectionInputBuilder {
     /// <p>The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.</p>
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_id
+    }
+    /// <p>The ID of the VPN concentrator to associate with the VPN connection.</p>
+    pub fn vpn_concentrator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpn_concentrator_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the VPN concentrator to associate with the VPN connection.</p>
+    pub fn set_vpn_concentrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpn_concentrator_id = input;
+        self
+    }
+    /// <p>The ID of the VPN concentrator to associate with the VPN connection.</p>
+    pub fn get_vpn_concentrator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_concentrator_id
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -208,6 +229,7 @@ impl CreateVpnConnectionInputBuilder {
             r#type: self.r#type,
             vpn_gateway_id: self.vpn_gateway_id,
             transit_gateway_id: self.transit_gateway_id,
+            vpn_concentrator_id: self.vpn_concentrator_id,
             tag_specifications: self.tag_specifications,
             pre_shared_key_storage: self.pre_shared_key_storage,
             dry_run: self.dry_run,

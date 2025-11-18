@@ -70,6 +70,8 @@ pub struct Stack {
     pub deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
     /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The StackSets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.</p>
     pub detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
+    /// <p>Information about the most recent operations performed on this stack.</p>
+    pub last_operations: ::std::option::Option<::std::vec::Vec<crate::types::OperationEntry>>,
 }
 impl Stack {
     /// <p>Unique identifier of the stack.</p>
@@ -198,6 +200,12 @@ impl Stack {
     pub fn detailed_status(&self) -> ::std::option::Option<&crate::types::DetailedStatus> {
         self.detailed_status.as_ref()
     }
+    /// <p>Information about the most recent operations performed on this stack.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_operations.is_none()`.
+    pub fn last_operations(&self) -> &[crate::types::OperationEntry] {
+        self.last_operations.as_deref().unwrap_or_default()
+    }
 }
 impl Stack {
     /// Creates a new builder-style object to manufacture [`Stack`](crate::types::Stack).
@@ -235,6 +243,7 @@ pub struct StackBuilder {
     pub(crate) retain_except_on_create: ::std::option::Option<bool>,
     pub(crate) deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
     pub(crate) detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
+    pub(crate) last_operations: ::std::option::Option<::std::vec::Vec<crate::types::OperationEntry>>,
 }
 impl StackBuilder {
     /// <p>Unique identifier of the stack.</p>
@@ -668,6 +677,26 @@ impl StackBuilder {
     pub fn get_detailed_status(&self) -> &::std::option::Option<crate::types::DetailedStatus> {
         &self.detailed_status
     }
+    /// Appends an item to `last_operations`.
+    ///
+    /// To override the contents of this collection use [`set_last_operations`](Self::set_last_operations).
+    ///
+    /// <p>Information about the most recent operations performed on this stack.</p>
+    pub fn last_operations(mut self, input: crate::types::OperationEntry) -> Self {
+        let mut v = self.last_operations.unwrap_or_default();
+        v.push(input);
+        self.last_operations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the most recent operations performed on this stack.</p>
+    pub fn set_last_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationEntry>>) -> Self {
+        self.last_operations = input;
+        self
+    }
+    /// <p>Information about the most recent operations performed on this stack.</p>
+    pub fn get_last_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationEntry>> {
+        &self.last_operations
+    }
     /// Consumes the builder and constructs a [`Stack`](crate::types::Stack).
     pub fn build(self) -> crate::types::Stack {
         crate::types::Stack {
@@ -696,6 +725,7 @@ impl StackBuilder {
             retain_except_on_create: self.retain_except_on_create,
             deletion_mode: self.deletion_mode,
             detailed_status: self.detailed_status,
+            last_operations: self.last_operations,
         }
     }
 }

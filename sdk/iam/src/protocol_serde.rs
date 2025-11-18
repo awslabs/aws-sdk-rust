@@ -23,6 +23,10 @@ pub fn parse_http_error_metadata(
     crate::rest_xml_wrapped_errors::parse_error_metadata(response_body)
 }
 
+pub(crate) mod shape_accept_delegation_request;
+
+pub(crate) mod shape_accept_delegation_request_input;
+
 pub(crate) mod shape_add_client_id_to_open_id_connect_provider;
 
 pub(crate) mod shape_add_client_id_to_open_id_connect_provider_input;
@@ -34,6 +38,10 @@ pub(crate) mod shape_add_role_to_instance_profile_input;
 pub(crate) mod shape_add_user_to_group;
 
 pub(crate) mod shape_add_user_to_group_input;
+
+pub(crate) mod shape_associate_delegation_request;
+
+pub(crate) mod shape_associate_delegation_request_input;
 
 pub(crate) mod shape_attach_group_policy;
 
@@ -279,6 +287,10 @@ pub(crate) mod shape_get_credential_report;
 
 pub(crate) mod shape_get_credential_report_input;
 
+pub(crate) mod shape_get_delegation_request;
+
+pub(crate) mod shape_get_delegation_request_input;
+
 pub(crate) mod shape_get_group;
 
 pub(crate) mod shape_get_group_input;
@@ -286,6 +298,10 @@ pub(crate) mod shape_get_group_input;
 pub(crate) mod shape_get_group_policy;
 
 pub(crate) mod shape_get_group_policy_input;
+
+pub(crate) mod shape_get_human_readable_summary;
+
+pub(crate) mod shape_get_human_readable_summary_input;
 
 pub(crate) mod shape_get_instance_profile;
 
@@ -374,6 +390,10 @@ pub(crate) mod shape_list_attached_role_policies_input;
 pub(crate) mod shape_list_attached_user_policies;
 
 pub(crate) mod shape_list_attached_user_policies_input;
+
+pub(crate) mod shape_list_delegation_requests;
+
+pub(crate) mod shape_list_delegation_requests_input;
 
 pub(crate) mod shape_list_entities_for_policy;
 
@@ -515,6 +535,10 @@ pub(crate) mod shape_put_user_policy;
 
 pub(crate) mod shape_put_user_policy_input;
 
+pub(crate) mod shape_reject_delegation_request;
+
+pub(crate) mod shape_reject_delegation_request_input;
+
 pub(crate) mod shape_remove_client_id_from_open_id_connect_provider;
 
 pub(crate) mod shape_remove_client_id_from_open_id_connect_provider_input;
@@ -534,6 +558,10 @@ pub(crate) mod shape_reset_service_specific_credential_input;
 pub(crate) mod shape_resync_mfa_device;
 
 pub(crate) mod shape_resync_mfa_device_input;
+
+pub(crate) mod shape_send_delegation_token;
+
+pub(crate) mod shape_send_delegation_token_input;
 
 pub(crate) mod shape_set_default_policy_version;
 
@@ -626,6 +654,10 @@ pub(crate) mod shape_update_account_password_policy_input;
 pub(crate) mod shape_update_assume_role_policy;
 
 pub(crate) mod shape_update_assume_role_policy_input;
+
+pub(crate) mod shape_update_delegation_request;
+
+pub(crate) mod shape_update_delegation_request_input;
 
 pub(crate) mod shape_update_group;
 
@@ -775,6 +807,10 @@ pub(crate) mod shape_client_id_list_type;
 
 pub(crate) mod shape_context_key_names_result_list_type;
 
+pub(crate) mod shape_delegation_request;
+
+pub(crate) mod shape_delegation_requests_list_type;
+
 pub(crate) mod shape_deletion_task_failure_reason_type;
 
 pub(crate) mod shape_entity_details_list_type;
@@ -901,6 +937,8 @@ pub(crate) mod shape_role_detail;
 
 pub(crate) mod shape_role_last_used;
 
+pub(crate) mod shape_role_permission_restriction_arn_list_type;
+
 pub(crate) mod shape_role_usage_list_type;
 
 pub(crate) mod shape_saml_private_key;
@@ -929,6 +967,8 @@ pub(crate) mod shape_policy_detail_list_type;
 
 pub(crate) mod shape_policy_granting_service_access_list_type;
 
+pub(crate) mod shape_policy_parameter_list_type;
+
 pub(crate) mod shape_resource_specific_result_list_type;
 
 pub(crate) mod shape_role_usage_type;
@@ -948,5 +988,7 @@ pub(crate) mod shape_resource_specific_result;
 pub(crate) mod shape_statement;
 
 pub(crate) mod shape_tracked_action_last_accessed;
+
+pub(crate) mod shape_policy_parameter_values_list_type;
 
 pub(crate) mod shape_position;

@@ -639,6 +639,10 @@ pub(crate) mod shape_create_vpc_peering_connection;
 
 pub(crate) mod shape_create_vpc_peering_connection_input;
 
+pub(crate) mod shape_create_vpn_concentrator;
+
+pub(crate) mod shape_create_vpn_concentrator_input;
+
 pub(crate) mod shape_create_vpn_connection;
 
 pub(crate) mod shape_create_vpn_connection_input;
@@ -978,6 +982,10 @@ pub(crate) mod shape_delete_vpc_input;
 pub(crate) mod shape_delete_vpc_peering_connection;
 
 pub(crate) mod shape_delete_vpc_peering_connection_input;
+
+pub(crate) mod shape_delete_vpn_concentrator;
+
+pub(crate) mod shape_delete_vpn_concentrator_input;
 
 pub(crate) mod shape_delete_vpn_connection;
 
@@ -1726,6 +1734,10 @@ pub(crate) mod shape_describe_vpc_peering_connections_input;
 pub(crate) mod shape_describe_vpcs;
 
 pub(crate) mod shape_describe_vpcs_input;
+
+pub(crate) mod shape_describe_vpn_concentrators;
+
+pub(crate) mod shape_describe_vpn_concentrators_input;
 
 pub(crate) mod shape_describe_vpn_connections;
 
@@ -4150,6 +4162,10 @@ pub(crate) mod shape_vpc_list;
 pub(crate) mod shape_vpc_peering_connection;
 
 pub(crate) mod shape_vpc_peering_connection_list;
+
+pub(crate) mod shape_vpn_concentrator;
+
+pub(crate) mod shape_vpn_concentrator_list;
 
 pub(crate) mod shape_vpn_connection;
 

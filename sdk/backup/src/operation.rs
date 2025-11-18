@@ -37,6 +37,9 @@ pub mod create_restore_testing_plan;
 /// Types for the `CreateRestoreTestingSelection` operation.
 pub mod create_restore_testing_selection;
 
+/// Types for the `CreateTieringConfiguration` operation.
+pub mod create_tiering_configuration;
+
 /// Types for the `DeleteBackupPlan` operation.
 pub mod delete_backup_plan;
 
@@ -69,6 +72,9 @@ pub mod delete_restore_testing_plan;
 
 /// Types for the `DeleteRestoreTestingSelection` operation.
 pub mod delete_restore_testing_selection;
+
+/// Types for the `DeleteTieringConfiguration` operation.
+pub mod delete_tiering_configuration;
 
 /// Types for the `DescribeBackupJob` operation.
 pub mod describe_backup_job;
@@ -157,6 +163,9 @@ pub mod get_restore_testing_selection;
 /// Types for the `GetSupportedResourceTypes` operation.
 pub mod get_supported_resource_types;
 
+/// Types for the `GetTieringConfiguration` operation.
+pub mod get_tiering_configuration;
+
 /// Types for the `ListBackupJobSummaries` operation.
 pub mod list_backup_job_summaries;
 
@@ -235,6 +244,9 @@ pub mod list_restore_testing_selections;
 /// Types for the `ListTags` operation.
 pub mod list_tags;
 
+/// Types for the `ListTieringConfigurations` operation.
+pub mod list_tiering_configurations;
+
 /// Types for the `PutBackupVaultAccessPolicy` operation.
 pub mod put_backup_vault_access_policy;
 
@@ -297,3 +309,6 @@ pub mod update_restore_testing_plan;
 
 /// Types for the `UpdateRestoreTestingSelection` operation.
 pub mod update_restore_testing_selection;
+
+/// Types for the `UpdateTieringConfiguration` operation.
+pub mod update_tiering_configuration;

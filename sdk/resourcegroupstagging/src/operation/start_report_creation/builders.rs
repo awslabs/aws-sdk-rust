@@ -24,8 +24,10 @@ impl crate::operation::start_report_creation::builders::StartReportCreationInput
 ///
 /// <p>Generates a report that lists all tagged resources in the accounts across your organization and tells whether each resource is compliant with the effective tag policy. Compliance data is refreshed daily. The report is generated asynchronously.</p>
 /// <p>The generated report is saved to the following location:</p>
-/// <p><code>s3://example-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</code></p>
+/// <p><code>s3://amzn-s3-demo-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</code></p>
+/// <p>For more information about evaluating resource compliance with tag policies, including the required permissions, review <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#tag-policies-permissions-org">Permissions for evaluating organization-wide compliance</a> in the <i>Tagging Amazon Web Services Resources and Tag Editor</i> user guide.</p>
 /// <p>You can call this operation only from the organization's management account and from the us-east-1 Region.</p>
+/// <p>If the account associated with the identity used to call <code>StartReportCreation</code> is different from the account that owns the Amazon S3 bucket, there must be a bucket policy attached to the bucket to provide access. For more information, review <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services Resources and Tag Editor</i> user guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartReportCreationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,22 +114,22 @@ impl StartReportCreationFluentBuilder {
         self
     }
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p><code>awsexamplebucket</code></p>
-    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+    /// <p><code>amzn-s3-demo-bucket</code></p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example Amazon S3 bucket policy on this page.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket(input.into());
         self
     }
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p><code>awsexamplebucket</code></p>
-    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+    /// <p><code>amzn-s3-demo-bucket</code></p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example Amazon S3 bucket policy on this page.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket(input);
         self
     }
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p><code>awsexamplebucket</code></p>
-    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+    /// <p><code>amzn-s3-demo-bucket</code></p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example Amazon S3 bucket policy on this page.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_bucket()
     }

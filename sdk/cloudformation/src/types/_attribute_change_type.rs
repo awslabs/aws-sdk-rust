@@ -15,6 +15,7 @@
 ///     AttributeChangeType::Add => { /* ... */ },
 ///     AttributeChangeType::Modify => { /* ... */ },
 ///     AttributeChangeType::Remove => { /* ... */ },
+///     AttributeChangeType::SyncWithActual => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum AttributeChangeType {
     Modify,
     #[allow(missing_docs)] // documentation missing in model
     Remove,
+    #[allow(missing_docs)] // documentation missing in model
+    SyncWithActual,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for AttributeChangeType {
             "Add" => AttributeChangeType::Add,
             "Modify" => AttributeChangeType::Modify,
             "Remove" => AttributeChangeType::Remove,
+            "SyncWithActual" => AttributeChangeType::SyncWithActual,
             other => AttributeChangeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl AttributeChangeType {
             AttributeChangeType::Add => "Add",
             AttributeChangeType::Modify => "Modify",
             AttributeChangeType::Remove => "Remove",
+            AttributeChangeType::SyncWithActual => "SyncWithActual",
             AttributeChangeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Add", "Modify", "Remove"]
+        &["Add", "Modify", "Remove", "SyncWithActual"]
     }
 }
 impl ::std::convert::AsRef<str> for AttributeChangeType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for AttributeChangeType {
             AttributeChangeType::Add => write!(f, "Add"),
             AttributeChangeType::Modify => write!(f, "Modify"),
             AttributeChangeType::Remove => write!(f, "Remove"),
+            AttributeChangeType::SyncWithActual => write!(f, "SyncWithActual"),
             AttributeChangeType::Unknown(value) => write!(f, "{value}"),
         }
     }

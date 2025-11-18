@@ -61,6 +61,12 @@ pub use crate::types::_policy_user::PolicyUserBuilder;
 
 pub use crate::types::_policy_group::PolicyGroupBuilder;
 
+pub use crate::types::_delegation_request::DelegationRequestBuilder;
+
+pub use crate::types::_delegation_permission::DelegationPermissionBuilder;
+
+pub use crate::types::_policy_parameter::PolicyParameterBuilder;
+
 pub use crate::types::_attached_policy::AttachedPolicyBuilder;
 
 pub use crate::types::_access_key_metadata::AccessKeyMetadataBuilder;
@@ -100,9 +106,5 @@ pub use crate::types::_group_detail::GroupDetailBuilder;
 pub use crate::types::_user_detail::UserDetailBuilder;
 
 pub use crate::types::_access_key_last_used::AccessKeyLastUsedBuilder;
-
-pub use crate::types::_delegation_permission::DelegationPermissionBuilder;
-
-pub use crate::types::_policy_parameter::PolicyParameterBuilder;
 
 pub use crate::types::_access_key::AccessKeyBuilder;

@@ -9,6 +9,26 @@ pub(crate) fn reflens_describe_account_limits_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_change_set_output_output_next_token(
+    input: &crate::operation::describe_change_set::DescribeChangeSetOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_events_output_output_next_token(
+    input: &crate::operation::describe_events::DescribeEventsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_stack_events_output_output_next_token(
     input: &crate::operation::describe_stack_events::DescribeStackEventsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -223,6 +243,20 @@ pub(crate) fn lens_describe_account_limits_output_output_account_limits(
     input: crate::operation::describe_account_limits::DescribeAccountLimitsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountLimit>> {
     let input = input.account_limits?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_change_set_output_output_changes(
+    input: crate::operation::describe_change_set::DescribeChangeSetOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Change>> {
+    let input = input.changes?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_events_output_output_operation_events(
+    input: crate::operation::describe_events::DescribeEventsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::OperationEvent>> {
+    let input = input.operation_events?;
     ::std::option::Option::Some(input)
 }
 

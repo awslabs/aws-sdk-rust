@@ -113,6 +113,12 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "RingStartTimestamp" => {
+                            builder = builder.set_ring_start_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "TotalPauseCount" => {
                             builder = builder.set_total_pause_count(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

@@ -61,6 +61,10 @@ pub(crate) mod shape_describe_configuration_revision;
 
 pub(crate) mod shape_describe_replicator;
 
+pub(crate) mod shape_describe_topic;
+
+pub(crate) mod shape_describe_topic_partitions;
+
 pub(crate) mod shape_describe_vpc_connection;
 
 pub(crate) mod shape_get_bootstrap_brokers;
@@ -92,6 +96,8 @@ pub(crate) mod shape_list_replicators;
 pub(crate) mod shape_list_scram_secrets;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_topics;
 
 pub(crate) mod shape_list_vpc_connections;
 
@@ -253,6 +259,10 @@ pub(crate) mod shape_list_of_replicator_summary;
 
 pub(crate) mod shape_list_of_string;
 
+pub(crate) mod shape_list_of_topic_info;
+
+pub(crate) mod shape_list_of_topic_partition_info;
+
 pub(crate) mod shape_list_of_unprocessed_scram_secret;
 
 pub(crate) mod shape_list_of_vpc_connection;
@@ -339,6 +349,10 @@ pub(crate) mod shape_storage_info;
 
 pub(crate) mod shape_tls;
 
+pub(crate) mod shape_topic_info;
+
+pub(crate) mod shape_topic_partition_info;
+
 pub(crate) mod shape_topic_replication;
 
 pub(crate) mod shape_unauthenticated;
@@ -372,6 +386,8 @@ pub(crate) mod shape_iam;
 pub(crate) mod shape_jmx_exporter_info;
 
 pub(crate) mod shape_list_of_broker_ebs_volume_info;
+
+pub(crate) mod shape_list_of_integer;
 
 pub(crate) mod shape_list_of_kafka_cluster_summary;
 

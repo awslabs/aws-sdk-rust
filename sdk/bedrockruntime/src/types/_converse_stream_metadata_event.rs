@@ -12,6 +12,8 @@ pub struct ConverseStreamMetadataEvent {
     pub trace: ::std::option::Option<crate::types::ConverseStreamTrace>,
     /// <p>Model performance configuration metadata for the conversation stream event.</p>
     pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub service_tier: ::std::option::Option<crate::types::ServiceTier>,
 }
 impl ConverseStreamMetadataEvent {
     /// <p>Usage information for the conversation stream event.</p>
@@ -30,6 +32,10 @@ impl ConverseStreamMetadataEvent {
     pub fn performance_config(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
         self.performance_config.as_ref()
     }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn service_tier(&self) -> ::std::option::Option<&crate::types::ServiceTier> {
+        self.service_tier.as_ref()
+    }
 }
 impl ConverseStreamMetadataEvent {
     /// Creates a new builder-style object to manufacture [`ConverseStreamMetadataEvent`](crate::types::ConverseStreamMetadataEvent).
@@ -46,6 +52,7 @@ pub struct ConverseStreamMetadataEventBuilder {
     pub(crate) metrics: ::std::option::Option<crate::types::ConverseStreamMetrics>,
     pub(crate) trace: ::std::option::Option<crate::types::ConverseStreamTrace>,
     pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
+    pub(crate) service_tier: ::std::option::Option<crate::types::ServiceTier>,
 }
 impl ConverseStreamMetadataEventBuilder {
     /// <p>Usage information for the conversation stream event.</p>
@@ -106,6 +113,20 @@ impl ConverseStreamMetadataEventBuilder {
     pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
         &self.performance_config
     }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn service_tier(mut self, input: crate::types::ServiceTier) -> Self {
+        self.service_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn set_service_tier(mut self, input: ::std::option::Option<crate::types::ServiceTier>) -> Self {
+        self.service_tier = input;
+        self
+    }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTier> {
+        &self.service_tier
+    }
     /// Consumes the builder and constructs a [`ConverseStreamMetadataEvent`](crate::types::ConverseStreamMetadataEvent).
     pub fn build(self) -> crate::types::ConverseStreamMetadataEvent {
         crate::types::ConverseStreamMetadataEvent {
@@ -113,6 +134,7 @@ impl ConverseStreamMetadataEventBuilder {
             metrics: self.metrics,
             trace: self.trace,
             performance_config: self.performance_config,
+            service_tier: self.service_tier,
         }
     }
 }

@@ -150,6 +150,13 @@ pub(crate) fn converse_metrics_correct_errors(
     builder
 }
 
+pub(crate) fn service_tier_correct_errors(mut builder: crate::types::builders::ServiceTierBuilder) -> crate::types::builders::ServiceTierBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ServiceTierType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn async_invoke_s3_output_data_config_correct_errors(
     mut builder: crate::types::builders::AsyncInvokeS3OutputDataConfigBuilder,
 ) -> crate::types::builders::AsyncInvokeS3OutputDataConfigBuilder {

@@ -108,6 +108,12 @@ impl DescribeChangeSetFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_change_set::paginator::DescribeChangeSetPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::describe_change_set::paginator::DescribeChangeSetPaginator {
+        crate::operation::describe_change_set::paginator::DescribeChangeSetPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
     pub fn change_set_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_set_name(input.into());

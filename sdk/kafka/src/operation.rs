@@ -58,6 +58,12 @@ pub mod describe_configuration_revision;
 /// Types for the `DescribeReplicator` operation.
 pub mod describe_replicator;
 
+/// Types for the `DescribeTopic` operation.
+pub mod describe_topic;
+
+/// Types for the `DescribeTopicPartitions` operation.
+pub mod describe_topic_partitions;
+
 /// Types for the `DescribeVpcConnection` operation.
 pub mod describe_vpc_connection;
 
@@ -105,6 +111,9 @@ pub mod list_scram_secrets;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListTopics` operation.
+pub mod list_topics;
 
 /// Types for the `ListVpcConnections` operation.
 pub mod list_vpc_connections;

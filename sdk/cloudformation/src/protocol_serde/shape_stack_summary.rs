@@ -151,6 +151,16 @@ pub fn de_stack_summary(
                 builder = builder.set_drift_information(var_11);
             }
             ,
+            s if s.matches("LastOperations") /* LastOperations com.amazonaws.cloudformation#StackSummary$LastOperations */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_last_operations::de_last_operations(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_last_operations(var_12);
+            }
+            ,
             _ => {}
         }
     }

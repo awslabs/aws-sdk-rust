@@ -47,6 +47,8 @@ pub(crate) mod shape_create_restore_testing_plan;
 
 pub(crate) mod shape_create_restore_testing_selection;
 
+pub(crate) mod shape_create_tiering_configuration;
+
 pub(crate) mod shape_delete_backup_plan;
 
 pub(crate) mod shape_delete_backup_selection;
@@ -68,6 +70,8 @@ pub(crate) mod shape_delete_report_plan;
 pub(crate) mod shape_delete_restore_testing_plan;
 
 pub(crate) mod shape_delete_restore_testing_selection;
+
+pub(crate) mod shape_delete_tiering_configuration;
 
 pub(crate) mod shape_describe_backup_job;
 
@@ -127,6 +131,8 @@ pub(crate) mod shape_get_restore_testing_selection;
 
 pub(crate) mod shape_get_supported_resource_types;
 
+pub(crate) mod shape_get_tiering_configuration;
+
 pub(crate) mod shape_list_backup_job_summaries;
 
 pub(crate) mod shape_list_backup_jobs;
@@ -179,6 +185,8 @@ pub(crate) mod shape_list_restore_testing_selections;
 
 pub(crate) mod shape_list_tags;
 
+pub(crate) mod shape_list_tiering_configurations;
+
 pub(crate) mod shape_put_backup_vault_access_policy;
 
 pub(crate) mod shape_put_backup_vault_lock_configuration;
@@ -221,6 +229,8 @@ pub(crate) mod shape_update_restore_testing_plan;
 
 pub(crate) mod shape_update_restore_testing_selection;
 
+pub(crate) mod shape_update_tiering_configuration;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -254,6 +264,8 @@ pub(crate) mod shape_create_restore_access_backup_vault_input;
 pub(crate) mod shape_create_restore_testing_plan_input;
 
 pub(crate) mod shape_create_restore_testing_selection_input;
+
+pub(crate) mod shape_create_tiering_configuration_input;
 
 pub(crate) mod shape_dependency_failure_exception;
 
@@ -312,6 +324,8 @@ pub(crate) mod shape_update_report_plan_input;
 pub(crate) mod shape_update_restore_testing_plan_input;
 
 pub(crate) mod shape_update_restore_testing_selection_input;
+
+pub(crate) mod shape_update_tiering_configuration_input;
 
 pub(crate) mod shape_advanced_backup_settings;
 
@@ -427,6 +441,14 @@ pub(crate) mod shape_string_map;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_tiering_configuration;
+
+pub(crate) mod shape_tiering_configuration_input_for_create;
+
+pub(crate) mod shape_tiering_configuration_input_for_update;
+
+pub(crate) mod shape_tiering_configurations_list;
+
 pub(crate) mod shape_advanced_backup_setting;
 
 pub(crate) mod shape_backup_job;
@@ -483,6 +505,10 @@ pub(crate) mod shape_resource_arns;
 
 pub(crate) mod shape_resource_identifiers;
 
+pub(crate) mod shape_resource_selection;
+
+pub(crate) mod shape_resource_selections;
+
 pub(crate) mod shape_restore_access_backup_vault_list_member;
 
 pub(crate) mod shape_restore_job_summary;
@@ -500,6 +526,8 @@ pub(crate) mod shape_scheduled_plan_execution_member;
 pub(crate) mod shape_sensitive_string_map;
 
 pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_tiering_configurations_list_member;
 
 pub(crate) mod shape_vault_names;
 

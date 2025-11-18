@@ -160,6 +160,8 @@ mod create_restore_testing_plan;
 
 mod create_restore_testing_selection;
 
+mod create_tiering_configuration;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -208,6 +210,8 @@ mod delete_report_plan;
 mod delete_restore_testing_plan;
 
 mod delete_restore_testing_selection;
+
+mod delete_tiering_configuration;
 
 mod describe_backup_job;
 
@@ -267,6 +271,8 @@ mod get_restore_testing_selection;
 
 mod get_supported_resource_types;
 
+mod get_tiering_configuration;
+
 mod list_backup_job_summaries;
 
 mod list_backup_jobs;
@@ -319,6 +325,8 @@ mod list_restore_testing_selections;
 
 mod list_tags;
 
+mod list_tiering_configurations;
+
 mod put_backup_vault_access_policy;
 
 mod put_backup_vault_lock_configuration;
@@ -360,3 +368,5 @@ mod update_report_plan;
 mod update_restore_testing_plan;
 
 mod update_restore_testing_selection;
+
+mod update_tiering_configuration;

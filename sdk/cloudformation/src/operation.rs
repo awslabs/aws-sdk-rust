@@ -67,6 +67,9 @@ pub mod describe_change_set;
 /// Types for the `DescribeChangeSetHooks` operation.
 pub mod describe_change_set_hooks;
 
+/// Types for the `DescribeEvents` operation.
+pub mod describe_events;
+
 /// Types for the `DescribeGeneratedTemplate` operation.
 pub mod describe_generated_template;
 

@@ -9,6 +9,8 @@ pub struct InvokeModelOutput {
     pub content_type: ::std::string::String,
     /// <p>Model performance settings for the request.</p>
     pub performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub service_tier: ::std::option::Option<crate::types::ServiceTierType>,
     _request_id: Option<String>,
 }
 impl InvokeModelOutput {
@@ -25,6 +27,10 @@ impl InvokeModelOutput {
     pub fn performance_config_latency(&self) -> ::std::option::Option<&crate::types::PerformanceConfigLatency> {
         self.performance_config_latency.as_ref()
     }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn service_tier(&self) -> ::std::option::Option<&crate::types::ServiceTierType> {
+        self.service_tier.as_ref()
+    }
 }
 impl ::std::fmt::Debug for InvokeModelOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -32,6 +38,7 @@ impl ::std::fmt::Debug for InvokeModelOutput {
         formatter.field("body", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
         formatter.field("performance_config_latency", &self.performance_config_latency);
+        formatter.field("service_tier", &self.service_tier);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -55,6 +62,7 @@ pub struct InvokeModelOutputBuilder {
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
+    pub(crate) service_tier: ::std::option::Option<crate::types::ServiceTierType>,
     _request_id: Option<String>,
 }
 impl InvokeModelOutputBuilder {
@@ -102,6 +110,20 @@ impl InvokeModelOutputBuilder {
     pub fn get_performance_config_latency(&self) -> &::std::option::Option<crate::types::PerformanceConfigLatency> {
         &self.performance_config_latency
     }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn service_tier(mut self, input: crate::types::ServiceTierType) -> Self {
+        self.service_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn set_service_tier(mut self, input: ::std::option::Option<crate::types::ServiceTierType>) -> Self {
+        self.service_tier = input;
+        self
+    }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTierType> {
+        &self.service_tier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -130,6 +152,7 @@ impl InvokeModelOutputBuilder {
                 )
             })?,
             performance_config_latency: self.performance_config_latency,
+            service_tier: self.service_tier,
             _request_id: self._request_id,
         })
     }
@@ -140,6 +163,7 @@ impl ::std::fmt::Debug for InvokeModelOutputBuilder {
         formatter.field("body", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
         formatter.field("performance_config_latency", &self.performance_config_latency);
+        formatter.field("service_tier", &self.service_tier);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

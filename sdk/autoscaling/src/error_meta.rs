@@ -7,6 +7,8 @@ pub enum Error {
     ActiveInstanceRefreshNotFoundFault(crate::types::error::ActiveInstanceRefreshNotFoundFault),
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::types::error::AlreadyExistsFault),
+    /// <p>Indicates that the parameters in the current request do not match the parameters from a previous request with the same client token within the idempotency window.</p>
+    IdempotentParameterMismatchError(crate::types::error::IdempotentParameterMismatchError),
     /// <p>The request failed because an active instance refresh already exists for the specified Auto Scaling group.</p>
     InstanceRefreshInProgressFault(crate::types::error::InstanceRefreshInProgressFault),
     /// <p>The <code>NextToken</code> value is not valid.</p>
@@ -37,6 +39,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::ActiveInstanceRefreshNotFoundFault(inner) => inner.fmt(f),
             Error::AlreadyExistsFault(inner) => inner.fmt(f),
+            Error::IdempotentParameterMismatchError(inner) => inner.fmt(f),
             Error::InstanceRefreshInProgressFault(inner) => inner.fmt(f),
             Error::InvalidNextToken(inner) => inner.fmt(f),
             Error::IrreversibleInstanceRefreshFault(inner) => inner.fmt(f),
@@ -68,6 +71,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::ActiveInstanceRefreshNotFoundFault(inner) => inner.meta(),
             Self::AlreadyExistsFault(inner) => inner.meta(),
+            Self::IdempotentParameterMismatchError(inner) => inner.meta(),
             Self::InstanceRefreshInProgressFault(inner) => inner.meta(),
             Self::InvalidNextToken(inner) => inner.meta(),
             Self::IrreversibleInstanceRefreshFault(inner) => inner.meta(),
@@ -1516,6 +1520,31 @@ impl From<crate::operation::get_predictive_scaling_forecast::GetPredictiveScalin
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::launch_instances::LaunchInstancesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::launch_instances::LaunchInstancesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::launch_instances::LaunchInstancesError> for Error {
+    fn from(err: crate::operation::launch_instances::LaunchInstancesError) -> Self {
+        match err {
+            crate::operation::launch_instances::LaunchInstancesError::IdempotentParameterMismatchError(inner) => {
+                Error::IdempotentParameterMismatchError(inner)
+            }
+            crate::operation::launch_instances::LaunchInstancesError::ResourceContentionFault(inner) => Error::ResourceContentionFault(inner),
+            crate::operation::launch_instances::LaunchInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_lifecycle_hook::PutLifecycleHookError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1971,6 +2000,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::ActiveInstanceRefreshNotFoundFault(inner) => inner.source(),
             Error::AlreadyExistsFault(inner) => inner.source(),
+            Error::IdempotentParameterMismatchError(inner) => inner.source(),
             Error::InstanceRefreshInProgressFault(inner) => inner.source(),
             Error::InvalidNextToken(inner) => inner.source(),
             Error::IrreversibleInstanceRefreshFault(inner) => inner.source(),
@@ -1988,6 +2018,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::ActiveInstanceRefreshNotFoundFault(e) => e.request_id(),
             Self::AlreadyExistsFault(e) => e.request_id(),
+            Self::IdempotentParameterMismatchError(e) => e.request_id(),
             Self::InstanceRefreshInProgressFault(e) => e.request_id(),
             Self::InvalidNextToken(e) => e.request_id(),
             Self::IrreversibleInstanceRefreshFault(e) => e.request_id(),

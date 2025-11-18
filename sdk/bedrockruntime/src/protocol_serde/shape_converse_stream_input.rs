@@ -68,23 +68,29 @@ pub fn ser_converse_stream_input_input(
         }
         object_21.finish();
     }
-    if let Some(var_24) = &input.system {
-        let mut array_25 = object.key("system").start_array();
-        for item_26 in var_24 {
+    if let Some(var_24) = &input.service_tier {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("serviceTier").start_object();
+        crate::protocol_serde::shape_service_tier::ser_service_tier(&mut object_25, var_24)?;
+        object_25.finish();
+    }
+    if let Some(var_26) = &input.system {
+        let mut array_27 = object.key("system").start_array();
+        for item_28 in var_26 {
             {
                 #[allow(unused_mut)]
-                let mut object_27 = array_25.value().start_object();
-                crate::protocol_serde::shape_system_content_block::ser_system_content_block(&mut object_27, item_26)?;
-                object_27.finish();
+                let mut object_29 = array_27.value().start_object();
+                crate::protocol_serde::shape_system_content_block::ser_system_content_block(&mut object_29, item_28)?;
+                object_29.finish();
             }
         }
-        array_25.finish();
+        array_27.finish();
     }
-    if let Some(var_28) = &input.tool_config {
+    if let Some(var_30) = &input.tool_config {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("toolConfig").start_object();
-        crate::protocol_serde::shape_tool_configuration::ser_tool_configuration(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_31 = object.key("toolConfig").start_object();
+        crate::protocol_serde::shape_tool_configuration::ser_tool_configuration(&mut object_31, var_30)?;
+        object_31.finish();
     }
     Ok(())
 }

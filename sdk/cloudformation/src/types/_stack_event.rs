@@ -10,6 +10,8 @@ pub struct StackEvent {
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The name associated with a stack.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the operation that generated this stack event.</p>
+    pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>The logical name of the resource specified in the template.</p>
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name or unique identifier associated with the physical instance of the resource.</p>
@@ -69,6 +71,10 @@ impl StackEvent {
     /// <p>The name associated with a stack.</p>
     pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
+    }
+    /// <p>The unique identifier of the operation that generated this stack event.</p>
+    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+        self.operation_id.as_deref()
     }
     /// <p>The logical name of the resource specified in the template.</p>
     pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
@@ -161,6 +167,7 @@ pub struct StackEventBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
     pub(crate) stack_name: ::std::option::Option<::std::string::String>,
+    pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) physical_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
@@ -222,6 +229,20 @@ impl StackEventBuilder {
     /// <p>The name associated with a stack.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_name
+    }
+    /// <p>The unique identifier of the operation that generated this stack event.</p>
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the operation that generated this stack event.</p>
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_id = input;
+        self
+    }
+    /// <p>The unique identifier of the operation that generated this stack event.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
     }
     /// <p>The logical name of the resource specified in the template.</p>
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -488,6 +509,7 @@ impl StackEventBuilder {
             stack_id: self.stack_id,
             event_id: self.event_id,
             stack_name: self.stack_name,
+            operation_id: self.operation_id,
             logical_resource_id: self.logical_resource_id,
             physical_resource_id: self.physical_resource_id,
             resource_type: self.resource_type,

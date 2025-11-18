@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AddClientIDToOpenIDConnectProvider`](crate::operation::add_client_id_to_open_id_connect_provider) operation has
-/// a [`Client::add_client_id_to_open_id_connect_provider`], function which returns a builder for that operation.
+/// For example, the [`AcceptDelegationRequest`](crate::operation::accept_delegation_request) operation has
+/// a [`Client::accept_delegation_request`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.add_client_id_to_open_id_connect_provider()
-///     .open_id_connect_provider_arn("example")
+/// let result = client.accept_delegation_request()
+///     .delegation_request_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -180,11 +180,15 @@ impl Client {
     }
 }
 
+mod accept_delegation_request;
+
 mod add_client_id_to_open_id_connect_provider;
 
 mod add_role_to_instance_profile;
 
 mod add_user_to_group;
+
+mod associate_delegation_request;
 
 mod attach_group_policy;
 
@@ -235,7 +239,7 @@ mod create_virtual_mfa_device;
 /// # let client: aws_sdk_iam::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.add_client_id_to_open_id_connect_provider()
+/// let result = client.accept_delegation_request()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -335,9 +339,13 @@ mod get_context_keys_for_principal_policy;
 
 mod get_credential_report;
 
+mod get_delegation_request;
+
 mod get_group;
 
 mod get_group_policy;
+
+mod get_human_readable_summary;
 
 mod get_instance_profile;
 
@@ -382,6 +390,8 @@ mod list_attached_group_policies;
 mod list_attached_role_policies;
 
 mod list_attached_user_policies;
+
+mod list_delegation_requests;
 
 mod list_entities_for_policy;
 
@@ -453,6 +463,8 @@ mod put_user_permissions_boundary;
 
 mod put_user_policy;
 
+mod reject_delegation_request;
+
 mod remove_client_id_from_open_id_connect_provider;
 
 mod remove_role_from_instance_profile;
@@ -462,6 +474,8 @@ mod remove_user_from_group;
 mod reset_service_specific_credential;
 
 mod resync_mfa_device;
+
+mod send_delegation_token;
 
 mod set_default_policy_version;
 
@@ -508,6 +522,8 @@ mod update_access_key;
 mod update_account_password_policy;
 
 mod update_assume_role_policy;
+
+mod update_delegation_request;
 
 mod update_group;
 

@@ -1309,6 +1309,16 @@ pub(crate) fn reflens_describe_vpcs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_vpn_concentrators_output_output_next_token(
+    input: &crate::operation::describe_vpn_concentrators::DescribeVpnConcentratorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_associated_ipv6_pool_cidrs_output_output_next_token(
     input: &crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2533,6 +2543,13 @@ pub(crate) fn lens_describe_vpcs_output_output_vpcs(
     input: crate::operation::describe_vpcs::DescribeVpcsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Vpc>> {
     let input = input.vpcs?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_vpn_concentrators_output_output_vpn_concentrators(
+    input: crate::operation::describe_vpn_concentrators::DescribeVpnConcentratorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::VpnConcentrator>> {
+    let input = input.vpn_concentrators?;
     ::std::option::Option::Some(input)
 }
 

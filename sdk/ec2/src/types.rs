@@ -1485,6 +1485,8 @@ pub use crate::types::_vpn_gateway::VpnGateway;
 
 pub use crate::types::_vpc_attachment::VpcAttachment;
 
+pub use crate::types::_vpn_concentrator::VpnConcentrator;
+
 pub use crate::types::_vpc::Vpc;
 
 pub use crate::types::_vpc_state::VpcState;
@@ -2384,6 +2386,8 @@ pub use crate::types::_coip_cidr::CoipCidr;
 pub use crate::types::_vpn_connection_options_specification::VpnConnectionOptionsSpecification;
 
 pub use crate::types::_vpn_tunnel_options_specification::VpnTunnelOptionsSpecification;
+
+pub use crate::types::_vpn_concentrator_type::VpnConcentratorType;
 
 pub use crate::types::_create_verified_access_native_application_oidc_options::CreateVerifiedAccessNativeApplicationOidcOptions;
 
@@ -5078,6 +5082,10 @@ mod _vpc_peering_connection_vpc_info;
 mod _vpc_state;
 
 mod _vpc_tenancy;
+
+mod _vpn_concentrator;
+
+mod _vpn_concentrator_type;
 
 mod _vpn_connection;
 

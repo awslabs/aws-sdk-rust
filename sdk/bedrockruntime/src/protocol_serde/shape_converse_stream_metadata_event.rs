@@ -43,6 +43,9 @@ where
                                 crate::protocol_serde::shape_performance_configuration::de_performance_configuration(tokens)?,
                             );
                         }
+                        "serviceTier" => {
+                            builder = builder.set_service_tier(crate::protocol_serde::shape_service_tier::de_service_tier(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

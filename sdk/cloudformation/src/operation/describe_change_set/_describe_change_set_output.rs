@@ -24,6 +24,19 @@ pub struct DescribeChangeSetOutput {
     pub status: ::std::option::Option<crate::types::ChangeSetStatus>,
     /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The drift status of the stack when the change set was created. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DRIFTED</code> – The stack has drifted from its last deployment.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The stack is in sync with its last deployment.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code> – CloudFormation doesn’t currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – The drift status could not be determined.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub stack_drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     /// <p>The ARNs of the Amazon SNS topics that will be associated with the stack if you execute the change set.</p>
     pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
@@ -56,6 +69,8 @@ pub struct DescribeChangeSetOutput {
     /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
     /// </note>
     pub import_existing_resources: ::std::option::Option<bool>,
+    /// <p>The deployment mode specified when the change set was created. Valid value is <code>REVERT_DRIFT</code>. Only present for drift-aware change sets.</p>
+    pub deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
     _request_id: Option<String>,
 }
 impl DescribeChangeSetOutput {
@@ -100,6 +115,21 @@ impl DescribeChangeSetOutput {
     /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
+    }
+    /// <p>The drift status of the stack when the change set was created. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DRIFTED</code> – The stack has drifted from its last deployment.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The stack is in sync with its last deployment.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code> – CloudFormation doesn’t currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – The drift status could not be determined.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn stack_drift_status(&self) -> ::std::option::Option<&crate::types::StackDriftStatus> {
+        self.stack_drift_status.as_ref()
     }
     /// <p>The ARNs of the Amazon SNS topics that will be associated with the stack if you execute the change set.</p>
     ///
@@ -163,6 +193,10 @@ impl DescribeChangeSetOutput {
     pub fn import_existing_resources(&self) -> ::std::option::Option<bool> {
         self.import_existing_resources
     }
+    /// <p>The deployment mode specified when the change set was created. Valid value is <code>REVERT_DRIFT</code>. Only present for drift-aware change sets.</p>
+    pub fn deployment_mode(&self) -> ::std::option::Option<&crate::types::DeploymentMode> {
+        self.deployment_mode.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeChangeSetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -190,6 +224,7 @@ pub struct DescribeChangeSetOutputBuilder {
     pub(crate) execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
     pub(crate) status: ::std::option::Option<crate::types::ChangeSetStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) stack_drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
@@ -201,6 +236,7 @@ pub struct DescribeChangeSetOutputBuilder {
     pub(crate) root_change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
     pub(crate) import_existing_resources: ::std::option::Option<bool>,
+    pub(crate) deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
     _request_id: Option<String>,
 }
 impl DescribeChangeSetOutputBuilder {
@@ -349,6 +385,53 @@ impl DescribeChangeSetOutputBuilder {
     /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
+    }
+    /// <p>The drift status of the stack when the change set was created. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DRIFTED</code> – The stack has drifted from its last deployment.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The stack is in sync with its last deployment.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code> – CloudFormation doesn’t currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – The drift status could not be determined.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn stack_drift_status(mut self, input: crate::types::StackDriftStatus) -> Self {
+        self.stack_drift_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The drift status of the stack when the change set was created. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DRIFTED</code> – The stack has drifted from its last deployment.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The stack is in sync with its last deployment.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code> – CloudFormation doesn’t currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – The drift status could not be determined.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn set_stack_drift_status(mut self, input: ::std::option::Option<crate::types::StackDriftStatus>) -> Self {
+        self.stack_drift_status = input;
+        self
+    }
+    /// <p>The drift status of the stack when the change set was created. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DRIFTED</code> – The stack has drifted from its last deployment.</p></li>
+    /// <li>
+    /// <p><code>IN_SYNC</code> – The stack is in sync with its last deployment.</p></li>
+    /// <li>
+    /// <p><code>NOT_CHECKED</code> – CloudFormation doesn’t currently return this value.</p></li>
+    /// <li>
+    /// <p><code>UNKNOWN</code> – The drift status could not be determined.</p></li>
+    /// </ul>
+    /// <p>Only present for drift-aware change sets.</p>
+    pub fn get_stack_drift_status(&self) -> &::std::option::Option<crate::types::StackDriftStatus> {
+        &self.stack_drift_status
     }
     /// Appends an item to `notification_arns`.
     ///
@@ -558,6 +641,20 @@ impl DescribeChangeSetOutputBuilder {
     pub fn get_import_existing_resources(&self) -> &::std::option::Option<bool> {
         &self.import_existing_resources
     }
+    /// <p>The deployment mode specified when the change set was created. Valid value is <code>REVERT_DRIFT</code>. Only present for drift-aware change sets.</p>
+    pub fn deployment_mode(mut self, input: crate::types::DeploymentMode) -> Self {
+        self.deployment_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment mode specified when the change set was created. Valid value is <code>REVERT_DRIFT</code>. Only present for drift-aware change sets.</p>
+    pub fn set_deployment_mode(mut self, input: ::std::option::Option<crate::types::DeploymentMode>) -> Self {
+        self.deployment_mode = input;
+        self
+    }
+    /// <p>The deployment mode specified when the change set was created. Valid value is <code>REVERT_DRIFT</code>. Only present for drift-aware change sets.</p>
+    pub fn get_deployment_mode(&self) -> &::std::option::Option<crate::types::DeploymentMode> {
+        &self.deployment_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -580,6 +677,7 @@ impl DescribeChangeSetOutputBuilder {
             execution_status: self.execution_status,
             status: self.status,
             status_reason: self.status_reason,
+            stack_drift_status: self.stack_drift_status,
             notification_arns: self.notification_arns,
             rollback_configuration: self.rollback_configuration,
             capabilities: self.capabilities,
@@ -591,6 +689,7 @@ impl DescribeChangeSetOutputBuilder {
             root_change_set_id: self.root_change_set_id,
             on_stack_failure: self.on_stack_failure,
             import_existing_resources: self.import_existing_resources,
+            deployment_mode: self.deployment_mode,
             _request_id: self._request_id,
         }
     }

@@ -201,6 +201,10 @@ mod describe_configuration_revision;
 
 mod describe_replicator;
 
+mod describe_topic;
+
+mod describe_topic_partitions;
+
 mod describe_vpc_connection;
 
 mod get_bootstrap_brokers;
@@ -232,6 +236,8 @@ mod list_replicators;
 mod list_scram_secrets;
 
 mod list_tags_for_resource;
+
+mod list_topics;
 
 mod list_vpc_connections;
 

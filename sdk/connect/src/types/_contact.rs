@@ -36,6 +36,8 @@ pub struct Contact {
     pub last_paused_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the contact was last resumed.</p>
     pub last_resumed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp when ringing started for a campaign call.</p>
+    pub ring_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Total pause count for a contact.</p>
     pub total_pause_count: ::std::option::Option<i32>,
     /// <p>Total pause duration for a contact in seconds.</p>
@@ -159,6 +161,10 @@ impl Contact {
     /// <p>The timestamp when the contact was last resumed.</p>
     pub fn last_resumed_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_resumed_timestamp.as_ref()
+    }
+    /// <p>The timestamp when ringing started for a campaign call.</p>
+    pub fn ring_start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.ring_start_timestamp.as_ref()
     }
     /// <p>Total pause count for a contact.</p>
     pub fn total_pause_count(&self) -> ::std::option::Option<i32> {
@@ -300,6 +306,7 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("last_update_timestamp", &self.last_update_timestamp);
         formatter.field("last_paused_timestamp", &self.last_paused_timestamp);
         formatter.field("last_resumed_timestamp", &self.last_resumed_timestamp);
+        formatter.field("ring_start_timestamp", &self.ring_start_timestamp);
         formatter.field("total_pause_count", &self.total_pause_count);
         formatter.field("total_pause_duration_in_seconds", &self.total_pause_duration_in_seconds);
         formatter.field("scheduled_timestamp", &self.scheduled_timestamp);
@@ -359,6 +366,7 @@ pub struct ContactBuilder {
     pub(crate) last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_paused_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_resumed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) ring_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) total_pause_count: ::std::option::Option<i32>,
     pub(crate) total_pause_duration_in_seconds: ::std::option::Option<i32>,
     pub(crate) scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -613,6 +621,20 @@ impl ContactBuilder {
     /// <p>The timestamp when the contact was last resumed.</p>
     pub fn get_last_resumed_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_resumed_timestamp
+    }
+    /// <p>The timestamp when ringing started for a campaign call.</p>
+    pub fn ring_start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.ring_start_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when ringing started for a campaign call.</p>
+    pub fn set_ring_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.ring_start_timestamp = input;
+        self
+    }
+    /// <p>The timestamp when ringing started for a campaign call.</p>
+    pub fn get_ring_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ring_start_timestamp
     }
     /// <p>Total pause count for a contact.</p>
     pub fn total_pause_count(mut self, input: i32) -> Self {
@@ -1079,6 +1101,7 @@ impl ContactBuilder {
             last_update_timestamp: self.last_update_timestamp,
             last_paused_timestamp: self.last_paused_timestamp,
             last_resumed_timestamp: self.last_resumed_timestamp,
+            ring_start_timestamp: self.ring_start_timestamp,
             total_pause_count: self.total_pause_count,
             total_pause_duration_in_seconds: self.total_pause_duration_in_seconds,
             scheduled_timestamp: self.scheduled_timestamp,
@@ -1130,6 +1153,7 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("last_update_timestamp", &self.last_update_timestamp);
         formatter.field("last_paused_timestamp", &self.last_paused_timestamp);
         formatter.field("last_resumed_timestamp", &self.last_resumed_timestamp);
+        formatter.field("ring_start_timestamp", &self.ring_start_timestamp);
         formatter.field("total_pause_count", &self.total_pause_count);
         formatter.field("total_pause_duration_in_seconds", &self.total_pause_duration_in_seconds);
         formatter.field("scheduled_timestamp", &self.scheduled_timestamp);

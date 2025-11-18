@@ -210,58 +210,72 @@ pub fn de_describe_change_set(
                 builder = builder.set_status_reason(var_10);
             }
             ,
-            s if s.matches("NotificationARNs") /* NotificationARNs com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$NotificationARNs */ =>  {
+            s if s.matches("StackDriftStatus") /* StackDriftStatus com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$StackDriftStatus */ =>  {
                 let var_11 =
+                    Some(
+                        Result::<crate::types::StackDriftStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StackDriftStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_stack_drift_status(var_11);
+            }
+            ,
+            s if s.matches("NotificationARNs") /* NotificationARNs com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$NotificationARNs */ =>  {
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_notification_arns::de_notification_arns(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_notification_arns(var_11);
+                builder = builder.set_notification_arns(var_12);
             }
             ,
             s if s.matches("RollbackConfiguration") /* RollbackConfiguration com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$RollbackConfiguration */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_rollback_configuration::de_rollback_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_rollback_configuration(var_12);
+                builder = builder.set_rollback_configuration(var_13);
             }
             ,
             s if s.matches("Capabilities") /* Capabilities com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Capabilities */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_capabilities::de_capabilities(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_capabilities(var_13);
+                builder = builder.set_capabilities(var_14);
             }
             ,
             s if s.matches("Tags") /* Tags com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Tags */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         crate::protocol_serde::shape_tags::de_tags(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_14);
+                builder = builder.set_tags(var_15);
             }
             ,
             s if s.matches("Changes") /* Changes com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Changes */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_changes::de_changes(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_changes(var_15);
+                builder = builder.set_changes(var_16);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$NextToken */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -270,11 +284,11 @@ pub fn de_describe_change_set(
                         ?
                     )
                 ;
-                builder = builder.set_next_token(var_16);
+                builder = builder.set_next_token(var_17);
             }
             ,
             s if s.matches("IncludeNestedStacks") /* IncludeNestedStacks com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$IncludeNestedStacks */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -285,23 +299,10 @@ pub fn de_describe_change_set(
                         ?
                     )
                 ;
-                builder = builder.set_include_nested_stacks(var_17);
+                builder = builder.set_include_nested_stacks(var_18);
             }
             ,
             s if s.matches("ParentChangeSetId") /* ParentChangeSetId com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$ParentChangeSetId */ =>  {
-                let var_18 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_parent_change_set_id(var_18);
-            }
-            ,
-            s if s.matches("RootChangeSetId") /* RootChangeSetId com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$RootChangeSetId */ =>  {
                 let var_19 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -311,11 +312,24 @@ pub fn de_describe_change_set(
                         ?
                     )
                 ;
-                builder = builder.set_root_change_set_id(var_19);
+                builder = builder.set_parent_change_set_id(var_19);
+            }
+            ,
+            s if s.matches("RootChangeSetId") /* RootChangeSetId com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$RootChangeSetId */ =>  {
+                let var_20 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_root_change_set_id(var_20);
             }
             ,
             s if s.matches("OnStackFailure") /* OnStackFailure com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$OnStackFailure */ =>  {
-                let var_20 =
+                let var_21 =
                     Some(
                         Result::<crate::types::OnStackFailure, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::OnStackFailure::from(
@@ -325,11 +339,11 @@ pub fn de_describe_change_set(
                         ?
                     )
                 ;
-                builder = builder.set_on_stack_failure(var_20);
+                builder = builder.set_on_stack_failure(var_21);
             }
             ,
             s if s.matches("ImportExistingResources") /* ImportExistingResources com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$ImportExistingResources */ =>  {
-                let var_21 =
+                let var_22 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -340,7 +354,21 @@ pub fn de_describe_change_set(
                         ?
                     )
                 ;
-                builder = builder.set_import_existing_resources(var_21);
+                builder = builder.set_import_existing_resources(var_22);
+            }
+            ,
+            s if s.matches("DeploymentMode") /* DeploymentMode com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$DeploymentMode */ =>  {
+                let var_23 =
+                    Some(
+                        Result::<crate::types::DeploymentMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DeploymentMode::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_deployment_mode(var_23);
             }
             ,
             _ => {}

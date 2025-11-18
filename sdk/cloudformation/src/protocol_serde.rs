@@ -111,6 +111,10 @@ pub(crate) mod shape_describe_change_set_hooks_input;
 
 pub(crate) mod shape_describe_change_set_input;
 
+pub(crate) mod shape_describe_events;
+
+pub(crate) mod shape_describe_events_input;
+
 pub(crate) mod shape_describe_generated_template;
 
 pub(crate) mod shape_describe_generated_template_input;
@@ -393,6 +397,8 @@ pub(crate) mod shape_created_but_modified_exception;
 
 pub(crate) mod shape_deployment_targets;
 
+pub(crate) mod shape_event_filter;
+
 pub(crate) mod shape_generated_template_not_found_exception;
 
 pub(crate) mod shape_hook_result_not_found_exception;
@@ -501,6 +507,8 @@ pub(crate) mod shape_imports;
 
 pub(crate) mod shape_notification_arns;
 
+pub(crate) mod shape_operation_events;
+
 pub(crate) mod shape_parameter_declarations;
 
 pub(crate) mod shape_parameters;
@@ -607,6 +615,8 @@ pub(crate) mod shape_hook_result_summary;
 
 pub(crate) mod shape_module_info;
 
+pub(crate) mod shape_operation_event;
+
 pub(crate) mod shape_organizational_unit_id_list;
 
 pub(crate) mod shape_parameter_declaration;
@@ -681,6 +691,8 @@ pub(crate) mod shape_change_set_hook_target_details;
 
 pub(crate) mod shape_jazz_resource_identifier_properties;
 
+pub(crate) mod shape_last_operations;
+
 pub(crate) mod shape_logical_resource_ids;
 
 pub(crate) mod shape_outputs;
@@ -717,9 +729,13 @@ pub(crate) mod shape_allowed_values;
 
 pub(crate) mod shape_change_set_hook_resource_target_details;
 
+pub(crate) mod shape_operation_entry;
+
 pub(crate) mod shape_output;
 
 pub(crate) mod shape_resource_change_details;
+
+pub(crate) mod shape_resource_drift_ignored_attributes;
 
 pub(crate) mod shape_scope;
 
@@ -727,8 +743,12 @@ pub(crate) mod shape_warning_detail;
 
 pub(crate) mod shape_resource_change_detail;
 
+pub(crate) mod shape_resource_drift_ignored_attribute;
+
 pub(crate) mod shape_warning_properties;
 
 pub(crate) mod shape_resource_target_definition;
 
 pub(crate) mod shape_warning_property;
+
+pub(crate) mod shape_live_resource_drift;

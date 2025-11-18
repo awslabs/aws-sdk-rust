@@ -8,6 +8,8 @@ pub struct VpnConnection {
     pub category: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the VPN concentrator associated with the VPN connection.</p>
+    pub vpn_concentrator_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the core network.</p>
     pub core_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the core network attachment.</p>
@@ -45,6 +47,10 @@ impl VpnConnection {
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
     pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_id.as_deref()
+    }
+    /// <p>The ID of the VPN concentrator associated with the VPN connection.</p>
+    pub fn vpn_concentrator_id(&self) -> ::std::option::Option<&str> {
+        self.vpn_concentrator_id.as_deref()
     }
     /// <p>The ARN of the core network.</p>
     pub fn core_network_arn(&self) -> ::std::option::Option<&str> {
@@ -114,6 +120,7 @@ impl ::std::fmt::Debug for VpnConnection {
         let mut formatter = f.debug_struct("VpnConnection");
         formatter.field("category", &self.category);
         formatter.field("transit_gateway_id", &self.transit_gateway_id);
+        formatter.field("vpn_concentrator_id", &self.vpn_concentrator_id);
         formatter.field("core_network_arn", &self.core_network_arn);
         formatter.field("core_network_attachment_arn", &self.core_network_attachment_arn);
         formatter.field("gateway_association_state", &self.gateway_association_state);
@@ -144,6 +151,7 @@ impl VpnConnection {
 pub struct VpnConnectionBuilder {
     pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpn_concentrator_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_attachment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_association_state: ::std::option::Option<crate::types::GatewayAssociationState>,
@@ -187,6 +195,20 @@ impl VpnConnectionBuilder {
     /// <p>The ID of the transit gateway associated with the VPN connection.</p>
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_id
+    }
+    /// <p>The ID of the VPN concentrator associated with the VPN connection.</p>
+    pub fn vpn_concentrator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpn_concentrator_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the VPN concentrator associated with the VPN connection.</p>
+    pub fn set_vpn_concentrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpn_concentrator_id = input;
+        self
+    }
+    /// <p>The ID of the VPN concentrator associated with the VPN connection.</p>
+    pub fn get_vpn_concentrator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_concentrator_id
     }
     /// <p>The ARN of the core network.</p>
     pub fn core_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -407,6 +429,7 @@ impl VpnConnectionBuilder {
         crate::types::VpnConnection {
             category: self.category,
             transit_gateway_id: self.transit_gateway_id,
+            vpn_concentrator_id: self.vpn_concentrator_id,
             core_network_arn: self.core_network_arn,
             core_network_attachment_arn: self.core_network_attachment_arn,
             gateway_association_state: self.gateway_association_state,
@@ -429,6 +452,7 @@ impl ::std::fmt::Debug for VpnConnectionBuilder {
         let mut formatter = f.debug_struct("VpnConnectionBuilder");
         formatter.field("category", &self.category);
         formatter.field("transit_gateway_id", &self.transit_gateway_id);
+        formatter.field("vpn_concentrator_id", &self.vpn_concentrator_id);
         formatter.field("core_network_arn", &self.core_network_arn);
         formatter.field("core_network_attachment_arn", &self.core_network_attachment_arn);
         formatter.field("gateway_association_state", &self.gateway_association_state);

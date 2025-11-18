@@ -32,6 +32,8 @@ impl crate::operation::tag_resources::builders::TagResourcesInputBuilder {
 /// <p>You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon Web Services account.</p></li>
 /// <li>
 /// <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p></li>
+/// <li>
+/// <p>When you use the <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html">Amazon Web Services Resource Groups Tagging API</a> to update tags for Amazon Web Services CloudFormation stack sets, Amazon Web Services calls the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html">Amazon Web Services CloudFormation <code>UpdateStack</code> </a> operation. This operation may initiate additional resource property updates in addition to the desired tag updates. To avoid unexpected resource updates, Amazon Web Services recommends that you only apply or update tags to your CloudFormation stack sets using Amazon Web Services CloudFormation.</p></li>
 /// </ul><important>
 /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
 /// </important>
@@ -39,10 +41,12 @@ impl crate::operation::tag_resources::builders::TagResourcesInputBuilder {
 /// <p>In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag an Amazon EC2 instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
 /// <ul>
 /// <li>
-/// <p><code>tag:TagResource</code></p></li>
+/// <p><code>tag:TagResources</code></p></li>
 /// <li>
 /// <p><code>ec2:CreateTags</code></p></li>
-/// </ul>
+/// </ul><note>
+/// <p>In addition, some services might have specific requirements for tagging some types of resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

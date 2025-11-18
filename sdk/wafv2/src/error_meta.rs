@@ -13,6 +13,8 @@ pub enum Error {
     WafDuplicateItemException(crate::types::error::WafDuplicateItemException),
     /// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
     WafExpiredManagedRuleGroupVersionException(crate::types::error::WafExpiredManagedRuleGroupVersionException),
+    /// <p>The operation failed because the specified WAF feature isn't supported by the CloudFront pricing plan associated with the web ACL.</p>
+    WafFeatureNotIncludedInPricingPlanException(crate::types::error::WafFeatureNotIncludedInPricingPlanException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request.</p>
     WafInternalErrorException(crate::types::error::WafInternalErrorException),
     /// <p>The operation isn't valid.</p>
@@ -83,6 +85,7 @@ impl ::std::fmt::Display for Error {
             Error::WafConfigurationWarningException(inner) => inner.fmt(f),
             Error::WafDuplicateItemException(inner) => inner.fmt(f),
             Error::WafExpiredManagedRuleGroupVersionException(inner) => inner.fmt(f),
+            Error::WafFeatureNotIncludedInPricingPlanException(inner) => inner.fmt(f),
             Error::WafInternalErrorException(inner) => inner.fmt(f),
             Error::WafInvalidOperationException(inner) => inner.fmt(f),
             Error::WafInvalidParameterException(inner) => inner.fmt(f),
@@ -123,6 +126,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::WafConfigurationWarningException(inner) => inner.meta(),
             Self::WafDuplicateItemException(inner) => inner.meta(),
             Self::WafExpiredManagedRuleGroupVersionException(inner) => inner.meta(),
+            Self::WafFeatureNotIncludedInPricingPlanException(inner) => inner.meta(),
             Self::WafInternalErrorException(inner) => inner.meta(),
             Self::WafInvalidOperationException(inner) => inner.meta(),
             Self::WafInvalidParameterException(inner) => inner.meta(),
@@ -159,6 +163,9 @@ where
 impl From<crate::operation::associate_web_acl::AssociateWebACLError> for Error {
     fn from(err: crate::operation::associate_web_acl::AssociateWebACLError) -> Self {
         match err {
+            crate::operation::associate_web_acl::AssociateWebACLError::WafFeatureNotIncludedInPricingPlanException(inner) => {
+                Error::WafFeatureNotIncludedInPricingPlanException(inner)
+            }
             crate::operation::associate_web_acl::AssociateWebACLError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
             crate::operation::associate_web_acl::AssociateWebACLError::WafInvalidOperationException(inner) => {
                 Error::WafInvalidOperationException(inner)
@@ -1661,6 +1668,9 @@ where
 impl From<crate::operation::put_logging_configuration::PutLoggingConfigurationError> for Error {
     fn from(err: crate::operation::put_logging_configuration::PutLoggingConfigurationError) -> Self {
         match err {
+            crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafFeatureNotIncludedInPricingPlanException(inner) => {
+                Error::WafFeatureNotIncludedInPricingPlanException(inner)
+            }
             crate::operation::put_logging_configuration::PutLoggingConfigurationError::WafInternalErrorException(inner) => {
                 Error::WafInternalErrorException(inner)
             }
@@ -1996,6 +2006,9 @@ impl From<crate::operation::update_web_acl::UpdateWebACLError> for Error {
             crate::operation::update_web_acl::UpdateWebACLError::WafExpiredManagedRuleGroupVersionException(inner) => {
                 Error::WafExpiredManagedRuleGroupVersionException(inner)
             }
+            crate::operation::update_web_acl::UpdateWebACLError::WafFeatureNotIncludedInPricingPlanException(inner) => {
+                Error::WafFeatureNotIncludedInPricingPlanException(inner)
+            }
             crate::operation::update_web_acl::UpdateWebACLError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
             crate::operation::update_web_acl::UpdateWebACLError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
             crate::operation::update_web_acl::UpdateWebACLError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
@@ -2018,6 +2031,7 @@ impl ::std::error::Error for Error {
             Error::WafConfigurationWarningException(inner) => inner.source(),
             Error::WafDuplicateItemException(inner) => inner.source(),
             Error::WafExpiredManagedRuleGroupVersionException(inner) => inner.source(),
+            Error::WafFeatureNotIncludedInPricingPlanException(inner) => inner.source(),
             Error::WafInternalErrorException(inner) => inner.source(),
             Error::WafInvalidOperationException(inner) => inner.source(),
             Error::WafInvalidParameterException(inner) => inner.source(),
@@ -2044,6 +2058,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::WafConfigurationWarningException(e) => e.request_id(),
             Self::WafDuplicateItemException(e) => e.request_id(),
             Self::WafExpiredManagedRuleGroupVersionException(e) => e.request_id(),
+            Self::WafFeatureNotIncludedInPricingPlanException(e) => e.request_id(),
             Self::WafInternalErrorException(e) => e.request_id(),
             Self::WafInvalidOperationException(e) => e.request_id(),
             Self::WafInvalidParameterException(e) => e.request_id(),

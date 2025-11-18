@@ -268,11 +268,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetCompliance
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetComplianceSummaryError {
-    /// <p>The request was denied because performing this operation violates a constraint.</p>
+    /// <p>The request failed because performing the operation would violate a constraint.</p>
     /// <p>Some of the reasons in the following list might not apply to this specific operation.</p>
     /// <ul>
     /// <li>
-    /// <p>You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites and Permissions for Using Tag Policies</a> in the <i>Organizations User Guide.</i></p></li>
+    /// <p>You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#tag-policies-prereqs">Prerequisites and permissions</a> in the <i>Tagging Amazon Web Services resources and Tag Editor</i> user guide.</p></li>
     /// <li>
     /// <p>You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>) to integrate with Organizations For information, see <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.</p></li>
     /// <li>
@@ -281,21 +281,23 @@ pub enum GetComplianceSummaryError {
     ConstraintViolationException(crate::types::error::ConstraintViolationException),
     /// <p>The request processing failed because of an unknown error, exception, or failure. You can retry the request.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
-    /// <p>This error indicates one of the following:</p>
+    /// <p>The request failed because of one of the following reasons:</p>
     /// <ul>
     /// <li>
-    /// <p>A parameter is missing.</p></li>
+    /// <p>A required parameter is missing.</p></li>
     /// <li>
-    /// <p>A malformed string was supplied for the request parameter.</p></li>
+    /// <p>A provided string parameter is malformed.</p></li>
     /// <li>
-    /// <p>An out-of-range value was supplied for the request parameter.</p></li>
+    /// <p>An provided parameter value is out of range.</p></li>
     /// <li>
     /// <p>The target ID is invalid, unsupported, or doesn't exist.</p></li>
     /// <li>
-    /// <p>You can't access the Amazon S3 bucket for report storage. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations User Guide.</i></p></li>
+    /// <p>You can't access the Amazon S3 bucket for report storage. For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy">Amazon S3 bucket policy for report storage</a> in the <i>Tagging Amazon Web Services resources and Tag Editor</i> user guide.</p></li>
+    /// <li>
+    /// <p>The partition specified in an ARN parameter in the request doesn't match the partition where you invoked the operation. The partition is specified by the second field of the ARN.</p></li>
     /// </ul>
     InvalidParameterException(crate::types::error::InvalidParameterException),
-    /// <p>The request was denied to limit the frequency of submitted requests.</p>
+    /// <p>The request failed because it exceeded the allowed frequency of submitted requests.</p>
     ThrottledException(crate::types::error::ThrottledException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

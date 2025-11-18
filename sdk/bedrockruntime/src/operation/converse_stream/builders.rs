@@ -392,4 +392,18 @@ impl ConverseStreamFluentBuilder {
     pub fn get_performance_config(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
         self.inner.get_performance_config()
     }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn service_tier(mut self, input: crate::types::ServiceTier) -> Self {
+        self.inner = self.inner.service_tier(input);
+        self
+    }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn set_service_tier(mut self, input: ::std::option::Option<crate::types::ServiceTier>) -> Self {
+        self.inner = self.inner.set_service_tier(input);
+        self
+    }
+    /// <p>Specifies the processing tier configuration used for serving the request.</p>
+    pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTier> {
+        self.inner.get_service_tier()
+    }
 }

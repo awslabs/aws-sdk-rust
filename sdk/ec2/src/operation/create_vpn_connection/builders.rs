@@ -170,6 +170,20 @@ impl CreateVpnConnectionFluentBuilder {
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transit_gateway_id()
     }
+    /// <p>The ID of the VPN concentrator to associate with the VPN connection.</p>
+    pub fn vpn_concentrator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.vpn_concentrator_id(input.into());
+        self
+    }
+    /// <p>The ID of the VPN concentrator to associate with the VPN connection.</p>
+    pub fn set_vpn_concentrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_vpn_concentrator_id(input);
+        self
+    }
+    /// <p>The ID of the VPN concentrator to associate with the VPN connection.</p>
+    pub fn get_vpn_concentrator_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpn_concentrator_id()
+    }
     ///
     /// Appends an item to `TagSpecifications`.
     ///

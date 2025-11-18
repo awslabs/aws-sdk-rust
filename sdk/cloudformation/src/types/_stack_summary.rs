@@ -28,6 +28,8 @@ pub struct StackSummary {
     pub root_id: ::std::option::Option<::std::string::String>,
     /// <p>Summarizes information about whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect unmanaged configuration changes to stacks and resources with drift detection</a>.</p>
     pub drift_information: ::std::option::Option<crate::types::StackDriftInformationSummary>,
+    /// <p>Information about the most recent operations performed on this stack.</p>
+    pub last_operations: ::std::option::Option<::std::vec::Vec<crate::types::OperationEntry>>,
 }
 impl StackSummary {
     /// <p>Unique stack identifier.</p>
@@ -76,6 +78,12 @@ impl StackSummary {
     pub fn drift_information(&self) -> ::std::option::Option<&crate::types::StackDriftInformationSummary> {
         self.drift_information.as_ref()
     }
+    /// <p>Information about the most recent operations performed on this stack.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_operations.is_none()`.
+    pub fn last_operations(&self) -> &[crate::types::OperationEntry] {
+        self.last_operations.as_deref().unwrap_or_default()
+    }
 }
 impl StackSummary {
     /// Creates a new builder-style object to manufacture [`StackSummary`](crate::types::StackSummary).
@@ -99,6 +107,7 @@ pub struct StackSummaryBuilder {
     pub(crate) parent_id: ::std::option::Option<::std::string::String>,
     pub(crate) root_id: ::std::option::Option<::std::string::String>,
     pub(crate) drift_information: ::std::option::Option<crate::types::StackDriftInformationSummary>,
+    pub(crate) last_operations: ::std::option::Option<::std::vec::Vec<crate::types::OperationEntry>>,
 }
 impl StackSummaryBuilder {
     /// <p>Unique stack identifier.</p>
@@ -264,6 +273,26 @@ impl StackSummaryBuilder {
     pub fn get_drift_information(&self) -> &::std::option::Option<crate::types::StackDriftInformationSummary> {
         &self.drift_information
     }
+    /// Appends an item to `last_operations`.
+    ///
+    /// To override the contents of this collection use [`set_last_operations`](Self::set_last_operations).
+    ///
+    /// <p>Information about the most recent operations performed on this stack.</p>
+    pub fn last_operations(mut self, input: crate::types::OperationEntry) -> Self {
+        let mut v = self.last_operations.unwrap_or_default();
+        v.push(input);
+        self.last_operations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the most recent operations performed on this stack.</p>
+    pub fn set_last_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationEntry>>) -> Self {
+        self.last_operations = input;
+        self
+    }
+    /// <p>Information about the most recent operations performed on this stack.</p>
+    pub fn get_last_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationEntry>> {
+        &self.last_operations
+    }
     /// Consumes the builder and constructs a [`StackSummary`](crate::types::StackSummary).
     pub fn build(self) -> crate::types::StackSummary {
         crate::types::StackSummary {
@@ -278,6 +307,7 @@ impl StackSummaryBuilder {
             parent_id: self.parent_id,
             root_id: self.root_id,
             drift_information: self.drift_information,
+            last_operations: self.last_operations,
         }
     }
 }

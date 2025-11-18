@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPoliciesGrantingServiceAccessOutput {
-    /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
+    /// <p>A <code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
     pub policies_granting_service_access: ::std::vec::Vec<crate::types::ListPoliciesGrantingServiceAccessEntry>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub is_truncated: bool,
@@ -12,7 +12,7 @@ pub struct ListPoliciesGrantingServiceAccessOutput {
     _request_id: Option<String>,
 }
 impl ListPoliciesGrantingServiceAccessOutput {
-    /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
+    /// <p>A <code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
     pub fn policies_granting_service_access(&self) -> &[crate::types::ListPoliciesGrantingServiceAccessEntry] {
         use std::ops::Deref;
         self.policies_granting_service_access.deref()
@@ -52,14 +52,14 @@ impl ListPoliciesGrantingServiceAccessOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_policies_granting_service_access`](Self::set_policies_granting_service_access).
     ///
-    /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
+    /// <p>A <code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
     pub fn policies_granting_service_access(mut self, input: crate::types::ListPoliciesGrantingServiceAccessEntry) -> Self {
         let mut v = self.policies_granting_service_access.unwrap_or_default();
         v.push(input);
         self.policies_granting_service_access = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
+    /// <p>A <code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
     pub fn set_policies_granting_service_access(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ListPoliciesGrantingServiceAccessEntry>>,
@@ -67,7 +67,7 @@ impl ListPoliciesGrantingServiceAccessOutputBuilder {
         self.policies_granting_service_access = input;
         self
     }
-    /// <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
+    /// <p>A <code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
     pub fn get_policies_granting_service_access(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListPoliciesGrantingServiceAccessEntry>> {

@@ -6,17 +6,18 @@ pub struct GetResourcesInput {
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceArnList</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
     /// <li>
-    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
+    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that were previously tagged, <i>but do not currently</i> have tags, are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
     /// <li>
     /// <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
     /// <li>
     /// <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p></li>
     /// <li>
     /// <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p>
-    /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
+    /// <p>For example, for the following filters: <code>filter1= {key1,{value1}}</code>, <code>filter2={key2,{value2,value3,value4}}</code>, <code>filter3= {key3}</code>:</p>
     /// <ul>
     /// <li>
     /// <p><code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code></p></li>
@@ -36,8 +37,11 @@ pub struct GetResourcesInput {
     /// <p><code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.</p>
     /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500 items.</p>
     pub tags_per_page: ::std::option::Option<i32>,
-    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
-    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
+    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a service of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceArnList</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN).</p><note>
+    /// <p>For the list of services whose resources you can tag using the Resource Groups Tagging API, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If an Amazon Web Services service isn't listed on that page, you might still be able to tag that service's resources by using that service's native tagging operations instead of using Resource Groups Tagging API operations. All tagged resources, whether the tagging used the Resource Groups Tagging API or not, are returned by the <code>Get*</code> operation.</p>
+    /// </note>
     /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
     /// <p><code>ec2:instance,s3:bucket,auditmanager</code></p>
     pub resource_type_filters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -46,7 +50,10 @@ pub struct GetResourcesInput {
     /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
     /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to <code>true</code>.</p>
     pub exclude_compliant_resources: ::std::option::Option<bool>,
-    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you specify both, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceTypeFilters</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>You can't specify both this parameter and the <code>TagFilters</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub resource_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -57,17 +64,18 @@ impl GetResourcesInput {
         self.pagination_token.as_deref()
     }
     /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceArnList</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
     /// <li>
-    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
+    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that were previously tagged, <i>but do not currently</i> have tags, are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
     /// <li>
     /// <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
     /// <li>
     /// <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p></li>
     /// <li>
     /// <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p>
-    /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
+    /// <p>For example, for the following filters: <code>filter1= {key1,{value1}}</code>, <code>filter2={key2,{value2,value3,value4}}</code>, <code>filter3= {key3}</code>:</p>
     /// <ul>
     /// <li>
     /// <p><code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code></p></li>
@@ -95,8 +103,11 @@ impl GetResourcesInput {
     pub fn tags_per_page(&self) -> ::std::option::Option<i32> {
         self.tags_per_page
     }
-    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
-    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
+    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a service of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceArnList</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN).</p><note>
+    /// <p>For the list of services whose resources you can tag using the Resource Groups Tagging API, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If an Amazon Web Services service isn't listed on that page, you might still be able to tag that service's resources by using that service's native tagging operations instead of using Resource Groups Tagging API operations. All tagged resources, whether the tagging used the Resource Groups Tagging API or not, are returned by the <code>Get*</code> operation.</p>
+    /// </note>
     /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
     /// <p><code>ec2:instance,s3:bucket,auditmanager</code></p>
     ///
@@ -113,7 +124,10 @@ impl GetResourcesInput {
     pub fn exclude_compliant_resources(&self) -> ::std::option::Option<bool> {
         self.exclude_compliant_resources
     }
-    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you specify both, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceTypeFilters</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>You can't specify both this parameter and the <code>TagFilters</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ///
@@ -162,17 +176,18 @@ impl GetResourcesInputBuilder {
     /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
     ///
     /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceArnList</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
     /// <li>
-    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
+    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that were previously tagged, <i>but do not currently</i> have tags, are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
     /// <li>
     /// <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
     /// <li>
     /// <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p></li>
     /// <li>
     /// <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p>
-    /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
+    /// <p>For example, for the following filters: <code>filter1= {key1,{value1}}</code>, <code>filter2={key2,{value2,value3,value4}}</code>, <code>filter3= {key3}</code>:</p>
     /// <ul>
     /// <li>
     /// <p><code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code></p></li>
@@ -191,17 +206,18 @@ impl GetResourcesInputBuilder {
         self
     }
     /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceArnList</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
     /// <li>
-    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
+    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that were previously tagged, <i>but do not currently</i> have tags, are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
     /// <li>
     /// <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
     /// <li>
     /// <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p></li>
     /// <li>
     /// <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p>
-    /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
+    /// <p>For example, for the following filters: <code>filter1= {key1,{value1}}</code>, <code>filter2={key2,{value2,value3,value4}}</code>, <code>filter3= {key3}</code>:</p>
     /// <ul>
     /// <li>
     /// <p><code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code></p></li>
@@ -218,17 +234,18 @@ impl GetResourcesInputBuilder {
         self
     }
     /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceArnList</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
     /// <li>
-    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
+    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that were previously tagged, <i>but do not currently</i> have tags, are shown with an empty tag set, like this: <code>"Tags": \[\]</code>.</p></li>
     /// <li>
     /// <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p></li>
     /// <li>
     /// <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p></li>
     /// <li>
     /// <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p>
-    /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
+    /// <p>For example, for the following filters: <code>filter1= {key1,{value1}}</code>, <code>filter2={key2,{value2,value3,value4}}</code>, <code>filter3= {key3}</code>:</p>
     /// <ul>
     /// <li>
     /// <p><code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code></p></li>
@@ -284,8 +301,11 @@ impl GetResourcesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_type_filters`](Self::set_resource_type_filters).
     ///
-    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
-    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
+    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a service of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceArnList</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN).</p><note>
+    /// <p>For the list of services whose resources you can tag using the Resource Groups Tagging API, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If an Amazon Web Services service isn't listed on that page, you might still be able to tag that service's resources by using that service's native tagging operations instead of using Resource Groups Tagging API operations. All tagged resources, whether the tagging used the Resource Groups Tagging API or not, are returned by the <code>Get*</code> operation.</p>
+    /// </note>
     /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
     /// <p><code>ec2:instance,s3:bucket,auditmanager</code></p>
     pub fn resource_type_filters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -294,16 +314,22 @@ impl GetResourcesInputBuilder {
         self.resource_type_filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
-    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
+    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a service of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceArnList</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN).</p><note>
+    /// <p>For the list of services whose resources you can tag using the Resource Groups Tagging API, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If an Amazon Web Services service isn't listed on that page, you might still be able to tag that service's resources by using that service's native tagging operations instead of using Resource Groups Tagging API operations. All tagged resources, whether the tagging used the Resource Groups Tagging API or not, are returned by the <code>Get*</code> operation.</p>
+    /// </note>
     /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
     /// <p><code>ec2:instance,s3:bucket,auditmanager</code></p>
     pub fn set_resource_type_filters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_type_filters = input;
         self
     }
-    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
-    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
+    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service\[:resourceType\]</code>. For example, specifying a service of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceArnList</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN).</p><note>
+    /// <p>For the list of services whose resources you can tag using the Resource Groups Tagging API, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If an Amazon Web Services service isn't listed on that page, you might still be able to tag that service's resources by using that service's native tagging operations instead of using Resource Groups Tagging API operations. All tagged resources, whether the tagging used the Resource Groups Tagging API or not, are returned by the <code>Get*</code> operation.</p>
+    /// </note>
     /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
     /// <p><code>ec2:instance,s3:bucket,auditmanager</code></p>
     pub fn get_resource_type_filters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -344,7 +370,10 @@ impl GetResourcesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arn_list`](Self::set_resource_arn_list).
     ///
-    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you specify both, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceTypeFilters</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>You can't specify both this parameter and the <code>TagFilters</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn resource_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -353,14 +382,20 @@ impl GetResourcesInputBuilder {
         self.resource_arn_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you specify both, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceTypeFilters</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>You can't specify both this parameter and the <code>TagFilters</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_resource_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arn_list = input;
         self
     }
-    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you specify both, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data.</p>
+    /// <p>You can't specify both this parameter and the <code>ResourceTypeFilters</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>You can't specify both this parameter and the <code>TagFilters</code> parameter in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you do, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_resource_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

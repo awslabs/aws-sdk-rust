@@ -35,6 +35,8 @@ pub struct StartOutboundVoiceContactInput {
     pub traffic_type: ::std::option::Option<crate::types::TrafficType>,
     /// <p>Information about the outbound strategy.</p>
     pub outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
+    /// <p>The maximum time the outbound call will wait for the destination to answer the call, in seconds</p>
+    pub ring_timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl StartOutboundVoiceContactInput {
     /// <p>The name of a voice contact that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -99,6 +101,10 @@ impl StartOutboundVoiceContactInput {
     pub fn outbound_strategy(&self) -> ::std::option::Option<&crate::types::OutboundStrategy> {
         self.outbound_strategy.as_ref()
     }
+    /// <p>The maximum time the outbound call will wait for the destination to answer the call, in seconds</p>
+    pub fn ring_timeout_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.ring_timeout_in_seconds
+    }
 }
 impl ::std::fmt::Debug for StartOutboundVoiceContactInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -118,6 +124,7 @@ impl ::std::fmt::Debug for StartOutboundVoiceContactInput {
         formatter.field("campaign_id", &self.campaign_id);
         formatter.field("traffic_type", &self.traffic_type);
         formatter.field("outbound_strategy", &self.outbound_strategy);
+        formatter.field("ring_timeout_in_seconds", &self.ring_timeout_in_seconds);
         formatter.finish()
     }
 }
@@ -147,6 +154,7 @@ pub struct StartOutboundVoiceContactInputBuilder {
     pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_type: ::std::option::Option<crate::types::TrafficType>,
     pub(crate) outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
+    pub(crate) ring_timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl StartOutboundVoiceContactInputBuilder {
     /// <p>The name of a voice contact that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -383,6 +391,20 @@ impl StartOutboundVoiceContactInputBuilder {
     pub fn get_outbound_strategy(&self) -> &::std::option::Option<crate::types::OutboundStrategy> {
         &self.outbound_strategy
     }
+    /// <p>The maximum time the outbound call will wait for the destination to answer the call, in seconds</p>
+    pub fn ring_timeout_in_seconds(mut self, input: i32) -> Self {
+        self.ring_timeout_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum time the outbound call will wait for the destination to answer the call, in seconds</p>
+    pub fn set_ring_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ring_timeout_in_seconds = input;
+        self
+    }
+    /// <p>The maximum time the outbound call will wait for the destination to answer the call, in seconds</p>
+    pub fn get_ring_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.ring_timeout_in_seconds
+    }
     /// Consumes the builder and constructs a [`StartOutboundVoiceContactInput`](crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactInput).
     pub fn build(
         self,
@@ -406,6 +428,7 @@ impl StartOutboundVoiceContactInputBuilder {
             campaign_id: self.campaign_id,
             traffic_type: self.traffic_type,
             outbound_strategy: self.outbound_strategy,
+            ring_timeout_in_seconds: self.ring_timeout_in_seconds,
         })
     }
 }
@@ -427,6 +450,7 @@ impl ::std::fmt::Debug for StartOutboundVoiceContactInputBuilder {
         formatter.field("campaign_id", &self.campaign_id);
         formatter.field("traffic_type", &self.traffic_type);
         formatter.field("outbound_strategy", &self.outbound_strategy);
+        formatter.field("ring_timeout_in_seconds", &self.ring_timeout_in_seconds);
         formatter.finish()
     }
 }

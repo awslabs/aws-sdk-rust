@@ -19,6 +19,7 @@
 ///     TransitGatewayAttachmentResourceType::TgwPeering => { /* ... */ },
 ///     TransitGatewayAttachmentResourceType::Vpc => { /* ... */ },
 ///     TransitGatewayAttachmentResourceType::Vpn => { /* ... */ },
+///     TransitGatewayAttachmentResourceType::VpnConcentrator => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -61,6 +62,8 @@ pub enum TransitGatewayAttachmentResourceType {
     Vpc,
     #[allow(missing_docs)] // documentation missing in model
     Vpn,
+    #[allow(missing_docs)] // documentation missing in model
+    VpnConcentrator,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for TransitGatewayAttachmentResourceType {
             "tgw-peering" => TransitGatewayAttachmentResourceType::TgwPeering,
             "vpc" => TransitGatewayAttachmentResourceType::Vpc,
             "vpn" => TransitGatewayAttachmentResourceType::Vpn,
+            "vpn-concentrator" => TransitGatewayAttachmentResourceType::VpnConcentrator,
             other => TransitGatewayAttachmentResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -97,6 +101,7 @@ impl TransitGatewayAttachmentResourceType {
             TransitGatewayAttachmentResourceType::TgwPeering => "tgw-peering",
             TransitGatewayAttachmentResourceType::Vpc => "vpc",
             TransitGatewayAttachmentResourceType::Vpn => "vpn",
+            TransitGatewayAttachmentResourceType::VpnConcentrator => "vpn-concentrator",
             TransitGatewayAttachmentResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -110,6 +115,7 @@ impl TransitGatewayAttachmentResourceType {
             "tgw-peering",
             "vpc",
             "vpn",
+            "vpn-concentrator",
         ]
     }
 }
@@ -140,6 +146,7 @@ impl ::std::fmt::Display for TransitGatewayAttachmentResourceType {
             TransitGatewayAttachmentResourceType::TgwPeering => write!(f, "tgw-peering"),
             TransitGatewayAttachmentResourceType::Vpc => write!(f, "vpc"),
             TransitGatewayAttachmentResourceType::Vpn => write!(f, "vpn"),
+            TransitGatewayAttachmentResourceType::VpnConcentrator => write!(f, "vpn-concentrator"),
             TransitGatewayAttachmentResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

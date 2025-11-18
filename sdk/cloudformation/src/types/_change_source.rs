@@ -14,6 +14,7 @@
 /// match changesource {
 ///     ChangeSource::Automatic => { /* ... */ },
 ///     ChangeSource::DirectModification => { /* ... */ },
+///     ChangeSource::NoModification => { /* ... */ },
 ///     ChangeSource::ParameterReference => { /* ... */ },
 ///     ChangeSource::ResourceAttribute => { /* ... */ },
 ///     ChangeSource::ResourceReference => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum ChangeSource {
     #[allow(missing_docs)] // documentation missing in model
     DirectModification,
     #[allow(missing_docs)] // documentation missing in model
+    NoModification,
+    #[allow(missing_docs)] // documentation missing in model
     ParameterReference,
     #[allow(missing_docs)] // documentation missing in model
     ResourceAttribute,
@@ -64,6 +67,7 @@ impl ::std::convert::From<&str> for ChangeSource {
         match s {
             "Automatic" => ChangeSource::Automatic,
             "DirectModification" => ChangeSource::DirectModification,
+            "NoModification" => ChangeSource::NoModification,
             "ParameterReference" => ChangeSource::ParameterReference,
             "ResourceAttribute" => ChangeSource::ResourceAttribute,
             "ResourceReference" => ChangeSource::ResourceReference,
@@ -84,6 +88,7 @@ impl ChangeSource {
         match self {
             ChangeSource::Automatic => "Automatic",
             ChangeSource::DirectModification => "DirectModification",
+            ChangeSource::NoModification => "NoModification",
             ChangeSource::ParameterReference => "ParameterReference",
             ChangeSource::ResourceAttribute => "ResourceAttribute",
             ChangeSource::ResourceReference => "ResourceReference",
@@ -95,6 +100,7 @@ impl ChangeSource {
         &[
             "Automatic",
             "DirectModification",
+            "NoModification",
             "ParameterReference",
             "ResourceAttribute",
             "ResourceReference",
@@ -123,6 +129,7 @@ impl ::std::fmt::Display for ChangeSource {
         match self {
             ChangeSource::Automatic => write!(f, "Automatic"),
             ChangeSource::DirectModification => write!(f, "DirectModification"),
+            ChangeSource::NoModification => write!(f, "NoModification"),
             ChangeSource::ParameterReference => write!(f, "ParameterReference"),
             ChangeSource::ResourceAttribute => write!(f, "ResourceAttribute"),
             ChangeSource::ResourceReference => write!(f, "ResourceReference"),

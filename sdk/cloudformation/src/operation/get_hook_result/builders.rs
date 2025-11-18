@@ -23,6 +23,7 @@ impl crate::operation::get_hook_result::builders::GetHookResultInputBuilder {
 /// Fluent builder constructing a request to `GetHookResult`.
 ///
 /// <p>Retrieves detailed information and remediation guidance for a Hook invocation result.</p>
+/// <p>If the Hook uses a KMS key to encrypt annotations, callers of the <code>GetHookResult</code> operation must have <code>kms:Decrypt</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-kms-key-policy.html">KMS key policy and permissions for encrypting CloudFormation Hooks results at rest</a> in the <i>CloudFormation Hooks User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetHookResultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

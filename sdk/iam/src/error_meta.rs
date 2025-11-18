@@ -172,6 +172,39 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_delegation_request::AcceptDelegationRequestError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_delegation_request::AcceptDelegationRequestError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::accept_delegation_request::AcceptDelegationRequestError> for Error {
+    fn from(err: crate::operation::accept_delegation_request::AcceptDelegationRequestError) -> Self {
+        match err {
+            crate::operation::accept_delegation_request::AcceptDelegationRequestError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::accept_delegation_request::AcceptDelegationRequestError::NoSuchEntityException(inner) => {
+                Error::NoSuchEntityException(inner)
+            }
+            crate::operation::accept_delegation_request::AcceptDelegationRequestError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::accept_delegation_request::AcceptDelegationRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -281,6 +314,42 @@ impl From<crate::operation::add_user_to_group::AddUserToGroupError> for Error {
             crate::operation::add_user_to_group::AddUserToGroupError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::add_user_to_group::AddUserToGroupError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
             crate::operation::add_user_to_group::AddUserToGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_delegation_request::AssociateDelegationRequestError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_delegation_request::AssociateDelegationRequestError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_delegation_request::AssociateDelegationRequestError> for Error {
+    fn from(err: crate::operation::associate_delegation_request::AssociateDelegationRequestError) -> Self {
+        match err {
+            crate::operation::associate_delegation_request::AssociateDelegationRequestError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::associate_delegation_request::AssociateDelegationRequestError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::associate_delegation_request::AssociateDelegationRequestError::NoSuchEntityException(inner) => {
+                Error::NoSuchEntityException(inner)
+            }
+            crate::operation::associate_delegation_request::AssociateDelegationRequestError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::associate_delegation_request::AssociateDelegationRequestError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2202,6 +2271,31 @@ impl From<crate::operation::get_credential_report::GetCredentialReportError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_delegation_request::GetDelegationRequestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_delegation_request::GetDelegationRequestError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_delegation_request::GetDelegationRequestError> for Error {
+    fn from(err: crate::operation::get_delegation_request::GetDelegationRequestError) -> Self {
+        match err {
+            crate::operation::get_delegation_request::GetDelegationRequestError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
+            crate::operation::get_delegation_request::GetDelegationRequestError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::get_delegation_request::GetDelegationRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_group::GetGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2245,6 +2339,39 @@ impl From<crate::operation::get_group_policy::GetGroupPolicyError> for Error {
             crate::operation::get_group_policy::GetGroupPolicyError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::get_group_policy::GetGroupPolicyError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
             crate::operation::get_group_policy::GetGroupPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_human_readable_summary::GetHumanReadableSummaryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_human_readable_summary::GetHumanReadableSummaryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_human_readable_summary::GetHumanReadableSummaryError> for Error {
+    fn from(err: crate::operation::get_human_readable_summary::GetHumanReadableSummaryError) -> Self {
+        match err {
+            crate::operation::get_human_readable_summary::GetHumanReadableSummaryError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_human_readable_summary::GetHumanReadableSummaryError::NoSuchEntityException(inner) => {
+                Error::NoSuchEntityException(inner)
+            }
+            crate::operation::get_human_readable_summary::GetHumanReadableSummaryError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::get_human_readable_summary::GetHumanReadableSummaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2851,6 +2978,38 @@ impl From<crate::operation::list_attached_user_policies::ListAttachedUserPolicie
                 Error::ServiceFailureException(inner)
             }
             crate::operation::list_attached_user_policies::ListAttachedUserPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_delegation_requests::ListDelegationRequestsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_delegation_requests::ListDelegationRequestsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_delegation_requests::ListDelegationRequestsError> for Error {
+    fn from(err: crate::operation::list_delegation_requests::ListDelegationRequestsError) -> Self {
+        match err {
+            crate::operation::list_delegation_requests::ListDelegationRequestsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_delegation_requests::ListDelegationRequestsError::NoSuchEntityException(inner) => {
+                Error::NoSuchEntityException(inner)
+            }
+            crate::operation::list_delegation_requests::ListDelegationRequestsError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::list_delegation_requests::ListDelegationRequestsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3815,6 +3974,42 @@ impl From<crate::operation::put_user_policy::PutUserPolicyError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reject_delegation_request::RejectDelegationRequestError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reject_delegation_request::RejectDelegationRequestError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reject_delegation_request::RejectDelegationRequestError> for Error {
+    fn from(err: crate::operation::reject_delegation_request::RejectDelegationRequestError) -> Self {
+        match err {
+            crate::operation::reject_delegation_request::RejectDelegationRequestError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::reject_delegation_request::RejectDelegationRequestError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::reject_delegation_request::RejectDelegationRequestError::NoSuchEntityException(inner) => {
+                Error::NoSuchEntityException(inner)
+            }
+            crate::operation::reject_delegation_request::RejectDelegationRequestError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::reject_delegation_request::RejectDelegationRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -3983,6 +4178,35 @@ impl From<crate::operation::resync_mfa_device::ResyncMFADeviceError> for Error {
             crate::operation::resync_mfa_device::ResyncMFADeviceError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::resync_mfa_device::ResyncMFADeviceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
             crate::operation::resync_mfa_device::ResyncMFADeviceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_delegation_token::SendDelegationTokenError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_delegation_token::SendDelegationTokenError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_delegation_token::SendDelegationTokenError> for Error {
+    fn from(err: crate::operation::send_delegation_token::SendDelegationTokenError) -> Self {
+        match err {
+            crate::operation::send_delegation_token::SendDelegationTokenError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::send_delegation_token::SendDelegationTokenError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::send_delegation_token::SendDelegationTokenError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
+            crate::operation::send_delegation_token::SendDelegationTokenError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::send_delegation_token::SendDelegationTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4678,6 +4902,42 @@ impl From<crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyErr
                 Error::UnmodifiableEntityException(inner)
             }
             crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_delegation_request::UpdateDelegationRequestError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_delegation_request::UpdateDelegationRequestError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_delegation_request::UpdateDelegationRequestError> for Error {
+    fn from(err: crate::operation::update_delegation_request::UpdateDelegationRequestError) -> Self {
+        match err {
+            crate::operation::update_delegation_request::UpdateDelegationRequestError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::update_delegation_request::UpdateDelegationRequestError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::update_delegation_request::UpdateDelegationRequestError::NoSuchEntityException(inner) => {
+                Error::NoSuchEntityException(inner)
+            }
+            crate::operation::update_delegation_request::UpdateDelegationRequestError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::update_delegation_request::UpdateDelegationRequestError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

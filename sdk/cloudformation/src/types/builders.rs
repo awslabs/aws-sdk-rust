@@ -47,6 +47,8 @@ pub use crate::types::_stack_set_auto_deployment_target_summary::StackSetAutoDep
 
 pub use crate::types::_stack_summary::StackSummaryBuilder;
 
+pub use crate::types::_operation_entry::OperationEntryBuilder;
+
 pub use crate::types::_stack_drift_information_summary::StackDriftInformationSummaryBuilder;
 
 pub use crate::types::_stack_resource_summary::StackResourceSummaryBuilder;
@@ -137,6 +139,10 @@ pub use crate::types::_warning_detail::WarningDetailBuilder;
 
 pub use crate::types::_warning_property::WarningPropertyBuilder;
 
+pub use crate::types::_operation_event::OperationEventBuilder;
+
+pub use crate::types::_event_filter::EventFilterBuilder;
+
 pub use crate::types::_change_set_hook::ChangeSetHookBuilder;
 
 pub use crate::types::_change_set_hook_target_details::ChangeSetHookTargetDetailsBuilder;
@@ -150,6 +156,10 @@ pub use crate::types::_resource_change::ResourceChangeBuilder;
 pub use crate::types::_resource_change_detail::ResourceChangeDetailBuilder;
 
 pub use crate::types::_resource_target_definition::ResourceTargetDefinitionBuilder;
+
+pub use crate::types::_live_resource_drift::LiveResourceDriftBuilder;
+
+pub use crate::types::_resource_drift_ignored_attribute::ResourceDriftIgnoredAttributeBuilder;
 
 pub use crate::types::_account_limit::AccountLimitBuilder;
 

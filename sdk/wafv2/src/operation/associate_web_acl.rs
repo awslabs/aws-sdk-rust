@@ -257,6 +257,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AssociateWebA
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum AssociateWebACLError {
+    /// <p>The operation failed because the specified WAF feature isn't supported by the CloudFront pricing plan associated with the web ACL.</p>
+    WafFeatureNotIncludedInPricingPlanException(crate::types::error::WafFeatureNotIncludedInPricingPlanException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request.</p>
     WafInternalErrorException(crate::types::error::WafInternalErrorException),
     /// <p>The operation isn't valid.</p>
@@ -312,6 +314,7 @@ impl AssociateWebACLError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::WafFeatureNotIncludedInPricingPlanException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafInternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafInvalidOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafInvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -320,6 +323,10 @@ impl AssociateWebACLError {
             Self::WafUnavailableEntityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `AssociateWebACLError::WafFeatureNotIncludedInPricingPlanException`.
+    pub fn is_waf_feature_not_included_in_pricing_plan_exception(&self) -> bool {
+        matches!(self, Self::WafFeatureNotIncludedInPricingPlanException(_))
     }
     /// Returns `true` if the error kind is `AssociateWebACLError::WafInternalErrorException`.
     pub fn is_waf_internal_error_exception(&self) -> bool {
@@ -349,6 +356,7 @@ impl AssociateWebACLError {
 impl ::std::error::Error for AssociateWebACLError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::WafFeatureNotIncludedInPricingPlanException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafInternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafInvalidOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafInvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
@@ -362,6 +370,7 @@ impl ::std::error::Error for AssociateWebACLError {
 impl ::std::fmt::Display for AssociateWebACLError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::WafFeatureNotIncludedInPricingPlanException(_inner) => _inner.fmt(f),
             Self::WafInternalErrorException(_inner) => _inner.fmt(f),
             Self::WafInvalidOperationException(_inner) => _inner.fmt(f),
             Self::WafInvalidParameterException(_inner) => _inner.fmt(f),
@@ -389,6 +398,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for AssociateWebACLError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AssociateWebACLError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::WafFeatureNotIncludedInPricingPlanException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafInternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafInvalidOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafInvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

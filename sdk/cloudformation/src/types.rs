@@ -99,6 +99,10 @@ pub use crate::types::_stack_set_auto_deployment_target_summary::StackSetAutoDep
 
 pub use crate::types::_stack_summary::StackSummary;
 
+pub use crate::types::_operation_entry::OperationEntry;
+
+pub use crate::types::_operation_type::OperationType;
+
 pub use crate::types::_stack_drift_information_summary::StackDriftInformationSummary;
 
 pub use crate::types::_stack_status::StackStatus;
@@ -263,6 +267,16 @@ pub use crate::types::_warning_type::WarningType;
 
 pub use crate::types::_generated_template_resource_status::GeneratedTemplateResourceStatus;
 
+pub use crate::types::_operation_event::OperationEvent;
+
+pub use crate::types::_validation_status::ValidationStatus;
+
+pub use crate::types::_event_type::EventType;
+
+pub use crate::types::_beacon_stack_operation_status::BeaconStackOperationStatus;
+
+pub use crate::types::_event_filter::EventFilter;
+
 pub use crate::types::_change_set_hooks_status::ChangeSetHooksStatus;
 
 pub use crate::types::_change_set_hook::ChangeSetHook;
@@ -272,6 +286,8 @@ pub use crate::types::_change_set_hook_target_details::ChangeSetHookTargetDetail
 pub use crate::types::_change_set_hook_resource_target_details::ChangeSetHookResourceTargetDetails;
 
 pub use crate::types::_change_action::ChangeAction;
+
+pub use crate::types::_deployment_mode::DeploymentMode;
 
 pub use crate::types::_on_stack_failure::OnStackFailure;
 
@@ -289,9 +305,19 @@ pub use crate::types::_resource_target_definition::ResourceTargetDefinition;
 
 pub use crate::types::_attribute_change_type::AttributeChangeType;
 
+pub use crate::types::_live_resource_drift::LiveResourceDrift;
+
+pub use crate::types::_after_value_from::AfterValueFrom;
+
+pub use crate::types::_before_value_from::BeforeValueFrom;
+
 pub use crate::types::_requires_recreation::RequiresRecreation;
 
 pub use crate::types::_resource_attribute::ResourceAttribute;
+
+pub use crate::types::_resource_drift_ignored_attribute::ResourceDriftIgnoredAttribute;
+
+pub use crate::types::_drift_ignored_reason::DriftIgnoredReason;
 
 pub use crate::types::_replacement::Replacement;
 
@@ -325,6 +351,8 @@ mod _account_gate_status;
 
 mod _account_limit;
 
+mod _after_value_from;
+
 mod _annotation;
 
 mod _annotation_severity_level;
@@ -336,6 +364,10 @@ mod _attribute_change_type;
 mod _auto_deployment;
 
 mod _batch_describe_type_configurations_error;
+
+mod _beacon_stack_operation_status;
+
+mod _before_value_from;
 
 mod _call_as;
 
@@ -369,6 +401,8 @@ mod _concurrency_mode;
 
 mod _deletion_mode;
 
+mod _deployment_mode;
+
 mod _deployment_targets;
 
 mod _deprecated_status;
@@ -377,7 +411,13 @@ mod _detailed_status;
 
 mod _difference_type;
 
+mod _drift_ignored_reason;
+
 mod _evaluation_type;
+
+mod _event_filter;
+
+mod _event_type;
 
 mod _execution_status;
 
@@ -411,6 +451,8 @@ mod _identity_provider;
 
 mod _list_hook_results_target_type;
 
+mod _live_resource_drift;
+
 mod _logging_config;
 
 mod _managed_execution;
@@ -421,11 +463,17 @@ mod _on_failure;
 
 mod _on_stack_failure;
 
+mod _operation_entry;
+
+mod _operation_event;
+
 mod _operation_result_filter;
 
 mod _operation_result_filter_name;
 
 mod _operation_status;
+
+mod _operation_type;
 
 mod _organization_status;
 
@@ -470,6 +518,8 @@ mod _resource_change_detail;
 mod _resource_definition;
 
 mod _resource_detail;
+
+mod _resource_drift_ignored_attribute;
 
 mod _resource_identifier_summary;
 
@@ -622,6 +672,8 @@ mod _type_summary;
 mod _type_tests_status;
 
 mod _type_version_summary;
+
+mod _validation_status;
 
 mod _version_bump;
 

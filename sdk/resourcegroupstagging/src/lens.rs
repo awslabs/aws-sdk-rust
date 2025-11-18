@@ -39,6 +39,16 @@ pub(crate) fn reflens_get_tag_values_output_output_pagination_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_required_tags_output_output_next_token(
+    input: &crate::operation::list_required_tags::ListRequiredTagsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_compliance_summary_output_output_summary_list(
     input: crate::operation::get_compliance_summary::GetComplianceSummaryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Summary>> {
@@ -64,5 +74,12 @@ pub(crate) fn lens_get_tag_values_output_output_tag_values(
     input: crate::operation::get_tag_values::GetTagValuesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.tag_values?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_required_tags_output_output_required_tags(
+    input: crate::operation::list_required_tags::ListRequiredTagsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RequiredTag>> {
+    let input = input.required_tags?;
     ::std::option::Option::Some(input)
 }

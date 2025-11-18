@@ -33,6 +33,8 @@ pub(crate) mod shape_get_tag_keys;
 
 pub(crate) mod shape_get_tag_values;
 
+pub(crate) mod shape_list_required_tags;
+
 pub(crate) mod shape_start_report_creation;
 
 pub(crate) mod shape_tag_resources;
@@ -63,6 +65,8 @@ pub(crate) mod shape_internal_service_exception;
 
 pub(crate) mod shape_invalid_parameter_exception;
 
+pub(crate) mod shape_list_required_tags_input;
+
 pub(crate) mod shape_pagination_token_expired_exception;
 
 pub(crate) mod shape_start_report_creation_input;
@@ -74,6 +78,8 @@ pub(crate) mod shape_throttled_exception;
 pub(crate) mod shape_untag_resources_input;
 
 pub(crate) mod shape_failed_resources_map;
+
+pub(crate) mod shape_required_tags_for_list_required_tags;
 
 pub(crate) mod shape_resource_tag_mapping_list;
 
@@ -87,11 +93,17 @@ pub(crate) mod shape_tag_values_output_list;
 
 pub(crate) mod shape_failure_info;
 
+pub(crate) mod shape_required_tag;
+
 pub(crate) mod shape_resource_tag_mapping;
 
 pub(crate) mod shape_summary;
 
+pub(crate) mod shape_cloud_formation_resource_types;
+
 pub(crate) mod shape_compliance_details;
+
+pub(crate) mod shape_reporting_tag_keys;
 
 pub(crate) mod shape_tag_list;
 

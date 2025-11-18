@@ -189,6 +189,21 @@ pub(crate) fn backup_selection_correct_errors(
     builder
 }
 
+pub(crate) fn tiering_configuration_correct_errors(
+    mut builder: crate::types::builders::TieringConfigurationBuilder,
+) -> crate::types::builders::TieringConfigurationBuilder {
+    if builder.tiering_configuration_name.is_none() {
+        builder.tiering_configuration_name = Some(Default::default())
+    }
+    if builder.backup_vault_name.is_none() {
+        builder.backup_vault_name = Some(Default::default())
+    }
+    if builder.resource_selection.is_none() {
+        builder.resource_selection = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn date_range_correct_errors(mut builder: crate::types::builders::DateRangeBuilder) -> crate::types::builders::DateRangeBuilder {
     if builder.from_date.is_none() {
         builder.from_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -284,6 +299,21 @@ pub(crate) fn condition_correct_errors(mut builder: crate::types::builders::Cond
     }
     if builder.condition_value.is_none() {
         builder.condition_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_selection_correct_errors(
+    mut builder: crate::types::builders::ResourceSelectionBuilder,
+) -> crate::types::builders::ResourceSelectionBuilder {
+    if builder.resources.is_none() {
+        builder.resources = Some(Default::default())
+    }
+    if builder.tiering_down_settings_in_days.is_none() {
+        builder.tiering_down_settings_in_days = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
     }
     builder
 }

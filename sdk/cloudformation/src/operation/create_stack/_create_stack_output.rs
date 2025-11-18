@@ -6,12 +6,18 @@
 pub struct CreateStackOutput {
     /// <p>Unique identifier of the stack.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier for this stack operation that can be used to track the operation's progress and events.</p>
+    pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateStackOutput {
     /// <p>Unique identifier of the stack.</p>
     pub fn stack_id(&self) -> ::std::option::Option<&str> {
         self.stack_id.as_deref()
+    }
+    /// <p>A unique identifier for this stack operation that can be used to track the operation's progress and events.</p>
+    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+        self.operation_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateStackOutput {
@@ -31,6 +37,7 @@ impl CreateStackOutput {
 #[non_exhaustive]
 pub struct CreateStackOutputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
+    pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateStackOutputBuilder {
@@ -48,6 +55,20 @@ impl CreateStackOutputBuilder {
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_id
     }
+    /// <p>A unique identifier for this stack operation that can be used to track the operation's progress and events.</p>
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for this stack operation that can be used to track the operation's progress and events.</p>
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_id = input;
+        self
+    }
+    /// <p>A unique identifier for this stack operation that can be used to track the operation's progress and events.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -61,6 +82,7 @@ impl CreateStackOutputBuilder {
     pub fn build(self) -> crate::operation::create_stack::CreateStackOutput {
         crate::operation::create_stack::CreateStackOutput {
             stack_id: self.stack_id,
+            operation_id: self.operation_id,
             _request_id: self._request_id,
         }
     }

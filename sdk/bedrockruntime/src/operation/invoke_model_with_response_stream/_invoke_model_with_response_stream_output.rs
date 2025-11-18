@@ -9,6 +9,8 @@ pub struct InvokeModelWithResponseStreamOutput {
     pub content_type: ::std::string::String,
     /// <p>Model performance settings for the request.</p>
     pub performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub service_tier: ::std::option::Option<crate::types::ServiceTierType>,
     _request_id: Option<String>,
 }
 impl InvokeModelWithResponseStreamOutput {
@@ -24,6 +26,10 @@ impl InvokeModelWithResponseStreamOutput {
     /// <p>Model performance settings for the request.</p>
     pub fn performance_config_latency(&self) -> ::std::option::Option<&crate::types::PerformanceConfigLatency> {
         self.performance_config_latency.as_ref()
+    }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn service_tier(&self) -> ::std::option::Option<&crate::types::ServiceTierType> {
+        self.service_tier.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for InvokeModelWithResponseStreamOutput {
@@ -46,6 +52,7 @@ pub struct InvokeModelWithResponseStreamOutputBuilder {
         ::std::option::Option<crate::event_receiver::EventReceiver<crate::types::ResponseStream, crate::types::error::ResponseStreamError>>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
+    pub(crate) service_tier: ::std::option::Option<crate::types::ServiceTierType>,
     _request_id: Option<String>,
 }
 impl InvokeModelWithResponseStreamOutputBuilder {
@@ -101,6 +108,20 @@ impl InvokeModelWithResponseStreamOutputBuilder {
     pub fn get_performance_config_latency(&self) -> &::std::option::Option<crate::types::PerformanceConfigLatency> {
         &self.performance_config_latency
     }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn service_tier(mut self, input: crate::types::ServiceTierType) -> Self {
+        self.service_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn set_service_tier(mut self, input: ::std::option::Option<crate::types::ServiceTierType>) -> Self {
+        self.service_tier = input;
+        self
+    }
+    /// <p>Specifies the processing tier type used for serving the request.</p>
+    pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTierType> {
+        &self.service_tier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -134,6 +155,7 @@ impl InvokeModelWithResponseStreamOutputBuilder {
                 )
             })?,
             performance_config_latency: self.performance_config_latency,
+            service_tier: self.service_tier,
             _request_id: self._request_id,
         })
     }

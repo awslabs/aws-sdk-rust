@@ -26,32 +26,37 @@ pub fn ser_create_vpn_connection_input_input_input(
         scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("TagSpecification");
-    if let Some(var_10) = &input.tag_specifications {
-        if !var_10.is_empty() {
-            let mut list_12 = scope_9.start_list(true, Some("item"));
-            for item_11 in var_10 {
+    let mut scope_9 = writer.prefix("VpnConcentratorId");
+    if let Some(var_10) = &input.vpn_concentrator_id {
+        scope_9.string(var_10);
+    }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("TagSpecification");
+    if let Some(var_12) = &input.tag_specifications {
+        if !var_12.is_empty() {
+            let mut list_14 = scope_11.start_list(true, Some("item"));
+            for item_13 in var_12 {
                 #[allow(unused_mut)]
-                let mut entry_13 = list_12.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_13, item_11)?;
+                let mut entry_15 = list_14.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_15, item_13)?;
             }
-            list_12.finish();
+            list_14.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("PreSharedKeyStorage");
-    if let Some(var_15) = &input.pre_shared_key_storage {
-        scope_14.string(var_15);
+    let mut scope_16 = writer.prefix("PreSharedKeyStorage");
+    if let Some(var_17) = &input.pre_shared_key_storage {
+        scope_16.string(var_17);
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("DryRun");
-    if let Some(var_17) = &input.dry_run {
-        scope_16.boolean(*var_17);
+    let mut scope_18 = writer.prefix("DryRun");
+    if let Some(var_19) = &input.dry_run {
+        scope_18.boolean(*var_19);
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("Options");
-    if let Some(var_19) = &input.options {
-        crate::protocol_serde::shape_vpn_connection_options_specification::ser_vpn_connection_options_specification(scope_18, var_19)?;
+    let mut scope_20 = writer.prefix("Options");
+    if let Some(var_21) = &input.options {
+        crate::protocol_serde::shape_vpn_connection_options_specification::ser_vpn_connection_options_specification(scope_20, var_21)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
