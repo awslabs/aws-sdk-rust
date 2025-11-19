@@ -15,13 +15,17 @@ pub use crate::types::_encryption_configuration_for_repository_creation_template
 
 pub use crate::types::_encryption_type::EncryptionType;
 
+pub use crate::types::_image_status::ImageStatus;
+
+pub use crate::types::_image_identifier::ImageIdentifier;
+
+pub use crate::types::_target_storage_class::TargetStorageClass;
+
 pub use crate::types::_lifecycle_policy_preview_status::LifecyclePolicyPreviewStatus;
 
 pub use crate::types::_image_scan_status::ImageScanStatus;
 
 pub use crate::types::_scan_status::ScanStatus;
-
-pub use crate::types::_image_identifier::ImageIdentifier;
 
 pub use crate::types::_replication_configuration::ReplicationConfiguration;
 
@@ -51,11 +55,29 @@ pub use crate::types::_image::Image;
 
 pub use crate::types::_list_images_filter::ListImagesFilter;
 
+pub use crate::types::_image_status_filter::ImageStatusFilter;
+
 pub use crate::types::_tag_status::TagStatus;
+
+pub use crate::types::_image_referrer::ImageReferrer;
+
+pub use crate::types::_artifact_status::ArtifactStatus;
+
+pub use crate::types::_list_image_referrers_filter::ListImageReferrersFilter;
+
+pub use crate::types::_artifact_status_filter::ArtifactStatusFilter;
+
+pub use crate::types::_subject_identifier::SubjectIdentifier;
 
 pub use crate::types::_lifecycle_policy_preview_summary::LifecyclePolicyPreviewSummary;
 
+pub use crate::types::_transitioning_image_total_count::TransitioningImageTotalCount;
+
+pub use crate::types::_lifecycle_policy_target_storage_class::LifecyclePolicyTargetStorageClass;
+
 pub use crate::types::_lifecycle_policy_preview_result::LifecyclePolicyPreviewResult;
+
+pub use crate::types::_lifecycle_policy_storage_class::LifecyclePolicyStorageClass;
 
 pub use crate::types::_lifecycle_policy_rule_action::LifecyclePolicyRuleAction;
 
@@ -133,6 +155,10 @@ pub use crate::types::_layer::Layer;
 
 pub use crate::types::_layer_availability::LayerAvailability;
 
+mod _artifact_status;
+
+mod _artifact_status_filter;
+
 mod _attribute;
 
 mod _authorization_data;
@@ -169,6 +195,8 @@ mod _image_failure_code;
 
 mod _image_identifier;
 
+mod _image_referrer;
+
 mod _image_replication_status;
 
 mod _image_scan_finding;
@@ -180,6 +208,10 @@ mod _image_scan_findings_summary;
 mod _image_scan_status;
 
 mod _image_scanning_configuration;
+
+mod _image_status;
+
+mod _image_status_filter;
 
 mod _image_tag_mutability;
 
@@ -204,6 +236,12 @@ mod _lifecycle_policy_preview_status;
 mod _lifecycle_policy_preview_summary;
 
 mod _lifecycle_policy_rule_action;
+
+mod _lifecycle_policy_storage_class;
+
+mod _lifecycle_policy_target_storage_class;
+
+mod _list_image_referrers_filter;
 
 mod _list_images_filter;
 
@@ -259,9 +297,15 @@ mod _scanning_repository_filter_type;
 
 mod _score_details;
 
+mod _subject_identifier;
+
 mod _tag;
 
 mod _tag_status;
+
+mod _target_storage_class;
+
+mod _transitioning_image_total_count;
 
 mod _upstream_registry;
 

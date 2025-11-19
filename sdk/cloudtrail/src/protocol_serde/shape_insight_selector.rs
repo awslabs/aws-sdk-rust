@@ -6,6 +6,15 @@ pub fn ser_insight_selector(
     if let Some(var_1) = &input.insight_type {
         object.key("InsightType").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.event_categories {
+        let mut array_3 = object.key("EventCategories").start_array();
+        for item_4 in var_2 {
+            {
+                array_3.value().string(item_4.as_str());
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +39,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::InsightType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "EventCategories" => {
+                            builder = builder
+                                .set_event_categories(crate::protocol_serde::shape_source_event_categories::de_source_event_categories(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

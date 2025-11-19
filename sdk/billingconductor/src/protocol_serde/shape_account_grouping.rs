@@ -15,5 +15,8 @@ pub fn ser_account_grouping(
     if let Some(var_3) = &input.auto_associate {
         object.key("AutoAssociate").boolean(*var_3);
     }
+    if let Some(var_4) = &input.responsibility_transfer_arn {
+        object.key("ResponsibilityTransferArn").string(var_4.as_str());
+    }
     Ok(())
 }

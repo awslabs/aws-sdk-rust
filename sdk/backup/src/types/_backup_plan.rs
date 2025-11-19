@@ -11,6 +11,8 @@ pub struct BackupPlan {
     pub rules: ::std::vec::Vec<crate::types::BackupRule>,
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
     pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    /// <p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>
+    pub scan_settings: ::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>>,
 }
 impl BackupPlan {
     /// <p>The display name of a backup plan. Must contain only alphanumeric or '-_.' special characters.</p>
@@ -30,6 +32,12 @@ impl BackupPlan {
     pub fn advanced_backup_settings(&self) -> &[crate::types::AdvancedBackupSetting] {
         self.advanced_backup_settings.as_deref().unwrap_or_default()
     }
+    /// <p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_settings.is_none()`.
+    pub fn scan_settings(&self) -> &[crate::types::ScanSetting] {
+        self.scan_settings.as_deref().unwrap_or_default()
+    }
 }
 impl BackupPlan {
     /// Creates a new builder-style object to manufacture [`BackupPlan`](crate::types::BackupPlan).
@@ -45,6 +53,7 @@ pub struct BackupPlanBuilder {
     pub(crate) backup_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::BackupRule>>,
     pub(crate) advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    pub(crate) scan_settings: ::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>>,
 }
 impl BackupPlanBuilder {
     /// <p>The display name of a backup plan. Must contain only alphanumeric or '-_.' special characters.</p>
@@ -105,6 +114,26 @@ impl BackupPlanBuilder {
     pub fn get_advanced_backup_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>> {
         &self.advanced_backup_settings
     }
+    /// Appends an item to `scan_settings`.
+    ///
+    /// To override the contents of this collection use [`set_scan_settings`](Self::set_scan_settings).
+    ///
+    /// <p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>
+    pub fn scan_settings(mut self, input: crate::types::ScanSetting) -> Self {
+        let mut v = self.scan_settings.unwrap_or_default();
+        v.push(input);
+        self.scan_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>
+    pub fn set_scan_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>>) -> Self {
+        self.scan_settings = input;
+        self
+    }
+    /// <p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>
+    pub fn get_scan_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>> {
+        &self.scan_settings
+    }
     /// Consumes the builder and constructs a [`BackupPlan`](crate::types::BackupPlan).
     /// This method will fail if any of the following fields are not set:
     /// - [`backup_plan_name`](crate::types::builders::BackupPlanBuilder::backup_plan_name)
@@ -124,6 +153,7 @@ impl BackupPlanBuilder {
                 )
             })?,
             advanced_backup_settings: self.advanced_backup_settings,
+            scan_settings: self.scan_settings,
         })
     }
 }

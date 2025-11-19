@@ -19,6 +19,10 @@ pub use crate::types::_layers_list_item::LayersListItem;
 
 pub use crate::types::_function_configuration::FunctionConfiguration;
 
+pub use crate::types::_tenancy_config::TenancyConfig;
+
+pub use crate::types::_tenant_isolation_mode::TenantIsolationMode;
+
 pub use crate::types::_logging_config::LoggingConfig;
 
 pub use crate::types::_system_log_level::SystemLogLevel;
@@ -356,6 +360,10 @@ mod _state_reason_code;
 mod _system_log_level;
 
 mod _tags_error;
+
+mod _tenancy_config;
+
+mod _tenant_isolation_mode;
 
 mod _throttle_reason;
 

@@ -26,6 +26,8 @@ pub struct CreateAppMonitorInput {
     pub custom_events: ::std::option::Option<crate::types::CustomEvents>,
     /// <p>A structure that contains the configuration for how an app monitor can deobfuscate stack traces.</p>
     pub deobfuscation_configuration: ::std::option::Option<crate::types::DeobfuscationConfiguration>,
+    /// <p>The platform type for the app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications. If you omit this parameter, the default is <code>Web</code>.</p>
+    pub platform: ::std::option::Option<crate::types::AppMonitorPlatform>,
 }
 impl CreateAppMonitorInput {
     /// <p>A name for the app monitor.</p>
@@ -69,6 +71,10 @@ impl CreateAppMonitorInput {
     pub fn deobfuscation_configuration(&self) -> ::std::option::Option<&crate::types::DeobfuscationConfiguration> {
         self.deobfuscation_configuration.as_ref()
     }
+    /// <p>The platform type for the app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications. If you omit this parameter, the default is <code>Web</code>.</p>
+    pub fn platform(&self) -> ::std::option::Option<&crate::types::AppMonitorPlatform> {
+        self.platform.as_ref()
+    }
 }
 impl CreateAppMonitorInput {
     /// Creates a new builder-style object to manufacture [`CreateAppMonitorInput`](crate::operation::create_app_monitor::CreateAppMonitorInput).
@@ -89,6 +95,7 @@ pub struct CreateAppMonitorInputBuilder {
     pub(crate) cw_log_enabled: ::std::option::Option<bool>,
     pub(crate) custom_events: ::std::option::Option<crate::types::CustomEvents>,
     pub(crate) deobfuscation_configuration: ::std::option::Option<crate::types::DeobfuscationConfiguration>,
+    pub(crate) platform: ::std::option::Option<crate::types::AppMonitorPlatform>,
 }
 impl CreateAppMonitorInputBuilder {
     /// <p>A name for the app monitor.</p>
@@ -237,6 +244,20 @@ impl CreateAppMonitorInputBuilder {
     pub fn get_deobfuscation_configuration(&self) -> &::std::option::Option<crate::types::DeobfuscationConfiguration> {
         &self.deobfuscation_configuration
     }
+    /// <p>The platform type for the app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications. If you omit this parameter, the default is <code>Web</code>.</p>
+    pub fn platform(mut self, input: crate::types::AppMonitorPlatform) -> Self {
+        self.platform = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The platform type for the app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications. If you omit this parameter, the default is <code>Web</code>.</p>
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::AppMonitorPlatform>) -> Self {
+        self.platform = input;
+        self
+    }
+    /// <p>The platform type for the app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications. If you omit this parameter, the default is <code>Web</code>.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::AppMonitorPlatform> {
+        &self.platform
+    }
     /// Consumes the builder and constructs a [`CreateAppMonitorInput`](crate::operation::create_app_monitor::CreateAppMonitorInput).
     pub fn build(
         self,
@@ -250,6 +271,7 @@ impl CreateAppMonitorInputBuilder {
             cw_log_enabled: self.cw_log_enabled,
             custom_events: self.custom_events,
             deobfuscation_configuration: self.deobfuscation_configuration,
+            platform: self.platform,
         })
     }
 }

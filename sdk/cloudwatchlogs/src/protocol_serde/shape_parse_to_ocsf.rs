@@ -12,6 +12,9 @@ pub fn ser_parse_to_ocsf(
     {
         object.key("ocsfVersion").string(input.ocsf_version.as_str());
     }
+    if let Some(var_2) = &input.mapping_version {
+        object.key("mappingVersion").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -48,6 +51,13 @@ where
                             builder = builder.set_ocsf_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::OcsfVersion::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "mappingVersion" => {
+                            builder = builder.set_mapping_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

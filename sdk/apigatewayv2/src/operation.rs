@@ -25,6 +25,18 @@ pub mod create_integration_response;
 /// Types for the `CreateModel` operation.
 pub mod create_model;
 
+/// Types for the `CreatePortal` operation.
+pub mod create_portal;
+
+/// Types for the `CreatePortalProduct` operation.
+pub mod create_portal_product;
+
+/// Types for the `CreateProductPage` operation.
+pub mod create_product_page;
+
+/// Types for the `CreateProductRestEndpointPage` operation.
+pub mod create_product_rest_endpoint_page;
+
 /// Types for the `CreateRoute` operation.
 pub mod create_route;
 
@@ -70,6 +82,21 @@ pub mod delete_integration_response;
 /// Types for the `DeleteModel` operation.
 pub mod delete_model;
 
+/// Types for the `DeletePortal` operation.
+pub mod delete_portal;
+
+/// Types for the `DeletePortalProduct` operation.
+pub mod delete_portal_product;
+
+/// Types for the `DeletePortalProductSharingPolicy` operation.
+pub mod delete_portal_product_sharing_policy;
+
+/// Types for the `DeleteProductPage` operation.
+pub mod delete_product_page;
+
+/// Types for the `DeleteProductRestEndpointPage` operation.
+pub mod delete_product_rest_endpoint_page;
+
 /// Types for the `DeleteRoute` operation.
 pub mod delete_route;
 
@@ -90,6 +117,9 @@ pub mod delete_stage;
 
 /// Types for the `DeleteVpcLink` operation.
 pub mod delete_vpc_link;
+
+/// Types for the `DisablePortal` operation.
+pub mod disable_portal;
 
 /// Types for the `ExportApi` operation.
 pub mod export_api;
@@ -145,6 +175,21 @@ pub mod get_model_template;
 /// Types for the `GetModels` operation.
 pub mod get_models;
 
+/// Types for the `GetPortal` operation.
+pub mod get_portal;
+
+/// Types for the `GetPortalProduct` operation.
+pub mod get_portal_product;
+
+/// Types for the `GetPortalProductSharingPolicy` operation.
+pub mod get_portal_product_sharing_policy;
+
+/// Types for the `GetProductPage` operation.
+pub mod get_product_page;
+
+/// Types for the `GetProductRestEndpointPage` operation.
+pub mod get_product_rest_endpoint_page;
+
 /// Types for the `GetRoute` operation.
 pub mod get_route;
 
@@ -178,8 +223,29 @@ pub mod get_vpc_links;
 /// Types for the `ImportApi` operation.
 pub mod import_api;
 
+/// Types for the `ListPortalProducts` operation.
+pub mod list_portal_products;
+
+/// Types for the `ListPortals` operation.
+pub mod list_portals;
+
+/// Types for the `ListProductPages` operation.
+pub mod list_product_pages;
+
+/// Types for the `ListProductRestEndpointPages` operation.
+pub mod list_product_rest_endpoint_pages;
+
 /// Types for the `ListRoutingRules` operation.
 pub mod list_routing_rules;
+
+/// Types for the `PreviewPortal` operation.
+pub mod preview_portal;
+
+/// Types for the `PublishPortal` operation.
+pub mod publish_portal;
+
+/// Types for the `PutPortalProductSharingPolicy` operation.
+pub mod put_portal_product_sharing_policy;
 
 /// Types for the `PutRoutingRule` operation.
 pub mod put_routing_rule;
@@ -219,6 +285,18 @@ pub mod update_integration_response;
 
 /// Types for the `UpdateModel` operation.
 pub mod update_model;
+
+/// Types for the `UpdatePortal` operation.
+pub mod update_portal;
+
+/// Types for the `UpdatePortalProduct` operation.
+pub mod update_portal_product;
+
+/// Types for the `UpdateProductPage` operation.
+pub mod update_product_page;
+
+/// Types for the `UpdateProductRestEndpointPage` operation.
+pub mod update_product_rest_endpoint_page;
 
 /// Types for the `UpdateRoute` operation.
 pub mod update_route;

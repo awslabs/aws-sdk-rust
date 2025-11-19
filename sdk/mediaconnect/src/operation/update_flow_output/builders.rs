@@ -409,4 +409,32 @@ impl UpdateFlowOutputFluentBuilder {
     pub fn get_ndi_speed_hq_quality(&self) -> &::std::option::Option<i32> {
         self.inner.get_ndi_speed_hq_quality()
     }
+    /// <p>Indicates whether to enable or disable router integration for this flow output.</p>
+    pub fn router_integration_state(mut self, input: crate::types::State) -> Self {
+        self.inner = self.inner.router_integration_state(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable router integration for this flow output.</p>
+    pub fn set_router_integration_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
+        self.inner = self.inner.set_router_integration_state(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable router integration for this flow output.</p>
+    pub fn get_router_integration_state(&self) -> &::std::option::Option<crate::types::State> {
+        self.inner.get_router_integration_state()
+    }
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub fn router_integration_transit_encryption(mut self, input: crate::types::FlowTransitEncryption) -> Self {
+        self.inner = self.inner.router_integration_transit_encryption(input);
+        self
+    }
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub fn set_router_integration_transit_encryption(mut self, input: ::std::option::Option<crate::types::FlowTransitEncryption>) -> Self {
+        self.inner = self.inner.set_router_integration_transit_encryption(input);
+        self
+    }
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub fn get_router_integration_transit_encryption(&self) -> &::std::option::Option<crate::types::FlowTransitEncryption> {
+        self.inner.get_router_integration_transit_encryption()
+    }
 }

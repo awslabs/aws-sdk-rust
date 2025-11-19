@@ -59,6 +59,7 @@ impl super::Client {
     ///   - [`snap_start(Option<SnapStartResponse>)`](crate::operation::update_function_configuration::UpdateFunctionConfigurationOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     ///   - [`runtime_version_config(Option<RuntimeVersionConfig>)`](crate::operation::update_function_configuration::UpdateFunctionConfigurationOutput::runtime_version_config): <p>The ARN of the runtime and any errors that occured.</p>
     ///   - [`logging_config(Option<LoggingConfig>)`](crate::operation::update_function_configuration::UpdateFunctionConfigurationOutput::logging_config): <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+    ///   - [`tenancy_config(Option<TenancyConfig>)`](crate::operation::update_function_configuration::UpdateFunctionConfigurationOutput::tenancy_config): <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
     /// - On failure, responds with [`SdkError<UpdateFunctionConfigurationError>`](crate::operation::update_function_configuration::UpdateFunctionConfigurationError)
     pub fn update_function_configuration(
         &self,

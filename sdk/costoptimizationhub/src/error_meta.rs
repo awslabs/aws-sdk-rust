@@ -111,6 +111,37 @@ impl From<crate::operation::get_recommendation::GetRecommendationError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_efficiency_metrics::ListEfficiencyMetricsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_efficiency_metrics::ListEfficiencyMetricsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_efficiency_metrics::ListEfficiencyMetricsError> for Error {
+    fn from(err: crate::operation::list_efficiency_metrics::ListEfficiencyMetricsError) -> Self {
+        match err {
+            crate::operation::list_efficiency_metrics::ListEfficiencyMetricsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_efficiency_metrics::ListEfficiencyMetricsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_efficiency_metrics::ListEfficiencyMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_efficiency_metrics::ListEfficiencyMetricsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_efficiency_metrics::ListEfficiencyMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_enrollment_statuses::ListEnrollmentStatusesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

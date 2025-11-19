@@ -49,6 +49,8 @@ pub use crate::types::error::_organization_not_found_exception::OrganizationNotF
 
 pub use crate::types::error::_account_not_management_or_delegated_administrator_exception::AccountNotManagementOrDelegatedAdministratorExceptionBuilder;
 
+pub use crate::types::error::_feature_disabled_exception::FeatureDisabledExceptionBuilder;
+
 pub use crate::types::error::_credential_report_not_ready_exception::CredentialReportNotReadyExceptionBuilder;
 
 pub use crate::types::error::_credential_report_not_present_exception::CredentialReportNotPresentExceptionBuilder;
@@ -56,6 +58,8 @@ pub use crate::types::error::_credential_report_not_present_exception::Credentia
 pub use crate::types::error::_credential_report_expired_exception::CredentialReportExpiredExceptionBuilder;
 
 pub use crate::types::error::_report_generation_limit_exceeded_exception::ReportGenerationLimitExceededExceptionBuilder;
+
+pub use crate::types::error::_feature_enabled_exception::FeatureEnabledExceptionBuilder;
 
 pub use crate::types::error::_caller_is_not_management_account_exception::CallerIsNotManagementAccountExceptionBuilder;
 

@@ -103,6 +103,13 @@ where
                         "tlsConfig" => {
                             builder = builder.set_tls_config(crate::protocol_serde::shape_tls_config::de_tls_config(tokens)?);
                         }
+                        "responseTransferMode" => {
+                            builder = builder.set_response_transfer_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResponseTransferMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

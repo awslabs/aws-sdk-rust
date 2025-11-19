@@ -77,6 +77,8 @@ pub struct DescribeRecoveryPointOutput {
     pub index_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
     pub encryption_key_type: ::std::option::Option<crate::types::EncryptionKeyType>,
+    /// <p>Contains the latest scanning results against the recovery point and currently include <code>MalwareScanner</code>, <code>ScanJobState</code>, <code>Findings</code>, and <code>LastScanTimestamp</code></p>
+    pub scan_results: ::std::option::Option<::std::vec::Vec<crate::types::ScanResult>>,
     _request_id: Option<String>,
 }
 impl DescribeRecoveryPointOutput {
@@ -210,6 +212,12 @@ impl DescribeRecoveryPointOutput {
     pub fn encryption_key_type(&self) -> ::std::option::Option<&crate::types::EncryptionKeyType> {
         self.encryption_key_type.as_ref()
     }
+    /// <p>Contains the latest scanning results against the recovery point and currently include <code>MalwareScanner</code>, <code>ScanJobState</code>, <code>Findings</code>, and <code>LastScanTimestamp</code></p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_results.is_none()`.
+    pub fn scan_results(&self) -> &[crate::types::ScanResult] {
+        self.scan_results.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeRecoveryPointOutput {
     fn request_id(&self) -> Option<&str> {
@@ -255,6 +263,7 @@ pub struct DescribeRecoveryPointOutputBuilder {
     pub(crate) index_status: ::std::option::Option<crate::types::IndexStatus>,
     pub(crate) index_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_type: ::std::option::Option<crate::types::EncryptionKeyType>,
+    pub(crate) scan_results: ::std::option::Option<::std::vec::Vec<crate::types::ScanResult>>,
     _request_id: Option<String>,
 }
 impl DescribeRecoveryPointOutputBuilder {
@@ -704,6 +713,26 @@ impl DescribeRecoveryPointOutputBuilder {
     pub fn get_encryption_key_type(&self) -> &::std::option::Option<crate::types::EncryptionKeyType> {
         &self.encryption_key_type
     }
+    /// Appends an item to `scan_results`.
+    ///
+    /// To override the contents of this collection use [`set_scan_results`](Self::set_scan_results).
+    ///
+    /// <p>Contains the latest scanning results against the recovery point and currently include <code>MalwareScanner</code>, <code>ScanJobState</code>, <code>Findings</code>, and <code>LastScanTimestamp</code></p>
+    pub fn scan_results(mut self, input: crate::types::ScanResult) -> Self {
+        let mut v = self.scan_results.unwrap_or_default();
+        v.push(input);
+        self.scan_results = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains the latest scanning results against the recovery point and currently include <code>MalwareScanner</code>, <code>ScanJobState</code>, <code>Findings</code>, and <code>LastScanTimestamp</code></p>
+    pub fn set_scan_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanResult>>) -> Self {
+        self.scan_results = input;
+        self
+    }
+    /// <p>Contains the latest scanning results against the recovery point and currently include <code>MalwareScanner</code>, <code>ScanJobState</code>, <code>Findings</code>, and <code>LastScanTimestamp</code></p>
+    pub fn get_scan_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanResult>> {
+        &self.scan_results
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -744,6 +773,7 @@ impl DescribeRecoveryPointOutputBuilder {
             index_status: self.index_status,
             index_status_message: self.index_status_message,
             encryption_key_type: self.encryption_key_type,
+            scan_results: self.scan_results,
             _request_id: self._request_id,
         }
     }

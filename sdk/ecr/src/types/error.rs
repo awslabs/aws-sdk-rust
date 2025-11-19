@@ -25,6 +25,10 @@ pub use crate::types::error::_unable_to_access_secret_exception::UnableToAccessS
 
 pub use crate::types::error::_secret_not_found_exception::SecretNotFoundException;
 
+pub use crate::types::error::_image_storage_class_update_not_supported_exception::ImageStorageClassUpdateNotSupportedException;
+
+pub use crate::types::error::_image_not_found_exception::ImageNotFoundException;
+
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
 pub use crate::types::error::_invalid_tag_parameter_exception::InvalidTagParameterException;
@@ -35,7 +39,11 @@ pub use crate::types::error::_lifecycle_policy_not_found_exception::LifecyclePol
 
 pub use crate::types::error::_unsupported_image_type_exception::UnsupportedImageTypeException;
 
-pub use crate::types::error::_image_not_found_exception::ImageNotFoundException;
+pub use crate::types::error::_image_archived_exception::ImageArchivedException;
+
+pub use crate::types::error::_exclusion_already_exists_exception::ExclusionAlreadyExistsException;
+
+pub use crate::types::error::_blocked_by_organization_policy_exception::BlockedByOrganizationPolicyException;
 
 pub use crate::types::error::_referenced_images_not_found_exception::ReferencedImagesNotFoundException;
 
@@ -59,6 +67,8 @@ pub use crate::types::error::_layer_inaccessible_exception::LayerInaccessibleExc
 
 pub use crate::types::error::_scan_not_found_exception::ScanNotFoundException;
 
+pub use crate::types::error::_exclusion_not_found_exception::ExclusionNotFoundException;
+
 pub use crate::types::error::_repository_not_empty_exception::RepositoryNotEmptyException;
 
 pub use crate::types::error::_template_already_exists_exception::TemplateAlreadyExistsException;
@@ -79,13 +89,23 @@ pub use crate::types::error::_empty_upload_exception::EmptyUploadException;
 
 pub use crate::types::error::_unable_to_get_upstream_image_exception::UnableToGetUpstreamImageException;
 
+mod _blocked_by_organization_policy_exception;
+
 mod _empty_upload_exception;
 
+mod _exclusion_already_exists_exception;
+
+mod _exclusion_not_found_exception;
+
 mod _image_already_exists_exception;
+
+mod _image_archived_exception;
 
 mod _image_digest_does_not_match_exception;
 
 mod _image_not_found_exception;
+
+mod _image_storage_class_update_not_supported_exception;
 
 mod _image_tag_already_exists_exception;
 

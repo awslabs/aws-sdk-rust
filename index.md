@@ -148,6 +148,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Service Catalog | [aws-sdk-servicecatalog](https://crates.io/crates/aws-sdk-servicecatalog) ([docs](https://docs.rs/aws-sdk-servicecatalog)) |
 | AWS Service Catalog App Registry | [aws-sdk-servicecatalogappregistry](https://crates.io/crates/aws-sdk-servicecatalogappregistry) ([docs](https://docs.rs/aws-sdk-servicecatalogappregistry)) |
 | AWS Shield | [aws-sdk-shield](https://crates.io/crates/aws-sdk-shield) ([docs](https://docs.rs/aws-sdk-shield)) |
+| AWS Sign-In Service | [aws-sdk-signin](https://crates.io/crates/aws-sdk-signin) ([docs](https://docs.rs/aws-sdk-signin)) |
 | AWS Signer | [aws-sdk-signer](https://crates.io/crates/aws-sdk-signer) ([docs](https://docs.rs/aws-sdk-signer)) |
 | AWS SimSpace Weaver | [aws-sdk-simspaceweaver](https://crates.io/crates/aws-sdk-simspaceweaver) ([docs](https://docs.rs/aws-sdk-simspaceweaver)) |
 | AWS Single Sign-On | [aws-sdk-sso](https://crates.io/crates/aws-sdk-sso) ([docs](https://docs.rs/aws-sdk-sso)) |
@@ -390,6 +391,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Migration Hub Strategy Recommendations | [aws-sdk-migrationhubstrategy](https://crates.io/crates/aws-sdk-migrationhubstrategy) ([docs](https://docs.rs/aws-sdk-migrationhubstrategy)) |
 | Network Flow Monitor | [aws-sdk-networkflowmonitor](https://crates.io/crates/aws-sdk-networkflowmonitor) ([docs](https://docs.rs/aws-sdk-networkflowmonitor)) |
 | OpenSearch Service Serverless | [aws-sdk-opensearchserverless](https://crates.io/crates/aws-sdk-opensearchserverless) ([docs](https://docs.rs/aws-sdk-opensearchserverless)) |
+| Partner Central Channel API | [aws-sdk-partnercentralchannel](https://crates.io/crates/aws-sdk-partnercentralchannel) ([docs](https://docs.rs/aws-sdk-partnercentralchannel)) |
 | Partner Central Selling API | [aws-sdk-partnercentralselling](https://crates.io/crates/aws-sdk-partnercentralselling) ([docs](https://docs.rs/aws-sdk-partnercentralselling)) |
 | Payment Cryptography Control Plane | [aws-sdk-paymentcryptography](https://crates.io/crates/aws-sdk-paymentcryptography) ([docs](https://docs.rs/aws-sdk-paymentcryptography)) |
 | Payment Cryptography Data Plane | [aws-sdk-paymentcryptographydata](https://crates.io/crates/aws-sdk-paymentcryptographydata) ([docs](https://docs.rs/aws-sdk-paymentcryptographydata)) |

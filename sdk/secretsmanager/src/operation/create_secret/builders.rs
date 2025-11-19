@@ -342,4 +342,18 @@ impl CreateSecretFluentBuilder {
     pub fn get_force_overwrite_replica_secret(&self) -> &::std::option::Option<bool> {
         self.inner.get_force_overwrite_replica_secret()
     }
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.r#type(input.into());
+        self
+    }
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type()
+    }
 }

@@ -13,7 +13,9 @@
 /// # let perobjectsyncstatus = unimplemented!();
 /// match perobjectsyncstatus {
 ///     PerObjectSyncStatus::CapacityConstrained => { /* ... */ },
+///     PerObjectSyncStatus::Deprecated => { /* ... */ },
 ///     PerObjectSyncStatus::InSync => { /* ... */ },
+///     PerObjectSyncStatus::NotSubscribed => { /* ... */ },
 ///     PerObjectSyncStatus::Pending => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -46,7 +48,11 @@ pub enum PerObjectSyncStatus {
     #[allow(missing_docs)] // documentation missing in model
     CapacityConstrained,
     #[allow(missing_docs)] // documentation missing in model
+    Deprecated,
+    #[allow(missing_docs)] // documentation missing in model
     InSync,
+    #[allow(missing_docs)] // documentation missing in model
+    NotSubscribed,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -57,7 +63,9 @@ impl ::std::convert::From<&str> for PerObjectSyncStatus {
     fn from(s: &str) -> Self {
         match s {
             "CAPACITY_CONSTRAINED" => PerObjectSyncStatus::CapacityConstrained,
+            "DEPRECATED" => PerObjectSyncStatus::Deprecated,
             "IN_SYNC" => PerObjectSyncStatus::InSync,
+            "NOT_SUBSCRIBED" => PerObjectSyncStatus::NotSubscribed,
             "PENDING" => PerObjectSyncStatus::Pending,
             other => PerObjectSyncStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,14 +83,16 @@ impl PerObjectSyncStatus {
     pub fn as_str(&self) -> &str {
         match self {
             PerObjectSyncStatus::CapacityConstrained => "CAPACITY_CONSTRAINED",
+            PerObjectSyncStatus::Deprecated => "DEPRECATED",
             PerObjectSyncStatus::InSync => "IN_SYNC",
+            PerObjectSyncStatus::NotSubscribed => "NOT_SUBSCRIBED",
             PerObjectSyncStatus::Pending => "PENDING",
             PerObjectSyncStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CAPACITY_CONSTRAINED", "IN_SYNC", "PENDING"]
+        &["CAPACITY_CONSTRAINED", "DEPRECATED", "IN_SYNC", "NOT_SUBSCRIBED", "PENDING"]
     }
 }
 impl ::std::convert::AsRef<str> for PerObjectSyncStatus {
@@ -106,7 +116,9 @@ impl ::std::fmt::Display for PerObjectSyncStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PerObjectSyncStatus::CapacityConstrained => write!(f, "CAPACITY_CONSTRAINED"),
+            PerObjectSyncStatus::Deprecated => write!(f, "DEPRECATED"),
             PerObjectSyncStatus::InSync => write!(f, "IN_SYNC"),
+            PerObjectSyncStatus::NotSubscribed => write!(f, "NOT_SUBSCRIBED"),
             PerObjectSyncStatus::Pending => write!(f, "PENDING"),
             PerObjectSyncStatus::Unknown(value) => write!(f, "{value}"),
         }

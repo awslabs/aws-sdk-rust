@@ -9,6 +9,8 @@ pub struct ListBillingViewsInput {
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of billing view.</p>
     pub billing_view_types: ::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>>,
+    /// <p>Filters the list of billing views by name. You can specify search criteria to match billing view names based on the search option provided.</p>
+    pub names: ::std::option::Option<::std::vec::Vec<crate::types::StringSearch>>,
     /// <p>The list of owners of the billing view.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results to include only billing views that use the specified account as a source.</p>
@@ -34,6 +36,12 @@ impl ListBillingViewsInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_view_types.is_none()`.
     pub fn billing_view_types(&self) -> &[crate::types::BillingViewType] {
         self.billing_view_types.as_deref().unwrap_or_default()
+    }
+    /// <p>Filters the list of billing views by name. You can specify search criteria to match billing view names based on the search option provided.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[crate::types::StringSearch] {
+        self.names.as_deref().unwrap_or_default()
     }
     /// <p>The list of owners of the billing view.</p>
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
@@ -66,6 +74,7 @@ pub struct ListBillingViewsInputBuilder {
     pub(crate) active_time_range: ::std::option::Option<crate::types::ActiveTimeRange>,
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) billing_view_types: ::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>>,
+    pub(crate) names: ::std::option::Option<::std::vec::Vec<crate::types::StringSearch>>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -125,6 +134,26 @@ impl ListBillingViewsInputBuilder {
     /// <p>The type of billing view.</p>
     pub fn get_billing_view_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>> {
         &self.billing_view_types
+    }
+    /// Appends an item to `names`.
+    ///
+    /// To override the contents of this collection use [`set_names`](Self::set_names).
+    ///
+    /// <p>Filters the list of billing views by name. You can specify search criteria to match billing view names based on the search option provided.</p>
+    pub fn names(mut self, input: crate::types::StringSearch) -> Self {
+        let mut v = self.names.unwrap_or_default();
+        v.push(input);
+        self.names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filters the list of billing views by name. You can specify search criteria to match billing view names based on the search option provided.</p>
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringSearch>>) -> Self {
+        self.names = input;
+        self
+    }
+    /// <p>Filters the list of billing views by name. You can specify search criteria to match billing view names based on the search option provided.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringSearch>> {
+        &self.names
     }
     /// <p>The list of owners of the billing view.</p>
     pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -190,6 +219,7 @@ impl ListBillingViewsInputBuilder {
             active_time_range: self.active_time_range,
             arns: self.arns,
             billing_view_types: self.billing_view_types,
+            names: self.names,
             owner_account_id: self.owner_account_id,
             source_account_id: self.source_account_id,
             max_results: self.max_results,

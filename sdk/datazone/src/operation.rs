@@ -19,6 +19,12 @@ pub mod associate_environment_role;
 /// Types for the `AssociateGovernedTerms` operation.
 pub mod associate_governed_terms;
 
+/// Types for the `BatchGetAttributesMetadata` operation.
+pub mod batch_get_attributes_metadata;
+
+/// Types for the `BatchPutAttributesMetadata` operation.
+pub mod batch_put_attributes_metadata;
+
 /// Types for the `CancelMetadataGenerationRun` operation.
 pub mod cancel_metadata_generation_run;
 
@@ -492,6 +498,9 @@ pub mod update_project;
 
 /// Types for the `UpdateProjectProfile` operation.
 pub mod update_project_profile;
+
+/// Types for the `UpdateRootDomainUnitOwner` operation.
+pub mod update_root_domain_unit_owner;
 
 /// Types for the `UpdateRule` operation.
 pub mod update_rule;

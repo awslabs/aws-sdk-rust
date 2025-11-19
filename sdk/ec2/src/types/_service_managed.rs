@@ -14,6 +14,7 @@
 /// match servicemanaged {
 ///     ServiceManaged::Alb => { /* ... */ },
 ///     ServiceManaged::Nlb => { /* ... */ },
+///     ServiceManaged::Rds => { /* ... */ },
 ///     ServiceManaged::Rnat => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum ServiceManaged {
     #[allow(missing_docs)] // documentation missing in model
     Nlb,
     #[allow(missing_docs)] // documentation missing in model
+    Rds,
+    #[allow(missing_docs)] // documentation missing in model
     Rnat,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for ServiceManaged {
         match s {
             "alb" => ServiceManaged::Alb,
             "nlb" => ServiceManaged::Nlb,
+            "rds" => ServiceManaged::Rds,
             "rnat" => ServiceManaged::Rnat,
             other => ServiceManaged::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl ServiceManaged {
         match self {
             ServiceManaged::Alb => "alb",
             ServiceManaged::Nlb => "nlb",
+            ServiceManaged::Rds => "rds",
             ServiceManaged::Rnat => "rnat",
             ServiceManaged::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["alb", "nlb", "rnat"]
+        &["alb", "nlb", "rds", "rnat"]
     }
 }
 impl ::std::convert::AsRef<str> for ServiceManaged {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for ServiceManaged {
         match self {
             ServiceManaged::Alb => write!(f, "alb"),
             ServiceManaged::Nlb => write!(f, "nlb"),
+            ServiceManaged::Rds => write!(f, "rds"),
             ServiceManaged::Rnat => write!(f, "rnat"),
             ServiceManaged::Unknown(value) => write!(f, "{value}"),
         }

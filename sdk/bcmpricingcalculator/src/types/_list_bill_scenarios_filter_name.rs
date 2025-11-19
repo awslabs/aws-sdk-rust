@@ -12,6 +12,8 @@
 /// ```text
 /// # let listbillscenariosfiltername = unimplemented!();
 /// match listbillscenariosfiltername {
+///     ListBillScenariosFilterName::CostCategoryArn => { /* ... */ },
+///     ListBillScenariosFilterName::GroupSharingPreference => { /* ... */ },
 ///     ListBillScenariosFilterName::Name => { /* ... */ },
 ///     ListBillScenariosFilterName::Status => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +45,10 @@
 )]
 pub enum ListBillScenariosFilterName {
     #[allow(missing_docs)] // documentation missing in model
+    CostCategoryArn,
+    #[allow(missing_docs)] // documentation missing in model
+    GroupSharingPreference,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
     #[allow(missing_docs)] // documentation missing in model
     Status,
@@ -53,6 +59,8 @@ pub enum ListBillScenariosFilterName {
 impl ::std::convert::From<&str> for ListBillScenariosFilterName {
     fn from(s: &str) -> Self {
         match s {
+            "COST_CATEGORY_ARN" => ListBillScenariosFilterName::CostCategoryArn,
+            "GROUP_SHARING_PREFERENCE" => ListBillScenariosFilterName::GroupSharingPreference,
             "NAME" => ListBillScenariosFilterName::Name,
             "STATUS" => ListBillScenariosFilterName::Status,
             other => ListBillScenariosFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +78,8 @@ impl ListBillScenariosFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ListBillScenariosFilterName::CostCategoryArn => "COST_CATEGORY_ARN",
+            ListBillScenariosFilterName::GroupSharingPreference => "GROUP_SHARING_PREFERENCE",
             ListBillScenariosFilterName::Name => "NAME",
             ListBillScenariosFilterName::Status => "STATUS",
             ListBillScenariosFilterName::Unknown(value) => value.as_str(),
@@ -77,7 +87,7 @@ impl ListBillScenariosFilterName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NAME", "STATUS"]
+        &["COST_CATEGORY_ARN", "GROUP_SHARING_PREFERENCE", "NAME", "STATUS"]
     }
 }
 impl ::std::convert::AsRef<str> for ListBillScenariosFilterName {
@@ -100,6 +110,8 @@ impl ListBillScenariosFilterName {
 impl ::std::fmt::Display for ListBillScenariosFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ListBillScenariosFilterName::CostCategoryArn => write!(f, "COST_CATEGORY_ARN"),
+            ListBillScenariosFilterName::GroupSharingPreference => write!(f, "GROUP_SHARING_PREFERENCE"),
             ListBillScenariosFilterName::Name => write!(f, "NAME"),
             ListBillScenariosFilterName::Status => write!(f, "STATUS"),
             ListBillScenariosFilterName::Unknown(value) => write!(f, "{value}"),

@@ -167,6 +167,8 @@ mod get_preferences;
 
 mod get_recommendation;
 
+mod list_efficiency_metrics;
+
 mod list_enrollment_statuses;
 
 mod list_recommendation_summaries;

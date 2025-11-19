@@ -158,6 +158,61 @@ pub fn de_nat_gateway(
                 builder = builder.set_connectivity_type(var_12);
             }
             ,
+            s if s.matches("availabilityMode") /* AvailabilityMode com.amazonaws.ec2#NatGateway$AvailabilityMode */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<crate::types::AvailabilityMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AvailabilityMode::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_mode(var_13);
+            }
+            ,
+            s if s.matches("autoScalingIps") /* AutoScalingIps com.amazonaws.ec2#NatGateway$AutoScalingIps */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<crate::types::AutoScalingIpsState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AutoScalingIpsState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_auto_scaling_ips(var_14);
+            }
+            ,
+            s if s.matches("autoProvisionZones") /* AutoProvisionZones com.amazonaws.ec2#NatGateway$AutoProvisionZones */ =>  {
+                let var_15 =
+                    Some(
+                        Result::<crate::types::AutoProvisionZonesState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AutoProvisionZonesState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_auto_provision_zones(var_15);
+            }
+            ,
+            s if s.matches("routeTableId") /* RouteTableId com.amazonaws.ec2#NatGateway$RouteTableId */ =>  {
+                let var_16 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_route_table_id(var_16);
+            }
+            ,
             _ => {}
         }
     }

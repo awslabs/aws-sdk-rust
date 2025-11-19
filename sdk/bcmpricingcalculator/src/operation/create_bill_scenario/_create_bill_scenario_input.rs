@@ -9,6 +9,10 @@ pub struct CreateBillScenarioInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the bill scenario.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub group_sharing_preference: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>,
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub cost_category_group_sharing_preference_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateBillScenarioInput {
     /// <p>A descriptive name for the bill scenario.</p>
@@ -22,6 +26,14 @@ impl CreateBillScenarioInput {
     /// <p>The tags to apply to the bill scenario.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn group_sharing_preference(&self) -> ::std::option::Option<&crate::types::GroupSharingPreferenceEnum> {
+        self.group_sharing_preference.as_ref()
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn cost_category_group_sharing_preference_arn(&self) -> ::std::option::Option<&str> {
+        self.cost_category_group_sharing_preference_arn.as_deref()
     }
 }
 impl CreateBillScenarioInput {
@@ -38,6 +50,8 @@ pub struct CreateBillScenarioInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) group_sharing_preference: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>,
+    pub(crate) cost_category_group_sharing_preference_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateBillScenarioInputBuilder {
     /// <p>A descriptive name for the bill scenario.</p>
@@ -89,6 +103,34 @@ impl CreateBillScenarioInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn group_sharing_preference(mut self, input: crate::types::GroupSharingPreferenceEnum) -> Self {
+        self.group_sharing_preference = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn set_group_sharing_preference(mut self, input: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>) -> Self {
+        self.group_sharing_preference = input;
+        self
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn get_group_sharing_preference(&self) -> &::std::option::Option<crate::types::GroupSharingPreferenceEnum> {
+        &self.group_sharing_preference
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn cost_category_group_sharing_preference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cost_category_group_sharing_preference_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn set_cost_category_group_sharing_preference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cost_category_group_sharing_preference_arn = input;
+        self
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn get_cost_category_group_sharing_preference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cost_category_group_sharing_preference_arn
+    }
     /// Consumes the builder and constructs a [`CreateBillScenarioInput`](crate::operation::create_bill_scenario::CreateBillScenarioInput).
     pub fn build(
         self,
@@ -98,6 +140,8 @@ impl CreateBillScenarioInputBuilder {
             name: self.name,
             client_token: self.client_token,
             tags: self.tags,
+            group_sharing_preference: self.group_sharing_preference,
+            cost_category_group_sharing_preference_arn: self.cost_category_group_sharing_preference_arn,
         })
     }
 }

@@ -13,6 +13,7 @@
 /// # let flowlogsresourcetype = unimplemented!();
 /// match flowlogsresourcetype {
 ///     FlowLogsResourceType::NetworkInterface => { /* ... */ },
+///     FlowLogsResourceType::RegionalNatGateway => { /* ... */ },
 ///     FlowLogsResourceType::Subnet => { /* ... */ },
 ///     FlowLogsResourceType::TransitGateway => { /* ... */ },
 ///     FlowLogsResourceType::TransitGatewayAttachment => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum FlowLogsResourceType {
     #[allow(missing_docs)] // documentation missing in model
     NetworkInterface,
     #[allow(missing_docs)] // documentation missing in model
+    RegionalNatGateway,
+    #[allow(missing_docs)] // documentation missing in model
     Subnet,
     #[allow(missing_docs)] // documentation missing in model
     TransitGateway,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for FlowLogsResourceType {
     fn from(s: &str) -> Self {
         match s {
             "NetworkInterface" => FlowLogsResourceType::NetworkInterface,
+            "RegionalNatGateway" => FlowLogsResourceType::RegionalNatGateway,
             "Subnet" => FlowLogsResourceType::Subnet,
             "TransitGateway" => FlowLogsResourceType::TransitGateway,
             "TransitGatewayAttachment" => FlowLogsResourceType::TransitGatewayAttachment,
@@ -83,6 +87,7 @@ impl FlowLogsResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             FlowLogsResourceType::NetworkInterface => "NetworkInterface",
+            FlowLogsResourceType::RegionalNatGateway => "RegionalNatGateway",
             FlowLogsResourceType::Subnet => "Subnet",
             FlowLogsResourceType::TransitGateway => "TransitGateway",
             FlowLogsResourceType::TransitGatewayAttachment => "TransitGatewayAttachment",
@@ -92,7 +97,14 @@ impl FlowLogsResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NetworkInterface", "Subnet", "TransitGateway", "TransitGatewayAttachment", "VPC"]
+        &[
+            "NetworkInterface",
+            "RegionalNatGateway",
+            "Subnet",
+            "TransitGateway",
+            "TransitGatewayAttachment",
+            "VPC",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for FlowLogsResourceType {
@@ -116,6 +128,7 @@ impl ::std::fmt::Display for FlowLogsResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FlowLogsResourceType::NetworkInterface => write!(f, "NetworkInterface"),
+            FlowLogsResourceType::RegionalNatGateway => write!(f, "RegionalNatGateway"),
             FlowLogsResourceType::Subnet => write!(f, "Subnet"),
             FlowLogsResourceType::TransitGateway => write!(f, "TransitGateway"),
             FlowLogsResourceType::TransitGatewayAttachment => write!(f, "TransitGatewayAttachment"),

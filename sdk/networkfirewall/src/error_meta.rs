@@ -1721,6 +1721,9 @@ impl From<crate::operation::update_firewall_analysis_settings::UpdateFirewallAna
             crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
+            crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError::InvalidTokenException(inner) => {
+                Error::InvalidTokenException(inner)
+            }
             crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }

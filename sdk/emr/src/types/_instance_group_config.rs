@@ -10,7 +10,7 @@ pub struct InstanceGroupConfig {
     pub market: ::std::option::Option<crate::types::MarketType>,
     /// <p>The role of the instance group in the cluster.</p>
     pub instance_role: ::std::option::Option<crate::types::InstanceRoleType>,
-    /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub bid_price: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
@@ -41,7 +41,7 @@ impl InstanceGroupConfig {
     pub fn instance_role(&self) -> ::std::option::Option<&crate::types::InstanceRoleType> {
         self.instance_role.as_ref()
     }
-    /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn bid_price(&self) -> ::std::option::Option<&str> {
         self.bid_price.as_deref()
     }
@@ -141,17 +141,17 @@ impl InstanceGroupConfigBuilder {
     pub fn get_instance_role(&self) -> &::std::option::Option<crate::types::InstanceRoleType> {
         &self.instance_role
     }
-    /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn bid_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bid_price = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn set_bid_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bid_price = input;
         self
     }
-    /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn get_bid_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.bid_price
     }

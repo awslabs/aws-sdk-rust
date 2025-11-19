@@ -178,6 +178,27 @@ pub(crate) fn de_describe_rule_group_metadata(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "VendorName" => {
+                    builder = builder.set_vendor_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ProductId" => {
+                    builder = builder.set_product_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ListingName" => {
+                    builder = builder.set_listing_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

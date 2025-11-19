@@ -3,6 +3,8 @@ pub use crate::types::_validation_errors_entry::ValidationErrorsEntryBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_external_secret_rotation_metadata_item::ExternalSecretRotationMetadataItemBuilder;
+
 pub use crate::types::_rotation_rules_type::RotationRulesTypeBuilder;
 
 pub use crate::types::_replication_status_type::ReplicationStatusTypeBuilder;

@@ -272,6 +272,125 @@ impl From<crate::operation::create_model::CreateModelError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_portal::CreatePortalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_portal::CreatePortalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_portal::CreatePortalError> for Error {
+    fn from(err: crate::operation::create_portal::CreatePortalError) -> Self {
+        match err {
+            crate::operation::create_portal::CreatePortalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_portal::CreatePortalError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_portal::CreatePortalError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_portal::CreatePortalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_portal_product::CreatePortalProductError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_portal_product::CreatePortalProductError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_portal_product::CreatePortalProductError> for Error {
+    fn from(err: crate::operation::create_portal_product::CreatePortalProductError) -> Self {
+        match err {
+            crate::operation::create_portal_product::CreatePortalProductError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_portal_product::CreatePortalProductError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_portal_product::CreatePortalProductError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_portal_product::CreatePortalProductError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_product_page::CreateProductPageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_product_page::CreateProductPageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_product_page::CreateProductPageError> for Error {
+    fn from(err: crate::operation::create_product_page::CreateProductPageError) -> Self {
+        match err {
+            crate::operation::create_product_page::CreateProductPageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_product_page::CreateProductPageError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_product_page::CreateProductPageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_product_page::CreateProductPageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_product_page::CreateProductPageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_product_rest_endpoint_page::CreateProductRestEndpointPageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_product_rest_endpoint_page::CreateProductRestEndpointPageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_product_rest_endpoint_page::CreateProductRestEndpointPageError> for Error {
+    fn from(err: crate::operation::create_product_rest_endpoint_page::CreateProductRestEndpointPageError) -> Self {
+        match err {
+            crate::operation::create_product_rest_endpoint_page::CreateProductRestEndpointPageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_product_rest_endpoint_page::CreateProductRestEndpointPageError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_product_rest_endpoint_page::CreateProductRestEndpointPageError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::create_product_rest_endpoint_page::CreateProductRestEndpointPageError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_product_rest_endpoint_page::CreateProductRestEndpointPageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_route::CreateRouteError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -645,6 +764,172 @@ impl From<crate::operation::delete_model::DeleteModelError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_portal::DeletePortalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_portal::DeletePortalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_portal::DeletePortalError> for Error {
+    fn from(err: crate::operation::delete_portal::DeletePortalError) -> Self {
+        match err {
+            crate::operation::delete_portal::DeletePortalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_portal::DeletePortalError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_portal::DeletePortalError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_portal::DeletePortalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_portal_product::DeletePortalProductError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_portal_product::DeletePortalProductError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_portal_product::DeletePortalProductError> for Error {
+    fn from(err: crate::operation::delete_portal_product::DeletePortalProductError) -> Self {
+        match err {
+            crate::operation::delete_portal_product::DeletePortalProductError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_portal_product::DeletePortalProductError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_portal_product::DeletePortalProductError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_portal_product::DeletePortalProductError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_portal_product::DeletePortalProductError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_portal_product_sharing_policy::DeletePortalProductSharingPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_portal_product_sharing_policy::DeletePortalProductSharingPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_portal_product_sharing_policy::DeletePortalProductSharingPolicyError> for Error {
+    fn from(err: crate::operation::delete_portal_product_sharing_policy::DeletePortalProductSharingPolicyError) -> Self {
+        match err {
+            crate::operation::delete_portal_product_sharing_policy::DeletePortalProductSharingPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_portal_product_sharing_policy::DeletePortalProductSharingPolicyError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_portal_product_sharing_policy::DeletePortalProductSharingPolicyError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_portal_product_sharing_policy::DeletePortalProductSharingPolicyError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_portal_product_sharing_policy::DeletePortalProductSharingPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_product_page::DeleteProductPageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_product_page::DeleteProductPageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_product_page::DeleteProductPageError> for Error {
+    fn from(err: crate::operation::delete_product_page::DeleteProductPageError) -> Self {
+        match err {
+            crate::operation::delete_product_page::DeleteProductPageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_product_page::DeleteProductPageError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_product_page::DeleteProductPageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_product_page::DeleteProductPageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_product_page::DeleteProductPageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_product_rest_endpoint_page::DeleteProductRestEndpointPageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_product_rest_endpoint_page::DeleteProductRestEndpointPageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_product_rest_endpoint_page::DeleteProductRestEndpointPageError> for Error {
+    fn from(err: crate::operation::delete_product_rest_endpoint_page::DeleteProductRestEndpointPageError) -> Self {
+        match err {
+            crate::operation::delete_product_rest_endpoint_page::DeleteProductRestEndpointPageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_product_rest_endpoint_page::DeleteProductRestEndpointPageError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_product_rest_endpoint_page::DeleteProductRestEndpointPageError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_product_rest_endpoint_page::DeleteProductRestEndpointPageError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_product_rest_endpoint_page::DeleteProductRestEndpointPageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_route::DeleteRouteError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -819,6 +1104,32 @@ impl From<crate::operation::delete_vpc_link::DeleteVpcLinkError> for Error {
             crate::operation::delete_vpc_link::DeleteVpcLinkError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_vpc_link::DeleteVpcLinkError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_vpc_link::DeleteVpcLinkError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_portal::DisablePortalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_portal::DisablePortalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_portal::DisablePortalError> for Error {
+    fn from(err: crate::operation::disable_portal::DisablePortalError) -> Self {
+        match err {
+            crate::operation::disable_portal::DisablePortalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disable_portal::DisablePortalError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::disable_portal::DisablePortalError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disable_portal::DisablePortalError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::disable_portal::DisablePortalError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::disable_portal::DisablePortalError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1257,6 +1568,161 @@ impl From<crate::operation::get_model_template::GetModelTemplateError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_portal::GetPortalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_portal::GetPortalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_portal::GetPortalError> for Error {
+    fn from(err: crate::operation::get_portal::GetPortalError) -> Self {
+        match err {
+            crate::operation::get_portal::GetPortalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_portal::GetPortalError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_portal::GetPortalError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_portal::GetPortalError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_portal::GetPortalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_portal_product::GetPortalProductError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_portal_product::GetPortalProductError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_portal_product::GetPortalProductError> for Error {
+    fn from(err: crate::operation::get_portal_product::GetPortalProductError) -> Self {
+        match err {
+            crate::operation::get_portal_product::GetPortalProductError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_portal_product::GetPortalProductError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_portal_product::GetPortalProductError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_portal_product::GetPortalProductError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_portal_product::GetPortalProductError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_portal_product_sharing_policy::GetPortalProductSharingPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_portal_product_sharing_policy::GetPortalProductSharingPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_portal_product_sharing_policy::GetPortalProductSharingPolicyError> for Error {
+    fn from(err: crate::operation::get_portal_product_sharing_policy::GetPortalProductSharingPolicyError) -> Self {
+        match err {
+            crate::operation::get_portal_product_sharing_policy::GetPortalProductSharingPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_portal_product_sharing_policy::GetPortalProductSharingPolicyError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_portal_product_sharing_policy::GetPortalProductSharingPolicyError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_portal_product_sharing_policy::GetPortalProductSharingPolicyError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_portal_product_sharing_policy::GetPortalProductSharingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_product_page::GetProductPageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_product_page::GetProductPageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_product_page::GetProductPageError> for Error {
+    fn from(err: crate::operation::get_product_page::GetProductPageError) -> Self {
+        match err {
+            crate::operation::get_product_page::GetProductPageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_product_page::GetProductPageError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_product_page::GetProductPageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_product_page::GetProductPageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_product_page::GetProductPageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_product_rest_endpoint_page::GetProductRestEndpointPageError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_product_rest_endpoint_page::GetProductRestEndpointPageError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_product_rest_endpoint_page::GetProductRestEndpointPageError> for Error {
+    fn from(err: crate::operation::get_product_rest_endpoint_page::GetProductRestEndpointPageError) -> Self {
+        match err {
+            crate::operation::get_product_rest_endpoint_page::GetProductRestEndpointPageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_product_rest_endpoint_page::GetProductRestEndpointPageError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_product_rest_endpoint_page::GetProductRestEndpointPageError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_product_rest_endpoint_page::GetProductRestEndpointPageError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_product_rest_endpoint_page::GetProductRestEndpointPageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_route::GetRouteError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1518,6 +1984,121 @@ impl From<crate::operation::import_api::ImportApiError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_portal_products::ListPortalProductsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_portal_products::ListPortalProductsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_portal_products::ListPortalProductsError> for Error {
+    fn from(err: crate::operation::list_portal_products::ListPortalProductsError) -> Self {
+        match err {
+            crate::operation::list_portal_products::ListPortalProductsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_portal_products::ListPortalProductsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_portal_products::ListPortalProductsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_portal_products::ListPortalProductsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_portals::ListPortalsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_portals::ListPortalsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_portals::ListPortalsError> for Error {
+    fn from(err: crate::operation::list_portals::ListPortalsError) -> Self {
+        match err {
+            crate::operation::list_portals::ListPortalsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_portals::ListPortalsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_portals::ListPortalsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_portals::ListPortalsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_product_pages::ListProductPagesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_product_pages::ListProductPagesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_product_pages::ListProductPagesError> for Error {
+    fn from(err: crate::operation::list_product_pages::ListProductPagesError) -> Self {
+        match err {
+            crate::operation::list_product_pages::ListProductPagesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_product_pages::ListProductPagesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_product_pages::ListProductPagesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_product_pages::ListProductPagesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_product_pages::ListProductPagesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_product_rest_endpoint_pages::ListProductRestEndpointPagesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_product_rest_endpoint_pages::ListProductRestEndpointPagesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_product_rest_endpoint_pages::ListProductRestEndpointPagesError> for Error {
+    fn from(err: crate::operation::list_product_rest_endpoint_pages::ListProductRestEndpointPagesError) -> Self {
+        match err {
+            crate::operation::list_product_rest_endpoint_pages::ListProductRestEndpointPagesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_product_rest_endpoint_pages::ListProductRestEndpointPagesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_product_rest_endpoint_pages::ListProductRestEndpointPagesError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_product_rest_endpoint_pages::ListProductRestEndpointPagesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_product_rest_endpoint_pages::ListProductRestEndpointPagesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_routing_rules::ListRoutingRulesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1539,6 +2120,102 @@ impl From<crate::operation::list_routing_rules::ListRoutingRulesError> for Error
             crate::operation::list_routing_rules::ListRoutingRulesError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::list_routing_rules::ListRoutingRulesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_routing_rules::ListRoutingRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::preview_portal::PreviewPortalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::preview_portal::PreviewPortalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::preview_portal::PreviewPortalError> for Error {
+    fn from(err: crate::operation::preview_portal::PreviewPortalError) -> Self {
+        match err {
+            crate::operation::preview_portal::PreviewPortalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::preview_portal::PreviewPortalError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::preview_portal::PreviewPortalError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::preview_portal::PreviewPortalError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::preview_portal::PreviewPortalError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::preview_portal::PreviewPortalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_portal::PublishPortalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_portal::PublishPortalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::publish_portal::PublishPortalError> for Error {
+    fn from(err: crate::operation::publish_portal::PublishPortalError) -> Self {
+        match err {
+            crate::operation::publish_portal::PublishPortalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::publish_portal::PublishPortalError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::publish_portal::PublishPortalError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::publish_portal::PublishPortalError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::publish_portal::PublishPortalError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::publish_portal::PublishPortalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_portal_product_sharing_policy::PutPortalProductSharingPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_portal_product_sharing_policy::PutPortalProductSharingPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_portal_product_sharing_policy::PutPortalProductSharingPolicyError> for Error {
+    fn from(err: crate::operation::put_portal_product_sharing_policy::PutPortalProductSharingPolicyError) -> Self {
+        match err {
+            crate::operation::put_portal_product_sharing_policy::PutPortalProductSharingPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_portal_product_sharing_policy::PutPortalProductSharingPolicyError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_portal_product_sharing_policy::PutPortalProductSharingPolicyError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::put_portal_product_sharing_policy::PutPortalProductSharingPolicyError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_portal_product_sharing_policy::PutPortalProductSharingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1877,6 +2554,128 @@ impl From<crate::operation::update_model::UpdateModelError> for Error {
             crate::operation::update_model::UpdateModelError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::update_model::UpdateModelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_model::UpdateModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_portal::UpdatePortalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_portal::UpdatePortalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_portal::UpdatePortalError> for Error {
+    fn from(err: crate::operation::update_portal::UpdatePortalError) -> Self {
+        match err {
+            crate::operation::update_portal::UpdatePortalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_portal::UpdatePortalError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_portal::UpdatePortalError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_portal::UpdatePortalError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_portal::UpdatePortalError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_portal::UpdatePortalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_portal_product::UpdatePortalProductError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_portal_product::UpdatePortalProductError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_portal_product::UpdatePortalProductError> for Error {
+    fn from(err: crate::operation::update_portal_product::UpdatePortalProductError) -> Self {
+        match err {
+            crate::operation::update_portal_product::UpdatePortalProductError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_portal_product::UpdatePortalProductError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_portal_product::UpdatePortalProductError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_portal_product::UpdatePortalProductError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_portal_product::UpdatePortalProductError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_product_page::UpdateProductPageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_product_page::UpdateProductPageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_product_page::UpdateProductPageError> for Error {
+    fn from(err: crate::operation::update_product_page::UpdateProductPageError) -> Self {
+        match err {
+            crate::operation::update_product_page::UpdateProductPageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_product_page::UpdateProductPageError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_product_page::UpdateProductPageError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_product_page::UpdateProductPageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_product_page::UpdateProductPageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_product_rest_endpoint_page::UpdateProductRestEndpointPageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_product_rest_endpoint_page::UpdateProductRestEndpointPageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_product_rest_endpoint_page::UpdateProductRestEndpointPageError> for Error {
+    fn from(err: crate::operation::update_product_rest_endpoint_page::UpdateProductRestEndpointPageError) -> Self {
+        match err {
+            crate::operation::update_product_rest_endpoint_page::UpdateProductRestEndpointPageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_product_rest_endpoint_page::UpdateProductRestEndpointPageError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_product_rest_endpoint_page::UpdateProductRestEndpointPageError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_product_rest_endpoint_page::UpdateProductRestEndpointPageError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_product_rest_endpoint_page::UpdateProductRestEndpointPageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

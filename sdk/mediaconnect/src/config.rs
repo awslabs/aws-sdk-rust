@@ -206,6 +206,22 @@ impl Builder {
         self.config.store_or_unset(stalled_stream_protection_config);
         self
     }
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn idempotency_token_provider(
+        mut self,
+        idempotency_token_provider: impl ::std::convert::Into<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> Self {
+        self.set_idempotency_token_provider(::std::option::Option::Some(idempotency_token_provider.into()));
+        self
+    }
+    /// Sets the idempotency token provider to use for service calls that require tokens.
+    pub fn set_idempotency_token_provider(
+        &mut self,
+        idempotency_token_provider: ::std::option::Option<crate::idempotency_token::IdempotencyTokenProvider>,
+    ) -> &mut Self {
+        self.config.store_or_unset(idempotency_token_provider);
+        self
+    }
     /// Sets the HTTP client to use when making requests.
     ///
     /// # Examples
@@ -1212,6 +1228,7 @@ impl Builder {
     #[allow(unused_mut)]
     /// Apply test defaults to the builder. NOTE: Consider migrating to use `apply_test_defaults_v2` instead.
     pub fn apply_test_defaults(&mut self) -> &mut Self {
+        self.set_idempotency_token_provider(Some("00000000-0000-4000-8000-000000000000".into()));
         self.set_time_source(::std::option::Option::Some(::aws_smithy_async::time::SharedTimeSource::new(
             ::aws_smithy_async::time::StaticTimeSource::new(::std::time::UNIX_EPOCH + ::std::time::Duration::from_secs(1234567890)),
         )));
@@ -1281,6 +1298,7 @@ impl ServiceRuntimePlugin {
     pub fn new(_service_config: crate::config::Config) -> Self {
         let config = {
             let mut cfg = ::aws_smithy_types::config_bag::Layer::new("MediaConnect");
+            cfg.store_put(crate::idempotency_token::default_provider());
             cfg.store_put(::aws_smithy_runtime::client::orchestrator::AuthSchemeAndEndpointOrchestrationV2);
             ::std::option::Option::Some(cfg.freeze())
         };

@@ -112,6 +112,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "FsrmConfiguration" => {
+                            builder = builder.set_fsrm_configuration(
+                                crate::protocol_serde::shape_windows_fsrm_configuration::de_windows_fsrm_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

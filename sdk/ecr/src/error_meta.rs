@@ -3,14 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>The operation did not succeed because the account is managed by a organization policy.</p>
+    BlockedByOrganizationPolicyException(crate::types::error::BlockedByOrganizationPolicyException),
     /// <p>The specified layer upload does not contain any layer parts.</p>
     EmptyUploadException(crate::types::error::EmptyUploadException),
+    /// <p>The specified pull time update exclusion already exists for the registry.</p>
+    ExclusionAlreadyExistsException(crate::types::error::ExclusionAlreadyExistsException),
+    /// <p>The specified pull time update exclusion was not found.</p>
+    ExclusionNotFoundException(crate::types::error::ExclusionNotFoundException),
     /// <p>The specified image has already been pushed, and there were no changes to the manifest or image tag after the last push.</p>
     ImageAlreadyExistsException(crate::types::error::ImageAlreadyExistsException),
+    /// <p>The specified image is archived and cannot be scanned.</p>
+    ImageArchivedException(crate::types::error::ImageArchivedException),
     /// <p>The specified image digest does not match the digest that Amazon ECR calculated for the image.</p>
     ImageDigestDoesNotMatchException(crate::types::error::ImageDigestDoesNotMatchException),
     /// <p>The image requested does not exist in the specified repository.</p>
     ImageNotFoundException(crate::types::error::ImageNotFoundException),
+    /// <p>The requested image storage class update is not supported.</p>
+    ImageStorageClassUpdateNotSupportedException(crate::types::error::ImageStorageClassUpdateNotSupportedException),
     /// <p>The specified image is tagged with a tag that already exists. The repository is configured for tag immutability.</p>
     ImageTagAlreadyExistsException(crate::types::error::ImageTagAlreadyExistsException),
     /// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the digest specified.</p>
@@ -95,10 +105,15 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::BlockedByOrganizationPolicyException(inner) => inner.fmt(f),
             Error::EmptyUploadException(inner) => inner.fmt(f),
+            Error::ExclusionAlreadyExistsException(inner) => inner.fmt(f),
+            Error::ExclusionNotFoundException(inner) => inner.fmt(f),
             Error::ImageAlreadyExistsException(inner) => inner.fmt(f),
+            Error::ImageArchivedException(inner) => inner.fmt(f),
             Error::ImageDigestDoesNotMatchException(inner) => inner.fmt(f),
             Error::ImageNotFoundException(inner) => inner.fmt(f),
+            Error::ImageStorageClassUpdateNotSupportedException(inner) => inner.fmt(f),
             Error::ImageTagAlreadyExistsException(inner) => inner.fmt(f),
             Error::InvalidLayerException(inner) => inner.fmt(f),
             Error::InvalidLayerPartException(inner) => inner.fmt(f),
@@ -156,10 +171,15 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::BlockedByOrganizationPolicyException(inner) => inner.meta(),
             Self::EmptyUploadException(inner) => inner.meta(),
+            Self::ExclusionAlreadyExistsException(inner) => inner.meta(),
+            Self::ExclusionNotFoundException(inner) => inner.meta(),
             Self::ImageAlreadyExistsException(inner) => inner.meta(),
+            Self::ImageArchivedException(inner) => inner.meta(),
             Self::ImageDigestDoesNotMatchException(inner) => inner.meta(),
             Self::ImageNotFoundException(inner) => inner.meta(),
+            Self::ImageStorageClassUpdateNotSupportedException(inner) => inner.meta(),
             Self::ImageTagAlreadyExistsException(inner) => inner.meta(),
             Self::InvalidLayerException(inner) => inner.meta(),
             Self::InvalidLayerPartException(inner) => inner.meta(),
@@ -706,6 +726,55 @@ impl From<crate::operation::delete_repository_policy::DeleteRepositoryPolicyErro
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::deregister_pull_time_update_exclusion::DeregisterPullTimeUpdateExclusionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::deregister_pull_time_update_exclusion::DeregisterPullTimeUpdateExclusionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::deregister_pull_time_update_exclusion::DeregisterPullTimeUpdateExclusionError> for Error {
+    fn from(err: crate::operation::deregister_pull_time_update_exclusion::DeregisterPullTimeUpdateExclusionError) -> Self {
+        match err {
+            crate::operation::deregister_pull_time_update_exclusion::DeregisterPullTimeUpdateExclusionError::ExclusionNotFoundException(inner) => {
+                Error::ExclusionNotFoundException(inner)
+            }
+            crate::operation::deregister_pull_time_update_exclusion::DeregisterPullTimeUpdateExclusionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::deregister_pull_time_update_exclusion::DeregisterPullTimeUpdateExclusionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::deregister_pull_time_update_exclusion::DeregisterPullTimeUpdateExclusionError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::deregister_pull_time_update_exclusion::DeregisterPullTimeUpdateExclusionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::deregister_pull_time_update_exclusion::DeregisterPullTimeUpdateExclusionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_image_replication_status::DescribeImageReplicationStatusError,
             R,
         >,
@@ -1246,6 +1315,35 @@ impl From<crate::operation::initiate_layer_upload::InitiateLayerUploadError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_image_referrers::ListImageReferrersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_image_referrers::ListImageReferrersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_image_referrers::ListImageReferrersError> for Error {
+    fn from(err: crate::operation::list_image_referrers::ListImageReferrersError) -> Self {
+        match err {
+            crate::operation::list_image_referrers::ListImageReferrersError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_image_referrers::ListImageReferrersError::RepositoryNotFoundException(inner) => {
+                Error::RepositoryNotFoundException(inner)
+            }
+            crate::operation::list_image_referrers::ListImageReferrersError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_image_referrers::ListImageReferrersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_image_referrers::ListImageReferrersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_images::ListImagesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1267,6 +1365,46 @@ impl From<crate::operation::list_images::ListImagesError> for Error {
             crate::operation::list_images::ListImagesError::RepositoryNotFoundException(inner) => Error::RepositoryNotFoundException(inner),
             crate::operation::list_images::ListImagesError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::list_images::ListImagesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_pull_time_update_exclusions::ListPullTimeUpdateExclusionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_pull_time_update_exclusions::ListPullTimeUpdateExclusionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_pull_time_update_exclusions::ListPullTimeUpdateExclusionsError> for Error {
+    fn from(err: crate::operation::list_pull_time_update_exclusions::ListPullTimeUpdateExclusionsError) -> Self {
+        match err {
+            crate::operation::list_pull_time_update_exclusions::ListPullTimeUpdateExclusionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_pull_time_update_exclusions::ListPullTimeUpdateExclusionsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::list_pull_time_update_exclusions::ListPullTimeUpdateExclusionsError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::list_pull_time_update_exclusions::ListPullTimeUpdateExclusionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_pull_time_update_exclusions::ListPullTimeUpdateExclusionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1510,6 +1648,9 @@ where
 impl From<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError> for Error {
     fn from(err: crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError) -> Self {
         match err {
+            crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError::BlockedByOrganizationPolicyException(
+                inner,
+            ) => Error::BlockedByOrganizationPolicyException(inner),
             crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
@@ -1553,6 +1694,53 @@ impl From<crate::operation::put_replication_configuration::PutReplicationConfigu
                 Error::ValidationException(inner)
             }
             crate::operation::put_replication_configuration::PutReplicationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_pull_time_update_exclusion::RegisterPullTimeUpdateExclusionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_pull_time_update_exclusion::RegisterPullTimeUpdateExclusionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_pull_time_update_exclusion::RegisterPullTimeUpdateExclusionError> for Error {
+    fn from(err: crate::operation::register_pull_time_update_exclusion::RegisterPullTimeUpdateExclusionError) -> Self {
+        match err {
+            crate::operation::register_pull_time_update_exclusion::RegisterPullTimeUpdateExclusionError::ExclusionAlreadyExistsException(inner) => {
+                Error::ExclusionAlreadyExistsException(inner)
+            }
+            crate::operation::register_pull_time_update_exclusion::RegisterPullTimeUpdateExclusionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::register_pull_time_update_exclusion::RegisterPullTimeUpdateExclusionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::register_pull_time_update_exclusion::RegisterPullTimeUpdateExclusionError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::register_pull_time_update_exclusion::RegisterPullTimeUpdateExclusionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::register_pull_time_update_exclusion::RegisterPullTimeUpdateExclusionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1601,6 +1789,7 @@ where
 impl From<crate::operation::start_image_scan::StartImageScanError> for Error {
     fn from(err: crate::operation::start_image_scan::StartImageScanError) -> Self {
         match err {
+            crate::operation::start_image_scan::StartImageScanError::ImageArchivedException(inner) => Error::ImageArchivedException(inner),
             crate::operation::start_image_scan::StartImageScanError::ImageNotFoundException(inner) => Error::ImageNotFoundException(inner),
             crate::operation::start_image_scan::StartImageScanError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::start_image_scan::StartImageScanError::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -1709,6 +1898,46 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::untag_resource::UntagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_image_storage_class::UpdateImageStorageClassError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_image_storage_class::UpdateImageStorageClassError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_image_storage_class::UpdateImageStorageClassError> for Error {
+    fn from(err: crate::operation::update_image_storage_class::UpdateImageStorageClassError) -> Self {
+        match err {
+            crate::operation::update_image_storage_class::UpdateImageStorageClassError::ImageNotFoundException(inner) => {
+                Error::ImageNotFoundException(inner)
+            }
+            crate::operation::update_image_storage_class::UpdateImageStorageClassError::ImageStorageClassUpdateNotSupportedException(inner) => {
+                Error::ImageStorageClassUpdateNotSupportedException(inner)
+            }
+            crate::operation::update_image_storage_class::UpdateImageStorageClassError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_image_storage_class::UpdateImageStorageClassError::RepositoryNotFoundException(inner) => {
+                Error::RepositoryNotFoundException(inner)
+            }
+            crate::operation::update_image_storage_class::UpdateImageStorageClassError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_image_storage_class::UpdateImageStorageClassError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_image_storage_class::UpdateImageStorageClassError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1886,10 +2115,15 @@ where
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::BlockedByOrganizationPolicyException(inner) => inner.source(),
             Error::EmptyUploadException(inner) => inner.source(),
+            Error::ExclusionAlreadyExistsException(inner) => inner.source(),
+            Error::ExclusionNotFoundException(inner) => inner.source(),
             Error::ImageAlreadyExistsException(inner) => inner.source(),
+            Error::ImageArchivedException(inner) => inner.source(),
             Error::ImageDigestDoesNotMatchException(inner) => inner.source(),
             Error::ImageNotFoundException(inner) => inner.source(),
+            Error::ImageStorageClassUpdateNotSupportedException(inner) => inner.source(),
             Error::ImageTagAlreadyExistsException(inner) => inner.source(),
             Error::InvalidLayerException(inner) => inner.source(),
             Error::InvalidLayerPartException(inner) => inner.source(),
@@ -1933,10 +2167,15 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::BlockedByOrganizationPolicyException(e) => e.request_id(),
             Self::EmptyUploadException(e) => e.request_id(),
+            Self::ExclusionAlreadyExistsException(e) => e.request_id(),
+            Self::ExclusionNotFoundException(e) => e.request_id(),
             Self::ImageAlreadyExistsException(e) => e.request_id(),
+            Self::ImageArchivedException(e) => e.request_id(),
             Self::ImageDigestDoesNotMatchException(e) => e.request_id(),
             Self::ImageNotFoundException(e) => e.request_id(),
+            Self::ImageStorageClassUpdateNotSupportedException(e) => e.request_id(),
             Self::ImageTagAlreadyExistsException(e) => e.request_id(),
             Self::InvalidLayerException(e) => e.request_id(),
             Self::InvalidLayerPartException(e) => e.request_id(),

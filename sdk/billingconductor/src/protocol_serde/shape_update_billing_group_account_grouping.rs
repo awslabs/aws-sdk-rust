@@ -17,6 +17,13 @@ where
                         "AutoAssociate" => {
                             builder = builder.set_auto_associate(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "ResponsibilityTransferArn" => {
+                            builder = builder.set_responsibility_transfer_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -40,6 +47,9 @@ pub fn ser_update_billing_group_account_grouping(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_associate {
         object.key("AutoAssociate").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.responsibility_transfer_arn {
+        object.key("ResponsibilityTransferArn").string(var_2.as_str());
     }
     Ok(())
 }

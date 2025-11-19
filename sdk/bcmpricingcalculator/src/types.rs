@@ -53,6 +53,8 @@ pub use crate::types::_list_usage_filter::ListUsageFilter;
 
 pub use crate::types::_list_usage_filter_name::ListUsageFilterName;
 
+pub use crate::types::_group_sharing_preference_enum::GroupSharingPreferenceEnum;
+
 pub use crate::types::_bill_scenario_status::BillScenarioStatus;
 
 pub use crate::types::_bill_scenario_summary::BillScenarioSummary;
@@ -238,6 +240,8 @@ mod _expression;
 mod _expression_filter;
 
 mod _filter_timestamp;
+
+mod _group_sharing_preference_enum;
 
 mod _historical_usage_entity;
 

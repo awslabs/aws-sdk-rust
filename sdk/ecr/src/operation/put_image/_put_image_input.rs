@@ -11,7 +11,7 @@ pub struct PutImageInput {
     pub image_manifest: ::std::option::Option<::std::string::String>,
     /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
     pub image_manifest_media_type: ::std::option::Option<::std::string::String>,
-    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is optional.</p>
     pub image_tag: ::std::option::Option<::std::string::String>,
     /// <p>The image digest of the image manifest corresponding to the image.</p>
     pub image_digest: ::std::option::Option<::std::string::String>,
@@ -33,7 +33,7 @@ impl PutImageInput {
     pub fn image_manifest_media_type(&self) -> ::std::option::Option<&str> {
         self.image_manifest_media_type.as_deref()
     }
-    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is optional.</p>
     pub fn image_tag(&self) -> ::std::option::Option<&str> {
         self.image_tag.as_deref()
     }
@@ -119,17 +119,17 @@ impl PutImageInputBuilder {
     pub fn get_image_manifest_media_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_manifest_media_type
     }
-    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is optional.</p>
     pub fn image_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_tag = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is optional.</p>
     pub fn set_image_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_tag = input;
         self
     }
-    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is optional.</p>
     pub fn get_image_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_tag
     }

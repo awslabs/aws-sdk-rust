@@ -308,6 +308,8 @@ pub enum CreateEventDataStoreError {
     OrganizationNotInAllFeaturesModeException(crate::types::error::OrganizationNotInAllFeaturesModeException),
     /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
     OrganizationsNotInUseException(crate::types::error::OrganizationsNotInUseException),
+    /// <p>This exception is thrown when the request rate exceeds the limit.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -360,6 +362,7 @@ impl CreateEventDataStoreError {
             Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OrganizationNotInAllFeaturesModeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OrganizationsNotInUseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -432,6 +435,10 @@ impl CreateEventDataStoreError {
     pub fn is_organizations_not_in_use_exception(&self) -> bool {
         matches!(self, Self::OrganizationsNotInUseException(_))
     }
+    /// Returns `true` if the error kind is `CreateEventDataStoreError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `CreateEventDataStoreError::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(self, Self::UnsupportedOperationException(_))
@@ -457,6 +464,7 @@ impl ::std::error::Error for CreateEventDataStoreError {
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationNotInAllFeaturesModeException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationsNotInUseException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -482,6 +490,7 @@ impl ::std::fmt::Display for CreateEventDataStoreError {
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
             Self::OrganizationNotInAllFeaturesModeException(_inner) => _inner.fmt(f),
             Self::OrganizationsNotInUseException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -523,6 +532,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateEventDa
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationNotInAllFeaturesModeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationsNotInUseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

@@ -30,5 +30,14 @@ pub fn ser_filters(
         }
         array_8.finish();
     }
+    if let Some(var_10) = &input.bill_source_accounts {
+        let mut array_11 = object.key("BillSourceAccounts").start_array();
+        for item_12 in var_10 {
+            {
+                array_11.value().string(item_12.as_str());
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }

@@ -306,4 +306,18 @@ impl UpdateInputFluentBuilder {
     pub fn get_sdi_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_sdi_sources()
     }
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub fn special_router_settings(mut self, input: crate::types::SpecialRouterSettings) -> Self {
+        self.inner = self.inner.special_router_settings(input);
+        self
+    }
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub fn set_special_router_settings(mut self, input: ::std::option::Option<crate::types::SpecialRouterSettings>) -> Self {
+        self.inner = self.inner.set_special_router_settings(input);
+        self
+    }
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub fn get_special_router_settings(&self) -> &::std::option::Option<crate::types::SpecialRouterSettings> {
+        self.inner.get_special_router_settings()
+    }
 }

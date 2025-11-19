@@ -25,7 +25,7 @@ impl crate::operation::get_bucket_tagging::builders::GetBucketTaggingInputBuilde
 /// <note>
 /// <p>This operation is not supported for directory buckets.</p>
 /// </note>
-/// <p>Returns the tag set associated with the bucket.</p>
+/// <p>Returns the tag set associated with the general purpose bucket.</p>
 /// <p>To use this operation, you must have permission to perform the <code>s3:GetBucketTagging</code> action. By default, the bucket owner has this permission and can grant this permission to others.</p>
 /// <p><code>GetBucketTagging</code> has the following special error:</p>
 /// <ul>

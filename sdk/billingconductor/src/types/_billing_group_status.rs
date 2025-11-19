@@ -13,6 +13,7 @@
 /// # let billinggroupstatus = unimplemented!();
 /// match billinggroupstatus {
 ///     BillingGroupStatus::Active => { /* ... */ },
+///     BillingGroupStatus::Pending => { /* ... */ },
 ///     BillingGroupStatus::PrimaryAccountMissing => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum BillingGroupStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
     PrimaryAccountMissing,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for BillingGroupStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => BillingGroupStatus::Active,
+            "PENDING" => BillingGroupStatus::Pending,
             "PRIMARY_ACCOUNT_MISSING" => BillingGroupStatus::PrimaryAccountMissing,
             other => BillingGroupStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl BillingGroupStatus {
     pub fn as_str(&self) -> &str {
         match self {
             BillingGroupStatus::Active => "ACTIVE",
+            BillingGroupStatus::Pending => "PENDING",
             BillingGroupStatus::PrimaryAccountMissing => "PRIMARY_ACCOUNT_MISSING",
             BillingGroupStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "PRIMARY_ACCOUNT_MISSING"]
+        &["ACTIVE", "PENDING", "PRIMARY_ACCOUNT_MISSING"]
     }
 }
 impl ::std::convert::AsRef<str> for BillingGroupStatus {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for BillingGroupStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BillingGroupStatus::Active => write!(f, "ACTIVE"),
+            BillingGroupStatus::Pending => write!(f, "PENDING"),
             BillingGroupStatus::PrimaryAccountMissing => write!(f, "PRIMARY_ACCOUNT_MISSING"),
             BillingGroupStatus::Unknown(value) => write!(f, "{value}"),
         }

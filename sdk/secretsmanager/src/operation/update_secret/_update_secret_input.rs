@@ -29,6 +29,8 @@ pub struct UpdateSecretInput {
     /// <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>
     /// <p>Sensitive: This field contains sensitive information, so the service does not include it in CloudTrail log entries. If you create your own log entries, you must also avoid logging the information in this field.</p>
     pub secret_string: ::std::option::Option<::std::string::String>,
+    /// <p>The exact string that identifies the third-party partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secret partners</a>.</p>
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecretInput {
     /// <p>The ARN or name of the secret.</p>
@@ -69,6 +71,10 @@ impl UpdateSecretInput {
     pub fn secret_string(&self) -> ::std::option::Option<&str> {
         self.secret_string.as_deref()
     }
+    /// <p>The exact string that identifies the third-party partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secret partners</a>.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateSecretInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -79,6 +85,7 @@ impl ::std::fmt::Debug for UpdateSecretInput {
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
@@ -99,6 +106,7 @@ pub struct UpdateSecretInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) secret_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) secret_string: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecretInputBuilder {
     /// <p>The ARN or name of the secret.</p>
@@ -228,6 +236,20 @@ impl UpdateSecretInputBuilder {
     pub fn get_secret_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_string
     }
+    /// <p>The exact string that identifies the third-party partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secret partners</a>.</p>
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The exact string that identifies the third-party partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secret partners</a>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The exact string that identifies the third-party partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secret partners</a>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`UpdateSecretInput`](crate::operation::update_secret::UpdateSecretInput).
     pub fn build(
         self,
@@ -239,6 +261,7 @@ impl UpdateSecretInputBuilder {
             kms_key_id: self.kms_key_id,
             secret_binary: self.secret_binary,
             secret_string: self.secret_string,
+            r#type: self.r#type,
         })
     }
 }
@@ -251,6 +274,7 @@ impl ::std::fmt::Debug for UpdateSecretInputBuilder {
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("secret_binary", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_string", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }

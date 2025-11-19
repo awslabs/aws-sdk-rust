@@ -43,6 +43,9 @@ pub mod delete_repository_creation_template;
 /// Types for the `DeleteRepositoryPolicy` operation.
 pub mod delete_repository_policy;
 
+/// Types for the `DeregisterPullTimeUpdateExclusion` operation.
+pub mod deregister_pull_time_update_exclusion;
+
 /// Types for the `DescribeImageReplicationStatus` operation.
 pub mod describe_image_replication_status;
 
@@ -91,8 +94,14 @@ pub mod get_repository_policy;
 /// Types for the `InitiateLayerUpload` operation.
 pub mod initiate_layer_upload;
 
+/// Types for the `ListImageReferrers` operation.
+pub mod list_image_referrers;
+
 /// Types for the `ListImages` operation.
 pub mod list_images;
+
+/// Types for the `ListPullTimeUpdateExclusions` operation.
+pub mod list_pull_time_update_exclusions;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -121,6 +130,9 @@ pub mod put_registry_scanning_configuration;
 /// Types for the `PutReplicationConfiguration` operation.
 pub mod put_replication_configuration;
 
+/// Types for the `RegisterPullTimeUpdateExclusion` operation.
+pub mod register_pull_time_update_exclusion;
+
 /// Types for the `SetRepositoryPolicy` operation.
 pub mod set_repository_policy;
 
@@ -135,6 +147,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateImageStorageClass` operation.
+pub mod update_image_storage_class;
 
 /// Types for the `UpdatePullThroughCacheRule` operation.
 pub mod update_pull_through_cache_rule;

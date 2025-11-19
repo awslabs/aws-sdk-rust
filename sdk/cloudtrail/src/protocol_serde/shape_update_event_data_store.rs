@@ -41,6 +41,21 @@ pub fn de_update_event_data_store_http_error(
                 tmp
             })
         }
+        "ConflictException" => crate::operation::update_event_data_store::UpdateEventDataStoreError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_event_data_store::UpdateEventDataStoreError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "EventDataStoreAlreadyExistsException" => {
             crate::operation::update_event_data_store::UpdateEventDataStoreError::EventDataStoreAlreadyExistsException({
                 #[allow(unused_mut)]
@@ -340,6 +355,21 @@ pub fn de_update_event_data_store_http_error(
                     output,
                 )
                 .map_err(crate::operation::update_event_data_store::UpdateEventDataStoreError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::update_event_data_store::UpdateEventDataStoreError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_event_data_store::UpdateEventDataStoreError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

@@ -6,11 +6,17 @@
 pub struct DescribeImagesFilter {
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
     pub tag_status: ::std::option::Option<crate::types::TagStatus>,
+    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    pub image_status: ::std::option::Option<crate::types::ImageStatusFilter>,
 }
 impl DescribeImagesFilter {
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
     pub fn tag_status(&self) -> ::std::option::Option<&crate::types::TagStatus> {
         self.tag_status.as_ref()
+    }
+    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    pub fn image_status(&self) -> ::std::option::Option<&crate::types::ImageStatusFilter> {
+        self.image_status.as_ref()
     }
 }
 impl DescribeImagesFilter {
@@ -25,6 +31,7 @@ impl DescribeImagesFilter {
 #[non_exhaustive]
 pub struct DescribeImagesFilterBuilder {
     pub(crate) tag_status: ::std::option::Option<crate::types::TagStatus>,
+    pub(crate) image_status: ::std::option::Option<crate::types::ImageStatusFilter>,
 }
 impl DescribeImagesFilterBuilder {
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
@@ -41,8 +48,25 @@ impl DescribeImagesFilterBuilder {
     pub fn get_tag_status(&self) -> &::std::option::Option<crate::types::TagStatus> {
         &self.tag_status
     }
+    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    pub fn image_status(mut self, input: crate::types::ImageStatusFilter) -> Self {
+        self.image_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    pub fn set_image_status(mut self, input: ::std::option::Option<crate::types::ImageStatusFilter>) -> Self {
+        self.image_status = input;
+        self
+    }
+    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    pub fn get_image_status(&self) -> &::std::option::Option<crate::types::ImageStatusFilter> {
+        &self.image_status
+    }
     /// Consumes the builder and constructs a [`DescribeImagesFilter`](crate::types::DescribeImagesFilter).
     pub fn build(self) -> crate::types::DescribeImagesFilter {
-        crate::types::DescribeImagesFilter { tag_status: self.tag_status }
+        crate::types::DescribeImagesFilter {
+            tag_status: self.tag_status,
+            image_status: self.image_status,
+        }
     }
 }

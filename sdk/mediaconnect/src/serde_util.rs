@@ -71,6 +71,42 @@ pub(crate) fn add_flow_outputs420_exception_correct_errors(
     builder
 }
 
+pub(crate) fn batch_get_router_input_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_router_input::builders::BatchGetRouterInputOutputBuilder,
+) -> crate::operation::batch_get_router_input::builders::BatchGetRouterInputOutputBuilder {
+    if builder.router_inputs.is_none() {
+        builder.router_inputs = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_router_network_interface_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_router_network_interface::builders::BatchGetRouterNetworkInterfaceOutputBuilder,
+) -> crate::operation::batch_get_router_network_interface::builders::BatchGetRouterNetworkInterfaceOutputBuilder {
+    if builder.router_network_interfaces.is_none() {
+        builder.router_network_interfaces = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_router_output_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_router_output::builders::BatchGetRouterOutputOutputBuilder,
+) -> crate::operation::batch_get_router_output::builders::BatchGetRouterOutputOutputBuilder {
+    if builder.router_outputs.is_none() {
+        builder.router_outputs = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_bridge420_exception_correct_errors(
     mut builder: crate::types::error::builders::CreateBridge420ExceptionBuilder,
 ) -> crate::types::error::builders::CreateBridge420ExceptionBuilder {
@@ -98,11 +134,564 @@ pub(crate) fn create_gateway420_exception_correct_errors(
     builder
 }
 
+pub(crate) fn router_input_service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::RouterInputServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::RouterInputServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_router_input_output_output_correct_errors(
+    mut builder: crate::operation::create_router_input::builders::CreateRouterInputOutputBuilder,
+) -> crate::operation::create_router_input::builders::CreateRouterInputOutputBuilder {
+    if builder.router_input.is_none() {
+        builder.router_input = {
+            let builder = crate::types::builders::RouterInputBuilder::default();
+            crate::serde_util::router_input_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn router_network_interface_service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::RouterNetworkInterfaceServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::RouterNetworkInterfaceServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_router_network_interface_output_output_correct_errors(
+    mut builder: crate::operation::create_router_network_interface::builders::CreateRouterNetworkInterfaceOutputBuilder,
+) -> crate::operation::create_router_network_interface::builders::CreateRouterNetworkInterfaceOutputBuilder {
+    if builder.router_network_interface.is_none() {
+        builder.router_network_interface = {
+            let builder = crate::types::builders::RouterNetworkInterfaceBuilder::default();
+            crate::serde_util::router_network_interface_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn router_output_service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::RouterOutputServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::RouterOutputServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_router_output_output_output_correct_errors(
+    mut builder: crate::operation::create_router_output::builders::CreateRouterOutputOutputBuilder,
+) -> crate::operation::create_router_output::builders::CreateRouterOutputOutputBuilder {
+    if builder.router_output.is_none() {
+        builder.router_output = {
+            let builder = crate::types::builders::RouterOutputBuilder::default();
+            crate::serde_util::router_output_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn delete_router_input_output_output_correct_errors(
+    mut builder: crate::operation::delete_router_input::builders::DeleteRouterInputOutputBuilder,
+) -> crate::operation::delete_router_input::builders::DeleteRouterInputOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterInputState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_router_network_interface_output_output_correct_errors(
+    mut builder: crate::operation::delete_router_network_interface::builders::DeleteRouterNetworkInterfaceOutputBuilder,
+) -> crate::operation::delete_router_network_interface::builders::DeleteRouterNetworkInterfaceOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterNetworkInterfaceState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_router_output_output_output_correct_errors(
+    mut builder: crate::operation::delete_router_output::builders::DeleteRouterOutputOutputBuilder,
+) -> crate::operation::delete_router_output::builders::DeleteRouterOutputOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterOutputState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_router_input_output_output_correct_errors(
+    mut builder: crate::operation::get_router_input::builders::GetRouterInputOutputBuilder,
+) -> crate::operation::get_router_input::builders::GetRouterInputOutputBuilder {
+    if builder.router_input.is_none() {
+        builder.router_input = {
+            let builder = crate::types::builders::RouterInputBuilder::default();
+            crate::serde_util::router_input_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_router_input_source_metadata_output_output_correct_errors(
+    mut builder: crate::operation::get_router_input_source_metadata::builders::GetRouterInputSourceMetadataOutputBuilder,
+) -> crate::operation::get_router_input_source_metadata::builders::GetRouterInputSourceMetadataOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.source_metadata_details.is_none() {
+        builder.source_metadata_details = {
+            let builder = crate::types::builders::RouterInputSourceMetadataDetailsBuilder::default();
+            crate::serde_util::router_input_source_metadata_details_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_router_input_thumbnail_output_output_correct_errors(
+    mut builder: crate::operation::get_router_input_thumbnail::builders::GetRouterInputThumbnailOutputBuilder,
+) -> crate::operation::get_router_input_thumbnail::builders::GetRouterInputThumbnailOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.thumbnail_details.is_none() {
+        builder.thumbnail_details = {
+            let builder = crate::types::builders::RouterInputThumbnailDetailsBuilder::default();
+            crate::serde_util::router_input_thumbnail_details_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_router_network_interface_output_output_correct_errors(
+    mut builder: crate::operation::get_router_network_interface::builders::GetRouterNetworkInterfaceOutputBuilder,
+) -> crate::operation::get_router_network_interface::builders::GetRouterNetworkInterfaceOutputBuilder {
+    if builder.router_network_interface.is_none() {
+        builder.router_network_interface = {
+            let builder = crate::types::builders::RouterNetworkInterfaceBuilder::default();
+            crate::serde_util::router_network_interface_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_router_output_output_output_correct_errors(
+    mut builder: crate::operation::get_router_output::builders::GetRouterOutputOutputBuilder,
+) -> crate::operation::get_router_output::builders::GetRouterOutputOutputBuilder {
+    if builder.router_output.is_none() {
+        builder.router_output = {
+            let builder = crate::types::builders::RouterOutputBuilder::default();
+            crate::serde_util::router_output_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn grant_flow_entitlements420_exception_correct_errors(
     mut builder: crate::types::error::builders::GrantFlowEntitlements420ExceptionBuilder,
 ) -> crate::types::error::builders::GrantFlowEntitlements420ExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_router_inputs_output_output_correct_errors(
+    mut builder: crate::operation::list_router_inputs::builders::ListRouterInputsOutputBuilder,
+) -> crate::operation::list_router_inputs::builders::ListRouterInputsOutputBuilder {
+    if builder.router_inputs.is_none() {
+        builder.router_inputs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_router_network_interfaces_output_output_correct_errors(
+    mut builder: crate::operation::list_router_network_interfaces::builders::ListRouterNetworkInterfacesOutputBuilder,
+) -> crate::operation::list_router_network_interfaces::builders::ListRouterNetworkInterfacesOutputBuilder {
+    if builder.router_network_interfaces.is_none() {
+        builder.router_network_interfaces = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_router_outputs_output_output_correct_errors(
+    mut builder: crate::operation::list_router_outputs::builders::ListRouterOutputsOutputBuilder,
+) -> crate::operation::list_router_outputs::builders::ListRouterOutputsOutputBuilder {
+    if builder.router_outputs.is_none() {
+        builder.router_outputs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn restart_router_input_output_output_correct_errors(
+    mut builder: crate::operation::restart_router_input::builders::RestartRouterInputOutputBuilder,
+) -> crate::operation::restart_router_input::builders::RestartRouterInputOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterInputState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn restart_router_output_output_output_correct_errors(
+    mut builder: crate::operation::restart_router_output::builders::RestartRouterOutputOutputBuilder,
+) -> crate::operation::restart_router_output::builders::RestartRouterOutputOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterOutputState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn start_router_input_output_output_correct_errors(
+    mut builder: crate::operation::start_router_input::builders::StartRouterInputOutputBuilder,
+) -> crate::operation::start_router_input::builders::StartRouterInputOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterInputState>().ok()
+    }
+    if builder.maintenance_schedule_type.is_none() {
+        builder.maintenance_schedule_type = "no value was set".parse::<crate::types::MaintenanceScheduleType>().ok()
+    }
+    if builder.maintenance_schedule.is_none() {
+        builder.maintenance_schedule = Some(crate::types::MaintenanceSchedule::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn start_router_output_output_output_correct_errors(
+    mut builder: crate::operation::start_router_output::builders::StartRouterOutputOutputBuilder,
+) -> crate::operation::start_router_output::builders::StartRouterOutputOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterOutputState>().ok()
+    }
+    if builder.maintenance_schedule_type.is_none() {
+        builder.maintenance_schedule_type = "no value was set".parse::<crate::types::MaintenanceScheduleType>().ok()
+    }
+    if builder.maintenance_schedule.is_none() {
+        builder.maintenance_schedule = Some(crate::types::MaintenanceSchedule::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn stop_router_input_output_output_correct_errors(
+    mut builder: crate::operation::stop_router_input::builders::StopRouterInputOutputBuilder,
+) -> crate::operation::stop_router_input::builders::StopRouterInputOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterInputState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn stop_router_output_output_output_correct_errors(
+    mut builder: crate::operation::stop_router_output::builders::StopRouterOutputOutputBuilder,
+) -> crate::operation::stop_router_output::builders::StopRouterOutputOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterOutputState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn take_router_input_output_output_correct_errors(
+    mut builder: crate::operation::take_router_input::builders::TakeRouterInputOutputBuilder,
+) -> crate::operation::take_router_input::builders::TakeRouterInputOutputBuilder {
+    if builder.routed_state.is_none() {
+        builder.routed_state = "no value was set".parse::<crate::types::RouterOutputRoutedState>().ok()
+    }
+    if builder.router_output_arn.is_none() {
+        builder.router_output_arn = Some(Default::default())
+    }
+    if builder.router_output_name.is_none() {
+        builder.router_output_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_router_input_output_output_correct_errors(
+    mut builder: crate::operation::update_router_input::builders::UpdateRouterInputOutputBuilder,
+) -> crate::operation::update_router_input::builders::UpdateRouterInputOutputBuilder {
+    if builder.router_input.is_none() {
+        builder.router_input = {
+            let builder = crate::types::builders::RouterInputBuilder::default();
+            crate::serde_util::router_input_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_router_network_interface_output_output_correct_errors(
+    mut builder: crate::operation::update_router_network_interface::builders::UpdateRouterNetworkInterfaceOutputBuilder,
+) -> crate::operation::update_router_network_interface::builders::UpdateRouterNetworkInterfaceOutputBuilder {
+    if builder.router_network_interface.is_none() {
+        builder.router_network_interface = {
+            let builder = crate::types::builders::RouterNetworkInterfaceBuilder::default();
+            crate::serde_util::router_network_interface_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_router_output_output_output_correct_errors(
+    mut builder: crate::operation::update_router_output::builders::UpdateRouterOutputOutputBuilder,
+) -> crate::operation::update_router_output::builders::UpdateRouterOutputOutputBuilder {
+    if builder.router_output.is_none() {
+        builder.router_output = {
+            let builder = crate::types::builders::RouterOutputBuilder::default();
+            crate::serde_util::router_output_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn router_input_correct_errors(mut builder: crate::types::builders::RouterInputBuilder) -> crate::types::builders::RouterInputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterInputState>().ok()
+    }
+    if builder.input_type.is_none() {
+        builder.input_type = "no value was set".parse::<crate::types::RouterInputType>().ok()
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::RouterInputConfiguration::Unknown)
+    }
+    if builder.routed_outputs.is_none() {
+        builder.routed_outputs = Some(Default::default())
+    }
+    if builder.region_name.is_none() {
+        builder.region_name = Some(Default::default())
+    }
+    if builder.availability_zone.is_none() {
+        builder.availability_zone = Some(Default::default())
+    }
+    if builder.maximum_bitrate.is_none() {
+        builder.maximum_bitrate = Some(Default::default())
+    }
+    if builder.tier.is_none() {
+        builder.tier = "no value was set".parse::<crate::types::RouterInputTier>().ok()
+    }
+    if builder.routing_scope.is_none() {
+        builder.routing_scope = "no value was set".parse::<crate::types::RoutingScope>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.messages.is_none() {
+        builder.messages = Some(Default::default())
+    }
+    if builder.transit_encryption.is_none() {
+        builder.transit_encryption = {
+            let builder = crate::types::builders::RouterInputTransitEncryptionBuilder::default();
+            Some(crate::serde_util::router_input_transit_encryption_correct_errors(builder).build())
+        }
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    if builder.stream_details.is_none() {
+        builder.stream_details = Some(crate::types::RouterInputStreamDetails::Unknown)
+    }
+    if builder.maintenance_type.is_none() {
+        builder.maintenance_type = "no value was set".parse::<crate::types::MaintenanceType>().ok()
+    }
+    if builder.maintenance_configuration.is_none() {
+        builder.maintenance_configuration = Some(crate::types::MaintenanceConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn router_network_interface_correct_errors(
+    mut builder: crate::types::builders::RouterNetworkInterfaceBuilder,
+) -> crate::types::builders::RouterNetworkInterfaceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterNetworkInterfaceState>().ok()
+    }
+    if builder.network_interface_type.is_none() {
+        builder.network_interface_type = "no value was set".parse::<crate::types::RouterNetworkInterfaceType>().ok()
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::RouterNetworkInterfaceConfiguration::Unknown)
+    }
+    if builder.associated_output_count.is_none() {
+        builder.associated_output_count = Some(Default::default())
+    }
+    if builder.associated_input_count.is_none() {
+        builder.associated_input_count = Some(Default::default())
+    }
+    if builder.region_name.is_none() {
+        builder.region_name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn router_output_correct_errors(mut builder: crate::types::builders::RouterOutputBuilder) -> crate::types::builders::RouterOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterOutputState>().ok()
+    }
+    if builder.output_type.is_none() {
+        builder.output_type = "no value was set".parse::<crate::types::RouterOutputType>().ok()
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::RouterOutputConfiguration::Unknown)
+    }
+    if builder.routed_state.is_none() {
+        builder.routed_state = "no value was set".parse::<crate::types::RouterOutputRoutedState>().ok()
+    }
+    if builder.region_name.is_none() {
+        builder.region_name = Some(Default::default())
+    }
+    if builder.availability_zone.is_none() {
+        builder.availability_zone = Some(Default::default())
+    }
+    if builder.maximum_bitrate.is_none() {
+        builder.maximum_bitrate = Some(Default::default())
+    }
+    if builder.routing_scope.is_none() {
+        builder.routing_scope = "no value was set".parse::<crate::types::RoutingScope>().ok()
+    }
+    if builder.tier.is_none() {
+        builder.tier = "no value was set".parse::<crate::types::RouterOutputTier>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.messages.is_none() {
+        builder.messages = Some(Default::default())
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    if builder.stream_details.is_none() {
+        builder.stream_details = Some(crate::types::RouterOutputStreamDetails::Unknown)
+    }
+    if builder.maintenance_type.is_none() {
+        builder.maintenance_type = "no value was set".parse::<crate::types::MaintenanceType>().ok()
+    }
+    if builder.maintenance_configuration.is_none() {
+        builder.maintenance_configuration = Some(crate::types::MaintenanceConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn router_input_source_metadata_details_correct_errors(
+    mut builder: crate::types::builders::RouterInputSourceMetadataDetailsBuilder,
+) -> crate::types::builders::RouterInputSourceMetadataDetailsBuilder {
+    if builder.source_metadata_messages.is_none() {
+        builder.source_metadata_messages = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn router_input_thumbnail_details_correct_errors(
+    mut builder: crate::types::builders::RouterInputThumbnailDetailsBuilder,
+) -> crate::types::builders::RouterInputThumbnailDetailsBuilder {
+    if builder.thumbnail_messages.is_none() {
+        builder.thumbnail_messages = Some(Default::default())
     }
     builder
 }
@@ -348,6 +937,60 @@ pub(crate) fn transport_media_info_correct_errors(
     builder
 }
 
+pub(crate) fn router_input_transit_encryption_correct_errors(
+    mut builder: crate::types::builders::RouterInputTransitEncryptionBuilder,
+) -> crate::types::builders::RouterInputTransitEncryptionBuilder {
+    if builder.encryption_key_configuration.is_none() {
+        builder.encryption_key_configuration = Some(crate::types::RouterInputTransitEncryptionKeyConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn batch_get_router_input_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetRouterInputErrorBuilder,
+) -> crate::types::builders::BatchGetRouterInputErrorBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_router_network_interface_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetRouterNetworkInterfaceErrorBuilder,
+) -> crate::types::builders::BatchGetRouterNetworkInterfaceErrorBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_router_output_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetRouterOutputErrorBuilder,
+) -> crate::types::builders::BatchGetRouterOutputErrorBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn bridge_flow_output_correct_errors(
     mut builder: crate::types::builders::BridgeFlowOutputBuilder,
 ) -> crate::types::builders::BridgeFlowOutputBuilder {
@@ -432,6 +1075,15 @@ pub(crate) fn egress_gateway_bridge_correct_errors(
 pub(crate) fn encryption_correct_errors(mut builder: crate::types::builders::EncryptionBuilder) -> crate::types::builders::EncryptionBuilder {
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn flow_transit_encryption_correct_errors(
+    mut builder: crate::types::builders::FlowTransitEncryptionBuilder,
+) -> crate::types::builders::FlowTransitEncryptionBuilder {
+    if builder.encryption_key_configuration.is_none() {
+        builder.encryption_key_configuration = Some(crate::types::FlowTransitEncryptionKeyConfiguration::Unknown)
     }
     builder
 }
@@ -540,6 +1192,132 @@ pub(crate) fn listed_gateway_instance_correct_errors(
     builder
 }
 
+pub(crate) fn listed_router_input_correct_errors(
+    mut builder: crate::types::builders::ListedRouterInputBuilder,
+) -> crate::types::builders::ListedRouterInputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.input_type.is_none() {
+        builder.input_type = "no value was set".parse::<crate::types::RouterInputType>().ok()
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterInputState>().ok()
+    }
+    if builder.routed_outputs.is_none() {
+        builder.routed_outputs = Some(Default::default())
+    }
+    if builder.region_name.is_none() {
+        builder.region_name = Some(Default::default())
+    }
+    if builder.availability_zone.is_none() {
+        builder.availability_zone = Some(Default::default())
+    }
+    if builder.maximum_bitrate.is_none() {
+        builder.maximum_bitrate = Some(Default::default())
+    }
+    if builder.routing_scope.is_none() {
+        builder.routing_scope = "no value was set".parse::<crate::types::RoutingScope>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.message_count.is_none() {
+        builder.message_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn listed_router_network_interface_correct_errors(
+    mut builder: crate::types::builders::ListedRouterNetworkInterfaceBuilder,
+) -> crate::types::builders::ListedRouterNetworkInterfaceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.network_interface_type.is_none() {
+        builder.network_interface_type = "no value was set".parse::<crate::types::RouterNetworkInterfaceType>().ok()
+    }
+    if builder.associated_output_count.is_none() {
+        builder.associated_output_count = Some(Default::default())
+    }
+    if builder.associated_input_count.is_none() {
+        builder.associated_input_count = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterNetworkInterfaceState>().ok()
+    }
+    if builder.region_name.is_none() {
+        builder.region_name = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn listed_router_output_correct_errors(
+    mut builder: crate::types::builders::ListedRouterOutputBuilder,
+) -> crate::types::builders::ListedRouterOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.output_type.is_none() {
+        builder.output_type = "no value was set".parse::<crate::types::RouterOutputType>().ok()
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RouterOutputState>().ok()
+    }
+    if builder.routed_state.is_none() {
+        builder.routed_state = "no value was set".parse::<crate::types::RouterOutputRoutedState>().ok()
+    }
+    if builder.region_name.is_none() {
+        builder.region_name = Some(Default::default())
+    }
+    if builder.availability_zone.is_none() {
+        builder.availability_zone = Some(Default::default())
+    }
+    if builder.maximum_bitrate.is_none() {
+        builder.maximum_bitrate = Some(Default::default())
+    }
+    if builder.routing_scope.is_none() {
+        builder.routing_scope = "no value was set".parse::<crate::types::RoutingScope>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.message_count.is_none() {
+        builder.message_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn media_stream_attributes_correct_errors(
     mut builder: crate::types::builders::MediaStreamAttributesBuilder,
 ) -> crate::types::builders::MediaStreamAttributesBuilder {
@@ -602,6 +1380,58 @@ pub(crate) fn vpc_interface_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn window_maintenance_schedule_correct_errors(
+    mut builder: crate::types::builders::WindowMaintenanceScheduleBuilder,
+) -> crate::types::builders::WindowMaintenanceScheduleBuilder {
+    if builder.start.is_none() {
+        builder.start = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.end.is_none() {
+        builder.end = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.scheduled_time.is_none() {
+        builder.scheduled_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn failover_router_input_configuration_correct_errors(
+    mut builder: crate::types::builders::FailoverRouterInputConfigurationBuilder,
+) -> crate::types::builders::FailoverRouterInputConfigurationBuilder {
+    if builder.network_interface_arn.is_none() {
+        builder.network_interface_arn = Some(Default::default())
+    }
+    if builder.protocol_configurations.is_none() {
+        builder.protocol_configurations = Some(Default::default())
+    }
+    if builder.source_priority_mode.is_none() {
+        builder.source_priority_mode = "no value was set".parse::<crate::types::FailoverInputSourcePriorityMode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn failover_router_input_stream_details_correct_errors(
+    mut builder: crate::types::builders::FailoverRouterInputStreamDetailsBuilder,
+) -> crate::types::builders::FailoverRouterInputStreamDetailsBuilder {
+    if builder.source_index_zero_stream_details.is_none() {
+        builder.source_index_zero_stream_details = {
+            let builder = crate::types::builders::FailoverRouterInputIndexedStreamDetailsBuilder::default();
+            crate::serde_util::failover_router_input_indexed_stream_details_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.source_index_one_stream_details.is_none() {
+        builder.source_index_one_stream_details = {
+            let builder = crate::types::builders::FailoverRouterInputIndexedStreamDetailsBuilder::default();
+            crate::serde_util::failover_router_input_indexed_stream_details_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn gateway_network_correct_errors(
     mut builder: crate::types::builders::GatewayNetworkBuilder,
 ) -> crate::types::builders::GatewayNetworkBuilder {
@@ -610,6 +1440,42 @@ pub(crate) fn gateway_network_correct_errors(
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn media_connect_flow_router_input_configuration_correct_errors(
+    mut builder: crate::types::builders::MediaConnectFlowRouterInputConfigurationBuilder,
+) -> crate::types::builders::MediaConnectFlowRouterInputConfigurationBuilder {
+    if builder.source_transit_decryption.is_none() {
+        builder.source_transit_decryption = {
+            let builder = crate::types::builders::FlowTransitEncryptionBuilder::default();
+            Some(crate::serde_util::flow_transit_encryption_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn media_connect_flow_router_output_configuration_correct_errors(
+    mut builder: crate::types::builders::MediaConnectFlowRouterOutputConfigurationBuilder,
+) -> crate::types::builders::MediaConnectFlowRouterOutputConfigurationBuilder {
+    if builder.destination_transit_encryption.is_none() {
+        builder.destination_transit_encryption = {
+            let builder = crate::types::builders::FlowTransitEncryptionBuilder::default();
+            Some(crate::serde_util::flow_transit_encryption_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn media_live_input_router_output_configuration_correct_errors(
+    mut builder: crate::types::builders::MediaLiveInputRouterOutputConfigurationBuilder,
+) -> crate::types::builders::MediaLiveInputRouterOutputConfigurationBuilder {
+    if builder.destination_transit_encryption.is_none() {
+        builder.destination_transit_encryption = {
+            let builder = crate::types::builders::MediaLiveTransitEncryptionBuilder::default();
+            Some(crate::serde_util::media_live_transit_encryption_correct_errors(builder).build())
+        }
     }
     builder
 }
@@ -638,6 +1504,112 @@ pub(crate) fn media_stream_source_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn merge_router_input_configuration_correct_errors(
+    mut builder: crate::types::builders::MergeRouterInputConfigurationBuilder,
+) -> crate::types::builders::MergeRouterInputConfigurationBuilder {
+    if builder.network_interface_arn.is_none() {
+        builder.network_interface_arn = Some(Default::default())
+    }
+    if builder.protocol_configurations.is_none() {
+        builder.protocol_configurations = Some(Default::default())
+    }
+    if builder.merge_recovery_window_milliseconds.is_none() {
+        builder.merge_recovery_window_milliseconds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn merge_router_input_stream_details_correct_errors(
+    mut builder: crate::types::builders::MergeRouterInputStreamDetailsBuilder,
+) -> crate::types::builders::MergeRouterInputStreamDetailsBuilder {
+    if builder.source_index_zero_stream_details.is_none() {
+        builder.source_index_zero_stream_details = {
+            let builder = crate::types::builders::MergeRouterInputIndexedStreamDetailsBuilder::default();
+            crate::serde_util::merge_router_input_indexed_stream_details_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.source_index_one_stream_details.is_none() {
+        builder.source_index_one_stream_details = {
+            let builder = crate::types::builders::MergeRouterInputIndexedStreamDetailsBuilder::default();
+            crate::serde_util::merge_router_input_indexed_stream_details_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn preferred_day_time_maintenance_configuration_correct_errors(
+    mut builder: crate::types::builders::PreferredDayTimeMaintenanceConfigurationBuilder,
+) -> crate::types::builders::PreferredDayTimeMaintenanceConfigurationBuilder {
+    if builder.day.is_none() {
+        builder.day = "no value was set".parse::<crate::types::Day>().ok()
+    }
+    if builder.time.is_none() {
+        builder.time = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn public_router_network_interface_configuration_correct_errors(
+    mut builder: crate::types::builders::PublicRouterNetworkInterfaceConfigurationBuilder,
+) -> crate::types::builders::PublicRouterNetworkInterfaceConfigurationBuilder {
+    if builder.allow_rules.is_none() {
+        builder.allow_rules = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn router_input_message_correct_errors(
+    mut builder: crate::types::builders::RouterInputMessageBuilder,
+) -> crate::types::builders::RouterInputMessageBuilder {
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn router_output_message_correct_errors(
+    mut builder: crate::types::builders::RouterOutputMessageBuilder,
+) -> crate::types::builders::RouterOutputMessageBuilder {
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn standard_router_input_configuration_correct_errors(
+    mut builder: crate::types::builders::StandardRouterInputConfigurationBuilder,
+) -> crate::types::builders::StandardRouterInputConfigurationBuilder {
+    if builder.network_interface_arn.is_none() {
+        builder.network_interface_arn = Some(Default::default())
+    }
+    if builder.protocol_configuration.is_none() {
+        builder.protocol_configuration = Some(crate::types::RouterInputProtocolConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn standard_router_output_configuration_correct_errors(
+    mut builder: crate::types::builders::StandardRouterOutputConfigurationBuilder,
+) -> crate::types::builders::StandardRouterOutputConfigurationBuilder {
+    if builder.network_interface_arn.is_none() {
+        builder.network_interface_arn = Some(Default::default())
+    }
+    if builder.protocol_configuration.is_none() {
+        builder.protocol_configuration = Some(crate::types::RouterOutputProtocolConfiguration::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn transport_stream_program_correct_errors(
     mut builder: crate::types::builders::TransportStreamProgramBuilder,
 ) -> crate::types::builders::TransportStreamProgramBuilder {
@@ -656,6 +1628,18 @@ pub(crate) fn transport_stream_program_correct_errors(
     builder
 }
 
+pub(crate) fn vpc_router_network_interface_configuration_correct_errors(
+    mut builder: crate::types::builders::VpcRouterNetworkInterfaceConfigurationBuilder,
+) -> crate::types::builders::VpcRouterNetworkInterfaceConfigurationBuilder {
+    if builder.security_group_ids.is_none() {
+        builder.security_group_ids = Some(Default::default())
+    }
+    if builder.subnet_id.is_none() {
+        builder.subnet_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn encoding_parameters_correct_errors(
     mut builder: crate::types::builders::EncodingParametersBuilder,
 ) -> crate::types::builders::EncodingParametersBuilder {
@@ -668,6 +1652,33 @@ pub(crate) fn encoding_parameters_correct_errors(
     builder
 }
 
+pub(crate) fn failover_router_input_indexed_stream_details_correct_errors(
+    mut builder: crate::types::builders::FailoverRouterInputIndexedStreamDetailsBuilder,
+) -> crate::types::builders::FailoverRouterInputIndexedStreamDetailsBuilder {
+    if builder.source_index.is_none() {
+        builder.source_index = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn media_live_transit_encryption_correct_errors(
+    mut builder: crate::types::builders::MediaLiveTransitEncryptionBuilder,
+) -> crate::types::builders::MediaLiveTransitEncryptionBuilder {
+    if builder.encryption_key_configuration.is_none() {
+        builder.encryption_key_configuration = Some(crate::types::MediaLiveTransitEncryptionKeyConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn merge_router_input_indexed_stream_details_correct_errors(
+    mut builder: crate::types::builders::MergeRouterInputIndexedStreamDetailsBuilder,
+) -> crate::types::builders::MergeRouterInputIndexedStreamDetailsBuilder {
+    if builder.source_index.is_none() {
+        builder.source_index = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ndi_discovery_server_config_correct_errors(
     mut builder: crate::types::builders::NdiDiscoveryServerConfigBuilder,
 ) -> crate::types::builders::NdiDiscoveryServerConfigBuilder {
@@ -676,6 +1687,18 @@ pub(crate) fn ndi_discovery_server_config_correct_errors(
     }
     if builder.vpc_interface_adapter.is_none() {
         builder.vpc_interface_adapter = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn secrets_manager_encryption_key_configuration_correct_errors(
+    mut builder: crate::types::builders::SecretsManagerEncryptionKeyConfigurationBuilder,
+) -> crate::types::builders::SecretsManagerEncryptionKeyConfigurationBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
     }
     builder
 }
@@ -719,6 +1742,114 @@ pub(crate) fn input_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn public_router_network_interface_rule_correct_errors(
+    mut builder: crate::types::builders::PublicRouterNetworkInterfaceRuleBuilder,
+) -> crate::types::builders::PublicRouterNetworkInterfaceRuleBuilder {
+    if builder.cidr.is_none() {
+        builder.cidr = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rist_router_input_configuration_correct_errors(
+    mut builder: crate::types::builders::RistRouterInputConfigurationBuilder,
+) -> crate::types::builders::RistRouterInputConfigurationBuilder {
+    if builder.port.is_none() {
+        builder.port = Some(Default::default())
+    }
+    if builder.recovery_latency_milliseconds.is_none() {
+        builder.recovery_latency_milliseconds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rist_router_output_configuration_correct_errors(
+    mut builder: crate::types::builders::RistRouterOutputConfigurationBuilder,
+) -> crate::types::builders::RistRouterOutputConfigurationBuilder {
+    if builder.destination_address.is_none() {
+        builder.destination_address = Some(Default::default())
+    }
+    if builder.destination_port.is_none() {
+        builder.destination_port = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rtp_router_input_configuration_correct_errors(
+    mut builder: crate::types::builders::RtpRouterInputConfigurationBuilder,
+) -> crate::types::builders::RtpRouterInputConfigurationBuilder {
+    if builder.port.is_none() {
+        builder.port = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rtp_router_output_configuration_correct_errors(
+    mut builder: crate::types::builders::RtpRouterOutputConfigurationBuilder,
+) -> crate::types::builders::RtpRouterOutputConfigurationBuilder {
+    if builder.destination_address.is_none() {
+        builder.destination_address = Some(Default::default())
+    }
+    if builder.destination_port.is_none() {
+        builder.destination_port = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn srt_caller_router_input_configuration_correct_errors(
+    mut builder: crate::types::builders::SrtCallerRouterInputConfigurationBuilder,
+) -> crate::types::builders::SrtCallerRouterInputConfigurationBuilder {
+    if builder.source_address.is_none() {
+        builder.source_address = Some(Default::default())
+    }
+    if builder.source_port.is_none() {
+        builder.source_port = Some(Default::default())
+    }
+    if builder.minimum_latency_milliseconds.is_none() {
+        builder.minimum_latency_milliseconds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn srt_caller_router_output_configuration_correct_errors(
+    mut builder: crate::types::builders::SrtCallerRouterOutputConfigurationBuilder,
+) -> crate::types::builders::SrtCallerRouterOutputConfigurationBuilder {
+    if builder.destination_address.is_none() {
+        builder.destination_address = Some(Default::default())
+    }
+    if builder.destination_port.is_none() {
+        builder.destination_port = Some(Default::default())
+    }
+    if builder.minimum_latency_milliseconds.is_none() {
+        builder.minimum_latency_milliseconds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn srt_listener_router_input_configuration_correct_errors(
+    mut builder: crate::types::builders::SrtListenerRouterInputConfigurationBuilder,
+) -> crate::types::builders::SrtListenerRouterInputConfigurationBuilder {
+    if builder.port.is_none() {
+        builder.port = Some(Default::default())
+    }
+    if builder.minimum_latency_milliseconds.is_none() {
+        builder.minimum_latency_milliseconds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn srt_listener_router_output_configuration_correct_errors(
+    mut builder: crate::types::builders::SrtListenerRouterOutputConfigurationBuilder,
+) -> crate::types::builders::SrtListenerRouterOutputConfigurationBuilder {
+    if builder.port.is_none() {
+        builder.port = Some(Default::default())
+    }
+    if builder.minimum_latency_milliseconds.is_none() {
+        builder.minimum_latency_milliseconds = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn transport_stream_correct_errors(
     mut builder: crate::types::builders::TransportStreamBuilder,
 ) -> crate::types::builders::TransportStreamBuilder {
@@ -746,6 +1877,34 @@ pub(crate) fn frame_resolution_correct_errors(
 pub(crate) fn interface_correct_errors(mut builder: crate::types::builders::InterfaceBuilder) -> crate::types::builders::InterfaceBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn srt_decryption_configuration_correct_errors(
+    mut builder: crate::types::builders::SrtDecryptionConfigurationBuilder,
+) -> crate::types::builders::SrtDecryptionConfigurationBuilder {
+    if builder.encryption_key.is_none() {
+        builder.encryption_key = {
+            let builder = crate::types::builders::SecretsManagerEncryptionKeyConfigurationBuilder::default();
+            crate::serde_util::secrets_manager_encryption_key_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn srt_encryption_configuration_correct_errors(
+    mut builder: crate::types::builders::SrtEncryptionConfigurationBuilder,
+) -> crate::types::builders::SrtEncryptionConfigurationBuilder {
+    if builder.encryption_key.is_none() {
+        builder.encryption_key = {
+            let builder = crate::types::builders::SecretsManagerEncryptionKeyConfigurationBuilder::default();
+            crate::serde_util::secrets_manager_encryption_key_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
     }
     builder
 }

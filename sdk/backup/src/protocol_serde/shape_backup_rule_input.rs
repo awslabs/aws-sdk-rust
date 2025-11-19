@@ -73,5 +73,17 @@ pub fn ser_backup_rule_input(
         }
         array_18.finish();
     }
+    if let Some(var_21) = &input.scan_actions {
+        let mut array_22 = object.key("ScanActions").start_array();
+        for item_23 in var_21 {
+            {
+                #[allow(unused_mut)]
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_scan_action::ser_scan_action(&mut object_24, item_23)?;
+                object_24.finish();
+            }
+        }
+        array_22.finish();
+    }
     Ok(())
 }

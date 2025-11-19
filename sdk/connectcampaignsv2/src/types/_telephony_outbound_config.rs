@@ -10,6 +10,8 @@ pub struct TelephonyOutboundConfig {
     pub connect_source_phone_number: ::std::option::Option<::std::string::String>,
     /// Answering Machine Detection config
     pub answer_machine_detection_config: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
+    /// Ring timeout for outbound calls
+    pub ring_timeout: ::std::option::Option<i32>,
 }
 impl TelephonyOutboundConfig {
     /// The identifier of the contact flow for the outbound call.
@@ -24,6 +26,10 @@ impl TelephonyOutboundConfig {
     /// Answering Machine Detection config
     pub fn answer_machine_detection_config(&self) -> ::std::option::Option<&crate::types::AnswerMachineDetectionConfig> {
         self.answer_machine_detection_config.as_ref()
+    }
+    /// Ring timeout for outbound calls
+    pub fn ring_timeout(&self) -> ::std::option::Option<i32> {
+        self.ring_timeout
     }
 }
 impl TelephonyOutboundConfig {
@@ -40,6 +46,7 @@ pub struct TelephonyOutboundConfigBuilder {
     pub(crate) connect_contact_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) connect_source_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) answer_machine_detection_config: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
+    pub(crate) ring_timeout: ::std::option::Option<i32>,
 }
 impl TelephonyOutboundConfigBuilder {
     /// The identifier of the contact flow for the outbound call.
@@ -85,6 +92,20 @@ impl TelephonyOutboundConfigBuilder {
     pub fn get_answer_machine_detection_config(&self) -> &::std::option::Option<crate::types::AnswerMachineDetectionConfig> {
         &self.answer_machine_detection_config
     }
+    /// Ring timeout for outbound calls
+    pub fn ring_timeout(mut self, input: i32) -> Self {
+        self.ring_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// Ring timeout for outbound calls
+    pub fn set_ring_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ring_timeout = input;
+        self
+    }
+    /// Ring timeout for outbound calls
+    pub fn get_ring_timeout(&self) -> &::std::option::Option<i32> {
+        &self.ring_timeout
+    }
     /// Consumes the builder and constructs a [`TelephonyOutboundConfig`](crate::types::TelephonyOutboundConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`connect_contact_flow_id`](crate::types::builders::TelephonyOutboundConfigBuilder::connect_contact_flow_id)
@@ -98,6 +119,7 @@ impl TelephonyOutboundConfigBuilder {
             })?,
             connect_source_phone_number: self.connect_source_phone_number,
             answer_machine_detection_config: self.answer_machine_detection_config,
+            ring_timeout: self.ring_timeout,
         })
     }
 }

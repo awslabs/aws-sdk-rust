@@ -1889,6 +1889,8 @@ pub(crate) mod shape_member_definition;
 
 pub(crate) mod shape_metadata_properties;
 
+pub(crate) mod shape_metrics_config;
+
 pub(crate) mod shape_model_artifacts;
 
 pub(crate) mod shape_model_bias_app_specification;

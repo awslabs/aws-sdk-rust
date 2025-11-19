@@ -257,6 +257,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartImageSca
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartImageScanError {
+    /// <p>The specified image is archived and cannot be scanned.</p>
+    ImageArchivedException(crate::types::error::ImageArchivedException),
     /// <p>The image requested does not exist in the specified repository.</p>
     ImageNotFoundException(crate::types::error::ImageNotFoundException),
     /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
@@ -304,6 +306,7 @@ impl StartImageScanError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ImageArchivedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ImageNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -313,6 +316,10 @@ impl StartImageScanError {
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `StartImageScanError::ImageArchivedException`.
+    pub fn is_image_archived_exception(&self) -> bool {
+        matches!(self, Self::ImageArchivedException(_))
     }
     /// Returns `true` if the error kind is `StartImageScanError::ImageNotFoundException`.
     pub fn is_image_not_found_exception(&self) -> bool {
@@ -346,6 +353,7 @@ impl StartImageScanError {
 impl ::std::error::Error for StartImageScanError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ImageArchivedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ImageNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -360,6 +368,7 @@ impl ::std::error::Error for StartImageScanError {
 impl ::std::fmt::Display for StartImageScanError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ImageArchivedException(_inner) => _inner.fmt(f),
             Self::ImageNotFoundException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
@@ -388,6 +397,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartImageScanError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartImageScanError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ImageArchivedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ImageNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -235,6 +235,8 @@ mod describe_report_plan;
 
 mod describe_restore_job;
 
+mod describe_scan_job;
+
 mod disassociate_backup_vault_mpa_approval_team;
 
 mod disassociate_recovery_point;
@@ -323,6 +325,10 @@ mod list_restore_testing_plans;
 
 mod list_restore_testing_selections;
 
+mod list_scan_job_summaries;
+
+mod list_scan_jobs;
+
 mod list_tags;
 
 mod list_tiering_configurations;
@@ -344,6 +350,8 @@ mod start_copy_job;
 mod start_report_job;
 
 mod start_restore_job;
+
+mod start_scan_job;
 
 mod stop_backup_job;
 

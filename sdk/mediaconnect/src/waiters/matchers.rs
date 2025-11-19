@@ -189,3 +189,525 @@ pub(crate) fn match_describe_flow_5ca2df6a6ffba30b9(
         })
         .unwrap_or_default()
 }
+
+/// Matcher union: {"output":{"path":"RouterInput.State","expected":"ACTIVE","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_input_f23fc9dd921da7fbc(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_input::GetRouterInputOutput,
+        &crate::operation::get_router_input::GetRouterInputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_input::GetRouterInputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterInputState> {
+        let _fld_1 = _output.router_input.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ACTIVE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterInput.State","expected":"STARTING","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_input_0223b7a37a8de1d45(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_input::GetRouterInputOutput,
+        &crate::operation::get_router_input::GetRouterInputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_input::GetRouterInputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterInputState> {
+        let _fld_1 = _output.router_input.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "STARTING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterInput.State","expected":"UPDATING","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_input_eb00a4469dfee9c67(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_input::GetRouterInputOutput,
+        &crate::operation::get_router_input::GetRouterInputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_input::GetRouterInputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterInputState> {
+        let _fld_1 = _output.router_input.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "UPDATING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"InternalServerErrorException"}
+pub(crate) fn match_get_router_input_23a4ee68df28eed70(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_input::GetRouterInputOutput,
+        &crate::operation::get_router_input::GetRouterInputError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "InternalServerErrorException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"errorType":"ServiceUnavailableException"}
+pub(crate) fn match_get_router_input_370bdfc8b90a93f70(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_input::GetRouterInputOutput,
+        &crate::operation::get_router_input::GetRouterInputError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "ServiceUnavailableException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"RouterInput.State","expected":"ERROR","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_input_50c992a3067eafa8a(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_input::GetRouterInputOutput,
+        &crate::operation::get_router_input::GetRouterInputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_input::GetRouterInputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterInputState> {
+        let _fld_1 = _output.router_input.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ERROR";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterInput.State","expected":"DELETING","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_input_9e03a6fb4922fe7a0(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_input::GetRouterInputOutput,
+        &crate::operation::get_router_input::GetRouterInputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_input::GetRouterInputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterInputState> {
+        let _fld_1 = _output.router_input.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"NotFoundException"}
+pub(crate) fn match_get_router_input_bcffe71d9077ffaa1(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_input::GetRouterInputOutput,
+        &crate::operation::get_router_input::GetRouterInputError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "NotFoundException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"RouterInput.State","expected":"STANDBY","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_input_6901094b798c808b3(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_input::GetRouterInputOutput,
+        &crate::operation::get_router_input::GetRouterInputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_input::GetRouterInputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterInputState> {
+        let _fld_1 = _output.router_input.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "STANDBY";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterInput.State","expected":"STOPPING","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_input_11c51d6bffa67b275(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_input::GetRouterInputOutput,
+        &crate::operation::get_router_input::GetRouterInputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_input::GetRouterInputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterInputState> {
+        let _fld_1 = _output.router_input.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "STOPPING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterOutput.State","expected":"ACTIVE","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_output_95a539fa65cacff89(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_output::GetRouterOutputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterOutputState> {
+        let _fld_1 = _output.router_output.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ACTIVE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterOutput.State","expected":"STARTING","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_output_0b774d741cd6958bc(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_output::GetRouterOutputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterOutputState> {
+        let _fld_1 = _output.router_output.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "STARTING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterOutput.State","expected":"UPDATING","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_output_db0cc9dc35c89baf9(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_output::GetRouterOutputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterOutputState> {
+        let _fld_1 = _output.router_output.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "UPDATING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"InternalServerErrorException"}
+pub(crate) fn match_get_router_output_23a4ee68df28eed70(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "InternalServerErrorException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"errorType":"ServiceUnavailableException"}
+pub(crate) fn match_get_router_output_370bdfc8b90a93f70(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "ServiceUnavailableException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"RouterOutput.State","expected":"ERROR","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_output_f4bb52b5d8fc651fa(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_output::GetRouterOutputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterOutputState> {
+        let _fld_1 = _output.router_output.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ERROR";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterOutput.State","expected":"DELETING","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_output_e752a126fc3959d57(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_output::GetRouterOutputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterOutputState> {
+        let _fld_1 = _output.router_output.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"NotFoundException"}
+pub(crate) fn match_get_router_output_bcffe71d9077ffaa1(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "NotFoundException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"RouterOutput.RoutedState","expected":"ROUTED","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_output_9c38bbeb51f934e64(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_output::GetRouterOutputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterOutputRoutedState> {
+        let _fld_1 = _output.router_output.as_ref()?;
+        let _fld_2 = &_fld_1.routed_state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ROUTED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterOutput.RoutedState","expected":"ROUTING","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_output_e691a43df9d36578f(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_output::GetRouterOutputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterOutputRoutedState> {
+        let _fld_1 = _output.router_output.as_ref()?;
+        let _fld_2 = &_fld_1.routed_state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ROUTING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterOutput.State","expected":"STANDBY","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_output_b89fc10ef5910e675(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_output::GetRouterOutputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterOutputState> {
+        let _fld_1 = _output.router_output.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "STANDBY";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterOutput.State","expected":"STOPPING","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_output_89ebfca473d93d50c(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_output::GetRouterOutputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterOutputState> {
+        let _fld_1 = _output.router_output.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "STOPPING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}

@@ -22,7 +22,7 @@ impl crate::operation::untag_resource::builders::UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// <p>Deletes specified tags from a resource.</p>
+/// <p>Deletes specified tags from a resource in the current region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

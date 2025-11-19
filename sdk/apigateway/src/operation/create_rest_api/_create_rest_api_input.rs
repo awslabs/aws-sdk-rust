@@ -26,6 +26,10 @@ pub struct CreateRestApiInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint</p>
     pub disable_execute_api_endpoint: ::std::option::Option<bool>,
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
+    /// <p>The endpoint access mode of the RestApi. Only available for RestApis that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub endpoint_access_mode: ::std::option::Option<crate::types::EndpointAccessMode>,
 }
 impl CreateRestApiInput {
     /// <p>The name of the RestApi.</p>
@@ -74,6 +78,14 @@ impl CreateRestApiInput {
     pub fn disable_execute_api_endpoint(&self) -> ::std::option::Option<bool> {
         self.disable_execute_api_endpoint
     }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub fn security_policy(&self) -> ::std::option::Option<&crate::types::SecurityPolicy> {
+        self.security_policy.as_ref()
+    }
+    /// <p>The endpoint access mode of the RestApi. Only available for RestApis that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn endpoint_access_mode(&self) -> ::std::option::Option<&crate::types::EndpointAccessMode> {
+        self.endpoint_access_mode.as_ref()
+    }
 }
 impl CreateRestApiInput {
     /// Creates a new builder-style object to manufacture [`CreateRestApiInput`](crate::operation::create_rest_api::CreateRestApiInput).
@@ -97,6 +109,8 @@ pub struct CreateRestApiInputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) disable_execute_api_endpoint: ::std::option::Option<bool>,
+    pub(crate) security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
+    pub(crate) endpoint_access_mode: ::std::option::Option<crate::types::EndpointAccessMode>,
 }
 impl CreateRestApiInputBuilder {
     /// <p>The name of the RestApi.</p>
@@ -266,6 +280,34 @@ impl CreateRestApiInputBuilder {
     pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
         &self.disable_execute_api_endpoint
     }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub fn security_policy(mut self, input: crate::types::SecurityPolicy) -> Self {
+        self.security_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub fn set_security_policy(mut self, input: ::std::option::Option<crate::types::SecurityPolicy>) -> Self {
+        self.security_policy = input;
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub fn get_security_policy(&self) -> &::std::option::Option<crate::types::SecurityPolicy> {
+        &self.security_policy
+    }
+    /// <p>The endpoint access mode of the RestApi. Only available for RestApis that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn endpoint_access_mode(mut self, input: crate::types::EndpointAccessMode) -> Self {
+        self.endpoint_access_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The endpoint access mode of the RestApi. Only available for RestApis that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn set_endpoint_access_mode(mut self, input: ::std::option::Option<crate::types::EndpointAccessMode>) -> Self {
+        self.endpoint_access_mode = input;
+        self
+    }
+    /// <p>The endpoint access mode of the RestApi. Only available for RestApis that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn get_endpoint_access_mode(&self) -> &::std::option::Option<crate::types::EndpointAccessMode> {
+        &self.endpoint_access_mode
+    }
     /// Consumes the builder and constructs a [`CreateRestApiInput`](crate::operation::create_rest_api::CreateRestApiInput).
     pub fn build(
         self,
@@ -282,6 +324,8 @@ impl CreateRestApiInputBuilder {
             policy: self.policy,
             tags: self.tags,
             disable_execute_api_endpoint: self.disable_execute_api_endpoint,
+            security_policy: self.security_policy,
+            endpoint_access_mode: self.endpoint_access_mode,
         })
     }
 }

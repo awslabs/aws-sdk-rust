@@ -52,6 +52,21 @@ pub fn de_update_firewall_analysis_settings_http_error(
                 tmp
             })
         }
+        "InvalidTokenException" => crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError::InvalidTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTokenExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_token_exception::de_invalid_token_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => {
             crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError::ResourceNotFoundException({
                 #[allow(unused_mut)]

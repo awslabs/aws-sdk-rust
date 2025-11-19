@@ -78,6 +78,8 @@ pub struct Cluster {
     pub ebs_root_volume_throughput: ::std::option::Option<i32>,
     /// <p>Reserved.</p>
     pub extended_support: ::std::option::Option<bool>,
+    /// <p>Contains Cloudwatch log configuration metadata and settings.</p>
+    pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl Cluster {
     /// <p>The unique identifier for the cluster.</p>
@@ -232,6 +234,10 @@ impl Cluster {
     pub fn extended_support(&self) -> ::std::option::Option<bool> {
         self.extended_support
     }
+    /// <p>Contains Cloudwatch log configuration metadata and settings.</p>
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -279,6 +285,7 @@ pub struct ClusterBuilder {
     pub(crate) ebs_root_volume_iops: ::std::option::Option<i32>,
     pub(crate) ebs_root_volume_throughput: ::std::option::Option<i32>,
     pub(crate) extended_support: ::std::option::Option<bool>,
+    pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl ClusterBuilder {
     /// <p>The unique identifier for the cluster.</p>
@@ -807,6 +814,20 @@ impl ClusterBuilder {
     pub fn get_extended_support(&self) -> &::std::option::Option<bool> {
         &self.extended_support
     }
+    /// <p>Contains Cloudwatch log configuration metadata and settings.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.monitoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains Cloudwatch log configuration metadata and settings.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring_configuration = input;
+        self
+    }
+    /// <p>Contains Cloudwatch log configuration metadata and settings.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring_configuration
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -845,6 +866,7 @@ impl ClusterBuilder {
             ebs_root_volume_iops: self.ebs_root_volume_iops,
             ebs_root_volume_throughput: self.ebs_root_volume_throughput,
             extended_support: self.extended_support,
+            monitoring_configuration: self.monitoring_configuration,
         }
     }
 }

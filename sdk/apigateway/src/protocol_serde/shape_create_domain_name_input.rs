@@ -21,45 +21,48 @@ pub fn ser_create_domain_name_input_input(
     if let Some(var_6) = &input.domain_name {
         object.key("domainName").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.endpoint_configuration {
+    if let Some(var_7) = &input.endpoint_access_mode {
+        object.key("endpointAccessMode").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.endpoint_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("endpointConfiguration").start_object();
-        crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("endpointConfiguration").start_object();
+        crate::protocol_serde::shape_endpoint_configuration::ser_endpoint_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.mutual_tls_authentication {
+    if let Some(var_10) = &input.mutual_tls_authentication {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("mutualTlsAuthentication").start_object();
-        crate::protocol_serde::shape_mutual_tls_authentication_input::ser_mutual_tls_authentication_input(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("mutualTlsAuthentication").start_object();
+        crate::protocol_serde::shape_mutual_tls_authentication_input::ser_mutual_tls_authentication_input(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.ownership_verification_certificate_arn {
-        object.key("ownershipVerificationCertificateArn").string(var_11.as_str());
+    if let Some(var_12) = &input.ownership_verification_certificate_arn {
+        object.key("ownershipVerificationCertificateArn").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.policy {
-        object.key("policy").string(var_12.as_str());
+    if let Some(var_13) = &input.policy {
+        object.key("policy").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.regional_certificate_arn {
-        object.key("regionalCertificateArn").string(var_13.as_str());
+    if let Some(var_14) = &input.regional_certificate_arn {
+        object.key("regionalCertificateArn").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.regional_certificate_name {
-        object.key("regionalCertificateName").string(var_14.as_str());
+    if let Some(var_15) = &input.regional_certificate_name {
+        object.key("regionalCertificateName").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.routing_mode {
-        object.key("routingMode").string(var_15.as_str());
+    if let Some(var_16) = &input.routing_mode {
+        object.key("routingMode").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.security_policy {
-        object.key("securityPolicy").string(var_16.as_str());
+    if let Some(var_17) = &input.security_policy {
+        object.key("securityPolicy").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.tags {
+    if let Some(var_18) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("tags").start_object();
-        for (key_19, value_20) in var_17 {
+        let mut object_19 = object.key("tags").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                object_18.key(key_19.as_str()).string(value_20.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
-        object_18.finish();
+        object_19.finish();
     }
     Ok(())
 }

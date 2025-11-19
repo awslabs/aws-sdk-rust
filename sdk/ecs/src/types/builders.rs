@@ -117,6 +117,8 @@ pub use crate::types::_capacity_provider::CapacityProviderBuilder;
 
 pub use crate::types::_managed_instances_provider::ManagedInstancesProviderBuilder;
 
+pub use crate::types::_infrastructure_optimization::InfrastructureOptimizationBuilder;
+
 pub use crate::types::_instance_launch_template::InstanceLaunchTemplateBuilder;
 
 pub use crate::types::_instance_requirements_request::InstanceRequirementsRequestBuilder;

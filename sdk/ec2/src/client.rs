@@ -541,6 +541,8 @@ mod create_ipam;
 
 mod create_ipam_external_resource_verification_token;
 
+mod create_ipam_policy;
+
 mod create_ipam_pool;
 
 mod create_ipam_prefix_list_resolver;
@@ -745,6 +747,8 @@ mod delete_internet_gateway;
 mod delete_ipam;
 
 mod delete_ipam_external_resource_verification_token;
+
+mod delete_ipam_policy;
 
 mod delete_ipam_pool;
 
@@ -1042,6 +1046,8 @@ mod describe_ipam_byoasn;
 
 mod describe_ipam_external_resource_verification_tokens;
 
+mod describe_ipam_policies;
+
 mod describe_ipam_pools;
 
 mod describe_ipam_prefix_list_resolver_targets;
@@ -1294,6 +1300,8 @@ mod disable_instance_sql_ha_standby_detections;
 
 mod disable_ipam_organization_admin_account;
 
+mod disable_ipam_policy;
+
 mod disable_route_server_propagation;
 
 mod disable_serial_console_access;
@@ -1370,6 +1378,8 @@ mod enable_instance_sql_ha_standby_detections;
 
 mod enable_ipam_organization_admin_account;
 
+mod enable_ipam_policy;
+
 mod enable_reachability_analyzer_organization_sharing;
 
 mod enable_route_server_propagation;
@@ -1430,6 +1440,8 @@ mod get_ebs_default_kms_key_id;
 
 mod get_ebs_encryption_by_default;
 
+mod get_enabled_ipam_policy;
+
 mod get_flow_logs_integration_template;
 
 mod get_groups_for_capacity_reservation;
@@ -1455,6 +1467,10 @@ mod get_ipam_discovered_accounts;
 mod get_ipam_discovered_public_addresses;
 
 mod get_ipam_discovered_resource_cidrs;
+
+mod get_ipam_policy_allocation_rules;
+
+mod get_ipam_policy_organization_targets;
 
 mod get_ipam_pool_allocations;
 
@@ -1593,6 +1609,8 @@ mod modify_instance_network_performance_options;
 mod modify_instance_placement;
 
 mod modify_ipam;
+
+mod modify_ipam_policy_allocation_rules;
 
 mod modify_ipam_pool;
 

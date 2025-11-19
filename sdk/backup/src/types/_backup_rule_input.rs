@@ -40,6 +40,8 @@ pub struct BackupRuleInput {
     /// <p><code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p></li>
     /// </ul>
     pub index_actions: ::std::option::Option<::std::vec::Vec<crate::types::IndexAction>>,
+    /// <p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>
+    pub scan_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScanAction>>,
 }
 impl BackupRuleInput {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -108,6 +110,12 @@ impl BackupRuleInput {
     pub fn index_actions(&self) -> &[crate::types::IndexAction] {
         self.index_actions.as_deref().unwrap_or_default()
     }
+    /// <p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_actions.is_none()`.
+    pub fn scan_actions(&self) -> &[crate::types::ScanAction] {
+        self.scan_actions.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for BackupRuleInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -127,6 +135,7 @@ impl ::std::fmt::Debug for BackupRuleInput {
         formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
         formatter.field("schedule_expression_timezone", &self.schedule_expression_timezone);
         formatter.field("index_actions", &self.index_actions);
+        formatter.field("scan_actions", &self.scan_actions);
         formatter.finish()
     }
 }
@@ -153,6 +162,7 @@ pub struct BackupRuleInputBuilder {
     pub(crate) enable_continuous_backup: ::std::option::Option<bool>,
     pub(crate) schedule_expression_timezone: ::std::option::Option<::std::string::String>,
     pub(crate) index_actions: ::std::option::Option<::std::vec::Vec<crate::types::IndexAction>>,
+    pub(crate) scan_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScanAction>>,
 }
 impl BackupRuleInputBuilder {
     /// <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -386,6 +396,26 @@ impl BackupRuleInputBuilder {
     pub fn get_index_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexAction>> {
         &self.index_actions
     }
+    /// Appends an item to `scan_actions`.
+    ///
+    /// To override the contents of this collection use [`set_scan_actions`](Self::set_scan_actions).
+    ///
+    /// <p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>
+    pub fn scan_actions(mut self, input: crate::types::ScanAction) -> Self {
+        let mut v = self.scan_actions.unwrap_or_default();
+        v.push(input);
+        self.scan_actions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>
+    pub fn set_scan_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanAction>>) -> Self {
+        self.scan_actions = input;
+        self
+    }
+    /// <p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>
+    pub fn get_scan_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanAction>> {
+        &self.scan_actions
+    }
     /// Consumes the builder and constructs a [`BackupRuleInput`](crate::types::BackupRuleInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_name`](crate::types::builders::BackupRuleInputBuilder::rule_name)
@@ -414,6 +444,7 @@ impl BackupRuleInputBuilder {
             enable_continuous_backup: self.enable_continuous_backup,
             schedule_expression_timezone: self.schedule_expression_timezone,
             index_actions: self.index_actions,
+            scan_actions: self.scan_actions,
         })
     }
 }
@@ -435,6 +466,7 @@ impl ::std::fmt::Debug for BackupRuleInputBuilder {
         formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
         formatter.field("schedule_expression_timezone", &self.schedule_expression_timezone);
         formatter.field("index_actions", &self.index_actions);
+        formatter.field("scan_actions", &self.scan_actions);
         formatter.finish()
     }
 }

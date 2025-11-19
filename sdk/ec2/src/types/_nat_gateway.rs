@@ -54,6 +54,19 @@ pub struct NatGateway {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether the NAT gateway supports public or private connectivity.</p>
     pub connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
+    /// <p>Indicates whether this is a zonal (single-AZ) or regional (multi-AZ) NAT gateway.</p>
+    /// <p>A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within a single availability zone. A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub availability_mode: ::std::option::Option<crate::types::AvailabilityMode>,
+    /// <p>For regional NAT gateways only: Indicates whether Amazon Web Services automatically allocates additional Elastic IP addresses (EIPs) in an AZ when the NAT gateway needs more ports due to increased concurrent connections to a single destination from that AZ.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub auto_scaling_ips: ::std::option::Option<crate::types::AutoScalingIpsState>,
+    /// <p>For regional NAT gateways only: Indicates whether Amazon Web Services automatically manages AZ coverage. When enabled, the NAT gateway associates EIPs in all AZs where your VPC has subnets to handle outbound NAT traffic, expands to new AZs when you create subnets there, and retracts from AZs where you've removed all subnets. When disabled, you must manually manage which AZs the NAT gateway supports and their corresponding EIPs.</p>
+    /// <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub auto_provision_zones: ::std::option::Option<crate::types::AutoProvisionZonesState>,
+    /// <p>For regional NAT gateways only, this is the ID of the NAT gateway.</p>
+    pub route_table_id: ::std::option::Option<::std::string::String>,
 }
 impl NatGateway {
     /// <p>The date and time the NAT gateway was created.</p>
@@ -134,6 +147,27 @@ impl NatGateway {
     pub fn connectivity_type(&self) -> ::std::option::Option<&crate::types::ConnectivityType> {
         self.connectivity_type.as_ref()
     }
+    /// <p>Indicates whether this is a zonal (single-AZ) or regional (multi-AZ) NAT gateway.</p>
+    /// <p>A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within a single availability zone. A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn availability_mode(&self) -> ::std::option::Option<&crate::types::AvailabilityMode> {
+        self.availability_mode.as_ref()
+    }
+    /// <p>For regional NAT gateways only: Indicates whether Amazon Web Services automatically allocates additional Elastic IP addresses (EIPs) in an AZ when the NAT gateway needs more ports due to increased concurrent connections to a single destination from that AZ.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn auto_scaling_ips(&self) -> ::std::option::Option<&crate::types::AutoScalingIpsState> {
+        self.auto_scaling_ips.as_ref()
+    }
+    /// <p>For regional NAT gateways only: Indicates whether Amazon Web Services automatically manages AZ coverage. When enabled, the NAT gateway associates EIPs in all AZs where your VPC has subnets to handle outbound NAT traffic, expands to new AZs when you create subnets there, and retracts from AZs where you've removed all subnets. When disabled, you must manually manage which AZs the NAT gateway supports and their corresponding EIPs.</p>
+    /// <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn auto_provision_zones(&self) -> ::std::option::Option<&crate::types::AutoProvisionZonesState> {
+        self.auto_provision_zones.as_ref()
+    }
+    /// <p>For regional NAT gateways only, this is the ID of the NAT gateway.</p>
+    pub fn route_table_id(&self) -> ::std::option::Option<&str> {
+        self.route_table_id.as_deref()
+    }
 }
 impl NatGateway {
     /// Creates a new builder-style object to manufacture [`NatGateway`](crate::types::NatGateway).
@@ -158,6 +192,10 @@ pub struct NatGatewayBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
+    pub(crate) availability_mode: ::std::option::Option<crate::types::AvailabilityMode>,
+    pub(crate) auto_scaling_ips: ::std::option::Option<crate::types::AutoScalingIpsState>,
+    pub(crate) auto_provision_zones: ::std::option::Option<crate::types::AutoProvisionZonesState>,
+    pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
 }
 impl NatGatewayBuilder {
     /// <p>The date and time the NAT gateway was created.</p>
@@ -418,6 +456,77 @@ impl NatGatewayBuilder {
     pub fn get_connectivity_type(&self) -> &::std::option::Option<crate::types::ConnectivityType> {
         &self.connectivity_type
     }
+    /// <p>Indicates whether this is a zonal (single-AZ) or regional (multi-AZ) NAT gateway.</p>
+    /// <p>A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within a single availability zone. A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn availability_mode(mut self, input: crate::types::AvailabilityMode) -> Self {
+        self.availability_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this is a zonal (single-AZ) or regional (multi-AZ) NAT gateway.</p>
+    /// <p>A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within a single availability zone. A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn set_availability_mode(mut self, input: ::std::option::Option<crate::types::AvailabilityMode>) -> Self {
+        self.availability_mode = input;
+        self
+    }
+    /// <p>Indicates whether this is a zonal (single-AZ) or regional (multi-AZ) NAT gateway.</p>
+    /// <p>A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within a single availability zone. A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_availability_mode(&self) -> &::std::option::Option<crate::types::AvailabilityMode> {
+        &self.availability_mode
+    }
+    /// <p>For regional NAT gateways only: Indicates whether Amazon Web Services automatically allocates additional Elastic IP addresses (EIPs) in an AZ when the NAT gateway needs more ports due to increased concurrent connections to a single destination from that AZ.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn auto_scaling_ips(mut self, input: crate::types::AutoScalingIpsState) -> Self {
+        self.auto_scaling_ips = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For regional NAT gateways only: Indicates whether Amazon Web Services automatically allocates additional Elastic IP addresses (EIPs) in an AZ when the NAT gateway needs more ports due to increased concurrent connections to a single destination from that AZ.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn set_auto_scaling_ips(mut self, input: ::std::option::Option<crate::types::AutoScalingIpsState>) -> Self {
+        self.auto_scaling_ips = input;
+        self
+    }
+    /// <p>For regional NAT gateways only: Indicates whether Amazon Web Services automatically allocates additional Elastic IP addresses (EIPs) in an AZ when the NAT gateway needs more ports due to increased concurrent connections to a single destination from that AZ.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_auto_scaling_ips(&self) -> &::std::option::Option<crate::types::AutoScalingIpsState> {
+        &self.auto_scaling_ips
+    }
+    /// <p>For regional NAT gateways only: Indicates whether Amazon Web Services automatically manages AZ coverage. When enabled, the NAT gateway associates EIPs in all AZs where your VPC has subnets to handle outbound NAT traffic, expands to new AZs when you create subnets there, and retracts from AZs where you've removed all subnets. When disabled, you must manually manage which AZs the NAT gateway supports and their corresponding EIPs.</p>
+    /// <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn auto_provision_zones(mut self, input: crate::types::AutoProvisionZonesState) -> Self {
+        self.auto_provision_zones = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For regional NAT gateways only: Indicates whether Amazon Web Services automatically manages AZ coverage. When enabled, the NAT gateway associates EIPs in all AZs where your VPC has subnets to handle outbound NAT traffic, expands to new AZs when you create subnets there, and retracts from AZs where you've removed all subnets. When disabled, you must manually manage which AZs the NAT gateway supports and their corresponding EIPs.</p>
+    /// <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn set_auto_provision_zones(mut self, input: ::std::option::Option<crate::types::AutoProvisionZonesState>) -> Self {
+        self.auto_provision_zones = input;
+        self
+    }
+    /// <p>For regional NAT gateways only: Indicates whether Amazon Web Services automatically manages AZ coverage. When enabled, the NAT gateway associates EIPs in all AZs where your VPC has subnets to handle outbound NAT traffic, expands to new AZs when you create subnets there, and retracts from AZs where you've removed all subnets. When disabled, you must manually manage which AZs the NAT gateway supports and their corresponding EIPs.</p>
+    /// <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_auto_provision_zones(&self) -> &::std::option::Option<crate::types::AutoProvisionZonesState> {
+        &self.auto_provision_zones
+    }
+    /// <p>For regional NAT gateways only, this is the ID of the NAT gateway.</p>
+    pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.route_table_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For regional NAT gateways only, this is the ID of the NAT gateway.</p>
+    pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.route_table_id = input;
+        self
+    }
+    /// <p>For regional NAT gateways only, this is the ID of the NAT gateway.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
+    }
     /// Consumes the builder and constructs a [`NatGateway`](crate::types::NatGateway).
     pub fn build(self) -> crate::types::NatGateway {
         crate::types::NatGateway {
@@ -433,6 +542,10 @@ impl NatGatewayBuilder {
             vpc_id: self.vpc_id,
             tags: self.tags,
             connectivity_type: self.connectivity_type,
+            availability_mode: self.availability_mode,
+            auto_scaling_ips: self.auto_scaling_ips,
+            auto_provision_zones: self.auto_provision_zones,
+            route_table_id: self.route_table_id,
         }
     }
 }

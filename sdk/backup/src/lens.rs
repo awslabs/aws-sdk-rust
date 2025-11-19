@@ -249,6 +249,26 @@ pub(crate) fn reflens_list_restore_testing_selections_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_scan_job_summaries_output_output_next_token(
+    input: &crate::operation::list_scan_job_summaries::ListScanJobSummariesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_scan_jobs_output_output_next_token(
+    input: &crate::operation::list_scan_jobs::ListScanJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_tags_output_output_next_token(
     input: &crate::operation::list_tags::ListTagsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -399,6 +419,20 @@ pub(crate) fn lens_list_restore_testing_selections_output_output_restore_testing
     input: crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingSelectionForList>> {
     let input = input.restore_testing_selections;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_scan_job_summaries_output_output_scan_job_summaries(
+    input: crate::operation::list_scan_job_summaries::ListScanJobSummariesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ScanJobSummary>> {
+    let input = input.scan_job_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_scan_jobs_output_output_scan_jobs(
+    input: crate::operation::list_scan_jobs::ListScanJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ScanJob>> {
+    let input = input.scan_jobs;
     ::std::option::Option::Some(input)
 }
 

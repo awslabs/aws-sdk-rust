@@ -7,6 +7,9 @@ pub mod get_preferences;
 /// Types for the `GetRecommendation` operation.
 pub mod get_recommendation;
 
+/// Types for the `ListEfficiencyMetrics` operation.
+pub mod list_efficiency_metrics;
+
 /// Types for the `ListEnrollmentStatuses` operation.
 pub mod list_enrollment_statuses;
 

@@ -25,6 +25,10 @@ pub enum Error {
     EntityAlreadyExistsException(crate::types::error::EntityAlreadyExistsException),
     /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
     EntityTemporarilyUnmodifiableException(crate::types::error::EntityTemporarilyUnmodifiableException),
+    /// <p>The request failed because outbound identity federation is already disabled for your Amazon Web Services account. You cannot disable the feature multiple times</p>
+    FeatureDisabledException(crate::types::error::FeatureDisabledException),
+    /// <p>The request failed because outbound identity federation is already enabled for your Amazon Web Services account. You cannot enable the feature multiple times. To fetch the current configuration (including the unique issuer URL), use the <code>GetOutboundWebIdentityFederationInfo</code> operation.</p>
+    FeatureEnabledException(crate::types::error::FeatureEnabledException),
     /// <p>The request was rejected because the authentication code was not recognized. The error message describes the specific error.</p>
     InvalidAuthenticationCodeException(crate::types::error::InvalidAuthenticationCodeException),
     /// <p>The request was rejected because the certificate is invalid.</p>
@@ -92,6 +96,8 @@ impl ::std::fmt::Display for Error {
             Error::DuplicateSshPublicKeyException(inner) => inner.fmt(f),
             Error::EntityAlreadyExistsException(inner) => inner.fmt(f),
             Error::EntityTemporarilyUnmodifiableException(inner) => inner.fmt(f),
+            Error::FeatureDisabledException(inner) => inner.fmt(f),
+            Error::FeatureEnabledException(inner) => inner.fmt(f),
             Error::InvalidAuthenticationCodeException(inner) => inner.fmt(f),
             Error::InvalidCertificateException(inner) => inner.fmt(f),
             Error::InvalidInputException(inner) => inner.fmt(f),
@@ -146,6 +152,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DuplicateSshPublicKeyException(inner) => inner.meta(),
             Self::EntityAlreadyExistsException(inner) => inner.meta(),
             Self::EntityTemporarilyUnmodifiableException(inner) => inner.meta(),
+            Self::FeatureDisabledException(inner) => inner.meta(),
+            Self::FeatureEnabledException(inner) => inner.meta(),
             Self::InvalidAuthenticationCodeException(inner) => inner.meta(),
             Self::InvalidCertificateException(inner) => inner.meta(),
             Self::InvalidInputException(inner) => inner.meta(),
@@ -1840,6 +1848,43 @@ impl From<crate::operation::disable_organizations_root_sessions::DisableOrganiza
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_outbound_web_identity_federation::DisableOutboundWebIdentityFederationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_outbound_web_identity_federation::DisableOutboundWebIdentityFederationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_outbound_web_identity_federation::DisableOutboundWebIdentityFederationError> for Error {
+    fn from(err: crate::operation::disable_outbound_web_identity_federation::DisableOutboundWebIdentityFederationError) -> Self {
+        match err {
+            crate::operation::disable_outbound_web_identity_federation::DisableOutboundWebIdentityFederationError::FeatureDisabledException(
+                inner,
+            ) => Error::FeatureDisabledException(inner),
+            crate::operation::disable_outbound_web_identity_federation::DisableOutboundWebIdentityFederationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_mfa_device::EnableMFADeviceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1947,6 +1992,43 @@ impl From<crate::operation::enable_organizations_root_sessions::EnableOrganizati
             crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError::OrganizationNotInAllFeaturesModeException(inner) => Error::OrganizationNotInAllFeaturesModeException(inner),
             crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError::ServiceAccessNotEnabledException(inner) => Error::ServiceAccessNotEnabledException(inner),
             crate::operation::enable_organizations_root_sessions::EnableOrganizationsRootSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_outbound_web_identity_federation::EnableOutboundWebIdentityFederationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_outbound_web_identity_federation::EnableOutboundWebIdentityFederationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_outbound_web_identity_federation::EnableOutboundWebIdentityFederationError> for Error {
+    fn from(err: crate::operation::enable_outbound_web_identity_federation::EnableOutboundWebIdentityFederationError) -> Self {
+        match err {
+            crate::operation::enable_outbound_web_identity_federation::EnableOutboundWebIdentityFederationError::FeatureEnabledException(inner) => {
+                Error::FeatureEnabledException(inner)
+            }
+            crate::operation::enable_outbound_web_identity_federation::EnableOutboundWebIdentityFederationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -2505,6 +2587,43 @@ impl From<crate::operation::get_organizations_access_report::GetOrganizationsAcc
                 Error::NoSuchEntityException(inner)
             }
             crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_outbound_web_identity_federation_info::GetOutboundWebIdentityFederationInfoError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_outbound_web_identity_federation_info::GetOutboundWebIdentityFederationInfoError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_outbound_web_identity_federation_info::GetOutboundWebIdentityFederationInfoError> for Error {
+    fn from(err: crate::operation::get_outbound_web_identity_federation_info::GetOutboundWebIdentityFederationInfoError) -> Self {
+        match err {
+            crate::operation::get_outbound_web_identity_federation_info::GetOutboundWebIdentityFederationInfoError::FeatureDisabledException(
+                inner,
+            ) => Error::FeatureDisabledException(inner),
+            crate::operation::get_outbound_web_identity_federation_info::GetOutboundWebIdentityFederationInfoError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -5426,6 +5545,8 @@ impl ::std::error::Error for Error {
             Error::DuplicateSshPublicKeyException(inner) => inner.source(),
             Error::EntityAlreadyExistsException(inner) => inner.source(),
             Error::EntityTemporarilyUnmodifiableException(inner) => inner.source(),
+            Error::FeatureDisabledException(inner) => inner.source(),
+            Error::FeatureEnabledException(inner) => inner.source(),
             Error::InvalidAuthenticationCodeException(inner) => inner.source(),
             Error::InvalidCertificateException(inner) => inner.source(),
             Error::InvalidInputException(inner) => inner.source(),
@@ -5466,6 +5587,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DuplicateSshPublicKeyException(e) => e.request_id(),
             Self::EntityAlreadyExistsException(e) => e.request_id(),
             Self::EntityTemporarilyUnmodifiableException(e) => e.request_id(),
+            Self::FeatureDisabledException(e) => e.request_id(),
+            Self::FeatureEnabledException(e) => e.request_id(),
             Self::InvalidAuthenticationCodeException(e) => e.request_id(),
             Self::InvalidCertificateException(e) => e.request_id(),
             Self::InvalidInputException(e) => e.request_id(),

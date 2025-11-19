@@ -12,6 +12,15 @@ pub fn ser_invoice_unit_rule(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.bill_source_accounts {
+        let mut array_5 = object.key("BillSourceAccounts").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }
 
@@ -31,7 +40,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LinkedAccounts" => {
-                            builder = builder.set_linked_accounts(crate::protocol_serde::shape_account_id_list::de_account_id_list(tokens)?);
+                            builder =
+                                builder.set_linked_accounts(crate::protocol_serde::shape_rule_account_id_list::de_rule_account_id_list(tokens)?);
+                        }
+                        "BillSourceAccounts" => {
+                            builder =
+                                builder.set_bill_source_accounts(crate::protocol_serde::shape_rule_account_id_list::de_rule_account_id_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

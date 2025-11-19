@@ -118,23 +118,29 @@ pub fn ser_create_function_input_input(
         }
         object_36.finish();
     }
-    if let Some(var_39) = &input.timeout {
+    if let Some(var_39) = &input.tenancy_config {
+        #[allow(unused_mut)]
+        let mut object_40 = object.key("TenancyConfig").start_object();
+        crate::protocol_serde::shape_tenancy_config::ser_tenancy_config(&mut object_40, var_39)?;
+        object_40.finish();
+    }
+    if let Some(var_41) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_39).into()),
+            ::aws_smithy_types::Number::NegInt((*var_41).into()),
         );
     }
-    if let Some(var_40) = &input.tracing_config {
+    if let Some(var_42) = &input.tracing_config {
         #[allow(unused_mut)]
-        let mut object_41 = object.key("TracingConfig").start_object();
-        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_41, var_40)?;
-        object_41.finish();
-    }
-    if let Some(var_42) = &input.vpc_config {
-        #[allow(unused_mut)]
-        let mut object_43 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_43, var_42)?;
+        let mut object_43 = object.key("TracingConfig").start_object();
+        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_43, var_42)?;
         object_43.finish();
+    }
+    if let Some(var_44) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_45 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_45, var_44)?;
+        object_45.finish();
     }
     Ok(())
 }

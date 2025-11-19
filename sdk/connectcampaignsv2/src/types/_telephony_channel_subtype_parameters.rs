@@ -12,6 +12,8 @@ pub struct TelephonyChannelSubtypeParameters {
     pub connect_source_phone_number: ::std::option::Option<::std::string::String>,
     /// Answering Machine Detection config
     pub answer_machine_detection_config: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
+    /// Ring timeout for outbound calls
+    pub ring_timeout: ::std::option::Option<i32>,
 }
 impl TelephonyChannelSubtypeParameters {
     /// The phone number of the customer, in E.164 format.
@@ -31,6 +33,10 @@ impl TelephonyChannelSubtypeParameters {
     pub fn answer_machine_detection_config(&self) -> ::std::option::Option<&crate::types::AnswerMachineDetectionConfig> {
         self.answer_machine_detection_config.as_ref()
     }
+    /// Ring timeout for outbound calls
+    pub fn ring_timeout(&self) -> ::std::option::Option<i32> {
+        self.ring_timeout
+    }
 }
 impl ::std::fmt::Debug for TelephonyChannelSubtypeParameters {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -39,6 +45,7 @@ impl ::std::fmt::Debug for TelephonyChannelSubtypeParameters {
         formatter.field("attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("connect_source_phone_number", &self.connect_source_phone_number);
         formatter.field("answer_machine_detection_config", &self.answer_machine_detection_config);
+        formatter.field("ring_timeout", &self.ring_timeout);
         formatter.finish()
     }
 }
@@ -57,6 +64,7 @@ pub struct TelephonyChannelSubtypeParametersBuilder {
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) connect_source_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) answer_machine_detection_config: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
+    pub(crate) ring_timeout: ::std::option::Option<i32>,
 }
 impl TelephonyChannelSubtypeParametersBuilder {
     /// The phone number of the customer, in E.164 format.
@@ -122,6 +130,20 @@ impl TelephonyChannelSubtypeParametersBuilder {
     pub fn get_answer_machine_detection_config(&self) -> &::std::option::Option<crate::types::AnswerMachineDetectionConfig> {
         &self.answer_machine_detection_config
     }
+    /// Ring timeout for outbound calls
+    pub fn ring_timeout(mut self, input: i32) -> Self {
+        self.ring_timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// Ring timeout for outbound calls
+    pub fn set_ring_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ring_timeout = input;
+        self
+    }
+    /// Ring timeout for outbound calls
+    pub fn get_ring_timeout(&self) -> &::std::option::Option<i32> {
+        &self.ring_timeout
+    }
     /// Consumes the builder and constructs a [`TelephonyChannelSubtypeParameters`](crate::types::TelephonyChannelSubtypeParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`destination_phone_number`](crate::types::builders::TelephonyChannelSubtypeParametersBuilder::destination_phone_number)
@@ -142,6 +164,7 @@ impl TelephonyChannelSubtypeParametersBuilder {
             })?,
             connect_source_phone_number: self.connect_source_phone_number,
             answer_machine_detection_config: self.answer_machine_detection_config,
+            ring_timeout: self.ring_timeout,
         })
     }
 }
@@ -152,6 +175,7 @@ impl ::std::fmt::Debug for TelephonyChannelSubtypeParametersBuilder {
         formatter.field("attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("connect_source_phone_number", &self.connect_source_phone_number);
         formatter.field("answer_machine_detection_config", &self.answer_machine_detection_config);
+        formatter.field("ring_timeout", &self.ring_timeout);
         formatter.finish()
     }
 }

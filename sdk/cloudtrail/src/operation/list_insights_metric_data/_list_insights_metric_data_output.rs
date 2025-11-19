@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInsightsMetricDataOutput {
+    /// <p>Specifies the ARN of the trail. This is only returned when Insights is enabled on a trail logging data events.</p>
+    pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub event_source: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event, typically the Amazon Web Services API on which unusual levels of activity were recorded.</p>
@@ -21,6 +23,10 @@ pub struct ListInsightsMetricDataOutput {
     _request_id: Option<String>,
 }
 impl ListInsightsMetricDataOutput {
+    /// <p>Specifies the ARN of the trail. This is only returned when Insights is enabled on a trail logging data events.</p>
+    pub fn trail_arn(&self) -> ::std::option::Option<&str> {
+        self.trail_arn.as_deref()
+    }
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub fn event_source(&self) -> ::std::option::Option<&str> {
         self.event_source.as_deref()
@@ -71,6 +77,7 @@ impl ListInsightsMetricDataOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListInsightsMetricDataOutputBuilder {
+    pub(crate) trail_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_source: ::std::option::Option<::std::string::String>,
     pub(crate) event_name: ::std::option::Option<::std::string::String>,
     pub(crate) insight_type: ::std::option::Option<crate::types::InsightType>,
@@ -81,6 +88,20 @@ pub struct ListInsightsMetricDataOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListInsightsMetricDataOutputBuilder {
+    /// <p>Specifies the ARN of the trail. This is only returned when Insights is enabled on a trail logging data events.</p>
+    pub fn trail_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trail_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the ARN of the trail. This is only returned when Insights is enabled on a trail logging data events.</p>
+    pub fn set_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trail_arn = input;
+        self
+    }
+    /// <p>Specifies the ARN of the trail. This is only returned when Insights is enabled on a trail logging data events.</p>
+    pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trail_arn
+    }
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source = ::std::option::Option::Some(input.into());
@@ -206,6 +227,7 @@ impl ListInsightsMetricDataOutputBuilder {
     /// Consumes the builder and constructs a [`ListInsightsMetricDataOutput`](crate::operation::list_insights_metric_data::ListInsightsMetricDataOutput).
     pub fn build(self) -> crate::operation::list_insights_metric_data::ListInsightsMetricDataOutput {
         crate::operation::list_insights_metric_data::ListInsightsMetricDataOutput {
+            trail_arn: self.trail_arn,
             event_source: self.event_source,
             event_name: self.event_name,
             insight_type: self.insight_type,

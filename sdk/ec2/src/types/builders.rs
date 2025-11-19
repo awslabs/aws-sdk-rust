@@ -591,6 +591,12 @@ pub use crate::types::_ipam_pool::IpamPoolBuilder;
 
 pub use crate::types::_ipam_pool_source_resource::IpamPoolSourceResourceBuilder;
 
+pub use crate::types::_ipam_policy_document::IpamPolicyDocumentBuilder;
+
+pub use crate::types::_ipam_policy_allocation_rule::IpamPolicyAllocationRuleBuilder;
+
+pub use crate::types::_ipam_policy_allocation_rule_request::IpamPolicyAllocationRuleRequestBuilder;
+
 pub use crate::types::_ipam::IpamBuilder;
 
 pub use crate::types::_instance_event_window::InstanceEventWindowBuilder;
@@ -852,6 +858,8 @@ pub use crate::types::_ipam_prefix_list_resolver_rule::IpamPrefixListResolverRul
 pub use crate::types::_ipam_prefix_list_resolver_rule_condition::IpamPrefixListResolverRuleConditionBuilder;
 
 pub use crate::types::_ipam_pool_allocation::IpamPoolAllocationBuilder;
+
+pub use crate::types::_ipam_policy_organization_target::IpamPolicyOrganizationTargetBuilder;
 
 pub use crate::types::_ipam_discovered_resource_cidr::IpamDiscoveredResourceCidrBuilder;
 
@@ -1263,6 +1271,8 @@ pub use crate::types::_ipv6_pool::Ipv6PoolBuilder;
 
 pub use crate::types::_pool_cidr_block::PoolCidrBlockBuilder;
 
+pub use crate::types::_ipam_policy::IpamPolicyBuilder;
+
 pub use crate::types::_ipam_external_resource_verification_token::IpamExternalResourceVerificationTokenBuilder;
 
 pub use crate::types::_internet_gateway::InternetGatewayBuilder;
@@ -1622,6 +1632,8 @@ pub use crate::types::_resource_statement_request::ResourceStatementRequestBuild
 pub use crate::types::_path_statement_request::PathStatementRequestBuilder;
 
 pub use crate::types::_packet_header_statement_request::PacketHeaderStatementRequestBuilder;
+
+pub use crate::types::_availability_zone_address::AvailabilityZoneAddressBuilder;
 
 pub use crate::types::_mac_system_integrity_protection_configuration_request::MacSystemIntegrityProtectionConfigurationRequestBuilder;
 

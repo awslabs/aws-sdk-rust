@@ -118,6 +118,25 @@ where
                                         .transpose()?,
                                 );
                             }
+                            "routerIntegrationState" => {
+                                builder = builder.set_router_integration_state(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::State::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "routerIntegrationTransitEncryption" => {
+                                builder = builder.set_router_integration_transit_encryption(
+                                    crate::protocol_serde::shape_flow_transit_encryption::de_flow_transit_encryption(tokens)?,
+                                );
+                            }
+                            "connectedRouterInputArn" => {
+                                builder = builder.set_connected_router_input_arn(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

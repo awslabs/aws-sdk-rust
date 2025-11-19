@@ -6,13 +6,13 @@
 pub struct TriggerHistoryRecord {
     /// <p>The unique identifier for the query execution.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the query execution (SUCCEEDED, FAILED, TIMEOUT, or INVALID_QUERY).</p>
+    /// <p>The status of the query execution (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
     pub execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The time when the scheduled query was triggered, in Unix epoch time.</p>
     pub triggered_timestamp: ::std::option::Option<i64>,
     /// <p>The error message if the scheduled query execution failed. This field is only populated when the execution status indicates a failure.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
-    /// <p>The list of destinations where the scheduled query results were delivered for this execution. This includes S3 buckets and EventBridge targets configured for the scheduled query.</p>
+    /// <p>The list of destinations where the scheduled query results were delivered for this execution. This includes S3 buckets configured for the scheduled query.</p>
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryDestination>>,
 }
 impl TriggerHistoryRecord {
@@ -20,7 +20,7 @@ impl TriggerHistoryRecord {
     pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
     }
-    /// <p>The status of the query execution (SUCCEEDED, FAILED, TIMEOUT, or INVALID_QUERY).</p>
+    /// <p>The status of the query execution (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
     pub fn execution_status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
         self.execution_status.as_ref()
     }
@@ -32,7 +32,7 @@ impl TriggerHistoryRecord {
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>The list of destinations where the scheduled query results were delivered for this execution. This includes S3 buckets and EventBridge targets configured for the scheduled query.</p>
+    /// <p>The list of destinations where the scheduled query results were delivered for this execution. This includes S3 buckets configured for the scheduled query.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
     pub fn destinations(&self) -> &[crate::types::ScheduledQueryDestination] {
@@ -71,17 +71,17 @@ impl TriggerHistoryRecordBuilder {
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }
-    /// <p>The status of the query execution (SUCCEEDED, FAILED, TIMEOUT, or INVALID_QUERY).</p>
+    /// <p>The status of the query execution (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
     pub fn execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.execution_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the query execution (SUCCEEDED, FAILED, TIMEOUT, or INVALID_QUERY).</p>
+    /// <p>The status of the query execution (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
     pub fn set_execution_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.execution_status = input;
         self
     }
-    /// <p>The status of the query execution (SUCCEEDED, FAILED, TIMEOUT, or INVALID_QUERY).</p>
+    /// <p>The status of the query execution (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
     pub fn get_execution_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
         &self.execution_status
     }
@@ -117,19 +117,19 @@ impl TriggerHistoryRecordBuilder {
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
     ///
-    /// <p>The list of destinations where the scheduled query results were delivered for this execution. This includes S3 buckets and EventBridge targets configured for the scheduled query.</p>
+    /// <p>The list of destinations where the scheduled query results were delivered for this execution. This includes S3 buckets configured for the scheduled query.</p>
     pub fn destinations(mut self, input: crate::types::ScheduledQueryDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
         v.push(input);
         self.destinations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of destinations where the scheduled query results were delivered for this execution. This includes S3 buckets and EventBridge targets configured for the scheduled query.</p>
+    /// <p>The list of destinations where the scheduled query results were delivered for this execution. This includes S3 buckets configured for the scheduled query.</p>
     pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryDestination>>) -> Self {
         self.destinations = input;
         self
     }
-    /// <p>The list of destinations where the scheduled query results were delivered for this execution. This includes S3 buckets and EventBridge targets configured for the scheduled query.</p>
+    /// <p>The list of destinations where the scheduled query results were delivered for this execution. This includes S3 buckets configured for the scheduled query.</p>
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledQueryDestination>> {
         &self.destinations
     }

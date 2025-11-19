@@ -46,6 +46,8 @@ pub struct DescribeInputOutput {
     pub smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
     /// SDI Sources for this Input.
     pub sdi_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// Information about any MediaConnect router association with this input.
+    pub router_settings: ::std::option::Option<crate::types::RouterInputSettings>,
     _request_id: Option<String>,
 }
 impl DescribeInputOutput {
@@ -149,6 +151,10 @@ impl DescribeInputOutput {
     pub fn sdi_sources(&self) -> &[::std::string::String] {
         self.sdi_sources.as_deref().unwrap_or_default()
     }
+    /// Information about any MediaConnect router association with this input.
+    pub fn router_settings(&self) -> ::std::option::Option<&crate::types::RouterInputSettings> {
+        self.router_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeInputOutput {
     fn request_id(&self) -> Option<&str> {
@@ -187,6 +193,7 @@ pub struct DescribeInputOutputBuilder {
     pub(crate) multicast_settings: ::std::option::Option<crate::types::MulticastSettings>,
     pub(crate) smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
     pub(crate) sdi_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) router_settings: ::std::option::Option<crate::types::RouterInputSettings>,
     _request_id: Option<String>,
 }
 impl DescribeInputOutputBuilder {
@@ -538,6 +545,20 @@ impl DescribeInputOutputBuilder {
     pub fn get_sdi_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sdi_sources
     }
+    /// Information about any MediaConnect router association with this input.
+    pub fn router_settings(mut self, input: crate::types::RouterInputSettings) -> Self {
+        self.router_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Information about any MediaConnect router association with this input.
+    pub fn set_router_settings(mut self, input: ::std::option::Option<crate::types::RouterInputSettings>) -> Self {
+        self.router_settings = input;
+        self
+    }
+    /// Information about any MediaConnect router association with this input.
+    pub fn get_router_settings(&self) -> &::std::option::Option<crate::types::RouterInputSettings> {
+        &self.router_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -571,6 +592,7 @@ impl DescribeInputOutputBuilder {
             multicast_settings: self.multicast_settings,
             smpte2110_receiver_group_settings: self.smpte2110_receiver_group_settings,
             sdi_sources: self.sdi_sources,
+            router_settings: self.router_settings,
             _request_id: self._request_id,
         }
     }

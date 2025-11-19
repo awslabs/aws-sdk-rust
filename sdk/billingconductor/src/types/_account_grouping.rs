@@ -8,6 +8,8 @@ pub struct AccountGrouping {
     pub linked_account_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub auto_associate: ::std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) that identifies the transfer relationship owned by the Bill Transfer account (caller account). When specified, the PrimaryAccountId is no longer required.</p>
+    pub responsibility_transfer_arn: ::std::option::Option<::std::string::String>,
 }
 impl AccountGrouping {
     /// <p>The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group.</p>
@@ -18,6 +20,10 @@ impl AccountGrouping {
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn auto_associate(&self) -> ::std::option::Option<bool> {
         self.auto_associate
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the transfer relationship owned by the Bill Transfer account (caller account). When specified, the PrimaryAccountId is no longer required.</p>
+    pub fn responsibility_transfer_arn(&self) -> ::std::option::Option<&str> {
+        self.responsibility_transfer_arn.as_deref()
     }
 }
 impl AccountGrouping {
@@ -33,6 +39,7 @@ impl AccountGrouping {
 pub struct AccountGroupingBuilder {
     pub(crate) linked_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_associate: ::std::option::Option<bool>,
+    pub(crate) responsibility_transfer_arn: ::std::option::Option<::std::string::String>,
 }
 impl AccountGroupingBuilder {
     /// Appends an item to `linked_account_ids`.
@@ -69,18 +76,26 @@ impl AccountGroupingBuilder {
     pub fn get_auto_associate(&self) -> &::std::option::Option<bool> {
         &self.auto_associate
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the transfer relationship owned by the Bill Transfer account (caller account). When specified, the PrimaryAccountId is no longer required.</p>
+    pub fn responsibility_transfer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.responsibility_transfer_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the transfer relationship owned by the Bill Transfer account (caller account). When specified, the PrimaryAccountId is no longer required.</p>
+    pub fn set_responsibility_transfer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.responsibility_transfer_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the transfer relationship owned by the Bill Transfer account (caller account). When specified, the PrimaryAccountId is no longer required.</p>
+    pub fn get_responsibility_transfer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.responsibility_transfer_arn
+    }
     /// Consumes the builder and constructs a [`AccountGrouping`](crate::types::AccountGrouping).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`linked_account_ids`](crate::types::builders::AccountGroupingBuilder::linked_account_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::AccountGrouping, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccountGrouping {
-            linked_account_ids: self.linked_account_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "linked_account_ids",
-                    "linked_account_ids was not specified but it is required when building AccountGrouping",
-                )
-            })?,
+    pub fn build(self) -> crate::types::AccountGrouping {
+        crate::types::AccountGrouping {
+            linked_account_ids: self.linked_account_ids.unwrap_or_default(),
             auto_associate: self.auto_associate,
-        })
+            responsibility_transfer_arn: self.responsibility_transfer_arn,
+        }
     }
 }

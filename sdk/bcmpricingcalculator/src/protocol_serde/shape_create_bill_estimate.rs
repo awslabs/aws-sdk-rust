@@ -215,6 +215,28 @@ pub(crate) fn de_create_bill_estimate(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "groupSharingPreference" => {
+                    builder = builder.set_group_sharing_preference(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::GroupSharingPreferenceEnum::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "costCategoryGroupSharingPreferenceArn" => {
+                    builder = builder.set_cost_category_group_sharing_preference_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "costCategoryGroupSharingPreferenceEffectiveDate" => {
+                    builder = builder.set_cost_category_group_sharing_preference_effective_date(
+                        ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

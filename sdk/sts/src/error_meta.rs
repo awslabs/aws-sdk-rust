@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.</p>
     ExpiredTokenException(crate::types::error::ExpiredTokenException),
-    /// <p></p>
+    /// <p>The trade-in token provided in the request has expired and can no longer be exchanged for credentials. Request a new token and retry the operation.</p>
     ExpiredTradeInTokenException(crate::types::error::ExpiredTradeInTokenException),
     /// <p>The request could not be fulfilled because the identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the identity provider might be down or not responding.</p>
     IdpCommunicationErrorException(crate::types::error::IdpCommunicationErrorException),
@@ -16,13 +16,19 @@ pub enum Error {
     InvalidAuthorizationMessageException(crate::types::error::InvalidAuthorizationMessageException),
     /// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new identity token from the identity provider and then retry the request.</p>
     InvalidIdentityTokenException(crate::types::error::InvalidIdentityTokenException),
+    /// <p>The requested token payload size exceeds the maximum allowed size. Reduce the number of request tags included in the <code>GetWebIdentityToken</code> API call to reduce the token payload size.</p>
+    JwtPayloadSizeExceededException(crate::types::error::JwtPayloadSizeExceededException),
     /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),
+    /// <p>The outbound web identity federation feature is not enabled for this account. To use this feature, you must first enable it through the Amazon Web Services Management Console or API.</p>
+    OutboundWebIdentityFederationDisabledException(crate::types::error::OutboundWebIdentityFederationDisabledException),
     /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
     /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::types::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html#sts-regions-activate-deactivate">Activating and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::types::error::RegionDisabledException),
+    /// <p>The requested token duration would extend the session beyond its original expiration time. You cannot use this operation to extend the lifetime of a session beyond what was granted when the session was originally created.</p>
+    SessionDurationEscalationException(crate::types::error::SessionDurationEscalationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -41,9 +47,12 @@ impl ::std::fmt::Display for Error {
             Error::IdpRejectedClaimException(inner) => inner.fmt(f),
             Error::InvalidAuthorizationMessageException(inner) => inner.fmt(f),
             Error::InvalidIdentityTokenException(inner) => inner.fmt(f),
+            Error::JwtPayloadSizeExceededException(inner) => inner.fmt(f),
             Error::MalformedPolicyDocumentException(inner) => inner.fmt(f),
+            Error::OutboundWebIdentityFederationDisabledException(inner) => inner.fmt(f),
             Error::PackedPolicyTooLargeException(inner) => inner.fmt(f),
             Error::RegionDisabledException(inner) => inner.fmt(f),
+            Error::SessionDurationEscalationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -71,9 +80,12 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::IdpRejectedClaimException(inner) => inner.meta(),
             Self::InvalidAuthorizationMessageException(inner) => inner.meta(),
             Self::InvalidIdentityTokenException(inner) => inner.meta(),
+            Self::JwtPayloadSizeExceededException(inner) => inner.meta(),
             Self::MalformedPolicyDocumentException(inner) => inner.meta(),
+            Self::OutboundWebIdentityFederationDisabledException(inner) => inner.meta(),
             Self::PackedPolicyTooLargeException(inner) => inner.meta(),
             Self::RegionDisabledException(inner) => inner.meta(),
+            Self::SessionDurationEscalationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -298,6 +310,9 @@ impl From<crate::operation::get_delegated_access_token::GetDelegatedAccessTokenE
             crate::operation::get_delegated_access_token::GetDelegatedAccessTokenError::ExpiredTradeInTokenException(inner) => {
                 Error::ExpiredTradeInTokenException(inner)
             }
+            crate::operation::get_delegated_access_token::GetDelegatedAccessTokenError::PackedPolicyTooLargeException(inner) => {
+                Error::PackedPolicyTooLargeException(inner)
+            }
             crate::operation::get_delegated_access_token::GetDelegatedAccessTokenError::RegionDisabledException(inner) => {
                 Error::RegionDisabledException(inner)
             }
@@ -355,6 +370,36 @@ impl From<crate::operation::get_session_token::GetSessionTokenError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_web_identity_token::GetWebIdentityTokenError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_web_identity_token::GetWebIdentityTokenError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_web_identity_token::GetWebIdentityTokenError> for Error {
+    fn from(err: crate::operation::get_web_identity_token::GetWebIdentityTokenError) -> Self {
+        match err {
+            crate::operation::get_web_identity_token::GetWebIdentityTokenError::JwtPayloadSizeExceededException(inner) => {
+                Error::JwtPayloadSizeExceededException(inner)
+            }
+            crate::operation::get_web_identity_token::GetWebIdentityTokenError::OutboundWebIdentityFederationDisabledException(inner) => {
+                Error::OutboundWebIdentityFederationDisabledException(inner)
+            }
+            crate::operation::get_web_identity_token::GetWebIdentityTokenError::SessionDurationEscalationException(inner) => {
+                Error::SessionDurationEscalationException(inner)
+            }
+            crate::operation::get_web_identity_token::GetWebIdentityTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
@@ -364,9 +409,12 @@ impl ::std::error::Error for Error {
             Error::IdpRejectedClaimException(inner) => inner.source(),
             Error::InvalidAuthorizationMessageException(inner) => inner.source(),
             Error::InvalidIdentityTokenException(inner) => inner.source(),
+            Error::JwtPayloadSizeExceededException(inner) => inner.source(),
             Error::MalformedPolicyDocumentException(inner) => inner.source(),
+            Error::OutboundWebIdentityFederationDisabledException(inner) => inner.source(),
             Error::PackedPolicyTooLargeException(inner) => inner.source(),
             Error::RegionDisabledException(inner) => inner.source(),
+            Error::SessionDurationEscalationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -380,9 +428,12 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::IdpRejectedClaimException(e) => e.request_id(),
             Self::InvalidAuthorizationMessageException(e) => e.request_id(),
             Self::InvalidIdentityTokenException(e) => e.request_id(),
+            Self::JwtPayloadSizeExceededException(e) => e.request_id(),
             Self::MalformedPolicyDocumentException(e) => e.request_id(),
+            Self::OutboundWebIdentityFederationDisabledException(e) => e.request_id(),
             Self::PackedPolicyTooLargeException(e) => e.request_id(),
             Self::RegionDisabledException(e) => e.request_id(),
+            Self::SessionDurationEscalationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

@@ -209,6 +209,8 @@ pub use crate::types::_server_side_encryption_configuration::ServerSideEncryptio
 
 pub use crate::types::_server_side_encryption_rule::ServerSideEncryptionRuleBuilder;
 
+pub use crate::types::_blocked_encryption_types::BlockedEncryptionTypesBuilder;
+
 pub use crate::types::_server_side_encryption_by_default::ServerSideEncryptionByDefaultBuilder;
 
 pub use crate::types::_cors_configuration::CorsConfigurationBuilder;

@@ -130,6 +130,9 @@ pub(crate) fn de_describe_endpoint(
                         crate::protocol_serde::shape_production_variant_summary_list::de_production_variant_summary_list(tokens)?,
                     );
                 }
+                "MetricsConfig" => {
+                    builder = builder.set_metrics_config(crate::protocol_serde::shape_metrics_config::de_metrics_config(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -404,4 +404,32 @@ impl UpdateFlowSourceFluentBuilder {
     pub fn get_gateway_bridge_source(&self) -> &::std::option::Option<crate::types::UpdateGatewayBridgeSourceRequest> {
         self.inner.get_gateway_bridge_source()
     }
+    /// <p>Indicates whether to enable or disable router integration for this flow source.</p>
+    pub fn router_integration_state(mut self, input: crate::types::State) -> Self {
+        self.inner = self.inner.router_integration_state(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable router integration for this flow source.</p>
+    pub fn set_router_integration_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
+        self.inner = self.inner.set_router_integration_state(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable router integration for this flow source.</p>
+    pub fn get_router_integration_state(&self) -> &::std::option::Option<crate::types::State> {
+        self.inner.get_router_integration_state()
+    }
+    /// <p>The encryption configuration for the flow source when router integration is enabled.</p>
+    pub fn router_integration_transit_decryption(mut self, input: crate::types::FlowTransitEncryption) -> Self {
+        self.inner = self.inner.router_integration_transit_decryption(input);
+        self
+    }
+    /// <p>The encryption configuration for the flow source when router integration is enabled.</p>
+    pub fn set_router_integration_transit_decryption(mut self, input: ::std::option::Option<crate::types::FlowTransitEncryption>) -> Self {
+        self.inner = self.inner.set_router_integration_transit_decryption(input);
+        self
+    }
+    /// <p>The encryption configuration for the flow source when router integration is enabled.</p>
+    pub fn get_router_integration_transit_decryption(&self) -> &::std::option::Option<crate::types::FlowTransitEncryption> {
+        self.inner.get_router_integration_transit_decryption()
+    }
 }

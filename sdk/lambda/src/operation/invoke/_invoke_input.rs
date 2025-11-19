@@ -34,6 +34,8 @@ pub struct InvokeInput {
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
     pub qualifier: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeInput {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
@@ -79,6 +81,10 @@ impl InvokeInput {
     pub fn qualifier(&self) -> ::std::option::Option<&str> {
         self.qualifier.as_deref()
     }
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub fn tenant_id(&self) -> ::std::option::Option<&str> {
+        self.tenant_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -89,6 +95,7 @@ impl ::std::fmt::Debug for InvokeInput {
         formatter.field("client_context", &self.client_context);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
         formatter.field("qualifier", &self.qualifier);
+        formatter.field("tenant_id", &self.tenant_id);
         formatter.finish()
     }
 }
@@ -109,6 +116,7 @@ pub struct InvokeInputBuilder {
     pub(crate) client_context: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,
+    pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeInputBuilder {
     /// <p>The name or ARN of the Lambda function, version, or alias.</p>
@@ -253,6 +261,20 @@ impl InvokeInputBuilder {
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualifier
     }
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tenant_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tenant_id = input;
+        self
+    }
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_id
+    }
     /// Consumes the builder and constructs a [`InvokeInput`](crate::operation::invoke::InvokeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke::InvokeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke::InvokeInput {
@@ -262,6 +284,7 @@ impl InvokeInputBuilder {
             client_context: self.client_context,
             payload: self.payload,
             qualifier: self.qualifier,
+            tenant_id: self.tenant_id,
         })
     }
 }
@@ -274,6 +297,7 @@ impl ::std::fmt::Debug for InvokeInputBuilder {
         formatter.field("client_context", &self.client_context);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
         formatter.field("qualifier", &self.qualifier);
+        formatter.field("tenant_id", &self.tenant_id);
         formatter.finish()
     }
 }

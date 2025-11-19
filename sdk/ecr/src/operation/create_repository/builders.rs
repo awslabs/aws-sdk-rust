@@ -177,12 +177,12 @@ impl CreateRepositoryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_image_tag_mutability_exclusion_filters`](Self::set_image_tag_mutability_exclusion_filters).
     ///
-    /// <p>Creates a repository with a list of filters that define which image tags can override the default image tag mutability setting.</p>
+    /// <p>A list of filters that specify which image tags should be excluded from the repository's image tag mutability setting.</p>
     pub fn image_tag_mutability_exclusion_filters(mut self, input: crate::types::ImageTagMutabilityExclusionFilter) -> Self {
         self.inner = self.inner.image_tag_mutability_exclusion_filters(input);
         self
     }
-    /// <p>Creates a repository with a list of filters that define which image tags can override the default image tag mutability setting.</p>
+    /// <p>A list of filters that specify which image tags should be excluded from the repository's image tag mutability setting.</p>
     pub fn set_image_tag_mutability_exclusion_filters(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ImageTagMutabilityExclusionFilter>>,
@@ -190,22 +190,31 @@ impl CreateRepositoryFluentBuilder {
         self.inner = self.inner.set_image_tag_mutability_exclusion_filters(input);
         self
     }
-    /// <p>Creates a repository with a list of filters that define which image tags can override the default image tag mutability setting.</p>
+    /// <p>A list of filters that specify which image tags should be excluded from the repository's image tag mutability setting.</p>
     pub fn get_image_tag_mutability_exclusion_filters(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageTagMutabilityExclusionFilter>> {
         self.inner.get_image_tag_mutability_exclusion_filters()
     }
+    /// <important>
+    /// <p>The <code>imageScanningConfiguration</code> parameter is being deprecated, in favor of specifying the image scanning configuration at the registry level. For more information, see <code>PutRegistryScanningConfiguration</code>.</p>
+    /// </important>
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.inner = self.inner.image_scanning_configuration(input);
         self
     }
+    /// <important>
+    /// <p>The <code>imageScanningConfiguration</code> parameter is being deprecated, in favor of specifying the image scanning configuration at the registry level. For more information, see <code>PutRegistryScanningConfiguration</code>.</p>
+    /// </important>
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.inner = self.inner.set_image_scanning_configuration(input);
         self
     }
+    /// <important>
+    /// <p>The <code>imageScanningConfiguration</code> parameter is being deprecated, in favor of specifying the image scanning configuration at the registry level. For more information, see <code>PutRegistryScanningConfiguration</code>.</p>
+    /// </important>
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         self.inner.get_image_scanning_configuration()

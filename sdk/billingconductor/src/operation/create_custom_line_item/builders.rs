@@ -225,31 +225,31 @@ impl CreateCustomLineItemFluentBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// The display settings of the custom line item
+    /// <p>Specifies how the custom line item charges are computed.</p>
     pub fn computation_rule(mut self, input: crate::types::ComputationRuleEnum) -> Self {
         self.inner = self.inner.computation_rule(input);
         self
     }
-    /// The display settings of the custom line item
+    /// <p>Specifies how the custom line item charges are computed.</p>
     pub fn set_computation_rule(mut self, input: ::std::option::Option<crate::types::ComputationRuleEnum>) -> Self {
         self.inner = self.inner.set_computation_rule(input);
         self
     }
-    /// The display settings of the custom line item
+    /// <p>Specifies how the custom line item charges are computed.</p>
     pub fn get_computation_rule(&self) -> &::std::option::Option<crate::types::ComputationRuleEnum> {
         self.inner.get_computation_rule()
     }
-    /// The presentation configuration of the custom line item
+    /// <p>Details controlling how the custom line item charges are presented in the bill. Contains specifications for which service the charges will be shown under.</p>
     pub fn presentation_details(mut self, input: crate::types::PresentationObject) -> Self {
         self.inner = self.inner.presentation_details(input);
         self
     }
-    /// The presentation configuration of the custom line item
+    /// <p>Details controlling how the custom line item charges are presented in the bill. Contains specifications for which service the charges will be shown under.</p>
     pub fn set_presentation_details(mut self, input: ::std::option::Option<crate::types::PresentationObject>) -> Self {
         self.inner = self.inner.set_presentation_details(input);
         self
     }
-    /// The presentation configuration of the custom line item
+    /// <p>Details controlling how the custom line item charges are presented in the bill. Contains specifications for which service the charges will be shown under.</p>
     pub fn get_presentation_details(&self) -> &::std::option::Option<crate::types::PresentationObject> {
         self.inner.get_presentation_details()
     }

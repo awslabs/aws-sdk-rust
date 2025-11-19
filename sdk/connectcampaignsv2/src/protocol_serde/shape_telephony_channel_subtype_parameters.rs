@@ -25,5 +25,11 @@ pub fn ser_telephony_channel_subtype_parameters(
         crate::protocol_serde::shape_answer_machine_detection_config::ser_answer_machine_detection_config(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.ring_timeout {
+        object.key("ringTimeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
+    }
     Ok(())
 }

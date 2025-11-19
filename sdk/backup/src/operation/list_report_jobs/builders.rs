@@ -157,19 +157,22 @@ impl ListReportJobsFluentBuilder {
         self.inner.get_by_creation_after()
     }
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
+    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED | COMPLETED_WITH_ISSUES</code></p>
+    /// <p>Please note that only scanning jobs finish with state completed with issues. For backup jobs this is a console interpretation of a job that finishes in completed state and has a status message.</p>
     pub fn by_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_status(input.into());
         self
     }
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
+    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED | COMPLETED_WITH_ISSUES</code></p>
+    /// <p>Please note that only scanning jobs finish with state completed with issues. For backup jobs this is a console interpretation of a job that finishes in completed state and has a status message.</p>
     pub fn set_by_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_status(input);
         self
     }
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
+    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED | COMPLETED_WITH_ISSUES</code></p>
+    /// <p>Please note that only scanning jobs finish with state completed with issues. For backup jobs this is a console interpretation of a job that finishes in completed state and has a status message.</p>
     pub fn get_by_status(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_status()
     }

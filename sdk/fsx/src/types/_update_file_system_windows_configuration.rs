@@ -18,6 +18,8 @@ pub struct UpdateFileSystemWindowsConfiguration {
     pub audit_log_configuration: ::std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>,
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fsrm_configuration: ::std::option::Option<crate::types::WindowsFsrmConfiguration>,
 }
 impl UpdateFileSystemWindowsConfiguration {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
@@ -50,6 +52,10 @@ impl UpdateFileSystemWindowsConfiguration {
     pub fn disk_iops_configuration(&self) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn fsrm_configuration(&self) -> ::std::option::Option<&crate::types::WindowsFsrmConfiguration> {
+        self.fsrm_configuration.as_ref()
+    }
 }
 impl UpdateFileSystemWindowsConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemWindowsConfiguration`](crate::types::UpdateFileSystemWindowsConfiguration).
@@ -69,6 +75,7 @@ pub struct UpdateFileSystemWindowsConfigurationBuilder {
     pub(crate) self_managed_active_directory_configuration: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
     pub(crate) audit_log_configuration: ::std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>,
     pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
+    pub(crate) fsrm_configuration: ::std::option::Option<crate::types::WindowsFsrmConfiguration>,
 }
 impl UpdateFileSystemWindowsConfigurationBuilder {
     /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
@@ -174,6 +181,20 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
     pub fn get_disk_iops_configuration(&self) -> &::std::option::Option<crate::types::DiskIopsConfiguration> {
         &self.disk_iops_configuration
     }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn fsrm_configuration(mut self, input: crate::types::WindowsFsrmConfiguration) -> Self {
+        self.fsrm_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn set_fsrm_configuration(mut self, input: ::std::option::Option<crate::types::WindowsFsrmConfiguration>) -> Self {
+        self.fsrm_configuration = input;
+        self
+    }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn get_fsrm_configuration(&self) -> &::std::option::Option<crate::types::WindowsFsrmConfiguration> {
+        &self.fsrm_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateFileSystemWindowsConfiguration`](crate::types::UpdateFileSystemWindowsConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemWindowsConfiguration {
         crate::types::UpdateFileSystemWindowsConfiguration {
@@ -184,6 +205,7 @@ impl UpdateFileSystemWindowsConfigurationBuilder {
             self_managed_active_directory_configuration: self.self_managed_active_directory_configuration,
             audit_log_configuration: self.audit_log_configuration,
             disk_iops_configuration: self.disk_iops_configuration,
+            fsrm_configuration: self.fsrm_configuration,
         }
     }
 }

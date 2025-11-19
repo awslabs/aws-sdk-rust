@@ -19,6 +19,8 @@ pub enum ContentBlock {
     Image(crate::types::ImageBlock),
     /// <p>Contains content regarding the reasoning that is carried out by the model. Reasoning refers to a Chain of Thought (CoT) that the model generates to enhance the accuracy of its final response.</p>
     ReasoningContent(crate::types::ReasoningContentBlock),
+    /// <p>Search result to include in the message.</p>
+    SearchResult(crate::types::SearchResultBlock),
     /// <p>Text to include in the message.</p>
     Text(::std::string::String),
     /// <p>The result for a tool request that a model makes.</p>
@@ -116,6 +118,19 @@ impl ContentBlock {
     pub fn is_reasoning_content(&self) -> bool {
         self.as_reasoning_content().is_ok()
     }
+    /// Tries to convert the enum instance into [`SearchResult`](crate::types::ContentBlock::SearchResult), extracting the inner [`SearchResultBlock`](crate::types::SearchResultBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_search_result(&self) -> ::std::result::Result<&crate::types::SearchResultBlock, &Self> {
+        if let ContentBlock::SearchResult(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SearchResult`](crate::types::ContentBlock::SearchResult).
+    pub fn is_search_result(&self) -> bool {
+        self.as_search_result().is_ok()
+    }
     /// Tries to convert the enum instance into [`Text`](crate::types::ContentBlock::Text), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text(&self) -> ::std::result::Result<&::std::string::String, &Self> {
@@ -182,6 +197,7 @@ impl ::std::fmt::Debug for ContentBlock {
             ContentBlock::GuardContent(val) => f.debug_tuple("GuardContent").field(&val).finish(),
             ContentBlock::Image(val) => f.debug_tuple("Image").field(&val).finish(),
             ContentBlock::ReasoningContent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            ContentBlock::SearchResult(val) => f.debug_tuple("SearchResult").field(&val).finish(),
             ContentBlock::Text(val) => f.debug_tuple("Text").field(&val).finish(),
             ContentBlock::ToolResult(val) => f.debug_tuple("ToolResult").field(&val).finish(),
             ContentBlock::ToolUse(val) => f.debug_tuple("ToolUse").field(&val).finish(),

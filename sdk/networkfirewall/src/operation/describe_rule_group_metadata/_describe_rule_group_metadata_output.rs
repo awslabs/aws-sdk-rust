@@ -22,6 +22,12 @@ pub struct DescribeRuleGroupMetadataOutput {
     pub stateful_rule_options: ::std::option::Option<crate::types::StatefulRuleOptions>,
     /// <p>A timestamp indicating when the rule group was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The name of the Amazon Web Services Marketplace vendor that provides this rule group.</p>
+    pub vendor_name: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier for the product listing associated with this rule group.</p>
+    pub product_id: ::std::option::Option<::std::string::String>,
+    /// <p>The display name of the product listing for this rule group.</p>
+    pub listing_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRuleGroupMetadataOutput {
@@ -60,6 +66,18 @@ impl DescribeRuleGroupMetadataOutput {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    /// <p>The name of the Amazon Web Services Marketplace vendor that provides this rule group.</p>
+    pub fn vendor_name(&self) -> ::std::option::Option<&str> {
+        self.vendor_name.as_deref()
+    }
+    /// <p>The unique identifier for the product listing associated with this rule group.</p>
+    pub fn product_id(&self) -> ::std::option::Option<&str> {
+        self.product_id.as_deref()
+    }
+    /// <p>The display name of the product listing for this rule group.</p>
+    pub fn listing_name(&self) -> ::std::option::Option<&str> {
+        self.listing_name.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeRuleGroupMetadataOutput {
     fn request_id(&self) -> Option<&str> {
@@ -84,6 +102,9 @@ pub struct DescribeRuleGroupMetadataOutputBuilder {
     pub(crate) capacity: ::std::option::Option<i32>,
     pub(crate) stateful_rule_options: ::std::option::Option<crate::types::StatefulRuleOptions>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) vendor_name: ::std::option::Option<::std::string::String>,
+    pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) listing_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRuleGroupMetadataOutputBuilder {
@@ -202,6 +223,48 @@ impl DescribeRuleGroupMetadataOutputBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>The name of the Amazon Web Services Marketplace vendor that provides this rule group.</p>
+    pub fn vendor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vendor_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the Amazon Web Services Marketplace vendor that provides this rule group.</p>
+    pub fn set_vendor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vendor_name = input;
+        self
+    }
+    /// <p>The name of the Amazon Web Services Marketplace vendor that provides this rule group.</p>
+    pub fn get_vendor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor_name
+    }
+    /// <p>The unique identifier for the product listing associated with this rule group.</p>
+    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier for the product listing associated with this rule group.</p>
+    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.product_id = input;
+        self
+    }
+    /// <p>The unique identifier for the product listing associated with this rule group.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
+    }
+    /// <p>The display name of the product listing for this rule group.</p>
+    pub fn listing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.listing_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The display name of the product listing for this rule group.</p>
+    pub fn set_listing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.listing_name = input;
+        self
+    }
+    /// <p>The display name of the product listing for this rule group.</p>
+    pub fn get_listing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listing_name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -239,6 +302,9 @@ impl DescribeRuleGroupMetadataOutputBuilder {
             capacity: self.capacity,
             stateful_rule_options: self.stateful_rule_options,
             last_modified_time: self.last_modified_time,
+            vendor_name: self.vendor_name,
+            product_id: self.product_id,
+            listing_name: self.listing_name,
             _request_id: self._request_id,
         })
     }

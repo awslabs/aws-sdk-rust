@@ -30,6 +30,12 @@ pub struct Resource {
     pub rds_db_user_details: ::std::option::Option<crate::types::RdsDbUserDetails>,
     /// <p>Contains information about the Lambda function that was involved in a finding.</p>
     pub lambda_details: ::std::option::Option<crate::types::LambdaDetails>,
+    /// <p>Contains details about the EBS snapshot that was scanned.</p>
+    pub ebs_snapshot_details: ::std::option::Option<crate::types::EbsSnapshotDetails>,
+    /// <p>Contains details about the EC2 image that was scanned.</p>
+    pub ec2_image_details: ::std::option::Option<crate::types::Ec2ImageDetails>,
+    /// <p>Contains details about the backup recovery point that was scanned.</p>
+    pub recovery_point_details: ::std::option::Option<crate::types::RecoveryPointDetails>,
 }
 impl Resource {
     /// <p>The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
@@ -86,6 +92,18 @@ impl Resource {
     pub fn lambda_details(&self) -> ::std::option::Option<&crate::types::LambdaDetails> {
         self.lambda_details.as_ref()
     }
+    /// <p>Contains details about the EBS snapshot that was scanned.</p>
+    pub fn ebs_snapshot_details(&self) -> ::std::option::Option<&crate::types::EbsSnapshotDetails> {
+        self.ebs_snapshot_details.as_ref()
+    }
+    /// <p>Contains details about the EC2 image that was scanned.</p>
+    pub fn ec2_image_details(&self) -> ::std::option::Option<&crate::types::Ec2ImageDetails> {
+        self.ec2_image_details.as_ref()
+    }
+    /// <p>Contains details about the backup recovery point that was scanned.</p>
+    pub fn recovery_point_details(&self) -> ::std::option::Option<&crate::types::RecoveryPointDetails> {
+        self.recovery_point_details.as_ref()
+    }
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::types::Resource).
@@ -111,6 +129,9 @@ pub struct ResourceBuilder {
     pub(crate) rds_limitless_db_details: ::std::option::Option<crate::types::RdsLimitlessDbDetails>,
     pub(crate) rds_db_user_details: ::std::option::Option<crate::types::RdsDbUserDetails>,
     pub(crate) lambda_details: ::std::option::Option<crate::types::LambdaDetails>,
+    pub(crate) ebs_snapshot_details: ::std::option::Option<crate::types::EbsSnapshotDetails>,
+    pub(crate) ec2_image_details: ::std::option::Option<crate::types::Ec2ImageDetails>,
+    pub(crate) recovery_point_details: ::std::option::Option<crate::types::RecoveryPointDetails>,
 }
 impl ResourceBuilder {
     /// <p>The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
@@ -301,6 +322,48 @@ impl ResourceBuilder {
     pub fn get_lambda_details(&self) -> &::std::option::Option<crate::types::LambdaDetails> {
         &self.lambda_details
     }
+    /// <p>Contains details about the EBS snapshot that was scanned.</p>
+    pub fn ebs_snapshot_details(mut self, input: crate::types::EbsSnapshotDetails) -> Self {
+        self.ebs_snapshot_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about the EBS snapshot that was scanned.</p>
+    pub fn set_ebs_snapshot_details(mut self, input: ::std::option::Option<crate::types::EbsSnapshotDetails>) -> Self {
+        self.ebs_snapshot_details = input;
+        self
+    }
+    /// <p>Contains details about the EBS snapshot that was scanned.</p>
+    pub fn get_ebs_snapshot_details(&self) -> &::std::option::Option<crate::types::EbsSnapshotDetails> {
+        &self.ebs_snapshot_details
+    }
+    /// <p>Contains details about the EC2 image that was scanned.</p>
+    pub fn ec2_image_details(mut self, input: crate::types::Ec2ImageDetails) -> Self {
+        self.ec2_image_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about the EC2 image that was scanned.</p>
+    pub fn set_ec2_image_details(mut self, input: ::std::option::Option<crate::types::Ec2ImageDetails>) -> Self {
+        self.ec2_image_details = input;
+        self
+    }
+    /// <p>Contains details about the EC2 image that was scanned.</p>
+    pub fn get_ec2_image_details(&self) -> &::std::option::Option<crate::types::Ec2ImageDetails> {
+        &self.ec2_image_details
+    }
+    /// <p>Contains details about the backup recovery point that was scanned.</p>
+    pub fn recovery_point_details(mut self, input: crate::types::RecoveryPointDetails) -> Self {
+        self.recovery_point_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about the backup recovery point that was scanned.</p>
+    pub fn set_recovery_point_details(mut self, input: ::std::option::Option<crate::types::RecoveryPointDetails>) -> Self {
+        self.recovery_point_details = input;
+        self
+    }
+    /// <p>Contains details about the backup recovery point that was scanned.</p>
+    pub fn get_recovery_point_details(&self) -> &::std::option::Option<crate::types::RecoveryPointDetails> {
+        &self.recovery_point_details
+    }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
@@ -317,6 +380,9 @@ impl ResourceBuilder {
             rds_limitless_db_details: self.rds_limitless_db_details,
             rds_db_user_details: self.rds_db_user_details,
             lambda_details: self.lambda_details,
+            ebs_snapshot_details: self.ebs_snapshot_details,
+            ec2_image_details: self.ec2_image_details,
+            recovery_point_details: self.recovery_point_details,
         }
     }
 }

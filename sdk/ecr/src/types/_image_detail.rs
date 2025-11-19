@@ -31,6 +31,14 @@ pub struct ImageDetail {
     /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
     /// </note>
     pub last_recorded_pull_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The digest of the subject manifest for images that are referrers.</p>
+    pub subject_manifest_digest: ::std::option::Option<::std::string::String>,
+    /// <p>The current status of the image.</p>
+    pub image_status: ::std::option::Option<crate::types::ImageStatus>,
+    /// <p>The date and time, expressed in standard JavaScript date format, when the image was last transitioned to Amazon ECR archive.</p>
+    pub last_archived_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time, expressed in standard JavaScript date format, when the image was last restored from Amazon ECR archive to Amazon ECR standard.</p>
+    pub last_activated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImageDetail {
     /// <p>The Amazon Web Services account ID associated with the registry to which this image belongs.</p>
@@ -84,6 +92,22 @@ impl ImageDetail {
     pub fn last_recorded_pull_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_recorded_pull_time.as_ref()
     }
+    /// <p>The digest of the subject manifest for images that are referrers.</p>
+    pub fn subject_manifest_digest(&self) -> ::std::option::Option<&str> {
+        self.subject_manifest_digest.as_deref()
+    }
+    /// <p>The current status of the image.</p>
+    pub fn image_status(&self) -> ::std::option::Option<&crate::types::ImageStatus> {
+        self.image_status.as_ref()
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, when the image was last transitioned to Amazon ECR archive.</p>
+    pub fn last_archived_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_archived_at.as_ref()
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, when the image was last restored from Amazon ECR archive to Amazon ECR standard.</p>
+    pub fn last_activated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_activated_at.as_ref()
+    }
 }
 impl ImageDetail {
     /// Creates a new builder-style object to manufacture [`ImageDetail`](crate::types::ImageDetail).
@@ -107,6 +131,10 @@ pub struct ImageDetailBuilder {
     pub(crate) image_manifest_media_type: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_media_type: ::std::option::Option<::std::string::String>,
     pub(crate) last_recorded_pull_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) subject_manifest_digest: ::std::option::Option<::std::string::String>,
+    pub(crate) image_status: ::std::option::Option<crate::types::ImageStatus>,
+    pub(crate) last_archived_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_activated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImageDetailBuilder {
     /// <p>The Amazon Web Services account ID associated with the registry to which this image belongs.</p>
@@ -284,6 +312,62 @@ impl ImageDetailBuilder {
     pub fn get_last_recorded_pull_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_recorded_pull_time
     }
+    /// <p>The digest of the subject manifest for images that are referrers.</p>
+    pub fn subject_manifest_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subject_manifest_digest = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The digest of the subject manifest for images that are referrers.</p>
+    pub fn set_subject_manifest_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subject_manifest_digest = input;
+        self
+    }
+    /// <p>The digest of the subject manifest for images that are referrers.</p>
+    pub fn get_subject_manifest_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_manifest_digest
+    }
+    /// <p>The current status of the image.</p>
+    pub fn image_status(mut self, input: crate::types::ImageStatus) -> Self {
+        self.image_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the image.</p>
+    pub fn set_image_status(mut self, input: ::std::option::Option<crate::types::ImageStatus>) -> Self {
+        self.image_status = input;
+        self
+    }
+    /// <p>The current status of the image.</p>
+    pub fn get_image_status(&self) -> &::std::option::Option<crate::types::ImageStatus> {
+        &self.image_status
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, when the image was last transitioned to Amazon ECR archive.</p>
+    pub fn last_archived_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_archived_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, when the image was last transitioned to Amazon ECR archive.</p>
+    pub fn set_last_archived_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_archived_at = input;
+        self
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, when the image was last transitioned to Amazon ECR archive.</p>
+    pub fn get_last_archived_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_archived_at
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, when the image was last restored from Amazon ECR archive to Amazon ECR standard.</p>
+    pub fn last_activated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_activated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, when the image was last restored from Amazon ECR archive to Amazon ECR standard.</p>
+    pub fn set_last_activated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_activated_at = input;
+        self
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, when the image was last restored from Amazon ECR archive to Amazon ECR standard.</p>
+    pub fn get_last_activated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_activated_at
+    }
     /// Consumes the builder and constructs a [`ImageDetail`](crate::types::ImageDetail).
     pub fn build(self) -> crate::types::ImageDetail {
         crate::types::ImageDetail {
@@ -298,6 +382,10 @@ impl ImageDetailBuilder {
             image_manifest_media_type: self.image_manifest_media_type,
             artifact_media_type: self.artifact_media_type,
             last_recorded_pull_time: self.last_recorded_pull_time,
+            subject_manifest_digest: self.subject_manifest_digest,
+            image_status: self.image_status,
+            last_archived_at: self.last_archived_at,
+            last_activated_at: self.last_activated_at,
         }
     }
 }

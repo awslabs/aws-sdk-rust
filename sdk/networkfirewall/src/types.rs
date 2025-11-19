@@ -139,6 +139,8 @@ pub use crate::types::_tls_inspection_configuration_metadata::TlsInspectionConfi
 
 pub use crate::types::_rule_group_metadata::RuleGroupMetadata;
 
+pub use crate::types::_subscription_status::SubscriptionStatus;
+
 pub use crate::types::_resource_managed_type::ResourceManagedType;
 
 pub use crate::types::_resource_managed_status::ResourceManagedStatus;
@@ -378,6 +380,8 @@ mod _stateless_rules_and_custom_actions;
 mod _stream_exception_policy;
 
 mod _subnet_mapping;
+
+mod _subscription_status;
 
 mod _summary;
 

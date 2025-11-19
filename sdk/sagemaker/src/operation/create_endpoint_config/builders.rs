@@ -337,4 +337,18 @@ impl CreateEndpointConfigFluentBuilder {
     pub fn get_enable_network_isolation(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_network_isolation()
     }
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub fn metrics_config(mut self, input: crate::types::MetricsConfig) -> Self {
+        self.inner = self.inner.metrics_config(input);
+        self
+    }
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::MetricsConfig>) -> Self {
+        self.inner = self.inner.set_metrics_config(input);
+        self
+    }
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::MetricsConfig> {
+        self.inner.get_metrics_config()
+    }
 }

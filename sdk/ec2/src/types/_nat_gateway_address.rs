@@ -20,6 +20,10 @@ pub struct NatGatewayAddress {
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The address status.</p>
     pub status: ::std::option::Option<crate::types::NatGatewayAddressStatus>,
+    /// <p>The Availability Zone where this Elastic IP address (EIP) is being used to handle outbound NAT traffic.</p>
+    pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Availability Zone where this Elastic IP address (EIP) is being used to handle outbound NAT traffic. Use this instead of AvailabilityZone for consistent identification of AZs across Amazon Web Services Regions.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl NatGatewayAddress {
     /// <p>\[Public NAT gateway only\] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
@@ -54,6 +58,14 @@ impl NatGatewayAddress {
     pub fn status(&self) -> ::std::option::Option<&crate::types::NatGatewayAddressStatus> {
         self.status.as_ref()
     }
+    /// <p>The Availability Zone where this Elastic IP address (EIP) is being used to handle outbound NAT traffic.</p>
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+        self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone where this Elastic IP address (EIP) is being used to handle outbound NAT traffic. Use this instead of AvailabilityZone for consistent identification of AZs across Amazon Web Services Regions.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
 }
 impl NatGatewayAddress {
     /// Creates a new builder-style object to manufacture [`NatGatewayAddress`](crate::types::NatGatewayAddress).
@@ -74,6 +86,8 @@ pub struct NatGatewayAddressBuilder {
     pub(crate) is_primary: ::std::option::Option<bool>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::NatGatewayAddressStatus>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl NatGatewayAddressBuilder {
     /// <p>\[Public NAT gateway only\] The allocation ID of the Elastic IP address that's associated with the NAT gateway.</p>
@@ -188,6 +202,34 @@ impl NatGatewayAddressBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NatGatewayAddressStatus> {
         &self.status
     }
+    /// <p>The Availability Zone where this Elastic IP address (EIP) is being used to handle outbound NAT traffic.</p>
+    pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone where this Elastic IP address (EIP) is being used to handle outbound NAT traffic.</p>
+    pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone = input;
+        self
+    }
+    /// <p>The Availability Zone where this Elastic IP address (EIP) is being used to handle outbound NAT traffic.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
+    /// <p>The ID of the Availability Zone where this Elastic IP address (EIP) is being used to handle outbound NAT traffic. Use this instead of AvailabilityZone for consistent identification of AZs across Amazon Web Services Regions.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone where this Elastic IP address (EIP) is being used to handle outbound NAT traffic. Use this instead of AvailabilityZone for consistent identification of AZs across Amazon Web Services Regions.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone where this Elastic IP address (EIP) is being used to handle outbound NAT traffic. Use this instead of AvailabilityZone for consistent identification of AZs across Amazon Web Services Regions.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Consumes the builder and constructs a [`NatGatewayAddress`](crate::types::NatGatewayAddress).
     pub fn build(self) -> crate::types::NatGatewayAddress {
         crate::types::NatGatewayAddress {
@@ -199,6 +241,8 @@ impl NatGatewayAddressBuilder {
             is_primary: self.is_primary,
             failure_message: self.failure_message,
             status: self.status,
+            availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
         }
     }
 }

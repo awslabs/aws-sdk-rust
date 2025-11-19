@@ -45,6 +45,10 @@ pub struct UpdateFlowOutputInput {
     pub ndi_program_name: ::std::option::Option<::std::string::String>,
     /// <p>A quality setting for the NDI Speed HQ encoder.</p>
     pub ndi_speed_hq_quality: ::std::option::Option<i32>,
+    /// <p>Indicates whether to enable or disable router integration for this flow output.</p>
+    pub router_integration_state: ::std::option::Option<crate::types::State>,
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub router_integration_transit_encryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
 }
 impl UpdateFlowOutputInput {
     /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
@@ -133,6 +137,14 @@ impl UpdateFlowOutputInput {
     pub fn ndi_speed_hq_quality(&self) -> ::std::option::Option<i32> {
         self.ndi_speed_hq_quality
     }
+    /// <p>Indicates whether to enable or disable router integration for this flow output.</p>
+    pub fn router_integration_state(&self) -> ::std::option::Option<&crate::types::State> {
+        self.router_integration_state.as_ref()
+    }
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub fn router_integration_transit_encryption(&self) -> ::std::option::Option<&crate::types::FlowTransitEncryption> {
+        self.router_integration_transit_encryption.as_ref()
+    }
 }
 impl UpdateFlowOutputInput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowOutputInput`](crate::operation::update_flow_output::UpdateFlowOutputInput).
@@ -165,6 +177,8 @@ pub struct UpdateFlowOutputInputBuilder {
     pub(crate) output_status: ::std::option::Option<crate::types::OutputStatus>,
     pub(crate) ndi_program_name: ::std::option::Option<::std::string::String>,
     pub(crate) ndi_speed_hq_quality: ::std::option::Option<i32>,
+    pub(crate) router_integration_state: ::std::option::Option<crate::types::State>,
+    pub(crate) router_integration_transit_encryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
 }
 impl UpdateFlowOutputInputBuilder {
     /// Appends an item to `cidr_allow_list`.
@@ -472,6 +486,34 @@ impl UpdateFlowOutputInputBuilder {
     pub fn get_ndi_speed_hq_quality(&self) -> &::std::option::Option<i32> {
         &self.ndi_speed_hq_quality
     }
+    /// <p>Indicates whether to enable or disable router integration for this flow output.</p>
+    pub fn router_integration_state(mut self, input: crate::types::State) -> Self {
+        self.router_integration_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable router integration for this flow output.</p>
+    pub fn set_router_integration_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
+        self.router_integration_state = input;
+        self
+    }
+    /// <p>Indicates whether to enable or disable router integration for this flow output.</p>
+    pub fn get_router_integration_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.router_integration_state
+    }
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub fn router_integration_transit_encryption(mut self, input: crate::types::FlowTransitEncryption) -> Self {
+        self.router_integration_transit_encryption = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub fn set_router_integration_transit_encryption(mut self, input: ::std::option::Option<crate::types::FlowTransitEncryption>) -> Self {
+        self.router_integration_transit_encryption = input;
+        self
+    }
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub fn get_router_integration_transit_encryption(&self) -> &::std::option::Option<crate::types::FlowTransitEncryption> {
+        &self.router_integration_transit_encryption
+    }
     /// Consumes the builder and constructs a [`UpdateFlowOutputInput`](crate::operation::update_flow_output::UpdateFlowOutputInput).
     pub fn build(
         self,
@@ -497,6 +539,8 @@ impl UpdateFlowOutputInputBuilder {
             output_status: self.output_status,
             ndi_program_name: self.ndi_program_name,
             ndi_speed_hq_quality: self.ndi_speed_hq_quality,
+            router_integration_state: self.router_integration_state,
+            router_integration_transit_encryption: self.router_integration_transit_encryption,
         })
     }
 }

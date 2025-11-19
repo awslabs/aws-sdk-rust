@@ -12,6 +12,15 @@
 /// ```text
 /// # let securitypolicy = unimplemented!();
 /// match securitypolicy {
+///     SecurityPolicy::SecurityPolicyTls122018Edge => { /* ... */ },
+///     SecurityPolicy::SecurityPolicyTls12Pfs2025Edge => { /* ... */ },
+///     SecurityPolicy::SecurityPolicyTls1312202106 => { /* ... */ },
+///     SecurityPolicy::SecurityPolicyTls1312FipsPq202509 => { /* ... */ },
+///     SecurityPolicy::SecurityPolicyTls1312PfsPq202509 => { /* ... */ },
+///     SecurityPolicy::SecurityPolicyTls1312Pq202509 => { /* ... */ },
+///     SecurityPolicy::SecurityPolicyTls1313202509 => { /* ... */ },
+///     SecurityPolicy::SecurityPolicyTls1313Fips202509 => { /* ... */ },
+///     SecurityPolicy::SecurityPolicyTls132025Edge => { /* ... */ },
 ///     SecurityPolicy::Tls10 => { /* ... */ },
 ///     SecurityPolicy::Tls12 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +52,24 @@
 )]
 pub enum SecurityPolicy {
     #[allow(missing_docs)] // documentation missing in model
+    SecurityPolicyTls122018Edge,
+    #[allow(missing_docs)] // documentation missing in model
+    SecurityPolicyTls12Pfs2025Edge,
+    #[allow(missing_docs)] // documentation missing in model
+    SecurityPolicyTls1312202106,
+    #[allow(missing_docs)] // documentation missing in model
+    SecurityPolicyTls1312FipsPq202509,
+    #[allow(missing_docs)] // documentation missing in model
+    SecurityPolicyTls1312PfsPq202509,
+    #[allow(missing_docs)] // documentation missing in model
+    SecurityPolicyTls1312Pq202509,
+    #[allow(missing_docs)] // documentation missing in model
+    SecurityPolicyTls1313202509,
+    #[allow(missing_docs)] // documentation missing in model
+    SecurityPolicyTls1313Fips202509,
+    #[allow(missing_docs)] // documentation missing in model
+    SecurityPolicyTls132025Edge,
+    #[allow(missing_docs)] // documentation missing in model
     Tls10,
     #[allow(missing_docs)] // documentation missing in model
     Tls12,
@@ -53,6 +80,15 @@ pub enum SecurityPolicy {
 impl ::std::convert::From<&str> for SecurityPolicy {
     fn from(s: &str) -> Self {
         match s {
+            "SecurityPolicy_TLS12_2018_EDGE" => SecurityPolicy::SecurityPolicyTls122018Edge,
+            "SecurityPolicy_TLS12_PFS_2025_EDGE" => SecurityPolicy::SecurityPolicyTls12Pfs2025Edge,
+            "SecurityPolicy_TLS13_1_2_2021_06" => SecurityPolicy::SecurityPolicyTls1312202106,
+            "SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09" => SecurityPolicy::SecurityPolicyTls1312FipsPq202509,
+            "SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09" => SecurityPolicy::SecurityPolicyTls1312PfsPq202509,
+            "SecurityPolicy_TLS13_1_2_PQ_2025_09" => SecurityPolicy::SecurityPolicyTls1312Pq202509,
+            "SecurityPolicy_TLS13_1_3_2025_09" => SecurityPolicy::SecurityPolicyTls1313202509,
+            "SecurityPolicy_TLS13_1_3_FIPS_2025_09" => SecurityPolicy::SecurityPolicyTls1313Fips202509,
+            "SecurityPolicy_TLS13_2025_EDGE" => SecurityPolicy::SecurityPolicyTls132025Edge,
             "TLS_1_0" => SecurityPolicy::Tls10,
             "TLS_1_2" => SecurityPolicy::Tls12,
             other => SecurityPolicy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +106,15 @@ impl SecurityPolicy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SecurityPolicy::SecurityPolicyTls122018Edge => "SecurityPolicy_TLS12_2018_EDGE",
+            SecurityPolicy::SecurityPolicyTls12Pfs2025Edge => "SecurityPolicy_TLS12_PFS_2025_EDGE",
+            SecurityPolicy::SecurityPolicyTls1312202106 => "SecurityPolicy_TLS13_1_2_2021_06",
+            SecurityPolicy::SecurityPolicyTls1312FipsPq202509 => "SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09",
+            SecurityPolicy::SecurityPolicyTls1312PfsPq202509 => "SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09",
+            SecurityPolicy::SecurityPolicyTls1312Pq202509 => "SecurityPolicy_TLS13_1_2_PQ_2025_09",
+            SecurityPolicy::SecurityPolicyTls1313202509 => "SecurityPolicy_TLS13_1_3_2025_09",
+            SecurityPolicy::SecurityPolicyTls1313Fips202509 => "SecurityPolicy_TLS13_1_3_FIPS_2025_09",
+            SecurityPolicy::SecurityPolicyTls132025Edge => "SecurityPolicy_TLS13_2025_EDGE",
             SecurityPolicy::Tls10 => "TLS_1_0",
             SecurityPolicy::Tls12 => "TLS_1_2",
             SecurityPolicy::Unknown(value) => value.as_str(),
@@ -77,7 +122,19 @@ impl SecurityPolicy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TLS_1_0", "TLS_1_2"]
+        &[
+            "SecurityPolicy_TLS12_2018_EDGE",
+            "SecurityPolicy_TLS12_PFS_2025_EDGE",
+            "SecurityPolicy_TLS13_1_2_2021_06",
+            "SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09",
+            "SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09",
+            "SecurityPolicy_TLS13_1_2_PQ_2025_09",
+            "SecurityPolicy_TLS13_1_3_2025_09",
+            "SecurityPolicy_TLS13_1_3_FIPS_2025_09",
+            "SecurityPolicy_TLS13_2025_EDGE",
+            "TLS_1_0",
+            "TLS_1_2",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SecurityPolicy {
@@ -100,6 +157,15 @@ impl SecurityPolicy {
 impl ::std::fmt::Display for SecurityPolicy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SecurityPolicy::SecurityPolicyTls122018Edge => write!(f, "SecurityPolicy_TLS12_2018_EDGE"),
+            SecurityPolicy::SecurityPolicyTls12Pfs2025Edge => write!(f, "SecurityPolicy_TLS12_PFS_2025_EDGE"),
+            SecurityPolicy::SecurityPolicyTls1312202106 => write!(f, "SecurityPolicy_TLS13_1_2_2021_06"),
+            SecurityPolicy::SecurityPolicyTls1312FipsPq202509 => write!(f, "SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"),
+            SecurityPolicy::SecurityPolicyTls1312PfsPq202509 => write!(f, "SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"),
+            SecurityPolicy::SecurityPolicyTls1312Pq202509 => write!(f, "SecurityPolicy_TLS13_1_2_PQ_2025_09"),
+            SecurityPolicy::SecurityPolicyTls1313202509 => write!(f, "SecurityPolicy_TLS13_1_3_2025_09"),
+            SecurityPolicy::SecurityPolicyTls1313Fips202509 => write!(f, "SecurityPolicy_TLS13_1_3_FIPS_2025_09"),
+            SecurityPolicy::SecurityPolicyTls132025Edge => write!(f, "SecurityPolicy_TLS13_2025_EDGE"),
             SecurityPolicy::Tls10 => write!(f, "TLS_1_0"),
             SecurityPolicy::Tls12 => write!(f, "TLS_1_2"),
             SecurityPolicy::Unknown(value) => write!(f, "{value}"),

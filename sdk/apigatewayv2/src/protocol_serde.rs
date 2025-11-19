@@ -39,6 +39,14 @@ pub(crate) mod shape_create_integration_response;
 
 pub(crate) mod shape_create_model;
 
+pub(crate) mod shape_create_portal;
+
+pub(crate) mod shape_create_portal_product;
+
+pub(crate) mod shape_create_product_page;
+
+pub(crate) mod shape_create_product_rest_endpoint_page;
+
 pub(crate) mod shape_create_route;
 
 pub(crate) mod shape_create_route_response;
@@ -69,6 +77,16 @@ pub(crate) mod shape_delete_integration_response;
 
 pub(crate) mod shape_delete_model;
 
+pub(crate) mod shape_delete_portal;
+
+pub(crate) mod shape_delete_portal_product;
+
+pub(crate) mod shape_delete_portal_product_sharing_policy;
+
+pub(crate) mod shape_delete_product_page;
+
+pub(crate) mod shape_delete_product_rest_endpoint_page;
+
 pub(crate) mod shape_delete_route;
 
 pub(crate) mod shape_delete_route_request_parameter;
@@ -82,6 +100,8 @@ pub(crate) mod shape_delete_routing_rule;
 pub(crate) mod shape_delete_stage;
 
 pub(crate) mod shape_delete_vpc_link;
+
+pub(crate) mod shape_disable_portal;
 
 pub(crate) mod shape_export_api;
 
@@ -119,6 +139,16 @@ pub(crate) mod shape_get_model_template;
 
 pub(crate) mod shape_get_models;
 
+pub(crate) mod shape_get_portal;
+
+pub(crate) mod shape_get_portal_product;
+
+pub(crate) mod shape_get_portal_product_sharing_policy;
+
+pub(crate) mod shape_get_product_page;
+
+pub(crate) mod shape_get_product_rest_endpoint_page;
+
 pub(crate) mod shape_get_route;
 
 pub(crate) mod shape_get_route_response;
@@ -141,7 +171,21 @@ pub(crate) mod shape_get_vpc_links;
 
 pub(crate) mod shape_import_api;
 
+pub(crate) mod shape_list_portal_products;
+
+pub(crate) mod shape_list_portals;
+
+pub(crate) mod shape_list_product_pages;
+
+pub(crate) mod shape_list_product_rest_endpoint_pages;
+
 pub(crate) mod shape_list_routing_rules;
+
+pub(crate) mod shape_preview_portal;
+
+pub(crate) mod shape_publish_portal;
+
+pub(crate) mod shape_put_portal_product_sharing_policy;
 
 pub(crate) mod shape_put_routing_rule;
 
@@ -168,6 +212,14 @@ pub(crate) mod shape_update_integration;
 pub(crate) mod shape_update_integration_response;
 
 pub(crate) mod shape_update_model;
+
+pub(crate) mod shape_update_portal;
+
+pub(crate) mod shape_update_portal_product;
+
+pub(crate) mod shape_update_product_page;
+
+pub(crate) mod shape_update_product_rest_endpoint_page;
 
 pub(crate) mod shape_update_route;
 
@@ -207,6 +259,14 @@ pub(crate) mod shape_create_integration_response_input;
 
 pub(crate) mod shape_create_model_input;
 
+pub(crate) mod shape_create_portal_input;
+
+pub(crate) mod shape_create_portal_product_input;
+
+pub(crate) mod shape_create_product_page_input;
+
+pub(crate) mod shape_create_product_rest_endpoint_page_input;
+
 pub(crate) mod shape_create_route_input;
 
 pub(crate) mod shape_create_route_response_input;
@@ -222,6 +282,10 @@ pub(crate) mod shape_export_api_output;
 pub(crate) mod shape_import_api_input;
 
 pub(crate) mod shape_not_found_exception;
+
+pub(crate) mod shape_publish_portal_input;
+
+pub(crate) mod shape_put_portal_product_sharing_policy_input;
 
 pub(crate) mod shape_put_routing_rule_input;
 
@@ -247,6 +311,14 @@ pub(crate) mod shape_update_integration_response_input;
 
 pub(crate) mod shape_update_model_input;
 
+pub(crate) mod shape_update_portal_input;
+
+pub(crate) mod shape_update_portal_product_input;
+
+pub(crate) mod shape_update_product_page_input;
+
+pub(crate) mod shape_update_product_rest_endpoint_page_input;
+
 pub(crate) mod shape_update_route_input;
 
 pub(crate) mod shape_update_route_response_input;
@@ -257,13 +329,27 @@ pub(crate) mod shape_update_vpc_link_input;
 
 pub(crate) mod shape_access_log_settings;
 
+pub(crate) mod shape_authorization;
+
 pub(crate) mod shape_authorization_scopes;
 
 pub(crate) mod shape_cors;
 
+pub(crate) mod shape_display_content;
+
+pub(crate) mod shape_display_order;
+
 pub(crate) mod shape_domain_name_configuration;
 
 pub(crate) mod shape_domain_name_configurations;
+
+pub(crate) mod shape_endpoint_configuration_request;
+
+pub(crate) mod shape_endpoint_configuration_response;
+
+pub(crate) mod shape_endpoint_display_content;
+
+pub(crate) mod shape_endpoint_display_content_response;
 
 pub(crate) mod shape_identity_source_list;
 
@@ -287,6 +373,14 @@ pub(crate) mod shape_list_of_integration_response;
 
 pub(crate) mod shape_list_of_model;
 
+pub(crate) mod shape_list_of_portal_product_summary;
+
+pub(crate) mod shape_list_of_portal_summary;
+
+pub(crate) mod shape_list_of_product_page_summary_no_body;
+
+pub(crate) mod shape_list_of_product_rest_endpoint_page_summary_no_body;
+
 pub(crate) mod shape_list_of_route;
 
 pub(crate) mod shape_list_of_route_response;
@@ -301,6 +395,8 @@ pub(crate) mod shape_list_of_stage;
 
 pub(crate) mod shape_list_of_string;
 
+pub(crate) mod shape_list_of_string_min20_max2048;
+
 pub(crate) mod shape_list_of_vpc_link;
 
 pub(crate) mod shape_mutual_tls_authentication;
@@ -309,7 +405,13 @@ pub(crate) mod shape_mutual_tls_authentication_input;
 
 pub(crate) mod shape_parameter_constraints;
 
+pub(crate) mod shape_portal_content;
+
+pub(crate) mod shape_preview;
+
 pub(crate) mod shape_response_parameters;
+
+pub(crate) mod shape_rest_endpoint_identifier;
 
 pub(crate) mod shape_route_models;
 
@@ -327,6 +429,8 @@ pub(crate) mod shape_security_group_id_list;
 
 pub(crate) mod shape_stage_variables_map;
 
+pub(crate) mod shape_status_exception;
+
 pub(crate) mod shape_subnet_id_list;
 
 pub(crate) mod shape_tags;
@@ -337,11 +441,15 @@ pub(crate) mod shape_tls_config;
 
 pub(crate) mod shape_tls_config_input;
 
+pub(crate) mod shape_acm_managed;
+
 pub(crate) mod shape_api;
 
 pub(crate) mod shape_api_mapping;
 
 pub(crate) mod shape_authorizer;
+
+pub(crate) mod shape_cognito_config;
 
 pub(crate) mod shape_cors_header_list;
 
@@ -351,13 +459,31 @@ pub(crate) mod shape_cors_origin_list;
 
 pub(crate) mod shape_deployment;
 
+pub(crate) mod shape_display_content_overrides;
+
 pub(crate) mod shape_domain_name;
+
+pub(crate) mod shape_identifier_parts;
 
 pub(crate) mod shape_integration;
 
 pub(crate) mod shape_integration_response;
 
+pub(crate) mod shape_list_of_section;
+
 pub(crate) mod shape_model;
+
+pub(crate) mod shape_none;
+
+pub(crate) mod shape_portal_product_summary;
+
+pub(crate) mod shape_portal_summary;
+
+pub(crate) mod shape_portal_theme;
+
+pub(crate) mod shape_product_page_summary_no_body;
+
+pub(crate) mod shape_product_rest_endpoint_page_summary_no_body;
 
 pub(crate) mod shape_route;
 
@@ -371,9 +497,13 @@ pub(crate) mod shape_routing_rule_match_base_paths;
 
 pub(crate) mod shape_routing_rule_match_headers;
 
+pub(crate) mod shape_section;
+
 pub(crate) mod shape_stage;
 
 pub(crate) mod shape_vpc_link;
+
+pub(crate) mod shape_custom_colors;
 
 pub(crate) mod shape_routing_rule_match_header_value;
 

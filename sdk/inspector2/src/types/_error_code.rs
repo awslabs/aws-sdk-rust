@@ -15,6 +15,7 @@
 ///     ErrorCode::AccessDenied => { /* ... */ },
 ///     ErrorCode::AccountIsIsolated => { /* ... */ },
 ///     ErrorCode::AlreadyEnabled => { /* ... */ },
+///     ErrorCode::BlockedByOrganizationPolicy => { /* ... */ },
 ///     ErrorCode::DisableInProgress => { /* ... */ },
 ///     ErrorCode::DisassociateAllMembers => { /* ... */ },
 ///     ErrorCode::Ec2SsmAssociationVersionLimitExceeded => { /* ... */ },
@@ -63,6 +64,8 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AlreadyEnabled,
     #[allow(missing_docs)] // documentation missing in model
+    BlockedByOrganizationPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     DisableInProgress,
     #[allow(missing_docs)] // documentation missing in model
     DisassociateAllMembers,
@@ -98,6 +101,7 @@ impl ::std::convert::From<&str> for ErrorCode {
             "ACCESS_DENIED" => ErrorCode::AccessDenied,
             "ACCOUNT_IS_ISOLATED" => ErrorCode::AccountIsIsolated,
             "ALREADY_ENABLED" => ErrorCode::AlreadyEnabled,
+            "BLOCKED_BY_ORGANIZATION_POLICY" => ErrorCode::BlockedByOrganizationPolicy,
             "DISABLE_IN_PROGRESS" => ErrorCode::DisableInProgress,
             "DISASSOCIATE_ALL_MEMBERS" => ErrorCode::DisassociateAllMembers,
             "EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED" => ErrorCode::Ec2SsmAssociationVersionLimitExceeded,
@@ -129,6 +133,7 @@ impl ErrorCode {
             ErrorCode::AccessDenied => "ACCESS_DENIED",
             ErrorCode::AccountIsIsolated => "ACCOUNT_IS_ISOLATED",
             ErrorCode::AlreadyEnabled => "ALREADY_ENABLED",
+            ErrorCode::BlockedByOrganizationPolicy => "BLOCKED_BY_ORGANIZATION_POLICY",
             ErrorCode::DisableInProgress => "DISABLE_IN_PROGRESS",
             ErrorCode::DisassociateAllMembers => "DISASSOCIATE_ALL_MEMBERS",
             ErrorCode::Ec2SsmAssociationVersionLimitExceeded => "EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED",
@@ -151,6 +156,7 @@ impl ErrorCode {
             "ACCESS_DENIED",
             "ACCOUNT_IS_ISOLATED",
             "ALREADY_ENABLED",
+            "BLOCKED_BY_ORGANIZATION_POLICY",
             "DISABLE_IN_PROGRESS",
             "DISASSOCIATE_ALL_MEMBERS",
             "EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED",
@@ -190,6 +196,7 @@ impl ::std::fmt::Display for ErrorCode {
             ErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
             ErrorCode::AccountIsIsolated => write!(f, "ACCOUNT_IS_ISOLATED"),
             ErrorCode::AlreadyEnabled => write!(f, "ALREADY_ENABLED"),
+            ErrorCode::BlockedByOrganizationPolicy => write!(f, "BLOCKED_BY_ORGANIZATION_POLICY"),
             ErrorCode::DisableInProgress => write!(f, "DISABLE_IN_PROGRESS"),
             ErrorCode::DisassociateAllMembers => write!(f, "DISASSOCIATE_ALL_MEMBERS"),
             ErrorCode::Ec2SsmAssociationVersionLimitExceeded => write!(f, "EC2_SSM_ASSOCIATION_VERSION_LIMIT_EXCEEDED"),

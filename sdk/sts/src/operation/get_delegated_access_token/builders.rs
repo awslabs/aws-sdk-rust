@@ -22,7 +22,7 @@ impl crate::operation::get_delegated_access_token::builders::GetDelegatedAccessT
 }
 /// Fluent builder constructing a request to `GetDelegatedAccessToken`.
 ///
-/// <p>This API is currently unavailable for general use.</p>
+/// <p>Exchanges a trade-in token for temporary Amazon Web Services credentials with the permissions associated with the assumed principal. This operation allows you to obtain credentials for a specific principal based on a trade-in token, enabling delegation of access to Amazon Web Services resources.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDelegatedAccessTokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetDelegatedAccessTokenFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p></p>
+    /// <p>The token to exchange for temporary Amazon Web Services credentials. This token must be valid and unexpired at the time of the request.</p>
     pub fn trade_in_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trade_in_token(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The token to exchange for temporary Amazon Web Services credentials. This token must be valid and unexpired at the time of the request.</p>
     pub fn set_trade_in_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trade_in_token(input);
         self
     }
-    /// <p></p>
+    /// <p>The token to exchange for temporary Amazon Web Services credentials. This token must be valid and unexpired at the time of the request.</p>
     pub fn get_trade_in_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trade_in_token()
     }

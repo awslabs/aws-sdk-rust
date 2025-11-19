@@ -6,71 +6,59 @@ pub use ::aws_smithy_types::endpoint::Endpoint;
 #[cfg(test)]
 mod test {
 
-    /// For region aws-global with FIPS disabled and DualStack disabled
+    /// For custom endpoint with region not set and fips disabled
     #[test]
     fn test_1() {
         let params = crate::config::endpoint::Params::builder()
-            .region("aws-global".to_string())
+            .endpoint("https://example.com".to_string())
             .use_fips(false)
-            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
         assert_eq!(
             endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
         );
     }
 
-    /// For region aws-global with FIPS enabled and DualStack disabled
+    /// For custom endpoint with fips enabled
     #[test]
     fn test_2() {
         let params = crate::config::endpoint::Params::builder()
-            .region("aws-global".to_string())
+            .endpoint("https://example.com".to_string())
             .use_fips(true)
-            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.amazonaws.com");
+        let error = endpoint
+            .expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [For custom endpoint with fips enabled]");
+        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and custom endpoint are not supported")
+    }
+
+    /// For custom endpoint with fips disabled and dualstack enabled
+    #[test]
+    fn test_3() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint("https://example.com".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [For custom endpoint with fips disabled and dualstack enabled]");
         assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53-fips.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
+            format!("{}", error),
+            "Invalid Configuration: Dualstack and custom endpoint are not supported"
+        )
     }
 
     /// For region us-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_3() {
+    fn test_4() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -79,18 +67,28 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53-fips.us-east-1.api.aws")
+                .url("https://route53-fips.global.api.aws")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
                 .build()
         );
     }
 
     /// For region us-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_4() {
+    fn test_5() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -109,7 +107,6 @@ mod test {
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -121,7 +118,7 @@ mod test {
 
     /// For region us-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_5() {
+    fn test_6() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -130,18 +127,28 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53.us-east-1.api.aws")
+                .url("https://route53.global.api.aws")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
                 .build()
         );
     }
 
     /// For region us-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_6() {
+    fn test_7() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -160,7 +167,6 @@ mod test {
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
@@ -170,102 +176,101 @@ mod test {
         );
     }
 
-    /// For region aws-cn-global with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_7() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("aws-cn-global".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.amazonaws.com.cn");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53.amazonaws.com.cn")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
-                        out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region cn-north-1 with FIPS enabled and DualStack enabled
+    /// For region cn-northwest-1 with FIPS enabled and DualStack enabled
     #[test]
     fn test_8() {
         let params = crate::config::endpoint::Params::builder()
-            .region("cn-north-1".to_string())
+            .region("cn-northwest-1".to_string())
             .use_fips(true)
             .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.cn-north-1.api.amazonwebservices.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.api.amazonwebservices.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53-fips.cn-north-1.api.amazonwebservices.com.cn")
+                .url("https://route53-fips.api.amazonwebservices.com.cn")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
                 .build()
         );
     }
 
-    /// For region cn-north-1 with FIPS enabled and DualStack disabled
+    /// For region cn-northwest-1 with FIPS enabled and DualStack disabled
     #[test]
     fn test_9() {
         let params = crate::config::endpoint::Params::builder()
-            .region("cn-north-1".to_string())
+            .region("cn-northwest-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.cn-north-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53-fips.cn-north-1.amazonaws.com.cn")
+                .url("https://route53-fips.amazonaws.com.cn")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
                 .build()
         );
     }
 
-    /// For region cn-north-1 with FIPS disabled and DualStack enabled
+    /// For region cn-northwest-1 with FIPS disabled and DualStack enabled
     #[test]
     fn test_10() {
         let params = crate::config::endpoint::Params::builder()
-            .region("cn-north-1".to_string())
+            .region("cn-northwest-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.cn-north-1.api.amazonwebservices.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.global.api.amazonwebservices.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53.cn-north-1.api.amazonwebservices.com.cn")
+                .url("https://route53.global.api.amazonwebservices.com.cn")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
                 .build()
         );
     }
 
-    /// For region cn-north-1 with FIPS disabled and DualStack disabled
+    /// For region cn-northwest-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_11() {
         let params = crate::config::endpoint::Params::builder()
-            .region("cn-north-1".to_string())
+            .region("cn-northwest-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
             .build()
@@ -282,7 +287,6 @@ mod test {
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());
                         out
                     }
@@ -292,29 +296,28 @@ mod test {
         );
     }
 
-    /// For region aws-us-gov-global with FIPS disabled and DualStack disabled
+    /// For region eusc-de-east-1 with FIPS enabled and DualStack disabled
     #[test]
     fn test_12() {
         let params = crate::config::endpoint::Params::builder()
-            .region("aws-us-gov-global".to_string())
-            .use_fips(false)
+            .region("eusc-de-east-1".to_string())
+            .use_fips(true)
             .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.us-gov.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.amazonaws.eu");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53.us-gov.amazonaws.com")
+                .url("https://route53-fips.amazonaws.eu")
                 .property(
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
+                        out.insert("signingRegion".to_string(), "eusc-de-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -323,162 +326,28 @@ mod test {
         );
     }
 
-    /// For region aws-us-gov-global with FIPS enabled and DualStack disabled
+    /// For region eusc-de-east-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_13() {
         let params = crate::config::endpoint::Params::builder()
-            .region("aws-us-gov-global".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.us-gov.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53.us-gov.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_14() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.us-gov-east-1.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53-fips.us-gov-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_15() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.us-gov.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53.us-gov.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_16() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.us-gov-east-1.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53.us-gov-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_17() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-east-1".to_string())
+            .region("eusc-de-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.us-gov.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.amazonaws.eu");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53.us-gov.amazonaws.com")
+                .url("https://route53.amazonaws.eu")
                 .property(
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region aws-iso-global with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_18() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("aws-iso-global".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.c2s.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53.c2s.ic.gov")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
+                        out.insert("signingRegion".to_string(), "eusc-de-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -489,7 +358,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_19() {
+    fn test_14() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -498,18 +367,28 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.us-iso-east-1.c2s.ic.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.c2s.ic.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53-fips.us-iso-east-1.c2s.ic.gov")
+                .url("https://route53-fips.c2s.ic.gov")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
                 .build()
         );
     }
 
     /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_20() {
+    fn test_15() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -528,39 +407,7 @@ mod test {
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region aws-iso-b-global with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_21() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("aws-iso-b-global".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.sc2s.sgov.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53.sc2s.sgov.gov")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -571,7 +418,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_22() {
+    fn test_16() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -580,18 +427,28 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.us-isob-east-1.sc2s.sgov.gov");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.sc2s.sgov.gov");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://route53-fips.us-isob-east-1.sc2s.sgov.gov")
+                .url("https://route53-fips.sc2s.sgov.gov")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
                 .build()
         );
     }
 
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_23() {
+    fn test_17() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -610,8 +467,37 @@ mod test {
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region eu-isoe-west-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_18() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eu-isoe-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.cloud.adc-e.uk");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://route53-fips.cloud.adc-e.uk")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "eu-isoe-west-1".to_string().into());
                         out
                     }
                     .into()]
@@ -622,7 +508,7 @@ mod test {
 
     /// For region eu-isoe-west-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_24() {
+    fn test_19() {
         let params = crate::config::endpoint::Params::builder()
             .region("eu-isoe-west-1".to_string())
             .use_fips(false)
@@ -641,8 +527,37 @@ mod test {
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "eu-isoe-west-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-isof-south-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_20() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isof-south-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53-fips.csp.hci.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://route53-fips.csp.hci.ic.gov")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-isof-south-1".to_string().into());
                         out
                     }
                     .into()]
@@ -653,7 +568,7 @@ mod test {
 
     /// For region us-isof-south-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_25() {
+    fn test_21() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isof-south-1".to_string())
             .use_fips(false)
@@ -672,7 +587,6 @@ mod test {
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-isof-south-1".to_string().into());
                         out
                     }
@@ -682,81 +596,129 @@ mod test {
         );
     }
 
-    /// For custom endpoint with region set and fips disabled and dualstack disabled
+    /// For region us-gov-west-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_26() {
+    fn test_22() {
         let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .endpoint("https://example.com".to_string())
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.us-gov.api.aws");
         assert_eq!(
             endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://route53.us-gov.api.aws")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
         );
     }
 
-    /// For custom endpoint with region not set and fips disabled and dualstack disabled
+    /// For region us-gov-west-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_27() {
+    fn test_23() {
         let params = crate::config::endpoint::Params::builder()
-            .use_fips(false)
-            .use_dual_stack(false)
-            .endpoint("https://example.com".to_string())
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
-        );
-    }
-
-    /// For custom endpoint with fips enabled and dualstack disabled
-    #[test]
-    fn test_28() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
+            .region("us-gov-west-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
-            .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [For custom endpoint with fips enabled and dualstack disabled]");
-        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and custom endpoint are not supported")
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.us-gov.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://route53.us-gov.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
     }
 
-    /// For custom endpoint with fips disabled and dualstack enabled
+    /// For region us-gov-west-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_29() {
+    fn test_24() {
         let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
+            .region("us-gov-west-1".to_string())
             .use_fips(false)
             .use_dual_stack(true)
-            .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [For custom endpoint with fips disabled and dualstack enabled]");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.us-gov.api.aws");
         assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: Dualstack and custom endpoint are not supported"
-        )
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://route53.us-gov.api.aws")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_25() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://route53.us-gov.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://route53.us-gov.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
     }
 
     /// Missing region
     #[test]
-    fn test_30() {
+    fn test_26() {
         let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -835,23 +797,19 @@ impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 /// Configuration parameters for resolving the correct endpoint
 pub struct Params {
-    /// The AWS region used to dispatch the request.
-    pub(crate) region: ::std::option::Option<::std::string::String>,
     /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
     pub(crate) use_dual_stack: bool,
     /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
     pub(crate) use_fips: bool,
     /// Override the endpoint used to send this request
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    /// The AWS region used to dispatch the request.
+    pub(crate) region: ::std::option::Option<::std::string::String>,
 }
 impl Params {
     /// Create a builder for [`Params`]
     pub fn builder() -> crate::config::endpoint::ParamsBuilder {
         crate::config::endpoint::ParamsBuilder::default()
-    }
-    /// The AWS region used to dispatch the request.
-    pub fn region(&self) -> ::std::option::Option<&str> {
-        self.region.as_deref()
     }
     /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
     pub fn use_dual_stack(&self) -> ::std::option::Option<bool> {
@@ -865,15 +823,19 @@ impl Params {
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
+    /// The AWS region used to dispatch the request.
+    pub fn region(&self) -> ::std::option::Option<&str> {
+        self.region.as_deref()
+    }
 }
 
 /// Builder for [`Params`]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParamsBuilder {
-    region: ::std::option::Option<::std::string::String>,
     use_dual_stack: ::std::option::Option<bool>,
     use_fips: ::std::option::Option<bool>,
     endpoint: ::std::option::Option<::std::string::String>,
+    region: ::std::option::Option<::std::string::String>,
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
@@ -893,7 +855,6 @@ impl ParamsBuilder {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::config::endpoint::Params {
-                region: self.region,
                 use_dual_stack: self
                     .use_dual_stack
                     .or_else(|| Some(false))
@@ -903,23 +864,9 @@ impl ParamsBuilder {
                     .or_else(|| Some(false))
                     .ok_or_else(|| crate::config::endpoint::InvalidParams::missing("use_fips"))?,
                 endpoint: self.endpoint,
+                region: self.region,
             },
         )
-    }
-    /// Sets the value for region
-    ///
-    /// The AWS region used to dispatch the request.
-    pub fn region(mut self, value: impl Into<::std::string::String>) -> Self {
-        self.region = Some(value.into());
-        self
-    }
-
-    /// Sets the value for region
-    ///
-    /// The AWS region used to dispatch the request.
-    pub fn set_region(mut self, param: Option<::std::string::String>) -> Self {
-        self.region = param;
-        self
     }
     /// Sets the value for use_dual_stack
     ///
@@ -968,6 +915,21 @@ impl ParamsBuilder {
     /// Override the endpoint used to send this request
     pub fn set_endpoint(mut self, param: Option<::std::string::String>) -> Self {
         self.endpoint = param;
+        self
+    }
+    /// Sets the value for region
+    ///
+    /// The AWS region used to dispatch the request.
+    pub fn region(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.region = Some(value.into());
+        self
+    }
+
+    /// Sets the value for region
+    ///
+    /// The AWS region used to dispatch the request.
+    pub fn set_region(mut self, param: Option<::std::string::String>) -> Self {
+        self.region = param;
         self
     }
 }

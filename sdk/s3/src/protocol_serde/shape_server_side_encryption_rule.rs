@@ -13,6 +13,10 @@ pub fn ser_server_side_encryption_rule(
         let mut inner_writer = scope.start_el("BucketKeyEnabled").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
     }
+    if let Some(var_3) = &input.blocked_encryption_types {
+        let inner_writer = scope.start_el("BlockedEncryptionTypes");
+        crate::protocol_serde::shape_blocked_encryption_types::ser_blocked_encryption_types(var_3, inner_writer)?
+    }
     scope.finish();
     Ok(())
 }
@@ -26,17 +30,17 @@ pub fn de_server_side_encryption_rule(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ApplyServerSideEncryptionByDefault") /* ApplyServerSideEncryptionByDefault com.amazonaws.s3#ServerSideEncryptionRule$ApplyServerSideEncryptionByDefault */ =>  {
-                let var_3 =
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_server_side_encryption_by_default::de_server_side_encryption_by_default(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_apply_server_side_encryption_by_default(var_3);
+                builder = builder.set_apply_server_side_encryption_by_default(var_4);
             }
             ,
             s if s.matches("BucketKeyEnabled") /* BucketKeyEnabled com.amazonaws.s3#ServerSideEncryptionRule$BucketKeyEnabled */ =>  {
-                let var_4 =
+                let var_5 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -47,7 +51,17 @@ pub fn de_server_side_encryption_rule(
                         ?
                     )
                 ;
-                builder = builder.set_bucket_key_enabled(var_4);
+                builder = builder.set_bucket_key_enabled(var_5);
+            }
+            ,
+            s if s.matches("BlockedEncryptionTypes") /* BlockedEncryptionTypes com.amazonaws.s3#ServerSideEncryptionRule$BlockedEncryptionTypes */ =>  {
+                let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_blocked_encryption_types::de_blocked_encryption_types(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_blocked_encryption_types(var_6);
             }
             ,
             _ => {}

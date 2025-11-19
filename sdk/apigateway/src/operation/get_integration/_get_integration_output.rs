@@ -37,6 +37,8 @@ pub struct GetIntegrationOutput {
     pub integration_responses: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>>,
     /// <p>Specifies the TLS configuration for an integration.</p>
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
+    /// <p>The response transfer mode of the integration.</p>
+    pub response_transfer_mode: ::std::option::Option<crate::types::ResponseTransferMode>,
     _request_id: Option<String>,
 }
 impl GetIntegrationOutput {
@@ -107,6 +109,10 @@ impl GetIntegrationOutput {
     pub fn tls_config(&self) -> ::std::option::Option<&crate::types::TlsConfig> {
         self.tls_config.as_ref()
     }
+    /// <p>The response transfer mode of the integration.</p>
+    pub fn response_transfer_mode(&self) -> ::std::option::Option<&crate::types::ResponseTransferMode> {
+        self.response_transfer_mode.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetIntegrationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -139,6 +145,7 @@ pub struct GetIntegrationOutputBuilder {
     pub(crate) cache_key_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) integration_responses: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>>,
     pub(crate) tls_config: ::std::option::Option<crate::types::TlsConfig>,
+    pub(crate) response_transfer_mode: ::std::option::Option<crate::types::ResponseTransferMode>,
     _request_id: Option<String>,
 }
 impl GetIntegrationOutputBuilder {
@@ -404,6 +411,20 @@ impl GetIntegrationOutputBuilder {
     pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
         &self.tls_config
     }
+    /// <p>The response transfer mode of the integration.</p>
+    pub fn response_transfer_mode(mut self, input: crate::types::ResponseTransferMode) -> Self {
+        self.response_transfer_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The response transfer mode of the integration.</p>
+    pub fn set_response_transfer_mode(mut self, input: ::std::option::Option<crate::types::ResponseTransferMode>) -> Self {
+        self.response_transfer_mode = input;
+        self
+    }
+    /// <p>The response transfer mode of the integration.</p>
+    pub fn get_response_transfer_mode(&self) -> &::std::option::Option<crate::types::ResponseTransferMode> {
+        &self.response_transfer_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -431,6 +452,7 @@ impl GetIntegrationOutputBuilder {
             cache_key_parameters: self.cache_key_parameters,
             integration_responses: self.integration_responses,
             tls_config: self.tls_config,
+            response_transfer_mode: self.response_transfer_mode,
             _request_id: self._request_id,
         }
     }

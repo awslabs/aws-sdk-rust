@@ -329,6 +329,8 @@ pub(crate) mod shape_kerberos_attributes;
 
 pub(crate) mod shape_managed_scaling_policy;
 
+pub(crate) mod shape_monitoring_configuration;
+
 pub(crate) mod shape_notebook_execution;
 
 pub(crate) mod shape_notebook_execution_summary_list;
@@ -378,6 +380,8 @@ pub(crate) mod shape_application_list;
 pub(crate) mod shape_auto_scaling_policy_status;
 
 pub(crate) mod shape_cancel_steps_info;
+
+pub(crate) mod shape_cloud_watch_log_configuration;
 
 pub(crate) mod shape_cluster_status;
 
@@ -545,6 +549,8 @@ pub(crate) mod shape_instance_timeline;
 
 pub(crate) mod shape_instance_type_specification;
 
+pub(crate) mod shape_log_types_map;
+
 pub(crate) mod shape_on_demand_capacity_reservation_options;
 
 pub(crate) mod shape_simple_scaling_policy_configuration;
@@ -563,8 +569,8 @@ pub(crate) mod shape_metric_dimension;
 
 pub(crate) mod shape_step_execution_status_detail;
 
+pub(crate) mod shape_xml_string_list;
+
 pub(crate) mod shape_metric_dimension_list;
 
 pub(crate) mod shape_key_value_list;
-
-pub(crate) mod shape_xml_string_list;

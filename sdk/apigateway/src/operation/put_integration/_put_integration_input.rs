@@ -39,6 +39,8 @@ pub struct PutIntegrationInput {
     pub timeout_in_millis: ::std::option::Option<i32>,
     /// <p>Specifies the TLS configuration for an integration.</p>
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
+    /// <p>The response transfer mode of the integration.</p>
+    pub response_transfer_mode: ::std::option::Option<crate::types::ResponseTransferMode>,
 }
 impl PutIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -112,6 +114,10 @@ impl PutIntegrationInput {
     pub fn tls_config(&self) -> ::std::option::Option<&crate::types::TlsConfig> {
         self.tls_config.as_ref()
     }
+    /// <p>The response transfer mode of the integration.</p>
+    pub fn response_transfer_mode(&self) -> ::std::option::Option<&crate::types::ResponseTransferMode> {
+        self.response_transfer_mode.as_ref()
+    }
 }
 impl PutIntegrationInput {
     /// Creates a new builder-style object to manufacture [`PutIntegrationInput`](crate::operation::put_integration::PutIntegrationInput).
@@ -141,6 +147,7 @@ pub struct PutIntegrationInputBuilder {
     pub(crate) content_handling: ::std::option::Option<crate::types::ContentHandlingStrategy>,
     pub(crate) timeout_in_millis: ::std::option::Option<i32>,
     pub(crate) tls_config: ::std::option::Option<crate::types::TlsConfig>,
+    pub(crate) response_transfer_mode: ::std::option::Option<crate::types::ResponseTransferMode>,
 }
 impl PutIntegrationInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -420,6 +427,20 @@ impl PutIntegrationInputBuilder {
     pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
         &self.tls_config
     }
+    /// <p>The response transfer mode of the integration.</p>
+    pub fn response_transfer_mode(mut self, input: crate::types::ResponseTransferMode) -> Self {
+        self.response_transfer_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The response transfer mode of the integration.</p>
+    pub fn set_response_transfer_mode(mut self, input: ::std::option::Option<crate::types::ResponseTransferMode>) -> Self {
+        self.response_transfer_mode = input;
+        self
+    }
+    /// <p>The response transfer mode of the integration.</p>
+    pub fn get_response_transfer_mode(&self) -> &::std::option::Option<crate::types::ResponseTransferMode> {
+        &self.response_transfer_mode
+    }
     /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::operation::put_integration::PutIntegrationInput).
     pub fn build(
         self,
@@ -442,6 +463,7 @@ impl PutIntegrationInputBuilder {
             content_handling: self.content_handling,
             timeout_in_millis: self.timeout_in_millis,
             tls_config: self.tls_config,
+            response_transfer_mode: self.response_transfer_mode,
         })
     }
 }

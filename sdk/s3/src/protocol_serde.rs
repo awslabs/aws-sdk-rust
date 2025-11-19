@@ -673,6 +673,8 @@ pub(crate) mod shape_transition;
 
 pub(crate) mod shape_analytics_and_operator;
 
+pub(crate) mod shape_blocked_encryption_types;
+
 pub(crate) mod shape_condition;
 
 pub(crate) mod shape_default_retention;

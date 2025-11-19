@@ -12,6 +12,14 @@ pub struct ListBillingGroupsFilter {
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>,
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub auto_associate: ::std::option::Option<bool>,
+    /// <p>A list of primary account IDs to filter the billing groups.</p>
+    pub primary_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Filter billing groups by their type.</p>
+    pub billing_group_types: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupType>>,
+    /// <p>Filter billing groups by their names.</p>
+    pub names: ::std::option::Option<::std::vec::Vec<crate::types::StringSearch>>,
+    /// <p>Filter billing groups by their responsibility transfer ARNs.</p>
+    pub responsibility_transfer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListBillingGroupsFilter {
     /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information.</p>
@@ -34,6 +42,30 @@ impl ListBillingGroupsFilter {
     pub fn auto_associate(&self) -> ::std::option::Option<bool> {
         self.auto_associate
     }
+    /// <p>A list of primary account IDs to filter the billing groups.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.primary_account_ids.is_none()`.
+    pub fn primary_account_ids(&self) -> &[::std::string::String] {
+        self.primary_account_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter billing groups by their type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_group_types.is_none()`.
+    pub fn billing_group_types(&self) -> &[crate::types::BillingGroupType] {
+        self.billing_group_types.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter billing groups by their names.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[crate::types::StringSearch] {
+        self.names.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter billing groups by their responsibility transfer ARNs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.responsibility_transfer_arns.is_none()`.
+    pub fn responsibility_transfer_arns(&self) -> &[::std::string::String] {
+        self.responsibility_transfer_arns.as_deref().unwrap_or_default()
+    }
 }
 impl ListBillingGroupsFilter {
     /// Creates a new builder-style object to manufacture [`ListBillingGroupsFilter`](crate::types::ListBillingGroupsFilter).
@@ -50,6 +82,10 @@ pub struct ListBillingGroupsFilterBuilder {
     pub(crate) pricing_plan: ::std::option::Option<::std::string::String>,
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>>,
     pub(crate) auto_associate: ::std::option::Option<bool>,
+    pub(crate) primary_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) billing_group_types: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupType>>,
+    pub(crate) names: ::std::option::Option<::std::vec::Vec<crate::types::StringSearch>>,
+    pub(crate) responsibility_transfer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListBillingGroupsFilterBuilder {
     /// Appends an item to `arns`.
@@ -120,6 +156,86 @@ impl ListBillingGroupsFilterBuilder {
     pub fn get_auto_associate(&self) -> &::std::option::Option<bool> {
         &self.auto_associate
     }
+    /// Appends an item to `primary_account_ids`.
+    ///
+    /// To override the contents of this collection use [`set_primary_account_ids`](Self::set_primary_account_ids).
+    ///
+    /// <p>A list of primary account IDs to filter the billing groups.</p>
+    pub fn primary_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.primary_account_ids.unwrap_or_default();
+        v.push(input.into());
+        self.primary_account_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of primary account IDs to filter the billing groups.</p>
+    pub fn set_primary_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.primary_account_ids = input;
+        self
+    }
+    /// <p>A list of primary account IDs to filter the billing groups.</p>
+    pub fn get_primary_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.primary_account_ids
+    }
+    /// Appends an item to `billing_group_types`.
+    ///
+    /// To override the contents of this collection use [`set_billing_group_types`](Self::set_billing_group_types).
+    ///
+    /// <p>Filter billing groups by their type.</p>
+    pub fn billing_group_types(mut self, input: crate::types::BillingGroupType) -> Self {
+        let mut v = self.billing_group_types.unwrap_or_default();
+        v.push(input);
+        self.billing_group_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter billing groups by their type.</p>
+    pub fn set_billing_group_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingGroupType>>) -> Self {
+        self.billing_group_types = input;
+        self
+    }
+    /// <p>Filter billing groups by their type.</p>
+    pub fn get_billing_group_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupType>> {
+        &self.billing_group_types
+    }
+    /// Appends an item to `names`.
+    ///
+    /// To override the contents of this collection use [`set_names`](Self::set_names).
+    ///
+    /// <p>Filter billing groups by their names.</p>
+    pub fn names(mut self, input: crate::types::StringSearch) -> Self {
+        let mut v = self.names.unwrap_or_default();
+        v.push(input);
+        self.names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter billing groups by their names.</p>
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringSearch>>) -> Self {
+        self.names = input;
+        self
+    }
+    /// <p>Filter billing groups by their names.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringSearch>> {
+        &self.names
+    }
+    /// Appends an item to `responsibility_transfer_arns`.
+    ///
+    /// To override the contents of this collection use [`set_responsibility_transfer_arns`](Self::set_responsibility_transfer_arns).
+    ///
+    /// <p>Filter billing groups by their responsibility transfer ARNs.</p>
+    pub fn responsibility_transfer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.responsibility_transfer_arns.unwrap_or_default();
+        v.push(input.into());
+        self.responsibility_transfer_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter billing groups by their responsibility transfer ARNs.</p>
+    pub fn set_responsibility_transfer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.responsibility_transfer_arns = input;
+        self
+    }
+    /// <p>Filter billing groups by their responsibility transfer ARNs.</p>
+    pub fn get_responsibility_transfer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.responsibility_transfer_arns
+    }
     /// Consumes the builder and constructs a [`ListBillingGroupsFilter`](crate::types::ListBillingGroupsFilter).
     pub fn build(self) -> crate::types::ListBillingGroupsFilter {
         crate::types::ListBillingGroupsFilter {
@@ -127,6 +243,10 @@ impl ListBillingGroupsFilterBuilder {
             pricing_plan: self.pricing_plan,
             statuses: self.statuses,
             auto_associate: self.auto_associate,
+            primary_account_ids: self.primary_account_ids,
+            billing_group_types: self.billing_group_types,
+            names: self.names,
+            responsibility_transfer_arns: self.responsibility_transfer_arns,
         }
     }
 }

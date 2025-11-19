@@ -12,6 +12,10 @@ pub struct EventType {
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub category: ::std::option::Option<crate::types::EventTypeCategory>,
+    /// <p>The actionability classification of the event. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>. Events with <code>ACTION_REQUIRED</code> actionability require customer action to resolve or mitigate the event. Events with <code>ACTION_MAY_BE_REQUIRED</code> actionability indicates that the current status is unknown or conditional and inspection is needed to determine if action is required. Events with <code>INFORMATIONAL</code> actionability are provided for awareness and do not require immediate action.</p>
+    pub actionability: ::std::option::Option<crate::types::EventTypeActionability>,
+    /// <p>A list of persona classifications that indicate the target audience for the event. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>. Events can be associated with multiple personas to indicate relevance to different teams or roles within an organization.</p>
+    pub personas: ::std::option::Option<::std::vec::Vec<crate::types::EventTypePersona>>,
 }
 impl EventType {
     /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
@@ -25,6 +29,16 @@ impl EventType {
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub fn category(&self) -> ::std::option::Option<&crate::types::EventTypeCategory> {
         self.category.as_ref()
+    }
+    /// <p>The actionability classification of the event. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>. Events with <code>ACTION_REQUIRED</code> actionability require customer action to resolve or mitigate the event. Events with <code>ACTION_MAY_BE_REQUIRED</code> actionability indicates that the current status is unknown or conditional and inspection is needed to determine if action is required. Events with <code>INFORMATIONAL</code> actionability are provided for awareness and do not require immediate action.</p>
+    pub fn actionability(&self) -> ::std::option::Option<&crate::types::EventTypeActionability> {
+        self.actionability.as_ref()
+    }
+    /// <p>A list of persona classifications that indicate the target audience for the event. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>. Events can be associated with multiple personas to indicate relevance to different teams or roles within an organization.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.personas.is_none()`.
+    pub fn personas(&self) -> &[crate::types::EventTypePersona] {
+        self.personas.as_deref().unwrap_or_default()
     }
 }
 impl EventType {
@@ -41,6 +55,8 @@ pub struct EventTypeBuilder {
     pub(crate) service: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) category: ::std::option::Option<crate::types::EventTypeCategory>,
+    pub(crate) actionability: ::std::option::Option<crate::types::EventTypeActionability>,
+    pub(crate) personas: ::std::option::Option<::std::vec::Vec<crate::types::EventTypePersona>>,
 }
 impl EventTypeBuilder {
     /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
@@ -85,12 +101,48 @@ impl EventTypeBuilder {
     pub fn get_category(&self) -> &::std::option::Option<crate::types::EventTypeCategory> {
         &self.category
     }
+    /// <p>The actionability classification of the event. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>. Events with <code>ACTION_REQUIRED</code> actionability require customer action to resolve or mitigate the event. Events with <code>ACTION_MAY_BE_REQUIRED</code> actionability indicates that the current status is unknown or conditional and inspection is needed to determine if action is required. Events with <code>INFORMATIONAL</code> actionability are provided for awareness and do not require immediate action.</p>
+    pub fn actionability(mut self, input: crate::types::EventTypeActionability) -> Self {
+        self.actionability = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The actionability classification of the event. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>. Events with <code>ACTION_REQUIRED</code> actionability require customer action to resolve or mitigate the event. Events with <code>ACTION_MAY_BE_REQUIRED</code> actionability indicates that the current status is unknown or conditional and inspection is needed to determine if action is required. Events with <code>INFORMATIONAL</code> actionability are provided for awareness and do not require immediate action.</p>
+    pub fn set_actionability(mut self, input: ::std::option::Option<crate::types::EventTypeActionability>) -> Self {
+        self.actionability = input;
+        self
+    }
+    /// <p>The actionability classification of the event. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>. Events with <code>ACTION_REQUIRED</code> actionability require customer action to resolve or mitigate the event. Events with <code>ACTION_MAY_BE_REQUIRED</code> actionability indicates that the current status is unknown or conditional and inspection is needed to determine if action is required. Events with <code>INFORMATIONAL</code> actionability are provided for awareness and do not require immediate action.</p>
+    pub fn get_actionability(&self) -> &::std::option::Option<crate::types::EventTypeActionability> {
+        &self.actionability
+    }
+    /// Appends an item to `personas`.
+    ///
+    /// To override the contents of this collection use [`set_personas`](Self::set_personas).
+    ///
+    /// <p>A list of persona classifications that indicate the target audience for the event. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>. Events can be associated with multiple personas to indicate relevance to different teams or roles within an organization.</p>
+    pub fn personas(mut self, input: crate::types::EventTypePersona) -> Self {
+        let mut v = self.personas.unwrap_or_default();
+        v.push(input);
+        self.personas = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of persona classifications that indicate the target audience for the event. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>. Events can be associated with multiple personas to indicate relevance to different teams or roles within an organization.</p>
+    pub fn set_personas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTypePersona>>) -> Self {
+        self.personas = input;
+        self
+    }
+    /// <p>A list of persona classifications that indicate the target audience for the event. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>. Events can be associated with multiple personas to indicate relevance to different teams or roles within an organization.</p>
+    pub fn get_personas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypePersona>> {
+        &self.personas
+    }
     /// Consumes the builder and constructs a [`EventType`](crate::types::EventType).
     pub fn build(self) -> crate::types::EventType {
         crate::types::EventType {
             service: self.service,
             code: self.code,
             category: self.category,
+            actionability: self.actionability,
+            personas: self.personas,
         }
     }
 }

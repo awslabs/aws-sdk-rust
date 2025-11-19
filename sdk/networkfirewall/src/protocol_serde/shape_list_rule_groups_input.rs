@@ -18,8 +18,11 @@ pub fn ser_list_rule_groups_input_input(
     if let Some(var_4) = &input.managed_type {
         object.key("ManagedType").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.r#type {
-        object.key("Type").string(var_5.as_str());
+    if let Some(var_5) = &input.subscription_status {
+        object.key("SubscriptionStatus").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.r#type {
+        object.key("Type").string(var_6.as_str());
     }
     Ok(())
 }

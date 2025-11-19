@@ -39,15 +39,18 @@ pub fn ser_create_app_monitor_input_input(
     if let Some(var_12) = &input.name {
         object.key("Name").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.tags {
+    if let Some(var_13) = &input.platform {
+        object.key("Platform").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("Tags").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_15 = object.key("Tags").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_14.finish();
+        object_15.finish();
     }
     Ok(())
 }

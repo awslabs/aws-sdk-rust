@@ -25,6 +25,12 @@ pub use crate::types::_cache_cluster_status::CacheClusterStatus;
 
 pub use crate::types::_cache_cluster_size::CacheClusterSize;
 
+pub use crate::types::_api_status::ApiStatus;
+
+pub use crate::types::_endpoint_access_mode::EndpointAccessMode;
+
+pub use crate::types::_security_policy::SecurityPolicy;
+
 pub use crate::types::_endpoint_configuration::EndpointConfiguration;
 
 pub use crate::types::_ip_address_type::IpAddressType;
@@ -36,6 +42,8 @@ pub use crate::types::_api_key_source_type::ApiKeySourceType;
 pub use crate::types::_method::Method;
 
 pub use crate::types::_integration::Integration;
+
+pub use crate::types::_response_transfer_mode::ResponseTransferMode;
 
 pub use crate::types::_tls_config::TlsConfig;
 
@@ -54,8 +62,6 @@ pub use crate::types::_gateway_response_type::GatewayResponseType;
 pub use crate::types::_routing_mode::RoutingMode;
 
 pub use crate::types::_mutual_tls_authentication::MutualTlsAuthentication;
-
-pub use crate::types::_security_policy::SecurityPolicy;
 
 pub use crate::types::_domain_name_status::DomainNameStatus;
 
@@ -135,6 +141,8 @@ mod _api_keys_format;
 
 mod _api_stage;
 
+mod _api_status;
+
 mod _authorizer;
 
 mod _authorizer_type;
@@ -170,6 +178,8 @@ mod _domain_name;
 mod _domain_name_access_association;
 
 mod _domain_name_status;
+
+mod _endpoint_access_mode;
 
 mod _endpoint_configuration;
 
@@ -218,6 +228,8 @@ mod _request_validator;
 mod _resource;
 
 mod _resource_owner;
+
+mod _response_transfer_mode;
 
 mod _rest_api;
 

@@ -17,6 +17,21 @@ pub fn de_start_image_scan_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ImageArchivedException" => crate::operation::start_image_scan::StartImageScanError::ImageArchivedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ImageArchivedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_image_archived_exception::de_image_archived_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::start_image_scan::StartImageScanError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ImageNotFoundException" => crate::operation::start_image_scan::StartImageScanError::ImageNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

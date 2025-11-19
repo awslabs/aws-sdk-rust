@@ -9,6 +9,10 @@ pub struct UpdateBillScenarioInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The new expiration date for the bill scenario.</p>
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub group_sharing_preference: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>,
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub cost_category_group_sharing_preference_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBillScenarioInput {
     /// <p>The unique identifier of the bill scenario to update.</p>
@@ -22,6 +26,14 @@ impl UpdateBillScenarioInput {
     /// <p>The new expiration date for the bill scenario.</p>
     pub fn expires_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn group_sharing_preference(&self) -> ::std::option::Option<&crate::types::GroupSharingPreferenceEnum> {
+        self.group_sharing_preference.as_ref()
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn cost_category_group_sharing_preference_arn(&self) -> ::std::option::Option<&str> {
+        self.cost_category_group_sharing_preference_arn.as_deref()
     }
 }
 impl UpdateBillScenarioInput {
@@ -38,6 +50,8 @@ pub struct UpdateBillScenarioInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) group_sharing_preference: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>,
+    pub(crate) cost_category_group_sharing_preference_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBillScenarioInputBuilder {
     /// <p>The unique identifier of the bill scenario to update.</p>
@@ -83,6 +97,34 @@ impl UpdateBillScenarioInputBuilder {
     pub fn get_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expires_at
     }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn group_sharing_preference(mut self, input: crate::types::GroupSharingPreferenceEnum) -> Self {
+        self.group_sharing_preference = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn set_group_sharing_preference(mut self, input: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>) -> Self {
+        self.group_sharing_preference = input;
+        self
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn get_group_sharing_preference(&self) -> &::std::option::Option<crate::types::GroupSharingPreferenceEnum> {
+        &self.group_sharing_preference
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn cost_category_group_sharing_preference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cost_category_group_sharing_preference_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn set_cost_category_group_sharing_preference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cost_category_group_sharing_preference_arn = input;
+        self
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn get_cost_category_group_sharing_preference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cost_category_group_sharing_preference_arn
+    }
     /// Consumes the builder and constructs a [`UpdateBillScenarioInput`](crate::operation::update_bill_scenario::UpdateBillScenarioInput).
     pub fn build(
         self,
@@ -92,6 +134,8 @@ impl UpdateBillScenarioInputBuilder {
             identifier: self.identifier,
             name: self.name,
             expires_at: self.expires_at,
+            group_sharing_preference: self.group_sharing_preference,
+            cost_category_group_sharing_preference_arn: self.cost_category_group_sharing_preference_arn,
         })
     }
 }

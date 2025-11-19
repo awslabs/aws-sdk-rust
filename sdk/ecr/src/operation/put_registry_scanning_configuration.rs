@@ -270,6 +270,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutRegistrySc
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutRegistryScanningConfigurationError {
+    /// <p>The operation did not succeed because the account is managed by a organization policy.</p>
+    BlockedByOrganizationPolicyException(crate::types::error::BlockedByOrganizationPolicyException),
     /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
@@ -309,11 +311,16 @@ impl PutRegistryScanningConfigurationError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::BlockedByOrganizationPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `PutRegistryScanningConfigurationError::BlockedByOrganizationPolicyException`.
+    pub fn is_blocked_by_organization_policy_exception(&self) -> bool {
+        matches!(self, Self::BlockedByOrganizationPolicyException(_))
     }
     /// Returns `true` if the error kind is `PutRegistryScanningConfigurationError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
@@ -331,6 +338,7 @@ impl PutRegistryScanningConfigurationError {
 impl ::std::error::Error for PutRegistryScanningConfigurationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::BlockedByOrganizationPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
@@ -341,6 +349,7 @@ impl ::std::error::Error for PutRegistryScanningConfigurationError {
 impl ::std::fmt::Display for PutRegistryScanningConfigurationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::BlockedByOrganizationPolicyException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -365,6 +374,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PutRegistryScanningConfigur
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutRegistryScanningConfigurationError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::BlockedByOrganizationPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -51,6 +51,8 @@ pub struct DescribeEndpointOutput {
     pub explainer_config: ::std::option::Option<crate::types::ExplainerConfig>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
     pub shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub metrics_config: ::std::option::Option<crate::types::MetricsConfig>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointOutput {
@@ -134,6 +136,10 @@ impl DescribeEndpointOutput {
     pub fn shadow_production_variants(&self) -> &[crate::types::ProductionVariantSummary] {
         self.shadow_production_variants.as_deref().unwrap_or_default()
     }
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::MetricsConfig> {
+        self.metrics_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeEndpointOutput {
     fn request_id(&self) -> Option<&str> {
@@ -165,6 +171,7 @@ pub struct DescribeEndpointOutputBuilder {
     pub(crate) pending_deployment_summary: ::std::option::Option<crate::types::PendingDeploymentSummary>,
     pub(crate) explainer_config: ::std::option::Option<crate::types::ExplainerConfig>,
     pub(crate) shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
+    pub(crate) metrics_config: ::std::option::Option<crate::types::MetricsConfig>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointOutputBuilder {
@@ -441,6 +448,20 @@ impl DescribeEndpointOutputBuilder {
     pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>> {
         &self.shadow_production_variants
     }
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub fn metrics_config(mut self, input: crate::types::MetricsConfig) -> Self {
+        self.metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::MetricsConfig>) -> Self {
+        self.metrics_config = input;
+        self
+    }
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::MetricsConfig> {
+        &self.metrics_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -467,6 +488,7 @@ impl DescribeEndpointOutputBuilder {
             pending_deployment_summary: self.pending_deployment_summary,
             explainer_config: self.explainer_config,
             shadow_production_variants: self.shadow_production_variants,
+            metrics_config: self.metrics_config,
             _request_id: self._request_id,
         }
     }

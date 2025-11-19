@@ -32,6 +32,14 @@ pub struct RestApi {
     pub disable_execute_api_endpoint: bool,
     /// <p>The API's root resource ID.</p>
     pub root_resource_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
+    /// <p>The endpoint access mode of the RestApi.</p>
+    pub endpoint_access_mode: ::std::option::Option<crate::types::EndpointAccessMode>,
+    /// <p>The ApiStatus of the RestApi.</p>
+    pub api_status: ::std::option::Option<crate::types::ApiStatus>,
+    /// <p>The status message of the RestApi. When the status message is <code>UPDATING</code> you can still invoke it.</p>
+    pub api_status_message: ::std::option::Option<::std::string::String>,
 }
 impl RestApi {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
@@ -94,6 +102,22 @@ impl RestApi {
     pub fn root_resource_id(&self) -> ::std::option::Option<&str> {
         self.root_resource_id.as_deref()
     }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub fn security_policy(&self) -> ::std::option::Option<&crate::types::SecurityPolicy> {
+        self.security_policy.as_ref()
+    }
+    /// <p>The endpoint access mode of the RestApi.</p>
+    pub fn endpoint_access_mode(&self) -> ::std::option::Option<&crate::types::EndpointAccessMode> {
+        self.endpoint_access_mode.as_ref()
+    }
+    /// <p>The ApiStatus of the RestApi.</p>
+    pub fn api_status(&self) -> ::std::option::Option<&crate::types::ApiStatus> {
+        self.api_status.as_ref()
+    }
+    /// <p>The status message of the RestApi. When the status message is <code>UPDATING</code> you can still invoke it.</p>
+    pub fn api_status_message(&self) -> ::std::option::Option<&str> {
+        self.api_status_message.as_deref()
+    }
 }
 impl RestApi {
     /// Creates a new builder-style object to manufacture [`RestApi`](crate::types::RestApi).
@@ -120,6 +144,10 @@ pub struct RestApiBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) disable_execute_api_endpoint: ::std::option::Option<bool>,
     pub(crate) root_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
+    pub(crate) endpoint_access_mode: ::std::option::Option<crate::types::EndpointAccessMode>,
+    pub(crate) api_status: ::std::option::Option<crate::types::ApiStatus>,
+    pub(crate) api_status_message: ::std::option::Option<::std::string::String>,
 }
 impl RestApiBuilder {
     /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
@@ -336,6 +364,62 @@ impl RestApiBuilder {
     pub fn get_root_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.root_resource_id
     }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub fn security_policy(mut self, input: crate::types::SecurityPolicy) -> Self {
+        self.security_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub fn set_security_policy(mut self, input: ::std::option::Option<crate::types::SecurityPolicy>) -> Self {
+        self.security_policy = input;
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub fn get_security_policy(&self) -> &::std::option::Option<crate::types::SecurityPolicy> {
+        &self.security_policy
+    }
+    /// <p>The endpoint access mode of the RestApi.</p>
+    pub fn endpoint_access_mode(mut self, input: crate::types::EndpointAccessMode) -> Self {
+        self.endpoint_access_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The endpoint access mode of the RestApi.</p>
+    pub fn set_endpoint_access_mode(mut self, input: ::std::option::Option<crate::types::EndpointAccessMode>) -> Self {
+        self.endpoint_access_mode = input;
+        self
+    }
+    /// <p>The endpoint access mode of the RestApi.</p>
+    pub fn get_endpoint_access_mode(&self) -> &::std::option::Option<crate::types::EndpointAccessMode> {
+        &self.endpoint_access_mode
+    }
+    /// <p>The ApiStatus of the RestApi.</p>
+    pub fn api_status(mut self, input: crate::types::ApiStatus) -> Self {
+        self.api_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ApiStatus of the RestApi.</p>
+    pub fn set_api_status(mut self, input: ::std::option::Option<crate::types::ApiStatus>) -> Self {
+        self.api_status = input;
+        self
+    }
+    /// <p>The ApiStatus of the RestApi.</p>
+    pub fn get_api_status(&self) -> &::std::option::Option<crate::types::ApiStatus> {
+        &self.api_status
+    }
+    /// <p>The status message of the RestApi. When the status message is <code>UPDATING</code> you can still invoke it.</p>
+    pub fn api_status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_status_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The status message of the RestApi. When the status message is <code>UPDATING</code> you can still invoke it.</p>
+    pub fn set_api_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.api_status_message = input;
+        self
+    }
+    /// <p>The status message of the RestApi. When the status message is <code>UPDATING</code> you can still invoke it.</p>
+    pub fn get_api_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_status_message
+    }
     /// Consumes the builder and constructs a [`RestApi`](crate::types::RestApi).
     pub fn build(self) -> crate::types::RestApi {
         crate::types::RestApi {
@@ -353,6 +437,10 @@ impl RestApiBuilder {
             tags: self.tags,
             disable_execute_api_endpoint: self.disable_execute_api_endpoint.unwrap_or_default(),
             root_resource_id: self.root_resource_id,
+            security_policy: self.security_policy,
+            endpoint_access_mode: self.endpoint_access_mode,
+            api_status: self.api_status,
+            api_status_message: self.api_status_message,
         }
     }
 }

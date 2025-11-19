@@ -29,6 +29,8 @@ pub struct AppMonitor {
     pub custom_events: ::std::option::Option<crate::types::CustomEvents>,
     /// <p>A structure that contains the configuration for how an app monitor can deobfuscate stack traces.</p>
     pub deobfuscation_configuration: ::std::option::Option<crate::types::DeobfuscationConfiguration>,
+    /// <p>The platform type for this app monitor. Valid values are <code>Web</code> for web applications , <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications.</p>
+    pub platform: ::std::option::Option<crate::types::AppMonitorPlatform>,
 }
 impl AppMonitor {
     /// <p>The name of the app monitor.</p>
@@ -82,6 +84,10 @@ impl AppMonitor {
     pub fn deobfuscation_configuration(&self) -> ::std::option::Option<&crate::types::DeobfuscationConfiguration> {
         self.deobfuscation_configuration.as_ref()
     }
+    /// <p>The platform type for this app monitor. Valid values are <code>Web</code> for web applications , <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications.</p>
+    pub fn platform(&self) -> ::std::option::Option<&crate::types::AppMonitorPlatform> {
+        self.platform.as_ref()
+    }
 }
 impl AppMonitor {
     /// Creates a new builder-style object to manufacture [`AppMonitor`](crate::types::AppMonitor).
@@ -106,6 +112,7 @@ pub struct AppMonitorBuilder {
     pub(crate) data_storage: ::std::option::Option<crate::types::DataStorage>,
     pub(crate) custom_events: ::std::option::Option<crate::types::CustomEvents>,
     pub(crate) deobfuscation_configuration: ::std::option::Option<crate::types::DeobfuscationConfiguration>,
+    pub(crate) platform: ::std::option::Option<crate::types::AppMonitorPlatform>,
 }
 impl AppMonitorBuilder {
     /// <p>The name of the app monitor.</p>
@@ -291,6 +298,20 @@ impl AppMonitorBuilder {
     pub fn get_deobfuscation_configuration(&self) -> &::std::option::Option<crate::types::DeobfuscationConfiguration> {
         &self.deobfuscation_configuration
     }
+    /// <p>The platform type for this app monitor. Valid values are <code>Web</code> for web applications , <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications.</p>
+    pub fn platform(mut self, input: crate::types::AppMonitorPlatform) -> Self {
+        self.platform = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The platform type for this app monitor. Valid values are <code>Web</code> for web applications , <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications.</p>
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::AppMonitorPlatform>) -> Self {
+        self.platform = input;
+        self
+    }
+    /// <p>The platform type for this app monitor. Valid values are <code>Web</code> for web applications , <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::AppMonitorPlatform> {
+        &self.platform
+    }
     /// Consumes the builder and constructs a [`AppMonitor`](crate::types::AppMonitor).
     pub fn build(self) -> crate::types::AppMonitor {
         crate::types::AppMonitor {
@@ -306,6 +327,7 @@ impl AppMonitorBuilder {
             data_storage: self.data_storage,
             custom_events: self.custom_events,
             deobfuscation_configuration: self.deobfuscation_configuration,
+            platform: self.platform,
         }
     }
 }

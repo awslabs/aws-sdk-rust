@@ -31,6 +31,23 @@ where
                         "itemPaths" => {
                             builder = builder.set_item_paths(crate::protocol_serde::shape_item_paths::de_item_paths(tokens)?);
                         }
+                        "count" => {
+                            builder = builder.set_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "hash" => {
+                            builder = builder.set_hash(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "itemDetails" => {
+                            builder = builder.set_item_details(crate::protocol_serde::shape_item_details_list::de_item_details_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -143,6 +143,12 @@ pub use crate::types::_input_device_media_connect_configurable_settings::InputDe
 
 pub use crate::types::_input::Input;
 
+pub use crate::types::_router_input_settings::RouterInputSettings;
+
+pub use crate::types::_router_encryption_type::RouterEncryptionType;
+
+pub use crate::types::_router_destination::RouterDestination;
+
 pub use crate::types::_smpte2110_receiver_group_settings::Smpte2110ReceiverGroupSettings;
 
 pub use crate::types::_smpte2110_receiver_group::Smpte2110ReceiverGroup;
@@ -184,6 +190,8 @@ pub use crate::types::_input_destination::InputDestination;
 pub use crate::types::_input_destination_route::InputDestinationRoute;
 
 pub use crate::types::_input_destination_vpc::InputDestinationVpc;
+
+pub use crate::types::_special_router_settings::SpecialRouterSettings;
 
 pub use crate::types::_multicast_settings_update_request::MulticastSettingsUpdateRequest;
 
@@ -1289,6 +1297,10 @@ pub use crate::types::_route_create_request::RouteCreateRequest;
 
 pub use crate::types::_ip_pool_create_request::IpPoolCreateRequest;
 
+pub use crate::types::_router_settings::RouterSettings;
+
+pub use crate::types::_router_destination_settings::RouterDestinationSettings;
+
 pub use crate::types::_multicast_settings_create_request::MulticastSettingsCreateRequest;
 
 pub use crate::types::_multicast_source_create_request::MulticastSourceCreateRequest;
@@ -2383,6 +2395,16 @@ mod _route_create_request;
 
 mod _route_update_request;
 
+mod _router_destination;
+
+mod _router_destination_settings;
+
+mod _router_encryption_type;
+
+mod _router_input_settings;
+
+mod _router_settings;
+
 mod _rtmp_ad_markers;
 
 mod _rtmp_cache_full_behavior;
@@ -2506,6 +2528,8 @@ mod _smpte2110_receiver_group_sdp_settings;
 mod _smpte2110_receiver_group_settings;
 
 mod _smpte_tt_destination_settings;
+
+mod _special_router_settings;
 
 mod _srt_caller_decryption;
 

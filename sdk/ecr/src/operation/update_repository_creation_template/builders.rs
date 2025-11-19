@@ -194,12 +194,12 @@ impl UpdateRepositoryCreationTemplateFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_image_tag_mutability_exclusion_filters`](Self::set_image_tag_mutability_exclusion_filters).
     ///
-    /// <p>Updates a repository with filters that define which image tags can override the default image tag mutability setting.</p>
+    /// <p>A list of filters that specify which image tags should be excluded from the repository creation template's image tag mutability setting.</p>
     pub fn image_tag_mutability_exclusion_filters(mut self, input: crate::types::ImageTagMutabilityExclusionFilter) -> Self {
         self.inner = self.inner.image_tag_mutability_exclusion_filters(input);
         self
     }
-    /// <p>Updates a repository with filters that define which image tags can override the default image tag mutability setting.</p>
+    /// <p>A list of filters that specify which image tags should be excluded from the repository creation template's image tag mutability setting.</p>
     pub fn set_image_tag_mutability_exclusion_filters(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ImageTagMutabilityExclusionFilter>>,
@@ -207,7 +207,7 @@ impl UpdateRepositoryCreationTemplateFluentBuilder {
         self.inner = self.inner.set_image_tag_mutability_exclusion_filters(input);
         self
     }
-    /// <p>Updates a repository with filters that define which image tags can override the default image tag mutability setting.</p>
+    /// <p>A list of filters that specify which image tags should be excluded from the repository creation template's image tag mutability setting.</p>
     pub fn get_image_tag_mutability_exclusion_filters(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageTagMutabilityExclusionFilter>> {

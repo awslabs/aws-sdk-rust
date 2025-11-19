@@ -100,6 +100,9 @@ pub mod list_import_failures;
 /// Types for the `ListImports` operation.
 pub mod list_imports;
 
+/// Types for the `ListInsightsData` operation.
+pub mod list_insights_data;
+
 /// Types for the `ListInsightsMetricData` operation.
 pub mod list_insights_metric_data;
 

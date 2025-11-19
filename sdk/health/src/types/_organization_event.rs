@@ -34,6 +34,10 @@ pub struct OrganizationEvent {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>
     pub status_code: ::std::option::Option<crate::types::EventStatusCode>,
+    /// <p>The actionability classification of the event. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>. Events with <code>ACTION_REQUIRED</code> actionability require customer action to resolve or mitigate the event. Events with <code>ACTION_MAY_BE_REQUIRED</code> actionability indicates that the current status is unknown or conditional and inspection is needed to determine if action is required. Events with <code>INFORMATIONAL</code> actionability are provided for awareness and do not require immediate action.</p>
+    pub actionability: ::std::option::Option<crate::types::EventActionability>,
+    /// <p>A list of persona classifications that indicate the target audience for the event. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>. Events can be associated with multiple personas to indicate relevance to different teams or roles within an organization.</p>
+    pub personas: ::std::option::Option<::std::vec::Vec<crate::types::EventPersona>>,
 }
 impl OrganizationEvent {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
@@ -86,6 +90,16 @@ impl OrganizationEvent {
     pub fn status_code(&self) -> ::std::option::Option<&crate::types::EventStatusCode> {
         self.status_code.as_ref()
     }
+    /// <p>The actionability classification of the event. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>. Events with <code>ACTION_REQUIRED</code> actionability require customer action to resolve or mitigate the event. Events with <code>ACTION_MAY_BE_REQUIRED</code> actionability indicates that the current status is unknown or conditional and inspection is needed to determine if action is required. Events with <code>INFORMATIONAL</code> actionability are provided for awareness and do not require immediate action.</p>
+    pub fn actionability(&self) -> ::std::option::Option<&crate::types::EventActionability> {
+        self.actionability.as_ref()
+    }
+    /// <p>A list of persona classifications that indicate the target audience for the event. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>. Events can be associated with multiple personas to indicate relevance to different teams or roles within an organization.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.personas.is_none()`.
+    pub fn personas(&self) -> &[crate::types::EventPersona] {
+        self.personas.as_deref().unwrap_or_default()
+    }
 }
 impl OrganizationEvent {
     /// Creates a new builder-style object to manufacture [`OrganizationEvent`](crate::types::OrganizationEvent).
@@ -108,6 +122,8 @@ pub struct OrganizationEventBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_code: ::std::option::Option<crate::types::EventStatusCode>,
+    pub(crate) actionability: ::std::option::Option<crate::types::EventActionability>,
+    pub(crate) personas: ::std::option::Option<::std::vec::Vec<crate::types::EventPersona>>,
 }
 impl OrganizationEventBuilder {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
@@ -280,6 +296,40 @@ impl OrganizationEventBuilder {
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::EventStatusCode> {
         &self.status_code
     }
+    /// <p>The actionability classification of the event. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>. Events with <code>ACTION_REQUIRED</code> actionability require customer action to resolve or mitigate the event. Events with <code>ACTION_MAY_BE_REQUIRED</code> actionability indicates that the current status is unknown or conditional and inspection is needed to determine if action is required. Events with <code>INFORMATIONAL</code> actionability are provided for awareness and do not require immediate action.</p>
+    pub fn actionability(mut self, input: crate::types::EventActionability) -> Self {
+        self.actionability = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The actionability classification of the event. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>. Events with <code>ACTION_REQUIRED</code> actionability require customer action to resolve or mitigate the event. Events with <code>ACTION_MAY_BE_REQUIRED</code> actionability indicates that the current status is unknown or conditional and inspection is needed to determine if action is required. Events with <code>INFORMATIONAL</code> actionability are provided for awareness and do not require immediate action.</p>
+    pub fn set_actionability(mut self, input: ::std::option::Option<crate::types::EventActionability>) -> Self {
+        self.actionability = input;
+        self
+    }
+    /// <p>The actionability classification of the event. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>. Events with <code>ACTION_REQUIRED</code> actionability require customer action to resolve or mitigate the event. Events with <code>ACTION_MAY_BE_REQUIRED</code> actionability indicates that the current status is unknown or conditional and inspection is needed to determine if action is required. Events with <code>INFORMATIONAL</code> actionability are provided for awareness and do not require immediate action.</p>
+    pub fn get_actionability(&self) -> &::std::option::Option<crate::types::EventActionability> {
+        &self.actionability
+    }
+    /// Appends an item to `personas`.
+    ///
+    /// To override the contents of this collection use [`set_personas`](Self::set_personas).
+    ///
+    /// <p>A list of persona classifications that indicate the target audience for the event. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>. Events can be associated with multiple personas to indicate relevance to different teams or roles within an organization.</p>
+    pub fn personas(mut self, input: crate::types::EventPersona) -> Self {
+        let mut v = self.personas.unwrap_or_default();
+        v.push(input);
+        self.personas = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of persona classifications that indicate the target audience for the event. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>. Events can be associated with multiple personas to indicate relevance to different teams or roles within an organization.</p>
+    pub fn set_personas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventPersona>>) -> Self {
+        self.personas = input;
+        self
+    }
+    /// <p>A list of persona classifications that indicate the target audience for the event. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>. Events can be associated with multiple personas to indicate relevance to different teams or roles within an organization.</p>
+    pub fn get_personas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventPersona>> {
+        &self.personas
+    }
     /// Consumes the builder and constructs a [`OrganizationEvent`](crate::types::OrganizationEvent).
     pub fn build(self) -> crate::types::OrganizationEvent {
         crate::types::OrganizationEvent {
@@ -293,6 +343,8 @@ impl OrganizationEventBuilder {
             end_time: self.end_time,
             last_updated_time: self.last_updated_time,
             status_code: self.status_code,
+            actionability: self.actionability,
+            personas: self.personas,
         }
     }
 }

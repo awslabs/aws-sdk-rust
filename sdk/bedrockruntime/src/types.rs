@@ -43,11 +43,19 @@ pub use crate::types::_message::Message;
 
 pub use crate::types::_content_block::ContentBlock;
 
+pub use crate::types::_search_result_block::SearchResultBlock;
+
+pub use crate::types::_citations_config::CitationsConfig;
+
+pub use crate::types::_search_result_content_block::SearchResultContentBlock;
+
 pub use crate::types::_citations_content_block::CitationsContentBlock;
 
 pub use crate::types::_citation::Citation;
 
 pub use crate::types::_citation_location::CitationLocation;
+
+pub use crate::types::_search_result_location::SearchResultLocation;
 
 pub use crate::types::_document_chunk_location::DocumentChunkLocation;
 
@@ -80,8 +88,6 @@ pub use crate::types::_s3_location::S3Location;
 pub use crate::types::_video_format::VideoFormat;
 
 pub use crate::types::_document_block::DocumentBlock;
-
-pub use crate::types::_citations_config::CitationsConfig;
 
 pub use crate::types::_document_source::DocumentSource;
 
@@ -572,6 +578,12 @@ mod _reasoning_text_block;
 mod _response_stream;
 
 mod _s3_location;
+
+mod _search_result_block;
+
+mod _search_result_content_block;
+
+mod _search_result_location;
 
 mod _service_tier;
 

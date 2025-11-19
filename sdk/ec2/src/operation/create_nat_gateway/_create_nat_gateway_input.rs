@@ -3,6 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNatGatewayInput {
+    /// <p>Specifies whether to create a zonal (single-AZ) or regional (multi-AZ) NAT gateway. Defaults to <code>zonal</code>.</p>
+    /// <p>A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within a single availability zone. A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub availability_mode: ::std::option::Option<crate::types::AvailabilityMode>,
     /// <p>\[Public NAT gateways only\] The allocation ID of an Elastic IP address to associate with the NAT gateway. You cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with another resource, you must first disassociate it.</p>
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
@@ -12,6 +16,12 @@ pub struct CreateNatGatewayInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the subnet in which to create the NAT gateway.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the VPC where you want to create a regional NAT gateway.</p>
+    pub vpc_id: ::std::option::Option<::std::string::String>,
+    /// <p>For regional NAT gateways only: Specifies which Availability Zones you want the NAT gateway to support and the Elastic IP addresses (EIPs) to use in each AZ. The regional NAT gateway uses these EIPs to handle outbound NAT traffic from their respective AZs. If not specified, the NAT gateway will automatically expand to new AZs and associate EIPs upon detection of an elastic network interface. If you specify this parameter, auto-expansion is disabled and you must manually manage AZ coverage.</p>
+    /// <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub availability_zone_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneAddress>>,
     /// <p>The tags to assign to the NAT gateway.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.</p>
@@ -26,6 +36,12 @@ pub struct CreateNatGatewayInput {
     pub secondary_private_ip_address_count: ::std::option::Option<i32>,
 }
 impl CreateNatGatewayInput {
+    /// <p>Specifies whether to create a zonal (single-AZ) or regional (multi-AZ) NAT gateway. Defaults to <code>zonal</code>.</p>
+    /// <p>A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within a single availability zone. A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn availability_mode(&self) -> ::std::option::Option<&crate::types::AvailabilityMode> {
+        self.availability_mode.as_ref()
+    }
     /// <p>\[Public NAT gateways only\] The allocation ID of an Elastic IP address to associate with the NAT gateway. You cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with another resource, you must first disassociate it.</p>
     pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
@@ -42,6 +58,18 @@ impl CreateNatGatewayInput {
     /// <p>The ID of the subnet in which to create the NAT gateway.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
+    }
+    /// <p>The ID of the VPC where you want to create a regional NAT gateway.</p>
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_id.as_deref()
+    }
+    /// <p>For regional NAT gateways only: Specifies which Availability Zones you want the NAT gateway to support and the Elastic IP addresses (EIPs) to use in each AZ. The regional NAT gateway uses these EIPs to handle outbound NAT traffic from their respective AZs. If not specified, the NAT gateway will automatically expand to new AZs and associate EIPs upon detection of an elastic network interface. If you specify this parameter, auto-expansion is disabled and you must manually manage AZ coverage.</p>
+    /// <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_addresses.is_none()`.
+    pub fn availability_zone_addresses(&self) -> &[crate::types::AvailabilityZoneAddress] {
+        self.availability_zone_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The tags to assign to the NAT gateway.</p>
     ///
@@ -85,10 +113,13 @@ impl CreateNatGatewayInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateNatGatewayInputBuilder {
+    pub(crate) availability_mode: ::std::option::Option<crate::types::AvailabilityMode>,
     pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_addresses: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneAddress>>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
@@ -97,6 +128,26 @@ pub struct CreateNatGatewayInputBuilder {
     pub(crate) secondary_private_ip_address_count: ::std::option::Option<i32>,
 }
 impl CreateNatGatewayInputBuilder {
+    /// <p>Specifies whether to create a zonal (single-AZ) or regional (multi-AZ) NAT gateway. Defaults to <code>zonal</code>.</p>
+    /// <p>A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within a single availability zone. A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn availability_mode(mut self, input: crate::types::AvailabilityMode) -> Self {
+        self.availability_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to create a zonal (single-AZ) or regional (multi-AZ) NAT gateway. Defaults to <code>zonal</code>.</p>
+    /// <p>A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within a single availability zone. A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn set_availability_mode(mut self, input: ::std::option::Option<crate::types::AvailabilityMode>) -> Self {
+        self.availability_mode = input;
+        self
+    }
+    /// <p>Specifies whether to create a zonal (single-AZ) or regional (multi-AZ) NAT gateway. Defaults to <code>zonal</code>.</p>
+    /// <p>A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within a single availability zone. A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_availability_mode(&self) -> &::std::option::Option<crate::types::AvailabilityMode> {
+        &self.availability_mode
+    }
     /// <p>\[Public NAT gateways only\] The allocation ID of an Elastic IP address to associate with the NAT gateway. You cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with another resource, you must first disassociate it.</p>
     pub fn allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.allocation_id = ::std::option::Option::Some(input.into());
@@ -143,7 +194,6 @@ impl CreateNatGatewayInputBuilder {
         &self.dry_run
     }
     /// <p>The ID of the subnet in which to create the NAT gateway.</p>
-    /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
@@ -156,6 +206,46 @@ impl CreateNatGatewayInputBuilder {
     /// <p>The ID of the subnet in which to create the NAT gateway.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
+    }
+    /// <p>The ID of the VPC where you want to create a regional NAT gateway.</p>
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the VPC where you want to create a regional NAT gateway.</p>
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_id = input;
+        self
+    }
+    /// <p>The ID of the VPC where you want to create a regional NAT gateway.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
+    /// Appends an item to `availability_zone_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_addresses`](Self::set_availability_zone_addresses).
+    ///
+    /// <p>For regional NAT gateways only: Specifies which Availability Zones you want the NAT gateway to support and the Elastic IP addresses (EIPs) to use in each AZ. The regional NAT gateway uses these EIPs to handle outbound NAT traffic from their respective AZs. If not specified, the NAT gateway will automatically expand to new AZs and associate EIPs upon detection of an elastic network interface. If you specify this parameter, auto-expansion is disabled and you must manually manage AZ coverage.</p>
+    /// <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn availability_zone_addresses(mut self, input: crate::types::AvailabilityZoneAddress) -> Self {
+        let mut v = self.availability_zone_addresses.unwrap_or_default();
+        v.push(input);
+        self.availability_zone_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>For regional NAT gateways only: Specifies which Availability Zones you want the NAT gateway to support and the Elastic IP addresses (EIPs) to use in each AZ. The regional NAT gateway uses these EIPs to handle outbound NAT traffic from their respective AZs. If not specified, the NAT gateway will automatically expand to new AZs and associate EIPs upon detection of an elastic network interface. If you specify this parameter, auto-expansion is disabled and you must manually manage AZ coverage.</p>
+    /// <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn set_availability_zone_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneAddress>>) -> Self {
+        self.availability_zone_addresses = input;
+        self
+    }
+    /// <p>For regional NAT gateways only: Specifies which Availability Zones you want the NAT gateway to support and the Elastic IP addresses (EIPs) to use in each AZ. The regional NAT gateway uses these EIPs to handle outbound NAT traffic from their respective AZs. If not specified, the NAT gateway will automatically expand to new AZs and associate EIPs upon detection of an elastic network interface. If you specify this parameter, auto-expansion is disabled and you must manually manage AZ coverage.</p>
+    /// <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_availability_zone_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneAddress>> {
+        &self.availability_zone_addresses
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -264,10 +354,13 @@ impl CreateNatGatewayInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::create_nat_gateway::CreateNatGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_nat_gateway::CreateNatGatewayInput {
+            availability_mode: self.availability_mode,
             allocation_id: self.allocation_id,
             client_token: self.client_token,
             dry_run: self.dry_run,
             subnet_id: self.subnet_id,
+            vpc_id: self.vpc_id,
+            availability_zone_addresses: self.availability_zone_addresses,
             tag_specifications: self.tag_specifications,
             connectivity_type: self.connectivity_type,
             private_ip_address: self.private_ip_address,

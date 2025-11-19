@@ -22,7 +22,8 @@ impl crate::operation::describe_ipam_external_resource_verification_tokens::buil
 }
 /// Fluent builder constructing a request to `DescribeIpamExternalResourceVerificationTokens`.
 ///
-/// <p>Describe verification tokens. A verification token is an Amazon Web Services-generated random value that you can use to prove ownership of an external resource. For example, you can use a verification token to validate that you control a public IP address range when you bring an IP address range to Amazon Web Services (BYOIP).</p>
+/// <p>Describe verification tokens.</p>
+/// <p>A verification token is an Amazon Web Services-generated random value that you can use to prove ownership of an external resource. For example, you can use a verification token to validate that you control a public IP address range when you bring an IP address range to Amazon Web Services (BYOIP).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIpamExternalResourceVerificationTokensFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

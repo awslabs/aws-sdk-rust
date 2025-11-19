@@ -272,4 +272,32 @@ impl CreateRestApiFluentBuilder {
     pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
         self.inner.get_disable_execute_api_endpoint()
     }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub fn security_policy(mut self, input: crate::types::SecurityPolicy) -> Self {
+        self.inner = self.inner.security_policy(input);
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub fn set_security_policy(mut self, input: ::std::option::Option<crate::types::SecurityPolicy>) -> Self {
+        self.inner = self.inner.set_security_policy(input);
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    pub fn get_security_policy(&self) -> &::std::option::Option<crate::types::SecurityPolicy> {
+        self.inner.get_security_policy()
+    }
+    /// <p>The endpoint access mode of the RestApi. Only available for RestApis that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn endpoint_access_mode(mut self, input: crate::types::EndpointAccessMode) -> Self {
+        self.inner = self.inner.endpoint_access_mode(input);
+        self
+    }
+    /// <p>The endpoint access mode of the RestApi. Only available for RestApis that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn set_endpoint_access_mode(mut self, input: ::std::option::Option<crate::types::EndpointAccessMode>) -> Self {
+        self.inner = self.inner.set_endpoint_access_mode(input);
+        self
+    }
+    /// <p>The endpoint access mode of the RestApi. Only available for RestApis that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn get_endpoint_access_mode(&self) -> &::std::option::Option<crate::types::EndpointAccessMode> {
+        self.inner.get_endpoint_access_mode()
+    }
 }

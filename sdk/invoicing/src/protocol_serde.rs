@@ -109,8 +109,6 @@ pub(crate) mod shape_resource_tag_list;
 
 pub(crate) mod shape_validation_exception_field_list;
 
-pub(crate) mod shape_account_id_list;
-
 pub(crate) mod shape_billing_period;
 
 pub(crate) mod shape_date_interval;
@@ -120,6 +118,8 @@ pub(crate) mod shape_invoice_profile;
 pub(crate) mod shape_invoice_summary;
 
 pub(crate) mod shape_invoice_unit;
+
+pub(crate) mod shape_rule_account_id_list;
 
 pub(crate) mod shape_supplemental_documents;
 

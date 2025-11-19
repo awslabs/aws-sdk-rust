@@ -36,6 +36,8 @@ pub struct CreateInputInput {
     pub smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
     /// SDI Sources for this Input.
     pub sdi_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// This is the collection of settings that are used during the creation of a MediaConnect router input.
+    pub router_settings: ::std::option::Option<crate::types::RouterSettings>,
 }
 impl CreateInputInput {
     /// Destination settings for PUSH type inputs.
@@ -114,6 +116,10 @@ impl CreateInputInput {
     pub fn sdi_sources(&self) -> &[::std::string::String] {
         self.sdi_sources.as_deref().unwrap_or_default()
     }
+    /// This is the collection of settings that are used during the creation of a MediaConnect router input.
+    pub fn router_settings(&self) -> ::std::option::Option<&crate::types::RouterSettings> {
+        self.router_settings.as_ref()
+    }
 }
 impl CreateInputInput {
     /// Creates a new builder-style object to manufacture [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
@@ -142,6 +148,7 @@ pub struct CreateInputInputBuilder {
     pub(crate) multicast_settings: ::std::option::Option<crate::types::MulticastSettingsCreateRequest>,
     pub(crate) smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
     pub(crate) sdi_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) router_settings: ::std::option::Option<crate::types::RouterSettings>,
 }
 impl CreateInputInputBuilder {
     /// Appends an item to `destinations`.
@@ -410,6 +417,20 @@ impl CreateInputInputBuilder {
     pub fn get_sdi_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sdi_sources
     }
+    /// This is the collection of settings that are used during the creation of a MediaConnect router input.
+    pub fn router_settings(mut self, input: crate::types::RouterSettings) -> Self {
+        self.router_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// This is the collection of settings that are used during the creation of a MediaConnect router input.
+    pub fn set_router_settings(mut self, input: ::std::option::Option<crate::types::RouterSettings>) -> Self {
+        self.router_settings = input;
+        self
+    }
+    /// This is the collection of settings that are used during the creation of a MediaConnect router input.
+    pub fn get_router_settings(&self) -> &::std::option::Option<crate::types::RouterSettings> {
+        &self.router_settings
+    }
     /// Consumes the builder and constructs a [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_input::CreateInputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_input::CreateInputInput {
@@ -429,6 +450,7 @@ impl CreateInputInputBuilder {
             multicast_settings: self.multicast_settings,
             smpte2110_receiver_group_settings: self.smpte2110_receiver_group_settings,
             sdi_sources: self.sdi_sources,
+            router_settings: self.router_settings,
         })
     }
 }

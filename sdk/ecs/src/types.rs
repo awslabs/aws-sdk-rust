@@ -171,6 +171,8 @@ pub use crate::types::_capacity_provider_update_status::CapacityProviderUpdateSt
 
 pub use crate::types::_managed_instances_provider::ManagedInstancesProvider;
 
+pub use crate::types::_infrastructure_optimization::InfrastructureOptimization;
+
 pub use crate::types::_propagate_mi_tags::PropagateMiTags;
 
 pub use crate::types::_instance_launch_template::InstanceLaunchTemplate;
@@ -620,6 +622,8 @@ mod _host_volume_properties;
 mod _inference_accelerator;
 
 mod _inference_accelerator_override;
+
+mod _infrastructure_optimization;
 
 mod _instance_generation;
 

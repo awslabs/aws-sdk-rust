@@ -243,4 +243,18 @@ impl InvokeFluentBuilder {
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qualifier()
     }
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.tenant_id(input.into());
+        self
+    }
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_tenant_id(input);
+        self
+    }
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tenant_id()
+    }
 }

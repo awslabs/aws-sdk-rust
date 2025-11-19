@@ -30,5 +30,17 @@ pub fn ser_backup_plan_input(
         }
         array_5.finish();
     }
+    if let Some(var_8) = &input.scan_settings {
+        let mut array_9 = object.key("ScanSettings").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_scan_setting::ser_scan_setting(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }

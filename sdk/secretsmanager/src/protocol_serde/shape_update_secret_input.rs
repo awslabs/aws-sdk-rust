@@ -21,5 +21,8 @@ pub fn ser_update_secret_input_input(
     if let Some(var_6) = &input.secret_string {
         object.key("SecretString").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.r#type {
+        object.key("Type").string(var_7.as_str());
+    }
     Ok(())
 }

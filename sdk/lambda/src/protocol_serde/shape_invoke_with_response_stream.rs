@@ -613,5 +613,16 @@ pub fn ser_invoke_with_response_stream_headers(
         })?;
         builder = builder.header("X-Amz-Client-Context", header_value);
     }
+    if let ::std::option::Option::Some(inner_7) = &input.tenant_id {
+        let formatted_8 = inner_7.as_str();
+        let header_value = formatted_8;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "tenant_id",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("X-Amz-Tenant-Id", header_value);
+    }
     Ok(builder)
 }

@@ -230,6 +230,13 @@ pub(crate) fn de_put_integration(
                     builder =
                         builder.set_request_templates(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens)?);
                 }
+                "responseTransferMode" => {
+                    builder = builder.set_response_transfer_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ResponseTransferMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "timeoutInMillis" => {
                     builder = builder.set_timeout_in_millis(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

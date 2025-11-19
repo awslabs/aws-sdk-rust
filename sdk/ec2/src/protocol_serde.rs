@@ -371,6 +371,10 @@ pub(crate) mod shape_create_ipam_external_resource_verification_token_input;
 
 pub(crate) mod shape_create_ipam_input;
 
+pub(crate) mod shape_create_ipam_policy;
+
+pub(crate) mod shape_create_ipam_policy_input;
+
 pub(crate) mod shape_create_ipam_pool;
 
 pub(crate) mod shape_create_ipam_pool_input;
@@ -726,6 +730,10 @@ pub(crate) mod shape_delete_ipam_external_resource_verification_token;
 pub(crate) mod shape_delete_ipam_external_resource_verification_token_input;
 
 pub(crate) mod shape_delete_ipam_input;
+
+pub(crate) mod shape_delete_ipam_policy;
+
+pub(crate) mod shape_delete_ipam_policy_input;
 
 pub(crate) mod shape_delete_ipam_pool;
 
@@ -1319,6 +1327,10 @@ pub(crate) mod shape_describe_ipam_external_resource_verification_tokens;
 
 pub(crate) mod shape_describe_ipam_external_resource_verification_tokens_input;
 
+pub(crate) mod shape_describe_ipam_policies;
+
+pub(crate) mod shape_describe_ipam_policies_input;
+
 pub(crate) mod shape_describe_ipam_pools;
 
 pub(crate) mod shape_describe_ipam_pools_input;
@@ -1823,6 +1835,10 @@ pub(crate) mod shape_disable_ipam_organization_admin_account;
 
 pub(crate) mod shape_disable_ipam_organization_admin_account_input;
 
+pub(crate) mod shape_disable_ipam_policy;
+
+pub(crate) mod shape_disable_ipam_policy_input;
+
 pub(crate) mod shape_disable_route_server_propagation;
 
 pub(crate) mod shape_disable_route_server_propagation_input;
@@ -1975,6 +1991,10 @@ pub(crate) mod shape_enable_ipam_organization_admin_account;
 
 pub(crate) mod shape_enable_ipam_organization_admin_account_input;
 
+pub(crate) mod shape_enable_ipam_policy;
+
+pub(crate) mod shape_enable_ipam_policy_input;
+
 pub(crate) mod shape_enable_reachability_analyzer_organization_sharing;
 
 pub(crate) mod shape_enable_reachability_analyzer_organization_sharing_input;
@@ -2095,6 +2115,10 @@ pub(crate) mod shape_get_ebs_encryption_by_default;
 
 pub(crate) mod shape_get_ebs_encryption_by_default_input;
 
+pub(crate) mod shape_get_enabled_ipam_policy;
+
+pub(crate) mod shape_get_enabled_ipam_policy_input;
+
 pub(crate) mod shape_get_flow_logs_integration_template;
 
 pub(crate) mod shape_get_flow_logs_integration_template_input;
@@ -2146,6 +2170,14 @@ pub(crate) mod shape_get_ipam_discovered_public_addresses_input;
 pub(crate) mod shape_get_ipam_discovered_resource_cidrs;
 
 pub(crate) mod shape_get_ipam_discovered_resource_cidrs_input;
+
+pub(crate) mod shape_get_ipam_policy_allocation_rules;
+
+pub(crate) mod shape_get_ipam_policy_allocation_rules_input;
+
+pub(crate) mod shape_get_ipam_policy_organization_targets;
+
+pub(crate) mod shape_get_ipam_policy_organization_targets_input;
 
 pub(crate) mod shape_get_ipam_pool_allocations;
 
@@ -2422,6 +2454,10 @@ pub(crate) mod shape_modify_instance_placement_input;
 pub(crate) mod shape_modify_ipam;
 
 pub(crate) mod shape_modify_ipam_input;
+
+pub(crate) mod shape_modify_ipam_policy_allocation_rules;
+
+pub(crate) mod shape_modify_ipam_policy_allocation_rules_input;
 
 pub(crate) mod shape_modify_ipam_pool;
 
@@ -2933,6 +2969,8 @@ pub(crate) mod shape_attribute_boolean_value;
 
 pub(crate) mod shape_attribute_value;
 
+pub(crate) mod shape_availability_zone_address;
+
 pub(crate) mod shape_blob_attribute_value;
 
 pub(crate) mod shape_block_device_mapping;
@@ -3070,6 +3108,8 @@ pub(crate) mod shape_integrate_services;
 pub(crate) mod shape_ip_permission;
 
 pub(crate) mod shape_ipam_cidr_authorization_context;
+
+pub(crate) mod shape_ipam_policy_allocation_rule_request;
 
 pub(crate) mod shape_ipam_pool_source_resource_request;
 
@@ -3566,6 +3606,16 @@ pub(crate) mod shape_ipam_discovered_resource_cidr_set;
 pub(crate) mod shape_ipam_external_resource_verification_token;
 
 pub(crate) mod shape_ipam_external_resource_verification_token_set;
+
+pub(crate) mod shape_ipam_policy;
+
+pub(crate) mod shape_ipam_policy_document;
+
+pub(crate) mod shape_ipam_policy_document_set;
+
+pub(crate) mod shape_ipam_policy_organization_target_set;
+
+pub(crate) mod shape_ipam_policy_set;
 
 pub(crate) mod shape_ipam_pool;
 
@@ -4437,6 +4487,10 @@ pub(crate) mod shape_ipam_operating_region_set;
 
 pub(crate) mod shape_ipam_organizational_unit_exclusion_set;
 
+pub(crate) mod shape_ipam_policy_allocation_rule_list;
+
+pub(crate) mod shape_ipam_policy_organization_target;
+
 pub(crate) mod shape_ipam_pool_cidr_failure_reason;
 
 pub(crate) mod shape_ipam_pool_source_resource;
@@ -4982,6 +5036,8 @@ pub(crate) mod shape_ipam_discovery_failure_reason;
 pub(crate) mod shape_ipam_operating_region;
 
 pub(crate) mod shape_ipam_organizational_unit_exclusion;
+
+pub(crate) mod shape_ipam_policy_allocation_rule;
 
 pub(crate) mod shape_ipam_prefix_list_resolver_rule_condition_set;
 

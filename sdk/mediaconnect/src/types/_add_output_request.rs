@@ -44,6 +44,10 @@ pub struct AddOutputRequest {
     pub ndi_program_name: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pairs that can be used to tag and organize the output.</p>
     pub output_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Indicates whether to enable or disable router integration when creating a new flow output.</p>
+    pub router_integration_state: ::std::option::Option<crate::types::State>,
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub router_integration_transit_encryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
 }
 impl AddOutputRequest {
     /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
@@ -128,6 +132,14 @@ impl AddOutputRequest {
     pub fn output_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.output_tags.as_ref()
     }
+    /// <p>Indicates whether to enable or disable router integration when creating a new flow output.</p>
+    pub fn router_integration_state(&self) -> ::std::option::Option<&crate::types::State> {
+        self.router_integration_state.as_ref()
+    }
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub fn router_integration_transit_encryption(&self) -> ::std::option::Option<&crate::types::FlowTransitEncryption> {
+        self.router_integration_transit_encryption.as_ref()
+    }
 }
 impl AddOutputRequest {
     /// Creates a new builder-style object to manufacture [`AddOutputRequest`](crate::types::AddOutputRequest).
@@ -159,6 +171,8 @@ pub struct AddOutputRequestBuilder {
     pub(crate) ndi_speed_hq_quality: ::std::option::Option<i32>,
     pub(crate) ndi_program_name: ::std::option::Option<::std::string::String>,
     pub(crate) output_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) router_integration_state: ::std::option::Option<crate::types::State>,
+    pub(crate) router_integration_transit_encryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
 }
 impl AddOutputRequestBuilder {
     /// Appends an item to `cidr_allow_list`.
@@ -459,6 +473,34 @@ impl AddOutputRequestBuilder {
     pub fn get_output_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.output_tags
     }
+    /// <p>Indicates whether to enable or disable router integration when creating a new flow output.</p>
+    pub fn router_integration_state(mut self, input: crate::types::State) -> Self {
+        self.router_integration_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable router integration when creating a new flow output.</p>
+    pub fn set_router_integration_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
+        self.router_integration_state = input;
+        self
+    }
+    /// <p>Indicates whether to enable or disable router integration when creating a new flow output.</p>
+    pub fn get_router_integration_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.router_integration_state
+    }
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub fn router_integration_transit_encryption(mut self, input: crate::types::FlowTransitEncryption) -> Self {
+        self.router_integration_transit_encryption = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub fn set_router_integration_transit_encryption(mut self, input: ::std::option::Option<crate::types::FlowTransitEncryption>) -> Self {
+        self.router_integration_transit_encryption = input;
+        self
+    }
+    /// <p>The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.</p>
+    pub fn get_router_integration_transit_encryption(&self) -> &::std::option::Option<crate::types::FlowTransitEncryption> {
+        &self.router_integration_transit_encryption
+    }
     /// Consumes the builder and constructs a [`AddOutputRequest`](crate::types::AddOutputRequest).
     pub fn build(self) -> crate::types::AddOutputRequest {
         crate::types::AddOutputRequest {
@@ -481,6 +523,8 @@ impl AddOutputRequestBuilder {
             ndi_speed_hq_quality: self.ndi_speed_hq_quality,
             ndi_program_name: self.ndi_program_name,
             output_tags: self.output_tags,
+            router_integration_state: self.router_integration_state,
+            router_integration_transit_encryption: self.router_integration_transit_encryption,
         }
     }
 }

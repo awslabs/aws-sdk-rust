@@ -49,6 +49,8 @@ pub struct WindowsFileSystemConfiguration {
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     /// <p>For MULTI_AZ_1 deployment types, the IPv6 address of the primary, or preferred, file server. Use this IP address when mounting the file system on Linux SMB clients or Windows SMB clients that are not joined to a Microsoft Active Directory. Applicable for all Windows file system deployment types. This IPv6 address is temporarily unavailable when the file system is undergoing maintenance. For Linux and Windows SMB clients that are joined to an Active Directory, use the file system's DNSName instead.</p>
     pub preferred_file_server_ipv6: ::std::option::Option<::std::string::String>,
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fsrm_configuration: ::std::option::Option<crate::types::WindowsFsrmConfiguration>,
 }
 impl WindowsFileSystemConfiguration {
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory instance that the file system is joined to.</p>
@@ -132,6 +134,10 @@ impl WindowsFileSystemConfiguration {
     pub fn preferred_file_server_ipv6(&self) -> ::std::option::Option<&str> {
         self.preferred_file_server_ipv6.as_deref()
     }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn fsrm_configuration(&self) -> ::std::option::Option<&crate::types::WindowsFsrmConfiguration> {
+        self.fsrm_configuration.as_ref()
+    }
 }
 impl WindowsFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`WindowsFileSystemConfiguration`](crate::types::WindowsFileSystemConfiguration).
@@ -160,6 +166,7 @@ pub struct WindowsFileSystemConfigurationBuilder {
     pub(crate) audit_log_configuration: ::std::option::Option<crate::types::WindowsAuditLogConfiguration>,
     pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     pub(crate) preferred_file_server_ipv6: ::std::option::Option<::std::string::String>,
+    pub(crate) fsrm_configuration: ::std::option::Option<crate::types::WindowsFsrmConfiguration>,
 }
 impl WindowsFileSystemConfigurationBuilder {
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory instance that the file system is joined to.</p>
@@ -443,6 +450,20 @@ impl WindowsFileSystemConfigurationBuilder {
     pub fn get_preferred_file_server_ipv6(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_file_server_ipv6
     }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn fsrm_configuration(mut self, input: crate::types::WindowsFsrmConfiguration) -> Self {
+        self.fsrm_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn set_fsrm_configuration(mut self, input: ::std::option::Option<crate::types::WindowsFsrmConfiguration>) -> Self {
+        self.fsrm_configuration = input;
+        self
+    }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn get_fsrm_configuration(&self) -> &::std::option::Option<crate::types::WindowsFsrmConfiguration> {
+        &self.fsrm_configuration
+    }
     /// Consumes the builder and constructs a [`WindowsFileSystemConfiguration`](crate::types::WindowsFileSystemConfiguration).
     pub fn build(self) -> crate::types::WindowsFileSystemConfiguration {
         crate::types::WindowsFileSystemConfiguration {
@@ -462,6 +483,7 @@ impl WindowsFileSystemConfigurationBuilder {
             audit_log_configuration: self.audit_log_configuration,
             disk_iops_configuration: self.disk_iops_configuration,
             preferred_file_server_ipv6: self.preferred_file_server_ipv6,
+            fsrm_configuration: self.fsrm_configuration,
         }
     }
 }

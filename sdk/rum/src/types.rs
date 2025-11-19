@@ -9,6 +9,8 @@ pub use crate::types::_query_filter::QueryFilter;
 
 pub use crate::types::_time_range::TimeRange;
 
+pub use crate::types::_app_monitor_platform::AppMonitorPlatform;
+
 pub use crate::types::_deobfuscation_configuration::DeobfuscationConfiguration;
 
 pub use crate::types::_java_script_source_maps::JavaScriptSourceMaps;
@@ -50,6 +52,8 @@ mod _app_monitor;
 mod _app_monitor_configuration;
 
 mod _app_monitor_details;
+
+mod _app_monitor_platform;
 
 mod _app_monitor_summary;
 

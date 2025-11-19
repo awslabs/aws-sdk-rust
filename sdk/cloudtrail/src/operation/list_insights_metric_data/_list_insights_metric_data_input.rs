@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInsightsMetricDataInput {
+    /// <p>The Amazon Resource Name(ARN) or name of the trail for which you want to retrieve Insights metrics data. This parameter should only be provided to fetch Insights metrics data generated on trails logging data events. This parameter is not required for Insights metric data generated on trails logging management events.</p>
+    pub trail_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub event_source: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event, typically the Amazon Web Services API on which unusual levels of activity were recorded.</p>
@@ -29,6 +31,10 @@ pub struct ListInsightsMetricDataInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListInsightsMetricDataInput {
+    /// <p>The Amazon Resource Name(ARN) or name of the trail for which you want to retrieve Insights metrics data. This parameter should only be provided to fetch Insights metrics data generated on trails logging data events. This parameter is not required for Insights metric data generated on trails logging management events.</p>
+    pub fn trail_name(&self) -> ::std::option::Option<&str> {
+        self.trail_name.as_deref()
+    }
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub fn event_source(&self) -> ::std::option::Option<&str> {
         self.event_source.as_deref()
@@ -85,6 +91,7 @@ impl ListInsightsMetricDataInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListInsightsMetricDataInputBuilder {
+    pub(crate) trail_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_source: ::std::option::Option<::std::string::String>,
     pub(crate) event_name: ::std::option::Option<::std::string::String>,
     pub(crate) insight_type: ::std::option::Option<crate::types::InsightType>,
@@ -97,6 +104,20 @@ pub struct ListInsightsMetricDataInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListInsightsMetricDataInputBuilder {
+    /// <p>The Amazon Resource Name(ARN) or name of the trail for which you want to retrieve Insights metrics data. This parameter should only be provided to fetch Insights metrics data generated on trails logging data events. This parameter is not required for Insights metric data generated on trails logging management events.</p>
+    pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trail_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name(ARN) or name of the trail for which you want to retrieve Insights metrics data. This parameter should only be provided to fetch Insights metrics data generated on trails logging data events. This parameter is not required for Insights metric data generated on trails logging management events.</p>
+    pub fn set_trail_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trail_name = input;
+        self
+    }
+    /// <p>The Amazon Resource Name(ARN) or name of the trail for which you want to retrieve Insights metrics data. This parameter should only be provided to fetch Insights metrics data generated on trails logging data events. This parameter is not required for Insights metric data generated on trails logging management events.</p>
+    pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trail_name
+    }
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     /// This field is required.
     pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -260,6 +281,7 @@ impl ListInsightsMetricDataInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_insights_metric_data::ListInsightsMetricDataInput {
+            trail_name: self.trail_name,
             event_source: self.event_source,
             event_name: self.event_name,
             insight_type: self.insight_type,

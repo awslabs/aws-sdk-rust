@@ -13,6 +13,52 @@ pub use crate::types::_parameter_constraints::ParameterConstraints;
 
 pub use crate::types::_authorization_type::AuthorizationType;
 
+pub use crate::types::_try_it_state::TryItState;
+
+pub use crate::types::_status_exception::StatusException;
+
+pub use crate::types::_status::Status;
+
+pub use crate::types::_rest_endpoint_identifier::RestEndpointIdentifier;
+
+pub use crate::types::_identifier_parts::IdentifierParts;
+
+pub use crate::types::_endpoint_display_content_response::EndpointDisplayContentResponse;
+
+pub use crate::types::_endpoint_display_content::EndpointDisplayContent;
+
+pub use crate::types::_display_content_overrides::DisplayContentOverrides;
+
+pub use crate::types::_none::None;
+
+pub use crate::types::_display_content::DisplayContent;
+
+pub use crate::types::_display_order::DisplayOrder;
+
+pub use crate::types::_section::Section;
+
+pub use crate::types::_publish_status::PublishStatus;
+
+pub use crate::types::_preview::Preview;
+
+pub use crate::types::_preview_status::PreviewStatus;
+
+pub use crate::types::_portal_content::PortalContent;
+
+pub use crate::types::_portal_theme::PortalTheme;
+
+pub use crate::types::_custom_colors::CustomColors;
+
+pub use crate::types::_endpoint_configuration_response::EndpointConfigurationResponse;
+
+pub use crate::types::_authorization::Authorization;
+
+pub use crate::types::_cognito_config::CognitoConfig;
+
+pub use crate::types::_endpoint_configuration_request::EndpointConfigurationRequest;
+
+pub use crate::types::_acm_managed::AcmManaged;
+
 pub use crate::types::_content_handling_strategy::ContentHandlingStrategy;
 
 pub use crate::types::_tls_config::TlsConfig;
@@ -65,6 +111,14 @@ pub use crate::types::_routing_rule_action_invoke_api::RoutingRuleActionInvokeAp
 
 pub use crate::types::_routing_rule::RoutingRule;
 
+pub use crate::types::_product_rest_endpoint_page_summary_no_body::ProductRestEndpointPageSummaryNoBody;
+
+pub use crate::types::_product_page_summary_no_body::ProductPageSummaryNoBody;
+
+pub use crate::types::_portal_summary::PortalSummary;
+
+pub use crate::types::_portal_product_summary::PortalProductSummary;
+
 pub use crate::types::_vpc_link::VpcLink;
 
 pub use crate::types::_stage::Stage;
@@ -91,9 +145,13 @@ pub use crate::types::_api_mapping::ApiMapping;
 
 mod _access_log_settings;
 
+mod _acm_managed;
+
 mod _api;
 
 mod _api_mapping;
+
+mod _authorization;
 
 mod _authorization_type;
 
@@ -101,15 +159,25 @@ mod _authorizer;
 
 mod _authorizer_type;
 
+mod _cognito_config;
+
 mod _connection_type;
 
 mod _content_handling_strategy;
 
 mod _cors;
 
+mod _custom_colors;
+
 mod _deployment;
 
 mod _deployment_status;
+
+mod _display_content;
+
+mod _display_content_overrides;
+
+mod _display_order;
 
 mod _domain_name;
 
@@ -117,7 +185,17 @@ mod _domain_name_configuration;
 
 mod _domain_name_status;
 
+mod _endpoint_configuration_request;
+
+mod _endpoint_configuration_response;
+
+mod _endpoint_display_content;
+
+mod _endpoint_display_content_response;
+
 mod _endpoint_type;
+
+mod _identifier_parts;
 
 mod _integration;
 
@@ -137,11 +215,33 @@ mod _mutual_tls_authentication;
 
 mod _mutual_tls_authentication_input;
 
+mod _none;
+
 mod _parameter_constraints;
 
 mod _passthrough_behavior;
 
+mod _portal_content;
+
+mod _portal_product_summary;
+
+mod _portal_summary;
+
+mod _portal_theme;
+
+mod _preview;
+
+mod _preview_status;
+
+mod _product_page_summary_no_body;
+
+mod _product_rest_endpoint_page_summary_no_body;
+
 mod _protocol_type;
+
+mod _publish_status;
+
+mod _rest_endpoint_identifier;
 
 mod _route;
 
@@ -165,13 +265,21 @@ mod _routing_rule_match_header_value;
 
 mod _routing_rule_match_headers;
 
+mod _section;
+
 mod _security_policy;
 
 mod _stage;
 
+mod _status;
+
+mod _status_exception;
+
 mod _tls_config;
 
 mod _tls_config_input;
+
+mod _try_it_state;
 
 mod _vpc_link;
 

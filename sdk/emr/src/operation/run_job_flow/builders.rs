@@ -707,4 +707,18 @@ impl RunJobFlowFluentBuilder {
     pub fn get_extended_support(&self) -> &::std::option::Option<bool> {
         self.inner.get_extended_support()
     }
+    /// <p>Contains CloudWatch log configuration metadata and settings.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.inner = self.inner.monitoring_configuration(input);
+        self
+    }
+    /// <p>Contains CloudWatch log configuration metadata and settings.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.inner = self.inner.set_monitoring_configuration(input);
+        self
+    }
+    /// <p>Contains CloudWatch log configuration metadata and settings.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        self.inner.get_monitoring_configuration()
+    }
 }

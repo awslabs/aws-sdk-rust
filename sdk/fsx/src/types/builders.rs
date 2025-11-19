@@ -51,6 +51,8 @@ pub use crate::types::_data_repository_failure_details::DataRepositoryFailureDet
 
 pub use crate::types::_windows_file_system_configuration::WindowsFileSystemConfigurationBuilder;
 
+pub use crate::types::_windows_fsrm_configuration::WindowsFsrmConfigurationBuilder;
+
 pub use crate::types::_windows_audit_log_configuration::WindowsAuditLogConfigurationBuilder;
 
 pub use crate::types::_alias::AliasBuilder;

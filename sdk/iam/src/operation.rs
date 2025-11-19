@@ -160,6 +160,9 @@ pub mod disable_organizations_root_credentials_management;
 /// Types for the `DisableOrganizationsRootSessions` operation.
 pub mod disable_organizations_root_sessions;
 
+/// Types for the `DisableOutboundWebIdentityFederation` operation.
+pub mod disable_outbound_web_identity_federation;
+
 /// Types for the `EnableMFADevice` operation.
 pub mod enable_mfa_device;
 
@@ -168,6 +171,9 @@ pub mod enable_organizations_root_credentials_management;
 
 /// Types for the `EnableOrganizationsRootSessions` operation.
 pub mod enable_organizations_root_sessions;
+
+/// Types for the `EnableOutboundWebIdentityFederation` operation.
+pub mod enable_outbound_web_identity_federation;
 
 /// Types for the `GenerateCredentialReport` operation.
 pub mod generate_credential_report;
@@ -225,6 +231,9 @@ pub mod get_open_id_connect_provider;
 
 /// Types for the `GetOrganizationsAccessReport` operation.
 pub mod get_organizations_access_report;
+
+/// Types for the `GetOutboundWebIdentityFederationInfo` operation.
+pub mod get_outbound_web_identity_federation_info;
 
 /// Types for the `GetPolicy` operation.
 pub mod get_policy;

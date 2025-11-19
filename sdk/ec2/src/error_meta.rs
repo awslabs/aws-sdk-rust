@@ -2277,6 +2277,27 @@ impl From<crate::operation::create_ipam_external_resource_verification_token::Cr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ipam_policy::CreateIpamPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ipam_policy::CreateIpamPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ipam_policy::CreateIpamPolicyError> for Error {
+    fn from(err: crate::operation::create_ipam_policy::CreateIpamPolicyError) -> Self {
+        match err {
+            crate::operation::create_ipam_policy::CreateIpamPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ipam_pool::CreateIpamPoolError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4585,6 +4606,27 @@ impl From<crate::operation::delete_ipam_external_resource_verification_token::De
             crate::operation::delete_ipam_external_resource_verification_token::DeleteIpamExternalResourceVerificationTokenError::Unhandled(
                 inner,
             ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ipam_policy::DeleteIpamPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ipam_policy::DeleteIpamPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ipam_policy::DeleteIpamPolicyError> for Error {
+    fn from(err: crate::operation::delete_ipam_policy::DeleteIpamPolicyError) -> Self {
+        match err {
+            crate::operation::delete_ipam_policy::DeleteIpamPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8521,6 +8563,27 @@ impl From<crate::operation::describe_ipam_external_resource_verification_tokens:
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ipam_policies::DescribeIpamPoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ipam_policies::DescribeIpamPoliciesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ipam_policies::DescribeIpamPoliciesError> for Error {
+    fn from(err: crate::operation::describe_ipam_policies::DescribeIpamPoliciesError) -> Self {
+        match err {
+            crate::operation::describe_ipam_policies::DescribeIpamPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ipam_pools::DescribeIpamPoolsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -12023,6 +12086,27 @@ impl From<crate::operation::disable_ipam_organization_admin_account::DisableIpam
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_ipam_policy::DisableIpamPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_ipam_policy::DisableIpamPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_ipam_policy::DisableIpamPolicyError> for Error {
+    fn from(err: crate::operation::disable_ipam_policy::DisableIpamPolicyError) -> Self {
+        match err {
+            crate::operation::disable_ipam_policy::DisableIpamPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_route_server_propagation::DisableRouteServerPropagationError, R>,
@@ -13104,6 +13188,27 @@ impl From<crate::operation::enable_ipam_organization_admin_account::EnableIpamOr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_ipam_policy::EnableIpamPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_ipam_policy::EnableIpamPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_ipam_policy::EnableIpamPolicyError> for Error {
+    fn from(err: crate::operation::enable_ipam_policy::EnableIpamPolicyError) -> Self {
+        match err {
+            crate::operation::enable_ipam_policy::EnableIpamPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -13929,6 +14034,29 @@ impl From<crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDef
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_enabled_ipam_policy::GetEnabledIpamPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_enabled_ipam_policy::GetEnabledIpamPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_enabled_ipam_policy::GetEnabledIpamPolicyError> for Error {
+    fn from(err: crate::operation::get_enabled_ipam_policy::GetEnabledIpamPolicyError) -> Self {
+        match err {
+            crate::operation::get_enabled_ipam_policy::GetEnabledIpamPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -14294,6 +14422,68 @@ impl From<crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscovere
     fn from(err: crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError) -> Self {
         match err {
             crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ipam_policy_allocation_rules::GetIpamPolicyAllocationRulesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_policy_allocation_rules::GetIpamPolicyAllocationRulesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_policy_allocation_rules::GetIpamPolicyAllocationRulesError> for Error {
+    fn from(err: crate::operation::get_ipam_policy_allocation_rules::GetIpamPolicyAllocationRulesError) -> Self {
+        match err {
+            crate::operation::get_ipam_policy_allocation_rules::GetIpamPolicyAllocationRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_policy_organization_targets::GetIpamPolicyOrganizationTargetsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_policy_organization_targets::GetIpamPolicyOrganizationTargetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_policy_organization_targets::GetIpamPolicyOrganizationTargetsError> for Error {
+    fn from(err: crate::operation::get_ipam_policy_organization_targets::GetIpamPolicyOrganizationTargetsError) -> Self {
+        match err {
+            crate::operation::get_ipam_policy_organization_targets::GetIpamPolicyOrganizationTargetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -16206,6 +16396,38 @@ impl From<crate::operation::modify_ipam::ModifyIpamError> for Error {
     fn from(err: crate::operation::modify_ipam::ModifyIpamError) -> Self {
         match err {
             crate::operation::modify_ipam::ModifyIpamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_ipam_policy_allocation_rules::ModifyIpamPolicyAllocationRulesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_ipam_policy_allocation_rules::ModifyIpamPolicyAllocationRulesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_ipam_policy_allocation_rules::ModifyIpamPolicyAllocationRulesError> for Error {
+    fn from(err: crate::operation::modify_ipam_policy_allocation_rules::ModifyIpamPolicyAllocationRulesError) -> Self {
+        match err {
+            crate::operation::modify_ipam_policy_allocation_rules::ModifyIpamPolicyAllocationRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

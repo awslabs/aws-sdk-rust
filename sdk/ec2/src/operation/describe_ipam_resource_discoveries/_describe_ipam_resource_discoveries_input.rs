@@ -7,7 +7,7 @@ pub struct DescribeIpamResourceDiscoveriesInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IPAM resource discovery IDs.</p>
     pub ipam_resource_discovery_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of resource discoveries to return in one page of results.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -25,7 +25,7 @@ impl DescribeIpamResourceDiscoveriesInput {
     pub fn ipam_resource_discovery_ids(&self) -> &[::std::string::String] {
         self.ipam_resource_discovery_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -92,17 +92,17 @@ impl DescribeIpamResourceDiscoveriesInputBuilder {
     pub fn get_ipam_resource_discovery_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipam_resource_discovery_ids
     }
-    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -15,6 +15,7 @@
 ///     MonitorLocalResourceType::AwsAz => { /* ... */ },
 ///     MonitorLocalResourceType::AwsSubnet => { /* ... */ },
 ///     MonitorLocalResourceType::AwsVpc => { /* ... */ },
+///     MonitorLocalResourceType::EksCluster => { /* ... */ },
 ///     MonitorLocalResourceType::AwsRegion => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum MonitorLocalResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsVpc,
     #[allow(missing_docs)] // documentation missing in model
+    EksCluster,
+    #[allow(missing_docs)] // documentation missing in model
     AwsRegion,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for MonitorLocalResourceType {
             "AWS::AvailabilityZone" => MonitorLocalResourceType::AwsAz,
             "AWS::EC2::Subnet" => MonitorLocalResourceType::AwsSubnet,
             "AWS::EC2::VPC" => MonitorLocalResourceType::AwsVpc,
+            "AWS::EKS::Cluster" => MonitorLocalResourceType::EksCluster,
             "AWS::Region" => MonitorLocalResourceType::AwsRegion,
             other => MonitorLocalResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -81,13 +85,20 @@ impl MonitorLocalResourceType {
             MonitorLocalResourceType::AwsAz => "AWS::AvailabilityZone",
             MonitorLocalResourceType::AwsSubnet => "AWS::EC2::Subnet",
             MonitorLocalResourceType::AwsVpc => "AWS::EC2::VPC",
+            MonitorLocalResourceType::EksCluster => "AWS::EKS::Cluster",
             MonitorLocalResourceType::AwsRegion => "AWS::Region",
             MonitorLocalResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS::AvailabilityZone", "AWS::EC2::Subnet", "AWS::EC2::VPC", "AWS::Region"]
+        &[
+            "AWS::AvailabilityZone",
+            "AWS::EC2::Subnet",
+            "AWS::EC2::VPC",
+            "AWS::EKS::Cluster",
+            "AWS::Region",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for MonitorLocalResourceType {
@@ -113,6 +124,7 @@ impl ::std::fmt::Display for MonitorLocalResourceType {
             MonitorLocalResourceType::AwsAz => write!(f, "AWS::AvailabilityZone"),
             MonitorLocalResourceType::AwsSubnet => write!(f, "AWS::EC2::Subnet"),
             MonitorLocalResourceType::AwsVpc => write!(f, "AWS::EC2::VPC"),
+            MonitorLocalResourceType::EksCluster => write!(f, "AWS::EKS::Cluster"),
             MonitorLocalResourceType::AwsRegion => write!(f, "AWS::Region"),
             MonitorLocalResourceType::Unknown(value) => write!(f, "{value}"),
         }

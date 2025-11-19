@@ -153,6 +153,20 @@ pub(crate) fn de_create_rest_api(
                             .transpose()?,
                     );
                 }
+                "apiStatus" => {
+                    builder = builder.set_api_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ApiStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "apiStatusMessage" => {
+                    builder = builder.set_api_status_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "binaryMediaTypes" => {
                     builder = builder.set_binary_media_types(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
@@ -171,6 +185,13 @@ pub(crate) fn de_create_rest_api(
                 }
                 "disableExecuteApiEndpoint" => {
                     builder = builder.set_disable_execute_api_endpoint(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "endpointAccessMode" => {
+                    builder = builder.set_endpoint_access_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::EndpointAccessMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 "endpointConfiguration" => {
                     builder =
@@ -208,6 +229,13 @@ pub(crate) fn de_create_rest_api(
                     builder = builder.set_root_resource_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "securityPolicy" => {
+                    builder = builder.set_security_policy(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SecurityPolicy::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

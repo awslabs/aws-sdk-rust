@@ -595,6 +595,10 @@ pub(crate) mod shape_route_create_request;
 
 pub(crate) mod shape_route_update_request;
 
+pub(crate) mod shape_router_input_settings;
+
+pub(crate) mod shape_router_settings;
+
 pub(crate) mod shape_sdi_source;
 
 pub(crate) mod shape_sdi_source_mapping_update_request;
@@ -602,6 +606,8 @@ pub(crate) mod shape_sdi_source_mapping_update_request;
 pub(crate) mod shape_sdi_source_mappings;
 
 pub(crate) mod shape_smpte2110_receiver_group_settings;
+
+pub(crate) mod shape_special_router_settings;
 
 pub(crate) mod shape_srt_settings;
 
@@ -701,6 +707,8 @@ pub(crate) mod shape_list_of_multicast_source;
 
 pub(crate) mod shape_list_of_output_group;
 
+pub(crate) mod shape_list_of_router_destination;
+
 pub(crate) mod shape_list_of_smpte2110_receiver_group;
 
 pub(crate) mod shape_list_of_srt_caller_source;
@@ -746,6 +754,8 @@ pub(crate) mod shape_output_group;
 pub(crate) mod shape_pipeline_detail;
 
 pub(crate) mod shape_route;
+
+pub(crate) mod shape_router_destination_settings;
 
 pub(crate) mod shape_schedule_action;
 
@@ -834,6 +844,8 @@ pub(crate) mod shape_output_group_settings;
 pub(crate) mod shape_output_locking_settings;
 
 pub(crate) mod shape_remix_settings;
+
+pub(crate) mod shape_router_destination;
 
 pub(crate) mod shape_schedule_action_settings;
 

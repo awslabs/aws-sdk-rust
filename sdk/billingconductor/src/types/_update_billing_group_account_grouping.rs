@@ -6,11 +6,17 @@
 pub struct UpdateBillingGroupAccountGrouping {
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub auto_associate: ::std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) that identifies the transfer relationship. Note: Modifications to the ResponsibilityTransferArn are not permitted for existing billing groups.</p>
+    pub responsibility_transfer_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBillingGroupAccountGrouping {
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn auto_associate(&self) -> ::std::option::Option<bool> {
         self.auto_associate
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the transfer relationship. Note: Modifications to the ResponsibilityTransferArn are not permitted for existing billing groups.</p>
+    pub fn responsibility_transfer_arn(&self) -> ::std::option::Option<&str> {
+        self.responsibility_transfer_arn.as_deref()
     }
 }
 impl UpdateBillingGroupAccountGrouping {
@@ -25,6 +31,7 @@ impl UpdateBillingGroupAccountGrouping {
 #[non_exhaustive]
 pub struct UpdateBillingGroupAccountGroupingBuilder {
     pub(crate) auto_associate: ::std::option::Option<bool>,
+    pub(crate) responsibility_transfer_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBillingGroupAccountGroupingBuilder {
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
@@ -41,10 +48,25 @@ impl UpdateBillingGroupAccountGroupingBuilder {
     pub fn get_auto_associate(&self) -> &::std::option::Option<bool> {
         &self.auto_associate
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the transfer relationship. Note: Modifications to the ResponsibilityTransferArn are not permitted for existing billing groups.</p>
+    pub fn responsibility_transfer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.responsibility_transfer_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the transfer relationship. Note: Modifications to the ResponsibilityTransferArn are not permitted for existing billing groups.</p>
+    pub fn set_responsibility_transfer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.responsibility_transfer_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the transfer relationship. Note: Modifications to the ResponsibilityTransferArn are not permitted for existing billing groups.</p>
+    pub fn get_responsibility_transfer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.responsibility_transfer_arn
+    }
     /// Consumes the builder and constructs a [`UpdateBillingGroupAccountGrouping`](crate::types::UpdateBillingGroupAccountGrouping).
     pub fn build(self) -> crate::types::UpdateBillingGroupAccountGrouping {
         crate::types::UpdateBillingGroupAccountGrouping {
             auto_associate: self.auto_associate,
+            responsibility_transfer_arn: self.responsibility_transfer_arn,
         }
     }
 }

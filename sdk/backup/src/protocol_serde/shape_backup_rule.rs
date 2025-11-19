@@ -86,6 +86,9 @@ where
                         "IndexActions" => {
                             builder = builder.set_index_actions(crate::protocol_serde::shape_index_actions::de_index_actions(tokens)?);
                         }
+                        "ScanActions" => {
+                            builder = builder.set_scan_actions(crate::protocol_serde::shape_scan_actions::de_scan_actions(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -11,6 +11,8 @@ pub struct UpdateManagedInstancesProviderConfiguration {
     pub instance_launch_template: ::std::option::Option<crate::types::InstanceLaunchTemplateUpdate>,
     /// <p>The updated tag propagation setting. When changed, this affects only new instances launched after the update.</p>
     pub propagate_tags: ::std::option::Option<crate::types::PropagateMiTags>,
+    /// <p>The updated infrastructure optimization configuration. Changes to this setting affect how Amazon ECS optimizes instances going forward.</p>
+    pub infrastructure_optimization: ::std::option::Option<crate::types::InfrastructureOptimization>,
 }
 impl UpdateManagedInstancesProviderConfiguration {
     /// <p>The updated Amazon Resource Name (ARN) of the infrastructure role. The new role must have the necessary permissions to manage instances and access required Amazon Web Services services.</p>
@@ -27,6 +29,10 @@ impl UpdateManagedInstancesProviderConfiguration {
     pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateMiTags> {
         self.propagate_tags.as_ref()
     }
+    /// <p>The updated infrastructure optimization configuration. Changes to this setting affect how Amazon ECS optimizes instances going forward.</p>
+    pub fn infrastructure_optimization(&self) -> ::std::option::Option<&crate::types::InfrastructureOptimization> {
+        self.infrastructure_optimization.as_ref()
+    }
 }
 impl UpdateManagedInstancesProviderConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateManagedInstancesProviderConfiguration`](crate::types::UpdateManagedInstancesProviderConfiguration).
@@ -42,6 +48,7 @@ pub struct UpdateManagedInstancesProviderConfigurationBuilder {
     pub(crate) infrastructure_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_launch_template: ::std::option::Option<crate::types::InstanceLaunchTemplateUpdate>,
     pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateMiTags>,
+    pub(crate) infrastructure_optimization: ::std::option::Option<crate::types::InfrastructureOptimization>,
 }
 impl UpdateManagedInstancesProviderConfigurationBuilder {
     /// <p>The updated Amazon Resource Name (ARN) of the infrastructure role. The new role must have the necessary permissions to manage instances and access required Amazon Web Services services.</p>
@@ -91,6 +98,20 @@ impl UpdateManagedInstancesProviderConfigurationBuilder {
     pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateMiTags> {
         &self.propagate_tags
     }
+    /// <p>The updated infrastructure optimization configuration. Changes to this setting affect how Amazon ECS optimizes instances going forward.</p>
+    pub fn infrastructure_optimization(mut self, input: crate::types::InfrastructureOptimization) -> Self {
+        self.infrastructure_optimization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated infrastructure optimization configuration. Changes to this setting affect how Amazon ECS optimizes instances going forward.</p>
+    pub fn set_infrastructure_optimization(mut self, input: ::std::option::Option<crate::types::InfrastructureOptimization>) -> Self {
+        self.infrastructure_optimization = input;
+        self
+    }
+    /// <p>The updated infrastructure optimization configuration. Changes to this setting affect how Amazon ECS optimizes instances going forward.</p>
+    pub fn get_infrastructure_optimization(&self) -> &::std::option::Option<crate::types::InfrastructureOptimization> {
+        &self.infrastructure_optimization
+    }
     /// Consumes the builder and constructs a [`UpdateManagedInstancesProviderConfiguration`](crate::types::UpdateManagedInstancesProviderConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`infrastructure_role_arn`](crate::types::builders::UpdateManagedInstancesProviderConfigurationBuilder::infrastructure_role_arn)
@@ -106,6 +127,7 @@ impl UpdateManagedInstancesProviderConfigurationBuilder {
             })?,
             instance_launch_template: self.instance_launch_template,
             propagate_tags: self.propagate_tags,
+            infrastructure_optimization: self.infrastructure_optimization,
         })
     }
 }

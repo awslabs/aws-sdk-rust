@@ -6,11 +6,17 @@
 pub struct LifecyclePolicyRuleAction {
     /// <p>The type of action to be taken.</p>
     pub r#type: ::std::option::Option<crate::types::ImageActionType>,
+    /// <p>The target storage class for the action. This is only present when the <code>type</code> is <code>TRANSITION.</code></p>
+    pub target_storage_class: ::std::option::Option<crate::types::LifecyclePolicyTargetStorageClass>,
 }
 impl LifecyclePolicyRuleAction {
     /// <p>The type of action to be taken.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImageActionType> {
         self.r#type.as_ref()
+    }
+    /// <p>The target storage class for the action. This is only present when the <code>type</code> is <code>TRANSITION.</code></p>
+    pub fn target_storage_class(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyTargetStorageClass> {
+        self.target_storage_class.as_ref()
     }
 }
 impl LifecyclePolicyRuleAction {
@@ -25,6 +31,7 @@ impl LifecyclePolicyRuleAction {
 #[non_exhaustive]
 pub struct LifecyclePolicyRuleActionBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ImageActionType>,
+    pub(crate) target_storage_class: ::std::option::Option<crate::types::LifecyclePolicyTargetStorageClass>,
 }
 impl LifecyclePolicyRuleActionBuilder {
     /// <p>The type of action to be taken.</p>
@@ -41,8 +48,25 @@ impl LifecyclePolicyRuleActionBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ImageActionType> {
         &self.r#type
     }
+    /// <p>The target storage class for the action. This is only present when the <code>type</code> is <code>TRANSITION.</code></p>
+    pub fn target_storage_class(mut self, input: crate::types::LifecyclePolicyTargetStorageClass) -> Self {
+        self.target_storage_class = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The target storage class for the action. This is only present when the <code>type</code> is <code>TRANSITION.</code></p>
+    pub fn set_target_storage_class(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyTargetStorageClass>) -> Self {
+        self.target_storage_class = input;
+        self
+    }
+    /// <p>The target storage class for the action. This is only present when the <code>type</code> is <code>TRANSITION.</code></p>
+    pub fn get_target_storage_class(&self) -> &::std::option::Option<crate::types::LifecyclePolicyTargetStorageClass> {
+        &self.target_storage_class
+    }
     /// Consumes the builder and constructs a [`LifecyclePolicyRuleAction`](crate::types::LifecyclePolicyRuleAction).
     pub fn build(self) -> crate::types::LifecyclePolicyRuleAction {
-        crate::types::LifecyclePolicyRuleAction { r#type: self.r#type }
+        crate::types::LifecyclePolicyRuleAction {
+            r#type: self.r#type,
+            target_storage_class: self.target_storage_class,
+        }
     }
 }

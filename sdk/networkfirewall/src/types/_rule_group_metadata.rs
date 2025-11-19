@@ -8,6 +8,8 @@ pub struct RuleGroupMetadata {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the Amazon Web Services Marketplace seller that provides this rule group.</p>
+    pub vendor_name: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupMetadata {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -17,6 +19,10 @@ impl RuleGroupMetadata {
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>The name of the Amazon Web Services Marketplace seller that provides this rule group.</p>
+    pub fn vendor_name(&self) -> ::std::option::Option<&str> {
+        self.vendor_name.as_deref()
     }
 }
 impl RuleGroupMetadata {
@@ -32,6 +38,7 @@ impl RuleGroupMetadata {
 pub struct RuleGroupMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vendor_name: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupMetadataBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -62,11 +69,26 @@ impl RuleGroupMetadataBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The name of the Amazon Web Services Marketplace seller that provides this rule group.</p>
+    pub fn vendor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vendor_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the Amazon Web Services Marketplace seller that provides this rule group.</p>
+    pub fn set_vendor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vendor_name = input;
+        self
+    }
+    /// <p>The name of the Amazon Web Services Marketplace seller that provides this rule group.</p>
+    pub fn get_vendor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor_name
+    }
     /// Consumes the builder and constructs a [`RuleGroupMetadata`](crate::types::RuleGroupMetadata).
     pub fn build(self) -> crate::types::RuleGroupMetadata {
         crate::types::RuleGroupMetadata {
             name: self.name,
             arn: self.arn,
+            vendor_name: self.vendor_name,
         }
     }
 }

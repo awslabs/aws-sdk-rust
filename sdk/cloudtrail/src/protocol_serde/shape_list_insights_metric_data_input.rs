@@ -3,45 +3,48 @@ pub fn ser_list_insights_metric_data_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_insights_metric_data::ListInsightsMetricDataInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.event_source {
-        object.key("EventSource").string(var_1.as_str());
+    if let Some(var_1) = &input.trail_name {
+        object.key("TrailName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.event_name {
-        object.key("EventName").string(var_2.as_str());
+    if let Some(var_2) = &input.event_source {
+        object.key("EventSource").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.insight_type {
-        object.key("InsightType").string(var_3.as_str());
+    if let Some(var_3) = &input.event_name {
+        object.key("EventName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.error_code {
-        object.key("ErrorCode").string(var_4.as_str());
+    if let Some(var_4) = &input.insight_type {
+        object.key("InsightType").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.start_time {
+    if let Some(var_5) = &input.error_code {
+        object.key("ErrorCode").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.start_time {
         object
             .key("StartTime")
-            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
-    }
-    if let Some(var_6) = &input.end_time {
-        object
-            .key("EndTime")
             .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_7) = &input.period {
+    if let Some(var_7) = &input.end_time {
+        object
+            .key("EndTime")
+            .date_time(var_7, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
+    if let Some(var_8) = &input.period {
         object.key("Period").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.data_type {
-        object.key("DataType").string(var_8.as_str());
+    if let Some(var_9) = &input.data_type {
+        object.key("DataType").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.max_results {
+    if let Some(var_10) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_10) = &input.next_token {
-        object.key("NextToken").string(var_10.as_str());
+    if let Some(var_11) = &input.next_token {
+        object.key("NextToken").string(var_11.as_str());
     }
     Ok(())
 }

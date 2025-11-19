@@ -95,6 +95,8 @@ pub(crate) mod shape_describe_report_plan;
 
 pub(crate) mod shape_describe_restore_job;
 
+pub(crate) mod shape_describe_scan_job;
+
 pub(crate) mod shape_disassociate_backup_vault_mpa_approval_team;
 
 pub(crate) mod shape_disassociate_recovery_point;
@@ -183,6 +185,10 @@ pub(crate) mod shape_list_restore_testing_plans;
 
 pub(crate) mod shape_list_restore_testing_selections;
 
+pub(crate) mod shape_list_scan_job_summaries;
+
+pub(crate) mod shape_list_scan_jobs;
+
 pub(crate) mod shape_list_tags;
 
 pub(crate) mod shape_list_tiering_configurations;
@@ -204,6 +210,8 @@ pub(crate) mod shape_start_copy_job;
 pub(crate) mod shape_start_report_job;
 
 pub(crate) mod shape_start_restore_job;
+
+pub(crate) mod shape_start_scan_job;
 
 pub(crate) mod shape_stop_backup_job;
 
@@ -302,6 +310,8 @@ pub(crate) mod shape_start_copy_job_input;
 pub(crate) mod shape_start_report_job_input;
 
 pub(crate) mod shape_start_restore_job_input;
+
+pub(crate) mod shape_start_scan_job_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -435,6 +445,18 @@ pub(crate) mod shape_restore_testing_selection_for_update;
 
 pub(crate) mod shape_restore_testing_selections;
 
+pub(crate) mod shape_scan_job_creator;
+
+pub(crate) mod shape_scan_job_summary_list;
+
+pub(crate) mod shape_scan_jobs;
+
+pub(crate) mod shape_scan_result_info;
+
+pub(crate) mod shape_scan_results;
+
+pub(crate) mod shape_scan_settings;
+
 pub(crate) mod shape_scheduled_runs_preview;
 
 pub(crate) mod shape_string_map;
@@ -521,6 +543,14 @@ pub(crate) mod shape_restore_testing_recovery_point_selection;
 
 pub(crate) mod shape_restore_testing_selection_for_list;
 
+pub(crate) mod shape_scan_job;
+
+pub(crate) mod shape_scan_job_summary;
+
+pub(crate) mod shape_scan_result;
+
+pub(crate) mod shape_scan_setting;
+
 pub(crate) mod shape_scheduled_plan_execution_member;
 
 pub(crate) mod shape_sensitive_string_map;
@@ -530,6 +560,8 @@ pub(crate) mod shape_string_list;
 pub(crate) mod shape_tiering_configurations_list_member;
 
 pub(crate) mod shape_vault_names;
+
+pub(crate) mod shape_aggregated_scan_result;
 
 pub(crate) mod shape_backup_rule;
 
@@ -553,6 +585,10 @@ pub(crate) mod shape_latest_revoke_request;
 
 pub(crate) mod shape_restore_testing_recovery_point_type_list;
 
+pub(crate) mod shape_scan_action;
+
+pub(crate) mod shape_scan_findings;
+
 pub(crate) mod shape_compliance_resource_id_list;
 
 pub(crate) mod shape_copy_actions;
@@ -560,3 +596,5 @@ pub(crate) mod shape_copy_actions;
 pub(crate) mod shape_index_actions;
 
 pub(crate) mod shape_resource_type_list;
+
+pub(crate) mod shape_scan_actions;

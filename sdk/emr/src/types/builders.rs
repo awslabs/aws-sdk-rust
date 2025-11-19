@@ -7,6 +7,10 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_execution_engine_config::ExecutionEngineConfigBuilder;
 
+pub use crate::types::_monitoring_configuration::MonitoringConfigurationBuilder;
+
+pub use crate::types::_cloud_watch_log_configuration::CloudWatchLogConfigurationBuilder;
+
 pub use crate::types::_auto_termination_policy::AutoTerminationPolicyBuilder;
 
 pub use crate::types::_placement_group_config::PlacementGroupConfigBuilder;

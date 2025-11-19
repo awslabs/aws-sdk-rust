@@ -180,6 +180,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AggregatedScanResult" => {
+                            builder = builder
+                                .set_aggregated_scan_result(crate::protocol_serde::shape_aggregated_scan_result::de_aggregated_scan_result(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -12,6 +12,8 @@ pub struct ManagedInstancesProvider {
     pub instance_launch_template: ::std::option::Option<crate::types::InstanceLaunchTemplate>,
     /// <p>Determines whether tags from the capacity provider are automatically applied to Amazon ECS Managed Instances. This helps with cost allocation and resource management by ensuring consistent tagging across your infrastructure.</p>
     pub propagate_tags: ::std::option::Option<crate::types::PropagateMiTags>,
+    /// <p>Defines how Amazon ECS Managed Instances optimizes the infrastastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle or underutilized EC2 instances optimization delay.</p>
+    pub infrastructure_optimization: ::std::option::Option<crate::types::InfrastructureOptimization>,
 }
 impl ManagedInstancesProvider {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure role that Amazon ECS assumes to manage instances. This role must include permissions for Amazon EC2 instance lifecycle management, networking, and any additional Amazon Web Services services required for your workloads.</p>
@@ -28,6 +30,10 @@ impl ManagedInstancesProvider {
     pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateMiTags> {
         self.propagate_tags.as_ref()
     }
+    /// <p>Defines how Amazon ECS Managed Instances optimizes the infrastastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle or underutilized EC2 instances optimization delay.</p>
+    pub fn infrastructure_optimization(&self) -> ::std::option::Option<&crate::types::InfrastructureOptimization> {
+        self.infrastructure_optimization.as_ref()
+    }
 }
 impl ManagedInstancesProvider {
     /// Creates a new builder-style object to manufacture [`ManagedInstancesProvider`](crate::types::ManagedInstancesProvider).
@@ -43,6 +49,7 @@ pub struct ManagedInstancesProviderBuilder {
     pub(crate) infrastructure_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_launch_template: ::std::option::Option<crate::types::InstanceLaunchTemplate>,
     pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateMiTags>,
+    pub(crate) infrastructure_optimization: ::std::option::Option<crate::types::InfrastructureOptimization>,
 }
 impl ManagedInstancesProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure role that Amazon ECS assumes to manage instances. This role must include permissions for Amazon EC2 instance lifecycle management, networking, and any additional Amazon Web Services services required for your workloads.</p>
@@ -93,12 +100,27 @@ impl ManagedInstancesProviderBuilder {
     pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateMiTags> {
         &self.propagate_tags
     }
+    /// <p>Defines how Amazon ECS Managed Instances optimizes the infrastastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle or underutilized EC2 instances optimization delay.</p>
+    pub fn infrastructure_optimization(mut self, input: crate::types::InfrastructureOptimization) -> Self {
+        self.infrastructure_optimization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines how Amazon ECS Managed Instances optimizes the infrastastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle or underutilized EC2 instances optimization delay.</p>
+    pub fn set_infrastructure_optimization(mut self, input: ::std::option::Option<crate::types::InfrastructureOptimization>) -> Self {
+        self.infrastructure_optimization = input;
+        self
+    }
+    /// <p>Defines how Amazon ECS Managed Instances optimizes the infrastastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle or underutilized EC2 instances optimization delay.</p>
+    pub fn get_infrastructure_optimization(&self) -> &::std::option::Option<crate::types::InfrastructureOptimization> {
+        &self.infrastructure_optimization
+    }
     /// Consumes the builder and constructs a [`ManagedInstancesProvider`](crate::types::ManagedInstancesProvider).
     pub fn build(self) -> crate::types::ManagedInstancesProvider {
         crate::types::ManagedInstancesProvider {
             infrastructure_role_arn: self.infrastructure_role_arn,
             instance_launch_template: self.instance_launch_template,
             propagate_tags: self.propagate_tags,
+            infrastructure_optimization: self.infrastructure_optimization,
         }
     }
 }

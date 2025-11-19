@@ -253,19 +253,33 @@ impl CreateDomainNameFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub fn security_policy(mut self, input: crate::types::SecurityPolicy) -> Self {
         self.inner = self.inner.security_policy(input);
         self
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub fn set_security_policy(mut self, input: ::std::option::Option<crate::types::SecurityPolicy>) -> Self {
         self.inner = self.inner.set_security_policy(input);
         self
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub fn get_security_policy(&self) -> &::std::option::Option<crate::types::SecurityPolicy> {
         self.inner.get_security_policy()
+    }
+    /// <p>The endpoint access mode of the DomainName. Only available for DomainNames that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn endpoint_access_mode(mut self, input: crate::types::EndpointAccessMode) -> Self {
+        self.inner = self.inner.endpoint_access_mode(input);
+        self
+    }
+    /// <p>The endpoint access mode of the DomainName. Only available for DomainNames that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn set_endpoint_access_mode(mut self, input: ::std::option::Option<crate::types::EndpointAccessMode>) -> Self {
+        self.inner = self.inner.set_endpoint_access_mode(input);
+        self
+    }
+    /// <p>The endpoint access mode of the DomainName. Only available for DomainNames that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn get_endpoint_access_mode(&self) -> &::std::option::Option<crate::types::EndpointAccessMode> {
+        self.inner.get_endpoint_access_mode()
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub fn mutual_tls_authentication(mut self, input: crate::types::MutualTlsAuthenticationInput) -> Self {

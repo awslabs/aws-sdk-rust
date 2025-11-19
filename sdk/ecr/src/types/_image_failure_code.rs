@@ -12,6 +12,7 @@
 /// ```text
 /// # let imagefailurecode = unimplemented!();
 /// match imagefailurecode {
+///     ImageFailureCode::ImageInaccessible => { /* ... */ },
 ///     ImageFailureCode::ImageNotFound => { /* ... */ },
 ///     ImageFailureCode::ImageReferencedByManifestList => { /* ... */ },
 ///     ImageFailureCode::ImageTagDoesNotMatchDigest => { /* ... */ },
@@ -51,6 +52,8 @@
 )]
 pub enum ImageFailureCode {
     #[allow(missing_docs)] // documentation missing in model
+    ImageInaccessible,
+    #[allow(missing_docs)] // documentation missing in model
     ImageNotFound,
     #[allow(missing_docs)] // documentation missing in model
     ImageReferencedByManifestList,
@@ -77,6 +80,7 @@ pub enum ImageFailureCode {
 impl ::std::convert::From<&str> for ImageFailureCode {
     fn from(s: &str) -> Self {
         match s {
+            "ImageInaccessible" => ImageFailureCode::ImageInaccessible,
             "ImageNotFound" => ImageFailureCode::ImageNotFound,
             "ImageReferencedByManifestList" => ImageFailureCode::ImageReferencedByManifestList,
             "ImageTagDoesNotMatchDigest" => ImageFailureCode::ImageTagDoesNotMatchDigest,
@@ -102,6 +106,7 @@ impl ImageFailureCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ImageFailureCode::ImageInaccessible => "ImageInaccessible",
             ImageFailureCode::ImageNotFound => "ImageNotFound",
             ImageFailureCode::ImageReferencedByManifestList => "ImageReferencedByManifestList",
             ImageFailureCode::ImageTagDoesNotMatchDigest => "ImageTagDoesNotMatchDigest",
@@ -118,6 +123,7 @@ impl ImageFailureCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ImageInaccessible",
             "ImageNotFound",
             "ImageReferencedByManifestList",
             "ImageTagDoesNotMatchDigest",
@@ -151,6 +157,7 @@ impl ImageFailureCode {
 impl ::std::fmt::Display for ImageFailureCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ImageFailureCode::ImageInaccessible => write!(f, "ImageInaccessible"),
             ImageFailureCode::ImageNotFound => write!(f, "ImageNotFound"),
             ImageFailureCode::ImageReferencedByManifestList => write!(f, "ImageReferencedByManifestList"),
             ImageFailureCode::ImageTagDoesNotMatchDigest => write!(f, "ImageTagDoesNotMatchDigest"),

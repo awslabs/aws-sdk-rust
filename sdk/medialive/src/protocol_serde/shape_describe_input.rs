@@ -229,6 +229,9 @@ pub(crate) fn de_describe_input(
                             .transpose()?,
                     );
                 }
+                "routerSettings" => {
+                    builder = builder.set_router_settings(crate::protocol_serde::shape_router_input_settings::de_router_input_settings(tokens)?);
+                }
                 "sdiSources" => {
                     builder = builder.set_sdi_sources(crate::protocol_serde::shape_input_sdi_sources::de_input_sdi_sources(tokens)?);
                 }

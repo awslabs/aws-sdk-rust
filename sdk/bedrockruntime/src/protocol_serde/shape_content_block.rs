@@ -61,6 +61,12 @@ pub fn ser_content_block(
             crate::protocol_serde::shape_citations_content_block::ser_citations_content_block(&mut object_9, inner)?;
             object_9.finish();
         }
+        crate::types::ContentBlock::SearchResult(inner) => {
+            #[allow(unused_mut)]
+            let mut object_10 = object_3.key("searchResult").start_object();
+            crate::protocol_serde::shape_search_result_block::ser_search_result_block(&mut object_10, inner)?;
+            object_10.finish();
+        }
         crate::types::ContentBlock::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ContentBlock")),
     }
     Ok(())
@@ -143,6 +149,11 @@ where
                         "citationsContent" => Some(crate::types::ContentBlock::CitationsContent(
                             crate::protocol_serde::shape_citations_content_block::de_citations_content_block(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'citationsContent' cannot be null")
+                            })?,
+                        )),
+                        "searchResult" => Some(crate::types::ContentBlock::SearchResult(
+                            crate::protocol_serde::shape_search_result_block::de_search_result_block(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'searchResult' cannot be null")
                             })?,
                         )),
                         _ => {

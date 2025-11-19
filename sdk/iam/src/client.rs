@@ -313,11 +313,15 @@ mod disable_organizations_root_credentials_management;
 
 mod disable_organizations_root_sessions;
 
+mod disable_outbound_web_identity_federation;
+
 mod enable_mfa_device;
 
 mod enable_organizations_root_credentials_management;
 
 mod enable_organizations_root_sessions;
+
+mod enable_outbound_web_identity_federation;
 
 mod generate_credential_report;
 
@@ -356,6 +360,8 @@ mod get_mfa_device;
 mod get_open_id_connect_provider;
 
 mod get_organizations_access_report;
+
+mod get_outbound_web_identity_federation_info;
 
 mod get_policy;
 

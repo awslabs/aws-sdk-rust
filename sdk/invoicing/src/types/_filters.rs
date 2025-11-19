@@ -10,6 +10,8 @@ pub struct Filters {
     pub invoice_receivers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>You can specify a list of Amazon Web Services account IDs inside filters to return invoice units that match only the specified accounts. If multiple accounts are provided, the result is an <code>OR</code> condition (match any) of the specified accounts. The specified account IDs are matched with either the receiver or the linked accounts in the rules.</p>
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of Amazon Web Services account account IDs used to filter invoice units. These are payer accounts from other Organizations that have delegated their billing responsibility to the receiver account through the billing transfer feature.</p>
+    pub bill_source_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filters {
     /// <p>An optional input to the list API. You can specify a list of invoice unit names inside filters to return invoice units that match only the specified invoice unit names. If multiple names are provided, the result is an <code>OR</code> condition (match any) of the specified invoice unit names.</p>
@@ -30,6 +32,12 @@ impl Filters {
     pub fn accounts(&self) -> &[::std::string::String] {
         self.accounts.as_deref().unwrap_or_default()
     }
+    /// <p>A list of Amazon Web Services account account IDs used to filter invoice units. These are payer accounts from other Organizations that have delegated their billing responsibility to the receiver account through the billing transfer feature.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bill_source_accounts.is_none()`.
+    pub fn bill_source_accounts(&self) -> &[::std::string::String] {
+        self.bill_source_accounts.as_deref().unwrap_or_default()
+    }
 }
 impl Filters {
     /// Creates a new builder-style object to manufacture [`Filters`](crate::types::Filters).
@@ -45,6 +53,7 @@ pub struct FiltersBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) invoice_receivers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bill_source_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FiltersBuilder {
     /// Appends an item to `names`.
@@ -107,12 +116,33 @@ impl FiltersBuilder {
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.accounts
     }
+    /// Appends an item to `bill_source_accounts`.
+    ///
+    /// To override the contents of this collection use [`set_bill_source_accounts`](Self::set_bill_source_accounts).
+    ///
+    /// <p>A list of Amazon Web Services account account IDs used to filter invoice units. These are payer accounts from other Organizations that have delegated their billing responsibility to the receiver account through the billing transfer feature.</p>
+    pub fn bill_source_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.bill_source_accounts.unwrap_or_default();
+        v.push(input.into());
+        self.bill_source_accounts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Web Services account account IDs used to filter invoice units. These are payer accounts from other Organizations that have delegated their billing responsibility to the receiver account through the billing transfer feature.</p>
+    pub fn set_bill_source_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.bill_source_accounts = input;
+        self
+    }
+    /// <p>A list of Amazon Web Services account account IDs used to filter invoice units. These are payer accounts from other Organizations that have delegated their billing responsibility to the receiver account through the billing transfer feature.</p>
+    pub fn get_bill_source_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bill_source_accounts
+    }
     /// Consumes the builder and constructs a [`Filters`](crate::types::Filters).
     pub fn build(self) -> crate::types::Filters {
         crate::types::Filters {
             names: self.names,
             invoice_receivers: self.invoice_receivers,
             accounts: self.accounts,
+            bill_source_accounts: self.bill_source_accounts,
         }
     }
 }

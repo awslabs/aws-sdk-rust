@@ -75,5 +75,11 @@ pub fn ser_create_endpoint_config_input_input(
     if let Some(var_24) = &input.enable_network_isolation {
         object.key("EnableNetworkIsolation").boolean(*var_24);
     }
+    if let Some(var_25) = &input.metrics_config {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("MetricsConfig").start_object();
+        crate::protocol_serde::shape_metrics_config::ser_metrics_config(&mut object_26, var_25)?;
+        object_26.finish();
+    }
     Ok(())
 }

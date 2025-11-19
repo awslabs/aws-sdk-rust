@@ -9,6 +9,8 @@ pub use crate::types::_layers_list_item::LayersListItemBuilder;
 
 pub use crate::types::_function_configuration::FunctionConfigurationBuilder;
 
+pub use crate::types::_tenancy_config::TenancyConfigBuilder;
+
 pub use crate::types::_logging_config::LoggingConfigBuilder;
 
 pub use crate::types::_runtime_version_config::RuntimeVersionConfigBuilder;

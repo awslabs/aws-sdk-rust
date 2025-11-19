@@ -146,6 +146,20 @@ pub trait Waiters {
     fn wait_until_flow_deleted(&self) -> crate::waiters::flow_deleted::FlowDeletedFluentBuilder;
     /// Wait until a flow is in standby mode
     fn wait_until_flow_standby(&self) -> crate::waiters::flow_standby::FlowStandbyFluentBuilder;
+    /// Wait until the Input is STANDBY
+    fn wait_until_input_standby(&self) -> crate::waiters::input_standby::InputStandbyFluentBuilder;
+    /// Wait until the Input is deleted
+    fn wait_until_input_deleted(&self) -> crate::waiters::input_deleted::InputDeletedFluentBuilder;
+    /// Wait until the Input is ACTIVE
+    fn wait_until_input_active(&self) -> crate::waiters::input_active::InputActiveFluentBuilder;
+    /// Wait until the Output is deleted
+    fn wait_until_output_deleted(&self) -> crate::waiters::output_deleted::OutputDeletedFluentBuilder;
+    /// Wait until the Output is ACTIVE
+    fn wait_until_output_active(&self) -> crate::waiters::output_active::OutputActiveFluentBuilder;
+    /// Wait until the Output is STANDBY
+    fn wait_until_output_standby(&self) -> crate::waiters::output_standby::OutputStandbyFluentBuilder;
+    /// Wait until the Output is ROUTED
+    fn wait_until_output_routed(&self) -> crate::waiters::output_routed::OutputRoutedFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_flow_active(&self) -> crate::waiters::flow_active::FlowActiveFluentBuilder {
@@ -156,6 +170,27 @@ impl Waiters for Client {
     }
     fn wait_until_flow_standby(&self) -> crate::waiters::flow_standby::FlowStandbyFluentBuilder {
         crate::waiters::flow_standby::FlowStandbyFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_input_standby(&self) -> crate::waiters::input_standby::InputStandbyFluentBuilder {
+        crate::waiters::input_standby::InputStandbyFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_input_deleted(&self) -> crate::waiters::input_deleted::InputDeletedFluentBuilder {
+        crate::waiters::input_deleted::InputDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_input_active(&self) -> crate::waiters::input_active::InputActiveFluentBuilder {
+        crate::waiters::input_active::InputActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_output_deleted(&self) -> crate::waiters::output_deleted::OutputDeletedFluentBuilder {
+        crate::waiters::output_deleted::OutputDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_output_active(&self) -> crate::waiters::output_active::OutputActiveFluentBuilder {
+        crate::waiters::output_active::OutputActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_output_standby(&self) -> crate::waiters::output_standby::OutputStandbyFluentBuilder {
+        crate::waiters::output_standby::OutputStandbyFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_output_routed(&self) -> crate::waiters::output_routed::OutputRoutedFluentBuilder {
+        crate::waiters::output_routed::OutputRoutedFluentBuilder::new(self.handle.clone())
     }
 }
 
@@ -187,11 +222,23 @@ mod add_flow_sources;
 
 mod add_flow_vpc_interfaces;
 
+mod batch_get_router_input;
+
+mod batch_get_router_network_interface;
+
+mod batch_get_router_output;
+
 mod create_bridge;
 
 mod create_flow;
 
 mod create_gateway;
+
+mod create_router_input;
+
+mod create_router_network_interface;
+
+mod create_router_output;
 
 /// Operation customization and supporting types.
 ///
@@ -226,6 +273,12 @@ mod delete_flow;
 
 mod delete_gateway;
 
+mod delete_router_input;
+
+mod delete_router_network_interface;
+
+mod delete_router_output;
+
 mod deregister_gateway_instance;
 
 mod describe_bridge;
@@ -244,6 +297,16 @@ mod describe_offering;
 
 mod describe_reservation;
 
+mod get_router_input;
+
+mod get_router_input_source_metadata;
+
+mod get_router_input_thumbnail;
+
+mod get_router_network_interface;
+
+mod get_router_output;
+
 mod grant_flow_entitlements;
 
 mod list_bridges;
@@ -259,6 +322,14 @@ mod list_gateways;
 mod list_offerings;
 
 mod list_reservations;
+
+mod list_router_inputs;
+
+mod list_router_network_interfaces;
+
+mod list_router_outputs;
+
+mod list_tags_for_global_resource;
 
 mod list_tags_for_resource;
 
@@ -276,13 +347,31 @@ mod remove_flow_source;
 
 mod remove_flow_vpc_interface;
 
+mod restart_router_input;
+
+mod restart_router_output;
+
 mod revoke_flow_entitlement;
 
 mod start_flow;
 
+mod start_router_input;
+
+mod start_router_output;
+
 mod stop_flow;
 
+mod stop_router_input;
+
+mod stop_router_output;
+
+mod tag_global_resource;
+
 mod tag_resource;
+
+mod take_router_input;
+
+mod untag_global_resource;
 
 mod untag_resource;
 
@@ -305,3 +394,9 @@ mod update_flow_output;
 mod update_flow_source;
 
 mod update_gateway_instance;
+
+mod update_router_input;
+
+mod update_router_network_interface;
+
+mod update_router_output;

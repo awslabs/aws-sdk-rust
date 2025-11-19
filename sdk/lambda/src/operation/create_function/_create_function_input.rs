@@ -74,6 +74,8 @@ pub struct CreateFunctionInput {
     pub snap_start: ::std::option::Option<crate::types::SnapStart>,
     /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
+    pub tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
 }
 impl CreateFunctionInput {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -201,6 +203,10 @@ impl CreateFunctionInput {
     pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
+    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
+    pub fn tenancy_config(&self) -> ::std::option::Option<&crate::types::TenancyConfig> {
+        self.tenancy_config.as_ref()
+    }
 }
 impl CreateFunctionInput {
     /// Creates a new builder-style object to manufacture [`CreateFunctionInput`](crate::operation::create_function::CreateFunctionInput).
@@ -237,6 +243,7 @@ pub struct CreateFunctionInputBuilder {
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) snap_start: ::std::option::Option<crate::types::SnapStart>,
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    pub(crate) tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
 }
 impl CreateFunctionInputBuilder {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -671,6 +678,20 @@ impl CreateFunctionInputBuilder {
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
         &self.logging_config
     }
+    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
+    pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
+        self.tenancy_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
+    pub fn set_tenancy_config(mut self, input: ::std::option::Option<crate::types::TenancyConfig>) -> Self {
+        self.tenancy_config = input;
+        self
+    }
+    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
+    pub fn get_tenancy_config(&self) -> &::std::option::Option<crate::types::TenancyConfig> {
+        &self.tenancy_config
+    }
     /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::operation::create_function::CreateFunctionInput).
     pub fn build(
         self,
@@ -700,6 +721,7 @@ impl CreateFunctionInputBuilder {
             ephemeral_storage: self.ephemeral_storage,
             snap_start: self.snap_start,
             logging_config: self.logging_config,
+            tenancy_config: self.tenancy_config,
         })
     }
 }

@@ -171,37 +171,121 @@ impl RotateSecretFluentBuilder {
     pub fn get_rotation_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rotation_lambda_arn()
     }
-    /// <p>A structure that defines the rotation configuration for this secret.</p>
+    /// <p>A structure that defines the rotation configuration for this secret.</p><important>
+    /// <p>When changing an existing rotation schedule and setting <code>RotateImmediately</code> to <code>false</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using <code>AutomaticallyAfterDays</code> or a <code>ScheduleExpression</code> with <code>rate()</code>, the previously scheduled rotation might still occur.</p></li>
+    /// <li>
+    /// <p>To prevent unintended rotations, use a <code>ScheduleExpression</code> with <code>cron()</code> for granular control over rotation windows.</p></li>
+    /// </ul>
+    /// </important>
     pub fn rotation_rules(mut self, input: crate::types::RotationRulesType) -> Self {
         self.inner = self.inner.rotation_rules(input);
         self
     }
-    /// <p>A structure that defines the rotation configuration for this secret.</p>
+    /// <p>A structure that defines the rotation configuration for this secret.</p><important>
+    /// <p>When changing an existing rotation schedule and setting <code>RotateImmediately</code> to <code>false</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using <code>AutomaticallyAfterDays</code> or a <code>ScheduleExpression</code> with <code>rate()</code>, the previously scheduled rotation might still occur.</p></li>
+    /// <li>
+    /// <p>To prevent unintended rotations, use a <code>ScheduleExpression</code> with <code>cron()</code> for granular control over rotation windows.</p></li>
+    /// </ul>
+    /// </important>
     pub fn set_rotation_rules(mut self, input: ::std::option::Option<crate::types::RotationRulesType>) -> Self {
         self.inner = self.inner.set_rotation_rules(input);
         self
     }
-    /// <p>A structure that defines the rotation configuration for this secret.</p>
+    /// <p>A structure that defines the rotation configuration for this secret.</p><important>
+    /// <p>When changing an existing rotation schedule and setting <code>RotateImmediately</code> to <code>false</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using <code>AutomaticallyAfterDays</code> or a <code>ScheduleExpression</code> with <code>rate()</code>, the previously scheduled rotation might still occur.</p></li>
+    /// <li>
+    /// <p>To prevent unintended rotations, use a <code>ScheduleExpression</code> with <code>cron()</code> for granular control over rotation windows.</p></li>
+    /// </ul>
+    /// </important>
     pub fn get_rotation_rules(&self) -> &::std::option::Option<crate::types::RotationRulesType> {
         self.inner.get_rotation_rules()
     }
+    ///
+    /// Appends an item to `ExternalSecretRotationMetadata`.
+    ///
+    /// To override the contents of this collection use [`set_external_secret_rotation_metadata`](Self::set_external_secret_rotation_metadata).
+    ///
+    /// <p>The metadata needed to successfully rotate a managed external secret. A list of key value pairs in JSON format specified by the partner. For more information about the required information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a></p>
+    pub fn external_secret_rotation_metadata(mut self, input: crate::types::ExternalSecretRotationMetadataItem) -> Self {
+        self.inner = self.inner.external_secret_rotation_metadata(input);
+        self
+    }
+    /// <p>The metadata needed to successfully rotate a managed external secret. A list of key value pairs in JSON format specified by the partner. For more information about the required information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a></p>
+    pub fn set_external_secret_rotation_metadata(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalSecretRotationMetadataItem>>,
+    ) -> Self {
+        self.inner = self.inner.set_external_secret_rotation_metadata(input);
+        self
+    }
+    /// <p>The metadata needed to successfully rotate a managed external secret. A list of key value pairs in JSON format specified by the partner. For more information about the required information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a></p>
+    pub fn get_external_secret_rotation_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalSecretRotationMetadataItem>> {
+        self.inner.get_external_secret_rotation_metadata()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that allows Secrets Manager to rotate a secret held by a third-party partner. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-security.html">Security and permissions</a>.</p>
+    pub fn external_secret_rotation_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.external_secret_rotation_role_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that allows Secrets Manager to rotate a secret held by a third-party partner. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-security.html">Security and permissions</a>.</p>
+    pub fn set_external_secret_rotation_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_external_secret_rotation_role_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that allows Secrets Manager to rotate a secret held by a third-party partner. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-security.html">Security and permissions</a>.</p>
+    pub fn get_external_secret_rotation_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_external_secret_rotation_role_arn()
+    }
     /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
-    /// <p>For secrets that use a Lambda rotation function to rotate, if you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_lambda-functions.html#rotate-secrets_lambda-functions-code"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
-    /// <p>By default, Secrets Manager rotates the secret immediately.</p>
+    /// <p>The default for <code>RotateImmediately</code> is <code>true</code>. If you don't specify this value, Secrets Manager rotates the secret immediately.</p>
+    /// <p>If you set <code>RotateImmediately</code> to <code>false</code>, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. This test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+    /// <p>When changing an existing rotation schedule and setting <code>RotateImmediately</code> to <code>false</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using <code>AutomaticallyAfterDays</code> or a <code>ScheduleExpression</code> with <code>rate()</code>, the previously scheduled rotation might still occur.</p></li>
+    /// <li>
+    /// <p>To prevent unintended rotations, use a <code>ScheduleExpression</code> with <code>cron()</code> for granular control over rotation windows.</p></li>
+    /// </ul>
+    /// <p>Rotation is an asynchronous process. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     pub fn rotate_immediately(mut self, input: bool) -> Self {
         self.inner = self.inner.rotate_immediately(input);
         self
     }
     /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
-    /// <p>For secrets that use a Lambda rotation function to rotate, if you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_lambda-functions.html#rotate-secrets_lambda-functions-code"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
-    /// <p>By default, Secrets Manager rotates the secret immediately.</p>
+    /// <p>The default for <code>RotateImmediately</code> is <code>true</code>. If you don't specify this value, Secrets Manager rotates the secret immediately.</p>
+    /// <p>If you set <code>RotateImmediately</code> to <code>false</code>, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. This test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+    /// <p>When changing an existing rotation schedule and setting <code>RotateImmediately</code> to <code>false</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using <code>AutomaticallyAfterDays</code> or a <code>ScheduleExpression</code> with <code>rate()</code>, the previously scheduled rotation might still occur.</p></li>
+    /// <li>
+    /// <p>To prevent unintended rotations, use a <code>ScheduleExpression</code> with <code>cron()</code> for granular control over rotation windows.</p></li>
+    /// </ul>
+    /// <p>Rotation is an asynchronous process. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     pub fn set_rotate_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_rotate_immediately(input);
         self
     }
     /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
-    /// <p>For secrets that use a Lambda rotation function to rotate, if you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_lambda-functions.html#rotate-secrets_lambda-functions-code"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
-    /// <p>By default, Secrets Manager rotates the secret immediately.</p>
+    /// <p>The default for <code>RotateImmediately</code> is <code>true</code>. If you don't specify this value, Secrets Manager rotates the secret immediately.</p>
+    /// <p>If you set <code>RotateImmediately</code> to <code>false</code>, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. This test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+    /// <p>When changing an existing rotation schedule and setting <code>RotateImmediately</code> to <code>false</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If using <code>AutomaticallyAfterDays</code> or a <code>ScheduleExpression</code> with <code>rate()</code>, the previously scheduled rotation might still occur.</p></li>
+    /// <li>
+    /// <p>To prevent unintended rotations, use a <code>ScheduleExpression</code> with <code>cron()</code> for granular control over rotation windows.</p></li>
+    /// </ul>
+    /// <p>Rotation is an asynchronous process. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
     pub fn get_rotate_immediately(&self) -> &::std::option::Option<bool> {
         self.inner.get_rotate_immediately()
     }

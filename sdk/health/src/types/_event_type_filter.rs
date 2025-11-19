@@ -10,6 +10,10 @@ pub struct EventTypeFilter {
     pub services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
+    /// <p>A list of actionability values to filter event types. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>.</p>
+    pub actionabilities: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeActionability>>,
+    /// <p>A list of persona classifications to filter event types. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>.</p>
+    pub personas: ::std::option::Option<::std::vec::Vec<crate::types::EventTypePersona>>,
 }
 impl EventTypeFilter {
     /// <p>A list of event type codes.</p>
@@ -30,6 +34,18 @@ impl EventTypeFilter {
     pub fn event_type_categories(&self) -> &[crate::types::EventTypeCategory] {
         self.event_type_categories.as_deref().unwrap_or_default()
     }
+    /// <p>A list of actionability values to filter event types. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actionabilities.is_none()`.
+    pub fn actionabilities(&self) -> &[crate::types::EventTypeActionability] {
+        self.actionabilities.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of persona classifications to filter event types. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.personas.is_none()`.
+    pub fn personas(&self) -> &[crate::types::EventTypePersona] {
+        self.personas.as_deref().unwrap_or_default()
+    }
 }
 impl EventTypeFilter {
     /// Creates a new builder-style object to manufacture [`EventTypeFilter`](crate::types::EventTypeFilter).
@@ -45,6 +61,8 @@ pub struct EventTypeFilterBuilder {
     pub(crate) event_type_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
+    pub(crate) actionabilities: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeActionability>>,
+    pub(crate) personas: ::std::option::Option<::std::vec::Vec<crate::types::EventTypePersona>>,
 }
 impl EventTypeFilterBuilder {
     /// Appends an item to `event_type_codes`.
@@ -107,12 +125,54 @@ impl EventTypeFilterBuilder {
     pub fn get_event_type_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>> {
         &self.event_type_categories
     }
+    /// Appends an item to `actionabilities`.
+    ///
+    /// To override the contents of this collection use [`set_actionabilities`](Self::set_actionabilities).
+    ///
+    /// <p>A list of actionability values to filter event types. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>.</p>
+    pub fn actionabilities(mut self, input: crate::types::EventTypeActionability) -> Self {
+        let mut v = self.actionabilities.unwrap_or_default();
+        v.push(input);
+        self.actionabilities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of actionability values to filter event types. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>.</p>
+    pub fn set_actionabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeActionability>>) -> Self {
+        self.actionabilities = input;
+        self
+    }
+    /// <p>A list of actionability values to filter event types. Possible values are <code>ACTION_REQUIRED</code>, <code>ACTION_MAY_BE_REQUIRED</code> and <code>INFORMATIONAL</code>.</p>
+    pub fn get_actionabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeActionability>> {
+        &self.actionabilities
+    }
+    /// Appends an item to `personas`.
+    ///
+    /// To override the contents of this collection use [`set_personas`](Self::set_personas).
+    ///
+    /// <p>A list of persona classifications to filter event types. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>.</p>
+    pub fn personas(mut self, input: crate::types::EventTypePersona) -> Self {
+        let mut v = self.personas.unwrap_or_default();
+        v.push(input);
+        self.personas = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of persona classifications to filter event types. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>.</p>
+    pub fn set_personas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTypePersona>>) -> Self {
+        self.personas = input;
+        self
+    }
+    /// <p>A list of persona classifications to filter event types. Possible values are <code>OPERATIONS</code>, <code>SECURITY</code>, and <code>BILLING</code>.</p>
+    pub fn get_personas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypePersona>> {
+        &self.personas
+    }
     /// Consumes the builder and constructs a [`EventTypeFilter`](crate::types::EventTypeFilter).
     pub fn build(self) -> crate::types::EventTypeFilter {
         crate::types::EventTypeFilter {
             event_type_codes: self.event_type_codes,
             services: self.services,
             event_type_categories: self.event_type_categories,
+            actionabilities: self.actionabilities,
+            personas: self.personas,
         }
     }
 }

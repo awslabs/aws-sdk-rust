@@ -23,6 +23,12 @@ pub enum Error {
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>The request to create a new router input would exceed the service quotas for the account.</p>
+    RouterInputServiceQuotaExceededException(crate::types::error::RouterInputServiceQuotaExceededException),
+    /// <p>The request to create a new router network interface would exceed the service quotas (limits) set for the account.</p>
+    RouterNetworkInterfaceServiceQuotaExceededException(crate::types::error::RouterNetworkInterfaceServiceQuotaExceededException),
+    /// <p>The request to create a new router output would exceed the service quotas (limits) set for the account.</p>
+    RouterOutputServiceQuotaExceededException(crate::types::error::RouterOutputServiceQuotaExceededException),
     /// <p>The service is currently unavailable or busy.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
@@ -49,6 +55,9 @@ impl ::std::fmt::Display for Error {
             Error::GrantFlowEntitlements420Exception(inner) => inner.fmt(f),
             Error::InternalServerErrorException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
+            Error::RouterInputServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::RouterNetworkInterfaceServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::RouterOutputServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -82,6 +91,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::GrantFlowEntitlements420Exception(inner) => inner.meta(),
             Self::InternalServerErrorException(inner) => inner.meta(),
             Self::NotFoundException(inner) => inner.meta(),
+            Self::RouterInputServiceQuotaExceededException(inner) => inner.meta(),
+            Self::RouterNetworkInterfaceServiceQuotaExceededException(inner) => inner.meta(),
+            Self::RouterOutputServiceQuotaExceededException(inner) => inner.meta(),
             Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::TooManyRequestsException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -279,6 +291,119 @@ impl From<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_router_input::BatchGetRouterInputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_router_input::BatchGetRouterInputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_router_input::BatchGetRouterInputError> for Error {
+    fn from(err: crate::operation::batch_get_router_input::BatchGetRouterInputError) -> Self {
+        match err {
+            crate::operation::batch_get_router_input::BatchGetRouterInputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::batch_get_router_input::BatchGetRouterInputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_get_router_input::BatchGetRouterInputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::batch_get_router_input::BatchGetRouterInputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::batch_get_router_input::BatchGetRouterInputError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::batch_get_router_input::BatchGetRouterInputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_router_network_interface::BatchGetRouterNetworkInterfaceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_router_network_interface::BatchGetRouterNetworkInterfaceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_router_network_interface::BatchGetRouterNetworkInterfaceError> for Error {
+    fn from(err: crate::operation::batch_get_router_network_interface::BatchGetRouterNetworkInterfaceError) -> Self {
+        match err {
+            crate::operation::batch_get_router_network_interface::BatchGetRouterNetworkInterfaceError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::batch_get_router_network_interface::BatchGetRouterNetworkInterfaceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::batch_get_router_network_interface::BatchGetRouterNetworkInterfaceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::batch_get_router_network_interface::BatchGetRouterNetworkInterfaceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::batch_get_router_network_interface::BatchGetRouterNetworkInterfaceError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::batch_get_router_network_interface::BatchGetRouterNetworkInterfaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_router_output::BatchGetRouterOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_router_output::BatchGetRouterOutputError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_router_output::BatchGetRouterOutputError> for Error {
+    fn from(err: crate::operation::batch_get_router_output::BatchGetRouterOutputError) -> Self {
+        match err {
+            crate::operation::batch_get_router_output::BatchGetRouterOutputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::batch_get_router_output::BatchGetRouterOutputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_get_router_output::BatchGetRouterOutputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::batch_get_router_output::BatchGetRouterOutputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::batch_get_router_output::BatchGetRouterOutputError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::batch_get_router_output::BatchGetRouterOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_bridge::CreateBridgeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -362,6 +487,111 @@ impl From<crate::operation::create_gateway::CreateGatewayError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_router_input::CreateRouterInputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_router_input::CreateRouterInputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_router_input::CreateRouterInputError> for Error {
+    fn from(err: crate::operation::create_router_input::CreateRouterInputError) -> Self {
+        match err {
+            crate::operation::create_router_input::CreateRouterInputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_router_input::CreateRouterInputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_router_input::CreateRouterInputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_router_input::CreateRouterInputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_router_input::CreateRouterInputError::RouterInputServiceQuotaExceededException(inner) => {
+                Error::RouterInputServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_router_input::CreateRouterInputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_router_input::CreateRouterInputError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_router_input::CreateRouterInputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError> for Error {
+    fn from(err: crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError) -> Self {
+        match err {
+            crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError::RouterNetworkInterfaceServiceQuotaExceededException(inner) => Error::RouterNetworkInterfaceServiceQuotaExceededException(inner),
+            crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_router_network_interface::CreateRouterNetworkInterfaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_router_output::CreateRouterOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_router_output::CreateRouterOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_router_output::CreateRouterOutputError> for Error {
+    fn from(err: crate::operation::create_router_output::CreateRouterOutputError) -> Self {
+        match err {
+            crate::operation::create_router_output::CreateRouterOutputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_router_output::CreateRouterOutputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_router_output::CreateRouterOutputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_router_output::CreateRouterOutputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_router_output::CreateRouterOutputError::RouterOutputServiceQuotaExceededException(inner) => {
+                Error::RouterOutputServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_router_output::CreateRouterOutputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_router_output::CreateRouterOutputError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_router_output::CreateRouterOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_bridge::DeleteBridgeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -442,6 +672,121 @@ impl From<crate::operation::delete_gateway::DeleteGatewayError> for Error {
             crate::operation::delete_gateway::DeleteGatewayError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_gateway::DeleteGatewayError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_gateway::DeleteGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_router_input::DeleteRouterInputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_router_input::DeleteRouterInputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_router_input::DeleteRouterInputError> for Error {
+    fn from(err: crate::operation::delete_router_input::DeleteRouterInputError) -> Self {
+        match err {
+            crate::operation::delete_router_input::DeleteRouterInputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_router_input::DeleteRouterInputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_router_input::DeleteRouterInputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_router_input::DeleteRouterInputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_router_input::DeleteRouterInputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_router_input::DeleteRouterInputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_router_input::DeleteRouterInputError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_router_input::DeleteRouterInputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError> for Error {
+    fn from(err: crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError) -> Self {
+        match err {
+            crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_router_network_interface::DeleteRouterNetworkInterfaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_router_output::DeleteRouterOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_router_output::DeleteRouterOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_router_output::DeleteRouterOutputError> for Error {
+    fn from(err: crate::operation::delete_router_output::DeleteRouterOutputError) -> Self {
+        match err {
+            crate::operation::delete_router_output::DeleteRouterOutputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_router_output::DeleteRouterOutputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_router_output::DeleteRouterOutputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_router_output::DeleteRouterOutputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_router_output::DeleteRouterOutputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_router_output::DeleteRouterOutputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_router_output::DeleteRouterOutputError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_router_output::DeleteRouterOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -764,6 +1109,197 @@ impl From<crate::operation::describe_reservation::DescribeReservationError> for 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_router_input::GetRouterInputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_router_input::GetRouterInputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_router_input::GetRouterInputError> for Error {
+    fn from(err: crate::operation::get_router_input::GetRouterInputError) -> Self {
+        match err {
+            crate::operation::get_router_input::GetRouterInputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_router_input::GetRouterInputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_router_input::GetRouterInputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_router_input::GetRouterInputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_router_input::GetRouterInputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_router_input::GetRouterInputError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_router_input::GetRouterInputError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_router_input::GetRouterInputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_router_input_source_metadata::GetRouterInputSourceMetadataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_router_input_source_metadata::GetRouterInputSourceMetadataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_router_input_source_metadata::GetRouterInputSourceMetadataError> for Error {
+    fn from(err: crate::operation::get_router_input_source_metadata::GetRouterInputSourceMetadataError) -> Self {
+        match err {
+            crate::operation::get_router_input_source_metadata::GetRouterInputSourceMetadataError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_router_input_source_metadata::GetRouterInputSourceMetadataError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_router_input_source_metadata::GetRouterInputSourceMetadataError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_router_input_source_metadata::GetRouterInputSourceMetadataError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_router_input_source_metadata::GetRouterInputSourceMetadataError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_router_input_source_metadata::GetRouterInputSourceMetadataError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_router_input_source_metadata::GetRouterInputSourceMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_router_input_thumbnail::GetRouterInputThumbnailError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_router_input_thumbnail::GetRouterInputThumbnailError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_router_input_thumbnail::GetRouterInputThumbnailError> for Error {
+    fn from(err: crate::operation::get_router_input_thumbnail::GetRouterInputThumbnailError) -> Self {
+        match err {
+            crate::operation::get_router_input_thumbnail::GetRouterInputThumbnailError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_router_input_thumbnail::GetRouterInputThumbnailError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_router_input_thumbnail::GetRouterInputThumbnailError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_router_input_thumbnail::GetRouterInputThumbnailError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_router_input_thumbnail::GetRouterInputThumbnailError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_router_input_thumbnail::GetRouterInputThumbnailError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_router_input_thumbnail::GetRouterInputThumbnailError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError> for Error {
+    fn from(err: crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError) -> Self {
+        match err {
+            crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_router_network_interface::GetRouterNetworkInterfaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_router_output::GetRouterOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_router_output::GetRouterOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_router_output::GetRouterOutputError> for Error {
+    fn from(err: crate::operation::get_router_output::GetRouterOutputError) -> Self {
+        match err {
+            crate::operation::get_router_output::GetRouterOutputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_router_output::GetRouterOutputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_router_output::GetRouterOutputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_router_output::GetRouterOutputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_router_output::GetRouterOutputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_router_output::GetRouterOutputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_router_output::GetRouterOutputError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_router_output::GetRouterOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -991,6 +1527,142 @@ impl From<crate::operation::list_reservations::ListReservationsError> for Error 
             }
             crate::operation::list_reservations::ListReservationsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_reservations::ListReservationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_router_inputs::ListRouterInputsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_router_inputs::ListRouterInputsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_router_inputs::ListRouterInputsError> for Error {
+    fn from(err: crate::operation::list_router_inputs::ListRouterInputsError) -> Self {
+        match err {
+            crate::operation::list_router_inputs::ListRouterInputsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_router_inputs::ListRouterInputsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_router_inputs::ListRouterInputsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_router_inputs::ListRouterInputsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_router_inputs::ListRouterInputsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_router_inputs::ListRouterInputsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesError> for Error {
+    fn from(err: crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesError) -> Self {
+        match err {
+            crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_router_outputs::ListRouterOutputsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_router_outputs::ListRouterOutputsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_router_outputs::ListRouterOutputsError> for Error {
+    fn from(err: crate::operation::list_router_outputs::ListRouterOutputsError) -> Self {
+        match err {
+            crate::operation::list_router_outputs::ListRouterOutputsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_router_outputs::ListRouterOutputsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_router_outputs::ListRouterOutputsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_router_outputs::ListRouterOutputsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_router_outputs::ListRouterOutputsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_router_outputs::ListRouterOutputsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_global_resource::ListTagsForGlobalResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_global_resource::ListTagsForGlobalResourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_global_resource::ListTagsForGlobalResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_global_resource::ListTagsForGlobalResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_global_resource::ListTagsForGlobalResourceError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_tags_for_global_resource::ListTagsForGlobalResourceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_tags_for_global_resource::ListTagsForGlobalResourceError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_tags_for_global_resource::ListTagsForGlobalResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1252,6 +1924,74 @@ impl From<crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceErr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restart_router_input::RestartRouterInputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restart_router_input::RestartRouterInputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::restart_router_input::RestartRouterInputError> for Error {
+    fn from(err: crate::operation::restart_router_input::RestartRouterInputError) -> Self {
+        match err {
+            crate::operation::restart_router_input::RestartRouterInputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::restart_router_input::RestartRouterInputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::restart_router_input::RestartRouterInputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::restart_router_input::RestartRouterInputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::restart_router_input::RestartRouterInputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::restart_router_input::RestartRouterInputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::restart_router_input::RestartRouterInputError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::restart_router_input::RestartRouterInputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restart_router_output::RestartRouterOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restart_router_output::RestartRouterOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::restart_router_output::RestartRouterOutputError> for Error {
+    fn from(err: crate::operation::restart_router_output::RestartRouterOutputError) -> Self {
+        match err {
+            crate::operation::restart_router_output::RestartRouterOutputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::restart_router_output::RestartRouterOutputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::restart_router_output::RestartRouterOutputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::restart_router_output::RestartRouterOutputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::restart_router_output::RestartRouterOutputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::restart_router_output::RestartRouterOutputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::restart_router_output::RestartRouterOutputError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::restart_router_output::RestartRouterOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1314,6 +2054,70 @@ impl From<crate::operation::start_flow::StartFlowError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_router_input::StartRouterInputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_router_input::StartRouterInputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_router_input::StartRouterInputError> for Error {
+    fn from(err: crate::operation::start_router_input::StartRouterInputError) -> Self {
+        match err {
+            crate::operation::start_router_input::StartRouterInputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_router_input::StartRouterInputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_router_input::StartRouterInputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::start_router_input::StartRouterInputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::start_router_input::StartRouterInputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_router_input::StartRouterInputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_router_input::StartRouterInputError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_router_input::StartRouterInputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_router_output::StartRouterOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_router_output::StartRouterOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_router_output::StartRouterOutputError> for Error {
+    fn from(err: crate::operation::start_router_output::StartRouterOutputError) -> Self {
+        match err {
+            crate::operation::start_router_output::StartRouterOutputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_router_output::StartRouterOutputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_router_output::StartRouterOutputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::start_router_output::StartRouterOutputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::start_router_output::StartRouterOutputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_router_output::StartRouterOutputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_router_output::StartRouterOutputError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::start_router_output::StartRouterOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_flow::StopFlowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1341,6 +2145,96 @@ impl From<crate::operation::stop_flow::StopFlowError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_router_input::StopRouterInputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_router_input::StopRouterInputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_router_input::StopRouterInputError> for Error {
+    fn from(err: crate::operation::stop_router_input::StopRouterInputError) -> Self {
+        match err {
+            crate::operation::stop_router_input::StopRouterInputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::stop_router_input::StopRouterInputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_router_input::StopRouterInputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::stop_router_input::StopRouterInputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::stop_router_input::StopRouterInputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::stop_router_input::StopRouterInputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::stop_router_input::StopRouterInputError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::stop_router_input::StopRouterInputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_router_output::StopRouterOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_router_output::StopRouterOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_router_output::StopRouterOutputError> for Error {
+    fn from(err: crate::operation::stop_router_output::StopRouterOutputError) -> Self {
+        match err {
+            crate::operation::stop_router_output::StopRouterOutputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::stop_router_output::StopRouterOutputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_router_output::StopRouterOutputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::stop_router_output::StopRouterOutputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::stop_router_output::StopRouterOutputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::stop_router_output::StopRouterOutputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::stop_router_output::StopRouterOutputError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::stop_router_output::StopRouterOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_global_resource::TagGlobalResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_global_resource::TagGlobalResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::tag_global_resource::TagGlobalResourceError> for Error {
+    fn from(err: crate::operation::tag_global_resource::TagGlobalResourceError) -> Self {
+        match err {
+            crate::operation::tag_global_resource::TagGlobalResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::tag_global_resource::TagGlobalResourceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::tag_global_resource::TagGlobalResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::tag_global_resource::TagGlobalResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1362,6 +2256,64 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::take_router_input::TakeRouterInputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::take_router_input::TakeRouterInputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::take_router_input::TakeRouterInputError> for Error {
+    fn from(err: crate::operation::take_router_input::TakeRouterInputError) -> Self {
+        match err {
+            crate::operation::take_router_input::TakeRouterInputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::take_router_input::TakeRouterInputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::take_router_input::TakeRouterInputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::take_router_input::TakeRouterInputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::take_router_input::TakeRouterInputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::take_router_input::TakeRouterInputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::take_router_input::TakeRouterInputError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::take_router_input::TakeRouterInputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_global_resource::UntagGlobalResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_global_resource::UntagGlobalResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::untag_global_resource::UntagGlobalResourceError> for Error {
+    fn from(err: crate::operation::untag_global_resource::UntagGlobalResourceError) -> Self {
+        match err {
+            crate::operation::untag_global_resource::UntagGlobalResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::untag_global_resource::UntagGlobalResourceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::untag_global_resource::UntagGlobalResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::untag_global_resource::UntagGlobalResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1712,6 +2664,118 @@ impl From<crate::operation::update_gateway_instance::UpdateGatewayInstanceError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_router_input::UpdateRouterInputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_router_input::UpdateRouterInputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_router_input::UpdateRouterInputError> for Error {
+    fn from(err: crate::operation::update_router_input::UpdateRouterInputError) -> Self {
+        match err {
+            crate::operation::update_router_input::UpdateRouterInputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_router_input::UpdateRouterInputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_router_input::UpdateRouterInputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_router_input::UpdateRouterInputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_router_input::UpdateRouterInputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_router_input::UpdateRouterInputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_router_input::UpdateRouterInputError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_router_input::UpdateRouterInputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_router_network_interface::UpdateRouterNetworkInterfaceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_router_network_interface::UpdateRouterNetworkInterfaceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_router_network_interface::UpdateRouterNetworkInterfaceError> for Error {
+    fn from(err: crate::operation::update_router_network_interface::UpdateRouterNetworkInterfaceError) -> Self {
+        match err {
+            crate::operation::update_router_network_interface::UpdateRouterNetworkInterfaceError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_router_network_interface::UpdateRouterNetworkInterfaceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_router_network_interface::UpdateRouterNetworkInterfaceError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_router_network_interface::UpdateRouterNetworkInterfaceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_router_network_interface::UpdateRouterNetworkInterfaceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_router_network_interface::UpdateRouterNetworkInterfaceError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_router_network_interface::UpdateRouterNetworkInterfaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_router_output::UpdateRouterOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_router_output::UpdateRouterOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_router_output::UpdateRouterOutputError> for Error {
+    fn from(err: crate::operation::update_router_output::UpdateRouterOutputError) -> Self {
+        match err {
+            crate::operation::update_router_output::UpdateRouterOutputError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_router_output::UpdateRouterOutputError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_router_output::UpdateRouterOutputError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_router_output::UpdateRouterOutputError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_router_output::UpdateRouterOutputError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_router_output::UpdateRouterOutputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_router_output::UpdateRouterOutputError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_router_output::UpdateRouterOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
 where
     O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
@@ -1737,6 +2801,9 @@ impl ::std::error::Error for Error {
             Error::GrantFlowEntitlements420Exception(inner) => inner.source(),
             Error::InternalServerErrorException(inner) => inner.source(),
             Error::NotFoundException(inner) => inner.source(),
+            Error::RouterInputServiceQuotaExceededException(inner) => inner.source(),
+            Error::RouterNetworkInterfaceServiceQuotaExceededException(inner) => inner.source(),
+            Error::RouterOutputServiceQuotaExceededException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -1756,6 +2823,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::GrantFlowEntitlements420Exception(e) => e.request_id(),
             Self::InternalServerErrorException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
+            Self::RouterInputServiceQuotaExceededException(e) => e.request_id(),
+            Self::RouterNetworkInterfaceServiceQuotaExceededException(e) => e.request_id(),
+            Self::RouterOutputServiceQuotaExceededException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
             Self::TooManyRequestsException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

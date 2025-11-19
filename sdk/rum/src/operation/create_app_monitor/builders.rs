@@ -253,4 +253,18 @@ impl CreateAppMonitorFluentBuilder {
     pub fn get_deobfuscation_configuration(&self) -> &::std::option::Option<crate::types::DeobfuscationConfiguration> {
         self.inner.get_deobfuscation_configuration()
     }
+    /// <p>The platform type for the app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications. If you omit this parameter, the default is <code>Web</code>.</p>
+    pub fn platform(mut self, input: crate::types::AppMonitorPlatform) -> Self {
+        self.inner = self.inner.platform(input);
+        self
+    }
+    /// <p>The platform type for the app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications. If you omit this parameter, the default is <code>Web</code>.</p>
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::AppMonitorPlatform>) -> Self {
+        self.inner = self.inner.set_platform(input);
+        self
+    }
+    /// <p>The platform type for the app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications. If you omit this parameter, the default is <code>Web</code>.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::AppMonitorPlatform> {
+        self.inner.get_platform()
+    }
 }

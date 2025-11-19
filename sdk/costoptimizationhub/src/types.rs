@@ -41,6 +41,14 @@ pub use crate::types::_order::Order;
 
 pub use crate::types::_account_enrollment_status::AccountEnrollmentStatus;
 
+pub use crate::types::_efficiency_metrics_by_group::EfficiencyMetricsByGroup;
+
+pub use crate::types::_metrics_by_time::MetricsByTime;
+
+pub use crate::types::_time_period::TimePeriod;
+
+pub use crate::types::_granularity_type::GranularityType;
+
 pub use crate::types::_resource_details::ResourceDetails;
 
 pub use crate::types::_memory_db_reserved_instances::MemoryDbReservedInstances;
@@ -197,6 +205,8 @@ mod _ecs_service;
 
 mod _ecs_service_configuration;
 
+mod _efficiency_metrics_by_group;
+
 mod _elasti_cache_reserved_instances;
 
 mod _elasti_cache_reserved_instances_configuration;
@@ -206,6 +216,8 @@ mod _enrollment_status;
 mod _estimated_discounts;
 
 mod _filter;
+
+mod _granularity_type;
 
 mod _implementation_effort;
 
@@ -220,6 +232,8 @@ mod _member_account_discount_visibility;
 mod _memory_db_reserved_instances;
 
 mod _memory_db_reserved_instances_configuration;
+
+mod _metrics_by_time;
 
 mod _mixed_instance_configuration;
 
@@ -288,6 +302,8 @@ mod _summary_metrics_result;
 mod _tag;
 
 mod _term;
+
+mod _time_period;
 
 mod _usage;
 

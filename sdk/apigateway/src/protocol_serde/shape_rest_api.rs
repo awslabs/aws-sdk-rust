@@ -93,6 +93,34 @@ where
                                     .transpose()?,
                             );
                         }
+                        "securityPolicy" => {
+                            builder = builder.set_security_policy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SecurityPolicy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "endpointAccessMode" => {
+                            builder = builder.set_endpoint_access_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EndpointAccessMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "apiStatus" => {
+                            builder = builder.set_api_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ApiStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "apiStatusMessage" => {
+                            builder = builder.set_api_status_message(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

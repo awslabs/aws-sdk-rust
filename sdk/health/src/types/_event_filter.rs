@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventFilter {
+    /// <p>A list of actionability values to filter events. Use this to filter events based on whether they require action (<code>ACTION_REQUIRED</code>), may require action (<code>ACTION_MAY_BE_REQUIRED</code>) or are informational (<code>INFORMATIONAL</code>).</p>
+    pub actionabilities: ::std::option::Option<::std::vec::Vec<crate::types::EventActionability>>,
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
     pub event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></p>
@@ -32,8 +34,16 @@ pub struct EventFilter {
     pub tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     /// <p>A list of event status codes.</p>
     pub event_status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>,
+    /// <p>A list of persona values to filter events. Use this to filter events based on their target audience: <code>OPERATIONS</code>, <code>SECURITY</code>, or <code>BILLING</code>.</p>
+    pub personas: ::std::option::Option<::std::vec::Vec<crate::types::EventPersona>>,
 }
 impl EventFilter {
+    /// <p>A list of actionability values to filter events. Use this to filter events based on whether they require action (<code>ACTION_REQUIRED</code>), may require action (<code>ACTION_MAY_BE_REQUIRED</code>) or are informational (<code>INFORMATIONAL</code>).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actionabilities.is_none()`.
+    pub fn actionabilities(&self) -> &[crate::types::EventActionability] {
+        self.actionabilities.as_deref().unwrap_or_default()
+    }
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_arns.is_none()`.
@@ -114,6 +124,12 @@ impl EventFilter {
     pub fn event_status_codes(&self) -> &[crate::types::EventStatusCode] {
         self.event_status_codes.as_deref().unwrap_or_default()
     }
+    /// <p>A list of persona values to filter events. Use this to filter events based on their target audience: <code>OPERATIONS</code>, <code>SECURITY</code>, or <code>BILLING</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.personas.is_none()`.
+    pub fn personas(&self) -> &[crate::types::EventPersona] {
+        self.personas.as_deref().unwrap_or_default()
+    }
 }
 impl EventFilter {
     /// Creates a new builder-style object to manufacture [`EventFilter`](crate::types::EventFilter).
@@ -126,6 +142,7 @@ impl EventFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct EventFilterBuilder {
+    pub(crate) actionabilities: ::std::option::Option<::std::vec::Vec<crate::types::EventActionability>>,
     pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) event_type_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -139,8 +156,29 @@ pub struct EventFilterBuilder {
     pub(crate) event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     pub(crate) event_status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>,
+    pub(crate) personas: ::std::option::Option<::std::vec::Vec<crate::types::EventPersona>>,
 }
 impl EventFilterBuilder {
+    /// Appends an item to `actionabilities`.
+    ///
+    /// To override the contents of this collection use [`set_actionabilities`](Self::set_actionabilities).
+    ///
+    /// <p>A list of actionability values to filter events. Use this to filter events based on whether they require action (<code>ACTION_REQUIRED</code>), may require action (<code>ACTION_MAY_BE_REQUIRED</code>) or are informational (<code>INFORMATIONAL</code>).</p>
+    pub fn actionabilities(mut self, input: crate::types::EventActionability) -> Self {
+        let mut v = self.actionabilities.unwrap_or_default();
+        v.push(input);
+        self.actionabilities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of actionability values to filter events. Use this to filter events based on whether they require action (<code>ACTION_REQUIRED</code>), may require action (<code>ACTION_MAY_BE_REQUIRED</code>) or are informational (<code>INFORMATIONAL</code>).</p>
+    pub fn set_actionabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventActionability>>) -> Self {
+        self.actionabilities = input;
+        self
+    }
+    /// <p>A list of actionability values to filter events. Use this to filter events based on whether they require action (<code>ACTION_REQUIRED</code>), may require action (<code>ACTION_MAY_BE_REQUIRED</code>) or are informational (<code>INFORMATIONAL</code>).</p>
+    pub fn get_actionabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventActionability>> {
+        &self.actionabilities
+    }
     /// Appends an item to `event_arns`.
     ///
     /// To override the contents of this collection use [`set_event_arns`](Self::set_event_arns).
@@ -410,9 +448,30 @@ impl EventFilterBuilder {
     pub fn get_event_status_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>> {
         &self.event_status_codes
     }
+    /// Appends an item to `personas`.
+    ///
+    /// To override the contents of this collection use [`set_personas`](Self::set_personas).
+    ///
+    /// <p>A list of persona values to filter events. Use this to filter events based on their target audience: <code>OPERATIONS</code>, <code>SECURITY</code>, or <code>BILLING</code>.</p>
+    pub fn personas(mut self, input: crate::types::EventPersona) -> Self {
+        let mut v = self.personas.unwrap_or_default();
+        v.push(input);
+        self.personas = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of persona values to filter events. Use this to filter events based on their target audience: <code>OPERATIONS</code>, <code>SECURITY</code>, or <code>BILLING</code>.</p>
+    pub fn set_personas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventPersona>>) -> Self {
+        self.personas = input;
+        self
+    }
+    /// <p>A list of persona values to filter events. Use this to filter events based on their target audience: <code>OPERATIONS</code>, <code>SECURITY</code>, or <code>BILLING</code>.</p>
+    pub fn get_personas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventPersona>> {
+        &self.personas
+    }
     /// Consumes the builder and constructs a [`EventFilter`](crate::types::EventFilter).
     pub fn build(self) -> crate::types::EventFilter {
         crate::types::EventFilter {
+            actionabilities: self.actionabilities,
             event_arns: self.event_arns,
             event_type_codes: self.event_type_codes,
             services: self.services,
@@ -426,6 +485,7 @@ impl EventFilterBuilder {
             event_type_categories: self.event_type_categories,
             tags: self.tags,
             event_status_codes: self.event_status_codes,
+            personas: self.personas,
         }
     }
 }

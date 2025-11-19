@@ -69,6 +69,10 @@ pub use crate::types::_input_device_media_connect_configurable_settings::InputDe
 
 pub use crate::types::_input::InputBuilder;
 
+pub use crate::types::_router_input_settings::RouterInputSettingsBuilder;
+
+pub use crate::types::_router_destination::RouterDestinationBuilder;
+
 pub use crate::types::_smpte2110_receiver_group_settings::Smpte2110ReceiverGroupSettingsBuilder;
 
 pub use crate::types::_smpte2110_receiver_group::Smpte2110ReceiverGroupBuilder;
@@ -98,6 +102,8 @@ pub use crate::types::_input_destination::InputDestinationBuilder;
 pub use crate::types::_input_destination_route::InputDestinationRouteBuilder;
 
 pub use crate::types::_input_destination_vpc::InputDestinationVpcBuilder;
+
+pub use crate::types::_special_router_settings::SpecialRouterSettingsBuilder;
 
 pub use crate::types::_multicast_settings_update_request::MulticastSettingsUpdateRequestBuilder;
 
@@ -622,6 +628,10 @@ pub use crate::types::_node_interface_mapping_create_request::NodeInterfaceMappi
 pub use crate::types::_route_create_request::RouteCreateRequestBuilder;
 
 pub use crate::types::_ip_pool_create_request::IpPoolCreateRequestBuilder;
+
+pub use crate::types::_router_settings::RouterSettingsBuilder;
+
+pub use crate::types::_router_destination_settings::RouterDestinationSettingsBuilder;
 
 pub use crate::types::_multicast_settings_create_request::MulticastSettingsCreateRequestBuilder;
 

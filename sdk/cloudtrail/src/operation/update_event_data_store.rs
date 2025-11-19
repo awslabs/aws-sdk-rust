@@ -264,6 +264,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateEventDa
 pub enum UpdateEventDataStoreError {
     /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_how-to-enable-disable-trusted-access">How to enable or disable trusted access</a> in the <i>Organizations User Guide</i> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> in the <i>CloudTrail User Guide</i>.</p>
     CloudTrailAccessNotEnabledException(crate::types::error::CloudTrailAccessNotEnabledException),
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>An event data store with that name already exists.</p>
     EventDataStoreAlreadyExistsException(crate::types::error::EventDataStoreAlreadyExistsException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
@@ -313,6 +315,8 @@ pub enum UpdateEventDataStoreError {
     OrganizationNotInAllFeaturesModeException(crate::types::error::OrganizationNotInAllFeaturesModeException),
     /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
     OrganizationsNotInUseException(crate::types::error::OrganizationsNotInUseException),
+    /// <p>This exception is thrown when the request rate exceeds the limit.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -349,6 +353,7 @@ impl UpdateEventDataStoreError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::CloudTrailAccessNotEnabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EventDataStoreAlreadyExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EventDataStoreArnInvalidException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EventDataStoreHasOngoingImportException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -367,6 +372,7 @@ impl UpdateEventDataStoreError {
             Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OrganizationNotInAllFeaturesModeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OrganizationsNotInUseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -374,6 +380,10 @@ impl UpdateEventDataStoreError {
     /// Returns `true` if the error kind is `UpdateEventDataStoreError::CloudTrailAccessNotEnabledException`.
     pub fn is_cloud_trail_access_not_enabled_exception(&self) -> bool {
         matches!(self, Self::CloudTrailAccessNotEnabledException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateEventDataStoreError::EventDataStoreAlreadyExistsException`.
     pub fn is_event_data_store_already_exists_exception(&self) -> bool {
@@ -447,6 +457,10 @@ impl UpdateEventDataStoreError {
     pub fn is_organizations_not_in_use_exception(&self) -> bool {
         matches!(self, Self::OrganizationsNotInUseException(_))
     }
+    /// Returns `true` if the error kind is `UpdateEventDataStoreError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `UpdateEventDataStoreError::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
         matches!(self, Self::UnsupportedOperationException(_))
@@ -456,6 +470,7 @@ impl ::std::error::Error for UpdateEventDataStoreError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::CloudTrailAccessNotEnabledException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::EventDataStoreAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::EventDataStoreArnInvalidException(_inner) => ::std::option::Option::Some(_inner),
             Self::EventDataStoreHasOngoingImportException(_inner) => ::std::option::Option::Some(_inner),
@@ -474,6 +489,7 @@ impl ::std::error::Error for UpdateEventDataStoreError {
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationNotInAllFeaturesModeException(_inner) => ::std::option::Option::Some(_inner),
             Self::OrganizationsNotInUseException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -483,6 +499,7 @@ impl ::std::fmt::Display for UpdateEventDataStoreError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::CloudTrailAccessNotEnabledException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::EventDataStoreAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
             Self::EventDataStoreHasOngoingImportException(_inner) => _inner.fmt(f),
@@ -501,6 +518,7 @@ impl ::std::fmt::Display for UpdateEventDataStoreError {
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
             Self::OrganizationNotInAllFeaturesModeException(_inner) => _inner.fmt(f),
             Self::OrganizationsNotInUseException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -524,6 +542,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateEventDa
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::CloudTrailAccessNotEnabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EventDataStoreAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EventDataStoreArnInvalidException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EventDataStoreHasOngoingImportException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -544,6 +563,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateEventDa
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationNotInAllFeaturesModeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OrganizationsNotInUseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

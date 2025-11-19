@@ -19,6 +19,12 @@ pub struct GetBillEstimateOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the bill estimate will expire.</p>
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub group_sharing_preference: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>,
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub cost_category_group_sharing_preference_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Timestamp of the effective date of the cost category used in the group sharing settings.</p>
+    pub cost_category_group_sharing_preference_effective_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetBillEstimateOutput {
@@ -55,6 +61,18 @@ impl GetBillEstimateOutput {
     pub fn expires_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn group_sharing_preference(&self) -> ::std::option::Option<&crate::types::GroupSharingPreferenceEnum> {
+        self.group_sharing_preference.as_ref()
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn cost_category_group_sharing_preference_arn(&self) -> ::std::option::Option<&str> {
+        self.cost_category_group_sharing_preference_arn.as_deref()
+    }
+    /// <p>Timestamp of the effective date of the cost category used in the group sharing settings.</p>
+    pub fn cost_category_group_sharing_preference_effective_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.cost_category_group_sharing_preference_effective_date.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetBillEstimateOutput {
     fn request_id(&self) -> Option<&str> {
@@ -80,6 +98,9 @@ pub struct GetBillEstimateOutputBuilder {
     pub(crate) cost_summary: ::std::option::Option<crate::types::BillEstimateCostSummary>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) group_sharing_preference: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>,
+    pub(crate) cost_category_group_sharing_preference_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) cost_category_group_sharing_preference_effective_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetBillEstimateOutputBuilder {
@@ -196,6 +217,48 @@ impl GetBillEstimateOutputBuilder {
     pub fn get_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expires_at
     }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn group_sharing_preference(mut self, input: crate::types::GroupSharingPreferenceEnum) -> Self {
+        self.group_sharing_preference = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn set_group_sharing_preference(mut self, input: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>) -> Self {
+        self.group_sharing_preference = input;
+        self
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn get_group_sharing_preference(&self) -> &::std::option::Option<crate::types::GroupSharingPreferenceEnum> {
+        &self.group_sharing_preference
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn cost_category_group_sharing_preference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cost_category_group_sharing_preference_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn set_cost_category_group_sharing_preference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cost_category_group_sharing_preference_arn = input;
+        self
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn get_cost_category_group_sharing_preference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cost_category_group_sharing_preference_arn
+    }
+    /// <p>Timestamp of the effective date of the cost category used in the group sharing settings.</p>
+    pub fn cost_category_group_sharing_preference_effective_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.cost_category_group_sharing_preference_effective_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Timestamp of the effective date of the cost category used in the group sharing settings.</p>
+    pub fn set_cost_category_group_sharing_preference_effective_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.cost_category_group_sharing_preference_effective_date = input;
+        self
+    }
+    /// <p>Timestamp of the effective date of the cost category used in the group sharing settings.</p>
+    pub fn get_cost_category_group_sharing_preference_effective_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.cost_category_group_sharing_preference_effective_date
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -225,6 +288,9 @@ impl GetBillEstimateOutputBuilder {
             cost_summary: self.cost_summary,
             created_at: self.created_at,
             expires_at: self.expires_at,
+            group_sharing_preference: self.group_sharing_preference,
+            cost_category_group_sharing_preference_arn: self.cost_category_group_sharing_preference_arn,
+            cost_category_group_sharing_preference_effective_date: self.cost_category_group_sharing_preference_effective_date,
             _request_id: self._request_id,
         })
     }

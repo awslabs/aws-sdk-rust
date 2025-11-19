@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`creation_date(Option<DateTime>)`](crate::operation::update_backup_plan::UpdateBackupPlanOutput::creation_date): <p>The date and time a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     ///   - [`version_id(Option<String>)`](crate::operation::update_backup_plan::UpdateBackupPlanOutput::version_id): <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot be edited.</p>
     ///   - [`advanced_backup_settings(Option<Vec::<AdvancedBackupSetting>>)`](crate::operation::update_backup_plan::UpdateBackupPlanOutput::advanced_backup_settings): <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+    ///   - [`scan_settings(Option<Vec::<ScanSetting>>)`](crate::operation::update_backup_plan::UpdateBackupPlanOutput::scan_settings): <p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>
     /// - On failure, responds with [`SdkError<UpdateBackupPlanError>`](crate::operation::update_backup_plan::UpdateBackupPlanError)
     pub fn update_backup_plan(&self) -> crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder {
         crate::operation::update_backup_plan::builders::UpdateBackupPlanFluentBuilder::new(self.handle.clone())

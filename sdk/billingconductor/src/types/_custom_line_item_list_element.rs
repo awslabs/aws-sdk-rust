@@ -26,9 +26,9 @@ pub struct CustomLineItemListElement {
     pub association_size: i64,
     /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// The display settings of the custom line item
+    /// <p>The computation rule that determines how the custom line item charges are computed and reflected in the bill.</p>
     pub computation_rule: ::std::option::Option<crate::types::ComputationRuleEnum>,
-    /// The presentation configuration of the custom line item
+    /// <p>Configuration details specifying how the custom line item charges are presented, including which service the charges are shown under.</p>
     pub presentation_details: ::std::option::Option<crate::types::PresentationObject>,
 }
 impl CustomLineItemListElement {
@@ -76,11 +76,11 @@ impl CustomLineItemListElement {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// The display settings of the custom line item
+    /// <p>The computation rule that determines how the custom line item charges are computed and reflected in the bill.</p>
     pub fn computation_rule(&self) -> ::std::option::Option<&crate::types::ComputationRuleEnum> {
         self.computation_rule.as_ref()
     }
-    /// The presentation configuration of the custom line item
+    /// <p>Configuration details specifying how the custom line item charges are presented, including which service the charges are shown under.</p>
     pub fn presentation_details(&self) -> ::std::option::Option<&crate::types::PresentationObject> {
         self.presentation_details.as_ref()
     }
@@ -284,31 +284,31 @@ impl CustomLineItemListElementBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// The display settings of the custom line item
+    /// <p>The computation rule that determines how the custom line item charges are computed and reflected in the bill.</p>
     pub fn computation_rule(mut self, input: crate::types::ComputationRuleEnum) -> Self {
         self.computation_rule = ::std::option::Option::Some(input);
         self
     }
-    /// The display settings of the custom line item
+    /// <p>The computation rule that determines how the custom line item charges are computed and reflected in the bill.</p>
     pub fn set_computation_rule(mut self, input: ::std::option::Option<crate::types::ComputationRuleEnum>) -> Self {
         self.computation_rule = input;
         self
     }
-    /// The display settings of the custom line item
+    /// <p>The computation rule that determines how the custom line item charges are computed and reflected in the bill.</p>
     pub fn get_computation_rule(&self) -> &::std::option::Option<crate::types::ComputationRuleEnum> {
         &self.computation_rule
     }
-    /// The presentation configuration of the custom line item
+    /// <p>Configuration details specifying how the custom line item charges are presented, including which service the charges are shown under.</p>
     pub fn presentation_details(mut self, input: crate::types::PresentationObject) -> Self {
         self.presentation_details = ::std::option::Option::Some(input);
         self
     }
-    /// The presentation configuration of the custom line item
+    /// <p>Configuration details specifying how the custom line item charges are presented, including which service the charges are shown under.</p>
     pub fn set_presentation_details(mut self, input: ::std::option::Option<crate::types::PresentationObject>) -> Self {
         self.presentation_details = input;
         self
     }
-    /// The presentation configuration of the custom line item
+    /// <p>Configuration details specifying how the custom line item charges are presented, including which service the charges are shown under.</p>
     pub fn get_presentation_details(&self) -> &::std::option::Option<crate::types::PresentationObject> {
         &self.presentation_details
     }

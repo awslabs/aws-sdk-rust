@@ -88,6 +88,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "actionability" => {
+                            builder = builder.set_actionability(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EventActionability::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "personas" => {
+                            builder = builder.set_personas(crate::protocol_serde::shape_event_persona_list::de_event_persona_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

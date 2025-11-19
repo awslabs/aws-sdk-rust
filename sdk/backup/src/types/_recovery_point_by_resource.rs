@@ -34,6 +34,8 @@ pub struct RecoveryPointByResource {
     pub index_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The type of encryption key used for the recovery point. Valid values are CUSTOMER_MANAGED_KMS_KEY for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned keys.</p>
     pub encryption_key_type: ::std::option::Option<crate::types::EncryptionKeyType>,
+    /// <p>Contains the latest scanning results against the recovery point and currently include <code>FailedScan</code>, <code>Findings</code>, <code>LastComputed</code>.</p>
+    pub aggregated_scan_result: ::std::option::Option<crate::types::AggregatedScanResult>,
 }
 impl RecoveryPointByResource {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -94,6 +96,10 @@ impl RecoveryPointByResource {
     pub fn encryption_key_type(&self) -> ::std::option::Option<&crate::types::EncryptionKeyType> {
         self.encryption_key_type.as_ref()
     }
+    /// <p>Contains the latest scanning results against the recovery point and currently include <code>FailedScan</code>, <code>Findings</code>, <code>LastComputed</code>.</p>
+    pub fn aggregated_scan_result(&self) -> ::std::option::Option<&crate::types::AggregatedScanResult> {
+        self.aggregated_scan_result.as_ref()
+    }
 }
 impl RecoveryPointByResource {
     /// Creates a new builder-style object to manufacture [`RecoveryPointByResource`](crate::types::RecoveryPointByResource).
@@ -120,6 +126,7 @@ pub struct RecoveryPointByResourceBuilder {
     pub(crate) index_status: ::std::option::Option<crate::types::IndexStatus>,
     pub(crate) index_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_type: ::std::option::Option<crate::types::EncryptionKeyType>,
+    pub(crate) aggregated_scan_result: ::std::option::Option<crate::types::AggregatedScanResult>,
 }
 impl RecoveryPointByResourceBuilder {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -324,6 +331,20 @@ impl RecoveryPointByResourceBuilder {
     pub fn get_encryption_key_type(&self) -> &::std::option::Option<crate::types::EncryptionKeyType> {
         &self.encryption_key_type
     }
+    /// <p>Contains the latest scanning results against the recovery point and currently include <code>FailedScan</code>, <code>Findings</code>, <code>LastComputed</code>.</p>
+    pub fn aggregated_scan_result(mut self, input: crate::types::AggregatedScanResult) -> Self {
+        self.aggregated_scan_result = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the latest scanning results against the recovery point and currently include <code>FailedScan</code>, <code>Findings</code>, <code>LastComputed</code>.</p>
+    pub fn set_aggregated_scan_result(mut self, input: ::std::option::Option<crate::types::AggregatedScanResult>) -> Self {
+        self.aggregated_scan_result = input;
+        self
+    }
+    /// <p>Contains the latest scanning results against the recovery point and currently include <code>FailedScan</code>, <code>Findings</code>, <code>LastComputed</code>.</p>
+    pub fn get_aggregated_scan_result(&self) -> &::std::option::Option<crate::types::AggregatedScanResult> {
+        &self.aggregated_scan_result
+    }
     /// Consumes the builder and constructs a [`RecoveryPointByResource`](crate::types::RecoveryPointByResource).
     pub fn build(self) -> crate::types::RecoveryPointByResource {
         crate::types::RecoveryPointByResource {
@@ -341,6 +362,7 @@ impl RecoveryPointByResourceBuilder {
             index_status: self.index_status,
             index_status_message: self.index_status_message,
             encryption_key_type: self.encryption_key_type,
+            aggregated_scan_result: self.aggregated_scan_result,
         }
     }
 }

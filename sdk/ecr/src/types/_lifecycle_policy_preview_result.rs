@@ -14,6 +14,8 @@ pub struct LifecyclePolicyPreviewResult {
     pub action: ::std::option::Option<crate::types::LifecyclePolicyRuleAction>,
     /// <p>The priority of the applied rule.</p>
     pub applied_rule_priority: ::std::option::Option<i32>,
+    /// <p>The storage class of the image.</p>
+    pub storage_class: ::std::option::Option<crate::types::LifecyclePolicyStorageClass>,
 }
 impl LifecyclePolicyPreviewResult {
     /// <p>The list of tags associated with this image.</p>
@@ -38,6 +40,10 @@ impl LifecyclePolicyPreviewResult {
     pub fn applied_rule_priority(&self) -> ::std::option::Option<i32> {
         self.applied_rule_priority
     }
+    /// <p>The storage class of the image.</p>
+    pub fn storage_class(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyStorageClass> {
+        self.storage_class.as_ref()
+    }
 }
 impl LifecyclePolicyPreviewResult {
     /// Creates a new builder-style object to manufacture [`LifecyclePolicyPreviewResult`](crate::types::LifecyclePolicyPreviewResult).
@@ -55,6 +61,7 @@ pub struct LifecyclePolicyPreviewResultBuilder {
     pub(crate) image_pushed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) action: ::std::option::Option<crate::types::LifecyclePolicyRuleAction>,
     pub(crate) applied_rule_priority: ::std::option::Option<i32>,
+    pub(crate) storage_class: ::std::option::Option<crate::types::LifecyclePolicyStorageClass>,
 }
 impl LifecyclePolicyPreviewResultBuilder {
     /// Appends an item to `image_tags`.
@@ -133,6 +140,20 @@ impl LifecyclePolicyPreviewResultBuilder {
     pub fn get_applied_rule_priority(&self) -> &::std::option::Option<i32> {
         &self.applied_rule_priority
     }
+    /// <p>The storage class of the image.</p>
+    pub fn storage_class(mut self, input: crate::types::LifecyclePolicyStorageClass) -> Self {
+        self.storage_class = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage class of the image.</p>
+    pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyStorageClass>) -> Self {
+        self.storage_class = input;
+        self
+    }
+    /// <p>The storage class of the image.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::LifecyclePolicyStorageClass> {
+        &self.storage_class
+    }
     /// Consumes the builder and constructs a [`LifecyclePolicyPreviewResult`](crate::types::LifecyclePolicyPreviewResult).
     pub fn build(self) -> crate::types::LifecyclePolicyPreviewResult {
         crate::types::LifecyclePolicyPreviewResult {
@@ -141,6 +162,7 @@ impl LifecyclePolicyPreviewResultBuilder {
             image_pushed_at: self.image_pushed_at,
             action: self.action,
             applied_rule_priority: self.applied_rule_priority,
+            storage_class: self.storage_class,
         }
     }
 }

@@ -121,6 +121,10 @@ where
                         "sdiSources" => {
                             builder = builder.set_sdi_sources(crate::protocol_serde::shape_input_sdi_sources::de_input_sdi_sources(tokens)?);
                         }
+                        "routerSettings" => {
+                            builder =
+                                builder.set_router_settings(crate::protocol_serde::shape_router_input_settings::de_router_input_settings(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

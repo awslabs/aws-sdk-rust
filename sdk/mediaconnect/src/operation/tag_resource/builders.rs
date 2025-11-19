@@ -22,7 +22,7 @@ impl crate::operation::tag_resource::builders::TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are deleted as well.</p>
+/// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code> in the current region. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are deleted as well.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

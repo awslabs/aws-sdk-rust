@@ -158,17 +158,17 @@ impl PutImageFluentBuilder {
     pub fn get_image_manifest_media_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_manifest_media_type()
     }
-    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is optional.</p>
     pub fn image_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_tag(input.into());
         self
     }
-    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is optional.</p>
     pub fn set_image_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_tag(input);
         self
     }
-    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is optional.</p>
     pub fn get_image_tag(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_tag()
     }

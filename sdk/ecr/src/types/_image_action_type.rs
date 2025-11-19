@@ -13,6 +13,7 @@
 /// # let imageactiontype = unimplemented!();
 /// match imageactiontype {
 ///     ImageActionType::Expire => { /* ... */ },
+///     ImageActionType::Transition => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum ImageActionType {
     #[allow(missing_docs)] // documentation missing in model
     Expire,
+    #[allow(missing_docs)] // documentation missing in model
+    Transition,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for ImageActionType {
     fn from(s: &str) -> Self {
         match s {
             "EXPIRE" => ImageActionType::Expire,
+            "TRANSITION" => ImageActionType::Transition,
             other => ImageActionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl ImageActionType {
     pub fn as_str(&self) -> &str {
         match self {
             ImageActionType::Expire => "EXPIRE",
+            ImageActionType::Transition => "TRANSITION",
             ImageActionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EXPIRE"]
+        &["EXPIRE", "TRANSITION"]
     }
 }
 impl ::std::convert::AsRef<str> for ImageActionType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for ImageActionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ImageActionType::Expire => write!(f, "EXPIRE"),
+            ImageActionType::Transition => write!(f, "TRANSITION"),
             ImageActionType::Unknown(value) => write!(f, "{value}"),
         }
     }

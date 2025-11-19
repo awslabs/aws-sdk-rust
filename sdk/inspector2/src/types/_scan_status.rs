@@ -36,6 +36,7 @@ pub struct ScanStatus {
     /// <p><code>UNSUPPORTED_MEDIA_TYPE </code>- The ECR image has an unsupported media type.</p>
     /// <p><code>UNSUPPORTED_OS</code> - Amazon Inspector does not support this OS, architecture, or image manifest type at this time. To see a complete list of supported operating systems see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p>
     /// <p><code>UNSUPPORTED_RUNTIME</code> - The function was not scanned because it has an unsupported runtime. To see a complete list of supported runtimes see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p>
+    /// <p><code>IMAGE_ARCHIVED</code> - This image has been archived in Amazon ECR and is no longer available for scanning in Amazon Inspector.</p>
     pub reason: crate::types::ScanStatusReason,
 }
 impl ScanStatus {
@@ -73,6 +74,7 @@ impl ScanStatus {
     /// <p><code>UNSUPPORTED_MEDIA_TYPE </code>- The ECR image has an unsupported media type.</p>
     /// <p><code>UNSUPPORTED_OS</code> - Amazon Inspector does not support this OS, architecture, or image manifest type at this time. To see a complete list of supported operating systems see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p>
     /// <p><code>UNSUPPORTED_RUNTIME</code> - The function was not scanned because it has an unsupported runtime. To see a complete list of supported runtimes see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p>
+    /// <p><code>IMAGE_ARCHIVED</code> - This image has been archived in Amazon ECR and is no longer available for scanning in Amazon Inspector.</p>
     pub fn reason(&self) -> &crate::types::ScanStatusReason {
         &self.reason
     }
@@ -137,6 +139,7 @@ impl ScanStatusBuilder {
     /// <p><code>UNSUPPORTED_MEDIA_TYPE </code>- The ECR image has an unsupported media type.</p>
     /// <p><code>UNSUPPORTED_OS</code> - Amazon Inspector does not support this OS, architecture, or image manifest type at this time. To see a complete list of supported operating systems see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p>
     /// <p><code>UNSUPPORTED_RUNTIME</code> - The function was not scanned because it has an unsupported runtime. To see a complete list of supported runtimes see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p>
+    /// <p><code>IMAGE_ARCHIVED</code> - This image has been archived in Amazon ECR and is no longer available for scanning in Amazon Inspector.</p>
     /// This field is required.
     pub fn reason(mut self, input: crate::types::ScanStatusReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -172,6 +175,7 @@ impl ScanStatusBuilder {
     /// <p><code>UNSUPPORTED_MEDIA_TYPE </code>- The ECR image has an unsupported media type.</p>
     /// <p><code>UNSUPPORTED_OS</code> - Amazon Inspector does not support this OS, architecture, or image manifest type at this time. To see a complete list of supported operating systems see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p>
     /// <p><code>UNSUPPORTED_RUNTIME</code> - The function was not scanned because it has an unsupported runtime. To see a complete list of supported runtimes see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p>
+    /// <p><code>IMAGE_ARCHIVED</code> - This image has been archived in Amazon ECR and is no longer available for scanning in Amazon Inspector.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ScanStatusReason>) -> Self {
         self.reason = input;
         self
@@ -206,6 +210,7 @@ impl ScanStatusBuilder {
     /// <p><code>UNSUPPORTED_MEDIA_TYPE </code>- The ECR image has an unsupported media type.</p>
     /// <p><code>UNSUPPORTED_OS</code> - Amazon Inspector does not support this OS, architecture, or image manifest type at this time. To see a complete list of supported operating systems see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p>
     /// <p><code>UNSUPPORTED_RUNTIME</code> - The function was not scanned because it has an unsupported runtime. To see a complete list of supported runtimes see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p>
+    /// <p><code>IMAGE_ARCHIVED</code> - This image has been archived in Amazon ECR and is no longer available for scanning in Amazon Inspector.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::ScanStatusReason> {
         &self.reason
     }

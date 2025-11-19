@@ -10,7 +10,7 @@ pub struct InstanceTypeSpecification {
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of units that a provisioned instance of this type provides toward fulfilling the target capacities defined in <code>InstanceFleetConfig</code>. Capacity values represent performance characteristics such as vCPUs, memory, or I/O. If not specified, the default value is 1.</p>
     pub weighted_capacity: ::std::option::Option<i32>,
-    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub bid_price: ::std::option::Option<::std::string::String>,
     /// <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).</p>
     pub bid_price_as_percentage_of_on_demand_price: ::std::option::Option<f64>,
@@ -34,7 +34,7 @@ impl InstanceTypeSpecification {
     pub fn weighted_capacity(&self) -> ::std::option::Option<i32> {
         self.weighted_capacity
     }
-    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn bid_price(&self) -> ::std::option::Option<&str> {
         self.bid_price.as_deref()
     }
@@ -117,17 +117,17 @@ impl InstanceTypeSpecificationBuilder {
     pub fn get_weighted_capacity(&self) -> &::std::option::Option<i32> {
         &self.weighted_capacity
     }
-    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn bid_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bid_price = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn set_bid_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bid_price = input;
         self
     }
-    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.</p>
+    /// <p>The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
     pub fn get_bid_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.bid_price
     }

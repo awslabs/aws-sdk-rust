@@ -7,7 +7,7 @@ pub struct GetDomainNameOutput {
     pub api_mapping_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DomainName resource.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>Represents an Amazon Resource Name (ARN).</p>
+    /// <p>The ARN of the DomainName resource.</p>
     pub domain_name_arn: ::std::option::Option<::std::string::String>,
     /// <p>The domain name configurations.</p>
     pub domain_name_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>,
@@ -28,7 +28,7 @@ impl GetDomainNameOutput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>Represents an Amazon Resource Name (ARN).</p>
+    /// <p>The ARN of the DomainName resource.</p>
     pub fn domain_name_arn(&self) -> ::std::option::Option<&str> {
         self.domain_name_arn.as_deref()
     }
@@ -105,17 +105,17 @@ impl GetDomainNameOutputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>Represents an Amazon Resource Name (ARN).</p>
+    /// <p>The ARN of the DomainName resource.</p>
     pub fn domain_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Represents an Amazon Resource Name (ARN).</p>
+    /// <p>The ARN of the DomainName resource.</p>
     pub fn set_domain_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name_arn = input;
         self
     }
-    /// <p>Represents an Amazon Resource Name (ARN).</p>
+    /// <p>The ARN of the DomainName resource.</p>
     pub fn get_domain_name_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name_arn
     }

@@ -27,6 +27,8 @@ pub struct DescribeEndpointConfigOutput {
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.</p>
     pub enable_network_isolation: ::std::option::Option<bool>,
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub metrics_config: ::std::option::Option<crate::types::MetricsConfig>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointConfigOutput {
@@ -82,6 +84,10 @@ impl DescribeEndpointConfigOutput {
     pub fn enable_network_isolation(&self) -> ::std::option::Option<bool> {
         self.enable_network_isolation
     }
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::MetricsConfig> {
+        self.metrics_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeEndpointConfigOutput {
     fn request_id(&self) -> Option<&str> {
@@ -111,6 +117,7 @@ pub struct DescribeEndpointConfigOutputBuilder {
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) enable_network_isolation: ::std::option::Option<bool>,
+    pub(crate) metrics_config: ::std::option::Option<crate::types::MetricsConfig>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointConfigOutputBuilder {
@@ -297,6 +304,20 @@ impl DescribeEndpointConfigOutputBuilder {
     pub fn get_enable_network_isolation(&self) -> &::std::option::Option<bool> {
         &self.enable_network_isolation
     }
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub fn metrics_config(mut self, input: crate::types::MetricsConfig) -> Self {
+        self.metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::MetricsConfig>) -> Self {
+        self.metrics_config = input;
+        self
+    }
+    /// <p>The configuration parameters for utilization metrics.</p>
+    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::MetricsConfig> {
+        &self.metrics_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -321,6 +342,7 @@ impl DescribeEndpointConfigOutputBuilder {
             execution_role_arn: self.execution_role_arn,
             vpc_config: self.vpc_config,
             enable_network_isolation: self.enable_network_isolation,
+            metrics_config: self.metrics_config,
             _request_id: self._request_id,
         }
     }

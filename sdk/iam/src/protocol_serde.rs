@@ -235,6 +235,10 @@ pub(crate) mod shape_disable_organizations_root_sessions;
 
 pub(crate) mod shape_disable_organizations_root_sessions_input;
 
+pub(crate) mod shape_disable_outbound_web_identity_federation;
+
+pub(crate) mod shape_disable_outbound_web_identity_federation_input;
+
 pub(crate) mod shape_enable_mfa_device;
 
 pub(crate) mod shape_enable_mfa_device_input;
@@ -246,6 +250,10 @@ pub(crate) mod shape_enable_organizations_root_credentials_management_input;
 pub(crate) mod shape_enable_organizations_root_sessions;
 
 pub(crate) mod shape_enable_organizations_root_sessions_input;
+
+pub(crate) mod shape_enable_outbound_web_identity_federation;
+
+pub(crate) mod shape_enable_outbound_web_identity_federation_input;
 
 pub(crate) mod shape_generate_credential_report;
 
@@ -322,6 +330,10 @@ pub(crate) mod shape_get_open_id_connect_provider_input;
 pub(crate) mod shape_get_organizations_access_report;
 
 pub(crate) mod shape_get_organizations_access_report_input;
+
+pub(crate) mod shape_get_outbound_web_identity_federation_info;
+
+pub(crate) mod shape_get_outbound_web_identity_federation_info_input;
 
 pub(crate) mod shape_get_policy;
 
@@ -740,6 +752,10 @@ pub(crate) mod shape_duplicate_ssh_public_key_exception;
 pub(crate) mod shape_entity_already_exists_exception;
 
 pub(crate) mod shape_entity_temporarily_unmodifiable_exception;
+
+pub(crate) mod shape_feature_disabled_exception;
+
+pub(crate) mod shape_feature_enabled_exception;
 
 pub(crate) mod shape_invalid_authentication_code_exception;
 

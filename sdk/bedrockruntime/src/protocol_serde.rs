@@ -239,6 +239,8 @@ pub(crate) mod shape_model_outputs;
 
 pub(crate) mod shape_reasoning_content_block;
 
+pub(crate) mod shape_search_result_block;
+
 pub(crate) mod shape_specific_tool_choice;
 
 pub(crate) mod shape_system_tool;
@@ -288,6 +290,8 @@ pub(crate) mod shape_guardrail_topic_list;
 pub(crate) mod shape_image_source;
 
 pub(crate) mod shape_reasoning_text_block;
+
+pub(crate) mod shape_search_result_content_block;
 
 pub(crate) mod shape_tool_input_schema;
 
@@ -356,6 +360,10 @@ pub(crate) mod shape_guardrail_automated_reasoning_too_complex_finding;
 pub(crate) mod shape_guardrail_automated_reasoning_translation_ambiguous_finding;
 
 pub(crate) mod shape_guardrail_automated_reasoning_valid_finding;
+
+pub(crate) mod shape_search_result_content_blocks;
+
+pub(crate) mod shape_search_result_location;
 
 pub(crate) mod shape_tool_result_block_delta;
 

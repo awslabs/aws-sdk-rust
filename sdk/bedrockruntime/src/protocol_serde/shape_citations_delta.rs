@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "source" => {
+                            builder = builder.set_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "sourceContent" => {
                             builder = builder.set_source_content(
                                 crate::protocol_serde::shape_citation_source_content_list_delta::de_citation_source_content_list_delta(tokens)?,

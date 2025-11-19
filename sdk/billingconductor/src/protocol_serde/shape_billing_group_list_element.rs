@@ -86,6 +86,13 @@ where
                                 crate::protocol_serde::shape_list_billing_group_account_grouping::de_list_billing_group_account_grouping(tokens)?,
                             );
                         }
+                        "BillingGroupType" => {
+                            builder = builder.set_billing_group_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::BillingGroupType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -47,6 +47,12 @@ pub struct Source {
     /// </ul>
     /// </note>
     pub peer_ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates if router integration is enabled or disabled on the flow source.</p>
+    pub router_integration_state: ::std::option::Option<crate::types::State>,
+    /// <p>The decryption configuration for the flow source when router integration is enabled.</p>
+    pub router_integration_transit_decryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
+    /// <p>The ARN of the router output that's currently connected to this source.</p>
+    pub connected_router_output_arn: ::std::option::Option<::std::string::String>,
 }
 impl Source {
     /// <p>Percentage from 0-100 of the data transfer cost to be billed to the subscriber.</p>
@@ -126,6 +132,18 @@ impl Source {
     pub fn peer_ip_address(&self) -> ::std::option::Option<&str> {
         self.peer_ip_address.as_deref()
     }
+    /// <p>Indicates if router integration is enabled or disabled on the flow source.</p>
+    pub fn router_integration_state(&self) -> ::std::option::Option<&crate::types::State> {
+        self.router_integration_state.as_ref()
+    }
+    /// <p>The decryption configuration for the flow source when router integration is enabled.</p>
+    pub fn router_integration_transit_decryption(&self) -> ::std::option::Option<&crate::types::FlowTransitEncryption> {
+        self.router_integration_transit_decryption.as_ref()
+    }
+    /// <p>The ARN of the router output that's currently connected to this source.</p>
+    pub fn connected_router_output_arn(&self) -> ::std::option::Option<&str> {
+        self.connected_router_output_arn.as_deref()
+    }
 }
 impl Source {
     /// Creates a new builder-style object to manufacture [`Source`](crate::types::Source).
@@ -154,6 +172,9 @@ pub struct SourceBuilder {
     pub(crate) whitelist_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_bridge_source: ::std::option::Option<crate::types::GatewayBridgeSource>,
     pub(crate) peer_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) router_integration_state: ::std::option::Option<crate::types::State>,
+    pub(crate) router_integration_transit_decryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
+    pub(crate) connected_router_output_arn: ::std::option::Option<::std::string::String>,
 }
 impl SourceBuilder {
     /// <p>Percentage from 0-100 of the data transfer cost to be billed to the subscriber.</p>
@@ -424,6 +445,48 @@ impl SourceBuilder {
     pub fn get_peer_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.peer_ip_address
     }
+    /// <p>Indicates if router integration is enabled or disabled on the flow source.</p>
+    pub fn router_integration_state(mut self, input: crate::types::State) -> Self {
+        self.router_integration_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if router integration is enabled or disabled on the flow source.</p>
+    pub fn set_router_integration_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
+        self.router_integration_state = input;
+        self
+    }
+    /// <p>Indicates if router integration is enabled or disabled on the flow source.</p>
+    pub fn get_router_integration_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.router_integration_state
+    }
+    /// <p>The decryption configuration for the flow source when router integration is enabled.</p>
+    pub fn router_integration_transit_decryption(mut self, input: crate::types::FlowTransitEncryption) -> Self {
+        self.router_integration_transit_decryption = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The decryption configuration for the flow source when router integration is enabled.</p>
+    pub fn set_router_integration_transit_decryption(mut self, input: ::std::option::Option<crate::types::FlowTransitEncryption>) -> Self {
+        self.router_integration_transit_decryption = input;
+        self
+    }
+    /// <p>The decryption configuration for the flow source when router integration is enabled.</p>
+    pub fn get_router_integration_transit_decryption(&self) -> &::std::option::Option<crate::types::FlowTransitEncryption> {
+        &self.router_integration_transit_decryption
+    }
+    /// <p>The ARN of the router output that's currently connected to this source.</p>
+    pub fn connected_router_output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connected_router_output_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the router output that's currently connected to this source.</p>
+    pub fn set_connected_router_output_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.connected_router_output_arn = input;
+        self
+    }
+    /// <p>The ARN of the router output that's currently connected to this source.</p>
+    pub fn get_connected_router_output_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connected_router_output_arn
+    }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {
         crate::types::Source {
@@ -443,6 +506,9 @@ impl SourceBuilder {
             whitelist_cidr: self.whitelist_cidr,
             gateway_bridge_source: self.gateway_bridge_source,
             peer_ip_address: self.peer_ip_address,
+            router_integration_state: self.router_integration_state,
+            router_integration_transit_decryption: self.router_integration_transit_decryption,
+            connected_router_output_arn: self.connected_router_output_arn,
         }
     }
 }

@@ -22,6 +22,10 @@ pub struct ServerSideEncryptionRule {
     /// </ul>
     /// </note>
     pub bucket_key_enabled: ::std::option::Option<bool>,
+    /// <p>A bucket-level setting for Amazon S3 general purpose buckets used to prevent the upload of new objects encrypted with the specified server-side encryption type. For example, blocking an encryption type will block <code>PutObject</code>, <code>CopyObject</code>, <code>PostObject</code>, multipart upload, and replication requests to the bucket for objects with the specified encryption type. However, you can continue to read and list any pre-existing objects already encrypted with the specified encryption type. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/userguide/block-encryption-type.html">Blocking an encryption type for a general purpose bucket</a>.</p><note>
+    /// <p>Currently, this parameter only supports blocking or unblocking Server Side Encryption with Customer Provided Keys (SSE-C). For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Using server-side encryption with customer-provided keys (SSE-C)</a>.</p>
+    /// </note>
+    pub blocked_encryption_types: ::std::option::Option<crate::types::BlockedEncryptionTypes>,
 }
 impl ServerSideEncryptionRule {
     /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
@@ -39,6 +43,12 @@ impl ServerSideEncryptionRule {
     pub fn bucket_key_enabled(&self) -> ::std::option::Option<bool> {
         self.bucket_key_enabled
     }
+    /// <p>A bucket-level setting for Amazon S3 general purpose buckets used to prevent the upload of new objects encrypted with the specified server-side encryption type. For example, blocking an encryption type will block <code>PutObject</code>, <code>CopyObject</code>, <code>PostObject</code>, multipart upload, and replication requests to the bucket for objects with the specified encryption type. However, you can continue to read and list any pre-existing objects already encrypted with the specified encryption type. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/userguide/block-encryption-type.html">Blocking an encryption type for a general purpose bucket</a>.</p><note>
+    /// <p>Currently, this parameter only supports blocking or unblocking Server Side Encryption with Customer Provided Keys (SSE-C). For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Using server-side encryption with customer-provided keys (SSE-C)</a>.</p>
+    /// </note>
+    pub fn blocked_encryption_types(&self) -> ::std::option::Option<&crate::types::BlockedEncryptionTypes> {
+        self.blocked_encryption_types.as_ref()
+    }
 }
 impl ServerSideEncryptionRule {
     /// Creates a new builder-style object to manufacture [`ServerSideEncryptionRule`](crate::types::ServerSideEncryptionRule).
@@ -53,6 +63,7 @@ impl ServerSideEncryptionRule {
 pub struct ServerSideEncryptionRuleBuilder {
     pub(crate) apply_server_side_encryption_by_default: ::std::option::Option<crate::types::ServerSideEncryptionByDefault>,
     pub(crate) bucket_key_enabled: ::std::option::Option<bool>,
+    pub(crate) blocked_encryption_types: ::std::option::Option<crate::types::BlockedEncryptionTypes>,
 }
 impl ServerSideEncryptionRuleBuilder {
     /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
@@ -104,11 +115,32 @@ impl ServerSideEncryptionRuleBuilder {
     pub fn get_bucket_key_enabled(&self) -> &::std::option::Option<bool> {
         &self.bucket_key_enabled
     }
+    /// <p>A bucket-level setting for Amazon S3 general purpose buckets used to prevent the upload of new objects encrypted with the specified server-side encryption type. For example, blocking an encryption type will block <code>PutObject</code>, <code>CopyObject</code>, <code>PostObject</code>, multipart upload, and replication requests to the bucket for objects with the specified encryption type. However, you can continue to read and list any pre-existing objects already encrypted with the specified encryption type. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/userguide/block-encryption-type.html">Blocking an encryption type for a general purpose bucket</a>.</p><note>
+    /// <p>Currently, this parameter only supports blocking or unblocking Server Side Encryption with Customer Provided Keys (SSE-C). For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Using server-side encryption with customer-provided keys (SSE-C)</a>.</p>
+    /// </note>
+    pub fn blocked_encryption_types(mut self, input: crate::types::BlockedEncryptionTypes) -> Self {
+        self.blocked_encryption_types = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A bucket-level setting for Amazon S3 general purpose buckets used to prevent the upload of new objects encrypted with the specified server-side encryption type. For example, blocking an encryption type will block <code>PutObject</code>, <code>CopyObject</code>, <code>PostObject</code>, multipart upload, and replication requests to the bucket for objects with the specified encryption type. However, you can continue to read and list any pre-existing objects already encrypted with the specified encryption type. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/userguide/block-encryption-type.html">Blocking an encryption type for a general purpose bucket</a>.</p><note>
+    /// <p>Currently, this parameter only supports blocking or unblocking Server Side Encryption with Customer Provided Keys (SSE-C). For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Using server-side encryption with customer-provided keys (SSE-C)</a>.</p>
+    /// </note>
+    pub fn set_blocked_encryption_types(mut self, input: ::std::option::Option<crate::types::BlockedEncryptionTypes>) -> Self {
+        self.blocked_encryption_types = input;
+        self
+    }
+    /// <p>A bucket-level setting for Amazon S3 general purpose buckets used to prevent the upload of new objects encrypted with the specified server-side encryption type. For example, blocking an encryption type will block <code>PutObject</code>, <code>CopyObject</code>, <code>PostObject</code>, multipart upload, and replication requests to the bucket for objects with the specified encryption type. However, you can continue to read and list any pre-existing objects already encrypted with the specified encryption type. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/userguide/block-encryption-type.html">Blocking an encryption type for a general purpose bucket</a>.</p><note>
+    /// <p>Currently, this parameter only supports blocking or unblocking Server Side Encryption with Customer Provided Keys (SSE-C). For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Using server-side encryption with customer-provided keys (SSE-C)</a>.</p>
+    /// </note>
+    pub fn get_blocked_encryption_types(&self) -> &::std::option::Option<crate::types::BlockedEncryptionTypes> {
+        &self.blocked_encryption_types
+    }
     /// Consumes the builder and constructs a [`ServerSideEncryptionRule`](crate::types::ServerSideEncryptionRule).
     pub fn build(self) -> crate::types::ServerSideEncryptionRule {
         crate::types::ServerSideEncryptionRule {
             apply_server_side_encryption_by_default: self.apply_server_side_encryption_by_default,
             bucket_key_enabled: self.bucket_key_enabled,
+            blocked_encryption_types: self.blocked_encryption_types,
         }
     }
 }

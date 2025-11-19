@@ -12,7 +12,7 @@ pub struct Ec2InstanceSavingsPlansConfiguration {
     pub payment_option: ::std::option::Option<::std::string::String>,
     /// <p>The hourly commitment for the Savings Plans type.</p>
     pub hourly_commitment: ::std::option::Option<::std::string::String>,
-    /// <p>The instance family of the recommended Savings Plan.</p>
+    /// <p>The instance family of the recommended Savings Plans.</p>
     pub instance_family: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the commitment.</p>
     pub savings_plans_region: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl Ec2InstanceSavingsPlansConfiguration {
     pub fn hourly_commitment(&self) -> ::std::option::Option<&str> {
         self.hourly_commitment.as_deref()
     }
-    /// <p>The instance family of the recommended Savings Plan.</p>
+    /// <p>The instance family of the recommended Savings Plans.</p>
     pub fn instance_family(&self) -> ::std::option::Option<&str> {
         self.instance_family.as_deref()
     }
@@ -118,17 +118,17 @@ impl Ec2InstanceSavingsPlansConfigurationBuilder {
     pub fn get_hourly_commitment(&self) -> &::std::option::Option<::std::string::String> {
         &self.hourly_commitment
     }
-    /// <p>The instance family of the recommended Savings Plan.</p>
+    /// <p>The instance family of the recommended Savings Plans.</p>
     pub fn instance_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_family = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance family of the recommended Savings Plan.</p>
+    /// <p>The instance family of the recommended Savings Plans.</p>
     pub fn set_instance_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_family = input;
         self
     }
-    /// <p>The instance family of the recommended Savings Plan.</p>
+    /// <p>The instance family of the recommended Savings Plans.</p>
     pub fn get_instance_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_family
     }

@@ -50,6 +50,8 @@ pub struct CreateSecretInput {
     pub add_replica_regions: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
     /// <p>Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't overwritten.</p>
     pub force_overwrite_replica_secret: ::std::option::Option<bool>,
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl CreateSecretInput {
     /// <p>The name of the new secret.</p>
@@ -121,6 +123,10 @@ impl CreateSecretInput {
     pub fn force_overwrite_replica_secret(&self) -> ::std::option::Option<bool> {
         self.force_overwrite_replica_secret
     }
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateSecretInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -134,6 +140,7 @@ impl ::std::fmt::Debug for CreateSecretInput {
         formatter.field("tags", &self.tags);
         formatter.field("add_replica_regions", &self.add_replica_regions);
         formatter.field("force_overwrite_replica_secret", &self.force_overwrite_replica_secret);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
@@ -157,6 +164,7 @@ pub struct CreateSecretInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) add_replica_regions: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
     pub(crate) force_overwrite_replica_secret: ::std::option::Option<bool>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl CreateSecretInputBuilder {
     /// <p>The name of the new secret.</p>
@@ -385,6 +393,20 @@ impl CreateSecretInputBuilder {
     pub fn get_force_overwrite_replica_secret(&self) -> &::std::option::Option<bool> {
         &self.force_overwrite_replica_secret
     }
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`CreateSecretInput`](crate::operation::create_secret::CreateSecretInput).
     pub fn build(
         self,
@@ -399,6 +421,7 @@ impl CreateSecretInputBuilder {
             tags: self.tags,
             add_replica_regions: self.add_replica_regions,
             force_overwrite_replica_secret: self.force_overwrite_replica_secret,
+            r#type: self.r#type,
         })
     }
 }
@@ -414,6 +437,7 @@ impl ::std::fmt::Debug for CreateSecretInputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("add_replica_regions", &self.add_replica_regions);
         formatter.field("force_overwrite_replica_secret", &self.force_overwrite_replica_secret);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }

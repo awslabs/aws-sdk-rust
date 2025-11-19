@@ -77,6 +77,8 @@ pub use crate::types::_list_billing_group_account_grouping::ListBillingGroupAcco
 
 pub use crate::types::_list_billing_groups_filter::ListBillingGroupsFilterBuilder;
 
+pub use crate::types::_string_search::StringSearchBuilder;
+
 pub use crate::types::_billing_group_cost_report_element::BillingGroupCostReportElementBuilder;
 
 pub use crate::types::_list_billing_group_cost_reports_filter::ListBillingGroupCostReportsFilterBuilder;

@@ -5,6 +5,44 @@ pub use crate::types::_access_log_settings::AccessLogSettingsBuilder;
 
 pub use crate::types::_parameter_constraints::ParameterConstraintsBuilder;
 
+pub use crate::types::_status_exception::StatusExceptionBuilder;
+
+pub use crate::types::_rest_endpoint_identifier::RestEndpointIdentifierBuilder;
+
+pub use crate::types::_identifier_parts::IdentifierPartsBuilder;
+
+pub use crate::types::_endpoint_display_content_response::EndpointDisplayContentResponseBuilder;
+
+pub use crate::types::_endpoint_display_content::EndpointDisplayContentBuilder;
+
+pub use crate::types::_display_content_overrides::DisplayContentOverridesBuilder;
+
+pub use crate::types::_none::NoneBuilder;
+
+pub use crate::types::_display_content::DisplayContentBuilder;
+
+pub use crate::types::_display_order::DisplayOrderBuilder;
+
+pub use crate::types::_section::SectionBuilder;
+
+pub use crate::types::_preview::PreviewBuilder;
+
+pub use crate::types::_portal_content::PortalContentBuilder;
+
+pub use crate::types::_portal_theme::PortalThemeBuilder;
+
+pub use crate::types::_custom_colors::CustomColorsBuilder;
+
+pub use crate::types::_endpoint_configuration_response::EndpointConfigurationResponseBuilder;
+
+pub use crate::types::_authorization::AuthorizationBuilder;
+
+pub use crate::types::_cognito_config::CognitoConfigBuilder;
+
+pub use crate::types::_endpoint_configuration_request::EndpointConfigurationRequestBuilder;
+
+pub use crate::types::_acm_managed::AcmManagedBuilder;
+
 pub use crate::types::_tls_config::TlsConfigBuilder;
 
 pub use crate::types::_tls_config_input::TlsConfigInputBuilder;
@@ -32,6 +70,14 @@ pub use crate::types::_routing_rule_action::RoutingRuleActionBuilder;
 pub use crate::types::_routing_rule_action_invoke_api::RoutingRuleActionInvokeApiBuilder;
 
 pub use crate::types::_routing_rule::RoutingRuleBuilder;
+
+pub use crate::types::_product_rest_endpoint_page_summary_no_body::ProductRestEndpointPageSummaryNoBodyBuilder;
+
+pub use crate::types::_product_page_summary_no_body::ProductPageSummaryNoBodyBuilder;
+
+pub use crate::types::_portal_summary::PortalSummaryBuilder;
+
+pub use crate::types::_portal_product_summary::PortalProductSummaryBuilder;
 
 pub use crate::types::_vpc_link::VpcLinkBuilder;
 

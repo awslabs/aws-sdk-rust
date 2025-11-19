@@ -525,6 +525,8 @@ pub(crate) mod shape_windows_audit_log_create_configuration;
 
 pub(crate) mod shape_windows_file_system_configuration;
 
+pub(crate) mod shape_windows_fsrm_configuration;
+
 pub(crate) mod shape_administrative_action_failure_details;
 
 pub(crate) mod shape_aggregate_configuration;

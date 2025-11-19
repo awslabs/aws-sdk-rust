@@ -19,6 +19,10 @@ impl super::Client {
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_rest_api::GetRestApiOutput::tags): <p>The collection of tags. Each tag element is associated with a given resource.</p>
     ///   - [`disable_execute_api_endpoint(bool)`](crate::operation::get_rest_api::GetRestApiOutput::disable_execute_api_endpoint): <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     ///   - [`root_resource_id(Option<String>)`](crate::operation::get_rest_api::GetRestApiOutput::root_resource_id): <p>The API's root resource ID.</p>
+    ///   - [`security_policy(Option<SecurityPolicy>)`](crate::operation::get_rest_api::GetRestApiOutput::security_policy): <p>The Transport Layer Security (TLS) version + cipher suite for this RestApi.</p>
+    ///   - [`endpoint_access_mode(Option<EndpointAccessMode>)`](crate::operation::get_rest_api::GetRestApiOutput::endpoint_access_mode): <p>The endpoint access mode of the RestApi.</p>
+    ///   - [`api_status(Option<ApiStatus>)`](crate::operation::get_rest_api::GetRestApiOutput::api_status): <p>The ApiStatus of the RestApi.</p>
+    ///   - [`api_status_message(Option<String>)`](crate::operation::get_rest_api::GetRestApiOutput::api_status_message): <p>The status message of the RestApi. When the status message is <code>UPDATING</code> you can still invoke it.</p>
     /// - On failure, responds with [`SdkError<GetRestApiError>`](crate::operation::get_rest_api::GetRestApiError)
     pub fn get_rest_api(&self) -> crate::operation::get_rest_api::builders::GetRestApiFluentBuilder {
         crate::operation::get_rest_api::builders::GetRestApiFluentBuilder::new(self.handle.clone())

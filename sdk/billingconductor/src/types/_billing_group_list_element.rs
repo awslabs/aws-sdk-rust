@@ -26,6 +26,8 @@ pub struct BillingGroupListElement {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
     pub account_grouping: ::std::option::Option<crate::types::ListBillingGroupAccountGrouping>,
+    /// <p>The type of billing group.</p>
+    pub billing_group_type: ::std::option::Option<crate::types::BillingGroupType>,
 }
 impl BillingGroupListElement {
     /// <p>The name of the billing group.</p>
@@ -72,6 +74,10 @@ impl BillingGroupListElement {
     pub fn account_grouping(&self) -> ::std::option::Option<&crate::types::ListBillingGroupAccountGrouping> {
         self.account_grouping.as_ref()
     }
+    /// <p>The type of billing group.</p>
+    pub fn billing_group_type(&self) -> ::std::option::Option<&crate::types::BillingGroupType> {
+        self.billing_group_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for BillingGroupListElement {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -87,6 +93,7 @@ impl ::std::fmt::Debug for BillingGroupListElement {
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
         formatter.field("account_grouping", &self.account_grouping);
+        formatter.field("billing_group_type", &self.billing_group_type);
         formatter.finish()
     }
 }
@@ -112,6 +119,7 @@ pub struct BillingGroupListElementBuilder {
     pub(crate) status: ::std::option::Option<crate::types::BillingGroupStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) account_grouping: ::std::option::Option<crate::types::ListBillingGroupAccountGrouping>,
+    pub(crate) billing_group_type: ::std::option::Option<crate::types::BillingGroupType>,
 }
 impl BillingGroupListElementBuilder {
     /// <p>The name of the billing group.</p>
@@ -268,6 +276,20 @@ impl BillingGroupListElementBuilder {
     pub fn get_account_grouping(&self) -> &::std::option::Option<crate::types::ListBillingGroupAccountGrouping> {
         &self.account_grouping
     }
+    /// <p>The type of billing group.</p>
+    pub fn billing_group_type(mut self, input: crate::types::BillingGroupType) -> Self {
+        self.billing_group_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of billing group.</p>
+    pub fn set_billing_group_type(mut self, input: ::std::option::Option<crate::types::BillingGroupType>) -> Self {
+        self.billing_group_type = input;
+        self
+    }
+    /// <p>The type of billing group.</p>
+    pub fn get_billing_group_type(&self) -> &::std::option::Option<crate::types::BillingGroupType> {
+        &self.billing_group_type
+    }
     /// Consumes the builder and constructs a [`BillingGroupListElement`](crate::types::BillingGroupListElement).
     pub fn build(self) -> crate::types::BillingGroupListElement {
         crate::types::BillingGroupListElement {
@@ -282,6 +304,7 @@ impl BillingGroupListElementBuilder {
             status: self.status,
             status_reason: self.status_reason,
             account_grouping: self.account_grouping,
+            billing_group_type: self.billing_group_type,
         }
     }
 }
@@ -299,6 +322,7 @@ impl ::std::fmt::Debug for BillingGroupListElementBuilder {
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
         formatter.field("account_grouping", &self.account_grouping);
+        formatter.field("billing_group_type", &self.billing_group_type);
         formatter.finish()
     }
 }

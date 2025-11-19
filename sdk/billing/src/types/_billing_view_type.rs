@@ -13,6 +13,8 @@
 /// # let billingviewtype = unimplemented!();
 /// match billingviewtype {
 ///     BillingViewType::BillingGroup => { /* ... */ },
+///     BillingViewType::BillingTransfer => { /* ... */ },
+///     BillingViewType::BillingTransferShowback => { /* ... */ },
 ///     BillingViewType::Custom => { /* ... */ },
 ///     BillingViewType::Primary => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +48,10 @@ pub enum BillingViewType {
     #[allow(missing_docs)] // documentation missing in model
     BillingGroup,
     #[allow(missing_docs)] // documentation missing in model
+    BillingTransfer,
+    #[allow(missing_docs)] // documentation missing in model
+    BillingTransferShowback,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Primary,
@@ -57,6 +63,8 @@ impl ::std::convert::From<&str> for BillingViewType {
     fn from(s: &str) -> Self {
         match s {
             "BILLING_GROUP" => BillingViewType::BillingGroup,
+            "BILLING_TRANSFER" => BillingViewType::BillingTransfer,
+            "BILLING_TRANSFER_SHOWBACK" => BillingViewType::BillingTransferShowback,
             "CUSTOM" => BillingViewType::Custom,
             "PRIMARY" => BillingViewType::Primary,
             other => BillingViewType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +83,8 @@ impl BillingViewType {
     pub fn as_str(&self) -> &str {
         match self {
             BillingViewType::BillingGroup => "BILLING_GROUP",
+            BillingViewType::BillingTransfer => "BILLING_TRANSFER",
+            BillingViewType::BillingTransferShowback => "BILLING_TRANSFER_SHOWBACK",
             BillingViewType::Custom => "CUSTOM",
             BillingViewType::Primary => "PRIMARY",
             BillingViewType::Unknown(value) => value.as_str(),
@@ -82,7 +92,7 @@ impl BillingViewType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BILLING_GROUP", "CUSTOM", "PRIMARY"]
+        &["BILLING_GROUP", "BILLING_TRANSFER", "BILLING_TRANSFER_SHOWBACK", "CUSTOM", "PRIMARY"]
     }
 }
 impl ::std::convert::AsRef<str> for BillingViewType {
@@ -106,6 +116,8 @@ impl ::std::fmt::Display for BillingViewType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BillingViewType::BillingGroup => write!(f, "BILLING_GROUP"),
+            BillingViewType::BillingTransfer => write!(f, "BILLING_TRANSFER"),
+            BillingViewType::BillingTransferShowback => write!(f, "BILLING_TRANSFER_SHOWBACK"),
             BillingViewType::Custom => write!(f, "CUSTOM"),
             BillingViewType::Primary => write!(f, "PRIMARY"),
             BillingViewType::Unknown(value) => write!(f, "{value}"),

@@ -15,6 +15,7 @@
 ///     InputType::AwsCdi => { /* ... */ },
 ///     InputType::InputDevice => { /* ... */ },
 ///     InputType::Mediaconnect => { /* ... */ },
+///     InputType::MediaconnectRouter => { /* ... */ },
 ///     InputType::Mp4File => { /* ... */ },
 ///     InputType::Multicast => { /* ... */ },
 ///     InputType::RtmpPull => { /* ... */ },
@@ -61,6 +62,8 @@ pub enum InputType {
     #[allow(missing_docs)] // documentation missing in model
     Mediaconnect,
     #[allow(missing_docs)] // documentation missing in model
+    MediaconnectRouter,
+    #[allow(missing_docs)] // documentation missing in model
     Mp4File,
     #[allow(missing_docs)] // documentation missing in model
     Multicast,
@@ -92,6 +95,7 @@ impl ::std::convert::From<&str> for InputType {
             "AWS_CDI" => InputType::AwsCdi,
             "INPUT_DEVICE" => InputType::InputDevice,
             "MEDIACONNECT" => InputType::Mediaconnect,
+            "MEDIACONNECT_ROUTER" => InputType::MediaconnectRouter,
             "MP4_FILE" => InputType::Mp4File,
             "MULTICAST" => InputType::Multicast,
             "RTMP_PULL" => InputType::RtmpPull,
@@ -121,6 +125,7 @@ impl InputType {
             InputType::AwsCdi => "AWS_CDI",
             InputType::InputDevice => "INPUT_DEVICE",
             InputType::Mediaconnect => "MEDIACONNECT",
+            InputType::MediaconnectRouter => "MEDIACONNECT_ROUTER",
             InputType::Mp4File => "MP4_FILE",
             InputType::Multicast => "MULTICAST",
             InputType::RtmpPull => "RTMP_PULL",
@@ -141,6 +146,7 @@ impl InputType {
             "AWS_CDI",
             "INPUT_DEVICE",
             "MEDIACONNECT",
+            "MEDIACONNECT_ROUTER",
             "MP4_FILE",
             "MULTICAST",
             "RTMP_PULL",
@@ -178,6 +184,7 @@ impl ::std::fmt::Display for InputType {
             InputType::AwsCdi => write!(f, "AWS_CDI"),
             InputType::InputDevice => write!(f, "INPUT_DEVICE"),
             InputType::Mediaconnect => write!(f, "MEDIACONNECT"),
+            InputType::MediaconnectRouter => write!(f, "MEDIACONNECT_ROUTER"),
             InputType::Mp4File => write!(f, "MP4_FILE"),
             InputType::Multicast => write!(f, "MULTICAST"),
             InputType::RtmpPull => write!(f, "RTMP_PULL"),

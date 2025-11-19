@@ -25,6 +25,10 @@ pub use crate::types::_billing_view_status::BillingViewStatus;
 
 pub use crate::types::_billing_view_type::BillingViewType;
 
+pub use crate::types::_string_search::StringSearch;
+
+pub use crate::types::_search_option::SearchOption;
+
 pub use crate::types::_active_time_range::ActiveTimeRange;
 
 pub use crate::types::_billing_view_element::BillingViewElement;
@@ -50,6 +54,10 @@ mod _dimension_values;
 mod _expression;
 
 mod _resource_tag;
+
+mod _search_option;
+
+mod _string_search;
 
 mod _tag_values;
 

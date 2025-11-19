@@ -27,17 +27,29 @@ pub use crate::types::_control_scope::ControlScopeBuilder;
 
 pub use crate::types::_control_input_parameter::ControlInputParameterBuilder;
 
+pub use crate::types::_scan_setting::ScanSettingBuilder;
+
 pub use crate::types::_advanced_backup_setting::AdvancedBackupSettingBuilder;
 
 pub use crate::types::_backup_plan_input::BackupPlanInputBuilder;
 
 pub use crate::types::_backup_rule_input::BackupRuleInputBuilder;
 
+pub use crate::types::_scan_action::ScanActionBuilder;
+
 pub use crate::types::_index_action::IndexActionBuilder;
 
 pub use crate::types::_copy_action::CopyActionBuilder;
 
 pub use crate::types::_tiering_configurations_list_member::TieringConfigurationsListMemberBuilder;
+
+pub use crate::types::_scan_job_summary::ScanJobSummaryBuilder;
+
+pub use crate::types::_scan_job::ScanJobBuilder;
+
+pub use crate::types::_scan_result_info::ScanResultInfoBuilder;
+
+pub use crate::types::_scan_job_creator::ScanJobCreatorBuilder;
 
 pub use crate::types::_restore_testing_selection_for_list::RestoreTestingSelectionForListBuilder;
 
@@ -60,6 +72,8 @@ pub use crate::types::_report_job::ReportJobBuilder;
 pub use crate::types::_report_destination::ReportDestinationBuilder;
 
 pub use crate::types::_recovery_point_by_resource::RecoveryPointByResourceBuilder;
+
+pub use crate::types::_aggregated_scan_result::AggregatedScanResultBuilder;
 
 pub use crate::types::_recovery_point_member::RecoveryPointMemberBuilder;
 
@@ -114,6 +128,8 @@ pub use crate::types::_backup_plan::BackupPlanBuilder;
 pub use crate::types::_backup_rule::BackupRuleBuilder;
 
 pub use crate::types::_scheduled_plan_execution_member::ScheduledPlanExecutionMemberBuilder;
+
+pub use crate::types::_scan_result::ScanResultBuilder;
 
 pub use crate::types::_latest_mpa_approval_team_update::LatestMpaApprovalTeamUpdateBuilder;
 

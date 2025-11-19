@@ -1221,6 +1221,32 @@ impl From<crate::operation::get_malware_protection_plan::GetMalwareProtectionPla
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_malware_scan::GetMalwareScanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_malware_scan::GetMalwareScanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_malware_scan::GetMalwareScanError> for Error {
+    fn from(err: crate::operation::get_malware_scan::GetMalwareScanError) -> Self {
+        match err {
+            crate::operation::get_malware_scan::GetMalwareScanError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_malware_scan::GetMalwareScanError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_malware_scan::GetMalwareScanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_malware_scan::GetMalwareScanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_malware_scan_settings::GetMalwareScanSettingsError, R>>
     for Error
 where
@@ -1675,6 +1701,31 @@ impl From<crate::operation::list_malware_protection_plans::ListMalwareProtection
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::list_malware_protection_plans::ListMalwareProtectionPlansError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_malware_scans::ListMalwareScansError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_malware_scans::ListMalwareScansError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_malware_scans::ListMalwareScansError> for Error {
+    fn from(err: crate::operation::list_malware_scans::ListMalwareScansError) -> Self {
+        match err {
+            crate::operation::list_malware_scans::ListMalwareScansError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_malware_scans::ListMalwareScansError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_malware_scans::ListMalwareScansError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

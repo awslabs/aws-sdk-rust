@@ -41,6 +41,8 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_insight_selector::InsightSelector;
 
+pub use crate::types::_source_event_category::SourceEventCategory;
+
 pub use crate::types::_insight_type::InsightType;
 
 pub use crate::types::_event_selector::EventSelector;
@@ -76,6 +78,10 @@ pub use crate::types::_query_status::QueryStatus;
 pub use crate::types::_public_key::PublicKey;
 
 pub use crate::types::_insights_metric_data_type::InsightsMetricDataType;
+
+pub use crate::types::_list_insights_data_dimension_key::ListInsightsDataDimensionKey;
+
+pub use crate::types::_list_insights_data_type::ListInsightsDataType;
 
 pub use crate::types::_imports_list_item::ImportsListItem;
 
@@ -161,6 +167,10 @@ mod _insight_type;
 
 mod _insights_metric_data_type;
 
+mod _list_insights_data_dimension_key;
+
+mod _list_insights_data_type;
+
 mod _lookup_attribute;
 
 mod _lookup_attribute_key;
@@ -200,6 +210,8 @@ mod _s3_import_source;
 mod _search_sample_queries_search_result;
 
 mod _source_config;
+
+mod _source_event_category;
 
 mod _tag;
 

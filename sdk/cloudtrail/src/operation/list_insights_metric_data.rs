@@ -264,6 +264,20 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListInsightsM
 pub enum ListInsightsMetricDataError {
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p></li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// </ul>
+    InvalidTrailNameException(crate::types::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
@@ -302,6 +316,7 @@ impl ListInsightsMetricDataError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidTrailNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -310,6 +325,10 @@ impl ListInsightsMetricDataError {
     /// Returns `true` if the error kind is `ListInsightsMetricDataError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `ListInsightsMetricDataError::InvalidTrailNameException`.
+    pub fn is_invalid_trail_name_exception(&self) -> bool {
+        matches!(self, Self::InvalidTrailNameException(_))
     }
     /// Returns `true` if the error kind is `ListInsightsMetricDataError::OperationNotPermittedException`.
     pub fn is_operation_not_permitted_exception(&self) -> bool {
@@ -324,6 +343,7 @@ impl ::std::error::Error for ListInsightsMetricDataError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidTrailNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -334,6 +354,7 @@ impl ::std::fmt::Display for ListInsightsMetricDataError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::InvalidTrailNameException(_inner) => _inner.fmt(f),
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
             Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -358,6 +379,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListInsightsM
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTrailNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

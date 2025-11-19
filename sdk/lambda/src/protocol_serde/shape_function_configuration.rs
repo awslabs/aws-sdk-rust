@@ -222,6 +222,9 @@ where
                         "LoggingConfig" => {
                             builder = builder.set_logging_config(crate::protocol_serde::shape_logging_config::de_logging_config(tokens)?);
                         }
+                        "TenancyConfig" => {
+                            builder = builder.set_tenancy_config(crate::protocol_serde::shape_tenancy_config::de_tenancy_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

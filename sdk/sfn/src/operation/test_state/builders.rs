@@ -48,7 +48,7 @@ impl crate::operation::test_state::builders::TestStateInputBuilder {
 /// </ul>
 /// <p>The <code>TestState</code> API assumes an IAM role which must contain the required IAM permissions for the resources your state is accessing. For information about the permissions a state might need, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions">IAM permissions to test a state</a>.</p>
 /// <p>The <code>TestState</code> API can run for up to five minutes. If the execution of a state exceeds this duration, it fails with the <code>States.Timeout</code> error.</p>
-/// <p><code>TestState</code> doesn't support <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity tasks</a>, <code>.sync</code> or <code>.waitForTaskToken</code> <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html">service integration patterns</a>, <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html">Parallel</a>, or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-map-state.html">Map</a> states.</p>
+/// <p><code>TestState</code> only supports the following when a mock is specified: <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity tasks</a>, <code>.sync</code> or <code>.waitForTaskToken</code> <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html">service integration patterns</a>, <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html">Parallel</a>, or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-map-state.html">Map</a> states.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,17 +128,17 @@ impl TestStateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state or state machine.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.definition(input.into());
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state or state machine.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> (ASL) definition of the state or state machine.</p>
     pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_definition()
     }
@@ -244,5 +244,64 @@ impl TestStateFluentBuilder {
     /// <p>JSON object literal that sets variables used in the state under test. Object keys are the variable names and values are the variable values.</p>
     pub fn get_variables(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_variables()
+    }
+    /// <p>Denotes the particular state within a state machine definition to be tested. If this field is specified, the <code>definition</code> must contain a fully-formed state machine definition.</p>
+    pub fn state_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.state_name(input.into());
+        self
+    }
+    /// <p>Denotes the particular state within a state machine definition to be tested. If this field is specified, the <code>definition</code> must contain a fully-formed state machine definition.</p>
+    pub fn set_state_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_state_name(input);
+        self
+    }
+    /// <p>Denotes the particular state within a state machine definition to be tested. If this field is specified, the <code>definition</code> must contain a fully-formed state machine definition.</p>
+    pub fn get_state_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state_name()
+    }
+    /// <p>Defines a mocked result or error for the state under test.</p>
+    /// <p>A mock can only be specified for Task, Map, or Parallel states. If it is specified for another state type, an exception will be thrown.</p>
+    pub fn mock(mut self, input: crate::types::MockInput) -> Self {
+        self.inner = self.inner.mock(input);
+        self
+    }
+    /// <p>Defines a mocked result or error for the state under test.</p>
+    /// <p>A mock can only be specified for Task, Map, or Parallel states. If it is specified for another state type, an exception will be thrown.</p>
+    pub fn set_mock(mut self, input: ::std::option::Option<crate::types::MockInput>) -> Self {
+        self.inner = self.inner.set_mock(input);
+        self
+    }
+    /// <p>Defines a mocked result or error for the state under test.</p>
+    /// <p>A mock can only be specified for Task, Map, or Parallel states. If it is specified for another state type, an exception will be thrown.</p>
+    pub fn get_mock(&self) -> &::std::option::Option<crate::types::MockInput> {
+        self.inner.get_mock()
+    }
+    /// <p>A JSON string representing a valid Context object for the state under test. This field may only be specified if a mock is specified in the same request.</p>
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.context(input.into());
+        self
+    }
+    /// <p>A JSON string representing a valid Context object for the state under test. This field may only be specified if a mock is specified in the same request.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_context(input);
+        self
+    }
+    /// <p>A JSON string representing a valid Context object for the state under test. This field may only be specified if a mock is specified in the same request.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_context()
+    }
+    /// <p>Contains configurations for the state under test.</p>
+    pub fn state_configuration(mut self, input: crate::types::TestStateConfiguration) -> Self {
+        self.inner = self.inner.state_configuration(input);
+        self
+    }
+    /// <p>Contains configurations for the state under test.</p>
+    pub fn set_state_configuration(mut self, input: ::std::option::Option<crate::types::TestStateConfiguration>) -> Self {
+        self.inner = self.inner.set_state_configuration(input);
+        self
+    }
+    /// <p>Contains configurations for the state under test.</p>
+    pub fn get_state_configuration(&self) -> &::std::option::Option<crate::types::TestStateConfiguration> {
+        self.inner.get_state_configuration()
     }
 }

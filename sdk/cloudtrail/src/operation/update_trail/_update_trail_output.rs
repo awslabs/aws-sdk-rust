@@ -29,7 +29,7 @@ pub struct UpdateTrailOutput {
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p>Specifies the KMS key ID that encrypts the logs and digest files delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the trail is an organization trail.</p>
@@ -84,7 +84,7 @@ impl UpdateTrailOutput {
     pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
-    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p>Specifies the KMS key ID that encrypts the logs and digest files delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -289,19 +289,19 @@ impl UpdateTrailOutputBuilder {
     pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_logs_role_arn
     }
-    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p>Specifies the KMS key ID that encrypts the logs and digest files delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p>Specifies the KMS key ID that encrypts the logs and digest files delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p>Specifies the KMS key ID that encrypts the logs and digest files delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
     /// <p><code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code></p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id

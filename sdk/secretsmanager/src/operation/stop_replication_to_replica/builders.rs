@@ -111,17 +111,17 @@ impl StopReplicationToReplicaFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the primary secret.</p>
+    /// <p>The name of the secret or the replica ARN. The replica ARN is the same as the original primary secret ARN expect the Region is changed to the replica Region.</p>
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_id(input.into());
         self
     }
-    /// <p>The ARN of the primary secret.</p>
+    /// <p>The name of the secret or the replica ARN. The replica ARN is the same as the original primary secret ARN expect the Region is changed to the replica Region.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_id(input);
         self
     }
-    /// <p>The ARN of the primary secret.</p>
+    /// <p>The name of the secret or the replica ARN. The replica ARN is the same as the original primary secret ARN expect the Region is changed to the replica Region.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secret_id()
     }

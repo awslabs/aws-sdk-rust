@@ -59,6 +59,12 @@ pub use crate::types::_detector_feature_configuration::DetectorFeatureConfigurat
 
 pub use crate::types::_detector_additional_configuration::DetectorAdditionalConfigurationBuilder;
 
+pub use crate::types::_start_malware_scan_configuration::StartMalwareScanConfigurationBuilder;
+
+pub use crate::types::_recovery_point::RecoveryPointBuilder;
+
+pub use crate::types::_incremental_scan_details::IncrementalScanDetailsBuilder;
+
 pub use crate::types::_s3_object_for_send_object_malware_scan::S3ObjectForSendObjectMalwareScanBuilder;
 
 pub use crate::types::_destination::DestinationBuilder;
@@ -67,11 +73,19 @@ pub use crate::types::_admin_account::AdminAccountBuilder;
 
 pub use crate::types::_member::MemberBuilder;
 
+pub use crate::types::_malware_scan::MalwareScanBuilder;
+
+pub use crate::types::_sort_criteria::SortCriteriaBuilder;
+
+pub use crate::types::_list_malware_scans_filter_criteria::ListMalwareScansFilterCriteriaBuilder;
+
+pub use crate::types::_list_malware_scans_filter_criterion::ListMalwareScansFilterCriterionBuilder;
+
+pub use crate::types::_filter_condition::FilterConditionBuilder;
+
 pub use crate::types::_malware_protection_plan_summary::MalwareProtectionPlanSummaryBuilder;
 
 pub use crate::types::_invitation::InvitationBuilder;
-
-pub use crate::types::_sort_criteria::SortCriteriaBuilder;
 
 pub use crate::types::_coverage_resource::CoverageResourceBuilder;
 
@@ -165,6 +179,28 @@ pub use crate::types::_cloud_trail_configuration_result::CloudTrailConfiguration
 
 pub use crate::types::_master::MasterBuilder;
 
+pub use crate::types::_get_malware_scan_result_details::GetMalwareScanResultDetailsBuilder;
+
+pub use crate::types::_scan_result_threat::ScanResultThreatBuilder;
+
+pub use crate::types::_item_details::ItemDetailsBuilder;
+
+pub use crate::types::_additional_info::AdditionalInfoBuilder;
+
+pub use crate::types::_scan_configuration::ScanConfigurationBuilder;
+
+pub use crate::types::_scan_configuration_recovery_point::ScanConfigurationRecoveryPointBuilder;
+
+pub use crate::types::_trigger_details::TriggerDetailsBuilder;
+
+pub use crate::types::_scanned_resource::ScannedResourceBuilder;
+
+pub use crate::types::_scanned_resource_details::ScannedResourceDetailsBuilder;
+
+pub use crate::types::_ebs_snapshot::EbsSnapshotBuilder;
+
+pub use crate::types::_volume_detail::VolumeDetailBuilder;
+
 pub use crate::types::_malware_protection_plan_status_reason::MalwareProtectionPlanStatusReasonBuilder;
 
 pub use crate::types::_create_protected_resource::CreateProtectedResourceBuilder;
@@ -188,6 +224,8 @@ pub use crate::types::_finding::FindingBuilder;
 pub use crate::types::_service::ServiceBuilder;
 
 pub use crate::types::_malware_scan_details::MalwareScanDetailsBuilder;
+
+pub use crate::types::_malware_protection_findings_scan_configuration::MalwareProtectionFindingsScanConfigurationBuilder;
 
 pub use crate::types::_threat::ThreatBuilder;
 
@@ -335,6 +373,12 @@ pub use crate::types::_domain_details::DomainDetailsBuilder;
 
 pub use crate::types::_resource::ResourceBuilder;
 
+pub use crate::types::_recovery_point_details::RecoveryPointDetailsBuilder;
+
+pub use crate::types::_ec2_image_details::Ec2ImageDetailsBuilder;
+
+pub use crate::types::_ebs_snapshot_details::EbsSnapshotDetailsBuilder;
+
 pub use crate::types::_lambda_details::LambdaDetailsBuilder;
 
 pub use crate::types::_vpc_config::VpcConfigBuilder;
@@ -360,8 +404,6 @@ pub use crate::types::_volume::VolumeBuilder;
 pub use crate::types::_host_path::HostPathBuilder;
 
 pub use crate::types::_ebs_volume_details::EbsVolumeDetailsBuilder;
-
-pub use crate::types::_volume_detail::VolumeDetailBuilder;
 
 pub use crate::types::_kubernetes_details::KubernetesDetailsBuilder;
 
@@ -433,13 +475,9 @@ pub use crate::types::_scan_result_details::ScanResultDetailsBuilder;
 
 pub use crate::types::_resource_details::ResourceDetailsBuilder;
 
-pub use crate::types::_trigger_details::TriggerDetailsBuilder;
-
 pub use crate::types::_filter_criteria::FilterCriteriaBuilder;
 
 pub use crate::types::_filter_criterion::FilterCriterionBuilder;
-
-pub use crate::types::_filter_condition::FilterConditionBuilder;
 
 pub use crate::types::_account_detail::AccountDetailBuilder;
 

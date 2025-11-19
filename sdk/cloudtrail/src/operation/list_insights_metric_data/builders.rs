@@ -33,7 +33,13 @@ impl crate::operation::list_insights_metric_data::builders::ListInsightsMetricDa
 /// <li>
 /// <p>Data points with a period of 3600 seconds (1 hour) are available for 90 days.</p></li>
 /// </ul>
-/// <p>Access to the <code>ListInsightsMetricData</code> API operation is linked to the <code>cloudtrail:LookupEvents</code> action. To use this operation, you must have permissions to perform the <code>cloudtrail:LookupEvents</code> action.</p>
+/// <p>To use <code>ListInsightsMetricData</code> operation, you must have the following permissions:</p>
+/// <ul>
+/// <li>
+/// <p>If <code>ListInsightsMetricData</code> is invoked with <code>TrailName</code> parameter, access to the <code>ListInsightsMetricData</code> API operation is linked to the <code>cloudtrail:LookupEvents</code> action and <code>cloudtrail:ListInsightsData</code>. To use this operation, you must have permissions to perform the <code>cloudtrail:LookupEvents</code> and <code>cloudtrail:ListInsightsData</code> action on the specific trail.</p></li>
+/// <li>
+/// <p>If <code>ListInsightsMetricData</code> is invoked without <code>TrailName</code> parameter, access to the <code>ListInsightsMetricData</code> API operation is linked to the <code>cloudtrail:LookupEvents</code> action only. To use this operation, you must have permissions to perform the <code>cloudtrail:LookupEvents</code> action.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInsightsMetricDataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,6 +130,20 @@ impl ListInsightsMetricDataFluentBuilder {
     /// Paginators are used by calling [`send().await`](crate::operation::list_insights_metric_data::paginator::ListInsightsMetricDataPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
     pub fn into_paginator(self) -> crate::operation::list_insights_metric_data::paginator::ListInsightsMetricDataPaginator {
         crate::operation::list_insights_metric_data::paginator::ListInsightsMetricDataPaginator::new(self.handle, self.inner)
+    }
+    /// <p>The Amazon Resource Name(ARN) or name of the trail for which you want to retrieve Insights metrics data. This parameter should only be provided to fetch Insights metrics data generated on trails logging data events. This parameter is not required for Insights metric data generated on trails logging management events.</p>
+    pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trail_name(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name(ARN) or name of the trail for which you want to retrieve Insights metrics data. This parameter should only be provided to fetch Insights metrics data generated on trails logging data events. This parameter is not required for Insights metric data generated on trails logging management events.</p>
+    pub fn set_trail_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trail_name(input);
+        self
+    }
+    /// <p>The Amazon Resource Name(ARN) or name of the trail for which you want to retrieve Insights metrics data. This parameter should only be provided to fetch Insights metrics data generated on trails logging data events. This parameter is not required for Insights metric data generated on trails logging management events.</p>
+    pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trail_name()
     }
     /// <p>The Amazon Web Services service to which the request was made, such as <code>iam.amazonaws.com</code> or <code>s3.amazonaws.com</code>.</p>
     pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

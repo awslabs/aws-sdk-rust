@@ -29,9 +29,19 @@ pub use crate::types::_test_execution_status::TestExecutionStatus;
 
 pub use crate::types::_inspection_data::InspectionData;
 
+pub use crate::types::_inspection_error_details::InspectionErrorDetails;
+
 pub use crate::types::_inspection_data_response::InspectionDataResponse;
 
 pub use crate::types::_inspection_data_request::InspectionDataRequest;
+
+pub use crate::types::_test_state_configuration::TestStateConfiguration;
+
+pub use crate::types::_mock_input::MockInput;
+
+pub use crate::types::_mock_response_validation_mode::MockResponseValidationMode;
+
+pub use crate::types::_mock_error_output::MockErrorOutput;
 
 pub use crate::types::_inspection_level::InspectionLevel;
 
@@ -213,6 +223,8 @@ mod _inspection_data_request;
 
 mod _inspection_data_response;
 
+mod _inspection_error_details;
+
 mod _inspection_level;
 
 mod _kms_key_state;
@@ -253,6 +265,12 @@ mod _map_run_status;
 
 mod _map_state_started_event_details;
 
+mod _mock_error_output;
+
+mod _mock_input;
+
+mod _mock_response_validation_mode;
+
 mod _routing_configuration_list_item;
 
 mod _state_entered_event_details;
@@ -292,6 +310,8 @@ mod _task_succeeded_event_details;
 mod _task_timed_out_event_details;
 
 mod _test_execution_status;
+
+mod _test_state_configuration;
 
 mod _tracing_configuration;
 

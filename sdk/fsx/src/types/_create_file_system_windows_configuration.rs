@@ -49,6 +49,8 @@ pub struct CreateFileSystemWindowsConfiguration {
     pub audit_log_configuration: ::std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>,
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.</p>
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fsrm_configuration: ::std::option::Option<crate::types::WindowsFsrmConfiguration>,
 }
 impl CreateFileSystemWindowsConfiguration {
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory (AD) instance that the file system should join when it's created.</p>
@@ -122,6 +124,10 @@ impl CreateFileSystemWindowsConfiguration {
     pub fn disk_iops_configuration(&self) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn fsrm_configuration(&self) -> ::std::option::Option<&crate::types::WindowsFsrmConfiguration> {
+        self.fsrm_configuration.as_ref()
+    }
 }
 impl CreateFileSystemWindowsConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateFileSystemWindowsConfiguration`](crate::types::CreateFileSystemWindowsConfiguration).
@@ -146,6 +152,7 @@ pub struct CreateFileSystemWindowsConfigurationBuilder {
     pub(crate) aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) audit_log_configuration: ::std::option::Option<crate::types::WindowsAuditLogCreateConfiguration>,
     pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
+    pub(crate) fsrm_configuration: ::std::option::Option<crate::types::WindowsFsrmConfiguration>,
 }
 impl CreateFileSystemWindowsConfigurationBuilder {
     /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory (AD) instance that the file system should join when it's created.</p>
@@ -389,6 +396,20 @@ impl CreateFileSystemWindowsConfigurationBuilder {
     pub fn get_disk_iops_configuration(&self) -> &::std::option::Option<crate::types::DiskIopsConfiguration> {
         &self.disk_iops_configuration
     }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn fsrm_configuration(mut self, input: crate::types::WindowsFsrmConfiguration) -> Self {
+        self.fsrm_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn set_fsrm_configuration(mut self, input: ::std::option::Option<crate::types::WindowsFsrmConfiguration>) -> Self {
+        self.fsrm_configuration = input;
+        self
+    }
+    /// <p>The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows File Server uses for the file system. FSRM is disabled by default.</p>
+    pub fn get_fsrm_configuration(&self) -> &::std::option::Option<crate::types::WindowsFsrmConfiguration> {
+        &self.fsrm_configuration
+    }
     /// Consumes the builder and constructs a [`CreateFileSystemWindowsConfiguration`](crate::types::CreateFileSystemWindowsConfiguration).
     pub fn build(self) -> crate::types::CreateFileSystemWindowsConfiguration {
         crate::types::CreateFileSystemWindowsConfiguration {
@@ -404,6 +425,7 @@ impl CreateFileSystemWindowsConfigurationBuilder {
             aliases: self.aliases,
             audit_log_configuration: self.audit_log_configuration,
             disk_iops_configuration: self.disk_iops_configuration,
+            fsrm_configuration: self.fsrm_configuration,
         }
     }
 }

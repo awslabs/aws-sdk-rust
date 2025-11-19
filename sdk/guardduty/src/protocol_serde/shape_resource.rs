@@ -64,6 +64,17 @@ where
                         "lambdaDetails" => {
                             builder = builder.set_lambda_details(crate::protocol_serde::shape_lambda_details::de_lambda_details(tokens)?);
                         }
+                        "ebsSnapshotDetails" => {
+                            builder =
+                                builder.set_ebs_snapshot_details(crate::protocol_serde::shape_ebs_snapshot_details::de_ebs_snapshot_details(tokens)?);
+                        }
+                        "ec2ImageDetails" => {
+                            builder = builder.set_ec2_image_details(crate::protocol_serde::shape_ec2_image_details::de_ec2_image_details(tokens)?);
+                        }
+                        "recoveryPointDetails" => {
+                            builder = builder
+                                .set_recovery_point_details(crate::protocol_serde::shape_recovery_point_details::de_recovery_point_details(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

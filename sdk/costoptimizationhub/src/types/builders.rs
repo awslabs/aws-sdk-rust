@@ -17,6 +17,12 @@ pub use crate::types::_order_by::OrderByBuilder;
 
 pub use crate::types::_account_enrollment_status::AccountEnrollmentStatusBuilder;
 
+pub use crate::types::_efficiency_metrics_by_group::EfficiencyMetricsByGroupBuilder;
+
+pub use crate::types::_metrics_by_time::MetricsByTimeBuilder;
+
+pub use crate::types::_time_period::TimePeriodBuilder;
+
 pub use crate::types::_memory_db_reserved_instances::MemoryDbReservedInstancesBuilder;
 
 pub use crate::types::_reserved_instances_cost_calculation::ReservedInstancesCostCalculationBuilder;

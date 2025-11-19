@@ -11,6 +11,8 @@ pub struct ListRuleGroupsInput {
     pub scope: ::std::option::Option<crate::types::ResourceManagedStatus>,
     /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
     pub managed_type: ::std::option::Option<crate::types::ResourceManagedType>,
+    /// <p>Filters the results to show only rule groups with the specified subscription status. Use this to find subscribed or unsubscribed rule groups.</p>
+    pub subscription_status: ::std::option::Option<crate::types::SubscriptionStatus>,
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
     pub r#type: ::std::option::Option<crate::types::RuleGroupType>,
 }
@@ -30,6 +32,10 @@ impl ListRuleGroupsInput {
     /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
     pub fn managed_type(&self) -> ::std::option::Option<&crate::types::ResourceManagedType> {
         self.managed_type.as_ref()
+    }
+    /// <p>Filters the results to show only rule groups with the specified subscription status. Use this to find subscribed or unsubscribed rule groups.</p>
+    pub fn subscription_status(&self) -> ::std::option::Option<&crate::types::SubscriptionStatus> {
+        self.subscription_status.as_ref()
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RuleGroupType> {
@@ -51,6 +57,7 @@ pub struct ListRuleGroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) scope: ::std::option::Option<crate::types::ResourceManagedStatus>,
     pub(crate) managed_type: ::std::option::Option<crate::types::ResourceManagedType>,
+    pub(crate) subscription_status: ::std::option::Option<crate::types::SubscriptionStatus>,
     pub(crate) r#type: ::std::option::Option<crate::types::RuleGroupType>,
 }
 impl ListRuleGroupsInputBuilder {
@@ -110,6 +117,20 @@ impl ListRuleGroupsInputBuilder {
     pub fn get_managed_type(&self) -> &::std::option::Option<crate::types::ResourceManagedType> {
         &self.managed_type
     }
+    /// <p>Filters the results to show only rule groups with the specified subscription status. Use this to find subscribed or unsubscribed rule groups.</p>
+    pub fn subscription_status(mut self, input: crate::types::SubscriptionStatus) -> Self {
+        self.subscription_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filters the results to show only rule groups with the specified subscription status. Use this to find subscribed or unsubscribed rule groups.</p>
+    pub fn set_subscription_status(mut self, input: ::std::option::Option<crate::types::SubscriptionStatus>) -> Self {
+        self.subscription_status = input;
+        self
+    }
+    /// <p>Filters the results to show only rule groups with the specified subscription status. Use this to find subscribed or unsubscribed rule groups.</p>
+    pub fn get_subscription_status(&self) -> &::std::option::Option<crate::types::SubscriptionStatus> {
+        &self.subscription_status
+    }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -133,6 +154,7 @@ impl ListRuleGroupsInputBuilder {
             max_results: self.max_results,
             scope: self.scope,
             managed_type: self.managed_type,
+            subscription_status: self.subscription_status,
             r#type: self.r#type,
         })
     }

@@ -78,6 +78,58 @@ where
                                     .transpose()?,
                             );
                         }
+                        "errorDetails" => {
+                            builder = builder.set_error_details(crate::protocol_serde::shape_inspection_error_details::de_inspection_error_details(
+                                tokens,
+                            )?);
+                        }
+                        "afterItemsPath" => {
+                            builder = builder.set_after_items_path(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "afterItemSelector" => {
+                            builder = builder.set_after_item_selector(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "afterItemBatcher" => {
+                            builder = builder.set_after_item_batcher(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "afterItemsPointer" => {
+                            builder = builder.set_after_items_pointer(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "toleratedFailureCount" => {
+                            builder = builder.set_tolerated_failure_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "toleratedFailurePercentage" => {
+                            builder = builder.set_tolerated_failure_percentage(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
+                            );
+                        }
+                        "maxConcurrency" => {
+                            builder = builder.set_max_concurrency(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

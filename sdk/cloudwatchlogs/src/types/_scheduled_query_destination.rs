@@ -4,23 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledQueryDestination {
-    /// <p>The type of destination (S3 or EVENTBRIDGE).</p>
+    /// <p>The type of destination (S3).</p>
     pub destination_type: ::std::option::Option<crate::types::ScheduledQueryDestinationType>,
-    /// <p>The destination identifier (S3 URI or EventBridge ARN).</p>
+    /// <p>The destination identifier (S3 URI).</p>
     pub destination_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The processing status for this destination (IN_PROGRESS, ERROR, FAILED, or COMPLETE).</p>
     pub status: ::std::option::Option<crate::types::ActionStatus>,
-    /// <p>The processed identifier returned for the destination (S3 key or event ID).</p>
+    /// <p>The processed identifier returned for the destination (S3 key).</p>
     pub processed_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Error message if the destination processing failed.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledQueryDestination {
-    /// <p>The type of destination (S3 or EVENTBRIDGE).</p>
+    /// <p>The type of destination (S3).</p>
     pub fn destination_type(&self) -> ::std::option::Option<&crate::types::ScheduledQueryDestinationType> {
         self.destination_type.as_ref()
     }
-    /// <p>The destination identifier (S3 URI or EventBridge ARN).</p>
+    /// <p>The destination identifier (S3 URI).</p>
     pub fn destination_identifier(&self) -> ::std::option::Option<&str> {
         self.destination_identifier.as_deref()
     }
@@ -28,7 +28,7 @@ impl ScheduledQueryDestination {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ActionStatus> {
         self.status.as_ref()
     }
-    /// <p>The processed identifier returned for the destination (S3 key or event ID).</p>
+    /// <p>The processed identifier returned for the destination (S3 key).</p>
     pub fn processed_identifier(&self) -> ::std::option::Option<&str> {
         self.processed_identifier.as_deref()
     }
@@ -55,31 +55,31 @@ pub struct ScheduledQueryDestinationBuilder {
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledQueryDestinationBuilder {
-    /// <p>The type of destination (S3 or EVENTBRIDGE).</p>
+    /// <p>The type of destination (S3).</p>
     pub fn destination_type(mut self, input: crate::types::ScheduledQueryDestinationType) -> Self {
         self.destination_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of destination (S3 or EVENTBRIDGE).</p>
+    /// <p>The type of destination (S3).</p>
     pub fn set_destination_type(mut self, input: ::std::option::Option<crate::types::ScheduledQueryDestinationType>) -> Self {
         self.destination_type = input;
         self
     }
-    /// <p>The type of destination (S3 or EVENTBRIDGE).</p>
+    /// <p>The type of destination (S3).</p>
     pub fn get_destination_type(&self) -> &::std::option::Option<crate::types::ScheduledQueryDestinationType> {
         &self.destination_type
     }
-    /// <p>The destination identifier (S3 URI or EventBridge ARN).</p>
+    /// <p>The destination identifier (S3 URI).</p>
     pub fn destination_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The destination identifier (S3 URI or EventBridge ARN).</p>
+    /// <p>The destination identifier (S3 URI).</p>
     pub fn set_destination_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_identifier = input;
         self
     }
-    /// <p>The destination identifier (S3 URI or EventBridge ARN).</p>
+    /// <p>The destination identifier (S3 URI).</p>
     pub fn get_destination_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_identifier
     }
@@ -97,17 +97,17 @@ impl ScheduledQueryDestinationBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
         &self.status
     }
-    /// <p>The processed identifier returned for the destination (S3 key or event ID).</p>
+    /// <p>The processed identifier returned for the destination (S3 key).</p>
     pub fn processed_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.processed_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The processed identifier returned for the destination (S3 key or event ID).</p>
+    /// <p>The processed identifier returned for the destination (S3 key).</p>
     pub fn set_processed_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.processed_identifier = input;
         self
     }
-    /// <p>The processed identifier returned for the destination (S3 key or event ID).</p>
+    /// <p>The processed identifier returned for the destination (S3 key).</p>
     pub fn get_processed_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.processed_identifier
     }

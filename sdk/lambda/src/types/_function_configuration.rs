@@ -89,6 +89,8 @@ pub struct FunctionConfiguration {
     pub runtime_version_config: ::std::option::Option<crate::types::RuntimeVersionConfig>,
     /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
+    pub tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
 }
 impl FunctionConfiguration {
     /// <p>The name of the function.</p>
@@ -254,6 +256,10 @@ impl FunctionConfiguration {
     pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
+    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
+    pub fn tenancy_config(&self) -> ::std::option::Option<&crate::types::TenancyConfig> {
+        self.tenancy_config.as_ref()
+    }
 }
 impl FunctionConfiguration {
     /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::types::FunctionConfiguration).
@@ -302,6 +308,7 @@ pub struct FunctionConfigurationBuilder {
     pub(crate) snap_start: ::std::option::Option<crate::types::SnapStartResponse>,
     pub(crate) runtime_version_config: ::std::option::Option<crate::types::RuntimeVersionConfig>,
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    pub(crate) tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
 }
 impl FunctionConfigurationBuilder {
     /// <p>The name of the function.</p>
@@ -865,6 +872,20 @@ impl FunctionConfigurationBuilder {
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
         &self.logging_config
     }
+    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
+    pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
+        self.tenancy_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
+    pub fn set_tenancy_config(mut self, input: ::std::option::Option<crate::types::TenancyConfig>) -> Self {
+        self.tenancy_config = input;
+        self
+    }
+    /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
+    pub fn get_tenancy_config(&self) -> &::std::option::Option<crate::types::TenancyConfig> {
+        &self.tenancy_config
+    }
     /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::types::FunctionConfiguration).
     pub fn build(self) -> crate::types::FunctionConfiguration {
         crate::types::FunctionConfiguration {
@@ -904,6 +925,7 @@ impl FunctionConfigurationBuilder {
             snap_start: self.snap_start,
             runtime_version_config: self.runtime_version_config,
             logging_config: self.logging_config,
+            tenancy_config: self.tenancy_config,
         }
     }
 }

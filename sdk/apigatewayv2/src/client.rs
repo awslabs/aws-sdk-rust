@@ -152,6 +152,14 @@ mod create_integration_response;
 
 mod create_model;
 
+mod create_portal;
+
+mod create_portal_product;
+
+mod create_product_page;
+
+mod create_product_rest_endpoint_page;
+
 mod create_route;
 
 mod create_route_response;
@@ -209,6 +217,16 @@ mod delete_integration_response;
 
 mod delete_model;
 
+mod delete_portal;
+
+mod delete_portal_product;
+
+mod delete_portal_product_sharing_policy;
+
+mod delete_product_page;
+
+mod delete_product_rest_endpoint_page;
+
 mod delete_route;
 
 mod delete_route_request_parameter;
@@ -222,6 +240,8 @@ mod delete_routing_rule;
 mod delete_stage;
 
 mod delete_vpc_link;
+
+mod disable_portal;
 
 mod export_api;
 
@@ -259,6 +279,16 @@ mod get_model_template;
 
 mod get_models;
 
+mod get_portal;
+
+mod get_portal_product;
+
+mod get_portal_product_sharing_policy;
+
+mod get_product_page;
+
+mod get_product_rest_endpoint_page;
+
 mod get_route;
 
 mod get_route_response;
@@ -281,7 +311,21 @@ mod get_vpc_links;
 
 mod import_api;
 
+mod list_portal_products;
+
+mod list_portals;
+
+mod list_product_pages;
+
+mod list_product_rest_endpoint_pages;
+
 mod list_routing_rules;
+
+mod preview_portal;
+
+mod publish_portal;
+
+mod put_portal_product_sharing_policy;
 
 mod put_routing_rule;
 
@@ -308,6 +352,14 @@ mod update_integration;
 mod update_integration_response;
 
 mod update_model;
+
+mod update_portal;
+
+mod update_portal_product;
+
+mod update_product_page;
+
+mod update_product_rest_endpoint_page;
 
 mod update_route;
 

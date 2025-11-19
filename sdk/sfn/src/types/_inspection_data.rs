@@ -24,6 +24,22 @@ pub struct InspectionData {
     pub response: ::std::option::Option<crate::types::InspectionDataResponse>,
     /// <p>JSON string that contains the set of workflow variables after execution of the state. The set will include variables assigned in the state and variables set up as test state input.</p>
     pub variables: ::std::option::Option<::std::string::String>,
+    /// <p>An object containing data about a handled exception in the tested state.</p>
+    pub error_details: ::std::option::Option<crate::types::InspectionErrorDetails>,
+    /// <p>The effective input after the ItemsPath filter is applied. Not populated when the QueryLanguage is JSONata.</p>
+    pub after_items_path: ::std::option::Option<::std::string::String>,
+    /// <p>An array containing the inputs for each Map iteration, transformed by the ItemSelector specified in a Map state.</p>
+    pub after_item_selector: ::std::option::Option<::std::string::String>,
+    /// <p>The effective input after the ItemBatcher filter is applied in a Map state.</p>
+    pub after_item_batcher: ::std::option::Option<::std::string::String>,
+    /// <p>The effective input after the ItemsPointer filter is applied in a Map state.</p>
+    pub after_items_pointer: ::std::option::Option<::std::string::String>,
+    /// <p>The tolerated failure threshold for a Map state as defined in number of Map state iterations.</p>
+    pub tolerated_failure_count: ::std::option::Option<i32>,
+    /// <p>The tolerated failure threshold for a Map state as defined in percentage of Map state iterations.</p>
+    pub tolerated_failure_percentage: ::std::option::Option<f32>,
+    /// <p>The max concurrency of the Map state.</p>
+    pub max_concurrency: ::std::option::Option<i32>,
 }
 impl InspectionData {
     /// <p>The raw state input.</p>
@@ -66,6 +82,38 @@ impl InspectionData {
     pub fn variables(&self) -> ::std::option::Option<&str> {
         self.variables.as_deref()
     }
+    /// <p>An object containing data about a handled exception in the tested state.</p>
+    pub fn error_details(&self) -> ::std::option::Option<&crate::types::InspectionErrorDetails> {
+        self.error_details.as_ref()
+    }
+    /// <p>The effective input after the ItemsPath filter is applied. Not populated when the QueryLanguage is JSONata.</p>
+    pub fn after_items_path(&self) -> ::std::option::Option<&str> {
+        self.after_items_path.as_deref()
+    }
+    /// <p>An array containing the inputs for each Map iteration, transformed by the ItemSelector specified in a Map state.</p>
+    pub fn after_item_selector(&self) -> ::std::option::Option<&str> {
+        self.after_item_selector.as_deref()
+    }
+    /// <p>The effective input after the ItemBatcher filter is applied in a Map state.</p>
+    pub fn after_item_batcher(&self) -> ::std::option::Option<&str> {
+        self.after_item_batcher.as_deref()
+    }
+    /// <p>The effective input after the ItemsPointer filter is applied in a Map state.</p>
+    pub fn after_items_pointer(&self) -> ::std::option::Option<&str> {
+        self.after_items_pointer.as_deref()
+    }
+    /// <p>The tolerated failure threshold for a Map state as defined in number of Map state iterations.</p>
+    pub fn tolerated_failure_count(&self) -> ::std::option::Option<i32> {
+        self.tolerated_failure_count
+    }
+    /// <p>The tolerated failure threshold for a Map state as defined in percentage of Map state iterations.</p>
+    pub fn tolerated_failure_percentage(&self) -> ::std::option::Option<f32> {
+        self.tolerated_failure_percentage
+    }
+    /// <p>The max concurrency of the Map state.</p>
+    pub fn max_concurrency(&self) -> ::std::option::Option<i32> {
+        self.max_concurrency
+    }
 }
 impl ::std::fmt::Debug for InspectionData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -80,6 +128,14 @@ impl ::std::fmt::Debug for InspectionData {
         formatter.field("request", &"*** Sensitive Data Redacted ***");
         formatter.field("response", &"*** Sensitive Data Redacted ***");
         formatter.field("variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("error_details", &"*** Sensitive Data Redacted ***");
+        formatter.field("after_items_path", &"*** Sensitive Data Redacted ***");
+        formatter.field("after_item_selector", &"*** Sensitive Data Redacted ***");
+        formatter.field("after_item_batcher", &"*** Sensitive Data Redacted ***");
+        formatter.field("after_items_pointer", &"*** Sensitive Data Redacted ***");
+        formatter.field("tolerated_failure_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("tolerated_failure_percentage", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_concurrency", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -104,6 +160,14 @@ pub struct InspectionDataBuilder {
     pub(crate) request: ::std::option::Option<crate::types::InspectionDataRequest>,
     pub(crate) response: ::std::option::Option<crate::types::InspectionDataResponse>,
     pub(crate) variables: ::std::option::Option<::std::string::String>,
+    pub(crate) error_details: ::std::option::Option<crate::types::InspectionErrorDetails>,
+    pub(crate) after_items_path: ::std::option::Option<::std::string::String>,
+    pub(crate) after_item_selector: ::std::option::Option<::std::string::String>,
+    pub(crate) after_item_batcher: ::std::option::Option<::std::string::String>,
+    pub(crate) after_items_pointer: ::std::option::Option<::std::string::String>,
+    pub(crate) tolerated_failure_count: ::std::option::Option<i32>,
+    pub(crate) tolerated_failure_percentage: ::std::option::Option<f32>,
+    pub(crate) max_concurrency: ::std::option::Option<i32>,
 }
 impl InspectionDataBuilder {
     /// <p>The raw state input.</p>
@@ -246,6 +310,118 @@ impl InspectionDataBuilder {
     pub fn get_variables(&self) -> &::std::option::Option<::std::string::String> {
         &self.variables
     }
+    /// <p>An object containing data about a handled exception in the tested state.</p>
+    pub fn error_details(mut self, input: crate::types::InspectionErrorDetails) -> Self {
+        self.error_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object containing data about a handled exception in the tested state.</p>
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::InspectionErrorDetails>) -> Self {
+        self.error_details = input;
+        self
+    }
+    /// <p>An object containing data about a handled exception in the tested state.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<crate::types::InspectionErrorDetails> {
+        &self.error_details
+    }
+    /// <p>The effective input after the ItemsPath filter is applied. Not populated when the QueryLanguage is JSONata.</p>
+    pub fn after_items_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.after_items_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The effective input after the ItemsPath filter is applied. Not populated when the QueryLanguage is JSONata.</p>
+    pub fn set_after_items_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.after_items_path = input;
+        self
+    }
+    /// <p>The effective input after the ItemsPath filter is applied. Not populated when the QueryLanguage is JSONata.</p>
+    pub fn get_after_items_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_items_path
+    }
+    /// <p>An array containing the inputs for each Map iteration, transformed by the ItemSelector specified in a Map state.</p>
+    pub fn after_item_selector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.after_item_selector = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An array containing the inputs for each Map iteration, transformed by the ItemSelector specified in a Map state.</p>
+    pub fn set_after_item_selector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.after_item_selector = input;
+        self
+    }
+    /// <p>An array containing the inputs for each Map iteration, transformed by the ItemSelector specified in a Map state.</p>
+    pub fn get_after_item_selector(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_item_selector
+    }
+    /// <p>The effective input after the ItemBatcher filter is applied in a Map state.</p>
+    pub fn after_item_batcher(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.after_item_batcher = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The effective input after the ItemBatcher filter is applied in a Map state.</p>
+    pub fn set_after_item_batcher(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.after_item_batcher = input;
+        self
+    }
+    /// <p>The effective input after the ItemBatcher filter is applied in a Map state.</p>
+    pub fn get_after_item_batcher(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_item_batcher
+    }
+    /// <p>The effective input after the ItemsPointer filter is applied in a Map state.</p>
+    pub fn after_items_pointer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.after_items_pointer = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The effective input after the ItemsPointer filter is applied in a Map state.</p>
+    pub fn set_after_items_pointer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.after_items_pointer = input;
+        self
+    }
+    /// <p>The effective input after the ItemsPointer filter is applied in a Map state.</p>
+    pub fn get_after_items_pointer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_items_pointer
+    }
+    /// <p>The tolerated failure threshold for a Map state as defined in number of Map state iterations.</p>
+    pub fn tolerated_failure_count(mut self, input: i32) -> Self {
+        self.tolerated_failure_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tolerated failure threshold for a Map state as defined in number of Map state iterations.</p>
+    pub fn set_tolerated_failure_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.tolerated_failure_count = input;
+        self
+    }
+    /// <p>The tolerated failure threshold for a Map state as defined in number of Map state iterations.</p>
+    pub fn get_tolerated_failure_count(&self) -> &::std::option::Option<i32> {
+        &self.tolerated_failure_count
+    }
+    /// <p>The tolerated failure threshold for a Map state as defined in percentage of Map state iterations.</p>
+    pub fn tolerated_failure_percentage(mut self, input: f32) -> Self {
+        self.tolerated_failure_percentage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tolerated failure threshold for a Map state as defined in percentage of Map state iterations.</p>
+    pub fn set_tolerated_failure_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
+        self.tolerated_failure_percentage = input;
+        self
+    }
+    /// <p>The tolerated failure threshold for a Map state as defined in percentage of Map state iterations.</p>
+    pub fn get_tolerated_failure_percentage(&self) -> &::std::option::Option<f32> {
+        &self.tolerated_failure_percentage
+    }
+    /// <p>The max concurrency of the Map state.</p>
+    pub fn max_concurrency(mut self, input: i32) -> Self {
+        self.max_concurrency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The max concurrency of the Map state.</p>
+    pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_concurrency = input;
+        self
+    }
+    /// <p>The max concurrency of the Map state.</p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrency
+    }
     /// Consumes the builder and constructs a [`InspectionData`](crate::types::InspectionData).
     pub fn build(self) -> crate::types::InspectionData {
         crate::types::InspectionData {
@@ -259,6 +435,14 @@ impl InspectionDataBuilder {
             request: self.request,
             response: self.response,
             variables: self.variables,
+            error_details: self.error_details,
+            after_items_path: self.after_items_path,
+            after_item_selector: self.after_item_selector,
+            after_item_batcher: self.after_item_batcher,
+            after_items_pointer: self.after_items_pointer,
+            tolerated_failure_count: self.tolerated_failure_count,
+            tolerated_failure_percentage: self.tolerated_failure_percentage,
+            max_concurrency: self.max_concurrency,
         }
     }
 }
@@ -275,6 +459,14 @@ impl ::std::fmt::Debug for InspectionDataBuilder {
         formatter.field("request", &"*** Sensitive Data Redacted ***");
         formatter.field("response", &"*** Sensitive Data Redacted ***");
         formatter.field("variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("error_details", &"*** Sensitive Data Redacted ***");
+        formatter.field("after_items_path", &"*** Sensitive Data Redacted ***");
+        formatter.field("after_item_selector", &"*** Sensitive Data Redacted ***");
+        formatter.field("after_item_batcher", &"*** Sensitive Data Redacted ***");
+        formatter.field("after_items_pointer", &"*** Sensitive Data Redacted ***");
+        formatter.field("tolerated_failure_count", &"*** Sensitive Data Redacted ***");
+        formatter.field("tolerated_failure_percentage", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_concurrency", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

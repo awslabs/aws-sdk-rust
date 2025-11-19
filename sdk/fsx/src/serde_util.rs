@@ -169,6 +169,15 @@ pub(crate) fn windows_audit_log_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn windows_fsrm_configuration_correct_errors(
+    mut builder: crate::types::builders::WindowsFsrmConfigurationBuilder,
+) -> crate::types::builders::WindowsFsrmConfigurationBuilder {
+    if builder.fsrm_service_enabled.is_none() {
+        builder.fsrm_service_enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn autocommit_period_correct_errors(
     mut builder: crate::types::builders::AutocommitPeriodBuilder,
 ) -> crate::types::builders::AutocommitPeriodBuilder {

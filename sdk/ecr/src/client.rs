@@ -229,6 +229,8 @@ mod delete_repository_creation_template;
 
 mod delete_repository_policy;
 
+mod deregister_pull_time_update_exclusion;
+
 mod describe_image_replication_status;
 
 mod describe_image_scan_findings;
@@ -261,7 +263,11 @@ mod get_repository_policy;
 
 mod initiate_layer_upload;
 
+mod list_image_referrers;
+
 mod list_images;
+
+mod list_pull_time_update_exclusions;
 
 mod list_tags_for_resource;
 
@@ -281,6 +287,8 @@ mod put_registry_scanning_configuration;
 
 mod put_replication_configuration;
 
+mod register_pull_time_update_exclusion;
+
 mod set_repository_policy;
 
 mod start_image_scan;
@@ -290,6 +298,8 @@ mod start_lifecycle_policy_preview;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_image_storage_class;
 
 mod update_pull_through_cache_rule;
 

@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RuleDetail {
+    /// <p>The enforcement details of a glossary term that's part of the metadata rule.</p>
+    GlossaryTermEnforcementDetail(crate::types::GlossaryTermEnforcementDetail),
     /// <p>The enforcement detail of the metadata form.</p>
     MetadataFormEnforcementDetail(crate::types::MetadataFormEnforcementDetail),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum RuleDetail {
     Unknown,
 }
 impl RuleDetail {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`GlossaryTermEnforcementDetail`](crate::types::RuleDetail::GlossaryTermEnforcementDetail), extracting the inner [`GlossaryTermEnforcementDetail`](crate::types::GlossaryTermEnforcementDetail).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_glossary_term_enforcement_detail(&self) -> ::std::result::Result<&crate::types::GlossaryTermEnforcementDetail, &Self> {
+        if let RuleDetail::GlossaryTermEnforcementDetail(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`GlossaryTermEnforcementDetail`](crate::types::RuleDetail::GlossaryTermEnforcementDetail).
+    pub fn is_glossary_term_enforcement_detail(&self) -> bool {
+        self.as_glossary_term_enforcement_detail().is_ok()
+    }
     /// Tries to convert the enum instance into [`MetadataFormEnforcementDetail`](crate::types::RuleDetail::MetadataFormEnforcementDetail), extracting the inner [`MetadataFormEnforcementDetail`](crate::types::MetadataFormEnforcementDetail).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_metadata_form_enforcement_detail(&self) -> ::std::result::Result<&crate::types::MetadataFormEnforcementDetail, &Self> {

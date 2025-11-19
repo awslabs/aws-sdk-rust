@@ -24,8 +24,10 @@ pub struct CreateDomainNameInput {
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
     /// <p>The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with aws:. The tag value can be up to 256 characters.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
+    /// <p>The endpoint access mode of the DomainName. Only available for DomainNames that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub endpoint_access_mode: ::std::option::Option<crate::types::EndpointAccessMode>,
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
@@ -76,9 +78,13 @@ impl CreateDomainNameInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub fn security_policy(&self) -> ::std::option::Option<&crate::types::SecurityPolicy> {
         self.security_policy.as_ref()
+    }
+    /// <p>The endpoint access mode of the DomainName. Only available for DomainNames that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn endpoint_access_mode(&self) -> ::std::option::Option<&crate::types::EndpointAccessMode> {
+        self.endpoint_access_mode.as_ref()
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub fn mutual_tls_authentication(&self) -> ::std::option::Option<&crate::types::MutualTlsAuthenticationInput> {
@@ -119,6 +125,7 @@ pub struct CreateDomainNameInputBuilder {
     pub(crate) endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
+    pub(crate) endpoint_access_mode: ::std::option::Option<crate::types::EndpointAccessMode>,
     pub(crate) mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
     pub(crate) ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
@@ -272,19 +279,33 @@ impl CreateDomainNameInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub fn security_policy(mut self, input: crate::types::SecurityPolicy) -> Self {
         self.security_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub fn set_security_policy(mut self, input: ::std::option::Option<crate::types::SecurityPolicy>) -> Self {
         self.security_policy = input;
         self
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub fn get_security_policy(&self) -> &::std::option::Option<crate::types::SecurityPolicy> {
         &self.security_policy
+    }
+    /// <p>The endpoint access mode of the DomainName. Only available for DomainNames that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn endpoint_access_mode(mut self, input: crate::types::EndpointAccessMode) -> Self {
+        self.endpoint_access_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The endpoint access mode of the DomainName. Only available for DomainNames that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn set_endpoint_access_mode(mut self, input: ::std::option::Option<crate::types::EndpointAccessMode>) -> Self {
+        self.endpoint_access_mode = input;
+        self
+    }
+    /// <p>The endpoint access mode of the DomainName. Only available for DomainNames that use security policies that start with <code>SecurityPolicy_</code>.</p>
+    pub fn get_endpoint_access_mode(&self) -> &::std::option::Option<crate::types::EndpointAccessMode> {
+        &self.endpoint_access_mode
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub fn mutual_tls_authentication(mut self, input: crate::types::MutualTlsAuthenticationInput) -> Self {
@@ -358,6 +379,7 @@ impl CreateDomainNameInputBuilder {
             endpoint_configuration: self.endpoint_configuration,
             tags: self.tags,
             security_policy: self.security_policy,
+            endpoint_access_mode: self.endpoint_access_mode,
             mutual_tls_authentication: self.mutual_tls_authentication,
             ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,
             policy: self.policy,

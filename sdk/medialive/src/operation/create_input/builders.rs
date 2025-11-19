@@ -367,4 +367,18 @@ impl CreateInputFluentBuilder {
     pub fn get_sdi_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_sdi_sources()
     }
+    /// This is the collection of settings that are used during the creation of a MediaConnect router input.
+    pub fn router_settings(mut self, input: crate::types::RouterSettings) -> Self {
+        self.inner = self.inner.router_settings(input);
+        self
+    }
+    /// This is the collection of settings that are used during the creation of a MediaConnect router input.
+    pub fn set_router_settings(mut self, input: ::std::option::Option<crate::types::RouterSettings>) -> Self {
+        self.inner = self.inner.set_router_settings(input);
+        self
+    }
+    /// This is the collection of settings that are used during the creation of a MediaConnect router input.
+    pub fn get_router_settings(&self) -> &::std::option::Option<crate::types::RouterSettings> {
+        self.inner.get_router_settings()
+    }
 }

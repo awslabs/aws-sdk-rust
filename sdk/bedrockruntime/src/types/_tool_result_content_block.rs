@@ -12,6 +12,8 @@ pub enum ToolResultContentBlock {
     Image(crate::types::ImageBlock),
     /// <p>A tool result that is JSON format data.</p>
     Json(::aws_smithy_types::Document),
+    /// <p>A tool result that is a search result.</p>
+    SearchResult(crate::types::SearchResultBlock),
     /// <p>A tool result that is text.</p>
     Text(::std::string::String),
     /// <p>A tool result that is video.</p>
@@ -65,6 +67,19 @@ impl ToolResultContentBlock {
     /// Returns true if this is a [`Json`](crate::types::ToolResultContentBlock::Json).
     pub fn is_json(&self) -> bool {
         self.as_json().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SearchResult`](crate::types::ToolResultContentBlock::SearchResult), extracting the inner [`SearchResultBlock`](crate::types::SearchResultBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_search_result(&self) -> ::std::result::Result<&crate::types::SearchResultBlock, &Self> {
+        if let ToolResultContentBlock::SearchResult(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SearchResult`](crate::types::ToolResultContentBlock::SearchResult).
+    pub fn is_search_result(&self) -> bool {
+        self.as_search_result().is_ok()
     }
     /// Tries to convert the enum instance into [`Text`](crate::types::ToolResultContentBlock::Text), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -25,6 +25,10 @@ pub use crate::types::error::_unable_to_access_secret_exception::UnableToAccessS
 
 pub use crate::types::error::_secret_not_found_exception::SecretNotFoundExceptionBuilder;
 
+pub use crate::types::error::_image_storage_class_update_not_supported_exception::ImageStorageClassUpdateNotSupportedExceptionBuilder;
+
+pub use crate::types::error::_image_not_found_exception::ImageNotFoundExceptionBuilder;
+
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;
 
 pub use crate::types::error::_invalid_tag_parameter_exception::InvalidTagParameterExceptionBuilder;
@@ -35,7 +39,11 @@ pub use crate::types::error::_lifecycle_policy_not_found_exception::LifecyclePol
 
 pub use crate::types::error::_unsupported_image_type_exception::UnsupportedImageTypeExceptionBuilder;
 
-pub use crate::types::error::_image_not_found_exception::ImageNotFoundExceptionBuilder;
+pub use crate::types::error::_image_archived_exception::ImageArchivedExceptionBuilder;
+
+pub use crate::types::error::_exclusion_already_exists_exception::ExclusionAlreadyExistsExceptionBuilder;
+
+pub use crate::types::error::_blocked_by_organization_policy_exception::BlockedByOrganizationPolicyExceptionBuilder;
 
 pub use crate::types::error::_referenced_images_not_found_exception::ReferencedImagesNotFoundExceptionBuilder;
 
@@ -58,6 +66,8 @@ pub use crate::types::error::_unable_to_get_upstream_layer_exception::UnableToGe
 pub use crate::types::error::_layer_inaccessible_exception::LayerInaccessibleExceptionBuilder;
 
 pub use crate::types::error::_scan_not_found_exception::ScanNotFoundExceptionBuilder;
+
+pub use crate::types::error::_exclusion_not_found_exception::ExclusionNotFoundExceptionBuilder;
 
 pub use crate::types::error::_repository_not_empty_exception::RepositoryNotEmptyExceptionBuilder;
 

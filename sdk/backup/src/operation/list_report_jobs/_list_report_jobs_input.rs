@@ -10,7 +10,8 @@ pub struct ListReportJobsInput {
     /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
     pub by_creation_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
+    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED | COMPLETED_WITH_ISSUES</code></p>
+    /// <p>Please note that only scanning jobs finish with state completed with issues. For backup jobs this is a console interpretation of a job that finishes in completed state and has a status message.</p>
     pub by_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -31,7 +32,8 @@ impl ListReportJobsInput {
         self.by_creation_after.as_ref()
     }
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
+    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED | COMPLETED_WITH_ISSUES</code></p>
+    /// <p>Please note that only scanning jobs finish with state completed with issues. For backup jobs this is a console interpretation of a job that finishes in completed state and has a status message.</p>
     pub fn by_status(&self) -> ::std::option::Option<&str> {
         self.by_status.as_deref()
     }
@@ -106,19 +108,22 @@ impl ListReportJobsInputBuilder {
         &self.by_creation_after
     }
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
+    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED | COMPLETED_WITH_ISSUES</code></p>
+    /// <p>Please note that only scanning jobs finish with state completed with issues. For backup jobs this is a console interpretation of a job that finishes in completed state and has a status message.</p>
     pub fn by_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
+    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED | COMPLETED_WITH_ISSUES</code></p>
+    /// <p>Please note that only scanning jobs finish with state completed with issues. For backup jobs this is a console interpretation of a job that finishes in completed state and has a status message.</p>
     pub fn set_by_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_status = input;
         self
     }
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
+    /// <p><code>CREATED | RUNNING | COMPLETED | FAILED | COMPLETED_WITH_ISSUES</code></p>
+    /// <p>Please note that only scanning jobs finish with state completed with issues. For backup jobs this is a console interpretation of a job that finishes in completed state and has a status message.</p>
     pub fn get_by_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_status
     }

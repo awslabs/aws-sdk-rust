@@ -35,6 +35,10 @@ pub(crate) mod shape_associate_environment_role;
 
 pub(crate) mod shape_associate_governed_terms;
 
+pub(crate) mod shape_batch_get_attributes_metadata;
+
+pub(crate) mod shape_batch_put_attributes_metadata;
+
 pub(crate) mod shape_cancel_metadata_generation_run;
 
 pub(crate) mod shape_cancel_subscription;
@@ -353,6 +357,8 @@ pub(crate) mod shape_update_project;
 
 pub(crate) mod shape_update_project_profile;
 
+pub(crate) mod shape_update_root_domain_unit_owner;
+
 pub(crate) mod shape_update_rule;
 
 pub(crate) mod shape_update_subscription_grant_status;
@@ -382,6 +388,8 @@ pub(crate) mod shape_add_entity_owner_input;
 pub(crate) mod shape_add_policy_grant_input;
 
 pub(crate) mod shape_associate_governed_terms_input;
+
+pub(crate) mod shape_batch_put_attributes_metadata_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -517,6 +525,8 @@ pub(crate) mod shape_update_project_input;
 
 pub(crate) mod shape_update_project_profile_input;
 
+pub(crate) mod shape_update_root_domain_unit_owner_input;
+
 pub(crate) mod shape_update_rule_input;
 
 pub(crate) mod shape_update_subscription_grant_status_input;
@@ -561,9 +571,17 @@ pub(crate) mod shape_asset_revisions;
 
 pub(crate) mod shape_asset_target_name_map;
 
+pub(crate) mod shape_attribute_input;
+
+pub(crate) mod shape_attributes_errors;
+
 pub(crate) mod shape_authorized_principal_identifiers;
 
 pub(crate) mod shape_aws_location;
+
+pub(crate) mod shape_batch_get_attribute_items;
+
+pub(crate) mod shape_batch_put_attribute_items;
 
 pub(crate) mod shape_column_name_list;
 
@@ -831,9 +849,15 @@ pub(crate) mod shape_athena_properties_output;
 
 pub(crate) mod shape_athena_properties_patch;
 
+pub(crate) mod shape_attribute_error;
+
 pub(crate) mod shape_aws_account;
 
 pub(crate) mod shape_aws_console_link_parameters;
+
+pub(crate) mod shape_batch_get_attribute_output;
+
+pub(crate) mod shape_batch_put_attribute_output;
 
 pub(crate) mod shape_business_name_generation_configuration;
 
@@ -906,6 +930,8 @@ pub(crate) mod shape_filter;
 pub(crate) mod shape_form_entry_output;
 
 pub(crate) mod shape_form_output;
+
+pub(crate) mod shape_glossary_term_enforcement_detail;
 
 pub(crate) mod shape_glue_properties_input;
 
@@ -1120,6 +1146,8 @@ pub(crate) mod shape_event_summary;
 pub(crate) mod shape_form_type_data;
 
 pub(crate) mod shape_glossary_item;
+
+pub(crate) mod shape_glossary_term_identifiers;
 
 pub(crate) mod shape_glossary_term_item;
 

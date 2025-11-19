@@ -13,6 +13,7 @@
 /// # let ocsfversion = unimplemented!();
 /// match ocsfversion {
 ///     OcsfVersion::V11 => { /* ... */ },
+///     OcsfVersion::V15 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum OcsfVersion {
     #[allow(missing_docs)] // documentation missing in model
     V11,
+    #[allow(missing_docs)] // documentation missing in model
+    V15,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for OcsfVersion {
     fn from(s: &str) -> Self {
         match s {
             "V1.1" => OcsfVersion::V11,
+            "V1.5" => OcsfVersion::V15,
             other => OcsfVersion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl OcsfVersion {
     pub fn as_str(&self) -> &str {
         match self {
             OcsfVersion::V11 => "V1.1",
+            OcsfVersion::V15 => "V1.5",
             OcsfVersion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["V1.1"]
+        &["V1.1", "V1.5"]
     }
 }
 impl ::std::convert::AsRef<str> for OcsfVersion {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for OcsfVersion {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OcsfVersion::V11 => write!(f, "V1.1"),
+            OcsfVersion::V15 => write!(f, "V1.5"),
             OcsfVersion::Unknown(value) => write!(f, "{value}"),
         }
     }

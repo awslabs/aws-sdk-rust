@@ -57,6 +57,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "groupSharingPreference" => {
+                            builder = builder.set_group_sharing_preference(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::GroupSharingPreferenceEnum::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "costCategoryGroupSharingPreferenceArn" => {
+                            builder = builder.set_cost_category_group_sharing_preference_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

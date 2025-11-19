@@ -15,6 +15,9 @@ impl super::Client {
     ///   - [`cost_summary(Option<BillEstimateCostSummary>)`](crate::operation::update_bill_estimate::UpdateBillEstimateOutput::cost_summary): <p>A summary of the updated estimated costs.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::update_bill_estimate::UpdateBillEstimateOutput::created_at): <p>The timestamp when the bill estimate was originally created.</p>
     ///   - [`expires_at(Option<DateTime>)`](crate::operation::update_bill_estimate::UpdateBillEstimateOutput::expires_at): <p>The updated expiration timestamp for the bill estimate.</p>
+    ///   - [`group_sharing_preference(Option<GroupSharingPreferenceEnum>)`](crate::operation::update_bill_estimate::UpdateBillEstimateOutput::group_sharing_preference): <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    ///   - [`cost_category_group_sharing_preference_arn(Option<String>)`](crate::operation::update_bill_estimate::UpdateBillEstimateOutput::cost_category_group_sharing_preference_arn): <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    ///   - [`cost_category_group_sharing_preference_effective_date(Option<DateTime>)`](crate::operation::update_bill_estimate::UpdateBillEstimateOutput::cost_category_group_sharing_preference_effective_date): <p>Timestamp of the effective date of the cost category used in the group sharing settings.</p>
     /// - On failure, responds with [`SdkError<UpdateBillEstimateError>`](crate::operation::update_bill_estimate::UpdateBillEstimateError)
     pub fn update_bill_estimate(&self) -> crate::operation::update_bill_estimate::builders::UpdateBillEstimateFluentBuilder {
         crate::operation::update_bill_estimate::builders::UpdateBillEstimateFluentBuilder::new(self.handle.clone())

@@ -1139,6 +1139,8 @@ pub use crate::types::_human_loop_request_source::HumanLoopRequestSourceBuilder;
 
 pub use crate::types::_throughput_config_description::ThroughputConfigDescriptionBuilder;
 
+pub use crate::types::_metrics_config::MetricsConfigBuilder;
+
 pub use crate::types::_production_variant::ProductionVariantBuilder;
 
 pub use crate::types::_production_variant_capacity_reservation_config::ProductionVariantCapacityReservationConfigBuilder;

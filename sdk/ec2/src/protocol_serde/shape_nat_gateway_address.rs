@@ -114,6 +114,32 @@ pub fn de_nat_gateway_address(
                 builder = builder.set_status(var_8);
             }
             ,
+            s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#NatGatewayAddress$AvailabilityZone */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone(var_9);
+            }
+            ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#NatGatewayAddress$AvailabilityZoneId */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_10);
+            }
+            ,
             _ => {}
         }
     }

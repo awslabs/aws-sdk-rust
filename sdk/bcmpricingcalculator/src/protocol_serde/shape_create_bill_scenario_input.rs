@@ -19,5 +19,11 @@ pub fn ser_create_bill_scenario_input_input(
         }
         object_4.finish();
     }
+    if let Some(var_7) = &input.group_sharing_preference {
+        object.key("groupSharingPreference").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.cost_category_group_sharing_preference_arn {
+        object.key("costCategoryGroupSharingPreferenceArn").string(var_8.as_str());
+    }
     Ok(())
 }

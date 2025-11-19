@@ -21,9 +21,17 @@ pub use crate::types::_guardrail_converse_text_block::GuardrailConverseTextBlock
 
 pub use crate::types::_message::MessageBuilder;
 
+pub use crate::types::_search_result_block::SearchResultBlockBuilder;
+
+pub use crate::types::_citations_config::CitationsConfigBuilder;
+
+pub use crate::types::_search_result_content_block::SearchResultContentBlockBuilder;
+
 pub use crate::types::_citations_content_block::CitationsContentBlockBuilder;
 
 pub use crate::types::_citation::CitationBuilder;
+
+pub use crate::types::_search_result_location::SearchResultLocationBuilder;
 
 pub use crate::types::_document_chunk_location::DocumentChunkLocationBuilder;
 
@@ -42,8 +50,6 @@ pub use crate::types::_video_block::VideoBlockBuilder;
 pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_document_block::DocumentBlockBuilder;
-
-pub use crate::types::_citations_config::CitationsConfigBuilder;
 
 pub use crate::types::_image_block::ImageBlockBuilder;
 

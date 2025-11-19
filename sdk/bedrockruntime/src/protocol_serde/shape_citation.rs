@@ -6,23 +6,26 @@ pub fn ser_citation(
     if let Some(var_1) = &input.title {
         object.key("title").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.source_content {
-        let mut array_3 = object.key("sourceContent").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.source {
+        object.key("source").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.source_content {
+        let mut array_4 = object.key("sourceContent").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_citation_source_content::ser_citation_source_content(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_citation_source_content::ser_citation_source_content(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_6) = &input.location {
+    if let Some(var_7) = &input.location {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("location").start_object();
-        crate::protocol_serde::shape_citation_location::ser_citation_location(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("location").start_object();
+        crate::protocol_serde::shape_citation_location::ser_citation_location(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }
@@ -44,6 +47,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "title" => {
                             builder = builder.set_title(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "source" => {
+                            builder = builder.set_source(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

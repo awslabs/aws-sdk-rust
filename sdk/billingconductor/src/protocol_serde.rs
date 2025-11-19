@@ -275,6 +275,8 @@ pub(crate) mod shape_pricing_plan_list_element;
 
 pub(crate) mod shape_pricing_rule_list_element;
 
+pub(crate) mod shape_string_search;
+
 pub(crate) mod shape_update_custom_line_item_flat_charge_details;
 
 pub(crate) mod shape_update_custom_line_item_percentage_charge_details;

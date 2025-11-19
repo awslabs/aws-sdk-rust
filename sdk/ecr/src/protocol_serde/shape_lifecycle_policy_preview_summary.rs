@@ -21,6 +21,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "transitioningImageTotalCounts" => {
+                            builder = builder.set_transitioning_image_total_counts(
+                                crate::protocol_serde::shape_transitioning_image_total_counts::de_transitioning_image_total_counts(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

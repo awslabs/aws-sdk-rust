@@ -22,6 +22,7 @@
 ///     ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => { /* ... */ },
 ///     ScanStatusReason::Ec2InstanceStopped => { /* ... */ },
 ///     ScanStatusReason::ExcludedByTag => { /* ... */ },
+///     ScanStatusReason::ImageArchived => { /* ... */ },
 ///     ScanStatusReason::ImageSizeExceeded => { /* ... */ },
 ///     ScanStatusReason::IntegrationConnectionLost => { /* ... */ },
 ///     ScanStatusReason::InternalError => { /* ... */ },
@@ -93,6 +94,8 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     ExcludedByTag,
     #[allow(missing_docs)] // documentation missing in model
+    ImageArchived,
+    #[allow(missing_docs)] // documentation missing in model
     ImageSizeExceeded,
     #[allow(missing_docs)] // documentation missing in model
     IntegrationConnectionLost,
@@ -153,6 +156,7 @@ impl ::std::convert::From<&str> for ScanStatusReason {
             "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded,
             "EC2_INSTANCE_STOPPED" => ScanStatusReason::Ec2InstanceStopped,
             "EXCLUDED_BY_TAG" => ScanStatusReason::ExcludedByTag,
+            "IMAGE_ARCHIVED" => ScanStatusReason::ImageArchived,
             "IMAGE_SIZE_EXCEEDED" => ScanStatusReason::ImageSizeExceeded,
             "INTEGRATION_CONNECTION_LOST" => ScanStatusReason::IntegrationConnectionLost,
             "INTERNAL_ERROR" => ScanStatusReason::InternalError,
@@ -200,6 +204,7 @@ impl ScanStatusReason {
             ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED",
             ScanStatusReason::Ec2InstanceStopped => "EC2_INSTANCE_STOPPED",
             ScanStatusReason::ExcludedByTag => "EXCLUDED_BY_TAG",
+            ScanStatusReason::ImageArchived => "IMAGE_ARCHIVED",
             ScanStatusReason::ImageSizeExceeded => "IMAGE_SIZE_EXCEEDED",
             ScanStatusReason::IntegrationConnectionLost => "INTEGRATION_CONNECTION_LOST",
             ScanStatusReason::InternalError => "INTERNAL_ERROR",
@@ -238,6 +243,7 @@ impl ScanStatusReason {
             "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED",
             "EC2_INSTANCE_STOPPED",
             "EXCLUDED_BY_TAG",
+            "IMAGE_ARCHIVED",
             "IMAGE_SIZE_EXCEEDED",
             "INTEGRATION_CONNECTION_LOST",
             "INTERNAL_ERROR",
@@ -293,6 +299,7 @@ impl ::std::fmt::Display for ScanStatusReason {
             ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => write!(f, "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED"),
             ScanStatusReason::Ec2InstanceStopped => write!(f, "EC2_INSTANCE_STOPPED"),
             ScanStatusReason::ExcludedByTag => write!(f, "EXCLUDED_BY_TAG"),
+            ScanStatusReason::ImageArchived => write!(f, "IMAGE_ARCHIVED"),
             ScanStatusReason::ImageSizeExceeded => write!(f, "IMAGE_SIZE_EXCEEDED"),
             ScanStatusReason::IntegrationConnectionLost => write!(f, "INTEGRATION_CONNECTION_LOST"),
             ScanStatusReason::InternalError => write!(f, "INTERNAL_ERROR"),

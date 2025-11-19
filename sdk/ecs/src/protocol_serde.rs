@@ -517,6 +517,8 @@ pub(crate) mod shape_inference_accelerator_override;
 
 pub(crate) mod shape_inference_accelerators;
 
+pub(crate) mod shape_infrastructure_optimization;
+
 pub(crate) mod shape_instance_launch_template;
 
 pub(crate) mod shape_instance_launch_template_update;

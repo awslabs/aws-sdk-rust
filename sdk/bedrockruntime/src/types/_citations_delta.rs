@@ -6,6 +6,8 @@
 pub struct CitationsDelta {
     /// <p>The title or identifier of the source document being cited.</p>
     pub title: ::std::option::Option<::std::string::String>,
+    /// <p>The source from the original search result that provided the cited content.</p>
+    pub source: ::std::option::Option<::std::string::String>,
     /// <p>The specific content from the source document that was referenced or cited in the generated response.</p>
     pub source_content: ::std::option::Option<::std::vec::Vec<crate::types::CitationSourceContentDelta>>,
     /// <p>Specifies the precise location within a source document where cited content can be found. This can include character-level positions, page numbers, or document chunks depending on the document type and indexing method.</p>
@@ -15,6 +17,10 @@ impl CitationsDelta {
     /// <p>The title or identifier of the source document being cited.</p>
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
+    }
+    /// <p>The source from the original search result that provided the cited content.</p>
+    pub fn source(&self) -> ::std::option::Option<&str> {
+        self.source.as_deref()
     }
     /// <p>The specific content from the source document that was referenced or cited in the generated response.</p>
     ///
@@ -39,6 +45,7 @@ impl CitationsDelta {
 #[non_exhaustive]
 pub struct CitationsDeltaBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) source_content: ::std::option::Option<::std::vec::Vec<crate::types::CitationSourceContentDelta>>,
     pub(crate) location: ::std::option::Option<crate::types::CitationLocation>,
 }
@@ -56,6 +63,20 @@ impl CitationsDeltaBuilder {
     /// <p>The title or identifier of the source document being cited.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
+    }
+    /// <p>The source from the original search result that provided the cited content.</p>
+    pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The source from the original search result that provided the cited content.</p>
+    pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source = input;
+        self
+    }
+    /// <p>The source from the original search result that provided the cited content.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Appends an item to `source_content`.
     ///
@@ -95,6 +116,7 @@ impl CitationsDeltaBuilder {
     pub fn build(self) -> crate::types::CitationsDelta {
         crate::types::CitationsDelta {
             title: self.title,
+            source: self.source,
             source_content: self.source_content,
             location: self.location,
         }

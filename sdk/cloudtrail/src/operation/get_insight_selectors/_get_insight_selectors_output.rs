@@ -5,7 +5,7 @@
 pub struct GetInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
     pub trail_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A JSON string that contains the Insight types you want to log on a trail or event data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.</p>
+    /// <p>Contains the Insights types that are enabled on a trail or event data store. It also specifies the event categories on which a particular Insight type is enabled. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.The EventCategory field can specify <code>Management</code> or <code>Data</code> events or both. For event data store, you can log Insights for management events only.</p>
     pub insight_selectors: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>,
     /// <p>The ARN of the source event data store that enabled Insights events.</p>
     pub event_data_store_arn: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl GetInsightSelectorsOutput {
     pub fn trail_arn(&self) -> ::std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
-    /// <p>A JSON string that contains the Insight types you want to log on a trail or event data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.</p>
+    /// <p>Contains the Insights types that are enabled on a trail or event data store. It also specifies the event categories on which a particular Insight type is enabled. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.The EventCategory field can specify <code>Management</code> or <code>Data</code> events or both. For event data store, you can log Insights for management events only.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_selectors.is_none()`.
     pub fn insight_selectors(&self) -> &[crate::types::InsightSelector] {
@@ -74,19 +74,19 @@ impl GetInsightSelectorsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
     ///
-    /// <p>A JSON string that contains the Insight types you want to log on a trail or event data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.</p>
+    /// <p>Contains the Insights types that are enabled on a trail or event data store. It also specifies the event categories on which a particular Insight type is enabled. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.The EventCategory field can specify <code>Management</code> or <code>Data</code> events or both. For event data store, you can log Insights for management events only.</p>
     pub fn insight_selectors(mut self, input: crate::types::InsightSelector) -> Self {
         let mut v = self.insight_selectors.unwrap_or_default();
         v.push(input);
         self.insight_selectors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A JSON string that contains the Insight types you want to log on a trail or event data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.</p>
+    /// <p>Contains the Insights types that are enabled on a trail or event data store. It also specifies the event categories on which a particular Insight type is enabled. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.The EventCategory field can specify <code>Management</code> or <code>Data</code> events or both. For event data store, you can log Insights for management events only.</p>
     pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>) -> Self {
         self.insight_selectors = input;
         self
     }
-    /// <p>A JSON string that contains the Insight types you want to log on a trail or event data store. <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.</p>
+    /// <p>Contains the Insights types that are enabled on a trail or event data store. It also specifies the event categories on which a particular Insight type is enabled. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.The EventCategory field can specify <code>Management</code> or <code>Data</code> events or both. For event data store, you can log Insights for management events only.</p>
     pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
         &self.insight_selectors
     }

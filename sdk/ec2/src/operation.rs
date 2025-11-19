@@ -262,6 +262,9 @@ pub mod create_ipam;
 /// Types for the `CreateIpamExternalResourceVerificationToken` operation.
 pub mod create_ipam_external_resource_verification_token;
 
+/// Types for the `CreateIpamPolicy` operation.
+pub mod create_ipam_policy;
+
 /// Types for the `CreateIpamPool` operation.
 pub mod create_ipam_pool;
 
@@ -528,6 +531,9 @@ pub mod delete_ipam;
 
 /// Types for the `DeleteIpamExternalResourceVerificationToken` operation.
 pub mod delete_ipam_external_resource_verification_token;
+
+/// Types for the `DeleteIpamPolicy` operation.
+pub mod delete_ipam_policy;
 
 /// Types for the `DeleteIpamPool` operation.
 pub mod delete_ipam_pool;
@@ -973,6 +979,9 @@ pub mod describe_ipam_byoasn;
 /// Types for the `DescribeIpamExternalResourceVerificationTokens` operation.
 pub mod describe_ipam_external_resource_verification_tokens;
 
+/// Types for the `DescribeIpamPolicies` operation.
+pub mod describe_ipam_policies;
+
 /// Types for the `DescribeIpamPools` operation.
 pub mod describe_ipam_pools;
 
@@ -1351,6 +1360,9 @@ pub mod disable_instance_sql_ha_standby_detections;
 /// Types for the `DisableIpamOrganizationAdminAccount` operation.
 pub mod disable_ipam_organization_admin_account;
 
+/// Types for the `DisableIpamPolicy` operation.
+pub mod disable_ipam_policy;
+
 /// Types for the `DisableRouteServerPropagation` operation.
 pub mod disable_route_server_propagation;
 
@@ -1465,6 +1477,9 @@ pub mod enable_instance_sql_ha_standby_detections;
 /// Types for the `EnableIpamOrganizationAdminAccount` operation.
 pub mod enable_ipam_organization_admin_account;
 
+/// Types for the `EnableIpamPolicy` operation.
+pub mod enable_ipam_policy;
+
 /// Types for the `EnableReachabilityAnalyzerOrganizationSharing` operation.
 pub mod enable_reachability_analyzer_organization_sharing;
 
@@ -1555,6 +1570,9 @@ pub mod get_ebs_default_kms_key_id;
 /// Types for the `GetEbsEncryptionByDefault` operation.
 pub mod get_ebs_encryption_by_default;
 
+/// Types for the `GetEnabledIpamPolicy` operation.
+pub mod get_enabled_ipam_policy;
+
 /// Types for the `GetFlowLogsIntegrationTemplate` operation.
 pub mod get_flow_logs_integration_template;
 
@@ -1593,6 +1611,12 @@ pub mod get_ipam_discovered_public_addresses;
 
 /// Types for the `GetIpamDiscoveredResourceCidrs` operation.
 pub mod get_ipam_discovered_resource_cidrs;
+
+/// Types for the `GetIpamPolicyAllocationRules` operation.
+pub mod get_ipam_policy_allocation_rules;
+
+/// Types for the `GetIpamPolicyOrganizationTargets` operation.
+pub mod get_ipam_policy_organization_targets;
 
 /// Types for the `GetIpamPoolAllocations` operation.
 pub mod get_ipam_pool_allocations;
@@ -1800,6 +1824,9 @@ pub mod modify_instance_placement;
 
 /// Types for the `ModifyIpam` operation.
 pub mod modify_ipam;
+
+/// Types for the `ModifyIpamPolicyAllocationRules` operation.
+pub mod modify_ipam_policy_allocation_rules;
 
 /// Types for the `ModifyIpamPool` operation.
 pub mod modify_ipam_pool;

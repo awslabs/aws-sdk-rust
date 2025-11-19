@@ -152,21 +152,21 @@ impl CreateReportPlanFluentBuilder {
         self.inner.get_report_delivery_channel()
     }
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT | SCAN_JOB_REPORT </code></p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub fn report_setting(mut self, input: crate::types::ReportSetting) -> Self {
         self.inner = self.inner.report_setting(input);
         self
     }
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT | SCAN_JOB_REPORT </code></p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub fn set_report_setting(mut self, input: ::std::option::Option<crate::types::ReportSetting>) -> Self {
         self.inner = self.inner.set_report_setting(input);
         self
     }
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
-    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
+    /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT | SCAN_JOB_REPORT </code></p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub fn get_report_setting(&self) -> &::std::option::Option<crate::types::ReportSetting> {
         self.inner.get_report_setting()

@@ -444,6 +444,21 @@ pub(crate) fn image_block_correct_errors(mut builder: crate::types::builders::Im
     builder
 }
 
+pub(crate) fn search_result_block_correct_errors(
+    mut builder: crate::types::builders::SearchResultBlockBuilder,
+) -> crate::types::builders::SearchResultBlockBuilder {
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.content.is_none() {
+        builder.content = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tool_result_block_correct_errors(
     mut builder: crate::types::builders::ToolResultBlockBuilder,
 ) -> crate::types::builders::ToolResultBlockBuilder {
@@ -551,6 +566,15 @@ pub(crate) fn reasoning_text_block_correct_errors(
 pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
     if builder.uri.is_none() {
         builder.uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn search_result_content_block_correct_errors(
+    mut builder: crate::types::builders::SearchResultContentBlockBuilder,
+) -> crate::types::builders::SearchResultContentBlockBuilder {
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
     }
     builder
 }

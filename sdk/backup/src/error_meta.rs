@@ -1388,6 +1388,37 @@ impl From<crate::operation::describe_restore_job::DescribeRestoreJobError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_scan_job::DescribeScanJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_scan_job::DescribeScanJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_scan_job::DescribeScanJobError> for Error {
+    fn from(err: crate::operation::describe_scan_job::DescribeScanJobError) -> Self {
+        match err {
+            crate::operation::describe_scan_job::DescribeScanJobError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_scan_job::DescribeScanJobError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::describe_scan_job::DescribeScanJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_scan_job::DescribeScanJobError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_scan_job::DescribeScanJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -2907,6 +2938,60 @@ impl From<crate::operation::list_restore_testing_selections::ListRestoreTestingS
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scan_jobs::ListScanJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scan_jobs::ListScanJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_scan_jobs::ListScanJobsError> for Error {
+    fn from(err: crate::operation::list_scan_jobs::ListScanJobsError) -> Self {
+        match err {
+            crate::operation::list_scan_jobs::ListScanJobsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_scan_jobs::ListScanJobsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_scan_jobs::ListScanJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scan_job_summaries::ListScanJobSummariesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scan_job_summaries::ListScanJobSummariesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_scan_job_summaries::ListScanJobSummariesError> for Error {
+    fn from(err: crate::operation::list_scan_job_summaries::ListScanJobSummariesError) -> Self {
+        match err {
+            crate::operation::list_scan_job_summaries::ListScanJobSummariesError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_scan_job_summaries::ListScanJobSummariesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_scan_job_summaries::ListScanJobSummariesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags::ListTagsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3291,6 +3376,37 @@ impl From<crate::operation::start_restore_job::StartRestoreJobError> for Error {
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::start_restore_job::StartRestoreJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_scan_job::StartScanJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_scan_job::StartScanJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_scan_job::StartScanJobError> for Error {
+    fn from(err: crate::operation::start_scan_job::StartScanJobError) -> Self {
+        match err {
+            crate::operation::start_scan_job::StartScanJobError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::start_scan_job::StartScanJobError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_scan_job::StartScanJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_scan_job::StartScanJobError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::start_scan_job::StartScanJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_scan_job::StartScanJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::start_scan_job::StartScanJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

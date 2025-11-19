@@ -46,6 +46,10 @@ pub struct SetSourceRequest {
     pub gateway_bridge_source: ::std::option::Option<crate::types::SetGatewayBridgeSourceRequest>,
     /// <p>The key-value pairs that can be used to tag and organize the source.</p>
     pub source_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Indicates whether to enable or disable router integration when setting a flow source.</p>
+    pub router_integration_state: ::std::option::Option<crate::types::State>,
+    /// <p>The decryption configuration for the flow source when router integration is enabled. Specifies how the source content should be decrypted when router integration is used.</p>
+    pub router_integration_transit_decryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
 }
 impl SetSourceRequest {
     /// <p>The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key.</p>
@@ -132,6 +136,14 @@ impl SetSourceRequest {
     pub fn source_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.source_tags.as_ref()
     }
+    /// <p>Indicates whether to enable or disable router integration when setting a flow source.</p>
+    pub fn router_integration_state(&self) -> ::std::option::Option<&crate::types::State> {
+        self.router_integration_state.as_ref()
+    }
+    /// <p>The decryption configuration for the flow source when router integration is enabled. Specifies how the source content should be decrypted when router integration is used.</p>
+    pub fn router_integration_transit_decryption(&self) -> ::std::option::Option<&crate::types::FlowTransitEncryption> {
+        self.router_integration_transit_decryption.as_ref()
+    }
 }
 impl SetSourceRequest {
     /// Creates a new builder-style object to manufacture [`SetSourceRequest`](crate::types::SetSourceRequest).
@@ -164,6 +176,8 @@ pub struct SetSourceRequestBuilder {
     pub(crate) whitelist_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_bridge_source: ::std::option::Option<crate::types::SetGatewayBridgeSourceRequest>,
     pub(crate) source_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) router_integration_state: ::std::option::Option<crate::types::State>,
+    pub(crate) router_integration_transit_decryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
 }
 impl SetSourceRequestBuilder {
     /// <p>The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key.</p>
@@ -472,6 +486,34 @@ impl SetSourceRequestBuilder {
     pub fn get_source_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.source_tags
     }
+    /// <p>Indicates whether to enable or disable router integration when setting a flow source.</p>
+    pub fn router_integration_state(mut self, input: crate::types::State) -> Self {
+        self.router_integration_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable router integration when setting a flow source.</p>
+    pub fn set_router_integration_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
+        self.router_integration_state = input;
+        self
+    }
+    /// <p>Indicates whether to enable or disable router integration when setting a flow source.</p>
+    pub fn get_router_integration_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.router_integration_state
+    }
+    /// <p>The decryption configuration for the flow source when router integration is enabled. Specifies how the source content should be decrypted when router integration is used.</p>
+    pub fn router_integration_transit_decryption(mut self, input: crate::types::FlowTransitEncryption) -> Self {
+        self.router_integration_transit_decryption = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The decryption configuration for the flow source when router integration is enabled. Specifies how the source content should be decrypted when router integration is used.</p>
+    pub fn set_router_integration_transit_decryption(mut self, input: ::std::option::Option<crate::types::FlowTransitEncryption>) -> Self {
+        self.router_integration_transit_decryption = input;
+        self
+    }
+    /// <p>The decryption configuration for the flow source when router integration is enabled. Specifies how the source content should be decrypted when router integration is used.</p>
+    pub fn get_router_integration_transit_decryption(&self) -> &::std::option::Option<crate::types::FlowTransitEncryption> {
+        &self.router_integration_transit_decryption
+    }
     /// Consumes the builder and constructs a [`SetSourceRequest`](crate::types::SetSourceRequest).
     pub fn build(self) -> crate::types::SetSourceRequest {
         crate::types::SetSourceRequest {
@@ -495,6 +537,8 @@ impl SetSourceRequestBuilder {
             whitelist_cidr: self.whitelist_cidr,
             gateway_bridge_source: self.gateway_bridge_source,
             source_tags: self.source_tags,
+            router_integration_state: self.router_integration_state,
+            router_integration_transit_decryption: self.router_integration_transit_decryption,
         }
     }
 }

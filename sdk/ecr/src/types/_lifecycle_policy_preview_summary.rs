@@ -6,11 +6,19 @@
 pub struct LifecyclePolicyPreviewSummary {
     /// <p>The number of expiring images.</p>
     pub expiring_image_total_count: ::std::option::Option<i32>,
+    /// <p>The total count of images that will be transitioned to each storage class. This field is only present if at least one image will be transitoned in the summary.</p>
+    pub transitioning_image_total_counts: ::std::option::Option<::std::vec::Vec<crate::types::TransitioningImageTotalCount>>,
 }
 impl LifecyclePolicyPreviewSummary {
     /// <p>The number of expiring images.</p>
     pub fn expiring_image_total_count(&self) -> ::std::option::Option<i32> {
         self.expiring_image_total_count
+    }
+    /// <p>The total count of images that will be transitioned to each storage class. This field is only present if at least one image will be transitoned in the summary.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transitioning_image_total_counts.is_none()`.
+    pub fn transitioning_image_total_counts(&self) -> &[crate::types::TransitioningImageTotalCount] {
+        self.transitioning_image_total_counts.as_deref().unwrap_or_default()
     }
 }
 impl LifecyclePolicyPreviewSummary {
@@ -25,6 +33,7 @@ impl LifecyclePolicyPreviewSummary {
 #[non_exhaustive]
 pub struct LifecyclePolicyPreviewSummaryBuilder {
     pub(crate) expiring_image_total_count: ::std::option::Option<i32>,
+    pub(crate) transitioning_image_total_counts: ::std::option::Option<::std::vec::Vec<crate::types::TransitioningImageTotalCount>>,
 }
 impl LifecyclePolicyPreviewSummaryBuilder {
     /// <p>The number of expiring images.</p>
@@ -41,10 +50,34 @@ impl LifecyclePolicyPreviewSummaryBuilder {
     pub fn get_expiring_image_total_count(&self) -> &::std::option::Option<i32> {
         &self.expiring_image_total_count
     }
+    /// Appends an item to `transitioning_image_total_counts`.
+    ///
+    /// To override the contents of this collection use [`set_transitioning_image_total_counts`](Self::set_transitioning_image_total_counts).
+    ///
+    /// <p>The total count of images that will be transitioned to each storage class. This field is only present if at least one image will be transitoned in the summary.</p>
+    pub fn transitioning_image_total_counts(mut self, input: crate::types::TransitioningImageTotalCount) -> Self {
+        let mut v = self.transitioning_image_total_counts.unwrap_or_default();
+        v.push(input);
+        self.transitioning_image_total_counts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The total count of images that will be transitioned to each storage class. This field is only present if at least one image will be transitoned in the summary.</p>
+    pub fn set_transitioning_image_total_counts(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitioningImageTotalCount>>,
+    ) -> Self {
+        self.transitioning_image_total_counts = input;
+        self
+    }
+    /// <p>The total count of images that will be transitioned to each storage class. This field is only present if at least one image will be transitoned in the summary.</p>
+    pub fn get_transitioning_image_total_counts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitioningImageTotalCount>> {
+        &self.transitioning_image_total_counts
+    }
     /// Consumes the builder and constructs a [`LifecyclePolicyPreviewSummary`](crate::types::LifecyclePolicyPreviewSummary).
     pub fn build(self) -> crate::types::LifecyclePolicyPreviewSummary {
         crate::types::LifecyclePolicyPreviewSummary {
             expiring_image_total_count: self.expiring_image_total_count,
+            transitioning_image_total_counts: self.transitioning_image_total_counts,
         }
     }
 }

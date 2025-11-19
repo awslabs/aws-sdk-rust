@@ -8,6 +8,8 @@ pub struct TriggerDetails {
     pub guard_duty_finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the scan trigger.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the trigger type that started the malware scan.</p>
+    pub trigger_type: ::std::option::Option<crate::types::TriggerType>,
 }
 impl TriggerDetails {
     /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
@@ -17,6 +19,10 @@ impl TriggerDetails {
     /// <p>The description of the scan trigger.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>Specifies the trigger type that started the malware scan.</p>
+    pub fn trigger_type(&self) -> ::std::option::Option<&crate::types::TriggerType> {
+        self.trigger_type.as_ref()
     }
 }
 impl TriggerDetails {
@@ -32,6 +38,7 @@ impl TriggerDetails {
 pub struct TriggerDetailsBuilder {
     pub(crate) guard_duty_finding_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) trigger_type: ::std::option::Option<crate::types::TriggerType>,
 }
 impl TriggerDetailsBuilder {
     /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
@@ -62,11 +69,26 @@ impl TriggerDetailsBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Specifies the trigger type that started the malware scan.</p>
+    pub fn trigger_type(mut self, input: crate::types::TriggerType) -> Self {
+        self.trigger_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the trigger type that started the malware scan.</p>
+    pub fn set_trigger_type(mut self, input: ::std::option::Option<crate::types::TriggerType>) -> Self {
+        self.trigger_type = input;
+        self
+    }
+    /// <p>Specifies the trigger type that started the malware scan.</p>
+    pub fn get_trigger_type(&self) -> &::std::option::Option<crate::types::TriggerType> {
+        &self.trigger_type
+    }
     /// Consumes the builder and constructs a [`TriggerDetails`](crate::types::TriggerDetails).
     pub fn build(self) -> crate::types::TriggerDetails {
         crate::types::TriggerDetails {
             guard_duty_finding_id: self.guard_duty_finding_id,
             description: self.description,
+            trigger_type: self.trigger_type,
         }
     }
 }

@@ -313,6 +313,10 @@ pub use crate::types::_server_side_encryption_configuration::ServerSideEncryptio
 
 pub use crate::types::_server_side_encryption_rule::ServerSideEncryptionRule;
 
+pub use crate::types::_blocked_encryption_types::BlockedEncryptionTypes;
+
+pub use crate::types::_encryption_type::EncryptionType;
+
 pub use crate::types::_server_side_encryption_by_default::ServerSideEncryptionByDefault;
 
 pub use crate::types::_cors_configuration::CorsConfiguration;
@@ -473,6 +477,8 @@ mod _analytics_s3_export_file_format;
 
 mod _archive_status;
 
+mod _blocked_encryption_types;
+
 mod _bucket;
 
 mod _bucket_accelerate_status;
@@ -550,6 +556,8 @@ mod _encoding_type;
 mod _encryption;
 
 mod _encryption_configuration;
+
+mod _encryption_type;
 
 mod _end_event;
 

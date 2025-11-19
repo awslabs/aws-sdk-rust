@@ -49,6 +49,8 @@ pub use crate::types::error::_organization_not_found_exception::OrganizationNotF
 
 pub use crate::types::error::_account_not_management_or_delegated_administrator_exception::AccountNotManagementOrDelegatedAdministratorException;
 
+pub use crate::types::error::_feature_disabled_exception::FeatureDisabledException;
+
 pub use crate::types::error::_credential_report_not_ready_exception::CredentialReportNotReadyException;
 
 pub use crate::types::error::_credential_report_not_present_exception::CredentialReportNotPresentException;
@@ -56,6 +58,8 @@ pub use crate::types::error::_credential_report_not_present_exception::Credentia
 pub use crate::types::error::_credential_report_expired_exception::CredentialReportExpiredException;
 
 pub use crate::types::error::_report_generation_limit_exceeded_exception::ReportGenerationLimitExceededException;
+
+pub use crate::types::error::_feature_enabled_exception::FeatureEnabledException;
 
 pub use crate::types::error::_caller_is_not_management_account_exception::CallerIsNotManagementAccountException;
 
@@ -86,6 +90,10 @@ mod _duplicate_ssh_public_key_exception;
 mod _entity_already_exists_exception;
 
 mod _entity_temporarily_unmodifiable_exception;
+
+mod _feature_disabled_exception;
+
+mod _feature_enabled_exception;
 
 mod _invalid_authentication_code_exception;
 

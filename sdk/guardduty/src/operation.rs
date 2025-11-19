@@ -124,6 +124,9 @@ pub mod get_ip_set;
 /// Types for the `GetMalwareProtectionPlan` operation.
 pub mod get_malware_protection_plan;
 
+/// Types for the `GetMalwareScan` operation.
+pub mod get_malware_scan;
+
 /// Types for the `GetMalwareScanSettings` operation.
 pub mod get_malware_scan_settings;
 
@@ -177,6 +180,9 @@ pub mod list_ip_sets;
 
 /// Types for the `ListMalwareProtectionPlans` operation.
 pub mod list_malware_protection_plans;
+
+/// Types for the `ListMalwareScans` operation.
+pub mod list_malware_scans;
 
 /// Types for the `ListMembers` operation.
 pub mod list_members;

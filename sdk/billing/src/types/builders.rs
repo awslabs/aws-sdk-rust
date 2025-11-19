@@ -15,6 +15,8 @@ pub use crate::types::_billing_view_list_element::BillingViewListElementBuilder;
 
 pub use crate::types::_billing_view_health_status::BillingViewHealthStatusBuilder;
 
+pub use crate::types::_string_search::StringSearchBuilder;
+
 pub use crate::types::_active_time_range::ActiveTimeRangeBuilder;
 
 pub use crate::types::_billing_view_element::BillingViewElementBuilder;

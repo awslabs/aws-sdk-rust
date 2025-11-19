@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoryEvent {
-    /// <p>The date and time the event occurred.</p>
+    /// <p>The date and time the event occurred, expressed in seconds and fractional milliseconds since the Unix epoch, which is defined as January 1, 1970, at 00:00:00 Coordinated Universal Time (UTC).</p>
     pub timestamp: ::aws_smithy_types::DateTime,
     /// <p>The type of the event.</p>
     pub r#type: crate::types::HistoryEventType,
@@ -88,7 +88,7 @@ pub struct HistoryEvent {
     pub evaluation_failed_event_details: ::std::option::Option<crate::types::EvaluationFailedEventDetails>,
 }
 impl HistoryEvent {
-    /// <p>The date and time the event occurred.</p>
+    /// <p>The date and time the event occurred, expressed in seconds and fractional milliseconds since the Unix epoch, which is defined as January 1, 1970, at 00:00:00 Coordinated Universal Time (UTC).</p>
     pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.timestamp
     }
@@ -307,18 +307,18 @@ pub struct HistoryEventBuilder {
     pub(crate) evaluation_failed_event_details: ::std::option::Option<crate::types::EvaluationFailedEventDetails>,
 }
 impl HistoryEventBuilder {
-    /// <p>The date and time the event occurred.</p>
+    /// <p>The date and time the event occurred, expressed in seconds and fractional milliseconds since the Unix epoch, which is defined as January 1, 1970, at 00:00:00 Coordinated Universal Time (UTC).</p>
     /// This field is required.
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time the event occurred.</p>
+    /// <p>The date and time the event occurred, expressed in seconds and fractional milliseconds since the Unix epoch, which is defined as January 1, 1970, at 00:00:00 Coordinated Universal Time (UTC).</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
-    /// <p>The date and time the event occurred.</p>
+    /// <p>The date and time the event occurred, expressed in seconds and fractional milliseconds since the Unix epoch, which is defined as January 1, 1970, at 00:00:00 Coordinated Universal Time (UTC).</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }

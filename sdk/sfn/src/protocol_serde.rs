@@ -267,6 +267,8 @@ pub(crate) mod shape_map_run_item_counts;
 
 pub(crate) mod shape_map_run_list;
 
+pub(crate) mod shape_mock_input;
+
 pub(crate) mod shape_routing_configuration_list;
 
 pub(crate) mod shape_routing_configuration_list_item;
@@ -280,6 +282,8 @@ pub(crate) mod shape_state_machine_version_list;
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_test_state_configuration;
 
 pub(crate) mod shape_tracing_configuration;
 
@@ -297,11 +301,15 @@ pub(crate) mod shape_inspection_data_request;
 
 pub(crate) mod shape_inspection_data_response;
 
+pub(crate) mod shape_inspection_error_details;
+
 pub(crate) mod shape_log_destination;
 
 pub(crate) mod shape_log_destination_list;
 
 pub(crate) mod shape_map_run_list_item;
+
+pub(crate) mod shape_mock_error_output;
 
 pub(crate) mod shape_state_machine_alias_list_item;
 

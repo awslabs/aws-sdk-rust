@@ -148,6 +148,10 @@ mod associate_environment_role;
 
 mod associate_governed_terms;
 
+mod batch_get_attributes_metadata;
+
+mod batch_put_attributes_metadata;
+
 mod cancel_metadata_generation_run;
 
 mod cancel_subscription;
@@ -490,6 +494,8 @@ mod update_group_profile;
 mod update_project;
 
 mod update_project_profile;
+
+mod update_root_domain_unit_owner;
 
 mod update_rule;
 

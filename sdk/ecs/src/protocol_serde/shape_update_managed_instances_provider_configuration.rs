@@ -15,5 +15,11 @@ pub fn ser_update_managed_instances_provider_configuration(
     if let Some(var_3) = &input.propagate_tags {
         object.key("propagateTags").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.infrastructure_optimization {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("infrastructureOptimization").start_object();
+        crate::protocol_serde::shape_infrastructure_optimization::ser_infrastructure_optimization(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

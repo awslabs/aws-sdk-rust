@@ -32,6 +32,8 @@ pub struct InvokeWithResponseStreamInput {
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeWithResponseStreamInput {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -75,6 +77,10 @@ impl InvokeWithResponseStreamInput {
     pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub fn tenant_id(&self) -> ::std::option::Option<&str> {
+        self.tenant_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeWithResponseStreamInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -85,6 +91,7 @@ impl ::std::fmt::Debug for InvokeWithResponseStreamInput {
         formatter.field("client_context", &self.client_context);
         formatter.field("qualifier", &self.qualifier);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
+        formatter.field("tenant_id", &self.tenant_id);
         formatter.finish()
     }
 }
@@ -105,6 +112,7 @@ pub struct InvokeWithResponseStreamInputBuilder {
     pub(crate) client_context: ::std::option::Option<::std::string::String>,
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeWithResponseStreamInputBuilder {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -243,6 +251,20 @@ impl InvokeWithResponseStreamInputBuilder {
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.payload
     }
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tenant_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tenant_id = input;
+        self
+    }
+    /// <p>The identifier of the tenant in a multi-tenant Lambda function.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_id
+    }
     /// Consumes the builder and constructs a [`InvokeWithResponseStreamInput`](crate::operation::invoke_with_response_stream::InvokeWithResponseStreamInput).
     pub fn build(
         self,
@@ -257,6 +279,7 @@ impl InvokeWithResponseStreamInputBuilder {
             client_context: self.client_context,
             qualifier: self.qualifier,
             payload: self.payload,
+            tenant_id: self.tenant_id,
         })
     }
 }
@@ -269,6 +292,7 @@ impl ::std::fmt::Debug for InvokeWithResponseStreamInputBuilder {
         formatter.field("client_context", &self.client_context);
         formatter.field("qualifier", &self.qualifier);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
+        formatter.field("tenant_id", &self.tenant_id);
         formatter.finish()
     }
 }

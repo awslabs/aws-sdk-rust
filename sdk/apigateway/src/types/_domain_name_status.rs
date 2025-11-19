@@ -13,6 +13,7 @@
 /// # let domainnamestatus = unimplemented!();
 /// match domainnamestatus {
 ///     DomainNameStatus::Available => { /* ... */ },
+///     DomainNameStatus::Failed => { /* ... */ },
 ///     DomainNameStatus::Pending => { /* ... */ },
 ///     DomainNameStatus::PendingCertificateReimport => { /* ... */ },
 ///     DomainNameStatus::PendingOwnershipVerification => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum DomainNameStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     PendingCertificateReimport,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for DomainNameStatus {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => DomainNameStatus::Available,
+            "FAILED" => DomainNameStatus::Failed,
             "PENDING" => DomainNameStatus::Pending,
             "PENDING_CERTIFICATE_REIMPORT" => DomainNameStatus::PendingCertificateReimport,
             "PENDING_OWNERSHIP_VERIFICATION" => DomainNameStatus::PendingOwnershipVerification,
@@ -83,6 +87,7 @@ impl DomainNameStatus {
     pub fn as_str(&self) -> &str {
         match self {
             DomainNameStatus::Available => "AVAILABLE",
+            DomainNameStatus::Failed => "FAILED",
             DomainNameStatus::Pending => "PENDING",
             DomainNameStatus::PendingCertificateReimport => "PENDING_CERTIFICATE_REIMPORT",
             DomainNameStatus::PendingOwnershipVerification => "PENDING_OWNERSHIP_VERIFICATION",
@@ -94,6 +99,7 @@ impl DomainNameStatus {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
+            "FAILED",
             "PENDING",
             "PENDING_CERTIFICATE_REIMPORT",
             "PENDING_OWNERSHIP_VERIFICATION",
@@ -122,6 +128,7 @@ impl ::std::fmt::Display for DomainNameStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DomainNameStatus::Available => write!(f, "AVAILABLE"),
+            DomainNameStatus::Failed => write!(f, "FAILED"),
             DomainNameStatus::Pending => write!(f, "PENDING"),
             DomainNameStatus::PendingCertificateReimport => write!(f, "PENDING_CERTIFICATE_REIMPORT"),
             DomainNameStatus::PendingOwnershipVerification => write!(f, "PENDING_OWNERSHIP_VERIFICATION"),

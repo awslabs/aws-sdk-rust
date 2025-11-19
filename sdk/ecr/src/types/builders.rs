@@ -7,9 +7,9 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_encryption_configuration_for_repository_creation_template::EncryptionConfigurationForRepositoryCreationTemplateBuilder;
 
-pub use crate::types::_image_scan_status::ImageScanStatusBuilder;
-
 pub use crate::types::_image_identifier::ImageIdentifierBuilder;
+
+pub use crate::types::_image_scan_status::ImageScanStatusBuilder;
 
 pub use crate::types::_replication_configuration::ReplicationConfigurationBuilder;
 
@@ -31,7 +31,15 @@ pub use crate::types::_image::ImageBuilder;
 
 pub use crate::types::_list_images_filter::ListImagesFilterBuilder;
 
+pub use crate::types::_image_referrer::ImageReferrerBuilder;
+
+pub use crate::types::_list_image_referrers_filter::ListImageReferrersFilterBuilder;
+
+pub use crate::types::_subject_identifier::SubjectIdentifierBuilder;
+
 pub use crate::types::_lifecycle_policy_preview_summary::LifecyclePolicyPreviewSummaryBuilder;
+
+pub use crate::types::_transitioning_image_total_count::TransitioningImageTotalCountBuilder;
 
 pub use crate::types::_lifecycle_policy_preview_result::LifecyclePolicyPreviewResultBuilder;
 

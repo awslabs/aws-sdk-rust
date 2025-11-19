@@ -378,4 +378,18 @@ impl PutIntegrationFluentBuilder {
     pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
         self.inner.get_tls_config()
     }
+    /// <p>The response transfer mode of the integration.</p>
+    pub fn response_transfer_mode(mut self, input: crate::types::ResponseTransferMode) -> Self {
+        self.inner = self.inner.response_transfer_mode(input);
+        self
+    }
+    /// <p>The response transfer mode of the integration.</p>
+    pub fn set_response_transfer_mode(mut self, input: ::std::option::Option<crate::types::ResponseTransferMode>) -> Self {
+        self.inner = self.inner.set_response_transfer_mode(input);
+        self
+    }
+    /// <p>The response transfer mode of the integration.</p>
+    pub fn get_response_transfer_mode(&self) -> &::std::option::Option<crate::types::ResponseTransferMode> {
+        self.inner.get_response_transfer_mode()
+    }
 }

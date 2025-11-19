@@ -37,11 +37,19 @@ pub use crate::types::_control_scope::ControlScope;
 
 pub use crate::types::_control_input_parameter::ControlInputParameter;
 
+pub use crate::types::_scan_setting::ScanSetting;
+
+pub use crate::types::_malware_scanner::MalwareScanner;
+
 pub use crate::types::_advanced_backup_setting::AdvancedBackupSetting;
 
 pub use crate::types::_backup_plan_input::BackupPlanInput;
 
 pub use crate::types::_backup_rule_input::BackupRuleInput;
+
+pub use crate::types::_scan_action::ScanAction;
+
+pub use crate::types::_scan_mode::ScanMode;
 
 pub use crate::types::_index_action::IndexAction;
 
@@ -53,6 +61,24 @@ pub use crate::types::_backup_vault_event::BackupVaultEvent;
 
 pub use crate::types::_tiering_configurations_list_member::TieringConfigurationsListMember;
 
+pub use crate::types::_scan_job_summary::ScanJobSummary;
+
+pub use crate::types::_scan_result_status::ScanResultStatus;
+
+pub use crate::types::_scan_job_status::ScanJobStatus;
+
+pub use crate::types::_aggregation_period::AggregationPeriod;
+
+pub use crate::types::_scan_job::ScanJob;
+
+pub use crate::types::_scan_state::ScanState;
+
+pub use crate::types::_scan_result_info::ScanResultInfo;
+
+pub use crate::types::_scan_resource_type::ScanResourceType;
+
+pub use crate::types::_scan_job_creator::ScanJobCreator;
+
 pub use crate::types::_restore_testing_selection_for_list::RestoreTestingSelectionForList;
 
 pub use crate::types::_restore_testing_plan_for_list::RestoreTestingPlanForList;
@@ -60,8 +86,6 @@ pub use crate::types::_restore_testing_plan_for_list::RestoreTestingPlanForList;
 pub use crate::types::_restore_job_summary::RestoreJobSummary;
 
 pub use crate::types::_restore_job_state::RestoreJobState;
-
-pub use crate::types::_aggregation_period::AggregationPeriod;
 
 pub use crate::types::_restore_jobs_list_member::RestoreJobsListMember;
 
@@ -86,6 +110,10 @@ pub use crate::types::_report_job::ReportJob;
 pub use crate::types::_report_destination::ReportDestination;
 
 pub use crate::types::_recovery_point_by_resource::RecoveryPointByResource;
+
+pub use crate::types::_aggregated_scan_result::AggregatedScanResult;
+
+pub use crate::types::_scan_finding::ScanFinding;
 
 pub use crate::types::_encryption_key_type::EncryptionKeyType;
 
@@ -161,6 +189,10 @@ pub use crate::types::_scheduled_plan_execution_member::ScheduledPlanExecutionMe
 
 pub use crate::types::_rule_execution_type::RuleExecutionType;
 
+pub use crate::types::_scan_result::ScanResult;
+
+pub use crate::types::_scan_job_state::ScanJobState;
+
 pub use crate::types::_storage_class::StorageClass;
 
 pub use crate::types::_latest_mpa_approval_team_update::LatestMpaApprovalTeamUpdate;
@@ -174,6 +206,8 @@ pub use crate::types::_restore_testing_selection_for_create::RestoreTestingSelec
 pub use crate::types::_restore_testing_plan_for_create::RestoreTestingPlanForCreate;
 
 mod _advanced_backup_setting;
+
+mod _aggregated_scan_result;
 
 mod _aggregation_period;
 
@@ -259,6 +293,8 @@ mod _lifecycle;
 
 mod _lifecycle_delete_after_event;
 
+mod _malware_scanner;
+
 mod _mpa_revoke_session_status;
 
 mod _mpa_session_status;
@@ -330,6 +366,34 @@ mod _restore_testing_selection_for_update;
 mod _restore_validation_status;
 
 mod _rule_execution_type;
+
+mod _scan_action;
+
+mod _scan_finding;
+
+mod _scan_job;
+
+mod _scan_job_creator;
+
+mod _scan_job_state;
+
+mod _scan_job_status;
+
+mod _scan_job_summary;
+
+mod _scan_mode;
+
+mod _scan_resource_type;
+
+mod _scan_result;
+
+mod _scan_result_info;
+
+mod _scan_result_status;
+
+mod _scan_setting;
+
+mod _scan_state;
 
 mod _scheduled_plan_execution_member;
 

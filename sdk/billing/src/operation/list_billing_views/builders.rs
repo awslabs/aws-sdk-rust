@@ -167,6 +167,25 @@ impl ListBillingViewsFluentBuilder {
     pub fn get_billing_view_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingViewType>> {
         self.inner.get_billing_view_types()
     }
+    ///
+    /// Appends an item to `names`.
+    ///
+    /// To override the contents of this collection use [`set_names`](Self::set_names).
+    ///
+    /// <p>Filters the list of billing views by name. You can specify search criteria to match billing view names based on the search option provided.</p>
+    pub fn names(mut self, input: crate::types::StringSearch) -> Self {
+        self.inner = self.inner.names(input);
+        self
+    }
+    /// <p>Filters the list of billing views by name. You can specify search criteria to match billing view names based on the search option provided.</p>
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringSearch>>) -> Self {
+        self.inner = self.inner.set_names(input);
+        self
+    }
+    /// <p>Filters the list of billing views by name. You can specify search criteria to match billing view names based on the search option provided.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringSearch>> {
+        self.inner.get_names()
+    }
     /// <p>The list of owners of the billing view.</p>
     pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner_account_id(input.into());

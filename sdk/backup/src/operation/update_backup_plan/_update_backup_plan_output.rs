@@ -13,6 +13,8 @@ pub struct UpdateBackupPlanOutput {
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
     pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    /// <p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>
+    pub scan_settings: ::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>>,
     _request_id: Option<String>,
 }
 impl UpdateBackupPlanOutput {
@@ -38,6 +40,12 @@ impl UpdateBackupPlanOutput {
     pub fn advanced_backup_settings(&self) -> &[crate::types::AdvancedBackupSetting] {
         self.advanced_backup_settings.as_deref().unwrap_or_default()
     }
+    /// <p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_settings.is_none()`.
+    pub fn scan_settings(&self) -> &[crate::types::ScanSetting] {
+        self.scan_settings.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateBackupPlanOutput {
     fn request_id(&self) -> Option<&str> {
@@ -60,6 +68,7 @@ pub struct UpdateBackupPlanOutputBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
     pub(crate) advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    pub(crate) scan_settings: ::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>>,
     _request_id: Option<String>,
 }
 impl UpdateBackupPlanOutputBuilder {
@@ -139,6 +148,26 @@ impl UpdateBackupPlanOutputBuilder {
     pub fn get_advanced_backup_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>> {
         &self.advanced_backup_settings
     }
+    /// Appends an item to `scan_settings`.
+    ///
+    /// To override the contents of this collection use [`set_scan_settings`](Self::set_scan_settings).
+    ///
+    /// <p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>
+    pub fn scan_settings(mut self, input: crate::types::ScanSetting) -> Self {
+        let mut v = self.scan_settings.unwrap_or_default();
+        v.push(input);
+        self.scan_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>
+    pub fn set_scan_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>>) -> Self {
+        self.scan_settings = input;
+        self
+    }
+    /// <p>Contains your scanning configuration for the backup plan and includes the Malware scanner, your selected resources, and scanner role.</p>
+    pub fn get_scan_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>> {
+        &self.scan_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -156,6 +185,7 @@ impl UpdateBackupPlanOutputBuilder {
             creation_date: self.creation_date,
             version_id: self.version_id,
             advanced_backup_settings: self.advanced_backup_settings,
+            scan_settings: self.scan_settings,
             _request_id: self._request_id,
         }
     }

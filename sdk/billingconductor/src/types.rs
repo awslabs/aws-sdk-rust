@@ -99,9 +99,15 @@ pub use crate::types::_account_grouping::AccountGrouping;
 
 pub use crate::types::_billing_group_list_element::BillingGroupListElement;
 
+pub use crate::types::_billing_group_type::BillingGroupType;
+
 pub use crate::types::_list_billing_group_account_grouping::ListBillingGroupAccountGrouping;
 
 pub use crate::types::_list_billing_groups_filter::ListBillingGroupsFilter;
+
+pub use crate::types::_string_search::StringSearch;
+
+pub use crate::types::_search_option::SearchOption;
 
 pub use crate::types::_billing_group_cost_report_element::BillingGroupCostReportElement;
 
@@ -138,6 +144,8 @@ mod _billing_group_cost_report_result_element;
 mod _billing_group_list_element;
 
 mod _billing_group_status;
+
+mod _billing_group_type;
 
 mod _billing_period_range;
 
@@ -220,6 +228,10 @@ mod _pricing_rule_list_element;
 mod _pricing_rule_scope;
 
 mod _pricing_rule_type;
+
+mod _search_option;
+
+mod _string_search;
 
 mod _tiering;
 

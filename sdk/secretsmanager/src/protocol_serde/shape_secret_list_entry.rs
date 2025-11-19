@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Description" => {
                             builder = builder.set_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -54,6 +61,20 @@ where
                         }
                         "RotationRules" => {
                             builder = builder.set_rotation_rules(crate::protocol_serde::shape_rotation_rules_type::de_rotation_rules_type(tokens)?);
+                        }
+                        "ExternalSecretRotationMetadata" => {
+                            builder = builder.set_external_secret_rotation_metadata(
+                                crate::protocol_serde::shape_external_secret_rotation_metadata_type::de_external_secret_rotation_metadata_type(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "ExternalSecretRotationRoleArn" => {
+                            builder = builder.set_external_secret_rotation_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         "LastRotatedDate" => {
                             builder = builder.set_last_rotated_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

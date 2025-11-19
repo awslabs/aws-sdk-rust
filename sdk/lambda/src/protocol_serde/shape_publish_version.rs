@@ -365,6 +365,9 @@ pub(crate) fn de_publish_version(
                             .transpose()?,
                     );
                 }
+                "TenancyConfig" => {
+                    builder = builder.set_tenancy_config(crate::protocol_serde::shape_tenancy_config::de_tenancy_config(tokens)?);
+                }
                 "Timeout" => {
                     builder = builder.set_timeout(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

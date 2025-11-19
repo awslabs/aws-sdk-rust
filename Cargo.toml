@@ -1,9 +1,9 @@
 [workspace]
 resolver = "2"
 exclude = [
+    "tests/telemetry",
     "tests/no-default-features",
-    "tests/webassembly",
-    "tests/telemetry"
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -317,6 +317,7 @@ members = [
     "sdk/osis",
     "sdk/outposts",
     "sdk/panorama",
+    "sdk/partnercentralchannel",
     "sdk/partnercentralselling",
     "sdk/paymentcryptography",
     "sdk/paymentcryptographydata",
@@ -391,6 +392,7 @@ members = [
     "sdk/sfn",
     "sdk/shield",
     "sdk/signer",
+    "sdk/signin",
     "sdk/simspaceweaver",
     "sdk/snowball",
     "sdk/snowdevicemanagement",

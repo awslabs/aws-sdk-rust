@@ -261,6 +261,9 @@ pub(crate) fn de_describe_recovery_point(
                             .transpose()?,
                     );
                 }
+                "ScanResults" => {
+                    builder = builder.set_scan_results(crate::protocol_serde::shape_scan_results::de_scan_results(tokens)?);
+                }
                 "SourceBackupVaultArn" => {
                     builder = builder.set_source_backup_vault_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

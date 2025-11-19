@@ -41,6 +41,7 @@
 ///     ResourceType::InternetGateway => { /* ... */ },
 ///     ResourceType::Ipam => { /* ... */ },
 ///     ResourceType::IpamExternalResourceVerificationToken => { /* ... */ },
+///     ResourceType::IpamPolicy => { /* ... */ },
 ///     ResourceType::IpamPool => { /* ... */ },
 ///     ResourceType::IpamPrefixListResolver => { /* ... */ },
 ///     ResourceType::IpamPrefixListResolverTarget => { /* ... */ },
@@ -199,6 +200,8 @@ pub enum ResourceType {
     Ipam,
     #[allow(missing_docs)] // documentation missing in model
     IpamExternalResourceVerificationToken,
+    #[allow(missing_docs)] // documentation missing in model
+    IpamPolicy,
     #[allow(missing_docs)] // documentation missing in model
     IpamPool,
     #[allow(missing_docs)] // documentation missing in model
@@ -379,6 +382,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "internet-gateway" => ResourceType::InternetGateway,
             "ipam" => ResourceType::Ipam,
             "ipam-external-resource-verification-token" => ResourceType::IpamExternalResourceVerificationToken,
+            "ipam-policy" => ResourceType::IpamPolicy,
             "ipam-pool" => ResourceType::IpamPool,
             "ipam-prefix-list-resolver" => ResourceType::IpamPrefixListResolver,
             "ipam-prefix-list-resolver-target" => ResourceType::IpamPrefixListResolverTarget,
@@ -495,6 +499,7 @@ impl ResourceType {
             ResourceType::InternetGateway => "internet-gateway",
             ResourceType::Ipam => "ipam",
             ResourceType::IpamExternalResourceVerificationToken => "ipam-external-resource-verification-token",
+            ResourceType::IpamPolicy => "ipam-policy",
             ResourceType::IpamPool => "ipam-pool",
             ResourceType::IpamPrefixListResolver => "ipam-prefix-list-resolver",
             ResourceType::IpamPrefixListResolverTarget => "ipam-prefix-list-resolver-target",
@@ -602,6 +607,7 @@ impl ResourceType {
             "internet-gateway",
             "ipam",
             "ipam-external-resource-verification-token",
+            "ipam-policy",
             "ipam-pool",
             "ipam-prefix-list-resolver",
             "ipam-prefix-list-resolver-target",
@@ -726,6 +732,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::InternetGateway => write!(f, "internet-gateway"),
             ResourceType::Ipam => write!(f, "ipam"),
             ResourceType::IpamExternalResourceVerificationToken => write!(f, "ipam-external-resource-verification-token"),
+            ResourceType::IpamPolicy => write!(f, "ipam-policy"),
             ResourceType::IpamPool => write!(f, "ipam-pool"),
             ResourceType::IpamPrefixListResolver => write!(f, "ipam-prefix-list-resolver"),
             ResourceType::IpamPrefixListResolverTarget => write!(f, "ipam-prefix-list-resolver-target"),

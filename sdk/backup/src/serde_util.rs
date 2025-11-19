@@ -32,6 +32,60 @@ pub(crate) fn create_restore_testing_selection_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_scan_job_output_output_correct_errors(
+    mut builder: crate::operation::describe_scan_job::builders::DescribeScanJobOutputBuilder,
+) -> crate::operation::describe_scan_job::builders::DescribeScanJobOutputBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.backup_vault_arn.is_none() {
+        builder.backup_vault_arn = Some(Default::default())
+    }
+    if builder.backup_vault_name.is_none() {
+        builder.backup_vault_name = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = {
+            let builder = crate::types::builders::ScanJobCreatorBuilder::default();
+            crate::serde_util::scan_job_creator_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.creation_date.is_none() {
+        builder.creation_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.iam_role_arn.is_none() {
+        builder.iam_role_arn = Some(Default::default())
+    }
+    if builder.malware_scanner.is_none() {
+        builder.malware_scanner = "no value was set".parse::<crate::types::MalwareScanner>().ok()
+    }
+    if builder.recovery_point_arn.is_none() {
+        builder.recovery_point_arn = Some(Default::default())
+    }
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.resource_name.is_none() {
+        builder.resource_name = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::ScanResourceType>().ok()
+    }
+    if builder.scan_job_id.is_none() {
+        builder.scan_job_id = Some(Default::default())
+    }
+    if builder.scan_mode.is_none() {
+        builder.scan_mode = "no value was set".parse::<crate::types::ScanMode>().ok()
+    }
+    if builder.scanner_role_arn.is_none() {
+        builder.scanner_role_arn = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::ScanState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_restore_testing_inferred_metadata_output_output_correct_errors(
     mut builder: crate::operation::get_restore_testing_inferred_metadata::builders::GetRestoreTestingInferredMetadataOutputBuilder,
 ) -> crate::operation::get_restore_testing_inferred_metadata::builders::GetRestoreTestingInferredMetadataOutputBuilder {
@@ -83,6 +137,27 @@ pub(crate) fn list_restore_testing_selections_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_scan_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_scan_jobs::builders::ListScanJobsOutputBuilder,
+) -> crate::operation::list_scan_jobs::builders::ListScanJobsOutputBuilder {
+    if builder.scan_jobs.is_none() {
+        builder.scan_jobs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_scan_job_output_output_correct_errors(
+    mut builder: crate::operation::start_scan_job::builders::StartScanJobOutputBuilder,
+) -> crate::operation::start_scan_job::builders::StartScanJobOutputBuilder {
+    if builder.creation_date.is_none() {
+        builder.creation_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.scan_job_id.is_none() {
+        builder.scan_job_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_restore_testing_plan_output_output_correct_errors(
     mut builder: crate::operation::update_restore_testing_plan::builders::UpdateRestoreTestingPlanOutputBuilder,
 ) -> crate::operation::update_restore_testing_plan::builders::UpdateRestoreTestingPlanOutputBuilder {
@@ -118,6 +193,24 @@ pub(crate) fn update_restore_testing_selection_output_output_correct_errors(
     }
     if builder.update_time.is_none() {
         builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn scan_job_creator_correct_errors(
+    mut builder: crate::types::builders::ScanJobCreatorBuilder,
+) -> crate::types::builders::ScanJobCreatorBuilder {
+    if builder.backup_plan_arn.is_none() {
+        builder.backup_plan_arn = Some(Default::default())
+    }
+    if builder.backup_plan_id.is_none() {
+        builder.backup_plan_id = Some(Default::default())
+    }
+    if builder.backup_plan_version.is_none() {
+        builder.backup_plan_version = Some(Default::default())
+    }
+    if builder.backup_rule_id.is_none() {
+        builder.backup_rule_id = Some(Default::default())
     }
     builder
 }
@@ -185,6 +278,15 @@ pub(crate) fn backup_selection_correct_errors(
     }
     if builder.iam_role_arn.is_none() {
         builder.iam_role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn scan_result_info_correct_errors(
+    mut builder: crate::types::builders::ScanResultInfoBuilder,
+) -> crate::types::builders::ScanResultInfoBuilder {
+    if builder.scan_result_status.is_none() {
+        builder.scan_result_status = "no value was set".parse::<crate::types::ScanResultStatus>().ok()
     }
     builder
 }
@@ -276,6 +378,55 @@ pub(crate) fn restore_testing_selection_for_list_correct_errors(
     }
     if builder.restore_testing_selection_name.is_none() {
         builder.restore_testing_selection_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn scan_job_correct_errors(mut builder: crate::types::builders::ScanJobBuilder) -> crate::types::builders::ScanJobBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.backup_vault_arn.is_none() {
+        builder.backup_vault_arn = Some(Default::default())
+    }
+    if builder.backup_vault_name.is_none() {
+        builder.backup_vault_name = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = {
+            let builder = crate::types::builders::ScanJobCreatorBuilder::default();
+            crate::serde_util::scan_job_creator_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.creation_date.is_none() {
+        builder.creation_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.iam_role_arn.is_none() {
+        builder.iam_role_arn = Some(Default::default())
+    }
+    if builder.malware_scanner.is_none() {
+        builder.malware_scanner = "no value was set".parse::<crate::types::MalwareScanner>().ok()
+    }
+    if builder.recovery_point_arn.is_none() {
+        builder.recovery_point_arn = Some(Default::default())
+    }
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.resource_name.is_none() {
+        builder.resource_name = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::ScanResourceType>().ok()
+    }
+    if builder.scan_job_id.is_none() {
+        builder.scan_job_id = Some(Default::default())
+    }
+    if builder.scan_mode.is_none() {
+        builder.scan_mode = "no value was set".parse::<crate::types::ScanMode>().ok()
+    }
+    if builder.scanner_role_arn.is_none() {
+        builder.scanner_role_arn = Some(Default::default())
     }
     builder
 }

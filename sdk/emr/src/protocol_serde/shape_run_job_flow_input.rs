@@ -192,5 +192,11 @@ pub fn ser_run_job_flow_input_input(
     if let Some(var_59) = &input.extended_support {
         object.key("ExtendedSupport").boolean(*var_59);
     }
+    if let Some(var_60) = &input.monitoring_configuration {
+        #[allow(unused_mut)]
+        let mut object_61 = object.key("MonitoringConfiguration").start_object();
+        crate::protocol_serde::shape_monitoring_configuration::ser_monitoring_configuration(&mut object_61, var_60)?;
+        object_61.finish();
+    }
     Ok(())
 }

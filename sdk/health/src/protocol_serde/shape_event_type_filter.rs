@@ -30,5 +30,23 @@ pub fn ser_event_type_filter(
         }
         array_8.finish();
     }
+    if let Some(var_10) = &input.actionabilities {
+        let mut array_11 = object.key("actionabilities").start_array();
+        for item_12 in var_10 {
+            {
+                array_11.value().string(item_12.as_str());
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_13) = &input.personas {
+        let mut array_14 = object.key("personas").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().string(item_15.as_str());
+            }
+        }
+        array_14.finish();
+    }
     Ok(())
 }

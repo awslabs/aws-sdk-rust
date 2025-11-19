@@ -41,6 +41,16 @@ pub fn ser_associate_nat_gateway_address_input_input_input(
     if let Some(var_14) = &input.dry_run {
         scope_13.boolean(*var_14);
     }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("AvailabilityZone");
+    if let Some(var_16) = &input.availability_zone {
+        scope_15.string(var_16);
+    }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_18) = &input.availability_zone_id {
+        scope_17.string(var_18);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

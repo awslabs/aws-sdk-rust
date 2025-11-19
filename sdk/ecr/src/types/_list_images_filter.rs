@@ -4,13 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImagesFilter {
-    /// <p>The tag status with which to filter your <code>ListImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
+    /// <p>The tag status with which to filter your <code>ListImages</code> results.</p>
     pub tag_status: ::std::option::Option<crate::types::TagStatus>,
+    /// <p>The image status with which to filter your <code>ListImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    pub image_status: ::std::option::Option<crate::types::ImageStatusFilter>,
 }
 impl ListImagesFilter {
-    /// <p>The tag status with which to filter your <code>ListImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
+    /// <p>The tag status with which to filter your <code>ListImages</code> results.</p>
     pub fn tag_status(&self) -> ::std::option::Option<&crate::types::TagStatus> {
         self.tag_status.as_ref()
+    }
+    /// <p>The image status with which to filter your <code>ListImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    pub fn image_status(&self) -> ::std::option::Option<&crate::types::ImageStatusFilter> {
+        self.image_status.as_ref()
     }
 }
 impl ListImagesFilter {
@@ -25,24 +31,42 @@ impl ListImagesFilter {
 #[non_exhaustive]
 pub struct ListImagesFilterBuilder {
     pub(crate) tag_status: ::std::option::Option<crate::types::TagStatus>,
+    pub(crate) image_status: ::std::option::Option<crate::types::ImageStatusFilter>,
 }
 impl ListImagesFilterBuilder {
-    /// <p>The tag status with which to filter your <code>ListImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
+    /// <p>The tag status with which to filter your <code>ListImages</code> results.</p>
     pub fn tag_status(mut self, input: crate::types::TagStatus) -> Self {
         self.tag_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The tag status with which to filter your <code>ListImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
+    /// <p>The tag status with which to filter your <code>ListImages</code> results.</p>
     pub fn set_tag_status(mut self, input: ::std::option::Option<crate::types::TagStatus>) -> Self {
         self.tag_status = input;
         self
     }
-    /// <p>The tag status with which to filter your <code>ListImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
+    /// <p>The tag status with which to filter your <code>ListImages</code> results.</p>
     pub fn get_tag_status(&self) -> &::std::option::Option<crate::types::TagStatus> {
         &self.tag_status
     }
+    /// <p>The image status with which to filter your <code>ListImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    pub fn image_status(mut self, input: crate::types::ImageStatusFilter) -> Self {
+        self.image_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The image status with which to filter your <code>ListImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    pub fn set_image_status(mut self, input: ::std::option::Option<crate::types::ImageStatusFilter>) -> Self {
+        self.image_status = input;
+        self
+    }
+    /// <p>The image status with which to filter your <code>ListImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    pub fn get_image_status(&self) -> &::std::option::Option<crate::types::ImageStatusFilter> {
+        &self.image_status
+    }
     /// Consumes the builder and constructs a [`ListImagesFilter`](crate::types::ListImagesFilter).
     pub fn build(self) -> crate::types::ListImagesFilter {
-        crate::types::ListImagesFilter { tag_status: self.tag_status }
+        crate::types::ListImagesFilter {
+            tag_status: self.tag_status,
+            image_status: self.image_status,
+        }
     }
 }

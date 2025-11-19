@@ -44,6 +44,7 @@ impl super::Client {
     ///   - [`snap_start(Option<SnapStartResponse>)`](crate::operation::publish_version::PublishVersionOutput::snap_start): <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     ///   - [`runtime_version_config(Option<RuntimeVersionConfig>)`](crate::operation::publish_version::PublishVersionOutput::runtime_version_config): <p>The ARN of the runtime and any errors that occured.</p>
     ///   - [`logging_config(Option<LoggingConfig>)`](crate::operation::publish_version::PublishVersionOutput::logging_config): <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+    ///   - [`tenancy_config(Option<TenancyConfig>)`](crate::operation::publish_version::PublishVersionOutput::tenancy_config): <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
     /// - On failure, responds with [`SdkError<PublishVersionError>`](crate::operation::publish_version::PublishVersionError)
     pub fn publish_version(&self) -> crate::operation::publish_version::builders::PublishVersionFluentBuilder {
         crate::operation::publish_version::builders::PublishVersionFluentBuilder::new(self.handle.clone())

@@ -27,6 +27,8 @@ pub(crate) mod shape_get_preferences;
 
 pub(crate) mod shape_get_recommendation;
 
+pub(crate) mod shape_list_efficiency_metrics;
+
 pub(crate) mod shape_list_enrollment_statuses;
 
 pub(crate) mod shape_list_recommendation_summaries;
@@ -51,6 +53,8 @@ pub(crate) mod shape_get_recommendation_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_list_efficiency_metrics_input;
+
 pub(crate) mod shape_list_enrollment_statuses_input;
 
 pub(crate) mod shape_list_recommendation_summaries_input;
@@ -69,6 +73,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_account_enrollment_statuses;
 
+pub(crate) mod shape_efficiency_metrics_by_group_list;
+
 pub(crate) mod shape_filter;
 
 pub(crate) mod shape_order_by;
@@ -84,6 +90,8 @@ pub(crate) mod shape_resource_details;
 pub(crate) mod shape_summary_metrics_result;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_time_period;
 
 pub(crate) mod shape_validation_exception_details;
 
@@ -106,6 +114,8 @@ pub(crate) mod shape_ec2_instance_savings_plans;
 pub(crate) mod shape_ec2_reserved_instances;
 
 pub(crate) mod shape_ecs_service;
+
+pub(crate) mod shape_efficiency_metrics_by_group;
 
 pub(crate) mod shape_elasti_cache_reserved_instances;
 
@@ -157,6 +167,8 @@ pub(crate) mod shape_lambda_function_configuration;
 
 pub(crate) mod shape_memory_db_reserved_instances_configuration;
 
+pub(crate) mod shape_metrics_by_time_list;
+
 pub(crate) mod shape_open_search_reserved_instances_configuration;
 
 pub(crate) mod shape_rds_db_instance_configuration;
@@ -182,6 +194,8 @@ pub(crate) mod shape_compute_configuration;
 pub(crate) mod shape_db_instance_configuration;
 
 pub(crate) mod shape_instance_configuration;
+
+pub(crate) mod shape_metrics_by_time;
 
 pub(crate) mod shape_mixed_instance_configuration_list;
 

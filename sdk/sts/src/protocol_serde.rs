@@ -63,6 +63,10 @@ pub(crate) mod shape_get_session_token;
 
 pub(crate) mod shape_get_session_token_input;
 
+pub(crate) mod shape_get_web_identity_token;
+
+pub(crate) mod shape_get_web_identity_token_input;
+
 pub(crate) mod shape_expired_token_exception;
 
 pub(crate) mod shape_expired_trade_in_token_exception;
@@ -75,7 +79,11 @@ pub(crate) mod shape_invalid_authorization_message_exception;
 
 pub(crate) mod shape_invalid_identity_token_exception;
 
+pub(crate) mod shape_jwt_payload_size_exceeded_exception;
+
 pub(crate) mod shape_malformed_policy_document_exception;
+
+pub(crate) mod shape_outbound_web_identity_federation_disabled_exception;
 
 pub(crate) mod shape_packed_policy_too_large_exception;
 
@@ -84,6 +92,8 @@ pub(crate) mod shape_policy_descriptor_type;
 pub(crate) mod shape_provided_context;
 
 pub(crate) mod shape_region_disabled_exception;
+
+pub(crate) mod shape_session_duration_escalation_exception;
 
 pub(crate) mod shape_tag;
 

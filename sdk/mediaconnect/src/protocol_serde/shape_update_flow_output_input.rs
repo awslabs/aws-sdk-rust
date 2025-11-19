@@ -75,29 +75,38 @@ pub fn ser_update_flow_output_input_input(
     if let Some(var_19) = &input.remote_id {
         object.key("remoteId").string(var_19.as_str());
     }
-    if let Some(var_20) = &input.sender_control_port {
+    if let Some(var_20) = &input.router_integration_state {
+        object.key("routerIntegrationState").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.router_integration_transit_encryption {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("routerIntegrationTransitEncryption").start_object();
+        crate::protocol_serde::shape_flow_transit_encryption::ser_flow_transit_encryption(&mut object_22, var_21)?;
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.sender_control_port {
         object.key("senderControlPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
-    if let Some(var_21) = &input.sender_ip_address {
-        object.key("senderIpAddress").string(var_21.as_str());
+    if let Some(var_24) = &input.sender_ip_address {
+        object.key("senderIpAddress").string(var_24.as_str());
     }
-    if let Some(var_22) = &input.smoothing_latency {
+    if let Some(var_25) = &input.smoothing_latency {
         object.key("smoothingLatency").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_22).into()),
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_23) = &input.stream_id {
-        object.key("streamId").string(var_23.as_str());
+    if let Some(var_26) = &input.stream_id {
+        object.key("streamId").string(var_26.as_str());
     }
-    if let Some(var_24) = &input.vpc_interface_attachment {
+    if let Some(var_27) = &input.vpc_interface_attachment {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("vpcInterfaceAttachment").start_object();
-        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_28 = object.key("vpcInterfaceAttachment").start_object();
+        crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(&mut object_28, var_27)?;
+        object_28.finish();
     }
     Ok(())
 }

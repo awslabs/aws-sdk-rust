@@ -27,20 +27,32 @@ pub fn ser_list_billing_views_input_input(
         }
         array_7.finish();
     }
-    if let Some(var_9) = &input.owner_account_id {
-        object.key("ownerAccountId").string(var_9.as_str());
+    if let Some(var_9) = &input.names {
+        let mut array_10 = object.key("names").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_string_search::ser_string_search(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
     }
-    if let Some(var_10) = &input.source_account_id {
-        object.key("sourceAccountId").string(var_10.as_str());
+    if let Some(var_13) = &input.owner_account_id {
+        object.key("ownerAccountId").string(var_13.as_str());
     }
-    if let Some(var_11) = &input.max_results {
+    if let Some(var_14) = &input.source_account_id {
+        object.key("sourceAccountId").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_12) = &input.next_token {
-        object.key("nextToken").string(var_12.as_str());
+    if let Some(var_16) = &input.next_token {
+        object.key("nextToken").string(var_16.as_str());
     }
     Ok(())
 }

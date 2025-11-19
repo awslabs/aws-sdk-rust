@@ -48,5 +48,8 @@ pub fn ser_create_secret_input_input(
     if let Some(var_15) = &input.force_overwrite_replica_secret {
         object.key("ForceOverwriteReplicaSecret").boolean(*var_15);
     }
+    if let Some(var_16) = &input.r#type {
+        object.key("Type").string(var_16.as_str());
+    }
     Ok(())
 }

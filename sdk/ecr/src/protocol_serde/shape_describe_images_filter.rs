@@ -6,5 +6,8 @@ pub fn ser_describe_images_filter(
     if let Some(var_1) = &input.tag_status {
         object.key("tagStatus").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.image_status {
+        object.key("imageStatus").string(var_2.as_str());
+    }
     Ok(())
 }

@@ -14,6 +14,8 @@ pub struct AppMonitorSummary {
     pub last_modified: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this app monitor.</p>
     pub state: ::std::option::Option<crate::types::StateEnum>,
+    /// <p>The platform type for this app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications.</p>
+    pub platform: ::std::option::Option<crate::types::AppMonitorPlatform>,
 }
 impl AppMonitorSummary {
     /// <p>The name of this app monitor.</p>
@@ -36,6 +38,10 @@ impl AppMonitorSummary {
     pub fn state(&self) -> ::std::option::Option<&crate::types::StateEnum> {
         self.state.as_ref()
     }
+    /// <p>The platform type for this app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications.</p>
+    pub fn platform(&self) -> ::std::option::Option<&crate::types::AppMonitorPlatform> {
+        self.platform.as_ref()
+    }
 }
 impl AppMonitorSummary {
     /// Creates a new builder-style object to manufacture [`AppMonitorSummary`](crate::types::AppMonitorSummary).
@@ -53,6 +59,7 @@ pub struct AppMonitorSummaryBuilder {
     pub(crate) created: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::StateEnum>,
+    pub(crate) platform: ::std::option::Option<crate::types::AppMonitorPlatform>,
 }
 impl AppMonitorSummaryBuilder {
     /// <p>The name of this app monitor.</p>
@@ -125,6 +132,20 @@ impl AppMonitorSummaryBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::StateEnum> {
         &self.state
     }
+    /// <p>The platform type for this app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications.</p>
+    pub fn platform(mut self, input: crate::types::AppMonitorPlatform) -> Self {
+        self.platform = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The platform type for this app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications.</p>
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::AppMonitorPlatform>) -> Self {
+        self.platform = input;
+        self
+    }
+    /// <p>The platform type for this app monitor. Valid values are <code>Web</code> for web applications, <code>Android</code> for Android applications, and <code>iOS</code> for IOS applications.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::AppMonitorPlatform> {
+        &self.platform
+    }
     /// Consumes the builder and constructs a [`AppMonitorSummary`](crate::types::AppMonitorSummary).
     pub fn build(self) -> crate::types::AppMonitorSummary {
         crate::types::AppMonitorSummary {
@@ -133,6 +154,7 @@ impl AppMonitorSummaryBuilder {
             created: self.created,
             last_modified: self.last_modified,
             state: self.state,
+            platform: self.platform,
         }
     }
 }

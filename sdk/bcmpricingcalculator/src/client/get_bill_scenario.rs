@@ -12,6 +12,8 @@ impl super::Client {
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_bill_scenario::GetBillScenarioOutput::created_at): <p>The timestamp when the bill scenario was created.</p>
     ///   - [`expires_at(Option<DateTime>)`](crate::operation::get_bill_scenario::GetBillScenarioOutput::expires_at): <p>The timestamp when the bill scenario will expire.</p>
     ///   - [`failure_message(Option<String>)`](crate::operation::get_bill_scenario::GetBillScenarioOutput::failure_message): <p>An error message if the bill scenario retrieval failed.</p>
+    ///   - [`group_sharing_preference(Option<GroupSharingPreferenceEnum>)`](crate::operation::get_bill_scenario::GetBillScenarioOutput::group_sharing_preference): <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    ///   - [`cost_category_group_sharing_preference_arn(Option<String>)`](crate::operation::get_bill_scenario::GetBillScenarioOutput::cost_category_group_sharing_preference_arn): <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
     /// - On failure, responds with [`SdkError<GetBillScenarioError>`](crate::operation::get_bill_scenario::GetBillScenarioError)
     pub fn get_bill_scenario(&self) -> crate::operation::get_bill_scenario::builders::GetBillScenarioFluentBuilder {
         crate::operation::get_bill_scenario::builders::GetBillScenarioFluentBuilder::new(self.handle.clone())

@@ -33,6 +33,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "infrastructureOptimization" => {
+                            builder = builder.set_infrastructure_optimization(
+                                crate::protocol_serde::shape_infrastructure_optimization::de_infrastructure_optimization(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

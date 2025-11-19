@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_ip_sets_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_malware_scans_output_output_next_token(
+    input: &crate::operation::list_malware_scans::ListMalwareScansOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_members_output_output_next_token(
     input: &crate::operation::list_members::ListMembersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -195,6 +205,13 @@ pub(crate) fn lens_list_ip_sets_output_output_ip_set_ids(
     input: crate::operation::list_ip_sets::ListIpSetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.ip_set_ids?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_malware_scans_output_output_scans(
+    input: crate::operation::list_malware_scans::ListMalwareScansOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MalwareScan>> {
+    let input = input.scans?;
     ::std::option::Option::Some(input)
 }
 

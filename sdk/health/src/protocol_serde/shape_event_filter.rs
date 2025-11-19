@@ -3,8 +3,8 @@ pub fn ser_event_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventFilter,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.event_arns {
-        let mut array_2 = object.key("eventArns").start_array();
+    if let Some(var_1) = &input.actionabilities {
+        let mut array_2 = object.key("actionabilities").start_array();
         for item_3 in var_1 {
             {
                 array_2.value().string(item_3.as_str());
@@ -12,8 +12,8 @@ pub fn ser_event_filter(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.event_type_codes {
-        let mut array_5 = object.key("eventTypeCodes").start_array();
+    if let Some(var_4) = &input.event_arns {
+        let mut array_5 = object.key("eventArns").start_array();
         for item_6 in var_4 {
             {
                 array_5.value().string(item_6.as_str());
@@ -21,8 +21,8 @@ pub fn ser_event_filter(
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.services {
-        let mut array_8 = object.key("services").start_array();
+    if let Some(var_7) = &input.event_type_codes {
+        let mut array_8 = object.key("eventTypeCodes").start_array();
         for item_9 in var_7 {
             {
                 array_8.value().string(item_9.as_str());
@@ -30,8 +30,8 @@ pub fn ser_event_filter(
         }
         array_8.finish();
     }
-    if let Some(var_10) = &input.regions {
-        let mut array_11 = object.key("regions").start_array();
+    if let Some(var_10) = &input.services {
+        let mut array_11 = object.key("services").start_array();
         for item_12 in var_10 {
             {
                 array_11.value().string(item_12.as_str());
@@ -39,8 +39,8 @@ pub fn ser_event_filter(
         }
         array_11.finish();
     }
-    if let Some(var_13) = &input.availability_zones {
-        let mut array_14 = object.key("availabilityZones").start_array();
+    if let Some(var_13) = &input.regions {
+        let mut array_14 = object.key("regions").start_array();
         for item_15 in var_13 {
             {
                 array_14.value().string(item_15.as_str());
@@ -48,53 +48,53 @@ pub fn ser_event_filter(
         }
         array_14.finish();
     }
-    if let Some(var_16) = &input.start_times {
-        let mut array_17 = object.key("startTimes").start_array();
+    if let Some(var_16) = &input.availability_zones {
+        let mut array_17 = object.key("availabilityZones").start_array();
         for item_18 in var_16 {
             {
-                #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_date_time_range::ser_date_time_range(&mut object_19, item_18)?;
-                object_19.finish();
+                array_17.value().string(item_18.as_str());
             }
         }
         array_17.finish();
     }
-    if let Some(var_20) = &input.end_times {
-        let mut array_21 = object.key("endTimes").start_array();
-        for item_22 in var_20 {
+    if let Some(var_19) = &input.start_times {
+        let mut array_20 = object.key("startTimes").start_array();
+        for item_21 in var_19 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_date_time_range::ser_date_time_range(&mut object_23, item_22)?;
-                object_23.finish();
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_date_time_range::ser_date_time_range(&mut object_22, item_21)?;
+                object_22.finish();
             }
         }
-        array_21.finish();
+        array_20.finish();
     }
-    if let Some(var_24) = &input.last_updated_times {
-        let mut array_25 = object.key("lastUpdatedTimes").start_array();
-        for item_26 in var_24 {
+    if let Some(var_23) = &input.end_times {
+        let mut array_24 = object.key("endTimes").start_array();
+        for item_25 in var_23 {
             {
                 #[allow(unused_mut)]
-                let mut object_27 = array_25.value().start_object();
-                crate::protocol_serde::shape_date_time_range::ser_date_time_range(&mut object_27, item_26)?;
-                object_27.finish();
+                let mut object_26 = array_24.value().start_object();
+                crate::protocol_serde::shape_date_time_range::ser_date_time_range(&mut object_26, item_25)?;
+                object_26.finish();
             }
         }
-        array_25.finish();
+        array_24.finish();
     }
-    if let Some(var_28) = &input.entity_arns {
-        let mut array_29 = object.key("entityArns").start_array();
-        for item_30 in var_28 {
+    if let Some(var_27) = &input.last_updated_times {
+        let mut array_28 = object.key("lastUpdatedTimes").start_array();
+        for item_29 in var_27 {
             {
-                array_29.value().string(item_30.as_str());
+                #[allow(unused_mut)]
+                let mut object_30 = array_28.value().start_object();
+                crate::protocol_serde::shape_date_time_range::ser_date_time_range(&mut object_30, item_29)?;
+                object_30.finish();
             }
         }
-        array_29.finish();
+        array_28.finish();
     }
-    if let Some(var_31) = &input.entity_values {
-        let mut array_32 = object.key("entityValues").start_array();
+    if let Some(var_31) = &input.entity_arns {
+        let mut array_32 = object.key("entityArns").start_array();
         for item_33 in var_31 {
             {
                 array_32.value().string(item_33.as_str());
@@ -102,8 +102,8 @@ pub fn ser_event_filter(
         }
         array_32.finish();
     }
-    if let Some(var_34) = &input.event_type_categories {
-        let mut array_35 = object.key("eventTypeCategories").start_array();
+    if let Some(var_34) = &input.entity_values {
+        let mut array_35 = object.key("entityValues").start_array();
         for item_36 in var_34 {
             {
                 array_35.value().string(item_36.as_str());
@@ -111,30 +111,48 @@ pub fn ser_event_filter(
         }
         array_35.finish();
     }
-    if let Some(var_37) = &input.tags {
-        let mut array_38 = object.key("tags").start_array();
+    if let Some(var_37) = &input.event_type_categories {
+        let mut array_38 = object.key("eventTypeCategories").start_array();
         for item_39 in var_37 {
             {
-                #[allow(unused_mut)]
-                let mut object_40 = array_38.value().start_object();
-                for (key_41, value_42) in item_39 {
-                    {
-                        object_40.key(key_41.as_str()).string(value_42.as_str());
-                    }
-                }
-                object_40.finish();
+                array_38.value().string(item_39.as_str());
             }
         }
         array_38.finish();
     }
-    if let Some(var_43) = &input.event_status_codes {
-        let mut array_44 = object.key("eventStatusCodes").start_array();
-        for item_45 in var_43 {
+    if let Some(var_40) = &input.tags {
+        let mut array_41 = object.key("tags").start_array();
+        for item_42 in var_40 {
             {
-                array_44.value().string(item_45.as_str());
+                #[allow(unused_mut)]
+                let mut object_43 = array_41.value().start_object();
+                for (key_44, value_45) in item_42 {
+                    {
+                        object_43.key(key_44.as_str()).string(value_45.as_str());
+                    }
+                }
+                object_43.finish();
             }
         }
-        array_44.finish();
+        array_41.finish();
+    }
+    if let Some(var_46) = &input.event_status_codes {
+        let mut array_47 = object.key("eventStatusCodes").start_array();
+        for item_48 in var_46 {
+            {
+                array_47.value().string(item_48.as_str());
+            }
+        }
+        array_47.finish();
+    }
+    if let Some(var_49) = &input.personas {
+        let mut array_50 = object.key("personas").start_array();
+        for item_51 in var_49 {
+            {
+                array_50.value().string(item_51.as_str());
+            }
+        }
+        array_50.finish();
     }
     Ok(())
 }

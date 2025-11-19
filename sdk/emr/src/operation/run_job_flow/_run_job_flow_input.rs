@@ -103,6 +103,8 @@ pub struct RunJobFlowInput {
     pub ebs_root_volume_throughput: ::std::option::Option<i32>,
     /// <p>Reserved.</p>
     pub extended_support: ::std::option::Option<bool>,
+    /// <p>Contains CloudWatch log configuration metadata and settings.</p>
+    pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl RunJobFlowInput {
     /// <p>The name of the job flow.</p>
@@ -284,6 +286,10 @@ impl RunJobFlowInput {
     pub fn extended_support(&self) -> ::std::option::Option<bool> {
         self.extended_support
     }
+    /// <p>Contains CloudWatch log configuration metadata and settings.</p>
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
+    }
 }
 impl RunJobFlowInput {
     /// Creates a new builder-style object to manufacture [`RunJobFlowInput`](crate::operation::run_job_flow::RunJobFlowInput).
@@ -328,6 +334,7 @@ pub struct RunJobFlowInputBuilder {
     pub(crate) ebs_root_volume_iops: ::std::option::Option<i32>,
     pub(crate) ebs_root_volume_throughput: ::std::option::Option<i32>,
     pub(crate) extended_support: ::std::option::Option<bool>,
+    pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl RunJobFlowInputBuilder {
     /// <p>The name of the job flow.</p>
@@ -933,6 +940,20 @@ impl RunJobFlowInputBuilder {
     pub fn get_extended_support(&self) -> &::std::option::Option<bool> {
         &self.extended_support
     }
+    /// <p>Contains CloudWatch log configuration metadata and settings.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.monitoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains CloudWatch log configuration metadata and settings.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring_configuration = input;
+        self
+    }
+    /// <p>Contains CloudWatch log configuration metadata and settings.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring_configuration
+    }
     /// Consumes the builder and constructs a [`RunJobFlowInput`](crate::operation::run_job_flow::RunJobFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::run_job_flow::RunJobFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::run_job_flow::RunJobFlowInput {
@@ -968,6 +989,7 @@ impl RunJobFlowInputBuilder {
             ebs_root_volume_iops: self.ebs_root_volume_iops,
             ebs_root_volume_throughput: self.ebs_root_volume_throughput,
             extended_support: self.extended_support,
+            monitoring_configuration: self.monitoring_configuration,
         })
     }
 }

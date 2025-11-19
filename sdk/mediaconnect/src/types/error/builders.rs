@@ -3,15 +3,21 @@ pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExcept
 
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableExceptionBuilder;
 
-pub use crate::types::error::_not_found_exception::NotFoundExceptionBuilder;
-
 pub use crate::types::error::_internal_server_error_exception::InternalServerErrorExceptionBuilder;
+
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_bad_request_exception::BadRequestExceptionBuilder;
 
+pub use crate::types::error::_not_found_exception::NotFoundExceptionBuilder;
+
 pub use crate::types::error::_forbidden_exception::ForbiddenExceptionBuilder;
 
-pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+pub use crate::types::error::_router_output_service_quota_exceeded_exception::RouterOutputServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_router_network_interface_service_quota_exceeded_exception::RouterNetworkInterfaceServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_router_input_service_quota_exceeded_exception::RouterInputServiceQuotaExceededExceptionBuilder;
 
 pub use crate::types::error::_create_gateway420_exception::CreateGateway420ExceptionBuilder;
 

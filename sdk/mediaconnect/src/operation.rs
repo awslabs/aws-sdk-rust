@@ -19,6 +19,15 @@ pub mod add_flow_sources;
 /// Types for the `AddFlowVpcInterfaces` operation.
 pub mod add_flow_vpc_interfaces;
 
+/// Types for the `BatchGetRouterInput` operation.
+pub mod batch_get_router_input;
+
+/// Types for the `BatchGetRouterNetworkInterface` operation.
+pub mod batch_get_router_network_interface;
+
+/// Types for the `BatchGetRouterOutput` operation.
+pub mod batch_get_router_output;
+
 /// Types for the `CreateBridge` operation.
 pub mod create_bridge;
 
@@ -28,6 +37,15 @@ pub mod create_flow;
 /// Types for the `CreateGateway` operation.
 pub mod create_gateway;
 
+/// Types for the `CreateRouterInput` operation.
+pub mod create_router_input;
+
+/// Types for the `CreateRouterNetworkInterface` operation.
+pub mod create_router_network_interface;
+
+/// Types for the `CreateRouterOutput` operation.
+pub mod create_router_output;
+
 /// Types for the `DeleteBridge` operation.
 pub mod delete_bridge;
 
@@ -36,6 +54,15 @@ pub mod delete_flow;
 
 /// Types for the `DeleteGateway` operation.
 pub mod delete_gateway;
+
+/// Types for the `DeleteRouterInput` operation.
+pub mod delete_router_input;
+
+/// Types for the `DeleteRouterNetworkInterface` operation.
+pub mod delete_router_network_interface;
+
+/// Types for the `DeleteRouterOutput` operation.
+pub mod delete_router_output;
 
 /// Types for the `DeregisterGatewayInstance` operation.
 pub mod deregister_gateway_instance;
@@ -64,6 +91,21 @@ pub mod describe_offering;
 /// Types for the `DescribeReservation` operation.
 pub mod describe_reservation;
 
+/// Types for the `GetRouterInput` operation.
+pub mod get_router_input;
+
+/// Types for the `GetRouterInputSourceMetadata` operation.
+pub mod get_router_input_source_metadata;
+
+/// Types for the `GetRouterInputThumbnail` operation.
+pub mod get_router_input_thumbnail;
+
+/// Types for the `GetRouterNetworkInterface` operation.
+pub mod get_router_network_interface;
+
+/// Types for the `GetRouterOutput` operation.
+pub mod get_router_output;
+
 /// Types for the `GrantFlowEntitlements` operation.
 pub mod grant_flow_entitlements;
 
@@ -87,6 +129,18 @@ pub mod list_offerings;
 
 /// Types for the `ListReservations` operation.
 pub mod list_reservations;
+
+/// Types for the `ListRouterInputs` operation.
+pub mod list_router_inputs;
+
+/// Types for the `ListRouterNetworkInterfaces` operation.
+pub mod list_router_network_interfaces;
+
+/// Types for the `ListRouterOutputs` operation.
+pub mod list_router_outputs;
+
+/// Types for the `ListTagsForGlobalResource` operation.
+pub mod list_tags_for_global_resource;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -112,17 +166,44 @@ pub mod remove_flow_source;
 /// Types for the `RemoveFlowVpcInterface` operation.
 pub mod remove_flow_vpc_interface;
 
+/// Types for the `RestartRouterInput` operation.
+pub mod restart_router_input;
+
+/// Types for the `RestartRouterOutput` operation.
+pub mod restart_router_output;
+
 /// Types for the `RevokeFlowEntitlement` operation.
 pub mod revoke_flow_entitlement;
 
 /// Types for the `StartFlow` operation.
 pub mod start_flow;
 
+/// Types for the `StartRouterInput` operation.
+pub mod start_router_input;
+
+/// Types for the `StartRouterOutput` operation.
+pub mod start_router_output;
+
 /// Types for the `StopFlow` operation.
 pub mod stop_flow;
 
+/// Types for the `StopRouterInput` operation.
+pub mod stop_router_input;
+
+/// Types for the `StopRouterOutput` operation.
+pub mod stop_router_output;
+
+/// Types for the `TagGlobalResource` operation.
+pub mod tag_global_resource;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
+
+/// Types for the `TakeRouterInput` operation.
+pub mod take_router_input;
+
+/// Types for the `UntagGlobalResource` operation.
+pub mod untag_global_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
@@ -156,3 +237,12 @@ pub mod update_flow_source;
 
 /// Types for the `UpdateGatewayInstance` operation.
 pub mod update_gateway_instance;
+
+/// Types for the `UpdateRouterInput` operation.
+pub mod update_router_input;
+
+/// Types for the `UpdateRouterNetworkInterface` operation.
+pub mod update_router_network_interface;
+
+/// Types for the `UpdateRouterOutput` operation.
+pub mod update_router_output;

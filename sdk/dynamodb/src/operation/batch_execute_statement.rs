@@ -270,7 +270,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchExecuteS
 pub enum BatchExecuteStatementError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>Throughput exceeds the current throughput quota for your account. For detailed information about why the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a> field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. For detailed information about why the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a> field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::types::error::RequestLimitExceeded),
     /// <p>The request was denied due to request throttling. For detailed information about why the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a> field in the returned exception.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

@@ -85,6 +85,8 @@ pub use crate::types::_data_repository_lifecycle::DataRepositoryLifecycle;
 
 pub use crate::types::_windows_file_system_configuration::WindowsFileSystemConfiguration;
 
+pub use crate::types::_windows_fsrm_configuration::WindowsFsrmConfiguration;
+
 pub use crate::types::_windows_audit_log_configuration::WindowsAuditLogConfiguration;
 
 pub use crate::types::_windows_access_audit_log_level::WindowsAccessAuditLogLevel;
@@ -722,6 +724,8 @@ mod _windows_audit_log_create_configuration;
 mod _windows_deployment_type;
 
 mod _windows_file_system_configuration;
+
+mod _windows_fsrm_configuration;
 
 /// Builders
 pub mod builders;

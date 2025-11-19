@@ -149,6 +149,10 @@ pub(crate) mod shape_validate_resource_policy_input;
 
 pub(crate) mod shape_api_error_list_type;
 
+pub(crate) mod shape_external_secret_rotation_metadata_item;
+
+pub(crate) mod shape_external_secret_rotation_metadata_type;
+
 pub(crate) mod shape_filter;
 
 pub(crate) mod shape_replica_region_type;

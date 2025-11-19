@@ -117,6 +117,9 @@ pub(crate) fn de_describe_endpoint_config(
                 "EnableNetworkIsolation" => {
                     builder = builder.set_enable_network_isolation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "MetricsConfig" => {
+                    builder = builder.set_metrics_config(crate::protocol_serde::shape_metrics_config::de_metrics_config(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

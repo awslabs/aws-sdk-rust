@@ -12,6 +12,7 @@
 /// ```text
 /// # let layeravailability = unimplemented!();
 /// match layeravailability {
+///     LayerAvailability::Archived => { /* ... */ },
 ///     LayerAvailability::Available => { /* ... */ },
 ///     LayerAvailability::Unavailable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum LayerAvailability {
     #[allow(missing_docs)] // documentation missing in model
+    Archived,
+    #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
     Unavailable,
@@ -53,6 +56,7 @@ pub enum LayerAvailability {
 impl ::std::convert::From<&str> for LayerAvailability {
     fn from(s: &str) -> Self {
         match s {
+            "ARCHIVED" => LayerAvailability::Archived,
             "AVAILABLE" => LayerAvailability::Available,
             "UNAVAILABLE" => LayerAvailability::Unavailable,
             other => LayerAvailability::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl LayerAvailability {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LayerAvailability::Archived => "ARCHIVED",
             LayerAvailability::Available => "AVAILABLE",
             LayerAvailability::Unavailable => "UNAVAILABLE",
             LayerAvailability::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl LayerAvailability {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "UNAVAILABLE"]
+        &["ARCHIVED", "AVAILABLE", "UNAVAILABLE"]
     }
 }
 impl ::std::convert::AsRef<str> for LayerAvailability {
@@ -100,6 +105,7 @@ impl LayerAvailability {
 impl ::std::fmt::Display for LayerAvailability {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            LayerAvailability::Archived => write!(f, "ARCHIVED"),
             LayerAvailability::Available => write!(f, "AVAILABLE"),
             LayerAvailability::Unavailable => write!(f, "UNAVAILABLE"),
             LayerAvailability::Unknown(value) => write!(f, "{value}"),

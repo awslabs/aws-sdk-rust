@@ -9,6 +9,27 @@ pub mod flow_deleted;
 /// Supporting types for the `flow_standby` waiter.
 pub mod flow_standby;
 
+/// Supporting types for the `input_active` waiter.
+pub mod input_active;
+
+/// Supporting types for the `input_deleted` waiter.
+pub mod input_deleted;
+
+/// Supporting types for the `input_standby` waiter.
+pub mod input_standby;
+
+/// Supporting types for the `output_active` waiter.
+pub mod output_active;
+
+/// Supporting types for the `output_deleted` waiter.
+pub mod output_deleted;
+
+/// Supporting types for the `output_routed` waiter.
+pub mod output_routed;
+
+/// Supporting types for the `output_standby` waiter.
+pub mod output_standby;
+
 #[allow(clippy::needless_lifetimes)]
 #[allow(clippy::let_and_return)]
 pub(crate) mod matchers;

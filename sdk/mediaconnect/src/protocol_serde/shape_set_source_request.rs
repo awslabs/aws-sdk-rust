@@ -109,5 +109,14 @@ pub fn ser_set_source_request(
         }
         object_26.finish();
     }
+    if let Some(var_29) = &input.router_integration_state {
+        object.key("routerIntegrationState").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.router_integration_transit_decryption {
+        #[allow(unused_mut)]
+        let mut object_31 = object.key("routerIntegrationTransitDecryption").start_object();
+        crate::protocol_serde::shape_flow_transit_encryption::ser_flow_transit_encryption(&mut object_31, var_30)?;
+        object_31.finish();
+    }
     Ok(())
 }

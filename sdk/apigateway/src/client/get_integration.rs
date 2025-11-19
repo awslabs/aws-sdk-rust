@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`cache_key_parameters(Option<Vec::<String>>)`](crate::operation::get_integration::GetIntegrationOutput::cache_key_parameters): <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for Method <code>requestParameters</code>.</p>
     ///   - [`integration_responses(Option<HashMap::<String, IntegrationResponse>>)`](crate::operation::get_integration::GetIntegrationOutput::integration_responses): <p>Specifies the integration's responses.</p>
     ///   - [`tls_config(Option<TlsConfig>)`](crate::operation::get_integration::GetIntegrationOutput::tls_config): <p>Specifies the TLS configuration for an integration.</p>
+    ///   - [`response_transfer_mode(Option<ResponseTransferMode>)`](crate::operation::get_integration::GetIntegrationOutput::response_transfer_mode): <p>The response transfer mode of the integration.</p>
     /// - On failure, responds with [`SdkError<GetIntegrationError>`](crate::operation::get_integration::GetIntegrationError)
     pub fn get_integration(&self) -> crate::operation::get_integration::builders::GetIntegrationFluentBuilder {
         crate::operation::get_integration::builders::GetIntegrationFluentBuilder::new(self.handle.clone())

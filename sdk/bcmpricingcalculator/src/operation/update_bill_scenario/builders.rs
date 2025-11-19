@@ -150,4 +150,32 @@ impl UpdateBillScenarioFluentBuilder {
     pub fn get_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_expires_at()
     }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn group_sharing_preference(mut self, input: crate::types::GroupSharingPreferenceEnum) -> Self {
+        self.inner = self.inner.group_sharing_preference(input);
+        self
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn set_group_sharing_preference(mut self, input: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>) -> Self {
+        self.inner = self.inner.set_group_sharing_preference(input);
+        self
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn get_group_sharing_preference(&self) -> &::std::option::Option<crate::types::GroupSharingPreferenceEnum> {
+        self.inner.get_group_sharing_preference()
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn cost_category_group_sharing_preference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cost_category_group_sharing_preference_arn(input.into());
+        self
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn set_cost_category_group_sharing_preference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_cost_category_group_sharing_preference_arn(input);
+        self
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn get_cost_category_group_sharing_preference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cost_category_group_sharing_preference_arn()
+    }
 }

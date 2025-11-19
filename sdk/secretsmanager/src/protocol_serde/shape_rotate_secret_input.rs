@@ -18,8 +18,26 @@ pub fn ser_rotate_secret_input_input(
         crate::protocol_serde::shape_rotation_rules_type::ser_rotation_rules_type(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.rotate_immediately {
-        object.key("RotateImmediately").boolean(*var_6);
+    if let Some(var_6) = &input.external_secret_rotation_metadata {
+        let mut array_7 = object.key("ExternalSecretRotationMetadata").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_external_secret_rotation_metadata_item::ser_external_secret_rotation_metadata_item(
+                    &mut object_9,
+                    item_8,
+                )?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.external_secret_rotation_role_arn {
+        object.key("ExternalSecretRotationRoleArn").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.rotate_immediately {
+        object.key("RotateImmediately").boolean(*var_11);
     }
     Ok(())
 }

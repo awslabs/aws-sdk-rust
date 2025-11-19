@@ -23,12 +23,12 @@ version = "1.8.10"
 [dev-dependencies.aws-sdk-dynamodb]
 path = "../../sdk/dynamodb"
 features = ["test-util", "behavior-version-latest"]
-version = "1.98.0"
+version = "1.99.0"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 features = ["test-util", "behavior-version-latest"]
-version = "1.112.0"
+version = "1.113.0"
 
 [dev-dependencies.aws-smithy-observability]
 path = "../../sdk/aws-smithy-observability"

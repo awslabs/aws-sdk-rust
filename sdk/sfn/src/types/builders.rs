@@ -15,9 +15,17 @@ pub use crate::types::_cloud_watch_logs_log_group::CloudWatchLogsLogGroupBuilder
 
 pub use crate::types::_inspection_data::InspectionDataBuilder;
 
+pub use crate::types::_inspection_error_details::InspectionErrorDetailsBuilder;
+
 pub use crate::types::_inspection_data_response::InspectionDataResponseBuilder;
 
 pub use crate::types::_inspection_data_request::InspectionDataRequestBuilder;
+
+pub use crate::types::_test_state_configuration::TestStateConfigurationBuilder;
+
+pub use crate::types::_mock_input::MockInputBuilder;
+
+pub use crate::types::_mock_error_output::MockErrorOutputBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 

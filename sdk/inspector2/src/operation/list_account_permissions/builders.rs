@@ -22,7 +22,7 @@ impl crate::operation::list_account_permissions::builders::ListAccountPermission
 }
 /// Fluent builder constructing a request to `ListAccountPermissions`.
 ///
-/// <p>Lists the permissions an account has to configure Amazon Inspector.</p>
+/// <p>Lists the permissions an account has to configure Amazon Inspector. If the account is a member account or standalone account with resources managed by an Organizations policy, the operation returns fewer permissions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccountPermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

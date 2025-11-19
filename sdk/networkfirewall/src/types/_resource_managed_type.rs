@@ -15,6 +15,7 @@
 ///     ResourceManagedType::ActiveThreatDefense => { /* ... */ },
 ///     ResourceManagedType::AwsManagedDomainLists => { /* ... */ },
 ///     ResourceManagedType::AwsManagedThreatSignatures => { /* ... */ },
+///     ResourceManagedType::PartnerManaged => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum ResourceManagedType {
     AwsManagedDomainLists,
     #[allow(missing_docs)] // documentation missing in model
     AwsManagedThreatSignatures,
+    #[allow(missing_docs)] // documentation missing in model
+    PartnerManaged,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for ResourceManagedType {
             "ACTIVE_THREAT_DEFENSE" => ResourceManagedType::ActiveThreatDefense,
             "AWS_MANAGED_DOMAIN_LISTS" => ResourceManagedType::AwsManagedDomainLists,
             "AWS_MANAGED_THREAT_SIGNATURES" => ResourceManagedType::AwsManagedThreatSignatures,
+            "PARTNER_MANAGED" => ResourceManagedType::PartnerManaged,
             other => ResourceManagedType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,18 @@ impl ResourceManagedType {
             ResourceManagedType::ActiveThreatDefense => "ACTIVE_THREAT_DEFENSE",
             ResourceManagedType::AwsManagedDomainLists => "AWS_MANAGED_DOMAIN_LISTS",
             ResourceManagedType::AwsManagedThreatSignatures => "AWS_MANAGED_THREAT_SIGNATURES",
+            ResourceManagedType::PartnerManaged => "PARTNER_MANAGED",
             ResourceManagedType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE_THREAT_DEFENSE", "AWS_MANAGED_DOMAIN_LISTS", "AWS_MANAGED_THREAT_SIGNATURES"]
+        &[
+            "ACTIVE_THREAT_DEFENSE",
+            "AWS_MANAGED_DOMAIN_LISTS",
+            "AWS_MANAGED_THREAT_SIGNATURES",
+            "PARTNER_MANAGED",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceManagedType {
@@ -108,6 +118,7 @@ impl ::std::fmt::Display for ResourceManagedType {
             ResourceManagedType::ActiveThreatDefense => write!(f, "ACTIVE_THREAT_DEFENSE"),
             ResourceManagedType::AwsManagedDomainLists => write!(f, "AWS_MANAGED_DOMAIN_LISTS"),
             ResourceManagedType::AwsManagedThreatSignatures => write!(f, "AWS_MANAGED_THREAT_SIGNATURES"),
+            ResourceManagedType::PartnerManaged => write!(f, "PARTNER_MANAGED"),
             ResourceManagedType::Unknown(value) => write!(f, "{value}"),
         }
     }

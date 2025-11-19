@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_imports_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_insights_data_output_output_next_token(
+    input: &crate::operation::list_insights_data::ListInsightsDataOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_insights_metric_data_output_output_next_token(
     input: &crate::operation::list_insights_metric_data::ListInsightsMetricDataOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -120,6 +130,13 @@ pub(crate) fn lens_list_imports_output_output_imports(
     input: crate::operation::list_imports::ListImportsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportsListItem>> {
     let input = input.imports?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_insights_data_output_output_events(
+    input: crate::operation::list_insights_data::ListInsightsDataOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+    let input = input.events?;
     ::std::option::Option::Some(input)
 }
 

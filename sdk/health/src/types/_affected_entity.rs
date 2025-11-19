@@ -18,7 +18,7 @@ pub struct AffectedEntity {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The most recent time that the entity was updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
+    /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, <code>UNKNOWN</code>, <code>PENDING</code>, and <code>RESOLVED</code>.</p>
     pub status_code: ::std::option::Option<crate::types::EntityStatusCode>,
     /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
@@ -54,7 +54,7 @@ impl AffectedEntity {
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
+    /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, <code>UNKNOWN</code>, <code>PENDING</code>, and <code>RESOLVED</code>.</p>
     pub fn status_code(&self) -> ::std::option::Option<&crate::types::EntityStatusCode> {
         self.status_code.as_ref()
     }
@@ -181,17 +181,17 @@ impl AffectedEntityBuilder {
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
-    /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
+    /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, <code>UNKNOWN</code>, <code>PENDING</code>, and <code>RESOLVED</code>.</p>
     pub fn status_code(mut self, input: crate::types::EntityStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
+    /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, <code>UNKNOWN</code>, <code>PENDING</code>, and <code>RESOLVED</code>.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::EntityStatusCode>) -> Self {
         self.status_code = input;
         self
     }
-    /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
+    /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, <code>UNKNOWN</code>, <code>PENDING</code>, and <code>RESOLVED</code>.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::EntityStatusCode> {
         &self.status_code
     }

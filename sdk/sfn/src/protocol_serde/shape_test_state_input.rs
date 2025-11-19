@@ -21,5 +21,23 @@ pub fn ser_test_state_input_input(
     if let Some(var_6) = &input.variables {
         object.key("variables").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.state_name {
+        object.key("stateName").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.mock {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("mock").start_object();
+        crate::protocol_serde::shape_mock_input::ser_mock_input(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.context {
+        object.key("context").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.state_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("stateConfiguration").start_object();
+        crate::protocol_serde::shape_test_state_configuration::ser_test_state_configuration(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

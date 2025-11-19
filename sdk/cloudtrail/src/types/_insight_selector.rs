@@ -5,16 +5,36 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightSelector {
     /// <p>The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
-    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
-    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls or read and write data API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management and data API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub insight_type: ::std::option::Option<crate::types::InsightType>,
+    /// <p>Select the event category on which Insights should be enabled.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If EventCategories is not provided, the specified Insights types are enabled on management API calls by default.</p></li>
+    /// <li>
+    /// <p>If EventCategories is provided, the given event categories will overwrite the existing ones. For example, if a trail already has Insights enabled on management events, and then a PutInsightSelectors request is made with only data events specified in EventCategories, Insights on management events will be disabled.</p></li>
+    /// </ul>
+    pub event_categories: ::std::option::Option<::std::vec::Vec<crate::types::SourceEventCategory>>,
 }
 impl InsightSelector {
     /// <p>The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
-    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
-    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls or read and write data API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management and data API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn insight_type(&self) -> ::std::option::Option<&crate::types::InsightType> {
         self.insight_type.as_ref()
+    }
+    /// <p>Select the event category on which Insights should be enabled.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If EventCategories is not provided, the specified Insights types are enabled on management API calls by default.</p></li>
+    /// <li>
+    /// <p>If EventCategories is provided, the given event categories will overwrite the existing ones. For example, if a trail already has Insights enabled on management events, and then a PutInsightSelectors request is made with only data events specified in EventCategories, Insights on management events will be disabled.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
+    pub fn event_categories(&self) -> &[crate::types::SourceEventCategory] {
+        self.event_categories.as_deref().unwrap_or_default()
     }
 }
 impl InsightSelector {
@@ -29,32 +49,72 @@ impl InsightSelector {
 #[non_exhaustive]
 pub struct InsightSelectorBuilder {
     pub(crate) insight_type: ::std::option::Option<crate::types::InsightType>,
+    pub(crate) event_categories: ::std::option::Option<::std::vec::Vec<crate::types::SourceEventCategory>>,
 }
 impl InsightSelectorBuilder {
     /// <p>The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
-    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
-    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls or read and write data API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management and data API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn insight_type(mut self, input: crate::types::InsightType) -> Self {
         self.insight_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
-    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
-    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls or read and write data API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management and data API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn set_insight_type(mut self, input: ::std::option::Option<crate::types::InsightType>) -> Self {
         self.insight_type = input;
         self
     }
     /// <p>The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
-    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
-    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls or read and write data API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management and data API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn get_insight_type(&self) -> &::std::option::Option<crate::types::InsightType> {
         &self.insight_type
+    }
+    /// Appends an item to `event_categories`.
+    ///
+    /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
+    ///
+    /// <p>Select the event category on which Insights should be enabled.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If EventCategories is not provided, the specified Insights types are enabled on management API calls by default.</p></li>
+    /// <li>
+    /// <p>If EventCategories is provided, the given event categories will overwrite the existing ones. For example, if a trail already has Insights enabled on management events, and then a PutInsightSelectors request is made with only data events specified in EventCategories, Insights on management events will be disabled.</p></li>
+    /// </ul>
+    pub fn event_categories(mut self, input: crate::types::SourceEventCategory) -> Self {
+        let mut v = self.event_categories.unwrap_or_default();
+        v.push(input);
+        self.event_categories = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Select the event category on which Insights should be enabled.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If EventCategories is not provided, the specified Insights types are enabled on management API calls by default.</p></li>
+    /// <li>
+    /// <p>If EventCategories is provided, the given event categories will overwrite the existing ones. For example, if a trail already has Insights enabled on management events, and then a PutInsightSelectors request is made with only data events specified in EventCategories, Insights on management events will be disabled.</p></li>
+    /// </ul>
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceEventCategory>>) -> Self {
+        self.event_categories = input;
+        self
+    }
+    /// <p>Select the event category on which Insights should be enabled.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If EventCategories is not provided, the specified Insights types are enabled on management API calls by default.</p></li>
+    /// <li>
+    /// <p>If EventCategories is provided, the given event categories will overwrite the existing ones. For example, if a trail already has Insights enabled on management events, and then a PutInsightSelectors request is made with only data events specified in EventCategories, Insights on management events will be disabled.</p></li>
+    /// </ul>
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceEventCategory>> {
+        &self.event_categories
     }
     /// Consumes the builder and constructs a [`InsightSelector`](crate::types::InsightSelector).
     pub fn build(self) -> crate::types::InsightSelector {
         crate::types::InsightSelector {
             insight_type: self.insight_type,
+            event_categories: self.event_categories,
         }
     }
 }

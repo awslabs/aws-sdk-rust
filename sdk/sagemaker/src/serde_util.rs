@@ -3380,15 +3380,6 @@ pub(crate) fn processing_stopping_condition_correct_errors(
     builder
 }
 
-pub(crate) fn resource_config_correct_errors(
-    mut builder: crate::types::builders::ResourceConfigBuilder,
-) -> crate::types::builders::ResourceConfigBuilder {
-    if builder.volume_size_in_gb.is_none() {
-        builder.volume_size_in_gb = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn retry_strategy_correct_errors(
     mut builder: crate::types::builders::RetryStrategyBuilder,
 ) -> crate::types::builders::RetryStrategyBuilder {
@@ -6522,7 +6513,7 @@ pub(crate) fn training_job_definition_correct_errors(
     if builder.resource_config.is_none() {
         builder.resource_config = {
             let builder = crate::types::builders::ResourceConfigBuilder::default();
-            Some(crate::serde_util::resource_config_correct_errors(builder).build())
+            Some(builder.build())
         }
     }
     if builder.stopping_condition.is_none() {

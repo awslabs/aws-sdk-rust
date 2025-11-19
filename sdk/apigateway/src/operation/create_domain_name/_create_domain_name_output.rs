@@ -34,8 +34,10 @@ pub struct CreateDomainNameOutput {
     pub domain_name_status: ::std::option::Option<crate::types::DomainNameStatus>,
     /// <p>An optional text message containing detailed information about status of the DomainName migration.</p>
     pub domain_name_status_message: ::std::option::Option<::std::string::String>,
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
+    /// <p>The endpoint access mode of the DomainName.</p>
+    pub endpoint_access_mode: ::std::option::Option<crate::types::EndpointAccessMode>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
@@ -111,9 +113,13 @@ impl CreateDomainNameOutput {
     pub fn domain_name_status_message(&self) -> ::std::option::Option<&str> {
         self.domain_name_status_message.as_deref()
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub fn security_policy(&self) -> ::std::option::Option<&crate::types::SecurityPolicy> {
         self.security_policy.as_ref()
+    }
+    /// <p>The endpoint access mode of the DomainName.</p>
+    pub fn endpoint_access_mode(&self) -> ::std::option::Option<&crate::types::EndpointAccessMode> {
+        self.endpoint_access_mode.as_ref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -172,6 +178,7 @@ pub struct CreateDomainNameOutputBuilder {
     pub(crate) domain_name_status: ::std::option::Option<crate::types::DomainNameStatus>,
     pub(crate) domain_name_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
+    pub(crate) endpoint_access_mode: ::std::option::Option<crate::types::EndpointAccessMode>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthentication>,
     pub(crate) ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
@@ -391,19 +398,33 @@ impl CreateDomainNameOutputBuilder {
     pub fn get_domain_name_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name_status_message
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub fn security_policy(mut self, input: crate::types::SecurityPolicy) -> Self {
         self.security_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub fn set_security_policy(mut self, input: ::std::option::Option<crate::types::SecurityPolicy>) -> Self {
         self.security_policy = input;
         self
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName.</p>
     pub fn get_security_policy(&self) -> &::std::option::Option<crate::types::SecurityPolicy> {
         &self.security_policy
+    }
+    /// <p>The endpoint access mode of the DomainName.</p>
+    pub fn endpoint_access_mode(mut self, input: crate::types::EndpointAccessMode) -> Self {
+        self.endpoint_access_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The endpoint access mode of the DomainName.</p>
+    pub fn set_endpoint_access_mode(mut self, input: ::std::option::Option<crate::types::EndpointAccessMode>) -> Self {
+        self.endpoint_access_mode = input;
+        self
+    }
+    /// <p>The endpoint access mode of the DomainName.</p>
+    pub fn get_endpoint_access_mode(&self) -> &::std::option::Option<crate::types::EndpointAccessMode> {
+        &self.endpoint_access_mode
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -523,6 +544,7 @@ impl CreateDomainNameOutputBuilder {
             domain_name_status: self.domain_name_status,
             domain_name_status_message: self.domain_name_status_message,
             security_policy: self.security_policy,
+            endpoint_access_mode: self.endpoint_access_mode,
             tags: self.tags,
             mutual_tls_authentication: self.mutual_tls_authentication,
             ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,

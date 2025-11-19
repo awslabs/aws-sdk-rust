@@ -229,6 +229,8 @@ mod list_import_failures;
 
 mod list_imports;
 
+mod list_insights_data;
+
 mod list_insights_metric_data;
 
 mod list_public_keys;

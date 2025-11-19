@@ -234,6 +234,13 @@ pub(crate) fn de_update_domain_name(
                             .transpose()?,
                     );
                 }
+                "endpointAccessMode" => {
+                    builder = builder.set_endpoint_access_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::EndpointAccessMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "endpointConfiguration" => {
                     builder =
                         builder.set_endpoint_configuration(crate::protocol_serde::shape_endpoint_configuration::de_endpoint_configuration(tokens)?);

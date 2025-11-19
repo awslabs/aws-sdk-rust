@@ -17,6 +17,10 @@ pub struct UpdateBillScenarioOutput {
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An error message if the bill scenario update failed.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub group_sharing_preference: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>,
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub cost_category_group_sharing_preference_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateBillScenarioOutput {
@@ -49,6 +53,14 @@ impl UpdateBillScenarioOutput {
     pub fn failure_message(&self) -> ::std::option::Option<&str> {
         self.failure_message.as_deref()
     }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn group_sharing_preference(&self) -> ::std::option::Option<&crate::types::GroupSharingPreferenceEnum> {
+        self.group_sharing_preference.as_ref()
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn cost_category_group_sharing_preference_arn(&self) -> ::std::option::Option<&str> {
+        self.cost_category_group_sharing_preference_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateBillScenarioOutput {
     fn request_id(&self) -> Option<&str> {
@@ -73,6 +85,8 @@ pub struct UpdateBillScenarioOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
+    pub(crate) group_sharing_preference: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>,
+    pub(crate) cost_category_group_sharing_preference_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateBillScenarioOutputBuilder {
@@ -175,6 +189,34 @@ impl UpdateBillScenarioOutputBuilder {
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_message
     }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn group_sharing_preference(mut self, input: crate::types::GroupSharingPreferenceEnum) -> Self {
+        self.group_sharing_preference = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn set_group_sharing_preference(mut self, input: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>) -> Self {
+        self.group_sharing_preference = input;
+        self
+    }
+    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    pub fn get_group_sharing_preference(&self) -> &::std::option::Option<crate::types::GroupSharingPreferenceEnum> {
+        &self.group_sharing_preference
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn cost_category_group_sharing_preference_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cost_category_group_sharing_preference_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn set_cost_category_group_sharing_preference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cost_category_group_sharing_preference_arn = input;
+        self
+    }
+    /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
+    pub fn get_cost_category_group_sharing_preference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cost_category_group_sharing_preference_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -204,6 +246,8 @@ impl UpdateBillScenarioOutputBuilder {
             created_at: self.created_at,
             expires_at: self.expires_at,
             failure_message: self.failure_message,
+            group_sharing_preference: self.group_sharing_preference,
+            cost_category_group_sharing_preference_arn: self.cost_category_group_sharing_preference_arn,
             _request_id: self._request_id,
         })
     }

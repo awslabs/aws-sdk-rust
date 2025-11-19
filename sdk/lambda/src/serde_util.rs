@@ -186,6 +186,15 @@ pub(crate) fn tags_error_correct_errors(mut builder: crate::types::builders::Tag
     builder
 }
 
+pub(crate) fn tenancy_config_correct_errors(
+    mut builder: crate::types::builders::TenancyConfigBuilder,
+) -> crate::types::builders::TenancyConfigBuilder {
+    if builder.tenant_isolation_mode.is_none() {
+        builder.tenant_isolation_mode = "no value was set".parse::<crate::types::TenantIsolationMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn allowed_publishers_correct_errors(
     mut builder: crate::types::builders::AllowedPublishersBuilder,
 ) -> crate::types::builders::AllowedPublishersBuilder {

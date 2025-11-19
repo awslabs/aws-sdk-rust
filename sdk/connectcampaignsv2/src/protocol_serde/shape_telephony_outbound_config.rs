@@ -15,6 +15,12 @@ pub fn ser_telephony_outbound_config(
         crate::protocol_serde::shape_answer_machine_detection_config::ser_answer_machine_detection_config(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.ring_timeout {
+        object.key("ringTimeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
     Ok(())
 }
 
@@ -50,6 +56,13 @@ where
                         "answerMachineDetectionConfig" => {
                             builder = builder.set_answer_machine_detection_config(
                                 crate::protocol_serde::shape_answer_machine_detection_config::de_answer_machine_detection_config(tokens)?,
+                            );
+                        }
+                        "ringTimeout" => {
+                            builder = builder.set_ring_timeout(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -10,6 +10,8 @@ pub struct BackupPlanInput {
     pub rules: ::std::vec::Vec<crate::types::BackupRuleInput>,
     /// <p>Specifies a list of <code>BackupOptions</code> for each resource type. These settings are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     pub advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    /// <p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>
+    pub scan_settings: ::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>>,
 }
 impl BackupPlanInput {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -28,6 +30,12 @@ impl BackupPlanInput {
     pub fn advanced_backup_settings(&self) -> &[crate::types::AdvancedBackupSetting] {
         self.advanced_backup_settings.as_deref().unwrap_or_default()
     }
+    /// <p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_settings.is_none()`.
+    pub fn scan_settings(&self) -> &[crate::types::ScanSetting] {
+        self.scan_settings.as_deref().unwrap_or_default()
+    }
 }
 impl BackupPlanInput {
     /// Creates a new builder-style object to manufacture [`BackupPlanInput`](crate::types::BackupPlanInput).
@@ -43,6 +51,7 @@ pub struct BackupPlanInputBuilder {
     pub(crate) backup_plan_name: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::BackupRuleInput>>,
     pub(crate) advanced_backup_settings: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    pub(crate) scan_settings: ::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>>,
 }
 impl BackupPlanInputBuilder {
     /// <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -100,6 +109,26 @@ impl BackupPlanInputBuilder {
     pub fn get_advanced_backup_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedBackupSetting>> {
         &self.advanced_backup_settings
     }
+    /// Appends an item to `scan_settings`.
+    ///
+    /// To override the contents of this collection use [`set_scan_settings`](Self::set_scan_settings).
+    ///
+    /// <p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>
+    pub fn scan_settings(mut self, input: crate::types::ScanSetting) -> Self {
+        let mut v = self.scan_settings.unwrap_or_default();
+        v.push(input);
+        self.scan_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>
+    pub fn set_scan_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>>) -> Self {
+        self.scan_settings = input;
+        self
+    }
+    /// <p>Contains your scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.</p>
+    pub fn get_scan_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanSetting>> {
+        &self.scan_settings
+    }
     /// Consumes the builder and constructs a [`BackupPlanInput`](crate::types::BackupPlanInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`backup_plan_name`](crate::types::builders::BackupPlanInputBuilder::backup_plan_name)
@@ -119,6 +148,7 @@ impl BackupPlanInputBuilder {
                 )
             })?,
             advanced_backup_settings: self.advanced_backup_settings,
+            scan_settings: self.scan_settings,
         })
     }
 }

@@ -85,6 +85,12 @@ pub use crate::types::_detector_feature::DetectorFeature;
 
 pub use crate::types::_finding_publishing_frequency::FindingPublishingFrequency;
 
+pub use crate::types::_start_malware_scan_configuration::StartMalwareScanConfiguration;
+
+pub use crate::types::_recovery_point::RecoveryPoint;
+
+pub use crate::types::_incremental_scan_details::IncrementalScanDetails;
+
 pub use crate::types::_s3_object_for_send_object_malware_scan::S3ObjectForSendObjectMalwareScan;
 
 pub use crate::types::_destination::Destination;
@@ -99,13 +105,31 @@ pub use crate::types::_admin_status::AdminStatus;
 
 pub use crate::types::_member::Member;
 
-pub use crate::types::_malware_protection_plan_summary::MalwareProtectionPlanSummary;
+pub use crate::types::_malware_scan::MalwareScan;
 
-pub use crate::types::_invitation::Invitation;
+pub use crate::types::_malware_protection_scan_type::MalwareProtectionScanType;
+
+pub use crate::types::_scan_result_status::ScanResultStatus;
+
+pub use crate::types::_malware_protection_scan_status::MalwareProtectionScanStatus;
+
+pub use crate::types::_malware_protection_resource_type::MalwareProtectionResourceType;
 
 pub use crate::types::_sort_criteria::SortCriteria;
 
 pub use crate::types::_order_by::OrderBy;
+
+pub use crate::types::_list_malware_scans_filter_criteria::ListMalwareScansFilterCriteria;
+
+pub use crate::types::_list_malware_scans_filter_criterion::ListMalwareScansFilterCriterion;
+
+pub use crate::types::_filter_condition::FilterCondition;
+
+pub use crate::types::_list_malware_scans_criterion_key::ListMalwareScansCriterionKey;
+
+pub use crate::types::_malware_protection_plan_summary::MalwareProtectionPlanSummary;
+
+pub use crate::types::_invitation::Invitation;
 
 pub use crate::types::_coverage_resource::CoverageResource;
 
@@ -231,6 +255,36 @@ pub use crate::types::_cloud_trail_configuration_result::CloudTrailConfiguration
 
 pub use crate::types::_master::Master;
 
+pub use crate::types::_get_malware_scan_result_details::GetMalwareScanResultDetails;
+
+pub use crate::types::_scan_result_threat::ScanResultThreat;
+
+pub use crate::types::_item_details::ItemDetails;
+
+pub use crate::types::_additional_info::AdditionalInfo;
+
+pub use crate::types::_detection_source::DetectionSource;
+
+pub use crate::types::_scan_status_reason::ScanStatusReason;
+
+pub use crate::types::_scan_category::ScanCategory;
+
+pub use crate::types::_scan_configuration::ScanConfiguration;
+
+pub use crate::types::_scan_configuration_recovery_point::ScanConfigurationRecoveryPoint;
+
+pub use crate::types::_trigger_details::TriggerDetails;
+
+pub use crate::types::_trigger_type::TriggerType;
+
+pub use crate::types::_scanned_resource::ScannedResource;
+
+pub use crate::types::_scanned_resource_details::ScannedResourceDetails;
+
+pub use crate::types::_ebs_snapshot::EbsSnapshot;
+
+pub use crate::types::_volume_detail::VolumeDetail;
+
 pub use crate::types::_malware_protection_plan_status_reason::MalwareProtectionPlanStatusReason;
 
 pub use crate::types::_malware_protection_plan_status::MalwareProtectionPlanStatus;
@@ -264,6 +318,8 @@ pub use crate::types::_finding::Finding;
 pub use crate::types::_service::Service;
 
 pub use crate::types::_malware_scan_details::MalwareScanDetails;
+
+pub use crate::types::_malware_protection_findings_scan_configuration::MalwareProtectionFindingsScanConfiguration;
 
 pub use crate::types::_threat::Threat;
 
@@ -437,6 +493,12 @@ pub use crate::types::_domain_details::DomainDetails;
 
 pub use crate::types::_resource::Resource;
 
+pub use crate::types::_recovery_point_details::RecoveryPointDetails;
+
+pub use crate::types::_ec2_image_details::Ec2ImageDetails;
+
+pub use crate::types::_ebs_snapshot_details::EbsSnapshotDetails;
+
 pub use crate::types::_lambda_details::LambdaDetails;
 
 pub use crate::types::_vpc_config::VpcConfig;
@@ -462,8 +524,6 @@ pub use crate::types::_volume::Volume;
 pub use crate::types::_host_path::HostPath;
 
 pub use crate::types::_ebs_volume_details::EbsVolumeDetails;
-
-pub use crate::types::_volume_detail::VolumeDetail;
 
 pub use crate::types::_kubernetes_details::KubernetesDetails;
 
@@ -543,15 +603,11 @@ pub use crate::types::_scan_result::ScanResult;
 
 pub use crate::types::_resource_details::ResourceDetails;
 
-pub use crate::types::_trigger_details::TriggerDetails;
-
 pub use crate::types::_scan_status::ScanStatus;
 
 pub use crate::types::_filter_criteria::FilterCriteria;
 
 pub use crate::types::_filter_criterion::FilterCriterion;
-
-pub use crate::types::_filter_condition::FilterCondition;
 
 pub use crate::types::_criterion_key::CriterionKey;
 
@@ -580,6 +636,8 @@ mod _action;
 mod _actor;
 
 mod _actor_process;
+
+mod _additional_info;
 
 mod _addon_details;
 
@@ -683,6 +741,8 @@ mod _destination_type;
 
 mod _detection;
 
+mod _detection_source;
+
 mod _detector_additional_configuration;
 
 mod _detector_additional_configuration_result;
@@ -703,6 +763,10 @@ mod _dns_request_action;
 
 mod _domain_details;
 
+mod _ebs_snapshot;
+
+mod _ebs_snapshot_details;
+
 mod _ebs_snapshot_preservation;
 
 mod _ebs_volume_details;
@@ -710,6 +774,8 @@ mod _ebs_volume_details;
 mod _ebs_volume_scan_details;
 
 mod _ebs_volumes_result;
+
+mod _ec2_image_details;
 
 mod _ec2_instance;
 
@@ -763,6 +829,8 @@ mod _free_trial_feature_result;
 
 mod _geo_location;
 
+mod _get_malware_scan_result_details;
+
 mod _group_by_type;
 
 mod _highest_severity_threat_details;
@@ -772,6 +840,8 @@ mod _host_path;
 mod _iam_instance_profile;
 
 mod _impersonated_user;
+
+mod _incremental_scan_details;
 
 mod _indicator;
 
@@ -784,6 +854,8 @@ mod _invitation;
 mod _ip_set_format;
 
 mod _ip_set_status;
+
+mod _item_details;
 
 mod _item_path;
 
@@ -819,6 +891,12 @@ mod _lambda_details;
 
 mod _lineage_object;
 
+mod _list_malware_scans_criterion_key;
+
+mod _list_malware_scans_filter_criteria;
+
+mod _list_malware_scans_filter_criterion;
+
 mod _local_ip_details;
 
 mod _local_port_details;
@@ -831,6 +909,8 @@ mod _malware_protection_configuration_result;
 
 mod _malware_protection_data_source_free_trial;
 
+mod _malware_protection_findings_scan_configuration;
+
 mod _malware_protection_plan_actions;
 
 mod _malware_protection_plan_status;
@@ -842,6 +922,14 @@ mod _malware_protection_plan_summary;
 mod _malware_protection_plan_tagging_action;
 
 mod _malware_protection_plan_tagging_action_status;
+
+mod _malware_protection_resource_type;
+
+mod _malware_protection_scan_status;
+
+mod _malware_protection_scan_type;
+
+mod _malware_scan;
 
 mod _malware_scan_details;
 
@@ -969,6 +1057,10 @@ mod _rds_limitless_db_details;
 
 mod _rds_login_attempt_action;
 
+mod _recovery_point;
+
+mod _recovery_point_details;
+
 mod _remote_account_details;
 
 mod _remote_ip_details;
@@ -1007,9 +1099,15 @@ mod _s3_object_for_send_object_malware_scan;
 
 mod _scan;
 
+mod _scan_category;
+
 mod _scan_condition;
 
 mod _scan_condition_pair;
+
+mod _scan_configuration;
+
+mod _scan_configuration_recovery_point;
 
 mod _scan_criterion_key;
 
@@ -1027,13 +1125,23 @@ mod _scan_result;
 
 mod _scan_result_details;
 
+mod _scan_result_status;
+
+mod _scan_result_threat;
+
 mod _scan_status;
+
+mod _scan_status_reason;
 
 mod _scan_threat_name;
 
 mod _scan_type;
 
 mod _scanned_item_count;
+
+mod _scanned_resource;
+
+mod _scanned_resource_details;
 
 mod _security_context;
 
@@ -1054,6 +1162,8 @@ mod _signal;
 mod _signal_type;
 
 mod _sort_criteria;
+
+mod _start_malware_scan_configuration;
 
 mod _tag;
 
@@ -1076,6 +1186,8 @@ mod _threats_detected_item_count;
 mod _total;
 
 mod _trigger_details;
+
+mod _trigger_type;
 
 mod _trusted_entity_set_format;
 

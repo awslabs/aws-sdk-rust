@@ -243,4 +243,18 @@ impl UpdateSecretFluentBuilder {
     pub fn get_secret_string(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secret_string()
     }
+    /// <p>The exact string that identifies the third-party partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secret partners</a>.</p>
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.r#type(input.into());
+        self
+    }
+    /// <p>The exact string that identifies the third-party partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secret partners</a>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// <p>The exact string that identifies the third-party partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secret partners</a>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type()
+    }
 }

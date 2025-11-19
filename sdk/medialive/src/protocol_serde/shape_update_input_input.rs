@@ -87,11 +87,17 @@ pub fn ser_update_input_input_input(
         }
         array_26.finish();
     }
-    if let Some(var_29) = &input.srt_settings {
+    if let Some(var_29) = &input.special_router_settings {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("srtSettings").start_object();
-        crate::protocol_serde::shape_srt_settings_request::ser_srt_settings_request(&mut object_30, var_29)?;
+        let mut object_30 = object.key("specialRouterSettings").start_object();
+        crate::protocol_serde::shape_special_router_settings::ser_special_router_settings(&mut object_30, var_29)?;
         object_30.finish();
+    }
+    if let Some(var_31) = &input.srt_settings {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("srtSettings").start_object();
+        crate::protocol_serde::shape_srt_settings_request::ser_srt_settings_request(&mut object_32, var_31)?;
+        object_32.finish();
     }
     Ok(())
 }

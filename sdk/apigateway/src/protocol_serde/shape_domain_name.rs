@@ -122,6 +122,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "endpointAccessMode" => {
+                            builder = builder.set_endpoint_access_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EndpointAccessMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens)?);
                         }

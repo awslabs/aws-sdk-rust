@@ -7,6 +7,8 @@ pub struct DescribeSecretOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the secret.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the secret.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted. Secrets created using the console use an KMS key ID.</p>
@@ -18,6 +20,10 @@ pub struct DescribeSecretOutput {
     pub rotation_lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
     pub rotation_rules: ::std::option::Option<crate::types::RotationRulesType>,
+    /// <p>The metadata needed to successfully rotate a managed external secret. A list of key value pairs in JSON format specified by the partner. For more information about the required information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secrets partners</a>.</p>
+    pub external_secret_rotation_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ExternalSecretRotationMetadataItem>>,
+    /// <p>The Amazon Resource Name (ARN) of the role that allows Secrets Manager to rotate a secret held by a third-party partner. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-security.html">Security and permissions</a>.</p>
+    pub external_secret_rotation_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub last_rotated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last date and time that this secret was modified in any way.</p>
@@ -72,6 +78,10 @@ impl DescribeSecretOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
     /// <p>The description of the secret.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
@@ -92,6 +102,16 @@ impl DescribeSecretOutput {
     /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
     pub fn rotation_rules(&self) -> ::std::option::Option<&crate::types::RotationRulesType> {
         self.rotation_rules.as_ref()
+    }
+    /// <p>The metadata needed to successfully rotate a managed external secret. A list of key value pairs in JSON format specified by the partner. For more information about the required information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secrets partners</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_secret_rotation_metadata.is_none()`.
+    pub fn external_secret_rotation_metadata(&self) -> &[crate::types::ExternalSecretRotationMetadataItem] {
+        self.external_secret_rotation_metadata.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that allows Secrets Manager to rotate a secret held by a third-party partner. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-security.html">Security and permissions</a>.</p>
+    pub fn external_secret_rotation_role_arn(&self) -> ::std::option::Option<&str> {
+        self.external_secret_rotation_role_arn.as_deref()
     }
     /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn last_rotated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -183,11 +203,14 @@ impl DescribeSecretOutput {
 pub struct DescribeSecretOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) rotation_enabled: ::std::option::Option<bool>,
     pub(crate) rotation_lambda_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rotation_rules: ::std::option::Option<crate::types::RotationRulesType>,
+    pub(crate) external_secret_rotation_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ExternalSecretRotationMetadataItem>>,
+    pub(crate) external_secret_rotation_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_rotated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_changed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_accessed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -230,6 +253,20 @@ impl DescribeSecretOutputBuilder {
     /// <p>The name of the secret.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The description of the secret.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -303,6 +340,43 @@ impl DescribeSecretOutputBuilder {
     /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
     pub fn get_rotation_rules(&self) -> &::std::option::Option<crate::types::RotationRulesType> {
         &self.rotation_rules
+    }
+    /// Appends an item to `external_secret_rotation_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_external_secret_rotation_metadata`](Self::set_external_secret_rotation_metadata).
+    ///
+    /// <p>The metadata needed to successfully rotate a managed external secret. A list of key value pairs in JSON format specified by the partner. For more information about the required information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secrets partners</a>.</p>
+    pub fn external_secret_rotation_metadata(mut self, input: crate::types::ExternalSecretRotationMetadataItem) -> Self {
+        let mut v = self.external_secret_rotation_metadata.unwrap_or_default();
+        v.push(input);
+        self.external_secret_rotation_metadata = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The metadata needed to successfully rotate a managed external secret. A list of key value pairs in JSON format specified by the partner. For more information about the required information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secrets partners</a>.</p>
+    pub fn set_external_secret_rotation_metadata(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalSecretRotationMetadataItem>>,
+    ) -> Self {
+        self.external_secret_rotation_metadata = input;
+        self
+    }
+    /// <p>The metadata needed to successfully rotate a managed external secret. A list of key value pairs in JSON format specified by the partner. For more information about the required information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed external secrets partners</a>.</p>
+    pub fn get_external_secret_rotation_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalSecretRotationMetadataItem>> {
+        &self.external_secret_rotation_metadata
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that allows Secrets Manager to rotate a secret held by a third-party partner. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-security.html">Security and permissions</a>.</p>
+    pub fn external_secret_rotation_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_secret_rotation_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that allows Secrets Manager to rotate a secret held by a third-party partner. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-security.html">Security and permissions</a>.</p>
+    pub fn set_external_secret_rotation_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_secret_rotation_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that allows Secrets Manager to rotate a secret held by a third-party partner. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-security.html">Security and permissions</a>.</p>
+    pub fn get_external_secret_rotation_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_secret_rotation_role_arn
     }
     /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn last_rotated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -558,11 +632,14 @@ impl DescribeSecretOutputBuilder {
         crate::operation::describe_secret::DescribeSecretOutput {
             arn: self.arn,
             name: self.name,
+            r#type: self.r#type,
             description: self.description,
             kms_key_id: self.kms_key_id,
             rotation_enabled: self.rotation_enabled,
             rotation_lambda_arn: self.rotation_lambda_arn,
             rotation_rules: self.rotation_rules,
+            external_secret_rotation_metadata: self.external_secret_rotation_metadata,
+            external_secret_rotation_role_arn: self.external_secret_rotation_role_arn,
             last_rotated_date: self.last_rotated_date,
             last_changed_date: self.last_changed_date,
             last_accessed_date: self.last_accessed_date,

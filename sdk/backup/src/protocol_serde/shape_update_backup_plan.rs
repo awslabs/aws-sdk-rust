@@ -153,6 +153,9 @@ pub(crate) fn de_update_backup_plan(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "ScanSettings" => {
+                    builder = builder.set_scan_settings(crate::protocol_serde::shape_scan_settings::de_scan_settings(tokens)?);
+                }
                 "VersionId" => {
                     builder = builder.set_version_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

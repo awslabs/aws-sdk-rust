@@ -1733,6 +1733,8 @@ pub use crate::types::_aws_managed_human_loop_request_source::AwsManagedHumanLoo
 
 pub use crate::types::_throughput_config_description::ThroughputConfigDescription;
 
+pub use crate::types::_metrics_config::MetricsConfig;
+
 pub use crate::types::_production_variant::ProductionVariant;
 
 pub use crate::types::_production_variant_capacity_reservation_config::ProductionVariantCapacityReservationConfig;
@@ -3028,6 +3030,8 @@ mod _metric_definition;
 mod _metric_set_source;
 
 mod _metric_specification;
+
+mod _metrics_config;
 
 mod _metrics_source;
 

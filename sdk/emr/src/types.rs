@@ -13,6 +13,10 @@ pub use crate::types::_execution_engine_config::ExecutionEngineConfig;
 
 pub use crate::types::_execution_engine_type::ExecutionEngineType;
 
+pub use crate::types::_monitoring_configuration::MonitoringConfiguration;
+
+pub use crate::types::_cloud_watch_log_configuration::CloudWatchLogConfiguration;
+
 pub use crate::types::_auto_termination_policy::AutoTerminationPolicy;
 
 pub use crate::types::_placement_group_config::PlacementGroupConfig;
@@ -337,6 +341,8 @@ mod _cancel_steps_request_status;
 
 mod _cloud_watch_alarm_definition;
 
+mod _cloud_watch_log_configuration;
+
 mod _cluster;
 
 mod _cluster_state;
@@ -474,6 +480,8 @@ mod _managed_scaling_policy;
 mod _market_type;
 
 mod _metric_dimension;
+
+mod _monitoring_configuration;
 
 mod _notebook_execution;
 

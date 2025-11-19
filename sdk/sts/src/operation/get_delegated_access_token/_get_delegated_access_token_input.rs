@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetDelegatedAccessTokenInput {
-    /// <p></p>
+    /// <p>The token to exchange for temporary Amazon Web Services credentials. This token must be valid and unexpired at the time of the request.</p>
     pub trade_in_token: ::std::option::Option<::std::string::String>,
 }
 impl GetDelegatedAccessTokenInput {
-    /// <p></p>
+    /// <p>The token to exchange for temporary Amazon Web Services credentials. This token must be valid and unexpired at the time of the request.</p>
     pub fn trade_in_token(&self) -> ::std::option::Option<&str> {
         self.trade_in_token.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetDelegatedAccessTokenInputBuilder {
     pub(crate) trade_in_token: ::std::option::Option<::std::string::String>,
 }
 impl GetDelegatedAccessTokenInputBuilder {
-    /// <p></p>
+    /// <p>The token to exchange for temporary Amazon Web Services credentials. This token must be valid and unexpired at the time of the request.</p>
     /// This field is required.
     pub fn trade_in_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trade_in_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The token to exchange for temporary Amazon Web Services credentials. This token must be valid and unexpired at the time of the request.</p>
     pub fn set_trade_in_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trade_in_token = input;
         self
     }
-    /// <p></p>
+    /// <p>The token to exchange for temporary Amazon Web Services credentials. This token must be valid and unexpired at the time of the request.</p>
     pub fn get_trade_in_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.trade_in_token
     }

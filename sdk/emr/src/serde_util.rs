@@ -122,6 +122,15 @@ pub(crate) fn scaling_constraints_correct_errors(
     builder
 }
 
+pub(crate) fn cloud_watch_log_configuration_correct_errors(
+    mut builder: crate::types::builders::CloudWatchLogConfigurationBuilder,
+) -> crate::types::builders::CloudWatchLogConfigurationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn job_flow_execution_status_detail_correct_errors(
     mut builder: crate::types::builders::JobFlowExecutionStatusDetailBuilder,
 ) -> crate::types::builders::JobFlowExecutionStatusDetailBuilder {

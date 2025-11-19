@@ -34,7 +34,11 @@ pub struct PutDeliverySourceInput {
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code> and <code>PCS_JOBCOMP_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
     /// <li>
@@ -85,7 +89,11 @@ impl PutDeliverySourceInput {
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code> and <code>PCS_JOBCOMP_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
     /// <li>
@@ -178,7 +186,11 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code> and <code>PCS_JOBCOMP_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
     /// <li>
@@ -220,7 +232,11 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code> and <code>PCS_JOBCOMP_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
     /// <li>
@@ -261,7 +277,11 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code> and <code>PCS_JOBCOMP_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
     /// <li>

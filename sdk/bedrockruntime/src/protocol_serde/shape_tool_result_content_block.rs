@@ -28,6 +28,12 @@ pub fn ser_tool_result_content_block(
             crate::protocol_serde::shape_video_block::ser_video_block(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::ToolResultContentBlock::SearchResult(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_3.key("searchResult").start_object();
+            crate::protocol_serde::shape_search_result_block::ser_search_result_block(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::ToolResultContentBlock::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ToolResultContentBlock",
@@ -89,6 +95,11 @@ where
                         "video" => Some(crate::types::ToolResultContentBlock::Video(
                             crate::protocol_serde::shape_video_block::de_video_block(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'video' cannot be null"))?,
+                        )),
+                        "searchResult" => Some(crate::types::ToolResultContentBlock::SearchResult(
+                            crate::protocol_serde::shape_search_result_block::de_search_result_block(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'searchResult' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

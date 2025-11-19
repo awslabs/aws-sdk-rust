@@ -109,6 +109,9 @@ pub mod describe_report_plan;
 /// Types for the `DescribeRestoreJob` operation.
 pub mod describe_restore_job;
 
+/// Types for the `DescribeScanJob` operation.
+pub mod describe_scan_job;
+
 /// Types for the `DisassociateBackupVaultMpaApprovalTeam` operation.
 pub mod disassociate_backup_vault_mpa_approval_team;
 
@@ -241,6 +244,12 @@ pub mod list_restore_testing_plans;
 /// Types for the `ListRestoreTestingSelections` operation.
 pub mod list_restore_testing_selections;
 
+/// Types for the `ListScanJobSummaries` operation.
+pub mod list_scan_job_summaries;
+
+/// Types for the `ListScanJobs` operation.
+pub mod list_scan_jobs;
+
 /// Types for the `ListTags` operation.
 pub mod list_tags;
 
@@ -273,6 +282,9 @@ pub mod start_report_job;
 
 /// Types for the `StartRestoreJob` operation.
 pub mod start_restore_job;
+
+/// Types for the `StartScanJob` operation.
+pub mod start_scan_job;
 
 /// Types for the `StopBackupJob` operation.
 pub mod stop_backup_job;

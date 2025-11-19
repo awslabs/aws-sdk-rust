@@ -69,6 +69,36 @@ pub(crate) fn reflens_list_reservations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_router_inputs_output_output_next_token(
+    input: &crate::operation::list_router_inputs::ListRouterInputsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_router_network_interfaces_output_output_next_token(
+    input: &crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_router_outputs_output_output_next_token(
+    input: &crate::operation::list_router_outputs::ListRouterOutputsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_bridges_output_output_bridges(
     input: crate::operation::list_bridges::ListBridgesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>> {
@@ -115,5 +145,26 @@ pub(crate) fn lens_list_reservations_output_output_reservations(
     input: crate::operation::list_reservations::ListReservationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
     let input = input.reservations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_router_inputs_output_output_router_inputs(
+    input: crate::operation::list_router_inputs::ListRouterInputsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ListedRouterInput>> {
+    let input = input.router_inputs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_router_network_interfaces_output_output_router_network_interfaces(
+    input: crate::operation::list_router_network_interfaces::ListRouterNetworkInterfacesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ListedRouterNetworkInterface>> {
+    let input = input.router_network_interfaces;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_router_outputs_output_output_router_outputs(
+    input: crate::operation::list_router_outputs::ListRouterOutputsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ListedRouterOutput>> {
+    let input = input.router_outputs;
     ::std::option::Option::Some(input)
 }

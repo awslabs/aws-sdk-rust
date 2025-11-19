@@ -28,6 +28,8 @@ pub struct UpdateInputInput {
     pub smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
     /// SDI Sources for this Input.
     pub sdi_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub special_router_settings: ::std::option::Option<crate::types::SpecialRouterSettings>,
 }
 impl UpdateInputInput {
     /// Destination settings for PUSH type inputs.
@@ -90,6 +92,10 @@ impl UpdateInputInput {
     pub fn sdi_sources(&self) -> &[::std::string::String] {
         self.sdi_sources.as_deref().unwrap_or_default()
     }
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub fn special_router_settings(&self) -> ::std::option::Option<&crate::types::SpecialRouterSettings> {
+        self.special_router_settings.as_ref()
+    }
 }
 impl UpdateInputInput {
     /// Creates a new builder-style object to manufacture [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
@@ -114,6 +120,7 @@ pub struct UpdateInputInputBuilder {
     pub(crate) multicast_settings: ::std::option::Option<crate::types::MulticastSettingsUpdateRequest>,
     pub(crate) smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
     pub(crate) sdi_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) special_router_settings: ::std::option::Option<crate::types::SpecialRouterSettings>,
 }
 impl UpdateInputInputBuilder {
     /// Appends an item to `destinations`.
@@ -321,6 +328,20 @@ impl UpdateInputInputBuilder {
     pub fn get_sdi_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sdi_sources
     }
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub fn special_router_settings(mut self, input: crate::types::SpecialRouterSettings) -> Self {
+        self.special_router_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub fn set_special_router_settings(mut self, input: ::std::option::Option<crate::types::SpecialRouterSettings>) -> Self {
+        self.special_router_settings = input;
+        self
+    }
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub fn get_special_router_settings(&self) -> &::std::option::Option<crate::types::SpecialRouterSettings> {
+        &self.special_router_settings
+    }
     /// Consumes the builder and constructs a [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_input::UpdateInputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_input::UpdateInputInput {
@@ -336,6 +357,7 @@ impl UpdateInputInputBuilder {
             multicast_settings: self.multicast_settings,
             smpte2110_receiver_group_settings: self.smpte2110_receiver_group_settings,
             sdi_sources: self.sdi_sources,
+            special_router_settings: self.special_router_settings,
         })
     }
 }

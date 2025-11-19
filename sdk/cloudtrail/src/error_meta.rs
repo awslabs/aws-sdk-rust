@@ -647,6 +647,7 @@ impl From<crate::operation::create_event_data_store::CreateEventDataStoreError> 
             crate::operation::create_event_data_store::CreateEventDataStoreError::OrganizationsNotInUseException(inner) => {
                 Error::OrganizationsNotInUseException(inner)
             }
+            crate::operation::create_event_data_store::CreateEventDataStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_event_data_store::CreateEventDataStoreError::UnsupportedOperationException(inner) => {
                 Error::UnsupportedOperationException(inner)
             }
@@ -1743,6 +1744,34 @@ impl From<crate::operation::list_imports::ListImportsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_insights_data::ListInsightsDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_insights_data::ListInsightsDataError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_insights_data::ListInsightsDataError> for Error {
+    fn from(err: crate::operation::list_insights_data::ListInsightsDataError) -> Self {
+        match err {
+            crate::operation::list_insights_data::ListInsightsDataError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_insights_data::ListInsightsDataError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::list_insights_data::ListInsightsDataError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::list_insights_data::ListInsightsDataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_insights_metric_data::ListInsightsMetricDataError, R>>
     for Error
 where
@@ -1765,6 +1794,9 @@ impl From<crate::operation::list_insights_metric_data::ListInsightsMetricDataErr
         match err {
             crate::operation::list_insights_metric_data::ListInsightsMetricDataError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_insights_metric_data::ListInsightsMetricDataError::InvalidTrailNameException(inner) => {
+                Error::InvalidTrailNameException(inner)
             }
             crate::operation::list_insights_metric_data::ListInsightsMetricDataError::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
@@ -2739,6 +2771,7 @@ impl From<crate::operation::update_event_data_store::UpdateEventDataStoreError> 
             crate::operation::update_event_data_store::UpdateEventDataStoreError::CloudTrailAccessNotEnabledException(inner) => {
                 Error::CloudTrailAccessNotEnabledException(inner)
             }
+            crate::operation::update_event_data_store::UpdateEventDataStoreError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_event_data_store::UpdateEventDataStoreError::EventDataStoreAlreadyExistsException(inner) => {
                 Error::EventDataStoreAlreadyExistsException(inner)
             }
@@ -2791,6 +2824,7 @@ impl From<crate::operation::update_event_data_store::UpdateEventDataStoreError> 
             crate::operation::update_event_data_store::UpdateEventDataStoreError::OrganizationsNotInUseException(inner) => {
                 Error::OrganizationsNotInUseException(inner)
             }
+            crate::operation::update_event_data_store::UpdateEventDataStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_event_data_store::UpdateEventDataStoreError::UnsupportedOperationException(inner) => {
                 Error::UnsupportedOperationException(inner)
             }

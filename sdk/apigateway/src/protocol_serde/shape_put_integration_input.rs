@@ -53,23 +53,26 @@ pub fn ser_put_integration_input_input(
         }
         object_16.finish();
     }
-    if let Some(var_19) = &input.timeout_in_millis {
+    if let Some(var_19) = &input.response_transfer_mode {
+        object.key("responseTransferMode").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.timeout_in_millis {
         object.key("timeoutInMillis").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_20) = &input.tls_config {
+    if let Some(var_21) = &input.tls_config {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("tlsConfig").start_object();
-        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_22 = object.key("tlsConfig").start_object();
+        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_22, var_21)?;
+        object_22.finish();
     }
-    if let Some(var_22) = &input.r#type {
-        object.key("type").string(var_22.as_str());
+    if let Some(var_23) = &input.r#type {
+        object.key("type").string(var_23.as_str());
     }
-    if let Some(var_23) = &input.uri {
-        object.key("uri").string(var_23.as_str());
+    if let Some(var_24) = &input.uri {
+        object.key("uri").string(var_24.as_str());
     }
     Ok(())
 }

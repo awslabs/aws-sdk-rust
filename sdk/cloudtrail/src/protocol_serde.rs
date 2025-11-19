@@ -89,6 +89,8 @@ pub(crate) mod shape_list_import_failures;
 
 pub(crate) mod shape_list_imports;
 
+pub(crate) mod shape_list_insights_data;
+
 pub(crate) mod shape_list_insights_metric_data;
 
 pub(crate) mod shape_list_public_keys;
@@ -343,6 +345,8 @@ pub(crate) mod shape_list_import_failures_input;
 
 pub(crate) mod shape_list_imports_input;
 
+pub(crate) mod shape_list_insights_data_input;
+
 pub(crate) mod shape_list_insights_metric_data_input;
 
 pub(crate) mod shape_list_public_keys_input;
@@ -568,6 +572,8 @@ pub(crate) mod shape_query_parameters;
 pub(crate) mod shape_query_result_column;
 
 pub(crate) mod shape_resource_list;
+
+pub(crate) mod shape_source_event_categories;
 
 pub(crate) mod shape_view_properties_map;
 

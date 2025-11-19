@@ -26,6 +26,21 @@ pub(crate) fn encryption_configuration_for_repository_creation_template_correct_
     builder
 }
 
+pub(crate) fn image_referrer_correct_errors(
+    mut builder: crate::types::builders::ImageReferrerBuilder,
+) -> crate::types::builders::ImageReferrerBuilder {
+    if builder.digest.is_none() {
+        builder.digest = Some(Default::default())
+    }
+    if builder.media_type.is_none() {
+        builder.media_type = Some(Default::default())
+    }
+    if builder.size.is_none() {
+        builder.size = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn image_tag_mutability_exclusion_filter_correct_errors(
     mut builder: crate::types::builders::ImageTagMutabilityExclusionFilterBuilder,
 ) -> crate::types::builders::ImageTagMutabilityExclusionFilterBuilder {

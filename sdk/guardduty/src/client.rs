@@ -245,6 +245,8 @@ mod get_ip_set;
 
 mod get_malware_protection_plan;
 
+mod get_malware_scan;
+
 mod get_malware_scan_settings;
 
 mod get_master_account;
@@ -280,6 +282,8 @@ mod list_invitations;
 mod list_ip_sets;
 
 mod list_malware_protection_plans;
+
+mod list_malware_scans;
 
 mod list_members;
 

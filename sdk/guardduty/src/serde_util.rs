@@ -365,6 +365,15 @@ pub(crate) fn list_ip_sets_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_malware_scans_output_output_correct_errors(
+    mut builder: crate::operation::list_malware_scans::builders::ListMalwareScansOutputBuilder,
+) -> crate::operation::list_malware_scans::builders::ListMalwareScansOutputBuilder {
+    if builder.scans.is_none() {
+        builder.scans = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_publishing_destinations_output_output_correct_errors(
     mut builder: crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsOutputBuilder,
 ) -> crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsOutputBuilder {
@@ -552,6 +561,15 @@ pub(crate) fn flow_logs_configuration_result_correct_errors(
 ) -> crate::types::builders::FlowLogsConfigurationResultBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::DataSourceStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn incremental_scan_details_correct_errors(
+    mut builder: crate::types::builders::IncrementalScanDetailsBuilder,
+) -> crate::types::builders::IncrementalScanDetailsBuilder {
+    if builder.baseline_resource_arn.is_none() {
+        builder.baseline_resource_arn = Some(Default::default())
     }
     builder
 }

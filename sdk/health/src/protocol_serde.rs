@@ -161,6 +161,10 @@ pub(crate) mod shape_event_description;
 
 pub(crate) mod shape_event_metadata;
 
+pub(crate) mod shape_event_persona_list;
+
+pub(crate) mod shape_event_type_persona_list;
+
 pub(crate) mod shape_tag_set;
 
 pub(crate) mod shape_account_entity_aggregate;

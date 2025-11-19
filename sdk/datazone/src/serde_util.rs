@@ -119,6 +119,15 @@ pub(crate) fn accept_subscription_request_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_get_attributes_metadata_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_attributes_metadata::builders::BatchGetAttributesMetadataOutputBuilder,
+) -> crate::operation::batch_get_attributes_metadata::builders::BatchGetAttributesMetadataOutputBuilder {
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cancel_subscription_output_output_correct_errors(
     mut builder: crate::operation::cancel_subscription::builders::CancelSubscriptionOutputBuilder,
 ) -> crate::operation::cancel_subscription::builders::CancelSubscriptionOutputBuilder {
@@ -2238,6 +2247,39 @@ pub(crate) fn asset_types_for_rule_correct_errors(
 ) -> crate::types::builders::AssetTypesForRuleBuilder {
     if builder.selection_mode.is_none() {
         builder.selection_mode = "no value was set".parse::<crate::types::RuleScopeSelectionMode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn attribute_error_correct_errors(
+    mut builder: crate::types::builders::AttributeErrorBuilder,
+) -> crate::types::builders::AttributeErrorBuilder {
+    if builder.attribute_identifier.is_none() {
+        builder.attribute_identifier = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_attribute_output_correct_errors(
+    mut builder: crate::types::builders::BatchGetAttributeOutputBuilder,
+) -> crate::types::builders::BatchGetAttributeOutputBuilder {
+    if builder.attribute_identifier.is_none() {
+        builder.attribute_identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_put_attribute_output_correct_errors(
+    mut builder: crate::types::builders::BatchPutAttributeOutputBuilder,
+) -> crate::types::builders::BatchPutAttributeOutputBuilder {
+    if builder.attribute_identifier.is_none() {
+        builder.attribute_identifier = Some(Default::default())
     }
     builder
 }

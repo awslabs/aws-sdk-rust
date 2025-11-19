@@ -10,6 +10,12 @@ pub struct Threat {
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>Information about the nested item path and hash of the protected resource.</p>
     pub item_paths: ::std::option::Option<::std::vec::Vec<crate::types::ItemPath>>,
+    /// <p>The number of occurrences of this specific threat detected during the scan.</p>
+    pub count: ::std::option::Option<i64>,
+    /// <p>The hash identifier of the detected malware threat.</p>
+    pub hash: ::std::option::Option<::std::string::String>,
+    /// <p>Detailed information about the detected malware threat.</p>
+    pub item_details: ::std::option::Option<::std::vec::Vec<crate::types::ItemDetails>>,
 }
 impl Threat {
     /// <p>Name of the detected threat that caused GuardDuty to generate this finding.</p>
@@ -26,6 +32,20 @@ impl Threat {
     pub fn item_paths(&self) -> &[crate::types::ItemPath] {
         self.item_paths.as_deref().unwrap_or_default()
     }
+    /// <p>The number of occurrences of this specific threat detected during the scan.</p>
+    pub fn count(&self) -> ::std::option::Option<i64> {
+        self.count
+    }
+    /// <p>The hash identifier of the detected malware threat.</p>
+    pub fn hash(&self) -> ::std::option::Option<&str> {
+        self.hash.as_deref()
+    }
+    /// <p>Detailed information about the detected malware threat.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.item_details.is_none()`.
+    pub fn item_details(&self) -> &[crate::types::ItemDetails] {
+        self.item_details.as_deref().unwrap_or_default()
+    }
 }
 impl Threat {
     /// Creates a new builder-style object to manufacture [`Threat`](crate::types::Threat).
@@ -41,6 +61,9 @@ pub struct ThreatBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
     pub(crate) item_paths: ::std::option::Option<::std::vec::Vec<crate::types::ItemPath>>,
+    pub(crate) count: ::std::option::Option<i64>,
+    pub(crate) hash: ::std::option::Option<::std::string::String>,
+    pub(crate) item_details: ::std::option::Option<::std::vec::Vec<crate::types::ItemDetails>>,
 }
 impl ThreatBuilder {
     /// <p>Name of the detected threat that caused GuardDuty to generate this finding.</p>
@@ -91,12 +114,63 @@ impl ThreatBuilder {
     pub fn get_item_paths(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ItemPath>> {
         &self.item_paths
     }
+    /// <p>The number of occurrences of this specific threat detected during the scan.</p>
+    pub fn count(mut self, input: i64) -> Self {
+        self.count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of occurrences of this specific threat detected during the scan.</p>
+    pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.count = input;
+        self
+    }
+    /// <p>The number of occurrences of this specific threat detected during the scan.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
+    }
+    /// <p>The hash identifier of the detected malware threat.</p>
+    pub fn hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hash = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The hash identifier of the detected malware threat.</p>
+    pub fn set_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hash = input;
+        self
+    }
+    /// <p>The hash identifier of the detected malware threat.</p>
+    pub fn get_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hash
+    }
+    /// Appends an item to `item_details`.
+    ///
+    /// To override the contents of this collection use [`set_item_details`](Self::set_item_details).
+    ///
+    /// <p>Detailed information about the detected malware threat.</p>
+    pub fn item_details(mut self, input: crate::types::ItemDetails) -> Self {
+        let mut v = self.item_details.unwrap_or_default();
+        v.push(input);
+        self.item_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Detailed information about the detected malware threat.</p>
+    pub fn set_item_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ItemDetails>>) -> Self {
+        self.item_details = input;
+        self
+    }
+    /// <p>Detailed information about the detected malware threat.</p>
+    pub fn get_item_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ItemDetails>> {
+        &self.item_details
+    }
     /// Consumes the builder and constructs a [`Threat`](crate::types::Threat).
     pub fn build(self) -> crate::types::Threat {
         crate::types::Threat {
             name: self.name,
             source: self.source,
             item_paths: self.item_paths,
+            count: self.count,
+            hash: self.hash,
+            item_details: self.item_details,
         }
     }
 }

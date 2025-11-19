@@ -14,5 +14,11 @@ pub fn ser_update_bill_scenario_input_input(
             .key("expiresAt")
             .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
+    if let Some(var_4) = &input.group_sharing_preference {
+        object.key("groupSharingPreference").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.cost_category_group_sharing_preference_arn {
+        object.key("costCategoryGroupSharingPreferenceArn").string(var_5.as_str());
+    }
     Ok(())
 }

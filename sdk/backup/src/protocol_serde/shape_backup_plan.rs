@@ -29,6 +29,9 @@ where
                                 crate::protocol_serde::shape_advanced_backup_settings::de_advanced_backup_settings(tokens)?,
                             );
                         }
+                        "ScanSettings" => {
+                            builder = builder.set_scan_settings(crate::protocol_serde::shape_scan_settings::de_scan_settings(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -925,6 +925,14 @@ pub use crate::types::_ipam_pool_aws_service::IpamPoolAwsService;
 
 pub use crate::types::_ipam_pool_state::IpamPoolState;
 
+pub use crate::types::_ipam_policy_document::IpamPolicyDocument;
+
+pub use crate::types::_ipam_policy_allocation_rule::IpamPolicyAllocationRule;
+
+pub use crate::types::_ipam_policy_resource_type::IpamPolicyResourceType;
+
+pub use crate::types::_ipam_policy_allocation_rule_request::IpamPolicyAllocationRuleRequest;
+
 pub use crate::types::_ipam::Ipam;
 
 pub use crate::types::_ipam_metered_account::IpamMeteredAccount;
@@ -1271,6 +1279,8 @@ pub use crate::types::_ipam_pool_allocation::IpamPoolAllocation;
 
 pub use crate::types::_ipam_pool_allocation_resource_type::IpamPoolAllocationResourceType;
 
+pub use crate::types::_ipam_policy_organization_target::IpamPolicyOrganizationTarget;
+
 pub use crate::types::_ipam_discovered_resource_cidr::IpamDiscoveredResourceCidr;
 
 pub use crate::types::_ipam_network_interface_attachment_status::IpamNetworkInterfaceAttachmentStatus;
@@ -1318,6 +1328,8 @@ pub use crate::types::_integrate_services::IntegrateServices;
 pub use crate::types::_athena_integration::AthenaIntegration;
 
 pub use crate::types::_partition_load_frequency::PartitionLoadFrequency;
+
+pub use crate::types::_ipam_policy_managed_by::IpamPolicyManagedBy;
 
 pub use crate::types::_attribute_summary::AttributeSummary;
 
@@ -1863,6 +1875,12 @@ pub use crate::types::_network_acl_association::NetworkAclAssociation;
 
 pub use crate::types::_nat_gateway::NatGateway;
 
+pub use crate::types::_auto_provision_zones_state::AutoProvisionZonesState;
+
+pub use crate::types::_auto_scaling_ips_state::AutoScalingIpsState;
+
+pub use crate::types::_availability_mode::AvailabilityMode;
+
 pub use crate::types::_connectivity_type::ConnectivityType;
 
 pub use crate::types::_nat_gateway_state::NatGatewayState;
@@ -1914,6 +1932,10 @@ pub use crate::types::_key_type::KeyType;
 pub use crate::types::_ipv6_pool::Ipv6Pool;
 
 pub use crate::types::_pool_cidr_block::PoolCidrBlock;
+
+pub use crate::types::_ipam_policy::IpamPolicy;
+
+pub use crate::types::_ipam_policy_state::IpamPolicyState;
 
 pub use crate::types::_ipam_external_resource_verification_token::IpamExternalResourceVerificationToken;
 
@@ -2447,6 +2469,8 @@ pub use crate::types::_path_statement_request::PathStatementRequest;
 
 pub use crate::types::_packet_header_statement_request::PacketHeaderStatementRequest;
 
+pub use crate::types::_availability_zone_address::AvailabilityZoneAddress;
+
 pub use crate::types::_mac_system_integrity_protection_configuration_request::MacSystemIntegrityProtectionConfigurationRequest;
 
 pub use crate::types::_validation_warning::ValidationWarning;
@@ -2699,7 +2723,15 @@ mod _auto_accept_shared_attachments_value;
 
 mod _auto_placement;
 
+mod _auto_provision_zones_state;
+
+mod _auto_scaling_ips_state;
+
+mod _availability_mode;
+
 mod _availability_zone;
+
+mod _availability_zone_address;
 
 mod _availability_zone_message;
 
@@ -3680,6 +3712,22 @@ mod _ipam_operating_region;
 mod _ipam_organizational_unit_exclusion;
 
 mod _ipam_overlap_status;
+
+mod _ipam_policy;
+
+mod _ipam_policy_allocation_rule;
+
+mod _ipam_policy_allocation_rule_request;
+
+mod _ipam_policy_document;
+
+mod _ipam_policy_managed_by;
+
+mod _ipam_policy_organization_target;
+
+mod _ipam_policy_resource_type;
+
+mod _ipam_policy_state;
 
 mod _ipam_pool;
 

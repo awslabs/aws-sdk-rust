@@ -109,6 +109,8 @@ pub(crate) mod shape_resource_tag;
 
 pub(crate) mod shape_resource_tag_list;
 
+pub(crate) mod shape_string_search;
+
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_billing_view_health_status;

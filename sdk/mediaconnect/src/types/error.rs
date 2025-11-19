@@ -3,15 +3,21 @@ pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExcept
 
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
 
-pub use crate::types::error::_not_found_exception::NotFoundException;
-
 pub use crate::types::error::_internal_server_error_exception::InternalServerErrorException;
+
+pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_bad_request_exception::BadRequestException;
 
+pub use crate::types::error::_not_found_exception::NotFoundException;
+
 pub use crate::types::error::_forbidden_exception::ForbiddenException;
 
-pub use crate::types::error::_conflict_exception::ConflictException;
+pub use crate::types::error::_router_output_service_quota_exceeded_exception::RouterOutputServiceQuotaExceededException;
+
+pub use crate::types::error::_router_network_interface_service_quota_exceeded_exception::RouterNetworkInterfaceServiceQuotaExceededException;
+
+pub use crate::types::error::_router_input_service_quota_exceeded_exception::RouterInputServiceQuotaExceededException;
 
 pub use crate::types::error::_create_gateway420_exception::CreateGateway420Exception;
 
@@ -42,6 +48,12 @@ mod _grant_flow_entitlements420_exception;
 mod _internal_server_error_exception;
 
 mod _not_found_exception;
+
+mod _router_input_service_quota_exceeded_exception;
+
+mod _router_network_interface_service_quota_exceeded_exception;
+
+mod _router_output_service_quota_exceeded_exception;
 
 mod _service_unavailable_exception;
 

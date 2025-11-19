@@ -541,4 +541,18 @@ impl CreateFunctionFluentBuilder {
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
         self.inner.get_logging_config()
     }
+    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
+    pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
+        self.inner = self.inner.tenancy_config(input);
+        self
+    }
+    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
+    pub fn set_tenancy_config(mut self, input: ::std::option::Option<crate::types::TenancyConfig>) -> Self {
+        self.inner = self.inner.set_tenancy_config(input);
+        self
+    }
+    /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
+    pub fn get_tenancy_config(&self) -> &::std::option::Option<crate::types::TenancyConfig> {
+        self.inner.get_tenancy_config()
+    }
 }

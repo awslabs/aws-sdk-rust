@@ -63,5 +63,11 @@ pub fn ser_create_file_system_windows_configuration(
         crate::protocol_serde::shape_disk_iops_configuration::ser_disk_iops_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
+    if let Some(var_18) = &input.fsrm_configuration {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("FsrmConfiguration").start_object();
+        crate::protocol_serde::shape_windows_fsrm_configuration::ser_windows_fsrm_configuration(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }

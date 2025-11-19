@@ -3,6 +3,8 @@ pub use crate::types::_validation_errors_entry::ValidationErrorsEntry;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_external_secret_rotation_metadata_item::ExternalSecretRotationMetadataItem;
+
 pub use crate::types::_rotation_rules_type::RotationRulesType;
 
 pub use crate::types::_replication_status_type::ReplicationStatusType;
@@ -26,6 +28,8 @@ pub use crate::types::_api_error_type::ApiErrorType;
 pub use crate::types::_secret_value_entry::SecretValueEntry;
 
 mod _api_error_type;
+
+mod _external_secret_rotation_metadata_item;
 
 mod _filter;
 

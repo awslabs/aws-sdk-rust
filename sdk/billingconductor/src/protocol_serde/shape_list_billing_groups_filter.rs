@@ -27,5 +27,44 @@ pub fn ser_list_billing_groups_filter(
     if let Some(var_8) = &input.auto_associate {
         object.key("AutoAssociate").boolean(*var_8);
     }
+    if let Some(var_9) = &input.primary_account_ids {
+        let mut array_10 = object.key("PrimaryAccountIds").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
+    }
+    if let Some(var_12) = &input.billing_group_types {
+        let mut array_13 = object.key("BillingGroupTypes").start_array();
+        for item_14 in var_12 {
+            {
+                array_13.value().string(item_14.as_str());
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_15) = &input.names {
+        let mut array_16 = object.key("Names").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_string_search::ser_string_search(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
+    }
+    if let Some(var_19) = &input.responsibility_transfer_arns {
+        let mut array_20 = object.key("ResponsibilityTransferArns").start_array();
+        for item_21 in var_19 {
+            {
+                array_20.value().string(item_21.as_str());
+            }
+        }
+        array_20.finish();
+    }
     Ok(())
 }

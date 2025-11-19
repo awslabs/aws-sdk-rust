@@ -217,6 +217,11 @@ where
                         "ExtendedSupport" => {
                             builder = builder.set_extended_support(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "MonitoringConfiguration" => {
+                            builder = builder.set_monitoring_configuration(
+                                crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

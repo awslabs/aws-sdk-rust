@@ -39,6 +39,21 @@ pub fn de_list_insights_metric_data_http_error(
             }
             tmp
         }),
+        "InvalidTrailNameException" => crate::operation::list_insights_metric_data::ListInsightsMetricDataError::InvalidTrailNameException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTrailNameExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_trail_name_exception::de_invalid_trail_name_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_insights_metric_data::ListInsightsMetricDataError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "OperationNotPermittedException" => {
             crate::operation::list_insights_metric_data::ListInsightsMetricDataError::OperationNotPermittedException({
                 #[allow(unused_mut)]
@@ -122,6 +137,13 @@ pub(crate) fn de_list_insights_metric_data(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "TrailARN" => {
+                    builder = builder.set_trail_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "EventSource" => {
                     builder = builder.set_event_source(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -170,6 +170,20 @@ impl ListRuleGroupsFluentBuilder {
     pub fn get_managed_type(&self) -> &::std::option::Option<crate::types::ResourceManagedType> {
         self.inner.get_managed_type()
     }
+    /// <p>Filters the results to show only rule groups with the specified subscription status. Use this to find subscribed or unsubscribed rule groups.</p>
+    pub fn subscription_status(mut self, input: crate::types::SubscriptionStatus) -> Self {
+        self.inner = self.inner.subscription_status(input);
+        self
+    }
+    /// <p>Filters the results to show only rule groups with the specified subscription status. Use this to find subscribed or unsubscribed rule groups.</p>
+    pub fn set_subscription_status(mut self, input: ::std::option::Option<crate::types::SubscriptionStatus>) -> Self {
+        self.inner = self.inner.set_subscription_status(input);
+        self
+    }
+    /// <p>Filters the results to show only rule groups with the specified subscription status. Use this to find subscribed or unsubscribed rule groups.</p>
+    pub fn get_subscription_status(&self) -> &::std::option::Option<crate::types::SubscriptionStatus> {
+        self.inner.get_subscription_status()
+    }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.inner = self.inner.r#type(input);
