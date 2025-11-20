@@ -129,6 +129,8 @@ pub mod ecs;
 mod env_service_config;
 pub mod environment;
 pub mod imds;
+#[cfg(feature = "credentials-login")]
+pub mod login;
 pub mod meta;
 pub mod profile;
 pub mod provider_config;

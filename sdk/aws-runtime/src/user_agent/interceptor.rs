@@ -25,6 +25,36 @@ use crate::sdk_feature::AwsSdkFeature;
 use crate::user_agent::metrics::ProvideBusinessMetric;
 use crate::user_agent::{AdditionalMetadata, ApiMetadata, AwsUserAgent, InvalidMetadataValue};
 
+macro_rules! add_metrics_unique {
+    ($features:expr, $ua:expr, $added:expr) => {
+        for feature in $features {
+            if let Some(m) = feature.provide_business_metric() {
+                if !$added.contains(&m) {
+                    $added.insert(m.clone());
+                    $ua.add_business_metric(m);
+                }
+            }
+        }
+    };
+}
+
+macro_rules! add_metrics_unique_reverse {
+    ($features:expr, $ua:expr, $added:expr) => {
+        let mut unique_metrics = Vec::new();
+        for feature in $features {
+            if let Some(m) = feature.provide_business_metric() {
+                if !$added.contains(&m) {
+                    $added.insert(m.clone());
+                    unique_metrics.push(m);
+                }
+            }
+        }
+        for m in unique_metrics.into_iter().rev() {
+            $ua.add_business_metric(m);
+        }
+    };
+}
+
 #[allow(clippy::declare_interior_mutable_const)] // we will never mutate this
 const X_AMZ_USER_AGENT: HeaderName = HeaderName::from_static("x-amz-user-agent");
 
@@ -133,26 +163,17 @@ impl Intercept for UserAgentInterceptor {
             .expect("`AwsUserAgent should have been created in `read_before_execution`")
             .clone();
 
-        let smithy_sdk_features = cfg.load::<SmithySdkFeature>();
-        for smithy_sdk_feature in smithy_sdk_features {
-            smithy_sdk_feature
-                .provide_business_metric()
-                .map(|m| ua.add_business_metric(m));
-        }
+        let mut added_metrics = std::collections::HashSet::new();
 
-        let aws_sdk_features = cfg.load::<AwsSdkFeature>();
-        for aws_sdk_feature in aws_sdk_features {
-            aws_sdk_feature
-                .provide_business_metric()
-                .map(|m| ua.add_business_metric(m));
-        }
-
-        let aws_credential_features = cfg.load::<AwsCredentialFeature>();
-        for aws_credential_feature in aws_credential_features {
-            aws_credential_feature
-                .provide_business_metric()
-                .map(|m| ua.add_business_metric(m));
-        }
+        add_metrics_unique!(cfg.load::<SmithySdkFeature>(), &mut ua, &mut added_metrics);
+        add_metrics_unique!(cfg.load::<AwsSdkFeature>(), &mut ua, &mut added_metrics);
+        // The order we emit credential features matters.
+        // Reverse to preserve emission order since StoreAppend pops backwards.
+        add_metrics_unique_reverse!(
+            cfg.load::<AwsCredentialFeature>(),
+            &mut ua,
+            &mut added_metrics
+        );
 
         let maybe_connector_metadata = runtime_components
             .http_client()
@@ -256,6 +277,80 @@ mod tests {
         assert_eq!(
             expected_ua.aws_ua_header(),
             expect_header(&context, "x-amz-user-agent")
+        );
+    }
+
+    #[test]
+    fn test_modify_before_signing_no_duplicate_metrics() {
+        let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
+        let mut context = context();
+
+        let api_metadata = ApiMetadata::new("test-service", "1.0");
+        let mut layer = Layer::new("test");
+        layer.store_put(api_metadata);
+        // Duplicate features
+        layer.store_append(SmithySdkFeature::Waiter);
+        layer.store_append(SmithySdkFeature::Waiter);
+        layer.store_append(AwsSdkFeature::S3Transfer);
+        layer.store_append(AwsSdkFeature::S3Transfer);
+        layer.store_append(AwsCredentialFeature::CredentialsCode);
+        layer.store_append(AwsCredentialFeature::CredentialsCode);
+        let mut config = ConfigBag::of_layers(vec![layer]);
+
+        let interceptor = UserAgentInterceptor::new();
+        let ctx = Into::into(&context);
+        interceptor
+            .read_after_serialization(&ctx, &rc, &mut config)
+            .unwrap();
+        let mut ctx = Into::into(&mut context);
+        interceptor
+            .modify_before_signing(&mut ctx, &rc, &mut config)
+            .unwrap();
+
+        let aws_ua_header = expect_header(&context, "x-amz-user-agent");
+        let metrics_section = aws_ua_header.split(" m/").nth(1).unwrap();
+        let waiter_count = metrics_section.matches("B").count();
+        let s3_transfer_count = metrics_section.matches("G").count();
+        let credentials_code_count = metrics_section.matches("e").count();
+        assert_eq!(
+            1, waiter_count,
+            "Waiter metric should appear only once, but found {waiter_count} occurrences in: {aws_ua_header}",
+        );
+        assert_eq!(1, s3_transfer_count, "S3Transfer metric should appear only once, but found {s3_transfer_count} occurrences in metrics section: {aws_ua_header}");
+        assert_eq!(1, credentials_code_count, "CredentialsCode metric should appear only once, but found {credentials_code_count} occurrences in metrics section: {aws_ua_header}");
+    }
+
+    #[test]
+    fn test_metrics_order_preserved() {
+        use aws_credential_types::credential_feature::AwsCredentialFeature;
+
+        let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
+        let mut context = context();
+
+        let api_metadata = ApiMetadata::new("test-service", "1.0");
+        let mut layer = Layer::new("test");
+        layer.store_put(api_metadata);
+        layer.store_append(AwsCredentialFeature::CredentialsCode);
+        layer.store_append(AwsCredentialFeature::CredentialsEnvVars);
+        layer.store_append(AwsCredentialFeature::CredentialsProfile);
+        let mut config = ConfigBag::of_layers(vec![layer]);
+
+        let interceptor = UserAgentInterceptor::new();
+        let ctx = Into::into(&context);
+        interceptor
+            .read_after_serialization(&ctx, &rc, &mut config)
+            .unwrap();
+        let mut ctx = Into::into(&mut context);
+        interceptor
+            .modify_before_signing(&mut ctx, &rc, &mut config)
+            .unwrap();
+
+        let aws_ua_header = expect_header(&context, "x-amz-user-agent");
+        let metrics_section = aws_ua_header.split(" m/").nth(1).unwrap();
+
+        assert_eq!(
+            metrics_section, "e,g,n",
+            "AwsCredentialFeature metrics should preserve order"
         );
     }
 

@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use bytes::{Bytes, BytesMut};
 use http_02x::{HeaderMap, HeaderValue};
 use http_body_04x::{Body, SizeHint};
@@ -22,7 +23,7 @@ pub mod header_value {
 }
 
 /// Options used when constructing an [`AwsChunkedBody`].
-#[derive(Debug, Default)]
+#[derive(Clone, Debug, Default)]
 #[non_exhaustive]
 pub struct AwsChunkedBodyOptions {
     /// The total size of the stream. Because we only support unsigned encoding
@@ -32,6 +33,13 @@ pub struct AwsChunkedBodyOptions {
     /// The length of each trailer sent within an `AwsChunkedBody`. Necessary in
     /// order to correctly calculate the total size of the body accurately.
     trailer_lengths: Vec<u64>,
+    /// Whether the aws-chunked encoding is disabled. This could occur, for instance,
+    /// if a user specifies a custom checksum, rendering aws-chunked encoding unnecessary.
+    disabled: bool,
+}
+
+impl Storable for AwsChunkedBodyOptions {
+    type Storer = StoreReplace<Self>;
 }
 
 impl AwsChunkedBodyOptions {
@@ -40,6 +48,7 @@ impl AwsChunkedBodyOptions {
         Self {
             stream_length,
             trailer_lengths,
+            disabled: false,
         }
     }
 
@@ -49,10 +58,52 @@ impl AwsChunkedBodyOptions {
             + (self.trailer_lengths.len() * CRLF.len()) as u64
     }
 
-    /// Set a trailer len
+    /// Set the stream length in the options
+    pub fn with_stream_length(mut self, stream_length: u64) -> Self {
+        self.stream_length = stream_length;
+        self
+    }
+
+    /// Append a trailer length to the options
     pub fn with_trailer_len(mut self, trailer_len: u64) -> Self {
         self.trailer_lengths.push(trailer_len);
         self
+    }
+
+    /// Create a new [`AwsChunkedBodyOptions`] with aws-chunked encoding disabled.
+    ///
+    /// When the option is disabled, the body must not be wrapped in an `AwsChunkedBody`.
+    pub fn disable_chunked_encoding() -> Self {
+        Self {
+            disabled: true,
+            ..Default::default()
+        }
+    }
+
+    /// Return whether aws-chunked encoding is disabled.
+    pub fn disabled(&self) -> bool {
+        self.disabled
+    }
+
+    /// Return the length of the body after `aws-chunked` encoding is applied
+    pub fn encoded_length(&self) -> u64 {
+        let mut length = 0;
+        if self.stream_length != 0 {
+            length += get_unsigned_chunk_bytes_length(self.stream_length);
+        }
+
+        // End chunk
+        length += CHUNK_TERMINATOR.len() as u64;
+
+        // Trailers
+        for len in self.trailer_lengths.iter() {
+            length += len + CRLF.len() as u64;
+        }
+
+        // Encoding terminator
+        length += CRLF.len() as u64;
+
+        length
     }
 }
 
@@ -113,26 +164,6 @@ impl<Inner> AwsChunkedBody<Inner> {
             options,
             inner_body_bytes_read_so_far: 0,
         }
-    }
-
-    fn encoded_length(&self) -> u64 {
-        let mut length = 0;
-        if self.options.stream_length != 0 {
-            length += get_unsigned_chunk_bytes_length(self.options.stream_length);
-        }
-
-        // End chunk
-        length += CHUNK_TERMINATOR.len() as u64;
-
-        // Trailers
-        for len in self.options.trailer_lengths.iter() {
-            length += len + CRLF.len() as u64;
-        }
-
-        // Encoding terminator
-        length += CRLF.len() as u64;
-
-        length
     }
 }
 
@@ -297,7 +328,7 @@ where
     }
 
     fn size_hint(&self) -> SizeHint {
-        SizeHint::with_exact(self.encoded_length())
+        SizeHint::with_exact(self.options.encoded_length())
     }
 }
 

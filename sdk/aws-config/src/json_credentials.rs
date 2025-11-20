@@ -2,7 +2,6 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-
 use aws_smithy_json::deserialize::token::skip_value;
 use aws_smithy_json::deserialize::{json_token_iter, EscapeError, Token};
 use aws_smithy_types::date_time::Format;
@@ -137,9 +136,9 @@ pub(crate) fn parse_json_credentials(
              "Type": "AWS-HMAC",
              "AccessKeyId" : "accessKey",
              "SecretAccessKey" : "secret",
-             "Token" : "token",
+             "Token | SessionToken" : "token",
              "AccountId" : "111122223333",
-             "Expiration" : "....",
+             "Expiration | ExpiresAt" : "....",
              "LastUpdated" : "2009-11-23T00:00:00Z"
             */
             (key, Token::ValueString { value, .. }) if key.eq_ignore_ascii_case("Code") => {
@@ -153,13 +152,19 @@ pub(crate) fn parse_json_credentials(
             {
                 secret_access_key = Some(value.to_unescaped()?);
             }
-            (key, Token::ValueString { value, .. }) if key.eq_ignore_ascii_case("Token") => {
+            (key, Token::ValueString { value, .. })
+                if key.eq_ignore_ascii_case("Token")
+                    || key.eq_ignore_ascii_case("SessionToken") =>
+            {
                 session_token = Some(value.to_unescaped()?);
             }
             (key, Token::ValueString { value, .. }) if key.eq_ignore_ascii_case("AccountId") => {
                 account_id = Some(value.to_unescaped()?);
             }
-            (key, Token::ValueString { value, .. }) if key.eq_ignore_ascii_case("Expiration") => {
+            (key, Token::ValueString { value, .. })
+                if key.eq_ignore_ascii_case("Expiration")
+                    || key.eq_ignore_ascii_case("ExpiresAt") =>
+            {
                 expiration = Some(value.to_unescaped()?);
             }
 

@@ -184,6 +184,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutObje
                     Ok(user_set_checksum_value)
                 },
             ))
+            .with_interceptor(crate::aws_chunked::AwsChunkedContentEncodingInterceptor)
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::put_object::PutObjectError,
             >::new())

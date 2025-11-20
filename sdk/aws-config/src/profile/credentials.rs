@@ -132,6 +132,15 @@ pub(crate) mod repr;
 ///
 /// SSO can also be used as a source profile for assume role chains.
 ///
+/// ### Credentials from a console session
+///
+/// An existing AWS Console session can be used to provide credentials.
+///
+/// ```ini
+/// [default]
+/// login_session = arn:aws:iam::0123456789012:user/Admin
+/// ```
+///
 #[doc = include_str!("location_of_profile_files.md")]
 #[derive(Debug)]
 pub struct ProfileFileCredentialsProvider {
@@ -794,5 +803,237 @@ sso_start_url = https://d-abc123.awsapps.com/start
             ],
             creds.get_property::<Vec<AwsCredentialFeature>>().unwrap()
         )
+    }
+}
+
+#[cfg(all(test, feature = "credentials-login"))]
+mod login_tests {
+    use crate::provider_config::ProviderConfig;
+    use aws_credential_types::provider::error::CredentialsError;
+    use aws_credential_types::provider::ProvideCredentials;
+    use aws_sdk_signin::config::RuntimeComponents;
+    use aws_smithy_runtime_api::client::{
+        http::{
+            HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings,
+            SharedHttpConnector,
+        },
+        orchestrator::{HttpRequest, HttpResponse},
+    };
+    use aws_smithy_types::body::SdkBody;
+    use aws_types::os_shim_internal::{Env, Fs};
+    use std::collections::HashMap;
+    use std::sync::atomic::{AtomicUsize, Ordering};
+    use std::sync::Arc;
+
+    #[derive(Debug, Clone)]
+    struct TestClientInner {
+        call_count: Arc<AtomicUsize>,
+        response: Option<&'static str>,
+    }
+
+    impl HttpConnector for TestClientInner {
+        fn call(&self, _request: HttpRequest) -> HttpConnectorFuture {
+            self.call_count.fetch_add(1, Ordering::SeqCst);
+            if let Some(response) = self.response {
+                HttpConnectorFuture::ready(Ok(HttpResponse::new(
+                    200.try_into().unwrap(),
+                    SdkBody::from(response),
+                )))
+            } else {
+                HttpConnectorFuture::ready(Ok(HttpResponse::new(
+                    500.try_into().unwrap(),
+                    SdkBody::from("{\"error\":\"server_error\"}"),
+                )))
+            }
+        }
+    }
+
+    #[derive(Debug, Clone)]
+    struct TestClient {
+        inner: SharedHttpConnector,
+        call_count: Arc<AtomicUsize>,
+    }
+
+    impl TestClient {
+        fn new_success() -> Self {
+            let call_count = Arc::new(AtomicUsize::new(0));
+            let response = r#"{
+                "accessToken": {
+                    "accessKeyId": "ASIARTESTID",
+                    "secretAccessKey": "TESTSECRETKEY",
+                    "sessionToken": "TESTSESSIONTOKEN"
+                },
+                "expiresIn": 3600,
+                "refreshToken": "new-refresh-token"
+            }"#;
+            let inner = TestClientInner {
+                call_count: call_count.clone(),
+                response: Some(response),
+            };
+            Self {
+                inner: SharedHttpConnector::new(inner),
+                call_count,
+            }
+        }
+
+        fn new_error() -> Self {
+            let call_count = Arc::new(AtomicUsize::new(0));
+            let inner = TestClientInner {
+                call_count: call_count.clone(),
+                response: None,
+            };
+            Self {
+                inner: SharedHttpConnector::new(inner),
+                call_count,
+            }
+        }
+
+        fn call_count(&self) -> usize {
+            self.call_count.load(Ordering::SeqCst)
+        }
+    }
+
+    impl HttpClient for TestClient {
+        fn http_connector(
+            &self,
+            _settings: &HttpConnectorSettings,
+            _components: &RuntimeComponents,
+        ) -> SharedHttpConnector {
+            self.inner.clone()
+        }
+    }
+
+    fn create_test_fs_unexpired() -> Fs {
+        Fs::from_map({
+            let mut map = HashMap::new();
+            map.insert(
+                "/home/.aws/config".to_string(),
+                br#"
+[profile default]
+login_session = arn:aws:iam::0123456789012:user/Admin
+region = us-east-1
+                "#
+                .to_vec(),
+            );
+            map.insert(
+                "/home/.aws/login/cache/36db1d138ff460920374e4c3d8e01f53f9f73537e89c88d639f68393df0e2726.json".to_string(),
+                br#"{
+                    "accessToken": {
+                        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+                        "secretAccessKey": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+                        "sessionToken": "session-token",
+                        "accountId": "012345678901",
+                        "expiresAt": "2199-12-25T21:30:00Z"
+                    },
+                    "tokenType": "aws_sigv4",
+                    "refreshToken": "refresh-token-value",
+                    "identityToken": "identity-token-value",
+                    "clientId": "aws:signin:::cli/same-device",
+                    "dpopKey": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIFDZHUzOG1Pzq+6F0mjMlOSp1syN9LRPBuHMoCFXTcXhoAoGCCqGSM49\nAwEHoUQDQgAE9qhj+KtcdHj1kVgwxWWWw++tqoh7H7UHs7oXh8jBbgF47rrYGC+t\ndjiIaHK3dBvvdE7MGj5HsepzLm3Kj91bqA==\n-----END EC PRIVATE KEY-----\n"
+                }"#
+                .to_vec(),
+            );
+            map
+        })
+    }
+
+    fn create_test_fs_expired() -> Fs {
+        Fs::from_map({
+            let mut map = HashMap::new();
+            map.insert(
+                "/home/.aws/config".to_string(),
+                br#"
+[profile default]
+login_session = arn:aws:iam::0123456789012:user/Admin
+region = us-east-1
+                "#
+                .to_vec(),
+            );
+            map.insert(
+                "/home/.aws/login/cache/36db1d138ff460920374e4c3d8e01f53f9f73537e89c88d639f68393df0e2726.json".to_string(),
+                br#"{
+                    "accessToken": {
+                        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+                        "secretAccessKey": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+                        "sessionToken": "session-token",
+                        "accountId": "012345678901",
+                        "expiresAt": "2020-01-01T00:00:00Z"
+                    },
+                    "tokenType": "aws_sigv4",
+                    "refreshToken": "refresh-token-value",
+                    "identityToken": "identity-token-value",
+                    "clientId": "aws:signin:::cli/same-device",
+                    "dpopKey": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIFDZHUzOG1Pzq+6F0mjMlOSp1syN9LRPBuHMoCFXTcXhoAoGCCqGSM49\nAwEHoUQDQgAE9qhj+KtcdHj1kVgwxWWWw++tqoh7H7UHs7oXh8jBbgF47rrYGC+t\ndjiIaHK3dBvvdE7MGj5HsepzLm3Kj91bqA==\n-----END EC PRIVATE KEY-----\n"
+                }"#
+                .to_vec(),
+            );
+            map
+        })
+    }
+
+    #[cfg_attr(windows, ignore)]
+    #[tokio::test]
+    async fn unexpired_credentials_no_refresh() {
+        let client = TestClient::new_success();
+
+        let provider_config = ProviderConfig::empty()
+            .with_fs(create_test_fs_unexpired())
+            .with_env(Env::from_slice(&[("HOME", "/home")]))
+            .with_http_client(client.clone())
+            .with_region(Some(aws_types::region::Region::new("us-east-1")));
+
+        let provider = crate::profile::credentials::Builder::default()
+            .configure(&provider_config)
+            .build();
+
+        let creds = provider.provide_credentials().await.unwrap();
+        assert_eq!("AKIAIOSFODNN7EXAMPLE", creds.access_key_id());
+        assert_eq!(0, client.call_count());
+    }
+
+    #[cfg_attr(windows, ignore)]
+    #[tokio::test]
+    async fn expired_credentials_trigger_refresh() {
+        let client = TestClient::new_success();
+
+        let provider_config = ProviderConfig::empty()
+            .with_fs(create_test_fs_expired())
+            .with_env(Env::from_slice(&[("HOME", "/home")]))
+            .with_http_client(client.clone())
+            .with_region(Some(aws_types::region::Region::new("us-east-1")));
+
+        let provider = crate::profile::credentials::Builder::default()
+            .configure(&provider_config)
+            .build();
+
+        let creds = provider.provide_credentials().await.unwrap();
+        assert_eq!("ASIARTESTID", creds.access_key_id());
+        assert_eq!(1, client.call_count());
+    }
+
+    #[cfg_attr(windows, ignore)]
+    #[tokio::test]
+    async fn refresh_error_propagates() {
+        let client = TestClient::new_error();
+
+        let provider_config = ProviderConfig::empty()
+            .with_fs(create_test_fs_expired())
+            .with_env(Env::from_slice(&[("HOME", "/home")]))
+            .with_http_client(client)
+            .with_region(Some(aws_types::region::Region::new("us-east-1")));
+
+        let provider = crate::profile::credentials::Builder::default()
+            .configure(&provider_config)
+            .build();
+
+        let err = provider
+            .provide_credentials()
+            .await
+            .expect_err("should fail on refresh error");
+
+        match &err {
+            CredentialsError::ProviderError(_) => {}
+            _ => panic!("wrong error type"),
+        }
     }
 }

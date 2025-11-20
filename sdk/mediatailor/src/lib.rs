@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-mediatailor = "1.97.0"
+//! aws-sdk-mediatailor = "1.98.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

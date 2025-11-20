@@ -6,6 +6,8 @@
 use super::repr::{self, BaseProvider};
 #[cfg(feature = "credentials-process")]
 use crate::credential_process::CredentialProcessProvider;
+#[cfg(feature = "credentials-login")]
+use crate::login::LoginCredentialsProvider;
 use crate::profile::credentials::ProfileFileError;
 use crate::provider_config::ProviderConfig;
 use crate::sts;
@@ -111,6 +113,28 @@ impl ProviderChain {
                         feature: "credentials-process".into(),
                         message: Some(
                             "In order to spawn a subprocess, the `credentials-process` feature must be enabled."
+                                .into(),
+                        ),
+                    })?
+                }
+            }
+            BaseProvider::LoginSession { login_session_arn } => {
+                #[cfg(feature = "credentials-login")]
+                {
+                    Arc::new({
+                        let builder = LoginCredentialsProvider::builder(*login_session_arn)
+                            .enabled_from_profile(true)
+                            .configure(provider_config);
+                        builder.build()
+                    })
+                }
+                #[cfg(not(feature = "credentials-login"))]
+                {
+                    let _ = login_session_arn;
+                    Err(ProfileFileError::FeatureNotEnabled {
+                        feature: "login".into(),
+                        message: Some(
+                            "In order to use an active login session, the `login` feature must be enabled."
                                 .into(),
                         ),
                     })?

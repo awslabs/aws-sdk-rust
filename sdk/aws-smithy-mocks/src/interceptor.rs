@@ -911,4 +911,34 @@ mod tests {
             .build();
         assert_eq!(rule.max_responses, usize::MAX);
     }
+
+    #[tokio::test]
+    async fn test_compute_response_conditional() {
+        use crate::MockResponse;
+
+        let rule = create_rule_builder().then_compute_response(|input| {
+            if input.key == "error-key" {
+                MockResponse::Error(TestError::new("conditional error"))
+            } else {
+                MockResponse::Output(TestOutput::new(&format!("response for {}", input.key)))
+            }
+        });
+
+        let interceptor = MockResponseInterceptor::new().with_rule(&rule);
+        let operation = create_test_operation(interceptor, false);
+
+        // Test success case
+        let result = operation
+            .invoke(TestInput::new("test-bucket", "success-key"))
+            .await;
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), TestOutput::new("response for success-key"));
+
+        // Test error case
+        let result = operation
+            .invoke(TestInput::new("test-bucket", "error-key"))
+            .await;
+        assert!(result.is_err());
+        assert_eq!(rule.num_calls(), 2);
+    }
 }

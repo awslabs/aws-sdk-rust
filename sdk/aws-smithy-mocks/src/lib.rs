@@ -18,8 +18,7 @@ mod interceptor;
 mod rule;
 
 pub use interceptor::{create_mock_http_client, MockResponseInterceptor};
-pub(crate) use rule::MockResponse;
-pub use rule::{Rule, RuleBuilder, RuleMode};
+pub use rule::{MockResponse, Rule, RuleBuilder, RuleMode};
 
 // why do we need a macro for this?
 // We want customers to be able to provide an ergonomic way to say the method they're looking for,

@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-elasticsearch = "1.92.0"
+//! aws-sdk-elasticsearch = "1.93.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

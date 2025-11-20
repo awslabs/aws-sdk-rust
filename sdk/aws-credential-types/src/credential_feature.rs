@@ -51,6 +51,10 @@ pub enum AwsCredentialFeature {
     BearerServiceEnvVars,
     /// An operation called using S3 Express bucket credentials
     S3ExpressBucket,
+    /// An operation called using credentials resolved from a LoginCredentialsProvider configured via profile
+    CredentialsProfileLogin,
+    /// An operation called using credentials resolved from a LoginCredentialsProvider configured explicitly via code
+    CredentialsLogin,
 }
 
 impl Storable for AwsCredentialFeature {

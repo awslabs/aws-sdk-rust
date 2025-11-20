@@ -33,13 +33,13 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-signin = "1.0.0"
+//! aws-sdk-signin = "1.1.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
 //! Then in code, a client can be created with the following:
 //!
-//! ```rust,no_run
+//! ```rust,ignore
 //! use aws_sdk_signin as signin;
 //!
 //! #[::tokio::main]
@@ -101,52 +101,6 @@ pub use error_meta::Error;
 pub use config::Config;
 
 /// Client for calling AWS Sign-In Service.
-/// ## Constructing a `Client`
-///
-/// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
-/// crate should be used to automatically resolve this config using
-/// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
-/// across multiple different AWS SDK clients. This config resolution process can be customized
-/// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
-/// the [builder pattern] to customize the default config.
-///
-/// In the simplest case, creating a client looks as follows:
-/// ```rust,no_run
-/// # async fn wrapper() {
-/// let config = aws_config::load_from_env().await;
-/// let client = aws_sdk_signin::Client::new(&config);
-/// # }
-/// ```
-///
-/// Occasionally, SDKs may have additional service-specific values that can be set on the [`Config`] that
-/// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
-/// The [`Builder`](crate::config::Builder) struct implements `From<&SdkConfig>`, so setting these specific settings can be
-/// done as follows:
-///
-/// ```rust,no_run
-/// # async fn wrapper() {
-/// let sdk_config = ::aws_config::load_from_env().await;
-/// let config = aws_sdk_signin::config::Builder::from(&sdk_config)
-/// # /*
-///     .some_service_specific_setting("value")
-/// # */
-///     .build();
-/// # }
-/// ```
-///
-/// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
-///
-/// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
-/// be done once at application start-up.
-///
-/// [`Config`]: crate::Config
-/// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
-/// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
-/// [`aws-config` docs]: https://docs.rs/aws-config/*
-/// [`aws-config`]: https://crates.io/crates/aws-config
-/// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
-/// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
-/// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
 pub mod client;
 
 /// Configuration for AWS Sign-In Service.

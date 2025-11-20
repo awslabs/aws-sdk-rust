@@ -22,7 +22,7 @@ use std::sync::Arc;
 ///
 #[derive(Debug)]
 #[allow(clippy::large_enum_variant)]
-pub(crate) enum MockResponse<O, E> {
+pub enum MockResponse<O, E> {
     /// A successful modeled response.
     Output(O),
     /// A modeled error.
@@ -251,6 +251,33 @@ where
     {
         self.sequence().compute_output(compute_fn).build_simple()
     }
+
+    /// Creates a rule that computes an arbitrary response based on the input.
+    ///
+    /// This allows generating any type of response (output, error, or HTTP) based on the input request.
+    /// Unlike `then_compute_output`, this method can return errors or HTTP responses conditionally.
+    ///
+    /// # Examples
+    ///
+    /// ```rust,ignore
+    /// let rule = mock!(Client::get_object)
+    ///     .then_compute_response(|req| {
+    ///         if req.key() == Some("error") {
+    ///             MockResponse::Error(GetObjectError::NoSuchKey(NoSuchKey::builder().build()))
+    ///         } else {
+    ///             MockResponse::Output(GetObjectOutput::builder()
+    ///                 .body(ByteStream::from_static(b"content"))
+    ///                 .build())
+    ///         }
+    ///     })
+    ///     .build();
+    /// ```
+    pub fn then_compute_response<F>(self, compute_fn: F) -> Rule
+    where
+        F: Fn(&I) -> MockResponse<O, E> + Send + Sync + 'static,
+    {
+        self.sequence().compute_response(compute_fn).build_simple()
+    }
 }
 
 type SequenceGeneratorFn<O, E> = Arc<dyn Fn(&Input) -> MockResponse<O, E> + Send + Sync>;
@@ -360,6 +387,22 @@ where
                 MockResponse::Output(compute_fn(typed_input))
             } else {
                 panic!("Input type mismatch in compute_output")
+            }
+        });
+        self.generators.push((generator, 1));
+        self
+    }
+
+    /// Add a computed response to the sequence. Not `pub` for same reason as `compute_output`.
+    fn compute_response<F>(mut self, compute_fn: F) -> Self
+    where
+        F: Fn(&I) -> MockResponse<O, E> + Send + Sync + 'static,
+    {
+        let generator = Arc::new(move |input: &Input| {
+            if let Some(typed_input) = input.downcast_ref::<I>() {
+                compute_fn(typed_input)
+            } else {
+                panic!("Input type mismatch in compute_response")
             }
         });
         self.generators.push((generator, 1));

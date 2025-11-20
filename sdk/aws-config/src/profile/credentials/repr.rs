@@ -99,6 +99,13 @@ pub(crate) enum BaseProvider<'a> {
         // if the process execution result does not provide one.
         account_id: Option<&'a str>,
     },
+
+    /// A profile that specifies an active console session vended by AWS Sign-In.
+    /// ```ini
+    /// [profile console]
+    /// login_session = arn:aws:iam::0123456789012:user/Admin
+    /// ```
+    LoginSession { login_session_arn: &'a str },
 }
 
 /// A profile that specifies a role to assume
@@ -243,6 +250,10 @@ mod credential_process {
     pub(super) const CREDENTIAL_PROCESS: &str = "credential_process";
 }
 
+mod login_session {
+    pub(super) const LOGIN_SESSION: &str = "login_session";
+}
+
 const PROVIDER_NAME: &str = "ProfileFile";
 
 fn base_provider<'a>(
@@ -254,6 +265,7 @@ fn base_provider<'a>(
         Some(source) => Ok(BaseProvider::NamedSource(source)),
         None => web_identity_token_from_profile(profile)
             .or_else(|| sso_from_profile(profile_set, profile).transpose())
+            .or_else(|| login_session_from_profile(profile))
             .or_else(|| credential_process_from_profile(profile))
             .unwrap_or_else(|| Ok(BaseProvider::AccessKey(static_creds_from_profile(profile)?))),
     }
@@ -476,6 +488,21 @@ fn credential_process_from_profile(
         })
 }
 
+/// Load credentials from `login_session`
+///
+/// Example:
+/// ```ini
+/// [profile console]
+/// login_session = arn:aws:iam::0123456789012:user/Admin
+/// ```
+fn login_session_from_profile(
+    profile: &Profile,
+) -> Option<Result<BaseProvider<'_>, ProfileFileError>> {
+    profile
+        .get(login_session::LOGIN_SESSION)
+        .map(|login_session_arn| Ok(BaseProvider::LoginSession { login_session_arn }))
+}
+
 #[cfg(test)]
 mod tests {
 
@@ -588,6 +615,11 @@ mod tests {
                 sso_account_id: sso_account_id.map(|s| s.to_string()),
                 sso_role_name: sso_role_name.map(|s| s.to_string()),
             }),
+            BaseProvider::LoginSession { login_session_arn } => {
+                output.push(Provider::LoginSession {
+                    login_session_arn: login_session_arn.into(),
+                })
+            }
         };
         for role in profile_chain.chain {
             output.push(Provider::AssumeRole {
@@ -635,6 +667,9 @@ mod tests {
 
             sso_account_id: Option<String>,
             sso_role_name: Option<String>,
+        },
+        LoginSession {
+            login_session_arn: String,
         },
     }
 

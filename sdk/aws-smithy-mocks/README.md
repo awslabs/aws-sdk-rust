@@ -117,6 +117,19 @@ let compute_rule = mock!(Client::get_object)
             .body(ByteStream::from_static(format!("content for {}", key).as_bytes()))
             .build()
     });
+
+// Return any response type (output, error, or HTTP) based on the input
+let conditional_rule = mock!(Client::get_object)
+    .then_compute_response(|req| {
+        use aws_smithy_mocks::MockResponse;
+        if req.key() == Some("error-key") {
+            MockResponse::Error(GetObjectError::NoSuchKey(NoSuchKey::builder().build()))
+        } else {
+            MockResponse::Output(GetObjectOutput::builder()
+                .body(ByteStream::from_static(b"success"))
+                .build())
+        }
+    });
 ```
 
 ### Response Sequences
