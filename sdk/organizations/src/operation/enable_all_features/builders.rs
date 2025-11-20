@@ -28,7 +28,7 @@ impl crate::operation::enable_all_features::builders::EnableAllFeaturesInputBuil
 /// <p>After you enable all features, you can separately enable or disable individual policy types in a root using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. To see the status of policy types in a root, use <code>ListRoots</code>.</p>
 /// <p>After all invited member accounts accept the handshake, you finalize the feature set change by accepting the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This completes the change.</p>
 /// <p>After you enable all features in your organization, the management account in the organization can apply policies on all member accounts. These policies can restrict what users and even administrators in those accounts can do. The management account can apply policies that prevent accounts from leaving the organization. Ensure that your account administrators are aware of this.</p>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>You can only call this operation from the management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableAllFeaturesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

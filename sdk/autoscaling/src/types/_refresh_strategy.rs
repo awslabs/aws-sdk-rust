@@ -12,6 +12,7 @@
 /// ```text
 /// # let refreshstrategy = unimplemented!();
 /// match refreshstrategy {
+///     RefreshStrategy::ReplaceRootVolume => { /* ... */ },
 ///     RefreshStrategy::Rolling => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum RefreshStrategy {
     #[allow(missing_docs)] // documentation missing in model
+    ReplaceRootVolume,
+    #[allow(missing_docs)] // documentation missing in model
     Rolling,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum RefreshStrategy {
 impl ::std::convert::From<&str> for RefreshStrategy {
     fn from(s: &str) -> Self {
         match s {
+            "ReplaceRootVolume" => RefreshStrategy::ReplaceRootVolume,
             "Rolling" => RefreshStrategy::Rolling,
             other => RefreshStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl RefreshStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RefreshStrategy::ReplaceRootVolume => "ReplaceRootVolume",
             RefreshStrategy::Rolling => "Rolling",
             RefreshStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Rolling"]
+        &["ReplaceRootVolume", "Rolling"]
     }
 }
 impl ::std::convert::AsRef<str> for RefreshStrategy {
@@ -95,6 +100,7 @@ impl RefreshStrategy {
 impl ::std::fmt::Display for RefreshStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RefreshStrategy::ReplaceRootVolume => write!(f, "ReplaceRootVolume"),
             RefreshStrategy::Rolling => write!(f, "Rolling"),
             RefreshStrategy::Unknown(value) => write!(f, "{value}"),
         }

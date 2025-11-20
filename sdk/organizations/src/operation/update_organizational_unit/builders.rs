@@ -23,7 +23,7 @@ impl crate::operation::update_organizational_unit::builders::UpdateOrganizationa
 /// Fluent builder constructing a request to `UpdateOrganizationalUnit`.
 ///
 /// <p>Renames the specified organizational unit (OU). The ID and ARN don't change. The child OUs and accounts remain in place, and any attached policies of the OU remain attached.</p>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>You can only call this operation from the management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateOrganizationalUnitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,19 +109,19 @@ impl UpdateOrganizationalUnitFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+    /// <p>ID for the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organizational_unit_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+    /// <p>ID for the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_organizational_unit_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
+    /// <p>ID for the OU that you want to rename. You can get the ID from the <code>ListOrganizationalUnitsForParent</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_organizational_unit_id()

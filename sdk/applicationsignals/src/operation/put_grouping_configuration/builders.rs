@@ -22,8 +22,7 @@ impl crate::operation::put_grouping_configuration::builders::PutGroupingConfigur
 }
 /// Fluent builder constructing a request to `PutGroupingConfiguration`.
 ///
-/// <p>Creates or updates a grouping configuration that defines how services are organized and grouped in Application Signals dashboards and service maps.</p>
-/// <p>Grouping configurations allow you to logically organize services based on attributes such as environment, team ownership, or business function, making it easier to monitor and manage related services together.</p>
+/// <p>Creates or updates the grouping configuration for this account. This operation allows you to define custom grouping attributes that determine how services are logically grouped based on telemetry attributes, Amazon Web Services tags, or predefined mappings. These grouping attributes can then be used to organize and filter services in the Application Signals console and APIs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutGroupingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,12 +113,12 @@ impl PutGroupingConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_grouping_attribute_definitions`](Self::set_grouping_attribute_definitions).
     ///
-    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes the grouping name, source keys, and default values.</p>
+    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes a friendly name, source keys to derive the grouping value from, and an optional default value.</p>
     pub fn grouping_attribute_definitions(mut self, input: crate::types::GroupingAttributeDefinition) -> Self {
         self.inner = self.inner.grouping_attribute_definitions(input);
         self
     }
-    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes the grouping name, source keys, and default values.</p>
+    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes a friendly name, source keys to derive the grouping value from, and an optional default value.</p>
     pub fn set_grouping_attribute_definitions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::GroupingAttributeDefinition>>,
@@ -127,7 +126,7 @@ impl PutGroupingConfigurationFluentBuilder {
         self.inner = self.inner.set_grouping_attribute_definitions(input);
         self
     }
-    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes the grouping name, source keys, and default values.</p>
+    /// <p>An array of grouping attribute definitions that specify how services should be grouped. Each definition includes a friendly name, source keys to derive the grouping value from, and an optional default value.</p>
     pub fn get_grouping_attribute_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupingAttributeDefinition>> {
         self.inner.get_grouping_attribute_definitions()
     }

@@ -1295,11 +1295,17 @@ impl From<crate::operation::get_event_configuration::GetEventConfigurationError>
             crate::operation::get_event_configuration::GetEventConfigurationError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
+            crate::operation::get_event_configuration::GetEventConfigurationError::InvalidTrailNameException(inner) => {
+                Error::InvalidTrailNameException(inner)
+            }
             crate::operation::get_event_configuration::GetEventConfigurationError::NoManagementAccountSlrExistsException(inner) => {
                 Error::NoManagementAccountSlrExistsException(inner)
             }
             crate::operation::get_event_configuration::GetEventConfigurationError::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::get_event_configuration::GetEventConfigurationError::TrailNotFoundException(inner) => {
+                Error::TrailNotFoundException(inner)
             }
             crate::operation::get_event_configuration::GetEventConfigurationError::UnsupportedOperationException(inner) => {
                 Error::UnsupportedOperationException(inner)
@@ -2005,11 +2011,17 @@ impl From<crate::operation::put_event_configuration::PutEventConfigurationError>
             crate::operation::put_event_configuration::PutEventConfigurationError::InvalidEventDataStoreStatusException(inner) => {
                 Error::InvalidEventDataStoreStatusException(inner)
             }
+            crate::operation::put_event_configuration::PutEventConfigurationError::InvalidHomeRegionException(inner) => {
+                Error::InvalidHomeRegionException(inner)
+            }
             crate::operation::put_event_configuration::PutEventConfigurationError::InvalidParameterCombinationException(inner) => {
                 Error::InvalidParameterCombinationException(inner)
             }
             crate::operation::put_event_configuration::PutEventConfigurationError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
+            }
+            crate::operation::put_event_configuration::PutEventConfigurationError::InvalidTrailNameException(inner) => {
+                Error::InvalidTrailNameException(inner)
             }
             crate::operation::put_event_configuration::PutEventConfigurationError::NoManagementAccountSlrExistsException(inner) => {
                 Error::NoManagementAccountSlrExistsException(inner)
@@ -2021,6 +2033,9 @@ impl From<crate::operation::put_event_configuration::PutEventConfigurationError>
                 Error::OperationNotPermittedException(inner)
             }
             crate::operation::put_event_configuration::PutEventConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_event_configuration::PutEventConfigurationError::TrailNotFoundException(inner) => {
+                Error::TrailNotFoundException(inner)
+            }
             crate::operation::put_event_configuration::PutEventConfigurationError::UnsupportedOperationException(inner) => {
                 Error::UnsupportedOperationException(inner)
             }

@@ -244,4 +244,18 @@ impl UpdateLicenseConfigurationFluentBuilder {
     pub fn get_disassociate_when_not_found(&self) -> &::std::option::Option<bool> {
         self.inner.get_disassociate_when_not_found()
     }
+    /// <p>License configuration expiry time.</p>
+    pub fn license_expiry(mut self, input: i64) -> Self {
+        self.inner = self.inner.license_expiry(input);
+        self
+    }
+    /// <p>License configuration expiry time.</p>
+    pub fn set_license_expiry(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_license_expiry(input);
+        self
+    }
+    /// <p>License configuration expiry time.</p>
+    pub fn get_license_expiry(&self) -> &::std::option::Option<i64> {
+        self.inner.get_license_expiry()
+    }
 }

@@ -223,6 +223,23 @@ impl CreateVpcFluentBuilder {
     pub fn get_ipv6_cidr_block_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ipv6_cidr_block_network_border_group()
     }
+    /// <p>Specifies the encryption control configuration to apply to the VPC during creation. VPC Encryption Control enables you to enforce encryption for all data in transit within and between VPCs to meet compliance requirements.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn vpc_encryption_control(mut self, input: crate::types::VpcEncryptionControlConfiguration) -> Self {
+        self.inner = self.inner.vpc_encryption_control(input);
+        self
+    }
+    /// <p>Specifies the encryption control configuration to apply to the VPC during creation. VPC Encryption Control enables you to enforce encryption for all data in transit within and between VPCs to meet compliance requirements.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn set_vpc_encryption_control(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlConfiguration>) -> Self {
+        self.inner = self.inner.set_vpc_encryption_control(input);
+        self
+    }
+    /// <p>Specifies the encryption control configuration to apply to the VPC during creation. VPC Encryption Control enables you to enforce encryption for all data in transit within and between VPCs to meet compliance requirements.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_vpc_encryption_control(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlConfiguration> {
+        self.inner.get_vpc_encryption_control()
+    }
     ///
     /// Appends an item to `TagSpecifications`.
     ///

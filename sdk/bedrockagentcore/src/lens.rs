@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_events_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_memory_extraction_jobs_output_output_next_token(
+    input: &crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_memory_records_output_output_next_token(
     input: &crate::operation::list_memory_records::ListMemoryRecordsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -60,6 +70,13 @@ pub(crate) fn lens_list_events_output_output_events(
     input: crate::operation::list_events::ListEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Event>> {
     let input = input.events;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_memory_extraction_jobs_output_output_jobs(
+    input: crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ExtractionJobMetadata>> {
+    let input = input.jobs;
     ::std::option::Option::Some(input)
 }
 

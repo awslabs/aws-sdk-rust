@@ -20,15 +20,6 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
-pub(crate) fn database_connection_exception_correct_errors(
-    mut builder: crate::types::error::builders::DatabaseConnectionExceptionBuilder,
-) -> crate::types::error::builders::DatabaseConnectionExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn resource_not_found_exception_correct_errors(
     mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
 ) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
@@ -37,6 +28,15 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     }
     if builder.resource_id.is_none() {
         builder.resource_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn database_connection_exception_correct_errors(
+    mut builder: crate::types::error::builders::DatabaseConnectionExceptionBuilder,
+) -> crate::types::error::builders::DatabaseConnectionExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

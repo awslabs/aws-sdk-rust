@@ -16,6 +16,8 @@ pub struct ReplicationSubnetGroup {
     pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     /// <p>The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
     pub supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates whether the replication subnet group is read-only. When set to <code>true</code>, this subnet group is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only subnet groups through their associated zero-ETL integration.</p>
+    pub is_read_only: ::std::option::Option<bool>,
 }
 impl ReplicationSubnetGroup {
     /// <p>The identifier of the replication instance subnet group.</p>
@@ -46,6 +48,10 @@ impl ReplicationSubnetGroup {
     pub fn supported_network_types(&self) -> &[::std::string::String] {
         self.supported_network_types.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether the replication subnet group is read-only. When set to <code>true</code>, this subnet group is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only subnet groups through their associated zero-ETL integration.</p>
+    pub fn is_read_only(&self) -> ::std::option::Option<bool> {
+        self.is_read_only
+    }
 }
 impl ReplicationSubnetGroup {
     /// Creates a new builder-style object to manufacture [`ReplicationSubnetGroup`](crate::types::ReplicationSubnetGroup).
@@ -64,6 +70,7 @@ pub struct ReplicationSubnetGroupBuilder {
     pub(crate) subnet_group_status: ::std::option::Option<::std::string::String>,
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     pub(crate) supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) is_read_only: ::std::option::Option<bool>,
 }
 impl ReplicationSubnetGroupBuilder {
     /// <p>The identifier of the replication instance subnet group.</p>
@@ -162,6 +169,20 @@ impl ReplicationSubnetGroupBuilder {
     pub fn get_supported_network_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_network_types
     }
+    /// <p>Indicates whether the replication subnet group is read-only. When set to <code>true</code>, this subnet group is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only subnet groups through their associated zero-ETL integration.</p>
+    pub fn is_read_only(mut self, input: bool) -> Self {
+        self.is_read_only = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the replication subnet group is read-only. When set to <code>true</code>, this subnet group is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only subnet groups through their associated zero-ETL integration.</p>
+    pub fn set_is_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_read_only = input;
+        self
+    }
+    /// <p>Indicates whether the replication subnet group is read-only. When set to <code>true</code>, this subnet group is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only subnet groups through their associated zero-ETL integration.</p>
+    pub fn get_is_read_only(&self) -> &::std::option::Option<bool> {
+        &self.is_read_only
+    }
     /// Consumes the builder and constructs a [`ReplicationSubnetGroup`](crate::types::ReplicationSubnetGroup).
     pub fn build(self) -> crate::types::ReplicationSubnetGroup {
         crate::types::ReplicationSubnetGroup {
@@ -171,6 +192,7 @@ impl ReplicationSubnetGroupBuilder {
             subnet_group_status: self.subnet_group_status,
             subnets: self.subnets,
             supported_network_types: self.supported_network_types,
+            is_read_only: self.is_read_only,
         }
     }
 }

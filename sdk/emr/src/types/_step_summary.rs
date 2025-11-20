@@ -14,6 +14,10 @@ pub struct StepSummary {
     pub action_on_failure: ::std::option::Option<crate::types::ActionOnFailure>,
     /// <p>The current execution status details of the cluster step.</p>
     pub status: ::std::option::Option<crate::types::StepStatus>,
+    /// <p>The Amazon S3 destination URI for log publishing.</p>
+    pub log_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
+    pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl StepSummary {
     /// <p>The identifier of the cluster step.</p>
@@ -36,6 +40,14 @@ impl StepSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::StepStatus> {
         self.status.as_ref()
     }
+    /// <p>The Amazon S3 destination URI for log publishing.</p>
+    pub fn log_uri(&self) -> ::std::option::Option<&str> {
+        self.log_uri.as_deref()
+    }
+    /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
 }
 impl StepSummary {
     /// Creates a new builder-style object to manufacture [`StepSummary`](crate::types::StepSummary).
@@ -53,6 +65,8 @@ pub struct StepSummaryBuilder {
     pub(crate) config: ::std::option::Option<crate::types::HadoopStepConfig>,
     pub(crate) action_on_failure: ::std::option::Option<crate::types::ActionOnFailure>,
     pub(crate) status: ::std::option::Option<crate::types::StepStatus>,
+    pub(crate) log_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl StepSummaryBuilder {
     /// <p>The identifier of the cluster step.</p>
@@ -125,6 +139,34 @@ impl StepSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StepStatus> {
         &self.status
     }
+    /// <p>The Amazon S3 destination URI for log publishing.</p>
+    pub fn log_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon S3 destination URI for log publishing.</p>
+    pub fn set_log_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.log_uri = input;
+        self
+    }
+    /// <p>The Amazon S3 destination URI for log publishing.</p>
+    pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_uri
+    }
+    /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.encryption_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.encryption_key_arn = input;
+        self
+    }
+    /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
+    }
     /// Consumes the builder and constructs a [`StepSummary`](crate::types::StepSummary).
     pub fn build(self) -> crate::types::StepSummary {
         crate::types::StepSummary {
@@ -133,6 +175,8 @@ impl StepSummaryBuilder {
             config: self.config,
             action_on_failure: self.action_on_failure,
             status: self.status,
+            log_uri: self.log_uri,
+            encryption_key_arn: self.encryption_key_arn,
         }
     }
 }

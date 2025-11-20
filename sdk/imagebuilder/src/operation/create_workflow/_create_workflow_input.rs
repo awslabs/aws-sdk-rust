@@ -39,6 +39,8 @@ pub struct CreateWorkflowInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The phase in the image build process for which the workflow resource is responsible.</p>
     pub r#type: ::std::option::Option<crate::types::WorkflowType>,
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateWorkflowInput {
     /// <p>The name of the workflow to create.</p>
@@ -97,6 +99,10 @@ impl CreateWorkflowInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
         self.r#type.as_ref()
     }
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl CreateWorkflowInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
@@ -119,6 +125,7 @@ pub struct CreateWorkflowInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::WorkflowType>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateWorkflowInputBuilder {
     /// <p>The name of the workflow to create.</p>
@@ -319,6 +326,20 @@ impl CreateWorkflowInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
         &self.r#type
     }
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
     pub fn build(
         self,
@@ -334,6 +355,7 @@ impl CreateWorkflowInputBuilder {
             tags: self.tags,
             client_token: self.client_token,
             r#type: self.r#type,
+            dry_run: self.dry_run,
         })
     }
 }

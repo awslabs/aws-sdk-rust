@@ -476,6 +476,16 @@ pub fn de_auto_scaling_group(
                 builder = builder.set_capacity_reservation_specification(var_38);
             }
             ,
+            s if s.matches("InstanceLifecyclePolicy") /* InstanceLifecyclePolicy com.amazonaws.autoscaling#AutoScalingGroup$InstanceLifecyclePolicy */ =>  {
+                let var_39 =
+                    Some(
+                        crate::protocol_serde::shape_instance_lifecycle_policy::de_instance_lifecycle_policy(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_lifecycle_policy(var_39);
+            }
+            ,
             _ => {}
         }
     }

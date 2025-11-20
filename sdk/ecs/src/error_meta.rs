@@ -227,6 +227,58 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError> for Error {
+    fn from(err: crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError) -> Self {
+        match err {
+            crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError::PlatformTaskDefinitionIncompatibilityException(
+                inner,
+            ) => Error::PlatformTaskDefinitionIncompatibilityException(inner),
+            crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError::PlatformUnknownException(inner) => {
+                Error::PlatformUnknownException(inner)
+            }
+            crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_service::CreateServiceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -410,6 +462,58 @@ impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
             crate::operation::delete_cluster::DeleteClusterError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_cluster::DeleteClusterError::UpdateInProgressException(inner) => Error::UpdateInProgressException(inner),
             crate::operation::delete_cluster::DeleteClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError> for Error {
+    fn from(err: crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError) -> Self {
+        match err {
+            crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError::ServiceNotActiveException(inner) => {
+                Error::ServiceNotActiveException(inner)
+            }
+            crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError::ServiceNotFoundException(inner) => {
+                Error::ServiceNotFoundException(inner)
+            }
+            crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -653,6 +757,56 @@ impl From<crate::operation::describe_container_instances::DescribeContainerInsta
             }
             crate::operation::describe_container_instances::DescribeContainerInstancesError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::describe_container_instances::DescribeContainerInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError> for Error {
+    fn from(err: crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError) -> Self {
+        match err {
+            crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::describe_express_gateway_service::DescribeExpressGatewayServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1865,6 +2019,58 @@ impl From<crate::operation::update_container_instances_state::UpdateContainerIns
                 Error::ServerException(inner)
             }
             crate::operation::update_container_instances_state::UpdateContainerInstancesStateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError> for Error {
+    fn from(err: crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError) -> Self {
+        match err {
+            crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError::ServiceNotActiveException(inner) => {
+                Error::ServiceNotActiveException(inner)
+            }
+            crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError::ServiceNotFoundException(inner) => {
+                Error::ServiceNotFoundException(inner)
+            }
+            crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

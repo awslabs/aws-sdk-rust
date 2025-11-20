@@ -353,6 +353,12 @@ pub use crate::types::_cache_policy_header_behavior::CachePolicyHeaderBehavior;
 
 pub use crate::types::_anycast_ip_list::AnycastIpList;
 
+pub use crate::types::_ipam_config::IpamConfig;
+
+pub use crate::types::_ipam_cidr_config::IpamCidrConfig;
+
+pub use crate::types::_ipam_cidr_status::IpamCidrStatus;
+
 pub use crate::types::_tag_keys::TagKeys;
 
 pub use crate::types::_test_result::TestResult;
@@ -698,6 +704,12 @@ mod _invalidation_list;
 mod _invalidation_summary;
 
 mod _ip_address_type;
+
+mod _ipam_cidr_config;
+
+mod _ipam_cidr_status;
+
+mod _ipam_config;
 
 mod _item_selection;
 

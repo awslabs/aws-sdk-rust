@@ -20,6 +20,15 @@ pub(crate) fn elasticsearch_settings_correct_errors(
     builder
 }
 
+pub(crate) fn lakehouse_settings_correct_errors(
+    mut builder: crate::types::builders::LakehouseSettingsBuilder,
+) -> crate::types::builders::LakehouseSettingsBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn neptune_settings_correct_errors(
     mut builder: crate::types::builders::NeptuneSettingsBuilder,
 ) -> crate::types::builders::NeptuneSettingsBuilder {

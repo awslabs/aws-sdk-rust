@@ -21,6 +21,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PeerEdgeLocation" => {
+                            builder = builder.set_peer_edge_location(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RoutingPolicyDirection" => {
+                            builder = builder.set_routing_policy_direction(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RoutingPolicyDirection::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "SegmentName" => {
                             builder = builder.set_segment_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -47,6 +61,13 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "RoutingPolicyAssociationDetails" => {
+                            builder = builder.set_routing_policy_association_details(
+                                crate::protocol_serde::shape_routing_policy_association_details_list::de_routing_policy_association_details_list(
+                                    tokens,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -45,6 +45,10 @@ pub struct Service {
     pub events: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEvent>>,
     /// <p>The Unix timestamp for the time when the service was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ARN of the current service deployment.</p>
+    pub current_service_deployment: ::std::option::Option<::std::string::String>,
+    /// <p>The list of the service revisions.</p>
+    pub current_service_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceCurrentRevisionSummary>>,
     /// <p>The placement constraints for the tasks in the service.</p>
     pub placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
     /// <p>The placement strategy that determines how tasks for the service are placed.</p>
@@ -104,6 +108,8 @@ pub struct Service {
     /// <p>For update service requests, when no value is specified for <code>AvailabilityZoneRebalancing</code>, Amazon ECS defaults to the existing service’s <code>AvailabilityZoneRebalancing</code> value. If the service never had an <code>AvailabilityZoneRebalancing</code> value set, Amazon ECS treats this as <code>DISABLED</code>.</p></li>
     /// </ul>
     pub availability_zone_rebalancing: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>,
+    /// <p>Identifies whether an ECS Service is an Express Service managed by ECS, or managed by the customer. The valid values are <code>ECS</code> and <code>CUSTOMER</code></p>
+    pub resource_management_type: ::std::option::Option<crate::types::ResourceManagementType>,
 }
 impl Service {
     /// <p>The ARN that identifies the service. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -199,6 +205,16 @@ impl Service {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>The ARN of the current service deployment.</p>
+    pub fn current_service_deployment(&self) -> ::std::option::Option<&str> {
+        self.current_service_deployment.as_deref()
+    }
+    /// <p>The list of the service revisions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.current_service_revisions.is_none()`.
+    pub fn current_service_revisions(&self) -> &[crate::types::ServiceCurrentRevisionSummary] {
+        self.current_service_revisions.as_deref().unwrap_or_default()
+    }
     /// <p>The placement constraints for the tasks in the service.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.placement_constraints.is_none()`.
@@ -288,6 +304,10 @@ impl Service {
     pub fn availability_zone_rebalancing(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneRebalancing> {
         self.availability_zone_rebalancing.as_ref()
     }
+    /// <p>Identifies whether an ECS Service is an Express Service managed by ECS, or managed by the customer. The valid values are <code>ECS</code> and <code>CUSTOMER</code></p>
+    pub fn resource_management_type(&self) -> ::std::option::Option<&crate::types::ResourceManagementType> {
+        self.resource_management_type.as_ref()
+    }
 }
 impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::types::Service).
@@ -320,6 +340,8 @@ pub struct ServiceBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEvent>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) current_service_deployment: ::std::option::Option<::std::string::String>,
+    pub(crate) current_service_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ServiceCurrentRevisionSummary>>,
     pub(crate) placement_constraints: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
     pub(crate) placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
@@ -332,6 +354,7 @@ pub struct ServiceBuilder {
     pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     pub(crate) enable_execute_command: ::std::option::Option<bool>,
     pub(crate) availability_zone_rebalancing: ::std::option::Option<crate::types::AvailabilityZoneRebalancing>,
+    pub(crate) resource_management_type: ::std::option::Option<crate::types::ResourceManagementType>,
 }
 impl ServiceBuilder {
     /// <p>The ARN that identifies the service. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
@@ -656,6 +679,43 @@ impl ServiceBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// <p>The ARN of the current service deployment.</p>
+    pub fn current_service_deployment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.current_service_deployment = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the current service deployment.</p>
+    pub fn set_current_service_deployment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.current_service_deployment = input;
+        self
+    }
+    /// <p>The ARN of the current service deployment.</p>
+    pub fn get_current_service_deployment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_service_deployment
+    }
+    /// Appends an item to `current_service_revisions`.
+    ///
+    /// To override the contents of this collection use [`set_current_service_revisions`](Self::set_current_service_revisions).
+    ///
+    /// <p>The list of the service revisions.</p>
+    pub fn current_service_revisions(mut self, input: crate::types::ServiceCurrentRevisionSummary) -> Self {
+        let mut v = self.current_service_revisions.unwrap_or_default();
+        v.push(input);
+        self.current_service_revisions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of the service revisions.</p>
+    pub fn set_current_service_revisions(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceCurrentRevisionSummary>>,
+    ) -> Self {
+        self.current_service_revisions = input;
+        self
+    }
+    /// <p>The list of the service revisions.</p>
+    pub fn get_current_service_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceCurrentRevisionSummary>> {
+        &self.current_service_revisions
+    }
     /// Appends an item to `placement_constraints`.
     ///
     /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
@@ -947,6 +1007,20 @@ impl ServiceBuilder {
     pub fn get_availability_zone_rebalancing(&self) -> &::std::option::Option<crate::types::AvailabilityZoneRebalancing> {
         &self.availability_zone_rebalancing
     }
+    /// <p>Identifies whether an ECS Service is an Express Service managed by ECS, or managed by the customer. The valid values are <code>ECS</code> and <code>CUSTOMER</code></p>
+    pub fn resource_management_type(mut self, input: crate::types::ResourceManagementType) -> Self {
+        self.resource_management_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies whether an ECS Service is an Express Service managed by ECS, or managed by the customer. The valid values are <code>ECS</code> and <code>CUSTOMER</code></p>
+    pub fn set_resource_management_type(mut self, input: ::std::option::Option<crate::types::ResourceManagementType>) -> Self {
+        self.resource_management_type = input;
+        self
+    }
+    /// <p>Identifies whether an ECS Service is an Express Service managed by ECS, or managed by the customer. The valid values are <code>ECS</code> and <code>CUSTOMER</code></p>
+    pub fn get_resource_management_type(&self) -> &::std::option::Option<crate::types::ResourceManagementType> {
+        &self.resource_management_type
+    }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {
         crate::types::Service {
@@ -970,6 +1044,8 @@ impl ServiceBuilder {
             role_arn: self.role_arn,
             events: self.events,
             created_at: self.created_at,
+            current_service_deployment: self.current_service_deployment,
+            current_service_revisions: self.current_service_revisions,
             placement_constraints: self.placement_constraints,
             placement_strategy: self.placement_strategy,
             network_configuration: self.network_configuration,
@@ -982,6 +1058,7 @@ impl ServiceBuilder {
             propagate_tags: self.propagate_tags,
             enable_execute_command: self.enable_execute_command.unwrap_or_default(),
             availability_zone_rebalancing: self.availability_zone_rebalancing,
+            resource_management_type: self.resource_management_type,
         }
     }
 }

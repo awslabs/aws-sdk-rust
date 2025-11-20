@@ -184,6 +184,11 @@ pub(crate) fn de_describe_lake_formation_identity_center_configuration(
                             .transpose()?,
                     );
                 }
+                "ServiceIntegrations" => {
+                    builder = builder.set_service_integrations(crate::protocol_serde::shape_service_integration_list::de_service_integration_list(
+                        tokens,
+                    )?);
+                }
                 "ShareRecipients" => {
                     builder = builder.set_share_recipients(crate::protocol_serde::shape_data_lake_principal_list::de_data_lake_principal_list(
                         tokens,

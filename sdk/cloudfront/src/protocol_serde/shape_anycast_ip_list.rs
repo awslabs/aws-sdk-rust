@@ -73,18 +73,28 @@ pub fn de_anycast_ip_list(
                 builder = builder.set_ip_address_type(var_5);
             }
             ,
-            s if s.matches("AnycastIps") /* AnycastIps com.amazonaws.cloudfront#AnycastIpList$AnycastIps */ =>  {
+            s if s.matches("IpamConfig") /* IpamConfig com.amazonaws.cloudfront#AnycastIpList$IpamConfig */ =>  {
                 let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_ipam_config::de_ipam_config(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ipam_config(var_6);
+            }
+            ,
+            s if s.matches("AnycastIps") /* AnycastIps com.amazonaws.cloudfront#AnycastIpList$AnycastIps */ =>  {
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_anycast_ips::de_anycast_ips(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_anycast_ips(var_6);
+                builder = builder.set_anycast_ips(var_7);
             }
             ,
             s if s.matches("IpCount") /* IpCount com.amazonaws.cloudfront#AnycastIpList$IpCount */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -95,11 +105,11 @@ pub fn de_anycast_ip_list(
                         ?
                     )
                 ;
-                builder = builder.set_ip_count(var_7);
+                builder = builder.set_ip_count(var_8);
             }
             ,
             s if s.matches("LastModifiedTime") /* LastModifiedTime com.amazonaws.cloudfront#AnycastIpList$LastModifiedTime */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -109,7 +119,7 @@ pub fn de_anycast_ip_list(
                         ?
                     )
                 ;
-                builder = builder.set_last_modified_time(var_8);
+                builder = builder.set_last_modified_time(var_9);
             }
             ,
             _ => {}

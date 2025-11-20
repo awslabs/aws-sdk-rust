@@ -146,6 +146,21 @@ pub fn de_get_event_configuration_http_error(
             }
             tmp
         }),
+        "InvalidTrailNameException" => crate::operation::get_event_configuration::GetEventConfigurationError::InvalidTrailNameException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTrailNameExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_trail_name_exception::de_invalid_trail_name_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_event_configuration::GetEventConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "NoManagementAccountSLRExistsException" => {
             crate::operation::get_event_configuration::GetEventConfigurationError::NoManagementAccountSlrExistsException({
                 #[allow(unused_mut)]
@@ -172,6 +187,21 @@ pub fn de_get_event_configuration_http_error(
                     output,
                 )
                 .map_err(crate::operation::get_event_configuration::GetEventConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TrailNotFoundException" => crate::operation::get_event_configuration::GetEventConfigurationError::TrailNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TrailNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_trail_not_found_exception::de_trail_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_event_configuration::GetEventConfigurationError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -243,6 +273,13 @@ pub(crate) fn de_get_event_configuration(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "TrailARN" => {
+                    builder = builder.set_trail_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "EventDataStoreArn" => {
                     builder = builder.set_event_data_store_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -260,6 +297,11 @@ pub(crate) fn de_get_event_configuration(
                 "ContextKeySelectors" => {
                     builder =
                         builder.set_context_key_selectors(crate::protocol_serde::shape_context_key_selectors::de_context_key_selectors(tokens)?);
+                }
+                "AggregationConfigurations" => {
+                    builder = builder.set_aggregation_configurations(
+                        crate::protocol_serde::shape_aggregation_configurations::de_aggregation_configurations(tokens)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

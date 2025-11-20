@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MoveAccountInput {
-    /// <p>The unique identifier (ID) of the account that you want to move.</p>
+    /// <p>ID for the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account from.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct MoveAccountInput {
     /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     pub source_parent_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account to.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -26,12 +26,12 @@ pub struct MoveAccountInput {
     pub destination_parent_id: ::std::option::Option<::std::string::String>,
 }
 impl MoveAccountInput {
-    /// <p>The unique identifier (ID) of the account that you want to move.</p>
+    /// <p>ID for the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account from.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -42,7 +42,7 @@ impl MoveAccountInput {
     pub fn source_parent_id(&self) -> ::std::option::Option<&str> {
         self.source_parent_id.as_deref()
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account to.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -70,25 +70,25 @@ pub struct MoveAccountInputBuilder {
     pub(crate) destination_parent_id: ::std::option::Option<::std::string::String>,
 }
 impl MoveAccountInputBuilder {
-    /// <p>The unique identifier (ID) of the account that you want to move.</p>
+    /// <p>ID for the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the account that you want to move.</p>
+    /// <p>ID for the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The unique identifier (ID) of the account that you want to move.</p>
+    /// <p>ID for the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account from.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -101,7 +101,7 @@ impl MoveAccountInputBuilder {
         self.source_parent_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account from.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -113,7 +113,7 @@ impl MoveAccountInputBuilder {
         self.source_parent_id = input;
         self
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account from.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -124,7 +124,7 @@ impl MoveAccountInputBuilder {
     pub fn get_source_parent_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_parent_id
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account to.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -137,7 +137,7 @@ impl MoveAccountInputBuilder {
         self.destination_parent_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account to.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -149,7 +149,7 @@ impl MoveAccountInputBuilder {
         self.destination_parent_id = input;
         self
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account to.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>

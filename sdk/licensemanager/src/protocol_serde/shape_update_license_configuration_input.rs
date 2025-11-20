@@ -48,5 +48,11 @@ pub fn ser_update_license_configuration_input_input(
     if let Some(var_14) = &input.disassociate_when_not_found {
         object.key("DisassociateWhenNotFound").boolean(*var_14);
     }
+    if let Some(var_15) = &input.license_expiry {
+        object.key("LicenseExpiry").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
+    }
     Ok(())
 }

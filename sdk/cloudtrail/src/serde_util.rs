@@ -30,6 +30,18 @@ pub(crate) fn advanced_event_selector_correct_errors(
     builder
 }
 
+pub(crate) fn aggregation_configuration_correct_errors(
+    mut builder: crate::types::builders::AggregationConfigurationBuilder,
+) -> crate::types::builders::AggregationConfigurationBuilder {
+    if builder.templates.is_none() {
+        builder.templates = Some(Default::default())
+    }
+    if builder.event_category.is_none() {
+        builder.event_category = "no value was set".parse::<crate::types::EventCategoryAggregation>().ok()
+    }
+    builder
+}
+
 pub(crate) fn context_key_selector_correct_errors(
     mut builder: crate::types::builders::ContextKeySelectorBuilder,
 ) -> crate::types::builders::ContextKeySelectorBuilder {

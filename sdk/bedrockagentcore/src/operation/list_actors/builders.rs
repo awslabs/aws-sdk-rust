@@ -129,17 +129,17 @@ impl ListActorsFluentBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

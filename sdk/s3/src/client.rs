@@ -261,6 +261,8 @@ mod delete_objects;
 
 mod delete_public_access_block;
 
+mod get_bucket_abac;
+
 mod get_bucket_accelerate_configuration;
 
 mod get_bucket_acl;
@@ -348,6 +350,8 @@ mod list_objects;
 mod list_objects_v2;
 
 mod list_parts;
+
+mod put_bucket_abac;
 
 mod put_bucket_accelerate_configuration;
 

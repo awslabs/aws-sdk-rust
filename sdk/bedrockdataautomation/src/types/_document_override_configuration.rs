@@ -8,6 +8,8 @@ pub struct DocumentOverrideConfiguration {
     pub splitter: ::std::option::Option<crate::types::SplitterConfiguration>,
     /// Configuration to enable/disable processing of modality
     pub modality_processing: ::std::option::Option<crate::types::ModalityProcessingConfiguration>,
+    /// Configuration for sensitive data detection and redaction
+    pub sensitive_data_configuration: ::std::option::Option<crate::types::SensitiveDataConfiguration>,
 }
 impl DocumentOverrideConfiguration {
     /// Configuration of Splitter
@@ -17,6 +19,10 @@ impl DocumentOverrideConfiguration {
     /// Configuration to enable/disable processing of modality
     pub fn modality_processing(&self) -> ::std::option::Option<&crate::types::ModalityProcessingConfiguration> {
         self.modality_processing.as_ref()
+    }
+    /// Configuration for sensitive data detection and redaction
+    pub fn sensitive_data_configuration(&self) -> ::std::option::Option<&crate::types::SensitiveDataConfiguration> {
+        self.sensitive_data_configuration.as_ref()
     }
 }
 impl DocumentOverrideConfiguration {
@@ -32,6 +38,7 @@ impl DocumentOverrideConfiguration {
 pub struct DocumentOverrideConfigurationBuilder {
     pub(crate) splitter: ::std::option::Option<crate::types::SplitterConfiguration>,
     pub(crate) modality_processing: ::std::option::Option<crate::types::ModalityProcessingConfiguration>,
+    pub(crate) sensitive_data_configuration: ::std::option::Option<crate::types::SensitiveDataConfiguration>,
 }
 impl DocumentOverrideConfigurationBuilder {
     /// Configuration of Splitter
@@ -62,11 +69,26 @@ impl DocumentOverrideConfigurationBuilder {
     pub fn get_modality_processing(&self) -> &::std::option::Option<crate::types::ModalityProcessingConfiguration> {
         &self.modality_processing
     }
+    /// Configuration for sensitive data detection and redaction
+    pub fn sensitive_data_configuration(mut self, input: crate::types::SensitiveDataConfiguration) -> Self {
+        self.sensitive_data_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Configuration for sensitive data detection and redaction
+    pub fn set_sensitive_data_configuration(mut self, input: ::std::option::Option<crate::types::SensitiveDataConfiguration>) -> Self {
+        self.sensitive_data_configuration = input;
+        self
+    }
+    /// Configuration for sensitive data detection and redaction
+    pub fn get_sensitive_data_configuration(&self) -> &::std::option::Option<crate::types::SensitiveDataConfiguration> {
+        &self.sensitive_data_configuration
+    }
     /// Consumes the builder and constructs a [`DocumentOverrideConfiguration`](crate::types::DocumentOverrideConfiguration).
     pub fn build(self) -> crate::types::DocumentOverrideConfiguration {
         crate::types::DocumentOverrideConfiguration {
             splitter: self.splitter,
             modality_processing: self.modality_processing,
+            sensitive_data_configuration: self.sensitive_data_configuration,
         }
     }
 }

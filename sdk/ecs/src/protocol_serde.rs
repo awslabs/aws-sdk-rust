@@ -27,6 +27,8 @@ pub(crate) mod shape_create_capacity_provider;
 
 pub(crate) mod shape_create_cluster;
 
+pub(crate) mod shape_create_express_gateway_service;
+
 pub(crate) mod shape_create_service;
 
 pub(crate) mod shape_create_task_set;
@@ -38,6 +40,8 @@ pub(crate) mod shape_delete_attributes;
 pub(crate) mod shape_delete_capacity_provider;
 
 pub(crate) mod shape_delete_cluster;
+
+pub(crate) mod shape_delete_express_gateway_service;
 
 pub(crate) mod shape_delete_service;
 
@@ -54,6 +58,8 @@ pub(crate) mod shape_describe_capacity_providers;
 pub(crate) mod shape_describe_clusters;
 
 pub(crate) mod shape_describe_container_instances;
+
+pub(crate) mod shape_describe_express_gateway_service;
 
 pub(crate) mod shape_describe_service_deployments;
 
@@ -135,6 +141,8 @@ pub(crate) mod shape_update_container_agent;
 
 pub(crate) mod shape_update_container_instances_state;
 
+pub(crate) mod shape_update_express_gateway_service;
+
 pub(crate) mod shape_update_service;
 
 pub(crate) mod shape_update_service_primary_task_set;
@@ -175,6 +183,8 @@ pub(crate) mod shape_create_capacity_provider_input;
 
 pub(crate) mod shape_create_cluster_input;
 
+pub(crate) mod shape_create_express_gateway_service_input;
+
 pub(crate) mod shape_create_service_input;
 
 pub(crate) mod shape_create_task_set_input;
@@ -186,6 +196,8 @@ pub(crate) mod shape_delete_attributes_input;
 pub(crate) mod shape_delete_capacity_provider_input;
 
 pub(crate) mod shape_delete_cluster_input;
+
+pub(crate) mod shape_delete_express_gateway_service_input;
 
 pub(crate) mod shape_delete_service_input;
 
@@ -202,6 +214,8 @@ pub(crate) mod shape_describe_capacity_providers_input;
 pub(crate) mod shape_describe_clusters_input;
 
 pub(crate) mod shape_describe_container_instances_input;
+
+pub(crate) mod shape_describe_express_gateway_service_input;
 
 pub(crate) mod shape_describe_service_deployments_input;
 
@@ -317,6 +331,8 @@ pub(crate) mod shape_update_container_agent_input;
 
 pub(crate) mod shape_update_container_instances_state_input;
 
+pub(crate) mod shape_update_express_gateway_service_input;
+
 pub(crate) mod shape_update_in_progress_exception;
 
 pub(crate) mod shape_update_service_input;
@@ -369,7 +385,15 @@ pub(crate) mod shape_deployment_configuration;
 
 pub(crate) mod shape_deployment_controller;
 
+pub(crate) mod shape_ecs_express_gateway_service;
+
 pub(crate) mod shape_ephemeral_storage;
+
+pub(crate) mod shape_express_gateway_container;
+
+pub(crate) mod shape_express_gateway_scaling_target;
+
+pub(crate) mod shape_express_gateway_service_network_configuration;
 
 pub(crate) mod shape_failures;
 
@@ -449,6 +473,8 @@ pub(crate) mod shape_tasks;
 
 pub(crate) mod shape_update_managed_instances_provider_configuration;
 
+pub(crate) mod shape_updated_express_gateway_service;
+
 pub(crate) mod shape_version_info;
 
 pub(crate) mod shape_volume;
@@ -500,6 +526,16 @@ pub(crate) mod shape_efs_volume_configuration;
 pub(crate) mod shape_environment_file;
 
 pub(crate) mod shape_execute_command_configuration;
+
+pub(crate) mod shape_express_gateway_repository_credentials;
+
+pub(crate) mod shape_express_gateway_service_aws_logs_configuration;
+
+pub(crate) mod shape_express_gateway_service_configuration;
+
+pub(crate) mod shape_express_gateway_service_configurations;
+
+pub(crate) mod shape_express_gateway_service_status;
 
 pub(crate) mod shape_f_sx_windows_file_server_volume_configuration;
 
@@ -563,6 +599,8 @@ pub(crate) mod shape_service_connect_access_log_configuration;
 
 pub(crate) mod shape_service_connect_service;
 
+pub(crate) mod shape_service_current_revision_summary_list;
+
 pub(crate) mod shape_service_deployment;
 
 pub(crate) mod shape_service_deployment_brief;
@@ -607,6 +645,8 @@ pub(crate) mod shape_device;
 
 pub(crate) mod shape_ebs_tag_specification;
 
+pub(crate) mod shape_ecs_managed_resources;
+
 pub(crate) mod shape_efs_authorization_config;
 
 pub(crate) mod shape_execute_command_log_configuration;
@@ -614,6 +654,8 @@ pub(crate) mod shape_execute_command_log_configuration;
 pub(crate) mod shape_f_sx_windows_file_server_authorization_config;
 
 pub(crate) mod shape_inference_accelerator_overrides;
+
+pub(crate) mod shape_ingress_path_summaries;
 
 pub(crate) mod shape_instance_health_check_result_list;
 
@@ -634,6 +676,8 @@ pub(crate) mod shape_rollback;
 pub(crate) mod shape_service_connect_client_alias;
 
 pub(crate) mod shape_service_connect_tls_configuration;
+
+pub(crate) mod shape_service_current_revision_summary;
 
 pub(crate) mod shape_service_deployment_alarms;
 
@@ -677,9 +721,21 @@ pub(crate) mod shape_gpu_ids;
 
 pub(crate) mod shape_host_entry_list;
 
+pub(crate) mod shape_ingress_path_summary;
+
 pub(crate) mod shape_instance_health_check_result;
 
 pub(crate) mod shape_managed_agents;
+
+pub(crate) mod shape_managed_auto_scaling;
+
+pub(crate) mod shape_managed_ingress_paths;
+
+pub(crate) mod shape_managed_log_groups;
+
+pub(crate) mod shape_managed_metric_alarms;
+
+pub(crate) mod shape_managed_security_groups;
 
 pub(crate) mod shape_memory_gib_per_v_cpu_request;
 
@@ -749,6 +805,18 @@ pub(crate) mod shape_log_configuration_options_map;
 
 pub(crate) mod shape_managed_agent;
 
+pub(crate) mod shape_managed_application_auto_scaling_policies;
+
+pub(crate) mod shape_managed_ingress_path;
+
+pub(crate) mod shape_managed_log_group;
+
+pub(crate) mod shape_managed_metric_alarm;
+
+pub(crate) mod shape_managed_scalable_target;
+
+pub(crate) mod shape_managed_security_group;
+
 pub(crate) mod shape_network_interface;
 
 pub(crate) mod shape_service_connect_service_resource;
@@ -763,8 +831,22 @@ pub(crate) mod shape_tmpfs_list;
 
 pub(crate) mod shape_ebs_tag_specifications;
 
+pub(crate) mod shape_managed_application_auto_scaling_policy;
+
+pub(crate) mod shape_managed_certificate;
+
+pub(crate) mod shape_managed_listener;
+
+pub(crate) mod shape_managed_listener_rule;
+
+pub(crate) mod shape_managed_load_balancer;
+
+pub(crate) mod shape_managed_target_groups;
+
 pub(crate) mod shape_service_connect_client_alias_list;
 
 pub(crate) mod shape_service_connect_test_traffic_header_match_rules;
 
 pub(crate) mod shape_device_cgroup_permissions;
+
+pub(crate) mod shape_managed_target_group;

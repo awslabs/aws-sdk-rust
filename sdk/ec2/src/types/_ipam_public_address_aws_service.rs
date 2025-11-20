@@ -12,6 +12,7 @@
 /// ```text
 /// # let ipampublicaddressawsservice = unimplemented!();
 /// match ipampublicaddressawsservice {
+///     IpamPublicAddressAwsService::Cloudfront => { /* ... */ },
 ///     IpamPublicAddressAwsService::Dms => { /* ... */ },
 ///     IpamPublicAddressAwsService::Ecs => { /* ... */ },
 ///     IpamPublicAddressAwsService::Aga => { /* ... */ },
@@ -50,6 +51,8 @@
 )]
 pub enum IpamPublicAddressAwsService {
     #[allow(missing_docs)] // documentation missing in model
+    Cloudfront,
+    #[allow(missing_docs)] // documentation missing in model
     Dms,
     #[allow(missing_docs)] // documentation missing in model
     Ecs,
@@ -74,6 +77,7 @@ pub enum IpamPublicAddressAwsService {
 impl ::std::convert::From<&str> for IpamPublicAddressAwsService {
     fn from(s: &str) -> Self {
         match s {
+            "cloudfront" => IpamPublicAddressAwsService::Cloudfront,
             "database-migration-service" => IpamPublicAddressAwsService::Dms,
             "elastic-container-service" => IpamPublicAddressAwsService::Ecs,
             "global-accelerator" => IpamPublicAddressAwsService::Aga,
@@ -98,6 +102,7 @@ impl IpamPublicAddressAwsService {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            IpamPublicAddressAwsService::Cloudfront => "cloudfront",
             IpamPublicAddressAwsService::Dms => "database-migration-service",
             IpamPublicAddressAwsService::Ecs => "elastic-container-service",
             IpamPublicAddressAwsService::Aga => "global-accelerator",
@@ -113,6 +118,7 @@ impl IpamPublicAddressAwsService {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "cloudfront",
             "database-migration-service",
             "elastic-container-service",
             "global-accelerator",
@@ -145,6 +151,7 @@ impl IpamPublicAddressAwsService {
 impl ::std::fmt::Display for IpamPublicAddressAwsService {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            IpamPublicAddressAwsService::Cloudfront => write!(f, "cloudfront"),
             IpamPublicAddressAwsService::Dms => write!(f, "database-migration-service"),
             IpamPublicAddressAwsService::Ecs => write!(f, "elastic-container-service"),
             IpamPublicAddressAwsService::Aga => write!(f, "global-accelerator"),

@@ -143,6 +143,11 @@ pub(crate) fn de_get_workflow(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "latestVersionReferences" => {
+                    builder = builder.set_latest_version_references(
+                        crate::protocol_serde::shape_latest_version_references::de_latest_version_references(tokens)?,
+                    );
+                }
                 "workflow" => {
                     builder = builder.set_workflow(crate::protocol_serde::shape_workflow::de_workflow(tokens)?);
                 }

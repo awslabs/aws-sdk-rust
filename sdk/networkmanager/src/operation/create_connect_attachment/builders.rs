@@ -151,6 +151,20 @@ impl CreateConnectAttachmentFluentBuilder {
     pub fn get_transport_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_transport_attachment_id()
     }
+    /// <p>The routing policy label to apply to the Connect attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.routing_policy_label(input.into());
+        self
+    }
+    /// <p>The routing policy label to apply to the Connect attachment for traffic routing decisions.</p>
+    pub fn set_routing_policy_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_routing_policy_label(input);
+        self
+    }
+    /// <p>The routing policy label to apply to the Connect attachment for traffic routing decisions.</p>
+    pub fn get_routing_policy_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_routing_policy_label()
+    }
     /// <p>Options for creating an attachment.</p>
     pub fn options(mut self, input: crate::types::ConnectAttachmentOptions) -> Self {
         self.inner = self.inner.options(input);

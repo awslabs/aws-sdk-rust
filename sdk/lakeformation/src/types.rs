@@ -15,6 +15,14 @@ pub use crate::types::_enable_status::EnableStatus;
 
 pub use crate::types::_application_status::ApplicationStatus;
 
+pub use crate::types::_service_integration_union::ServiceIntegrationUnion;
+
+pub use crate::types::_redshift_scope_union::RedshiftScopeUnion;
+
+pub use crate::types::_redshift_connect::RedshiftConnect;
+
+pub use crate::types::_service_authorization::ServiceAuthorization;
+
 pub use crate::types::_data_lake_principal::DataLakePrincipal;
 
 pub use crate::types::_data_cells_filter::DataCellsFilter;
@@ -217,6 +225,10 @@ mod _query_session_context;
 
 mod _query_state_string;
 
+mod _redshift_connect;
+
+mod _redshift_scope_union;
+
 mod _resource;
 
 mod _resource_info;
@@ -226,6 +238,10 @@ mod _resource_share_type;
 mod _resource_type;
 
 mod _row_filter;
+
+mod _service_authorization;
+
+mod _service_integration_union;
 
 mod _storage_optimizer;
 

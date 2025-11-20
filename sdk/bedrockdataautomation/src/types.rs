@@ -15,6 +15,18 @@ pub use crate::types::_desired_modality::DesiredModality;
 
 pub use crate::types::_audio_override_configuration::AudioOverrideConfiguration;
 
+pub use crate::types::_sensitive_data_configuration::SensitiveDataConfiguration;
+
+pub use crate::types::_pii_entities_configuration::PiiEntitiesConfiguration;
+
+pub use crate::types::_pii_redaction_mask_mode::PiiRedactionMaskMode;
+
+pub use crate::types::_pii_entity_type::PiiEntityType;
+
+pub use crate::types::_sensitive_data_detection_scope_type::SensitiveDataDetectionScopeType;
+
+pub use crate::types::_sensitive_data_detection_mode::SensitiveDataDetectionMode;
+
 pub use crate::types::_audio_language_configuration::AudioLanguageConfiguration;
 
 pub use crate::types::_audio_generative_output_language::AudioGenerativeOutputLanguage;
@@ -111,6 +123,8 @@ pub use crate::types::_document_extraction_granularity_type::DocumentExtractionG
 
 pub use crate::types::_data_automation_project::DataAutomationProject;
 
+pub use crate::types::_data_automation_project_type::DataAutomationProjectType;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_data_automation_project_summary::DataAutomationProjectSummary;
@@ -179,6 +193,8 @@ mod _data_automation_project_status;
 
 mod _data_automation_project_summary;
 
+mod _data_automation_project_type;
+
 mod _desired_modality;
 
 mod _document_bounding_box;
@@ -229,7 +245,19 @@ mod _modality_routing_configuration;
 
 mod _override_configuration;
 
+mod _pii_entities_configuration;
+
+mod _pii_entity_type;
+
+mod _pii_redaction_mask_mode;
+
 mod _resource_owner;
+
+mod _sensitive_data_configuration;
+
+mod _sensitive_data_detection_mode;
+
+mod _sensitive_data_detection_scope_type;
 
 mod _speaker_labeling_configuration;
 

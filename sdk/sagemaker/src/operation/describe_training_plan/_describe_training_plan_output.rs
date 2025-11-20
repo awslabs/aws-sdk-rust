@@ -35,13 +35,15 @@ pub struct DescribeTrainingPlanOutput {
     pub available_spare_instance_count: ::std::option::Option<i32>,
     /// <p>The total number of UltraServers reserved to this training plan.</p>
     pub total_ultra_server_count: ::std::option::Option<i32>,
-    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) that can use this training plan.</p>
+    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
     /// <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p></li>
     /// <li>
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
+    /// <li>
+    /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
     /// </ul>
     pub target_resources: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>>,
     /// <p>The list of Reserved Capacity providing the underlying compute resources of the plan.</p>
@@ -113,13 +115,15 @@ impl DescribeTrainingPlanOutput {
     pub fn total_ultra_server_count(&self) -> ::std::option::Option<i32> {
         self.total_ultra_server_count
     }
-    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) that can use this training plan.</p>
+    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
     /// <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p></li>
     /// <li>
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
+    /// <li>
+    /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_resources.is_none()`.
@@ -401,13 +405,15 @@ impl DescribeTrainingPlanOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_target_resources`](Self::set_target_resources).
     ///
-    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) that can use this training plan.</p>
+    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
     /// <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p></li>
     /// <li>
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
+    /// <li>
+    /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
     /// </ul>
     pub fn target_resources(mut self, input: crate::types::SageMakerResourceName) -> Self {
         let mut v = self.target_resources.unwrap_or_default();
@@ -415,25 +421,29 @@ impl DescribeTrainingPlanOutputBuilder {
         self.target_resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) that can use this training plan.</p>
+    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
     /// <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p></li>
     /// <li>
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
+    /// <li>
+    /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
     /// </ul>
     pub fn set_target_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>>) -> Self {
         self.target_resources = input;
         self
     }
-    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) that can use this training plan.</p>
+    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) that can use this training plan.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
     /// <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p></li>
     /// <li>
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
+    /// <li>
+    /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
     /// </ul>
     pub fn get_target_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>> {
         &self.target_resources

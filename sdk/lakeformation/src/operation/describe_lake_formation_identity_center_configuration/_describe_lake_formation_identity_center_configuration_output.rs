@@ -15,6 +15,8 @@ pub struct DescribeLakeFormationIdentityCenterConfigurationOutput {
     /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources as the <code>ShareRecipients</code>.</p>
     /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
     pub share_recipients: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>>,
     /// <p>The Amazon Resource Name (ARN) of the RAM share.</p>
     pub resource_share: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -44,6 +46,12 @@ impl DescribeLakeFormationIdentityCenterConfigurationOutput {
     pub fn share_recipients(&self) -> &[crate::types::DataLakePrincipal] {
         self.share_recipients.as_deref().unwrap_or_default()
     }
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_integrations.is_none()`.
+    pub fn service_integrations(&self) -> &[crate::types::ServiceIntegrationUnion] {
+        self.service_integrations.as_deref().unwrap_or_default()
+    }
     /// <p>The Amazon Resource Name (ARN) of the RAM share.</p>
     pub fn resource_share(&self) -> ::std::option::Option<&str> {
         self.resource_share.as_deref()
@@ -70,6 +78,7 @@ pub struct DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) external_filtering: ::std::option::Option<crate::types::ExternalFilteringConfiguration>,
     pub(crate) share_recipients: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    pub(crate) service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>>,
     pub(crate) resource_share: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -156,6 +165,26 @@ impl DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
     pub fn get_share_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
         &self.share_recipients
     }
+    /// Appends an item to `service_integrations`.
+    ///
+    /// To override the contents of this collection use [`set_service_integrations`](Self::set_service_integrations).
+    ///
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn service_integrations(mut self, input: crate::types::ServiceIntegrationUnion) -> Self {
+        let mut v = self.service_integrations.unwrap_or_default();
+        v.push(input);
+        self.service_integrations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn set_service_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>>) -> Self {
+        self.service_integrations = input;
+        self
+    }
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn get_service_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>> {
+        &self.service_integrations
+    }
     /// <p>The Amazon Resource Name (ARN) of the RAM share.</p>
     pub fn resource_share(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_share = ::std::option::Option::Some(input.into());
@@ -189,6 +218,7 @@ impl DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
             application_arn: self.application_arn,
             external_filtering: self.external_filtering,
             share_recipients: self.share_recipients,
+            service_integrations: self.service_integrations,
             resource_share: self.resource_share,
             _request_id: self._request_id,
         }

@@ -3,31 +3,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceStatesOutput {
-    /// <p>The start time of the query range, expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The start of the time period that the returned information applies to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
     pub start_time: ::aws_smithy_types::DateTime,
-    /// <p>The end time of the query range, expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The end of the time period that the returned information applies to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
     pub end_time: ::aws_smithy_types::DateTime,
-    /// <p>An array of service state objects that match the specified criteria. Each service state includes current status, recent change events, and service metadata.</p>
+    /// <p>An array of structures, where each structure contains information about the state of one service, including its latest change events such as deployments.</p>
     pub service_states: ::std::vec::Vec<crate::types::ServiceState>,
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of service states.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListServiceStatesOutput {
-    /// <p>The start time of the query range, expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The start of the time period that the returned information applies to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
     pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
         &self.start_time
     }
-    /// <p>The end time of the query range, expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The end of the time period that the returned information applies to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
     pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
         &self.end_time
     }
-    /// <p>An array of service state objects that match the specified criteria. Each service state includes current status, recent change events, and service metadata.</p>
+    /// <p>An array of structures, where each structure contains information about the state of one service, including its latest change events such as deployments.</p>
     pub fn service_states(&self) -> &[crate::types::ServiceState] {
         use std::ops::Deref;
         self.service_states.deref()
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of service states.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -55,33 +55,33 @@ pub struct ListServiceStatesOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListServiceStatesOutputBuilder {
-    /// <p>The start time of the query range, expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The start of the time period that the returned information applies to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
     /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time of the query range, expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The start of the time period that the returned information applies to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start time of the query range, expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The start of the time period that the returned information applies to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The end time of the query range, expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The end of the time period that the returned information applies to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
     /// This field is required.
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time of the query range, expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The end of the time period that the returned information applies to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time of the query range, expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The end of the time period that the returned information applies to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
@@ -89,33 +89,33 @@ impl ListServiceStatesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_service_states`](Self::set_service_states).
     ///
-    /// <p>An array of service state objects that match the specified criteria. Each service state includes current status, recent change events, and service metadata.</p>
+    /// <p>An array of structures, where each structure contains information about the state of one service, including its latest change events such as deployments.</p>
     pub fn service_states(mut self, input: crate::types::ServiceState) -> Self {
         let mut v = self.service_states.unwrap_or_default();
         v.push(input);
         self.service_states = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of service state objects that match the specified criteria. Each service state includes current status, recent change events, and service metadata.</p>
+    /// <p>An array of structures, where each structure contains information about the state of one service, including its latest change events such as deployments.</p>
     pub fn set_service_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceState>>) -> Self {
         self.service_states = input;
         self
     }
-    /// <p>An array of service state objects that match the specified criteria. Each service state includes current status, recent change events, and service metadata.</p>
+    /// <p>An array of structures, where each structure contains information about the state of one service, including its latest change events such as deployments.</p>
     pub fn get_service_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceState>> {
         &self.service_states
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of service states.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of service states.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of service states.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

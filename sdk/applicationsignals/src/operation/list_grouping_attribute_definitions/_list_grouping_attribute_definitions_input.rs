@@ -3,13 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupingAttributeDefinitionsInput {
-    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
+    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services account ID to retrieve grouping attribute definitions for. Use this when accessing grouping configurations from a different account in cross-account monitoring scenarios.</p>
+    pub aws_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include grouping attributes from source accounts in the returned data.</p>
+    pub include_linked_accounts: ::std::option::Option<bool>,
 }
 impl ListGroupingAttributeDefinitionsInput {
-    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
+    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID to retrieve grouping attribute definitions for. Use this when accessing grouping configurations from a different account in cross-account monitoring scenarios.</p>
+    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include grouping attributes from source accounts in the returned data.</p>
+    pub fn include_linked_accounts(&self) -> ::std::option::Option<bool> {
+        self.include_linked_accounts
     }
 }
 impl ListGroupingAttributeDefinitionsInput {
@@ -24,21 +36,51 @@ impl ListGroupingAttributeDefinitionsInput {
 #[non_exhaustive]
 pub struct ListGroupingAttributeDefinitionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) include_linked_accounts: ::std::option::Option<bool>,
 }
 impl ListGroupingAttributeDefinitionsInputBuilder {
-    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
+    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
+    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
+    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
+    }
+    /// <p>The Amazon Web Services account ID to retrieve grouping attribute definitions for. Use this when accessing grouping configurations from a different account in cross-account monitoring scenarios.</p>
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID to retrieve grouping attribute definitions for. Use this when accessing grouping configurations from a different account in cross-account monitoring scenarios.</p>
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID to retrieve grouping attribute definitions for. Use this when accessing grouping configurations from a different account in cross-account monitoring scenarios.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include grouping attributes from source accounts in the returned data.</p>
+    pub fn include_linked_accounts(mut self, input: bool) -> Self {
+        self.include_linked_accounts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include grouping attributes from source accounts in the returned data.</p>
+    pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_linked_accounts = input;
+        self
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include grouping attributes from source accounts in the returned data.</p>
+    pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
+        &self.include_linked_accounts
     }
     /// Consumes the builder and constructs a [`ListGroupingAttributeDefinitionsInput`](crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsInput).
     pub fn build(
@@ -48,7 +90,11 @@ impl ListGroupingAttributeDefinitionsInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
-            crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsInput { next_token: self.next_token },
+            crate::operation::list_grouping_attribute_definitions::ListGroupingAttributeDefinitionsInput {
+                next_token: self.next_token,
+                aws_account_id: self.aws_account_id,
+                include_linked_accounts: self.include_linked_accounts,
+            },
         )
     }
 }

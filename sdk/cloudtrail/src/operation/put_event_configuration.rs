@@ -284,10 +284,26 @@ pub enum PutEventConfigurationError {
     InvalidEventDataStoreCategoryException(crate::types::error::InvalidEventDataStoreCategoryException),
     /// <p>The event data store is not in a status that supports the operation.</p>
     InvalidEventDataStoreStatusException(crate::types::error::InvalidEventDataStoreStatusException),
+    /// <p>This exception is thrown when an operation is called on a trail from a Region other than the Region in which the trail was created.</p>
+    InvalidHomeRegionException(crate::types::error::InvalidHomeRegionException),
     /// <p>This exception is thrown when the combination of parameters provided is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
     /// <p>The request includes a parameter that is not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p></li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// </ul>
+    InvalidTrailNameException(crate::types::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the management account does not have a service-linked role.</p>
     NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail or event data store is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-organizations.html">Organization event data stores</a>.</p>
@@ -296,6 +312,8 @@ pub enum PutEventConfigurationError {
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the request rate exceeds the limit.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>This exception is thrown when the trail with the given name is not found.</p>
+    TrailNotFoundException(crate::types::error::TrailNotFoundException),
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -340,12 +358,15 @@ impl PutEventConfigurationError {
             Self::InsufficientIamAccessPermissionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidEventDataStoreCategoryException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidEventDataStoreStatusException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidHomeRegionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterCombinationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidTrailNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoManagementAccountSlrExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotOrganizationMasterAccountException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TrailNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -386,6 +407,10 @@ impl PutEventConfigurationError {
     pub fn is_invalid_event_data_store_status_exception(&self) -> bool {
         matches!(self, Self::InvalidEventDataStoreStatusException(_))
     }
+    /// Returns `true` if the error kind is `PutEventConfigurationError::InvalidHomeRegionException`.
+    pub fn is_invalid_home_region_exception(&self) -> bool {
+        matches!(self, Self::InvalidHomeRegionException(_))
+    }
     /// Returns `true` if the error kind is `PutEventConfigurationError::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterCombinationException(_))
@@ -393,6 +418,10 @@ impl PutEventConfigurationError {
     /// Returns `true` if the error kind is `PutEventConfigurationError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `PutEventConfigurationError::InvalidTrailNameException`.
+    pub fn is_invalid_trail_name_exception(&self) -> bool {
+        matches!(self, Self::InvalidTrailNameException(_))
     }
     /// Returns `true` if the error kind is `PutEventConfigurationError::NoManagementAccountSlrExistsException`.
     pub fn is_no_management_account_slr_exists_exception(&self) -> bool {
@@ -409,6 +438,10 @@ impl PutEventConfigurationError {
     /// Returns `true` if the error kind is `PutEventConfigurationError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `PutEventConfigurationError::TrailNotFoundException`.
+    pub fn is_trail_not_found_exception(&self) -> bool {
+        matches!(self, Self::TrailNotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutEventConfigurationError::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
@@ -427,12 +460,15 @@ impl ::std::error::Error for PutEventConfigurationError {
             Self::InsufficientIamAccessPermissionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEventDataStoreCategoryException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEventDataStoreStatusException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidHomeRegionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterCombinationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidTrailNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoManagementAccountSlrExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotOrganizationMasterAccountException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TrailNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -450,12 +486,15 @@ impl ::std::fmt::Display for PutEventConfigurationError {
             Self::InsufficientIamAccessPermissionException(_inner) => _inner.fmt(f),
             Self::InvalidEventDataStoreCategoryException(_inner) => _inner.fmt(f),
             Self::InvalidEventDataStoreStatusException(_inner) => _inner.fmt(f),
+            Self::InvalidHomeRegionException(_inner) => _inner.fmt(f),
             Self::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::InvalidTrailNameException(_inner) => _inner.fmt(f),
             Self::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             Self::NotOrganizationMasterAccountException(_inner) => _inner.fmt(f),
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::TrailNotFoundException(_inner) => _inner.fmt(f),
             Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -489,12 +528,15 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutEventConfi
             Self::InsufficientIamAccessPermissionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidEventDataStoreCategoryException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidEventDataStoreStatusException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidHomeRegionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTrailNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoManagementAccountSlrExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotOrganizationMasterAccountException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TrailNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

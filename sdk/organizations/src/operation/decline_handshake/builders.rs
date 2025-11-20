@@ -22,9 +22,9 @@ impl crate::operation::decline_handshake::builders::DeclineHandshakeInputBuilder
 }
 /// Fluent builder constructing a request to `DeclineHandshake`.
 ///
-/// <p>Declines a handshake request. This sets the handshake state to <code>DECLINED</code> and effectively deactivates the request.</p>
-/// <p>This operation can be called only from the account that received the handshake. The originator of the handshake can use <code>CancelHandshake</code> instead. The originator can't reactivate a declined request, but can reinitiate the process with a new handshake request.</p>
-/// <p>After you decline a handshake, it continues to appear in the results of relevant APIs for only 30 days. After that, it's deleted.</p>
+/// <p>Declines a <code>Handshake</code>.</p>
+/// <p>Only the account that receives a handshake can call this operation. The sender of the handshake can use <code>CancelHandshake</code> to cancel if the handshake hasn't yet been responded to.</p>
+/// <p>You can view canceled handshakes in API responses for 30 days before they are deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeclineHandshakeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,19 +110,19 @@ impl DeclineHandshakeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the ID from the <code>ListHandshakesForAccount</code> operation.</p>
+    /// <p>ID for the handshake that you want to decline. You can get the ID from the <code>ListHandshakesForAccount</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn handshake_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.handshake_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the ID from the <code>ListHandshakesForAccount</code> operation.</p>
+    /// <p>ID for the handshake that you want to decline. You can get the ID from the <code>ListHandshakesForAccount</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn set_handshake_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_handshake_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the ID from the <code>ListHandshakesForAccount</code> operation.</p>
+    /// <p>ID for the handshake that you want to decline. You can get the ID from the <code>ListHandshakesForAccount</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn get_handshake_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_handshake_id()

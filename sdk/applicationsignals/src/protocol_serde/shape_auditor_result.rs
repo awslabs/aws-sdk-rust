@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Data" => {
+                            builder = builder.set_data(crate::protocol_serde::shape_data_map::de_data_map(tokens)?);
+                        }
                         "Severity" => {
                             builder = builder.set_severity(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

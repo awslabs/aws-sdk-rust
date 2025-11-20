@@ -9,6 +9,9 @@ impl super::Client {
     ///   - [`organization_configuration(Option<OrganizationConfiguration>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::organization_configuration): <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
     ///   - [`enable_cross_accounts_discovery(Option<bool>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::enable_cross_accounts_discovery): <p>Indicates whether cross-account discovery is enabled.</p>
     ///   - [`license_manager_resource_share_arn(Option<String>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::license_manager_resource_share_arn): <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
+    ///   - [`cross_region_discovery_home_region(Option<String>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::cross_region_discovery_home_region): <p>Cross region discovery home region.</p>
+    ///   - [`cross_region_discovery_source_regions(Option<Vec::<String>>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::cross_region_discovery_source_regions): <p>Cross region discovery source regions.</p>
+    ///   - [`service_status(Option<ServiceStatus>)`](crate::operation::get_service_settings::GetServiceSettingsOutput::service_status): <p>Service status.</p>
     /// - On failure, responds with [`SdkError<GetServiceSettingsError>`](crate::operation::get_service_settings::GetServiceSettingsError)
     pub fn get_service_settings(&self) -> crate::operation::get_service_settings::builders::GetServiceSettingsFluentBuilder {
         crate::operation::get_service_settings::builders::GetServiceSettingsFluentBuilder::new(self.handle.clone())

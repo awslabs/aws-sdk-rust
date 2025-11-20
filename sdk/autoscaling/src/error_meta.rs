@@ -124,6 +124,9 @@ where
 impl From<crate::operation::attach_load_balancers::AttachLoadBalancersError> for Error {
     fn from(err: crate::operation::attach_load_balancers::AttachLoadBalancersError) -> Self {
         match err {
+            crate::operation::attach_load_balancers::AttachLoadBalancersError::InstanceRefreshInProgressFault(inner) => {
+                Error::InstanceRefreshInProgressFault(inner)
+            }
             crate::operation::attach_load_balancers::AttachLoadBalancersError::ResourceContentionFault(inner) => {
                 Error::ResourceContentionFault(inner)
             }
@@ -162,6 +165,9 @@ where
 impl From<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError> for Error {
     fn from(err: crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError) -> Self {
         match err {
+            crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError::InstanceRefreshInProgressFault(inner) => {
+                Error::InstanceRefreshInProgressFault(inner)
+            }
             crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError::ResourceContentionFault(inner) => {
                 Error::ResourceContentionFault(inner)
             }
@@ -189,6 +195,9 @@ where
 impl From<crate::operation::attach_traffic_sources::AttachTrafficSourcesError> for Error {
     fn from(err: crate::operation::attach_traffic_sources::AttachTrafficSourcesError) -> Self {
         match err {
+            crate::operation::attach_traffic_sources::AttachTrafficSourcesError::InstanceRefreshInProgressFault(inner) => {
+                Error::InstanceRefreshInProgressFault(inner)
+            }
             crate::operation::attach_traffic_sources::AttachTrafficSourcesError::ResourceContentionFault(inner) => {
                 Error::ResourceContentionFault(inner)
             }
@@ -1687,6 +1696,7 @@ where
 impl From<crate::operation::put_warm_pool::PutWarmPoolError> for Error {
     fn from(err: crate::operation::put_warm_pool::PutWarmPoolError) -> Self {
         match err {
+            crate::operation::put_warm_pool::PutWarmPoolError::InstanceRefreshInProgressFault(inner) => Error::InstanceRefreshInProgressFault(inner),
             crate::operation::put_warm_pool::PutWarmPoolError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
             crate::operation::put_warm_pool::PutWarmPoolError::ResourceContentionFault(inner) => Error::ResourceContentionFault(inner),
             crate::operation::put_warm_pool::PutWarmPoolError::Unhandled(inner) => Error::Unhandled(inner),

@@ -101,6 +101,8 @@ pub(crate) mod shape_delete_objects_input;
 
 pub(crate) mod shape_delete_public_access_block;
 
+pub(crate) mod shape_get_bucket_abac;
+
 pub(crate) mod shape_get_bucket_accelerate_configuration;
 
 pub(crate) mod shape_get_bucket_acl;
@@ -188,6 +190,10 @@ pub(crate) mod shape_list_objects;
 pub(crate) mod shape_list_objects_v2;
 
 pub(crate) mod shape_list_parts;
+
+pub(crate) mod shape_put_bucket_abac;
+
+pub(crate) mod shape_put_bucket_abac_input;
 
 pub(crate) mod shape_put_bucket_accelerate_configuration;
 
@@ -339,6 +345,8 @@ pub(crate) mod shape_delete_objects_output;
 
 pub(crate) mod shape_encryption_type_mismatch;
 
+pub(crate) mod shape_get_bucket_abac_output;
+
 pub(crate) mod shape_get_bucket_accelerate_configuration_output;
 
 pub(crate) mod shape_get_bucket_analytics_configuration_output;
@@ -448,6 +456,8 @@ pub fn parse_event_stream_error_metadata(
 ) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_xml::decode::XmlDecodeError> {
     crate::rest_xml_unwrapped_errors::parse_error_metadata(payload.as_ref())
 }
+
+pub(crate) mod shape_abac_status;
 
 pub(crate) mod shape_accelerate_configuration;
 

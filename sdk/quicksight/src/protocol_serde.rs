@@ -1589,6 +1589,8 @@ pub(crate) mod shape_filters_operation;
 
 pub(crate) mod shape_font;
 
+pub(crate) mod shape_font_configuration;
+
 pub(crate) mod shape_format_configuration;
 
 pub(crate) mod shape_iam_connection_metadata;
@@ -1667,6 +1669,8 @@ pub(crate) mod shape_semantic_table_map;
 
 pub(crate) mod shape_sheet;
 
+pub(crate) mod shape_sheet_background_style;
+
 pub(crate) mod shape_sheet_control_layout;
 
 pub(crate) mod shape_sheet_image;
@@ -1736,6 +1740,10 @@ pub(crate) mod shape_visual;
 pub(crate) mod shape_visual_custom_action_defaults;
 
 pub(crate) mod shape_visual_options;
+
+pub(crate) mod shape_visual_subtitle_font_configuration;
+
+pub(crate) mod shape_visual_title_font_configuration;
 
 pub(crate) mod shape_agg_function;
 
@@ -1870,6 +1878,10 @@ pub(crate) mod shape_filter_text_area_control;
 pub(crate) mod shape_filter_text_field_control;
 
 pub(crate) mod shape_folder_column_list;
+
+pub(crate) mod shape_font_size;
+
+pub(crate) mod shape_font_weight;
 
 pub(crate) mod shape_funnel_chart_visual;
 
@@ -2743,8 +2755,6 @@ pub(crate) mod shape_filled_map_shape_conditional_formatting;
 
 pub(crate) mod shape_filter_agg_metrics_list;
 
-pub(crate) mod shape_font_configuration;
-
 pub(crate) mod shape_forecast_computation;
 
 pub(crate) mod shape_forecast_scenario;
@@ -2772,6 +2782,10 @@ pub(crate) mod shape_geospatial_layer_definition;
 pub(crate) mod shape_geospatial_layer_join_definition;
 
 pub(crate) mod shape_geospatial_map_aggregated_field_wells;
+
+pub(crate) mod shape_grid_layout_element_background_style;
+
+pub(crate) mod shape_grid_layout_element_border_style;
 
 pub(crate) mod shape_grid_layout_screen_canvas_size_options;
 
@@ -3002,10 +3016,6 @@ pub(crate) mod shape_filter_operation_selected_fields_configuration;
 pub(crate) mod shape_filter_operation_target_visuals_configuration;
 
 pub(crate) mod shape_filtered_visuals_list;
-
-pub(crate) mod shape_font_size;
-
-pub(crate) mod shape_font_weight;
 
 pub(crate) mod shape_forecast_configuration_list;
 

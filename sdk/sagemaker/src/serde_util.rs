@@ -3737,6 +3737,66 @@ pub(crate) fn batch_describe_model_package_summary_correct_errors(
     builder
 }
 
+pub(crate) fn batch_reboot_cluster_node_logical_ids_error_correct_errors(
+    mut builder: crate::types::builders::BatchRebootClusterNodeLogicalIdsErrorBuilder,
+) -> crate::types::builders::BatchRebootClusterNodeLogicalIdsErrorBuilder {
+    if builder.node_logical_id.is_none() {
+        builder.node_logical_id = Some(Default::default())
+    }
+    if builder.error_code.is_none() {
+        builder.error_code = "no value was set".parse::<crate::types::BatchRebootClusterNodesErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_reboot_cluster_nodes_error_correct_errors(
+    mut builder: crate::types::builders::BatchRebootClusterNodesErrorBuilder,
+) -> crate::types::builders::BatchRebootClusterNodesErrorBuilder {
+    if builder.node_id.is_none() {
+        builder.node_id = Some(Default::default())
+    }
+    if builder.error_code.is_none() {
+        builder.error_code = "no value was set".parse::<crate::types::BatchRebootClusterNodesErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_replace_cluster_node_logical_ids_error_correct_errors(
+    mut builder: crate::types::builders::BatchReplaceClusterNodeLogicalIdsErrorBuilder,
+) -> crate::types::builders::BatchReplaceClusterNodeLogicalIdsErrorBuilder {
+    if builder.node_logical_id.is_none() {
+        builder.node_logical_id = Some(Default::default())
+    }
+    if builder.error_code.is_none() {
+        builder.error_code = "no value was set".parse::<crate::types::BatchReplaceClusterNodesErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_replace_cluster_nodes_error_correct_errors(
+    mut builder: crate::types::builders::BatchReplaceClusterNodesErrorBuilder,
+) -> crate::types::builders::BatchReplaceClusterNodesErrorBuilder {
+    if builder.node_id.is_none() {
+        builder.node_id = Some(Default::default())
+    }
+    if builder.error_code.is_none() {
+        builder.error_code = "no value was set".parse::<crate::types::BatchReplaceClusterNodesErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_transform_input_correct_errors(
     mut builder: crate::types::builders::BatchTransformInputBuilder,
 ) -> crate::types::builders::BatchTransformInputBuilder {
@@ -6091,6 +6151,18 @@ pub(crate) fn training_repository_auth_config_correct_errors(
 ) -> crate::types::builders::TrainingRepositoryAuthConfigBuilder {
     if builder.training_repository_credentials_provider_arn.is_none() {
         builder.training_repository_credentials_provider_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn accelerator_partition_config_correct_errors(
+    mut builder: crate::types::builders::AcceleratorPartitionConfigBuilder,
+) -> crate::types::builders::AcceleratorPartitionConfigBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::MigProfileType>().ok()
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
     }
     builder
 }

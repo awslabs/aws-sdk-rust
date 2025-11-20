@@ -39,6 +39,8 @@ pub(crate) mod shape_get_service_level_objective;
 
 pub(crate) mod shape_list_audit_findings;
 
+pub(crate) mod shape_list_entity_events;
+
 pub(crate) mod shape_list_grouping_attribute_definitions;
 
 pub(crate) mod shape_list_service_dependencies;
@@ -89,6 +91,8 @@ pub(crate) mod shape_get_service_input;
 
 pub(crate) mod shape_list_audit_findings_input;
 
+pub(crate) mod shape_list_entity_events_input;
+
 pub(crate) mod shape_list_service_dependencies_input;
 
 pub(crate) mod shape_list_service_dependents_input;
@@ -124,6 +128,8 @@ pub(crate) mod shape_audit_target;
 pub(crate) mod shape_batch_update_exclusion_windows_errors;
 
 pub(crate) mod shape_burn_rate_configuration;
+
+pub(crate) mod shape_change_events;
 
 pub(crate) mod shape_dependency_config;
 
@@ -182,6 +188,8 @@ pub(crate) mod shape_audit_target_entity;
 pub(crate) mod shape_batch_update_exclusion_windows_error;
 
 pub(crate) mod shape_burn_rate_configurations;
+
+pub(crate) mod shape_change_event;
 
 pub(crate) mod shape_interval;
 
@@ -257,8 +265,6 @@ pub(crate) mod shape_service_operation_entity;
 
 pub(crate) mod shape_auditor_result;
 
-pub(crate) mod shape_change_event;
-
 pub(crate) mod shape_dimensions;
 
 pub(crate) mod shape_edges;
@@ -270,6 +276,8 @@ pub(crate) mod shape_metric_stat;
 pub(crate) mod shape_nodes;
 
 pub(crate) mod shape_attribute_filter_values;
+
+pub(crate) mod shape_data_map;
 
 pub(crate) mod shape_dimension;
 

@@ -26,7 +26,7 @@ impl crate::operation::enable_aws_service_access::builders::EnableAwsServiceAcce
 /// <p>We recommend that you enable integration between Organizations and the specified Amazon Web Services service by using the console or commands that are provided by the specified service. Doing so ensures that the service is aware that it can create the resources that are required for the integration. How the service creates those resources in the organization's accounts depends on that service. For more information, see the documentation for the other Amazon Web Services service.</p>
 /// </important>
 /// <p>For more information about enabling services to integrate with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using Organizations with other Amazon Web Services services</a> in the <i>Organizations User Guide</i>.</p>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>You can only call this operation from the management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableAWSServiceAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

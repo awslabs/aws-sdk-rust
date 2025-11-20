@@ -153,6 +153,8 @@ pub(crate) mod shape_get_finding_statistics_v2;
 
 pub(crate) mod shape_get_findings;
 
+pub(crate) mod shape_get_findings_trends_v2;
+
 pub(crate) mod shape_get_findings_v2;
 
 pub(crate) mod shape_get_insight_results;
@@ -166,6 +168,8 @@ pub(crate) mod shape_get_master_account;
 pub(crate) mod shape_get_members;
 
 pub(crate) mod shape_get_resources_statistics_v2;
+
+pub(crate) mod shape_get_resources_trends_v2;
 
 pub(crate) mod shape_get_resources_v2;
 
@@ -325,6 +329,8 @@ pub(crate) mod shape_get_finding_statistics_v2_input;
 
 pub(crate) mod shape_get_findings_input;
 
+pub(crate) mod shape_get_findings_trends_v2_input;
+
 pub(crate) mod shape_get_findings_v2_input;
 
 pub(crate) mod shape_get_insights_input;
@@ -332,6 +338,8 @@ pub(crate) mod shape_get_insights_input;
 pub(crate) mod shape_get_members_input;
 
 pub(crate) mod shape_get_resources_statistics_v2_input;
+
+pub(crate) mod shape_get_resources_trends_v2_input;
 
 pub(crate) mod shape_get_resources_v2_input;
 
@@ -447,6 +455,8 @@ pub(crate) mod shape_finding_aggregator_list;
 
 pub(crate) mod shape_finding_history_record_list;
 
+pub(crate) mod shape_findings_trends_filters;
+
 pub(crate) mod shape_group_by_results;
 
 pub(crate) mod shape_group_by_rule;
@@ -499,6 +509,10 @@ pub(crate) mod shape_resources;
 
 pub(crate) mod shape_resources_filters;
 
+pub(crate) mod shape_resources_trends_filters;
+
+pub(crate) mod shape_resources_trends_metrics;
+
 pub(crate) mod shape_result_list;
 
 pub(crate) mod shape_security_control_definition;
@@ -532,6 +546,8 @@ pub(crate) mod shape_string_list;
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_target;
+
+pub(crate) mod shape_trends_metrics;
 
 pub(crate) mod shape_unprocessed_automation_rules_list;
 
@@ -597,6 +613,8 @@ pub(crate) mod shape_finding_history_record;
 
 pub(crate) mod shape_finding_provider_fields;
 
+pub(crate) mod shape_findings_trends_composite_filter;
+
 pub(crate) mod shape_generator_details;
 
 pub(crate) mod shape_group_by_result;
@@ -651,6 +669,10 @@ pub(crate) mod shape_resource_result;
 
 pub(crate) mod shape_resources_composite_filter;
 
+pub(crate) mod shape_resources_trends_composite_filter;
+
+pub(crate) mod shape_resources_trends_metrics_result;
+
 pub(crate) mod shape_result;
 
 pub(crate) mod shape_security_control;
@@ -678,6 +700,8 @@ pub(crate) mod shape_string_filter;
 pub(crate) mod shape_threat;
 
 pub(crate) mod shape_threat_intel_indicator;
+
+pub(crate) mod shape_trends_metrics_result;
 
 pub(crate) mod shape_unprocessed_automation_rule;
 
@@ -724,6 +748,8 @@ pub(crate) mod shape_finding_history_update_source;
 pub(crate) mod shape_finding_history_updates_list;
 
 pub(crate) mod shape_finding_provider_severity;
+
+pub(crate) mod shape_findings_trends_string_filter;
 
 pub(crate) mod shape_group_by_values;
 
@@ -785,6 +811,10 @@ pub(crate) mod shape_resources_number_filter;
 
 pub(crate) mod shape_resources_string_filter;
 
+pub(crate) mod shape_resources_trends_string_filter;
+
+pub(crate) mod shape_resources_trends_values;
+
 pub(crate) mod shape_security_control_parameter;
 
 pub(crate) mod shape_security_controls_configuration;
@@ -806,6 +836,8 @@ pub(crate) mod shape_status_reason;
 pub(crate) mod shape_threat_intel_indicator_list;
 
 pub(crate) mod shape_threat_list;
+
+pub(crate) mod shape_trends_values;
 
 pub(crate) mod shape_type_list;
 
@@ -1067,11 +1099,15 @@ pub(crate) mod shape_resource_findings_summary;
 
 pub(crate) mod shape_resource_tag;
 
+pub(crate) mod shape_resources_count;
+
 pub(crate) mod shape_security_control_custom_parameter;
 
 pub(crate) mod shape_security_control_custom_parameters_list;
 
 pub(crate) mod shape_security_control_parameters_list;
+
+pub(crate) mod shape_severity_trends_count;
 
 pub(crate) mod shape_signal;
 

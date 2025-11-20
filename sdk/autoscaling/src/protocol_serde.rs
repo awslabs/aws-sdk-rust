@@ -305,6 +305,8 @@ pub(crate) mod shape_filter;
 
 pub(crate) mod shape_idempotent_parameter_mismatch_error;
 
+pub(crate) mod shape_instance_lifecycle_policy;
+
 pub(crate) mod shape_instance_maintenance_policy;
 
 pub(crate) mod shape_instance_metadata_options;
@@ -408,6 +410,8 @@ pub(crate) mod shape_predefined_metric_specification;
 pub(crate) mod shape_predictive_scaling_metric_specification;
 
 pub(crate) mod shape_processes;
+
+pub(crate) mod shape_retention_triggers;
 
 pub(crate) mod shape_scaling_policies;
 

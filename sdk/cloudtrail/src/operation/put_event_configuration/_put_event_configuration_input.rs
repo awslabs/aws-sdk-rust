@@ -3,15 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEventConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to update event configuration settings.</p>
+    /// <p>The name of the trail for which you want to update event configuration settings.</p>
+    pub trail_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which event configuration settings are updated.</p>
     pub event_data_store: ::std::option::Option<::std::string::String>,
     /// <p>The maximum allowed size for events to be stored in the specified event data store. If you are using context key selectors, MaxEventSize must be set to Large.</p>
     pub max_event_size: ::std::option::Option<crate::types::MaxEventSize>,
     /// <p>A list of context key selectors that will be included to provide enriched event data.</p>
     pub context_key_selectors: ::std::option::Option<::std::vec::Vec<crate::types::ContextKeySelector>>,
+    /// <p>The list of aggregation configurations that you want to configure for the trail.</p>
+    pub aggregation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>,
 }
 impl PutEventConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to update event configuration settings.</p>
+    /// <p>The name of the trail for which you want to update event configuration settings.</p>
+    pub fn trail_name(&self) -> ::std::option::Option<&str> {
+        self.trail_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which event configuration settings are updated.</p>
     pub fn event_data_store(&self) -> ::std::option::Option<&str> {
         self.event_data_store.as_deref()
     }
@@ -25,6 +33,12 @@ impl PutEventConfigurationInput {
     pub fn context_key_selectors(&self) -> &[crate::types::ContextKeySelector] {
         self.context_key_selectors.as_deref().unwrap_or_default()
     }
+    /// <p>The list of aggregation configurations that you want to configure for the trail.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregation_configurations.is_none()`.
+    pub fn aggregation_configurations(&self) -> &[crate::types::AggregationConfiguration] {
+        self.aggregation_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl PutEventConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutEventConfigurationInput`](crate::operation::put_event_configuration::PutEventConfigurationInput).
@@ -37,27 +51,42 @@ impl PutEventConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct PutEventConfigurationInputBuilder {
+    pub(crate) trail_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) max_event_size: ::std::option::Option<crate::types::MaxEventSize>,
     pub(crate) context_key_selectors: ::std::option::Option<::std::vec::Vec<crate::types::ContextKeySelector>>,
+    pub(crate) aggregation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>,
 }
 impl PutEventConfigurationInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to update event configuration settings.</p>
+    /// <p>The name of the trail for which you want to update event configuration settings.</p>
+    pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trail_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the trail for which you want to update event configuration settings.</p>
+    pub fn set_trail_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trail_name = input;
+        self
+    }
+    /// <p>The name of the trail for which you want to update event configuration settings.</p>
+    pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trail_name
+    }
+    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which event configuration settings are updated.</p>
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to update event configuration settings.</p>
+    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which event configuration settings are updated.</p>
     pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data_store = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to update event configuration settings.</p>
+    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which event configuration settings are updated.</p>
     pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_data_store
     }
     /// <p>The maximum allowed size for events to be stored in the specified event data store. If you are using context key selectors, MaxEventSize must be set to Large.</p>
-    /// This field is required.
     pub fn max_event_size(mut self, input: crate::types::MaxEventSize) -> Self {
         self.max_event_size = ::std::option::Option::Some(input);
         self
@@ -91,15 +120,37 @@ impl PutEventConfigurationInputBuilder {
     pub fn get_context_key_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContextKeySelector>> {
         &self.context_key_selectors
     }
+    /// Appends an item to `aggregation_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_aggregation_configurations`](Self::set_aggregation_configurations).
+    ///
+    /// <p>The list of aggregation configurations that you want to configure for the trail.</p>
+    pub fn aggregation_configurations(mut self, input: crate::types::AggregationConfiguration) -> Self {
+        let mut v = self.aggregation_configurations.unwrap_or_default();
+        v.push(input);
+        self.aggregation_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of aggregation configurations that you want to configure for the trail.</p>
+    pub fn set_aggregation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>) -> Self {
+        self.aggregation_configurations = input;
+        self
+    }
+    /// <p>The list of aggregation configurations that you want to configure for the trail.</p>
+    pub fn get_aggregation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>> {
+        &self.aggregation_configurations
+    }
     /// Consumes the builder and constructs a [`PutEventConfigurationInput`](crate::operation::put_event_configuration::PutEventConfigurationInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_event_configuration::PutEventConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_event_configuration::PutEventConfigurationInput {
+            trail_name: self.trail_name,
             event_data_store: self.event_data_store,
             max_event_size: self.max_event_size,
             context_key_selectors: self.context_key_selectors,
+            aggregation_configurations: self.aggregation_configurations,
         })
     }
 }

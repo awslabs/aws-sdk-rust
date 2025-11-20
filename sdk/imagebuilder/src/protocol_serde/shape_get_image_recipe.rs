@@ -148,6 +148,11 @@ pub(crate) fn de_get_image_recipe(
                 "imageRecipe" => {
                     builder = builder.set_image_recipe(crate::protocol_serde::shape_image_recipe::de_image_recipe(tokens)?);
                 }
+                "latestVersionReferences" => {
+                    builder = builder.set_latest_version_references(
+                        crate::protocol_serde::shape_latest_version_references::de_latest_version_references(tokens)?,
+                    );
+                }
                 "requestId" => {
                     builder = builder.set_request_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

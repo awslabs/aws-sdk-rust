@@ -12,6 +12,25 @@ pub fn ser_report_context(
         }
         array_1.finish();
     }
+    if let Some(var_3) = &input.license_asset_group_arns {
+        let mut array_4 = object.key("licenseAssetGroupArns").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_6) = &input.report_start_date {
+        object
+            .key("reportStartDate")
+            .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
+    if let Some(var_7) = &input.report_end_date {
+        object
+            .key("reportEndDate")
+            .date_time(var_7, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
     Ok(())
 }
 
@@ -33,6 +52,21 @@ where
                         "licenseConfigurationArns" => {
                             builder = builder.set_license_configuration_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens)?);
                         }
+                        "licenseAssetGroupArns" => {
+                            builder = builder.set_license_asset_group_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens)?);
+                        }
+                        "reportStartDate" => {
+                            builder = builder.set_report_start_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "reportEndDate" => {
+                            builder = builder.set_report_end_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -42,9 +76,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::report_context_correct_errors(builder).build().map_err(
-                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
-            )?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

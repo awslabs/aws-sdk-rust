@@ -13,6 +13,7 @@
 /// # let ipampoolawsservice = unimplemented!();
 /// match ipampoolawsservice {
 ///     IpamPoolAwsService::Ec2 => { /* ... */ },
+///     IpamPoolAwsService::GlobalServices => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum IpamPoolAwsService {
     #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
+    GlobalServices,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for IpamPoolAwsService {
     fn from(s: &str) -> Self {
         match s {
             "ec2" => IpamPoolAwsService::Ec2,
+            "global-services" => IpamPoolAwsService::GlobalServices,
             other => IpamPoolAwsService::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl IpamPoolAwsService {
     pub fn as_str(&self) -> &str {
         match self {
             IpamPoolAwsService::Ec2 => "ec2",
+            IpamPoolAwsService::GlobalServices => "global-services",
             IpamPoolAwsService::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ec2"]
+        &["ec2", "global-services"]
     }
 }
 impl ::std::convert::AsRef<str> for IpamPoolAwsService {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for IpamPoolAwsService {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IpamPoolAwsService::Ec2 => write!(f, "ec2"),
+            IpamPoolAwsService::GlobalServices => write!(f, "global-services"),
             IpamPoolAwsService::Unknown(value) => write!(f, "{value}"),
         }
     }

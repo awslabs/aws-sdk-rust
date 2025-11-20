@@ -23,7 +23,7 @@ impl crate::operation::leave_organization::builders::LeaveOrganizationInputBuild
 /// Fluent builder constructing a request to `LeaveOrganization`.
 ///
 /// <p>Removes a member account from its parent organization. This version of the operation is performed by the account that wants to leave. To remove a member account as a user in the management account, use <code>RemoveAccountFromOrganization</code> instead.</p>
-/// <p>This operation can be called only from a member account in the organization.</p><important>
+/// <p>You can only call from operation from a member account.</p><important>
 /// <ul>
 /// <li>
 /// <p>The management account in an organization with all features enabled can set service control policies (SCPs) that can restrict what administrators of member accounts can do. This includes preventing them from successfully calling <code>LeaveOrganization</code> and leaving the organization.</p></li>

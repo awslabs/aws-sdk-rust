@@ -50,6 +50,21 @@ pub fn de_create_workflow_http_error(
             }
             tmp
         }),
+        "DryRunOperationException" => crate::operation::create_workflow::CreateWorkflowError::DryRunOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DryRunOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_dry_run_operation_exception::de_dry_run_operation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_workflow::CreateWorkflowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ForbiddenException" => crate::operation::create_workflow::CreateWorkflowError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -247,6 +262,11 @@ pub(crate) fn de_create_workflow(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                    );
+                }
+                "latestVersionReferences" => {
+                    builder = builder.set_latest_version_references(
+                        crate::protocol_serde::shape_latest_version_references::de_latest_version_references(tokens)?,
                     );
                 }
                 "workflowBuildVersionArn" => {

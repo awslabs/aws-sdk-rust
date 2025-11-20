@@ -19,6 +19,10 @@ pub struct Step {
     /// <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
     /// <p>For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon S3 destination URI for log publishing.</p>
+    pub log_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
+    pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl Step {
     /// <p>The identifier of the cluster step.</p>
@@ -48,6 +52,14 @@ impl Step {
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
+    /// <p>The Amazon S3 destination URI for log publishing.</p>
+    pub fn log_uri(&self) -> ::std::option::Option<&str> {
+        self.log_uri.as_deref()
+    }
+    /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
 }
 impl Step {
     /// Creates a new builder-style object to manufacture [`Step`](crate::types::Step).
@@ -66,6 +78,8 @@ pub struct StepBuilder {
     pub(crate) action_on_failure: ::std::option::Option<crate::types::ActionOnFailure>,
     pub(crate) status: ::std::option::Option<crate::types::StepStatus>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) log_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl StepBuilder {
     /// <p>The identifier of the cluster step.</p>
@@ -161,6 +175,34 @@ impl StepBuilder {
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
+    /// <p>The Amazon S3 destination URI for log publishing.</p>
+    pub fn log_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon S3 destination URI for log publishing.</p>
+    pub fn set_log_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.log_uri = input;
+        self
+    }
+    /// <p>The Amazon S3 destination URI for log publishing.</p>
+    pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_uri
+    }
+    /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.encryption_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.encryption_key_arn = input;
+        self
+    }
+    /// <p>The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
+    }
     /// Consumes the builder and constructs a [`Step`](crate::types::Step).
     pub fn build(self) -> crate::types::Step {
         crate::types::Step {
@@ -170,6 +212,8 @@ impl StepBuilder {
             action_on_failure: self.action_on_failure,
             status: self.status,
             execution_role_arn: self.execution_role_arn,
+            log_uri: self.log_uri,
+            encryption_key_arn: self.encryption_key_arn,
         }
     }
 }

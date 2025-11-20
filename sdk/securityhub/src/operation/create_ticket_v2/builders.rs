@@ -22,7 +22,7 @@ impl crate::operation::create_ticket_v2::builders::CreateTicketV2InputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTicketV2`.
 ///
-/// <p>Grants permission to create a ticket in the chosen ITSM based on finding information for the provided finding metadata UID. This API is in preview release and subject to change.</p>
+/// <p>Grants permission to create a ticket in the chosen ITSM based on finding information for the provided finding metadata UID. This API is in public preview and subject to change.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTicketV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

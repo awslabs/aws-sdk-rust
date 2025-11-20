@@ -24,7 +24,7 @@ impl crate::operation::register_delegated_administrator::builders::RegisterDeleg
 ///
 /// <p>Enables the specified member account to administer the Organizations features of the specified Amazon Web Services service. It grants read-only access to Organizations service data. The account still requires IAM permissions to access and administer the Amazon Web Services service.</p>
 /// <p>You can run this action only for Amazon Web Services services that support this feature. For a current list of services that support it, see the column <i>Supports Delegated Administrator</i> in the table at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">Amazon Web Services Services that you can use with Organizations</a> in the <i>Organizations User Guide.</i></p>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>You can only call this operation from the management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterDelegatedAdministratorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

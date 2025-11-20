@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_get_data_automation_status;
 
+pub(crate) mod shape_invoke_data_automation;
+
 pub(crate) mod shape_invoke_data_automation_async;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -49,11 +51,15 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invoke_data_automation_async_input;
 
+pub(crate) mod shape_invoke_data_automation_input;
+
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -75,6 +81,10 @@ pub(crate) mod shape_notification_configuration;
 
 pub(crate) mod shape_output_configuration;
 
+pub(crate) mod shape_output_segment_list;
+
+pub(crate) mod shape_sync_input_configuration;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
@@ -82,6 +92,8 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_asset_processing_configuration;
 
 pub(crate) mod shape_event_bridge_configuration;
+
+pub(crate) mod shape_output_segment;
 
 pub(crate) mod shape_video_asset_processing_configuration;
 

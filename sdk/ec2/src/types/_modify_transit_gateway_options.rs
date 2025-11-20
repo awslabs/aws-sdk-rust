@@ -40,6 +40,8 @@ pub struct ModifyTransitGatewayOptions {
     /// </ul>
     /// <p>You must first delete all transit gateway attachments configured prior to modifying the ASN on the transit gateway.</p>
     pub amazon_side_asn: ::std::option::Option<i64>,
+    /// <p>Enable or disable encryption support for VPC Encryption Control.</p>
+    pub encryption_support: ::std::option::Option<crate::types::EncryptionSupportOptionValue>,
 }
 impl ModifyTransitGatewayOptions {
     /// <p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>
@@ -104,6 +106,10 @@ impl ModifyTransitGatewayOptions {
     pub fn amazon_side_asn(&self) -> ::std::option::Option<i64> {
         self.amazon_side_asn
     }
+    /// <p>Enable or disable encryption support for VPC Encryption Control.</p>
+    pub fn encryption_support(&self) -> ::std::option::Option<&crate::types::EncryptionSupportOptionValue> {
+        self.encryption_support.as_ref()
+    }
 }
 impl ModifyTransitGatewayOptions {
     /// Creates a new builder-style object to manufacture [`ModifyTransitGatewayOptions`](crate::types::ModifyTransitGatewayOptions).
@@ -127,6 +133,7 @@ pub struct ModifyTransitGatewayOptionsBuilder {
     pub(crate) default_route_table_propagation: ::std::option::Option<crate::types::DefaultRouteTablePropagationValue>,
     pub(crate) propagation_default_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) amazon_side_asn: ::std::option::Option<i64>,
+    pub(crate) encryption_support: ::std::option::Option<crate::types::EncryptionSupportOptionValue>,
 }
 impl ModifyTransitGatewayOptionsBuilder {
     /// Appends an item to `add_transit_gateway_cidr_blocks`.
@@ -340,6 +347,20 @@ impl ModifyTransitGatewayOptionsBuilder {
     pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
         &self.amazon_side_asn
     }
+    /// <p>Enable or disable encryption support for VPC Encryption Control.</p>
+    pub fn encryption_support(mut self, input: crate::types::EncryptionSupportOptionValue) -> Self {
+        self.encryption_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enable or disable encryption support for VPC Encryption Control.</p>
+    pub fn set_encryption_support(mut self, input: ::std::option::Option<crate::types::EncryptionSupportOptionValue>) -> Self {
+        self.encryption_support = input;
+        self
+    }
+    /// <p>Enable or disable encryption support for VPC Encryption Control.</p>
+    pub fn get_encryption_support(&self) -> &::std::option::Option<crate::types::EncryptionSupportOptionValue> {
+        &self.encryption_support
+    }
     /// Consumes the builder and constructs a [`ModifyTransitGatewayOptions`](crate::types::ModifyTransitGatewayOptions).
     pub fn build(self) -> crate::types::ModifyTransitGatewayOptions {
         crate::types::ModifyTransitGatewayOptions {
@@ -354,6 +375,7 @@ impl ModifyTransitGatewayOptionsBuilder {
             default_route_table_propagation: self.default_route_table_propagation,
             propagation_default_route_table_id: self.propagation_default_route_table_id,
             amazon_side_asn: self.amazon_side_asn,
+            encryption_support: self.encryption_support,
         }
     }
 }

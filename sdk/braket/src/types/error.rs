@@ -7,13 +7,13 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_internal_service_exception::InternalServiceException;
 
-pub use crate::types::error::_conflict_exception::ConflictException;
-
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
-pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
-
 pub use crate::types::error::_device_retired_exception::DeviceRetiredException;
+
+pub use crate::types::error::_conflict_exception::ConflictException;
+
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
 pub use crate::types::error::_device_offline_exception::DeviceOfflineException;
 

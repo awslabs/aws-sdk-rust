@@ -12,6 +12,14 @@ pub struct CloudWatchLogOptions {
     /// <p>Configured log format. Default format is <code>json</code>.</p>
     /// <p>Valid values: <code>json</code> | <code>text</code></p>
     pub log_output_format: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether Border Gateway Protocol (BGP) logging is enabled for the VPN connection. Default value is <code>False</code>.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code></p>
+    pub bgp_log_enabled: ::std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch log group for BGP logs.</p>
+    pub bgp_log_group_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The output format for BGP logs sent to CloudWatch. Default format is <code>json</code>.</p>
+    /// <p>Valid values: <code>json</code> | <code>text</code></p>
+    pub bgp_log_output_format: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogOptions {
     /// <p>Status of VPN tunnel logging feature. Default value is <code>False</code>.</p>
@@ -28,6 +36,20 @@ impl CloudWatchLogOptions {
     pub fn log_output_format(&self) -> ::std::option::Option<&str> {
         self.log_output_format.as_deref()
     }
+    /// <p>Indicates whether Border Gateway Protocol (BGP) logging is enabled for the VPN connection. Default value is <code>False</code>.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code></p>
+    pub fn bgp_log_enabled(&self) -> ::std::option::Option<bool> {
+        self.bgp_log_enabled
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch log group for BGP logs.</p>
+    pub fn bgp_log_group_arn(&self) -> ::std::option::Option<&str> {
+        self.bgp_log_group_arn.as_deref()
+    }
+    /// <p>The output format for BGP logs sent to CloudWatch. Default format is <code>json</code>.</p>
+    /// <p>Valid values: <code>json</code> | <code>text</code></p>
+    pub fn bgp_log_output_format(&self) -> ::std::option::Option<&str> {
+        self.bgp_log_output_format.as_deref()
+    }
 }
 impl CloudWatchLogOptions {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogOptions`](crate::types::CloudWatchLogOptions).
@@ -43,6 +65,9 @@ pub struct CloudWatchLogOptionsBuilder {
     pub(crate) log_enabled: ::std::option::Option<bool>,
     pub(crate) log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_output_format: ::std::option::Option<::std::string::String>,
+    pub(crate) bgp_log_enabled: ::std::option::Option<bool>,
+    pub(crate) bgp_log_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) bgp_log_output_format: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogOptionsBuilder {
     /// <p>Status of VPN tunnel logging feature. Default value is <code>False</code>.</p>
@@ -93,12 +118,63 @@ impl CloudWatchLogOptionsBuilder {
     pub fn get_log_output_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_output_format
     }
+    /// <p>Indicates whether Border Gateway Protocol (BGP) logging is enabled for the VPN connection. Default value is <code>False</code>.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code></p>
+    pub fn bgp_log_enabled(mut self, input: bool) -> Self {
+        self.bgp_log_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Border Gateway Protocol (BGP) logging is enabled for the VPN connection. Default value is <code>False</code>.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code></p>
+    pub fn set_bgp_log_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.bgp_log_enabled = input;
+        self
+    }
+    /// <p>Indicates whether Border Gateway Protocol (BGP) logging is enabled for the VPN connection. Default value is <code>False</code>.</p>
+    /// <p>Valid values: <code>True</code> | <code>False</code></p>
+    pub fn get_bgp_log_enabled(&self) -> &::std::option::Option<bool> {
+        &self.bgp_log_enabled
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch log group for BGP logs.</p>
+    pub fn bgp_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bgp_log_group_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch log group for BGP logs.</p>
+    pub fn set_bgp_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bgp_log_group_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch log group for BGP logs.</p>
+    pub fn get_bgp_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bgp_log_group_arn
+    }
+    /// <p>The output format for BGP logs sent to CloudWatch. Default format is <code>json</code>.</p>
+    /// <p>Valid values: <code>json</code> | <code>text</code></p>
+    pub fn bgp_log_output_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bgp_log_output_format = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The output format for BGP logs sent to CloudWatch. Default format is <code>json</code>.</p>
+    /// <p>Valid values: <code>json</code> | <code>text</code></p>
+    pub fn set_bgp_log_output_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bgp_log_output_format = input;
+        self
+    }
+    /// <p>The output format for BGP logs sent to CloudWatch. Default format is <code>json</code>.</p>
+    /// <p>Valid values: <code>json</code> | <code>text</code></p>
+    pub fn get_bgp_log_output_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bgp_log_output_format
+    }
     /// Consumes the builder and constructs a [`CloudWatchLogOptions`](crate::types::CloudWatchLogOptions).
     pub fn build(self) -> crate::types::CloudWatchLogOptions {
         crate::types::CloudWatchLogOptions {
             log_enabled: self.log_enabled,
             log_group_arn: self.log_group_arn,
             log_output_format: self.log_output_format,
+            bgp_log_enabled: self.bgp_log_enabled,
+            bgp_log_group_arn: self.bgp_log_group_arn,
+            bgp_log_output_format: self.bgp_log_output_format,
         }
     }
 }

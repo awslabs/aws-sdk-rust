@@ -23,7 +23,7 @@ impl crate::operation::describe_organization::builders::DescribeOrganizationInpu
 /// Fluent builder constructing a request to `DescribeOrganization`.
 ///
 /// <p>Retrieves information about the organization that the user's account belongs to.</p>
-/// <p>This operation can be called from any account in the organization.</p><note>
+/// <p>You can call this operation from any account in a organization.</p><note>
 /// <p>Even if a policy type is shown as available in the organization, you can disable it separately at the root level with <code>DisablePolicyType</code>. Use <code>ListRoots</code> to see the status of policy types for a specified root.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

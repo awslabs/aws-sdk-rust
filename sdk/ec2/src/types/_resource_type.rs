@@ -90,6 +90,7 @@
 ///     ResourceType::TransitGateway => { /* ... */ },
 ///     ResourceType::TransitGatewayAttachment => { /* ... */ },
 ///     ResourceType::TransitGatewayConnectPeer => { /* ... */ },
+///     ResourceType::TransitGatewayMeteringPolicy => { /* ... */ },
 ///     ResourceType::TransitGatewayMulticastDomain => { /* ... */ },
 ///     ResourceType::TransitGatewayPolicyTable => { /* ... */ },
 ///     ResourceType::TransitGatewayRouteTable => { /* ... */ },
@@ -103,6 +104,7 @@
 ///     ResourceType::Volume => { /* ... */ },
 ///     ResourceType::Vpc => { /* ... */ },
 ///     ResourceType::VpcBlockPublicAccessExclusion => { /* ... */ },
+///     ResourceType::VpcEncryptionControl => { /* ... */ },
 ///     ResourceType::VpcEndpoint => { /* ... */ },
 ///     ResourceType::VpcEndpointConnection => { /* ... */ },
 ///     ResourceType::VpcEndpointConnectionDeviceType => { /* ... */ },
@@ -299,6 +301,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     TransitGatewayConnectPeer,
     #[allow(missing_docs)] // documentation missing in model
+    TransitGatewayMeteringPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     TransitGatewayMulticastDomain,
     #[allow(missing_docs)] // documentation missing in model
     TransitGatewayPolicyTable,
@@ -324,6 +328,8 @@ pub enum ResourceType {
     Vpc,
     #[allow(missing_docs)] // documentation missing in model
     VpcBlockPublicAccessExclusion,
+    #[allow(missing_docs)] // documentation missing in model
+    VpcEncryptionControl,
     #[allow(missing_docs)] // documentation missing in model
     VpcEndpoint,
     #[allow(missing_docs)] // documentation missing in model
@@ -431,6 +437,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "transit-gateway" => ResourceType::TransitGateway,
             "transit-gateway-attachment" => ResourceType::TransitGatewayAttachment,
             "transit-gateway-connect-peer" => ResourceType::TransitGatewayConnectPeer,
+            "transit-gateway-metering-policy" => ResourceType::TransitGatewayMeteringPolicy,
             "transit-gateway-multicast-domain" => ResourceType::TransitGatewayMulticastDomain,
             "transit-gateway-policy-table" => ResourceType::TransitGatewayPolicyTable,
             "transit-gateway-route-table" => ResourceType::TransitGatewayRouteTable,
@@ -444,6 +451,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "volume" => ResourceType::Volume,
             "vpc" => ResourceType::Vpc,
             "vpc-block-public-access-exclusion" => ResourceType::VpcBlockPublicAccessExclusion,
+            "vpc-encryption-control" => ResourceType::VpcEncryptionControl,
             "vpc-endpoint" => ResourceType::VpcEndpoint,
             "vpc-endpoint-connection" => ResourceType::VpcEndpointConnection,
             "vpc-endpoint-connection-device-type" => ResourceType::VpcEndpointConnectionDeviceType,
@@ -548,6 +556,7 @@ impl ResourceType {
             ResourceType::TransitGateway => "transit-gateway",
             ResourceType::TransitGatewayAttachment => "transit-gateway-attachment",
             ResourceType::TransitGatewayConnectPeer => "transit-gateway-connect-peer",
+            ResourceType::TransitGatewayMeteringPolicy => "transit-gateway-metering-policy",
             ResourceType::TransitGatewayMulticastDomain => "transit-gateway-multicast-domain",
             ResourceType::TransitGatewayPolicyTable => "transit-gateway-policy-table",
             ResourceType::TransitGatewayRouteTable => "transit-gateway-route-table",
@@ -561,6 +570,7 @@ impl ResourceType {
             ResourceType::Volume => "volume",
             ResourceType::Vpc => "vpc",
             ResourceType::VpcBlockPublicAccessExclusion => "vpc-block-public-access-exclusion",
+            ResourceType::VpcEncryptionControl => "vpc-encryption-control",
             ResourceType::VpcEndpoint => "vpc-endpoint",
             ResourceType::VpcEndpointConnection => "vpc-endpoint-connection",
             ResourceType::VpcEndpointConnectionDeviceType => "vpc-endpoint-connection-device-type",
@@ -656,6 +666,7 @@ impl ResourceType {
             "transit-gateway",
             "transit-gateway-attachment",
             "transit-gateway-connect-peer",
+            "transit-gateway-metering-policy",
             "transit-gateway-multicast-domain",
             "transit-gateway-policy-table",
             "transit-gateway-route-table",
@@ -669,6 +680,7 @@ impl ResourceType {
             "volume",
             "vpc",
             "vpc-block-public-access-exclusion",
+            "vpc-encryption-control",
             "vpc-endpoint",
             "vpc-endpoint-connection",
             "vpc-endpoint-connection-device-type",
@@ -783,6 +795,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::TransitGateway => write!(f, "transit-gateway"),
             ResourceType::TransitGatewayAttachment => write!(f, "transit-gateway-attachment"),
             ResourceType::TransitGatewayConnectPeer => write!(f, "transit-gateway-connect-peer"),
+            ResourceType::TransitGatewayMeteringPolicy => write!(f, "transit-gateway-metering-policy"),
             ResourceType::TransitGatewayMulticastDomain => write!(f, "transit-gateway-multicast-domain"),
             ResourceType::TransitGatewayPolicyTable => write!(f, "transit-gateway-policy-table"),
             ResourceType::TransitGatewayRouteTable => write!(f, "transit-gateway-route-table"),
@@ -796,6 +809,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Volume => write!(f, "volume"),
             ResourceType::Vpc => write!(f, "vpc"),
             ResourceType::VpcBlockPublicAccessExclusion => write!(f, "vpc-block-public-access-exclusion"),
+            ResourceType::VpcEncryptionControl => write!(f, "vpc-encryption-control"),
             ResourceType::VpcEndpoint => write!(f, "vpc-endpoint"),
             ResourceType::VpcEndpointConnection => write!(f, "vpc-endpoint-connection"),
             ResourceType::VpcEndpointConnectionDeviceType => write!(f, "vpc-endpoint-connection-device-type"),

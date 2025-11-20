@@ -23,6 +23,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::create_container_recipe::CreateContainerRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::create_container_recipe::CreateContainerRecipeOutput::client_token): <p>The client token that uniquely identifies the request.</p>
     ///   - [`container_recipe_arn(Option<String>)`](crate::operation::create_container_recipe::CreateContainerRecipeOutput::container_recipe_arn): <p>Returns the Amazon Resource Name (ARN) of the container recipe that the request created.</p>
+    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::create_container_recipe::CreateContainerRecipeOutput::latest_version_references): <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
     /// - On failure, responds with [`SdkError<CreateContainerRecipeError>`](crate::operation::create_container_recipe::CreateContainerRecipeError)
     pub fn create_container_recipe(&self) -> crate::operation::create_container_recipe::builders::CreateContainerRecipeFluentBuilder {
         crate::operation::create_container_recipe::builders::CreateContainerRecipeFluentBuilder::new(self.handle.clone())

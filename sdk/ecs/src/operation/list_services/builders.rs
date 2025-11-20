@@ -190,4 +190,18 @@ impl ListServicesFluentBuilder {
     pub fn get_scheduling_strategy(&self) -> &::std::option::Option<crate::types::SchedulingStrategy> {
         self.inner.get_scheduling_strategy()
     }
+    /// <p>The resourceManagementType type to use when filtering the <code>ListServices</code> results.</p>
+    pub fn resource_management_type(mut self, input: crate::types::ResourceManagementType) -> Self {
+        self.inner = self.inner.resource_management_type(input);
+        self
+    }
+    /// <p>The resourceManagementType type to use when filtering the <code>ListServices</code> results.</p>
+    pub fn set_resource_management_type(mut self, input: ::std::option::Option<crate::types::ResourceManagementType>) -> Self {
+        self.inner = self.inner.set_resource_management_type(input);
+        self
+    }
+    /// <p>The resourceManagementType type to use when filtering the <code>ListServices</code> results.</p>
+    pub fn get_resource_management_type(&self) -> &::std::option::Option<crate::types::ResourceManagementType> {
+        self.inner.get_resource_management_type()
+    }
 }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyOutput {
-    /// <p>The ARN of the image lifecycle policy resource that was returned.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image lifecycle policy resource that was returned.</p>
     pub lifecycle_policy: ::std::option::Option<crate::types::LifecyclePolicy>,
     _request_id: Option<String>,
 }
 impl GetLifecyclePolicyOutput {
-    /// <p>The ARN of the image lifecycle policy resource that was returned.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image lifecycle policy resource that was returned.</p>
     pub fn lifecycle_policy(&self) -> ::std::option::Option<&crate::types::LifecyclePolicy> {
         self.lifecycle_policy.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetLifecyclePolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetLifecyclePolicyOutputBuilder {
-    /// <p>The ARN of the image lifecycle policy resource that was returned.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image lifecycle policy resource that was returned.</p>
     pub fn lifecycle_policy(mut self, input: crate::types::LifecyclePolicy) -> Self {
         self.lifecycle_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ARN of the image lifecycle policy resource that was returned.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image lifecycle policy resource that was returned.</p>
     pub fn set_lifecycle_policy(mut self, input: ::std::option::Option<crate::types::LifecyclePolicy>) -> Self {
         self.lifecycle_policy = input;
         self
     }
-    /// <p>The ARN of the image lifecycle policy resource that was returned.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image lifecycle policy resource that was returned.</p>
     pub fn get_lifecycle_policy(&self) -> &::std::option::Option<crate::types::LifecyclePolicy> {
         &self.lifecycle_policy
     }

@@ -22,7 +22,9 @@
 ///     AttachmentErrorCode::SubnetNoIpv6Cidrs => { /* ... */ },
 ///     AttachmentErrorCode::SubnetUnsupportedAvailabilityZone => { /* ... */ },
 ///     AttachmentErrorCode::VpcNotFound => { /* ... */ },
+///     AttachmentErrorCode::VpcUnsupportedFeatures => { /* ... */ },
 ///     AttachmentErrorCode::VpnConnectionNotFound => { /* ... */ },
+///     AttachmentErrorCode::VpnExistingAssociations => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -72,7 +74,11 @@ pub enum AttachmentErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     VpcNotFound,
     #[allow(missing_docs)] // documentation missing in model
+    VpcUnsupportedFeatures,
+    #[allow(missing_docs)] // documentation missing in model
     VpnConnectionNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    VpnExistingAssociations,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -90,7 +96,9 @@ impl ::std::convert::From<&str> for AttachmentErrorCode {
             "SUBNET_NO_IPV6_CIDRS" => AttachmentErrorCode::SubnetNoIpv6Cidrs,
             "SUBNET_UNSUPPORTED_AVAILABILITY_ZONE" => AttachmentErrorCode::SubnetUnsupportedAvailabilityZone,
             "VPC_NOT_FOUND" => AttachmentErrorCode::VpcNotFound,
+            "VPC_UNSUPPORTED_FEATURES" => AttachmentErrorCode::VpcUnsupportedFeatures,
             "VPN_CONNECTION_NOT_FOUND" => AttachmentErrorCode::VpnConnectionNotFound,
+            "VPN_EXISTING_ASSOCIATIONS" => AttachmentErrorCode::VpnExistingAssociations,
             other => AttachmentErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -116,7 +124,9 @@ impl AttachmentErrorCode {
             AttachmentErrorCode::SubnetNoIpv6Cidrs => "SUBNET_NO_IPV6_CIDRS",
             AttachmentErrorCode::SubnetUnsupportedAvailabilityZone => "SUBNET_UNSUPPORTED_AVAILABILITY_ZONE",
             AttachmentErrorCode::VpcNotFound => "VPC_NOT_FOUND",
+            AttachmentErrorCode::VpcUnsupportedFeatures => "VPC_UNSUPPORTED_FEATURES",
             AttachmentErrorCode::VpnConnectionNotFound => "VPN_CONNECTION_NOT_FOUND",
+            AttachmentErrorCode::VpnExistingAssociations => "VPN_EXISTING_ASSOCIATIONS",
             AttachmentErrorCode::Unknown(value) => value.as_str(),
         }
     }
@@ -133,7 +143,9 @@ impl AttachmentErrorCode {
             "SUBNET_NO_IPV6_CIDRS",
             "SUBNET_UNSUPPORTED_AVAILABILITY_ZONE",
             "VPC_NOT_FOUND",
+            "VPC_UNSUPPORTED_FEATURES",
             "VPN_CONNECTION_NOT_FOUND",
+            "VPN_EXISTING_ASSOCIATIONS",
         ]
     }
 }
@@ -167,7 +179,9 @@ impl ::std::fmt::Display for AttachmentErrorCode {
             AttachmentErrorCode::SubnetNoIpv6Cidrs => write!(f, "SUBNET_NO_IPV6_CIDRS"),
             AttachmentErrorCode::SubnetUnsupportedAvailabilityZone => write!(f, "SUBNET_UNSUPPORTED_AVAILABILITY_ZONE"),
             AttachmentErrorCode::VpcNotFound => write!(f, "VPC_NOT_FOUND"),
+            AttachmentErrorCode::VpcUnsupportedFeatures => write!(f, "VPC_UNSUPPORTED_FEATURES"),
             AttachmentErrorCode::VpnConnectionNotFound => write!(f, "VPN_CONNECTION_NOT_FOUND"),
+            AttachmentErrorCode::VpnExistingAssociations => write!(f, "VPN_EXISTING_ASSOCIATIONS"),
             AttachmentErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }

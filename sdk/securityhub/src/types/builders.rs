@@ -125,6 +125,18 @@ pub use crate::types::_resources_date_filter::ResourcesDateFilterBuilder;
 
 pub use crate::types::_resources_string_filter::ResourcesStringFilterBuilder;
 
+pub use crate::types::_resources_trends_metrics_result::ResourcesTrendsMetricsResultBuilder;
+
+pub use crate::types::_resources_trends_values::ResourcesTrendsValuesBuilder;
+
+pub use crate::types::_resources_count::ResourcesCountBuilder;
+
+pub use crate::types::_resources_trends_filters::ResourcesTrendsFiltersBuilder;
+
+pub use crate::types::_resources_trends_composite_filter::ResourcesTrendsCompositeFilterBuilder;
+
+pub use crate::types::_resources_trends_string_filter::ResourcesTrendsStringFilterBuilder;
+
 pub use crate::types::_group_by_result::GroupByResultBuilder;
 
 pub use crate::types::_group_by_value::GroupByValueBuilder;
@@ -136,6 +148,18 @@ pub use crate::types::_insight::InsightBuilder;
 pub use crate::types::_insight_results::InsightResultsBuilder;
 
 pub use crate::types::_insight_result_value::InsightResultValueBuilder;
+
+pub use crate::types::_trends_metrics_result::TrendsMetricsResultBuilder;
+
+pub use crate::types::_trends_values::TrendsValuesBuilder;
+
+pub use crate::types::_severity_trends_count::SeverityTrendsCountBuilder;
+
+pub use crate::types::_findings_trends_filters::FindingsTrendsFiltersBuilder;
+
+pub use crate::types::_findings_trends_composite_filter::FindingsTrendsCompositeFilterBuilder;
+
+pub use crate::types::_findings_trends_string_filter::FindingsTrendsStringFilterBuilder;
 
 pub use crate::types::_group_by_rule::GroupByRuleBuilder;
 

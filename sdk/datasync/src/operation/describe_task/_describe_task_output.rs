@@ -6,7 +6,7 @@
 pub struct DescribeTaskOutput {
     /// <p>The ARN of your task.</p>
     pub task_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task statuses</a>.</p>
+    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task-how-to.html#understand-task-creation-statuses">Task statuses</a>.</p>
     pub status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>The name of your task.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl DescribeTaskOutput {
     pub fn task_arn(&self) -> ::std::option::Option<&str> {
         self.task_arn.as_deref()
     }
-    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task statuses</a>.</p>
+    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task-how-to.html#understand-task-creation-statuses">Task statuses</a>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
         self.status.as_ref()
     }
@@ -191,17 +191,17 @@ impl DescribeTaskOutputBuilder {
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_arn
     }
-    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task statuses</a>.</p>
+    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task-how-to.html#understand-task-creation-statuses">Task statuses</a>.</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task statuses</a>.</p>
+    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task-how-to.html#understand-task-creation-statuses">Task statuses</a>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task statuses</a>.</p>
+    /// <p>The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task-how-to.html#understand-task-creation-statuses">Task statuses</a>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
         &self.status
     }

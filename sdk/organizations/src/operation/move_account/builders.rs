@@ -23,7 +23,7 @@ impl crate::operation::move_account::builders::MoveAccountInputBuilder {
 /// Fluent builder constructing a request to `MoveAccount`.
 ///
 /// <p>Moves an account from its current source parent root or organizational unit (OU) to the specified destination parent root or OU.</p>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>You can only call this operation from the management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct MoveAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,24 +109,24 @@ impl MoveAccountFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier (ID) of the account that you want to move.</p>
+    /// <p>ID for the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the account that you want to move.</p>
+    /// <p>ID for the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the account that you want to move.</p>
+    /// <p>ID for the account that you want to move.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account from.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -138,7 +138,7 @@ impl MoveAccountFluentBuilder {
         self.inner = self.inner.source_parent_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account from.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -150,7 +150,7 @@ impl MoveAccountFluentBuilder {
         self.inner = self.inner.set_source_parent_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account from.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account from.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -161,7 +161,7 @@ impl MoveAccountFluentBuilder {
     pub fn get_source_parent_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_parent_id()
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account to.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -173,7 +173,7 @@ impl MoveAccountFluentBuilder {
         self.inner = self.inner.destination_parent_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account to.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -185,7 +185,7 @@ impl MoveAccountFluentBuilder {
         self.inner = self.inner.set_destination_parent_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the root or organizational unit that you want to move the account to.</p>
+    /// <p>ID for the root or organizational unit that you want to move the account to.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>

@@ -196,6 +196,9 @@ pub mod get_finding_statistics_v2;
 /// Types for the `GetFindings` operation.
 pub mod get_findings;
 
+/// Types for the `GetFindingsTrendsV2` operation.
+pub mod get_findings_trends_v2;
+
 /// Types for the `GetFindingsV2` operation.
 pub mod get_findings_v2;
 
@@ -216,6 +219,9 @@ pub mod get_members;
 
 /// Types for the `GetResourcesStatisticsV2` operation.
 pub mod get_resources_statistics_v2;
+
+/// Types for the `GetResourcesTrendsV2` operation.
+pub mod get_resources_trends_v2;
 
 /// Types for the `GetResourcesV2` operation.
 pub mod get_resources_v2;

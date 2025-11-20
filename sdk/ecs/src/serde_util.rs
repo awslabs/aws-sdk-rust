@@ -87,6 +87,15 @@ pub(crate) fn deployment_circuit_breaker_correct_errors(
     builder
 }
 
+pub(crate) fn express_gateway_container_correct_errors(
+    mut builder: crate::types::builders::ExpressGatewayContainerBuilder,
+) -> crate::types::builders::ExpressGatewayContainerBuilder {
+    if builder.image.is_none() {
+        builder.image = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn inference_accelerator_correct_errors(
     mut builder: crate::types::builders::InferenceAcceleratorBuilder,
 ) -> crate::types::builders::InferenceAcceleratorBuilder {
@@ -141,6 +150,18 @@ pub(crate) fn efs_volume_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn express_gateway_service_aws_logs_configuration_correct_errors(
+    mut builder: crate::types::builders::ExpressGatewayServiceAwsLogsConfigurationBuilder,
+) -> crate::types::builders::ExpressGatewayServiceAwsLogsConfigurationBuilder {
+    if builder.log_group.is_none() {
+        builder.log_group = Some(Default::default())
+    }
+    if builder.log_stream_prefix.is_none() {
+        builder.log_stream_prefix = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn f_sx_windows_file_server_volume_configuration_correct_errors(
     mut builder: crate::types::builders::FSxWindowsFileServerVolumeConfigurationBuilder,
 ) -> crate::types::builders::FSxWindowsFileServerVolumeConfigurationBuilder {
@@ -173,6 +194,18 @@ pub(crate) fn firelens_configuration_correct_errors(
 pub(crate) fn health_check_correct_errors(mut builder: crate::types::builders::HealthCheckBuilder) -> crate::types::builders::HealthCheckBuilder {
     if builder.command.is_none() {
         builder.command = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ingress_path_summary_correct_errors(
+    mut builder: crate::types::builders::IngressPathSummaryBuilder,
+) -> crate::types::builders::IngressPathSummaryBuilder {
+    if builder.access_type.is_none() {
+        builder.access_type = "no value was set".parse::<crate::types::AccessType>().ok()
+    }
+    if builder.endpoint.is_none() {
+        builder.endpoint = Some(Default::default())
     }
     builder
 }
@@ -292,6 +325,75 @@ pub(crate) fn host_entry_correct_errors(mut builder: crate::types::builders::Hos
     builder
 }
 
+pub(crate) fn managed_ingress_path_correct_errors(
+    mut builder: crate::types::builders::ManagedIngressPathBuilder,
+) -> crate::types::builders::ManagedIngressPathBuilder {
+    if builder.access_type.is_none() {
+        builder.access_type = "no value was set".parse::<crate::types::AccessType>().ok()
+    }
+    if builder.endpoint.is_none() {
+        builder.endpoint = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_log_group_correct_errors(
+    mut builder: crate::types::builders::ManagedLogGroupBuilder,
+) -> crate::types::builders::ManagedLogGroupBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ManagedResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.log_group_name.is_none() {
+        builder.log_group_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_metric_alarm_correct_errors(
+    mut builder: crate::types::builders::ManagedMetricAlarmBuilder,
+) -> crate::types::builders::ManagedMetricAlarmBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ManagedResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn managed_scalable_target_correct_errors(
+    mut builder: crate::types::builders::ManagedScalableTargetBuilder,
+) -> crate::types::builders::ManagedScalableTargetBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ManagedResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.min_capacity.is_none() {
+        builder.min_capacity = Some(Default::default())
+    }
+    if builder.max_capacity.is_none() {
+        builder.max_capacity = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_security_group_correct_errors(
+    mut builder: crate::types::builders::ManagedSecurityGroupBuilder,
+) -> crate::types::builders::ManagedSecurityGroupBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ManagedResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn memory_mib_request_correct_errors(
     mut builder: crate::types::builders::MemoryMiBRequestBuilder,
 ) -> crate::types::builders::MemoryMiBRequestBuilder {
@@ -370,6 +472,81 @@ pub(crate) fn device_correct_errors(mut builder: crate::types::builders::DeviceB
     builder
 }
 
+pub(crate) fn managed_application_auto_scaling_policy_correct_errors(
+    mut builder: crate::types::builders::ManagedApplicationAutoScalingPolicyBuilder,
+) -> crate::types::builders::ManagedApplicationAutoScalingPolicyBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ManagedResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.policy_type.is_none() {
+        builder.policy_type = Some(Default::default())
+    }
+    if builder.target_value.is_none() {
+        builder.target_value = Some(Default::default())
+    }
+    if builder.metric.is_none() {
+        builder.metric = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_certificate_correct_errors(
+    mut builder: crate::types::builders::ManagedCertificateBuilder,
+) -> crate::types::builders::ManagedCertificateBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ManagedResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.domain_name.is_none() {
+        builder.domain_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_listener_correct_errors(
+    mut builder: crate::types::builders::ManagedListenerBuilder,
+) -> crate::types::builders::ManagedListenerBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ManagedResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn managed_listener_rule_correct_errors(
+    mut builder: crate::types::builders::ManagedListenerRuleBuilder,
+) -> crate::types::builders::ManagedListenerRuleBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ManagedResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn managed_load_balancer_correct_errors(
+    mut builder: crate::types::builders::ManagedLoadBalancerBuilder,
+) -> crate::types::builders::ManagedLoadBalancerBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ManagedResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.scheme.is_none() {
+        builder.scheme = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_connect_tls_configuration_correct_errors(
     mut builder: crate::types::builders::ServiceConnectTlsConfigurationBuilder,
 ) -> crate::types::builders::ServiceConnectTlsConfigurationBuilder {
@@ -397,6 +574,27 @@ pub(crate) fn ebs_tag_specification_correct_errors(
 ) -> crate::types::builders::EbsTagSpecificationBuilder {
     if builder.resource_type.is_none() {
         builder.resource_type = "no value was set".parse::<crate::types::EbsResourceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn managed_target_group_correct_errors(
+    mut builder: crate::types::builders::ManagedTargetGroupBuilder,
+) -> crate::types::builders::ManagedTargetGroupBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ManagedResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.health_check_path.is_none() {
+        builder.health_check_path = Some(Default::default())
+    }
+    if builder.health_check_port.is_none() {
+        builder.health_check_port = Some(Default::default())
+    }
+    if builder.port.is_none() {
+        builder.port = Some(Default::default())
     }
     builder
 }

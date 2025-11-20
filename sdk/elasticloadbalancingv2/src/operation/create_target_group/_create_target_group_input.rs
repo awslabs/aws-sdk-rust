@@ -6,7 +6,7 @@ pub struct CreateTargetGroupInput {
     /// <p>The name of the target group.</p>
     /// <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
+    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. A TCP_QUIC listener must be associated with a TCP_QUIC target group. If the target is a Lambda function, this parameter does not apply.</p>
     pub protocol: ::std::option::Option<crate::types::ProtocolEnum>,
     /// <p>\[HTTP/HTTPS protocol\] The protocol version. Specify GRPC to send requests to targets using gRPC. Specify HTTP2 to send requests to targets using HTTP/2. The default is HTTP1, which sends requests to targets using HTTP/1.1.</p>
     pub protocol_version: ::std::option::Option<::std::string::String>,
@@ -14,9 +14,9 @@ pub struct CreateTargetGroupInput {
     pub port: ::std::option::Option<i32>,
     /// <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC protocols are not supported for health checks.</p>
     pub health_check_protocol: ::std::option::Option<crate::types::ProtocolEnum>,
-    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
+    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
     pub health_check_port: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and can't be disabled.</p>
     pub health_check_enabled: ::std::option::Option<bool>,
@@ -24,15 +24,15 @@ pub struct CreateTargetGroupInput {
     /// <p>\[HTTP1 or HTTP2 protocol version\] The ping path. The default is /.</p>
     /// <p>\[GRPC protocol version\] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub health_check_path: ::std::option::Option<::std::string::String>,
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
     pub health_check_interval_seconds: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, during which no response from a target means a failed health check. The range is 2–120 seconds. For target groups with a protocol of HTTP, the default is 6 seconds. For target groups with a protocol of TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol of GENEVE, the default is 5 seconds. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
     pub health_check_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The number of consecutive health check successes required before considering a target healthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a protocol of GENEVE, the default is 5. If the target type is <code>lambda</code>, the default is 5.</p>
     pub healthy_threshold_count: ::std::option::Option<i32>,
-    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
+    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
     pub unhealthy_threshold_count: ::std::option::Option<i32>,
-    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP, QUIC, TCP_QUIC, or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub matcher: ::std::option::Option<crate::types::Matcher>,
     /// <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>
     /// <ul>
@@ -50,6 +50,8 @@ pub struct CreateTargetGroupInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub ip_address_type: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
+    /// <p>The port on which the target control agent and application load balancer exchange management traffic for the target optimizer feature.</p>
+    pub target_control_port: ::std::option::Option<i32>,
 }
 impl CreateTargetGroupInput {
     /// <p>The name of the target group.</p>
@@ -57,7 +59,7 @@ impl CreateTargetGroupInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
+    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. A TCP_QUIC listener must be associated with a TCP_QUIC target group. If the target is a Lambda function, this parameter does not apply.</p>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::ProtocolEnum> {
         self.protocol.as_ref()
     }
@@ -73,11 +75,11 @@ impl CreateTargetGroupInput {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC protocols are not supported for health checks.</p>
     pub fn health_check_protocol(&self) -> ::std::option::Option<&crate::types::ProtocolEnum> {
         self.health_check_protocol.as_ref()
     }
-    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
+    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
     pub fn health_check_port(&self) -> ::std::option::Option<&str> {
         self.health_check_port.as_deref()
     }
@@ -91,7 +93,7 @@ impl CreateTargetGroupInput {
     pub fn health_check_path(&self) -> ::std::option::Option<&str> {
         self.health_check_path.as_deref()
     }
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
     pub fn health_check_interval_seconds(&self) -> ::std::option::Option<i32> {
         self.health_check_interval_seconds
     }
@@ -103,11 +105,11 @@ impl CreateTargetGroupInput {
     pub fn healthy_threshold_count(&self) -> ::std::option::Option<i32> {
         self.healthy_threshold_count
     }
-    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
+    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
     pub fn unhealthy_threshold_count(&self) -> ::std::option::Option<i32> {
         self.unhealthy_threshold_count
     }
-    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP, QUIC, TCP_QUIC, or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub fn matcher(&self) -> ::std::option::Option<&crate::types::Matcher> {
         self.matcher.as_ref()
     }
@@ -134,6 +136,10 @@ impl CreateTargetGroupInput {
     /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::TargetGroupIpAddressTypeEnum> {
         self.ip_address_type.as_ref()
+    }
+    /// <p>The port on which the target control agent and application load balancer exchange management traffic for the target optimizer feature.</p>
+    pub fn target_control_port(&self) -> ::std::option::Option<i32> {
+        self.target_control_port
     }
 }
 impl CreateTargetGroupInput {
@@ -164,6 +170,7 @@ pub struct CreateTargetGroupInputBuilder {
     pub(crate) target_type: ::std::option::Option<crate::types::TargetTypeEnum>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
+    pub(crate) target_control_port: ::std::option::Option<i32>,
 }
 impl CreateTargetGroupInputBuilder {
     /// <p>The name of the target group.</p>
@@ -184,17 +191,17 @@ impl CreateTargetGroupInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
+    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. A TCP_QUIC listener must be associated with a TCP_QUIC target group. If the target is a Lambda function, this parameter does not apply.</p>
     pub fn protocol(mut self, input: crate::types::ProtocolEnum) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
+    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. A TCP_QUIC listener must be associated with a TCP_QUIC target group. If the target is a Lambda function, this parameter does not apply.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.protocol = input;
         self
     }
-    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
+    /// <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. A TCP_QUIC listener must be associated with a TCP_QUIC target group. If the target is a Lambda function, this parameter does not apply.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ProtocolEnum> {
         &self.protocol
     }
@@ -240,31 +247,31 @@ impl CreateTargetGroupInputBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
-    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC protocols are not supported for health checks.</p>
     pub fn health_check_protocol(mut self, input: crate::types::ProtocolEnum) -> Self {
         self.health_check_protocol = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC protocols are not supported for health checks.</p>
     pub fn set_health_check_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolEnum>) -> Self {
         self.health_check_protocol = input;
         self
     }
-    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+    /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC protocols are not supported for health checks.</p>
     pub fn get_health_check_protocol(&self) -> &::std::option::Option<crate::types::ProtocolEnum> {
         &self.health_check_protocol
     }
-    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
+    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
     pub fn health_check_port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_port = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
+    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
     pub fn set_health_check_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_port = input;
         self
     }
-    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
+    /// <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, QUIC, or TCP_QUIC the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
     pub fn get_health_check_port(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_check_port
     }
@@ -302,17 +309,17 @@ impl CreateTargetGroupInputBuilder {
     pub fn get_health_check_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_check_path
     }
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
     pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
         self.health_check_interval_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
     pub fn set_health_check_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.health_check_interval_seconds = input;
         self
     }
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
     pub fn get_health_check_interval_seconds(&self) -> &::std::option::Option<i32> {
         &self.health_check_interval_seconds
     }
@@ -344,31 +351,31 @@ impl CreateTargetGroupInputBuilder {
     pub fn get_healthy_threshold_count(&self) -> &::std::option::Option<i32> {
         &self.healthy_threshold_count
     }
-    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
+    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
     pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
         self.unhealthy_threshold_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
+    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
     pub fn set_unhealthy_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unhealthy_threshold_count = input;
         self
     }
-    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
+    /// <p>The number of consecutive health check failures required before considering a target unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, QUIC, TCP_QUIC, HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the default is 2. If the target type is <code>lambda</code>, the default is 5.</p>
     pub fn get_unhealthy_threshold_count(&self) -> &::std::option::Option<i32> {
         &self.unhealthy_threshold_count
     }
-    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP, QUIC, TCP_QUIC, or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub fn matcher(mut self, input: crate::types::Matcher) -> Self {
         self.matcher = ::std::option::Option::Some(input);
         self
     }
-    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP, QUIC, TCP_QUIC, or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub fn set_matcher(mut self, input: ::std::option::Option<crate::types::Matcher>) -> Self {
         self.matcher = input;
         self
     }
-    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
+    /// <p>\[HTTP/HTTPS health checks\] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP, QUIC, TCP_QUIC, or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
     pub fn get_matcher(&self) -> &::std::option::Option<crate::types::Matcher> {
         &self.matcher
     }
@@ -450,6 +457,20 @@ impl CreateTargetGroupInputBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum> {
         &self.ip_address_type
     }
+    /// <p>The port on which the target control agent and application load balancer exchange management traffic for the target optimizer feature.</p>
+    pub fn target_control_port(mut self, input: i32) -> Self {
+        self.target_control_port = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The port on which the target control agent and application load balancer exchange management traffic for the target optimizer feature.</p>
+    pub fn set_target_control_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.target_control_port = input;
+        self
+    }
+    /// <p>The port on which the target control agent and application load balancer exchange management traffic for the target optimizer feature.</p>
+    pub fn get_target_control_port(&self) -> &::std::option::Option<i32> {
+        &self.target_control_port
+    }
     /// Consumes the builder and constructs a [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
     pub fn build(
         self,
@@ -472,6 +493,7 @@ impl CreateTargetGroupInputBuilder {
             target_type: self.target_type,
             tags: self.tags,
             ip_address_type: self.ip_address_type,
+            target_control_port: self.target_control_port,
         })
     }
 }

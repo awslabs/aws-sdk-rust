@@ -21,5 +21,20 @@ pub fn ser_update_project_input_input(
         crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.environment_variables {
+        let mut array_7 = object.key("environmentVariables").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.execution_role_arn {
+        object.key("executionRoleArn").string(var_10.as_str());
+    }
     Ok(())
 }

@@ -15,6 +15,12 @@ pub fn ser_sheet_style(
         crate::protocol_serde::shape_tile_layout_style::ser_tile_layout_style(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.background {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("Background").start_object();
+        crate::protocol_serde::shape_sheet_background_style::ser_sheet_background_style(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -38,6 +44,9 @@ where
                         }
                         "TileLayout" => {
                             builder = builder.set_tile_layout(crate::protocol_serde::shape_tile_layout_style::de_tile_layout_style(tokens)?);
+                        }
+                        "Background" => {
+                            builder = builder.set_background(crate::protocol_serde::shape_sheet_background_style::de_sheet_background_style(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -153,6 +153,19 @@ pub(crate) fn de_get_service_settings(
                             .transpose()?,
                     );
                 }
+                "CrossRegionDiscoveryHomeRegion" => {
+                    builder = builder.set_cross_region_discovery_home_region(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "CrossRegionDiscoverySourceRegions" => {
+                    builder = builder.set_cross_region_discovery_source_regions(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                }
+                "ServiceStatus" => {
+                    builder = builder.set_service_status(crate::protocol_serde::shape_service_status::de_service_status(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

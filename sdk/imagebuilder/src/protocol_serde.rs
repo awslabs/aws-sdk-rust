@@ -63,6 +63,8 @@ pub(crate) mod shape_delete_lifecycle_policy;
 
 pub(crate) mod shape_delete_workflow;
 
+pub(crate) mod shape_distribute_image;
+
 pub(crate) mod shape_get_component;
 
 pub(crate) mod shape_get_component_policy;
@@ -155,6 +157,8 @@ pub(crate) mod shape_put_image_policy;
 
 pub(crate) mod shape_put_image_recipe_policy;
 
+pub(crate) mod shape_retry_image;
+
 pub(crate) mod shape_send_workflow_step_action;
 
 pub(crate) mod shape_start_image_pipeline_execution;
@@ -181,6 +185,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_access_denied_exception;
+
 pub(crate) mod shape_call_rate_limit_exceeded_exception;
 
 pub(crate) mod shape_cancel_image_creation_input;
@@ -206,6 +212,10 @@ pub(crate) mod shape_create_infrastructure_configuration_input;
 pub(crate) mod shape_create_lifecycle_policy_input;
 
 pub(crate) mod shape_create_workflow_input;
+
+pub(crate) mod shape_distribute_image_input;
+
+pub(crate) mod shape_dry_run_operation_exception;
 
 pub(crate) mod shape_forbidden_exception;
 
@@ -289,6 +299,8 @@ pub(crate) mod shape_resource_in_use_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_retry_image_input;
+
 pub(crate) mod shape_send_workflow_step_action_input;
 
 pub(crate) mod shape_service_exception;
@@ -302,6 +314,8 @@ pub(crate) mod shape_start_image_pipeline_execution_input;
 pub(crate) mod shape_start_resource_state_update_input;
 
 pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_update_distribution_configuration_input;
 
@@ -370,6 +384,8 @@ pub(crate) mod shape_instance_block_device_mapping;
 pub(crate) mod shape_instance_configuration;
 
 pub(crate) mod shape_instance_metadata_options;
+
+pub(crate) mod shape_latest_version_references;
 
 pub(crate) mod shape_lifecycle_execution;
 

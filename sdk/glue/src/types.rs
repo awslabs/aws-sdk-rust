@@ -7,6 +7,8 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_principal_type::PrincipalType;
 
+pub use crate::types::_function_type::FunctionType;
+
 pub use crate::types::_profile_configuration::ProfileConfiguration;
 
 pub use crate::types::_configuration_object::ConfigurationObject;
@@ -1500,6 +1502,8 @@ mod _find_matches_metrics;
 mod _find_matches_parameters;
 
 mod _find_matches_task_run_properties;
+
+mod _function_type;
 
 mod _get_connections_filter;
 

@@ -7,7 +7,7 @@ pub struct ListWorkflowExecutionsOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
     pub workflow_executions: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionMetadata>>,
-    /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
+    /// <p>The resource Amazon Resource Name (ARN) of the image build version for which you requested a list of workflow runtime details.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The output message from the list action, if applicable.</p>
     pub message: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl ListWorkflowExecutionsOutput {
     pub fn workflow_executions(&self) -> &[crate::types::WorkflowExecutionMetadata] {
         self.workflow_executions.as_deref().unwrap_or_default()
     }
-    /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
+    /// <p>The resource Amazon Resource Name (ARN) of the image build version for which you requested a list of workflow runtime details.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -97,17 +97,17 @@ impl ListWorkflowExecutionsOutputBuilder {
     pub fn get_workflow_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionMetadata>> {
         &self.workflow_executions
     }
-    /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
+    /// <p>The resource Amazon Resource Name (ARN) of the image build version for which you requested a list of workflow runtime details.</p>
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
+    /// <p>The resource Amazon Resource Name (ARN) of the image build version for which you requested a list of workflow runtime details.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
+    /// <p>The resource Amazon Resource Name (ARN) of the image build version for which you requested a list of workflow runtime details.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }

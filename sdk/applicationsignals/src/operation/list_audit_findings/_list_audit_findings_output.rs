@@ -3,19 +3,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAuditFindingsOutput {
-    /// <p>An array of audit findings that match the specified criteria. Each finding includes details about the issue, affected resources, and auditor results.</p>
+    /// <p>The start of the time period that the returned audit findings apply to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code></p>
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The end of the time period that the returned audit findings apply to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code></p>
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>An array of structures, where each structure contains information about one audit finding, including the auditor results, severity, and associated metric and dependency graphs.</p>
     pub audit_findings: ::std::vec::Vec<crate::types::AuditFinding>,
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of audit findings.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAuditFindingsOutput {
-    /// <p>An array of audit findings that match the specified criteria. Each finding includes details about the issue, affected resources, and auditor results.</p>
+    /// <p>The start of the time period that the returned audit findings apply to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code></p>
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>The end of the time period that the returned audit findings apply to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code></p>
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+    /// <p>An array of structures, where each structure contains information about one audit finding, including the auditor results, severity, and associated metric and dependency graphs.</p>
     pub fn audit_findings(&self) -> &[crate::types::AuditFinding] {
         use std::ops::Deref;
         self.audit_findings.deref()
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of audit findings.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -36,42 +48,72 @@ impl ListAuditFindingsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListAuditFindingsOutputBuilder {
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) audit_findings: ::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAuditFindingsOutputBuilder {
+    /// <p>The start of the time period that the returned audit findings apply to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code></p>
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The start of the time period that the returned audit findings apply to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code></p>
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input;
+        self
+    }
+    /// <p>The start of the time period that the returned audit findings apply to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code></p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
+    /// <p>The end of the time period that the returned audit findings apply to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code></p>
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The end of the time period that the returned audit findings apply to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code></p>
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input;
+        self
+    }
+    /// <p>The end of the time period that the returned audit findings apply to. When used in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <code>1698778057</code></p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// Appends an item to `audit_findings`.
     ///
     /// To override the contents of this collection use [`set_audit_findings`](Self::set_audit_findings).
     ///
-    /// <p>An array of audit findings that match the specified criteria. Each finding includes details about the issue, affected resources, and auditor results.</p>
+    /// <p>An array of structures, where each structure contains information about one audit finding, including the auditor results, severity, and associated metric and dependency graphs.</p>
     pub fn audit_findings(mut self, input: crate::types::AuditFinding) -> Self {
         let mut v = self.audit_findings.unwrap_or_default();
         v.push(input);
         self.audit_findings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of audit findings that match the specified criteria. Each finding includes details about the issue, affected resources, and auditor results.</p>
+    /// <p>An array of structures, where each structure contains information about one audit finding, including the auditor results, severity, and associated metric and dependency graphs.</p>
     pub fn set_audit_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>>) -> Self {
         self.audit_findings = input;
         self
     }
-    /// <p>An array of audit findings that match the specified criteria. Each finding includes details about the issue, affected resources, and auditor results.</p>
+    /// <p>An array of structures, where each structure contains information about one audit finding, including the auditor results, severity, and associated metric and dependency graphs.</p>
     pub fn get_audit_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditFinding>> {
         &self.audit_findings
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of audit findings.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of audit findings.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of audit findings.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -91,6 +133,8 @@ impl ListAuditFindingsOutputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::list_audit_findings::ListAuditFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_audit_findings::ListAuditFindingsOutput {
+            start_time: self.start_time,
+            end_time: self.end_time,
             audit_findings: self.audit_findings.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "audit_findings",

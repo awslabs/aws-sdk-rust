@@ -42,17 +42,17 @@ pub fn ser_execute_statement_input_input(
     if let Some(var_13) = &input.client_token {
         object.key("ClientToken").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.session_keep_alive_seconds {
+    if let Some(var_14) = &input.result_format {
+        object.key("ResultFormat").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.session_keep_alive_seconds {
         object.key("SessionKeepAliveSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_15) = &input.session_id {
-        object.key("SessionId").string(var_15.as_str());
-    }
-    if let Some(var_16) = &input.result_format {
-        object.key("ResultFormat").string(var_16.as_str());
+    if let Some(var_16) = &input.session_id {
+        object.key("SessionId").string(var_16.as_str());
     }
     Ok(())
 }

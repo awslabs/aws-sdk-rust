@@ -9,6 +9,9 @@ pub fn ser_free_form_layout_element_border_style(
     if let Some(var_2) = &input.color {
         object.key("Color").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.width {
+        object.key("Width").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -36,6 +39,13 @@ where
                         }
                         "Color" => {
                             builder = builder.set_color(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Width" => {
+                            builder = builder.set_width(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

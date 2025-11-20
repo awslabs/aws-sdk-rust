@@ -97,12 +97,24 @@ pub(crate) fn de_list_audit_findings(
                 "AuditFindings" => {
                     builder = builder.set_audit_findings(crate::protocol_serde::shape_audit_findings::de_audit_findings(tokens)?);
                 }
+                "EndTime" => {
+                    builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "NextToken" => {
                     builder = builder.set_next_token(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "StartTime" => {
+                    builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

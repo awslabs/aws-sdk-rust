@@ -71,6 +71,8 @@ pub use crate::types::_event_subscription::EventSubscriptionBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
 
+pub use crate::types::_lakehouse_settings::LakehouseSettingsBuilder;
+
 pub use crate::types::_timestream_settings::TimestreamSettingsBuilder;
 
 pub use crate::types::_gcp_my_sql_settings::GcpMySqlSettingsBuilder;

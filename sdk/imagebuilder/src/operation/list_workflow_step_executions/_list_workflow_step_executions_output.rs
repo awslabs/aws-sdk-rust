@@ -7,11 +7,11 @@ pub struct ListWorkflowStepExecutionsOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains an array of runtime details that represents each step in this runtime instance of the workflow.</p>
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>>,
-    /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
+    /// <p>The build version Amazon Resource Name (ARN) for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
     pub workflow_execution_id: ::std::option::Option<::std::string::String>,
-    /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
+    /// <p>The image build version resource Amazon Resource Name (ARN) that's associated with the specified runtime instance of the workflow.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The output message from the list action, if applicable.</p>
     pub message: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl ListWorkflowStepExecutionsOutput {
     pub fn steps(&self) -> &[crate::types::WorkflowStepMetadata] {
         self.steps.as_deref().unwrap_or_default()
     }
-    /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
+    /// <p>The build version Amazon Resource Name (ARN) for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
     pub fn workflow_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.workflow_build_version_arn.as_deref()
     }
@@ -38,7 +38,7 @@ impl ListWorkflowStepExecutionsOutput {
     pub fn workflow_execution_id(&self) -> ::std::option::Option<&str> {
         self.workflow_execution_id.as_deref()
     }
-    /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
+    /// <p>The image build version resource Amazon Resource Name (ARN) that's associated with the specified runtime instance of the workflow.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -111,17 +111,17 @@ impl ListWorkflowStepExecutionsOutputBuilder {
     pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>> {
         &self.steps
     }
-    /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
+    /// <p>The build version Amazon Resource Name (ARN) for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
     pub fn workflow_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
+    /// <p>The build version Amazon Resource Name (ARN) for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
     pub fn set_workflow_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_build_version_arn = input;
         self
     }
-    /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
+    /// <p>The build version Amazon Resource Name (ARN) for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
     pub fn get_workflow_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_build_version_arn
     }
@@ -139,17 +139,17 @@ impl ListWorkflowStepExecutionsOutputBuilder {
     pub fn get_workflow_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_execution_id
     }
-    /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
+    /// <p>The image build version resource Amazon Resource Name (ARN) that's associated with the specified runtime instance of the workflow.</p>
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
+    /// <p>The image build version resource Amazon Resource Name (ARN) that's associated with the specified runtime instance of the workflow.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
+    /// <p>The image build version resource Amazon Resource Name (ARN) that's associated with the specified runtime instance of the workflow.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }

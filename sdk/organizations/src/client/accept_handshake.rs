@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AcceptHandshake`](crate::operation::accept_handshake::builders::AcceptHandshakeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`handshake_id(impl Into<String>)`](crate::operation::accept_handshake::builders::AcceptHandshakeFluentBuilder::handshake_id) / [`set_handshake_id(Option<String>)`](crate::operation::accept_handshake::builders::AcceptHandshakeFluentBuilder::set_handshake_id):<br>required: **true**<br><p>The unique identifier (ID) of the handshake that you want to accept.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p><br>
+    ///   - [`handshake_id(impl Into<String>)`](crate::operation::accept_handshake::builders::AcceptHandshakeFluentBuilder::handshake_id) / [`set_handshake_id(Option<String>)`](crate::operation::accept_handshake::builders::AcceptHandshakeFluentBuilder::set_handshake_id):<br>required: **true**<br><p>ID for the handshake that you want to accept.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p><br>
     /// - On success, responds with [`AcceptHandshakeOutput`](crate::operation::accept_handshake::AcceptHandshakeOutput) with field(s):
-    ///   - [`handshake(Option<Handshake>)`](crate::operation::accept_handshake::AcceptHandshakeOutput::handshake): <p>A structure that contains details about the accepted handshake.</p>
+    ///   - [`handshake(Option<Handshake>)`](crate::operation::accept_handshake::AcceptHandshakeOutput::handshake): <p>A <code>Handshake</code> object. Contains details for the handshake.</p>
     /// - On failure, responds with [`SdkError<AcceptHandshakeError>`](crate::operation::accept_handshake::AcceptHandshakeError)
     pub fn accept_handshake(&self) -> crate::operation::accept_handshake::builders::AcceptHandshakeFluentBuilder {
         crate::operation::accept_handshake::builders::AcceptHandshakeFluentBuilder::new(self.handle.clone())

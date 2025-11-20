@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOrganizationalUnitInput {
-    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+    /// <p>ID for the parent root or OU that you want to create the new OU in.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -20,7 +20,7 @@ pub struct CreateOrganizationalUnitInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOrganizationalUnitInput {
-    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+    /// <p>ID for the parent root or OU that you want to create the new OU in.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -60,7 +60,7 @@ pub struct CreateOrganizationalUnitInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOrganizationalUnitInputBuilder {
-    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+    /// <p>ID for the parent root or OU that you want to create the new OU in.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -73,7 +73,7 @@ impl CreateOrganizationalUnitInputBuilder {
         self.parent_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+    /// <p>ID for the parent root or OU that you want to create the new OU in.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -85,7 +85,7 @@ impl CreateOrganizationalUnitInputBuilder {
         self.parent_id = input;
         self
     }
-    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+    /// <p>ID for the parent root or OU that you want to create the new OU in.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>

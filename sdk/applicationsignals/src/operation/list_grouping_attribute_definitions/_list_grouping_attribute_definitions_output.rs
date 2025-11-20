@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGroupingAttributeDefinitionsOutput {
-    /// <p>An array of available grouping attribute definitions that can be used to create grouping configurations.</p>
+    /// <p>An array of structures, where each structure contains information about one grouping attribute definition, including the grouping name, source keys, and default values.</p>
     pub grouping_attribute_definitions: ::std::vec::Vec<crate::types::GroupingAttributeDefinition>,
-    /// <p>The timestamp when the grouping attribute definitions were last updated. Expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The timestamp when the grouping configuration was last updated. When used in a raw HTTP Query API, it is formatted as epoch time in seconds.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of grouping attribute definitions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListGroupingAttributeDefinitionsOutput {
-    /// <p>An array of available grouping attribute definitions that can be used to create grouping configurations.</p>
+    /// <p>An array of structures, where each structure contains information about one grouping attribute definition, including the grouping name, source keys, and default values.</p>
     pub fn grouping_attribute_definitions(&self) -> &[crate::types::GroupingAttributeDefinition] {
         use std::ops::Deref;
         self.grouping_attribute_definitions.deref()
     }
-    /// <p>The timestamp when the grouping attribute definitions were last updated. Expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The timestamp when the grouping configuration was last updated. When used in a raw HTTP Query API, it is formatted as epoch time in seconds.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of grouping attribute definitions.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -52,14 +52,14 @@ impl ListGroupingAttributeDefinitionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_grouping_attribute_definitions`](Self::set_grouping_attribute_definitions).
     ///
-    /// <p>An array of available grouping attribute definitions that can be used to create grouping configurations.</p>
+    /// <p>An array of structures, where each structure contains information about one grouping attribute definition, including the grouping name, source keys, and default values.</p>
     pub fn grouping_attribute_definitions(mut self, input: crate::types::GroupingAttributeDefinition) -> Self {
         let mut v = self.grouping_attribute_definitions.unwrap_or_default();
         v.push(input);
         self.grouping_attribute_definitions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of available grouping attribute definitions that can be used to create grouping configurations.</p>
+    /// <p>An array of structures, where each structure contains information about one grouping attribute definition, including the grouping name, source keys, and default values.</p>
     pub fn set_grouping_attribute_definitions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::GroupingAttributeDefinition>>,
@@ -67,35 +67,35 @@ impl ListGroupingAttributeDefinitionsOutputBuilder {
         self.grouping_attribute_definitions = input;
         self
     }
-    /// <p>An array of available grouping attribute definitions that can be used to create grouping configurations.</p>
+    /// <p>An array of structures, where each structure contains information about one grouping attribute definition, including the grouping name, source keys, and default values.</p>
     pub fn get_grouping_attribute_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupingAttributeDefinition>> {
         &self.grouping_attribute_definitions
     }
-    /// <p>The timestamp when the grouping attribute definitions were last updated. Expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The timestamp when the grouping configuration was last updated. When used in a raw HTTP Query API, it is formatted as epoch time in seconds.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the grouping attribute definitions were last updated. Expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The timestamp when the grouping configuration was last updated. When used in a raw HTTP Query API, it is formatted as epoch time in seconds.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The timestamp when the grouping attribute definitions were last updated. Expressed as the number of milliseconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The timestamp when the grouping configuration was last updated. When used in a raw HTTP Query API, it is formatted as epoch time in seconds.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of grouping attribute definitions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of grouping attribute definitions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to use for retrieving the next page of results. This value is present only if there are more results available than were returned in the current response.</p>
+    /// <p>Include this value in your next use of this API to get the next set of grouping attribute definitions.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

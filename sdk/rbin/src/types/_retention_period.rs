@@ -4,13 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionPeriod {
-    /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
+    /// <p>The period value for which the retention rule is to retain resources, measured in days. The supported retention periods are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>EBS volumes: 1 - 7 days</p></li>
+    /// <li>
+    /// <p>EBS snapshots and EBS-backed AMIs: 1 - 365 days</p></li>
+    /// </ul>
     pub retention_period_value: i32,
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
     pub retention_period_unit: crate::types::RetentionPeriodUnit,
 }
 impl RetentionPeriod {
-    /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
+    /// <p>The period value for which the retention rule is to retain resources, measured in days. The supported retention periods are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>EBS volumes: 1 - 7 days</p></li>
+    /// <li>
+    /// <p>EBS snapshots and EBS-backed AMIs: 1 - 365 days</p></li>
+    /// </ul>
     pub fn retention_period_value(&self) -> i32 {
         self.retention_period_value
     }
@@ -34,18 +46,36 @@ pub struct RetentionPeriodBuilder {
     pub(crate) retention_period_unit: ::std::option::Option<crate::types::RetentionPeriodUnit>,
 }
 impl RetentionPeriodBuilder {
-    /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
+    /// <p>The period value for which the retention rule is to retain resources, measured in days. The supported retention periods are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>EBS volumes: 1 - 7 days</p></li>
+    /// <li>
+    /// <p>EBS snapshots and EBS-backed AMIs: 1 - 365 days</p></li>
+    /// </ul>
     /// This field is required.
     pub fn retention_period_value(mut self, input: i32) -> Self {
         self.retention_period_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
+    /// <p>The period value for which the retention rule is to retain resources, measured in days. The supported retention periods are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>EBS volumes: 1 - 7 days</p></li>
+    /// <li>
+    /// <p>EBS snapshots and EBS-backed AMIs: 1 - 365 days</p></li>
+    /// </ul>
     pub fn set_retention_period_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period_value = input;
         self
     }
-    /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
+    /// <p>The period value for which the retention rule is to retain resources, measured in days. The supported retention periods are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>EBS volumes: 1 - 7 days</p></li>
+    /// <li>
+    /// <p>EBS snapshots and EBS-backed AMIs: 1 - 365 days</p></li>
+    /// </ul>
     pub fn get_retention_period_value(&self) -> &::std::option::Option<i32> {
         &self.retention_period_value
     }

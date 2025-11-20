@@ -567,6 +567,14 @@ pub(crate) mod shape_create_transit_gateway_connect_peer_input;
 
 pub(crate) mod shape_create_transit_gateway_input;
 
+pub(crate) mod shape_create_transit_gateway_metering_policy;
+
+pub(crate) mod shape_create_transit_gateway_metering_policy_entry;
+
+pub(crate) mod shape_create_transit_gateway_metering_policy_entry_input;
+
+pub(crate) mod shape_create_transit_gateway_metering_policy_input;
+
 pub(crate) mod shape_create_transit_gateway_multicast_domain;
 
 pub(crate) mod shape_create_transit_gateway_multicast_domain_input;
@@ -624,6 +632,10 @@ pub(crate) mod shape_create_vpc;
 pub(crate) mod shape_create_vpc_block_public_access_exclusion;
 
 pub(crate) mod shape_create_vpc_block_public_access_exclusion_input;
+
+pub(crate) mod shape_create_vpc_encryption_control;
+
+pub(crate) mod shape_create_vpc_encryption_control_input;
 
 pub(crate) mod shape_create_vpc_endpoint;
 
@@ -915,6 +927,14 @@ pub(crate) mod shape_delete_transit_gateway_connect_peer_input;
 
 pub(crate) mod shape_delete_transit_gateway_input;
 
+pub(crate) mod shape_delete_transit_gateway_metering_policy;
+
+pub(crate) mod shape_delete_transit_gateway_metering_policy_entry;
+
+pub(crate) mod shape_delete_transit_gateway_metering_policy_entry_input;
+
+pub(crate) mod shape_delete_transit_gateway_metering_policy_input;
+
 pub(crate) mod shape_delete_transit_gateway_multicast_domain;
 
 pub(crate) mod shape_delete_transit_gateway_multicast_domain_input;
@@ -972,6 +992,10 @@ pub(crate) mod shape_delete_vpc;
 pub(crate) mod shape_delete_vpc_block_public_access_exclusion;
 
 pub(crate) mod shape_delete_vpc_block_public_access_exclusion_input;
+
+pub(crate) mod shape_delete_vpc_encryption_control;
+
+pub(crate) mod shape_delete_vpc_encryption_control_input;
 
 pub(crate) mod shape_delete_vpc_endpoint_connection_notifications;
 
@@ -1623,6 +1647,10 @@ pub(crate) mod shape_describe_transit_gateway_connects;
 
 pub(crate) mod shape_describe_transit_gateway_connects_input;
 
+pub(crate) mod shape_describe_transit_gateway_metering_policies;
+
+pub(crate) mod shape_describe_transit_gateway_metering_policies_input;
+
 pub(crate) mod shape_describe_transit_gateway_multicast_domains;
 
 pub(crate) mod shape_describe_transit_gateway_multicast_domains_input;
@@ -1710,6 +1738,10 @@ pub(crate) mod shape_describe_vpc_classic_link_dns_support;
 pub(crate) mod shape_describe_vpc_classic_link_dns_support_input;
 
 pub(crate) mod shape_describe_vpc_classic_link_input;
+
+pub(crate) mod shape_describe_vpc_encryption_controls;
+
+pub(crate) mod shape_describe_vpc_encryption_controls_input;
 
 pub(crate) mod shape_describe_vpc_endpoint_associations;
 
@@ -2267,6 +2299,10 @@ pub(crate) mod shape_get_transit_gateway_attachment_propagations;
 
 pub(crate) mod shape_get_transit_gateway_attachment_propagations_input;
 
+pub(crate) mod shape_get_transit_gateway_metering_policy_entries;
+
+pub(crate) mod shape_get_transit_gateway_metering_policy_entries_input;
+
 pub(crate) mod shape_get_transit_gateway_multicast_domain_associations;
 
 pub(crate) mod shape_get_transit_gateway_multicast_domain_associations_input;
@@ -2302,6 +2338,10 @@ pub(crate) mod shape_get_verified_access_endpoint_targets_input;
 pub(crate) mod shape_get_verified_access_group_policy;
 
 pub(crate) mod shape_get_verified_access_group_policy_input;
+
+pub(crate) mod shape_get_vpc_resources_blocking_encryption_enforcement;
+
+pub(crate) mod shape_get_vpc_resources_blocking_encryption_enforcement_input;
 
 pub(crate) mod shape_get_vpn_connection_device_sample_configuration;
 
@@ -2346,6 +2386,10 @@ pub(crate) mod shape_list_images_in_recycle_bin_input;
 pub(crate) mod shape_list_snapshots_in_recycle_bin;
 
 pub(crate) mod shape_list_snapshots_in_recycle_bin_input;
+
+pub(crate) mod shape_list_volumes_in_recycle_bin;
+
+pub(crate) mod shape_list_volumes_in_recycle_bin_input;
 
 pub(crate) mod shape_lock_snapshot;
 
@@ -2551,6 +2595,10 @@ pub(crate) mod shape_modify_transit_gateway;
 
 pub(crate) mod shape_modify_transit_gateway_input;
 
+pub(crate) mod shape_modify_transit_gateway_metering_policy;
+
+pub(crate) mod shape_modify_transit_gateway_metering_policy_input;
+
 pub(crate) mod shape_modify_transit_gateway_prefix_list_reference;
 
 pub(crate) mod shape_modify_transit_gateway_prefix_list_reference_input;
@@ -2606,6 +2654,10 @@ pub(crate) mod shape_modify_vpc_block_public_access_exclusion_input;
 pub(crate) mod shape_modify_vpc_block_public_access_options;
 
 pub(crate) mod shape_modify_vpc_block_public_access_options_input;
+
+pub(crate) mod shape_modify_vpc_encryption_control;
+
+pub(crate) mod shape_modify_vpc_encryption_control_input;
 
 pub(crate) mod shape_modify_vpc_endpoint;
 
@@ -2850,6 +2902,10 @@ pub(crate) mod shape_restore_snapshot_from_recycle_bin_input;
 pub(crate) mod shape_restore_snapshot_tier;
 
 pub(crate) mod shape_restore_snapshot_tier_input;
+
+pub(crate) mod shape_restore_volume_from_recycle_bin;
+
+pub(crate) mod shape_restore_volume_from_recycle_bin_input;
 
 pub(crate) mod shape_revoke_client_vpn_ingress;
 
@@ -3246,6 +3302,8 @@ pub(crate) mod shape_verified_access_log_options;
 pub(crate) mod shape_verified_access_sse_specification_request;
 
 pub(crate) mod shape_volume_detail;
+
+pub(crate) mod shape_vpc_encryption_control_configuration;
 
 pub(crate) mod shape_vpn_connection_options_specification;
 
@@ -4059,6 +4117,14 @@ pub(crate) mod shape_transit_gateway_connect_peer_list;
 
 pub(crate) mod shape_transit_gateway_list;
 
+pub(crate) mod shape_transit_gateway_metering_policy;
+
+pub(crate) mod shape_transit_gateway_metering_policy_entry;
+
+pub(crate) mod shape_transit_gateway_metering_policy_entry_list;
+
+pub(crate) mod shape_transit_gateway_metering_policy_list;
+
 pub(crate) mod shape_transit_gateway_multicast_deregistered_group_members;
 
 pub(crate) mod shape_transit_gateway_multicast_deregistered_group_sources;
@@ -4181,6 +4247,8 @@ pub(crate) mod shape_volume_modification;
 
 pub(crate) mod shape_volume_modification_list;
 
+pub(crate) mod shape_volume_recycle_bin_info_list;
+
 pub(crate) mod shape_volume_status_list;
 
 pub(crate) mod shape_vpc;
@@ -4196,6 +4264,12 @@ pub(crate) mod shape_vpc_block_public_access_options;
 pub(crate) mod shape_vpc_cidr_block_association;
 
 pub(crate) mod shape_vpc_classic_link_list;
+
+pub(crate) mod shape_vpc_encryption_control;
+
+pub(crate) mod shape_vpc_encryption_control_list;
+
+pub(crate) mod shape_vpc_encryption_non_compliant_resource_list;
 
 pub(crate) mod shape_vpc_endpoint;
 
@@ -4765,6 +4839,8 @@ pub(crate) mod shape_transit_gateway_connect_options;
 
 pub(crate) mod shape_transit_gateway_connect_peer_configuration;
 
+pub(crate) mod shape_transit_gateway_metering_policy_rule;
+
 pub(crate) mod shape_transit_gateway_multicast_domain_association;
 
 pub(crate) mod shape_transit_gateway_multicast_domain_options;
@@ -4819,6 +4895,8 @@ pub(crate) mod shape_volume;
 
 pub(crate) mod shape_volume_attachment;
 
+pub(crate) mod shape_volume_recycle_bin_info;
+
 pub(crate) mod shape_volume_status_item;
 
 pub(crate) mod shape_vpc_attachment_list;
@@ -4829,7 +4907,9 @@ pub(crate) mod shape_vpc_cidr_block_state;
 
 pub(crate) mod shape_vpc_classic_link;
 
-pub(crate) mod shape_vpc_encryption_control;
+pub(crate) mod shape_vpc_encryption_control_exclusions;
+
+pub(crate) mod shape_vpc_encryption_non_compliant_resource;
 
 pub(crate) mod shape_vpc_endpoint_association;
 
@@ -4958,6 +5038,8 @@ pub(crate) mod shape_elastic_gpu_specification_response;
 pub(crate) mod shape_elastic_inference_accelerator_association_list;
 
 pub(crate) mod shape_enable_fast_snapshot_restore_state_error_set;
+
+pub(crate) mod shape_encryption_support;
 
 pub(crate) mod shape_event_information;
 
@@ -5247,7 +5329,7 @@ pub(crate) mod shape_volume_status_events_list;
 
 pub(crate) mod shape_volume_status_info;
 
-pub(crate) mod shape_vpc_encryption_control_exclusions;
+pub(crate) mod shape_vpc_encryption_control_exclusion;
 
 pub(crate) mod shape_vpc_peering_connection_options_description;
 
@@ -5452,8 +5534,6 @@ pub(crate) mod shape_volume_status_attachment_status;
 pub(crate) mod shape_volume_status_details_list;
 
 pub(crate) mod shape_volume_status_event;
-
-pub(crate) mod shape_vpc_encryption_control_exclusion;
 
 pub(crate) mod shape_additional_detail;
 

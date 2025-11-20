@@ -47,6 +47,8 @@ pub use crate::types::error::_invalid_db_instance_automated_backup_state_fault::
 
 pub use crate::types::error::_db_instance_automated_backup_quota_exceeded_fault::DbInstanceAutomatedBackupQuotaExceededFaultBuilder;
 
+pub use crate::types::error::_vpc_encryption_control_violation_exception::VpcEncryptionControlViolationExceptionBuilder;
+
 pub use crate::types::error::_invalid_vpc_network_state_fault::InvalidVpcNetworkStateFaultBuilder;
 
 pub use crate::types::error::_invalid_subnet::InvalidSubnetBuilder;

@@ -5,29 +5,35 @@ pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExcept
 
 pub use crate::types::error::_service_exception::ServiceException;
 
+pub use crate::types::error::_responsibility_transfer_not_found_exception::ResponsibilityTransferNotFoundException;
+
+pub use crate::types::error::_invalid_input_exception::InvalidInputException;
+
+pub use crate::types::error::_constraint_violation_exception::ConstraintViolationException;
+
+pub use crate::types::error::_aws_organizations_not_in_use_exception::AwsOrganizationsNotInUseException;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
 pub use crate::types::error::_policy_not_found_exception::PolicyNotFoundException;
 
 pub use crate::types::error::_policy_changes_in_progress_exception::PolicyChangesInProgressException;
 
 pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentException;
 
-pub use crate::types::error::_invalid_input_exception::InvalidInputException;
-
 pub use crate::types::error::_duplicate_policy_exception::DuplicatePolicyException;
 
-pub use crate::types::error::_constraint_violation_exception::ConstraintViolationException;
-
 pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationException;
-
-pub use crate::types::error::_aws_organizations_not_in_use_exception::AwsOrganizationsNotInUseException;
-
-pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_organizational_unit_not_found_exception::OrganizationalUnitNotFoundException;
 
 pub use crate::types::error::_duplicate_organizational_unit_exception::DuplicateOrganizationalUnitException;
 
 pub use crate::types::error::_target_not_found_exception::TargetNotFoundException;
+
+pub use crate::types::error::_responsibility_transfer_already_in_status_exception::ResponsibilityTransferAlreadyInStatusException;
+
+pub use crate::types::error::_invalid_responsibility_transfer_transition_exception::InvalidResponsibilityTransferTransitionException;
 
 pub use crate::types::error::_master_cannot_leave_organization_exception::MasterCannotLeaveOrganizationException;
 
@@ -51,9 +57,9 @@ pub use crate::types::error::_account_not_registered_exception::AccountNotRegist
 
 pub use crate::types::error::_handshake_constraint_violation_exception::HandshakeConstraintViolationException;
 
-pub use crate::types::error::_finalizing_organization_exception::FinalizingOrganizationException;
-
 pub use crate::types::error::_duplicate_handshake_exception::DuplicateHandshakeException;
+
+pub use crate::types::error::_finalizing_organization_exception::FinalizingOrganizationException;
 
 pub use crate::types::error::_account_owner_not_verified_exception::AccountOwnerNotVerifiedException;
 
@@ -147,6 +153,8 @@ mod _invalid_handshake_transition_exception;
 
 mod _invalid_input_exception;
 
+mod _invalid_responsibility_transfer_transition_exception;
+
 mod _malformed_policy_document_exception;
 
 mod _master_cannot_leave_organization_exception;
@@ -174,6 +182,10 @@ mod _policy_type_not_available_for_organization_exception;
 mod _policy_type_not_enabled_exception;
 
 mod _resource_policy_not_found_exception;
+
+mod _responsibility_transfer_already_in_status_exception;
+
+mod _responsibility_transfer_not_found_exception;
 
 mod _root_not_found_exception;
 

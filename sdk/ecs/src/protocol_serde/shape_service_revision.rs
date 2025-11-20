@@ -114,6 +114,10 @@ where
                             builder = builder
                                 .set_resolved_configuration(crate::protocol_serde::shape_resolved_configuration::de_resolved_configuration(tokens)?);
                         }
+                        "ecsManagedResources" => {
+                            builder = builder
+                                .set_ecs_managed_resources(crate::protocol_serde::shape_ecs_managed_resources::de_ecs_managed_resources(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

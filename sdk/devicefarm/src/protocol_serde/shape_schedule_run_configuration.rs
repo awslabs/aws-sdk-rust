@@ -57,5 +57,20 @@ pub fn ser_schedule_run_configuration(
     if let Some(var_18) = &input.billing_method {
         object.key("billingMethod").string(var_18.as_str());
     }
+    if let Some(var_19) = &input.environment_variables {
+        let mut array_20 = object.key("environmentVariables").start_array();
+        for item_21 in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_22, item_21)?;
+                object_22.finish();
+            }
+        }
+        array_20.finish();
+    }
+    if let Some(var_23) = &input.execution_role_arn {
+        object.key("executionRoleArn").string(var_23.as_str());
+    }
     Ok(())
 }

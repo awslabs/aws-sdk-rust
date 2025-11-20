@@ -251,6 +251,10 @@ mod batch_delete_cluster_nodes;
 
 mod batch_describe_model_package;
 
+mod batch_reboot_cluster_nodes;
+
+mod batch_replace_cluster_nodes;
+
 mod create_action;
 
 mod create_algorithm;

@@ -3,6 +3,14 @@ pub use crate::types::_program_set_validation_failure::ProgramSetValidationFailu
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_time_period::TimePeriod;
+
+pub use crate::types::_spending_limit_summary::SpendingLimitSummary;
+
+pub use crate::types::_search_spending_limits_filter::SearchSpendingLimitsFilter;
+
+pub use crate::types::_search_spending_limits_filter_operator::SearchSpendingLimitsFilterOperator;
+
 pub use crate::types::_cancellation_status::CancellationStatus;
 
 pub use crate::types::_experimental_capabilities::ExperimentalCapabilities;
@@ -164,6 +172,14 @@ mod _search_jobs_filter_operator;
 mod _search_quantum_tasks_filter;
 
 mod _search_quantum_tasks_filter_operator;
+
+mod _search_spending_limits_filter;
+
+mod _search_spending_limits_filter_operator;
+
+mod _spending_limit_summary;
+
+mod _time_period;
 
 mod _validation_exception_reason;
 

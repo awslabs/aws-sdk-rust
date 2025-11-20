@@ -14,6 +14,7 @@
 /// match scalingactivitystatuscode {
 ///     ScalingActivityStatusCode::Cancelled => { /* ... */ },
 ///     ScalingActivityStatusCode::Failed => { /* ... */ },
+///     ScalingActivityStatusCode::InPlaceUpdateInProgress => { /* ... */ },
 ///     ScalingActivityStatusCode::InProgress => { /* ... */ },
 ///     ScalingActivityStatusCode::MidLifecycleAction => { /* ... */ },
 ///     ScalingActivityStatusCode::PendingSpotBidPlacement => { /* ... */ },
@@ -21,6 +22,8 @@
 ///     ScalingActivityStatusCode::Successful => { /* ... */ },
 ///     ScalingActivityStatusCode::WaitingForConnectionDraining => { /* ... */ },
 ///     ScalingActivityStatusCode::WaitingForElbConnectionDraining => { /* ... */ },
+///     ScalingActivityStatusCode::WaitingForInPlaceUpdateToFinalize => { /* ... */ },
+///     ScalingActivityStatusCode::WaitingForInPlaceUpdateToStart => { /* ... */ },
 ///     ScalingActivityStatusCode::WaitingForInstanceId => { /* ... */ },
 ///     ScalingActivityStatusCode::WaitingForInstanceWarmup => { /* ... */ },
 ///     ScalingActivityStatusCode::WaitingForSpotInstanceId => { /* ... */ },
@@ -58,6 +61,8 @@ pub enum ScalingActivityStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    InPlaceUpdateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     MidLifecycleAction,
@@ -71,6 +76,10 @@ pub enum ScalingActivityStatusCode {
     WaitingForConnectionDraining,
     #[allow(missing_docs)] // documentation missing in model
     WaitingForElbConnectionDraining,
+    #[allow(missing_docs)] // documentation missing in model
+    WaitingForInPlaceUpdateToFinalize,
+    #[allow(missing_docs)] // documentation missing in model
+    WaitingForInPlaceUpdateToStart,
     #[allow(missing_docs)] // documentation missing in model
     WaitingForInstanceId,
     #[allow(missing_docs)] // documentation missing in model
@@ -88,6 +97,7 @@ impl ::std::convert::From<&str> for ScalingActivityStatusCode {
         match s {
             "Cancelled" => ScalingActivityStatusCode::Cancelled,
             "Failed" => ScalingActivityStatusCode::Failed,
+            "InPlaceUpdateInProgress" => ScalingActivityStatusCode::InPlaceUpdateInProgress,
             "InProgress" => ScalingActivityStatusCode::InProgress,
             "MidLifecycleAction" => ScalingActivityStatusCode::MidLifecycleAction,
             "PendingSpotBidPlacement" => ScalingActivityStatusCode::PendingSpotBidPlacement,
@@ -95,6 +105,8 @@ impl ::std::convert::From<&str> for ScalingActivityStatusCode {
             "Successful" => ScalingActivityStatusCode::Successful,
             "WaitingForConnectionDraining" => ScalingActivityStatusCode::WaitingForConnectionDraining,
             "WaitingForELBConnectionDraining" => ScalingActivityStatusCode::WaitingForElbConnectionDraining,
+            "WaitingForInPlaceUpdateToFinalize" => ScalingActivityStatusCode::WaitingForInPlaceUpdateToFinalize,
+            "WaitingForInPlaceUpdateToStart" => ScalingActivityStatusCode::WaitingForInPlaceUpdateToStart,
             "WaitingForInstanceId" => ScalingActivityStatusCode::WaitingForInstanceId,
             "WaitingForInstanceWarmup" => ScalingActivityStatusCode::WaitingForInstanceWarmup,
             "WaitingForSpotInstanceId" => ScalingActivityStatusCode::WaitingForSpotInstanceId,
@@ -116,6 +128,7 @@ impl ScalingActivityStatusCode {
         match self {
             ScalingActivityStatusCode::Cancelled => "Cancelled",
             ScalingActivityStatusCode::Failed => "Failed",
+            ScalingActivityStatusCode::InPlaceUpdateInProgress => "InPlaceUpdateInProgress",
             ScalingActivityStatusCode::InProgress => "InProgress",
             ScalingActivityStatusCode::MidLifecycleAction => "MidLifecycleAction",
             ScalingActivityStatusCode::PendingSpotBidPlacement => "PendingSpotBidPlacement",
@@ -123,6 +136,8 @@ impl ScalingActivityStatusCode {
             ScalingActivityStatusCode::Successful => "Successful",
             ScalingActivityStatusCode::WaitingForConnectionDraining => "WaitingForConnectionDraining",
             ScalingActivityStatusCode::WaitingForElbConnectionDraining => "WaitingForELBConnectionDraining",
+            ScalingActivityStatusCode::WaitingForInPlaceUpdateToFinalize => "WaitingForInPlaceUpdateToFinalize",
+            ScalingActivityStatusCode::WaitingForInPlaceUpdateToStart => "WaitingForInPlaceUpdateToStart",
             ScalingActivityStatusCode::WaitingForInstanceId => "WaitingForInstanceId",
             ScalingActivityStatusCode::WaitingForInstanceWarmup => "WaitingForInstanceWarmup",
             ScalingActivityStatusCode::WaitingForSpotInstanceId => "WaitingForSpotInstanceId",
@@ -135,6 +150,7 @@ impl ScalingActivityStatusCode {
         &[
             "Cancelled",
             "Failed",
+            "InPlaceUpdateInProgress",
             "InProgress",
             "MidLifecycleAction",
             "PendingSpotBidPlacement",
@@ -142,6 +158,8 @@ impl ScalingActivityStatusCode {
             "Successful",
             "WaitingForConnectionDraining",
             "WaitingForELBConnectionDraining",
+            "WaitingForInPlaceUpdateToFinalize",
+            "WaitingForInPlaceUpdateToStart",
             "WaitingForInstanceId",
             "WaitingForInstanceWarmup",
             "WaitingForSpotInstanceId",
@@ -171,6 +189,7 @@ impl ::std::fmt::Display for ScalingActivityStatusCode {
         match self {
             ScalingActivityStatusCode::Cancelled => write!(f, "Cancelled"),
             ScalingActivityStatusCode::Failed => write!(f, "Failed"),
+            ScalingActivityStatusCode::InPlaceUpdateInProgress => write!(f, "InPlaceUpdateInProgress"),
             ScalingActivityStatusCode::InProgress => write!(f, "InProgress"),
             ScalingActivityStatusCode::MidLifecycleAction => write!(f, "MidLifecycleAction"),
             ScalingActivityStatusCode::PendingSpotBidPlacement => write!(f, "PendingSpotBidPlacement"),
@@ -178,6 +197,8 @@ impl ::std::fmt::Display for ScalingActivityStatusCode {
             ScalingActivityStatusCode::Successful => write!(f, "Successful"),
             ScalingActivityStatusCode::WaitingForConnectionDraining => write!(f, "WaitingForConnectionDraining"),
             ScalingActivityStatusCode::WaitingForElbConnectionDraining => write!(f, "WaitingForELBConnectionDraining"),
+            ScalingActivityStatusCode::WaitingForInPlaceUpdateToFinalize => write!(f, "WaitingForInPlaceUpdateToFinalize"),
+            ScalingActivityStatusCode::WaitingForInPlaceUpdateToStart => write!(f, "WaitingForInPlaceUpdateToStart"),
             ScalingActivityStatusCode::WaitingForInstanceId => write!(f, "WaitingForInstanceId"),
             ScalingActivityStatusCode::WaitingForInstanceWarmup => write!(f, "WaitingForInstanceWarmup"),
             ScalingActivityStatusCode::WaitingForSpotInstanceId => write!(f, "WaitingForSpotInstanceId"),

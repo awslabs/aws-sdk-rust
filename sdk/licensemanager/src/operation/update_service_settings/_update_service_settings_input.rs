@@ -11,6 +11,8 @@ pub struct UpdateServiceSettingsInput {
     pub organization_configuration: ::std::option::Option<crate::types::OrganizationConfiguration>,
     /// <p>Activates cross-account discovery.</p>
     pub enable_cross_accounts_discovery: ::std::option::Option<bool>,
+    /// <p>Cross region discovery enabled source regions.</p>
+    pub enabled_discovery_source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateServiceSettingsInput {
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
@@ -29,6 +31,12 @@ impl UpdateServiceSettingsInput {
     pub fn enable_cross_accounts_discovery(&self) -> ::std::option::Option<bool> {
         self.enable_cross_accounts_discovery
     }
+    /// <p>Cross region discovery enabled source regions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_discovery_source_regions.is_none()`.
+    pub fn enabled_discovery_source_regions(&self) -> &[::std::string::String] {
+        self.enabled_discovery_source_regions.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateServiceSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSettingsInput`](crate::operation::update_service_settings::UpdateServiceSettingsInput).
@@ -45,6 +53,7 @@ pub struct UpdateServiceSettingsInputBuilder {
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) organization_configuration: ::std::option::Option<crate::types::OrganizationConfiguration>,
     pub(crate) enable_cross_accounts_discovery: ::std::option::Option<bool>,
+    pub(crate) enabled_discovery_source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateServiceSettingsInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
@@ -103,6 +112,26 @@ impl UpdateServiceSettingsInputBuilder {
     pub fn get_enable_cross_accounts_discovery(&self) -> &::std::option::Option<bool> {
         &self.enable_cross_accounts_discovery
     }
+    /// Appends an item to `enabled_discovery_source_regions`.
+    ///
+    /// To override the contents of this collection use [`set_enabled_discovery_source_regions`](Self::set_enabled_discovery_source_regions).
+    ///
+    /// <p>Cross region discovery enabled source regions.</p>
+    pub fn enabled_discovery_source_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.enabled_discovery_source_regions.unwrap_or_default();
+        v.push(input.into());
+        self.enabled_discovery_source_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Cross region discovery enabled source regions.</p>
+    pub fn set_enabled_discovery_source_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.enabled_discovery_source_regions = input;
+        self
+    }
+    /// <p>Cross region discovery enabled source regions.</p>
+    pub fn get_enabled_discovery_source_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.enabled_discovery_source_regions
+    }
     /// Consumes the builder and constructs a [`UpdateServiceSettingsInput`](crate::operation::update_service_settings::UpdateServiceSettingsInput).
     pub fn build(
         self,
@@ -113,6 +142,7 @@ impl UpdateServiceSettingsInputBuilder {
             sns_topic_arn: self.sns_topic_arn,
             organization_configuration: self.organization_configuration,
             enable_cross_accounts_discovery: self.enable_cross_accounts_discovery,
+            enabled_discovery_source_regions: self.enabled_discovery_source_regions,
         })
     }
 }

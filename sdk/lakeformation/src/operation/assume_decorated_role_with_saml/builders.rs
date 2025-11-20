@@ -23,7 +23,19 @@ impl crate::operation::assume_decorated_role_with_saml::builders::AssumeDecorate
 /// Fluent builder constructing a request to `AssumeDecoratedRoleWithSAML`.
 ///
 /// <p>Allows a caller to assume an IAM role decorated as the SAML user specified in the SAML assertion included in the request. This decoration allows Lake Formation to enforce access policies against the SAML users and groups. This API operation requires SAML federation setup in the caller’s account as it can only be called with valid SAML assertions. Lake Formation does not scope down the permission of the assumed role. All permissions attached to the role via the SAML federation setup will be included in the role session.</p>
-/// <p>This decorated role is expected to access data in Amazon S3 by getting temporary access from Lake Formation which is authorized via the virtual API <code>GetDataAccess</code>. Therefore, all SAML roles that can be assumed via <code>AssumeDecoratedRoleWithSAML</code> must at a minimum include <code>lakeformation:GetDataAccess</code> in their role policies. A typical IAM policy attached to such a role would look as follows:</p>
+/// <p>This decorated role is expected to access data in Amazon S3 by getting temporary access from Lake Formation which is authorized via the virtual API <code>GetDataAccess</code>. Therefore, all SAML roles that can be assumed via <code>AssumeDecoratedRoleWithSAML</code> must at a minimum include <code>lakeformation:GetDataAccess</code> in their role policies. A typical IAM policy attached to such a role would include the following actions:</p>
+/// <ul>
+/// <li>
+/// <p>glue:*Database*</p></li>
+/// <li>
+/// <p>glue:*Table*</p></li>
+/// <li>
+/// <p>glue:*Partition*</p></li>
+/// <li>
+/// <p>glue:*UserDefinedFunction*</p></li>
+/// <li>
+/// <p>lakeformation:GetDataAccess</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssumeDecoratedRoleWithSAMLFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

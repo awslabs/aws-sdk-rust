@@ -12,6 +12,8 @@ pub struct UserDefinedFunction {
     pub class_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the function.</p>
     pub owner_name: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the function.</p>
+    pub function_type: ::std::option::Option<crate::types::FunctionType>,
     /// <p>The owner type.</p>
     pub owner_type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>The time at which the function was created.</p>
@@ -37,6 +39,10 @@ impl UserDefinedFunction {
     /// <p>The owner of the function.</p>
     pub fn owner_name(&self) -> ::std::option::Option<&str> {
         self.owner_name.as_deref()
+    }
+    /// <p>The type of the function.</p>
+    pub fn function_type(&self) -> ::std::option::Option<&crate::types::FunctionType> {
+        self.function_type.as_ref()
     }
     /// <p>The owner type.</p>
     pub fn owner_type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
@@ -72,6 +78,7 @@ pub struct UserDefinedFunctionBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) class_name: ::std::option::Option<::std::string::String>,
     pub(crate) owner_name: ::std::option::Option<::std::string::String>,
+    pub(crate) function_type: ::std::option::Option<crate::types::FunctionType>,
     pub(crate) owner_type: ::std::option::Option<crate::types::PrincipalType>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource_uris: ::std::option::Option<::std::vec::Vec<crate::types::ResourceUri>>,
@@ -133,6 +140,20 @@ impl UserDefinedFunctionBuilder {
     /// <p>The owner of the function.</p>
     pub fn get_owner_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_name
+    }
+    /// <p>The type of the function.</p>
+    pub fn function_type(mut self, input: crate::types::FunctionType) -> Self {
+        self.function_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the function.</p>
+    pub fn set_function_type(mut self, input: ::std::option::Option<crate::types::FunctionType>) -> Self {
+        self.function_type = input;
+        self
+    }
+    /// <p>The type of the function.</p>
+    pub fn get_function_type(&self) -> &::std::option::Option<crate::types::FunctionType> {
+        &self.function_type
     }
     /// <p>The owner type.</p>
     pub fn owner_type(mut self, input: crate::types::PrincipalType) -> Self {
@@ -203,6 +224,7 @@ impl UserDefinedFunctionBuilder {
             database_name: self.database_name,
             class_name: self.class_name,
             owner_name: self.owner_name,
+            function_type: self.function_type,
             owner_type: self.owner_type,
             create_time: self.create_time,
             resource_uris: self.resource_uris,

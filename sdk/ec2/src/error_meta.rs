@@ -3526,6 +3526,74 @@ impl From<crate::operation::create_transit_gateway_connect_peer::CreateTransitGa
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_transit_gateway_metering_policy::CreateTransitGatewayMeteringPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_transit_gateway_metering_policy::CreateTransitGatewayMeteringPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_transit_gateway_metering_policy::CreateTransitGatewayMeteringPolicyError> for Error {
+    fn from(err: crate::operation::create_transit_gateway_metering_policy::CreateTransitGatewayMeteringPolicyError) -> Self {
+        match err {
+            crate::operation::create_transit_gateway_metering_policy::CreateTransitGatewayMeteringPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_transit_gateway_metering_policy_entry::CreateTransitGatewayMeteringPolicyEntryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_transit_gateway_metering_policy_entry::CreateTransitGatewayMeteringPolicyEntryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_transit_gateway_metering_policy_entry::CreateTransitGatewayMeteringPolicyEntryError> for Error {
+    fn from(err: crate::operation::create_transit_gateway_metering_policy_entry::CreateTransitGatewayMeteringPolicyEntryError) -> Self {
+        match err {
+            crate::operation::create_transit_gateway_metering_policy_entry::CreateTransitGatewayMeteringPolicyEntryError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainError,
             R,
         >,
@@ -3968,6 +4036,30 @@ impl From<crate::operation::create_vpc_block_public_access_exclusion::CreateVpcB
             crate::operation::create_vpc_block_public_access_exclusion::CreateVpcBlockPublicAccessExclusionError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_encryption_control::CreateVpcEncryptionControlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_encryption_control::CreateVpcEncryptionControlError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_vpc_encryption_control::CreateVpcEncryptionControlError> for Error {
+    fn from(err: crate::operation::create_vpc_encryption_control::CreateVpcEncryptionControlError) -> Self {
+        match err {
+            crate::operation::create_vpc_encryption_control::CreateVpcEncryptionControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5786,6 +5878,74 @@ impl From<crate::operation::delete_transit_gateway_connect_peer::DeleteTransitGa
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_transit_gateway_metering_policy::DeleteTransitGatewayMeteringPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_transit_gateway_metering_policy::DeleteTransitGatewayMeteringPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_transit_gateway_metering_policy::DeleteTransitGatewayMeteringPolicyError> for Error {
+    fn from(err: crate::operation::delete_transit_gateway_metering_policy::DeleteTransitGatewayMeteringPolicyError) -> Self {
+        match err {
+            crate::operation::delete_transit_gateway_metering_policy::DeleteTransitGatewayMeteringPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_transit_gateway_metering_policy_entry::DeleteTransitGatewayMeteringPolicyEntryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_transit_gateway_metering_policy_entry::DeleteTransitGatewayMeteringPolicyEntryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_transit_gateway_metering_policy_entry::DeleteTransitGatewayMeteringPolicyEntryError> for Error {
+    fn from(err: crate::operation::delete_transit_gateway_metering_policy_entry::DeleteTransitGatewayMeteringPolicyEntryError) -> Self {
+        match err {
+            crate::operation::delete_transit_gateway_metering_policy_entry::DeleteTransitGatewayMeteringPolicyEntryError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainError,
             R,
         >,
@@ -6228,6 +6388,30 @@ impl From<crate::operation::delete_vpc_block_public_access_exclusion::DeleteVpcB
             crate::operation::delete_vpc_block_public_access_exclusion::DeleteVpcBlockPublicAccessExclusionError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpc_encryption_control::DeleteVpcEncryptionControlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpc_encryption_control::DeleteVpcEncryptionControlError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_vpc_encryption_control::DeleteVpcEncryptionControlError> for Error {
+    fn from(err: crate::operation::delete_vpc_encryption_control::DeleteVpcEncryptionControlError) -> Self {
+        match err {
+            crate::operation::delete_vpc_encryption_control::DeleteVpcEncryptionControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -10578,6 +10762,40 @@ impl From<crate::operation::describe_transit_gateway_connects::DescribeTransitGa
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_transit_gateway_metering_policies::DescribeTransitGatewayMeteringPoliciesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_transit_gateway_metering_policies::DescribeTransitGatewayMeteringPoliciesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_transit_gateway_metering_policies::DescribeTransitGatewayMeteringPoliciesError> for Error {
+    fn from(err: crate::operation::describe_transit_gateway_metering_policies::DescribeTransitGatewayMeteringPoliciesError) -> Self {
+        match err {
+            crate::operation::describe_transit_gateway_metering_policies::DescribeTransitGatewayMeteringPoliciesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsError,
             R,
         >,
@@ -11237,6 +11455,35 @@ impl From<crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcCl
             crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_vpc_encryption_controls::DescribeVpcEncryptionControlsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_vpc_encryption_controls::DescribeVpcEncryptionControlsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_vpc_encryption_controls::DescribeVpcEncryptionControlsError> for Error {
+    fn from(err: crate::operation::describe_vpc_encryption_controls::DescribeVpcEncryptionControlsError) -> Self {
+        match err {
+            crate::operation::describe_vpc_encryption_controls::DescribeVpcEncryptionControlsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -15114,6 +15361,40 @@ impl From<crate::operation::get_transit_gateway_attachment_propagations::GetTran
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_transit_gateway_metering_policy_entries::GetTransitGatewayMeteringPolicyEntriesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_transit_gateway_metering_policy_entries::GetTransitGatewayMeteringPolicyEntriesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_transit_gateway_metering_policy_entries::GetTransitGatewayMeteringPolicyEntriesError> for Error {
+    fn from(err: crate::operation::get_transit_gateway_metering_policy_entries::GetTransitGatewayMeteringPolicyEntriesError) -> Self {
+        match err {
+            crate::operation::get_transit_gateway_metering_policy_entries::GetTransitGatewayMeteringPolicyEntriesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsError,
             R,
         >,
@@ -15412,6 +15693,40 @@ impl From<crate::operation::get_verified_access_group_policy::GetVerifiedAccessG
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_vpc_resources_blocking_encryption_enforcement::GetVpcResourcesBlockingEncryptionEnforcementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_vpc_resources_blocking_encryption_enforcement::GetVpcResourcesBlockingEncryptionEnforcementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_vpc_resources_blocking_encryption_enforcement::GetVpcResourcesBlockingEncryptionEnforcementError> for Error {
+    fn from(err: crate::operation::get_vpc_resources_blocking_encryption_enforcement::GetVpcResourcesBlockingEncryptionEnforcementError) -> Self {
+        match err {
+            crate::operation::get_vpc_resources_blocking_encryption_enforcement::GetVpcResourcesBlockingEncryptionEnforcementError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationError,
             R,
         >,
@@ -15687,6 +16002,30 @@ impl From<crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycl
     fn from(err: crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError) -> Self {
         match err {
             crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_volumes_in_recycle_bin::ListVolumesInRecycleBinError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_volumes_in_recycle_bin::ListVolumesInRecycleBinError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_volumes_in_recycle_bin::ListVolumesInRecycleBinError> for Error {
+    fn from(err: crate::operation::list_volumes_in_recycle_bin::ListVolumesInRecycleBinError) -> Self {
+        match err {
+            crate::operation::list_volumes_in_recycle_bin::ListVolumesInRecycleBinError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -17020,6 +17359,40 @@ impl From<crate::operation::modify_transit_gateway::ModifyTransitGatewayError> f
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_transit_gateway_metering_policy::ModifyTransitGatewayMeteringPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_transit_gateway_metering_policy::ModifyTransitGatewayMeteringPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_transit_gateway_metering_policy::ModifyTransitGatewayMeteringPolicyError> for Error {
+    fn from(err: crate::operation::modify_transit_gateway_metering_policy::ModifyTransitGatewayMeteringPolicyError) -> Self {
+        match err {
+            crate::operation::modify_transit_gateway_metering_policy::ModifyTransitGatewayMeteringPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::modify_transit_gateway_prefix_list_reference::ModifyTransitGatewayPrefixListReferenceError,
             R,
         >,
@@ -17429,6 +17802,30 @@ impl From<crate::operation::modify_vpc_block_public_access_options::ModifyVpcBlo
             crate::operation::modify_vpc_block_public_access_options::ModifyVpcBlockPublicAccessOptionsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_vpc_encryption_control::ModifyVpcEncryptionControlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_vpc_encryption_control::ModifyVpcEncryptionControlError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_vpc_encryption_control::ModifyVpcEncryptionControlError> for Error {
+    fn from(err: crate::operation::modify_vpc_encryption_control::ModifyVpcEncryptionControlError) -> Self {
+        match err {
+            crate::operation::modify_vpc_encryption_control::ModifyVpcEncryptionControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -19037,6 +19434,34 @@ impl From<crate::operation::restore_snapshot_tier::RestoreSnapshotTierError> for
     fn from(err: crate::operation::restore_snapshot_tier::RestoreSnapshotTierError) -> Self {
         match err {
             crate::operation::restore_snapshot_tier::RestoreSnapshotTierError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_volume_from_recycle_bin::RestoreVolumeFromRecycleBinError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::restore_volume_from_recycle_bin::RestoreVolumeFromRecycleBinError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::restore_volume_from_recycle_bin::RestoreVolumeFromRecycleBinError> for Error {
+    fn from(err: crate::operation::restore_volume_from_recycle_bin::RestoreVolumeFromRecycleBinError) -> Self {
+        match err {
+            crate::operation::restore_volume_from_recycle_bin::RestoreVolumeFromRecycleBinError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

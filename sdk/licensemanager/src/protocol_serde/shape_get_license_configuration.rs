@@ -247,6 +247,13 @@ pub(crate) fn de_get_license_configuration(
                 "DisassociateWhenNotFound" => {
                     builder = builder.set_disassociate_when_not_found(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "LicenseExpiry" => {
+                    builder = builder.set_license_expiry(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

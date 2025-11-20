@@ -125,9 +125,33 @@ pub use crate::types::_theme_configuration::ThemeConfiguration;
 
 pub use crate::types::_typography::Typography;
 
+pub use crate::types::_visual_subtitle_font_configuration::VisualSubtitleFontConfiguration;
+
+pub use crate::types::_text_transform::TextTransform;
+
+pub use crate::types::_horizontal_text_alignment::HorizontalTextAlignment;
+
+pub use crate::types::_font_configuration::FontConfiguration;
+
+pub use crate::types::_font_style::FontStyle;
+
+pub use crate::types::_font_weight::FontWeight;
+
+pub use crate::types::_font_weight_name::FontWeightName;
+
+pub use crate::types::_font_decoration::FontDecoration;
+
+pub use crate::types::_font_size::FontSize;
+
+pub use crate::types::_relative_font_size::RelativeFontSize;
+
+pub use crate::types::_visual_title_font_configuration::VisualTitleFontConfiguration;
+
 pub use crate::types::_font::Font;
 
 pub use crate::types::_sheet_style::SheetStyle;
+
+pub use crate::types::_sheet_background_style::SheetBackgroundStyle;
 
 pub use crate::types::_tile_layout_style::TileLayoutStyle;
 
@@ -299,20 +323,6 @@ pub use crate::types::_sheet_control_info_icon_label_options::SheetControlInfoIc
 
 pub use crate::types::_label_options::LabelOptions;
 
-pub use crate::types::_font_configuration::FontConfiguration;
-
-pub use crate::types::_font_style::FontStyle;
-
-pub use crate::types::_font_weight::FontWeight;
-
-pub use crate::types::_font_weight_name::FontWeightName;
-
-pub use crate::types::_font_decoration::FontDecoration;
-
-pub use crate::types::_font_size::FontSize;
-
-pub use crate::types::_relative_font_size::RelativeFontSize;
-
 pub use crate::types::_default_slider_control_options::DefaultSliderControlOptions;
 
 pub use crate::types::_sheet_control_slider_type::SheetControlSliderType;
@@ -465,6 +475,12 @@ pub use crate::types::_grid_layout_configuration::GridLayoutConfiguration;
 
 pub use crate::types::_grid_layout_element::GridLayoutElement;
 
+pub use crate::types::_loading_animation::LoadingAnimation;
+
+pub use crate::types::_grid_layout_element_background_style::GridLayoutElementBackgroundStyle;
+
+pub use crate::types::_grid_layout_element_border_style::GridLayoutElementBorderStyle;
+
 pub use crate::types::_layout_element_type::LayoutElementType;
 
 pub use crate::types::_layout::Layout;
@@ -482,8 +498,6 @@ pub use crate::types::_section_layout_configuration::SectionLayoutConfiguration;
 pub use crate::types::_free_form_section_layout_configuration::FreeFormSectionLayoutConfiguration;
 
 pub use crate::types::_free_form_layout_element::FreeFormLayoutElement;
-
-pub use crate::types::_loading_animation::LoadingAnimation;
 
 pub use crate::types::_free_form_layout_element_background_style::FreeFormLayoutElementBackgroundStyle;
 
@@ -1170,8 +1184,6 @@ pub use crate::types::_panel_configuration::PanelConfiguration;
 pub use crate::types::_panel_border_style::PanelBorderStyle;
 
 pub use crate::types::_panel_title_options::PanelTitleOptions;
-
-pub use crate::types::_horizontal_text_alignment::HorizontalTextAlignment;
 
 pub use crate::types::_line_chart_type::LineChartType;
 
@@ -3721,6 +3733,10 @@ mod _grid_layout_configuration;
 
 mod _grid_layout_element;
 
+mod _grid_layout_element_background_style;
+
+mod _grid_layout_element_border_style;
+
 mod _grid_layout_screen_canvas_size_options;
 
 mod _group;
@@ -4533,6 +4549,8 @@ mod _sharing_model;
 
 mod _sheet;
 
+mod _sheet_background_style;
+
 mod _sheet_content_type;
 
 mod _sheet_control_date_time_picker_type;
@@ -4809,6 +4827,8 @@ mod _text_field_control_display_options;
 
 mod _text_qualifier;
 
+mod _text_transform;
+
 mod _text_wrap;
 
 mod _theme;
@@ -5049,7 +5069,11 @@ mod _visual_palette;
 
 mod _visual_role;
 
+mod _visual_subtitle_font_configuration;
+
 mod _visual_subtitle_label_options;
+
+mod _visual_title_font_configuration;
 
 mod _visual_title_label_options;
 

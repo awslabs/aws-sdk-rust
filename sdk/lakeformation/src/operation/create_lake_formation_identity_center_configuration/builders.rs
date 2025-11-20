@@ -183,4 +183,23 @@ impl CreateLakeFormationIdentityCenterConfigurationFluentBuilder {
     pub fn get_share_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
         self.inner.get_share_recipients()
     }
+    ///
+    /// Appends an item to `ServiceIntegrations`.
+    ///
+    /// To override the contents of this collection use [`set_service_integrations`](Self::set_service_integrations).
+    ///
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn service_integrations(mut self, input: crate::types::ServiceIntegrationUnion) -> Self {
+        self.inner = self.inner.service_integrations(input);
+        self
+    }
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn set_service_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>>) -> Self {
+        self.inner = self.inner.set_service_integrations(input);
+        self
+    }
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn get_service_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>> {
+        self.inner.get_service_integrations()
+    }
 }

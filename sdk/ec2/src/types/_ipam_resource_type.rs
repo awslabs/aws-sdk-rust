@@ -12,6 +12,7 @@
 /// ```text
 /// # let ipamresourcetype = unimplemented!();
 /// match ipamresourcetype {
+///     IpamResourceType::AnycastIpList => { /* ... */ },
 ///     IpamResourceType::Eip => { /* ... */ },
 ///     IpamResourceType::Eni => { /* ... */ },
 ///     IpamResourceType::Ipv6Pool => { /* ... */ },
@@ -47,6 +48,8 @@
 )]
 pub enum IpamResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AnycastIpList,
+    #[allow(missing_docs)] // documentation missing in model
     Eip,
     #[allow(missing_docs)] // documentation missing in model
     Eni,
@@ -65,6 +68,7 @@ pub enum IpamResourceType {
 impl ::std::convert::From<&str> for IpamResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "anycast-ip-list" => IpamResourceType::AnycastIpList,
             "eip" => IpamResourceType::Eip,
             "eni" => IpamResourceType::Eni,
             "ipv6-pool" => IpamResourceType::Ipv6Pool,
@@ -86,6 +90,7 @@ impl IpamResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            IpamResourceType::AnycastIpList => "anycast-ip-list",
             IpamResourceType::Eip => "eip",
             IpamResourceType::Eni => "eni",
             IpamResourceType::Ipv6Pool => "ipv6-pool",
@@ -97,7 +102,7 @@ impl IpamResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["eip", "eni", "ipv6-pool", "public-ipv4-pool", "subnet", "vpc"]
+        &["anycast-ip-list", "eip", "eni", "ipv6-pool", "public-ipv4-pool", "subnet", "vpc"]
     }
 }
 impl ::std::convert::AsRef<str> for IpamResourceType {
@@ -120,6 +125,7 @@ impl IpamResourceType {
 impl ::std::fmt::Display for IpamResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            IpamResourceType::AnycastIpList => write!(f, "anycast-ip-list"),
             IpamResourceType::Eip => write!(f, "eip"),
             IpamResourceType::Eni => write!(f, "eni"),
             IpamResourceType::Ipv6Pool => write!(f, "ipv6-pool"),

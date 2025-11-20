@@ -78,5 +78,10 @@ pub fn ser_modify_transit_gateway_options(
             ::aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_29 = writer.prefix("EncryptionSupport");
+    if let Some(var_30) = &input.encryption_support {
+        scope_29.string(var_30.as_str());
+    }
     Ok(())
 }

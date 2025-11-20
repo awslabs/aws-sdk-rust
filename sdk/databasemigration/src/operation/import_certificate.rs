@@ -268,6 +268,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ImportCertifi
 pub enum ImportCertificateError {
     /// <p>The certificate was not valid.</p>
     InvalidCertificateFault(crate::types::error::InvalidCertificateFault),
+    /// <p>DMS cannot access the KMS key.</p>
+    KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
     /// <p>The resource you are attempting to create already exists.</p>
     ResourceAlreadyExistsFault(crate::types::error::ResourceAlreadyExistsFault),
     /// <p>The quota for this resource quota has been exceeded.</p>
@@ -306,6 +308,7 @@ impl ImportCertificateError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidCertificateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -314,6 +317,10 @@ impl ImportCertificateError {
     /// Returns `true` if the error kind is `ImportCertificateError::InvalidCertificateFault`.
     pub fn is_invalid_certificate_fault(&self) -> bool {
         matches!(self, Self::InvalidCertificateFault(_))
+    }
+    /// Returns `true` if the error kind is `ImportCertificateError::KmsKeyNotAccessibleFault`.
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(self, Self::KmsKeyNotAccessibleFault(_))
     }
     /// Returns `true` if the error kind is `ImportCertificateError::ResourceAlreadyExistsFault`.
     pub fn is_resource_already_exists_fault(&self) -> bool {
@@ -328,6 +335,7 @@ impl ::std::error::Error for ImportCertificateError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InvalidCertificateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -338,6 +346,7 @@ impl ::std::fmt::Display for ImportCertificateError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InvalidCertificateFault(_inner) => _inner.fmt(f),
+            Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             Self::ResourceAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::ResourceQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -362,6 +371,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ImportCertifi
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidCertificateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

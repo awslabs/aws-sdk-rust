@@ -40,6 +40,8 @@ pub enum Error {
     /// <li>
     /// <p>ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't fully active. You must complete the account setup before you create an organization.</p></li>
     /// <li>
+    /// <p>ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing responsibility transfer process. For example, a pending invitation or an in-progress transfer. To delete the organization, you must resolve the current transfer process.</p></li>
+    /// <li>
     /// <p>ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you need more accounts, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a> to request an increase in your limit.</p>
     /// <p>Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in your organization. Send fewer invitations or contact Amazon Web Services Support to request an increase in the number of accounts.</p><note>
     /// <p>Deleted and closed accounts still count toward your limit.</p>
@@ -65,7 +67,7 @@ pub enum Error {
     /// <li>
     /// <p>DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an Amazon Web Services account as a delegated administrator for an Amazon Web Services service that already has a delegated administrator. To complete this operation, you must first deregister any existing delegated administrators for this service.</p></li>
     /// <li>
-    /// <p>EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time. You must resubmit the request and generate a new verfication code.</p></li>
+    /// <p>EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time. You must resubmit the request and generate a new verification code.</p></li>
     /// <li>
     /// <p>HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.</p></li>
     /// <li>
@@ -103,6 +105,14 @@ pub enum Error {
     /// <li>
     /// <p>POLICY_TYPE_ENABLED_FOR_THIS_SERVICE: You attempted to disable service access before you disabled the policy type (for example, SECURITYHUB_POLICY). To complete this operation, you must first disable the policy type.</p></li>
     /// <li>
+    /// <p>RESPONSIBILITY_TRANSFER_MAX_INBOUND_QUOTA_VIOLATION: You have exceeded your inbound transfers limit.</p></li>
+    /// <li>
+    /// <p>RESPONSIBILITY_TRANSFER_MAX_LEVEL_VIOLATION: You have exceeded the maximum length of your transfer chain.</p></li>
+    /// <li>
+    /// <p>RESPONSIBILITY_TRANSFER_MAX_OUTBOUND_QUOTA_VIOLATION: You have exceeded your outbound transfers limit.</p></li>
+    /// <li>
+    /// <p>RESPONSIBILITY_TRANSFER_MAX_TRANSFERS_QUOTA_VIOLATION: You have exceeded the maximum number of inbound transfers allowed in a transfer chain.</p></li>
+    /// <li>
     /// <p>SERVICE_ACCESS_NOT_ENABLED:</p>
     /// <ul>
     /// <li>
@@ -112,6 +122,12 @@ pub enum Error {
     /// </ul></li>
     /// <li>
     /// <p>TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with the tag policy requirements for this account.</p></li>
+    /// <li>
+    /// <p>TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS: The source organization cannot accept this transfer invitation because it is marked for deletion.</p></li>
+    /// <li>
+    /// <p>TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS: The source organization cannot accept this transfer invitation because target organization is marked for deletion.</p></li>
+    /// <li>
+    /// <p>UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.</p></li>
     /// <li>
     /// <p>WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait until at least four days after the account was created. Invited accounts aren't subject to this waiting period.</p></li>
     /// </ul>
@@ -151,15 +167,23 @@ pub enum Error {
     /// <li>
     /// <p>INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES: You can't issue new invitations to join an organization while it's in the process of enabling all features. You can resume inviting accounts after you finalize the process when all accounts have agreed to the change.</p></li>
     /// <li>
+    /// <p>LEGACY_PERMISSIONS_STILL_IN_USE: Your organization must migrate to use the new IAM fine-grained actions for billing, cost management, and accounts.</p></li>
+    /// <li>
     /// <p>ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has already enabled all features.</p></li>
     /// <li>
-    /// <p>ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the organization has already started the process to enable all features.</p></li>
-    /// <li>
     /// <p>ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different marketplace than the accounts in the organization.</p></li>
+    /// <li>
+    /// <p>ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the organization has already started the process to enable all features.</p></li>
     /// <li>
     /// <p>ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership of an account too quickly after its previous change.</p></li>
     /// <li>
     /// <p>PAYMENT_INSTRUMENT_REQUIRED: You can't complete the operation with an account that doesn't have a payment instrument, such as a credit card, associated with it.</p></li>
+    /// <li>
+    /// <p>RESPONSIBILITY_TRANSFER_ALREADY_EXISTS: You cannot perform this operation with the current transfer.</p></li>
+    /// <li>
+    /// <p>SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it is both the sender and recipient of the invitation.</p></li>
+    /// <li>
+    /// <p>UNUSED_PREPAYMENT_BALANCE: Your organization has an outstanding pre-payment balance.</p></li>
     /// </ul>
     HandshakeConstraintViolationException(crate::types::error::HandshakeConstraintViolationException),
     /// <p>We can't find a handshake with the <code>HandshakeId</code> that you specified.</p>
@@ -171,13 +195,21 @@ pub enum Error {
     /// </note>
     /// <ul>
     /// <li>
+    /// <p>CALLER_REQUIRED_FIELD_MISSING: At least one of the required field is missing: Caller Account Id, Management Account Id or Organization Id.</p></li>
+    /// <li>
     /// <p>DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.</p></li>
+    /// <li>
+    /// <p>END_DATE_NOT_END_OF_MONTH: You provided an invalid end date. The end date must be the end of the last day of the month (23.59.59.999).</p></li>
+    /// <li>
+    /// <p>END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer to end.</p></li>
     /// <li>
     /// <p>IMMUTABLE_POLICY: You specified a policy that is managed by Amazon Web Services and can't be modified.</p></li>
     /// <li>
     /// <p>INPUT_REQUIRED: You must include a value for all required parameters.</p></li>
     /// <li>
     /// <p>INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.</p></li>
+    /// <li>
+    /// <p>INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner agreement. Visit Amazon Web Services Partner Central to view your partner agreements or contact your Amazon Web Services Partner for help.</p></li>
     /// <li>
     /// <p>INVALID_ENUM: You specified an invalid value.</p></li>
     /// <li>
@@ -199,6 +231,8 @@ pub enum Error {
     /// <li>
     /// <p>INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin with the reserved prefix <code>AWSServiceRoleFor</code>.</p></li>
     /// <li>
+    /// <p>INVALID_START_DATE: The start date doesn't meet the minimum requirements.</p></li>
+    /// <li>
     /// <p>INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon Resource Name (ARN) for the organization.</p></li>
     /// <li>
     /// <p>INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.</p></li>
@@ -219,11 +253,23 @@ pub enum Error {
     /// <li>
     /// <p>NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.</p></li>
     /// <li>
+    /// <p>START_DATE_NOT_BEGINNING_OF_DAY: You provided an invalid start date. The start date must be the beginning of the day (00:00:00.000).</p></li>
+    /// <li>
+    /// <p>START_DATE_NOT_BEGINNING_OF_MONTH: You provided an invalid start date. The start date must be the first day of the month.</p></li>
+    /// <li>
+    /// <p>START_DATE_TOO_EARLY: You provided an invalid start date. The start date is too early.</p></li>
+    /// <li>
+    /// <p>START_DATE_TOO_LATE: You provided an invalid start date. The start date is too late.</p></li>
+    /// <li>
     /// <p>TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.</p></li>
     /// <li>
     /// <p>UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.</p></li>
+    /// <li>
+    /// <p>UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER: You provided a value that is not supported by this operation.</p></li>
     /// </ul>
     InvalidInputException(crate::types::error::InvalidInputException),
+    /// <p>The responsibility transfer can't transition to the requested state because it's not in a valid state for this operation.</p>
+    InvalidResponsibilityTransferTransitionException(crate::types::error::InvalidResponsibilityTransferTransitionException),
     /// <p>The provided policy document doesn't meet the requirements of the specified policy type. For example, the syntax might be incorrect. For details about service control policy syntax, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html">SCP syntax</a> in the <i>Organizations User Guide</i>.</p>
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),
     /// <p>You can't remove a management account from an organization. If you want the management account to become a member account in another organization, you must first delete the current organization of the management account.</p>
@@ -252,6 +298,10 @@ pub enum Error {
     PolicyTypeNotEnabledException(crate::types::error::PolicyTypeNotEnabledException),
     /// <p>We can't find a resource policy request with the parameter that you specified.</p>
     ResourcePolicyNotFoundException(crate::types::error::ResourcePolicyNotFoundException),
+    /// <p>The responsibility transfer is already in the status that you specified.</p>
+    ResponsibilityTransferAlreadyInStatusException(crate::types::error::ResponsibilityTransferAlreadyInStatusException),
+    /// <p>We can't find a transfer that you specified.</p>
+    ResponsibilityTransferNotFoundException(crate::types::error::ResponsibilityTransferNotFoundException),
     /// <p>We can't find a root with the <code>RootId</code> that you specified.</p>
     RootNotFoundException(crate::types::error::RootNotFoundException),
     /// <p>Organizations can't complete your request because of an internal service error. Try again later.</p>
@@ -304,6 +354,7 @@ impl ::std::fmt::Display for Error {
             Error::HandshakeNotFoundException(inner) => inner.fmt(f),
             Error::InvalidHandshakeTransitionException(inner) => inner.fmt(f),
             Error::InvalidInputException(inner) => inner.fmt(f),
+            Error::InvalidResponsibilityTransferTransitionException(inner) => inner.fmt(f),
             Error::MalformedPolicyDocumentException(inner) => inner.fmt(f),
             Error::MasterCannotLeaveOrganizationException(inner) => inner.fmt(f),
             Error::OrganizationNotEmptyException(inner) => inner.fmt(f),
@@ -318,6 +369,8 @@ impl ::std::fmt::Display for Error {
             Error::PolicyTypeNotAvailableForOrganizationException(inner) => inner.fmt(f),
             Error::PolicyTypeNotEnabledException(inner) => inner.fmt(f),
             Error::ResourcePolicyNotFoundException(inner) => inner.fmt(f),
+            Error::ResponsibilityTransferAlreadyInStatusException(inner) => inner.fmt(f),
+            Error::ResponsibilityTransferNotFoundException(inner) => inner.fmt(f),
             Error::RootNotFoundException(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::SourceParentNotFoundException(inner) => inner.fmt(f),
@@ -372,6 +425,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::HandshakeNotFoundException(inner) => inner.meta(),
             Self::InvalidHandshakeTransitionException(inner) => inner.meta(),
             Self::InvalidInputException(inner) => inner.meta(),
+            Self::InvalidResponsibilityTransferTransitionException(inner) => inner.meta(),
             Self::MalformedPolicyDocumentException(inner) => inner.meta(),
             Self::MasterCannotLeaveOrganizationException(inner) => inner.meta(),
             Self::OrganizationNotEmptyException(inner) => inner.meta(),
@@ -386,6 +440,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::PolicyTypeNotAvailableForOrganizationException(inner) => inner.meta(),
             Self::PolicyTypeNotEnabledException(inner) => inner.meta(),
             Self::ResourcePolicyNotFoundException(inner) => inner.meta(),
+            Self::ResponsibilityTransferAlreadyInStatusException(inner) => inner.meta(),
+            Self::ResponsibilityTransferNotFoundException(inner) => inner.meta(),
             Self::RootNotFoundException(inner) => inner.meta(),
             Self::ServiceException(inner) => inner.meta(),
             Self::SourceParentNotFoundException(inner) => inner.meta(),
@@ -423,6 +479,9 @@ impl From<crate::operation::accept_handshake::AcceptHandshakeError> for Error {
             crate::operation::accept_handshake::AcceptHandshakeError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
+            crate::operation::accept_handshake::AcceptHandshakeError::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
             crate::operation::accept_handshake::AcceptHandshakeError::HandshakeAlreadyInStateException(inner) => {
                 Error::HandshakeAlreadyInStateException(inner)
             }
@@ -434,6 +493,9 @@ impl From<crate::operation::accept_handshake::AcceptHandshakeError> for Error {
                 Error::InvalidHandshakeTransitionException(inner)
             }
             crate::operation::accept_handshake::AcceptHandshakeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::accept_handshake::AcceptHandshakeError::MasterCannotLeaveOrganizationException(inner) => {
+                Error::MasterCannotLeaveOrganizationException(inner)
+            }
             crate::operation::accept_handshake::AcceptHandshakeError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::accept_handshake::AcceptHandshakeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::accept_handshake::AcceptHandshakeError::Unhandled(inner) => Error::Unhandled(inner),
@@ -829,6 +891,9 @@ impl From<crate::operation::delete_organization::DeleteOrganizationError> for Er
             }
             crate::operation::delete_organization::DeleteOrganizationError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_organization::DeleteOrganizationError::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
             }
             crate::operation::delete_organization::DeleteOrganizationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_organization::DeleteOrganizationError::OrganizationNotEmptyException(inner) => {
@@ -1331,6 +1396,59 @@ impl From<crate::operation::describe_resource_policy::DescribeResourcePolicyErro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError> for Error {
+    fn from(err: crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError) -> Self {
+        match err {
+            crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError::AwsOrganizationsNotInUseException(inner) => {
+                Error::AwsOrganizationsNotInUseException(inner)
+            }
+            crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError::ResponsibilityTransferNotFoundException(
+                inner,
+            ) => Error::ResponsibilityTransferNotFoundException(inner),
+            crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError::UnsupportedApiEndpointException(inner) => {
+                Error::UnsupportedApiEndpointException(inner)
+            }
+            crate::operation::describe_responsibility_transfer::DescribeResponsibilityTransferError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detach_policy::DetachPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1650,6 +1768,48 @@ impl From<crate::operation::invite_account_to_organization::InviteAccountToOrgan
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::invite_account_to_organization::InviteAccountToOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError> for Error {
+    fn from(err: crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError) -> Self {
+        match err {
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError::DuplicateHandshakeException(inner) => Error::DuplicateHandshakeException(inner),
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError::HandshakeConstraintViolationException(inner) => Error::HandshakeConstraintViolationException(inner),
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2138,6 +2298,46 @@ impl From<crate::operation::list_handshakes_for_organization::ListHandshakesForO
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError> for Error {
+    fn from(err: crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError) -> Self {
+        match err {
+            crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError::ResponsibilityTransferNotFoundException(inner) => Error::ResponsibilityTransferNotFoundException(inner),
+            crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError,
             R,
         >,
@@ -2182,6 +2382,61 @@ impl From<crate::operation::list_organizational_units_for_parent::ListOrganizati
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError> for Error {
+    fn from(err: crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError) -> Self {
+        match err {
+            crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError::AwsOrganizationsNotInUseException(
+                inner,
+            ) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError::ConstraintViolationException(
+                inner,
+            ) => Error::ConstraintViolationException(inner),
+            crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError::UnsupportedApiEndpointException(
+                inner,
+            ) => Error::UnsupportedApiEndpointException(inner),
+            crate::operation::list_outbound_responsibility_transfers::ListOutboundResponsibilityTransfersError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -2607,6 +2862,49 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError> for Error {
+    fn from(err: crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError) -> Self {
+        match err {
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::AwsOrganizationsNotInUseException(inner) => Error::AwsOrganizationsNotInUseException(inner),
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::ConstraintViolationException(inner) => Error::ConstraintViolationException(inner),
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::InvalidResponsibilityTransferTransitionException(inner) => Error::InvalidResponsibilityTransferTransitionException(inner),
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::ResponsibilityTransferAlreadyInStatusException(inner) => Error::ResponsibilityTransferAlreadyInStatusException(inner),
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::ResponsibilityTransferNotFoundException(inner) => Error::ResponsibilityTransferNotFoundException(inner),
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::UnsupportedApiEndpointException(inner) => Error::UnsupportedApiEndpointException(inner),
+            crate::operation::terminate_responsibility_transfer::TerminateResponsibilityTransferError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2729,6 +3027,58 @@ impl From<crate::operation::update_policy::UpdatePolicyError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError> for Error {
+    fn from(err: crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError) -> Self {
+        match err {
+            crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError::AwsOrganizationsNotInUseException(inner) => {
+                Error::AwsOrganizationsNotInUseException(inner)
+            }
+            crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError::ConstraintViolationException(inner) => {
+                Error::ConstraintViolationException(inner)
+            }
+            crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError::ResponsibilityTransferNotFoundException(inner) => {
+                Error::ResponsibilityTransferNotFoundException(inner)
+            }
+            crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError::UnsupportedApiEndpointException(inner) => {
+                Error::UnsupportedApiEndpointException(inner)
+            }
+            crate::operation::update_responsibility_transfer::UpdateResponsibilityTransferError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
@@ -2759,6 +3109,7 @@ impl ::std::error::Error for Error {
             Error::HandshakeNotFoundException(inner) => inner.source(),
             Error::InvalidHandshakeTransitionException(inner) => inner.source(),
             Error::InvalidInputException(inner) => inner.source(),
+            Error::InvalidResponsibilityTransferTransitionException(inner) => inner.source(),
             Error::MalformedPolicyDocumentException(inner) => inner.source(),
             Error::MasterCannotLeaveOrganizationException(inner) => inner.source(),
             Error::OrganizationNotEmptyException(inner) => inner.source(),
@@ -2773,6 +3124,8 @@ impl ::std::error::Error for Error {
             Error::PolicyTypeNotAvailableForOrganizationException(inner) => inner.source(),
             Error::PolicyTypeNotEnabledException(inner) => inner.source(),
             Error::ResourcePolicyNotFoundException(inner) => inner.source(),
+            Error::ResponsibilityTransferAlreadyInStatusException(inner) => inner.source(),
+            Error::ResponsibilityTransferNotFoundException(inner) => inner.source(),
             Error::RootNotFoundException(inner) => inner.source(),
             Error::ServiceException(inner) => inner.source(),
             Error::SourceParentNotFoundException(inner) => inner.source(),
@@ -2813,6 +3166,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::HandshakeNotFoundException(e) => e.request_id(),
             Self::InvalidHandshakeTransitionException(e) => e.request_id(),
             Self::InvalidInputException(e) => e.request_id(),
+            Self::InvalidResponsibilityTransferTransitionException(e) => e.request_id(),
             Self::MalformedPolicyDocumentException(e) => e.request_id(),
             Self::MasterCannotLeaveOrganizationException(e) => e.request_id(),
             Self::OrganizationNotEmptyException(e) => e.request_id(),
@@ -2827,6 +3181,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::PolicyTypeNotAvailableForOrganizationException(e) => e.request_id(),
             Self::PolicyTypeNotEnabledException(e) => e.request_id(),
             Self::ResourcePolicyNotFoundException(e) => e.request_id(),
+            Self::ResponsibilityTransferAlreadyInStatusException(e) => e.request_id(),
+            Self::ResponsibilityTransferNotFoundException(e) => e.request_id(),
             Self::RootNotFoundException(e) => e.request_id(),
             Self::ServiceException(e) => e.request_id(),
             Self::SourceParentNotFoundException(e) => e.request_id(),

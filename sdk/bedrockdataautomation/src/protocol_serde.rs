@@ -171,6 +171,8 @@ pub(crate) mod shape_image_standard_generative_field;
 
 pub(crate) mod shape_modality_processing_configuration;
 
+pub(crate) mod shape_sensitive_data_configuration;
+
 pub(crate) mod shape_splitter_configuration;
 
 pub(crate) mod shape_video_standard_extraction;
@@ -191,6 +193,8 @@ pub(crate) mod shape_image_bounding_box;
 
 pub(crate) mod shape_image_extraction_category;
 
+pub(crate) mod shape_pii_entities_configuration;
+
 pub(crate) mod shape_video_bounding_box;
 
 pub(crate) mod shape_video_extraction_category;
@@ -203,6 +207,8 @@ pub(crate) mod shape_audio_standard_generative_field_types;
 
 pub(crate) mod shape_image_standard_generative_field_types;
 
+pub(crate) mod shape_sensitive_data_detection_scope;
+
 pub(crate) mod shape_video_standard_generative_field_types;
 
 pub(crate) mod shape_audio_extraction_category_types;
@@ -212,6 +218,8 @@ pub(crate) mod shape_document_extraction_granularity_types;
 pub(crate) mod shape_document_output_text_format_types;
 
 pub(crate) mod shape_image_extraction_category_types;
+
+pub(crate) mod shape_pii_entity_types;
 
 pub(crate) mod shape_transcript_configuration;
 

@@ -22,7 +22,7 @@ impl crate::operation::get_event_configuration::builders::GetEventConfigurationI
 }
 /// Fluent builder constructing a request to `GetEventConfiguration`.
 ///
-/// <p>Retrieves the current event configuration settings for the specified event data store, including details about maximum event size and context key selectors configured for the event data store.</p>
+/// <p>Retrieves the current event configuration settings for the specified event data store or trail. The response includes maximum event size configuration, the context key selectors configured for the event data store, and any aggregation settings configured for the trail.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEventConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -107,6 +107,20 @@ impl GetEventConfigurationFluentBuilder {
     pub(crate) fn set_config_override(&mut self, config_override: ::std::option::Option<crate::config::Builder>) -> &mut Self {
         self.config_override = config_override;
         self
+    }
+    /// <p>The name of the trail for which you want to retrieve event configuration settings.</p>
+    pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trail_name(input.into());
+        self
+    }
+    /// <p>The name of the trail for which you want to retrieve event configuration settings.</p>
+    pub fn set_trail_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trail_name(input);
+        self
+    }
+    /// <p>The name of the trail for which you want to retrieve event configuration settings.</p>
+    pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trail_name()
     }
     /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to retrieve event configuration settings.</p>
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -15,15 +15,23 @@
 /// <li>
 /// <p>INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES: You can't issue new invitations to join an organization while it's in the process of enabling all features. You can resume inviting accounts after you finalize the process when all accounts have agreed to the change.</p></li>
 /// <li>
+/// <p>LEGACY_PERMISSIONS_STILL_IN_USE: Your organization must migrate to use the new IAM fine-grained actions for billing, cost management, and accounts.</p></li>
+/// <li>
 /// <p>ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has already enabled all features.</p></li>
 /// <li>
-/// <p>ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the organization has already started the process to enable all features.</p></li>
-/// <li>
 /// <p>ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different marketplace than the accounts in the organization.</p></li>
+/// <li>
+/// <p>ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the organization has already started the process to enable all features.</p></li>
 /// <li>
 /// <p>ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership of an account too quickly after its previous change.</p></li>
 /// <li>
 /// <p>PAYMENT_INSTRUMENT_REQUIRED: You can't complete the operation with an account that doesn't have a payment instrument, such as a credit card, associated with it.</p></li>
+/// <li>
+/// <p>RESPONSIBILITY_TRANSFER_ALREADY_EXISTS: You cannot perform this operation with the current transfer.</p></li>
+/// <li>
+/// <p>SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it is both the sender and recipient of the invitation.</p></li>
+/// <li>
+/// <p>UNUSED_PREPAYMENT_BALANCE: Your organization has an outstanding pre-payment balance.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

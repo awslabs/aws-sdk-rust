@@ -9,6 +9,8 @@ pub use crate::types::_lf_tag::LfTagBuilder;
 
 pub use crate::types::_external_filtering_configuration::ExternalFilteringConfigurationBuilder;
 
+pub use crate::types::_redshift_connect::RedshiftConnectBuilder;
+
 pub use crate::types::_data_lake_principal::DataLakePrincipalBuilder;
 
 pub use crate::types::_data_cells_filter::DataCellsFilterBuilder;

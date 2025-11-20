@@ -283,4 +283,18 @@ impl CreateLicenseConfigurationFluentBuilder {
     pub fn get_product_information_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>> {
         self.inner.get_product_information_list()
     }
+    /// <p>License configuration expiry.</p>
+    pub fn license_expiry(mut self, input: i64) -> Self {
+        self.inner = self.inner.license_expiry(input);
+        self
+    }
+    /// <p>License configuration expiry.</p>
+    pub fn set_license_expiry(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_license_expiry(input);
+        self
+    }
+    /// <p>License configuration expiry.</p>
+    pub fn get_license_expiry(&self) -> &::std::option::Option<i64> {
+        self.inner.get_license_expiry()
+    }
 }

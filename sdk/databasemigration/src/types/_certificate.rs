@@ -24,6 +24,10 @@ pub struct Certificate {
     pub signing_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>The key length of the cryptographic algorithm being used.</p>
     pub key_length: ::std::option::Option<i32>,
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl Certificate {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -66,6 +70,12 @@ impl Certificate {
     pub fn key_length(&self) -> ::std::option::Option<i32> {
         self.key_length
     }
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl Certificate {
     /// Creates a new builder-style object to manufacture [`Certificate`](crate::types::Certificate).
@@ -88,6 +98,7 @@ pub struct CertificateBuilder {
     pub(crate) valid_to_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) signing_algorithm: ::std::option::Option<::std::string::String>,
     pub(crate) key_length: ::std::option::Option<i32>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CertificateBuilder {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -230,6 +241,26 @@ impl CertificateBuilder {
     pub fn get_key_length(&self) -> &::std::option::Option<i32> {
         &self.key_length
     }
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`Certificate`](crate::types::Certificate).
     pub fn build(self) -> crate::types::Certificate {
         crate::types::Certificate {
@@ -243,6 +274,7 @@ impl CertificateBuilder {
             valid_to_date: self.valid_to_date,
             signing_algorithm: self.signing_algorithm,
             key_length: self.key_length,
+            kms_key_id: self.kms_key_id,
         }
     }
 }

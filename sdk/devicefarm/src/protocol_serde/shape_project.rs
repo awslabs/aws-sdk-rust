@@ -44,6 +44,17 @@ where
                         "vpcConfig" => {
                             builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
                         }
+                        "environmentVariables" => {
+                            builder = builder
+                                .set_environment_variables(crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens)?);
+                        }
+                        "executionRoleArn" => {
+                            builder = builder.set_execution_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

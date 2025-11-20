@@ -15,6 +15,8 @@ pub use crate::types::_test_grid_vpc_config::TestGridVpcConfig;
 
 pub use crate::types::_project::Project;
 
+pub use crate::types::_environment_variable::EnvironmentVariable;
+
 pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_network_profile::NetworkProfile;
@@ -208,6 +210,8 @@ mod _device_proxy;
 mod _device_selection_configuration;
 
 mod _device_selection_result;
+
+mod _environment_variable;
 
 mod _execution_configuration;
 

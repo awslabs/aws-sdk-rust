@@ -59,7 +59,7 @@ pub struct Service {
     /// <p><code>Telemetry.Source</code> Specifies the point of application where the telemetry was collected or specifies what was used for the source of telemetry data.</p></li>
     /// </ul>
     pub attribute_maps: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
-    /// <p>An array of service groups that this service belongs to, based on the configured grouping rules.</p>
+    /// <p>An array of service groups that this service belongs to, based on the configured grouping attributes.</p>
     pub service_groups: ::std::option::Option<::std::vec::Vec<crate::types::ServiceGroup>>,
     /// <p>An array of structures that each contain information about one metric associated with this service.</p>
     pub metric_references: ::std::vec::Vec<crate::types::MetricReference>,
@@ -136,7 +136,7 @@ impl Service {
     pub fn attribute_maps(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
         self.attribute_maps.as_deref().unwrap_or_default()
     }
-    /// <p>An array of service groups that this service belongs to, based on the configured grouping rules.</p>
+    /// <p>An array of service groups that this service belongs to, based on the configured grouping attributes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_groups.is_none()`.
     pub fn service_groups(&self) -> &[crate::types::ServiceGroup] {
@@ -390,19 +390,19 @@ impl ServiceBuilder {
     ///
     /// To override the contents of this collection use [`set_service_groups`](Self::set_service_groups).
     ///
-    /// <p>An array of service groups that this service belongs to, based on the configured grouping rules.</p>
+    /// <p>An array of service groups that this service belongs to, based on the configured grouping attributes.</p>
     pub fn service_groups(mut self, input: crate::types::ServiceGroup) -> Self {
         let mut v = self.service_groups.unwrap_or_default();
         v.push(input);
         self.service_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of service groups that this service belongs to, based on the configured grouping rules.</p>
+    /// <p>An array of service groups that this service belongs to, based on the configured grouping attributes.</p>
     pub fn set_service_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceGroup>>) -> Self {
         self.service_groups = input;
         self
     }
-    /// <p>An array of service groups that this service belongs to, based on the configured grouping rules.</p>
+    /// <p>An array of service groups that this service belongs to, based on the configured grouping attributes.</p>
     pub fn get_service_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceGroup>> {
         &self.service_groups
     }

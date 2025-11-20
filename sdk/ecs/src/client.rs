@@ -184,6 +184,8 @@ mod create_capacity_provider;
 
 mod create_cluster;
 
+mod create_express_gateway_service;
+
 mod create_service;
 
 mod create_task_set;
@@ -223,6 +225,8 @@ mod delete_capacity_provider;
 
 mod delete_cluster;
 
+mod delete_express_gateway_service;
+
 mod delete_service;
 
 mod delete_task_definitions;
@@ -238,6 +242,8 @@ mod describe_capacity_providers;
 mod describe_clusters;
 
 mod describe_container_instances;
+
+mod describe_express_gateway_service;
 
 mod describe_service_deployments;
 
@@ -318,6 +324,8 @@ mod update_cluster_settings;
 mod update_container_agent;
 
 mod update_container_instances_state;
+
+mod update_express_gateway_service;
 
 mod update_service;
 

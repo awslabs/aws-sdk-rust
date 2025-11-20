@@ -10,6 +10,8 @@ pub struct UpdateLakeFormationIdentityCenterConfigurationInput {
     /// <p>If the <code>ShareRecipients</code> value is null, both the list of share recipients and the resource share remain unchanged.</p>
     /// <p>If the <code>ShareRecipients</code> value is an empty list, then the existing share recipients list will be cleared, and the resource share will be deleted.</p>
     pub share_recipients: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>>,
     /// <p>Allows to enable or disable the IAM Identity Center connection.</p>
     pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
@@ -28,6 +30,12 @@ impl UpdateLakeFormationIdentityCenterConfigurationInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.share_recipients.is_none()`.
     pub fn share_recipients(&self) -> &[crate::types::DataLakePrincipal] {
         self.share_recipients.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_integrations.is_none()`.
+    pub fn service_integrations(&self) -> &[crate::types::ServiceIntegrationUnion] {
+        self.service_integrations.as_deref().unwrap_or_default()
     }
     /// <p>Allows to enable or disable the IAM Identity Center connection.</p>
     pub fn application_status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
@@ -53,6 +61,7 @@ impl UpdateLakeFormationIdentityCenterConfigurationInput {
 pub struct UpdateLakeFormationIdentityCenterConfigurationInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) share_recipients: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    pub(crate) service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>>,
     pub(crate) application_status: ::std::option::Option<crate::types::ApplicationStatus>,
     pub(crate) external_filtering: ::std::option::Option<crate::types::ExternalFilteringConfiguration>,
 }
@@ -100,6 +109,26 @@ impl UpdateLakeFormationIdentityCenterConfigurationInputBuilder {
     pub fn get_share_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
         &self.share_recipients
     }
+    /// Appends an item to `service_integrations`.
+    ///
+    /// To override the contents of this collection use [`set_service_integrations`](Self::set_service_integrations).
+    ///
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn service_integrations(mut self, input: crate::types::ServiceIntegrationUnion) -> Self {
+        let mut v = self.service_integrations.unwrap_or_default();
+        v.push(input);
+        self.service_integrations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn set_service_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>>) -> Self {
+        self.service_integrations = input;
+        self
+    }
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn get_service_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>> {
+        &self.service_integrations
+    }
     /// <p>Allows to enable or disable the IAM Identity Center connection.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.application_status = ::std::option::Option::Some(input);
@@ -139,6 +168,7 @@ impl UpdateLakeFormationIdentityCenterConfigurationInputBuilder {
             crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationInput {
                 catalog_id: self.catalog_id,
                 share_recipients: self.share_recipients,
+                service_integrations: self.service_integrations,
                 application_status: self.application_status,
                 external_filtering: self.external_filtering,
             },

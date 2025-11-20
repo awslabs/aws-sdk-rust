@@ -344,6 +344,22 @@ pub fn de_modify_db_cluster_http_error(
             }
             tmp
         }),
+        "VpcEncryptionControlViolationException" => {
+            crate::operation::modify_db_cluster::ModifyDBClusterError::VpcEncryptionControlViolationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::VpcEncryptionControlViolationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_vpc_encryption_control_violation_exception::de_vpc_encryption_control_violation_exception_xml_err(_response_body, output).map_err(crate::operation::modify_db_cluster::ModifyDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::modify_db_cluster::ModifyDBClusterError::generic(generic),
     })
 }

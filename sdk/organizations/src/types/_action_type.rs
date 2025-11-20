@@ -16,6 +16,7 @@
 ///     ActionType::ApproveAllFeatures => { /* ... */ },
 ///     ActionType::EnableAllFeatures => { /* ... */ },
 ///     ActionType::InviteAccountToOrganization => { /* ... */ },
+///     ActionType::TransferResponsibility => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum ActionType {
     EnableAllFeatures,
     #[allow(missing_docs)] // documentation missing in model
     InviteAccountToOrganization,
+    #[allow(missing_docs)] // documentation missing in model
+    TransferResponsibility,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for ActionType {
             "APPROVE_ALL_FEATURES" => ActionType::ApproveAllFeatures,
             "ENABLE_ALL_FEATURES" => ActionType::EnableAllFeatures,
             "INVITE" => ActionType::InviteAccountToOrganization,
+            "TRANSFER_RESPONSIBILITY" => ActionType::TransferResponsibility,
             other => ActionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,6 +86,7 @@ impl ActionType {
             ActionType::ApproveAllFeatures => "APPROVE_ALL_FEATURES",
             ActionType::EnableAllFeatures => "ENABLE_ALL_FEATURES",
             ActionType::InviteAccountToOrganization => "INVITE",
+            ActionType::TransferResponsibility => "TRANSFER_RESPONSIBILITY",
             ActionType::Unknown(value) => value.as_str(),
         }
     }
@@ -92,6 +97,7 @@ impl ActionType {
             "APPROVE_ALL_FEATURES",
             "ENABLE_ALL_FEATURES",
             "INVITE",
+            "TRANSFER_RESPONSIBILITY",
         ]
     }
 }
@@ -119,6 +125,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::ApproveAllFeatures => write!(f, "APPROVE_ALL_FEATURES"),
             ActionType::EnableAllFeatures => write!(f, "ENABLE_ALL_FEATURES"),
             ActionType::InviteAccountToOrganization => write!(f, "INVITE"),
+            ActionType::TransferResponsibility => write!(f, "TRANSFER_RESPONSIBILITY"),
             ActionType::Unknown(value) => write!(f, "{value}"),
         }
     }

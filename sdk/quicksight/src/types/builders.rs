@@ -69,9 +69,21 @@ pub use crate::types::_theme_configuration::ThemeConfigurationBuilder;
 
 pub use crate::types::_typography::TypographyBuilder;
 
+pub use crate::types::_visual_subtitle_font_configuration::VisualSubtitleFontConfigurationBuilder;
+
+pub use crate::types::_font_configuration::FontConfigurationBuilder;
+
+pub use crate::types::_font_weight::FontWeightBuilder;
+
+pub use crate::types::_font_size::FontSizeBuilder;
+
+pub use crate::types::_visual_title_font_configuration::VisualTitleFontConfigurationBuilder;
+
 pub use crate::types::_font::FontBuilder;
 
 pub use crate::types::_sheet_style::SheetStyleBuilder;
+
+pub use crate::types::_sheet_background_style::SheetBackgroundStyleBuilder;
 
 pub use crate::types::_tile_layout_style::TileLayoutStyleBuilder;
 
@@ -205,12 +217,6 @@ pub use crate::types::_sheet_control_info_icon_label_options::SheetControlInfoIc
 
 pub use crate::types::_label_options::LabelOptionsBuilder;
 
-pub use crate::types::_font_configuration::FontConfigurationBuilder;
-
-pub use crate::types::_font_weight::FontWeightBuilder;
-
-pub use crate::types::_font_size::FontSizeBuilder;
-
 pub use crate::types::_default_slider_control_options::DefaultSliderControlOptionsBuilder;
 
 pub use crate::types::_slider_control_display_options::SliderControlDisplayOptionsBuilder;
@@ -327,6 +333,12 @@ pub use crate::types::_grid_layout_configuration::GridLayoutConfigurationBuilder
 
 pub use crate::types::_grid_layout_element::GridLayoutElementBuilder;
 
+pub use crate::types::_loading_animation::LoadingAnimationBuilder;
+
+pub use crate::types::_grid_layout_element_background_style::GridLayoutElementBackgroundStyleBuilder;
+
+pub use crate::types::_grid_layout_element_border_style::GridLayoutElementBorderStyleBuilder;
+
 pub use crate::types::_layout::LayoutBuilder;
 
 pub use crate::types::_layout_configuration::LayoutConfigurationBuilder;
@@ -342,8 +354,6 @@ pub use crate::types::_section_layout_configuration::SectionLayoutConfigurationB
 pub use crate::types::_free_form_section_layout_configuration::FreeFormSectionLayoutConfigurationBuilder;
 
 pub use crate::types::_free_form_layout_element::FreeFormLayoutElementBuilder;
-
-pub use crate::types::_loading_animation::LoadingAnimationBuilder;
 
 pub use crate::types::_free_form_layout_element_background_style::FreeFormLayoutElementBackgroundStyleBuilder;
 

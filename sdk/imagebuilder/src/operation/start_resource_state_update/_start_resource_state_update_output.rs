@@ -5,7 +5,7 @@
 pub struct StartResourceStateUpdateOutput {
     /// <p>Identifies the lifecycle runtime instance that started the resource state update.</p>
     pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
-    /// <p>The requested ARN of the Image Builder resource for the asynchronous update.</p>
+    /// <p>The requested Amazon Resource Name (ARN) of the Image Builder resource for the asynchronous update.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl StartResourceStateUpdateOutput {
     pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
         self.lifecycle_execution_id.as_deref()
     }
-    /// <p>The requested ARN of the Image Builder resource for the asynchronous update.</p>
+    /// <p>The requested Amazon Resource Name (ARN) of the Image Builder resource for the asynchronous update.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl StartResourceStateUpdateOutputBuilder {
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_execution_id
     }
-    /// <p>The requested ARN of the Image Builder resource for the asynchronous update.</p>
+    /// <p>The requested Amazon Resource Name (ARN) of the Image Builder resource for the asynchronous update.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The requested ARN of the Image Builder resource for the asynchronous update.</p>
+    /// <p>The requested Amazon Resource Name (ARN) of the Image Builder resource for the asynchronous update.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The requested ARN of the Image Builder resource for the asynchronous update.</p>
+    /// <p>The requested Amazon Resource Name (ARN) of the Image Builder resource for the asynchronous update.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

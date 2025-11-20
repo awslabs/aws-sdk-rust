@@ -20,6 +20,8 @@ pub struct AnycastIpListSummary {
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The current version (ETag value) of the Anycast static IP list.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
+    /// <p>The IPAM configuration for the Anycast static IP list, that contains the quantity and list of IPAM CIDR configurations.</p>
+    pub ipam_config: ::std::option::Option<crate::types::IpamConfig>,
 }
 impl AnycastIpListSummary {
     /// <p>The ID of the Anycast static IP list.</p>
@@ -58,6 +60,10 @@ impl AnycastIpListSummary {
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
+    /// <p>The IPAM configuration for the Anycast static IP list, that contains the quantity and list of IPAM CIDR configurations.</p>
+    pub fn ipam_config(&self) -> ::std::option::Option<&crate::types::IpamConfig> {
+        self.ipam_config.as_ref()
+    }
 }
 impl AnycastIpListSummary {
     /// Creates a new builder-style object to manufacture [`AnycastIpListSummary`](crate::types::AnycastIpListSummary).
@@ -78,6 +84,7 @@ pub struct AnycastIpListSummaryBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
+    pub(crate) ipam_config: ::std::option::Option<crate::types::IpamConfig>,
 }
 impl AnycastIpListSummaryBuilder {
     /// <p>The ID of the Anycast static IP list.</p>
@@ -198,6 +205,20 @@ impl AnycastIpListSummaryBuilder {
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
+    /// <p>The IPAM configuration for the Anycast static IP list, that contains the quantity and list of IPAM CIDR configurations.</p>
+    pub fn ipam_config(mut self, input: crate::types::IpamConfig) -> Self {
+        self.ipam_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IPAM configuration for the Anycast static IP list, that contains the quantity and list of IPAM CIDR configurations.</p>
+    pub fn set_ipam_config(mut self, input: ::std::option::Option<crate::types::IpamConfig>) -> Self {
+        self.ipam_config = input;
+        self
+    }
+    /// <p>The IPAM configuration for the Anycast static IP list, that contains the quantity and list of IPAM CIDR configurations.</p>
+    pub fn get_ipam_config(&self) -> &::std::option::Option<crate::types::IpamConfig> {
+        &self.ipam_config
+    }
     /// Consumes the builder and constructs a [`AnycastIpListSummary`](crate::types::AnycastIpListSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::AnycastIpListSummaryBuilder::id)
@@ -246,6 +267,7 @@ impl AnycastIpListSummaryBuilder {
             })?,
             ip_address_type: self.ip_address_type,
             e_tag: self.e_tag,
+            ipam_config: self.ipam_config,
         })
     }
 }

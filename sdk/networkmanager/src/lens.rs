@@ -159,6 +159,16 @@ pub(crate) fn reflens_get_transit_gateway_registrations_output_output_next_token
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_attachment_routing_policy_associations_output_output_next_token(
+    input: &crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_attachments_output_output_next_token(
     input: &crate::operation::list_attachments::ListAttachmentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -181,6 +191,26 @@ pub(crate) fn reflens_list_connect_peers_output_output_next_token(
 
 pub(crate) fn reflens_list_core_network_policy_versions_output_output_next_token(
     input: &crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_core_network_prefix_list_associations_output_output_next_token(
+    input: &crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_core_network_routing_information_output_output_next_token(
+    input: &crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -321,6 +351,13 @@ pub(crate) fn lens_get_transit_gateway_registrations_output_output_transit_gatew
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_attachment_routing_policy_associations_output_output_attachment_routing_policy_associations(
+    input: crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AttachmentRoutingPolicyAssociationSummary>> {
+    let input = input.attachment_routing_policy_associations?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_attachments_output_output_attachments(
     input: crate::operation::list_attachments::ListAttachmentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
@@ -339,6 +376,20 @@ pub(crate) fn lens_list_core_network_policy_versions_output_output_core_network_
     input: crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyVersion>> {
     let input = input.core_network_policy_versions?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_core_network_prefix_list_associations_output_output_prefix_list_associations(
+    input: crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PrefixListAssociation>> {
+    let input = input.prefix_list_associations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_core_network_routing_information_output_output_core_network_routing_information(
+    input: crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkRoutingInformation>> {
+    let input = input.core_network_routing_information?;
     ::std::option::Option::Some(input)
 }
 

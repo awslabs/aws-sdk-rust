@@ -12,6 +12,10 @@ pub struct ImportCertificateInput {
     pub certificate_wallet: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The tags associated with the certificate.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportCertificateInput {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -33,6 +37,12 @@ impl ImportCertificateInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ImportCertificateInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -41,6 +51,7 @@ impl ::std::fmt::Debug for ImportCertificateInput {
         formatter.field("certificate_pem", &"*** Sensitive Data Redacted ***");
         formatter.field("certificate_wallet", &self.certificate_wallet);
         formatter.field("tags", &self.tags);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.finish()
     }
 }
@@ -59,6 +70,7 @@ pub struct ImportCertificateInputBuilder {
     pub(crate) certificate_pem: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_wallet: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportCertificateInputBuilder {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -127,6 +139,26 @@ impl ImportCertificateInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
     pub fn build(
         self,
@@ -136,6 +168,7 @@ impl ImportCertificateInputBuilder {
             certificate_pem: self.certificate_pem,
             certificate_wallet: self.certificate_wallet,
             tags: self.tags,
+            kms_key_id: self.kms_key_id,
         })
     }
 }
@@ -146,6 +179,7 @@ impl ::std::fmt::Debug for ImportCertificateInputBuilder {
         formatter.field("certificate_pem", &"*** Sensitive Data Redacted ***");
         formatter.field("certificate_wallet", &self.certificate_wallet);
         formatter.field("tags", &self.tags);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.finish()
     }
 }

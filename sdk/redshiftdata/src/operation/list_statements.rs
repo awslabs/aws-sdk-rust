@@ -262,6 +262,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListStatement
 pub enum ListStatementsError {
     /// <p>The Amazon Redshift Data API operation failed due to invalid input.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The Amazon Redshift Data API operation failed due to a missing resource.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -298,6 +300,7 @@ impl ListStatementsError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -305,6 +308,10 @@ impl ListStatementsError {
     /// Returns `true` if the error kind is `ListStatementsError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `ListStatementsError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListStatementsError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -315,6 +322,7 @@ impl ::std::error::Error for ListStatementsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -324,6 +332,7 @@ impl ::std::fmt::Display for ListStatementsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -347,6 +356,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListStatement
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

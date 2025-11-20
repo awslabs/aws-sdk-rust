@@ -156,6 +156,23 @@ impl GetUserDefinedFunctionsFluentBuilder {
     pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pattern()
     }
+    /// <p>An optional function-type pattern string that filters the function definitions returned from Amazon Redshift Federated Permissions Catalog.</p>
+    /// <p>Specify a value of <code>REGULAR_FUNCTION</code> or <code>STORED_PROCEDURE</code>. The <code>STORED_PROCEDURE</code> function type is only compatible with Amazon Redshift Federated Permissions Catalog.</p>
+    pub fn function_type(mut self, input: crate::types::FunctionType) -> Self {
+        self.inner = self.inner.function_type(input);
+        self
+    }
+    /// <p>An optional function-type pattern string that filters the function definitions returned from Amazon Redshift Federated Permissions Catalog.</p>
+    /// <p>Specify a value of <code>REGULAR_FUNCTION</code> or <code>STORED_PROCEDURE</code>. The <code>STORED_PROCEDURE</code> function type is only compatible with Amazon Redshift Federated Permissions Catalog.</p>
+    pub fn set_function_type(mut self, input: ::std::option::Option<crate::types::FunctionType>) -> Self {
+        self.inner = self.inner.set_function_type(input);
+        self
+    }
+    /// <p>An optional function-type pattern string that filters the function definitions returned from Amazon Redshift Federated Permissions Catalog.</p>
+    /// <p>Specify a value of <code>REGULAR_FUNCTION</code> or <code>STORED_PROCEDURE</code>. The <code>STORED_PROCEDURE</code> function type is only compatible with Amazon Redshift Federated Permissions Catalog.</p>
+    pub fn get_function_type(&self) -> &::std::option::Option<crate::types::FunctionType> {
+        self.inner.get_function_type()
+    }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

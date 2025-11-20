@@ -77,9 +77,17 @@ pub use crate::types::_permissions_error_context::PermissionsErrorContextBuilder
 
 pub use crate::types::_core_network_summary::CoreNetworkSummaryBuilder;
 
+pub use crate::types::_core_network_routing_information::CoreNetworkRoutingInformationBuilder;
+
+pub use crate::types::_routing_information_next_hop::RoutingInformationNextHopBuilder;
+
+pub use crate::types::_prefix_list_association::PrefixListAssociationBuilder;
+
 pub use crate::types::_core_network_policy_version::CoreNetworkPolicyVersionBuilder;
 
 pub use crate::types::_connect_peer_summary::ConnectPeerSummaryBuilder;
+
+pub use crate::types::_attachment_routing_policy_association_summary::AttachmentRoutingPolicyAssociationSummaryBuilder;
 
 pub use crate::types::_transit_gateway_route_table_attachment::TransitGatewayRouteTableAttachmentBuilder;
 
@@ -116,6 +124,8 @@ pub use crate::types::_customer_gateway_association::CustomerGatewayAssociationB
 pub use crate::types::_core_network_change::CoreNetworkChangeBuilder;
 
 pub use crate::types::_core_network_change_values::CoreNetworkChangeValuesBuilder;
+
+pub use crate::types::_routing_policy_association_detail::RoutingPolicyAssociationDetailBuilder;
 
 pub use crate::types::_service_insertion_action::ServiceInsertionActionBuilder;
 

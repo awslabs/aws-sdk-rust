@@ -14,6 +14,8 @@ pub struct ComputeQuotaResourceConfig {
     pub v_cpu: ::std::option::Option<f32>,
     /// <p>The amount of memory in GiB to allocate. If you specify a value only for this parameter, SageMaker AI automatically allocates a ratio-based value for vCPU based on this memory that you provide. For example, if you allocate 200 out of 400 total memory in GiB, SageMaker AI uses the ratio of 0.5 and allocates values to vCPU. Accelerators are set to 0.</p>
     pub memory_in_gib: ::std::option::Option<f32>,
+    /// <p>The accelerator partition configuration for fractional GPU allocation.</p>
+    pub accelerator_partition: ::std::option::Option<crate::types::AcceleratorPartitionConfig>,
 }
 impl ComputeQuotaResourceConfig {
     /// <p>The instance type of the instance group for the cluster.</p>
@@ -36,6 +38,10 @@ impl ComputeQuotaResourceConfig {
     pub fn memory_in_gib(&self) -> ::std::option::Option<f32> {
         self.memory_in_gib
     }
+    /// <p>The accelerator partition configuration for fractional GPU allocation.</p>
+    pub fn accelerator_partition(&self) -> ::std::option::Option<&crate::types::AcceleratorPartitionConfig> {
+        self.accelerator_partition.as_ref()
+    }
 }
 impl ComputeQuotaResourceConfig {
     /// Creates a new builder-style object to manufacture [`ComputeQuotaResourceConfig`](crate::types::ComputeQuotaResourceConfig).
@@ -53,6 +59,7 @@ pub struct ComputeQuotaResourceConfigBuilder {
     pub(crate) accelerators: ::std::option::Option<i32>,
     pub(crate) v_cpu: ::std::option::Option<f32>,
     pub(crate) memory_in_gib: ::std::option::Option<f32>,
+    pub(crate) accelerator_partition: ::std::option::Option<crate::types::AcceleratorPartitionConfig>,
 }
 impl ComputeQuotaResourceConfigBuilder {
     /// <p>The instance type of the instance group for the cluster.</p>
@@ -126,6 +133,20 @@ impl ComputeQuotaResourceConfigBuilder {
     pub fn get_memory_in_gib(&self) -> &::std::option::Option<f32> {
         &self.memory_in_gib
     }
+    /// <p>The accelerator partition configuration for fractional GPU allocation.</p>
+    pub fn accelerator_partition(mut self, input: crate::types::AcceleratorPartitionConfig) -> Self {
+        self.accelerator_partition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The accelerator partition configuration for fractional GPU allocation.</p>
+    pub fn set_accelerator_partition(mut self, input: ::std::option::Option<crate::types::AcceleratorPartitionConfig>) -> Self {
+        self.accelerator_partition = input;
+        self
+    }
+    /// <p>The accelerator partition configuration for fractional GPU allocation.</p>
+    pub fn get_accelerator_partition(&self) -> &::std::option::Option<crate::types::AcceleratorPartitionConfig> {
+        &self.accelerator_partition
+    }
     /// Consumes the builder and constructs a [`ComputeQuotaResourceConfig`](crate::types::ComputeQuotaResourceConfig).
     pub fn build(self) -> crate::types::ComputeQuotaResourceConfig {
         crate::types::ComputeQuotaResourceConfig {
@@ -134,6 +155,7 @@ impl ComputeQuotaResourceConfigBuilder {
             accelerators: self.accelerators,
             v_cpu: self.v_cpu,
             memory_in_gib: self.memory_in_gib,
+            accelerator_partition: self.accelerator_partition,
         }
     }
 }

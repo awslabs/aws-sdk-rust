@@ -427,6 +427,12 @@ pub use crate::types::_subnet_configuration::SubnetConfigurationBuilder;
 
 pub use crate::types::_dns_options_specification::DnsOptionsSpecificationBuilder;
 
+pub use crate::types::_vpc_encryption_control::VpcEncryptionControlBuilder;
+
+pub use crate::types::_vpc_encryption_control_exclusions::VpcEncryptionControlExclusionsBuilder;
+
+pub use crate::types::_vpc_encryption_control_exclusion::VpcEncryptionControlExclusionBuilder;
+
 pub use crate::types::_vpc_block_public_access_options::VpcBlockPublicAccessOptionsBuilder;
 
 pub use crate::types::_vpc_block_public_access_exclusion::VpcBlockPublicAccessExclusionBuilder;
@@ -511,9 +517,13 @@ pub use crate::types::_transit_gateway_prefix_list_reference::TransitGatewayPref
 
 pub use crate::types::_transit_gateway_prefix_list_attachment::TransitGatewayPrefixListAttachmentBuilder;
 
+pub use crate::types::_transit_gateway_metering_policy::TransitGatewayMeteringPolicyBuilder;
+
 pub use crate::types::_transit_gateway::TransitGatewayBuilder;
 
 pub use crate::types::_transit_gateway_options::TransitGatewayOptionsBuilder;
+
+pub use crate::types::_encryption_support::EncryptionSupportBuilder;
 
 pub use crate::types::_modify_transit_gateway_options::ModifyTransitGatewayOptionsBuilder;
 
@@ -685,6 +695,8 @@ pub use crate::types::_dns_servers_options_modify_structure::DnsServersOptionsMo
 
 pub use crate::types::_connection_log_options::ConnectionLogOptionsBuilder;
 
+pub use crate::types::_volume_recycle_bin_info::VolumeRecycleBinInfoBuilder;
+
 pub use crate::types::_snapshot_recycle_bin_info::SnapshotRecycleBinInfoBuilder;
 
 pub use crate::types::_image_recycle_bin_info::ImageRecycleBinInfoBuilder;
@@ -733,6 +745,8 @@ pub use crate::types::_maintenance_details::MaintenanceDetailsBuilder;
 
 pub use crate::types::_vpn_connection_device_type::VpnConnectionDeviceTypeBuilder;
 
+pub use crate::types::_vpc_encryption_non_compliant_resource::VpcEncryptionNonCompliantResourceBuilder;
+
 pub use crate::types::_verified_access_endpoint_target::VerifiedAccessEndpointTargetBuilder;
 
 pub use crate::types::_transit_gateway_route_table_propagation::TransitGatewayRouteTablePropagationBuilder;
@@ -748,6 +762,10 @@ pub use crate::types::_transit_gateway_policy_rule_meta_data::TransitGatewayPoli
 pub use crate::types::_transit_gateway_policy_table_association::TransitGatewayPolicyTableAssociationBuilder;
 
 pub use crate::types::_transit_gateway_multicast_domain_association::TransitGatewayMulticastDomainAssociationBuilder;
+
+pub use crate::types::_transit_gateway_metering_policy_entry::TransitGatewayMeteringPolicyEntryBuilder;
+
+pub use crate::types::_transit_gateway_metering_policy_rule::TransitGatewayMeteringPolicyRuleBuilder;
 
 pub use crate::types::_transit_gateway_attachment_propagation::TransitGatewayAttachmentPropagationBuilder;
 
@@ -994,12 +1012,6 @@ pub use crate::types::_vpn_concentrator::VpnConcentratorBuilder;
 pub use crate::types::_vpc::VpcBuilder;
 
 pub use crate::types::_block_public_access_states::BlockPublicAccessStatesBuilder;
-
-pub use crate::types::_vpc_encryption_control::VpcEncryptionControlBuilder;
-
-pub use crate::types::_vpc_encryption_control_exclusions::VpcEncryptionControlExclusionsBuilder;
-
-pub use crate::types::_vpc_encryption_control_exclusion::VpcEncryptionControlExclusionBuilder;
 
 pub use crate::types::_vpc_peering_connection::VpcPeeringConnectionBuilder;
 
@@ -1580,6 +1592,8 @@ pub use crate::types::_coip_cidr::CoipCidrBuilder;
 pub use crate::types::_vpn_connection_options_specification::VpnConnectionOptionsSpecificationBuilder;
 
 pub use crate::types::_vpn_tunnel_options_specification::VpnTunnelOptionsSpecificationBuilder;
+
+pub use crate::types::_vpc_encryption_control_configuration::VpcEncryptionControlConfigurationBuilder;
 
 pub use crate::types::_create_verified_access_native_application_oidc_options::CreateVerifiedAccessNativeApplicationOidcOptionsBuilder;
 

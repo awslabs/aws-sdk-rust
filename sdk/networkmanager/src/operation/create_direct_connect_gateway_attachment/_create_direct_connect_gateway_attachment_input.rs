@@ -7,6 +7,8 @@ pub struct CreateDirectConnectGatewayAttachmentInput {
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Direct Connect gateway attachment.</p>
     pub direct_connect_gateway_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The routing policy label to apply to the Direct Connect Gateway attachment for traffic routing decisions.</p>
+    pub routing_policy_label: ::std::option::Option<::std::string::String>,
     /// <p>One or more core network edge locations that the Direct Connect gateway attachment is associated with.</p>
     pub edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The key value tags to apply to the Direct Connect gateway attachment during creation.</p>
@@ -22,6 +24,10 @@ impl CreateDirectConnectGatewayAttachmentInput {
     /// <p>The ARN of the Direct Connect gateway attachment.</p>
     pub fn direct_connect_gateway_arn(&self) -> ::std::option::Option<&str> {
         self.direct_connect_gateway_arn.as_deref()
+    }
+    /// <p>The routing policy label to apply to the Direct Connect Gateway attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(&self) -> ::std::option::Option<&str> {
+        self.routing_policy_label.as_deref()
     }
     /// <p>One or more core network edge locations that the Direct Connect gateway attachment is associated with.</p>
     ///
@@ -53,6 +59,7 @@ impl CreateDirectConnectGatewayAttachmentInput {
 pub struct CreateDirectConnectGatewayAttachmentInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) direct_connect_gateway_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_policy_label: ::std::option::Option<::std::string::String>,
     pub(crate) edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -87,6 +94,20 @@ impl CreateDirectConnectGatewayAttachmentInputBuilder {
     /// <p>The ARN of the Direct Connect gateway attachment.</p>
     pub fn get_direct_connect_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.direct_connect_gateway_arn
+    }
+    /// <p>The routing policy label to apply to the Direct Connect Gateway attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.routing_policy_label = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The routing policy label to apply to the Direct Connect Gateway attachment for traffic routing decisions.</p>
+    pub fn set_routing_policy_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.routing_policy_label = input;
+        self
+    }
+    /// <p>The routing policy label to apply to the Direct Connect Gateway attachment for traffic routing decisions.</p>
+    pub fn get_routing_policy_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_policy_label
     }
     /// Appends an item to `edge_locations`.
     ///
@@ -153,6 +174,7 @@ impl CreateDirectConnectGatewayAttachmentInputBuilder {
             crate::operation::create_direct_connect_gateway_attachment::CreateDirectConnectGatewayAttachmentInput {
                 core_network_id: self.core_network_id,
                 direct_connect_gateway_arn: self.direct_connect_gateway_arn,
+                routing_policy_label: self.routing_policy_label,
                 edge_locations: self.edge_locations,
                 tags: self.tags,
                 client_token: self.client_token,

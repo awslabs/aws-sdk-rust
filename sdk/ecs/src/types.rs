@@ -33,6 +33,8 @@ pub use crate::types::_protected_task::ProtectedTask;
 
 pub use crate::types::_service::Service;
 
+pub use crate::types::_resource_management_type::ResourceManagementType;
+
 pub use crate::types::_availability_zone_rebalancing::AvailabilityZoneRebalancing;
 
 pub use crate::types::_propagate_tags::PropagateTags;
@@ -50,6 +52,8 @@ pub use crate::types::_placement_strategy_type::PlacementStrategyType;
 pub use crate::types::_placement_constraint::PlacementConstraint;
 
 pub use crate::types::_placement_constraint_type::PlacementConstraintType;
+
+pub use crate::types::_service_current_revision_summary::ServiceCurrentRevisionSummary;
 
 pub use crate::types::_service_event::ServiceEvent;
 
@@ -117,6 +121,32 @@ pub use crate::types::_deployment_alarms::DeploymentAlarms;
 
 pub use crate::types::_deployment_circuit_breaker::DeploymentCircuitBreaker;
 
+pub use crate::types::_updated_express_gateway_service::UpdatedExpressGatewayService;
+
+pub use crate::types::_express_gateway_service_configuration::ExpressGatewayServiceConfiguration;
+
+pub use crate::types::_ingress_path_summary::IngressPathSummary;
+
+pub use crate::types::_access_type::AccessType;
+
+pub use crate::types::_express_gateway_scaling_target::ExpressGatewayScalingTarget;
+
+pub use crate::types::_express_gateway_service_scaling_metric::ExpressGatewayServiceScalingMetric;
+
+pub use crate::types::_express_gateway_container::ExpressGatewayContainer;
+
+pub use crate::types::_key_value_pair::KeyValuePair;
+
+pub use crate::types::_express_gateway_repository_credentials::ExpressGatewayRepositoryCredentials;
+
+pub use crate::types::_express_gateway_service_aws_logs_configuration::ExpressGatewayServiceAwsLogsConfiguration;
+
+pub use crate::types::_express_gateway_service_network_configuration::ExpressGatewayServiceNetworkConfiguration;
+
+pub use crate::types::_express_gateway_service_status::ExpressGatewayServiceStatus;
+
+pub use crate::types::_express_gateway_service_status_code::ExpressGatewayServiceStatusCode;
+
 pub use crate::types::_container_instance::ContainerInstance;
 
 pub use crate::types::_container_instance_health_status::ContainerInstanceHealthStatus;
@@ -128,8 +158,6 @@ pub use crate::types::_instance_health_check_state::InstanceHealthCheckState;
 pub use crate::types::_instance_health_check_type::InstanceHealthCheckType;
 
 pub use crate::types::_attachment::Attachment;
-
-pub use crate::types::_key_value_pair::KeyValuePair;
 
 pub use crate::types::_attribute::Attribute;
 
@@ -417,6 +445,34 @@ pub use crate::types::_service_field::ServiceField;
 
 pub use crate::types::_service_revision::ServiceRevision;
 
+pub use crate::types::_ecs_managed_resources::EcsManagedResources;
+
+pub use crate::types::_managed_log_group::ManagedLogGroup;
+
+pub use crate::types::_managed_resource_status::ManagedResourceStatus;
+
+pub use crate::types::_managed_security_group::ManagedSecurityGroup;
+
+pub use crate::types::_managed_metric_alarm::ManagedMetricAlarm;
+
+pub use crate::types::_managed_auto_scaling::ManagedAutoScaling;
+
+pub use crate::types::_managed_application_auto_scaling_policy::ManagedApplicationAutoScalingPolicy;
+
+pub use crate::types::_managed_scalable_target::ManagedScalableTarget;
+
+pub use crate::types::_managed_ingress_path::ManagedIngressPath;
+
+pub use crate::types::_managed_target_group::ManagedTargetGroup;
+
+pub use crate::types::_managed_listener_rule::ManagedListenerRule;
+
+pub use crate::types::_managed_listener::ManagedListener;
+
+pub use crate::types::_managed_certificate::ManagedCertificate;
+
+pub use crate::types::_managed_load_balancer::ManagedLoadBalancer;
+
 pub use crate::types::_resolved_configuration::ResolvedConfiguration;
 
 pub use crate::types::_service_revision_load_balancer::ServiceRevisionLoadBalancer;
@@ -437,6 +493,10 @@ pub use crate::types::_service_deployment_lifecycle_stage::ServiceDeploymentLife
 
 pub use crate::types::_service_revision_summary::ServiceRevisionSummary;
 
+pub use crate::types::_ecs_express_gateway_service::EcsExpressGatewayService;
+
+pub use crate::types::_express_gateway_service_include::ExpressGatewayServiceInclude;
+
 pub use crate::types::_container_instance_field::ContainerInstanceField;
 
 pub use crate::types::_cluster_field::ClusterField;
@@ -454,6 +514,8 @@ mod _accelerator_name;
 mod _accelerator_total_memory_mib_request;
 
 mod _accelerator_type;
+
+mod _access_type;
 
 mod _advanced_configuration;
 
@@ -581,6 +643,10 @@ mod _ebs_resource_type;
 
 mod _ebs_tag_specification;
 
+mod _ecs_express_gateway_service;
+
+mod _ecs_managed_resources;
+
 mod _efs_authorization_config;
 
 mod _efs_authorization_config_iam;
@@ -600,6 +666,26 @@ mod _execute_command_configuration;
 mod _execute_command_log_configuration;
 
 mod _execute_command_logging;
+
+mod _express_gateway_container;
+
+mod _express_gateway_repository_credentials;
+
+mod _express_gateway_scaling_target;
+
+mod _express_gateway_service_aws_logs_configuration;
+
+mod _express_gateway_service_configuration;
+
+mod _express_gateway_service_include;
+
+mod _express_gateway_service_network_configuration;
+
+mod _express_gateway_service_scaling_metric;
+
+mod _express_gateway_service_status;
+
+mod _express_gateway_service_status_code;
 
 mod _f_sx_windows_file_server_authorization_config;
 
@@ -624,6 +710,8 @@ mod _inference_accelerator;
 mod _inference_accelerator_override;
 
 mod _infrastructure_optimization;
+
+mod _ingress_path_summary;
 
 mod _instance_generation;
 
@@ -667,7 +755,15 @@ mod _managed_agent_name;
 
 mod _managed_agent_state_change;
 
+mod _managed_application_auto_scaling_policy;
+
+mod _managed_auto_scaling;
+
+mod _managed_certificate;
+
 mod _managed_draining;
+
+mod _managed_ingress_path;
 
 mod _managed_instances_monitoring_options;
 
@@ -677,11 +773,29 @@ mod _managed_instances_provider;
 
 mod _managed_instances_storage_configuration;
 
+mod _managed_listener;
+
+mod _managed_listener_rule;
+
+mod _managed_load_balancer;
+
+mod _managed_log_group;
+
+mod _managed_metric_alarm;
+
+mod _managed_resource_status;
+
+mod _managed_scalable_target;
+
 mod _managed_scaling;
 
 mod _managed_scaling_status;
 
+mod _managed_security_group;
+
 mod _managed_storage_configuration;
+
+mod _managed_target_group;
 
 mod _managed_termination_protection;
 
@@ -737,6 +851,8 @@ mod _resolved_configuration;
 
 mod _resource;
 
+mod _resource_management_type;
+
 mod _resource_requirement;
 
 mod _resource_type;
@@ -780,6 +896,8 @@ mod _service_connect_test_traffic_rules;
 mod _service_connect_tls_certificate_authority;
 
 mod _service_connect_tls_configuration;
+
+mod _service_current_revision_summary;
 
 mod _service_deployment;
 
@@ -878,6 +996,8 @@ mod _ulimit;
 mod _ulimit_name;
 
 mod _update_managed_instances_provider_configuration;
+
+mod _updated_express_gateway_service;
 
 mod _v_cpu_count_range_request;
 

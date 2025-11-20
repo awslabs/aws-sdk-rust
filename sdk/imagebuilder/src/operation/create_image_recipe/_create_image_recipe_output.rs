@@ -9,6 +9,8 @@ pub struct CreateImageRecipeOutput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
     pub image_recipe_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
 impl CreateImageRecipeOutput {
@@ -23,6 +25,10 @@ impl CreateImageRecipeOutput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
     pub fn image_recipe_arn(&self) -> ::std::option::Option<&str> {
         self.image_recipe_arn.as_deref()
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn latest_version_references(&self) -> ::std::option::Option<&crate::types::LatestVersionReferences> {
+        self.latest_version_references.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateImageRecipeOutput {
@@ -44,6 +50,7 @@ pub struct CreateImageRecipeOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) image_recipe_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
 impl CreateImageRecipeOutputBuilder {
@@ -89,6 +96,20 @@ impl CreateImageRecipeOutputBuilder {
     pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_recipe_arn
     }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn latest_version_references(mut self, input: crate::types::LatestVersionReferences) -> Self {
+        self.latest_version_references = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn set_latest_version_references(mut self, input: ::std::option::Option<crate::types::LatestVersionReferences>) -> Self {
+        self.latest_version_references = input;
+        self
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn get_latest_version_references(&self) -> &::std::option::Option<crate::types::LatestVersionReferences> {
+        &self.latest_version_references
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -104,6 +125,7 @@ impl CreateImageRecipeOutputBuilder {
             request_id: self.request_id,
             client_token: self.client_token,
             image_recipe_arn: self.image_recipe_arn,
+            latest_version_references: self.latest_version_references,
             _request_id: self._request_id,
         }
     }

@@ -655,6 +655,20 @@ pub use crate::types::_dns_record_ip_type::DnsRecordIpType;
 
 pub use crate::types::_ip_address_type::IpAddressType;
 
+pub use crate::types::_vpc_encryption_control::VpcEncryptionControl;
+
+pub use crate::types::_vpc_encryption_control_exclusions::VpcEncryptionControlExclusions;
+
+pub use crate::types::_vpc_encryption_control_exclusion::VpcEncryptionControlExclusion;
+
+pub use crate::types::_vpc_encryption_control_exclusion_state::VpcEncryptionControlExclusionState;
+
+pub use crate::types::_vpc_encryption_control_state::VpcEncryptionControlState;
+
+pub use crate::types::_vpc_encryption_control_mode::VpcEncryptionControlMode;
+
+pub use crate::types::_vpc_encryption_control_exclusion_state_input::VpcEncryptionControlExclusionStateInput;
+
 pub use crate::types::_vpc_block_public_access_options::VpcBlockPublicAccessOptions;
 
 pub use crate::types::_vpc_block_public_access_exclusions_allowed::VpcBlockPublicAccessExclusionsAllowed;
@@ -771,9 +785,17 @@ pub use crate::types::_transit_gateway_prefix_list_attachment::TransitGatewayPre
 
 pub use crate::types::_transit_gateway_prefix_list_reference_state::TransitGatewayPrefixListReferenceState;
 
+pub use crate::types::_transit_gateway_metering_policy::TransitGatewayMeteringPolicy;
+
+pub use crate::types::_transit_gateway_metering_policy_state::TransitGatewayMeteringPolicyState;
+
 pub use crate::types::_transit_gateway::TransitGateway;
 
 pub use crate::types::_transit_gateway_options::TransitGatewayOptions;
+
+pub use crate::types::_encryption_support::EncryptionSupport;
+
+pub use crate::types::_encryption_state_value::EncryptionStateValue;
 
 pub use crate::types::_multicast_support_value::MulticastSupportValue;
 
@@ -788,6 +810,8 @@ pub use crate::types::_auto_accept_shared_attachments_value::AutoAcceptSharedAtt
 pub use crate::types::_transit_gateway_state::TransitGatewayState;
 
 pub use crate::types::_modify_transit_gateway_options::ModifyTransitGatewayOptions;
+
+pub use crate::types::_encryption_support_option_value::EncryptionSupportOptionValue;
 
 pub use crate::types::_traffic_mirror_session::TrafficMirrorSession;
 
@@ -1067,6 +1091,10 @@ pub use crate::types::_lock_state::LockState;
 
 pub use crate::types::_lock_mode::LockMode;
 
+pub use crate::types::_volume_recycle_bin_info::VolumeRecycleBinInfo;
+
+pub use crate::types::_volume_state::VolumeState;
+
 pub use crate::types::_snapshot_recycle_bin_info::SnapshotRecycleBinInfo;
 
 pub use crate::types::_image_recycle_bin_info::ImageRecycleBinInfo;
@@ -1119,6 +1147,8 @@ pub use crate::types::_maintenance_details::MaintenanceDetails;
 
 pub use crate::types::_vpn_connection_device_type::VpnConnectionDeviceType;
 
+pub use crate::types::_vpc_encryption_non_compliant_resource::VpcEncryptionNonCompliantResource;
+
 pub use crate::types::_verified_access_endpoint_target::VerifiedAccessEndpointTarget;
 
 pub use crate::types::_transit_gateway_route_table_propagation::TransitGatewayRouteTablePropagation;
@@ -1138,6 +1168,14 @@ pub use crate::types::_transit_gateway_policy_rule_meta_data::TransitGatewayPoli
 pub use crate::types::_transit_gateway_policy_table_association::TransitGatewayPolicyTableAssociation;
 
 pub use crate::types::_transit_gateway_multicast_domain_association::TransitGatewayMulticastDomainAssociation;
+
+pub use crate::types::_transit_gateway_metering_policy_entry::TransitGatewayMeteringPolicyEntry;
+
+pub use crate::types::_transit_gateway_metering_policy_rule::TransitGatewayMeteringPolicyRule;
+
+pub use crate::types::_transit_gateway_metering_policy_entry_state::TransitGatewayMeteringPolicyEntryState;
+
+pub use crate::types::_transit_gateway_metering_payer_type::TransitGatewayMeteringPayerType;
 
 pub use crate::types::_transit_gateway_attachment_propagation::TransitGatewayAttachmentPropagation;
 
@@ -1507,18 +1545,6 @@ pub use crate::types::_block_public_access_states::BlockPublicAccessStates;
 
 pub use crate::types::_block_public_access_mode::BlockPublicAccessMode;
 
-pub use crate::types::_vpc_encryption_control::VpcEncryptionControl;
-
-pub use crate::types::_vpc_encryption_control_exclusions::VpcEncryptionControlExclusions;
-
-pub use crate::types::_vpc_encryption_control_exclusion::VpcEncryptionControlExclusion;
-
-pub use crate::types::_vpc_encryption_control_exclusion_state::VpcEncryptionControlExclusionState;
-
-pub use crate::types::_vpc_encryption_control_state::VpcEncryptionControlState;
-
-pub use crate::types::_vpc_encryption_control_mode::VpcEncryptionControlMode;
-
 pub use crate::types::_vpc_peering_connection::VpcPeeringConnection;
 
 pub use crate::types::_vpc_peering_connection_state_reason::VpcPeeringConnectionStateReason;
@@ -1610,8 +1636,6 @@ pub use crate::types::_volume_status_action::VolumeStatusAction;
 pub use crate::types::_volume::Volume;
 
 pub use crate::types::_volume_attachment::VolumeAttachment;
-
-pub use crate::types::_volume_state::VolumeState;
 
 pub use crate::types::_volume_attribute_name::VolumeAttributeName;
 
@@ -2410,6 +2434,8 @@ pub use crate::types::_vpn_connection_options_specification::VpnConnectionOption
 pub use crate::types::_vpn_tunnel_options_specification::VpnTunnelOptionsSpecification;
 
 pub use crate::types::_vpn_concentrator_type::VpnConcentratorType;
+
+pub use crate::types::_vpc_encryption_control_configuration::VpcEncryptionControlConfiguration;
 
 pub use crate::types::_create_verified_access_native_application_oidc_options::CreateVerifiedAccessNativeApplicationOidcOptions;
 
@@ -3226,6 +3252,12 @@ mod _enable_fast_snapshot_restore_success_item;
 mod _enclave_options;
 
 mod _enclave_options_request;
+
+mod _encryption_state_value;
+
+mod _encryption_support;
+
+mod _encryption_support_option_value;
 
 mod _end_date_type;
 
@@ -4839,6 +4871,18 @@ mod _transit_gateway_connect_peer_state;
 
 mod _transit_gateway_connect_request_bgp_options;
 
+mod _transit_gateway_metering_payer_type;
+
+mod _transit_gateway_metering_policy;
+
+mod _transit_gateway_metering_policy_entry;
+
+mod _transit_gateway_metering_policy_entry_state;
+
+mod _transit_gateway_metering_policy_rule;
+
+mod _transit_gateway_metering_policy_state;
+
 mod _transit_gateway_mulitcast_domain_association_state;
 
 mod _transit_gateway_multicast_deregistered_group_members;
@@ -5051,6 +5095,8 @@ mod _volume_modification;
 
 mod _volume_modification_state;
 
+mod _volume_recycle_bin_info;
+
 mod _volume_state;
 
 mod _volume_status_action;
@@ -5097,15 +5143,21 @@ mod _vpc_classic_link;
 
 mod _vpc_encryption_control;
 
+mod _vpc_encryption_control_configuration;
+
 mod _vpc_encryption_control_exclusion;
 
 mod _vpc_encryption_control_exclusion_state;
+
+mod _vpc_encryption_control_exclusion_state_input;
 
 mod _vpc_encryption_control_exclusions;
 
 mod _vpc_encryption_control_mode;
 
 mod _vpc_encryption_control_state;
+
+mod _vpc_encryption_non_compliant_resource;
 
 mod _vpc_endpoint;
 

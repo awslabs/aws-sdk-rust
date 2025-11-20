@@ -429,6 +429,10 @@ pub use crate::types::_resource_sharing_strategy::ResourceSharingStrategy;
 
 pub use crate::types::_compute_quota_resource_config::ComputeQuotaResourceConfig;
 
+pub use crate::types::_accelerator_partition_config::AcceleratorPartitionConfig;
+
+pub use crate::types::_mig_profile_type::MigProfileType;
+
 pub use crate::types::_cluster_instance_type::ClusterInstanceType;
 
 pub use crate::types::_git_config_for_update::GitConfigForUpdate;
@@ -2005,6 +2009,18 @@ pub use crate::types::_throughput_config::ThroughputConfig;
 
 pub use crate::types::_deployment_stage::DeploymentStage;
 
+pub use crate::types::_batch_replace_cluster_node_logical_ids_error::BatchReplaceClusterNodeLogicalIdsError;
+
+pub use crate::types::_batch_replace_cluster_nodes_error_code::BatchReplaceClusterNodesErrorCode;
+
+pub use crate::types::_batch_replace_cluster_nodes_error::BatchReplaceClusterNodesError;
+
+pub use crate::types::_batch_reboot_cluster_node_logical_ids_error::BatchRebootClusterNodeLogicalIdsError;
+
+pub use crate::types::_batch_reboot_cluster_nodes_error_code::BatchRebootClusterNodesErrorCode;
+
+pub use crate::types::_batch_reboot_cluster_nodes_error::BatchRebootClusterNodesError;
+
 pub use crate::types::_batch_describe_model_package_error::BatchDescribeModelPackageError;
 
 pub use crate::types::_batch_describe_model_package_summary::BatchDescribeModelPackageSummary;
@@ -2022,6 +2038,8 @@ pub use crate::types::_batch_add_cluster_nodes_error_code::BatchAddClusterNodesE
 pub use crate::types::_node_addition_result::NodeAdditionResult;
 
 pub use crate::types::_add_cluster_node_specification::AddClusterNodeSpecification;
+
+mod _accelerator_partition_config;
 
 mod _action_source;
 
@@ -2228,6 +2246,18 @@ mod _batch_delete_cluster_nodes_error_code;
 mod _batch_describe_model_package_error;
 
 mod _batch_describe_model_package_summary;
+
+mod _batch_reboot_cluster_node_logical_ids_error;
+
+mod _batch_reboot_cluster_nodes_error;
+
+mod _batch_reboot_cluster_nodes_error_code;
+
+mod _batch_replace_cluster_node_logical_ids_error;
+
+mod _batch_replace_cluster_nodes_error;
+
+mod _batch_replace_cluster_nodes_error_code;
 
 mod _batch_strategy;
 
@@ -3034,6 +3064,8 @@ mod _metric_specification;
 mod _metrics_config;
 
 mod _metrics_source;
+
+mod _mig_profile_type;
 
 mod _ml_tools;
 

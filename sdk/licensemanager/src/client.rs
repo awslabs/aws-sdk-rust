@@ -150,6 +150,10 @@ mod create_grant_version;
 
 mod create_license;
 
+mod create_license_asset_group;
+
+mod create_license_asset_ruleset;
+
 mod create_license_configuration;
 
 mod create_license_conversion_task_for_resource;
@@ -191,6 +195,10 @@ mod delete_grant;
 
 mod delete_license;
 
+mod delete_license_asset_group;
+
+mod delete_license_asset_ruleset;
+
 mod delete_license_configuration;
 
 mod delete_license_manager_report_generator;
@@ -205,6 +213,10 @@ mod get_grant;
 
 mod get_license;
 
+mod get_license_asset_group;
+
+mod get_license_asset_ruleset;
+
 mod get_license_configuration;
 
 mod get_license_conversion_task;
@@ -215,13 +227,21 @@ mod get_license_usage;
 
 mod get_service_settings;
 
+mod list_assets_for_license_asset_group;
+
 mod list_associations_for_license_configuration;
 
 mod list_distributed_grants;
 
 mod list_failures_for_license_configuration_operations;
 
+mod list_license_asset_groups;
+
+mod list_license_asset_rulesets;
+
 mod list_license_configurations;
+
+mod list_license_configurations_for_organization;
 
 mod list_license_conversion_tasks;
 
@@ -254,6 +274,10 @@ mod reject_grant;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_license_asset_group;
+
+mod update_license_asset_ruleset;
 
 mod update_license_configuration;
 

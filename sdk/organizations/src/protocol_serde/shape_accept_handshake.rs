@@ -86,6 +86,22 @@ pub fn de_accept_handshake_http_error(
             }
             tmp
         }),
+        "ConstraintViolationException" => crate::operation::accept_handshake::AcceptHandshakeError::ConstraintViolationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConstraintViolationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_constraint_violation_exception::de_constraint_violation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::accept_handshake::AcceptHandshakeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "HandshakeAlreadyInStateException" => crate::operation::accept_handshake::AcceptHandshakeError::HandshakeAlreadyInStateException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -171,6 +187,22 @@ pub fn de_accept_handshake_http_error(
             }
             tmp
         }),
+        "MasterCannotLeaveOrganizationException" => {
+            crate::operation::accept_handshake::AcceptHandshakeError::MasterCannotLeaveOrganizationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::MasterCannotLeaveOrganizationExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_master_cannot_leave_organization_exception::de_master_cannot_leave_organization_exception_json_err(_response_body, output).map_err(crate::operation::accept_handshake::AcceptHandshakeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceException" => crate::operation::accept_handshake::AcceptHandshakeError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

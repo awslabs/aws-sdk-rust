@@ -31,6 +31,10 @@ pub(crate) mod shape_create_job;
 
 pub(crate) mod shape_create_quantum_task;
 
+pub(crate) mod shape_create_spending_limit;
+
+pub(crate) mod shape_delete_spending_limit;
+
 pub(crate) mod shape_get_device;
 
 pub(crate) mod shape_get_job;
@@ -45,9 +49,13 @@ pub(crate) mod shape_search_jobs;
 
 pub(crate) mod shape_search_quantum_tasks;
 
+pub(crate) mod shape_search_spending_limits;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_spending_limit;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -67,6 +75,8 @@ pub(crate) mod shape_create_job_input;
 
 pub(crate) mod shape_create_quantum_task_input;
 
+pub(crate) mod shape_create_spending_limit_input;
+
 pub(crate) mod shape_device_offline_exception;
 
 pub(crate) mod shape_device_retired_exception;
@@ -81,11 +91,15 @@ pub(crate) mod shape_search_jobs_input;
 
 pub(crate) mod shape_search_quantum_tasks_input;
 
+pub(crate) mod shape_search_spending_limits_input;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_update_spending_limit_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -137,7 +151,13 @@ pub(crate) mod shape_search_jobs_filter;
 
 pub(crate) mod shape_search_quantum_tasks_filter;
 
+pub(crate) mod shape_search_spending_limits_filter;
+
+pub(crate) mod shape_spending_limit_summary_list;
+
 pub(crate) mod shape_tags_map;
+
+pub(crate) mod shape_time_period;
 
 pub(crate) mod shape_container_image;
 
@@ -156,6 +176,8 @@ pub(crate) mod shape_program_set_validation_failure;
 pub(crate) mod shape_quantum_task_summary;
 
 pub(crate) mod shape_script_mode_config;
+
+pub(crate) mod shape_spending_limit_summary;
 
 pub(crate) mod shape_program_validation_failures_list;
 

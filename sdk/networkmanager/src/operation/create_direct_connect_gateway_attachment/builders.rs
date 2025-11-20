@@ -139,6 +139,20 @@ impl CreateDirectConnectGatewayAttachmentFluentBuilder {
     pub fn get_direct_connect_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_direct_connect_gateway_arn()
     }
+    /// <p>The routing policy label to apply to the Direct Connect Gateway attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.routing_policy_label(input.into());
+        self
+    }
+    /// <p>The routing policy label to apply to the Direct Connect Gateway attachment for traffic routing decisions.</p>
+    pub fn set_routing_policy_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_routing_policy_label(input);
+        self
+    }
+    /// <p>The routing policy label to apply to the Direct Connect Gateway attachment for traffic routing decisions.</p>
+    pub fn get_routing_policy_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_routing_policy_label()
+    }
     ///
     /// Appends an item to `EdgeLocations`.
     ///

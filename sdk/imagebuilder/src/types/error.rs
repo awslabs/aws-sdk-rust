@@ -27,15 +27,25 @@ pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginat
 
 pub use crate::types::error::_invalid_version_number_exception::InvalidVersionNumberException;
 
-pub use crate::types::error::_resource_dependency_exception::ResourceDependencyException;
+pub use crate::types::error::_too_many_requests_exception::TooManyRequestsException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
+pub use crate::types::error::_resource_dependency_exception::ResourceDependencyException;
+
+pub use crate::types::error::_dry_run_operation_exception::DryRunOperationException;
+
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
+
+mod _access_denied_exception;
 
 mod _call_rate_limit_exceeded_exception;
 
 mod _client_exception;
+
+mod _dry_run_operation_exception;
 
 mod _forbidden_exception;
 
@@ -66,6 +76,8 @@ mod _service_exception;
 mod _service_quota_exceeded_exception;
 
 mod _service_unavailable_exception;
+
+mod _too_many_requests_exception;
 
 /// Builders
 pub mod builders;

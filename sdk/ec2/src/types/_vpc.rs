@@ -14,7 +14,8 @@ pub struct Vpc {
     pub cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>>,
     /// <p>Indicates whether the VPC is the default VPC.</p>
     pub is_default: ::std::option::Option<bool>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Describes the configuration and state of VPC encryption controls.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub encryption_control: ::std::option::Option<crate::types::VpcEncryptionControl>,
     /// <p>Any tags assigned to the VPC.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -54,7 +55,8 @@ impl Vpc {
     pub fn is_default(&self) -> ::std::option::Option<bool> {
         self.is_default
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Describes the configuration and state of VPC encryption controls.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn encryption_control(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControl> {
         self.encryption_control.as_ref()
     }
@@ -195,17 +197,20 @@ impl VpcBuilder {
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
         &self.is_default
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Describes the configuration and state of VPC encryption controls.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn encryption_control(mut self, input: crate::types::VpcEncryptionControl) -> Self {
         self.encryption_control = ::std::option::Option::Some(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Describes the configuration and state of VPC encryption controls.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn set_encryption_control(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControl>) -> Self {
         self.encryption_control = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Describes the configuration and state of VPC encryption controls.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn get_encryption_control(&self) -> &::std::option::Option<crate::types::VpcEncryptionControl> {
         &self.encryption_control
     }

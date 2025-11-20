@@ -228,6 +228,11 @@ pub fn ser_create_auto_scaling_group_input_input_input(
     if let Some(var_85) = &input.capacity_reservation_specification {
         crate::protocol_serde::shape_capacity_reservation_specification::ser_capacity_reservation_specification(scope_84, var_85)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_86 = writer.prefix("InstanceLifecyclePolicy");
+    if let Some(var_87) = &input.instance_lifecycle_policy {
+        crate::protocol_serde::shape_instance_lifecycle_policy::ser_instance_lifecycle_policy(scope_86, var_87)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

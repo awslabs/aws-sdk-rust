@@ -10,6 +10,8 @@ pub struct CreateDataAutomationProjectInput {
     pub project_description: ::std::option::Option<::std::string::String>,
     /// Stage of the Project
     pub project_stage: ::std::option::Option<crate::types::DataAutomationProjectStage>,
+    /// Type of the DataAutomationProject
+    pub project_type: ::std::option::Option<crate::types::DataAutomationProjectType>,
     /// Standard output configuration
     pub standard_output_configuration: ::std::option::Option<crate::types::StandardOutputConfiguration>,
     /// Custom output configuration
@@ -35,6 +37,10 @@ impl CreateDataAutomationProjectInput {
     /// Stage of the Project
     pub fn project_stage(&self) -> ::std::option::Option<&crate::types::DataAutomationProjectStage> {
         self.project_stage.as_ref()
+    }
+    /// Type of the DataAutomationProject
+    pub fn project_type(&self) -> ::std::option::Option<&crate::types::DataAutomationProjectType> {
+        self.project_type.as_ref()
     }
     /// Standard output configuration
     pub fn standard_output_configuration(&self) -> ::std::option::Option<&crate::types::StandardOutputConfiguration> {
@@ -69,6 +75,7 @@ impl ::std::fmt::Debug for CreateDataAutomationProjectInput {
         formatter.field("project_name", &"*** Sensitive Data Redacted ***");
         formatter.field("project_description", &"*** Sensitive Data Redacted ***");
         formatter.field("project_stage", &self.project_stage);
+        formatter.field("project_type", &self.project_type);
         formatter.field("standard_output_configuration", &self.standard_output_configuration);
         formatter.field("custom_output_configuration", &self.custom_output_configuration);
         formatter.field("override_configuration", &self.override_configuration);
@@ -92,6 +99,7 @@ pub struct CreateDataAutomationProjectInputBuilder {
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_description: ::std::option::Option<::std::string::String>,
     pub(crate) project_stage: ::std::option::Option<crate::types::DataAutomationProjectStage>,
+    pub(crate) project_type: ::std::option::Option<crate::types::DataAutomationProjectType>,
     pub(crate) standard_output_configuration: ::std::option::Option<crate::types::StandardOutputConfiguration>,
     pub(crate) custom_output_configuration: ::std::option::Option<crate::types::CustomOutputConfiguration>,
     pub(crate) override_configuration: ::std::option::Option<crate::types::OverrideConfiguration>,
@@ -142,6 +150,20 @@ impl CreateDataAutomationProjectInputBuilder {
     /// Stage of the Project
     pub fn get_project_stage(&self) -> &::std::option::Option<crate::types::DataAutomationProjectStage> {
         &self.project_stage
+    }
+    /// Type of the DataAutomationProject
+    pub fn project_type(mut self, input: crate::types::DataAutomationProjectType) -> Self {
+        self.project_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// Type of the DataAutomationProject
+    pub fn set_project_type(mut self, input: ::std::option::Option<crate::types::DataAutomationProjectType>) -> Self {
+        self.project_type = input;
+        self
+    }
+    /// Type of the DataAutomationProject
+    pub fn get_project_type(&self) -> &::std::option::Option<crate::types::DataAutomationProjectType> {
+        &self.project_type
     }
     /// Standard output configuration
     /// This field is required.
@@ -245,6 +267,7 @@ impl CreateDataAutomationProjectInputBuilder {
             project_name: self.project_name,
             project_description: self.project_description,
             project_stage: self.project_stage,
+            project_type: self.project_type,
             standard_output_configuration: self.standard_output_configuration,
             custom_output_configuration: self.custom_output_configuration,
             override_configuration: self.override_configuration,
@@ -260,6 +283,7 @@ impl ::std::fmt::Debug for CreateDataAutomationProjectInputBuilder {
         formatter.field("project_name", &"*** Sensitive Data Redacted ***");
         formatter.field("project_description", &"*** Sensitive Data Redacted ***");
         formatter.field("project_stage", &self.project_stage);
+        formatter.field("project_type", &self.project_type);
         formatter.field("standard_output_configuration", &self.standard_output_configuration);
         formatter.field("custom_output_configuration", &self.custom_output_configuration);
         formatter.field("override_configuration", &self.override_configuration);

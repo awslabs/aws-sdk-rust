@@ -257,6 +257,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutWarmPoolEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum PutWarmPoolError {
+    /// <p>The request failed because an active instance refresh already exists for the specified Auto Scaling group.</p>
+    InstanceRefreshInProgressFault(crate::types::error::InstanceRefreshInProgressFault),
     /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::types::error::LimitExceededFault),
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
@@ -294,10 +296,15 @@ impl PutWarmPoolError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InstanceRefreshInProgressFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceContentionFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `PutWarmPoolError::InstanceRefreshInProgressFault`.
+    pub fn is_instance_refresh_in_progress_fault(&self) -> bool {
+        matches!(self, Self::InstanceRefreshInProgressFault(_))
     }
     /// Returns `true` if the error kind is `PutWarmPoolError::LimitExceededFault`.
     pub fn is_limit_exceeded_fault(&self) -> bool {
@@ -311,6 +318,7 @@ impl PutWarmPoolError {
 impl ::std::error::Error for PutWarmPoolError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InstanceRefreshInProgressFault(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceContentionFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -320,6 +328,7 @@ impl ::std::error::Error for PutWarmPoolError {
 impl ::std::fmt::Display for PutWarmPoolError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InstanceRefreshInProgressFault(_inner) => _inner.fmt(f),
             Self::LimitExceededFault(_inner) => _inner.fmt(f),
             Self::ResourceContentionFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -343,6 +352,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for PutWarmPoolError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutWarmPoolError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InstanceRefreshInProgressFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceContentionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

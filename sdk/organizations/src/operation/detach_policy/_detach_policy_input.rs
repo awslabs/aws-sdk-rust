@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachPolicyInput {
-    /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>ID for the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub policy_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>ID for the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -19,12 +19,12 @@ pub struct DetachPolicyInput {
     pub target_id: ::std::option::Option<::std::string::String>,
 }
 impl DetachPolicyInput {
-    /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>ID for the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn policy_id(&self) -> ::std::option::Option<&str> {
         self.policy_id.as_deref()
     }
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>ID for the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -53,25 +53,25 @@ pub struct DetachPolicyInputBuilder {
     pub(crate) target_id: ::std::option::Option<::std::string::String>,
 }
 impl DetachPolicyInputBuilder {
-    /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>ID for the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>ID for the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_id = input;
         self
     }
-    /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>ID for the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_id
     }
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>ID for the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -86,7 +86,7 @@ impl DetachPolicyInputBuilder {
         self.target_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>ID for the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -100,7 +100,7 @@ impl DetachPolicyInputBuilder {
         self.target_id = input;
         self
     }
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>ID for the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
     /// <li>

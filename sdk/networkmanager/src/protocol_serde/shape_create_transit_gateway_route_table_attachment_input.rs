@@ -9,20 +9,23 @@ pub fn ser_create_transit_gateway_route_table_attachment_input_input(
     if let Some(var_2) = &input.peering_id {
         object.key("PeeringId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.tags {
-        let mut array_4 = object.key("Tags").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.routing_policy_label {
+        object.key("RoutingPolicyLabel").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.tags {
+        let mut array_5 = object.key("Tags").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_7) = &input.transit_gateway_route_table_arn {
-        object.key("TransitGatewayRouteTableArn").string(var_7.as_str());
+    if let Some(var_8) = &input.transit_gateway_route_table_arn {
+        object.key("TransitGatewayRouteTableArn").string(var_8.as_str());
     }
     Ok(())
 }

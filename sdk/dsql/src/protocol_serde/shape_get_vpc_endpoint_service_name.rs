@@ -143,6 +143,13 @@ pub(crate) fn de_get_vpc_endpoint_service_name(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "clusterVpcEndpoint" => {
+                    builder = builder.set_cluster_vpc_endpoint(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "serviceName" => {
                     builder = builder.set_service_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

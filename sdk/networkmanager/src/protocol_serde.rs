@@ -41,6 +41,8 @@ pub(crate) mod shape_create_connection;
 
 pub(crate) mod shape_create_core_network;
 
+pub(crate) mod shape_create_core_network_prefix_list_association;
+
 pub(crate) mod shape_create_device;
 
 pub(crate) mod shape_create_direct_connect_gateway_attachment;
@@ -68,6 +70,8 @@ pub(crate) mod shape_delete_connection;
 pub(crate) mod shape_delete_core_network;
 
 pub(crate) mod shape_delete_core_network_policy_version;
+
+pub(crate) mod shape_delete_core_network_prefix_list_association;
 
 pub(crate) mod shape_delete_device;
 
@@ -149,11 +153,17 @@ pub(crate) mod shape_get_transit_gateway_route_table_attachment;
 
 pub(crate) mod shape_get_vpc_attachment;
 
+pub(crate) mod shape_list_attachment_routing_policy_associations;
+
 pub(crate) mod shape_list_attachments;
 
 pub(crate) mod shape_list_connect_peers;
 
 pub(crate) mod shape_list_core_network_policy_versions;
+
+pub(crate) mod shape_list_core_network_prefix_list_associations;
+
+pub(crate) mod shape_list_core_network_routing_information;
 
 pub(crate) mod shape_list_core_networks;
 
@@ -163,6 +173,8 @@ pub(crate) mod shape_list_peerings;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_put_attachment_routing_policy_label;
+
 pub(crate) mod shape_put_core_network_policy;
 
 pub(crate) mod shape_put_resource_policy;
@@ -170,6 +182,8 @@ pub(crate) mod shape_put_resource_policy;
 pub(crate) mod shape_register_transit_gateway;
 
 pub(crate) mod shape_reject_attachment;
+
+pub(crate) mod shape_remove_attachment_routing_policy_label;
 
 pub(crate) mod shape_restore_core_network_policy_version;
 
@@ -229,6 +243,8 @@ pub(crate) mod shape_create_connection_input;
 
 pub(crate) mod shape_create_core_network_input;
 
+pub(crate) mod shape_create_core_network_prefix_list_association_input;
+
 pub(crate) mod shape_create_device_input;
 
 pub(crate) mod shape_create_direct_connect_gateway_attachment_input;
@@ -250,6 +266,10 @@ pub(crate) mod shape_create_vpc_attachment_input;
 pub(crate) mod shape_get_network_routes_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_list_core_network_routing_information_input;
+
+pub(crate) mod shape_put_attachment_routing_policy_label_input;
 
 pub(crate) mod shape_put_core_network_policy_input;
 
@@ -293,6 +313,8 @@ pub(crate) mod shape_attachment;
 
 pub(crate) mod shape_attachment_list;
 
+pub(crate) mod shape_attachment_routing_policy_associations_list;
+
 pub(crate) mod shape_aws_location;
 
 pub(crate) mod shape_bandwidth;
@@ -326,6 +348,8 @@ pub(crate) mod shape_core_network_policy;
 pub(crate) mod shape_core_network_policy_error_list;
 
 pub(crate) mod shape_core_network_policy_version_list;
+
+pub(crate) mod shape_core_network_routing_information_list;
 
 pub(crate) mod shape_core_network_segment_edge_identifier;
 
@@ -373,6 +397,8 @@ pub(crate) mod shape_peering;
 
 pub(crate) mod shape_peering_list;
 
+pub(crate) mod shape_prefix_list_association_list;
+
 pub(crate) mod shape_relationship_list;
 
 pub(crate) mod shape_route_analysis;
@@ -413,6 +439,8 @@ pub(crate) mod shape_account_status_list;
 
 pub(crate) mod shape_attachment_error_list;
 
+pub(crate) mod shape_attachment_routing_policy_association_summary;
+
 pub(crate) mod shape_connect_peer_configuration;
 
 pub(crate) mod shape_connect_peer_error_list;
@@ -433,6 +461,8 @@ pub(crate) mod shape_core_network_policy_error;
 
 pub(crate) mod shape_core_network_policy_version;
 
+pub(crate) mod shape_core_network_routing_information;
+
 pub(crate) mod shape_core_network_segment_list;
 
 pub(crate) mod shape_core_network_summary;
@@ -448,6 +478,8 @@ pub(crate) mod shape_network_route;
 pub(crate) mod shape_network_telemetry;
 
 pub(crate) mod shape_peering_error_list;
+
+pub(crate) mod shape_prefix_list_association;
 
 pub(crate) mod shape_proposed_network_function_group_change;
 
@@ -495,6 +527,8 @@ pub(crate) mod shape_peering_error;
 
 pub(crate) mod shape_route_analysis_completion;
 
+pub(crate) mod shape_routing_information_next_hop;
+
 pub(crate) mod shape_connect_peer_bgp_configuration;
 
 pub(crate) mod shape_network_route_destination;
@@ -505,11 +539,15 @@ pub(crate) mod shape_permissions_error_context;
 
 pub(crate) mod shape_reason_context_map;
 
+pub(crate) mod shape_routing_policy_association_details_list;
+
 pub(crate) mod shape_service_insertion_action_list;
 
 pub(crate) mod shape_service_insertion_segments;
 
 pub(crate) mod shape_network_resource_summary;
+
+pub(crate) mod shape_routing_policy_association_detail;
 
 pub(crate) mod shape_service_insertion_action;
 

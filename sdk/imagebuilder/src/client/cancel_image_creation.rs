@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`CancelImageCreationOutput`](crate::operation::cancel_image_creation::CancelImageCreationOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::cancel_image_creation::CancelImageCreationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::cancel_image_creation::CancelImageCreationOutput::client_token): <p>The client token that uniquely identifies the request.</p>
-    ///   - [`image_build_version_arn(Option<String>)`](crate::operation::cancel_image_creation::CancelImageCreationOutput::image_build_version_arn): <p>The ARN of the image whose creation this request canceled.</p>
+    ///   - [`image_build_version_arn(Option<String>)`](crate::operation::cancel_image_creation::CancelImageCreationOutput::image_build_version_arn): <p>The Amazon Resource Name (ARN) of the image whose creation this request canceled.</p>
     /// - On failure, responds with [`SdkError<CancelImageCreationError>`](crate::operation::cancel_image_creation::CancelImageCreationError)
     pub fn cancel_image_creation(&self) -> crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder {
         crate::operation::cancel_image_creation::builders::CancelImageCreationFluentBuilder::new(self.handle.clone())

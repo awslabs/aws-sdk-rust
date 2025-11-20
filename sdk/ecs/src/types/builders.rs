@@ -31,6 +31,8 @@ pub use crate::types::_placement_strategy::PlacementStrategyBuilder;
 
 pub use crate::types::_placement_constraint::PlacementConstraintBuilder;
 
+pub use crate::types::_service_current_revision_summary::ServiceCurrentRevisionSummaryBuilder;
+
 pub use crate::types::_service_event::ServiceEventBuilder;
 
 pub use crate::types::_deployment::DeploymentBuilder;
@@ -81,6 +83,26 @@ pub use crate::types::_deployment_alarms::DeploymentAlarmsBuilder;
 
 pub use crate::types::_deployment_circuit_breaker::DeploymentCircuitBreakerBuilder;
 
+pub use crate::types::_updated_express_gateway_service::UpdatedExpressGatewayServiceBuilder;
+
+pub use crate::types::_express_gateway_service_configuration::ExpressGatewayServiceConfigurationBuilder;
+
+pub use crate::types::_ingress_path_summary::IngressPathSummaryBuilder;
+
+pub use crate::types::_express_gateway_scaling_target::ExpressGatewayScalingTargetBuilder;
+
+pub use crate::types::_express_gateway_container::ExpressGatewayContainerBuilder;
+
+pub use crate::types::_key_value_pair::KeyValuePairBuilder;
+
+pub use crate::types::_express_gateway_repository_credentials::ExpressGatewayRepositoryCredentialsBuilder;
+
+pub use crate::types::_express_gateway_service_aws_logs_configuration::ExpressGatewayServiceAwsLogsConfigurationBuilder;
+
+pub use crate::types::_express_gateway_service_network_configuration::ExpressGatewayServiceNetworkConfigurationBuilder;
+
+pub use crate::types::_express_gateway_service_status::ExpressGatewayServiceStatusBuilder;
+
 pub use crate::types::_container_instance::ContainerInstanceBuilder;
 
 pub use crate::types::_container_instance_health_status::ContainerInstanceHealthStatusBuilder;
@@ -88,8 +110,6 @@ pub use crate::types::_container_instance_health_status::ContainerInstanceHealth
 pub use crate::types::_instance_health_check_result::InstanceHealthCheckResultBuilder;
 
 pub use crate::types::_attachment::AttachmentBuilder;
-
-pub use crate::types::_key_value_pair::KeyValuePairBuilder;
 
 pub use crate::types::_attribute::AttributeBuilder;
 
@@ -259,6 +279,32 @@ pub use crate::types::_session::SessionBuilder;
 
 pub use crate::types::_service_revision::ServiceRevisionBuilder;
 
+pub use crate::types::_ecs_managed_resources::EcsManagedResourcesBuilder;
+
+pub use crate::types::_managed_log_group::ManagedLogGroupBuilder;
+
+pub use crate::types::_managed_security_group::ManagedSecurityGroupBuilder;
+
+pub use crate::types::_managed_metric_alarm::ManagedMetricAlarmBuilder;
+
+pub use crate::types::_managed_auto_scaling::ManagedAutoScalingBuilder;
+
+pub use crate::types::_managed_application_auto_scaling_policy::ManagedApplicationAutoScalingPolicyBuilder;
+
+pub use crate::types::_managed_scalable_target::ManagedScalableTargetBuilder;
+
+pub use crate::types::_managed_ingress_path::ManagedIngressPathBuilder;
+
+pub use crate::types::_managed_target_group::ManagedTargetGroupBuilder;
+
+pub use crate::types::_managed_listener_rule::ManagedListenerRuleBuilder;
+
+pub use crate::types::_managed_listener::ManagedListenerBuilder;
+
+pub use crate::types::_managed_certificate::ManagedCertificateBuilder;
+
+pub use crate::types::_managed_load_balancer::ManagedLoadBalancerBuilder;
+
 pub use crate::types::_resolved_configuration::ResolvedConfigurationBuilder;
 
 pub use crate::types::_service_revision_load_balancer::ServiceRevisionLoadBalancerBuilder;
@@ -274,5 +320,7 @@ pub use crate::types::_service_deployment_circuit_breaker::ServiceDeploymentCirc
 pub use crate::types::_rollback::RollbackBuilder;
 
 pub use crate::types::_service_revision_summary::ServiceRevisionSummaryBuilder;
+
+pub use crate::types::_ecs_express_gateway_service::EcsExpressGatewayServiceBuilder;
 
 pub use crate::types::_create_managed_instances_provider_configuration::CreateManagedInstancesProviderConfigurationBuilder;

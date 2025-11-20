@@ -164,4 +164,23 @@ impl UpdateServiceSettingsFluentBuilder {
     pub fn get_enable_cross_accounts_discovery(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_cross_accounts_discovery()
     }
+    ///
+    /// Appends an item to `EnabledDiscoverySourceRegions`.
+    ///
+    /// To override the contents of this collection use [`set_enabled_discovery_source_regions`](Self::set_enabled_discovery_source_regions).
+    ///
+    /// <p>Cross region discovery enabled source regions.</p>
+    pub fn enabled_discovery_source_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.enabled_discovery_source_regions(input.into());
+        self
+    }
+    /// <p>Cross region discovery enabled source regions.</p>
+    pub fn set_enabled_discovery_source_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_enabled_discovery_source_regions(input);
+        self
+    }
+    /// <p>Cross region discovery enabled source regions.</p>
+    pub fn get_enabled_discovery_source_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_enabled_discovery_source_regions()
+    }
 }

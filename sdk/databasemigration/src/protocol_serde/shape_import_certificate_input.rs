@@ -26,5 +26,8 @@ pub fn ser_import_certificate_input_input(
         }
         array_5.finish();
     }
+    if let Some(var_8) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_8.as_str());
+    }
     Ok(())
 }

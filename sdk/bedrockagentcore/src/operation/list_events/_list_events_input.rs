@@ -5,15 +5,15 @@
 pub struct ListEventsInput {
     /// <p>The identifier of the AgentCore Memory resource for which to list events.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the session for which to list events. If specified, only events from this session are returned.</p>
+    /// <p>The identifier of the session for which to list events.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the actor for which to list events. If specified, only events from this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list events.</p>
     pub actor_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to include event payloads in the response. Set to true to include payloads, or false to exclude them.</p>
     pub include_payloads: ::std::option::Option<bool>,
     /// <p>Filter criteria to apply when listing events.</p>
     pub filter: ::std::option::Option<crate::types::FilterInput>,
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -23,11 +23,11 @@ impl ListEventsInput {
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
     }
-    /// <p>The identifier of the session for which to list events. If specified, only events from this session are returned.</p>
+    /// <p>The identifier of the session for which to list events.</p>
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>The identifier of the actor for which to list events. If specified, only events from this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list events.</p>
     pub fn actor_id(&self) -> ::std::option::Option<&str> {
         self.actor_id.as_deref()
     }
@@ -39,7 +39,7 @@ impl ListEventsInput {
     pub fn filter(&self) -> ::std::option::Option<&crate::types::FilterInput> {
         self.filter.as_ref()
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -83,33 +83,33 @@ impl ListEventsInputBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }
-    /// <p>The identifier of the session for which to list events. If specified, only events from this session are returned.</p>
+    /// <p>The identifier of the session for which to list events.</p>
     /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the session for which to list events. If specified, only events from this session are returned.</p>
+    /// <p>The identifier of the session for which to list events.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
-    /// <p>The identifier of the session for which to list events. If specified, only events from this session are returned.</p>
+    /// <p>The identifier of the session for which to list events.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>The identifier of the actor for which to list events. If specified, only events from this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list events.</p>
     /// This field is required.
     pub fn actor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.actor_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the actor for which to list events. If specified, only events from this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list events.</p>
     pub fn set_actor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.actor_id = input;
         self
     }
-    /// <p>The identifier of the actor for which to list events. If specified, only events from this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list events.</p>
     pub fn get_actor_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.actor_id
     }
@@ -141,17 +141,17 @@ impl ListEventsInputBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::FilterInput> {
         &self.filter
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

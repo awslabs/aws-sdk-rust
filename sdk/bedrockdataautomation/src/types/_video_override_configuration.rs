@@ -6,11 +6,17 @@
 pub struct VideoOverrideConfiguration {
     /// Configuration to enable/disable processing of modality
     pub modality_processing: ::std::option::Option<crate::types::ModalityProcessingConfiguration>,
+    /// Configuration for sensitive data detection and redaction
+    pub sensitive_data_configuration: ::std::option::Option<crate::types::SensitiveDataConfiguration>,
 }
 impl VideoOverrideConfiguration {
     /// Configuration to enable/disable processing of modality
     pub fn modality_processing(&self) -> ::std::option::Option<&crate::types::ModalityProcessingConfiguration> {
         self.modality_processing.as_ref()
+    }
+    /// Configuration for sensitive data detection and redaction
+    pub fn sensitive_data_configuration(&self) -> ::std::option::Option<&crate::types::SensitiveDataConfiguration> {
+        self.sensitive_data_configuration.as_ref()
     }
 }
 impl VideoOverrideConfiguration {
@@ -25,6 +31,7 @@ impl VideoOverrideConfiguration {
 #[non_exhaustive]
 pub struct VideoOverrideConfigurationBuilder {
     pub(crate) modality_processing: ::std::option::Option<crate::types::ModalityProcessingConfiguration>,
+    pub(crate) sensitive_data_configuration: ::std::option::Option<crate::types::SensitiveDataConfiguration>,
 }
 impl VideoOverrideConfigurationBuilder {
     /// Configuration to enable/disable processing of modality
@@ -41,10 +48,25 @@ impl VideoOverrideConfigurationBuilder {
     pub fn get_modality_processing(&self) -> &::std::option::Option<crate::types::ModalityProcessingConfiguration> {
         &self.modality_processing
     }
+    /// Configuration for sensitive data detection and redaction
+    pub fn sensitive_data_configuration(mut self, input: crate::types::SensitiveDataConfiguration) -> Self {
+        self.sensitive_data_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Configuration for sensitive data detection and redaction
+    pub fn set_sensitive_data_configuration(mut self, input: ::std::option::Option<crate::types::SensitiveDataConfiguration>) -> Self {
+        self.sensitive_data_configuration = input;
+        self
+    }
+    /// Configuration for sensitive data detection and redaction
+    pub fn get_sensitive_data_configuration(&self) -> &::std::option::Option<crate::types::SensitiveDataConfiguration> {
+        &self.sensitive_data_configuration
+    }
     /// Consumes the builder and constructs a [`VideoOverrideConfiguration`](crate::types::VideoOverrideConfiguration).
     pub fn build(self) -> crate::types::VideoOverrideConfiguration {
         crate::types::VideoOverrideConfiguration {
             modality_processing: self.modality_processing,
+            sensitive_data_configuration: self.sensitive_data_configuration,
         }
     }
 }

@@ -7,6 +7,8 @@ pub struct GetImageOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The image object.</p>
     pub image: ::std::option::Option<crate::types::Image>,
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
 impl GetImageOutput {
@@ -17,6 +19,10 @@ impl GetImageOutput {
     /// <p>The image object.</p>
     pub fn image(&self) -> ::std::option::Option<&crate::types::Image> {
         self.image.as_ref()
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn latest_version_references(&self) -> ::std::option::Option<&crate::types::LatestVersionReferences> {
+        self.latest_version_references.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetImageOutput {
@@ -37,6 +43,7 @@ impl GetImageOutput {
 pub struct GetImageOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::Image>,
+    pub(crate) latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
 impl GetImageOutputBuilder {
@@ -68,6 +75,20 @@ impl GetImageOutputBuilder {
     pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
         &self.image
     }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn latest_version_references(mut self, input: crate::types::LatestVersionReferences) -> Self {
+        self.latest_version_references = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn set_latest_version_references(mut self, input: ::std::option::Option<crate::types::LatestVersionReferences>) -> Self {
+        self.latest_version_references = input;
+        self
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn get_latest_version_references(&self) -> &::std::option::Option<crate::types::LatestVersionReferences> {
+        &self.latest_version_references
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl GetImageOutputBuilder {
         crate::operation::get_image::GetImageOutput {
             request_id: self.request_id,
             image: self.image,
+            latest_version_references: self.latest_version_references,
             _request_id: self._request_id,
         }
     }

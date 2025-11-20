@@ -5,7 +5,7 @@
 pub struct DeleteComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the component build version that this request deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component build version that this request deleted.</p>
     pub component_build_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl DeleteComponentOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The ARN of the component build version that this request deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component build version that this request deleted.</p>
     pub fn component_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.component_build_version_arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl DeleteComponentOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p>The ARN of the component build version that this request deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component build version that this request deleted.</p>
     pub fn component_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the component build version that this request deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component build version that this request deleted.</p>
     pub fn set_component_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_build_version_arn = input;
         self
     }
-    /// <p>The ARN of the component build version that this request deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component build version that this request deleted.</p>
     pub fn get_component_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_build_version_arn
     }

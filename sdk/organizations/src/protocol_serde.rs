@@ -69,6 +69,8 @@ pub(crate) mod shape_describe_policy;
 
 pub(crate) mod shape_describe_resource_policy;
 
+pub(crate) mod shape_describe_responsibility_transfer;
+
 pub(crate) mod shape_detach_policy;
 
 pub(crate) mod shape_disable_aws_service_access;
@@ -82,6 +84,8 @@ pub(crate) mod shape_enable_aws_service_access;
 pub(crate) mod shape_enable_policy_type;
 
 pub(crate) mod shape_invite_account_to_organization;
+
+pub(crate) mod shape_invite_organization_to_transfer_responsibility;
 
 pub(crate) mod shape_leave_organization;
 
@@ -107,7 +111,11 @@ pub(crate) mod shape_list_handshakes_for_account;
 
 pub(crate) mod shape_list_handshakes_for_organization;
 
+pub(crate) mod shape_list_inbound_responsibility_transfers;
+
 pub(crate) mod shape_list_organizational_units_for_parent;
+
+pub(crate) mod shape_list_outbound_responsibility_transfers;
 
 pub(crate) mod shape_list_parents;
 
@@ -131,11 +139,15 @@ pub(crate) mod shape_remove_account_from_organization;
 
 pub(crate) mod shape_tag_resource;
 
+pub(crate) mod shape_terminate_responsibility_transfer;
+
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_organizational_unit;
 
 pub(crate) mod shape_update_policy;
+
+pub(crate) mod shape_update_responsibility_transfer;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -211,6 +223,8 @@ pub(crate) mod shape_describe_organizational_unit_input;
 
 pub(crate) mod shape_describe_policy_input;
 
+pub(crate) mod shape_describe_responsibility_transfer_input;
+
 pub(crate) mod shape_destination_parent_not_found_exception;
 
 pub(crate) mod shape_detach_policy_input;
@@ -247,7 +261,11 @@ pub(crate) mod shape_invalid_handshake_transition_exception;
 
 pub(crate) mod shape_invalid_input_exception;
 
+pub(crate) mod shape_invalid_responsibility_transfer_transition_exception;
+
 pub(crate) mod shape_invite_account_to_organization_input;
+
+pub(crate) mod shape_invite_organization_to_transfer_responsibility_input;
 
 pub(crate) mod shape_list_accounts_for_parent_input;
 
@@ -271,7 +289,11 @@ pub(crate) mod shape_list_handshakes_for_account_input;
 
 pub(crate) mod shape_list_handshakes_for_organization_input;
 
+pub(crate) mod shape_list_inbound_responsibility_transfers_input;
+
 pub(crate) mod shape_list_organizational_units_for_parent_input;
+
+pub(crate) mod shape_list_outbound_responsibility_transfers_input;
 
 pub(crate) mod shape_list_parents_input;
 
@@ -321,6 +343,10 @@ pub(crate) mod shape_remove_account_from_organization_input;
 
 pub(crate) mod shape_resource_policy_not_found_exception;
 
+pub(crate) mod shape_responsibility_transfer_already_in_status_exception;
+
+pub(crate) mod shape_responsibility_transfer_not_found_exception;
+
 pub(crate) mod shape_root_not_found_exception;
 
 pub(crate) mod shape_service_exception;
@@ -331,6 +357,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_target_not_found_exception;
 
+pub(crate) mod shape_terminate_responsibility_transfer_input;
+
 pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_unsupported_api_endpoint_exception;
@@ -340,6 +368,8 @@ pub(crate) mod shape_untag_resource_input;
 pub(crate) mod shape_update_organizational_unit_input;
 
 pub(crate) mod shape_update_policy_input;
+
+pub(crate) mod shape_update_responsibility_transfer_input;
 
 pub(crate) mod shape_account;
 
@@ -385,6 +415,10 @@ pub(crate) mod shape_policy_targets;
 
 pub(crate) mod shape_resource_policy;
 
+pub(crate) mod shape_responsibility_transfer;
+
+pub(crate) mod shape_responsibility_transfers;
+
 pub(crate) mod shape_root;
 
 pub(crate) mod shape_roots;
@@ -416,6 +450,8 @@ pub(crate) mod shape_policy_target_summary;
 pub(crate) mod shape_policy_types;
 
 pub(crate) mod shape_resource_policy_summary;
+
+pub(crate) mod shape_transfer_participant;
 
 pub(crate) mod shape_handshake_resource;
 

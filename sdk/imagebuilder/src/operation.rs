@@ -61,6 +61,9 @@ pub mod delete_lifecycle_policy;
 /// Types for the `DeleteWorkflow` operation.
 pub mod delete_workflow;
 
+/// Types for the `DistributeImage` operation.
+pub mod distribute_image;
+
 /// Types for the `GetComponent` operation.
 pub mod get_component;
 
@@ -198,6 +201,9 @@ pub mod put_image_policy;
 
 /// Types for the `PutImageRecipePolicy` operation.
 pub mod put_image_recipe_policy;
+
+/// Types for the `RetryImage` operation.
+pub mod retry_image;
 
 /// Types for the `SendWorkflowStepAction` operation.
 pub mod send_workflow_step_action;

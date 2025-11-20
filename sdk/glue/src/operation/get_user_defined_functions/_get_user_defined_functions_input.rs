@@ -9,6 +9,9 @@ pub struct GetUserDefinedFunctionsInput {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
     pub pattern: ::std::option::Option<::std::string::String>,
+    /// <p>An optional function-type pattern string that filters the function definitions returned from Amazon Redshift Federated Permissions Catalog.</p>
+    /// <p>Specify a value of <code>REGULAR_FUNCTION</code> or <code>STORED_PROCEDURE</code>. The <code>STORED_PROCEDURE</code> function type is only compatible with Amazon Redshift Federated Permissions Catalog.</p>
+    pub function_type: ::std::option::Option<crate::types::FunctionType>,
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of functions to return in one response.</p>
@@ -26,6 +29,11 @@ impl GetUserDefinedFunctionsInput {
     /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
     pub fn pattern(&self) -> ::std::option::Option<&str> {
         self.pattern.as_deref()
+    }
+    /// <p>An optional function-type pattern string that filters the function definitions returned from Amazon Redshift Federated Permissions Catalog.</p>
+    /// <p>Specify a value of <code>REGULAR_FUNCTION</code> or <code>STORED_PROCEDURE</code>. The <code>STORED_PROCEDURE</code> function type is only compatible with Amazon Redshift Federated Permissions Catalog.</p>
+    pub fn function_type(&self) -> ::std::option::Option<&crate::types::FunctionType> {
+        self.function_type.as_ref()
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -50,6 +58,7 @@ pub struct GetUserDefinedFunctionsInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) pattern: ::std::option::Option<::std::string::String>,
+    pub(crate) function_type: ::std::option::Option<crate::types::FunctionType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -97,6 +106,23 @@ impl GetUserDefinedFunctionsInputBuilder {
     pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
         &self.pattern
     }
+    /// <p>An optional function-type pattern string that filters the function definitions returned from Amazon Redshift Federated Permissions Catalog.</p>
+    /// <p>Specify a value of <code>REGULAR_FUNCTION</code> or <code>STORED_PROCEDURE</code>. The <code>STORED_PROCEDURE</code> function type is only compatible with Amazon Redshift Federated Permissions Catalog.</p>
+    pub fn function_type(mut self, input: crate::types::FunctionType) -> Self {
+        self.function_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional function-type pattern string that filters the function definitions returned from Amazon Redshift Federated Permissions Catalog.</p>
+    /// <p>Specify a value of <code>REGULAR_FUNCTION</code> or <code>STORED_PROCEDURE</code>. The <code>STORED_PROCEDURE</code> function type is only compatible with Amazon Redshift Federated Permissions Catalog.</p>
+    pub fn set_function_type(mut self, input: ::std::option::Option<crate::types::FunctionType>) -> Self {
+        self.function_type = input;
+        self
+    }
+    /// <p>An optional function-type pattern string that filters the function definitions returned from Amazon Redshift Federated Permissions Catalog.</p>
+    /// <p>Specify a value of <code>REGULAR_FUNCTION</code> or <code>STORED_PROCEDURE</code>. The <code>STORED_PROCEDURE</code> function type is only compatible with Amazon Redshift Federated Permissions Catalog.</p>
+    pub fn get_function_type(&self) -> &::std::option::Option<crate::types::FunctionType> {
+        &self.function_type
+    }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -136,6 +162,7 @@ impl GetUserDefinedFunctionsInputBuilder {
             catalog_id: self.catalog_id,
             database_name: self.database_name,
             pattern: self.pattern,
+            function_type: self.function_type,
             next_token: self.next_token,
             max_results: self.max_results,
         })

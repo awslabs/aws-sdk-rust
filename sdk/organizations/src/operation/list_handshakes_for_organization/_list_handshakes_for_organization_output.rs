@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHandshakesForOrganizationOutput {
-    /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
+    /// <p>An array of <code>Handshake</code>objects. Contains details for a handshake.</p>
     pub handshakes: ::std::option::Option<::std::vec::Vec<crate::types::Handshake>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListHandshakesForOrganizationOutput {
-    /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
+    /// <p>An array of <code>Handshake</code>objects. Contains details for a handshake.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.handshakes.is_none()`.
     pub fn handshakes(&self) -> &[crate::types::Handshake] {
@@ -46,19 +46,19 @@ impl ListHandshakesForOrganizationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_handshakes`](Self::set_handshakes).
     ///
-    /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
+    /// <p>An array of <code>Handshake</code>objects. Contains details for a handshake.</p>
     pub fn handshakes(mut self, input: crate::types::Handshake) -> Self {
         let mut v = self.handshakes.unwrap_or_default();
         v.push(input);
         self.handshakes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
+    /// <p>An array of <code>Handshake</code>objects. Contains details for a handshake.</p>
     pub fn set_handshakes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Handshake>>) -> Self {
         self.handshakes = input;
         self
     }
-    /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
+    /// <p>An array of <code>Handshake</code>objects. Contains details for a handshake.</p>
     pub fn get_handshakes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Handshake>> {
         &self.handshakes
     }

@@ -7,6 +7,8 @@ pub struct CreateTransitGatewayRouteTableAttachmentInput {
     pub peering_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub transit_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The routing policy label to apply to the Transit Gateway route table attachment for traffic routing decisions.</p>
+    pub routing_policy_label: ::std::option::Option<::std::string::String>,
     /// <p>The list of key-value tags associated with the request.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
@@ -20,6 +22,10 @@ impl CreateTransitGatewayRouteTableAttachmentInput {
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub fn transit_gateway_route_table_arn(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_route_table_arn.as_deref()
+    }
+    /// <p>The routing policy label to apply to the Transit Gateway route table attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(&self) -> ::std::option::Option<&str> {
+        self.routing_policy_label.as_deref()
     }
     /// <p>The list of key-value tags associated with the request.</p>
     ///
@@ -46,6 +52,7 @@ impl CreateTransitGatewayRouteTableAttachmentInput {
 pub struct CreateTransitGatewayRouteTableAttachmentInputBuilder {
     pub(crate) peering_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_policy_label: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -79,6 +86,20 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub fn get_transit_gateway_route_table_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_route_table_arn
+    }
+    /// <p>The routing policy label to apply to the Transit Gateway route table attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.routing_policy_label = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The routing policy label to apply to the Transit Gateway route table attachment for traffic routing decisions.</p>
+    pub fn set_routing_policy_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.routing_policy_label = input;
+        self
+    }
+    /// <p>The routing policy label to apply to the Transit Gateway route table attachment for traffic routing decisions.</p>
+    pub fn get_routing_policy_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_policy_label
     }
     /// Appends an item to `tags`.
     ///
@@ -125,6 +146,7 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
             crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput {
                 peering_id: self.peering_id,
                 transit_gateway_route_table_arn: self.transit_gateway_route_table_arn,
+                routing_policy_label: self.routing_policy_label,
                 tags: self.tags,
                 client_token: self.client_token,
             },

@@ -29,6 +29,16 @@ pub(crate) fn reflens_search_quantum_tasks_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_spending_limits_output_output_next_token(
+    input: &crate::operation::search_spending_limits::SearchSpendingLimitsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_search_devices_output_output_devices(
     input: crate::operation::search_devices::SearchDevicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>> {
@@ -47,5 +57,12 @@ pub(crate) fn lens_search_quantum_tasks_output_output_quantum_tasks(
     input: crate::operation::search_quantum_tasks::SearchQuantumTasksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskSummary>> {
     let input = input.quantum_tasks;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_spending_limits_output_output_spending_limits(
+    input: crate::operation::search_spending_limits::SearchSpendingLimitsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SpendingLimitSummary>> {
+    let input = input.spending_limits;
     ::std::option::Option::Some(input)
 }

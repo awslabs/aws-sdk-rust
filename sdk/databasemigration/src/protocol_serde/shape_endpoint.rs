@@ -133,6 +133,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "IsReadOnly" => {
+                            builder = builder.set_is_read_only(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "DynamoDbSettings" => {
                             builder = builder.set_dynamo_db_settings(crate::protocol_serde::shape_dynamo_db_settings::de_dynamo_db_settings(tokens)?);
                         }
@@ -196,6 +199,9 @@ where
                         "TimestreamSettings" => {
                             builder =
                                 builder.set_timestream_settings(crate::protocol_serde::shape_timestream_settings::de_timestream_settings(tokens)?);
+                        }
+                        "LakehouseSettings" => {
+                            builder = builder.set_lakehouse_settings(crate::protocol_serde::shape_lakehouse_settings::de_lakehouse_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

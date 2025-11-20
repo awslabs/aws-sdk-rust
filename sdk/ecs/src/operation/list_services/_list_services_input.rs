@@ -15,6 +15,8 @@ pub struct ListServicesInput {
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The scheduling strategy to use when filtering the <code>ListServices</code> results.</p>
     pub scheduling_strategy: ::std::option::Option<crate::types::SchedulingStrategy>,
+    /// <p>The resourceManagementType type to use when filtering the <code>ListServices</code> results.</p>
+    pub resource_management_type: ::std::option::Option<crate::types::ResourceManagementType>,
 }
 impl ListServicesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -39,6 +41,10 @@ impl ListServicesInput {
     pub fn scheduling_strategy(&self) -> ::std::option::Option<&crate::types::SchedulingStrategy> {
         self.scheduling_strategy.as_ref()
     }
+    /// <p>The resourceManagementType type to use when filtering the <code>ListServices</code> results.</p>
+    pub fn resource_management_type(&self) -> ::std::option::Option<&crate::types::ResourceManagementType> {
+        self.resource_management_type.as_ref()
+    }
 }
 impl ListServicesInput {
     /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
@@ -56,6 +62,7 @@ pub struct ListServicesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) launch_type: ::std::option::Option<crate::types::LaunchType>,
     pub(crate) scheduling_strategy: ::std::option::Option<crate::types::SchedulingStrategy>,
+    pub(crate) resource_management_type: ::std::option::Option<crate::types::ResourceManagementType>,
 }
 impl ListServicesInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -134,6 +141,20 @@ impl ListServicesInputBuilder {
     pub fn get_scheduling_strategy(&self) -> &::std::option::Option<crate::types::SchedulingStrategy> {
         &self.scheduling_strategy
     }
+    /// <p>The resourceManagementType type to use when filtering the <code>ListServices</code> results.</p>
+    pub fn resource_management_type(mut self, input: crate::types::ResourceManagementType) -> Self {
+        self.resource_management_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The resourceManagementType type to use when filtering the <code>ListServices</code> results.</p>
+    pub fn set_resource_management_type(mut self, input: ::std::option::Option<crate::types::ResourceManagementType>) -> Self {
+        self.resource_management_type = input;
+        self
+    }
+    /// <p>The resourceManagementType type to use when filtering the <code>ListServices</code> results.</p>
+    pub fn get_resource_management_type(&self) -> &::std::option::Option<crate::types::ResourceManagementType> {
+        &self.resource_management_type
+    }
     /// Consumes the builder and constructs a [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
     pub fn build(
         self,
@@ -144,6 +165,7 @@ impl ListServicesInputBuilder {
             max_results: self.max_results,
             launch_type: self.launch_type,
             scheduling_strategy: self.scheduling_strategy,
+            resource_management_type: self.resource_management_type,
         })
     }
 }

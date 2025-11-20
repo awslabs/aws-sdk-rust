@@ -27,6 +27,8 @@ pub struct TransitGatewayOptions {
     pub security_group_referencing_support: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,
     /// <p>Indicates whether multicast is enabled on the transit gateway</p>
     pub multicast_support: ::std::option::Option<crate::types::MulticastSupportValue>,
+    /// <p>Defines if the Transit Gateway supports VPC Encryption Control.</p>
+    pub encryption_support: ::std::option::Option<crate::types::EncryptionSupport>,
 }
 impl TransitGatewayOptions {
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
@@ -76,6 +78,10 @@ impl TransitGatewayOptions {
     pub fn multicast_support(&self) -> ::std::option::Option<&crate::types::MulticastSupportValue> {
         self.multicast_support.as_ref()
     }
+    /// <p>Defines if the Transit Gateway supports VPC Encryption Control.</p>
+    pub fn encryption_support(&self) -> ::std::option::Option<&crate::types::EncryptionSupport> {
+        self.encryption_support.as_ref()
+    }
 }
 impl TransitGatewayOptions {
     /// Creates a new builder-style object to manufacture [`TransitGatewayOptions`](crate::types::TransitGatewayOptions).
@@ -99,6 +105,7 @@ pub struct TransitGatewayOptionsBuilder {
     pub(crate) dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
     pub(crate) security_group_referencing_support: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,
     pub(crate) multicast_support: ::std::option::Option<crate::types::MulticastSupportValue>,
+    pub(crate) encryption_support: ::std::option::Option<crate::types::EncryptionSupport>,
 }
 impl TransitGatewayOptionsBuilder {
     /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
@@ -267,6 +274,20 @@ impl TransitGatewayOptionsBuilder {
     pub fn get_multicast_support(&self) -> &::std::option::Option<crate::types::MulticastSupportValue> {
         &self.multicast_support
     }
+    /// <p>Defines if the Transit Gateway supports VPC Encryption Control.</p>
+    pub fn encryption_support(mut self, input: crate::types::EncryptionSupport) -> Self {
+        self.encryption_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines if the Transit Gateway supports VPC Encryption Control.</p>
+    pub fn set_encryption_support(mut self, input: ::std::option::Option<crate::types::EncryptionSupport>) -> Self {
+        self.encryption_support = input;
+        self
+    }
+    /// <p>Defines if the Transit Gateway supports VPC Encryption Control.</p>
+    pub fn get_encryption_support(&self) -> &::std::option::Option<crate::types::EncryptionSupport> {
+        &self.encryption_support
+    }
     /// Consumes the builder and constructs a [`TransitGatewayOptions`](crate::types::TransitGatewayOptions).
     pub fn build(self) -> crate::types::TransitGatewayOptions {
         crate::types::TransitGatewayOptions {
@@ -281,6 +302,7 @@ impl TransitGatewayOptionsBuilder {
             dns_support: self.dns_support,
             security_group_referencing_support: self.security_group_referencing_support,
             multicast_support: self.multicast_support,
+            encryption_support: self.encryption_support,
         }
     }
 }

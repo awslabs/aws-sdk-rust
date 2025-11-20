@@ -23,7 +23,7 @@ pub enum Error {
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The request was received and recognized by the server, but the server rejected that particular method for the requested resource.</p>
     ResourceLockedException(crate::types::error::ResourceLockedException),
-    /// <p>You've reached the limit on the number of tags you can associate with a resource.</p>
+    /// <p>You've reached a Service Quota limit on this resource.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The number of API requests has exceeded the maximum allowed API request throttling limit for the account.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
@@ -614,6 +614,9 @@ impl From<crate::operation::describe_budget_performance_history::DescribeBudgetP
             crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::BillingViewHealthStatusException(inner) => {
+                Error::BillingViewHealthStatusException(inner)
+            }
             crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::ExpiredNextTokenException(inner) => {
                 Error::ExpiredNextTokenException(inner)
             }
@@ -908,6 +911,7 @@ impl From<crate::operation::update_budget::UpdateBudgetError> for Error {
             crate::operation::update_budget::UpdateBudgetError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::update_budget::UpdateBudgetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::update_budget::UpdateBudgetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_budget::UpdateBudgetError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::update_budget::UpdateBudgetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_budget::UpdateBudgetError::Unhandled(inner) => Error::Unhandled(inner),
         }

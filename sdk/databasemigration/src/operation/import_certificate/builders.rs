@@ -172,4 +172,24 @@ impl ImportCertificateFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.kms_key_id(input.into());
+        self
+    }
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_kms_key_id(input);
+        self
+    }
+    /// <p>An KMS key identifier that is used to encrypt the certificate.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
 }

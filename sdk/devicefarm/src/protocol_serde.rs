@@ -385,6 +385,8 @@ pub(crate) mod shape_device_selection_configuration;
 
 pub(crate) mod shape_devices;
 
+pub(crate) mod shape_environment_variable;
+
 pub(crate) mod shape_execution_configuration;
 
 pub(crate) mod shape_instance_profile;
@@ -482,6 +484,8 @@ pub(crate) mod shape_device_pool_compatibility_result;
 pub(crate) mod shape_device_proxy;
 
 pub(crate) mod shape_device_selection_result;
+
+pub(crate) mod shape_environment_variables;
 
 pub(crate) mod shape_instance_labels;
 

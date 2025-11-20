@@ -23,12 +23,12 @@ pub struct ExecuteStatementInput {
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub result_format: ::std::option::Option<crate::types::ResultFormatString>,
     /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
     pub session_keep_alive_seconds: ::std::option::Option<i32>,
     /// <p>The session identifier of the query.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
-    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
-    pub result_format: ::std::option::Option<crate::types::ResultFormatString>,
 }
 impl ExecuteStatementInput {
     /// <p>The SQL statement text to run.</p>
@@ -73,6 +73,10 @@ impl ExecuteStatementInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub fn result_format(&self) -> ::std::option::Option<&crate::types::ResultFormatString> {
+        self.result_format.as_ref()
+    }
     /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
     pub fn session_keep_alive_seconds(&self) -> ::std::option::Option<i32> {
         self.session_keep_alive_seconds
@@ -80,10 +84,6 @@ impl ExecuteStatementInput {
     /// <p>The session identifier of the query.</p>
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
-    }
-    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
-    pub fn result_format(&self) -> ::std::option::Option<&crate::types::ResultFormatString> {
-        self.result_format.as_ref()
     }
 }
 impl ExecuteStatementInput {
@@ -107,9 +107,9 @@ pub struct ExecuteStatementInputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) result_format: ::std::option::Option<crate::types::ResultFormatString>,
     pub(crate) session_keep_alive_seconds: ::std::option::Option<i32>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
-    pub(crate) result_format: ::std::option::Option<crate::types::ResultFormatString>,
 }
 impl ExecuteStatementInputBuilder {
     /// <p>The SQL statement text to run.</p>
@@ -259,6 +259,20 @@ impl ExecuteStatementInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub fn result_format(mut self, input: crate::types::ResultFormatString) -> Self {
+        self.result_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub fn set_result_format(mut self, input: ::std::option::Option<crate::types::ResultFormatString>) -> Self {
+        self.result_format = input;
+        self
+    }
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub fn get_result_format(&self) -> &::std::option::Option<crate::types::ResultFormatString> {
+        &self.result_format
+    }
     /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
     pub fn session_keep_alive_seconds(mut self, input: i32) -> Self {
         self.session_keep_alive_seconds = ::std::option::Option::Some(input);
@@ -287,20 +301,6 @@ impl ExecuteStatementInputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
-    pub fn result_format(mut self, input: crate::types::ResultFormatString) -> Self {
-        self.result_format = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
-    pub fn set_result_format(mut self, input: ::std::option::Option<crate::types::ResultFormatString>) -> Self {
-        self.result_format = input;
-        self
-    }
-    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
-    pub fn get_result_format(&self) -> &::std::option::Option<crate::types::ResultFormatString> {
-        &self.result_format
-    }
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
     pub fn build(
         self,
@@ -316,9 +316,9 @@ impl ExecuteStatementInputBuilder {
             parameters: self.parameters,
             workgroup_name: self.workgroup_name,
             client_token: self.client_token,
+            result_format: self.result_format,
             session_keep_alive_seconds: self.session_keep_alive_seconds,
             session_id: self.session_id,
-            result_format: self.result_format,
         })
     }
 }

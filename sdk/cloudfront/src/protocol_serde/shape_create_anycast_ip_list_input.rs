@@ -13,13 +13,22 @@ pub fn ser_create_anycast_ip_list_input_input_input(
         let mut inner_writer = scope.start_el("IpCount").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
     }
-    if let Some(var_3) = &input.name {
-        let mut inner_writer = scope.start_el("Name").finish();
-        inner_writer.data(var_3.as_str());
+    if let Some(var_3) = &input.ipam_cidr_configs {
+        let mut inner_writer = scope.start_el("IpamCidrConfigs").finish();
+        for list_item_4 in var_3 {
+            {
+                let inner_writer = inner_writer.start_el("IpamCidrConfig");
+                crate::protocol_serde::shape_ipam_cidr_config::ser_ipam_cidr_config(list_item_4, inner_writer)?
+            }
+        }
     }
-    if let Some(var_4) = &input.tags {
+    if let Some(var_5) = &input.name {
+        let mut inner_writer = scope.start_el("Name").finish();
+        inner_writer.data(var_5.as_str());
+    }
+    if let Some(var_6) = &input.tags {
         let inner_writer = scope.start_el("Tags");
-        crate::protocol_serde::shape_tags::ser_tags(var_4, inner_writer)?
+        crate::protocol_serde::shape_tags::ser_tags(var_6, inner_writer)?
     }
     scope.finish();
     Ok(())

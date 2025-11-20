@@ -115,11 +115,19 @@ pub use crate::types::_peering_type::PeeringType;
 
 pub use crate::types::_core_network_summary::CoreNetworkSummary;
 
+pub use crate::types::_core_network_routing_information::CoreNetworkRoutingInformation;
+
+pub use crate::types::_routing_information_next_hop::RoutingInformationNextHop;
+
+pub use crate::types::_prefix_list_association::PrefixListAssociation;
+
 pub use crate::types::_core_network_policy_version::CoreNetworkPolicyVersion;
 
 pub use crate::types::_connect_peer_summary::ConnectPeerSummary;
 
 pub use crate::types::_connect_peer_state::ConnectPeerState;
+
+pub use crate::types::_attachment_routing_policy_association_summary::AttachmentRoutingPolicyAssociationSummary;
 
 pub use crate::types::_transit_gateway_route_table_attachment::TransitGatewayRouteTableAttachment;
 
@@ -172,6 +180,10 @@ pub use crate::types::_customer_gateway_association_state::CustomerGatewayAssoci
 pub use crate::types::_core_network_change::CoreNetworkChange;
 
 pub use crate::types::_core_network_change_values::CoreNetworkChangeValues;
+
+pub use crate::types::_routing_policy_association_detail::RoutingPolicyAssociationDetail;
+
+pub use crate::types::_routing_policy_direction::RoutingPolicyDirection;
 
 pub use crate::types::_service_insertion_action::ServiceInsertionAction;
 
@@ -226,6 +238,8 @@ mod _attachment;
 mod _attachment_error;
 
 mod _attachment_error_code;
+
+mod _attachment_routing_policy_association_summary;
 
 mod _attachment_state;
 
@@ -301,6 +315,8 @@ mod _core_network_policy_error;
 
 mod _core_network_policy_version;
 
+mod _core_network_routing_information;
+
 mod _core_network_segment;
 
 mod _core_network_segment_edge_identifier;
@@ -365,6 +381,8 @@ mod _peering_type;
 
 mod _permissions_error_context;
 
+mod _prefix_list_association;
+
 mod _proposed_network_function_group_change;
 
 mod _proposed_segment_change;
@@ -394,6 +412,12 @@ mod _route_table_identifier;
 mod _route_table_type;
 
 mod _route_type;
+
+mod _routing_information_next_hop;
+
+mod _routing_policy_association_detail;
+
+mod _routing_policy_direction;
 
 mod _segment_action_service_insertion;
 

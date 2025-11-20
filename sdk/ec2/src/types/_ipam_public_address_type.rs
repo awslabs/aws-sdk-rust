@@ -14,6 +14,7 @@
 /// match ipampublicaddresstype {
 ///     IpamPublicAddressType::AmazonOwnedContig => { /* ... */ },
 ///     IpamPublicAddressType::AmazonOwnedEip => { /* ... */ },
+///     IpamPublicAddressType::AnycastIpListIp => { /* ... */ },
 ///     IpamPublicAddressType::Byoip => { /* ... */ },
 ///     IpamPublicAddressType::Ec2PublicIp => { /* ... */ },
 ///     IpamPublicAddressType::ServiceManagedByoip => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum IpamPublicAddressType {
     #[allow(missing_docs)] // documentation missing in model
     AmazonOwnedEip,
     #[allow(missing_docs)] // documentation missing in model
+    AnycastIpListIp,
+    #[allow(missing_docs)] // documentation missing in model
     Byoip,
     #[allow(missing_docs)] // documentation missing in model
     Ec2PublicIp,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for IpamPublicAddressType {
         match s {
             "amazon-owned-contig" => IpamPublicAddressType::AmazonOwnedContig,
             "amazon-owned-eip" => IpamPublicAddressType::AmazonOwnedEip,
+            "anycast-ip-list-ip" => IpamPublicAddressType::AnycastIpListIp,
             "byoip" => IpamPublicAddressType::Byoip,
             "ec2-public-ip" => IpamPublicAddressType::Ec2PublicIp,
             "service-managed-byoip" => IpamPublicAddressType::ServiceManagedByoip,
@@ -88,6 +92,7 @@ impl IpamPublicAddressType {
         match self {
             IpamPublicAddressType::AmazonOwnedContig => "amazon-owned-contig",
             IpamPublicAddressType::AmazonOwnedEip => "amazon-owned-eip",
+            IpamPublicAddressType::AnycastIpListIp => "anycast-ip-list-ip",
             IpamPublicAddressType::Byoip => "byoip",
             IpamPublicAddressType::Ec2PublicIp => "ec2-public-ip",
             IpamPublicAddressType::ServiceManagedByoip => "service-managed-byoip",
@@ -100,6 +105,7 @@ impl IpamPublicAddressType {
         &[
             "amazon-owned-contig",
             "amazon-owned-eip",
+            "anycast-ip-list-ip",
             "byoip",
             "ec2-public-ip",
             "service-managed-byoip",
@@ -129,6 +135,7 @@ impl ::std::fmt::Display for IpamPublicAddressType {
         match self {
             IpamPublicAddressType::AmazonOwnedContig => write!(f, "amazon-owned-contig"),
             IpamPublicAddressType::AmazonOwnedEip => write!(f, "amazon-owned-eip"),
+            IpamPublicAddressType::AnycastIpListIp => write!(f, "anycast-ip-list-ip"),
             IpamPublicAddressType::Byoip => write!(f, "byoip"),
             IpamPublicAddressType::Ec2PublicIp => write!(f, "ec2-public-ip"),
             IpamPublicAddressType::ServiceManagedByoip => write!(f, "service-managed-byoip"),

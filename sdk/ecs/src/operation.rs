@@ -7,6 +7,9 @@ pub mod create_capacity_provider;
 /// Types for the `CreateCluster` operation.
 pub mod create_cluster;
 
+/// Types for the `CreateExpressGatewayService` operation.
+pub mod create_express_gateway_service;
+
 /// Types for the `CreateService` operation.
 pub mod create_service;
 
@@ -24,6 +27,9 @@ pub mod delete_capacity_provider;
 
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
+
+/// Types for the `DeleteExpressGatewayService` operation.
+pub mod delete_express_gateway_service;
 
 /// Types for the `DeleteService` operation.
 pub mod delete_service;
@@ -48,6 +54,9 @@ pub mod describe_clusters;
 
 /// Types for the `DescribeContainerInstances` operation.
 pub mod describe_container_instances;
+
+/// Types for the `DescribeExpressGatewayService` operation.
+pub mod describe_express_gateway_service;
 
 /// Types for the `DescribeServiceDeployments` operation.
 pub mod describe_service_deployments;
@@ -168,6 +177,9 @@ pub mod update_container_agent;
 
 /// Types for the `UpdateContainerInstancesState` operation.
 pub mod update_container_instances_state;
+
+/// Types for the `UpdateExpressGatewayService` operation.
+pub mod update_express_gateway_service;
 
 /// Types for the `UpdateService` operation.
 pub mod update_service;

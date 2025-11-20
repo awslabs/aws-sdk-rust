@@ -71,6 +71,22 @@ pub fn de_delete_organization_http_error(
             }
             tmp
         }),
+        "ConstraintViolationException" => crate::operation::delete_organization::DeleteOrganizationError::ConstraintViolationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConstraintViolationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_constraint_violation_exception::de_constraint_violation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::delete_organization::DeleteOrganizationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidInputException" => crate::operation::delete_organization::DeleteOrganizationError::InvalidInputException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -989,6 +989,8 @@ pub(crate) mod shape_unsupported_db_engine_version_fault;
 
 pub(crate) mod shape_user_auth_config;
 
+pub(crate) mod shape_vpc_encryption_control_violation_exception;
+
 pub(crate) mod shape_account_quota_list;
 
 pub(crate) mod shape_blue_green_deployment;

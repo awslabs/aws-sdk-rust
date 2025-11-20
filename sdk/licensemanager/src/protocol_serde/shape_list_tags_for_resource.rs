@@ -99,6 +99,21 @@ pub fn de_list_tags_for_resource_http_error(
             }
             tmp
         }),
+        "ValidationException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::list_tags_for_resource::ListTagsForResourceError::generic(generic),
     })
 }

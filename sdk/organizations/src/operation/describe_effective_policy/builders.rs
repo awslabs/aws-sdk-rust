@@ -25,7 +25,7 @@ impl crate::operation::describe_effective_policy::builders::DescribeEffectivePol
 /// <p>Returns the contents of the effective policy for specified policy type and account. The effective policy is the aggregation of any policies of the specified type that the account inherits, plus any policy of that type that is directly attached to the account.</p>
 /// <p>This operation applies only to management policies. It does not apply to authorization policies: service control policies (SCPs) and resource control policies (RCPs).</p>
 /// <p>For more information about policy inheritance, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inheritance_mgmt.html">Understanding management policy inheritance</a> in the <i>Organizations User Guide</i>.</p>
-/// <p>This operation can be called from any account in the organization.</p>
+/// <p>You can call this operation from any account in a organization.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEffectivePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -125,6 +125,8 @@ impl DescribeEffectivePolicyFluentBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a></p></li>
     /// </ul>
     pub fn policy_type(mut self, input: crate::types::EffectivePolicyType) -> Self {
         self.inner = self.inner.policy_type(input);
@@ -144,6 +146,8 @@ impl DescribeEffectivePolicyFluentBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a></p></li>
     /// </ul>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::EffectivePolicyType>) -> Self {
         self.inner = self.inner.set_policy_type(input);
@@ -163,6 +167,8 @@ impl DescribeEffectivePolicyFluentBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a></p></li>
     /// </ul>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::EffectivePolicyType> {
         self.inner.get_policy_type()

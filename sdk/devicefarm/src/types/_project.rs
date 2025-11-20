@@ -14,6 +14,10 @@ pub struct Project {
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    /// <p>Environment variables associated with the project.</p>
+    pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    /// <p>The IAM execution role associated with the project.</p>
+    pub execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl Project {
     /// <p>The project's ARN.</p>
@@ -36,6 +40,16 @@ impl Project {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>Environment variables associated with the project.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_variables.is_none()`.
+    pub fn environment_variables(&self) -> &[crate::types::EnvironmentVariable] {
+        self.environment_variables.as_deref().unwrap_or_default()
+    }
+    /// <p>The IAM execution role associated with the project.</p>
+    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
 }
 impl Project {
     /// Creates a new builder-style object to manufacture [`Project`](crate::types::Project).
@@ -53,6 +67,8 @@ pub struct ProjectBuilder {
     pub(crate) default_job_timeout_minutes: ::std::option::Option<i32>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ProjectBuilder {
     /// <p>The project's ARN.</p>
@@ -125,6 +141,40 @@ impl ProjectBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
+    /// Appends an item to `environment_variables`.
+    ///
+    /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+    ///
+    /// <p>Environment variables associated with the project.</p>
+    pub fn environment_variables(mut self, input: crate::types::EnvironmentVariable) -> Self {
+        let mut v = self.environment_variables.unwrap_or_default();
+        v.push(input);
+        self.environment_variables = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Environment variables associated with the project.</p>
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
+        self.environment_variables = input;
+        self
+    }
+    /// <p>Environment variables associated with the project.</p>
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+        &self.environment_variables
+    }
+    /// <p>The IAM execution role associated with the project.</p>
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IAM execution role associated with the project.</p>
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_arn = input;
+        self
+    }
+    /// <p>The IAM execution role associated with the project.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// Consumes the builder and constructs a [`Project`](crate::types::Project).
     pub fn build(self) -> crate::types::Project {
         crate::types::Project {
@@ -133,6 +183,8 @@ impl ProjectBuilder {
             default_job_timeout_minutes: self.default_job_timeout_minutes,
             created: self.created,
             vpc_config: self.vpc_config,
+            environment_variables: self.environment_variables,
+            execution_role_arn: self.execution_role_arn,
         }
     }
 }

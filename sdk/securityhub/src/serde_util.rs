@@ -179,6 +179,18 @@ pub(crate) fn get_findings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_findings_trends_v2_output_output_correct_errors(
+    mut builder: crate::operation::get_findings_trends_v2::builders::GetFindingsTrendsV2OutputBuilder,
+) -> crate::operation::get_findings_trends_v2::builders::GetFindingsTrendsV2OutputBuilder {
+    if builder.granularity.is_none() {
+        builder.granularity = "no value was set".parse::<crate::types::GranularityField>().ok()
+    }
+    if builder.trends_metrics.is_none() {
+        builder.trends_metrics = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_insight_results_output_output_correct_errors(
     mut builder: crate::operation::get_insight_results::builders::GetInsightResultsOutputBuilder,
 ) -> crate::operation::get_insight_results::builders::GetInsightResultsOutputBuilder {
@@ -205,6 +217,18 @@ pub(crate) fn get_resources_statistics_v2_output_output_correct_errors(
 ) -> crate::operation::get_resources_statistics_v2::builders::GetResourcesStatisticsV2OutputBuilder {
     if builder.group_by_results.is_none() {
         builder.group_by_results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_resources_trends_v2_output_output_correct_errors(
+    mut builder: crate::operation::get_resources_trends_v2::builders::GetResourcesTrendsV2OutputBuilder,
+) -> crate::operation::get_resources_trends_v2::builders::GetResourcesTrendsV2OutputBuilder {
+    if builder.granularity.is_none() {
+        builder.granularity = "no value was set".parse::<crate::types::GranularityField>().ok()
+    }
+    if builder.trends_metrics.is_none() {
+        builder.trends_metrics = Some(Default::default())
     }
     builder
 }
@@ -477,6 +501,21 @@ pub(crate) fn resource_result_correct_errors(
     builder
 }
 
+pub(crate) fn resources_trends_metrics_result_correct_errors(
+    mut builder: crate::types::builders::ResourcesTrendsMetricsResultBuilder,
+) -> crate::types::builders::ResourcesTrendsMetricsResultBuilder {
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.trends_values.is_none() {
+        builder.trends_values = {
+            let builder = crate::types::builders::ResourcesTrendsValuesBuilder::default();
+            Some(crate::serde_util::resources_trends_values_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn security_control_correct_errors(
     mut builder: crate::types::builders::SecurityControlBuilder,
 ) -> crate::types::builders::SecurityControlBuilder {
@@ -563,6 +602,21 @@ pub(crate) fn standards_subscription_correct_errors(
     }
     if builder.standards_status.is_none() {
         builder.standards_status = "no value was set".parse::<crate::types::StandardsStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn trends_metrics_result_correct_errors(
+    mut builder: crate::types::builders::TrendsMetricsResultBuilder,
+) -> crate::types::builders::TrendsMetricsResultBuilder {
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.trends_values.is_none() {
+        builder.trends_values = {
+            let builder = crate::types::builders::TrendsValuesBuilder::default();
+            Some(crate::serde_util::trends_values_correct_errors(builder).build())
+        }
     }
     builder
 }
@@ -668,6 +722,18 @@ pub(crate) fn patch_summary_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn resources_trends_values_correct_errors(
+    mut builder: crate::types::builders::ResourcesTrendsValuesBuilder,
+) -> crate::types::builders::ResourcesTrendsValuesBuilder {
+    if builder.resources_count.is_none() {
+        builder.resources_count = {
+            let builder = crate::types::builders::ResourcesCountBuilder::default();
+            Some(crate::serde_util::resources_count_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn standards_control_association_id_correct_errors(
     mut builder: crate::types::builders::StandardsControlAssociationIdBuilder,
 ) -> crate::types::builders::StandardsControlAssociationIdBuilder {
@@ -700,6 +766,16 @@ pub(crate) fn standards_status_reason_correct_errors(
 ) -> crate::types::builders::StandardsStatusReasonBuilder {
     if builder.status_reason_code.is_none() {
         builder.status_reason_code = "no value was set".parse::<crate::types::StatusReasonCode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn trends_values_correct_errors(mut builder: crate::types::builders::TrendsValuesBuilder) -> crate::types::builders::TrendsValuesBuilder {
+    if builder.severity_trends.is_none() {
+        builder.severity_trends = {
+            let builder = crate::types::builders::SeverityTrendsCountBuilder::default();
+            Some(crate::serde_util::severity_trends_count_correct_errors(builder).build())
+        }
     }
     builder
 }
@@ -763,6 +839,45 @@ pub(crate) fn resource_tag_correct_errors(mut builder: crate::types::builders::R
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resources_count_correct_errors(
+    mut builder: crate::types::builders::ResourcesCountBuilder,
+) -> crate::types::builders::ResourcesCountBuilder {
+    if builder.all_resources.is_none() {
+        builder.all_resources = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn severity_trends_count_correct_errors(
+    mut builder: crate::types::builders::SeverityTrendsCountBuilder,
+) -> crate::types::builders::SeverityTrendsCountBuilder {
+    if builder.unknown.is_none() {
+        builder.unknown = Some(Default::default())
+    }
+    if builder.informational.is_none() {
+        builder.informational = Some(Default::default())
+    }
+    if builder.low.is_none() {
+        builder.low = Some(Default::default())
+    }
+    if builder.medium.is_none() {
+        builder.medium = Some(Default::default())
+    }
+    if builder.high.is_none() {
+        builder.high = Some(Default::default())
+    }
+    if builder.critical.is_none() {
+        builder.critical = Some(Default::default())
+    }
+    if builder.fatal.is_none() {
+        builder.fatal = Some(Default::default())
+    }
+    if builder.other.is_none() {
+        builder.other = Some(Default::default())
     }
     builder
 }

@@ -278,6 +278,8 @@ pub enum StartDBInstanceError {
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
+    /// <p>The operation violates VPC encryption control settings. Make sure that your DB instance type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption controls to not enforce encryption-in-transit.</p>
+    VpcEncryptionControlViolationException(crate::types::error::VpcEncryptionControlViolationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -322,6 +324,7 @@ impl StartDBInstanceError {
             Self::InvalidSubnet(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidVpcNetworkStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::VpcEncryptionControlViolationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -369,6 +372,10 @@ impl StartDBInstanceError {
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(self, Self::KmsKeyNotAccessibleFault(_))
     }
+    /// Returns `true` if the error kind is `StartDBInstanceError::VpcEncryptionControlViolationException`.
+    pub fn is_vpc_encryption_control_violation_exception(&self) -> bool {
+        matches!(self, Self::VpcEncryptionControlViolationException(_))
+    }
 }
 impl ::std::error::Error for StartDBInstanceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -384,6 +391,7 @@ impl ::std::error::Error for StartDBInstanceError {
             Self::InvalidSubnet(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::VpcEncryptionControlViolationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -402,6 +410,7 @@ impl ::std::fmt::Display for StartDBInstanceError {
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            Self::VpcEncryptionControlViolationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -434,6 +443,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartDBInstan
             Self::InvalidSubnet(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::VpcEncryptionControlViolationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

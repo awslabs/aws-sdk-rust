@@ -57,6 +57,18 @@ pub(crate) fn vpc_config_correct_errors(mut builder: crate::types::builders::Vpc
     builder
 }
 
+pub(crate) fn environment_variable_correct_errors(
+    mut builder: crate::types::builders::EnvironmentVariableBuilder,
+) -> crate::types::builders::EnvironmentVariableBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn device_filter_correct_errors(mut builder: crate::types::builders::DeviceFilterBuilder) -> crate::types::builders::DeviceFilterBuilder {
     if builder.attribute.is_none() {
         builder.attribute = "no value was set".parse::<crate::types::DeviceFilterAttribute>().ok()

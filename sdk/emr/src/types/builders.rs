@@ -33,6 +33,10 @@ pub use crate::types::_script_bootstrap_action_config::ScriptBootstrapActionConf
 
 pub use crate::types::_step_config::StepConfigBuilder;
 
+pub use crate::types::_step_monitoring_configuration::StepMonitoringConfigurationBuilder;
+
+pub use crate::types::_s3_monitoring_configuration::S3MonitoringConfigurationBuilder;
+
 pub use crate::types::_hadoop_jar_step_config::HadoopJarStepConfigBuilder;
 
 pub use crate::types::_key_value::KeyValueBuilder;

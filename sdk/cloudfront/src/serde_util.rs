@@ -1078,6 +1078,16 @@ pub(crate) fn invalidation_batch_correct_errors(
     builder
 }
 
+pub(crate) fn ipam_config_correct_errors(mut builder: crate::types::builders::IpamConfigBuilder) -> crate::types::builders::IpamConfigBuilder {
+    if builder.quantity.is_none() {
+        builder.quantity = Some(Default::default())
+    }
+    if builder.ipam_cidr_configs.is_none() {
+        builder.ipam_cidr_configs = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn origin_groups_correct_errors(mut builder: crate::types::builders::OriginGroupsBuilder) -> crate::types::builders::OriginGroupsBuilder {
     if builder.quantity.is_none() {
         builder.quantity = Some(Default::default())
@@ -2121,6 +2131,18 @@ pub(crate) fn encryption_entity_correct_errors(
             let builder = crate::types::builders::FieldPatternsBuilder::default();
             crate::serde_util::field_patterns_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn ipam_cidr_config_correct_errors(
+    mut builder: crate::types::builders::IpamCidrConfigBuilder,
+) -> crate::types::builders::IpamCidrConfigBuilder {
+    if builder.cidr.is_none() {
+        builder.cidr = Some(Default::default())
+    }
+    if builder.ipam_pool_arn.is_none() {
+        builder.ipam_pool_arn = Some(Default::default())
     }
     builder
 }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLifecyclePolicyOutput {
-    /// <p>The ARN of the lifecycle policy that was deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy that was deleted.</p>
     pub lifecycle_policy_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteLifecyclePolicyOutput {
-    /// <p>The ARN of the lifecycle policy that was deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy that was deleted.</p>
     pub fn lifecycle_policy_arn(&self) -> ::std::option::Option<&str> {
         self.lifecycle_policy_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteLifecyclePolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteLifecyclePolicyOutputBuilder {
-    /// <p>The ARN of the lifecycle policy that was deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy that was deleted.</p>
     pub fn lifecycle_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the lifecycle policy that was deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy that was deleted.</p>
     pub fn set_lifecycle_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_policy_arn = input;
         self
     }
-    /// <p>The ARN of the lifecycle policy that was deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy that was deleted.</p>
     pub fn get_lifecycle_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_policy_arn
     }

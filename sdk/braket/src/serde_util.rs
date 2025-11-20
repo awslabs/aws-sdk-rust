@@ -41,6 +41,15 @@ pub(crate) fn create_quantum_task_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_spending_limit_output_output_correct_errors(
+    mut builder: crate::operation::create_spending_limit::builders::CreateSpendingLimitOutputBuilder,
+) -> crate::operation::create_spending_limit::builders::CreateSpendingLimitOutputBuilder {
+    if builder.spending_limit_arn.is_none() {
+        builder.spending_limit_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_device_output_output_correct_errors(
     mut builder: crate::operation::get_device::builders::GetDeviceOutputBuilder,
 ) -> crate::operation::get_device::builders::GetDeviceOutputBuilder {
@@ -157,6 +166,15 @@ pub(crate) fn search_quantum_tasks_output_output_correct_errors(
 ) -> crate::operation::search_quantum_tasks::builders::SearchQuantumTasksOutputBuilder {
     if builder.quantum_tasks.is_none() {
         builder.quantum_tasks = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn search_spending_limits_output_output_correct_errors(
+    mut builder: crate::operation::search_spending_limits::builders::SearchSpendingLimitsOutputBuilder,
+) -> crate::operation::search_spending_limits::builders::SearchSpendingLimitsOutputBuilder {
+    if builder.spending_limits.is_none() {
+        builder.spending_limits = Some(Default::default())
     }
     builder
 }
@@ -365,12 +383,55 @@ pub(crate) fn script_mode_config_correct_errors(
     builder
 }
 
+pub(crate) fn spending_limit_summary_correct_errors(
+    mut builder: crate::types::builders::SpendingLimitSummaryBuilder,
+) -> crate::types::builders::SpendingLimitSummaryBuilder {
+    if builder.spending_limit_arn.is_none() {
+        builder.spending_limit_arn = Some(Default::default())
+    }
+    if builder.device_arn.is_none() {
+        builder.device_arn = Some(Default::default())
+    }
+    if builder.time_period.is_none() {
+        builder.time_period = {
+            let builder = crate::types::builders::TimePeriodBuilder::default();
+            crate::serde_util::time_period_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.spending_limit.is_none() {
+        builder.spending_limit = Some(Default::default())
+    }
+    if builder.queued_spend.is_none() {
+        builder.queued_spend = Some(Default::default())
+    }
+    if builder.total_spend.is_none() {
+        builder.total_spend = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn data_source_correct_errors(mut builder: crate::types::builders::DataSourceBuilder) -> crate::types::builders::DataSourceBuilder {
     if builder.s3_data_source.is_none() {
         builder.s3_data_source = {
             let builder = crate::types::builders::S3DataSourceBuilder::default();
             crate::serde_util::s3_data_source_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn time_period_correct_errors(mut builder: crate::types::builders::TimePeriodBuilder) -> crate::types::builders::TimePeriodBuilder {
+    if builder.start_at.is_none() {
+        builder.start_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.end_at.is_none() {
+        builder.end_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

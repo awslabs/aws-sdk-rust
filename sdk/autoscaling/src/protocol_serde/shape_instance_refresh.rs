@@ -158,6 +158,20 @@ pub fn de_instance_refresh(
                 builder = builder.set_rollback_details(var_12);
             }
             ,
+            s if s.matches("Strategy") /* Strategy com.amazonaws.autoscaling#InstanceRefresh$Strategy */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<crate::types::RefreshStrategy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::RefreshStrategy::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_strategy(var_13);
+            }
+            ,
             _ => {}
         }
     }

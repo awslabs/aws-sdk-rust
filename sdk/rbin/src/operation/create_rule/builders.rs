@@ -162,17 +162,41 @@ impl CreateRuleFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// <p>The resource type to be retained by the retention rule. Currently, only EBS volumes, EBS snapshots, and EBS-backed AMIs are supported.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To retain EBS volumes, specify <code>EBS_VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To retain EBS snapshots, specify <code>EBS_SNAPSHOT</code></p></li>
+    /// <li>
+    /// <p>To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p></li>
+    /// </ul>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
         self
     }
-    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// <p>The resource type to be retained by the retention rule. Currently, only EBS volumes, EBS snapshots, and EBS-backed AMIs are supported.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To retain EBS volumes, specify <code>EBS_VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To retain EBS snapshots, specify <code>EBS_SNAPSHOT</code></p></li>
+    /// <li>
+    /// <p>To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p></li>
+    /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// <p>The resource type to be retained by the retention rule. Currently, only EBS volumes, EBS snapshots, and EBS-backed AMIs are supported.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To retain EBS volumes, specify <code>EBS_VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To retain EBS snapshots, specify <code>EBS_SNAPSHOT</code></p></li>
+    /// <li>
+    /// <p>To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p></li>
+    /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         self.inner.get_resource_type()
     }

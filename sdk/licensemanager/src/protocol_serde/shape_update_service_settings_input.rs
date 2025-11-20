@@ -18,5 +18,14 @@ pub fn ser_update_service_settings_input_input(
     if let Some(var_5) = &input.enable_cross_accounts_discovery {
         object.key("EnableCrossAccountsDiscovery").boolean(*var_5);
     }
+    if let Some(var_6) = &input.enabled_discovery_source_regions {
+        let mut array_7 = object.key("EnabledDiscoverySourceRegions").start_array();
+        for item_8 in var_6 {
+            {
+                array_7.value().string(item_8.as_str());
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }

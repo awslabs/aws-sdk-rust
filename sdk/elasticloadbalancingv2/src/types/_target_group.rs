@@ -40,6 +40,8 @@ pub struct TargetGroup {
     pub protocol_version: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type. The default value is <code>ipv4</code>.</p>
     pub ip_address_type: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
+    /// <p>The port on which the target control agent and application load balancer exchange management traffic for the target optimizer feature.</p>
+    pub target_control_port: ::std::option::Option<i32>,
 }
 impl TargetGroup {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -116,6 +118,10 @@ impl TargetGroup {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::TargetGroupIpAddressTypeEnum> {
         self.ip_address_type.as_ref()
     }
+    /// <p>The port on which the target control agent and application load balancer exchange management traffic for the target optimizer feature.</p>
+    pub fn target_control_port(&self) -> ::std::option::Option<i32> {
+        self.target_control_port
+    }
 }
 impl TargetGroup {
     /// Creates a new builder-style object to manufacture [`TargetGroup`](crate::types::TargetGroup).
@@ -146,6 +152,7 @@ pub struct TargetGroupBuilder {
     pub(crate) target_type: ::std::option::Option<crate::types::TargetTypeEnum>,
     pub(crate) protocol_version: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
+    pub(crate) target_control_port: ::std::option::Option<i32>,
 }
 impl TargetGroupBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -406,6 +413,20 @@ impl TargetGroupBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum> {
         &self.ip_address_type
     }
+    /// <p>The port on which the target control agent and application load balancer exchange management traffic for the target optimizer feature.</p>
+    pub fn target_control_port(mut self, input: i32) -> Self {
+        self.target_control_port = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The port on which the target control agent and application load balancer exchange management traffic for the target optimizer feature.</p>
+    pub fn set_target_control_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.target_control_port = input;
+        self
+    }
+    /// <p>The port on which the target control agent and application load balancer exchange management traffic for the target optimizer feature.</p>
+    pub fn get_target_control_port(&self) -> &::std::option::Option<i32> {
+        &self.target_control_port
+    }
     /// Consumes the builder and constructs a [`TargetGroup`](crate::types::TargetGroup).
     pub fn build(self) -> crate::types::TargetGroup {
         crate::types::TargetGroup {
@@ -427,6 +448,7 @@ impl TargetGroupBuilder {
             target_type: self.target_type,
             protocol_version: self.protocol_version,
             ip_address_type: self.ip_address_type,
+            target_control_port: self.target_control_port,
         }
     }
 }

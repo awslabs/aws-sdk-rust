@@ -227,6 +227,56 @@ impl From<crate::operation::batch_describe_model_package::BatchDescribeModelPack
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_reboot_cluster_nodes::BatchRebootClusterNodesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_reboot_cluster_nodes::BatchRebootClusterNodesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_reboot_cluster_nodes::BatchRebootClusterNodesError> for Error {
+    fn from(err: crate::operation::batch_reboot_cluster_nodes::BatchRebootClusterNodesError) -> Self {
+        match err {
+            crate::operation::batch_reboot_cluster_nodes::BatchRebootClusterNodesError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::batch_reboot_cluster_nodes::BatchRebootClusterNodesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_replace_cluster_nodes::BatchReplaceClusterNodesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_replace_cluster_nodes::BatchReplaceClusterNodesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_replace_cluster_nodes::BatchReplaceClusterNodesError> for Error {
+    fn from(err: crate::operation::batch_replace_cluster_nodes::BatchReplaceClusterNodesError) -> Self {
+        match err {
+            crate::operation::batch_replace_cluster_nodes::BatchReplaceClusterNodesError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::batch_replace_cluster_nodes::BatchReplaceClusterNodesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_action::CreateActionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

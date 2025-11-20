@@ -36,6 +36,8 @@ pub struct LicenseConfiguration {
     pub product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
     /// <p>Automated discovery information.</p>
     pub automated_discovery_information: ::std::option::Option<crate::types::AutomatedDiscoveryInformation>,
+    /// <p>License configuration expiry time in Unix timestamp format.</p>
+    pub license_expiry: ::std::option::Option<i64>,
 }
 impl LicenseConfiguration {
     /// <p>Unique ID of the license configuration.</p>
@@ -110,6 +112,10 @@ impl LicenseConfiguration {
     pub fn automated_discovery_information(&self) -> ::std::option::Option<&crate::types::AutomatedDiscoveryInformation> {
         self.automated_discovery_information.as_ref()
     }
+    /// <p>License configuration expiry time in Unix timestamp format.</p>
+    pub fn license_expiry(&self) -> ::std::option::Option<i64> {
+        self.license_expiry
+    }
 }
 impl LicenseConfiguration {
     /// Creates a new builder-style object to manufacture [`LicenseConfiguration`](crate::types::LicenseConfiguration).
@@ -138,6 +144,7 @@ pub struct LicenseConfigurationBuilder {
     pub(crate) managed_resource_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceSummary>>,
     pub(crate) product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
     pub(crate) automated_discovery_information: ::std::option::Option<crate::types::AutomatedDiscoveryInformation>,
+    pub(crate) license_expiry: ::std::option::Option<i64>,
 }
 impl LicenseConfigurationBuilder {
     /// <p>Unique ID of the license configuration.</p>
@@ -388,6 +395,20 @@ impl LicenseConfigurationBuilder {
     pub fn get_automated_discovery_information(&self) -> &::std::option::Option<crate::types::AutomatedDiscoveryInformation> {
         &self.automated_discovery_information
     }
+    /// <p>License configuration expiry time in Unix timestamp format.</p>
+    pub fn license_expiry(mut self, input: i64) -> Self {
+        self.license_expiry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>License configuration expiry time in Unix timestamp format.</p>
+    pub fn set_license_expiry(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.license_expiry = input;
+        self
+    }
+    /// <p>License configuration expiry time in Unix timestamp format.</p>
+    pub fn get_license_expiry(&self) -> &::std::option::Option<i64> {
+        &self.license_expiry
+    }
     /// Consumes the builder and constructs a [`LicenseConfiguration`](crate::types::LicenseConfiguration).
     pub fn build(self) -> crate::types::LicenseConfiguration {
         crate::types::LicenseConfiguration {
@@ -407,6 +428,7 @@ impl LicenseConfigurationBuilder {
             managed_resource_summary_list: self.managed_resource_summary_list,
             product_information_list: self.product_information_list,
             automated_discovery_information: self.automated_discovery_information,
+            license_expiry: self.license_expiry,
         }
     }
 }

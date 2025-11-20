@@ -23,7 +23,7 @@ impl crate::operation::list_permissions::builders::ListPermissionsInputBuilder {
 /// Fluent builder constructing a request to `ListPermissions`.
 ///
 /// <p>Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER.</p>
-/// <p>This operation returns only those permissions that have been explicitly granted.</p>
+/// <p>This operation returns only those permissions that have been explicitly granted. If both <code>Principal</code> and <code>Resource</code> parameters are provided, the response returns effective permissions rather than the explicitly granted permissions.</p>
 /// <p>For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPermissionsFluentBuilder {
@@ -203,17 +203,20 @@ impl ListPermissionsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>Indicates that related permissions should be included in the results.</p>
+    /// <p>Indicates that related permissions should be included in the results when listing permissions on a table resource.</p>
+    /// <p>Set the field to <code>TRUE</code> to show the cell filters on a table resource. Default is <code>FALSE</code>. The Principal parameter must not be specified when requesting cell filter information.</p>
     pub fn include_related(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.include_related(input.into());
         self
     }
-    /// <p>Indicates that related permissions should be included in the results.</p>
+    /// <p>Indicates that related permissions should be included in the results when listing permissions on a table resource.</p>
+    /// <p>Set the field to <code>TRUE</code> to show the cell filters on a table resource. Default is <code>FALSE</code>. The Principal parameter must not be specified when requesting cell filter information.</p>
     pub fn set_include_related(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_include_related(input);
         self
     }
-    /// <p>Indicates that related permissions should be included in the results.</p>
+    /// <p>Indicates that related permissions should be included in the results when listing permissions on a table resource.</p>
+    /// <p>Set the field to <code>TRUE</code> to show the cell filters on a table resource. Default is <code>FALSE</code>. The Principal parameter must not be specified when requesting cell filter information.</p>
     pub fn get_include_related(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_include_related()
     }

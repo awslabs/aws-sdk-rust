@@ -33,23 +33,26 @@ pub fn ser_create_data_automation_project_input_input(
     if let Some(var_10) = &input.project_stage {
         object.key("projectStage").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.standard_output_configuration {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("standardOutputConfiguration").start_object();
-        crate::protocol_serde::shape_standard_output_configuration::ser_standard_output_configuration(&mut object_12, var_11)?;
-        object_12.finish();
+    if let Some(var_11) = &input.project_type {
+        object.key("projectType").string(var_11.as_str());
     }
-    if let Some(var_13) = &input.tags {
-        let mut array_14 = object.key("tags").start_array();
-        for item_15 in var_13 {
+    if let Some(var_12) = &input.standard_output_configuration {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("standardOutputConfiguration").start_object();
+        crate::protocol_serde::shape_standard_output_configuration::ser_standard_output_configuration(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
     Ok(())
 }

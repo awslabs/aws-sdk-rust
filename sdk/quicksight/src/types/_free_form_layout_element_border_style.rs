@@ -8,6 +8,8 @@ pub struct FreeFormLayoutElementBorderStyle {
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The border color of a free-form layout element.</p>
     pub color: ::std::option::Option<::std::string::String>,
+    /// <p>The border width of a free-form layout element.</p>
+    pub width: ::std::option::Option<::std::string::String>,
 }
 impl FreeFormLayoutElementBorderStyle {
     /// <p>The border visibility of a free-form layout element.</p>
@@ -17,6 +19,10 @@ impl FreeFormLayoutElementBorderStyle {
     /// <p>The border color of a free-form layout element.</p>
     pub fn color(&self) -> ::std::option::Option<&str> {
         self.color.as_deref()
+    }
+    /// <p>The border width of a free-form layout element.</p>
+    pub fn width(&self) -> ::std::option::Option<&str> {
+        self.width.as_deref()
     }
 }
 impl FreeFormLayoutElementBorderStyle {
@@ -32,6 +38,7 @@ impl FreeFormLayoutElementBorderStyle {
 pub struct FreeFormLayoutElementBorderStyleBuilder {
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) color: ::std::option::Option<::std::string::String>,
+    pub(crate) width: ::std::option::Option<::std::string::String>,
 }
 impl FreeFormLayoutElementBorderStyleBuilder {
     /// <p>The border visibility of a free-form layout element.</p>
@@ -62,11 +69,26 @@ impl FreeFormLayoutElementBorderStyleBuilder {
     pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
         &self.color
     }
+    /// <p>The border width of a free-form layout element.</p>
+    pub fn width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.width = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The border width of a free-form layout element.</p>
+    pub fn set_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.width = input;
+        self
+    }
+    /// <p>The border width of a free-form layout element.</p>
+    pub fn get_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.width
+    }
     /// Consumes the builder and constructs a [`FreeFormLayoutElementBorderStyle`](crate::types::FreeFormLayoutElementBorderStyle).
     pub fn build(self) -> crate::types::FreeFormLayoutElementBorderStyle {
         crate::types::FreeFormLayoutElementBorderStyle {
             visibility: self.visibility,
             color: self.color,
+            width: self.width,
         }
     }
 }

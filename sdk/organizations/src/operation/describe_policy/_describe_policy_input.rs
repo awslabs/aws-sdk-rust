@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePolicyInput {
-    /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>ID for the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub policy_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribePolicyInput {
-    /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>ID for the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn policy_id(&self) -> ::std::option::Option<&str> {
         self.policy_id.as_deref()
@@ -28,20 +28,20 @@ pub struct DescribePolicyInputBuilder {
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribePolicyInputBuilder {
-    /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>ID for the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>ID for the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_id = input;
         self
     }
-    /// <p>The unique identifier (ID) of the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>ID for the policy that you want details about. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_id

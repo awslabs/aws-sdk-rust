@@ -13,6 +13,7 @@
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
 ///     ResourceType::EbsSnapshot => { /* ... */ },
+///     ResourceType::EbsVolume => { /* ... */ },
 ///     ResourceType::Ec2Image => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     EbsSnapshot,
     #[allow(missing_docs)] // documentation missing in model
+    EbsVolume,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2Image,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "EBS_SNAPSHOT" => ResourceType::EbsSnapshot,
+            "EBS_VOLUME" => ResourceType::EbsVolume,
             "EC2_IMAGE" => ResourceType::Ec2Image,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::EbsSnapshot => "EBS_SNAPSHOT",
+            ResourceType::EbsVolume => "EBS_VOLUME",
             ResourceType::Ec2Image => "EC2_IMAGE",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EBS_SNAPSHOT", "EC2_IMAGE"]
+        &["EBS_SNAPSHOT", "EBS_VOLUME", "EC2_IMAGE"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceType::EbsSnapshot => write!(f, "EBS_SNAPSHOT"),
+            ResourceType::EbsVolume => write!(f, "EBS_VOLUME"),
             ResourceType::Ec2Image => write!(f, "EC2_IMAGE"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }

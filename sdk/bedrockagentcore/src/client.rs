@@ -209,6 +209,8 @@ mod list_code_interpreter_sessions;
 
 mod list_events;
 
+mod list_memory_extraction_jobs;
+
 mod list_memory_records;
 
 mod list_sessions;
@@ -218,6 +220,8 @@ mod retrieve_memory_records;
 mod start_browser_session;
 
 mod start_code_interpreter_session;
+
+mod start_memory_extraction_job;
 
 mod stop_browser_session;
 

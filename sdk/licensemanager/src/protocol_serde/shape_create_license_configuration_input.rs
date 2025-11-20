@@ -57,5 +57,11 @@ pub fn ser_create_license_configuration_input_input(
         }
         array_15.finish();
     }
+    if let Some(var_18) = &input.license_expiry {
+        object.key("LicenseExpiry").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+        );
+    }
     Ok(())
 }

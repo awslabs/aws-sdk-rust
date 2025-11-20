@@ -10,7 +10,7 @@ pub struct WorkflowStepExecution {
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies the runtime instance of the workflow that contains the workflow step that ran for the associated image build version.</p>
     pub workflow_execution_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the workflow resource that ran.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that ran.</p>
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workflow step.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -32,7 +32,7 @@ impl WorkflowStepExecution {
     pub fn workflow_execution_id(&self) -> ::std::option::Option<&str> {
         self.workflow_execution_id.as_deref()
     }
-    /// <p>The ARN of the workflow resource that ran.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that ran.</p>
     pub fn workflow_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.workflow_build_version_arn.as_deref()
     }
@@ -111,17 +111,17 @@ impl WorkflowStepExecutionBuilder {
     pub fn get_workflow_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_execution_id
     }
-    /// <p>The ARN of the workflow resource that ran.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that ran.</p>
     pub fn workflow_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the workflow resource that ran.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that ran.</p>
     pub fn set_workflow_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_build_version_arn = input;
         self
     }
-    /// <p>The ARN of the workflow resource that ran.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that ran.</p>
     pub fn get_workflow_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_build_version_arn
     }

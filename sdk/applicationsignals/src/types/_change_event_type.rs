@@ -12,6 +12,7 @@
 /// ```text
 /// # let changeeventtype = unimplemented!();
 /// match changeeventtype {
+///     ChangeEventType::Configuration => { /* ... */ },
 ///     ChangeEventType::Deployment => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum ChangeEventType {
     #[allow(missing_docs)] // documentation missing in model
+    Configuration,
+    #[allow(missing_docs)] // documentation missing in model
     Deployment,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum ChangeEventType {
 impl ::std::convert::From<&str> for ChangeEventType {
     fn from(s: &str) -> Self {
         match s {
+            "CONFIGURATION" => ChangeEventType::Configuration,
             "DEPLOYMENT" => ChangeEventType::Deployment,
             other => ChangeEventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl ChangeEventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ChangeEventType::Configuration => "CONFIGURATION",
             ChangeEventType::Deployment => "DEPLOYMENT",
             ChangeEventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEPLOYMENT"]
+        &["CONFIGURATION", "DEPLOYMENT"]
     }
 }
 impl ::std::convert::AsRef<str> for ChangeEventType {
@@ -95,6 +100,7 @@ impl ChangeEventType {
 impl ::std::fmt::Display for ChangeEventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ChangeEventType::Configuration => write!(f, "CONFIGURATION"),
             ChangeEventType::Deployment => write!(f, "DEPLOYMENT"),
             ChangeEventType::Unknown(value) => write!(f, "{value}"),
         }

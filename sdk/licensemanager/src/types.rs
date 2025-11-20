@@ -17,6 +17,30 @@ pub use crate::types::_product_information_filter::ProductInformationFilter;
 
 pub use crate::types::_license_configuration_status::LicenseConfigurationStatus;
 
+pub use crate::types::_license_asset_rule::LicenseAssetRule;
+
+pub use crate::types::_rule_statement::RuleStatement;
+
+pub use crate::types::_instance_rule_statement::InstanceRuleStatement;
+
+pub use crate::types::_script_rule_statement::ScriptRuleStatement;
+
+pub use crate::types::_matching_rule_statement::MatchingRuleStatement;
+
+pub use crate::types::_or_rule_statement::OrRuleStatement;
+
+pub use crate::types::_and_rule_statement::AndRuleStatement;
+
+pub use crate::types::_license_rule_statement::LicenseRuleStatement;
+
+pub use crate::types::_license_configuration_rule_statement::LicenseConfigurationRuleStatement;
+
+pub use crate::types::_license_asset_group_status::LicenseAssetGroupStatus;
+
+pub use crate::types::_license_asset_group_property::LicenseAssetGroupProperty;
+
+pub use crate::types::_license_asset_group_configuration::LicenseAssetGroupConfiguration;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_grant_status::GrantStatus;
@@ -95,9 +119,23 @@ pub use crate::types::_consumed_license_summary::ConsumedLicenseSummary;
 
 pub use crate::types::_license_counting_type::LicenseCountingType;
 
+pub use crate::types::_license_asset_ruleset::LicenseAssetRuleset;
+
+pub use crate::types::_license_asset_group::LicenseAssetGroup;
+
 pub use crate::types::_license_operation_failure::LicenseOperationFailure;
 
 pub use crate::types::_license_configuration_association::LicenseConfigurationAssociation;
+
+pub use crate::types::_asset::Asset;
+
+pub use crate::types::_service_status::ServiceStatus;
+
+pub use crate::types::_cross_region_discovery_status::CrossRegionDiscoveryStatus;
+
+pub use crate::types::_region_status::RegionStatus;
+
+pub use crate::types::_cross_account_discovery_service_status::CrossAccountDiscoveryServiceStatus;
 
 pub use crate::types::_license_usage::LicenseUsage;
 
@@ -121,6 +159,10 @@ mod _activation_override_behavior;
 
 mod _allowed_operation;
 
+mod _and_rule_statement;
+
+mod _asset;
+
 mod _automated_discovery_information;
 
 mod _borrow_configuration;
@@ -130,6 +172,10 @@ mod _checkout_type;
 mod _consumed_license_summary;
 
 mod _consumption_configuration;
+
+mod _cross_account_discovery_service_status;
+
+mod _cross_region_discovery_status;
 
 mod _datetime_range;
 
@@ -153,6 +199,8 @@ mod _grant_status;
 
 mod _granted_license;
 
+mod _instance_rule_statement;
+
 mod _inventory_filter;
 
 mod _inventory_filter_condition;
@@ -163,9 +211,23 @@ mod _issuer_details;
 
 mod _license;
 
+mod _license_asset_group;
+
+mod _license_asset_group_configuration;
+
+mod _license_asset_group_property;
+
+mod _license_asset_group_status;
+
+mod _license_asset_rule;
+
+mod _license_asset_ruleset;
+
 mod _license_configuration;
 
 mod _license_configuration_association;
+
+mod _license_configuration_rule_statement;
 
 mod _license_configuration_status;
 
@@ -183,6 +245,8 @@ mod _license_deletion_status;
 
 mod _license_operation_failure;
 
+mod _license_rule_statement;
+
 mod _license_specification;
 
 mod _license_status;
@@ -191,9 +255,13 @@ mod _license_usage;
 
 mod _managed_resource_summary;
 
+mod _matching_rule_statement;
+
 mod _metadata;
 
 mod _options;
+
+mod _or_rule_statement;
 
 mod _organization_configuration;
 
@@ -211,6 +279,8 @@ mod _received_metadata;
 
 mod _received_status;
 
+mod _region_status;
+
 mod _renew_type;
 
 mod _report_context;
@@ -227,7 +297,13 @@ mod _resource_inventory;
 
 mod _resource_type;
 
+mod _rule_statement;
+
 mod _s3_location;
+
+mod _script_rule_statement;
+
+mod _service_status;
 
 mod _tag;
 

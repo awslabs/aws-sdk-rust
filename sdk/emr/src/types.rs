@@ -51,6 +51,10 @@ pub use crate::types::_script_bootstrap_action_config::ScriptBootstrapActionConf
 
 pub use crate::types::_step_config::StepConfig;
 
+pub use crate::types::_step_monitoring_configuration::StepMonitoringConfiguration;
+
+pub use crate::types::_s3_monitoring_configuration::S3MonitoringConfiguration;
+
 pub use crate::types::_hadoop_jar_step_config::HadoopJarStepConfig;
 
 pub use crate::types::_key_value::KeyValue;
@@ -535,6 +539,8 @@ mod _release_label_filter;
 
 mod _repo_upgrade_on_boot;
 
+mod _s3_monitoring_configuration;
+
 mod _scale_down_behavior;
 
 mod _scaling_action;
@@ -582,6 +588,8 @@ mod _step_detail;
 mod _step_execution_state;
 
 mod _step_execution_status_detail;
+
+mod _step_monitoring_configuration;
 
 mod _step_state;
 

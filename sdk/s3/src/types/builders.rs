@@ -231,6 +231,8 @@ pub use crate::types::_analytics_and_operator::AnalyticsAndOperatorBuilder;
 
 pub use crate::types::_accelerate_configuration::AccelerateConfigurationBuilder;
 
+pub use crate::types::_abac_status::AbacStatusBuilder;
+
 pub use crate::types::_initiator::InitiatorBuilder;
 
 pub use crate::types::_part::PartBuilder;

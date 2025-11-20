@@ -50,6 +50,21 @@ pub fn de_update_service_settings_http_error(
             }
             tmp
         }),
+        "ConflictException" => crate::operation::update_service_settings::UpdateServiceSettingsError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_service_settings::UpdateServiceSettingsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidParameterValueException" => crate::operation::update_service_settings::UpdateServiceSettingsError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -90,6 +105,21 @@ pub fn de_update_service_settings_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ServerInternalExceptionBuilder::default();
                 output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_service_settings::UpdateServiceSettingsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::update_service_settings::UpdateServiceSettingsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_service_settings::UpdateServiceSettingsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

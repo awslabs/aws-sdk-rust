@@ -154,6 +154,8 @@ mod create_connection;
 
 mod create_core_network;
 
+mod create_core_network_prefix_list_association;
+
 mod create_device;
 
 mod create_direct_connect_gateway_attachment;
@@ -208,6 +210,8 @@ mod delete_connection;
 mod delete_core_network;
 
 mod delete_core_network_policy_version;
+
+mod delete_core_network_prefix_list_association;
 
 mod delete_device;
 
@@ -289,11 +293,17 @@ mod get_transit_gateway_route_table_attachment;
 
 mod get_vpc_attachment;
 
+mod list_attachment_routing_policy_associations;
+
 mod list_attachments;
 
 mod list_connect_peers;
 
 mod list_core_network_policy_versions;
+
+mod list_core_network_prefix_list_associations;
+
+mod list_core_network_routing_information;
 
 mod list_core_networks;
 
@@ -303,6 +313,8 @@ mod list_peerings;
 
 mod list_tags_for_resource;
 
+mod put_attachment_routing_policy_label;
+
 mod put_core_network_policy;
 
 mod put_resource_policy;
@@ -310,6 +322,8 @@ mod put_resource_policy;
 mod register_transit_gateway;
 
 mod reject_attachment;
+
+mod remove_attachment_routing_policy_label;
 
 mod restore_core_network_policy_version;
 

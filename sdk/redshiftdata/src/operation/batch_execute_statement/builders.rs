@@ -254,6 +254,20 @@ impl BatchExecuteStatementFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub fn result_format(mut self, input: crate::types::ResultFormatString) -> Self {
+        self.inner = self.inner.result_format(input);
+        self
+    }
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub fn set_result_format(mut self, input: ::std::option::Option<crate::types::ResultFormatString>) -> Self {
+        self.inner = self.inner.set_result_format(input);
+        self
+    }
+    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
+    pub fn get_result_format(&self) -> &::std::option::Option<crate::types::ResultFormatString> {
+        self.inner.get_result_format()
+    }
     /// <p>The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.</p>
     pub fn session_keep_alive_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.session_keep_alive_seconds(input);
@@ -281,19 +295,5 @@ impl BatchExecuteStatementFluentBuilder {
     /// <p>The session identifier of the query.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
-    }
-    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
-    pub fn result_format(mut self, input: crate::types::ResultFormatString) -> Self {
-        self.inner = self.inner.result_format(input);
-        self
-    }
-    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
-    pub fn set_result_format(mut self, input: ::std::option::Option<crate::types::ResultFormatString>) -> Self {
-        self.inner = self.inner.set_result_format(input);
-        self
-    }
-    /// <p>The data format of the result of the SQL statement. If no format is specified, the default is JSON.</p>
-    pub fn get_result_format(&self) -> &::std::option::Option<crate::types::ResultFormatString> {
-        self.inner.get_result_format()
     }
 }

@@ -6,7 +6,7 @@
 pub struct TaskExecutionListEntry {
     /// <p>The Amazon Resource Name (ARN) of a task execution.</p>
     pub task_execution_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
+    /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
     pub status: ::std::option::Option<crate::types::TaskExecutionStatus>,
     /// <p>The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing a task mode for your data transfer</a>.</p>
     pub task_mode: ::std::option::Option<crate::types::TaskMode>,
@@ -16,7 +16,7 @@ impl TaskExecutionListEntry {
     pub fn task_execution_arn(&self) -> ::std::option::Option<&str> {
         self.task_execution_arn.as_deref()
     }
-    /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
+    /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TaskExecutionStatus> {
         self.status.as_ref()
     }
@@ -55,17 +55,17 @@ impl TaskExecutionListEntryBuilder {
     pub fn get_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_execution_arn
     }
-    /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
+    /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
     pub fn status(mut self, input: crate::types::TaskExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
+    /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskExecutionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
+    /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskExecutionStatus> {
         &self.status
     }

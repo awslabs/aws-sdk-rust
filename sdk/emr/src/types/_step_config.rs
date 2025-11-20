@@ -22,6 +22,8 @@ pub struct StepConfig {
     pub action_on_failure: ::std::option::Option<crate::types::ActionOnFailure>,
     /// <p>The JAR file used for the step.</p>
     pub hadoop_jar_step: ::std::option::Option<crate::types::HadoopJarStepConfig>,
+    /// <p>Object that holds configuration properties for logging.</p>
+    pub step_monitoring_configuration: ::std::option::Option<crate::types::StepMonitoringConfiguration>,
 }
 impl StepConfig {
     /// <p>The name of the step.</p>
@@ -48,6 +50,10 @@ impl StepConfig {
     pub fn hadoop_jar_step(&self) -> ::std::option::Option<&crate::types::HadoopJarStepConfig> {
         self.hadoop_jar_step.as_ref()
     }
+    /// <p>Object that holds configuration properties for logging.</p>
+    pub fn step_monitoring_configuration(&self) -> ::std::option::Option<&crate::types::StepMonitoringConfiguration> {
+        self.step_monitoring_configuration.as_ref()
+    }
 }
 impl StepConfig {
     /// Creates a new builder-style object to manufacture [`StepConfig`](crate::types::StepConfig).
@@ -63,6 +69,7 @@ pub struct StepConfigBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) action_on_failure: ::std::option::Option<crate::types::ActionOnFailure>,
     pub(crate) hadoop_jar_step: ::std::option::Option<crate::types::HadoopJarStepConfig>,
+    pub(crate) step_monitoring_configuration: ::std::option::Option<crate::types::StepMonitoringConfiguration>,
 }
 impl StepConfigBuilder {
     /// <p>The name of the step.</p>
@@ -145,12 +152,27 @@ impl StepConfigBuilder {
     pub fn get_hadoop_jar_step(&self) -> &::std::option::Option<crate::types::HadoopJarStepConfig> {
         &self.hadoop_jar_step
     }
+    /// <p>Object that holds configuration properties for logging.</p>
+    pub fn step_monitoring_configuration(mut self, input: crate::types::StepMonitoringConfiguration) -> Self {
+        self.step_monitoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Object that holds configuration properties for logging.</p>
+    pub fn set_step_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::StepMonitoringConfiguration>) -> Self {
+        self.step_monitoring_configuration = input;
+        self
+    }
+    /// <p>Object that holds configuration properties for logging.</p>
+    pub fn get_step_monitoring_configuration(&self) -> &::std::option::Option<crate::types::StepMonitoringConfiguration> {
+        &self.step_monitoring_configuration
+    }
     /// Consumes the builder and constructs a [`StepConfig`](crate::types::StepConfig).
     pub fn build(self) -> crate::types::StepConfig {
         crate::types::StepConfig {
             name: self.name,
             action_on_failure: self.action_on_failure,
             hadoop_jar_step: self.hadoop_jar_step,
+            step_monitoring_configuration: self.step_monitoring_configuration,
         }
     }
 }

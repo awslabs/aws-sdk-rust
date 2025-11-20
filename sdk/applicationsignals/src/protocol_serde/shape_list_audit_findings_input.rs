@@ -24,14 +24,17 @@ pub fn ser_list_audit_findings_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_8) = &input.max_results {
+    if let Some(var_8) = &input.detail_level {
+        object.key("DetailLevel").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.next_token {
-        object.key("NextToken").string(var_9.as_str());
+    if let Some(var_10) = &input.next_token {
+        object.key("NextToken").string(var_10.as_str());
     }
     Ok(())
 }

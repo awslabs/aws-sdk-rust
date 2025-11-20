@@ -22,7 +22,7 @@ impl crate::operation::put_event_configuration::builders::PutEventConfigurationI
 }
 /// Fluent builder constructing a request to `PutEventConfiguration`.
 ///
-/// <p>Updates the event configuration settings for the specified event data store. You can update the maximum event size and context key selectors.</p>
+/// <p>Updates the event configuration settings for the specified event data store or trail. This operation supports updating the maximum event size, adding or modifying context key selectors for event data store, and configuring aggregation settings for the trail.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutEventConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,31 @@ impl PutEventConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to update event configuration settings.</p>
+    /// <p>The name of the trail for which you want to update event configuration settings.</p>
+    pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trail_name(input.into());
+        self
+    }
+    /// <p>The name of the trail for which you want to update event configuration settings.</p>
+    pub fn set_trail_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trail_name(input);
+        self
+    }
+    /// <p>The name of the trail for which you want to update event configuration settings.</p>
+    pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trail_name()
+    }
+    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which event configuration settings are updated.</p>
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_data_store(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to update event configuration settings.</p>
+    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which event configuration settings are updated.</p>
     pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_data_store(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to update event configuration settings.</p>
+    /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which event configuration settings are updated.</p>
     pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_data_store()
     }
@@ -154,5 +168,24 @@ impl PutEventConfigurationFluentBuilder {
     /// <p>A list of context key selectors that will be included to provide enriched event data.</p>
     pub fn get_context_key_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContextKeySelector>> {
         self.inner.get_context_key_selectors()
+    }
+    ///
+    /// Appends an item to `AggregationConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_aggregation_configurations`](Self::set_aggregation_configurations).
+    ///
+    /// <p>The list of aggregation configurations that you want to configure for the trail.</p>
+    pub fn aggregation_configurations(mut self, input: crate::types::AggregationConfiguration) -> Self {
+        self.inner = self.inner.aggregation_configurations(input);
+        self
+    }
+    /// <p>The list of aggregation configurations that you want to configure for the trail.</p>
+    pub fn set_aggregation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>) -> Self {
+        self.inner = self.inner.set_aggregation_configurations(input);
+        self
+    }
+    /// <p>The list of aggregation configurations that you want to configure for the trail.</p>
+    pub fn get_aggregation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>> {
+        self.inner.get_aggregation_configurations()
     }
 }

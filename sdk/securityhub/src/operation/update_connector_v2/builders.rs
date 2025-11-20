@@ -22,7 +22,7 @@ impl crate::operation::update_connector_v2::builders::UpdateConnectorV2InputBuil
 }
 /// Fluent builder constructing a request to `UpdateConnectorV2`.
 ///
-/// <p>Grants permission to update a connectorV2 based on its id and input parameters. This API is in preview release and subject to change.</p>
+/// <p>Grants permission to update a connectorV2 based on its id and input parameters. This API is in public preview and subject to change.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectorV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -179,6 +179,8 @@ mod get_service_level_objective;
 
 mod list_audit_findings;
 
+mod list_entity_events;
+
 mod list_grouping_attribute_definitions;
 
 mod list_service_dependencies;

@@ -115,6 +115,16 @@ pub fn de_anycast_ip_list_summary(
                 builder = builder.set_e_tag(var_8);
             }
             ,
+            s if s.matches("IpamConfig") /* IpamConfig com.amazonaws.cloudfront#AnycastIpListSummary$IpamConfig */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_ipam_config::de_ipam_config(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ipam_config(var_9);
+            }
+            ,
             _ => {}
         }
     }

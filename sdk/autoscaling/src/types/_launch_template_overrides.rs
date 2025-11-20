@@ -28,6 +28,17 @@ pub struct LaunchTemplateOverrides {
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
+    /// <p>The ID of the Amazon Machine Image (AMI) to use for instances launched with this override. When using Instance Refresh with <code>ReplaceRootVolume</code> strategy, this specifies the AMI for root volume replacement operations.</p>
+    /// <p>For <code>ReplaceRootVolume</code> operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>All overrides in the <code>MixedInstancesPolicy</code> must specify an ImageId</p></li>
+    /// <li>
+    /// <p>The AMI must contain only a single root volume</p></li>
+    /// <li>
+    /// <p>Root volume replacement doesn't support multi-volume AMIs</p></li>
+    /// </ul>
+    pub image_id: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplateOverrides {
     /// <p>The instance type, such as <code>m3.xlarge</code>. You must specify an instance type that is supported in your requested Region and Availability Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -54,6 +65,19 @@ impl LaunchTemplateOverrides {
     pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirements> {
         self.instance_requirements.as_ref()
     }
+    /// <p>The ID of the Amazon Machine Image (AMI) to use for instances launched with this override. When using Instance Refresh with <code>ReplaceRootVolume</code> strategy, this specifies the AMI for root volume replacement operations.</p>
+    /// <p>For <code>ReplaceRootVolume</code> operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>All overrides in the <code>MixedInstancesPolicy</code> must specify an ImageId</p></li>
+    /// <li>
+    /// <p>The AMI must contain only a single root volume</p></li>
+    /// <li>
+    /// <p>Root volume replacement doesn't support multi-volume AMIs</p></li>
+    /// </ul>
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
 }
 impl LaunchTemplateOverrides {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateOverrides`](crate::types::LaunchTemplateOverrides).
@@ -70,6 +94,7 @@ pub struct LaunchTemplateOverridesBuilder {
     pub(crate) weighted_capacity: ::std::option::Option<::std::string::String>,
     pub(crate) launch_template_specification: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplateOverridesBuilder {
     /// <p>The instance type, such as <code>m3.xlarge</code>. You must specify an instance type that is supported in your requested Region and Availability Zones. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -152,6 +177,47 @@ impl LaunchTemplateOverridesBuilder {
     pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirements> {
         &self.instance_requirements
     }
+    /// <p>The ID of the Amazon Machine Image (AMI) to use for instances launched with this override. When using Instance Refresh with <code>ReplaceRootVolume</code> strategy, this specifies the AMI for root volume replacement operations.</p>
+    /// <p>For <code>ReplaceRootVolume</code> operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>All overrides in the <code>MixedInstancesPolicy</code> must specify an ImageId</p></li>
+    /// <li>
+    /// <p>The AMI must contain only a single root volume</p></li>
+    /// <li>
+    /// <p>Root volume replacement doesn't support multi-volume AMIs</p></li>
+    /// </ul>
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) to use for instances launched with this override. When using Instance Refresh with <code>ReplaceRootVolume</code> strategy, this specifies the AMI for root volume replacement operations.</p>
+    /// <p>For <code>ReplaceRootVolume</code> operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>All overrides in the <code>MixedInstancesPolicy</code> must specify an ImageId</p></li>
+    /// <li>
+    /// <p>The AMI must contain only a single root volume</p></li>
+    /// <li>
+    /// <p>Root volume replacement doesn't support multi-volume AMIs</p></li>
+    /// </ul>
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_id = input;
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) to use for instances launched with this override. When using Instance Refresh with <code>ReplaceRootVolume</code> strategy, this specifies the AMI for root volume replacement operations.</p>
+    /// <p>For <code>ReplaceRootVolume</code> operations:</p>
+    /// <ul>
+    /// <li>
+    /// <p>All overrides in the <code>MixedInstancesPolicy</code> must specify an ImageId</p></li>
+    /// <li>
+    /// <p>The AMI must contain only a single root volume</p></li>
+    /// <li>
+    /// <p>Root volume replacement doesn't support multi-volume AMIs</p></li>
+    /// </ul>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateOverrides`](crate::types::LaunchTemplateOverrides).
     pub fn build(self) -> crate::types::LaunchTemplateOverrides {
         crate::types::LaunchTemplateOverrides {
@@ -159,6 +225,7 @@ impl LaunchTemplateOverridesBuilder {
             weighted_capacity: self.weighted_capacity,
             launch_template_specification: self.launch_template_specification,
             instance_requirements: self.instance_requirements,
+            image_id: self.image_id,
         }
     }
 }

@@ -279,6 +279,10 @@ pub use crate::types::_cache_policy_headers_config::CachePolicyHeadersConfigBuil
 
 pub use crate::types::_anycast_ip_list::AnycastIpListBuilder;
 
+pub use crate::types::_ipam_config::IpamConfigBuilder;
+
+pub use crate::types::_ipam_cidr_config::IpamCidrConfigBuilder;
+
 pub use crate::types::_tag_keys::TagKeysBuilder;
 
 pub use crate::types::_test_result::TestResultBuilder;

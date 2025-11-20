@@ -14,6 +14,8 @@ pub struct SendNotificationActionDefinition {
     pub content_type: crate::types::NotificationContentType,
     /// <p>Notification recipient.</p>
     pub recipient: ::std::option::Option<crate::types::NotificationRecipientType>,
+    /// <p>Recipients to exclude from notification.</p>
+    pub exclusion: ::std::option::Option<crate::types::NotificationRecipientType>,
 }
 impl SendNotificationActionDefinition {
     /// <p>Notification delivery method.</p>
@@ -37,6 +39,10 @@ impl SendNotificationActionDefinition {
     pub fn recipient(&self) -> ::std::option::Option<&crate::types::NotificationRecipientType> {
         self.recipient.as_ref()
     }
+    /// <p>Recipients to exclude from notification.</p>
+    pub fn exclusion(&self) -> ::std::option::Option<&crate::types::NotificationRecipientType> {
+        self.exclusion.as_ref()
+    }
 }
 impl SendNotificationActionDefinition {
     /// Creates a new builder-style object to manufacture [`SendNotificationActionDefinition`](crate::types::SendNotificationActionDefinition).
@@ -54,6 +60,7 @@ pub struct SendNotificationActionDefinitionBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<crate::types::NotificationContentType>,
     pub(crate) recipient: ::std::option::Option<crate::types::NotificationRecipientType>,
+    pub(crate) exclusion: ::std::option::Option<crate::types::NotificationRecipientType>,
 }
 impl SendNotificationActionDefinitionBuilder {
     /// <p>Notification delivery method.</p>
@@ -130,6 +137,20 @@ impl SendNotificationActionDefinitionBuilder {
     pub fn get_recipient(&self) -> &::std::option::Option<crate::types::NotificationRecipientType> {
         &self.recipient
     }
+    /// <p>Recipients to exclude from notification.</p>
+    pub fn exclusion(mut self, input: crate::types::NotificationRecipientType) -> Self {
+        self.exclusion = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Recipients to exclude from notification.</p>
+    pub fn set_exclusion(mut self, input: ::std::option::Option<crate::types::NotificationRecipientType>) -> Self {
+        self.exclusion = input;
+        self
+    }
+    /// <p>Recipients to exclude from notification.</p>
+    pub fn get_exclusion(&self) -> &::std::option::Option<crate::types::NotificationRecipientType> {
+        &self.exclusion
+    }
     /// Consumes the builder and constructs a [`SendNotificationActionDefinition`](crate::types::SendNotificationActionDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`delivery_method`](crate::types::builders::SendNotificationActionDefinitionBuilder::delivery_method)
@@ -157,6 +178,7 @@ impl SendNotificationActionDefinitionBuilder {
                 )
             })?,
             recipient: self.recipient,
+            exclusion: self.exclusion,
         })
     }
 }

@@ -39,6 +39,7 @@ impl crate::operation::start_discovery::builders::StartDiscoveryInputBuilder {
 /// <li>
 /// <p><code>autoscaling:DescribeAutoScalingGroups</code></p></li>
 /// </ul>
+/// <p>A service-linked CloudTrail event channel is created to process CloudTrail events and return change event information. This includes last deployment time, userName, eventName, and other event metadata.</p>
 /// <p>After completing this step, you still need to instrument your Java and Python applications to send data to Application Signals. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals-Enable.html"> Enabling Application Signals</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDiscoveryFluentBuilder {

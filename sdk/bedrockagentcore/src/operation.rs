@@ -70,6 +70,9 @@ pub mod list_code_interpreter_sessions;
 /// Types for the `ListEvents` operation.
 pub mod list_events;
 
+/// Types for the `ListMemoryExtractionJobs` operation.
+pub mod list_memory_extraction_jobs;
+
 /// Types for the `ListMemoryRecords` operation.
 pub mod list_memory_records;
 
@@ -84,6 +87,9 @@ pub mod start_browser_session;
 
 /// Types for the `StartCodeInterpreterSession` operation.
 pub mod start_code_interpreter_session;
+
+/// Types for the `StartMemoryExtractionJob` operation.
+pub mod start_memory_extraction_job;
 
 /// Types for the `StopBrowserSession` operation.
 pub mod stop_browser_session;

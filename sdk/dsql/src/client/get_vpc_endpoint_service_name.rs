@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`identifier(impl Into<String>)`](crate::operation::get_vpc_endpoint_service_name::builders::GetVpcEndpointServiceNameFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_vpc_endpoint_service_name::builders::GetVpcEndpointServiceNameFluentBuilder::set_identifier):<br>required: **true**<br><p>The ID of the cluster to retrieve.</p><br>
     /// - On success, responds with [`GetVpcEndpointServiceNameOutput`](crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameOutput) with field(s):
     ///   - [`service_name(String)`](crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameOutput::service_name): <p>The VPC endpoint service name.</p>
+    ///   - [`cluster_vpc_endpoint(Option<String>)`](crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameOutput::cluster_vpc_endpoint): <p>The VPC connection endpoint for the cluster.</p>
     /// - On failure, responds with [`SdkError<GetVpcEndpointServiceNameError>`](crate::operation::get_vpc_endpoint_service_name::GetVpcEndpointServiceNameError)
     pub fn get_vpc_endpoint_service_name(&self) -> crate::operation::get_vpc_endpoint_service_name::builders::GetVpcEndpointServiceNameFluentBuilder {
         crate::operation::get_vpc_endpoint_service_name::builders::GetVpcEndpointServiceNameFluentBuilder::new(self.handle.clone())

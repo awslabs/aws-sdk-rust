@@ -62,6 +62,13 @@ where
                         "UltraServerInfo" => {
                             builder = builder.set_ultra_server_info(crate::protocol_serde::shape_ultra_server_info::de_ultra_server_info(tokens)?);
                         }
+                        "PrivateDnsHostname" => {
+                            builder = builder.set_private_dns_hostname(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

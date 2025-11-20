@@ -251,6 +251,21 @@ pub fn de_target_group(
                 builder = builder.set_ip_address_type(var_18);
             }
             ,
+            s if s.matches("TargetControlPort") /* TargetControlPort com.amazonaws.elasticloadbalancingv2#TargetGroup$TargetControlPort */ =>  {
+                let var_19 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#TargetControlPort`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_target_control_port(var_19);
+            }
+            ,
             _ => {}
         }
     }

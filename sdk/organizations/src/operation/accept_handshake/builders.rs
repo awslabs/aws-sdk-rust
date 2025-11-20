@@ -22,17 +22,23 @@ impl crate::operation::accept_handshake::builders::AcceptHandshakeInputBuilder {
 }
 /// Fluent builder constructing a request to `AcceptHandshake`.
 ///
-/// <p>Sends a response to the originator of a handshake agreeing to the action proposed by the handshake request.</p>
-/// <p>You can only call this operation by the following principals when they also have the relevant IAM permissions:</p>
+/// <p>Accepts a handshake by sending an <code>ACCEPTED</code> response to the sender. You can view accepted handshakes in API responses for 30 days before they are deleted.</p>
+/// <p><b>Only the management account can accept the following handshakes</b>:</p>
 /// <ul>
 /// <li>
-/// <p><b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only a principal from the member account.</p>
-/// <p>The user who calls the API for an invitation to join must have the <code>organizations:AcceptHandshake</code> permission. If you enabled all features in the organization, the user must also have the <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can create the required service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integrate_services-using_slrs">Organizations and service-linked roles</a> in the <i>Organizations User Guide</i>.</p></li>
+/// <p>Enable all features final confirmation (<code>APPROVE_ALL_FEATURES</code>)</p></li>
 /// <li>
-/// <p><b>Enable all features final confirmation</b> handshake: only a principal from the management account.</p>
-/// <p>For more information about invitations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting an Amazon Web Services account to join your organization</a> in the <i>Organizations User Guide</i>. For more information about requests to enable all features in the organization, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.</p></li>
+/// <p>Billing transfer (<code>TRANSFER_RESPONSIBILITY</code>)</p></li>
 /// </ul>
-/// <p>After you accept a handshake, it continues to appear in the results of relevant APIs for only 30 days. After that, it's deleted.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/manage-begin-all-features-standard-migration.html#manage-approve-all-features-invite">Enabling all features</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_transfer_billing-respond-invitation.html">Responding to a billing transfer invitation</a> in the <i>Organizations User Guide</i>.</p>
+/// <p><b>Only a member account can accept the following handshakes</b>:</p>
+/// <ul>
+/// <li>
+/// <p>Invitation to join (<code>INVITE</code>)</p></li>
+/// <li>
+/// <p>Approve all features request (<code>ENABLE_ALL_FEATURES</code>)</p></li>
+/// </ul>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_accept-decline-invite.html">Responding to invitations</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/manage-begin-all-features-standard-migration.html#manage-approve-all-features-invite">Enabling all features</a> in the <i>Organizations User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptHandshakeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -118,19 +124,19 @@ impl AcceptHandshakeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
+    /// <p>ID for the handshake that you want to accept.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn handshake_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.handshake_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
+    /// <p>ID for the handshake that you want to accept.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn set_handshake_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_handshake_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
+    /// <p>ID for the handshake that you want to accept.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn get_handshake_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_handshake_id()

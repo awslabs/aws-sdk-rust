@@ -639,6 +639,10 @@ mod create_transit_gateway_connect;
 
 mod create_transit_gateway_connect_peer;
 
+mod create_transit_gateway_metering_policy;
+
+mod create_transit_gateway_metering_policy_entry;
+
 mod create_transit_gateway_multicast_domain;
 
 mod create_transit_gateway_peering_attachment;
@@ -668,6 +672,8 @@ mod create_volume;
 mod create_vpc;
 
 mod create_vpc_block_public_access_exclusion;
+
+mod create_vpc_encryption_control;
 
 mod create_vpc_endpoint;
 
@@ -840,6 +846,10 @@ mod delete_transit_gateway_connect;
 
 mod delete_transit_gateway_connect_peer;
 
+mod delete_transit_gateway_metering_policy;
+
+mod delete_transit_gateway_metering_policy_entry;
+
 mod delete_transit_gateway_multicast_domain;
 
 mod delete_transit_gateway_peering_attachment;
@@ -869,6 +879,8 @@ mod delete_volume;
 mod delete_vpc;
 
 mod delete_vpc_block_public_access_exclusion;
+
+mod delete_vpc_encryption_control;
 
 mod delete_vpc_endpoint_connection_notifications;
 
@@ -1194,6 +1206,8 @@ mod describe_transit_gateway_connect_peers;
 
 mod describe_transit_gateway_connects;
 
+mod describe_transit_gateway_metering_policies;
+
 mod describe_transit_gateway_multicast_domains;
 
 mod describe_transit_gateway_peering_attachments;
@@ -1237,6 +1251,8 @@ mod describe_vpc_block_public_access_options;
 mod describe_vpc_classic_link;
 
 mod describe_vpc_classic_link_dns_support;
+
+mod describe_vpc_encryption_controls;
 
 mod describe_vpc_endpoint_associations;
 
@@ -1516,6 +1532,8 @@ mod get_subnet_cidr_reservations;
 
 mod get_transit_gateway_attachment_propagations;
 
+mod get_transit_gateway_metering_policy_entries;
+
 mod get_transit_gateway_multicast_domain_associations;
 
 mod get_transit_gateway_policy_table_associations;
@@ -1533,6 +1551,8 @@ mod get_verified_access_endpoint_policy;
 mod get_verified_access_endpoint_targets;
 
 mod get_verified_access_group_policy;
+
+mod get_vpc_resources_blocking_encryption_enforcement;
 
 mod get_vpn_connection_device_sample_configuration;
 
@@ -1555,6 +1575,8 @@ mod import_volume;
 mod list_images_in_recycle_bin;
 
 mod list_snapshots_in_recycle_bin;
+
+mod list_volumes_in_recycle_bin;
 
 mod lock_snapshot;
 
@@ -1658,6 +1680,8 @@ mod modify_traffic_mirror_session;
 
 mod modify_transit_gateway;
 
+mod modify_transit_gateway_metering_policy;
+
 mod modify_transit_gateway_prefix_list_reference;
 
 mod modify_transit_gateway_vpc_attachment;
@@ -1685,6 +1709,8 @@ mod modify_vpc_attribute;
 mod modify_vpc_block_public_access_exclusion;
 
 mod modify_vpc_block_public_access_options;
+
+mod modify_vpc_encryption_control;
 
 mod modify_vpc_endpoint;
 
@@ -1807,6 +1833,8 @@ mod restore_managed_prefix_list_version;
 mod restore_snapshot_from_recycle_bin;
 
 mod restore_snapshot_tier;
+
+mod restore_volume_from_recycle_bin;
 
 mod revoke_client_vpn_ingress;
 

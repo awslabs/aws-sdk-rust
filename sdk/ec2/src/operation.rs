@@ -409,6 +409,12 @@ pub mod create_transit_gateway_connect;
 /// Types for the `CreateTransitGatewayConnectPeer` operation.
 pub mod create_transit_gateway_connect_peer;
 
+/// Types for the `CreateTransitGatewayMeteringPolicy` operation.
+pub mod create_transit_gateway_metering_policy;
+
+/// Types for the `CreateTransitGatewayMeteringPolicyEntry` operation.
+pub mod create_transit_gateway_metering_policy_entry;
+
 /// Types for the `CreateTransitGatewayMulticastDomain` operation.
 pub mod create_transit_gateway_multicast_domain;
 
@@ -453,6 +459,9 @@ pub mod create_vpc;
 
 /// Types for the `CreateVpcBlockPublicAccessExclusion` operation.
 pub mod create_vpc_block_public_access_exclusion;
+
+/// Types for the `CreateVpcEncryptionControl` operation.
+pub mod create_vpc_encryption_control;
 
 /// Types for the `CreateVpcEndpoint` operation.
 pub mod create_vpc_endpoint;
@@ -670,6 +679,12 @@ pub mod delete_transit_gateway_connect;
 /// Types for the `DeleteTransitGatewayConnectPeer` operation.
 pub mod delete_transit_gateway_connect_peer;
 
+/// Types for the `DeleteTransitGatewayMeteringPolicy` operation.
+pub mod delete_transit_gateway_metering_policy;
+
+/// Types for the `DeleteTransitGatewayMeteringPolicyEntry` operation.
+pub mod delete_transit_gateway_metering_policy_entry;
+
 /// Types for the `DeleteTransitGatewayMulticastDomain` operation.
 pub mod delete_transit_gateway_multicast_domain;
 
@@ -714,6 +729,9 @@ pub mod delete_vpc;
 
 /// Types for the `DeleteVpcBlockPublicAccessExclusion` operation.
 pub mod delete_vpc_block_public_access_exclusion;
+
+/// Types for the `DeleteVpcEncryptionControl` operation.
+pub mod delete_vpc_encryption_control;
 
 /// Types for the `DeleteVpcEndpointConnectionNotifications` operation.
 pub mod delete_vpc_endpoint_connection_notifications;
@@ -1201,6 +1219,9 @@ pub mod describe_transit_gateway_connect_peers;
 /// Types for the `DescribeTransitGatewayConnects` operation.
 pub mod describe_transit_gateway_connects;
 
+/// Types for the `DescribeTransitGatewayMeteringPolicies` operation.
+pub mod describe_transit_gateway_metering_policies;
+
 /// Types for the `DescribeTransitGatewayMulticastDomains` operation.
 pub mod describe_transit_gateway_multicast_domains;
 
@@ -1266,6 +1287,9 @@ pub mod describe_vpc_classic_link;
 
 /// Types for the `DescribeVpcClassicLinkDnsSupport` operation.
 pub mod describe_vpc_classic_link_dns_support;
+
+/// Types for the `DescribeVpcEncryptionControls` operation.
+pub mod describe_vpc_encryption_controls;
 
 /// Types for the `DescribeVpcEndpointAssociations` operation.
 pub mod describe_vpc_endpoint_associations;
@@ -1684,6 +1708,9 @@ pub mod get_subnet_cidr_reservations;
 /// Types for the `GetTransitGatewayAttachmentPropagations` operation.
 pub mod get_transit_gateway_attachment_propagations;
 
+/// Types for the `GetTransitGatewayMeteringPolicyEntries` operation.
+pub mod get_transit_gateway_metering_policy_entries;
+
 /// Types for the `GetTransitGatewayMulticastDomainAssociations` operation.
 pub mod get_transit_gateway_multicast_domain_associations;
 
@@ -1710,6 +1737,9 @@ pub mod get_verified_access_endpoint_targets;
 
 /// Types for the `GetVerifiedAccessGroupPolicy` operation.
 pub mod get_verified_access_group_policy;
+
+/// Types for the `GetVpcResourcesBlockingEncryptionEnforcement` operation.
+pub mod get_vpc_resources_blocking_encryption_enforcement;
 
 /// Types for the `GetVpnConnectionDeviceSampleConfiguration` operation.
 pub mod get_vpn_connection_device_sample_configuration;
@@ -1743,6 +1773,9 @@ pub mod list_images_in_recycle_bin;
 
 /// Types for the `ListSnapshotsInRecycleBin` operation.
 pub mod list_snapshots_in_recycle_bin;
+
+/// Types for the `ListVolumesInRecycleBin` operation.
+pub mod list_volumes_in_recycle_bin;
 
 /// Types for the `LockSnapshot` operation.
 pub mod lock_snapshot;
@@ -1897,6 +1930,9 @@ pub mod modify_traffic_mirror_session;
 /// Types for the `ModifyTransitGateway` operation.
 pub mod modify_transit_gateway;
 
+/// Types for the `ModifyTransitGatewayMeteringPolicy` operation.
+pub mod modify_transit_gateway_metering_policy;
+
 /// Types for the `ModifyTransitGatewayPrefixListReference` operation.
 pub mod modify_transit_gateway_prefix_list_reference;
 
@@ -1938,6 +1974,9 @@ pub mod modify_vpc_block_public_access_exclusion;
 
 /// Types for the `ModifyVpcBlockPublicAccessOptions` operation.
 pub mod modify_vpc_block_public_access_options;
+
+/// Types for the `ModifyVpcEncryptionControl` operation.
+pub mod modify_vpc_encryption_control;
 
 /// Types for the `ModifyVpcEndpoint` operation.
 pub mod modify_vpc_endpoint;
@@ -2121,6 +2160,9 @@ pub mod restore_snapshot_from_recycle_bin;
 
 /// Types for the `RestoreSnapshotTier` operation.
 pub mod restore_snapshot_tier;
+
+/// Types for the `RestoreVolumeFromRecycleBin` operation.
+pub mod restore_volume_from_recycle_bin;
 
 /// Types for the `RevokeClientVpnIngress` operation.
 pub mod revoke_client_vpn_ingress;

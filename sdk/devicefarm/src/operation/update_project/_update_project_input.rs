@@ -12,6 +12,11 @@ pub struct UpdateProjectInput {
     pub default_job_timeout_minutes: ::std::option::Option<i32>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    /// <p>A set of environment variables which are used by default for all runs in the project. These environment variables are applied to the test run during the execution of a test spec file.</p>
+    /// <p>For more information about using test spec files, please see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/custom-test-environments.html">Custom test environments </a> in <i>AWS Device Farm.</i></p>
+    pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    /// <p>An IAM role to be assumed by the test host for all runs in the project.</p>
+    pub execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectInput {
     /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
@@ -30,6 +35,17 @@ impl UpdateProjectInput {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>A set of environment variables which are used by default for all runs in the project. These environment variables are applied to the test run during the execution of a test spec file.</p>
+    /// <p>For more information about using test spec files, please see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/custom-test-environments.html">Custom test environments </a> in <i>AWS Device Farm.</i></p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_variables.is_none()`.
+    pub fn environment_variables(&self) -> &[crate::types::EnvironmentVariable] {
+        self.environment_variables.as_deref().unwrap_or_default()
+    }
+    /// <p>An IAM role to be assumed by the test host for all runs in the project.</p>
+    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
 }
 impl UpdateProjectInput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
@@ -46,6 +62,8 @@ pub struct UpdateProjectInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) default_job_timeout_minutes: ::std::option::Option<i32>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
@@ -105,6 +123,43 @@ impl UpdateProjectInputBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
+    /// Appends an item to `environment_variables`.
+    ///
+    /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+    ///
+    /// <p>A set of environment variables which are used by default for all runs in the project. These environment variables are applied to the test run during the execution of a test spec file.</p>
+    /// <p>For more information about using test spec files, please see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/custom-test-environments.html">Custom test environments </a> in <i>AWS Device Farm.</i></p>
+    pub fn environment_variables(mut self, input: crate::types::EnvironmentVariable) -> Self {
+        let mut v = self.environment_variables.unwrap_or_default();
+        v.push(input);
+        self.environment_variables = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A set of environment variables which are used by default for all runs in the project. These environment variables are applied to the test run during the execution of a test spec file.</p>
+    /// <p>For more information about using test spec files, please see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/custom-test-environments.html">Custom test environments </a> in <i>AWS Device Farm.</i></p>
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
+        self.environment_variables = input;
+        self
+    }
+    /// <p>A set of environment variables which are used by default for all runs in the project. These environment variables are applied to the test run during the execution of a test spec file.</p>
+    /// <p>For more information about using test spec files, please see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/custom-test-environments.html">Custom test environments </a> in <i>AWS Device Farm.</i></p>
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+        &self.environment_variables
+    }
+    /// <p>An IAM role to be assumed by the test host for all runs in the project.</p>
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An IAM role to be assumed by the test host for all runs in the project.</p>
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_arn = input;
+        self
+    }
+    /// <p>An IAM role to be assumed by the test host for all runs in the project.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(
         self,
@@ -114,6 +169,8 @@ impl UpdateProjectInputBuilder {
             name: self.name,
             default_job_timeout_minutes: self.default_job_timeout_minutes,
             vpc_config: self.vpc_config,
+            environment_variables: self.environment_variables,
+            execution_role_arn: self.execution_role_arn,
         })
     }
 }

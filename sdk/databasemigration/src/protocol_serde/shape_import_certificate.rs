@@ -33,6 +33,21 @@ pub fn de_import_certificate_http_error(
             }
             tmp
         }),
+        "KMSKeyNotAccessibleFault" => crate::operation::import_certificate::ImportCertificateError::KmsKeyNotAccessibleFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
+                output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_json_err(_response_body, output)
+                    .map_err(crate::operation::import_certificate::ImportCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceAlreadyExistsFault" => crate::operation::import_certificate::ImportCertificateError::ResourceAlreadyExistsFault({
             #[allow(unused_mut)]
             let mut tmp = {

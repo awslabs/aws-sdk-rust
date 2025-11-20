@@ -369,6 +369,10 @@ pub(crate) mod shape_resource_info;
 
 pub(crate) mod shape_resource_info_list;
 
+pub(crate) mod shape_service_integration_list;
+
+pub(crate) mod shape_service_integration_union;
+
 pub(crate) mod shape_storage_optimizer_list;
 
 pub(crate) mod shape_table_lf_tags_list;
@@ -431,6 +435,8 @@ pub(crate) mod shape_principal_permissions_list;
 
 pub(crate) mod shape_principal_resource_permissions;
 
+pub(crate) mod shape_redshift_scope_union;
+
 pub(crate) mod shape_row_filter;
 
 pub(crate) mod shape_scope_targets;
@@ -458,6 +464,10 @@ pub(crate) mod shape_error_detail;
 pub(crate) mod shape_partition_values_list;
 
 pub(crate) mod shape_permission_list;
+
+pub(crate) mod shape_redshift_connect;
+
+pub(crate) mod shape_redshift_service_integrations;
 
 pub(crate) mod shape_storage_optimizer_config;
 

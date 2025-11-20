@@ -8,6 +8,8 @@ pub struct AudioOverrideConfiguration {
     pub modality_processing: ::std::option::Option<crate::types::ModalityProcessingConfiguration>,
     /// Optional configuration for audio language settings
     pub language_configuration: ::std::option::Option<crate::types::AudioLanguageConfiguration>,
+    /// Configuration for sensitive data detection and redaction
+    pub sensitive_data_configuration: ::std::option::Option<crate::types::SensitiveDataConfiguration>,
 }
 impl AudioOverrideConfiguration {
     /// Configuration to enable/disable processing of modality
@@ -17,6 +19,10 @@ impl AudioOverrideConfiguration {
     /// Optional configuration for audio language settings
     pub fn language_configuration(&self) -> ::std::option::Option<&crate::types::AudioLanguageConfiguration> {
         self.language_configuration.as_ref()
+    }
+    /// Configuration for sensitive data detection and redaction
+    pub fn sensitive_data_configuration(&self) -> ::std::option::Option<&crate::types::SensitiveDataConfiguration> {
+        self.sensitive_data_configuration.as_ref()
     }
 }
 impl AudioOverrideConfiguration {
@@ -32,6 +38,7 @@ impl AudioOverrideConfiguration {
 pub struct AudioOverrideConfigurationBuilder {
     pub(crate) modality_processing: ::std::option::Option<crate::types::ModalityProcessingConfiguration>,
     pub(crate) language_configuration: ::std::option::Option<crate::types::AudioLanguageConfiguration>,
+    pub(crate) sensitive_data_configuration: ::std::option::Option<crate::types::SensitiveDataConfiguration>,
 }
 impl AudioOverrideConfigurationBuilder {
     /// Configuration to enable/disable processing of modality
@@ -62,11 +69,26 @@ impl AudioOverrideConfigurationBuilder {
     pub fn get_language_configuration(&self) -> &::std::option::Option<crate::types::AudioLanguageConfiguration> {
         &self.language_configuration
     }
+    /// Configuration for sensitive data detection and redaction
+    pub fn sensitive_data_configuration(mut self, input: crate::types::SensitiveDataConfiguration) -> Self {
+        self.sensitive_data_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Configuration for sensitive data detection and redaction
+    pub fn set_sensitive_data_configuration(mut self, input: ::std::option::Option<crate::types::SensitiveDataConfiguration>) -> Self {
+        self.sensitive_data_configuration = input;
+        self
+    }
+    /// Configuration for sensitive data detection and redaction
+    pub fn get_sensitive_data_configuration(&self) -> &::std::option::Option<crate::types::SensitiveDataConfiguration> {
+        &self.sensitive_data_configuration
+    }
     /// Consumes the builder and constructs a [`AudioOverrideConfiguration`](crate::types::AudioOverrideConfiguration).
     pub fn build(self) -> crate::types::AudioOverrideConfiguration {
         crate::types::AudioOverrideConfiguration {
             modality_processing: self.modality_processing,
             language_configuration: self.language_configuration,
+            sensitive_data_configuration: self.sensitive_data_configuration,
         }
     }
 }

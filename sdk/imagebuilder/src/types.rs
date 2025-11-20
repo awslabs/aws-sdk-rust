@@ -231,6 +231,8 @@ pub use crate::types::_component_state::ComponentState;
 
 pub use crate::types::_component_format::ComponentFormat;
 
+pub use crate::types::_latest_version_references::LatestVersionReferences;
+
 pub use crate::types::_workflow::Workflow;
 
 pub use crate::types::_workflow_parameter_detail::WorkflowParameterDetail;
@@ -398,6 +400,8 @@ mod _instance_block_device_mapping;
 mod _instance_configuration;
 
 mod _instance_metadata_options;
+
+mod _latest_version_references;
 
 mod _launch_permission_configuration;
 

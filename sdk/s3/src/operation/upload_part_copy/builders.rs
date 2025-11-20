@@ -73,7 +73,9 @@ impl crate::operation::upload_part_copy::builders::UploadPartCopyInputBuilder {
 /// <dd>
 /// <ul>
 /// <li>
-/// <p><b>General purpose buckets </b> - For information about using server-side encryption with customer-provided encryption keys with the <code>UploadPartCopy</code> operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.</p></li>
+/// <p><b>General purpose buckets </b> - For information about using server-side encryption with customer-provided encryption keys with the <code>UploadPartCopy</code> operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.</p><note>
+/// <p>If you have server-side encryption with customer-provided keys (SSE-C) blocked for your general purpose bucket, you will get an HTTP 403 Access Denied error when you specify the SSE-C request headers while writing new data to your bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking or unblocking SSE-C for a general purpose bucket</a>.</p>
+/// </note></li>
 /// <li>
 /// <p><b>Directory buckets </b> - For directory buckets, there are only two supported options for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) and server-side encryption with KMS keys (SSE-KMS) (<code>aws:kms</code>). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>.</p><note>
 /// <p>For directory buckets, when you perform a <code>CreateMultipartUpload</code> operation and an <code>UploadPartCopy</code> operation, the request headers you provide in the <code>CreateMultipartUpload</code> request must match the default encryption configuration of the destination bucket.</p>

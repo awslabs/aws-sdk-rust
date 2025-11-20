@@ -9,6 +9,8 @@ pub use crate::types::_test_grid_vpc_config::TestGridVpcConfigBuilder;
 
 pub use crate::types::_project::ProjectBuilder;
 
+pub use crate::types::_environment_variable::EnvironmentVariableBuilder;
+
 pub use crate::types::_vpc_config::VpcConfigBuilder;
 
 pub use crate::types::_network_profile::NetworkProfileBuilder;

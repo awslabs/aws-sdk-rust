@@ -24,6 +24,11 @@ pub fn ser_launch_template_overrides(
     if let Some(var_8) = &input.instance_requirements {
         crate::protocol_serde::shape_instance_requirements::ser_instance_requirements(scope_7, var_8)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("ImageId");
+    if let Some(var_10) = &input.image_id {
+        scope_9.string(var_10);
+    }
     Ok(())
 }
 
@@ -36,7 +41,7 @@ pub fn de_launch_template_overrides(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("InstanceType") /* InstanceType com.amazonaws.autoscaling#LaunchTemplateOverrides$InstanceType */ =>  {
-                let var_9 =
+                let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -45,11 +50,11 @@ pub fn de_launch_template_overrides(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_9);
+                builder = builder.set_instance_type(var_11);
             }
             ,
             s if s.matches("WeightedCapacity") /* WeightedCapacity com.amazonaws.autoscaling#LaunchTemplateOverrides$WeightedCapacity */ =>  {
-                let var_10 =
+                let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -58,27 +63,40 @@ pub fn de_launch_template_overrides(
                         ?
                     )
                 ;
-                builder = builder.set_weighted_capacity(var_10);
+                builder = builder.set_weighted_capacity(var_12);
             }
             ,
             s if s.matches("LaunchTemplateSpecification") /* LaunchTemplateSpecification com.amazonaws.autoscaling#LaunchTemplateOverrides$LaunchTemplateSpecification */ =>  {
-                let var_11 =
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_launch_template_specification(var_11);
+                builder = builder.set_launch_template_specification(var_13);
             }
             ,
             s if s.matches("InstanceRequirements") /* InstanceRequirements com.amazonaws.autoscaling#LaunchTemplateOverrides$InstanceRequirements */ =>  {
-                let var_12 =
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_instance_requirements::de_instance_requirements(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_requirements(var_12);
+                builder = builder.set_instance_requirements(var_14);
+            }
+            ,
+            s if s.matches("ImageId") /* ImageId com.amazonaws.autoscaling#LaunchTemplateOverrides$ImageId */ =>  {
+                let var_15 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_image_id(var_15);
             }
             ,
             _ => {}

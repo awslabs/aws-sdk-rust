@@ -22,9 +22,9 @@ impl crate::operation::cancel_handshake::builders::CancelHandshakeInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelHandshake`.
 ///
-/// <p>Cancels a handshake. Canceling a handshake sets the handshake state to <code>CANCELED</code>.</p>
-/// <p>This operation can be called only from the account that originated the handshake. The recipient of the handshake can't cancel it, but can use <code>DeclineHandshake</code> instead. After a handshake is canceled, the recipient can no longer respond to that handshake.</p>
-/// <p>After you cancel a handshake, it continues to appear in the results of relevant APIs for only 30 days. After that, it's deleted.</p>
+/// <p>Cancels a <code>Handshake</code>.</p>
+/// <p>Only the account that sent a handshake can call this operation. The recipient of the handshake can't cancel it, but can use <code>DeclineHandshake</code> to decline. After a handshake is canceled, the recipient can no longer respond to the handshake.</p>
+/// <p>You can view canceled handshakes in API responses for 30 days before they are deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelHandshakeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,19 +110,19 @@ impl CancelHandshakeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
+    /// <p>ID for the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn handshake_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.handshake_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
+    /// <p>ID for the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn set_handshake_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_handshake_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
+    /// <p>ID for the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn get_handshake_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_handshake_id()

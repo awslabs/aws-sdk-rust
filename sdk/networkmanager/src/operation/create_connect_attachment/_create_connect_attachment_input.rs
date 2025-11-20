@@ -9,6 +9,8 @@ pub struct CreateConnectAttachmentInput {
     pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment between the two connections.</p>
     pub transport_attachment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The routing policy label to apply to the Connect attachment for traffic routing decisions.</p>
+    pub routing_policy_label: ::std::option::Option<::std::string::String>,
     /// <p>Options for creating an attachment.</p>
     pub options: ::std::option::Option<crate::types::ConnectAttachmentOptions>,
     /// <p>The list of key-value tags associated with the request.</p>
@@ -28,6 +30,10 @@ impl CreateConnectAttachmentInput {
     /// <p>The ID of the attachment between the two connections.</p>
     pub fn transport_attachment_id(&self) -> ::std::option::Option<&str> {
         self.transport_attachment_id.as_deref()
+    }
+    /// <p>The routing policy label to apply to the Connect attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(&self) -> ::std::option::Option<&str> {
+        self.routing_policy_label.as_deref()
     }
     /// <p>Options for creating an attachment.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::ConnectAttachmentOptions> {
@@ -58,6 +64,7 @@ pub struct CreateConnectAttachmentInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
     pub(crate) transport_attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_policy_label: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<crate::types::ConnectAttachmentOptions>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -107,6 +114,20 @@ impl CreateConnectAttachmentInputBuilder {
     /// <p>The ID of the attachment between the two connections.</p>
     pub fn get_transport_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transport_attachment_id
+    }
+    /// <p>The routing policy label to apply to the Connect attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.routing_policy_label = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The routing policy label to apply to the Connect attachment for traffic routing decisions.</p>
+    pub fn set_routing_policy_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.routing_policy_label = input;
+        self
+    }
+    /// <p>The routing policy label to apply to the Connect attachment for traffic routing decisions.</p>
+    pub fn get_routing_policy_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_policy_label
     }
     /// <p>Options for creating an attachment.</p>
     /// This field is required.
@@ -168,6 +189,7 @@ impl CreateConnectAttachmentInputBuilder {
             core_network_id: self.core_network_id,
             edge_location: self.edge_location,
             transport_attachment_id: self.transport_attachment_id,
+            routing_policy_label: self.routing_policy_label,
             options: self.options,
             tags: self.tags,
             client_token: self.client_token,

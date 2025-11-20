@@ -451,6 +451,8 @@ pub(crate) mod shape_shrink_policy;
 
 pub(crate) mod shape_simplified_application;
 
+pub(crate) mod shape_step_monitoring_configuration;
+
 pub(crate) mod shape_step_status;
 
 pub(crate) mod shape_step_summary;
@@ -504,6 +506,8 @@ pub(crate) mod shape_key_value;
 pub(crate) mod shape_on_demand_provisioning_specification;
 
 pub(crate) mod shape_on_demand_resizing_specification;
+
+pub(crate) mod shape_s3_monitoring_configuration;
 
 pub(crate) mod shape_scaling_action;
 

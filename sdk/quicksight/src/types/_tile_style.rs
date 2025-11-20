@@ -4,13 +4,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TileStyle {
+    /// <p>The background color of a tile.</p>
+    pub background_color: ::std::option::Option<::std::string::String>,
     /// <p>The border around a tile.</p>
     pub border: ::std::option::Option<crate::types::BorderStyle>,
+    /// <p>The border radius of a tile.</p>
+    pub border_radius: ::std::option::Option<::std::string::String>,
+    /// <p>The padding of a tile.</p>
+    pub padding: ::std::option::Option<::std::string::String>,
 }
 impl TileStyle {
+    /// <p>The background color of a tile.</p>
+    pub fn background_color(&self) -> ::std::option::Option<&str> {
+        self.background_color.as_deref()
+    }
     /// <p>The border around a tile.</p>
     pub fn border(&self) -> ::std::option::Option<&crate::types::BorderStyle> {
         self.border.as_ref()
+    }
+    /// <p>The border radius of a tile.</p>
+    pub fn border_radius(&self) -> ::std::option::Option<&str> {
+        self.border_radius.as_deref()
+    }
+    /// <p>The padding of a tile.</p>
+    pub fn padding(&self) -> ::std::option::Option<&str> {
+        self.padding.as_deref()
     }
 }
 impl TileStyle {
@@ -24,9 +42,26 @@ impl TileStyle {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct TileStyleBuilder {
+    pub(crate) background_color: ::std::option::Option<::std::string::String>,
     pub(crate) border: ::std::option::Option<crate::types::BorderStyle>,
+    pub(crate) border_radius: ::std::option::Option<::std::string::String>,
+    pub(crate) padding: ::std::option::Option<::std::string::String>,
 }
 impl TileStyleBuilder {
+    /// <p>The background color of a tile.</p>
+    pub fn background_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.background_color = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The background color of a tile.</p>
+    pub fn set_background_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.background_color = input;
+        self
+    }
+    /// <p>The background color of a tile.</p>
+    pub fn get_background_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.background_color
+    }
     /// <p>The border around a tile.</p>
     pub fn border(mut self, input: crate::types::BorderStyle) -> Self {
         self.border = ::std::option::Option::Some(input);
@@ -41,8 +76,41 @@ impl TileStyleBuilder {
     pub fn get_border(&self) -> &::std::option::Option<crate::types::BorderStyle> {
         &self.border
     }
+    /// <p>The border radius of a tile.</p>
+    pub fn border_radius(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.border_radius = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The border radius of a tile.</p>
+    pub fn set_border_radius(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.border_radius = input;
+        self
+    }
+    /// <p>The border radius of a tile.</p>
+    pub fn get_border_radius(&self) -> &::std::option::Option<::std::string::String> {
+        &self.border_radius
+    }
+    /// <p>The padding of a tile.</p>
+    pub fn padding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.padding = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The padding of a tile.</p>
+    pub fn set_padding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.padding = input;
+        self
+    }
+    /// <p>The padding of a tile.</p>
+    pub fn get_padding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.padding
+    }
     /// Consumes the builder and constructs a [`TileStyle`](crate::types::TileStyle).
     pub fn build(self) -> crate::types::TileStyle {
-        crate::types::TileStyle { border: self.border }
+        crate::types::TileStyle {
+            background_color: self.background_color,
+            border: self.border,
+            border_radius: self.border_radius,
+            padding: self.padding,
+        }
     }
 }

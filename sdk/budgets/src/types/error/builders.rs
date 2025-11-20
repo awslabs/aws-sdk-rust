@@ -13,9 +13,9 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuil
 
 pub use crate::types::error::_resource_locked_exception::ResourceLockedExceptionBuilder;
 
-pub use crate::types::error::_billing_view_health_status_exception::BillingViewHealthStatusExceptionBuilder;
-
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_billing_view_health_status_exception::BillingViewHealthStatusExceptionBuilder;
 
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExceptionBuilder;
 

@@ -11,6 +11,8 @@ pub struct CreateVpcAttachmentInput {
     pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Options for the VPC attachment.</p>
     pub options: ::std::option::Option<crate::types::VpcOptions>,
+    /// <p>The routing policy label to apply to the VPC attachment for traffic routing decisions.</p>
+    pub routing_policy_label: ::std::option::Option<::std::string::String>,
     /// <p>The key-value tags associated with the request.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
@@ -34,6 +36,10 @@ impl CreateVpcAttachmentInput {
     /// <p>Options for the VPC attachment.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
         self.options.as_ref()
+    }
+    /// <p>The routing policy label to apply to the VPC attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(&self) -> ::std::option::Option<&str> {
+        self.routing_policy_label.as_deref()
     }
     /// <p>The key-value tags associated with the request.</p>
     ///
@@ -61,6 +67,7 @@ pub struct CreateVpcAttachmentInputBuilder {
     pub(crate) vpc_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) options: ::std::option::Option<crate::types::VpcOptions>,
+    pub(crate) routing_policy_label: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -129,6 +136,20 @@ impl CreateVpcAttachmentInputBuilder {
     pub fn get_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
         &self.options
     }
+    /// <p>The routing policy label to apply to the VPC attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.routing_policy_label = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The routing policy label to apply to the VPC attachment for traffic routing decisions.</p>
+    pub fn set_routing_policy_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.routing_policy_label = input;
+        self
+    }
+    /// <p>The routing policy label to apply to the VPC attachment for traffic routing decisions.</p>
+    pub fn get_routing_policy_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_policy_label
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -173,6 +194,7 @@ impl CreateVpcAttachmentInputBuilder {
             vpc_arn: self.vpc_arn,
             subnet_arns: self.subnet_arns,
             options: self.options,
+            routing_policy_label: self.routing_policy_label,
             tags: self.tags,
             client_token: self.client_token,
         })

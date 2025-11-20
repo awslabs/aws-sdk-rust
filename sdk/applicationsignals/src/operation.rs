@@ -25,6 +25,9 @@ pub mod get_service_level_objective;
 /// Types for the `ListAuditFindings` operation.
 pub mod list_audit_findings;
 
+/// Types for the `ListEntityEvents` operation.
+pub mod list_entity_events;
+
 /// Types for the `ListGroupingAttributeDefinitions` operation.
 pub mod list_grouping_attribute_definitions;
 

@@ -21,6 +21,9 @@ pub struct CreateVpcInput {
     /// <p>The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the address to this location.</p>
     /// <p>You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.</p>
     pub ipv6_cidr_block_network_border_group: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the encryption control configuration to apply to the VPC during creation. VPC Encryption Control enables you to enforce encryption for all data in transit within and between VPCs to meet compliance requirements.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub vpc_encryption_control: ::std::option::Option<crate::types::VpcEncryptionControlConfiguration>,
     /// <p>The tags to assign to the VPC.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -67,6 +70,11 @@ impl CreateVpcInput {
     pub fn ipv6_cidr_block_network_border_group(&self) -> ::std::option::Option<&str> {
         self.ipv6_cidr_block_network_border_group.as_deref()
     }
+    /// <p>Specifies the encryption control configuration to apply to the VPC during creation. VPC Encryption Control enables you to enforce encryption for all data in transit within and between VPCs to meet compliance requirements.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn vpc_encryption_control(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlConfiguration> {
+        self.vpc_encryption_control.as_ref()
+    }
     /// <p>The tags to assign to the VPC.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
@@ -107,6 +115,7 @@ pub struct CreateVpcInputBuilder {
     pub(crate) ipv6_ipam_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipv6_netmask_length: ::std::option::Option<i32>,
     pub(crate) ipv6_cidr_block_network_border_group: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_encryption_control: ::std::option::Option<crate::types::VpcEncryptionControlConfiguration>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) instance_tenancy: ::std::option::Option<crate::types::Tenancy>,
@@ -231,6 +240,23 @@ impl CreateVpcInputBuilder {
     pub fn get_ipv6_cidr_block_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6_cidr_block_network_border_group
     }
+    /// <p>Specifies the encryption control configuration to apply to the VPC during creation. VPC Encryption Control enables you to enforce encryption for all data in transit within and between VPCs to meet compliance requirements.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn vpc_encryption_control(mut self, input: crate::types::VpcEncryptionControlConfiguration) -> Self {
+        self.vpc_encryption_control = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the encryption control configuration to apply to the VPC during creation. VPC Encryption Control enables you to enforce encryption for all data in transit within and between VPCs to meet compliance requirements.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn set_vpc_encryption_control(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlConfiguration>) -> Self {
+        self.vpc_encryption_control = input;
+        self
+    }
+    /// <p>Specifies the encryption control configuration to apply to the VPC during creation. VPC Encryption Control enables you to enforce encryption for all data in transit within and between VPCs to meet compliance requirements.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_vpc_encryption_control(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlConfiguration> {
+        &self.vpc_encryption_control
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -310,6 +336,7 @@ impl CreateVpcInputBuilder {
             ipv6_ipam_pool_id: self.ipv6_ipam_pool_id,
             ipv6_netmask_length: self.ipv6_netmask_length,
             ipv6_cidr_block_network_border_group: self.ipv6_cidr_block_network_border_group,
+            vpc_encryption_control: self.vpc_encryption_control,
             tag_specifications: self.tag_specifications,
             dry_run: self.dry_run,
             instance_tenancy: self.instance_tenancy,

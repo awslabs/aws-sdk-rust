@@ -6,7 +6,7 @@
 pub struct UnlockDelay {
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
     pub unlock_delay_value: i32,
-    /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
+    /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measured only in days.</p>
     pub unlock_delay_unit: crate::types::UnlockDelayUnit,
 }
 impl UnlockDelay {
@@ -14,7 +14,7 @@ impl UnlockDelay {
     pub fn unlock_delay_value(&self) -> i32 {
         self.unlock_delay_value
     }
-    /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
+    /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measured only in days.</p>
     pub fn unlock_delay_unit(&self) -> &crate::types::UnlockDelayUnit {
         &self.unlock_delay_unit
     }
@@ -49,18 +49,18 @@ impl UnlockDelayBuilder {
     pub fn get_unlock_delay_value(&self) -> &::std::option::Option<i32> {
         &self.unlock_delay_value
     }
-    /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
+    /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measured only in days.</p>
     /// This field is required.
     pub fn unlock_delay_unit(mut self, input: crate::types::UnlockDelayUnit) -> Self {
         self.unlock_delay_unit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
+    /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measured only in days.</p>
     pub fn set_unlock_delay_unit(mut self, input: ::std::option::Option<crate::types::UnlockDelayUnit>) -> Self {
         self.unlock_delay_unit = input;
         self
     }
-    /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
+    /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measured only in days.</p>
     pub fn get_unlock_delay_unit(&self) -> &::std::option::Option<crate::types::UnlockDelayUnit> {
         &self.unlock_delay_unit
     }

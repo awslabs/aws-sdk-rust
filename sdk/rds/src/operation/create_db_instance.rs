@@ -301,6 +301,8 @@ pub enum CreateDBInstanceError {
     StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// <p>You attempted to create more tenant databases than are permitted in your Amazon Web Services account.</p>
     TenantDatabaseQuotaExceededFault(crate::types::error::TenantDatabaseQuotaExceededFault),
+    /// <p>The operation violates VPC encryption control settings. Make sure that your DB instance type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption controls to not enforce encryption-in-transit.</p>
+    VpcEncryptionControlViolationException(crate::types::error::VpcEncryptionControlViolationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -356,6 +358,7 @@ impl CreateDBInstanceError {
             Self::StorageQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageTypeNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TenantDatabaseQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::VpcEncryptionControlViolationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -447,6 +450,10 @@ impl CreateDBInstanceError {
     pub fn is_tenant_database_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::TenantDatabaseQuotaExceededFault(_))
     }
+    /// Returns `true` if the error kind is `CreateDBInstanceError::VpcEncryptionControlViolationException`.
+    pub fn is_vpc_encryption_control_violation_exception(&self) -> bool {
+        matches!(self, Self::VpcEncryptionControlViolationException(_))
+    }
 }
 impl ::std::error::Error for CreateDBInstanceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -473,6 +480,7 @@ impl ::std::error::Error for CreateDBInstanceError {
             Self::StorageQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageTypeNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::TenantDatabaseQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::VpcEncryptionControlViolationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -502,6 +510,7 @@ impl ::std::fmt::Display for CreateDBInstanceError {
             Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::StorageTypeNotSupportedFault(_inner) => _inner.fmt(f),
             Self::TenantDatabaseQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::VpcEncryptionControlViolationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -545,6 +554,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDBInsta
             Self::StorageQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageTypeNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TenantDatabaseQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::VpcEncryptionControlViolationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -40,8 +40,10 @@ impl crate::operation::attach_policy::builders::AttachPolicyInputBuilder {
 /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a></p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a></p></li>
 /// </ul>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator.</p>
+/// <p>You can only call this operation from the management account or a member account that is a delegated administrator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AttachPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,24 +129,24 @@ impl AttachPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You can get the ID for the policy by calling the <code>ListPolicies</code> operation.</p>
+    /// <p>ID for the policy that you want to attach to the target. You can get the ID for the policy by calling the <code>ListPolicies</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You can get the ID for the policy by calling the <code>ListPolicies</code> operation.</p>
+    /// <p>ID for the policy that you want to attach to the target. You can get the ID for the policy by calling the <code>ListPolicies</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You can get the ID for the policy by calling the <code>ListPolicies</code> operation.</p>
+    /// <p>ID for the policy that you want to attach to the target. You can get the ID for the policy by calling the <code>ListPolicies</code> operation.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_id()
     }
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>ID for the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -158,7 +160,7 @@ impl AttachPolicyFluentBuilder {
         self.inner = self.inner.target_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>ID for the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -172,7 +174,7 @@ impl AttachPolicyFluentBuilder {
         self.inner = self.inner.set_target_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>ID for the root, OU, or account that you want to attach the policy to. You can get the ID by calling the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
     /// <li>

@@ -5,29 +5,35 @@ pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExcept
 
 pub use crate::types::error::_service_exception::ServiceExceptionBuilder;
 
+pub use crate::types::error::_responsibility_transfer_not_found_exception::ResponsibilityTransferNotFoundExceptionBuilder;
+
+pub use crate::types::error::_invalid_input_exception::InvalidInputExceptionBuilder;
+
+pub use crate::types::error::_constraint_violation_exception::ConstraintViolationExceptionBuilder;
+
+pub use crate::types::error::_aws_organizations_not_in_use_exception::AwsOrganizationsNotInUseExceptionBuilder;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
 pub use crate::types::error::_policy_not_found_exception::PolicyNotFoundExceptionBuilder;
 
 pub use crate::types::error::_policy_changes_in_progress_exception::PolicyChangesInProgressExceptionBuilder;
 
 pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentExceptionBuilder;
 
-pub use crate::types::error::_invalid_input_exception::InvalidInputExceptionBuilder;
-
 pub use crate::types::error::_duplicate_policy_exception::DuplicatePolicyExceptionBuilder;
 
-pub use crate::types::error::_constraint_violation_exception::ConstraintViolationExceptionBuilder;
-
 pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationExceptionBuilder;
-
-pub use crate::types::error::_aws_organizations_not_in_use_exception::AwsOrganizationsNotInUseExceptionBuilder;
-
-pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
 
 pub use crate::types::error::_organizational_unit_not_found_exception::OrganizationalUnitNotFoundExceptionBuilder;
 
 pub use crate::types::error::_duplicate_organizational_unit_exception::DuplicateOrganizationalUnitExceptionBuilder;
 
 pub use crate::types::error::_target_not_found_exception::TargetNotFoundExceptionBuilder;
+
+pub use crate::types::error::_responsibility_transfer_already_in_status_exception::ResponsibilityTransferAlreadyInStatusExceptionBuilder;
+
+pub use crate::types::error::_invalid_responsibility_transfer_transition_exception::InvalidResponsibilityTransferTransitionExceptionBuilder;
 
 pub use crate::types::error::_master_cannot_leave_organization_exception::MasterCannotLeaveOrganizationExceptionBuilder;
 
@@ -51,9 +57,9 @@ pub use crate::types::error::_account_not_registered_exception::AccountNotRegist
 
 pub use crate::types::error::_handshake_constraint_violation_exception::HandshakeConstraintViolationExceptionBuilder;
 
-pub use crate::types::error::_finalizing_organization_exception::FinalizingOrganizationExceptionBuilder;
-
 pub use crate::types::error::_duplicate_handshake_exception::DuplicateHandshakeExceptionBuilder;
+
+pub use crate::types::error::_finalizing_organization_exception::FinalizingOrganizationExceptionBuilder;
 
 pub use crate::types::error::_account_owner_not_verified_exception::AccountOwnerNotVerifiedExceptionBuilder;
 

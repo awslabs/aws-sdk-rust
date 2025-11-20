@@ -26,6 +26,10 @@ pub struct ScheduleRunConfiguration {
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
     pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
+    /// <p>Environment variables associated with the run.</p>
+    pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    /// <p>An IAM role to be assumed by the test host for the run.</p>
+    pub execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleRunConfiguration {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
@@ -74,6 +78,16 @@ impl ScheduleRunConfiguration {
     pub fn billing_method(&self) -> ::std::option::Option<&crate::types::BillingMethod> {
         self.billing_method.as_ref()
     }
+    /// <p>Environment variables associated with the run.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_variables.is_none()`.
+    pub fn environment_variables(&self) -> &[crate::types::EnvironmentVariable] {
+        self.environment_variables.as_deref().unwrap_or_default()
+    }
+    /// <p>An IAM role to be assumed by the test host for the run.</p>
+    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
 }
 impl ScheduleRunConfiguration {
     /// Creates a new builder-style object to manufacture [`ScheduleRunConfiguration`](crate::types::ScheduleRunConfiguration).
@@ -96,6 +110,8 @@ pub struct ScheduleRunConfigurationBuilder {
     pub(crate) radios: ::std::option::Option<crate::types::Radios>,
     pub(crate) auxiliary_apps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) billing_method: ::std::option::Option<crate::types::BillingMethod>,
+    pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleRunConfigurationBuilder {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
@@ -256,6 +272,40 @@ impl ScheduleRunConfigurationBuilder {
     pub fn get_billing_method(&self) -> &::std::option::Option<crate::types::BillingMethod> {
         &self.billing_method
     }
+    /// Appends an item to `environment_variables`.
+    ///
+    /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+    ///
+    /// <p>Environment variables associated with the run.</p>
+    pub fn environment_variables(mut self, input: crate::types::EnvironmentVariable) -> Self {
+        let mut v = self.environment_variables.unwrap_or_default();
+        v.push(input);
+        self.environment_variables = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Environment variables associated with the run.</p>
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
+        self.environment_variables = input;
+        self
+    }
+    /// <p>Environment variables associated with the run.</p>
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+        &self.environment_variables
+    }
+    /// <p>An IAM role to be assumed by the test host for the run.</p>
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An IAM role to be assumed by the test host for the run.</p>
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_arn = input;
+        self
+    }
+    /// <p>An IAM role to be assumed by the test host for the run.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// Consumes the builder and constructs a [`ScheduleRunConfiguration`](crate::types::ScheduleRunConfiguration).
     pub fn build(self) -> crate::types::ScheduleRunConfiguration {
         crate::types::ScheduleRunConfiguration {
@@ -269,6 +319,8 @@ impl ScheduleRunConfigurationBuilder {
             radios: self.radios,
             auxiliary_apps: self.auxiliary_apps,
             billing_method: self.billing_method,
+            environment_variables: self.environment_variables,
+            execution_role_arn: self.execution_role_arn,
         }
     }
 }

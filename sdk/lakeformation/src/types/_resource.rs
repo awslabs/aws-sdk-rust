@@ -16,7 +16,7 @@ pub struct Resource {
     pub data_location: ::std::option::Option<crate::types::DataLocationResource>,
     /// <p>A data cell filter.</p>
     pub data_cells_filter: ::std::option::Option<crate::types::DataCellsFilterResource>,
-    /// <p>The LF-tag key and values attached to a resource.</p>
+    /// <p>The LF-Tag key and values attached to a resource.</p>
     pub lf_tag: ::std::option::Option<crate::types::LfTagKeyResource>,
     /// <p>A list of LF-tag conditions or saved LF-Tag expressions that define a resource's LF-tag policy.</p>
     pub lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyResource>,
@@ -48,7 +48,7 @@ impl Resource {
     pub fn data_cells_filter(&self) -> ::std::option::Option<&crate::types::DataCellsFilterResource> {
         self.data_cells_filter.as_ref()
     }
-    /// <p>The LF-tag key and values attached to a resource.</p>
+    /// <p>The LF-Tag key and values attached to a resource.</p>
     pub fn lf_tag(&self) -> ::std::option::Option<&crate::types::LfTagKeyResource> {
         self.lf_tag.as_ref()
     }
@@ -167,17 +167,17 @@ impl ResourceBuilder {
     pub fn get_data_cells_filter(&self) -> &::std::option::Option<crate::types::DataCellsFilterResource> {
         &self.data_cells_filter
     }
-    /// <p>The LF-tag key and values attached to a resource.</p>
+    /// <p>The LF-Tag key and values attached to a resource.</p>
     pub fn lf_tag(mut self, input: crate::types::LfTagKeyResource) -> Self {
         self.lf_tag = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The LF-tag key and values attached to a resource.</p>
+    /// <p>The LF-Tag key and values attached to a resource.</p>
     pub fn set_lf_tag(mut self, input: ::std::option::Option<crate::types::LfTagKeyResource>) -> Self {
         self.lf_tag = input;
         self
     }
-    /// <p>The LF-tag key and values attached to a resource.</p>
+    /// <p>The LF-Tag key and values attached to a resource.</p>
     pub fn get_lf_tag(&self) -> &::std::option::Option<crate::types::LfTagKeyResource> {
         &self.lf_tag
     }

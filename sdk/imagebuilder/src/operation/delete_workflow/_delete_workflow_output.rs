@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkflowOutput {
-    /// <p>The ARN of the workflow resource that this request deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that this request deleted.</p>
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteWorkflowOutput {
-    /// <p>The ARN of the workflow resource that this request deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that this request deleted.</p>
     pub fn workflow_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.workflow_build_version_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteWorkflowOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteWorkflowOutputBuilder {
-    /// <p>The ARN of the workflow resource that this request deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that this request deleted.</p>
     pub fn workflow_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the workflow resource that this request deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that this request deleted.</p>
     pub fn set_workflow_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_build_version_arn = input;
         self
     }
-    /// <p>The ARN of the workflow resource that this request deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that this request deleted.</p>
     pub fn get_workflow_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_build_version_arn
     }

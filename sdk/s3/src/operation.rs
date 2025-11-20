@@ -84,6 +84,9 @@ pub mod delete_objects;
 /// Types for the `DeletePublicAccessBlock` operation.
 pub mod delete_public_access_block;
 
+/// Types for the `GetBucketAbac` operation.
+pub mod get_bucket_abac;
+
 /// Types for the `GetBucketAccelerateConfiguration` operation.
 pub mod get_bucket_accelerate_configuration;
 
@@ -215,6 +218,9 @@ pub mod list_objects_v2;
 
 /// Types for the `ListParts` operation.
 pub mod list_parts;
+
+/// Types for the `PutBucketAbac` operation.
+pub mod put_bucket_abac;
 
 /// Types for the `PutBucketAccelerateConfiguration` operation.
 pub mod put_bucket_accelerate_configuration;

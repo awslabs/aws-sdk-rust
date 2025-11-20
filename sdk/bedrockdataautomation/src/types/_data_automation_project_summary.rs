@@ -8,6 +8,8 @@ pub struct DataAutomationProjectSummary {
     pub project_arn: ::std::string::String,
     /// Stage of the Project
     pub project_stage: ::std::option::Option<crate::types::DataAutomationProjectStage>,
+    /// Type of the DataAutomationProject
+    pub project_type: ::std::option::Option<crate::types::DataAutomationProjectType>,
     /// Name of the DataAutomationProject
     pub project_name: ::std::option::Option<::std::string::String>,
     /// Time Stamp
@@ -23,6 +25,10 @@ impl DataAutomationProjectSummary {
     pub fn project_stage(&self) -> ::std::option::Option<&crate::types::DataAutomationProjectStage> {
         self.project_stage.as_ref()
     }
+    /// Type of the DataAutomationProject
+    pub fn project_type(&self) -> ::std::option::Option<&crate::types::DataAutomationProjectType> {
+        self.project_type.as_ref()
+    }
     /// Name of the DataAutomationProject
     pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
@@ -37,6 +43,7 @@ impl ::std::fmt::Debug for DataAutomationProjectSummary {
         let mut formatter = f.debug_struct("DataAutomationProjectSummary");
         formatter.field("project_arn", &self.project_arn);
         formatter.field("project_stage", &self.project_stage);
+        formatter.field("project_type", &self.project_type);
         formatter.field("project_name", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_time", &self.creation_time);
         formatter.finish()
@@ -55,6 +62,7 @@ impl DataAutomationProjectSummary {
 pub struct DataAutomationProjectSummaryBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) project_stage: ::std::option::Option<crate::types::DataAutomationProjectStage>,
+    pub(crate) project_type: ::std::option::Option<crate::types::DataAutomationProjectType>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -87,6 +95,20 @@ impl DataAutomationProjectSummaryBuilder {
     /// Stage of the Project
     pub fn get_project_stage(&self) -> &::std::option::Option<crate::types::DataAutomationProjectStage> {
         &self.project_stage
+    }
+    /// Type of the DataAutomationProject
+    pub fn project_type(mut self, input: crate::types::DataAutomationProjectType) -> Self {
+        self.project_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// Type of the DataAutomationProject
+    pub fn set_project_type(mut self, input: ::std::option::Option<crate::types::DataAutomationProjectType>) -> Self {
+        self.project_type = input;
+        self
+    }
+    /// Type of the DataAutomationProject
+    pub fn get_project_type(&self) -> &::std::option::Option<crate::types::DataAutomationProjectType> {
+        &self.project_type
     }
     /// Name of the DataAutomationProject
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +152,7 @@ impl DataAutomationProjectSummaryBuilder {
                 )
             })?,
             project_stage: self.project_stage,
+            project_type: self.project_type,
             project_name: self.project_name,
             creation_time: self.creation_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -145,6 +168,7 @@ impl ::std::fmt::Debug for DataAutomationProjectSummaryBuilder {
         let mut formatter = f.debug_struct("DataAutomationProjectSummaryBuilder");
         formatter.field("project_arn", &self.project_arn);
         formatter.field("project_stage", &self.project_stage);
+        formatter.field("project_type", &self.project_type);
         formatter.field("project_name", &"*** Sensitive Data Redacted ***");
         formatter.field("creation_time", &self.creation_time);
         formatter.finish()

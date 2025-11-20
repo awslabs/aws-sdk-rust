@@ -15,6 +15,12 @@ pub fn ser_step_config(
         crate::protocol_serde::shape_hadoop_jar_step_config::ser_hadoop_jar_step_config(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.step_monitoring_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("StepMonitoringConfiguration").start_object();
+        crate::protocol_serde::shape_step_monitoring_configuration::ser_step_monitoring_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -50,6 +56,11 @@ where
                         "HadoopJarStep" => {
                             builder =
                                 builder.set_hadoop_jar_step(crate::protocol_serde::shape_hadoop_jar_step_config::de_hadoop_jar_step_config(tokens)?);
+                        }
+                        "StepMonitoringConfiguration" => {
+                            builder = builder.set_step_monitoring_configuration(
+                                crate::protocol_serde::shape_step_monitoring_configuration::de_step_monitoring_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

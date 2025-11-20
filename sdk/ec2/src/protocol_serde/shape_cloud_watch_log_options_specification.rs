@@ -19,5 +19,20 @@ pub fn ser_cloud_watch_log_options_specification(
     if let Some(var_6) = &input.log_output_format {
         scope_5.string(var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("BgpLogEnabled");
+    if let Some(var_8) = &input.bgp_log_enabled {
+        scope_7.boolean(*var_8);
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("BgpLogGroupArn");
+    if let Some(var_10) = &input.bgp_log_group_arn {
+        scope_9.string(var_10);
+    }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("BgpLogOutputFormat");
+    if let Some(var_12) = &input.bgp_log_output_format {
+        scope_11.string(var_12);
+    }
     Ok(())
 }

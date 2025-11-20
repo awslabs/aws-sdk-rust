@@ -18,7 +18,7 @@ pub struct CreateAccountStatus {
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
+    /// <p>If the account was created successfully, the ID for the new account in the Amazon Web Services GovCloud (US) Region.</p>
     pub gov_cloud_account_id: ::std::option::Option<::std::string::String>,
     /// <p>If the request failed, a description of the reason for the failure.</p>
     /// <ul>
@@ -80,7 +80,7 @@ impl CreateAccountStatus {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
+    /// <p>If the account was created successfully, the ID for the new account in the Amazon Web Services GovCloud (US) Region.</p>
     pub fn gov_cloud_account_id(&self) -> ::std::option::Option<&str> {
         self.gov_cloud_account_id.as_deref()
     }
@@ -244,17 +244,17 @@ impl CreateAccountStatusBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
+    /// <p>If the account was created successfully, the ID for the new account in the Amazon Web Services GovCloud (US) Region.</p>
     pub fn gov_cloud_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gov_cloud_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
+    /// <p>If the account was created successfully, the ID for the new account in the Amazon Web Services GovCloud (US) Region.</p>
     pub fn set_gov_cloud_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gov_cloud_account_id = input;
         self
     }
-    /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
+    /// <p>If the account was created successfully, the ID for the new account in the Amazon Web Services GovCloud (US) Region.</p>
     pub fn get_gov_cloud_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gov_cloud_account_id
     }

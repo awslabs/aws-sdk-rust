@@ -144,6 +144,8 @@ mod create_job;
 
 mod create_quantum_task;
 
+mod create_spending_limit;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -171,6 +173,8 @@ mod create_quantum_task;
 /// ```
 pub mod customize;
 
+mod delete_spending_limit;
+
 mod get_device;
 
 mod get_job;
@@ -185,6 +189,10 @@ mod search_jobs;
 
 mod search_quantum_tasks;
 
+mod search_spending_limits;
+
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_spending_limit;

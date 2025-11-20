@@ -21,6 +21,12 @@ pub fn ser_send_notification_action_definition(
         crate::protocol_serde::shape_notification_recipient_type::ser_notification_recipient_type(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.exclusion {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("Exclusion").start_object();
+        crate::protocol_serde::shape_notification_recipient_type::ser_notification_recipient_type(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -69,6 +75,11 @@ where
                         }
                         "Recipient" => {
                             builder = builder.set_recipient(
+                                crate::protocol_serde::shape_notification_recipient_type::de_notification_recipient_type(tokens)?,
+                            );
+                        }
+                        "Exclusion" => {
+                            builder = builder.set_exclusion(
                                 crate::protocol_serde::shape_notification_recipient_type::de_notification_recipient_type(tokens)?,
                             );
                         }

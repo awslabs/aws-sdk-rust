@@ -15,17 +15,29 @@ pub fn ser_create_lake_formation_identity_center_configuration_input_input(
     if let Some(var_4) = &input.instance_arn {
         object.key("InstanceArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.share_recipients {
-        let mut array_6 = object.key("ShareRecipients").start_array();
+    if let Some(var_5) = &input.service_integrations {
+        let mut array_6 = object.key("ServiceIntegrations").start_array();
         for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_data_lake_principal::ser_data_lake_principal(&mut object_8, item_7)?;
+                crate::protocol_serde::shape_service_integration_union::ser_service_integration_union(&mut object_8, item_7)?;
                 object_8.finish();
             }
         }
         array_6.finish();
+    }
+    if let Some(var_9) = &input.share_recipients {
+        let mut array_10 = object.key("ShareRecipients").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_data_lake_principal::ser_data_lake_principal(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
     }
     Ok(())
 }

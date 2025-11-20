@@ -6,12 +6,32 @@
 pub struct ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     pub license_configuration_arns: ::std::vec::Vec<::std::string::String>,
+    /// <p>Amazon Resource Names (ARNs) of the license asset groups to include in the report.</p>
+    pub license_asset_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Start date for the report data collection period.</p>
+    pub report_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>End date for the report data collection period.</p>
+    pub report_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     pub fn license_configuration_arns(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.license_configuration_arns.deref()
+    }
+    /// <p>Amazon Resource Names (ARNs) of the license asset groups to include in the report.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_asset_group_arns.is_none()`.
+    pub fn license_asset_group_arns(&self) -> &[::std::string::String] {
+        self.license_asset_group_arns.as_deref().unwrap_or_default()
+    }
+    /// <p>Start date for the report data collection period.</p>
+    pub fn report_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.report_start_date.as_ref()
+    }
+    /// <p>End date for the report data collection period.</p>
+    pub fn report_end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.report_end_date.as_ref()
     }
 }
 impl ReportContext {
@@ -26,6 +46,9 @@ impl ReportContext {
 #[non_exhaustive]
 pub struct ReportContextBuilder {
     pub(crate) license_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) license_asset_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) report_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) report_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReportContextBuilder {
     /// Appends an item to `license_configuration_arns`.
@@ -48,17 +71,61 @@ impl ReportContextBuilder {
     pub fn get_license_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.license_configuration_arns
     }
+    /// Appends an item to `license_asset_group_arns`.
+    ///
+    /// To override the contents of this collection use [`set_license_asset_group_arns`](Self::set_license_asset_group_arns).
+    ///
+    /// <p>Amazon Resource Names (ARNs) of the license asset groups to include in the report.</p>
+    pub fn license_asset_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.license_asset_group_arns.unwrap_or_default();
+        v.push(input.into());
+        self.license_asset_group_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Amazon Resource Names (ARNs) of the license asset groups to include in the report.</p>
+    pub fn set_license_asset_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.license_asset_group_arns = input;
+        self
+    }
+    /// <p>Amazon Resource Names (ARNs) of the license asset groups to include in the report.</p>
+    pub fn get_license_asset_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.license_asset_group_arns
+    }
+    /// <p>Start date for the report data collection period.</p>
+    pub fn report_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.report_start_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Start date for the report data collection period.</p>
+    pub fn set_report_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.report_start_date = input;
+        self
+    }
+    /// <p>Start date for the report data collection period.</p>
+    pub fn get_report_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.report_start_date
+    }
+    /// <p>End date for the report data collection period.</p>
+    pub fn report_end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.report_end_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>End date for the report data collection period.</p>
+    pub fn set_report_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.report_end_date = input;
+        self
+    }
+    /// <p>End date for the report data collection period.</p>
+    pub fn get_report_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.report_end_date
+    }
     /// Consumes the builder and constructs a [`ReportContext`](crate::types::ReportContext).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`license_configuration_arns`](crate::types::builders::ReportContextBuilder::license_configuration_arns)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReportContext, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReportContext {
-            license_configuration_arns: self.license_configuration_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "license_configuration_arns",
-                    "license_configuration_arns was not specified but it is required when building ReportContext",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::ReportContext {
+        crate::types::ReportContext {
+            license_configuration_arns: self.license_configuration_arns.unwrap_or_default(),
+            license_asset_group_arns: self.license_asset_group_arns,
+            report_start_date: self.report_start_date,
+            report_end_date: self.report_end_date,
+        }
     }
 }

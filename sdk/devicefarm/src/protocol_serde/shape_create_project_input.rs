@@ -18,5 +18,20 @@ pub fn ser_create_project_input_input(
         crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.environment_variables {
+        let mut array_6 = object.key("environmentVariables").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.execution_role_arn {
+        object.key("executionRoleArn").string(var_9.as_str());
+    }
     Ok(())
 }

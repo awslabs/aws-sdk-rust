@@ -101,6 +101,8 @@ pub use crate::types::_auditor_result::AuditorResult;
 
 pub use crate::types::_severity::Severity;
 
+pub use crate::types::_detail_level::DetailLevel;
+
 pub use crate::types::_audit_target::AuditTarget;
 
 pub use crate::types::_audit_target_entity::AuditTargetEntity;
@@ -150,6 +152,8 @@ mod _connection_type;
 mod _dependency_config;
 
 mod _dependency_graph;
+
+mod _detail_level;
 
 mod _dimension;
 

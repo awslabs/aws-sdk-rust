@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeclineHandshakeOutput {
-    /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
+    /// <p>A <code>Handshake</code> object. Contains details for the declined handshake.</p>
     pub handshake: ::std::option::Option<crate::types::Handshake>,
     _request_id: Option<String>,
 }
 impl DeclineHandshakeOutput {
-    /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
+    /// <p>A <code>Handshake</code> object. Contains details for the declined handshake.</p>
     pub fn handshake(&self) -> ::std::option::Option<&crate::types::Handshake> {
         self.handshake.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DeclineHandshakeOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeclineHandshakeOutputBuilder {
-    /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
+    /// <p>A <code>Handshake</code> object. Contains details for the declined handshake.</p>
     pub fn handshake(mut self, input: crate::types::Handshake) -> Self {
         self.handshake = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
+    /// <p>A <code>Handshake</code> object. Contains details for the declined handshake.</p>
     pub fn set_handshake(mut self, input: ::std::option::Option<crate::types::Handshake>) -> Self {
         self.handshake = input;
         self
     }
-    /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
+    /// <p>A <code>Handshake</code> object. Contains details for the declined handshake.</p>
     pub fn get_handshake(&self) -> &::std::option::Option<crate::types::Handshake> {
         &self.handshake
     }

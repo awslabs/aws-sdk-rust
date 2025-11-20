@@ -108,6 +108,13 @@ where
                                 crate::protocol_serde::shape_automated_discovery_information::de_automated_discovery_information(tokens)?,
                             );
                         }
+                        "LicenseExpiry" => {
+                            builder = builder.set_license_expiry(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

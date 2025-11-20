@@ -20,3 +20,7 @@ pub use crate::types::_asset_processing_configuration::AssetProcessingConfigurat
 pub use crate::types::_video_asset_processing_configuration::VideoAssetProcessingConfigurationBuilder;
 
 pub use crate::types::_timestamp_segment::TimestampSegmentBuilder;
+
+pub use crate::types::_output_segment::OutputSegmentBuilder;
+
+pub use crate::types::_sync_input_configuration::SyncInputConfigurationBuilder;

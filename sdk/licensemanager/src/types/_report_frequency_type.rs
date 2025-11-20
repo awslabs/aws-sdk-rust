@@ -14,6 +14,7 @@
 /// match reportfrequencytype {
 ///     ReportFrequencyType::Day => { /* ... */ },
 ///     ReportFrequencyType::Month => { /* ... */ },
+///     ReportFrequencyType::OneTime => { /* ... */ },
 ///     ReportFrequencyType::Week => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum ReportFrequencyType {
     #[allow(missing_docs)] // documentation missing in model
     Month,
     #[allow(missing_docs)] // documentation missing in model
+    OneTime,
+    #[allow(missing_docs)] // documentation missing in model
     Week,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for ReportFrequencyType {
         match s {
             "DAY" => ReportFrequencyType::Day,
             "MONTH" => ReportFrequencyType::Month,
+            "ONE_TIME" => ReportFrequencyType::OneTime,
             "WEEK" => ReportFrequencyType::Week,
             other => ReportFrequencyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl ReportFrequencyType {
         match self {
             ReportFrequencyType::Day => "DAY",
             ReportFrequencyType::Month => "MONTH",
+            ReportFrequencyType::OneTime => "ONE_TIME",
             ReportFrequencyType::Week => "WEEK",
             ReportFrequencyType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DAY", "MONTH", "WEEK"]
+        &["DAY", "MONTH", "ONE_TIME", "WEEK"]
     }
 }
 impl ::std::convert::AsRef<str> for ReportFrequencyType {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for ReportFrequencyType {
         match self {
             ReportFrequencyType::Day => write!(f, "DAY"),
             ReportFrequencyType::Month => write!(f, "MONTH"),
+            ReportFrequencyType::OneTime => write!(f, "ONE_TIME"),
             ReportFrequencyType::Week => write!(f, "WEEK"),
             ReportFrequencyType::Unknown(value) => write!(f, "{value}"),
         }

@@ -150,6 +150,20 @@ impl CreateDataAutomationProjectFluentBuilder {
     pub fn get_project_stage(&self) -> &::std::option::Option<crate::types::DataAutomationProjectStage> {
         self.inner.get_project_stage()
     }
+    /// Type of the DataAutomationProject
+    pub fn project_type(mut self, input: crate::types::DataAutomationProjectType) -> Self {
+        self.inner = self.inner.project_type(input);
+        self
+    }
+    /// Type of the DataAutomationProject
+    pub fn set_project_type(mut self, input: ::std::option::Option<crate::types::DataAutomationProjectType>) -> Self {
+        self.inner = self.inner.set_project_type(input);
+        self
+    }
+    /// Type of the DataAutomationProject
+    pub fn get_project_type(&self) -> &::std::option::Option<crate::types::DataAutomationProjectType> {
+        self.inner.get_project_type()
+    }
     /// Standard output configuration
     pub fn standard_output_configuration(mut self, input: crate::types::StandardOutputConfiguration) -> Self {
         self.inner = self.inner.standard_output_configuration(input);

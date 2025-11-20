@@ -21,5 +21,8 @@ pub fn ser_list_services_input_input(
     if let Some(var_5) = &input.scheduling_strategy {
         object.key("schedulingStrategy").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.resource_management_type {
+        object.key("resourceManagementType").string(var_6.as_str());
+    }
     Ok(())
 }

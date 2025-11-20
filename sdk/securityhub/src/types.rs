@@ -211,6 +211,22 @@ pub use crate::types::_resources_string_filter::ResourcesStringFilter;
 
 pub use crate::types::_resources_string_field::ResourcesStringField;
 
+pub use crate::types::_resources_trends_metrics_result::ResourcesTrendsMetricsResult;
+
+pub use crate::types::_resources_trends_values::ResourcesTrendsValues;
+
+pub use crate::types::_resources_count::ResourcesCount;
+
+pub use crate::types::_granularity_field::GranularityField;
+
+pub use crate::types::_resources_trends_filters::ResourcesTrendsFilters;
+
+pub use crate::types::_resources_trends_composite_filter::ResourcesTrendsCompositeFilter;
+
+pub use crate::types::_resources_trends_string_filter::ResourcesTrendsStringFilter;
+
+pub use crate::types::_resources_trends_string_field::ResourcesTrendsStringField;
+
 pub use crate::types::_group_by_result::GroupByResult;
 
 pub use crate::types::_group_by_value::GroupByValue;
@@ -224,6 +240,20 @@ pub use crate::types::_insight::Insight;
 pub use crate::types::_insight_results::InsightResults;
 
 pub use crate::types::_insight_result_value::InsightResultValue;
+
+pub use crate::types::_trends_metrics_result::TrendsMetricsResult;
+
+pub use crate::types::_trends_values::TrendsValues;
+
+pub use crate::types::_severity_trends_count::SeverityTrendsCount;
+
+pub use crate::types::_findings_trends_filters::FindingsTrendsFilters;
+
+pub use crate::types::_findings_trends_composite_filter::FindingsTrendsCompositeFilter;
+
+pub use crate::types::_findings_trends_string_filter::FindingsTrendsStringFilter;
+
+pub use crate::types::_findings_trends_string_field::FindingsTrendsStringField;
 
 pub use crate::types::_group_by_rule::GroupByRule;
 
@@ -2763,6 +2793,14 @@ mod _finding_provider_fields;
 
 mod _finding_provider_severity;
 
+mod _findings_trends_composite_filter;
+
+mod _findings_trends_filters;
+
+mod _findings_trends_string_field;
+
+mod _findings_trends_string_filter;
+
 mod _firewall_policy_details;
 
 mod _firewall_policy_stateful_rule_group_references_details;
@@ -2774,6 +2812,8 @@ mod _firewall_policy_stateless_rule_group_references_details;
 mod _generator_details;
 
 mod _geo_location;
+
+mod _granularity_field;
 
 mod _group_by_field;
 
@@ -2971,6 +3011,8 @@ mod _resource_tag;
 
 mod _resources_composite_filter;
 
+mod _resources_count;
+
 mod _resources_date_field;
 
 mod _resources_date_filter;
@@ -2988,6 +3030,18 @@ mod _resources_number_filter;
 mod _resources_string_field;
 
 mod _resources_string_filter;
+
+mod _resources_trends_composite_filter;
+
+mod _resources_trends_filters;
+
+mod _resources_trends_metrics_result;
+
+mod _resources_trends_string_field;
+
+mod _resources_trends_string_filter;
+
+mod _resources_trends_values;
 
 mod _result;
 
@@ -3067,6 +3121,8 @@ mod _severity_label;
 
 mod _severity_rating;
 
+mod _severity_trends_count;
+
 mod _severity_update;
 
 mod _signal;
@@ -3130,6 +3186,10 @@ mod _threat_intel_indicator;
 mod _threat_intel_indicator_category;
 
 mod _threat_intel_indicator_type;
+
+mod _trends_metrics_result;
+
+mod _trends_values;
 
 mod _unprocessed_automation_rule;
 

@@ -156,6 +156,16 @@ pub fn de_transit_gateway_options(
                 builder = builder.set_multicast_support(var_11);
             }
             ,
+            s if s.matches("encryptionSupport") /* EncryptionSupport com.amazonaws.ec2#TransitGatewayOptions$EncryptionSupport */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_encryption_support::de_encryption_support(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_encryption_support(var_12);
+            }
+            ,
             _ => {}
         }
     }

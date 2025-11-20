@@ -37,6 +37,26 @@ pub fn de_describe_budget_performance_history_http_error(
                 tmp
             })
         }
+        "BillingViewHealthStatusException" => {
+            crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::BillingViewHealthStatusException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BillingViewHealthStatusExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_billing_view_health_status_exception::de_billing_view_health_status_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ExpiredNextTokenException" => {
             crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError::ExpiredNextTokenException({
                 #[allow(unused_mut)]

@@ -108,8 +108,21 @@ pub fn de_auto_scaling_instance_details(
                 builder = builder.set_launch_template(var_8);
             }
             ,
-            s if s.matches("ProtectedFromScaleIn") /* ProtectedFromScaleIn com.amazonaws.autoscaling#AutoScalingInstanceDetails$ProtectedFromScaleIn */ =>  {
+            s if s.matches("ImageId") /* ImageId com.amazonaws.autoscaling#AutoScalingInstanceDetails$ImageId */ =>  {
                 let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_image_id(var_9);
+            }
+            ,
+            s if s.matches("ProtectedFromScaleIn") /* ProtectedFromScaleIn com.amazonaws.autoscaling#AutoScalingInstanceDetails$ProtectedFromScaleIn */ =>  {
+                let var_10 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -120,11 +133,11 @@ pub fn de_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_protected_from_scale_in(var_9);
+                builder = builder.set_protected_from_scale_in(var_10);
             }
             ,
             s if s.matches("WeightedCapacity") /* WeightedCapacity com.amazonaws.autoscaling#AutoScalingInstanceDetails$WeightedCapacity */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -133,7 +146,7 @@ pub fn de_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_weighted_capacity(var_10);
+                builder = builder.set_weighted_capacity(var_11);
             }
             ,
             _ => {}

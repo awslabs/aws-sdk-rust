@@ -3,10 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>You do not have permissions to perform the requested operation.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>You have exceeded the permitted request rate for the specific operation.</p>
     CallRateLimitExceededException(crate::types::error::CallRateLimitExceededException),
     /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::types::error::ClientException),
+    /// <p>The dry run operation of the resource was successful, and no resources or mutations were actually performed due to the dry run flag in the request.</p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
@@ -37,6 +41,8 @@ pub enum Error {
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>You have attempted too many requests for the specific operation.</p>
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -49,8 +55,10 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::CallRateLimitExceededException(inner) => inner.fmt(f),
             Error::ClientException(inner) => inner.fmt(f),
+            Error::DryRunOperationException(inner) => inner.fmt(f),
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::IdempotentParameterMismatchException(inner) => inner.fmt(f),
             Error::InvalidPaginationTokenException(inner) => inner.fmt(f),
@@ -66,6 +74,7 @@ impl ::std::fmt::Display for Error {
             Error::ServiceException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
+            Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -87,8 +96,10 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
             Self::CallRateLimitExceededException(inner) => inner.meta(),
             Self::ClientException(inner) => inner.meta(),
+            Self::DryRunOperationException(inner) => inner.meta(),
             Self::ForbiddenException(inner) => inner.meta(),
             Self::IdempotentParameterMismatchException(inner) => inner.meta(),
             Self::InvalidPaginationTokenException(inner) => inner.meta(),
@@ -104,6 +115,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ServiceException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ServiceUnavailableException(inner) => inner.meta(),
+            Self::TooManyRequestsException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -210,6 +222,7 @@ impl From<crate::operation::create_component::CreateComponentError> for Error {
                 Error::CallRateLimitExceededException(inner)
             }
             crate::operation::create_component::CreateComponentError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_component::CreateComponentError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::create_component::CreateComponentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::create_component::CreateComponentError::IdempotentParameterMismatchException(inner) => {
                 Error::IdempotentParameterMismatchException(inner)
@@ -597,6 +610,7 @@ impl From<crate::operation::create_workflow::CreateWorkflowError> for Error {
                 Error::CallRateLimitExceededException(inner)
             }
             crate::operation::create_workflow::CreateWorkflowError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_workflow::CreateWorkflowError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::create_workflow::CreateWorkflowError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::create_workflow::CreateWorkflowError::IdempotentParameterMismatchException(inner) => {
                 Error::IdempotentParameterMismatchException(inner)
@@ -957,6 +971,45 @@ impl From<crate::operation::delete_workflow::DeleteWorkflowError> for Error {
             crate::operation::delete_workflow::DeleteWorkflowError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_workflow::DeleteWorkflowError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_workflow::DeleteWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::distribute_image::DistributeImageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::distribute_image::DistributeImageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::distribute_image::DistributeImageError> for Error {
+    fn from(err: crate::operation::distribute_image::DistributeImageError) -> Self {
+        match err {
+            crate::operation::distribute_image::DistributeImageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::distribute_image::DistributeImageError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::distribute_image::DistributeImageError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::distribute_image::DistributeImageError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::distribute_image::DistributeImageError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::distribute_image::DistributeImageError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::distribute_image::DistributeImageError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::distribute_image::DistributeImageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::distribute_image::DistributeImageError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::distribute_image::DistributeImageError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::distribute_image::DistributeImageError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::distribute_image::DistributeImageError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::distribute_image::DistributeImageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2660,6 +2713,37 @@ impl From<crate::operation::put_image_recipe_policy::PutImageRecipePolicyError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::retry_image::RetryImageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::retry_image::RetryImageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::retry_image::RetryImageError> for Error {
+    fn from(err: crate::operation::retry_image::RetryImageError) -> Self {
+        match err {
+            crate::operation::retry_image::RetryImageError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::retry_image::RetryImageError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::retry_image::RetryImageError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::retry_image::RetryImageError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::retry_image::RetryImageError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::retry_image::RetryImageError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::retry_image::RetryImageError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::retry_image::RetryImageError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::retry_image::RetryImageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_workflow_step_action::SendWorkflowStepActionError, R>>
     for Error
 where
@@ -3059,8 +3143,10 @@ impl From<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyError>
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessDeniedException(inner) => inner.source(),
             Error::CallRateLimitExceededException(inner) => inner.source(),
             Error::ClientException(inner) => inner.source(),
+            Error::DryRunOperationException(inner) => inner.source(),
             Error::ForbiddenException(inner) => inner.source(),
             Error::IdempotentParameterMismatchException(inner) => inner.source(),
             Error::InvalidPaginationTokenException(inner) => inner.source(),
@@ -3076,6 +3162,7 @@ impl ::std::error::Error for Error {
             Error::ServiceException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::TooManyRequestsException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -3083,8 +3170,10 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
             Self::CallRateLimitExceededException(e) => e.request_id(),
             Self::ClientException(e) => e.request_id(),
+            Self::DryRunOperationException(e) => e.request_id(),
             Self::ForbiddenException(e) => e.request_id(),
             Self::IdempotentParameterMismatchException(e) => e.request_id(),
             Self::InvalidPaginationTokenException(e) => e.request_id(),
@@ -3100,6 +3189,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ServiceException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

@@ -20,6 +20,10 @@
 ///     ChangeType::CoreNetworkEdge => { /* ... */ },
 ///     ChangeType::CoreNetworkSegment => { /* ... */ },
 ///     ChangeType::NetworkFunctionGroup => { /* ... */ },
+///     ChangeType::RoutingPolicy => { /* ... */ },
+///     ChangeType::RoutingPolicyAttachmentAssociation => { /* ... */ },
+///     ChangeType::RoutingPolicyEdgeAssociation => { /* ... */ },
+///     ChangeType::RoutingPolicySegmentAssociation => { /* ... */ },
 ///     ChangeType::SegmentsConfiguration => { /* ... */ },
 ///     ChangeType::SegmentActionsConfiguration => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -67,6 +71,14 @@ pub enum ChangeType {
     #[allow(missing_docs)] // documentation missing in model
     NetworkFunctionGroup,
     #[allow(missing_docs)] // documentation missing in model
+    RoutingPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    RoutingPolicyAttachmentAssociation,
+    #[allow(missing_docs)] // documentation missing in model
+    RoutingPolicyEdgeAssociation,
+    #[allow(missing_docs)] // documentation missing in model
+    RoutingPolicySegmentAssociation,
+    #[allow(missing_docs)] // documentation missing in model
     SegmentsConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     SegmentActionsConfiguration,
@@ -85,6 +97,10 @@ impl ::std::convert::From<&str> for ChangeType {
             "CORE_NETWORK_EDGE" => ChangeType::CoreNetworkEdge,
             "CORE_NETWORK_SEGMENT" => ChangeType::CoreNetworkSegment,
             "NETWORK_FUNCTION_GROUP" => ChangeType::NetworkFunctionGroup,
+            "ROUTING_POLICY" => ChangeType::RoutingPolicy,
+            "ROUTING_POLICY_ATTACHMENT_ASSOCIATION" => ChangeType::RoutingPolicyAttachmentAssociation,
+            "ROUTING_POLICY_EDGE_ASSOCIATION" => ChangeType::RoutingPolicyEdgeAssociation,
+            "ROUTING_POLICY_SEGMENT_ASSOCIATION" => ChangeType::RoutingPolicySegmentAssociation,
             "SEGMENTS_CONFIGURATION" => ChangeType::SegmentsConfiguration,
             "SEGMENT_ACTIONS_CONFIGURATION" => ChangeType::SegmentActionsConfiguration,
             other => ChangeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -110,6 +126,10 @@ impl ChangeType {
             ChangeType::CoreNetworkEdge => "CORE_NETWORK_EDGE",
             ChangeType::CoreNetworkSegment => "CORE_NETWORK_SEGMENT",
             ChangeType::NetworkFunctionGroup => "NETWORK_FUNCTION_GROUP",
+            ChangeType::RoutingPolicy => "ROUTING_POLICY",
+            ChangeType::RoutingPolicyAttachmentAssociation => "ROUTING_POLICY_ATTACHMENT_ASSOCIATION",
+            ChangeType::RoutingPolicyEdgeAssociation => "ROUTING_POLICY_EDGE_ASSOCIATION",
+            ChangeType::RoutingPolicySegmentAssociation => "ROUTING_POLICY_SEGMENT_ASSOCIATION",
             ChangeType::SegmentsConfiguration => "SEGMENTS_CONFIGURATION",
             ChangeType::SegmentActionsConfiguration => "SEGMENT_ACTIONS_CONFIGURATION",
             ChangeType::Unknown(value) => value.as_str(),
@@ -126,6 +146,10 @@ impl ChangeType {
             "CORE_NETWORK_EDGE",
             "CORE_NETWORK_SEGMENT",
             "NETWORK_FUNCTION_GROUP",
+            "ROUTING_POLICY",
+            "ROUTING_POLICY_ATTACHMENT_ASSOCIATION",
+            "ROUTING_POLICY_EDGE_ASSOCIATION",
+            "ROUTING_POLICY_SEGMENT_ASSOCIATION",
             "SEGMENTS_CONFIGURATION",
             "SEGMENT_ACTIONS_CONFIGURATION",
         ]
@@ -159,6 +183,10 @@ impl ::std::fmt::Display for ChangeType {
             ChangeType::CoreNetworkEdge => write!(f, "CORE_NETWORK_EDGE"),
             ChangeType::CoreNetworkSegment => write!(f, "CORE_NETWORK_SEGMENT"),
             ChangeType::NetworkFunctionGroup => write!(f, "NETWORK_FUNCTION_GROUP"),
+            ChangeType::RoutingPolicy => write!(f, "ROUTING_POLICY"),
+            ChangeType::RoutingPolicyAttachmentAssociation => write!(f, "ROUTING_POLICY_ATTACHMENT_ASSOCIATION"),
+            ChangeType::RoutingPolicyEdgeAssociation => write!(f, "ROUTING_POLICY_EDGE_ASSOCIATION"),
+            ChangeType::RoutingPolicySegmentAssociation => write!(f, "ROUTING_POLICY_SEGMENT_ASSOCIATION"),
             ChangeType::SegmentsConfiguration => write!(f, "SEGMENTS_CONFIGURATION"),
             ChangeType::SegmentActionsConfiguration => write!(f, "SEGMENT_ACTIONS_CONFIGURATION"),
             ChangeType::Unknown(value) => write!(f, "{value}"),

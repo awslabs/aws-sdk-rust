@@ -3,15 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEventConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the trail that has aggregation enabled.</p>
+    pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which the event configuration settings were updated.</p>
     pub event_data_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum allowed size for events stored in the specified event data store.</p>
     pub max_event_size: ::std::option::Option<crate::types::MaxEventSize>,
     /// <p>The list of context key selectors that are configured for the event data store.</p>
     pub context_key_selectors: ::std::option::Option<::std::vec::Vec<crate::types::ContextKeySelector>>,
+    /// <p>A list of aggregation configurations that are configured for the trail.</p>
+    pub aggregation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>,
     _request_id: Option<String>,
 }
 impl PutEventConfigurationOutput {
+    /// <p>The Amazon Resource Name (ARN) of the trail that has aggregation enabled.</p>
+    pub fn trail_arn(&self) -> ::std::option::Option<&str> {
+        self.trail_arn.as_deref()
+    }
     /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which the event configuration settings were updated.</p>
     pub fn event_data_store_arn(&self) -> ::std::option::Option<&str> {
         self.event_data_store_arn.as_deref()
@@ -25,6 +33,12 @@ impl PutEventConfigurationOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.context_key_selectors.is_none()`.
     pub fn context_key_selectors(&self) -> &[crate::types::ContextKeySelector] {
         self.context_key_selectors.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of aggregation configurations that are configured for the trail.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregation_configurations.is_none()`.
+    pub fn aggregation_configurations(&self) -> &[crate::types::AggregationConfiguration] {
+        self.aggregation_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PutEventConfigurationOutput {
@@ -43,12 +57,28 @@ impl PutEventConfigurationOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct PutEventConfigurationOutputBuilder {
+    pub(crate) trail_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_data_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_event_size: ::std::option::Option<crate::types::MaxEventSize>,
     pub(crate) context_key_selectors: ::std::option::Option<::std::vec::Vec<crate::types::ContextKeySelector>>,
+    pub(crate) aggregation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>,
     _request_id: Option<String>,
 }
 impl PutEventConfigurationOutputBuilder {
+    /// <p>The Amazon Resource Name (ARN) of the trail that has aggregation enabled.</p>
+    pub fn trail_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trail_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the trail that has aggregation enabled.</p>
+    pub fn set_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trail_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the trail that has aggregation enabled.</p>
+    pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trail_arn
+    }
     /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which the event configuration settings were updated.</p>
     pub fn event_data_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store_arn = ::std::option::Option::Some(input.into());
@@ -97,6 +127,26 @@ impl PutEventConfigurationOutputBuilder {
     pub fn get_context_key_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContextKeySelector>> {
         &self.context_key_selectors
     }
+    /// Appends an item to `aggregation_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_aggregation_configurations`](Self::set_aggregation_configurations).
+    ///
+    /// <p>A list of aggregation configurations that are configured for the trail.</p>
+    pub fn aggregation_configurations(mut self, input: crate::types::AggregationConfiguration) -> Self {
+        let mut v = self.aggregation_configurations.unwrap_or_default();
+        v.push(input);
+        self.aggregation_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of aggregation configurations that are configured for the trail.</p>
+    pub fn set_aggregation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>) -> Self {
+        self.aggregation_configurations = input;
+        self
+    }
+    /// <p>A list of aggregation configurations that are configured for the trail.</p>
+    pub fn get_aggregation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>> {
+        &self.aggregation_configurations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -109,9 +159,11 @@ impl PutEventConfigurationOutputBuilder {
     /// Consumes the builder and constructs a [`PutEventConfigurationOutput`](crate::operation::put_event_configuration::PutEventConfigurationOutput).
     pub fn build(self) -> crate::operation::put_event_configuration::PutEventConfigurationOutput {
         crate::operation::put_event_configuration::PutEventConfigurationOutput {
+            trail_arn: self.trail_arn,
             event_data_store_arn: self.event_data_store_arn,
             max_event_size: self.max_event_size,
             context_key_selectors: self.context_key_selectors,
+            aggregation_configurations: self.aggregation_configurations,
             _request_id: self._request_id,
         }
     }

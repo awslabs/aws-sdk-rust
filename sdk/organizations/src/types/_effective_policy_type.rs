@@ -16,6 +16,7 @@
 ///     EffectivePolicyType::BackupPolicy => { /* ... */ },
 ///     EffectivePolicyType::ChatbotPolicy => { /* ... */ },
 ///     EffectivePolicyType::DeclarativePolicyEc2 => { /* ... */ },
+///     EffectivePolicyType::InspectorPolicy => { /* ... */ },
 ///     EffectivePolicyType::SecurityhubPolicy => { /* ... */ },
 ///     EffectivePolicyType::TagPolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -55,6 +56,8 @@ pub enum EffectivePolicyType {
     #[allow(missing_docs)] // documentation missing in model
     DeclarativePolicyEc2,
     #[allow(missing_docs)] // documentation missing in model
+    InspectorPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityhubPolicy,
     #[allow(missing_docs)] // documentation missing in model
     TagPolicy,
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for EffectivePolicyType {
             "BACKUP_POLICY" => EffectivePolicyType::BackupPolicy,
             "CHATBOT_POLICY" => EffectivePolicyType::ChatbotPolicy,
             "DECLARATIVE_POLICY_EC2" => EffectivePolicyType::DeclarativePolicyEc2,
+            "INSPECTOR_POLICY" => EffectivePolicyType::InspectorPolicy,
             "SECURITYHUB_POLICY" => EffectivePolicyType::SecurityhubPolicy,
             "TAG_POLICY" => EffectivePolicyType::TagPolicy,
             other => EffectivePolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -90,6 +94,7 @@ impl EffectivePolicyType {
             EffectivePolicyType::BackupPolicy => "BACKUP_POLICY",
             EffectivePolicyType::ChatbotPolicy => "CHATBOT_POLICY",
             EffectivePolicyType::DeclarativePolicyEc2 => "DECLARATIVE_POLICY_EC2",
+            EffectivePolicyType::InspectorPolicy => "INSPECTOR_POLICY",
             EffectivePolicyType::SecurityhubPolicy => "SECURITYHUB_POLICY",
             EffectivePolicyType::TagPolicy => "TAG_POLICY",
             EffectivePolicyType::Unknown(value) => value.as_str(),
@@ -102,6 +107,7 @@ impl EffectivePolicyType {
             "BACKUP_POLICY",
             "CHATBOT_POLICY",
             "DECLARATIVE_POLICY_EC2",
+            "INSPECTOR_POLICY",
             "SECURITYHUB_POLICY",
             "TAG_POLICY",
         ]
@@ -131,6 +137,7 @@ impl ::std::fmt::Display for EffectivePolicyType {
             EffectivePolicyType::BackupPolicy => write!(f, "BACKUP_POLICY"),
             EffectivePolicyType::ChatbotPolicy => write!(f, "CHATBOT_POLICY"),
             EffectivePolicyType::DeclarativePolicyEc2 => write!(f, "DECLARATIVE_POLICY_EC2"),
+            EffectivePolicyType::InspectorPolicy => write!(f, "INSPECTOR_POLICY"),
             EffectivePolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             EffectivePolicyType::TagPolicy => write!(f, "TAG_POLICY"),
             EffectivePolicyType::Unknown(value) => write!(f, "{value}"),

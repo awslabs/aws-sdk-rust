@@ -272,6 +272,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeBudge
 pub enum DescribeBudgetPerformanceHistoryError {
     /// <p>You are not authorized to use this operation with the given parameters.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The billing view status must be HEALTHY to perform this action. Try again when the status is HEALTHY.</p>
+    BillingViewHealthStatusException(crate::types::error::BillingViewHealthStatusException),
     /// <p>The pagination token expired.</p>
     ExpiredNextTokenException(crate::types::error::ExpiredNextTokenException),
     /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
@@ -318,6 +320,7 @@ impl DescribeBudgetPerformanceHistoryError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::BillingViewHealthStatusException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ExpiredNextTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidNextTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -330,6 +333,10 @@ impl DescribeBudgetPerformanceHistoryError {
     /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryError::BillingViewHealthStatusException`.
+    pub fn is_billing_view_health_status_exception(&self) -> bool {
+        matches!(self, Self::BillingViewHealthStatusException(_))
     }
     /// Returns `true` if the error kind is `DescribeBudgetPerformanceHistoryError::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
@@ -360,6 +367,7 @@ impl ::std::error::Error for DescribeBudgetPerformanceHistoryError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::BillingViewHealthStatusException(_inner) => ::std::option::Option::Some(_inner),
             Self::ExpiredNextTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidNextTokenException(_inner) => ::std::option::Option::Some(_inner),
@@ -374,6 +382,7 @@ impl ::std::fmt::Display for DescribeBudgetPerformanceHistoryError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::BillingViewHealthStatusException(_inner) => _inner.fmt(f),
             Self::ExpiredNextTokenException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidNextTokenException(_inner) => _inner.fmt(f),
@@ -402,6 +411,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeBudge
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BillingViewHealthStatusException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ExpiredNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

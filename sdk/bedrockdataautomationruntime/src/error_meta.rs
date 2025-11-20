@@ -11,6 +11,8 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// This exception will be thrown when service quota is exceeded.
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// This exception will be thrown when service is temporarily unavailable.
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// This exception will be thrown when customer reached API TPS limit.
     ThrottlingException(crate::types::error::ThrottlingException),
     /// This exception will be thrown when customer provided invalid parameters.
@@ -31,6 +33,7 @@ impl ::std::fmt::Display for Error {
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -58,6 +61,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -100,6 +104,36 @@ impl From<crate::operation::get_data_automation_status::GetDataAutomationStatusE
                 Error::ValidationException(inner)
             }
             crate::operation::get_data_automation_status::GetDataAutomationStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_data_automation::InvokeDataAutomationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_data_automation::InvokeDataAutomationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_data_automation::InvokeDataAutomationError> for Error {
+    fn from(err: crate::operation::invoke_data_automation::InvokeDataAutomationError) -> Self {
+        match err {
+            crate::operation::invoke_data_automation::InvokeDataAutomationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invoke_data_automation::InvokeDataAutomationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::invoke_data_automation::InvokeDataAutomationError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::invoke_data_automation::InvokeDataAutomationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_data_automation::InvokeDataAutomationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::invoke_data_automation::InvokeDataAutomationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -232,6 +266,7 @@ impl ::std::error::Error for Error {
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::ServiceUnavailableException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -245,6 +280,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

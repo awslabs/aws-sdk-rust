@@ -227,17 +227,17 @@ pub(crate) fn de_describe_statement(
                             .transpose()?,
                     );
                 }
-                "SessionId" => {
-                    builder = builder.set_session_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
                 "ResultFormat" => {
                     builder = builder.set_result_format(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::ResultFormatString::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "SessionId" => {
+                    builder = builder.set_session_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

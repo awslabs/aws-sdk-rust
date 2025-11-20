@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `GetDataAutomationStatus` operation.
 pub mod get_data_automation_status;
 
+/// Types for the `InvokeDataAutomation` operation.
+pub mod invoke_data_automation;
+
 /// Types for the `InvokeDataAutomationAsync` operation.
 pub mod invoke_data_automation_async;
 

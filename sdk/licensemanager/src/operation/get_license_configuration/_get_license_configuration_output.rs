@@ -37,6 +37,8 @@ pub struct GetLicenseConfigurationOutput {
     pub automated_discovery_information: ::std::option::Option<crate::types::AutomatedDiscoveryInformation>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub disassociate_when_not_found: ::std::option::Option<bool>,
+    /// <p>License Expiry.</p>
+    pub license_expiry: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetLicenseConfigurationOutput {
@@ -118,6 +120,10 @@ impl GetLicenseConfigurationOutput {
     pub fn disassociate_when_not_found(&self) -> ::std::option::Option<bool> {
         self.disassociate_when_not_found
     }
+    /// <p>License Expiry.</p>
+    pub fn license_expiry(&self) -> ::std::option::Option<i64> {
+        self.license_expiry
+    }
 }
 impl ::aws_types::request_id::RequestId for GetLicenseConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -152,6 +158,7 @@ pub struct GetLicenseConfigurationOutputBuilder {
     pub(crate) product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
     pub(crate) automated_discovery_information: ::std::option::Option<crate::types::AutomatedDiscoveryInformation>,
     pub(crate) disassociate_when_not_found: ::std::option::Option<bool>,
+    pub(crate) license_expiry: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetLicenseConfigurationOutputBuilder {
@@ -423,6 +430,20 @@ impl GetLicenseConfigurationOutputBuilder {
     pub fn get_disassociate_when_not_found(&self) -> &::std::option::Option<bool> {
         &self.disassociate_when_not_found
     }
+    /// <p>License Expiry.</p>
+    pub fn license_expiry(mut self, input: i64) -> Self {
+        self.license_expiry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>License Expiry.</p>
+    pub fn set_license_expiry(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.license_expiry = input;
+        self
+    }
+    /// <p>License Expiry.</p>
+    pub fn get_license_expiry(&self) -> &::std::option::Option<i64> {
+        &self.license_expiry
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -452,6 +473,7 @@ impl GetLicenseConfigurationOutputBuilder {
             product_information_list: self.product_information_list,
             automated_discovery_information: self.automated_discovery_information,
             disassociate_when_not_found: self.disassociate_when_not_found,
+            license_expiry: self.license_expiry,
             _request_id: self._request_id,
         }
     }

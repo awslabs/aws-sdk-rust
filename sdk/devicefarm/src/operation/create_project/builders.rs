@@ -150,4 +150,40 @@ impl CreateProjectFluentBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         self.inner.get_vpc_config()
     }
+    ///
+    /// Appends an item to `environmentVariables`.
+    ///
+    /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+    ///
+    /// <p>A set of environment variables which are used by default for all runs in the project. These environment variables are applied to the test run during the execution of a test spec file.</p>
+    /// <p>For more information about using test spec files, please see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/custom-test-environments.html">Custom test environments </a> in <i>AWS Device Farm.</i></p>
+    pub fn environment_variables(mut self, input: crate::types::EnvironmentVariable) -> Self {
+        self.inner = self.inner.environment_variables(input);
+        self
+    }
+    /// <p>A set of environment variables which are used by default for all runs in the project. These environment variables are applied to the test run during the execution of a test spec file.</p>
+    /// <p>For more information about using test spec files, please see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/custom-test-environments.html">Custom test environments </a> in <i>AWS Device Farm.</i></p>
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
+        self.inner = self.inner.set_environment_variables(input);
+        self
+    }
+    /// <p>A set of environment variables which are used by default for all runs in the project. These environment variables are applied to the test run during the execution of a test spec file.</p>
+    /// <p>For more information about using test spec files, please see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/custom-test-environments.html">Custom test environments </a> in <i>AWS Device Farm.</i></p>
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+        self.inner.get_environment_variables()
+    }
+    /// <p>An IAM role to be assumed by the test host for all runs in the project.</p>
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.execution_role_arn(input.into());
+        self
+    }
+    /// <p>An IAM role to be assumed by the test host for all runs in the project.</p>
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_execution_role_arn(input);
+        self
+    }
+    /// <p>An IAM role to be assumed by the test host for all runs in the project.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role_arn()
+    }
 }

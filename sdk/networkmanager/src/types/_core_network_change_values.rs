@@ -28,6 +28,16 @@ pub struct CoreNetworkChangeValues {
     pub dns_support: bool,
     /// <p>Indicates whether security group referencing is enabled for the core network.</p>
     pub security_group_referencing_support: bool,
+    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    pub routing_policy_direction: ::std::option::Option<crate::types::RoutingPolicyDirection>,
+    /// <p>The routing policy configuration in the core network change values.</p>
+    pub routing_policy: ::std::option::Option<::std::string::String>,
+    /// <p>The edge locations of peers in the core network change values.</p>
+    pub peer_edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The attachment identifier in the core network change values.</p>
+    pub attachment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    pub routing_policy_association_details: ::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>>,
 }
 impl CoreNetworkChangeValues {
     /// <p>The names of the segments in a core network.</p>
@@ -86,6 +96,30 @@ impl CoreNetworkChangeValues {
     pub fn security_group_referencing_support(&self) -> bool {
         self.security_group_referencing_support
     }
+    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    pub fn routing_policy_direction(&self) -> ::std::option::Option<&crate::types::RoutingPolicyDirection> {
+        self.routing_policy_direction.as_ref()
+    }
+    /// <p>The routing policy configuration in the core network change values.</p>
+    pub fn routing_policy(&self) -> ::std::option::Option<&str> {
+        self.routing_policy.as_deref()
+    }
+    /// <p>The edge locations of peers in the core network change values.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.peer_edge_locations.is_none()`.
+    pub fn peer_edge_locations(&self) -> &[::std::string::String] {
+        self.peer_edge_locations.as_deref().unwrap_or_default()
+    }
+    /// <p>The attachment identifier in the core network change values.</p>
+    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+        self.attachment_id.as_deref()
+    }
+    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_policy_association_details.is_none()`.
+    pub fn routing_policy_association_details(&self) -> &[crate::types::RoutingPolicyAssociationDetail] {
+        self.routing_policy_association_details.as_deref().unwrap_or_default()
+    }
 }
 impl CoreNetworkChangeValues {
     /// Creates a new builder-style object to manufacture [`CoreNetworkChangeValues`](crate::types::CoreNetworkChangeValues).
@@ -110,6 +144,11 @@ pub struct CoreNetworkChangeValuesBuilder {
     pub(crate) vpn_ecmp_support: ::std::option::Option<bool>,
     pub(crate) dns_support: ::std::option::Option<bool>,
     pub(crate) security_group_referencing_support: ::std::option::Option<bool>,
+    pub(crate) routing_policy_direction: ::std::option::Option<crate::types::RoutingPolicyDirection>,
+    pub(crate) routing_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) peer_edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_policy_association_details: ::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>>,
 }
 impl CoreNetworkChangeValuesBuilder {
     /// <p>The names of the segments in a core network.</p>
@@ -304,6 +343,91 @@ impl CoreNetworkChangeValuesBuilder {
     pub fn get_security_group_referencing_support(&self) -> &::std::option::Option<bool> {
         &self.security_group_referencing_support
     }
+    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    pub fn routing_policy_direction(mut self, input: crate::types::RoutingPolicyDirection) -> Self {
+        self.routing_policy_direction = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    pub fn set_routing_policy_direction(mut self, input: ::std::option::Option<crate::types::RoutingPolicyDirection>) -> Self {
+        self.routing_policy_direction = input;
+        self
+    }
+    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    pub fn get_routing_policy_direction(&self) -> &::std::option::Option<crate::types::RoutingPolicyDirection> {
+        &self.routing_policy_direction
+    }
+    /// <p>The routing policy configuration in the core network change values.</p>
+    pub fn routing_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.routing_policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The routing policy configuration in the core network change values.</p>
+    pub fn set_routing_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.routing_policy = input;
+        self
+    }
+    /// <p>The routing policy configuration in the core network change values.</p>
+    pub fn get_routing_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_policy
+    }
+    /// Appends an item to `peer_edge_locations`.
+    ///
+    /// To override the contents of this collection use [`set_peer_edge_locations`](Self::set_peer_edge_locations).
+    ///
+    /// <p>The edge locations of peers in the core network change values.</p>
+    pub fn peer_edge_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.peer_edge_locations.unwrap_or_default();
+        v.push(input.into());
+        self.peer_edge_locations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The edge locations of peers in the core network change values.</p>
+    pub fn set_peer_edge_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.peer_edge_locations = input;
+        self
+    }
+    /// <p>The edge locations of peers in the core network change values.</p>
+    pub fn get_peer_edge_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.peer_edge_locations
+    }
+    /// <p>The attachment identifier in the core network change values.</p>
+    pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.attachment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The attachment identifier in the core network change values.</p>
+    pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.attachment_id = input;
+        self
+    }
+    /// <p>The attachment identifier in the core network change values.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
+    /// Appends an item to `routing_policy_association_details`.
+    ///
+    /// To override the contents of this collection use [`set_routing_policy_association_details`](Self::set_routing_policy_association_details).
+    ///
+    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    pub fn routing_policy_association_details(mut self, input: crate::types::RoutingPolicyAssociationDetail) -> Self {
+        let mut v = self.routing_policy_association_details.unwrap_or_default();
+        v.push(input);
+        self.routing_policy_association_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    pub fn set_routing_policy_association_details(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>>,
+    ) -> Self {
+        self.routing_policy_association_details = input;
+        self
+    }
+    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    pub fn get_routing_policy_association_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>> {
+        &self.routing_policy_association_details
+    }
     /// Consumes the builder and constructs a [`CoreNetworkChangeValues`](crate::types::CoreNetworkChangeValues).
     pub fn build(self) -> crate::types::CoreNetworkChangeValues {
         crate::types::CoreNetworkChangeValues {
@@ -319,6 +443,11 @@ impl CoreNetworkChangeValuesBuilder {
             vpn_ecmp_support: self.vpn_ecmp_support.unwrap_or_default(),
             dns_support: self.dns_support.unwrap_or_default(),
             security_group_referencing_support: self.security_group_referencing_support.unwrap_or_default(),
+            routing_policy_direction: self.routing_policy_direction,
+            routing_policy: self.routing_policy,
+            peer_edge_locations: self.peer_edge_locations,
+            attachment_id: self.attachment_id,
+            routing_policy_association_details: self.routing_policy_association_details,
         }
     }
 }

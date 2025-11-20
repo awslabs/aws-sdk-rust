@@ -14,6 +14,8 @@ pub struct AnycastIpList {
     pub arn: ::std::string::String,
     /// <p>The IP address type for the Anycast static IP list.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    /// <p>The IPAM configuration for the Anycast static IP list, that contains the quantity and list of IPAM CIDR configurations.</p>
+    pub ipam_config: ::std::option::Option<crate::types::IpamConfig>,
     /// <p>The static IP addresses that are allocated to the Anycast static IP list.</p>
     pub anycast_ips: ::std::vec::Vec<::std::string::String>,
     /// <p>The number of IP addresses in the Anycast static IP list.</p>
@@ -46,6 +48,10 @@ impl AnycastIpList {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>The IPAM configuration for the Anycast static IP list, that contains the quantity and list of IPAM CIDR configurations.</p>
+    pub fn ipam_config(&self) -> ::std::option::Option<&crate::types::IpamConfig> {
+        self.ipam_config.as_ref()
+    }
     /// <p>The static IP addresses that are allocated to the Anycast static IP list.</p>
     pub fn anycast_ips(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -76,6 +82,7 @@ pub struct AnycastIpListBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) ipam_config: ::std::option::Option<crate::types::IpamConfig>,
     pub(crate) anycast_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_count: ::std::option::Option<i32>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -154,6 +161,20 @@ impl AnycastIpListBuilder {
     /// <p>The IP address type for the Anycast static IP list.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
+    }
+    /// <p>The IPAM configuration for the Anycast static IP list, that contains the quantity and list of IPAM CIDR configurations.</p>
+    pub fn ipam_config(mut self, input: crate::types::IpamConfig) -> Self {
+        self.ipam_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IPAM configuration for the Anycast static IP list, that contains the quantity and list of IPAM CIDR configurations.</p>
+    pub fn set_ipam_config(mut self, input: ::std::option::Option<crate::types::IpamConfig>) -> Self {
+        self.ipam_config = input;
+        self
+    }
+    /// <p>The IPAM configuration for the Anycast static IP list, that contains the quantity and list of IPAM CIDR configurations.</p>
+    pub fn get_ipam_config(&self) -> &::std::option::Option<crate::types::IpamConfig> {
+        &self.ipam_config
     }
     /// Appends an item to `anycast_ips`.
     ///
@@ -241,6 +262,7 @@ impl AnycastIpListBuilder {
                 )
             })?,
             ip_address_type: self.ip_address_type,
+            ipam_config: self.ipam_config,
             anycast_ips: self.anycast_ips.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "anycast_ips",

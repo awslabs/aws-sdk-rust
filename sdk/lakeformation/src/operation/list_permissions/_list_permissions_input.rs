@@ -16,7 +16,8 @@ pub struct ListPermissionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Indicates that related permissions should be included in the results.</p>
+    /// <p>Indicates that related permissions should be included in the results when listing permissions on a table resource.</p>
+    /// <p>Set the field to <code>TRUE</code> to show the cell filters on a table resource. Default is <code>FALSE</code>. The Principal parameter must not be specified when requesting cell filter information.</p>
     pub include_related: ::std::option::Option<::std::string::String>,
 }
 impl ListPermissionsInput {
@@ -45,7 +46,8 @@ impl ListPermissionsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Indicates that related permissions should be included in the results.</p>
+    /// <p>Indicates that related permissions should be included in the results when listing permissions on a table resource.</p>
+    /// <p>Set the field to <code>TRUE</code> to show the cell filters on a table resource. Default is <code>FALSE</code>. The Principal parameter must not be specified when requesting cell filter information.</p>
     pub fn include_related(&self) -> ::std::option::Option<&str> {
         self.include_related.as_deref()
     }
@@ -157,17 +159,20 @@ impl ListPermissionsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Indicates that related permissions should be included in the results.</p>
+    /// <p>Indicates that related permissions should be included in the results when listing permissions on a table resource.</p>
+    /// <p>Set the field to <code>TRUE</code> to show the cell filters on a table resource. Default is <code>FALSE</code>. The Principal parameter must not be specified when requesting cell filter information.</p>
     pub fn include_related(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.include_related = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates that related permissions should be included in the results.</p>
+    /// <p>Indicates that related permissions should be included in the results when listing permissions on a table resource.</p>
+    /// <p>Set the field to <code>TRUE</code> to show the cell filters on a table resource. Default is <code>FALSE</code>. The Principal parameter must not be specified when requesting cell filter information.</p>
     pub fn set_include_related(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.include_related = input;
         self
     }
-    /// <p>Indicates that related permissions should be included in the results.</p>
+    /// <p>Indicates that related permissions should be included in the results when listing permissions on a table resource.</p>
+    /// <p>Set the field to <code>TRUE</code> to show the cell filters on a table resource. Default is <code>FALSE</code>. The Principal parameter must not be specified when requesting cell filter information.</p>
     pub fn get_include_related(&self) -> &::std::option::Option<::std::string::String> {
         &self.include_related
     }

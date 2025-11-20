@@ -13,6 +13,8 @@ pub struct CreateLakeFormationIdentityCenterConfigurationInput {
     /// <p>If the <code>ShareRecipients</code> list includes valid values, a resource share is created with the principals you want to have access to the resources.</p>
     /// <p>If the <code>ShareRecipients</code> value is null or the list is empty, no resource share is created.</p>
     pub share_recipients: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>>,
 }
 impl CreateLakeFormationIdentityCenterConfigurationInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment.</p>
@@ -35,6 +37,12 @@ impl CreateLakeFormationIdentityCenterConfigurationInput {
     pub fn share_recipients(&self) -> &[crate::types::DataLakePrincipal] {
         self.share_recipients.as_deref().unwrap_or_default()
     }
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_integrations.is_none()`.
+    pub fn service_integrations(&self) -> &[crate::types::ServiceIntegrationUnion] {
+        self.service_integrations.as_deref().unwrap_or_default()
+    }
 }
 impl CreateLakeFormationIdentityCenterConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateLakeFormationIdentityCenterConfigurationInput`](crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationInput).
@@ -53,6 +61,7 @@ pub struct CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) external_filtering: ::std::option::Option<crate::types::ExternalFilteringConfiguration>,
     pub(crate) share_recipients: ::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>>,
+    pub(crate) service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>>,
 }
 impl CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment.</p>
@@ -123,6 +132,26 @@ impl CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     pub fn get_share_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakePrincipal>> {
         &self.share_recipients
     }
+    /// Appends an item to `service_integrations`.
+    ///
+    /// To override the contents of this collection use [`set_service_integrations`](Self::set_service_integrations).
+    ///
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn service_integrations(mut self, input: crate::types::ServiceIntegrationUnion) -> Self {
+        let mut v = self.service_integrations.unwrap_or_default();
+        v.push(input);
+        self.service_integrations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn set_service_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>>) -> Self {
+        self.service_integrations = input;
+        self
+    }
+    /// <p>A list of service integrations for enabling trusted identity propagation with external services such as Redshift.</p>
+    pub fn get_service_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationUnion>> {
+        &self.service_integrations
+    }
     /// Consumes the builder and constructs a [`CreateLakeFormationIdentityCenterConfigurationInput`](crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationInput).
     pub fn build(
         self,
@@ -136,6 +165,7 @@ impl CreateLakeFormationIdentityCenterConfigurationInputBuilder {
                 instance_arn: self.instance_arn,
                 external_filtering: self.external_filtering,
                 share_recipients: self.share_recipients,
+                service_integrations: self.service_integrations,
             },
         )
     }

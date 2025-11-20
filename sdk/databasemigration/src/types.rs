@@ -87,6 +87,8 @@ pub use crate::types::_event_subscription::EventSubscription;
 
 pub use crate::types::_endpoint::Endpoint;
 
+pub use crate::types::_lakehouse_settings::LakehouseSettings;
+
 pub use crate::types::_timestream_settings::TimestreamSettings;
 
 pub use crate::types::_gcp_my_sql_settings::GcpMySqlSettings;
@@ -436,6 +438,8 @@ mod _kafka_ssl_endpoint_identification_algorithm;
 mod _kerberos_authentication_settings;
 
 mod _kinesis_settings;
+
+mod _lakehouse_settings;
 
 mod _limitation;
 

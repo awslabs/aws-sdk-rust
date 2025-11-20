@@ -83,6 +83,19 @@ pub fn de_byoip_cidr(
                 builder = builder.set_network_border_group(var_6);
             }
             ,
+            s if s.matches("advertisementType") /* AdvertisementType com.amazonaws.ec2#ByoipCidr$AdvertisementType */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_advertisement_type(var_7);
+            }
+            ,
             _ => {}
         }
     }

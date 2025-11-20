@@ -129,6 +129,18 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "currentServiceDeployment" => {
+                            builder = builder.set_current_service_deployment(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "currentServiceRevisions" => {
+                            builder = builder.set_current_service_revisions(
+                                crate::protocol_serde::shape_service_current_revision_summary_list::de_service_current_revision_summary_list(tokens)?,
+                            );
+                        }
                         "placementConstraints" => {
                             builder = builder
                                 .set_placement_constraints(crate::protocol_serde::shape_placement_constraints::de_placement_constraints(tokens)?);
@@ -186,6 +198,13 @@ where
                             builder = builder.set_availability_zone_rebalancing(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AvailabilityZoneRebalancing::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "resourceManagementType" => {
+                            builder = builder.set_resource_management_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResourceManagementType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

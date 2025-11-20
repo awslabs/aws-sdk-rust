@@ -74,6 +74,8 @@ pub struct Replication {
     pub replication_last_stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when DMS will deprovision the replication.</p>
     pub replication_deprovision_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Indicates whether the serverless replication is read-only. When set to <code>true</code>, this replication is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only replications through their associated zero-ETL integration.</p>
+    pub is_read_only: ::std::option::Option<bool>,
 }
 impl Replication {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
@@ -190,6 +192,10 @@ impl Replication {
     pub fn replication_deprovision_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replication_deprovision_time.as_ref()
     }
+    /// <p>Indicates whether the serverless replication is read-only. When set to <code>true</code>, this replication is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only replications through their associated zero-ETL integration.</p>
+    pub fn is_read_only(&self) -> ::std::option::Option<bool> {
+        self.is_read_only
+    }
 }
 impl Replication {
     /// Creates a new builder-style object to manufacture [`Replication`](crate::types::Replication).
@@ -222,6 +228,7 @@ pub struct ReplicationBuilder {
     pub(crate) replication_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) replication_last_stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) replication_deprovision_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) is_read_only: ::std::option::Option<bool>,
 }
 impl ReplicationBuilder {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
@@ -609,6 +616,20 @@ impl ReplicationBuilder {
     pub fn get_replication_deprovision_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.replication_deprovision_time
     }
+    /// <p>Indicates whether the serverless replication is read-only. When set to <code>true</code>, this replication is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only replications through their associated zero-ETL integration.</p>
+    pub fn is_read_only(mut self, input: bool) -> Self {
+        self.is_read_only = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the serverless replication is read-only. When set to <code>true</code>, this replication is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only replications through their associated zero-ETL integration.</p>
+    pub fn set_is_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_read_only = input;
+        self
+    }
+    /// <p>Indicates whether the serverless replication is read-only. When set to <code>true</code>, this replication is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only replications through their associated zero-ETL integration.</p>
+    pub fn get_is_read_only(&self) -> &::std::option::Option<bool> {
+        &self.is_read_only
+    }
     /// Consumes the builder and constructs a [`Replication`](crate::types::Replication).
     pub fn build(self) -> crate::types::Replication {
         crate::types::Replication {
@@ -632,6 +653,7 @@ impl ReplicationBuilder {
             replication_update_time: self.replication_update_time,
             replication_last_stop_time: self.replication_last_stop_time,
             replication_deprovision_time: self.replication_deprovision_time,
+            is_read_only: self.is_read_only,
         }
     }
 }

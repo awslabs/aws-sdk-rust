@@ -20,6 +20,8 @@ pub struct ClusterNodeSummary {
     pub instance_status: ::std::option::Option<crate::types::ClusterInstanceStatusDetails>,
     /// <p>Contains information about the UltraServer.</p>
     pub ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
+    /// <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+    pub private_dns_hostname: ::std::option::Option<::std::string::String>,
 }
 impl ClusterNodeSummary {
     /// <p>The name of the instance group in which the instance is.</p>
@@ -54,6 +56,10 @@ impl ClusterNodeSummary {
     pub fn ultra_server_info(&self) -> ::std::option::Option<&crate::types::UltraServerInfo> {
         self.ultra_server_info.as_ref()
     }
+    /// <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+    pub fn private_dns_hostname(&self) -> ::std::option::Option<&str> {
+        self.private_dns_hostname.as_deref()
+    }
 }
 impl ClusterNodeSummary {
     /// Creates a new builder-style object to manufacture [`ClusterNodeSummary`](crate::types::ClusterNodeSummary).
@@ -74,6 +80,7 @@ pub struct ClusterNodeSummaryBuilder {
     pub(crate) last_software_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) instance_status: ::std::option::Option<crate::types::ClusterInstanceStatusDetails>,
     pub(crate) ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
+    pub(crate) private_dns_hostname: ::std::option::Option<::std::string::String>,
 }
 impl ClusterNodeSummaryBuilder {
     /// <p>The name of the instance group in which the instance is.</p>
@@ -193,6 +200,20 @@ impl ClusterNodeSummaryBuilder {
     pub fn get_ultra_server_info(&self) -> &::std::option::Option<crate::types::UltraServerInfo> {
         &self.ultra_server_info
     }
+    /// <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+    pub fn private_dns_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.private_dns_hostname = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+    pub fn set_private_dns_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.private_dns_hostname = input;
+        self
+    }
+    /// <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
+    pub fn get_private_dns_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_hostname
+    }
     /// Consumes the builder and constructs a [`ClusterNodeSummary`](crate::types::ClusterNodeSummary).
     pub fn build(self) -> crate::types::ClusterNodeSummary {
         crate::types::ClusterNodeSummary {
@@ -204,6 +225,7 @@ impl ClusterNodeSummaryBuilder {
             last_software_update_time: self.last_software_update_time,
             instance_status: self.instance_status,
             ultra_server_info: self.ultra_server_info,
+            private_dns_hostname: self.private_dns_hostname,
         }
     }
 }

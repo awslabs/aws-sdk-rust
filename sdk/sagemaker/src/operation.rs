@@ -22,6 +22,12 @@ pub mod batch_delete_cluster_nodes;
 /// Types for the `BatchDescribeModelPackage` operation.
 pub mod batch_describe_model_package;
 
+/// Types for the `BatchRebootClusterNodes` operation.
+pub mod batch_reboot_cluster_nodes;
+
+/// Types for the `BatchReplaceClusterNodes` operation.
+pub mod batch_replace_cluster_nodes;
+
 /// Types for the `CreateAction` operation.
 pub mod create_action;
 

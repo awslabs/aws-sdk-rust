@@ -21,6 +21,22 @@ pub struct AutoScalingInstanceDetails {
     pub launch_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The launch template for the instance.</p>
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
+    /// <p>The ID of the Amazon Machine Image (AMI) associated with the instance. This field shows the current AMI ID of the instance's root volume. It may differ from the original AMI used when the instance was first launched.</p>
+    /// <p>This field appears for:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Instances with root volume replacements through Instance Refresh</p></li>
+    /// <li>
+    /// <p>Instances launched with AMI overrides</p></li>
+    /// </ul>
+    /// <p>This field won't appear for:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Existing instances launched from Launch Templates without overrides</p></li>
+    /// <li>
+    /// <p>Existing instances that didn’t have their root volume replaced through Instance Refresh</p></li>
+    /// </ul>
+    pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
     pub protected_from_scale_in: ::std::option::Option<bool>,
     /// <p>The number of capacity units contributed by the instance based on its instance type.</p>
@@ -61,6 +77,24 @@ impl AutoScalingInstanceDetails {
     pub fn launch_template(&self) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
+    /// <p>The ID of the Amazon Machine Image (AMI) associated with the instance. This field shows the current AMI ID of the instance's root volume. It may differ from the original AMI used when the instance was first launched.</p>
+    /// <p>This field appears for:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Instances with root volume replacements through Instance Refresh</p></li>
+    /// <li>
+    /// <p>Instances launched with AMI overrides</p></li>
+    /// </ul>
+    /// <p>This field won't appear for:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Existing instances launched from Launch Templates without overrides</p></li>
+    /// <li>
+    /// <p>Existing instances that didn’t have their root volume replaced through Instance Refresh</p></li>
+    /// </ul>
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
     pub fn protected_from_scale_in(&self) -> ::std::option::Option<bool> {
         self.protected_from_scale_in
@@ -90,6 +124,7 @@ pub struct AutoScalingInstanceDetailsBuilder {
     pub(crate) health_status: ::std::option::Option<::std::string::String>,
     pub(crate) launch_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) protected_from_scale_in: ::std::option::Option<bool>,
     pub(crate) weighted_capacity: ::std::option::Option<::std::string::String>,
 }
@@ -214,6 +249,62 @@ impl AutoScalingInstanceDetailsBuilder {
     pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
         &self.launch_template
     }
+    /// <p>The ID of the Amazon Machine Image (AMI) associated with the instance. This field shows the current AMI ID of the instance's root volume. It may differ from the original AMI used when the instance was first launched.</p>
+    /// <p>This field appears for:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Instances with root volume replacements through Instance Refresh</p></li>
+    /// <li>
+    /// <p>Instances launched with AMI overrides</p></li>
+    /// </ul>
+    /// <p>This field won't appear for:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Existing instances launched from Launch Templates without overrides</p></li>
+    /// <li>
+    /// <p>Existing instances that didn’t have their root volume replaced through Instance Refresh</p></li>
+    /// </ul>
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) associated with the instance. This field shows the current AMI ID of the instance's root volume. It may differ from the original AMI used when the instance was first launched.</p>
+    /// <p>This field appears for:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Instances with root volume replacements through Instance Refresh</p></li>
+    /// <li>
+    /// <p>Instances launched with AMI overrides</p></li>
+    /// </ul>
+    /// <p>This field won't appear for:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Existing instances launched from Launch Templates without overrides</p></li>
+    /// <li>
+    /// <p>Existing instances that didn’t have their root volume replaced through Instance Refresh</p></li>
+    /// </ul>
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_id = input;
+        self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) associated with the instance. This field shows the current AMI ID of the instance's root volume. It may differ from the original AMI used when the instance was first launched.</p>
+    /// <p>This field appears for:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Instances with root volume replacements through Instance Refresh</p></li>
+    /// <li>
+    /// <p>Instances launched with AMI overrides</p></li>
+    /// </ul>
+    /// <p>This field won't appear for:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Existing instances launched from Launch Templates without overrides</p></li>
+    /// <li>
+    /// <p>Existing instances that didn’t have their root volume replaced through Instance Refresh</p></li>
+    /// </ul>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
     /// This field is required.
     pub fn protected_from_scale_in(mut self, input: bool) -> Self {
@@ -257,6 +348,7 @@ impl AutoScalingInstanceDetailsBuilder {
             health_status: self.health_status,
             launch_configuration_name: self.launch_configuration_name,
             launch_template: self.launch_template,
+            image_id: self.image_id,
             protected_from_scale_in: self.protected_from_scale_in,
             weighted_capacity: self.weighted_capacity,
         }

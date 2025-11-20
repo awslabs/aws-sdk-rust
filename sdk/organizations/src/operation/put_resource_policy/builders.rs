@@ -23,7 +23,7 @@ impl crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuil
 /// Fluent builder constructing a request to `PutResourcePolicy`.
 ///
 /// <p>Creates or updates a resource policy.</p>
-/// <p>This operation can be called only from the organization's management account..</p>
+/// <p>You can only call this operation from the management account..</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -171,3 +171,12 @@ pub(crate) fn table_with_columns_resource_correct_errors(
     }
     builder
 }
+
+pub(crate) fn redshift_connect_correct_errors(
+    mut builder: crate::types::builders::RedshiftConnectBuilder,
+) -> crate::types::builders::RedshiftConnectBuilder {
+    if builder.authorization.is_none() {
+        builder.authorization = "no value was set".parse::<crate::types::ServiceAuthorization>().ok()
+    }
+    builder
+}

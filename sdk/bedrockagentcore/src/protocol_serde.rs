@@ -71,6 +71,8 @@ pub(crate) mod shape_list_code_interpreter_sessions;
 
 pub(crate) mod shape_list_events;
 
+pub(crate) mod shape_list_memory_extraction_jobs;
+
 pub(crate) mod shape_list_memory_records;
 
 pub(crate) mod shape_list_sessions;
@@ -80,6 +82,8 @@ pub(crate) mod shape_retrieve_memory_records;
 pub(crate) mod shape_start_browser_session;
 
 pub(crate) mod shape_start_code_interpreter_session;
+
+pub(crate) mod shape_start_memory_extraction_job;
 
 pub(crate) mod shape_stop_browser_session;
 
@@ -141,6 +145,8 @@ pub(crate) mod shape_list_code_interpreter_sessions_input;
 
 pub(crate) mod shape_list_events_input;
 
+pub(crate) mod shape_list_memory_extraction_jobs_input;
+
 pub(crate) mod shape_list_memory_records_input;
 
 pub(crate) mod shape_list_sessions_input;
@@ -158,6 +164,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_start_browser_session_input;
 
 pub(crate) mod shape_start_code_interpreter_session_input;
+
+pub(crate) mod shape_start_memory_extraction_job_input;
 
 pub(crate) mod shape_stop_browser_session_input;
 
@@ -198,6 +206,12 @@ pub(crate) mod shape_code_interpreter_session_summaries;
 pub(crate) mod shape_event;
 
 pub(crate) mod shape_event_list;
+
+pub(crate) mod shape_extraction_job;
+
+pub(crate) mod shape_extraction_job_filter_input;
+
+pub(crate) mod shape_extraction_job_metadata_list;
 
 pub(crate) mod shape_filter_input;
 
@@ -249,6 +263,8 @@ pub(crate) mod shape_conversational;
 
 pub(crate) mod shape_event_metadata_filter_expression;
 
+pub(crate) mod shape_extraction_job_metadata;
+
 pub(crate) mod shape_input_content_block;
 
 pub(crate) mod shape_live_view_stream;
@@ -271,14 +287,20 @@ pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_content;
 
+pub(crate) mod shape_extraction_job_messages;
+
 pub(crate) mod shape_left_expression;
 
 pub(crate) mod shape_right_expression;
 
 pub(crate) mod shape_content_block_list;
 
+pub(crate) mod shape_messages_list;
+
 pub(crate) mod shape_tool_result_structured_content;
 
 pub(crate) mod shape_content_block;
+
+pub(crate) mod shape_message_metadata;
 
 pub(crate) mod shape_resource_content;

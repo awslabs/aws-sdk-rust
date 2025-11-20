@@ -29,6 +29,8 @@ pub use crate::types::_event_selector::EventSelectorBuilder;
 
 pub use crate::types::_data_resource::DataResourceBuilder;
 
+pub use crate::types::_aggregation_configuration::AggregationConfigurationBuilder;
+
 pub use crate::types::_context_key_selector::ContextKeySelectorBuilder;
 
 pub use crate::types::_event::EventBuilder;

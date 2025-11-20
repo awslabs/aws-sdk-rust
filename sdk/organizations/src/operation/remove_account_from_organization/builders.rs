@@ -24,7 +24,7 @@ impl crate::operation::remove_account_from_organization::builders::RemoveAccount
 ///
 /// <p>Removes the specified account from the organization.</p>
 /// <p>The removed account becomes a standalone account that isn't a member of any organization. It's no longer subject to any policies and is responsible for its own bill payments. The organization's management account is no longer charged for any expenses accrued by the member account after it's removed from the organization.</p>
-/// <p>This operation can be called only from the organization's management account. Member accounts can remove themselves with <code>LeaveOrganization</code> instead.</p><important>
+/// <p>You can only call this operation from the management account. Member accounts can remove themselves with <code>LeaveOrganization</code> instead.</p><important>
 /// <ul>
 /// <li>
 /// <p>You can remove an account from your organization only if the account is configured with the information required to operate as a standalone account. When you create an account in an organization using the Organizations console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically collected. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations before removing an account from an organization</a> in the <i>Organizations User Guide</i>.</p></li>
@@ -119,19 +119,19 @@ impl RemoveAccountFromOrganizationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+    /// <p>ID for the member account that you want to remove from the organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+    /// <p>ID for the member account that you want to remove from the organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the member account that you want to remove from the organization.</p>
+    /// <p>ID for the member account that you want to remove from the organization.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()

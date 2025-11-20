@@ -22,7 +22,7 @@ impl crate::operation::connector_registrations_v2::builders::ConnectorRegistrati
 }
 /// Fluent builder constructing a request to `ConnectorRegistrationsV2`.
 ///
-/// <p>Grants permission to complete the authorization based on input parameters. This API is in preview release and subject to change.</p>
+/// <p>Grants permission to complete the authorization based on input parameters. This API is in public preview and subject to change.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConnectorRegistrationsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

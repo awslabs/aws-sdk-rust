@@ -16,6 +16,18 @@ pub struct GridLayoutElement {
     pub row_index: ::std::option::Option<i32>,
     /// <p>The height of a grid element expressed as a number of grid rows.</p>
     pub row_span: i32,
+    /// <p>The border style configuration of a grid layout element.</p>
+    pub border_style: ::std::option::Option<crate::types::GridLayoutElementBorderStyle>,
+    /// <p>The border style configuration of a grid layout element. This border style is used when the element is selected.</p>
+    pub selected_border_style: ::std::option::Option<crate::types::GridLayoutElementBorderStyle>,
+    /// <p>The background style configuration of a grid layout element.</p>
+    pub background_style: ::std::option::Option<crate::types::GridLayoutElementBackgroundStyle>,
+    /// <p>The configuration of loading animation in free-form layout.</p>
+    pub loading_animation: ::std::option::Option<crate::types::LoadingAnimation>,
+    /// <p>The border radius of a grid layout element.</p>
+    pub border_radius: ::std::option::Option<::std::string::String>,
+    /// <p>The padding of a grid layout element.</p>
+    pub padding: ::std::option::Option<::std::string::String>,
 }
 impl GridLayoutElement {
     /// <p>A unique identifier for an element within a grid layout.</p>
@@ -43,6 +55,30 @@ impl GridLayoutElement {
     pub fn row_span(&self) -> i32 {
         self.row_span
     }
+    /// <p>The border style configuration of a grid layout element.</p>
+    pub fn border_style(&self) -> ::std::option::Option<&crate::types::GridLayoutElementBorderStyle> {
+        self.border_style.as_ref()
+    }
+    /// <p>The border style configuration of a grid layout element. This border style is used when the element is selected.</p>
+    pub fn selected_border_style(&self) -> ::std::option::Option<&crate::types::GridLayoutElementBorderStyle> {
+        self.selected_border_style.as_ref()
+    }
+    /// <p>The background style configuration of a grid layout element.</p>
+    pub fn background_style(&self) -> ::std::option::Option<&crate::types::GridLayoutElementBackgroundStyle> {
+        self.background_style.as_ref()
+    }
+    /// <p>The configuration of loading animation in free-form layout.</p>
+    pub fn loading_animation(&self) -> ::std::option::Option<&crate::types::LoadingAnimation> {
+        self.loading_animation.as_ref()
+    }
+    /// <p>The border radius of a grid layout element.</p>
+    pub fn border_radius(&self) -> ::std::option::Option<&str> {
+        self.border_radius.as_deref()
+    }
+    /// <p>The padding of a grid layout element.</p>
+    pub fn padding(&self) -> ::std::option::Option<&str> {
+        self.padding.as_deref()
+    }
 }
 impl GridLayoutElement {
     /// Creates a new builder-style object to manufacture [`GridLayoutElement`](crate::types::GridLayoutElement).
@@ -61,6 +97,12 @@ pub struct GridLayoutElementBuilder {
     pub(crate) column_span: ::std::option::Option<i32>,
     pub(crate) row_index: ::std::option::Option<i32>,
     pub(crate) row_span: ::std::option::Option<i32>,
+    pub(crate) border_style: ::std::option::Option<crate::types::GridLayoutElementBorderStyle>,
+    pub(crate) selected_border_style: ::std::option::Option<crate::types::GridLayoutElementBorderStyle>,
+    pub(crate) background_style: ::std::option::Option<crate::types::GridLayoutElementBackgroundStyle>,
+    pub(crate) loading_animation: ::std::option::Option<crate::types::LoadingAnimation>,
+    pub(crate) border_radius: ::std::option::Option<::std::string::String>,
+    pub(crate) padding: ::std::option::Option<::std::string::String>,
 }
 impl GridLayoutElementBuilder {
     /// <p>A unique identifier for an element within a grid layout.</p>
@@ -151,6 +193,90 @@ impl GridLayoutElementBuilder {
     pub fn get_row_span(&self) -> &::std::option::Option<i32> {
         &self.row_span
     }
+    /// <p>The border style configuration of a grid layout element.</p>
+    pub fn border_style(mut self, input: crate::types::GridLayoutElementBorderStyle) -> Self {
+        self.border_style = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The border style configuration of a grid layout element.</p>
+    pub fn set_border_style(mut self, input: ::std::option::Option<crate::types::GridLayoutElementBorderStyle>) -> Self {
+        self.border_style = input;
+        self
+    }
+    /// <p>The border style configuration of a grid layout element.</p>
+    pub fn get_border_style(&self) -> &::std::option::Option<crate::types::GridLayoutElementBorderStyle> {
+        &self.border_style
+    }
+    /// <p>The border style configuration of a grid layout element. This border style is used when the element is selected.</p>
+    pub fn selected_border_style(mut self, input: crate::types::GridLayoutElementBorderStyle) -> Self {
+        self.selected_border_style = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The border style configuration of a grid layout element. This border style is used when the element is selected.</p>
+    pub fn set_selected_border_style(mut self, input: ::std::option::Option<crate::types::GridLayoutElementBorderStyle>) -> Self {
+        self.selected_border_style = input;
+        self
+    }
+    /// <p>The border style configuration of a grid layout element. This border style is used when the element is selected.</p>
+    pub fn get_selected_border_style(&self) -> &::std::option::Option<crate::types::GridLayoutElementBorderStyle> {
+        &self.selected_border_style
+    }
+    /// <p>The background style configuration of a grid layout element.</p>
+    pub fn background_style(mut self, input: crate::types::GridLayoutElementBackgroundStyle) -> Self {
+        self.background_style = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The background style configuration of a grid layout element.</p>
+    pub fn set_background_style(mut self, input: ::std::option::Option<crate::types::GridLayoutElementBackgroundStyle>) -> Self {
+        self.background_style = input;
+        self
+    }
+    /// <p>The background style configuration of a grid layout element.</p>
+    pub fn get_background_style(&self) -> &::std::option::Option<crate::types::GridLayoutElementBackgroundStyle> {
+        &self.background_style
+    }
+    /// <p>The configuration of loading animation in free-form layout.</p>
+    pub fn loading_animation(mut self, input: crate::types::LoadingAnimation) -> Self {
+        self.loading_animation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of loading animation in free-form layout.</p>
+    pub fn set_loading_animation(mut self, input: ::std::option::Option<crate::types::LoadingAnimation>) -> Self {
+        self.loading_animation = input;
+        self
+    }
+    /// <p>The configuration of loading animation in free-form layout.</p>
+    pub fn get_loading_animation(&self) -> &::std::option::Option<crate::types::LoadingAnimation> {
+        &self.loading_animation
+    }
+    /// <p>The border radius of a grid layout element.</p>
+    pub fn border_radius(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.border_radius = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The border radius of a grid layout element.</p>
+    pub fn set_border_radius(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.border_radius = input;
+        self
+    }
+    /// <p>The border radius of a grid layout element.</p>
+    pub fn get_border_radius(&self) -> &::std::option::Option<::std::string::String> {
+        &self.border_radius
+    }
+    /// <p>The padding of a grid layout element.</p>
+    pub fn padding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.padding = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The padding of a grid layout element.</p>
+    pub fn set_padding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.padding = input;
+        self
+    }
+    /// <p>The padding of a grid layout element.</p>
+    pub fn get_padding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.padding
+    }
     /// Consumes the builder and constructs a [`GridLayoutElement`](crate::types::GridLayoutElement).
     /// This method will fail if any of the following fields are not set:
     /// - [`element_id`](crate::types::builders::GridLayoutElementBuilder::element_id)
@@ -185,6 +311,12 @@ impl GridLayoutElementBuilder {
                     "row_span was not specified but it is required when building GridLayoutElement",
                 )
             })?,
+            border_style: self.border_style,
+            selected_border_style: self.selected_border_style,
+            background_style: self.background_style,
+            loading_animation: self.loading_animation,
+            border_radius: self.border_radius,
+            padding: self.padding,
         })
     }
 }

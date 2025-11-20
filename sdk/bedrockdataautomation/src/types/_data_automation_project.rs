@@ -14,6 +14,8 @@ pub struct DataAutomationProject {
     pub project_name: ::std::string::String,
     /// Stage of the Project
     pub project_stage: ::std::option::Option<crate::types::DataAutomationProjectStage>,
+    /// Type of the DataAutomationProject
+    pub project_type: ::std::option::Option<crate::types::DataAutomationProjectType>,
     /// Description of the DataAutomationProject
     pub project_description: ::std::option::Option<::std::string::String>,
     /// Standard output configuration
@@ -52,6 +54,10 @@ impl DataAutomationProject {
     pub fn project_stage(&self) -> ::std::option::Option<&crate::types::DataAutomationProjectStage> {
         self.project_stage.as_ref()
     }
+    /// Type of the DataAutomationProject
+    pub fn project_type(&self) -> ::std::option::Option<&crate::types::DataAutomationProjectType> {
+        self.project_type.as_ref()
+    }
     /// Description of the DataAutomationProject
     pub fn project_description(&self) -> ::std::option::Option<&str> {
         self.project_description.as_deref()
@@ -89,6 +95,7 @@ impl ::std::fmt::Debug for DataAutomationProject {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("project_name", &"*** Sensitive Data Redacted ***");
         formatter.field("project_stage", &self.project_stage);
+        formatter.field("project_type", &self.project_type);
         formatter.field("project_description", &"*** Sensitive Data Redacted ***");
         formatter.field("standard_output_configuration", &self.standard_output_configuration);
         formatter.field("custom_output_configuration", &self.custom_output_configuration);
@@ -115,6 +122,7 @@ pub struct DataAutomationProjectBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) project_stage: ::std::option::Option<crate::types::DataAutomationProjectStage>,
+    pub(crate) project_type: ::std::option::Option<crate::types::DataAutomationProjectType>,
     pub(crate) project_description: ::std::option::Option<::std::string::String>,
     pub(crate) standard_output_configuration: ::std::option::Option<crate::types::StandardOutputConfiguration>,
     pub(crate) custom_output_configuration: ::std::option::Option<crate::types::CustomOutputConfiguration>,
@@ -197,6 +205,20 @@ impl DataAutomationProjectBuilder {
     /// Stage of the Project
     pub fn get_project_stage(&self) -> &::std::option::Option<crate::types::DataAutomationProjectStage> {
         &self.project_stage
+    }
+    /// Type of the DataAutomationProject
+    pub fn project_type(mut self, input: crate::types::DataAutomationProjectType) -> Self {
+        self.project_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// Type of the DataAutomationProject
+    pub fn set_project_type(mut self, input: ::std::option::Option<crate::types::DataAutomationProjectType>) -> Self {
+        self.project_type = input;
+        self
+    }
+    /// Type of the DataAutomationProject
+    pub fn get_project_type(&self) -> &::std::option::Option<crate::types::DataAutomationProjectType> {
+        &self.project_type
     }
     /// Description of the DataAutomationProject
     pub fn project_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -344,6 +366,7 @@ impl DataAutomationProjectBuilder {
                 )
             })?,
             project_stage: self.project_stage,
+            project_type: self.project_type,
             project_description: self.project_description,
             standard_output_configuration: self.standard_output_configuration,
             custom_output_configuration: self.custom_output_configuration,
@@ -367,6 +390,7 @@ impl ::std::fmt::Debug for DataAutomationProjectBuilder {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("project_name", &"*** Sensitive Data Redacted ***");
         formatter.field("project_stage", &self.project_stage);
+        formatter.field("project_type", &self.project_type);
         formatter.field("project_description", &"*** Sensitive Data Redacted ***");
         formatter.field("standard_output_configuration", &self.standard_output_configuration);
         formatter.field("custom_output_configuration", &self.custom_output_configuration);

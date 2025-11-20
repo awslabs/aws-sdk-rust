@@ -32,7 +32,7 @@ impl crate::operation::create_account::builders::CreateAccountInputBuilder {
 /// <p>The user who calls the API to create an account must have the <code>organizations:CreateAccount</code> permission. If you enabled all features in the organization, Organizations creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations and service-linked roles</a> in the <i>Organizations User Guide</i>.</p>
 /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
 /// <p>Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code> by default) that grants users in the management account administrator permissions in the new member account. Principals in the management account can assume the role. Organizations clones the company name and address information for the new account from the organization's management account.</p>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>You can only call this operation from the management account.</p>
 /// <p>For more information about creating accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating a member account in your organization</a> in the <i>Organizations User Guide</i>.</p><important>
 /// <ul>
 /// <li>

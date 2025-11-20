@@ -349,6 +349,90 @@ impl From<crate::operation::create_license::CreateLicenseError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_license_asset_group::CreateLicenseAssetGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_license_asset_group::CreateLicenseAssetGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_license_asset_group::CreateLicenseAssetGroupError> for Error {
+    fn from(err: crate::operation::create_license_asset_group::CreateLicenseAssetGroupError) -> Self {
+        match err {
+            crate::operation::create_license_asset_group::CreateLicenseAssetGroupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_license_asset_group::CreateLicenseAssetGroupError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::create_license_asset_group::CreateLicenseAssetGroupError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_license_asset_group::CreateLicenseAssetGroupError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::create_license_asset_group::CreateLicenseAssetGroupError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::create_license_asset_group::CreateLicenseAssetGroupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_license_asset_group::CreateLicenseAssetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_license_asset_ruleset::CreateLicenseAssetRulesetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_license_asset_ruleset::CreateLicenseAssetRulesetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_license_asset_ruleset::CreateLicenseAssetRulesetError> for Error {
+    fn from(err: crate::operation::create_license_asset_ruleset::CreateLicenseAssetRulesetError) -> Self {
+        match err {
+            crate::operation::create_license_asset_ruleset::CreateLicenseAssetRulesetError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_license_asset_ruleset::CreateLicenseAssetRulesetError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::create_license_asset_ruleset::CreateLicenseAssetRulesetError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_license_asset_ruleset::CreateLicenseAssetRulesetError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::create_license_asset_ruleset::CreateLicenseAssetRulesetError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::create_license_asset_ruleset::CreateLicenseAssetRulesetError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_license_asset_ruleset::CreateLicenseAssetRulesetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_license_configuration::CreateLicenseConfigurationError, R>>
     for Error
 where
@@ -612,6 +696,90 @@ impl From<crate::operation::delete_license::DeleteLicenseError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_license_asset_group::DeleteLicenseAssetGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_license_asset_group::DeleteLicenseAssetGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_license_asset_group::DeleteLicenseAssetGroupError> for Error {
+    fn from(err: crate::operation::delete_license_asset_group::DeleteLicenseAssetGroupError) -> Self {
+        match err {
+            crate::operation::delete_license_asset_group::DeleteLicenseAssetGroupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_license_asset_group::DeleteLicenseAssetGroupError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::delete_license_asset_group::DeleteLicenseAssetGroupError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_license_asset_group::DeleteLicenseAssetGroupError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::delete_license_asset_group::DeleteLicenseAssetGroupError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::delete_license_asset_group::DeleteLicenseAssetGroupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_license_asset_group::DeleteLicenseAssetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_license_asset_ruleset::DeleteLicenseAssetRulesetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_license_asset_ruleset::DeleteLicenseAssetRulesetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_license_asset_ruleset::DeleteLicenseAssetRulesetError> for Error {
+    fn from(err: crate::operation::delete_license_asset_ruleset::DeleteLicenseAssetRulesetError) -> Self {
+        match err {
+            crate::operation::delete_license_asset_ruleset::DeleteLicenseAssetRulesetError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_license_asset_ruleset::DeleteLicenseAssetRulesetError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::delete_license_asset_ruleset::DeleteLicenseAssetRulesetError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_license_asset_ruleset::DeleteLicenseAssetRulesetError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::delete_license_asset_ruleset::DeleteLicenseAssetRulesetError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::delete_license_asset_ruleset::DeleteLicenseAssetRulesetError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_license_asset_ruleset::DeleteLicenseAssetRulesetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_license_configuration::DeleteLicenseConfigurationError, R>>
     for Error
 where
@@ -863,6 +1031,83 @@ impl From<crate::operation::get_license::GetLicenseError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_license_asset_group::GetLicenseAssetGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_license_asset_group::GetLicenseAssetGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_license_asset_group::GetLicenseAssetGroupError> for Error {
+    fn from(err: crate::operation::get_license_asset_group::GetLicenseAssetGroupError) -> Self {
+        match err {
+            crate::operation::get_license_asset_group::GetLicenseAssetGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_license_asset_group::GetLicenseAssetGroupError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::get_license_asset_group::GetLicenseAssetGroupError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_license_asset_group::GetLicenseAssetGroupError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::get_license_asset_group::GetLicenseAssetGroupError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::get_license_asset_group::GetLicenseAssetGroupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_license_asset_group::GetLicenseAssetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetError> for Error {
+    fn from(err: crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetError) -> Self {
+        match err {
+            crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_license_configuration::GetLicenseConfigurationError, R>>
     for Error
 where
@@ -1058,6 +1303,56 @@ impl From<crate::operation::get_service_settings::GetServiceSettingsError> for E
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_assets_for_license_asset_group::ListAssetsForLicenseAssetGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_assets_for_license_asset_group::ListAssetsForLicenseAssetGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_assets_for_license_asset_group::ListAssetsForLicenseAssetGroupError> for Error {
+    fn from(err: crate::operation::list_assets_for_license_asset_group::ListAssetsForLicenseAssetGroupError) -> Self {
+        match err {
+            crate::operation::list_assets_for_license_asset_group::ListAssetsForLicenseAssetGroupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_assets_for_license_asset_group::ListAssetsForLicenseAssetGroupError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_assets_for_license_asset_group::ListAssetsForLicenseAssetGroupError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_assets_for_license_asset_group::ListAssetsForLicenseAssetGroupError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_assets_for_license_asset_group::ListAssetsForLicenseAssetGroupError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::list_assets_for_license_asset_group::ListAssetsForLicenseAssetGroupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_assets_for_license_asset_group::ListAssetsForLicenseAssetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfigurationError,
             R,
         >,
@@ -1172,6 +1467,88 @@ impl From<crate::operation::list_failures_for_license_configuration_operations::
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_license_asset_groups::ListLicenseAssetGroupsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_license_asset_groups::ListLicenseAssetGroupsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_license_asset_groups::ListLicenseAssetGroupsError> for Error {
+    fn from(err: crate::operation::list_license_asset_groups::ListLicenseAssetGroupsError) -> Self {
+        match err {
+            crate::operation::list_license_asset_groups::ListLicenseAssetGroupsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_license_asset_groups::ListLicenseAssetGroupsError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_license_asset_groups::ListLicenseAssetGroupsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_license_asset_groups::ListLicenseAssetGroupsError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_license_asset_groups::ListLicenseAssetGroupsError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::list_license_asset_groups::ListLicenseAssetGroupsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_license_asset_groups::ListLicenseAssetGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_license_asset_rulesets::ListLicenseAssetRulesetsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_license_asset_rulesets::ListLicenseAssetRulesetsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_license_asset_rulesets::ListLicenseAssetRulesetsError> for Error {
+    fn from(err: crate::operation::list_license_asset_rulesets::ListLicenseAssetRulesetsError) -> Self {
+        match err {
+            crate::operation::list_license_asset_rulesets::ListLicenseAssetRulesetsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_license_asset_rulesets::ListLicenseAssetRulesetsError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::list_license_asset_rulesets::ListLicenseAssetRulesetsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_license_asset_rulesets::ListLicenseAssetRulesetsError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::list_license_asset_rulesets::ListLicenseAssetRulesetsError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::list_license_asset_rulesets::ListLicenseAssetRulesetsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_license_asset_rulesets::ListLicenseAssetRulesetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_license_configurations::ListLicenseConfigurationsError, R>>
     for Error
 where
@@ -1211,6 +1588,44 @@ impl From<crate::operation::list_license_configurations::ListLicenseConfiguratio
                 Error::ServerInternalException(inner)
             }
             crate::operation::list_license_configurations::ListLicenseConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_license_configurations_for_organization::ListLicenseConfigurationsForOrganizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_license_configurations_for_organization::ListLicenseConfigurationsForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_license_configurations_for_organization::ListLicenseConfigurationsForOrganizationError> for Error {
+    fn from(err: crate::operation::list_license_configurations_for_organization::ListLicenseConfigurationsForOrganizationError) -> Self {
+        match err {
+            crate::operation::list_license_configurations_for_organization::ListLicenseConfigurationsForOrganizationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_license_configurations_for_organization::ListLicenseConfigurationsForOrganizationError::AuthorizationException(inner) => Error::AuthorizationException(inner),
+            crate::operation::list_license_configurations_for_organization::ListLicenseConfigurationsForOrganizationError::FilterLimitExceededException(inner) => Error::FilterLimitExceededException(inner),
+            crate::operation::list_license_configurations_for_organization::ListLicenseConfigurationsForOrganizationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_license_configurations_for_organization::ListLicenseConfigurationsForOrganizationError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
+            crate::operation::list_license_configurations_for_organization::ListLicenseConfigurationsForOrganizationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_license_configurations_for_organization::ListLicenseConfigurationsForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1673,6 +2088,7 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ServerInternalException(inner) => {
                 Error::ServerInternalException(inner)
             }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1805,6 +2221,7 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::tag_resource::TagResourceError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
             crate::operation::tag_resource::TagResourceError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1833,7 +2250,92 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             }
             crate::operation::untag_resource::UntagResourceError::RateLimitExceededException(inner) => Error::RateLimitExceededException(inner),
             crate::operation::untag_resource::UntagResourceError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_license_asset_group::UpdateLicenseAssetGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_license_asset_group::UpdateLicenseAssetGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_license_asset_group::UpdateLicenseAssetGroupError> for Error {
+    fn from(err: crate::operation::update_license_asset_group::UpdateLicenseAssetGroupError) -> Self {
+        match err {
+            crate::operation::update_license_asset_group::UpdateLicenseAssetGroupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_license_asset_group::UpdateLicenseAssetGroupError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::update_license_asset_group::UpdateLicenseAssetGroupError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_license_asset_group::UpdateLicenseAssetGroupError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::update_license_asset_group::UpdateLicenseAssetGroupError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::update_license_asset_group::UpdateLicenseAssetGroupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_license_asset_group::UpdateLicenseAssetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_license_asset_ruleset::UpdateLicenseAssetRulesetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_license_asset_ruleset::UpdateLicenseAssetRulesetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_license_asset_ruleset::UpdateLicenseAssetRulesetError> for Error {
+    fn from(err: crate::operation::update_license_asset_ruleset::UpdateLicenseAssetRulesetError) -> Self {
+        match err {
+            crate::operation::update_license_asset_ruleset::UpdateLicenseAssetRulesetError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_license_asset_ruleset::UpdateLicenseAssetRulesetError::AuthorizationException(inner) => {
+                Error::AuthorizationException(inner)
+            }
+            crate::operation::update_license_asset_ruleset::UpdateLicenseAssetRulesetError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_license_asset_ruleset::UpdateLicenseAssetRulesetError::RateLimitExceededException(inner) => {
+                Error::RateLimitExceededException(inner)
+            }
+            crate::operation::update_license_asset_ruleset::UpdateLicenseAssetRulesetError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::update_license_asset_ruleset::UpdateLicenseAssetRulesetError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_license_asset_ruleset::UpdateLicenseAssetRulesetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2005,6 +2507,7 @@ impl From<crate::operation::update_service_settings::UpdateServiceSettingsError>
             crate::operation::update_service_settings::UpdateServiceSettingsError::AuthorizationException(inner) => {
                 Error::AuthorizationException(inner)
             }
+            crate::operation::update_service_settings::UpdateServiceSettingsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_service_settings::UpdateServiceSettingsError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
@@ -2014,6 +2517,7 @@ impl From<crate::operation::update_service_settings::UpdateServiceSettingsError>
             crate::operation::update_service_settings::UpdateServiceSettingsError::ServerInternalException(inner) => {
                 Error::ServerInternalException(inner)
             }
+            crate::operation::update_service_settings::UpdateServiceSettingsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_service_settings::UpdateServiceSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

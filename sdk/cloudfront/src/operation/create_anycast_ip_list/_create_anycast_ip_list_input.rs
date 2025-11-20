@@ -12,13 +12,15 @@ pub struct CreateAnycastIpListInput {
     /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <p><code>ipv4</code> only</p></li>
     /// <li>
-    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <p><code>ipv6</code> only</p></li>
     /// <li>
     /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
     /// </ul>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for creating the Anycast static IP list.</p>
+    pub ipam_cidr_configs: ::std::option::Option<::std::vec::Vec<crate::types::IpamCidrConfig>>,
 }
 impl CreateAnycastIpListInput {
     /// <p>Name of the Anycast static IP list.</p>
@@ -36,14 +38,20 @@ impl CreateAnycastIpListInput {
     /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <p><code>ipv4</code> only</p></li>
     /// <li>
-    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <p><code>ipv6</code> only</p></li>
     /// <li>
     /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
     /// </ul>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
+    }
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for creating the Anycast static IP list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipam_cidr_configs.is_none()`.
+    pub fn ipam_cidr_configs(&self) -> &[crate::types::IpamCidrConfig] {
+        self.ipam_cidr_configs.as_deref().unwrap_or_default()
     }
 }
 impl CreateAnycastIpListInput {
@@ -61,6 +69,7 @@ pub struct CreateAnycastIpListInputBuilder {
     pub(crate) ip_count: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<crate::types::Tags>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) ipam_cidr_configs: ::std::option::Option<::std::vec::Vec<crate::types::IpamCidrConfig>>,
 }
 impl CreateAnycastIpListInputBuilder {
     /// <p>Name of the Anycast static IP list.</p>
@@ -110,9 +119,9 @@ impl CreateAnycastIpListInputBuilder {
     /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <p><code>ipv4</code> only</p></li>
     /// <li>
-    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <p><code>ipv6</code> only</p></li>
     /// <li>
     /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
     /// </ul>
@@ -123,9 +132,9 @@ impl CreateAnycastIpListInputBuilder {
     /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <p><code>ipv4</code> only</p></li>
     /// <li>
-    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <p><code>ipv6</code> only</p></li>
     /// <li>
     /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
     /// </ul>
@@ -136,14 +145,34 @@ impl CreateAnycastIpListInputBuilder {
     /// <p>The IP address type for the Anycast static IP list. You can specify one of the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ipv4</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <p><code>ipv4</code> only</p></li>
     /// <li>
-    /// <p><code>ipv6</code> - Allocate a list of only IPv4 addresses</p></li>
+    /// <p><code>ipv6</code> only</p></li>
     /// <li>
     /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
     /// </ul>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
+    }
+    /// Appends an item to `ipam_cidr_configs`.
+    ///
+    /// To override the contents of this collection use [`set_ipam_cidr_configs`](Self::set_ipam_cidr_configs).
+    ///
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for creating the Anycast static IP list.</p>
+    pub fn ipam_cidr_configs(mut self, input: crate::types::IpamCidrConfig) -> Self {
+        let mut v = self.ipam_cidr_configs.unwrap_or_default();
+        v.push(input);
+        self.ipam_cidr_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for creating the Anycast static IP list.</p>
+    pub fn set_ipam_cidr_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamCidrConfig>>) -> Self {
+        self.ipam_cidr_configs = input;
+        self
+    }
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for creating the Anycast static IP list.</p>
+    pub fn get_ipam_cidr_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamCidrConfig>> {
+        &self.ipam_cidr_configs
     }
     /// Consumes the builder and constructs a [`CreateAnycastIpListInput`](crate::operation::create_anycast_ip_list::CreateAnycastIpListInput).
     pub fn build(
@@ -155,6 +184,7 @@ impl CreateAnycastIpListInputBuilder {
             ip_count: self.ip_count,
             tags: self.tags,
             ip_address_type: self.ip_address_type,
+            ipam_cidr_configs: self.ipam_cidr_configs,
         })
     }
 }

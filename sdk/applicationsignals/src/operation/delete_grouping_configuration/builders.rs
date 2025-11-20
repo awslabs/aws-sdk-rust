@@ -22,8 +22,7 @@ impl crate::operation::delete_grouping_configuration::builders::DeleteGroupingCo
 }
 /// Fluent builder constructing a request to `DeleteGroupingConfiguration`.
 ///
-/// <p>Deletes a grouping configuration that defines how services are grouped and organized in Application Signals. Once deleted, services will no longer be grouped according to the specified configuration rules.</p>
-/// <p>This operation is irreversible. After deletion, you must recreate the grouping configuration if you want to restore the same grouping behavior.</p>
+/// <p>Deletes the grouping configuration for this account. This removes all custom grouping attribute definitions that were previously configured.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGroupingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

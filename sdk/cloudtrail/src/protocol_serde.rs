@@ -447,6 +447,10 @@ pub(crate) mod shape_advanced_event_selector;
 
 pub(crate) mod shape_advanced_event_selectors;
 
+pub(crate) mod shape_aggregation_configuration;
+
+pub(crate) mod shape_aggregation_configurations;
+
 pub(crate) mod shape_channels;
 
 pub(crate) mod shape_context_key_selector;
@@ -574,6 +578,8 @@ pub(crate) mod shape_query_result_column;
 pub(crate) mod shape_resource_list;
 
 pub(crate) mod shape_source_event_categories;
+
+pub(crate) mod shape_templates;
 
 pub(crate) mod shape_view_properties_map;
 

@@ -81,6 +81,8 @@ pub struct AutoScalingGroup {
     pub availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
     /// <p>The capacity reservation specification.</p>
     pub capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
+    /// <p>The instance lifecycle policy applied to this Auto Scaling group. This policy determines instance behavior when an instance transitions through its lifecycle states. It provides additional control over graceful instance management processes.</p>
+    pub instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
 }
 impl AutoScalingGroup {
     /// <p>The name of the Auto Scaling group.</p>
@@ -254,6 +256,10 @@ impl AutoScalingGroup {
     pub fn capacity_reservation_specification(&self) -> ::std::option::Option<&crate::types::CapacityReservationSpecification> {
         self.capacity_reservation_specification.as_ref()
     }
+    /// <p>The instance lifecycle policy applied to this Auto Scaling group. This policy determines instance behavior when an instance transitions through its lifecycle states. It provides additional control over graceful instance management processes.</p>
+    pub fn instance_lifecycle_policy(&self) -> ::std::option::Option<&crate::types::InstanceLifecyclePolicy> {
+        self.instance_lifecycle_policy.as_ref()
+    }
 }
 impl AutoScalingGroup {
     /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::types::AutoScalingGroup).
@@ -304,6 +310,7 @@ pub struct AutoScalingGroupBuilder {
     pub(crate) availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
     pub(crate) availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
     pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
+    pub(crate) instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
 }
 impl AutoScalingGroupBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -902,6 +909,20 @@ impl AutoScalingGroupBuilder {
     pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
         &self.capacity_reservation_specification
     }
+    /// <p>The instance lifecycle policy applied to this Auto Scaling group. This policy determines instance behavior when an instance transitions through its lifecycle states. It provides additional control over graceful instance management processes.</p>
+    pub fn instance_lifecycle_policy(mut self, input: crate::types::InstanceLifecyclePolicy) -> Self {
+        self.instance_lifecycle_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance lifecycle policy applied to this Auto Scaling group. This policy determines instance behavior when an instance transitions through its lifecycle states. It provides additional control over graceful instance management processes.</p>
+    pub fn set_instance_lifecycle_policy(mut self, input: ::std::option::Option<crate::types::InstanceLifecyclePolicy>) -> Self {
+        self.instance_lifecycle_policy = input;
+        self
+    }
+    /// <p>The instance lifecycle policy applied to this Auto Scaling group. This policy determines instance behavior when an instance transitions through its lifecycle states. It provides additional control over graceful instance management processes.</p>
+    pub fn get_instance_lifecycle_policy(&self) -> &::std::option::Option<crate::types::InstanceLifecyclePolicy> {
+        &self.instance_lifecycle_policy
+    }
     /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::types::AutoScalingGroup).
     pub fn build(self) -> crate::types::AutoScalingGroup {
         crate::types::AutoScalingGroup {
@@ -943,6 +964,7 @@ impl AutoScalingGroupBuilder {
             availability_zone_distribution: self.availability_zone_distribution,
             availability_zone_impairment_policy: self.availability_zone_impairment_policy,
             capacity_reservation_specification: self.capacity_reservation_specification,
+            instance_lifecycle_policy: self.instance_lifecycle_policy,
         }
     }
 }

@@ -18,6 +18,7 @@
 ///     ConstraintViolationExceptionReason::AccountCreationNotComplete => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AccountNumberLimitExceeded => { /* ... */ },
+///     ConstraintViolationExceptionReason::ActiveResponsibilityTransferProcess => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AllFeaturesMigrationOrganizationSizeLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::CannotCloseManagementAccount => { /* ... */ },
 ///     ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => { /* ... */ },
@@ -46,8 +47,15 @@
 ///     ConstraintViolationExceptionReason::PolicyContentLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::PolicyTypeEnabledForThisService => { /* ... */ },
+///     ConstraintViolationExceptionReason::ResponsibilityTransferMaxInboundQuotaViolation => { /* ... */ },
+///     ConstraintViolationExceptionReason::ResponsibilityTransferMaxLevelViolation => { /* ... */ },
+///     ConstraintViolationExceptionReason::ResponsibilityTransferMaxOutboundQuotaViolation => { /* ... */ },
+///     ConstraintViolationExceptionReason::ResponsibilityTransferMaxTransfersQuotaViolation => { /* ... */ },
 ///     ConstraintViolationExceptionReason::ServiceAccessNotEnabled => { /* ... */ },
 ///     ConstraintViolationExceptionReason::TagPolicyViolation => { /* ... */ },
+///     ConstraintViolationExceptionReason::TransferResponsibilitySourceDeletionInProgress => { /* ... */ },
+///     ConstraintViolationExceptionReason::TransferResponsibilityTargetDeletionInProgress => { /* ... */ },
+///     ConstraintViolationExceptionReason::UnsupportedPricing => { /* ... */ },
 ///     ConstraintViolationExceptionReason::WaitPeriodActive => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -89,6 +97,8 @@ pub enum ConstraintViolationExceptionReason {
     AccountCreationRateLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     AccountNumberLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    ActiveResponsibilityTransferProcess,
     #[allow(missing_docs)] // documentation missing in model
     AllFeaturesMigrationOrganizationSizeLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
@@ -146,9 +156,23 @@ pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     PolicyTypeEnabledForThisService,
     #[allow(missing_docs)] // documentation missing in model
+    ResponsibilityTransferMaxInboundQuotaViolation,
+    #[allow(missing_docs)] // documentation missing in model
+    ResponsibilityTransferMaxLevelViolation,
+    #[allow(missing_docs)] // documentation missing in model
+    ResponsibilityTransferMaxOutboundQuotaViolation,
+    #[allow(missing_docs)] // documentation missing in model
+    ResponsibilityTransferMaxTransfersQuotaViolation,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceAccessNotEnabled,
     #[allow(missing_docs)] // documentation missing in model
     TagPolicyViolation,
+    #[allow(missing_docs)] // documentation missing in model
+    TransferResponsibilitySourceDeletionInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    TransferResponsibilityTargetDeletionInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedPricing,
     #[allow(missing_docs)] // documentation missing in model
     WaitPeriodActive,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -164,6 +188,7 @@ impl ::std::convert::From<&str> for ConstraintViolationExceptionReason {
             "ACCOUNT_CREATION_NOT_COMPLETE" => ConstraintViolationExceptionReason::AccountCreationNotComplete,
             "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded,
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountNumberLimitExceeded,
+            "ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS" => ConstraintViolationExceptionReason::ActiveResponsibilityTransferProcess,
             "ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED" => {
                 ConstraintViolationExceptionReason::AllFeaturesMigrationOrganizationSizeLimitExceeded
             }
@@ -200,8 +225,25 @@ impl ::std::convert::From<&str> for ConstraintViolationExceptionReason {
             "POLICY_CONTENT_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyContentLimitExceeded,
             "POLICY_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::PolicyNumberLimitExceeded,
             "POLICY_TYPE_ENABLED_FOR_THIS_SERVICE" => ConstraintViolationExceptionReason::PolicyTypeEnabledForThisService,
+            "RESPONSIBILITY_TRANSFER_MAX_INBOUND_QUOTA_VIOLATION" => {
+                ConstraintViolationExceptionReason::ResponsibilityTransferMaxInboundQuotaViolation
+            }
+            "RESPONSIBILITY_TRANSFER_MAX_LEVEL_VIOLATION" => ConstraintViolationExceptionReason::ResponsibilityTransferMaxLevelViolation,
+            "RESPONSIBILITY_TRANSFER_MAX_OUTBOUND_QUOTA_VIOLATION" => {
+                ConstraintViolationExceptionReason::ResponsibilityTransferMaxOutboundQuotaViolation
+            }
+            "RESPONSIBILITY_TRANSFER_MAX_TRANSFERS_QUOTA_VIOLATION" => {
+                ConstraintViolationExceptionReason::ResponsibilityTransferMaxTransfersQuotaViolation
+            }
             "SERVICE_ACCESS_NOT_ENABLED" => ConstraintViolationExceptionReason::ServiceAccessNotEnabled,
             "TAG_POLICY_VIOLATION" => ConstraintViolationExceptionReason::TagPolicyViolation,
+            "TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS" => {
+                ConstraintViolationExceptionReason::TransferResponsibilitySourceDeletionInProgress
+            }
+            "TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS" => {
+                ConstraintViolationExceptionReason::TransferResponsibilityTargetDeletionInProgress
+            }
+            "UNSUPPORTED_PRICING" => ConstraintViolationExceptionReason::UnsupportedPricing,
             "WAIT_PERIOD_ACTIVE" => ConstraintViolationExceptionReason::WaitPeriodActive,
             other => ConstraintViolationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -224,6 +266,7 @@ impl ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::AccountCreationNotComplete => "ACCOUNT_CREATION_NOT_COMPLETE",
             ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+            ConstraintViolationExceptionReason::ActiveResponsibilityTransferProcess => "ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS",
             ConstraintViolationExceptionReason::AllFeaturesMigrationOrganizationSizeLimitExceeded => {
                 "ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED"
             }
@@ -260,8 +303,25 @@ impl ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::PolicyContentLimitExceeded => "POLICY_CONTENT_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => "POLICY_NUMBER_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::PolicyTypeEnabledForThisService => "POLICY_TYPE_ENABLED_FOR_THIS_SERVICE",
+            ConstraintViolationExceptionReason::ResponsibilityTransferMaxInboundQuotaViolation => {
+                "RESPONSIBILITY_TRANSFER_MAX_INBOUND_QUOTA_VIOLATION"
+            }
+            ConstraintViolationExceptionReason::ResponsibilityTransferMaxLevelViolation => "RESPONSIBILITY_TRANSFER_MAX_LEVEL_VIOLATION",
+            ConstraintViolationExceptionReason::ResponsibilityTransferMaxOutboundQuotaViolation => {
+                "RESPONSIBILITY_TRANSFER_MAX_OUTBOUND_QUOTA_VIOLATION"
+            }
+            ConstraintViolationExceptionReason::ResponsibilityTransferMaxTransfersQuotaViolation => {
+                "RESPONSIBILITY_TRANSFER_MAX_TRANSFERS_QUOTA_VIOLATION"
+            }
             ConstraintViolationExceptionReason::ServiceAccessNotEnabled => "SERVICE_ACCESS_NOT_ENABLED",
             ConstraintViolationExceptionReason::TagPolicyViolation => "TAG_POLICY_VIOLATION",
+            ConstraintViolationExceptionReason::TransferResponsibilitySourceDeletionInProgress => {
+                "TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS"
+            }
+            ConstraintViolationExceptionReason::TransferResponsibilityTargetDeletionInProgress => {
+                "TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS"
+            }
+            ConstraintViolationExceptionReason::UnsupportedPricing => "UNSUPPORTED_PRICING",
             ConstraintViolationExceptionReason::WaitPeriodActive => "WAIT_PERIOD_ACTIVE",
             ConstraintViolationExceptionReason::Unknown(value) => value.as_str(),
         }
@@ -275,6 +335,7 @@ impl ConstraintViolationExceptionReason {
             "ACCOUNT_CREATION_NOT_COMPLETE",
             "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+            "ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS",
             "ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED",
             "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
             "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
@@ -303,8 +364,15 @@ impl ConstraintViolationExceptionReason {
             "POLICY_CONTENT_LIMIT_EXCEEDED",
             "POLICY_NUMBER_LIMIT_EXCEEDED",
             "POLICY_TYPE_ENABLED_FOR_THIS_SERVICE",
+            "RESPONSIBILITY_TRANSFER_MAX_INBOUND_QUOTA_VIOLATION",
+            "RESPONSIBILITY_TRANSFER_MAX_LEVEL_VIOLATION",
+            "RESPONSIBILITY_TRANSFER_MAX_OUTBOUND_QUOTA_VIOLATION",
+            "RESPONSIBILITY_TRANSFER_MAX_TRANSFERS_QUOTA_VIOLATION",
             "SERVICE_ACCESS_NOT_ENABLED",
             "TAG_POLICY_VIOLATION",
+            "TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS",
+            "TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS",
+            "UNSUPPORTED_PRICING",
             "WAIT_PERIOD_ACTIVE",
         ]
     }
@@ -337,6 +405,7 @@ impl ::std::fmt::Display for ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::AccountCreationNotComplete => write!(f, "ACCOUNT_CREATION_NOT_COMPLETE"),
             ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => write!(f, "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED"),
             ConstraintViolationExceptionReason::AccountNumberLimitExceeded => write!(f, "ACCOUNT_NUMBER_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::ActiveResponsibilityTransferProcess => write!(f, "ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS"),
             ConstraintViolationExceptionReason::AllFeaturesMigrationOrganizationSizeLimitExceeded => {
                 write!(f, "ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED")
             }
@@ -381,8 +450,25 @@ impl ::std::fmt::Display for ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::PolicyContentLimitExceeded => write!(f, "POLICY_CONTENT_LIMIT_EXCEEDED"),
             ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => write!(f, "POLICY_NUMBER_LIMIT_EXCEEDED"),
             ConstraintViolationExceptionReason::PolicyTypeEnabledForThisService => write!(f, "POLICY_TYPE_ENABLED_FOR_THIS_SERVICE"),
+            ConstraintViolationExceptionReason::ResponsibilityTransferMaxInboundQuotaViolation => {
+                write!(f, "RESPONSIBILITY_TRANSFER_MAX_INBOUND_QUOTA_VIOLATION")
+            }
+            ConstraintViolationExceptionReason::ResponsibilityTransferMaxLevelViolation => write!(f, "RESPONSIBILITY_TRANSFER_MAX_LEVEL_VIOLATION"),
+            ConstraintViolationExceptionReason::ResponsibilityTransferMaxOutboundQuotaViolation => {
+                write!(f, "RESPONSIBILITY_TRANSFER_MAX_OUTBOUND_QUOTA_VIOLATION")
+            }
+            ConstraintViolationExceptionReason::ResponsibilityTransferMaxTransfersQuotaViolation => {
+                write!(f, "RESPONSIBILITY_TRANSFER_MAX_TRANSFERS_QUOTA_VIOLATION")
+            }
             ConstraintViolationExceptionReason::ServiceAccessNotEnabled => write!(f, "SERVICE_ACCESS_NOT_ENABLED"),
             ConstraintViolationExceptionReason::TagPolicyViolation => write!(f, "TAG_POLICY_VIOLATION"),
+            ConstraintViolationExceptionReason::TransferResponsibilitySourceDeletionInProgress => {
+                write!(f, "TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS")
+            }
+            ConstraintViolationExceptionReason::TransferResponsibilityTargetDeletionInProgress => {
+                write!(f, "TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS")
+            }
+            ConstraintViolationExceptionReason::UnsupportedPricing => write!(f, "UNSUPPORTED_PRICING"),
             ConstraintViolationExceptionReason::WaitPeriodActive => write!(f, "WAIT_PERIOD_ACTIVE"),
             ConstraintViolationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }

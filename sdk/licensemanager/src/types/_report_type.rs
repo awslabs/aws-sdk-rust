@@ -12,6 +12,7 @@
 /// ```text
 /// # let reporttype = unimplemented!();
 /// match reporttype {
+///     ReportType::LicenseAssetGroupUsageReport => { /* ... */ },
 ///     ReportType::LicenseConfigurationSummaryReport => { /* ... */ },
 ///     ReportType::LicenseConfigurationUsageReport => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum ReportType {
     #[allow(missing_docs)] // documentation missing in model
+    LicenseAssetGroupUsageReport,
+    #[allow(missing_docs)] // documentation missing in model
     LicenseConfigurationSummaryReport,
     #[allow(missing_docs)] // documentation missing in model
     LicenseConfigurationUsageReport,
@@ -53,6 +56,7 @@ pub enum ReportType {
 impl ::std::convert::From<&str> for ReportType {
     fn from(s: &str) -> Self {
         match s {
+            "LicenseAssetGroupUsageReport" => ReportType::LicenseAssetGroupUsageReport,
             "LicenseConfigurationSummaryReport" => ReportType::LicenseConfigurationSummaryReport,
             "LicenseConfigurationUsageReport" => ReportType::LicenseConfigurationUsageReport,
             other => ReportType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl ReportType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ReportType::LicenseAssetGroupUsageReport => "LicenseAssetGroupUsageReport",
             ReportType::LicenseConfigurationSummaryReport => "LicenseConfigurationSummaryReport",
             ReportType::LicenseConfigurationUsageReport => "LicenseConfigurationUsageReport",
             ReportType::Unknown(value) => value.as_str(),
@@ -77,7 +82,11 @@ impl ReportType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LicenseConfigurationSummaryReport", "LicenseConfigurationUsageReport"]
+        &[
+            "LicenseAssetGroupUsageReport",
+            "LicenseConfigurationSummaryReport",
+            "LicenseConfigurationUsageReport",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ReportType {
@@ -100,6 +109,7 @@ impl ReportType {
 impl ::std::fmt::Display for ReportType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ReportType::LicenseAssetGroupUsageReport => write!(f, "LicenseAssetGroupUsageReport"),
             ReportType::LicenseConfigurationSummaryReport => write!(f, "LicenseConfigurationSummaryReport"),
             ReportType::LicenseConfigurationUsageReport => write!(f, "LicenseConfigurationUsageReport"),
             ReportType::Unknown(value) => write!(f, "{value}"),

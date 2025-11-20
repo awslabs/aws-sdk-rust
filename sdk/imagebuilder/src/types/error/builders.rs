@@ -27,8 +27,14 @@ pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginat
 
 pub use crate::types::error::_invalid_version_number_exception::InvalidVersionNumberExceptionBuilder;
 
-pub use crate::types::error::_resource_dependency_exception::ResourceDependencyExceptionBuilder;
+pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExceptionBuilder;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
+pub use crate::types::error::_resource_dependency_exception::ResourceDependencyExceptionBuilder;
+
+pub use crate::types::error::_dry_run_operation_exception::DryRunOperationExceptionBuilder;
 
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsExceptionBuilder;

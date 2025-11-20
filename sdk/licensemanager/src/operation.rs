@@ -22,6 +22,12 @@ pub mod create_grant_version;
 /// Types for the `CreateLicense` operation.
 pub mod create_license;
 
+/// Types for the `CreateLicenseAssetGroup` operation.
+pub mod create_license_asset_group;
+
+/// Types for the `CreateLicenseAssetRuleset` operation.
+pub mod create_license_asset_ruleset;
+
 /// Types for the `CreateLicenseConfiguration` operation.
 pub mod create_license_configuration;
 
@@ -42,6 +48,12 @@ pub mod delete_grant;
 
 /// Types for the `DeleteLicense` operation.
 pub mod delete_license;
+
+/// Types for the `DeleteLicenseAssetGroup` operation.
+pub mod delete_license_asset_group;
+
+/// Types for the `DeleteLicenseAssetRuleset` operation.
+pub mod delete_license_asset_ruleset;
 
 /// Types for the `DeleteLicenseConfiguration` operation.
 pub mod delete_license_configuration;
@@ -64,6 +76,12 @@ pub mod get_grant;
 /// Types for the `GetLicense` operation.
 pub mod get_license;
 
+/// Types for the `GetLicenseAssetGroup` operation.
+pub mod get_license_asset_group;
+
+/// Types for the `GetLicenseAssetRuleset` operation.
+pub mod get_license_asset_ruleset;
+
 /// Types for the `GetLicenseConfiguration` operation.
 pub mod get_license_configuration;
 
@@ -79,6 +97,9 @@ pub mod get_license_usage;
 /// Types for the `GetServiceSettings` operation.
 pub mod get_service_settings;
 
+/// Types for the `ListAssetsForLicenseAssetGroup` operation.
+pub mod list_assets_for_license_asset_group;
+
 /// Types for the `ListAssociationsForLicenseConfiguration` operation.
 pub mod list_associations_for_license_configuration;
 
@@ -88,8 +109,17 @@ pub mod list_distributed_grants;
 /// Types for the `ListFailuresForLicenseConfigurationOperations` operation.
 pub mod list_failures_for_license_configuration_operations;
 
+/// Types for the `ListLicenseAssetGroups` operation.
+pub mod list_license_asset_groups;
+
+/// Types for the `ListLicenseAssetRulesets` operation.
+pub mod list_license_asset_rulesets;
+
 /// Types for the `ListLicenseConfigurations` operation.
 pub mod list_license_configurations;
+
+/// Types for the `ListLicenseConfigurationsForOrganization` operation.
+pub mod list_license_configurations_for_organization;
 
 /// Types for the `ListLicenseConversionTasks` operation.
 pub mod list_license_conversion_tasks;
@@ -138,6 +168,12 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateLicenseAssetGroup` operation.
+pub mod update_license_asset_group;
+
+/// Types for the `UpdateLicenseAssetRuleset` operation.
+pub mod update_license_asset_ruleset;
 
 /// Types for the `UpdateLicenseConfiguration` operation.
 pub mod update_license_configuration;

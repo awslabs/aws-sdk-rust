@@ -16,12 +16,16 @@
 ///     HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures => { /* ... */ },
+///     HandshakeConstraintViolationExceptionReason::LegacyPermissionsStillInUse => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => { /* ... */ },
+///     HandshakeConstraintViolationExceptionReason::ResponsibilityTransferAlreadyExists => { /* ... */ },
+///     HandshakeConstraintViolationExceptionReason::SourceAndTargetCannotMatch => { /* ... */ },
+///     HandshakeConstraintViolationExceptionReason::UnusedPrepaymentBalance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -59,6 +63,8 @@ pub enum HandshakeConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InviteDisabledDuringEnableAllFeatures,
     #[allow(missing_docs)] // documentation missing in model
+    LegacyPermissionsStillInUse,
+    #[allow(missing_docs)] // documentation missing in model
     ManagementAccountEmailNotVerified,
     #[allow(missing_docs)] // documentation missing in model
     OrganizationAlreadyHasAllFeatures,
@@ -70,6 +76,12 @@ pub enum HandshakeConstraintViolationExceptionReason {
     OrganizationMembershipChangeRateLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     PaymentInstrumentRequired,
+    #[allow(missing_docs)] // documentation missing in model
+    ResponsibilityTransferAlreadyExists,
+    #[allow(missing_docs)] // documentation missing in model
+    SourceAndTargetCannotMatch,
+    #[allow(missing_docs)] // documentation missing in model
+    UnusedPrepaymentBalance,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -81,6 +93,7 @@ impl ::std::convert::From<&str> for HandshakeConstraintViolationExceptionReason 
             "ALREADY_IN_AN_ORGANIZATION" => HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization,
             "HANDSHAKE_RATE_LIMIT_EXCEEDED" => HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded,
             "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures,
+            "LEGACY_PERMISSIONS_STILL_IN_USE" => HandshakeConstraintViolationExceptionReason::LegacyPermissionsStillInUse,
             "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED" => HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified,
             "ORGANIZATION_ALREADY_HAS_ALL_FEATURES" => HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures,
             "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD" => HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord,
@@ -91,6 +104,9 @@ impl ::std::convert::From<&str> for HandshakeConstraintViolationExceptionReason 
                 HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded
             }
             "PAYMENT_INSTRUMENT_REQUIRED" => HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired,
+            "RESPONSIBILITY_TRANSFER_ALREADY_EXISTS" => HandshakeConstraintViolationExceptionReason::ResponsibilityTransferAlreadyExists,
+            "SOURCE_AND_TARGET_CANNOT_MATCH" => HandshakeConstraintViolationExceptionReason::SourceAndTargetCannotMatch,
+            "UNUSED_PREPAYMENT_BALANCE" => HandshakeConstraintViolationExceptionReason::UnusedPrepaymentBalance,
             other => {
                 HandshakeConstraintViolationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
             }
@@ -112,6 +128,7 @@ impl HandshakeConstraintViolationExceptionReason {
             HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization => "ALREADY_IN_AN_ORGANIZATION",
             HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded => "HANDSHAKE_RATE_LIMIT_EXCEEDED",
             HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures => "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES",
+            HandshakeConstraintViolationExceptionReason::LegacyPermissionsStillInUse => "LEGACY_PERMISSIONS_STILL_IN_USE",
             HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified => "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED",
             HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures => "ORGANIZATION_ALREADY_HAS_ALL_FEATURES",
             HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord => "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD",
@@ -122,6 +139,9 @@ impl HandshakeConstraintViolationExceptionReason {
                 "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED"
             }
             HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => "PAYMENT_INSTRUMENT_REQUIRED",
+            HandshakeConstraintViolationExceptionReason::ResponsibilityTransferAlreadyExists => "RESPONSIBILITY_TRANSFER_ALREADY_EXISTS",
+            HandshakeConstraintViolationExceptionReason::SourceAndTargetCannotMatch => "SOURCE_AND_TARGET_CANNOT_MATCH",
+            HandshakeConstraintViolationExceptionReason::UnusedPrepaymentBalance => "UNUSED_PREPAYMENT_BALANCE",
             HandshakeConstraintViolationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
@@ -132,12 +152,16 @@ impl HandshakeConstraintViolationExceptionReason {
             "ALREADY_IN_AN_ORGANIZATION",
             "HANDSHAKE_RATE_LIMIT_EXCEEDED",
             "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES",
+            "LEGACY_PERMISSIONS_STILL_IN_USE",
             "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED",
             "ORGANIZATION_ALREADY_HAS_ALL_FEATURES",
             "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD",
             "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION",
             "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED",
             "PAYMENT_INSTRUMENT_REQUIRED",
+            "RESPONSIBILITY_TRANSFER_ALREADY_EXISTS",
+            "SOURCE_AND_TARGET_CANNOT_MATCH",
+            "UNUSED_PREPAYMENT_BALANCE",
         ]
     }
 }
@@ -167,6 +191,7 @@ impl ::std::fmt::Display for HandshakeConstraintViolationExceptionReason {
             HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures => {
                 write!(f, "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES")
             }
+            HandshakeConstraintViolationExceptionReason::LegacyPermissionsStillInUse => write!(f, "LEGACY_PERMISSIONS_STILL_IN_USE"),
             HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified => write!(f, "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED"),
             HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures => write!(f, "ORGANIZATION_ALREADY_HAS_ALL_FEATURES"),
             HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord => {
@@ -179,6 +204,9 @@ impl ::std::fmt::Display for HandshakeConstraintViolationExceptionReason {
                 write!(f, "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED")
             }
             HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => write!(f, "PAYMENT_INSTRUMENT_REQUIRED"),
+            HandshakeConstraintViolationExceptionReason::ResponsibilityTransferAlreadyExists => write!(f, "RESPONSIBILITY_TRANSFER_ALREADY_EXISTS"),
+            HandshakeConstraintViolationExceptionReason::SourceAndTargetCannotMatch => write!(f, "SOURCE_AND_TARGET_CANNOT_MATCH"),
+            HandshakeConstraintViolationExceptionReason::UnusedPrepaymentBalance => write!(f, "UNUSED_PREPAYMENT_BALANCE"),
             HandshakeConstraintViolationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }

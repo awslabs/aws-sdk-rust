@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartResourceStateUpdateInput {
-    /// <p>The ARN of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the lifecycle action to take for this request.</p>
     pub state: ::std::option::Option<crate::types::ResourceState>,
@@ -19,7 +19,7 @@ pub struct StartResourceStateUpdateInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartResourceStateUpdateInput {
-    /// <p>The ARN of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -68,18 +68,18 @@ pub struct StartResourceStateUpdateInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartResourceStateUpdateInputBuilder {
-    /// <p>The ARN of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The ARN of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

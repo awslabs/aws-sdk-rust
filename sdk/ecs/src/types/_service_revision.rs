@@ -44,6 +44,8 @@ pub struct ServiceRevision {
     pub vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>,
     /// <p>The resolved configuration for the service revision which contains the actual resources your service revision uses, such as which target groups serve traffic.</p>
     pub resolved_configuration: ::std::option::Option<crate::types::ResolvedConfiguration>,
+    /// <p>The resources created and managed by Amazon ECS when you create an Express service for Amazon ECS.</p>
+    pub ecs_managed_resources: ::std::option::Option<crate::types::EcsManagedResources>,
 }
 impl ServiceRevision {
     /// <p>The ARN of the service revision.</p>
@@ -135,6 +137,10 @@ impl ServiceRevision {
     pub fn resolved_configuration(&self) -> ::std::option::Option<&crate::types::ResolvedConfiguration> {
         self.resolved_configuration.as_ref()
     }
+    /// <p>The resources created and managed by Amazon ECS when you create an Express service for Amazon ECS.</p>
+    pub fn ecs_managed_resources(&self) -> ::std::option::Option<&crate::types::EcsManagedResources> {
+        self.ecs_managed_resources.as_ref()
+    }
 }
 impl ServiceRevision {
     /// Creates a new builder-style object to manufacture [`ServiceRevision`](crate::types::ServiceRevision).
@@ -166,6 +172,7 @@ pub struct ServiceRevisionBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>,
     pub(crate) resolved_configuration: ::std::option::Option<crate::types::ResolvedConfiguration>,
+    pub(crate) ecs_managed_resources: ::std::option::Option<crate::types::EcsManagedResources>,
 }
 impl ServiceRevisionBuilder {
     /// <p>The ARN of the service revision.</p>
@@ -476,6 +483,20 @@ impl ServiceRevisionBuilder {
     pub fn get_resolved_configuration(&self) -> &::std::option::Option<crate::types::ResolvedConfiguration> {
         &self.resolved_configuration
     }
+    /// <p>The resources created and managed by Amazon ECS when you create an Express service for Amazon ECS.</p>
+    pub fn ecs_managed_resources(mut self, input: crate::types::EcsManagedResources) -> Self {
+        self.ecs_managed_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The resources created and managed by Amazon ECS when you create an Express service for Amazon ECS.</p>
+    pub fn set_ecs_managed_resources(mut self, input: ::std::option::Option<crate::types::EcsManagedResources>) -> Self {
+        self.ecs_managed_resources = input;
+        self
+    }
+    /// <p>The resources created and managed by Amazon ECS when you create an Express service for Amazon ECS.</p>
+    pub fn get_ecs_managed_resources(&self) -> &::std::option::Option<crate::types::EcsManagedResources> {
+        &self.ecs_managed_resources
+    }
     /// Consumes the builder and constructs a [`ServiceRevision`](crate::types::ServiceRevision).
     pub fn build(self) -> crate::types::ServiceRevision {
         crate::types::ServiceRevision {
@@ -498,6 +519,7 @@ impl ServiceRevisionBuilder {
             created_at: self.created_at,
             vpc_lattice_configurations: self.vpc_lattice_configurations,
             resolved_configuration: self.resolved_configuration,
+            ecs_managed_resources: self.ecs_managed_resources,
         }
     }
 }

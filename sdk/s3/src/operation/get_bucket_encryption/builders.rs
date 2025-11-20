@@ -22,7 +22,7 @@ impl crate::operation::get_bucket_encryption::builders::GetBucketEncryptionInput
 }
 /// Fluent builder constructing a request to `GetBucketEncryption`.
 ///
-/// <p>Returns the default encryption configuration for an Amazon S3 bucket. By default, all buckets have a default encryption configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3). This operation also returns the <code>BucketKeyEnabled</code> and <code>BlockedEncryptionTypes</code> statuses.</p><note>
+/// <p>Returns the default encryption configuration for an Amazon S3 bucket. By default, all buckets have a default encryption configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3). This operation also returns the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BucketKeyEnabled.html">BucketKeyEnabled</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BlockedEncryptionTypes.html">BlockedEncryptionTypes</a> statuses.</p><note>
 /// <ul>
 /// <li>
 /// <p><b>General purpose buckets</b> - For information about the bucket default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Amazon S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p></li>

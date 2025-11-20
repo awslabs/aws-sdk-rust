@@ -12,13 +12,16 @@ pub fn ser_get_user_defined_functions_input_input(
     if let Some(var_3) = &input.pattern {
         object.key("Pattern").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("NextToken").string(var_4.as_str());
+    if let Some(var_4) = &input.function_type {
+        object.key("FunctionType").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.max_results {
+    if let Some(var_5) = &input.next_token {
+        object.key("NextToken").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

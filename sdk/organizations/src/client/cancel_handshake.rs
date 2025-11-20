@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelHandshake`](crate::operation::cancel_handshake::builders::CancelHandshakeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`handshake_id(impl Into<String>)`](crate::operation::cancel_handshake::builders::CancelHandshakeFluentBuilder::handshake_id) / [`set_handshake_id(Option<String>)`](crate::operation::cancel_handshake::builders::CancelHandshakeFluentBuilder::set_handshake_id):<br>required: **true**<br><p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p><br>
+    ///   - [`handshake_id(impl Into<String>)`](crate::operation::cancel_handshake::builders::CancelHandshakeFluentBuilder::handshake_id) / [`set_handshake_id(Option<String>)`](crate::operation::cancel_handshake::builders::CancelHandshakeFluentBuilder::set_handshake_id):<br>required: **true**<br><p>ID for the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p><br>
     /// - On success, responds with [`CancelHandshakeOutput`](crate::operation::cancel_handshake::CancelHandshakeOutput) with field(s):
-    ///   - [`handshake(Option<Handshake>)`](crate::operation::cancel_handshake::CancelHandshakeOutput::handshake): <p>A structure that contains details about the handshake that you canceled.</p>
+    ///   - [`handshake(Option<Handshake>)`](crate::operation::cancel_handshake::CancelHandshakeOutput::handshake): <p>A <code>Handshake</code> object. Contains for the handshake that you canceled.</p>
     /// - On failure, responds with [`SdkError<CancelHandshakeError>`](crate::operation::cancel_handshake::CancelHandshakeError)
     pub fn cancel_handshake(&self) -> crate::operation::cancel_handshake::builders::CancelHandshakeFluentBuilder {
         crate::operation::cancel_handshake::builders::CancelHandshakeFluentBuilder::new(self.handle.clone())

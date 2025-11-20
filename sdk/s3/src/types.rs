@@ -347,6 +347,10 @@ pub use crate::types::_accelerate_configuration::AccelerateConfiguration;
 
 pub use crate::types::_bucket_accelerate_status::BucketAccelerateStatus;
 
+pub use crate::types::_abac_status::AbacStatus;
+
+pub use crate::types::_bucket_abac_status::BucketAbacStatus;
+
 pub use crate::types::_initiator::Initiator;
 
 pub use crate::types::_part::Part;
@@ -455,6 +459,8 @@ pub use crate::types::_completed_multipart_upload::CompletedMultipartUpload;
 
 pub use crate::types::_completed_part::CompletedPart;
 
+mod _abac_status;
+
 mod _abort_incomplete_multipart_upload;
 
 mod _accelerate_configuration;
@@ -480,6 +486,8 @@ mod _archive_status;
 mod _blocked_encryption_types;
 
 mod _bucket;
+
+mod _bucket_abac_status;
 
 mod _bucket_accelerate_status;
 

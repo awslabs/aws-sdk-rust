@@ -16,6 +16,18 @@ pub struct ResourceInventory {
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>ID of the account that owns the resource.</p>
     pub resource_owning_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>List of Marketplace product codes associated with the resource.</p>
+    pub marketplace_product_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Usage operation value that corresponds to the license type for billing purposes.</p>
+    pub usage_operation: ::std::option::Option<::std::string::String>,
+    /// <p>Amazon Machine Image (AMI) ID associated with the resource.</p>
+    pub ami_id: ::std::option::Option<::std::string::String>,
+    /// <p>Dedicated Host ID where the resource is running.</p>
+    pub host_id: ::std::option::Option<::std::string::String>,
+    /// <p>Region where the resource is located.</p>
+    pub region: ::std::option::Option<::std::string::String>,
+    /// <p>EC2 instance type of the resource.</p>
+    pub instance_type: ::std::option::Option<::std::string::String>,
 }
 impl ResourceInventory {
     /// <p>ID of the resource.</p>
@@ -42,6 +54,32 @@ impl ResourceInventory {
     pub fn resource_owning_account_id(&self) -> ::std::option::Option<&str> {
         self.resource_owning_account_id.as_deref()
     }
+    /// <p>List of Marketplace product codes associated with the resource.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.marketplace_product_codes.is_none()`.
+    pub fn marketplace_product_codes(&self) -> &[::std::string::String] {
+        self.marketplace_product_codes.as_deref().unwrap_or_default()
+    }
+    /// <p>Usage operation value that corresponds to the license type for billing purposes.</p>
+    pub fn usage_operation(&self) -> ::std::option::Option<&str> {
+        self.usage_operation.as_deref()
+    }
+    /// <p>Amazon Machine Image (AMI) ID associated with the resource.</p>
+    pub fn ami_id(&self) -> ::std::option::Option<&str> {
+        self.ami_id.as_deref()
+    }
+    /// <p>Dedicated Host ID where the resource is running.</p>
+    pub fn host_id(&self) -> ::std::option::Option<&str> {
+        self.host_id.as_deref()
+    }
+    /// <p>Region where the resource is located.</p>
+    pub fn region(&self) -> ::std::option::Option<&str> {
+        self.region.as_deref()
+    }
+    /// <p>EC2 instance type of the resource.</p>
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+        self.instance_type.as_deref()
+    }
 }
 impl ResourceInventory {
     /// Creates a new builder-style object to manufacture [`ResourceInventory`](crate::types::ResourceInventory).
@@ -60,6 +98,12 @@ pub struct ResourceInventoryBuilder {
     pub(crate) platform: ::std::option::Option<::std::string::String>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) resource_owning_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) marketplace_product_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) usage_operation: ::std::option::Option<::std::string::String>,
+    pub(crate) ami_id: ::std::option::Option<::std::string::String>,
+    pub(crate) host_id: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
 }
 impl ResourceInventoryBuilder {
     /// <p>ID of the resource.</p>
@@ -146,6 +190,96 @@ impl ResourceInventoryBuilder {
     pub fn get_resource_owning_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_owning_account_id
     }
+    /// Appends an item to `marketplace_product_codes`.
+    ///
+    /// To override the contents of this collection use [`set_marketplace_product_codes`](Self::set_marketplace_product_codes).
+    ///
+    /// <p>List of Marketplace product codes associated with the resource.</p>
+    pub fn marketplace_product_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.marketplace_product_codes.unwrap_or_default();
+        v.push(input.into());
+        self.marketplace_product_codes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of Marketplace product codes associated with the resource.</p>
+    pub fn set_marketplace_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.marketplace_product_codes = input;
+        self
+    }
+    /// <p>List of Marketplace product codes associated with the resource.</p>
+    pub fn get_marketplace_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.marketplace_product_codes
+    }
+    /// <p>Usage operation value that corresponds to the license type for billing purposes.</p>
+    pub fn usage_operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.usage_operation = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Usage operation value that corresponds to the license type for billing purposes.</p>
+    pub fn set_usage_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.usage_operation = input;
+        self
+    }
+    /// <p>Usage operation value that corresponds to the license type for billing purposes.</p>
+    pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_operation
+    }
+    /// <p>Amazon Machine Image (AMI) ID associated with the resource.</p>
+    pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ami_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Amazon Machine Image (AMI) ID associated with the resource.</p>
+    pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ami_id = input;
+        self
+    }
+    /// <p>Amazon Machine Image (AMI) ID associated with the resource.</p>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_id
+    }
+    /// <p>Dedicated Host ID where the resource is running.</p>
+    pub fn host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.host_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Dedicated Host ID where the resource is running.</p>
+    pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.host_id = input;
+        self
+    }
+    /// <p>Dedicated Host ID where the resource is running.</p>
+    pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_id
+    }
+    /// <p>Region where the resource is located.</p>
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Region where the resource is located.</p>
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.region = input;
+        self
+    }
+    /// <p>Region where the resource is located.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
+    /// <p>EC2 instance type of the resource.</p>
+    pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>EC2 instance type of the resource.</p>
+    pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_type = input;
+        self
+    }
+    /// <p>EC2 instance type of the resource.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// Consumes the builder and constructs a [`ResourceInventory`](crate::types::ResourceInventory).
     pub fn build(self) -> crate::types::ResourceInventory {
         crate::types::ResourceInventory {
@@ -155,6 +289,12 @@ impl ResourceInventoryBuilder {
             platform: self.platform,
             platform_version: self.platform_version,
             resource_owning_account_id: self.resource_owning_account_id,
+            marketplace_product_codes: self.marketplace_product_codes,
+            usage_operation: self.usage_operation,
+            ami_id: self.ami_id,
+            host_id: self.host_id,
+            region: self.region,
+            instance_type: self.instance_type,
         }
     }
 }

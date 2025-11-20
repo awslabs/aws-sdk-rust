@@ -25,7 +25,7 @@ impl crate::operation::create_organizational_unit::builders::CreateOrganizationa
 /// <p>Creates an organizational unit (OU) within a root or parent OU. An OU is a container for accounts that enables you to organize your accounts to apply policies according to your business requirements. The number of levels deep that you can nest OUs is dependent upon the policy types enabled for that root. For service control policies, the limit is five.</p>
 /// <p>For more information about OUs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing organizational units (OUs)</a> in the <i>Organizations User Guide</i>.</p>
 /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>You can only call this operation from the management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOrganizationalUnitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,7 +111,7 @@ impl CreateOrganizationalUnitFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+    /// <p>ID for the parent root or OU that you want to create the new OU in.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -123,7 +123,7 @@ impl CreateOrganizationalUnitFluentBuilder {
         self.inner = self.inner.parent_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+    /// <p>ID for the parent root or OU that you want to create the new OU in.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>
@@ -135,7 +135,7 @@ impl CreateOrganizationalUnitFluentBuilder {
         self.inner = self.inner.set_parent_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
+    /// <p>ID for the parent root or OU that you want to create the new OU in.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
     /// <ul>
     /// <li>

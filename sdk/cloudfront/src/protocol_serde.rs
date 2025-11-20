@@ -1035,6 +1035,8 @@ pub(crate) mod shape_import_source;
 
 pub(crate) mod shape_invalidation_batch;
 
+pub(crate) mod shape_ipam_cidr_config;
+
 pub(crate) mod shape_key_group_config;
 
 pub(crate) mod shape_managed_certificate_request;
@@ -1301,6 +1303,8 @@ pub(crate) mod shape_headers;
 
 pub(crate) mod shape_invalidation_summary_list;
 
+pub(crate) mod shape_ipam_config;
+
 pub(crate) mod shape_key_group_summary_list;
 
 pub(crate) mod shape_key_value_store_association;
@@ -1414,6 +1418,8 @@ pub(crate) mod shape_field_patterns;
 pub(crate) mod shape_function_association;
 
 pub(crate) mod shape_invalidation_summary;
+
+pub(crate) mod shape_ipam_cidr_config_list;
 
 pub(crate) mod shape_key_group_summary;
 

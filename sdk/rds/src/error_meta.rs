@@ -295,6 +295,8 @@ pub enum Error {
     TenantDatabaseQuotaExceededFault(crate::types::error::TenantDatabaseQuotaExceededFault),
     /// <p>The specified DB engine version isn't supported for Aurora Limitless Database.</p>
     UnsupportedDbEngineVersionFault(crate::types::error::UnsupportedDbEngineVersionFault),
+    /// <p>The operation violates VPC encryption control settings. Make sure that your DB instance type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption controls to not enforce encryption-in-transit.</p>
+    VpcEncryptionControlViolationException(crate::types::error::VpcEncryptionControlViolationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -452,6 +454,7 @@ impl ::std::fmt::Display for Error {
             Error::TenantDatabaseNotFoundFault(inner) => inner.fmt(f),
             Error::TenantDatabaseQuotaExceededFault(inner) => inner.fmt(f),
             Error::UnsupportedDbEngineVersionFault(inner) => inner.fmt(f),
+            Error::VpcEncryptionControlViolationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -618,6 +621,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::TenantDatabaseNotFoundFault(inner) => inner.meta(),
             Self::TenantDatabaseQuotaExceededFault(inner) => inner.meta(),
             Self::UnsupportedDbEngineVersionFault(inner) => inner.meta(),
+            Self::VpcEncryptionControlViolationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -1251,6 +1255,9 @@ impl From<crate::operation::create_db_cluster::CreateDBClusterError> for Error {
             crate::operation::create_db_cluster::CreateDBClusterError::StorageTypeNotSupportedFault(inner) => {
                 Error::StorageTypeNotSupportedFault(inner)
             }
+            crate::operation::create_db_cluster::CreateDBClusterError::VpcEncryptionControlViolationException(inner) => {
+                Error::VpcEncryptionControlViolationException(inner)
+            }
             crate::operation::create_db_cluster::CreateDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1439,6 +1446,9 @@ impl From<crate::operation::create_db_instance::CreateDBInstanceError> for Error
             crate::operation::create_db_instance::CreateDBInstanceError::TenantDatabaseQuotaExceededFault(inner) => {
                 Error::TenantDatabaseQuotaExceededFault(inner)
             }
+            crate::operation::create_db_instance::CreateDBInstanceError::VpcEncryptionControlViolationException(inner) => {
+                Error::VpcEncryptionControlViolationException(inner)
+            }
             crate::operation::create_db_instance::CreateDBInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1536,6 +1546,9 @@ impl From<crate::operation::create_db_instance_read_replica::CreateDBInstanceRea
             }
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::TenantDatabaseQuotaExceededFault(inner) => {
                 Error::TenantDatabaseQuotaExceededFault(inner)
+            }
+            crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::VpcEncryptionControlViolationException(inner) => {
+                Error::VpcEncryptionControlViolationException(inner)
             }
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -4330,6 +4343,9 @@ impl From<crate::operation::modify_db_cluster::ModifyDBClusterError> for Error {
             crate::operation::modify_db_cluster::ModifyDBClusterError::StorageTypeNotSupportedFault(inner) => {
                 Error::StorageTypeNotSupportedFault(inner)
             }
+            crate::operation::modify_db_cluster::ModifyDBClusterError::VpcEncryptionControlViolationException(inner) => {
+                Error::VpcEncryptionControlViolationException(inner)
+            }
             crate::operation::modify_db_cluster::ModifyDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -4517,6 +4533,9 @@ impl From<crate::operation::modify_db_instance::ModifyDBInstanceError> for Error
             }
             crate::operation::modify_db_instance::ModifyDBInstanceError::TenantDatabaseQuotaExceededFault(inner) => {
                 Error::TenantDatabaseQuotaExceededFault(inner)
+            }
+            crate::operation::modify_db_instance::ModifyDBInstanceError::VpcEncryptionControlViolationException(inner) => {
+                Error::VpcEncryptionControlViolationException(inner)
             }
             crate::operation::modify_db_instance::ModifyDBInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -5613,6 +5632,9 @@ impl From<crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFr
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::StorageTypeNotSupportedFault(inner) => {
                 Error::StorageTypeNotSupportedFault(inner)
             }
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::VpcEncryptionControlViolationException(inner) => {
+                Error::VpcEncryptionControlViolationException(inner)
+            }
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -5711,6 +5733,9 @@ impl From<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBCluste
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::StorageTypeNotSupportedFault(inner) => {
                 Error::StorageTypeNotSupportedFault(inner)
             }
+            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::VpcEncryptionControlViolationException(
+                inner,
+            ) => Error::VpcEncryptionControlViolationException(inner),
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -5815,6 +5840,9 @@ impl From<crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInsta
             crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::TenantDatabaseQuotaExceededFault(inner) => {
                 Error::TenantDatabaseQuotaExceededFault(inner)
             }
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::VpcEncryptionControlViolationException(
+                inner,
+            ) => Error::VpcEncryptionControlViolationException(inner),
             crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -5893,6 +5921,9 @@ impl From<crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3
             }
             crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::StorageTypeNotSupportedFault(inner) => {
                 Error::StorageTypeNotSupportedFault(inner)
+            }
+            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::VpcEncryptionControlViolationException(inner) => {
+                Error::VpcEncryptionControlViolationException(inner)
             }
             crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -6001,6 +6032,9 @@ impl From<crate::operation::restore_db_instance_to_point_in_time::RestoreDBInsta
             crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::TenantDatabaseQuotaExceededFault(inner) => {
                 Error::TenantDatabaseQuotaExceededFault(inner)
             }
+            crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::VpcEncryptionControlViolationException(
+                inner,
+            ) => Error::VpcEncryptionControlViolationException(inner),
             crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -6101,6 +6135,9 @@ impl From<crate::operation::start_db_cluster::StartDBClusterError> for Error {
                 Error::InvalidDbShardGroupStateFault(inner)
             }
             crate::operation::start_db_cluster::StartDBClusterError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+            crate::operation::start_db_cluster::StartDBClusterError::VpcEncryptionControlViolationException(inner) => {
+                Error::VpcEncryptionControlViolationException(inner)
+            }
             crate::operation::start_db_cluster::StartDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -6141,6 +6178,9 @@ impl From<crate::operation::start_db_instance::StartDBInstanceError> for Error {
                 Error::InvalidVpcNetworkStateFault(inner)
             }
             crate::operation::start_db_instance::StartDBInstanceError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+            crate::operation::start_db_instance::StartDBInstanceError::VpcEncryptionControlViolationException(inner) => {
+                Error::VpcEncryptionControlViolationException(inner)
+            }
             crate::operation::start_db_instance::StartDBInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -6601,6 +6641,7 @@ impl ::std::error::Error for Error {
             Error::TenantDatabaseNotFoundFault(inner) => inner.source(),
             Error::TenantDatabaseQuotaExceededFault(inner) => inner.source(),
             Error::UnsupportedDbEngineVersionFault(inner) => inner.source(),
+            Error::VpcEncryptionControlViolationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -6753,6 +6794,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::TenantDatabaseNotFoundFault(e) => e.request_id(),
             Self::TenantDatabaseQuotaExceededFault(e) => e.request_id(),
             Self::UnsupportedDbEngineVersionFault(e) => e.request_id(),
+            Self::VpcEncryptionControlViolationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

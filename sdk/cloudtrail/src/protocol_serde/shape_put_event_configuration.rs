@@ -177,6 +177,22 @@ pub fn de_put_event_configuration_http_error(
                 tmp
             })
         }
+        "InvalidHomeRegionException" => crate::operation::put_event_configuration::PutEventConfigurationError::InvalidHomeRegionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidHomeRegionExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_home_region_exception::de_invalid_home_region_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::put_event_configuration::PutEventConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidParameterCombinationException" => {
             crate::operation::put_event_configuration::PutEventConfigurationError::InvalidParameterCombinationException({
                 #[allow(unused_mut)]
@@ -204,6 +220,21 @@ pub fn de_put_event_configuration_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_event_configuration::PutEventConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidTrailNameException" => crate::operation::put_event_configuration::PutEventConfigurationError::InvalidTrailNameException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidTrailNameExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_trail_name_exception::de_invalid_trail_name_exception_json_err(_response_body, output)
                     .map_err(crate::operation::put_event_configuration::PutEventConfigurationError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -278,6 +309,21 @@ pub fn de_put_event_configuration_http_error(
             }
             tmp
         }),
+        "TrailNotFoundException" => crate::operation::put_event_configuration::PutEventConfigurationError::TrailNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TrailNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_trail_not_found_exception::de_trail_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_event_configuration::PutEventConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UnsupportedOperationException" => crate::operation::put_event_configuration::PutEventConfigurationError::UnsupportedOperationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -341,6 +387,13 @@ pub(crate) fn de_put_event_configuration(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "TrailARN" => {
+                    builder = builder.set_trail_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "EventDataStoreArn" => {
                     builder = builder.set_event_data_store_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -358,6 +411,11 @@ pub(crate) fn de_put_event_configuration(
                 "ContextKeySelectors" => {
                     builder =
                         builder.set_context_key_selectors(crate::protocol_serde::shape_context_key_selectors::de_context_key_selectors(tokens)?);
+                }
+                "AggregationConfigurations" => {
+                    builder = builder.set_aggregation_configurations(
+                        crate::protocol_serde::shape_aggregation_configurations::de_aggregation_configurations(tokens)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

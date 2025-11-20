@@ -51,6 +51,12 @@ pub use crate::types::_data_resource::DataResource;
 
 pub use crate::types::_read_write_type::ReadWriteType;
 
+pub use crate::types::_aggregation_configuration::AggregationConfiguration;
+
+pub use crate::types::_event_category_aggregation::EventCategoryAggregation;
+
+pub use crate::types::_template::Template;
+
 pub use crate::types::_context_key_selector::ContextKeySelector;
 
 pub use crate::types::_type_::Type;
@@ -115,6 +121,8 @@ mod _advanced_event_selector;
 
 mod _advanced_field_selector;
 
+mod _aggregation_configuration;
+
 mod _billing_mode;
 
 mod _channel;
@@ -138,6 +146,8 @@ mod _destination_type;
 mod _event;
 
 mod _event_category;
+
+mod _event_category_aggregation;
 
 mod _event_data_store;
 
@@ -214,6 +224,8 @@ mod _source_config;
 mod _source_event_category;
 
 mod _tag;
+
+mod _template;
 
 mod _trail;
 

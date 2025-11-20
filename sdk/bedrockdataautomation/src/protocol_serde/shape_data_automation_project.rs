@@ -47,6 +47,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "projectType" => {
+                            builder = builder.set_project_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DataAutomationProjectType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "projectDescription" => {
                             builder = builder.set_project_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -79,6 +79,16 @@ pub(crate) fn reflens_get_findings_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_findings_trends_v2_output_output_next_token(
+    input: &crate::operation::get_findings_trends_v2::GetFindingsTrendsV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_findings_v2_output_output_next_token(
     input: &crate::operation::get_findings_v2::GetFindingsV2Output,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -91,6 +101,16 @@ pub(crate) fn reflens_get_findings_v2_output_output_next_token(
 
 pub(crate) fn reflens_get_insights_output_output_next_token(
     input: &crate::operation::get_insights::GetInsightsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_get_resources_trends_v2_output_output_next_token(
+    input: &crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Output,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -265,6 +285,13 @@ pub(crate) fn lens_get_findings_output_output_findings(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_get_findings_trends_v2_output_output_trends_metrics(
+    input: crate::operation::get_findings_trends_v2::GetFindingsTrendsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TrendsMetricsResult>> {
+    let input = input.trends_metrics?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_findings_v2_output_output_findings(
     input: crate::operation::get_findings_v2::GetFindingsV2Output,
 ) -> ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>> {
@@ -276,6 +303,13 @@ pub(crate) fn lens_get_insights_output_output_insights(
     input: crate::operation::get_insights::GetInsightsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Insight>> {
     let input = input.insights?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_resources_trends_v2_output_output_trends_metrics(
+    input: crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourcesTrendsMetricsResult>> {
+    let input = input.trends_metrics?;
     ::std::option::Option::Some(input)
 }
 

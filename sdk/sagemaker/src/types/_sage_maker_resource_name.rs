@@ -12,6 +12,7 @@
 /// ```text
 /// # let sagemakerresourcename = unimplemented!();
 /// match sagemakerresourcename {
+///     SageMakerResourceName::Endpoint => { /* ... */ },
 ///     SageMakerResourceName::HyperpodCluster => { /* ... */ },
 ///     SageMakerResourceName::TrainingJob => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum SageMakerResourceName {
     #[allow(missing_docs)] // documentation missing in model
+    Endpoint,
+    #[allow(missing_docs)] // documentation missing in model
     HyperpodCluster,
     #[allow(missing_docs)] // documentation missing in model
     TrainingJob,
@@ -53,6 +56,7 @@ pub enum SageMakerResourceName {
 impl ::std::convert::From<&str> for SageMakerResourceName {
     fn from(s: &str) -> Self {
         match s {
+            "endpoint" => SageMakerResourceName::Endpoint,
             "hyperpod-cluster" => SageMakerResourceName::HyperpodCluster,
             "training-job" => SageMakerResourceName::TrainingJob,
             other => SageMakerResourceName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl SageMakerResourceName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SageMakerResourceName::Endpoint => "endpoint",
             SageMakerResourceName::HyperpodCluster => "hyperpod-cluster",
             SageMakerResourceName::TrainingJob => "training-job",
             SageMakerResourceName::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl SageMakerResourceName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["hyperpod-cluster", "training-job"]
+        &["endpoint", "hyperpod-cluster", "training-job"]
     }
 }
 impl ::std::convert::AsRef<str> for SageMakerResourceName {
@@ -100,6 +105,7 @@ impl SageMakerResourceName {
 impl ::std::fmt::Display for SageMakerResourceName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SageMakerResourceName::Endpoint => write!(f, "endpoint"),
             SageMakerResourceName::HyperpodCluster => write!(f, "hyperpod-cluster"),
             SageMakerResourceName::TrainingJob => write!(f, "training-job"),
             SageMakerResourceName::Unknown(value) => write!(f, "{value}"),

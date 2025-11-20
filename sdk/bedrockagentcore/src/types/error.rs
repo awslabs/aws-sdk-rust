@@ -9,9 +9,9 @@ pub use crate::types::error::_service_exception::ServiceException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
-pub use crate::types::error::_invalid_input_exception::InvalidInputException;
-
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
+pub use crate::types::error::_invalid_input_exception::InvalidInputException;
 
 pub use crate::types::error::_throttling_exception::ThrottlingException;
 

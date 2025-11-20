@@ -165,6 +165,8 @@ pub use crate::types::_component_summary::ComponentSummaryBuilder;
 
 pub use crate::types::_component_state::ComponentStateBuilder;
 
+pub use crate::types::_latest_version_references::LatestVersionReferencesBuilder;
+
 pub use crate::types::_workflow::WorkflowBuilder;
 
 pub use crate::types::_workflow_parameter_detail::WorkflowParameterDetailBuilder;

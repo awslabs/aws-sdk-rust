@@ -302,6 +302,8 @@ pub enum RestoreDBClusterFromSnapshotError {
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
     /// <p>The specified <code>StorageType</code> can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
+    /// <p>The operation violates VPC encryption control settings. Make sure that your DB instance type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption controls to not enforce encryption-in-transit.</p>
+    VpcEncryptionControlViolationException(crate::types::error::VpcEncryptionControlViolationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -357,6 +359,7 @@ impl RestoreDBClusterFromSnapshotError {
             Self::OptionGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageTypeNotSupportedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::VpcEncryptionControlViolationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -448,6 +451,10 @@ impl RestoreDBClusterFromSnapshotError {
     pub fn is_storage_type_not_supported_fault(&self) -> bool {
         matches!(self, Self::StorageTypeNotSupportedFault(_))
     }
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotError::VpcEncryptionControlViolationException`.
+    pub fn is_vpc_encryption_control_violation_exception(&self) -> bool {
+        matches!(self, Self::VpcEncryptionControlViolationException(_))
+    }
 }
 impl ::std::error::Error for RestoreDBClusterFromSnapshotError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -474,6 +481,7 @@ impl ::std::error::Error for RestoreDBClusterFromSnapshotError {
             Self::OptionGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageTypeNotSupportedFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::VpcEncryptionControlViolationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -503,6 +511,7 @@ impl ::std::fmt::Display for RestoreDBClusterFromSnapshotError {
             Self::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::StorageTypeNotSupportedFault(_inner) => _inner.fmt(f),
+            Self::VpcEncryptionControlViolationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -546,6 +555,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBClus
             Self::OptionGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageTypeNotSupportedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::VpcEncryptionControlViolationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -45,6 +45,15 @@ pub struct ByoipCidr {
     /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
     /// </note>
     pub network_border_group: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the advertisement method for the BYOIP CIDR. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>unicast</code>: IP is advertised from a single location (regional services like EC2)</p></li>
+    /// <li>
+    /// <p><code>anycast</code>: IP is advertised from multiple global locations simultaneously (global services like CloudFront)</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-cloudfront.html">Bring your own IP to CloudFront using IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub advertisement_type: ::std::option::Option<::std::string::String>,
 }
 impl ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
@@ -102,6 +111,17 @@ impl ByoipCidr {
     pub fn network_border_group(&self) -> ::std::option::Option<&str> {
         self.network_border_group.as_deref()
     }
+    /// <p>Specifies the advertisement method for the BYOIP CIDR. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>unicast</code>: IP is advertised from a single location (regional services like EC2)</p></li>
+    /// <li>
+    /// <p><code>anycast</code>: IP is advertised from multiple global locations simultaneously (global services like CloudFront)</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-cloudfront.html">Bring your own IP to CloudFront using IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn advertisement_type(&self) -> ::std::option::Option<&str> {
+        self.advertisement_type.as_deref()
+    }
 }
 impl ByoipCidr {
     /// Creates a new builder-style object to manufacture [`ByoipCidr`](crate::types::ByoipCidr).
@@ -120,6 +140,7 @@ pub struct ByoipCidrBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ByoipCidrState>,
     pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
+    pub(crate) advertisement_type: ::std::option::Option<::std::string::String>,
 }
 impl ByoipCidrBuilder {
     /// <p>The address range, in CIDR notation.</p>
@@ -299,6 +320,41 @@ impl ByoipCidrBuilder {
     pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_border_group
     }
+    /// <p>Specifies the advertisement method for the BYOIP CIDR. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>unicast</code>: IP is advertised from a single location (regional services like EC2)</p></li>
+    /// <li>
+    /// <p><code>anycast</code>: IP is advertised from multiple global locations simultaneously (global services like CloudFront)</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-cloudfront.html">Bring your own IP to CloudFront using IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn advertisement_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.advertisement_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the advertisement method for the BYOIP CIDR. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>unicast</code>: IP is advertised from a single location (regional services like EC2)</p></li>
+    /// <li>
+    /// <p><code>anycast</code>: IP is advertised from multiple global locations simultaneously (global services like CloudFront)</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-cloudfront.html">Bring your own IP to CloudFront using IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn set_advertisement_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.advertisement_type = input;
+        self
+    }
+    /// <p>Specifies the advertisement method for the BYOIP CIDR. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>unicast</code>: IP is advertised from a single location (regional services like EC2)</p></li>
+    /// <li>
+    /// <p><code>anycast</code>: IP is advertised from multiple global locations simultaneously (global services like CloudFront)</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-cloudfront.html">Bring your own IP to CloudFront using IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_advertisement_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.advertisement_type
+    }
     /// Consumes the builder and constructs a [`ByoipCidr`](crate::types::ByoipCidr).
     pub fn build(self) -> crate::types::ByoipCidr {
         crate::types::ByoipCidr {
@@ -308,6 +364,7 @@ impl ByoipCidrBuilder {
             status_message: self.status_message,
             state: self.state,
             network_border_group: self.network_border_group,
+            advertisement_type: self.advertisement_type,
         }
     }
 }

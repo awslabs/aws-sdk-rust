@@ -218,37 +218,43 @@ impl SearchTrainingPlanOfferingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_target_resources`](Self::set_target_resources).
     ///
-    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) to search for in the offerings.</p>
+    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) to search for in the offerings.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
     /// <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p></li>
     /// <li>
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
+    /// <li>
+    /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
     /// </ul>
     pub fn target_resources(mut self, input: crate::types::SageMakerResourceName) -> Self {
         self.inner = self.inner.target_resources(input);
         self
     }
-    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) to search for in the offerings.</p>
+    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) to search for in the offerings.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
     /// <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p></li>
     /// <li>
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
+    /// <li>
+    /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
     /// </ul>
     pub fn set_target_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>>) -> Self {
         self.inner = self.inner.set_target_resources(input);
         self
     }
-    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) to search for in the offerings.</p>
+    /// <p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) to search for in the offerings.</p>
     /// <p>Training plans are specific to their target resource.</p>
     /// <ul>
     /// <li>
     /// <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p></li>
     /// <li>
     /// <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p></li>
+    /// <li>
+    /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
     /// </ul>
     pub fn get_target_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>> {
         self.inner.get_target_resources()

@@ -203,6 +203,8 @@ mod delete_lifecycle_policy;
 
 mod delete_workflow;
 
+mod distribute_image;
+
 mod get_component;
 
 mod get_component_policy;
@@ -294,6 +296,8 @@ mod put_container_recipe_policy;
 mod put_image_policy;
 
 mod put_image_recipe_policy;
+
+mod retry_image;
 
 mod send_workflow_step_action;
 

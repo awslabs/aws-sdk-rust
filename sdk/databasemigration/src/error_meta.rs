@@ -2807,6 +2807,7 @@ impl From<crate::operation::import_certificate::ImportCertificateError> for Erro
     fn from(err: crate::operation::import_certificate::ImportCertificateError) -> Self {
         match err {
             crate::operation::import_certificate::ImportCertificateError::InvalidCertificateFault(inner) => Error::InvalidCertificateFault(inner),
+            crate::operation::import_certificate::ImportCertificateError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
             crate::operation::import_certificate::ImportCertificateError::ResourceAlreadyExistsFault(inner) => {
                 Error::ResourceAlreadyExistsFault(inner)
             }

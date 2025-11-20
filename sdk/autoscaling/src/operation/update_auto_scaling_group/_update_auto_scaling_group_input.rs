@@ -70,6 +70,8 @@ pub struct UpdateAutoScalingGroupInput {
     pub skip_zonal_shift_validation: ::std::option::Option<bool>,
     /// <p>The capacity reservation specification for the Auto Scaling group.</p>
     pub capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
+    /// <p>The instance lifecycle policy for the Auto Scaling group. Use this to add, modify, or remove lifecycle policies that control instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when to preserve instances for manual intervention.</p>
+    pub instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
 }
 impl UpdateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group.</p>
@@ -195,6 +197,10 @@ impl UpdateAutoScalingGroupInput {
     pub fn capacity_reservation_specification(&self) -> ::std::option::Option<&crate::types::CapacityReservationSpecification> {
         self.capacity_reservation_specification.as_ref()
     }
+    /// <p>The instance lifecycle policy for the Auto Scaling group. Use this to add, modify, or remove lifecycle policies that control instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when to preserve instances for manual intervention.</p>
+    pub fn instance_lifecycle_policy(&self) -> ::std::option::Option<&crate::types::InstanceLifecyclePolicy> {
+        self.instance_lifecycle_policy.as_ref()
+    }
 }
 impl UpdateAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateAutoScalingGroupInput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput).
@@ -233,6 +239,7 @@ pub struct UpdateAutoScalingGroupInputBuilder {
     pub(crate) availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
     pub(crate) skip_zonal_shift_validation: ::std::option::Option<bool>,
     pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
+    pub(crate) instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
 }
 impl UpdateAutoScalingGroupInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -657,6 +664,20 @@ impl UpdateAutoScalingGroupInputBuilder {
     pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
         &self.capacity_reservation_specification
     }
+    /// <p>The instance lifecycle policy for the Auto Scaling group. Use this to add, modify, or remove lifecycle policies that control instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when to preserve instances for manual intervention.</p>
+    pub fn instance_lifecycle_policy(mut self, input: crate::types::InstanceLifecyclePolicy) -> Self {
+        self.instance_lifecycle_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance lifecycle policy for the Auto Scaling group. Use this to add, modify, or remove lifecycle policies that control instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when to preserve instances for manual intervention.</p>
+    pub fn set_instance_lifecycle_policy(mut self, input: ::std::option::Option<crate::types::InstanceLifecyclePolicy>) -> Self {
+        self.instance_lifecycle_policy = input;
+        self
+    }
+    /// <p>The instance lifecycle policy for the Auto Scaling group. Use this to add, modify, or remove lifecycle policies that control instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when to preserve instances for manual intervention.</p>
+    pub fn get_instance_lifecycle_policy(&self) -> &::std::option::Option<crate::types::InstanceLifecyclePolicy> {
+        &self.instance_lifecycle_policy
+    }
     /// Consumes the builder and constructs a [`UpdateAutoScalingGroupInput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput).
     pub fn build(
         self,
@@ -691,6 +712,7 @@ impl UpdateAutoScalingGroupInputBuilder {
             availability_zone_impairment_policy: self.availability_zone_impairment_policy,
             skip_zonal_shift_validation: self.skip_zonal_shift_validation,
             capacity_reservation_specification: self.capacity_reservation_specification,
+            instance_lifecycle_policy: self.instance_lifecycle_policy,
         })
     }
 }

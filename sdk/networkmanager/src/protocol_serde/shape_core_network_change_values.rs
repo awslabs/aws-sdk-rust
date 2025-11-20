@@ -77,6 +77,39 @@ where
                             builder = builder
                                 .set_security_group_referencing_support(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "RoutingPolicyDirection" => {
+                            builder = builder.set_routing_policy_direction(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RoutingPolicyDirection::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "RoutingPolicy" => {
+                            builder = builder.set_routing_policy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "PeerEdgeLocations" => {
+                            builder = builder.set_peer_edge_locations(
+                                crate::protocol_serde::shape_external_region_code_list::de_external_region_code_list(tokens)?,
+                            );
+                        }
+                        "AttachmentId" => {
+                            builder = builder.set_attachment_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RoutingPolicyAssociationDetails" => {
+                            builder = builder.set_routing_policy_association_details(
+                                crate::protocol_serde::shape_routing_policy_association_details_list::de_routing_policy_association_details_list(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

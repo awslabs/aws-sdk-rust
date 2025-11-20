@@ -107,6 +107,9 @@ impl From<crate::operation::batch_execute_statement::BatchExecuteStatementError>
             crate::operation::batch_execute_statement::BatchExecuteStatementError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::batch_execute_statement::BatchExecuteStatementError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_execute_statement::BatchExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -131,6 +134,7 @@ impl From<crate::operation::cancel_statement::CancelStatementError> for Error {
         match err {
             crate::operation::cancel_statement::CancelStatementError::DatabaseConnectionException(inner) => Error::DatabaseConnectionException(inner),
             crate::operation::cancel_statement::CancelStatementError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_statement::CancelStatementError::QueryTimeoutException(inner) => Error::QueryTimeoutException(inner),
             crate::operation::cancel_statement::CancelStatementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::cancel_statement::CancelStatementError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::cancel_statement::CancelStatementError::Unhandled(inner) => Error::Unhandled(inner),
@@ -181,6 +185,7 @@ impl From<crate::operation::describe_table::DescribeTableError> for Error {
             crate::operation::describe_table::DescribeTableError::DatabaseConnectionException(inner) => Error::DatabaseConnectionException(inner),
             crate::operation::describe_table::DescribeTableError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::describe_table::DescribeTableError::QueryTimeoutException(inner) => Error::QueryTimeoutException(inner),
+            crate::operation::describe_table::DescribeTableError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_table::DescribeTableError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_table::DescribeTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -211,6 +216,7 @@ impl From<crate::operation::execute_statement::ExecuteStatementError> for Error 
             }
             crate::operation::execute_statement::ExecuteStatementError::ExecuteStatementException(inner) => Error::ExecuteStatementException(inner),
             crate::operation::execute_statement::ExecuteStatementError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::execute_statement::ExecuteStatementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::execute_statement::ExecuteStatementError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::execute_statement::ExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -292,6 +298,7 @@ impl From<crate::operation::list_databases::ListDatabasesError> for Error {
             crate::operation::list_databases::ListDatabasesError::DatabaseConnectionException(inner) => Error::DatabaseConnectionException(inner),
             crate::operation::list_databases::ListDatabasesError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_databases::ListDatabasesError::QueryTimeoutException(inner) => Error::QueryTimeoutException(inner),
+            crate::operation::list_databases::ListDatabasesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_databases::ListDatabasesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_databases::ListDatabasesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -317,6 +324,7 @@ impl From<crate::operation::list_schemas::ListSchemasError> for Error {
             crate::operation::list_schemas::ListSchemasError::DatabaseConnectionException(inner) => Error::DatabaseConnectionException(inner),
             crate::operation::list_schemas::ListSchemasError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_schemas::ListSchemasError::QueryTimeoutException(inner) => Error::QueryTimeoutException(inner),
+            crate::operation::list_schemas::ListSchemasError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_schemas::ListSchemasError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_schemas::ListSchemasError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -340,6 +348,7 @@ impl From<crate::operation::list_statements::ListStatementsError> for Error {
     fn from(err: crate::operation::list_statements::ListStatementsError) -> Self {
         match err {
             crate::operation::list_statements::ListStatementsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_statements::ListStatementsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_statements::ListStatementsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_statements::ListStatementsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -365,6 +374,7 @@ impl From<crate::operation::list_tables::ListTablesError> for Error {
             crate::operation::list_tables::ListTablesError::DatabaseConnectionException(inner) => Error::DatabaseConnectionException(inner),
             crate::operation::list_tables::ListTablesError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_tables::ListTablesError::QueryTimeoutException(inner) => Error::QueryTimeoutException(inner),
+            crate::operation::list_tables::ListTablesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_tables::ListTablesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tables::ListTablesError::Unhandled(inner) => Error::Unhandled(inner),
         }

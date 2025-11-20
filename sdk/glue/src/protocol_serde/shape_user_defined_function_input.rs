@@ -12,20 +12,23 @@ pub fn ser_user_defined_function_input(
     if let Some(var_3) = &input.owner_name {
         object.key("OwnerName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.owner_type {
-        object.key("OwnerType").string(var_4.as_str());
+    if let Some(var_4) = &input.function_type {
+        object.key("FunctionType").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.resource_uris {
-        let mut array_6 = object.key("ResourceUris").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.owner_type {
+        object.key("OwnerType").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.resource_uris {
+        let mut array_7 = object.key("ResourceUris").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_resource_uri::ser_resource_uri(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_resource_uri::ser_resource_uri(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
     Ok(())
 }

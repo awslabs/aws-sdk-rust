@@ -21,6 +21,8 @@ pub struct UpdateLicenseConfigurationInput {
     pub product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub disassociate_when_not_found: ::std::option::Option<bool>,
+    /// <p>License configuration expiry time.</p>
+    pub license_expiry: ::std::option::Option<i64>,
 }
 impl UpdateLicenseConfigurationInput {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
@@ -63,6 +65,10 @@ impl UpdateLicenseConfigurationInput {
     pub fn disassociate_when_not_found(&self) -> ::std::option::Option<bool> {
         self.disassociate_when_not_found
     }
+    /// <p>License configuration expiry time.</p>
+    pub fn license_expiry(&self) -> ::std::option::Option<i64> {
+        self.license_expiry
+    }
 }
 impl UpdateLicenseConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateLicenseConfigurationInput`](crate::operation::update_license_configuration::UpdateLicenseConfigurationInput).
@@ -84,6 +90,7 @@ pub struct UpdateLicenseConfigurationInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
     pub(crate) disassociate_when_not_found: ::std::option::Option<bool>,
+    pub(crate) license_expiry: ::std::option::Option<i64>,
 }
 impl UpdateLicenseConfigurationInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
@@ -225,6 +232,20 @@ impl UpdateLicenseConfigurationInputBuilder {
     pub fn get_disassociate_when_not_found(&self) -> &::std::option::Option<bool> {
         &self.disassociate_when_not_found
     }
+    /// <p>License configuration expiry time.</p>
+    pub fn license_expiry(mut self, input: i64) -> Self {
+        self.license_expiry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>License configuration expiry time.</p>
+    pub fn set_license_expiry(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.license_expiry = input;
+        self
+    }
+    /// <p>License configuration expiry time.</p>
+    pub fn get_license_expiry(&self) -> &::std::option::Option<i64> {
+        &self.license_expiry
+    }
     /// Consumes the builder and constructs a [`UpdateLicenseConfigurationInput`](crate::operation::update_license_configuration::UpdateLicenseConfigurationInput).
     pub fn build(
         self,
@@ -242,6 +263,7 @@ impl UpdateLicenseConfigurationInputBuilder {
             description: self.description,
             product_information_list: self.product_information_list,
             disassociate_when_not_found: self.disassociate_when_not_found,
+            license_expiry: self.license_expiry,
         })
     }
 }

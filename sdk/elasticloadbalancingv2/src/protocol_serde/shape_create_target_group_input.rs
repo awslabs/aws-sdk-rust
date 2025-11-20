@@ -111,6 +111,14 @@ pub fn ser_create_target_group_input_input_input(
     if let Some(var_37) = &input.ip_address_type {
         scope_36.string(var_37.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_38 = writer.prefix("TargetControlPort");
+    if let Some(var_39) = &input.target_control_port {
+        scope_38.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_39).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

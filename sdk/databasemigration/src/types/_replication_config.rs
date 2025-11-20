@@ -26,6 +26,8 @@ pub struct ReplicationConfig {
     pub replication_config_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the serverless replication config was updated.</p>
     pub replication_config_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Indicates whether the replication configuration is read-only. When set to <code>true</code>, this replication configuration is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only replication configurations through their associated zero-ETL integration.</p>
+    pub is_read_only: ::std::option::Option<bool>,
 }
 impl ReplicationConfig {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
@@ -72,6 +74,10 @@ impl ReplicationConfig {
     pub fn replication_config_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replication_config_update_time.as_ref()
     }
+    /// <p>Indicates whether the replication configuration is read-only. When set to <code>true</code>, this replication configuration is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only replication configurations through their associated zero-ETL integration.</p>
+    pub fn is_read_only(&self) -> ::std::option::Option<bool> {
+        self.is_read_only
+    }
 }
 impl ReplicationConfig {
     /// Creates a new builder-style object to manufacture [`ReplicationConfig`](crate::types::ReplicationConfig).
@@ -95,6 +101,7 @@ pub struct ReplicationConfigBuilder {
     pub(crate) table_mappings: ::std::option::Option<::std::string::String>,
     pub(crate) replication_config_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) replication_config_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) is_read_only: ::std::option::Option<bool>,
 }
 impl ReplicationConfigBuilder {
     /// <p>The identifier for the <code>ReplicationConfig</code> associated with the replication.</p>
@@ -251,6 +258,20 @@ impl ReplicationConfigBuilder {
     pub fn get_replication_config_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.replication_config_update_time
     }
+    /// <p>Indicates whether the replication configuration is read-only. When set to <code>true</code>, this replication configuration is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only replication configurations through their associated zero-ETL integration.</p>
+    pub fn is_read_only(mut self, input: bool) -> Self {
+        self.is_read_only = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the replication configuration is read-only. When set to <code>true</code>, this replication configuration is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only replication configurations through their associated zero-ETL integration.</p>
+    pub fn set_is_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_read_only = input;
+        self
+    }
+    /// <p>Indicates whether the replication configuration is read-only. When set to <code>true</code>, this replication configuration is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only replication configurations through their associated zero-ETL integration.</p>
+    pub fn get_is_read_only(&self) -> &::std::option::Option<bool> {
+        &self.is_read_only
+    }
     /// Consumes the builder and constructs a [`ReplicationConfig`](crate::types::ReplicationConfig).
     pub fn build(self) -> crate::types::ReplicationConfig {
         crate::types::ReplicationConfig {
@@ -265,6 +286,7 @@ impl ReplicationConfigBuilder {
             table_mappings: self.table_mappings,
             replication_config_create_time: self.replication_config_create_time,
             replication_config_update_time: self.replication_config_update_time,
+            is_read_only: self.is_read_only,
         }
     }
 }

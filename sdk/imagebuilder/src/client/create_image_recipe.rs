@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`request_id(Option<String>)`](crate::operation::create_image_recipe::CreateImageRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::create_image_recipe::CreateImageRecipeOutput::client_token): <p>The client token that uniquely identifies the request.</p>
     ///   - [`image_recipe_arn(Option<String>)`](crate::operation::create_image_recipe::CreateImageRecipeOutput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
+    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::create_image_recipe::CreateImageRecipeOutput::latest_version_references): <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
     /// - On failure, responds with [`SdkError<CreateImageRecipeError>`](crate::operation::create_image_recipe::CreateImageRecipeError)
     pub fn create_image_recipe(&self) -> crate::operation::create_image_recipe::builders::CreateImageRecipeFluentBuilder {
         crate::operation::create_image_recipe::builders::CreateImageRecipeFluentBuilder::new(self.handle.clone())

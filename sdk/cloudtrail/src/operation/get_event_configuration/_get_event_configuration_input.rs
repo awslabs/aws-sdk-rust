@@ -3,10 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventConfigurationInput {
+    /// <p>The name of the trail for which you want to retrieve event configuration settings.</p>
+    pub trail_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to retrieve event configuration settings.</p>
     pub event_data_store: ::std::option::Option<::std::string::String>,
 }
 impl GetEventConfigurationInput {
+    /// <p>The name of the trail for which you want to retrieve event configuration settings.</p>
+    pub fn trail_name(&self) -> ::std::option::Option<&str> {
+        self.trail_name.as_deref()
+    }
     /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to retrieve event configuration settings.</p>
     pub fn event_data_store(&self) -> ::std::option::Option<&str> {
         self.event_data_store.as_deref()
@@ -23,9 +29,24 @@ impl GetEventConfigurationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetEventConfigurationInputBuilder {
+    pub(crate) trail_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
 }
 impl GetEventConfigurationInputBuilder {
+    /// <p>The name of the trail for which you want to retrieve event configuration settings.</p>
+    pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trail_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the trail for which you want to retrieve event configuration settings.</p>
+    pub fn set_trail_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trail_name = input;
+        self
+    }
+    /// <p>The name of the trail for which you want to retrieve event configuration settings.</p>
+    pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trail_name
+    }
     /// <p>The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to retrieve event configuration settings.</p>
     pub fn event_data_store(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data_store = ::std::option::Option::Some(input.into());
@@ -46,6 +67,7 @@ impl GetEventConfigurationInputBuilder {
     ) -> ::std::result::Result<crate::operation::get_event_configuration::GetEventConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_event_configuration::GetEventConfigurationInput {
+            trail_name: self.trail_name,
             event_data_store: self.event_data_store,
         })
     }

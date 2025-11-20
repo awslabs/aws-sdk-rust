@@ -63,6 +63,12 @@ pub fn ser_free_form_layout_element(
         crate::protocol_serde::shape_loading_animation::ser_loading_animation(&mut object_13, var_12)?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.border_radius {
+        object.key("BorderRadius").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.padding {
+        object.key("Padding").string(var_15.as_str());
+    }
     Ok(())
 }
 
@@ -154,6 +160,20 @@ where
                         }
                         "LoadingAnimation" => {
                             builder = builder.set_loading_animation(crate::protocol_serde::shape_loading_animation::de_loading_animation(tokens)?);
+                        }
+                        "BorderRadius" => {
+                            builder = builder.set_border_radius(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Padding" => {
+                            builder = builder.set_padding(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

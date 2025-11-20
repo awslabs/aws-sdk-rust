@@ -5,9 +5,9 @@
 pub struct ListSessionsInput {
     /// <p>The identifier of the AgentCore Memory resource for which to list sessions.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the actor for which to list sessions. If specified, only sessions involving this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list sessions.</p>
     pub actor_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,11 +17,11 @@ impl ListSessionsInput {
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
     }
-    /// <p>The identifier of the actor for which to list sessions. If specified, only sessions involving this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list sessions.</p>
     pub fn actor_id(&self) -> ::std::option::Option<&str> {
         self.actor_id.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -62,32 +62,32 @@ impl ListSessionsInputBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }
-    /// <p>The identifier of the actor for which to list sessions. If specified, only sessions involving this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list sessions.</p>
     /// This field is required.
     pub fn actor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.actor_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the actor for which to list sessions. If specified, only sessions involving this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list sessions.</p>
     pub fn set_actor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.actor_id = input;
         self
     }
-    /// <p>The identifier of the actor for which to list sessions. If specified, only sessions involving this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list sessions.</p>
     pub fn get_actor_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.actor_id
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

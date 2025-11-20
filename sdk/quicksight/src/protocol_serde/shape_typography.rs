@@ -15,6 +15,48 @@ pub fn ser_typography(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.axis_title_font_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("AxisTitleFontConfiguration").start_object();
+        crate::protocol_serde::shape_font_configuration::ser_font_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.axis_label_font_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("AxisLabelFontConfiguration").start_object();
+        crate::protocol_serde::shape_font_configuration::ser_font_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.legend_title_font_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("LegendTitleFontConfiguration").start_object();
+        crate::protocol_serde::shape_font_configuration::ser_font_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.legend_value_font_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("LegendValueFontConfiguration").start_object();
+        crate::protocol_serde::shape_font_configuration::ser_font_configuration(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.data_label_font_configuration {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("DataLabelFontConfiguration").start_object();
+        crate::protocol_serde::shape_font_configuration::ser_font_configuration(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.visual_title_font_configuration {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("VisualTitleFontConfiguration").start_object();
+        crate::protocol_serde::shape_visual_title_font_configuration::ser_visual_title_font_configuration(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.visual_subtitle_font_configuration {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("VisualSubtitleFontConfiguration").start_object();
+        crate::protocol_serde::shape_visual_subtitle_font_configuration::ser_visual_subtitle_font_configuration(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -35,6 +77,36 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FontFamilies" => {
                             builder = builder.set_font_families(crate::protocol_serde::shape_font_list::de_font_list(tokens)?);
+                        }
+                        "AxisTitleFontConfiguration" => {
+                            builder = builder
+                                .set_axis_title_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                        }
+                        "AxisLabelFontConfiguration" => {
+                            builder = builder
+                                .set_axis_label_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                        }
+                        "LegendTitleFontConfiguration" => {
+                            builder = builder
+                                .set_legend_title_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                        }
+                        "LegendValueFontConfiguration" => {
+                            builder = builder
+                                .set_legend_value_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                        }
+                        "DataLabelFontConfiguration" => {
+                            builder = builder
+                                .set_data_label_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                        }
+                        "VisualTitleFontConfiguration" => {
+                            builder = builder.set_visual_title_font_configuration(
+                                crate::protocol_serde::shape_visual_title_font_configuration::de_visual_title_font_configuration(tokens)?,
+                            );
+                        }
+                        "VisualSubtitleFontConfiguration" => {
+                            builder = builder.set_visual_subtitle_font_configuration(
+                                crate::protocol_serde::shape_visual_subtitle_font_configuration::de_visual_subtitle_font_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

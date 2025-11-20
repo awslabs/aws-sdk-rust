@@ -129,31 +129,31 @@ impl ListEventsFluentBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }
-    /// <p>The identifier of the session for which to list events. If specified, only events from this session are returned.</p>
+    /// <p>The identifier of the session for which to list events.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
         self
     }
-    /// <p>The identifier of the session for which to list events. If specified, only events from this session are returned.</p>
+    /// <p>The identifier of the session for which to list events.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
     }
-    /// <p>The identifier of the session for which to list events. If specified, only events from this session are returned.</p>
+    /// <p>The identifier of the session for which to list events.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
     }
-    /// <p>The identifier of the actor for which to list events. If specified, only events from this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list events.</p>
     pub fn actor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.actor_id(input.into());
         self
     }
-    /// <p>The identifier of the actor for which to list events. If specified, only events from this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list events.</p>
     pub fn set_actor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_actor_id(input);
         self
     }
-    /// <p>The identifier of the actor for which to list events. If specified, only events from this actor are returned.</p>
+    /// <p>The identifier of the actor for which to list events.</p>
     pub fn get_actor_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_actor_id()
     }
@@ -185,17 +185,17 @@ impl ListEventsFluentBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::FilterInput> {
         self.inner.get_filter()
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

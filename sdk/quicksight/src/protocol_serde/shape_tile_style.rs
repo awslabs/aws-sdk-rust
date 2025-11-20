@@ -3,11 +3,20 @@ pub fn ser_tile_style(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TileStyle,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.border {
+    if let Some(var_1) = &input.background_color {
+        object.key("BackgroundColor").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.border {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Border").start_object();
-        crate::protocol_serde::shape_border_style::ser_border_style(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("Border").start_object();
+        crate::protocol_serde::shape_border_style::ser_border_style(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.border_radius {
+        object.key("BorderRadius").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.padding {
+        object.key("Padding").string(var_5.as_str());
     }
     Ok(())
 }
@@ -27,8 +36,29 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "BackgroundColor" => {
+                            builder = builder.set_background_color(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Border" => {
                             builder = builder.set_border(crate::protocol_serde::shape_border_style::de_border_style(tokens)?);
+                        }
+                        "BorderRadius" => {
+                            builder = builder.set_border_radius(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Padding" => {
+                            builder = builder.set_padding(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

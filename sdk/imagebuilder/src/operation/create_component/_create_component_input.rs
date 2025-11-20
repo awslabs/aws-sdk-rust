@@ -41,6 +41,8 @@ pub struct CreateComponentInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateComponentInput {
     /// <p>The name of the component.</p>
@@ -105,6 +107,10 @@ impl CreateComponentInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl CreateComponentInput {
     /// Creates a new builder-style object to manufacture [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
@@ -128,6 +134,7 @@ pub struct CreateComponentInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateComponentInputBuilder {
     /// <p>The name of the component.</p>
@@ -348,6 +355,20 @@ impl CreateComponentInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
     pub fn build(
         self,
@@ -364,6 +385,7 @@ impl CreateComponentInputBuilder {
             kms_key_id: self.kms_key_id,
             tags: self.tags,
             client_token: self.client_token,
+            dry_run: self.dry_run,
         })
     }
 }

@@ -165,6 +165,8 @@ pub mod customize;
 
 mod get_data_automation_status;
 
+mod invoke_data_automation;
+
 mod invoke_data_automation_async;
 
 mod list_tags_for_resource;

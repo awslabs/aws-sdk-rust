@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_extraction_job::ExtractionJob;
+
 pub use crate::types::_memory_record_summary::MemoryRecordSummary;
 
 pub use crate::types::_memory_content::MemoryContent;
@@ -10,6 +12,16 @@ pub use crate::types::_memory_content::MemoryContent;
 pub use crate::types::_search_criteria::SearchCriteria;
 
 pub use crate::types::_session_summary::SessionSummary;
+
+pub use crate::types::_extraction_job_metadata::ExtractionJobMetadata;
+
+pub use crate::types::_extraction_job_status::ExtractionJobStatus;
+
+pub use crate::types::_extraction_job_messages::ExtractionJobMessages;
+
+pub use crate::types::_message_metadata::MessageMetadata;
+
+pub use crate::types::_extraction_job_filter_input::ExtractionJobFilterInput;
 
 pub use crate::types::_event::Event;
 
@@ -141,6 +153,16 @@ mod _event;
 
 mod _event_metadata_filter_expression;
 
+mod _extraction_job;
+
+mod _extraction_job_filter_input;
+
+mod _extraction_job_messages;
+
+mod _extraction_job_metadata;
+
+mod _extraction_job_status;
+
 mod _filter_input;
 
 mod _input_content_block;
@@ -164,6 +186,8 @@ mod _memory_record_status;
 mod _memory_record_summary;
 
 mod _memory_record_update_input;
+
+mod _message_metadata;
 
 mod _metadata_value;
 

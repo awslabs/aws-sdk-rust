@@ -293,6 +293,8 @@ mod get_finding_statistics_v2;
 
 mod get_findings;
 
+mod get_findings_trends_v2;
+
 mod get_findings_v2;
 
 mod get_insight_results;
@@ -306,6 +308,8 @@ mod get_master_account;
 mod get_members;
 
 mod get_resources_statistics_v2;
+
+mod get_resources_trends_v2;
 
 mod get_resources_v2;
 

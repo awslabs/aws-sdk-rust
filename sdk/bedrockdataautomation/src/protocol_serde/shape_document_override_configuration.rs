@@ -15,6 +15,12 @@ pub fn ser_document_override_configuration(
         crate::protocol_serde::shape_modality_processing_configuration::ser_modality_processing_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.sensitive_data_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("sensitiveDataConfiguration").start_object();
+        crate::protocol_serde::shape_sensitive_data_configuration::ser_sensitive_data_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -39,6 +45,11 @@ where
                         "modalityProcessing" => {
                             builder = builder.set_modality_processing(
                                 crate::protocol_serde::shape_modality_processing_configuration::de_modality_processing_configuration(tokens)?,
+                            );
+                        }
+                        "sensitiveDataConfiguration" => {
+                            builder = builder.set_sensitive_data_configuration(
+                                crate::protocol_serde::shape_sensitive_data_configuration::de_sensitive_data_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

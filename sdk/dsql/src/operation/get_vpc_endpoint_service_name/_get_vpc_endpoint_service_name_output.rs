@@ -5,6 +5,8 @@
 pub struct GetVpcEndpointServiceNameOutput {
     /// <p>The VPC endpoint service name.</p>
     pub service_name: ::std::string::String,
+    /// <p>The VPC connection endpoint for the cluster.</p>
+    pub cluster_vpc_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetVpcEndpointServiceNameOutput {
@@ -12,6 +14,10 @@ impl GetVpcEndpointServiceNameOutput {
     pub fn service_name(&self) -> &str {
         use std::ops::Deref;
         self.service_name.deref()
+    }
+    /// <p>The VPC connection endpoint for the cluster.</p>
+    pub fn cluster_vpc_endpoint(&self) -> ::std::option::Option<&str> {
+        self.cluster_vpc_endpoint.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetVpcEndpointServiceNameOutput {
@@ -31,6 +37,7 @@ impl GetVpcEndpointServiceNameOutput {
 #[non_exhaustive]
 pub struct GetVpcEndpointServiceNameOutputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_vpc_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetVpcEndpointServiceNameOutputBuilder {
@@ -48,6 +55,20 @@ impl GetVpcEndpointServiceNameOutputBuilder {
     /// <p>The VPC endpoint service name.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
+    }
+    /// <p>The VPC connection endpoint for the cluster.</p>
+    pub fn cluster_vpc_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_vpc_endpoint = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The VPC connection endpoint for the cluster.</p>
+    pub fn set_cluster_vpc_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster_vpc_endpoint = input;
+        self
+    }
+    /// <p>The VPC connection endpoint for the cluster.</p>
+    pub fn get_cluster_vpc_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_vpc_endpoint
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -74,6 +95,7 @@ impl GetVpcEndpointServiceNameOutputBuilder {
                     "service_name was not specified but it is required when building GetVpcEndpointServiceNameOutput",
                 )
             })?,
+            cluster_vpc_endpoint: self.cluster_vpc_endpoint,
             _request_id: self._request_id,
         })
     }

@@ -261,6 +261,11 @@ pub(crate) fn de_create_image_recipe(
                             .transpose()?,
                     );
                 }
+                "latestVersionReferences" => {
+                    builder = builder.set_latest_version_references(
+                        crate::protocol_serde::shape_latest_version_references::de_latest_version_references(tokens)?,
+                    );
+                }
                 "requestId" => {
                     builder = builder.set_request_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

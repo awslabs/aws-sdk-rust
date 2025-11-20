@@ -30,6 +30,12 @@ pub fn ser_compute_quota_resource_config(
             ::aws_smithy_types::Number::Float((*var_5).into()),
         );
     }
+    if let Some(var_6) = &input.accelerator_partition {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("AcceleratorPartition").start_object();
+        crate::protocol_serde::shape_accelerator_partition_config::ser_accelerator_partition_config(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -76,6 +82,11 @@ where
                         "MemoryInGiB" => {
                             builder = builder.set_memory_in_gib(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
+                            );
+                        }
+                        "AcceleratorPartition" => {
+                            builder = builder.set_accelerator_partition(
+                                crate::protocol_serde::shape_accelerator_partition_config::de_accelerator_partition_config(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

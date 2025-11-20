@@ -3,6 +3,14 @@ pub use crate::types::_invalid_input_exception_reason::InvalidInputExceptionReas
 
 pub use crate::types::_constraint_violation_exception_reason::ConstraintViolationExceptionReason;
 
+pub use crate::types::_responsibility_transfer::ResponsibilityTransfer;
+
+pub use crate::types::_transfer_participant::TransferParticipant;
+
+pub use crate::types::_responsibility_transfer_status::ResponsibilityTransferStatus;
+
+pub use crate::types::_responsibility_transfer_type::ResponsibilityTransferType;
+
 pub use crate::types::_policy::Policy;
 
 pub use crate::types::_policy_summary::PolicySummary;
@@ -169,11 +177,19 @@ mod _resource_policy;
 
 mod _resource_policy_summary;
 
+mod _responsibility_transfer;
+
+mod _responsibility_transfer_status;
+
+mod _responsibility_transfer_type;
+
 mod _root;
 
 mod _tag;
 
 mod _target_type;
+
+mod _transfer_participant;
 
 /// Builders
 pub mod builders;

@@ -191,6 +191,64 @@ impl From<crate::operation::create_quantum_task::CreateQuantumTaskError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_spending_limit::CreateSpendingLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_spending_limit::CreateSpendingLimitError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_spending_limit::CreateSpendingLimitError> for Error {
+    fn from(err: crate::operation::create_spending_limit::CreateSpendingLimitError) -> Self {
+        match err {
+            crate::operation::create_spending_limit::CreateSpendingLimitError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_spending_limit::CreateSpendingLimitError::DeviceRetiredException(inner) => Error::DeviceRetiredException(inner),
+            crate::operation::create_spending_limit::CreateSpendingLimitError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_spending_limit::CreateSpendingLimitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_spending_limit::CreateSpendingLimitError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_spending_limit::CreateSpendingLimitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_spending_limit::DeleteSpendingLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_spending_limit::DeleteSpendingLimitError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_spending_limit::DeleteSpendingLimitError> for Error {
+    fn from(err: crate::operation::delete_spending_limit::DeleteSpendingLimitError) -> Self {
+        match err {
+            crate::operation::delete_spending_limit::DeleteSpendingLimitError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_spending_limit::DeleteSpendingLimitError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_spending_limit::DeleteSpendingLimitError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_spending_limit::DeleteSpendingLimitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_spending_limit::DeleteSpendingLimitError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_spending_limit::DeleteSpendingLimitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_device::GetDeviceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -374,6 +432,33 @@ impl From<crate::operation::search_quantum_tasks::SearchQuantumTasksError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_spending_limits::SearchSpendingLimitsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_spending_limits::SearchSpendingLimitsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_spending_limits::SearchSpendingLimitsError> for Error {
+    fn from(err: crate::operation::search_spending_limits::SearchSpendingLimitsError) -> Self {
+        match err {
+            crate::operation::search_spending_limits::SearchSpendingLimitsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_spending_limits::SearchSpendingLimitsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::search_spending_limits::SearchSpendingLimitsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_spending_limits::SearchSpendingLimitsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::search_spending_limits::SearchSpendingLimitsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -419,6 +504,36 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_spending_limit::UpdateSpendingLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_spending_limit::UpdateSpendingLimitError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_spending_limit::UpdateSpendingLimitError> for Error {
+    fn from(err: crate::operation::update_spending_limit::UpdateSpendingLimitError) -> Self {
+        match err {
+            crate::operation::update_spending_limit::UpdateSpendingLimitError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_spending_limit::UpdateSpendingLimitError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_spending_limit::UpdateSpendingLimitError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_spending_limit::UpdateSpendingLimitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_spending_limit::UpdateSpendingLimitError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_spending_limit::UpdateSpendingLimitError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -4,13 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BorderStyle {
+    /// <p>The option to add color for tile borders for visuals.</p>
+    pub color: ::std::option::Option<::std::string::String>,
     /// <p>The option to enable display of borders for visuals.</p>
     pub show: ::std::option::Option<bool>,
+    /// <p>The option to set the width of tile borders for visuals.</p>
+    pub width: ::std::option::Option<::std::string::String>,
 }
 impl BorderStyle {
+    /// <p>The option to add color for tile borders for visuals.</p>
+    pub fn color(&self) -> ::std::option::Option<&str> {
+        self.color.as_deref()
+    }
     /// <p>The option to enable display of borders for visuals.</p>
     pub fn show(&self) -> ::std::option::Option<bool> {
         self.show
+    }
+    /// <p>The option to set the width of tile borders for visuals.</p>
+    pub fn width(&self) -> ::std::option::Option<&str> {
+        self.width.as_deref()
     }
 }
 impl BorderStyle {
@@ -24,9 +36,25 @@ impl BorderStyle {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct BorderStyleBuilder {
+    pub(crate) color: ::std::option::Option<::std::string::String>,
     pub(crate) show: ::std::option::Option<bool>,
+    pub(crate) width: ::std::option::Option<::std::string::String>,
 }
 impl BorderStyleBuilder {
+    /// <p>The option to add color for tile borders for visuals.</p>
+    pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.color = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The option to add color for tile borders for visuals.</p>
+    pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.color = input;
+        self
+    }
+    /// <p>The option to add color for tile borders for visuals.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
+    }
     /// <p>The option to enable display of borders for visuals.</p>
     pub fn show(mut self, input: bool) -> Self {
         self.show = ::std::option::Option::Some(input);
@@ -41,8 +69,26 @@ impl BorderStyleBuilder {
     pub fn get_show(&self) -> &::std::option::Option<bool> {
         &self.show
     }
+    /// <p>The option to set the width of tile borders for visuals.</p>
+    pub fn width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.width = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The option to set the width of tile borders for visuals.</p>
+    pub fn set_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.width = input;
+        self
+    }
+    /// <p>The option to set the width of tile borders for visuals.</p>
+    pub fn get_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.width
+    }
     /// Consumes the builder and constructs a [`BorderStyle`](crate::types::BorderStyle).
     pub fn build(self) -> crate::types::BorderStyle {
-        crate::types::BorderStyle { show: self.show }
+        crate::types::BorderStyle {
+            color: self.color,
+            show: self.show,
+            width: self.width,
+        }
     }
 }

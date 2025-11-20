@@ -33,6 +33,36 @@ pub fn ser_grid_layout_element(
             ::aws_smithy_types::Number::NegInt((input.row_span).into()),
         );
     }
+    if let Some(var_3) = &input.border_style {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("BorderStyle").start_object();
+        crate::protocol_serde::shape_grid_layout_element_border_style::ser_grid_layout_element_border_style(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.selected_border_style {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("SelectedBorderStyle").start_object();
+        crate::protocol_serde::shape_grid_layout_element_border_style::ser_grid_layout_element_border_style(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.background_style {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("BackgroundStyle").start_object();
+        crate::protocol_serde::shape_grid_layout_element_background_style::ser_grid_layout_element_background_style(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.loading_animation {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("LoadingAnimation").start_object();
+        crate::protocol_serde::shape_loading_animation::ser_loading_animation(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.border_radius {
+        object.key("BorderRadius").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.padding {
+        object.key("Padding").string(var_12.as_str());
+    }
     Ok(())
 }
 
@@ -90,6 +120,38 @@ where
                             builder = builder.set_row_span(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "BorderStyle" => {
+                            builder = builder.set_border_style(
+                                crate::protocol_serde::shape_grid_layout_element_border_style::de_grid_layout_element_border_style(tokens)?,
+                            );
+                        }
+                        "SelectedBorderStyle" => {
+                            builder = builder.set_selected_border_style(
+                                crate::protocol_serde::shape_grid_layout_element_border_style::de_grid_layout_element_border_style(tokens)?,
+                            );
+                        }
+                        "BackgroundStyle" => {
+                            builder = builder.set_background_style(
+                                crate::protocol_serde::shape_grid_layout_element_background_style::de_grid_layout_element_background_style(tokens)?,
+                            );
+                        }
+                        "LoadingAnimation" => {
+                            builder = builder.set_loading_animation(crate::protocol_serde::shape_loading_animation::de_loading_animation(tokens)?);
+                        }
+                        "BorderRadius" => {
+                            builder = builder.set_border_radius(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Padding" => {
+                            builder = builder.set_padding(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

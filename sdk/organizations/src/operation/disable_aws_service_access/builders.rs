@@ -38,7 +38,7 @@ impl crate::operation::disable_aws_service_access::builders::DisableAwsServiceAc
 /// </important>
 /// <p>After you perform the <code>DisableAWSServiceAccess</code> operation, the specified service can no longer perform operations in your organization's accounts</p>
 /// <p>For more information about integrating other services with Organizations, including the list of services that work with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using Organizations with other Amazon Web Services services</a> in the <i>Organizations User Guide</i>.</p>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>You can only call this operation from the management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableAWSServiceAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

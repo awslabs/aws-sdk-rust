@@ -13,6 +13,12 @@ pub mod create_job;
 /// Types for the `CreateQuantumTask` operation.
 pub mod create_quantum_task;
 
+/// Types for the `CreateSpendingLimit` operation.
+pub mod create_spending_limit;
+
+/// Types for the `DeleteSpendingLimit` operation.
+pub mod delete_spending_limit;
+
 /// Types for the `GetDevice` operation.
 pub mod get_device;
 
@@ -34,8 +40,14 @@ pub mod search_jobs;
 /// Types for the `SearchQuantumTasks` operation.
 pub mod search_quantum_tasks;
 
+/// Types for the `SearchSpendingLimits` operation.
+pub mod search_spending_limits;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateSpendingLimit` operation.
+pub mod update_spending_limit;

@@ -32,6 +32,8 @@ pub struct CreateLicenseConfigurationInput {
     pub disassociate_when_not_found: ::std::option::Option<bool>,
     /// <p>Product information.</p>
     pub product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
+    /// <p>License configuration expiry.</p>
+    pub license_expiry: ::std::option::Option<i64>,
 }
 impl CreateLicenseConfigurationInput {
     /// <p>Name of the license configuration.</p>
@@ -87,6 +89,10 @@ impl CreateLicenseConfigurationInput {
     pub fn product_information_list(&self) -> &[crate::types::ProductInformation] {
         self.product_information_list.as_deref().unwrap_or_default()
     }
+    /// <p>License configuration expiry.</p>
+    pub fn license_expiry(&self) -> ::std::option::Option<i64> {
+        self.license_expiry
+    }
 }
 impl CreateLicenseConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseConfigurationInput`](crate::operation::create_license_configuration::CreateLicenseConfigurationInput).
@@ -108,6 +114,7 @@ pub struct CreateLicenseConfigurationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) disassociate_when_not_found: ::std::option::Option<bool>,
     pub(crate) product_information_list: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
+    pub(crate) license_expiry: ::std::option::Option<i64>,
 }
 impl CreateLicenseConfigurationInputBuilder {
     /// <p>Name of the license configuration.</p>
@@ -289,6 +296,20 @@ impl CreateLicenseConfigurationInputBuilder {
     pub fn get_product_information_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>> {
         &self.product_information_list
     }
+    /// <p>License configuration expiry.</p>
+    pub fn license_expiry(mut self, input: i64) -> Self {
+        self.license_expiry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>License configuration expiry.</p>
+    pub fn set_license_expiry(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.license_expiry = input;
+        self
+    }
+    /// <p>License configuration expiry.</p>
+    pub fn get_license_expiry(&self) -> &::std::option::Option<i64> {
+        &self.license_expiry
+    }
     /// Consumes the builder and constructs a [`CreateLicenseConfigurationInput`](crate::operation::create_license_configuration::CreateLicenseConfigurationInput).
     pub fn build(
         self,
@@ -306,6 +327,7 @@ impl CreateLicenseConfigurationInputBuilder {
             tags: self.tags,
             disassociate_when_not_found: self.disassociate_when_not_found,
             product_information_list: self.product_information_list,
+            license_expiry: self.license_expiry,
         })
     }
 }

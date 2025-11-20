@@ -7,6 +7,8 @@ pub struct CreateWorkflowOutput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the workflow resource that the request created.</p>
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
 impl CreateWorkflowOutput {
@@ -17,6 +19,10 @@ impl CreateWorkflowOutput {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource that the request created.</p>
     pub fn workflow_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.workflow_build_version_arn.as_deref()
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn latest_version_references(&self) -> ::std::option::Option<&crate::types::LatestVersionReferences> {
+        self.latest_version_references.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateWorkflowOutput {
@@ -37,6 +43,7 @@ impl CreateWorkflowOutput {
 pub struct CreateWorkflowOutputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_build_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
 impl CreateWorkflowOutputBuilder {
@@ -68,6 +75,20 @@ impl CreateWorkflowOutputBuilder {
     pub fn get_workflow_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_build_version_arn
     }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn latest_version_references(mut self, input: crate::types::LatestVersionReferences) -> Self {
+        self.latest_version_references = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn set_latest_version_references(mut self, input: ::std::option::Option<crate::types::LatestVersionReferences>) -> Self {
+        self.latest_version_references = input;
+        self
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn get_latest_version_references(&self) -> &::std::option::Option<crate::types::LatestVersionReferences> {
+        &self.latest_version_references
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl CreateWorkflowOutputBuilder {
         crate::operation::create_workflow::CreateWorkflowOutput {
             client_token: self.client_token,
             workflow_build_version_arn: self.workflow_build_version_arn,
+            latest_version_references: self.latest_version_references,
             _request_id: self._request_id,
         }
     }

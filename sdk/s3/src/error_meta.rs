@@ -805,6 +805,27 @@ impl From<crate::operation::delete_public_access_block::DeletePublicAccessBlockE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_bucket_abac::GetBucketAbacError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_bucket_abac::GetBucketAbacError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_bucket_abac::GetBucketAbacError> for Error {
+    fn from(err: crate::operation::get_bucket_abac::GetBucketAbacError) -> Self {
+        match err {
+            crate::operation::get_bucket_abac::GetBucketAbacError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1899,6 +1920,27 @@ impl From<crate::operation::list_parts::ListPartsError> for Error {
     fn from(err: crate::operation::list_parts::ListPartsError) -> Self {
         match err {
             crate::operation::list_parts::ListPartsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_bucket_abac::PutBucketAbacError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_bucket_abac::PutBucketAbacError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_bucket_abac::PutBucketAbacError> for Error {
+    fn from(err: crate::operation::put_bucket_abac::PutBucketAbacError) -> Self {
+        match err {
+            crate::operation::put_bucket_abac::PutBucketAbacError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

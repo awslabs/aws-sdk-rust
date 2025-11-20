@@ -267,6 +267,8 @@ pub enum UpdateBudgetError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>You've reached a Service Quota limit on this resource.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The number of API requests has exceeded the maximum allowed API request throttling limit for the account.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -307,6 +309,7 @@ impl UpdateBudgetError {
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -331,6 +334,10 @@ impl UpdateBudgetError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(self, Self::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `UpdateBudgetError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
     /// Returns `true` if the error kind is `UpdateBudgetError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
@@ -344,6 +351,7 @@ impl ::std::error::Error for UpdateBudgetError {
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -357,6 +365,7 @@ impl ::std::fmt::Display for UpdateBudgetError {
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -384,6 +393,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateBudgetE
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

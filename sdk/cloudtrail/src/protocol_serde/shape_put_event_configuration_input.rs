@@ -3,23 +3,38 @@ pub fn ser_put_event_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_event_configuration::PutEventConfigurationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.event_data_store {
-        object.key("EventDataStore").string(var_1.as_str());
+    if let Some(var_1) = &input.trail_name {
+        object.key("TrailName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.max_event_size {
-        object.key("MaxEventSize").string(var_2.as_str());
+    if let Some(var_2) = &input.event_data_store {
+        object.key("EventDataStore").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.context_key_selectors {
-        let mut array_4 = object.key("ContextKeySelectors").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.max_event_size {
+        object.key("MaxEventSize").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.context_key_selectors {
+        let mut array_5 = object.key("ContextKeySelectors").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_context_key_selector::ser_context_key_selector(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_context_key_selector::ser_context_key_selector(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
+    }
+    if let Some(var_8) = &input.aggregation_configurations {
+        let mut array_9 = object.key("AggregationConfigurations").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_aggregation_configuration::ser_aggregation_configuration(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
     }
     Ok(())
 }

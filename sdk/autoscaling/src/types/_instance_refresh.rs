@@ -54,6 +54,14 @@ pub struct InstanceRefresh {
     pub desired_configuration: ::std::option::Option<crate::types::DesiredConfiguration>,
     /// <p>The rollback details.</p>
     pub rollback_details: ::std::option::Option<crate::types::RollbackDetails>,
+    /// <p>The strategy to use for the instance refresh. This determines how instances in the Auto Scaling group are updated. Default is Rolling.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Rolling</code> – Terminates instances and launches replacements in batches</p></li>
+    /// <li>
+    /// <p><code>ReplaceRootVolume</code> – Updates instances by replacing only the root volume without terminating the instance</p></li>
+    /// </ul>
+    pub strategy: ::std::option::Option<crate::types::RefreshStrategy>,
 }
 impl InstanceRefresh {
     /// <p>The instance refresh ID.</p>
@@ -130,6 +138,16 @@ impl InstanceRefresh {
     pub fn rollback_details(&self) -> ::std::option::Option<&crate::types::RollbackDetails> {
         self.rollback_details.as_ref()
     }
+    /// <p>The strategy to use for the instance refresh. This determines how instances in the Auto Scaling group are updated. Default is Rolling.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Rolling</code> – Terminates instances and launches replacements in batches</p></li>
+    /// <li>
+    /// <p><code>ReplaceRootVolume</code> – Updates instances by replacing only the root volume without terminating the instance</p></li>
+    /// </ul>
+    pub fn strategy(&self) -> ::std::option::Option<&crate::types::RefreshStrategy> {
+        self.strategy.as_ref()
+    }
 }
 impl InstanceRefresh {
     /// Creates a new builder-style object to manufacture [`InstanceRefresh`](crate::types::InstanceRefresh).
@@ -154,6 +172,7 @@ pub struct InstanceRefreshBuilder {
     pub(crate) preferences: ::std::option::Option<crate::types::RefreshPreferences>,
     pub(crate) desired_configuration: ::std::option::Option<crate::types::DesiredConfiguration>,
     pub(crate) rollback_details: ::std::option::Option<crate::types::RollbackDetails>,
+    pub(crate) strategy: ::std::option::Option<crate::types::RefreshStrategy>,
 }
 impl InstanceRefreshBuilder {
     /// <p>The instance refresh ID.</p>
@@ -402,6 +421,38 @@ impl InstanceRefreshBuilder {
     pub fn get_rollback_details(&self) -> &::std::option::Option<crate::types::RollbackDetails> {
         &self.rollback_details
     }
+    /// <p>The strategy to use for the instance refresh. This determines how instances in the Auto Scaling group are updated. Default is Rolling.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Rolling</code> – Terminates instances and launches replacements in batches</p></li>
+    /// <li>
+    /// <p><code>ReplaceRootVolume</code> – Updates instances by replacing only the root volume without terminating the instance</p></li>
+    /// </ul>
+    pub fn strategy(mut self, input: crate::types::RefreshStrategy) -> Self {
+        self.strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The strategy to use for the instance refresh. This determines how instances in the Auto Scaling group are updated. Default is Rolling.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Rolling</code> – Terminates instances and launches replacements in batches</p></li>
+    /// <li>
+    /// <p><code>ReplaceRootVolume</code> – Updates instances by replacing only the root volume without terminating the instance</p></li>
+    /// </ul>
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::RefreshStrategy>) -> Self {
+        self.strategy = input;
+        self
+    }
+    /// <p>The strategy to use for the instance refresh. This determines how instances in the Auto Scaling group are updated. Default is Rolling.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Rolling</code> – Terminates instances and launches replacements in batches</p></li>
+    /// <li>
+    /// <p><code>ReplaceRootVolume</code> – Updates instances by replacing only the root volume without terminating the instance</p></li>
+    /// </ul>
+    pub fn get_strategy(&self) -> &::std::option::Option<crate::types::RefreshStrategy> {
+        &self.strategy
+    }
     /// Consumes the builder and constructs a [`InstanceRefresh`](crate::types::InstanceRefresh).
     pub fn build(self) -> crate::types::InstanceRefresh {
         crate::types::InstanceRefresh {
@@ -417,6 +468,7 @@ impl InstanceRefreshBuilder {
             preferences: self.preferences,
             desired_configuration: self.desired_configuration,
             rollback_details: self.rollback_details,
+            strategy: self.strategy,
         }
     }
 }

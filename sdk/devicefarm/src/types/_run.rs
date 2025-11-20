@@ -149,6 +149,10 @@ pub struct Run {
     pub device_selection_result: ::std::option::Option<crate::types::DeviceSelectionResult>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    /// <p>The IAM role associated with the run.</p>
+    pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Environment variables associated with the run.</p>
+    pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
 }
 impl Run {
     /// <p>The run's ARN.</p>
@@ -362,6 +366,16 @@ impl Run {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>The IAM role associated with the run.</p>
+    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>Environment variables associated with the run.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_variables.is_none()`.
+    pub fn environment_variables(&self) -> &[crate::types::EnvironmentVariable] {
+        self.environment_variables.as_deref().unwrap_or_default()
+    }
 }
 impl Run {
     /// Creates a new builder-style object to manufacture [`Run`](crate::types::Run).
@@ -407,6 +421,8 @@ pub struct RunBuilder {
     pub(crate) test_spec_arn: ::std::option::Option<::std::string::String>,
     pub(crate) device_selection_result: ::std::option::Option<crate::types::DeviceSelectionResult>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
 }
 impl RunBuilder {
     /// <p>The run's ARN.</p>
@@ -1108,6 +1124,40 @@ impl RunBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
+    /// <p>The IAM role associated with the run.</p>
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IAM role associated with the run.</p>
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_arn = input;
+        self
+    }
+    /// <p>The IAM role associated with the run.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
+    /// Appends an item to `environment_variables`.
+    ///
+    /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+    ///
+    /// <p>Environment variables associated with the run.</p>
+    pub fn environment_variables(mut self, input: crate::types::EnvironmentVariable) -> Self {
+        let mut v = self.environment_variables.unwrap_or_default();
+        v.push(input);
+        self.environment_variables = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Environment variables associated with the run.</p>
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
+        self.environment_variables = input;
+        self
+    }
+    /// <p>Environment variables associated with the run.</p>
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+        &self.environment_variables
+    }
     /// Consumes the builder and constructs a [`Run`](crate::types::Run).
     pub fn build(self) -> crate::types::Run {
         crate::types::Run {
@@ -1144,6 +1194,8 @@ impl RunBuilder {
             test_spec_arn: self.test_spec_arn,
             device_selection_result: self.device_selection_result,
             vpc_config: self.vpc_config,
+            execution_role_arn: self.execution_role_arn,
+            environment_variables: self.environment_variables,
         }
     }
 }

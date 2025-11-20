@@ -257,6 +257,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AttachLoadBal
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum AttachLoadBalancersError {
+    /// <p>The request failed because an active instance refresh already exists for the specified Auto Scaling group.</p>
+    InstanceRefreshInProgressFault(crate::types::error::InstanceRefreshInProgressFault),
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::types::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
@@ -294,10 +296,15 @@ impl AttachLoadBalancersError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InstanceRefreshInProgressFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceContentionFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceLinkedRoleFailure(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `AttachLoadBalancersError::InstanceRefreshInProgressFault`.
+    pub fn is_instance_refresh_in_progress_fault(&self) -> bool {
+        matches!(self, Self::InstanceRefreshInProgressFault(_))
     }
     /// Returns `true` if the error kind is `AttachLoadBalancersError::ResourceContentionFault`.
     pub fn is_resource_contention_fault(&self) -> bool {
@@ -311,6 +318,7 @@ impl AttachLoadBalancersError {
 impl ::std::error::Error for AttachLoadBalancersError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InstanceRefreshInProgressFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceContentionFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceLinkedRoleFailure(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -320,6 +328,7 @@ impl ::std::error::Error for AttachLoadBalancersError {
 impl ::std::fmt::Display for AttachLoadBalancersError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InstanceRefreshInProgressFault(_inner) => _inner.fmt(f),
             Self::ResourceContentionFault(_inner) => _inner.fmt(f),
             Self::ServiceLinkedRoleFailure(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -343,6 +352,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for AttachLoadBalancersError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachLoadBalancersError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InstanceRefreshInProgressFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceContentionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceLinkedRoleFailure(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

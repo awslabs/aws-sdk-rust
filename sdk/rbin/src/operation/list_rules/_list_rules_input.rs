@@ -7,7 +7,15 @@ pub struct ListRulesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only EBS volumes, EBS snapshots, and EBS-backed AMIs are supported.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To list retention rules that retain EBS volumes, specify <code>EBS_VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To list retention rules that retain EBS snapshots, specify <code>EBS_SNAPSHOT</code>.</p></li>
+    /// <li>
+    /// <p>To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p></li>
+    /// </ul>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>\[Tag-level retention rules only\] Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
@@ -25,7 +33,15 @@ impl ListRulesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only EBS volumes, EBS snapshots, and EBS-backed AMIs are supported.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To list retention rules that retain EBS volumes, specify <code>EBS_VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To list retention rules that retain EBS snapshots, specify <code>EBS_SNAPSHOT</code>.</p></li>
+    /// <li>
+    /// <p>To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p></li>
+    /// </ul>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -93,18 +109,42 @@ impl ListRulesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only EBS volumes, EBS snapshots, and EBS-backed AMIs are supported.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To list retention rules that retain EBS volumes, specify <code>EBS_VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To list retention rules that retain EBS snapshots, specify <code>EBS_SNAPSHOT</code>.</p></li>
+    /// <li>
+    /// <p>To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only EBS volumes, EBS snapshots, and EBS-backed AMIs are supported.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To list retention rules that retain EBS volumes, specify <code>EBS_VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To list retention rules that retain EBS snapshots, specify <code>EBS_SNAPSHOT</code>.</p></li>
+    /// <li>
+    /// <p>To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p></li>
+    /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
+    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only EBS volumes, EBS snapshots, and EBS-backed AMIs are supported.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To list retention rules that retain EBS volumes, specify <code>EBS_VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To list retention rules that retain EBS snapshots, specify <code>EBS_SNAPSHOT</code>.</p></li>
+    /// <li>
+    /// <p>To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p></li>
+    /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

@@ -6,6 +6,20 @@
 pub struct Typography {
     /// <p>Determines the list of font families.</p>
     pub font_families: ::std::option::Option<::std::vec::Vec<crate::types::Font>>,
+    /// <p>Configures the display properties of the given text.</p>
+    pub axis_title_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    /// <p>Configures the display properties of the given text.</p>
+    pub axis_label_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    /// <p>Configures the display properties of the given text.</p>
+    pub legend_title_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    /// <p>Configures the display properties of the given text.</p>
+    pub legend_value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    /// <p>Configures the display properties of the given text.</p>
+    pub data_label_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    /// <p>Configures the display properties of the visual title.</p>
+    pub visual_title_font_configuration: ::std::option::Option<crate::types::VisualTitleFontConfiguration>,
+    /// <p>Configures the display properties of the visual sub-title.</p>
+    pub visual_subtitle_font_configuration: ::std::option::Option<crate::types::VisualSubtitleFontConfiguration>,
 }
 impl Typography {
     /// <p>Determines the list of font families.</p>
@@ -13,6 +27,34 @@ impl Typography {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.font_families.is_none()`.
     pub fn font_families(&self) -> &[crate::types::Font] {
         self.font_families.as_deref().unwrap_or_default()
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn axis_title_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+        self.axis_title_font_configuration.as_ref()
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn axis_label_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+        self.axis_label_font_configuration.as_ref()
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn legend_title_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+        self.legend_title_font_configuration.as_ref()
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn legend_value_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+        self.legend_value_font_configuration.as_ref()
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn data_label_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+        self.data_label_font_configuration.as_ref()
+    }
+    /// <p>Configures the display properties of the visual title.</p>
+    pub fn visual_title_font_configuration(&self) -> ::std::option::Option<&crate::types::VisualTitleFontConfiguration> {
+        self.visual_title_font_configuration.as_ref()
+    }
+    /// <p>Configures the display properties of the visual sub-title.</p>
+    pub fn visual_subtitle_font_configuration(&self) -> ::std::option::Option<&crate::types::VisualSubtitleFontConfiguration> {
+        self.visual_subtitle_font_configuration.as_ref()
     }
 }
 impl Typography {
@@ -27,6 +69,13 @@ impl Typography {
 #[non_exhaustive]
 pub struct TypographyBuilder {
     pub(crate) font_families: ::std::option::Option<::std::vec::Vec<crate::types::Font>>,
+    pub(crate) axis_title_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    pub(crate) axis_label_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    pub(crate) legend_title_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    pub(crate) legend_value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    pub(crate) data_label_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    pub(crate) visual_title_font_configuration: ::std::option::Option<crate::types::VisualTitleFontConfiguration>,
+    pub(crate) visual_subtitle_font_configuration: ::std::option::Option<crate::types::VisualSubtitleFontConfiguration>,
 }
 impl TypographyBuilder {
     /// Appends an item to `font_families`.
@@ -49,10 +98,115 @@ impl TypographyBuilder {
     pub fn get_font_families(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Font>> {
         &self.font_families
     }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn axis_title_font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
+        self.axis_title_font_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn set_axis_title_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
+        self.axis_title_font_configuration = input;
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn get_axis_title_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.axis_title_font_configuration
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn axis_label_font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
+        self.axis_label_font_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn set_axis_label_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
+        self.axis_label_font_configuration = input;
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn get_axis_label_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.axis_label_font_configuration
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn legend_title_font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
+        self.legend_title_font_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn set_legend_title_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
+        self.legend_title_font_configuration = input;
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn get_legend_title_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.legend_title_font_configuration
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn legend_value_font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
+        self.legend_value_font_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn set_legend_value_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
+        self.legend_value_font_configuration = input;
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn get_legend_value_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.legend_value_font_configuration
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn data_label_font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
+        self.data_label_font_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn set_data_label_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
+        self.data_label_font_configuration = input;
+        self
+    }
+    /// <p>Configures the display properties of the given text.</p>
+    pub fn get_data_label_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.data_label_font_configuration
+    }
+    /// <p>Configures the display properties of the visual title.</p>
+    pub fn visual_title_font_configuration(mut self, input: crate::types::VisualTitleFontConfiguration) -> Self {
+        self.visual_title_font_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the display properties of the visual title.</p>
+    pub fn set_visual_title_font_configuration(mut self, input: ::std::option::Option<crate::types::VisualTitleFontConfiguration>) -> Self {
+        self.visual_title_font_configuration = input;
+        self
+    }
+    /// <p>Configures the display properties of the visual title.</p>
+    pub fn get_visual_title_font_configuration(&self) -> &::std::option::Option<crate::types::VisualTitleFontConfiguration> {
+        &self.visual_title_font_configuration
+    }
+    /// <p>Configures the display properties of the visual sub-title.</p>
+    pub fn visual_subtitle_font_configuration(mut self, input: crate::types::VisualSubtitleFontConfiguration) -> Self {
+        self.visual_subtitle_font_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the display properties of the visual sub-title.</p>
+    pub fn set_visual_subtitle_font_configuration(mut self, input: ::std::option::Option<crate::types::VisualSubtitleFontConfiguration>) -> Self {
+        self.visual_subtitle_font_configuration = input;
+        self
+    }
+    /// <p>Configures the display properties of the visual sub-title.</p>
+    pub fn get_visual_subtitle_font_configuration(&self) -> &::std::option::Option<crate::types::VisualSubtitleFontConfiguration> {
+        &self.visual_subtitle_font_configuration
+    }
     /// Consumes the builder and constructs a [`Typography`](crate::types::Typography).
     pub fn build(self) -> crate::types::Typography {
         crate::types::Typography {
             font_families: self.font_families,
+            axis_title_font_configuration: self.axis_title_font_configuration,
+            axis_label_font_configuration: self.axis_label_font_configuration,
+            legend_title_font_configuration: self.legend_title_font_configuration,
+            legend_value_font_configuration: self.legend_value_font_configuration,
+            data_label_font_configuration: self.data_label_font_configuration,
+            visual_title_font_configuration: self.visual_title_font_configuration,
+            visual_subtitle_font_configuration: self.visual_subtitle_font_configuration,
         }
     }
 }

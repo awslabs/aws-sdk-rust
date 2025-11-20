@@ -894,6 +894,46 @@ impl From<crate::operation::list_events::ListEventsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsError> for Error {
+    fn from(err: crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsError) -> Self {
+        match err {
+            crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsError::ThrottledException(inner) => {
+                Error::ThrottledException(inner)
+            }
+            crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_memory_extraction_jobs::ListMemoryExtractionJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_memory_records::ListMemoryRecordsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1072,6 +1112,46 @@ impl From<crate::operation::start_code_interpreter_session::StartCodeInterpreter
                 Error::ValidationException(inner)
             }
             crate::operation::start_code_interpreter_session::StartCodeInterpreterSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError> for Error {
+    fn from(err: crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError) -> Self {
+        match err {
+            crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError::ThrottledException(inner) => {
+                Error::ThrottledException(inner)
+            }
+            crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

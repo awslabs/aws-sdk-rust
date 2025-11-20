@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`product_information_list(Option<Vec::<ProductInformation>>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::product_information_list): <p>Product information.</p>
     ///   - [`automated_discovery_information(Option<AutomatedDiscoveryInformation>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::automated_discovery_information): <p>Automated discovery information.</p>
     ///   - [`disassociate_when_not_found(Option<bool>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::disassociate_when_not_found): <p>When true, disassociates a resource when software is uninstalled.</p>
+    ///   - [`license_expiry(Option<i64>)`](crate::operation::get_license_configuration::GetLicenseConfigurationOutput::license_expiry): <p>License Expiry.</p>
     /// - On failure, responds with [`SdkError<GetLicenseConfigurationError>`](crate::operation::get_license_configuration::GetLicenseConfigurationError)
     pub fn get_license_configuration(&self) -> crate::operation::get_license_configuration::builders::GetLicenseConfigurationFluentBuilder {
         crate::operation::get_license_configuration::builders::GetLicenseConfigurationFluentBuilder::new(self.handle.clone())

@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetImageRecipeOutput`](crate::operation::get_image_recipe::GetImageRecipeOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_image_recipe::GetImageRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_recipe(Option<ImageRecipe>)`](crate::operation::get_image_recipe::GetImageRecipeOutput::image_recipe): <p>The image recipe object.</p>
+    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::get_image_recipe::GetImageRecipeOutput::latest_version_references): <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
     /// - On failure, responds with [`SdkError<GetImageRecipeError>`](crate::operation::get_image_recipe::GetImageRecipeError)
     pub fn get_image_recipe(&self) -> crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder {
         crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::new(self.handle.clone())

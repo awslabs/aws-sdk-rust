@@ -47,6 +47,8 @@ pub use crate::types::error::_invalid_db_instance_automated_backup_state_fault::
 
 pub use crate::types::error::_db_instance_automated_backup_quota_exceeded_fault::DbInstanceAutomatedBackupQuotaExceededFault;
 
+pub use crate::types::error::_vpc_encryption_control_violation_exception::VpcEncryptionControlViolationException;
+
 pub use crate::types::error::_invalid_vpc_network_state_fault::InvalidVpcNetworkStateFault;
 
 pub use crate::types::error::_invalid_subnet::InvalidSubnet;
@@ -578,6 +580,8 @@ mod _tenant_database_not_found_fault;
 mod _tenant_database_quota_exceeded_fault;
 
 mod _unsupported_db_engine_version_fault;
+
+mod _vpc_encryption_control_violation_exception;
 
 /// Builders
 pub mod builders;

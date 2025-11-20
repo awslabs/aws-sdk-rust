@@ -13,6 +13,12 @@ pub struct GetServiceSettingsOutput {
     pub enable_cross_accounts_discovery: ::std::option::Option<bool>,
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
     pub license_manager_resource_share_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Cross region discovery home region.</p>
+    pub cross_region_discovery_home_region: ::std::option::Option<::std::string::String>,
+    /// <p>Cross region discovery source regions.</p>
+    pub cross_region_discovery_source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Service status.</p>
+    pub service_status: ::std::option::Option<crate::types::ServiceStatus>,
     _request_id: Option<String>,
 }
 impl GetServiceSettingsOutput {
@@ -36,6 +42,20 @@ impl GetServiceSettingsOutput {
     pub fn license_manager_resource_share_arn(&self) -> ::std::option::Option<&str> {
         self.license_manager_resource_share_arn.as_deref()
     }
+    /// <p>Cross region discovery home region.</p>
+    pub fn cross_region_discovery_home_region(&self) -> ::std::option::Option<&str> {
+        self.cross_region_discovery_home_region.as_deref()
+    }
+    /// <p>Cross region discovery source regions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_region_discovery_source_regions.is_none()`.
+    pub fn cross_region_discovery_source_regions(&self) -> &[::std::string::String] {
+        self.cross_region_discovery_source_regions.as_deref().unwrap_or_default()
+    }
+    /// <p>Service status.</p>
+    pub fn service_status(&self) -> ::std::option::Option<&crate::types::ServiceStatus> {
+        self.service_status.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetServiceSettingsOutput {
     fn request_id(&self) -> Option<&str> {
@@ -58,6 +78,9 @@ pub struct GetServiceSettingsOutputBuilder {
     pub(crate) organization_configuration: ::std::option::Option<crate::types::OrganizationConfiguration>,
     pub(crate) enable_cross_accounts_discovery: ::std::option::Option<bool>,
     pub(crate) license_manager_resource_share_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) cross_region_discovery_home_region: ::std::option::Option<::std::string::String>,
+    pub(crate) cross_region_discovery_source_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) service_status: ::std::option::Option<crate::types::ServiceStatus>,
     _request_id: Option<String>,
 }
 impl GetServiceSettingsOutputBuilder {
@@ -131,6 +154,54 @@ impl GetServiceSettingsOutputBuilder {
     pub fn get_license_manager_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_manager_resource_share_arn
     }
+    /// <p>Cross region discovery home region.</p>
+    pub fn cross_region_discovery_home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cross_region_discovery_home_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Cross region discovery home region.</p>
+    pub fn set_cross_region_discovery_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cross_region_discovery_home_region = input;
+        self
+    }
+    /// <p>Cross region discovery home region.</p>
+    pub fn get_cross_region_discovery_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cross_region_discovery_home_region
+    }
+    /// Appends an item to `cross_region_discovery_source_regions`.
+    ///
+    /// To override the contents of this collection use [`set_cross_region_discovery_source_regions`](Self::set_cross_region_discovery_source_regions).
+    ///
+    /// <p>Cross region discovery source regions.</p>
+    pub fn cross_region_discovery_source_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.cross_region_discovery_source_regions.unwrap_or_default();
+        v.push(input.into());
+        self.cross_region_discovery_source_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Cross region discovery source regions.</p>
+    pub fn set_cross_region_discovery_source_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.cross_region_discovery_source_regions = input;
+        self
+    }
+    /// <p>Cross region discovery source regions.</p>
+    pub fn get_cross_region_discovery_source_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cross_region_discovery_source_regions
+    }
+    /// <p>Service status.</p>
+    pub fn service_status(mut self, input: crate::types::ServiceStatus) -> Self {
+        self.service_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Service status.</p>
+    pub fn set_service_status(mut self, input: ::std::option::Option<crate::types::ServiceStatus>) -> Self {
+        self.service_status = input;
+        self
+    }
+    /// <p>Service status.</p>
+    pub fn get_service_status(&self) -> &::std::option::Option<crate::types::ServiceStatus> {
+        &self.service_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -148,6 +219,9 @@ impl GetServiceSettingsOutputBuilder {
             organization_configuration: self.organization_configuration,
             enable_cross_accounts_discovery: self.enable_cross_accounts_discovery,
             license_manager_resource_share_arn: self.license_manager_resource_share_arn,
+            cross_region_discovery_home_region: self.cross_region_discovery_home_region,
+            cross_region_discovery_source_regions: self.cross_region_discovery_source_regions,
+            service_status: self.service_status,
             _request_id: self._request_id,
         }
     }

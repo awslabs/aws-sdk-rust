@@ -5,13 +5,13 @@
 pub struct RetrieveMemoryRecordsInput {
     /// <p>The identifier of the AgentCore Memory resource from which to retrieve memory records.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
-    /// <p>The namespace to filter memory records by. If specified, only memory records in this namespace are searched.</p>
+    /// <p>The namespace to filter memory records by.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The search criteria to use for finding relevant memory records. This includes the search query, memory strategy ID, and other search parameters.</p>
     pub search_criteria: ::std::option::Option<crate::types::SearchCriteria>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl RetrieveMemoryRecordsInput {
@@ -19,7 +19,7 @@ impl RetrieveMemoryRecordsInput {
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
     }
-    /// <p>The namespace to filter memory records by. If specified, only memory records in this namespace are searched.</p>
+    /// <p>The namespace to filter memory records by.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
@@ -31,7 +31,7 @@ impl RetrieveMemoryRecordsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -69,18 +69,18 @@ impl RetrieveMemoryRecordsInputBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }
-    /// <p>The namespace to filter memory records by. If specified, only memory records in this namespace are searched.</p>
+    /// <p>The namespace to filter memory records by.</p>
     /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The namespace to filter memory records by. If specified, only memory records in this namespace are searched.</p>
+    /// <p>The namespace to filter memory records by.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The namespace to filter memory records by. If specified, only memory records in this namespace are searched.</p>
+    /// <p>The namespace to filter memory records by.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
@@ -113,17 +113,17 @@ impl RetrieveMemoryRecordsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

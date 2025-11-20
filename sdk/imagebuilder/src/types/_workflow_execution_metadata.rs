@@ -28,6 +28,8 @@ pub struct WorkflowExecutionMetadata {
     pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>The name of the test group that included the test workflow resource at runtime.</p>
     pub parallel_group: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates retry status for this runtime instance of the workflow.</p>
+    pub retried: ::std::option::Option<bool>,
 }
 impl WorkflowExecutionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource build version that ran.</p>
@@ -78,6 +80,10 @@ impl WorkflowExecutionMetadata {
     pub fn parallel_group(&self) -> ::std::option::Option<&str> {
         self.parallel_group.as_deref()
     }
+    /// <p>Indicates retry status for this runtime instance of the workflow.</p>
+    pub fn retried(&self) -> ::std::option::Option<bool> {
+        self.retried
+    }
 }
 impl WorkflowExecutionMetadata {
     /// Creates a new builder-style object to manufacture [`WorkflowExecutionMetadata`](crate::types::WorkflowExecutionMetadata).
@@ -102,6 +108,7 @@ pub struct WorkflowExecutionMetadataBuilder {
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
     pub(crate) parallel_group: ::std::option::Option<::std::string::String>,
+    pub(crate) retried: ::std::option::Option<bool>,
 }
 impl WorkflowExecutionMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource build version that ran.</p>
@@ -272,6 +279,20 @@ impl WorkflowExecutionMetadataBuilder {
     pub fn get_parallel_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.parallel_group
     }
+    /// <p>Indicates retry status for this runtime instance of the workflow.</p>
+    pub fn retried(mut self, input: bool) -> Self {
+        self.retried = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates retry status for this runtime instance of the workflow.</p>
+    pub fn set_retried(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.retried = input;
+        self
+    }
+    /// <p>Indicates retry status for this runtime instance of the workflow.</p>
+    pub fn get_retried(&self) -> &::std::option::Option<bool> {
+        &self.retried
+    }
     /// Consumes the builder and constructs a [`WorkflowExecutionMetadata`](crate::types::WorkflowExecutionMetadata).
     pub fn build(self) -> crate::types::WorkflowExecutionMetadata {
         crate::types::WorkflowExecutionMetadata {
@@ -287,6 +308,7 @@ impl WorkflowExecutionMetadataBuilder {
             start_time: self.start_time,
             end_time: self.end_time,
             parallel_group: self.parallel_group,
+            retried: self.retried,
         }
     }
 }

@@ -301,4 +301,18 @@ impl CreateWorkflowFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
         self.inner.get_type()
     }
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Validates the required permissions for the operation and the request parameters, without actually making the request, and provides an error response. Upon a successful request, the error response is <code>DryRunOperationException</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
 }

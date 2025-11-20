@@ -271,7 +271,7 @@ pub enum CreateBudgetError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::types::error::NotFoundException),
-    /// <p>You've reached the limit on the number of tags you can associate with a resource.</p>
+    /// <p>You've reached a Service Quota limit on this resource.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The number of API requests has exceeded the maximum allowed API request throttling limit for the account.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

@@ -11,6 +11,28 @@ pub use crate::types::_product_information::ProductInformationBuilder;
 
 pub use crate::types::_product_information_filter::ProductInformationFilterBuilder;
 
+pub use crate::types::_license_asset_rule::LicenseAssetRuleBuilder;
+
+pub use crate::types::_rule_statement::RuleStatementBuilder;
+
+pub use crate::types::_instance_rule_statement::InstanceRuleStatementBuilder;
+
+pub use crate::types::_script_rule_statement::ScriptRuleStatementBuilder;
+
+pub use crate::types::_matching_rule_statement::MatchingRuleStatementBuilder;
+
+pub use crate::types::_or_rule_statement::OrRuleStatementBuilder;
+
+pub use crate::types::_and_rule_statement::AndRuleStatementBuilder;
+
+pub use crate::types::_license_rule_statement::LicenseRuleStatementBuilder;
+
+pub use crate::types::_license_configuration_rule_statement::LicenseConfigurationRuleStatementBuilder;
+
+pub use crate::types::_license_asset_group_property::LicenseAssetGroupPropertyBuilder;
+
+pub use crate::types::_license_asset_group_configuration::LicenseAssetGroupConfigurationBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_license_configuration_usage::LicenseConfigurationUsageBuilder;
@@ -65,9 +87,23 @@ pub use crate::types::_managed_resource_summary::ManagedResourceSummaryBuilder;
 
 pub use crate::types::_consumed_license_summary::ConsumedLicenseSummaryBuilder;
 
+pub use crate::types::_license_asset_ruleset::LicenseAssetRulesetBuilder;
+
+pub use crate::types::_license_asset_group::LicenseAssetGroupBuilder;
+
 pub use crate::types::_license_operation_failure::LicenseOperationFailureBuilder;
 
 pub use crate::types::_license_configuration_association::LicenseConfigurationAssociationBuilder;
+
+pub use crate::types::_asset::AssetBuilder;
+
+pub use crate::types::_service_status::ServiceStatusBuilder;
+
+pub use crate::types::_cross_region_discovery_status::CrossRegionDiscoveryStatusBuilder;
+
+pub use crate::types::_region_status::RegionStatusBuilder;
+
+pub use crate::types::_cross_account_discovery_service_status::CrossAccountDiscoveryServiceStatusBuilder;
 
 pub use crate::types::_license_usage::LicenseUsageBuilder;
 

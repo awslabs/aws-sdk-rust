@@ -48,6 +48,47 @@ pub fn de_cloud_watch_log_options(
                 builder = builder.set_log_output_format(var_3);
             }
             ,
+            s if s.matches("bgpLogEnabled") /* BgpLogEnabled com.amazonaws.ec2#CloudWatchLogOptions$BgpLogEnabled */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_bgp_log_enabled(var_4);
+            }
+            ,
+            s if s.matches("bgpLogGroupArn") /* BgpLogGroupArn com.amazonaws.ec2#CloudWatchLogOptions$BgpLogGroupArn */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bgp_log_group_arn(var_5);
+            }
+            ,
+            s if s.matches("bgpLogOutputFormat") /* BgpLogOutputFormat com.amazonaws.ec2#CloudWatchLogOptions$BgpLogOutputFormat */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_bgp_log_output_format(var_6);
+            }
+            ,
             _ => {}
         }
     }

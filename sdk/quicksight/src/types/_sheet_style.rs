@@ -8,6 +8,8 @@ pub struct SheetStyle {
     pub tile: ::std::option::Option<crate::types::TileStyle>,
     /// <p>The layout options for tiles.</p>
     pub tile_layout: ::std::option::Option<crate::types::TileLayoutStyle>,
+    /// <p>The background for sheets.</p>
+    pub background: ::std::option::Option<crate::types::SheetBackgroundStyle>,
 }
 impl SheetStyle {
     /// <p>The display options for tiles.</p>
@@ -17,6 +19,10 @@ impl SheetStyle {
     /// <p>The layout options for tiles.</p>
     pub fn tile_layout(&self) -> ::std::option::Option<&crate::types::TileLayoutStyle> {
         self.tile_layout.as_ref()
+    }
+    /// <p>The background for sheets.</p>
+    pub fn background(&self) -> ::std::option::Option<&crate::types::SheetBackgroundStyle> {
+        self.background.as_ref()
     }
 }
 impl SheetStyle {
@@ -32,6 +38,7 @@ impl SheetStyle {
 pub struct SheetStyleBuilder {
     pub(crate) tile: ::std::option::Option<crate::types::TileStyle>,
     pub(crate) tile_layout: ::std::option::Option<crate::types::TileLayoutStyle>,
+    pub(crate) background: ::std::option::Option<crate::types::SheetBackgroundStyle>,
 }
 impl SheetStyleBuilder {
     /// <p>The display options for tiles.</p>
@@ -62,11 +69,26 @@ impl SheetStyleBuilder {
     pub fn get_tile_layout(&self) -> &::std::option::Option<crate::types::TileLayoutStyle> {
         &self.tile_layout
     }
+    /// <p>The background for sheets.</p>
+    pub fn background(mut self, input: crate::types::SheetBackgroundStyle) -> Self {
+        self.background = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The background for sheets.</p>
+    pub fn set_background(mut self, input: ::std::option::Option<crate::types::SheetBackgroundStyle>) -> Self {
+        self.background = input;
+        self
+    }
+    /// <p>The background for sheets.</p>
+    pub fn get_background(&self) -> &::std::option::Option<crate::types::SheetBackgroundStyle> {
+        &self.background
+    }
     /// Consumes the builder and constructs a [`SheetStyle`](crate::types::SheetStyle).
     pub fn build(self) -> crate::types::SheetStyle {
         crate::types::SheetStyle {
             tile: self.tile,
             tile_layout: self.tile_layout,
+            background: self.background,
         }
     }
 }

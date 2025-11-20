@@ -16,8 +16,10 @@
 ///     ByoipCidrState::Deprovisioned => { /* ... */ },
 ///     ByoipCidrState::FailedDeprovision => { /* ... */ },
 ///     ByoipCidrState::FailedProvision => { /* ... */ },
+///     ByoipCidrState::PendingAdvertising => { /* ... */ },
 ///     ByoipCidrState::PendingDeprovision => { /* ... */ },
 ///     ByoipCidrState::PendingProvision => { /* ... */ },
+///     ByoipCidrState::PendingWithdrawal => { /* ... */ },
 ///     ByoipCidrState::Provisioned => { /* ... */ },
 ///     ByoipCidrState::ProvisionedNotPubliclyAdvertisable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -57,9 +59,13 @@ pub enum ByoipCidrState {
     #[allow(missing_docs)] // documentation missing in model
     FailedProvision,
     #[allow(missing_docs)] // documentation missing in model
+    PendingAdvertising,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDeprovision,
     #[allow(missing_docs)] // documentation missing in model
     PendingProvision,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingWithdrawal,
     #[allow(missing_docs)] // documentation missing in model
     Provisioned,
     #[allow(missing_docs)] // documentation missing in model
@@ -75,8 +81,10 @@ impl ::std::convert::From<&str> for ByoipCidrState {
             "deprovisioned" => ByoipCidrState::Deprovisioned,
             "failed-deprovision" => ByoipCidrState::FailedDeprovision,
             "failed-provision" => ByoipCidrState::FailedProvision,
+            "pending-advertising" => ByoipCidrState::PendingAdvertising,
             "pending-deprovision" => ByoipCidrState::PendingDeprovision,
             "pending-provision" => ByoipCidrState::PendingProvision,
+            "pending-withdrawal" => ByoipCidrState::PendingWithdrawal,
             "provisioned" => ByoipCidrState::Provisioned,
             "provisioned-not-publicly-advertisable" => ByoipCidrState::ProvisionedNotPubliclyAdvertisable,
             other => ByoipCidrState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -98,8 +106,10 @@ impl ByoipCidrState {
             ByoipCidrState::Deprovisioned => "deprovisioned",
             ByoipCidrState::FailedDeprovision => "failed-deprovision",
             ByoipCidrState::FailedProvision => "failed-provision",
+            ByoipCidrState::PendingAdvertising => "pending-advertising",
             ByoipCidrState::PendingDeprovision => "pending-deprovision",
             ByoipCidrState::PendingProvision => "pending-provision",
+            ByoipCidrState::PendingWithdrawal => "pending-withdrawal",
             ByoipCidrState::Provisioned => "provisioned",
             ByoipCidrState::ProvisionedNotPubliclyAdvertisable => "provisioned-not-publicly-advertisable",
             ByoipCidrState::Unknown(value) => value.as_str(),
@@ -112,8 +122,10 @@ impl ByoipCidrState {
             "deprovisioned",
             "failed-deprovision",
             "failed-provision",
+            "pending-advertising",
             "pending-deprovision",
             "pending-provision",
+            "pending-withdrawal",
             "provisioned",
             "provisioned-not-publicly-advertisable",
         ]
@@ -143,8 +155,10 @@ impl ::std::fmt::Display for ByoipCidrState {
             ByoipCidrState::Deprovisioned => write!(f, "deprovisioned"),
             ByoipCidrState::FailedDeprovision => write!(f, "failed-deprovision"),
             ByoipCidrState::FailedProvision => write!(f, "failed-provision"),
+            ByoipCidrState::PendingAdvertising => write!(f, "pending-advertising"),
             ByoipCidrState::PendingDeprovision => write!(f, "pending-deprovision"),
             ByoipCidrState::PendingProvision => write!(f, "pending-provision"),
+            ByoipCidrState::PendingWithdrawal => write!(f, "pending-withdrawal"),
             ByoipCidrState::Provisioned => write!(f, "provisioned"),
             ByoipCidrState::ProvisionedNotPubliclyAdvertisable => write!(f, "provisioned-not-publicly-advertisable"),
             ByoipCidrState::Unknown(value) => write!(f, "{value}"),

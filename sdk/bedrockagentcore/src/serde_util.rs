@@ -248,6 +248,15 @@ pub(crate) fn list_events_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_memory_extraction_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_memory_extraction_jobs::builders::ListMemoryExtractionJobsOutputBuilder,
+) -> crate::operation::list_memory_extraction_jobs::builders::ListMemoryExtractionJobsOutputBuilder {
+    if builder.jobs.is_none() {
+        builder.jobs = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_memory_records_output_output_correct_errors(
     mut builder: crate::operation::list_memory_records::builders::ListMemoryRecordsOutputBuilder,
 ) -> crate::operation::list_memory_records::builders::ListMemoryRecordsOutputBuilder {
@@ -301,6 +310,15 @@ pub(crate) fn start_code_interpreter_session_output_output_correct_errors(
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn start_memory_extraction_job_output_output_correct_errors(
+    mut builder: crate::operation::start_memory_extraction_job::builders::StartMemoryExtractionJobOutputBuilder,
+) -> crate::operation::start_memory_extraction_job::builders::StartMemoryExtractionJobOutputBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
     }
     builder
 }
@@ -481,6 +499,18 @@ pub(crate) fn code_interpreter_session_summary_correct_errors(
     builder
 }
 
+pub(crate) fn extraction_job_metadata_correct_errors(
+    mut builder: crate::types::builders::ExtractionJobMetadataBuilder,
+) -> crate::types::builders::ExtractionJobMetadataBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.messages.is_none() {
+        builder.messages = Some(crate::types::ExtractionJobMessages::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn memory_record_output_correct_errors(
     mut builder: crate::types::builders::MemoryRecordOutputBuilder,
 ) -> crate::types::builders::MemoryRecordOutputBuilder {
@@ -565,6 +595,18 @@ pub(crate) fn conversational_correct_errors(
 pub(crate) fn content_block_correct_errors(mut builder: crate::types::builders::ContentBlockBuilder) -> crate::types::builders::ContentBlockBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ContentBlockType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn message_metadata_correct_errors(
+    mut builder: crate::types::builders::MessageMetadataBuilder,
+) -> crate::types::builders::MessageMetadataBuilder {
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
+    }
+    if builder.message_index.is_none() {
+        builder.message_index = Some(Default::default())
     }
     builder
 }

@@ -23,7 +23,7 @@ impl crate::operation::update_policy::builders::UpdatePolicyInputBuilder {
 /// Fluent builder constructing a request to `UpdatePolicy`.
 ///
 /// <p>Updates an existing policy with a new name, description, or content. If you don't supply any parameter, that value remains unchanged. You can't change a policy's type.</p>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator.</p>
+/// <p>You can only call this operation from the management account or a member account that is a delegated administrator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,19 +109,19 @@ impl UpdatePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier (ID) of the policy that you want to update.</p>
+    /// <p>ID for the policy that you want to update.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the policy that you want to update.</p>
+    /// <p>ID for the policy that you want to update.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_id(input);
         self
     }
-    /// <p>The unique identifier (ID) of the policy that you want to update.</p>
+    /// <p>ID for the policy that you want to update.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_id()

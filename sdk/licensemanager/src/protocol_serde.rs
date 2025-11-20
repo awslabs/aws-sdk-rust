@@ -37,6 +37,10 @@ pub(crate) mod shape_create_grant_version;
 
 pub(crate) mod shape_create_license;
 
+pub(crate) mod shape_create_license_asset_group;
+
+pub(crate) mod shape_create_license_asset_ruleset;
+
 pub(crate) mod shape_create_license_configuration;
 
 pub(crate) mod shape_create_license_conversion_task_for_resource;
@@ -50,6 +54,10 @@ pub(crate) mod shape_create_token;
 pub(crate) mod shape_delete_grant;
 
 pub(crate) mod shape_delete_license;
+
+pub(crate) mod shape_delete_license_asset_group;
+
+pub(crate) mod shape_delete_license_asset_ruleset;
 
 pub(crate) mod shape_delete_license_configuration;
 
@@ -65,6 +73,10 @@ pub(crate) mod shape_get_grant;
 
 pub(crate) mod shape_get_license;
 
+pub(crate) mod shape_get_license_asset_group;
+
+pub(crate) mod shape_get_license_asset_ruleset;
+
 pub(crate) mod shape_get_license_configuration;
 
 pub(crate) mod shape_get_license_conversion_task;
@@ -75,13 +87,21 @@ pub(crate) mod shape_get_license_usage;
 
 pub(crate) mod shape_get_service_settings;
 
+pub(crate) mod shape_list_assets_for_license_asset_group;
+
 pub(crate) mod shape_list_associations_for_license_configuration;
 
 pub(crate) mod shape_list_distributed_grants;
 
 pub(crate) mod shape_list_failures_for_license_configuration_operations;
 
+pub(crate) mod shape_list_license_asset_groups;
+
+pub(crate) mod shape_list_license_asset_rulesets;
+
 pub(crate) mod shape_list_license_configurations;
+
+pub(crate) mod shape_list_license_configurations_for_organization;
 
 pub(crate) mod shape_list_license_conversion_tasks;
 
@@ -114,6 +134,10 @@ pub(crate) mod shape_reject_grant;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_license_asset_group;
+
+pub(crate) mod shape_update_license_asset_ruleset;
 
 pub(crate) mod shape_update_license_configuration;
 
@@ -149,6 +173,10 @@ pub(crate) mod shape_create_grant_input;
 
 pub(crate) mod shape_create_grant_version_input;
 
+pub(crate) mod shape_create_license_asset_group_input;
+
+pub(crate) mod shape_create_license_asset_ruleset_input;
+
 pub(crate) mod shape_create_license_configuration_input;
 
 pub(crate) mod shape_create_license_conversion_task_for_resource_input;
@@ -162,6 +190,10 @@ pub(crate) mod shape_create_license_version_input;
 pub(crate) mod shape_create_token_input;
 
 pub(crate) mod shape_delete_grant_input;
+
+pub(crate) mod shape_delete_license_asset_group_input;
+
+pub(crate) mod shape_delete_license_asset_ruleset_input;
 
 pub(crate) mod shape_delete_license_configuration_input;
 
@@ -183,6 +215,10 @@ pub(crate) mod shape_get_access_token_input;
 
 pub(crate) mod shape_get_grant_input;
 
+pub(crate) mod shape_get_license_asset_group_input;
+
+pub(crate) mod shape_get_license_asset_ruleset_input;
+
 pub(crate) mod shape_get_license_configuration_input;
 
 pub(crate) mod shape_get_license_conversion_task_input;
@@ -199,11 +235,19 @@ pub(crate) mod shape_invalid_resource_state_exception;
 
 pub(crate) mod shape_license_usage_exception;
 
+pub(crate) mod shape_list_assets_for_license_asset_group_input;
+
 pub(crate) mod shape_list_associations_for_license_configuration_input;
 
 pub(crate) mod shape_list_distributed_grants_input;
 
 pub(crate) mod shape_list_failures_for_license_configuration_operations_input;
+
+pub(crate) mod shape_list_license_asset_groups_input;
+
+pub(crate) mod shape_list_license_asset_rulesets_input;
+
+pub(crate) mod shape_list_license_configurations_for_organization_input;
 
 pub(crate) mod shape_list_license_configurations_input;
 
@@ -253,6 +297,10 @@ pub(crate) mod shape_unsupported_digital_signature_method_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_license_asset_group_input;
+
+pub(crate) mod shape_update_license_asset_ruleset_input;
+
 pub(crate) mod shape_update_license_configuration_input;
 
 pub(crate) mod shape_update_license_manager_report_generator_input;
@@ -262,6 +310,8 @@ pub(crate) mod shape_update_license_specifications_for_resource_input;
 pub(crate) mod shape_update_service_settings_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_asset_list;
 
 pub(crate) mod shape_automated_discovery_information;
 
@@ -290,6 +340,20 @@ pub(crate) mod shape_inventory_filter;
 pub(crate) mod shape_issuer;
 
 pub(crate) mod shape_license;
+
+pub(crate) mod shape_license_asset_group;
+
+pub(crate) mod shape_license_asset_group_configuration;
+
+pub(crate) mod shape_license_asset_group_list;
+
+pub(crate) mod shape_license_asset_group_property;
+
+pub(crate) mod shape_license_asset_rule;
+
+pub(crate) mod shape_license_asset_ruleset;
+
+pub(crate) mod shape_license_asset_ruleset_list;
 
 pub(crate) mod shape_license_configuration_associations;
 
@@ -335,6 +399,8 @@ pub(crate) mod shape_report_generator_list;
 
 pub(crate) mod shape_resource_inventory_list;
 
+pub(crate) mod shape_service_status;
+
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_tag;
@@ -345,9 +411,15 @@ pub(crate) mod shape_token_list;
 
 pub(crate) mod shape_allowed_operation_list;
 
+pub(crate) mod shape_asset;
+
 pub(crate) mod shape_borrow_configuration;
 
 pub(crate) mod shape_consumed_license_summary;
+
+pub(crate) mod shape_cross_account_discovery_service_status;
+
+pub(crate) mod shape_cross_region_discovery_status;
 
 pub(crate) mod shape_entitlement_list;
 
@@ -356,6 +428,14 @@ pub(crate) mod shape_entitlement_usage_list;
 pub(crate) mod shape_granted_license;
 
 pub(crate) mod shape_issuer_details;
+
+pub(crate) mod shape_license_asset_group_configuration_list;
+
+pub(crate) mod shape_license_asset_group_property_list;
+
+pub(crate) mod shape_license_asset_rule_list;
+
+pub(crate) mod shape_license_asset_ruleset_arn_list;
 
 pub(crate) mod shape_license_configuration;
 
@@ -381,6 +461,8 @@ pub(crate) mod shape_report_type_list;
 
 pub(crate) mod shape_resource_inventory;
 
+pub(crate) mod shape_rule_statement;
+
 pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_token_data;
@@ -389,8 +471,30 @@ pub(crate) mod shape_arn_list;
 
 pub(crate) mod shape_entitlement_usage;
 
+pub(crate) mod shape_instance_rule_statement;
+
+pub(crate) mod shape_license_configuration_rule_statement;
+
+pub(crate) mod shape_license_rule_statement;
+
 pub(crate) mod shape_max_size3_string_list;
 
 pub(crate) mod shape_product_information_filter_list;
 
 pub(crate) mod shape_received_metadata;
+
+pub(crate) mod shape_region_status_map;
+
+pub(crate) mod shape_and_rule_statement;
+
+pub(crate) mod shape_matching_rule_statement;
+
+pub(crate) mod shape_or_rule_statement;
+
+pub(crate) mod shape_region_status;
+
+pub(crate) mod shape_script_rule_statement;
+
+pub(crate) mod shape_matching_rule_statement_list;
+
+pub(crate) mod shape_script_rule_statement_list;

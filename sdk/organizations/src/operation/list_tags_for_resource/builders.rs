@@ -34,7 +34,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 /// <li>
 /// <p>Policy (any type)</p></li>
 /// </ul>
-/// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator.</p>
+/// <p>You can only call this operation from the management account or a member account that is a delegated administrator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

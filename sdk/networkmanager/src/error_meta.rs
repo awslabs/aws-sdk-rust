@@ -389,6 +389,45 @@ impl From<crate::operation::create_core_network::CreateCoreNetworkError> for Err
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError> for Error {
+    fn from(err: crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError) -> Self {
+        match err {
+            crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_core_network_prefix_list_association::CreateCoreNetworkPrefixListAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_device::CreateDeviceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -880,6 +919,45 @@ impl From<crate::operation::delete_core_network_policy_version::DeleteCoreNetwor
                 Error::ValidationException(inner)
             }
             crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError> for Error {
+    fn from(err: crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError) -> Self {
+        match err {
+            crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_core_network_prefix_list_association::DeleteCoreNetworkPrefixListAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2260,6 +2338,43 @@ impl From<crate::operation::get_vpc_attachment::GetVpcAttachmentError> for Error
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsError> for Error {
+    fn from(err: crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsError) -> Self {
+        match err {
+            crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_attachments::ListAttachmentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2354,6 +2469,104 @@ impl From<crate::operation::list_core_network_policy_versions::ListCoreNetworkPo
                 Error::ValidationException(inner)
             }
             crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsError> for Error {
+    fn from(err: crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsError) -> Self {
+        match err {
+            crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_core_network_prefix_list_associations::ListCoreNetworkPrefixListAssociationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationError> for Error {
+    fn from(err: crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationError) -> Self {
+        match err {
+            crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_core_network_routing_information::ListCoreNetworkRoutingInformationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -2468,6 +2681,59 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError> for Error {
+    fn from(err: crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError) -> Self {
+        match err {
+            crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_attachment_routing_policy_label::PutAttachmentRoutingPolicyLabelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2595,6 +2861,61 @@ impl From<crate::operation::reject_attachment::RejectAttachmentError> for Error 
             crate::operation::reject_attachment::RejectAttachmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::reject_attachment::RejectAttachmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::reject_attachment::RejectAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError> for Error {
+    fn from(err: crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError) -> Self {
+        match err {
+            crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::remove_attachment_routing_policy_label::RemoveAttachmentRoutingPolicyLabelError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

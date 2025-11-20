@@ -41,6 +41,20 @@ where
                         "Status" => {
                             builder = builder.set_status(crate::protocol_serde::shape_step_status::de_step_status(tokens)?);
                         }
+                        "LogUri" => {
+                            builder = builder.set_log_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "EncryptionKeyArn" => {
+                            builder = builder.set_encryption_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

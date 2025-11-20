@@ -28,6 +28,9 @@ pub mod create_connection;
 /// Types for the `CreateCoreNetwork` operation.
 pub mod create_core_network;
 
+/// Types for the `CreateCoreNetworkPrefixListAssociation` operation.
+pub mod create_core_network_prefix_list_association;
+
 /// Types for the `CreateDevice` operation.
 pub mod create_device;
 
@@ -69,6 +72,9 @@ pub mod delete_core_network;
 
 /// Types for the `DeleteCoreNetworkPolicyVersion` operation.
 pub mod delete_core_network_policy_version;
+
+/// Types for the `DeleteCoreNetworkPrefixListAssociation` operation.
+pub mod delete_core_network_prefix_list_association;
 
 /// Types for the `DeleteDevice` operation.
 pub mod delete_device;
@@ -190,6 +196,9 @@ pub mod get_transit_gateway_route_table_attachment;
 /// Types for the `GetVpcAttachment` operation.
 pub mod get_vpc_attachment;
 
+/// Types for the `ListAttachmentRoutingPolicyAssociations` operation.
+pub mod list_attachment_routing_policy_associations;
+
 /// Types for the `ListAttachments` operation.
 pub mod list_attachments;
 
@@ -198,6 +207,12 @@ pub mod list_connect_peers;
 
 /// Types for the `ListCoreNetworkPolicyVersions` operation.
 pub mod list_core_network_policy_versions;
+
+/// Types for the `ListCoreNetworkPrefixListAssociations` operation.
+pub mod list_core_network_prefix_list_associations;
+
+/// Types for the `ListCoreNetworkRoutingInformation` operation.
+pub mod list_core_network_routing_information;
 
 /// Types for the `ListCoreNetworks` operation.
 pub mod list_core_networks;
@@ -211,6 +226,9 @@ pub mod list_peerings;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `PutAttachmentRoutingPolicyLabel` operation.
+pub mod put_attachment_routing_policy_label;
+
 /// Types for the `PutCoreNetworkPolicy` operation.
 pub mod put_core_network_policy;
 
@@ -222,6 +240,9 @@ pub mod register_transit_gateway;
 
 /// Types for the `RejectAttachment` operation.
 pub mod reject_attachment;
+
+/// Types for the `RemoveAttachmentRoutingPolicyLabel` operation.
+pub mod remove_attachment_routing_policy_label;
 
 /// Types for the `RestoreCoreNetworkPolicyVersion` operation.
 pub mod restore_core_network_policy_version;

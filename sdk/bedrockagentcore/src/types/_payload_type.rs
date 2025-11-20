@@ -2,7 +2,7 @@
 
 /// <p>Contains the payload content for an event.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum PayloadType {
     /// <p>The binary content of the payload.</p>
     Blob(::aws_smithy_types::Document),
@@ -48,5 +48,14 @@ impl PayloadType {
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
+    }
+}
+impl ::std::fmt::Debug for PayloadType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            PayloadType::Blob(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            PayloadType::Conversational(val) => f.debug_tuple("Conversational").field(&val).finish(),
+            PayloadType::Unknown => f.debug_tuple("Unknown").finish(),
+        }
     }
 }

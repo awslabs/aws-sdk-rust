@@ -2272,6 +2272,33 @@ impl From<crate::operation::get_finding_statistics_v2::GetFindingStatisticsV2Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_findings_trends_v2::GetFindingsTrendsV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_findings_trends_v2::GetFindingsTrendsV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_findings_trends_v2::GetFindingsTrendsV2Error> for Error {
+    fn from(err: crate::operation::get_findings_trends_v2::GetFindingsTrendsV2Error) -> Self {
+        match err {
+            crate::operation::get_findings_trends_v2::GetFindingsTrendsV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_findings_trends_v2::GetFindingsTrendsV2Error::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_findings_trends_v2::GetFindingsTrendsV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_findings_trends_v2::GetFindingsTrendsV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_findings_trends_v2::GetFindingsTrendsV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_findings_v2::GetFindingsV2Error, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2466,6 +2493,35 @@ impl From<crate::operation::get_resources_statistics_v2::GetResourcesStatisticsV
                 Error::ValidationException(inner)
             }
             crate::operation::get_resources_statistics_v2::GetResourcesStatisticsV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Error> for Error {
+    fn from(err: crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Error) -> Self {
+        match err {
+            crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Error::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

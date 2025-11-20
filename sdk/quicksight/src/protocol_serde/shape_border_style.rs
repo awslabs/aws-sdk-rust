@@ -3,8 +3,14 @@ pub fn ser_border_style(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BorderStyle,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.show {
-        object.key("Show").boolean(*var_1);
+    if let Some(var_1) = &input.color {
+        object.key("Color").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.show {
+        object.key("Show").boolean(*var_2);
+    }
+    if let Some(var_3) = &input.width {
+        object.key("Width").string(var_3.as_str());
     }
     Ok(())
 }
@@ -24,8 +30,22 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Color" => {
+                            builder = builder.set_color(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Show" => {
                             builder = builder.set_show(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "Width" => {
+                            builder = builder.set_width(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

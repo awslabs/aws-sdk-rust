@@ -22,8 +22,7 @@ impl crate::operation::list_grouping_attribute_definitions::builders::ListGroupi
 }
 /// Fluent builder constructing a request to `ListGroupingAttributeDefinitions`.
 ///
-/// <p>Retrieves the available grouping attribute definitions that can be used to create grouping configurations. These definitions specify the attributes and rules available for organizing services.</p>
-/// <p>Use this operation to discover what grouping options are available before creating or updating grouping configurations.</p>
+/// <p>Returns the current grouping configuration for this account, including all custom grouping attribute definitions that have been configured. These definitions determine how services are logically grouped based on telemetry attributes, Amazon Web Services tags, or predefined mappings.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListGroupingAttributeDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,18 +108,46 @@ impl ListGroupingAttributeDefinitionsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
+    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
+    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token for the next set of results. Use this token to retrieve additional pages of grouping attribute definitions when the result set is large.</p>
+    /// <p>Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
+    }
+    /// <p>The Amazon Web Services account ID to retrieve grouping attribute definitions for. Use this when accessing grouping configurations from a different account in cross-account monitoring scenarios.</p>
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.aws_account_id(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID to retrieve grouping attribute definitions for. Use this when accessing grouping configurations from a different account in cross-account monitoring scenarios.</p>
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_aws_account_id(input);
+        self
+    }
+    /// <p>The Amazon Web Services account ID to retrieve grouping attribute definitions for. Use this when accessing grouping configurations from a different account in cross-account monitoring scenarios.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include grouping attributes from source accounts in the returned data.</p>
+    pub fn include_linked_accounts(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_linked_accounts(input);
+        self
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include grouping attributes from source accounts in the returned data.</p>
+    pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_linked_accounts(input);
+        self
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include grouping attributes from source accounts in the returned data.</p>
+    pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_linked_accounts()
     }
 }

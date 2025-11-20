@@ -7,6 +7,8 @@ pub struct GetContainerRecipeOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The container recipe object that is returned.</p>
     pub container_recipe: ::std::option::Option<crate::types::ContainerRecipe>,
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
 impl GetContainerRecipeOutput {
@@ -17,6 +19,10 @@ impl GetContainerRecipeOutput {
     /// <p>The container recipe object that is returned.</p>
     pub fn container_recipe(&self) -> ::std::option::Option<&crate::types::ContainerRecipe> {
         self.container_recipe.as_ref()
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn latest_version_references(&self) -> ::std::option::Option<&crate::types::LatestVersionReferences> {
+        self.latest_version_references.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetContainerRecipeOutput {
@@ -37,6 +43,7 @@ impl GetContainerRecipeOutput {
 pub struct GetContainerRecipeOutputBuilder {
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) container_recipe: ::std::option::Option<crate::types::ContainerRecipe>,
+    pub(crate) latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
 impl GetContainerRecipeOutputBuilder {
@@ -68,6 +75,20 @@ impl GetContainerRecipeOutputBuilder {
     pub fn get_container_recipe(&self) -> &::std::option::Option<crate::types::ContainerRecipe> {
         &self.container_recipe
     }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn latest_version_references(mut self, input: crate::types::LatestVersionReferences) -> Self {
+        self.latest_version_references = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn set_latest_version_references(mut self, input: ::std::option::Option<crate::types::LatestVersionReferences>) -> Self {
+        self.latest_version_references = input;
+        self
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn get_latest_version_references(&self) -> &::std::option::Option<crate::types::LatestVersionReferences> {
+        &self.latest_version_references
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl GetContainerRecipeOutputBuilder {
         crate::operation::get_container_recipe::GetContainerRecipeOutput {
             request_id: self.request_id,
             container_recipe: self.container_recipe,
+            latest_version_references: self.latest_version_references,
             _request_id: self._request_id,
         }
     }

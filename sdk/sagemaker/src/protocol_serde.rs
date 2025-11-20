@@ -37,6 +37,10 @@ pub(crate) mod shape_batch_delete_cluster_nodes;
 
 pub(crate) mod shape_batch_describe_model_package;
 
+pub(crate) mod shape_batch_reboot_cluster_nodes;
+
+pub(crate) mod shape_batch_replace_cluster_nodes;
+
 pub(crate) mod shape_create_action;
 
 pub(crate) mod shape_create_algorithm;
@@ -786,6 +790,10 @@ pub(crate) mod shape_batch_add_cluster_nodes_input;
 pub(crate) mod shape_batch_delete_cluster_nodes_input;
 
 pub(crate) mod shape_batch_describe_model_package_input;
+
+pub(crate) mod shape_batch_reboot_cluster_nodes_input;
+
+pub(crate) mod shape_batch_replace_cluster_nodes_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -1603,6 +1611,14 @@ pub(crate) mod shape_batch_delete_cluster_nodes_error_list;
 
 pub(crate) mod shape_batch_describe_model_package_error_map;
 
+pub(crate) mod shape_batch_reboot_cluster_node_logical_ids_errors;
+
+pub(crate) mod shape_batch_reboot_cluster_nodes_errors;
+
+pub(crate) mod shape_batch_replace_cluster_node_logical_ids_errors;
+
+pub(crate) mod shape_batch_replace_cluster_nodes_errors;
+
 pub(crate) mod shape_channel;
 
 pub(crate) mod shape_checkpoint_config;
@@ -2357,6 +2373,14 @@ pub(crate) mod shape_batch_describe_model_package_error;
 
 pub(crate) mod shape_batch_describe_model_package_summary;
 
+pub(crate) mod shape_batch_reboot_cluster_node_logical_ids_error;
+
+pub(crate) mod shape_batch_reboot_cluster_nodes_error;
+
+pub(crate) mod shape_batch_replace_cluster_node_logical_ids_error;
+
+pub(crate) mod shape_batch_replace_cluster_nodes_error;
+
 pub(crate) mod shape_batch_transform_input;
 
 pub(crate) mod shape_bias;
@@ -2956,6 +2980,8 @@ pub(crate) mod shape_vertex;
 pub(crate) mod shape_vpc_security_group_ids;
 
 pub(crate) mod shape_workforce_vpc_config_response;
+
+pub(crate) mod shape_accelerator_partition_config;
 
 pub(crate) mod shape_alarm;
 

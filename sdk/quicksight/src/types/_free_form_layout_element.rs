@@ -28,6 +28,10 @@ pub struct FreeFormLayoutElement {
     pub background_style: ::std::option::Option<crate::types::FreeFormLayoutElementBackgroundStyle>,
     /// <p>The loading animation configuration of a free-form layout element.</p>
     pub loading_animation: ::std::option::Option<crate::types::LoadingAnimation>,
+    /// <p>The border radius of a free-form layout element.</p>
+    pub border_radius: ::std::option::Option<::std::string::String>,
+    /// <p>The padding of a free-form layout element.</p>
+    pub padding: ::std::option::Option<::std::string::String>,
 }
 impl FreeFormLayoutElement {
     /// <p>A unique identifier for an element within a free-form layout.</p>
@@ -85,6 +89,14 @@ impl FreeFormLayoutElement {
     pub fn loading_animation(&self) -> ::std::option::Option<&crate::types::LoadingAnimation> {
         self.loading_animation.as_ref()
     }
+    /// <p>The border radius of a free-form layout element.</p>
+    pub fn border_radius(&self) -> ::std::option::Option<&str> {
+        self.border_radius.as_deref()
+    }
+    /// <p>The padding of a free-form layout element.</p>
+    pub fn padding(&self) -> ::std::option::Option<&str> {
+        self.padding.as_deref()
+    }
 }
 impl FreeFormLayoutElement {
     /// Creates a new builder-style object to manufacture [`FreeFormLayoutElement`](crate::types::FreeFormLayoutElement).
@@ -109,6 +121,8 @@ pub struct FreeFormLayoutElementBuilder {
     pub(crate) selected_border_style: ::std::option::Option<crate::types::FreeFormLayoutElementBorderStyle>,
     pub(crate) background_style: ::std::option::Option<crate::types::FreeFormLayoutElementBackgroundStyle>,
     pub(crate) loading_animation: ::std::option::Option<crate::types::LoadingAnimation>,
+    pub(crate) border_radius: ::std::option::Option<::std::string::String>,
+    pub(crate) padding: ::std::option::Option<::std::string::String>,
 }
 impl FreeFormLayoutElementBuilder {
     /// <p>A unique identifier for an element within a free-form layout.</p>
@@ -291,6 +305,34 @@ impl FreeFormLayoutElementBuilder {
     pub fn get_loading_animation(&self) -> &::std::option::Option<crate::types::LoadingAnimation> {
         &self.loading_animation
     }
+    /// <p>The border radius of a free-form layout element.</p>
+    pub fn border_radius(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.border_radius = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The border radius of a free-form layout element.</p>
+    pub fn set_border_radius(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.border_radius = input;
+        self
+    }
+    /// <p>The border radius of a free-form layout element.</p>
+    pub fn get_border_radius(&self) -> &::std::option::Option<::std::string::String> {
+        &self.border_radius
+    }
+    /// <p>The padding of a free-form layout element.</p>
+    pub fn padding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.padding = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The padding of a free-form layout element.</p>
+    pub fn set_padding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.padding = input;
+        self
+    }
+    /// <p>The padding of a free-form layout element.</p>
+    pub fn get_padding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.padding
+    }
     /// Consumes the builder and constructs a [`FreeFormLayoutElement`](crate::types::FreeFormLayoutElement).
     /// This method will fail if any of the following fields are not set:
     /// - [`element_id`](crate::types::builders::FreeFormLayoutElementBuilder::element_id)
@@ -343,6 +385,8 @@ impl FreeFormLayoutElementBuilder {
             selected_border_style: self.selected_border_style,
             background_style: self.background_style,
             loading_animation: self.loading_animation,
+            border_radius: self.border_radius,
+            padding: self.padding,
         })
     }
 }

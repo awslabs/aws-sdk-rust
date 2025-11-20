@@ -90,6 +90,10 @@ pub struct CreateAutoScalingGroupInput {
     pub skip_zonal_shift_validation: ::std::option::Option<bool>,
     /// <p>The capacity reservation specification for the Auto Scaling group.</p>
     pub capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
+    /// <p>The instance lifecycle policy for the Auto Scaling group. This policy controls instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when instances should move to a <code>Retained</code> state for manual intervention instead of automatic termination.</p><note>
+    /// <p>Instances in a Retained state will continue to incur standard EC2 charges until terminated.</p>
+    /// </note>
+    pub instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
 }
 impl CreateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
@@ -257,6 +261,12 @@ impl CreateAutoScalingGroupInput {
     pub fn capacity_reservation_specification(&self) -> ::std::option::Option<&crate::types::CapacityReservationSpecification> {
         self.capacity_reservation_specification.as_ref()
     }
+    /// <p>The instance lifecycle policy for the Auto Scaling group. This policy controls instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when instances should move to a <code>Retained</code> state for manual intervention instead of automatic termination.</p><note>
+    /// <p>Instances in a Retained state will continue to incur standard EC2 charges until terminated.</p>
+    /// </note>
+    pub fn instance_lifecycle_policy(&self) -> ::std::option::Option<&crate::types::InstanceLifecyclePolicy> {
+        self.instance_lifecycle_policy.as_ref()
+    }
 }
 impl CreateAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateAutoScalingGroupInput`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput).
@@ -301,6 +311,7 @@ pub struct CreateAutoScalingGroupInputBuilder {
     pub(crate) availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
     pub(crate) skip_zonal_shift_validation: ::std::option::Option<bool>,
     pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
+    pub(crate) instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
 }
 impl CreateAutoScalingGroupInputBuilder {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
@@ -868,6 +879,26 @@ impl CreateAutoScalingGroupInputBuilder {
     pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
         &self.capacity_reservation_specification
     }
+    /// <p>The instance lifecycle policy for the Auto Scaling group. This policy controls instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when instances should move to a <code>Retained</code> state for manual intervention instead of automatic termination.</p><note>
+    /// <p>Instances in a Retained state will continue to incur standard EC2 charges until terminated.</p>
+    /// </note>
+    pub fn instance_lifecycle_policy(mut self, input: crate::types::InstanceLifecyclePolicy) -> Self {
+        self.instance_lifecycle_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance lifecycle policy for the Auto Scaling group. This policy controls instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when instances should move to a <code>Retained</code> state for manual intervention instead of automatic termination.</p><note>
+    /// <p>Instances in a Retained state will continue to incur standard EC2 charges until terminated.</p>
+    /// </note>
+    pub fn set_instance_lifecycle_policy(mut self, input: ::std::option::Option<crate::types::InstanceLifecyclePolicy>) -> Self {
+        self.instance_lifecycle_policy = input;
+        self
+    }
+    /// <p>The instance lifecycle policy for the Auto Scaling group. This policy controls instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when instances should move to a <code>Retained</code> state for manual intervention instead of automatic termination.</p><note>
+    /// <p>Instances in a Retained state will continue to incur standard EC2 charges until terminated.</p>
+    /// </note>
+    pub fn get_instance_lifecycle_policy(&self) -> &::std::option::Option<crate::types::InstanceLifecyclePolicy> {
+        &self.instance_lifecycle_policy
+    }
     /// Consumes the builder and constructs a [`CreateAutoScalingGroupInput`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput).
     pub fn build(
         self,
@@ -908,6 +939,7 @@ impl CreateAutoScalingGroupInputBuilder {
             availability_zone_impairment_policy: self.availability_zone_impairment_policy,
             skip_zonal_shift_validation: self.skip_zonal_shift_validation,
             capacity_reservation_specification: self.capacity_reservation_specification,
+            instance_lifecycle_policy: self.instance_lifecycle_policy,
         })
     }
 }

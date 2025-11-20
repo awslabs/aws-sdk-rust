@@ -309,6 +309,8 @@ pub use crate::types::_resource_sharing_config::ResourceSharingConfigBuilder;
 
 pub use crate::types::_compute_quota_resource_config::ComputeQuotaResourceConfigBuilder;
 
+pub use crate::types::_accelerator_partition_config::AcceleratorPartitionConfigBuilder;
+
 pub use crate::types::_git_config_for_update::GitConfigForUpdateBuilder;
 
 pub use crate::types::_deployment_configuration::DeploymentConfigurationBuilder;
@@ -1348,6 +1350,14 @@ pub use crate::types::_presigned_url_access_config::PresignedUrlAccessConfigBuil
 pub use crate::types::_throughput_config::ThroughputConfigBuilder;
 
 pub use crate::types::_deployment_stage::DeploymentStageBuilder;
+
+pub use crate::types::_batch_replace_cluster_node_logical_ids_error::BatchReplaceClusterNodeLogicalIdsErrorBuilder;
+
+pub use crate::types::_batch_replace_cluster_nodes_error::BatchReplaceClusterNodesErrorBuilder;
+
+pub use crate::types::_batch_reboot_cluster_node_logical_ids_error::BatchRebootClusterNodeLogicalIdsErrorBuilder;
+
+pub use crate::types::_batch_reboot_cluster_nodes_error::BatchRebootClusterNodesErrorBuilder;
 
 pub use crate::types::_batch_describe_model_package_error::BatchDescribeModelPackageErrorBuilder;
 

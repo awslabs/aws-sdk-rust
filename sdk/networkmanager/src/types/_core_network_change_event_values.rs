@@ -6,6 +6,10 @@
 pub struct CoreNetworkChangeEventValues {
     /// <p>The edge location for the core network change event.</p>
     pub edge_location: ::std::option::Option<::std::string::String>,
+    /// <p>The edge location of the peer in a core network change event.</p>
+    pub peer_edge_location: ::std::option::Option<::std::string::String>,
+    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    pub routing_policy_direction: ::std::option::Option<crate::types::RoutingPolicyDirection>,
     /// <p>The segment name if the change event is associated with a segment.</p>
     pub segment_name: ::std::option::Option<::std::string::String>,
     /// <p>The changed network function group name.</p>
@@ -14,11 +18,21 @@ pub struct CoreNetworkChangeEventValues {
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
+    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    pub routing_policy_association_details: ::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>>,
 }
 impl CoreNetworkChangeEventValues {
     /// <p>The edge location for the core network change event.</p>
     pub fn edge_location(&self) -> ::std::option::Option<&str> {
         self.edge_location.as_deref()
+    }
+    /// <p>The edge location of the peer in a core network change event.</p>
+    pub fn peer_edge_location(&self) -> ::std::option::Option<&str> {
+        self.peer_edge_location.as_deref()
+    }
+    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    pub fn routing_policy_direction(&self) -> ::std::option::Option<&crate::types::RoutingPolicyDirection> {
+        self.routing_policy_direction.as_ref()
     }
     /// <p>The segment name if the change event is associated with a segment.</p>
     pub fn segment_name(&self) -> ::std::option::Option<&str> {
@@ -36,6 +50,12 @@ impl CoreNetworkChangeEventValues {
     pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
+    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_policy_association_details.is_none()`.
+    pub fn routing_policy_association_details(&self) -> &[crate::types::RoutingPolicyAssociationDetail] {
+        self.routing_policy_association_details.as_deref().unwrap_or_default()
+    }
 }
 impl CoreNetworkChangeEventValues {
     /// Creates a new builder-style object to manufacture [`CoreNetworkChangeEventValues`](crate::types::CoreNetworkChangeEventValues).
@@ -49,10 +69,13 @@ impl CoreNetworkChangeEventValues {
 #[non_exhaustive]
 pub struct CoreNetworkChangeEventValuesBuilder {
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
+    pub(crate) peer_edge_location: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_policy_direction: ::std::option::Option<crate::types::RoutingPolicyDirection>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
     pub(crate) network_function_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_policy_association_details: ::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>>,
 }
 impl CoreNetworkChangeEventValuesBuilder {
     /// <p>The edge location for the core network change event.</p>
@@ -68,6 +91,34 @@ impl CoreNetworkChangeEventValuesBuilder {
     /// <p>The edge location for the core network change event.</p>
     pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.edge_location
+    }
+    /// <p>The edge location of the peer in a core network change event.</p>
+    pub fn peer_edge_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.peer_edge_location = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The edge location of the peer in a core network change event.</p>
+    pub fn set_peer_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.peer_edge_location = input;
+        self
+    }
+    /// <p>The edge location of the peer in a core network change event.</p>
+    pub fn get_peer_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_edge_location
+    }
+    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    pub fn routing_policy_direction(mut self, input: crate::types::RoutingPolicyDirection) -> Self {
+        self.routing_policy_direction = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    pub fn set_routing_policy_direction(mut self, input: ::std::option::Option<crate::types::RoutingPolicyDirection>) -> Self {
+        self.routing_policy_direction = input;
+        self
+    }
+    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    pub fn get_routing_policy_direction(&self) -> &::std::option::Option<crate::types::RoutingPolicyDirection> {
+        &self.routing_policy_direction
     }
     /// <p>The segment name if the change event is associated with a segment.</p>
     pub fn segment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,14 +176,40 @@ impl CoreNetworkChangeEventValuesBuilder {
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
     }
+    /// Appends an item to `routing_policy_association_details`.
+    ///
+    /// To override the contents of this collection use [`set_routing_policy_association_details`](Self::set_routing_policy_association_details).
+    ///
+    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    pub fn routing_policy_association_details(mut self, input: crate::types::RoutingPolicyAssociationDetail) -> Self {
+        let mut v = self.routing_policy_association_details.unwrap_or_default();
+        v.push(input);
+        self.routing_policy_association_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    pub fn set_routing_policy_association_details(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>>,
+    ) -> Self {
+        self.routing_policy_association_details = input;
+        self
+    }
+    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    pub fn get_routing_policy_association_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>> {
+        &self.routing_policy_association_details
+    }
     /// Consumes the builder and constructs a [`CoreNetworkChangeEventValues`](crate::types::CoreNetworkChangeEventValues).
     pub fn build(self) -> crate::types::CoreNetworkChangeEventValues {
         crate::types::CoreNetworkChangeEventValues {
             edge_location: self.edge_location,
+            peer_edge_location: self.peer_edge_location,
+            routing_policy_direction: self.routing_policy_direction,
             segment_name: self.segment_name,
             network_function_group_name: self.network_function_group_name,
             attachment_id: self.attachment_id,
             cidr: self.cidr,
+            routing_policy_association_details: self.routing_policy_association_details,
         }
     }
 }

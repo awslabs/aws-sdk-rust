@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetComponentOutput`](crate::operation::get_component::GetComponentOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_component::GetComponentOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`component(Option<Component>)`](crate::operation::get_component::GetComponentOutput::component): <p>The component object specified in the request.</p>
+    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::get_component::GetComponentOutput::latest_version_references): <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
     /// - On failure, responds with [`SdkError<GetComponentError>`](crate::operation::get_component::GetComponentError)
     pub fn get_component(&self) -> crate::operation::get_component::builders::GetComponentFluentBuilder {
         crate::operation::get_component::builders::GetComponentFluentBuilder::new(self.handle.clone())

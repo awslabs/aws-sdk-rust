@@ -297,6 +297,15 @@ pub(crate) fn image_standard_generative_field_correct_errors(
     builder
 }
 
+pub(crate) fn sensitive_data_configuration_correct_errors(
+    mut builder: crate::types::builders::SensitiveDataConfigurationBuilder,
+) -> crate::types::builders::SensitiveDataConfigurationBuilder {
+    if builder.detection_mode.is_none() {
+        builder.detection_mode = "no value was set".parse::<crate::types::SensitiveDataDetectionMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn video_standard_extraction_correct_errors(
     mut builder: crate::types::builders::VideoStandardExtractionBuilder,
 ) -> crate::types::builders::VideoStandardExtractionBuilder {

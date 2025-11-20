@@ -5,12 +5,18 @@
 pub struct GetWorkflowOutput {
     /// <p>The workflow resource specified in the request.</p>
     pub workflow: ::std::option::Option<crate::types::Workflow>,
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
 impl GetWorkflowOutput {
     /// <p>The workflow resource specified in the request.</p>
     pub fn workflow(&self) -> ::std::option::Option<&crate::types::Workflow> {
         self.workflow.as_ref()
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn latest_version_references(&self) -> ::std::option::Option<&crate::types::LatestVersionReferences> {
+        self.latest_version_references.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetWorkflowOutput {
@@ -30,6 +36,7 @@ impl GetWorkflowOutput {
 #[non_exhaustive]
 pub struct GetWorkflowOutputBuilder {
     pub(crate) workflow: ::std::option::Option<crate::types::Workflow>,
+    pub(crate) latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
 impl GetWorkflowOutputBuilder {
@@ -47,6 +54,20 @@ impl GetWorkflowOutputBuilder {
     pub fn get_workflow(&self) -> &::std::option::Option<crate::types::Workflow> {
         &self.workflow
     }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn latest_version_references(mut self, input: crate::types::LatestVersionReferences) -> Self {
+        self.latest_version_references = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn set_latest_version_references(mut self, input: ::std::option::Option<crate::types::LatestVersionReferences>) -> Self {
+        self.latest_version_references = input;
+        self
+    }
+    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    pub fn get_latest_version_references(&self) -> &::std::option::Option<crate::types::LatestVersionReferences> {
+        &self.latest_version_references
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl GetWorkflowOutputBuilder {
     pub fn build(self) -> crate::operation::get_workflow::GetWorkflowOutput {
         crate::operation::get_workflow::GetWorkflowOutput {
             workflow: self.workflow,
+            latest_version_references: self.latest_version_references,
             _request_id: self._request_id,
         }
     }

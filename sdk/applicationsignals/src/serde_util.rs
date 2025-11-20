@@ -119,6 +119,21 @@ pub(crate) fn list_audit_findings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_entity_events_output_output_correct_errors(
+    mut builder: crate::operation::list_entity_events::builders::ListEntityEventsOutputBuilder,
+) -> crate::operation::list_entity_events::builders::ListEntityEventsOutputBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.end_time.is_none() {
+        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.change_events.is_none() {
+        builder.change_events = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_grouping_attribute_definitions_output_output_correct_errors(
     mut builder: crate::operation::list_grouping_attribute_definitions::builders::ListGroupingAttributeDefinitionsOutputBuilder,
 ) -> crate::operation::list_grouping_attribute_definitions::builders::ListGroupingAttributeDefinitionsOutputBuilder {
@@ -300,6 +315,28 @@ pub(crate) fn batch_update_exclusion_windows_error_correct_errors(
     }
     if builder.error_message.is_none() {
         builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn change_event_correct_errors(mut builder: crate::types::builders::ChangeEventBuilder) -> crate::types::builders::ChangeEventBuilder {
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.entity.is_none() {
+        builder.entity = Some(Default::default())
+    }
+    if builder.change_event_type.is_none() {
+        builder.change_event_type = "no value was set".parse::<crate::types::ChangeEventType>().ok()
+    }
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
     }
     builder
 }
@@ -591,28 +628,6 @@ pub(crate) fn calendar_interval_correct_errors(
     }
     if builder.duration.is_none() {
         builder.duration = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn change_event_correct_errors(mut builder: crate::types::builders::ChangeEventBuilder) -> crate::types::builders::ChangeEventBuilder {
-    if builder.timestamp.is_none() {
-        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.account_id.is_none() {
-        builder.account_id = Some(Default::default())
-    }
-    if builder.region.is_none() {
-        builder.region = Some(Default::default())
-    }
-    if builder.entity.is_none() {
-        builder.entity = Some(Default::default())
-    }
-    if builder.change_event_type.is_none() {
-        builder.change_event_type = "no value was set".parse::<crate::types::ChangeEventType>().ok()
-    }
-    if builder.event_id.is_none() {
-        builder.event_id = Some(Default::default())
     }
     builder
 }

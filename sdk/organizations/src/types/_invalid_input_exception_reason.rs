@@ -12,10 +12,14 @@
 /// ```text
 /// # let invalidinputexceptionreason = unimplemented!();
 /// match invalidinputexceptionreason {
+///     InvalidInputExceptionReason::CallerRequiredFieldMissing => { /* ... */ },
 ///     InvalidInputExceptionReason::DuplicateTagKey => { /* ... */ },
+///     InvalidInputExceptionReason::EndDateNotEndOfMonth => { /* ... */ },
+///     InvalidInputExceptionReason::EndDateTooEarly => { /* ... */ },
 ///     InvalidInputExceptionReason::ImmutablePolicy => { /* ... */ },
 ///     InvalidInputExceptionReason::InputRequired => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidEmailAddressTarget => { /* ... */ },
+///     InvalidInputExceptionReason::InvalidEndDate => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidEnum => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidEnumPolicyType => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidFullNameTarget => { /* ... */ },
@@ -27,6 +31,7 @@
 ///     InvalidInputExceptionReason::InvalidPrincipal => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidResourcePolicyJson => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidRoleName => { /* ... */ },
+///     InvalidInputExceptionReason::InvalidStartDate => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidSyntaxOrganization => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidSyntaxPolicy => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidSystemTagsParameter => { /* ... */ },
@@ -37,9 +42,14 @@
 ///     InvalidInputExceptionReason::MinValueExceeded => { /* ... */ },
 ///     InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => { /* ... */ },
 ///     InvalidInputExceptionReason::NonDetachablePolicy => { /* ... */ },
+///     InvalidInputExceptionReason::StartDateNotBeginningOfDay => { /* ... */ },
+///     InvalidInputExceptionReason::StartDateNotBeginningOfMonth => { /* ... */ },
+///     InvalidInputExceptionReason::StartDateTooEarly => { /* ... */ },
+///     InvalidInputExceptionReason::StartDateTooLate => { /* ... */ },
 ///     InvalidInputExceptionReason::TargetNotSupported => { /* ... */ },
 ///     InvalidInputExceptionReason::UnrecognizedServicePrincipal => { /* ... */ },
 ///     InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => { /* ... */ },
+///     InvalidInputExceptionReason::UnsupportedActionInResponsibilityTransfer => { /* ... */ },
 ///     InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => { /* ... */ },
 ///     InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -71,13 +81,21 @@
 )]
 pub enum InvalidInputExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
+    CallerRequiredFieldMissing,
+    #[allow(missing_docs)] // documentation missing in model
     DuplicateTagKey,
+    #[allow(missing_docs)] // documentation missing in model
+    EndDateNotEndOfMonth,
+    #[allow(missing_docs)] // documentation missing in model
+    EndDateTooEarly,
     #[allow(missing_docs)] // documentation missing in model
     ImmutablePolicy,
     #[allow(missing_docs)] // documentation missing in model
     InputRequired,
     #[allow(missing_docs)] // documentation missing in model
     InvalidEmailAddressTarget,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidEndDate,
     #[allow(missing_docs)] // documentation missing in model
     InvalidEnum,
     #[allow(missing_docs)] // documentation missing in model
@@ -101,6 +119,8 @@ pub enum InvalidInputExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidRoleName,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidStartDate,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidSyntaxOrganization,
     #[allow(missing_docs)] // documentation missing in model
     InvalidSyntaxPolicy,
@@ -121,11 +141,21 @@ pub enum InvalidInputExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     NonDetachablePolicy,
     #[allow(missing_docs)] // documentation missing in model
+    StartDateNotBeginningOfDay,
+    #[allow(missing_docs)] // documentation missing in model
+    StartDateNotBeginningOfMonth,
+    #[allow(missing_docs)] // documentation missing in model
+    StartDateTooEarly,
+    #[allow(missing_docs)] // documentation missing in model
+    StartDateTooLate,
+    #[allow(missing_docs)] // documentation missing in model
     TargetNotSupported,
     #[allow(missing_docs)] // documentation missing in model
     UnrecognizedServicePrincipal,
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedActionInResourcePolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedActionInResponsibilityTransfer,
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedPolicyTypeInResourcePolicy,
     #[allow(missing_docs)] // documentation missing in model
@@ -137,10 +167,14 @@ pub enum InvalidInputExceptionReason {
 impl ::std::convert::From<&str> for InvalidInputExceptionReason {
     fn from(s: &str) -> Self {
         match s {
+            "CALLER_REQUIRED_FIELD_MISSING" => InvalidInputExceptionReason::CallerRequiredFieldMissing,
             "DUPLICATE_TAG_KEY" => InvalidInputExceptionReason::DuplicateTagKey,
+            "END_DATE_NOT_END_OF_MONTH" => InvalidInputExceptionReason::EndDateNotEndOfMonth,
+            "END_DATE_TOO_EARLY" => InvalidInputExceptionReason::EndDateTooEarly,
             "IMMUTABLE_POLICY" => InvalidInputExceptionReason::ImmutablePolicy,
             "INPUT_REQUIRED" => InvalidInputExceptionReason::InputRequired,
             "INVALID_EMAIL_ADDRESS_TARGET" => InvalidInputExceptionReason::InvalidEmailAddressTarget,
+            "INVALID_END_DATE" => InvalidInputExceptionReason::InvalidEndDate,
             "INVALID_ENUM" => InvalidInputExceptionReason::InvalidEnum,
             "INVALID_ENUM_POLICY_TYPE" => InvalidInputExceptionReason::InvalidEnumPolicyType,
             "INVALID_FULL_NAME_TARGET" => InvalidInputExceptionReason::InvalidFullNameTarget,
@@ -152,6 +186,7 @@ impl ::std::convert::From<&str> for InvalidInputExceptionReason {
             "INVALID_PRINCIPAL" => InvalidInputExceptionReason::InvalidPrincipal,
             "INVALID_RESOURCE_POLICY_JSON" => InvalidInputExceptionReason::InvalidResourcePolicyJson,
             "INVALID_ROLE_NAME" => InvalidInputExceptionReason::InvalidRoleName,
+            "INVALID_START_DATE" => InvalidInputExceptionReason::InvalidStartDate,
             "INVALID_SYNTAX_ORGANIZATION_ARN" => InvalidInputExceptionReason::InvalidSyntaxOrganization,
             "INVALID_SYNTAX_POLICY_ID" => InvalidInputExceptionReason::InvalidSyntaxPolicy,
             "INVALID_SYSTEM_TAGS_PARAMETER" => InvalidInputExceptionReason::InvalidSystemTagsParameter,
@@ -162,9 +197,14 @@ impl ::std::convert::From<&str> for InvalidInputExceptionReason {
             "MIN_VALUE_EXCEEDED" => InvalidInputExceptionReason::MinValueExceeded,
             "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS" => InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots,
             "NON_DETACHABLE_POLICY" => InvalidInputExceptionReason::NonDetachablePolicy,
+            "START_DATE_NOT_BEGINNING_OF_DAY" => InvalidInputExceptionReason::StartDateNotBeginningOfDay,
+            "START_DATE_NOT_BEGINNING_OF_MONTH" => InvalidInputExceptionReason::StartDateNotBeginningOfMonth,
+            "START_DATE_TOO_EARLY" => InvalidInputExceptionReason::StartDateTooEarly,
+            "START_DATE_TOO_LATE" => InvalidInputExceptionReason::StartDateTooLate,
             "TARGET_NOT_SUPPORTED" => InvalidInputExceptionReason::TargetNotSupported,
             "UNRECOGNIZED_SERVICE_PRINCIPAL" => InvalidInputExceptionReason::UnrecognizedServicePrincipal,
             "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedActionInResourcePolicy,
+            "UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER" => InvalidInputExceptionReason::UnsupportedActionInResponsibilityTransfer,
             "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy,
             "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy,
             other => InvalidInputExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -182,10 +222,14 @@ impl InvalidInputExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            InvalidInputExceptionReason::CallerRequiredFieldMissing => "CALLER_REQUIRED_FIELD_MISSING",
             InvalidInputExceptionReason::DuplicateTagKey => "DUPLICATE_TAG_KEY",
+            InvalidInputExceptionReason::EndDateNotEndOfMonth => "END_DATE_NOT_END_OF_MONTH",
+            InvalidInputExceptionReason::EndDateTooEarly => "END_DATE_TOO_EARLY",
             InvalidInputExceptionReason::ImmutablePolicy => "IMMUTABLE_POLICY",
             InvalidInputExceptionReason::InputRequired => "INPUT_REQUIRED",
             InvalidInputExceptionReason::InvalidEmailAddressTarget => "INVALID_EMAIL_ADDRESS_TARGET",
+            InvalidInputExceptionReason::InvalidEndDate => "INVALID_END_DATE",
             InvalidInputExceptionReason::InvalidEnum => "INVALID_ENUM",
             InvalidInputExceptionReason::InvalidEnumPolicyType => "INVALID_ENUM_POLICY_TYPE",
             InvalidInputExceptionReason::InvalidFullNameTarget => "INVALID_FULL_NAME_TARGET",
@@ -197,6 +241,7 @@ impl InvalidInputExceptionReason {
             InvalidInputExceptionReason::InvalidPrincipal => "INVALID_PRINCIPAL",
             InvalidInputExceptionReason::InvalidResourcePolicyJson => "INVALID_RESOURCE_POLICY_JSON",
             InvalidInputExceptionReason::InvalidRoleName => "INVALID_ROLE_NAME",
+            InvalidInputExceptionReason::InvalidStartDate => "INVALID_START_DATE",
             InvalidInputExceptionReason::InvalidSyntaxOrganization => "INVALID_SYNTAX_ORGANIZATION_ARN",
             InvalidInputExceptionReason::InvalidSyntaxPolicy => "INVALID_SYNTAX_POLICY_ID",
             InvalidInputExceptionReason::InvalidSystemTagsParameter => "INVALID_SYSTEM_TAGS_PARAMETER",
@@ -207,9 +252,14 @@ impl InvalidInputExceptionReason {
             InvalidInputExceptionReason::MinValueExceeded => "MIN_VALUE_EXCEEDED",
             InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS",
             InvalidInputExceptionReason::NonDetachablePolicy => "NON_DETACHABLE_POLICY",
+            InvalidInputExceptionReason::StartDateNotBeginningOfDay => "START_DATE_NOT_BEGINNING_OF_DAY",
+            InvalidInputExceptionReason::StartDateNotBeginningOfMonth => "START_DATE_NOT_BEGINNING_OF_MONTH",
+            InvalidInputExceptionReason::StartDateTooEarly => "START_DATE_TOO_EARLY",
+            InvalidInputExceptionReason::StartDateTooLate => "START_DATE_TOO_LATE",
             InvalidInputExceptionReason::TargetNotSupported => "TARGET_NOT_SUPPORTED",
             InvalidInputExceptionReason::UnrecognizedServicePrincipal => "UNRECOGNIZED_SERVICE_PRINCIPAL",
             InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY",
+            InvalidInputExceptionReason::UnsupportedActionInResponsibilityTransfer => "UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER",
             InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY",
             InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY",
             InvalidInputExceptionReason::Unknown(value) => value.as_str(),
@@ -218,10 +268,14 @@ impl InvalidInputExceptionReason {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CALLER_REQUIRED_FIELD_MISSING",
             "DUPLICATE_TAG_KEY",
+            "END_DATE_NOT_END_OF_MONTH",
+            "END_DATE_TOO_EARLY",
             "IMMUTABLE_POLICY",
             "INPUT_REQUIRED",
             "INVALID_EMAIL_ADDRESS_TARGET",
+            "INVALID_END_DATE",
             "INVALID_ENUM",
             "INVALID_ENUM_POLICY_TYPE",
             "INVALID_FULL_NAME_TARGET",
@@ -233,6 +287,7 @@ impl InvalidInputExceptionReason {
             "INVALID_PRINCIPAL",
             "INVALID_RESOURCE_POLICY_JSON",
             "INVALID_ROLE_NAME",
+            "INVALID_START_DATE",
             "INVALID_SYNTAX_ORGANIZATION_ARN",
             "INVALID_SYNTAX_POLICY_ID",
             "INVALID_SYSTEM_TAGS_PARAMETER",
@@ -243,9 +298,14 @@ impl InvalidInputExceptionReason {
             "MIN_VALUE_EXCEEDED",
             "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS",
             "NON_DETACHABLE_POLICY",
+            "START_DATE_NOT_BEGINNING_OF_DAY",
+            "START_DATE_NOT_BEGINNING_OF_MONTH",
+            "START_DATE_TOO_EARLY",
+            "START_DATE_TOO_LATE",
             "TARGET_NOT_SUPPORTED",
             "UNRECOGNIZED_SERVICE_PRINCIPAL",
             "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY",
+            "UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER",
             "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY",
             "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY",
         ]
@@ -271,10 +331,14 @@ impl InvalidInputExceptionReason {
 impl ::std::fmt::Display for InvalidInputExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            InvalidInputExceptionReason::CallerRequiredFieldMissing => write!(f, "CALLER_REQUIRED_FIELD_MISSING"),
             InvalidInputExceptionReason::DuplicateTagKey => write!(f, "DUPLICATE_TAG_KEY"),
+            InvalidInputExceptionReason::EndDateNotEndOfMonth => write!(f, "END_DATE_NOT_END_OF_MONTH"),
+            InvalidInputExceptionReason::EndDateTooEarly => write!(f, "END_DATE_TOO_EARLY"),
             InvalidInputExceptionReason::ImmutablePolicy => write!(f, "IMMUTABLE_POLICY"),
             InvalidInputExceptionReason::InputRequired => write!(f, "INPUT_REQUIRED"),
             InvalidInputExceptionReason::InvalidEmailAddressTarget => write!(f, "INVALID_EMAIL_ADDRESS_TARGET"),
+            InvalidInputExceptionReason::InvalidEndDate => write!(f, "INVALID_END_DATE"),
             InvalidInputExceptionReason::InvalidEnum => write!(f, "INVALID_ENUM"),
             InvalidInputExceptionReason::InvalidEnumPolicyType => write!(f, "INVALID_ENUM_POLICY_TYPE"),
             InvalidInputExceptionReason::InvalidFullNameTarget => write!(f, "INVALID_FULL_NAME_TARGET"),
@@ -286,6 +350,7 @@ impl ::std::fmt::Display for InvalidInputExceptionReason {
             InvalidInputExceptionReason::InvalidPrincipal => write!(f, "INVALID_PRINCIPAL"),
             InvalidInputExceptionReason::InvalidResourcePolicyJson => write!(f, "INVALID_RESOURCE_POLICY_JSON"),
             InvalidInputExceptionReason::InvalidRoleName => write!(f, "INVALID_ROLE_NAME"),
+            InvalidInputExceptionReason::InvalidStartDate => write!(f, "INVALID_START_DATE"),
             InvalidInputExceptionReason::InvalidSyntaxOrganization => write!(f, "INVALID_SYNTAX_ORGANIZATION_ARN"),
             InvalidInputExceptionReason::InvalidSyntaxPolicy => write!(f, "INVALID_SYNTAX_POLICY_ID"),
             InvalidInputExceptionReason::InvalidSystemTagsParameter => write!(f, "INVALID_SYSTEM_TAGS_PARAMETER"),
@@ -296,9 +361,14 @@ impl ::std::fmt::Display for InvalidInputExceptionReason {
             InvalidInputExceptionReason::MinValueExceeded => write!(f, "MIN_VALUE_EXCEEDED"),
             InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => write!(f, "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS"),
             InvalidInputExceptionReason::NonDetachablePolicy => write!(f, "NON_DETACHABLE_POLICY"),
+            InvalidInputExceptionReason::StartDateNotBeginningOfDay => write!(f, "START_DATE_NOT_BEGINNING_OF_DAY"),
+            InvalidInputExceptionReason::StartDateNotBeginningOfMonth => write!(f, "START_DATE_NOT_BEGINNING_OF_MONTH"),
+            InvalidInputExceptionReason::StartDateTooEarly => write!(f, "START_DATE_TOO_EARLY"),
+            InvalidInputExceptionReason::StartDateTooLate => write!(f, "START_DATE_TOO_LATE"),
             InvalidInputExceptionReason::TargetNotSupported => write!(f, "TARGET_NOT_SUPPORTED"),
             InvalidInputExceptionReason::UnrecognizedServicePrincipal => write!(f, "UNRECOGNIZED_SERVICE_PRINCIPAL"),
             InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => write!(f, "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY"),
+            InvalidInputExceptionReason::UnsupportedActionInResponsibilityTransfer => write!(f, "UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER"),
             InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => write!(f, "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY"),
             InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => write!(f, "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY"),
             InvalidInputExceptionReason::Unknown(value) => write!(f, "{value}"),

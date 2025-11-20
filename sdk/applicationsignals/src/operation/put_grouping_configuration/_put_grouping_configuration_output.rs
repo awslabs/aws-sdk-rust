@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutGroupingConfigurationOutput {
-    /// <p>The created or updated grouping configuration, including all attribute definitions and metadata such as the update timestamp.</p>
+    /// <p>A structure containing the updated grouping configuration, including all grouping attribute definitions and the timestamp when it was last updated.</p>
     pub grouping_configuration: ::std::option::Option<crate::types::GroupingConfiguration>,
     _request_id: Option<String>,
 }
 impl PutGroupingConfigurationOutput {
-    /// <p>The created or updated grouping configuration, including all attribute definitions and metadata such as the update timestamp.</p>
+    /// <p>A structure containing the updated grouping configuration, including all grouping attribute definitions and the timestamp when it was last updated.</p>
     pub fn grouping_configuration(&self) -> ::std::option::Option<&crate::types::GroupingConfiguration> {
         self.grouping_configuration.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct PutGroupingConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutGroupingConfigurationOutputBuilder {
-    /// <p>The created or updated grouping configuration, including all attribute definitions and metadata such as the update timestamp.</p>
+    /// <p>A structure containing the updated grouping configuration, including all grouping attribute definitions and the timestamp when it was last updated.</p>
     /// This field is required.
     pub fn grouping_configuration(mut self, input: crate::types::GroupingConfiguration) -> Self {
         self.grouping_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The created or updated grouping configuration, including all attribute definitions and metadata such as the update timestamp.</p>
+    /// <p>A structure containing the updated grouping configuration, including all grouping attribute definitions and the timestamp when it was last updated.</p>
     pub fn set_grouping_configuration(mut self, input: ::std::option::Option<crate::types::GroupingConfiguration>) -> Self {
         self.grouping_configuration = input;
         self
     }
-    /// <p>The created or updated grouping configuration, including all attribute definitions and metadata such as the update timestamp.</p>
+    /// <p>A structure containing the updated grouping configuration, including all grouping attribute definitions and the timestamp when it was last updated.</p>
     pub fn get_grouping_configuration(&self) -> &::std::option::Option<crate::types::GroupingConfiguration> {
         &self.grouping_configuration
     }

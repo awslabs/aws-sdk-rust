@@ -48,6 +48,8 @@ pub struct Endpoint {
     pub external_table_definition: ::std::option::Option<::std::string::String>,
     /// <p>Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the endpoint is read-only. When set to <code>true</code>, this endpoint is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only endpoints through their associated zero-ETL integration.</p>
+    pub is_read_only: ::std::option::Option<bool>,
     /// <p>The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code> structure.</p>
     pub dynamo_db_settings: ::std::option::Option<crate::types::DynamoDbSettings>,
     /// <p>The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.</p>
@@ -86,6 +88,8 @@ pub struct Endpoint {
     pub gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
     /// <p>The settings for the Amazon Timestream target endpoint. For more information, see the <code>TimestreamSettings</code> structure.</p>
     pub timestream_settings: ::std::option::Option<crate::types::TimestreamSettings>,
+    /// <p>Settings in JSON format for the target Lakehouse endpoint. This parameter applies to endpoints that are automatically created by DMS for a Lakehouse data warehouse as part of a zero-ETL integration.</p>
+    pub lakehouse_settings: ::std::option::Option<crate::types::LakehouseSettings>,
 }
 impl Endpoint {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -157,6 +161,10 @@ impl Endpoint {
     /// <p>Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account.</p>
     pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
+    }
+    /// <p>Indicates whether the endpoint is read-only. When set to <code>true</code>, this endpoint is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only endpoints through their associated zero-ETL integration.</p>
+    pub fn is_read_only(&self) -> ::std::option::Option<bool> {
+        self.is_read_only
     }
     /// <p>The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code> structure.</p>
     pub fn dynamo_db_settings(&self) -> ::std::option::Option<&crate::types::DynamoDbSettings> {
@@ -234,6 +242,10 @@ impl Endpoint {
     pub fn timestream_settings(&self) -> ::std::option::Option<&crate::types::TimestreamSettings> {
         self.timestream_settings.as_ref()
     }
+    /// <p>Settings in JSON format for the target Lakehouse endpoint. This parameter applies to endpoints that are automatically created by DMS for a Lakehouse data warehouse as part of a zero-ETL integration.</p>
+    pub fn lakehouse_settings(&self) -> ::std::option::Option<&crate::types::LakehouseSettings> {
+        self.lakehouse_settings.as_ref()
+    }
 }
 impl Endpoint {
     /// Creates a new builder-style object to manufacture [`Endpoint`](crate::types::Endpoint).
@@ -263,6 +275,7 @@ pub struct EndpointBuilder {
     pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) external_table_definition: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
+    pub(crate) is_read_only: ::std::option::Option<bool>,
     pub(crate) dynamo_db_settings: ::std::option::Option<crate::types::DynamoDbSettings>,
     pub(crate) s3_settings: ::std::option::Option<crate::types::S3Settings>,
     pub(crate) dms_transfer_settings: ::std::option::Option<crate::types::DmsTransferSettings>,
@@ -282,6 +295,7 @@ pub struct EndpointBuilder {
     pub(crate) redis_settings: ::std::option::Option<crate::types::RedisSettings>,
     pub(crate) gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
     pub(crate) timestream_settings: ::std::option::Option<crate::types::TimestreamSettings>,
+    pub(crate) lakehouse_settings: ::std::option::Option<crate::types::LakehouseSettings>,
 }
 impl EndpointBuilder {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -527,6 +541,20 @@ impl EndpointBuilder {
     /// <p>Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_id
+    }
+    /// <p>Indicates whether the endpoint is read-only. When set to <code>true</code>, this endpoint is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only endpoints through their associated zero-ETL integration.</p>
+    pub fn is_read_only(mut self, input: bool) -> Self {
+        self.is_read_only = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the endpoint is read-only. When set to <code>true</code>, this endpoint is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only endpoints through their associated zero-ETL integration.</p>
+    pub fn set_is_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_read_only = input;
+        self
+    }
+    /// <p>Indicates whether the endpoint is read-only. When set to <code>true</code>, this endpoint is managed by DMS as part of a zero-ETL integration and cannot be modified or deleted directly. You can only modify or delete read-only endpoints through their associated zero-ETL integration.</p>
+    pub fn get_is_read_only(&self) -> &::std::option::Option<bool> {
+        &self.is_read_only
     }
     /// <p>The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code> structure.</p>
     pub fn dynamo_db_settings(mut self, input: crate::types::DynamoDbSettings) -> Self {
@@ -794,6 +822,20 @@ impl EndpointBuilder {
     pub fn get_timestream_settings(&self) -> &::std::option::Option<crate::types::TimestreamSettings> {
         &self.timestream_settings
     }
+    /// <p>Settings in JSON format for the target Lakehouse endpoint. This parameter applies to endpoints that are automatically created by DMS for a Lakehouse data warehouse as part of a zero-ETL integration.</p>
+    pub fn lakehouse_settings(mut self, input: crate::types::LakehouseSettings) -> Self {
+        self.lakehouse_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings in JSON format for the target Lakehouse endpoint. This parameter applies to endpoints that are automatically created by DMS for a Lakehouse data warehouse as part of a zero-ETL integration.</p>
+    pub fn set_lakehouse_settings(mut self, input: ::std::option::Option<crate::types::LakehouseSettings>) -> Self {
+        self.lakehouse_settings = input;
+        self
+    }
+    /// <p>Settings in JSON format for the target Lakehouse endpoint. This parameter applies to endpoints that are automatically created by DMS for a Lakehouse data warehouse as part of a zero-ETL integration.</p>
+    pub fn get_lakehouse_settings(&self) -> &::std::option::Option<crate::types::LakehouseSettings> {
+        &self.lakehouse_settings
+    }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
@@ -814,6 +856,7 @@ impl EndpointBuilder {
             service_access_role_arn: self.service_access_role_arn,
             external_table_definition: self.external_table_definition,
             external_id: self.external_id,
+            is_read_only: self.is_read_only,
             dynamo_db_settings: self.dynamo_db_settings,
             s3_settings: self.s3_settings,
             dms_transfer_settings: self.dms_transfer_settings,
@@ -833,6 +876,7 @@ impl EndpointBuilder {
             redis_settings: self.redis_settings,
             gcp_my_sql_settings: self.gcp_my_sql_settings,
             timestream_settings: self.timestream_settings,
+            lakehouse_settings: self.lakehouse_settings,
         }
     }
 }

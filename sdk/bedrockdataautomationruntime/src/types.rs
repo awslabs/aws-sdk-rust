@@ -29,6 +29,14 @@ pub use crate::types::_video_segment_configuration::VideoSegmentConfiguration;
 
 pub use crate::types::_timestamp_segment::TimestampSegment;
 
+pub use crate::types::_output_segment::OutputSegment;
+
+pub use crate::types::_custom_output_status::CustomOutputStatus;
+
+pub use crate::types::_semantic_modality::SemanticModality;
+
+pub use crate::types::_sync_input_configuration::SyncInputConfiguration;
+
 mod _asset_processing_configuration;
 
 mod _automation_job_status;
@@ -36,6 +44,8 @@ mod _automation_job_status;
 mod _blueprint;
 
 mod _blueprint_stage;
+
+mod _custom_output_status;
 
 mod _data_automation_configuration;
 
@@ -50,6 +60,12 @@ mod _input_configuration;
 mod _notification_configuration;
 
 mod _output_configuration;
+
+mod _output_segment;
+
+mod _semantic_modality;
+
+mod _sync_input_configuration;
 
 mod _tag;
 

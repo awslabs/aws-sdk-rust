@@ -9,7 +9,7 @@ pub struct ListMemoryRecordsInput {
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The memory strategy identifier to filter memory records by. If specified, only memory records with this strategy ID are returned.</p>
     pub memory_strategy_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl ListMemoryRecordsInput {
     pub fn memory_strategy_id(&self) -> ::std::option::Option<&str> {
         self.memory_strategy_id.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -98,17 +98,17 @@ impl ListMemoryRecordsInputBuilder {
     pub fn get_memory_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_strategy_id
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let ipampoolallocationresourcetype = unimplemented!();
 /// match ipampoolallocationresourcetype {
+///     IpamPoolAllocationResourceType::AnycastIpList => { /* ... */ },
 ///     IpamPoolAllocationResourceType::Custom => { /* ... */ },
 ///     IpamPoolAllocationResourceType::Ec2PublicIpv4Pool => { /* ... */ },
 ///     IpamPoolAllocationResourceType::Eip => { /* ... */ },
@@ -47,6 +48,8 @@
 )]
 pub enum IpamPoolAllocationResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AnycastIpList,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Ec2PublicIpv4Pool,
@@ -65,6 +68,7 @@ pub enum IpamPoolAllocationResourceType {
 impl ::std::convert::From<&str> for IpamPoolAllocationResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "anycast-ip-list" => IpamPoolAllocationResourceType::AnycastIpList,
             "custom" => IpamPoolAllocationResourceType::Custom,
             "ec2-public-ipv4-pool" => IpamPoolAllocationResourceType::Ec2PublicIpv4Pool,
             "eip" => IpamPoolAllocationResourceType::Eip,
@@ -86,6 +90,7 @@ impl IpamPoolAllocationResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            IpamPoolAllocationResourceType::AnycastIpList => "anycast-ip-list",
             IpamPoolAllocationResourceType::Custom => "custom",
             IpamPoolAllocationResourceType::Ec2PublicIpv4Pool => "ec2-public-ipv4-pool",
             IpamPoolAllocationResourceType::Eip => "eip",
@@ -97,7 +102,7 @@ impl IpamPoolAllocationResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["custom", "ec2-public-ipv4-pool", "eip", "ipam-pool", "subnet", "vpc"]
+        &["anycast-ip-list", "custom", "ec2-public-ipv4-pool", "eip", "ipam-pool", "subnet", "vpc"]
     }
 }
 impl ::std::convert::AsRef<str> for IpamPoolAllocationResourceType {
@@ -120,6 +125,7 @@ impl IpamPoolAllocationResourceType {
 impl ::std::fmt::Display for IpamPoolAllocationResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            IpamPoolAllocationResourceType::AnycastIpList => write!(f, "anycast-ip-list"),
             IpamPoolAllocationResourceType::Custom => write!(f, "custom"),
             IpamPoolAllocationResourceType::Ec2PublicIpv4Pool => write!(f, "ec2-public-ipv4-pool"),
             IpamPoolAllocationResourceType::Eip => write!(f, "eip"),

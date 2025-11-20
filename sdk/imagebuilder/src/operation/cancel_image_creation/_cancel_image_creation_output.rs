@@ -7,7 +7,7 @@ pub struct CancelImageCreationOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The client token that uniquely identifies the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the image whose creation this request canceled.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image whose creation this request canceled.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl CancelImageCreationOutput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The ARN of the image whose creation this request canceled.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image whose creation this request canceled.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -75,17 +75,17 @@ impl CancelImageCreationOutputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The ARN of the image whose creation this request canceled.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image whose creation this request canceled.</p>
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the image whose creation this request canceled.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image whose creation this request canceled.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>The ARN of the image whose creation this request canceled.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image whose creation this request canceled.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }

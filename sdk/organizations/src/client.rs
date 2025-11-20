@@ -209,6 +209,8 @@ mod describe_policy;
 
 mod describe_resource_policy;
 
+mod describe_responsibility_transfer;
+
 mod detach_policy;
 
 mod disable_aws_service_access;
@@ -222,6 +224,8 @@ mod enable_aws_service_access;
 mod enable_policy_type;
 
 mod invite_account_to_organization;
+
+mod invite_organization_to_transfer_responsibility;
 
 mod leave_organization;
 
@@ -247,7 +251,11 @@ mod list_handshakes_for_account;
 
 mod list_handshakes_for_organization;
 
+mod list_inbound_responsibility_transfers;
+
 mod list_organizational_units_for_parent;
+
+mod list_outbound_responsibility_transfers;
 
 mod list_parents;
 
@@ -271,8 +279,12 @@ mod remove_account_from_organization;
 
 mod tag_resource;
 
+mod terminate_responsibility_transfer;
+
 mod untag_resource;
 
 mod update_organizational_unit;
 
 mod update_policy;
+
+mod update_responsibility_transfer;

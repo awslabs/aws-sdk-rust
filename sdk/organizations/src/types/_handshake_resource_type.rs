@@ -14,12 +14,18 @@
 /// match handshakeresourcetype {
 ///     HandshakeResourceType::Account => { /* ... */ },
 ///     HandshakeResourceType::Email => { /* ... */ },
+///     HandshakeResourceType::ManagementAccount => { /* ... */ },
+///     HandshakeResourceType::ManagementEmail => { /* ... */ },
+///     HandshakeResourceType::ManagementName => { /* ... */ },
 ///     HandshakeResourceType::MasterEmail => { /* ... */ },
 ///     HandshakeResourceType::MasterName => { /* ... */ },
 ///     HandshakeResourceType::Notes => { /* ... */ },
 ///     HandshakeResourceType::Organization => { /* ... */ },
 ///     HandshakeResourceType::OrganizationFeatureSet => { /* ... */ },
 ///     HandshakeResourceType::ParentHandshake => { /* ... */ },
+///     HandshakeResourceType::ResponsibilityTransfer => { /* ... */ },
+///     HandshakeResourceType::TransferStartTimestamp => { /* ... */ },
+///     HandshakeResourceType::TransferType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -53,6 +59,12 @@ pub enum HandshakeResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Email,
     #[allow(missing_docs)] // documentation missing in model
+    ManagementAccount,
+    #[allow(missing_docs)] // documentation missing in model
+    ManagementEmail,
+    #[allow(missing_docs)] // documentation missing in model
+    ManagementName,
+    #[allow(missing_docs)] // documentation missing in model
     MasterEmail,
     #[allow(missing_docs)] // documentation missing in model
     MasterName,
@@ -64,6 +76,12 @@ pub enum HandshakeResourceType {
     OrganizationFeatureSet,
     #[allow(missing_docs)] // documentation missing in model
     ParentHandshake,
+    #[allow(missing_docs)] // documentation missing in model
+    ResponsibilityTransfer,
+    #[allow(missing_docs)] // documentation missing in model
+    TransferStartTimestamp,
+    #[allow(missing_docs)] // documentation missing in model
+    TransferType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -73,12 +91,18 @@ impl ::std::convert::From<&str> for HandshakeResourceType {
         match s {
             "ACCOUNT" => HandshakeResourceType::Account,
             "EMAIL" => HandshakeResourceType::Email,
+            "MANAGEMENT_ACCOUNT" => HandshakeResourceType::ManagementAccount,
+            "MANAGEMENT_EMAIL" => HandshakeResourceType::ManagementEmail,
+            "MANAGEMENT_NAME" => HandshakeResourceType::ManagementName,
             "MASTER_EMAIL" => HandshakeResourceType::MasterEmail,
             "MASTER_NAME" => HandshakeResourceType::MasterName,
             "NOTES" => HandshakeResourceType::Notes,
             "ORGANIZATION" => HandshakeResourceType::Organization,
             "ORGANIZATION_FEATURE_SET" => HandshakeResourceType::OrganizationFeatureSet,
             "PARENT_HANDSHAKE" => HandshakeResourceType::ParentHandshake,
+            "RESPONSIBILITY_TRANSFER" => HandshakeResourceType::ResponsibilityTransfer,
+            "TRANSFER_START_TIMESTAMP" => HandshakeResourceType::TransferStartTimestamp,
+            "TRANSFER_TYPE" => HandshakeResourceType::TransferType,
             other => HandshakeResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -96,12 +120,18 @@ impl HandshakeResourceType {
         match self {
             HandshakeResourceType::Account => "ACCOUNT",
             HandshakeResourceType::Email => "EMAIL",
+            HandshakeResourceType::ManagementAccount => "MANAGEMENT_ACCOUNT",
+            HandshakeResourceType::ManagementEmail => "MANAGEMENT_EMAIL",
+            HandshakeResourceType::ManagementName => "MANAGEMENT_NAME",
             HandshakeResourceType::MasterEmail => "MASTER_EMAIL",
             HandshakeResourceType::MasterName => "MASTER_NAME",
             HandshakeResourceType::Notes => "NOTES",
             HandshakeResourceType::Organization => "ORGANIZATION",
             HandshakeResourceType::OrganizationFeatureSet => "ORGANIZATION_FEATURE_SET",
             HandshakeResourceType::ParentHandshake => "PARENT_HANDSHAKE",
+            HandshakeResourceType::ResponsibilityTransfer => "RESPONSIBILITY_TRANSFER",
+            HandshakeResourceType::TransferStartTimestamp => "TRANSFER_START_TIMESTAMP",
+            HandshakeResourceType::TransferType => "TRANSFER_TYPE",
             HandshakeResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -110,12 +140,18 @@ impl HandshakeResourceType {
         &[
             "ACCOUNT",
             "EMAIL",
+            "MANAGEMENT_ACCOUNT",
+            "MANAGEMENT_EMAIL",
+            "MANAGEMENT_NAME",
             "MASTER_EMAIL",
             "MASTER_NAME",
             "NOTES",
             "ORGANIZATION",
             "ORGANIZATION_FEATURE_SET",
             "PARENT_HANDSHAKE",
+            "RESPONSIBILITY_TRANSFER",
+            "TRANSFER_START_TIMESTAMP",
+            "TRANSFER_TYPE",
         ]
     }
 }
@@ -141,12 +177,18 @@ impl ::std::fmt::Display for HandshakeResourceType {
         match self {
             HandshakeResourceType::Account => write!(f, "ACCOUNT"),
             HandshakeResourceType::Email => write!(f, "EMAIL"),
+            HandshakeResourceType::ManagementAccount => write!(f, "MANAGEMENT_ACCOUNT"),
+            HandshakeResourceType::ManagementEmail => write!(f, "MANAGEMENT_EMAIL"),
+            HandshakeResourceType::ManagementName => write!(f, "MANAGEMENT_NAME"),
             HandshakeResourceType::MasterEmail => write!(f, "MASTER_EMAIL"),
             HandshakeResourceType::MasterName => write!(f, "MASTER_NAME"),
             HandshakeResourceType::Notes => write!(f, "NOTES"),
             HandshakeResourceType::Organization => write!(f, "ORGANIZATION"),
             HandshakeResourceType::OrganizationFeatureSet => write!(f, "ORGANIZATION_FEATURE_SET"),
             HandshakeResourceType::ParentHandshake => write!(f, "PARENT_HANDSHAKE"),
+            HandshakeResourceType::ResponsibilityTransfer => write!(f, "RESPONSIBILITY_TRANSFER"),
+            HandshakeResourceType::TransferStartTimestamp => write!(f, "TRANSFER_START_TIMESTAMP"),
+            HandshakeResourceType::TransferType => write!(f, "TRANSFER_TYPE"),
             HandshakeResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

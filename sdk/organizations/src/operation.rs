@@ -70,6 +70,9 @@ pub mod describe_policy;
 /// Types for the `DescribeResourcePolicy` operation.
 pub mod describe_resource_policy;
 
+/// Types for the `DescribeResponsibilityTransfer` operation.
+pub mod describe_responsibility_transfer;
+
 /// Types for the `DetachPolicy` operation.
 pub mod detach_policy;
 
@@ -90,6 +93,9 @@ pub mod enable_policy_type;
 
 /// Types for the `InviteAccountToOrganization` operation.
 pub mod invite_account_to_organization;
+
+/// Types for the `InviteOrganizationToTransferResponsibility` operation.
+pub mod invite_organization_to_transfer_responsibility;
 
 /// Types for the `LeaveOrganization` operation.
 pub mod leave_organization;
@@ -127,8 +133,14 @@ pub mod list_handshakes_for_account;
 /// Types for the `ListHandshakesForOrganization` operation.
 pub mod list_handshakes_for_organization;
 
+/// Types for the `ListInboundResponsibilityTransfers` operation.
+pub mod list_inbound_responsibility_transfers;
+
 /// Types for the `ListOrganizationalUnitsForParent` operation.
 pub mod list_organizational_units_for_parent;
+
+/// Types for the `ListOutboundResponsibilityTransfers` operation.
+pub mod list_outbound_responsibility_transfers;
 
 /// Types for the `ListParents` operation.
 pub mod list_parents;
@@ -163,6 +175,9 @@ pub mod remove_account_from_organization;
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
+/// Types for the `TerminateResponsibilityTransfer` operation.
+pub mod terminate_responsibility_transfer;
+
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
@@ -171,3 +186,6 @@ pub mod update_organizational_unit;
 
 /// Types for the `UpdatePolicy` operation.
 pub mod update_policy;
+
+/// Types for the `UpdateResponsibilityTransfer` operation.
+pub mod update_responsibility_transfer;

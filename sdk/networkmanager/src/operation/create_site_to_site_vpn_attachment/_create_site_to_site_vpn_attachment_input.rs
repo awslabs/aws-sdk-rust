@@ -7,6 +7,8 @@ pub struct CreateSiteToSiteVpnAttachmentInput {
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN identifying the VPN attachment.</p>
     pub vpn_connection_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The routing policy label to apply to the Site-to-Site VPN attachment for traffic routing decisions.</p>
+    pub routing_policy_label: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the request.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
@@ -20,6 +22,10 @@ impl CreateSiteToSiteVpnAttachmentInput {
     /// <p>The ARN identifying the VPN attachment.</p>
     pub fn vpn_connection_arn(&self) -> ::std::option::Option<&str> {
         self.vpn_connection_arn.as_deref()
+    }
+    /// <p>The routing policy label to apply to the Site-to-Site VPN attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(&self) -> ::std::option::Option<&str> {
+        self.routing_policy_label.as_deref()
     }
     /// <p>The tags associated with the request.</p>
     ///
@@ -45,6 +51,7 @@ impl CreateSiteToSiteVpnAttachmentInput {
 pub struct CreateSiteToSiteVpnAttachmentInputBuilder {
     pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpn_connection_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_policy_label: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -78,6 +85,20 @@ impl CreateSiteToSiteVpnAttachmentInputBuilder {
     /// <p>The ARN identifying the VPN attachment.</p>
     pub fn get_vpn_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpn_connection_arn
+    }
+    /// <p>The routing policy label to apply to the Site-to-Site VPN attachment for traffic routing decisions.</p>
+    pub fn routing_policy_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.routing_policy_label = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The routing policy label to apply to the Site-to-Site VPN attachment for traffic routing decisions.</p>
+    pub fn set_routing_policy_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.routing_policy_label = input;
+        self
+    }
+    /// <p>The routing policy label to apply to the Site-to-Site VPN attachment for traffic routing decisions.</p>
+    pub fn get_routing_policy_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_policy_label
     }
     /// Appends an item to `tags`.
     ///
@@ -123,6 +144,7 @@ impl CreateSiteToSiteVpnAttachmentInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentInput {
             core_network_id: self.core_network_id,
             vpn_connection_arn: self.vpn_connection_arn,
+            routing_policy_label: self.routing_policy_label,
             tags: self.tags,
             client_token: self.client_token,
         })

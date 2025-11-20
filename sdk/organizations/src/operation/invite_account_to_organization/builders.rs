@@ -26,7 +26,7 @@ impl crate::operation::invite_account_to_organization::builders::InviteAccountTo
 /// <p>If you receive an exception that indicates that you exceeded your account limits for the organization or that the operation failed because your organization is still initializing, wait one hour and then try again. If the error persists after an hour, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web Services Support</a>.</p>
 /// </important>
 /// <p>If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.</p>
-/// <p>This operation can be called only from the organization's management account.</p>
+/// <p>You can only call this operation from the management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InviteAccountToOrganizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

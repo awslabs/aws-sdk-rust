@@ -16,6 +16,7 @@
 ///     PolicyType::BackupPolicy => { /* ... */ },
 ///     PolicyType::ChatbotPolicy => { /* ... */ },
 ///     PolicyType::DeclarativePolicyEc2 => { /* ... */ },
+///     PolicyType::InspectorPolicy => { /* ... */ },
 ///     PolicyType::ResourceControlPolicy => { /* ... */ },
 ///     PolicyType::SecurityhubPolicy => { /* ... */ },
 ///     PolicyType::ServiceControlPolicy => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     DeclarativePolicyEc2,
     #[allow(missing_docs)] // documentation missing in model
+    InspectorPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceControlPolicy,
     #[allow(missing_docs)] // documentation missing in model
     SecurityhubPolicy,
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for PolicyType {
             "BACKUP_POLICY" => PolicyType::BackupPolicy,
             "CHATBOT_POLICY" => PolicyType::ChatbotPolicy,
             "DECLARATIVE_POLICY_EC2" => PolicyType::DeclarativePolicyEc2,
+            "INSPECTOR_POLICY" => PolicyType::InspectorPolicy,
             "RESOURCE_CONTROL_POLICY" => PolicyType::ResourceControlPolicy,
             "SECURITYHUB_POLICY" => PolicyType::SecurityhubPolicy,
             "SERVICE_CONTROL_POLICY" => PolicyType::ServiceControlPolicy,
@@ -98,6 +102,7 @@ impl PolicyType {
             PolicyType::BackupPolicy => "BACKUP_POLICY",
             PolicyType::ChatbotPolicy => "CHATBOT_POLICY",
             PolicyType::DeclarativePolicyEc2 => "DECLARATIVE_POLICY_EC2",
+            PolicyType::InspectorPolicy => "INSPECTOR_POLICY",
             PolicyType::ResourceControlPolicy => "RESOURCE_CONTROL_POLICY",
             PolicyType::SecurityhubPolicy => "SECURITYHUB_POLICY",
             PolicyType::ServiceControlPolicy => "SERVICE_CONTROL_POLICY",
@@ -112,6 +117,7 @@ impl PolicyType {
             "BACKUP_POLICY",
             "CHATBOT_POLICY",
             "DECLARATIVE_POLICY_EC2",
+            "INSPECTOR_POLICY",
             "RESOURCE_CONTROL_POLICY",
             "SECURITYHUB_POLICY",
             "SERVICE_CONTROL_POLICY",
@@ -143,6 +149,7 @@ impl ::std::fmt::Display for PolicyType {
             PolicyType::BackupPolicy => write!(f, "BACKUP_POLICY"),
             PolicyType::ChatbotPolicy => write!(f, "CHATBOT_POLICY"),
             PolicyType::DeclarativePolicyEc2 => write!(f, "DECLARATIVE_POLICY_EC2"),
+            PolicyType::InspectorPolicy => write!(f, "INSPECTOR_POLICY"),
             PolicyType::ResourceControlPolicy => write!(f, "RESOURCE_CONTROL_POLICY"),
             PolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             PolicyType::ServiceControlPolicy => write!(f, "SERVICE_CONTROL_POLICY"),
