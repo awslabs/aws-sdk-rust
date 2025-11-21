@@ -19,6 +19,8 @@ pub struct StartQueryExecutionInput {
     pub execution_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the query result reuse behavior for the query.</p>
     pub result_reuse_configuration: ::std::option::Option<crate::types::ResultReuseConfiguration>,
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
 }
 impl StartQueryExecutionInput {
     /// <p>The SQL query statements to be executed.</p>
@@ -53,6 +55,10 @@ impl StartQueryExecutionInput {
     pub fn result_reuse_configuration(&self) -> ::std::option::Option<&crate::types::ResultReuseConfiguration> {
         self.result_reuse_configuration.as_ref()
     }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn engine_configuration(&self) -> ::std::option::Option<&crate::types::EngineConfiguration> {
+        self.engine_configuration.as_ref()
+    }
 }
 impl StartQueryExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartQueryExecutionInput`](crate::operation::start_query_execution::StartQueryExecutionInput).
@@ -72,6 +78,7 @@ pub struct StartQueryExecutionInputBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) execution_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) result_reuse_configuration: ::std::option::Option<crate::types::ResultReuseConfiguration>,
+    pub(crate) engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
 }
 impl StartQueryExecutionInputBuilder {
     /// <p>The SQL query statements to be executed.</p>
@@ -185,6 +192,20 @@ impl StartQueryExecutionInputBuilder {
     pub fn get_result_reuse_configuration(&self) -> &::std::option::Option<crate::types::ResultReuseConfiguration> {
         &self.result_reuse_configuration
     }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn engine_configuration(mut self, input: crate::types::EngineConfiguration) -> Self {
+        self.engine_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn set_engine_configuration(mut self, input: ::std::option::Option<crate::types::EngineConfiguration>) -> Self {
+        self.engine_configuration = input;
+        self
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn get_engine_configuration(&self) -> &::std::option::Option<crate::types::EngineConfiguration> {
+        &self.engine_configuration
+    }
     /// Consumes the builder and constructs a [`StartQueryExecutionInput`](crate::operation::start_query_execution::StartQueryExecutionInput).
     pub fn build(
         self,
@@ -198,6 +219,7 @@ impl StartQueryExecutionInputBuilder {
             work_group: self.work_group,
             execution_parameters: self.execution_parameters,
             result_reuse_configuration: self.result_reuse_configuration,
+            engine_configuration: self.engine_configuration,
         })
     }
 }

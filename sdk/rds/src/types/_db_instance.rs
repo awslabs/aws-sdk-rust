@@ -42,6 +42,16 @@ pub struct DbInstance {
     pub db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
+    /// <p>This data type represents the order in which the instances are upgraded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>\[first\] - Typically used for development or testing environments.</p></li>
+    /// <li>
+    /// <p>\[second\] - Default order for resources not specifically configured.</p></li>
+    /// <li>
+    /// <p>\[last\] - Usually reserved for production environments.</p></li>
+    /// </ul>
+    pub upgrade_rollout_order: ::std::option::Option<crate::types::UpgradeRolloutOrder>,
     /// <p>Information about pending changes to the DB instance. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
     pub pending_modified_values: ::std::option::Option<crate::types::PendingModifiedValues>,
     /// <p>The latest time to which a database in this DB instance can be restored with point-in-time restore.</p>
@@ -303,6 +313,18 @@ impl DbInstance {
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>This data type represents the order in which the instances are upgraded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>\[first\] - Typically used for development or testing environments.</p></li>
+    /// <li>
+    /// <p>\[second\] - Default order for resources not specifically configured.</p></li>
+    /// <li>
+    /// <p>\[last\] - Usually reserved for production environments.</p></li>
+    /// </ul>
+    pub fn upgrade_rollout_order(&self) -> ::std::option::Option<&crate::types::UpgradeRolloutOrder> {
+        self.upgrade_rollout_order.as_ref()
     }
     /// <p>Information about pending changes to the DB instance. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
     pub fn pending_modified_values(&self) -> ::std::option::Option<&crate::types::PendingModifiedValues> {
@@ -676,6 +698,7 @@ pub struct DbInstanceBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) db_subnet_group: ::std::option::Option<crate::types::DbSubnetGroup>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
+    pub(crate) upgrade_rollout_order: ::std::option::Option<crate::types::UpgradeRolloutOrder>,
     pub(crate) pending_modified_values: ::std::option::Option<crate::types::PendingModifiedValues>,
     pub(crate) latest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) multi_az: ::std::option::Option<bool>,
@@ -1013,6 +1036,44 @@ impl DbInstanceBuilder {
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
+    }
+    /// <p>This data type represents the order in which the instances are upgraded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>\[first\] - Typically used for development or testing environments.</p></li>
+    /// <li>
+    /// <p>\[second\] - Default order for resources not specifically configured.</p></li>
+    /// <li>
+    /// <p>\[last\] - Usually reserved for production environments.</p></li>
+    /// </ul>
+    pub fn upgrade_rollout_order(mut self, input: crate::types::UpgradeRolloutOrder) -> Self {
+        self.upgrade_rollout_order = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This data type represents the order in which the instances are upgraded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>\[first\] - Typically used for development or testing environments.</p></li>
+    /// <li>
+    /// <p>\[second\] - Default order for resources not specifically configured.</p></li>
+    /// <li>
+    /// <p>\[last\] - Usually reserved for production environments.</p></li>
+    /// </ul>
+    pub fn set_upgrade_rollout_order(mut self, input: ::std::option::Option<crate::types::UpgradeRolloutOrder>) -> Self {
+        self.upgrade_rollout_order = input;
+        self
+    }
+    /// <p>This data type represents the order in which the instances are upgraded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>\[first\] - Typically used for development or testing environments.</p></li>
+    /// <li>
+    /// <p>\[second\] - Default order for resources not specifically configured.</p></li>
+    /// <li>
+    /// <p>\[last\] - Usually reserved for production environments.</p></li>
+    /// </ul>
+    pub fn get_upgrade_rollout_order(&self) -> &::std::option::Option<crate::types::UpgradeRolloutOrder> {
+        &self.upgrade_rollout_order
     }
     /// <p>Information about pending changes to the DB instance. This information is returned only when there are pending changes. Specific changes are identified by subelements.</p>
     pub fn pending_modified_values(mut self, input: crate::types::PendingModifiedValues) -> Self {
@@ -2208,6 +2269,7 @@ impl DbInstanceBuilder {
             availability_zone: self.availability_zone,
             db_subnet_group: self.db_subnet_group,
             preferred_maintenance_window: self.preferred_maintenance_window,
+            upgrade_rollout_order: self.upgrade_rollout_order,
             pending_modified_values: self.pending_modified_values,
             latest_restorable_time: self.latest_restorable_time,
             multi_az: self.multi_az,

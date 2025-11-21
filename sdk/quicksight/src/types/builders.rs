@@ -1853,6 +1853,8 @@ pub use crate::types::_asset_bundle_export_job_summary::AssetBundleExportJobSumm
 
 pub use crate::types::_registered_user_embedding_experience_configuration::RegisteredUserEmbeddingExperienceConfigurationBuilder;
 
+pub use crate::types::_registered_user_quick_chat_embedding_configuration::RegisteredUserQuickChatEmbeddingConfigurationBuilder;
+
 pub use crate::types::_registered_user_generative_qn_a_embedding_configuration::RegisteredUserGenerativeQnAEmbeddingConfigurationBuilder;
 
 pub use crate::types::_registered_user_dashboard_visual_embedding_configuration::RegisteredUserDashboardVisualEmbeddingConfigurationBuilder;

@@ -5,21 +5,17 @@
 pub struct UpdateLandingZoneInput {
     /// <p>The landing zone version, for example, 3.2.</p>
     pub version: ::std::option::Option<::std::string::String>,
-    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
-    pub manifest: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Specifies the types of remediation actions to apply when updating the landing zone configuration.</p>
     pub remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     /// <p>The unique identifier of the landing zone.</p>
     pub landing_zone_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
+    pub manifest: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl UpdateLandingZoneInput {
     /// <p>The landing zone version, for example, 3.2.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
-    }
-    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
-    pub fn manifest(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
-        self.manifest.as_ref()
     }
     /// <p>Specifies the types of remediation actions to apply when updating the landing zone configuration.</p>
     ///
@@ -30,6 +26,10 @@ impl UpdateLandingZoneInput {
     /// <p>The unique identifier of the landing zone.</p>
     pub fn landing_zone_identifier(&self) -> ::std::option::Option<&str> {
         self.landing_zone_identifier.as_deref()
+    }
+    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
+    pub fn manifest(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.manifest.as_ref()
     }
 }
 impl UpdateLandingZoneInput {
@@ -44,9 +44,9 @@ impl UpdateLandingZoneInput {
 #[non_exhaustive]
 pub struct UpdateLandingZoneInputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) manifest: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     pub(crate) landing_zone_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) manifest: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl UpdateLandingZoneInputBuilder {
     /// <p>The landing zone version, for example, 3.2.</p>
@@ -63,21 +63,6 @@ impl UpdateLandingZoneInputBuilder {
     /// <p>The landing zone version, for example, 3.2.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
-    }
-    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
-    /// This field is required.
-    pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
-        self.manifest = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
-    pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.manifest = input;
-        self
-    }
-    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
-    pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
-        &self.manifest
     }
     /// Appends an item to `remediation_types`.
     ///
@@ -114,15 +99,29 @@ impl UpdateLandingZoneInputBuilder {
     pub fn get_landing_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.landing_zone_identifier
     }
+    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
+    pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.manifest = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
+    pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.manifest = input;
+        self
+    }
+    /// <p>The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>. The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.</p>
+    pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.manifest
+    }
     /// Consumes the builder and constructs a [`UpdateLandingZoneInput`](crate::operation::update_landing_zone::UpdateLandingZoneInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_landing_zone::UpdateLandingZoneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_landing_zone::UpdateLandingZoneInput {
             version: self.version,
-            manifest: self.manifest,
             remediation_types: self.remediation_types,
             landing_zone_identifier: self.landing_zone_identifier,
+            manifest: self.manifest,
         })
     }
 }

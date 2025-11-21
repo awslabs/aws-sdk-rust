@@ -40,6 +40,10 @@ pub struct ClusterNodeDetails {
     pub desired_image_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the UltraServer.</p>
     pub ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
+    /// <p>The Kubernetes configuration applied to this node, showing both the current and desired state of labels and taints. The cluster works to reconcile the actual state with the declared state.</p>
+    pub kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfigNodeDetails>,
+    /// <p>The capacity type of the node. Valid values are <code>OnDemand</code> and <code>Spot</code>. When set to <code>OnDemand</code>, the node is launched as an On-Demand instance. When set to <code>Spot</code>, the node is launched as a Spot instance.</p>
+    pub capacity_type: ::std::option::Option<crate::types::ClusterCapacityType>,
 }
 impl ClusterNodeDetails {
     /// <p>The instance group name in which the instance is.</p>
@@ -116,6 +120,14 @@ impl ClusterNodeDetails {
     pub fn ultra_server_info(&self) -> ::std::option::Option<&crate::types::UltraServerInfo> {
         self.ultra_server_info.as_ref()
     }
+    /// <p>The Kubernetes configuration applied to this node, showing both the current and desired state of labels and taints. The cluster works to reconcile the actual state with the declared state.</p>
+    pub fn kubernetes_config(&self) -> ::std::option::Option<&crate::types::ClusterKubernetesConfigNodeDetails> {
+        self.kubernetes_config.as_ref()
+    }
+    /// <p>The capacity type of the node. Valid values are <code>OnDemand</code> and <code>Spot</code>. When set to <code>OnDemand</code>, the node is launched as an On-Demand instance. When set to <code>Spot</code>, the node is launched as a Spot instance.</p>
+    pub fn capacity_type(&self) -> ::std::option::Option<&crate::types::ClusterCapacityType> {
+        self.capacity_type.as_ref()
+    }
 }
 impl ClusterNodeDetails {
     /// Creates a new builder-style object to manufacture [`ClusterNodeDetails`](crate::types::ClusterNodeDetails).
@@ -146,6 +158,8 @@ pub struct ClusterNodeDetailsBuilder {
     pub(crate) current_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) desired_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
+    pub(crate) kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfigNodeDetails>,
+    pub(crate) capacity_type: ::std::option::Option<crate::types::ClusterCapacityType>,
 }
 impl ClusterNodeDetailsBuilder {
     /// <p>The instance group name in which the instance is.</p>
@@ -406,6 +420,34 @@ impl ClusterNodeDetailsBuilder {
     pub fn get_ultra_server_info(&self) -> &::std::option::Option<crate::types::UltraServerInfo> {
         &self.ultra_server_info
     }
+    /// <p>The Kubernetes configuration applied to this node, showing both the current and desired state of labels and taints. The cluster works to reconcile the actual state with the declared state.</p>
+    pub fn kubernetes_config(mut self, input: crate::types::ClusterKubernetesConfigNodeDetails) -> Self {
+        self.kubernetes_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Kubernetes configuration applied to this node, showing both the current and desired state of labels and taints. The cluster works to reconcile the actual state with the declared state.</p>
+    pub fn set_kubernetes_config(mut self, input: ::std::option::Option<crate::types::ClusterKubernetesConfigNodeDetails>) -> Self {
+        self.kubernetes_config = input;
+        self
+    }
+    /// <p>The Kubernetes configuration applied to this node, showing both the current and desired state of labels and taints. The cluster works to reconcile the actual state with the declared state.</p>
+    pub fn get_kubernetes_config(&self) -> &::std::option::Option<crate::types::ClusterKubernetesConfigNodeDetails> {
+        &self.kubernetes_config
+    }
+    /// <p>The capacity type of the node. Valid values are <code>OnDemand</code> and <code>Spot</code>. When set to <code>OnDemand</code>, the node is launched as an On-Demand instance. When set to <code>Spot</code>, the node is launched as a Spot instance.</p>
+    pub fn capacity_type(mut self, input: crate::types::ClusterCapacityType) -> Self {
+        self.capacity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The capacity type of the node. Valid values are <code>OnDemand</code> and <code>Spot</code>. When set to <code>OnDemand</code>, the node is launched as an On-Demand instance. When set to <code>Spot</code>, the node is launched as a Spot instance.</p>
+    pub fn set_capacity_type(mut self, input: ::std::option::Option<crate::types::ClusterCapacityType>) -> Self {
+        self.capacity_type = input;
+        self
+    }
+    /// <p>The capacity type of the node. Valid values are <code>OnDemand</code> and <code>Spot</code>. When set to <code>OnDemand</code>, the node is launched as an On-Demand instance. When set to <code>Spot</code>, the node is launched as a Spot instance.</p>
+    pub fn get_capacity_type(&self) -> &::std::option::Option<crate::types::ClusterCapacityType> {
+        &self.capacity_type
+    }
     /// Consumes the builder and constructs a [`ClusterNodeDetails`](crate::types::ClusterNodeDetails).
     pub fn build(self) -> crate::types::ClusterNodeDetails {
         crate::types::ClusterNodeDetails {
@@ -427,6 +469,8 @@ impl ClusterNodeDetailsBuilder {
             current_image_id: self.current_image_id,
             desired_image_id: self.desired_image_id,
             ultra_server_info: self.ultra_server_info,
+            kubernetes_config: self.kubernetes_config,
+            capacity_type: self.capacity_type,
         }
     }
 }

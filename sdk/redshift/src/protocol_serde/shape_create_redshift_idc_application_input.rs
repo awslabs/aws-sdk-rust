@@ -55,26 +55,31 @@ pub fn ser_create_redshift_idc_application_input_input_input(
         list_19.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("Tags");
-    if let Some(var_23) = &input.tags {
-        let mut list_25 = scope_22.start_list(false, Some("Tag"));
-        for item_24 in var_23 {
-            #[allow(unused_mut)]
-            let mut entry_26 = list_25.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_26, item_24)?;
-        }
-        list_25.finish();
+    let mut scope_22 = writer.prefix("ApplicationType");
+    if let Some(var_23) = &input.application_type {
+        scope_22.string(var_23.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_27 = writer.prefix("SsoTagKeys");
-    if let Some(var_28) = &input.sso_tag_keys {
-        let mut list_30 = scope_27.start_list(false, Some("TagKey"));
-        for item_29 in var_28 {
+    let mut scope_24 = writer.prefix("Tags");
+    if let Some(var_25) = &input.tags {
+        let mut list_27 = scope_24.start_list(false, Some("Tag"));
+        for item_26 in var_25 {
             #[allow(unused_mut)]
-            let mut entry_31 = list_30.entry();
-            entry_31.string(item_29);
+            let mut entry_28 = list_27.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_28, item_26)?;
         }
-        list_30.finish();
+        list_27.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_29 = writer.prefix("SsoTagKeys");
+    if let Some(var_30) = &input.sso_tag_keys {
+        let mut list_32 = scope_29.start_list(false, Some("TagKey"));
+        for item_31 in var_30 {
+            #[allow(unused_mut)]
+            let mut entry_33 = list_32.entry();
+            entry_33.string(item_31);
+        }
+        list_32.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -2,7 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InitializeServiceInput {}
+pub struct InitializeServiceInput {
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p>
+    pub oci_identity_domain: ::std::option::Option<bool>,
+}
+impl InitializeServiceInput {
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p>
+    pub fn oci_identity_domain(&self) -> ::std::option::Option<bool> {
+        self.oci_identity_domain
+    }
+}
 impl InitializeServiceInput {
     /// Creates a new builder-style object to manufacture [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
     pub fn builder() -> crate::operation::initialize_service::builders::InitializeServiceInputBuilder {
@@ -13,12 +22,30 @@ impl InitializeServiceInput {
 /// A builder for [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct InitializeServiceInputBuilder {}
+pub struct InitializeServiceInputBuilder {
+    pub(crate) oci_identity_domain: ::std::option::Option<bool>,
+}
 impl InitializeServiceInputBuilder {
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p>
+    pub fn oci_identity_domain(mut self, input: bool) -> Self {
+        self.oci_identity_domain = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p>
+    pub fn set_oci_identity_domain(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.oci_identity_domain = input;
+        self
+    }
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p>
+    pub fn get_oci_identity_domain(&self) -> &::std::option::Option<bool> {
+        &self.oci_identity_domain
+    }
     /// Consumes the builder and constructs a [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::initialize_service::InitializeServiceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::initialize_service::InitializeServiceInput {})
+        ::std::result::Result::Ok(crate::operation::initialize_service::InitializeServiceInput {
+            oci_identity_domain: self.oci_identity_domain,
+        })
     }
 }

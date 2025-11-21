@@ -22,7 +22,7 @@ impl crate::operation::describe_instance_attribute::builders::DescribeInstanceAt
 }
 /// Fluent builder constructing a request to `DescribeInstanceAttribute`.
 ///
-/// <p>Describes the specified attribute of the specified instance. You can specify only one attribute at a time.</p>
+/// <p>Describes the specified attribute of the specified instance. You can specify only one attribute at a time. Available attributes include SQL license exemption configuration for instances registered with the SQL LE service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

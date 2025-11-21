@@ -94,7 +94,11 @@ pub fn de_initialize_service_http_response(
 }
 
 pub fn ser_initialize_service_input(
-    _input: &crate::operation::initialize_service::InitializeServiceInput,
+    input: &crate::operation::initialize_service::InitializeServiceInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_initialize_service_input::ser_initialize_service_input_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

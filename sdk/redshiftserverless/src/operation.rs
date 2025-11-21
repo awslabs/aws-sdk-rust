@@ -172,6 +172,9 @@ pub mod update_custom_domain_association;
 /// Types for the `UpdateEndpointAccess` operation.
 pub mod update_endpoint_access;
 
+/// Types for the `UpdateLakehouseConfiguration` operation.
+pub mod update_lakehouse_configuration;
+
 /// Types for the `UpdateNamespace` operation.
 pub mod update_namespace;
 

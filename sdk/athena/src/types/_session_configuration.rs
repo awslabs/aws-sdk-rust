@@ -10,6 +10,8 @@ pub struct SessionConfiguration {
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>The idle timeout in seconds for the session.</p>
     pub idle_timeout_seconds: ::std::option::Option<i64>,
+    /// <p>The idle timeout in seconds for the session.</p>
+    pub session_idle_timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
@@ -25,6 +27,10 @@ impl SessionConfiguration {
     /// <p>The idle timeout in seconds for the session.</p>
     pub fn idle_timeout_seconds(&self) -> ::std::option::Option<i64> {
         self.idle_timeout_seconds
+    }
+    /// <p>The idle timeout in seconds for the session.</p>
+    pub fn session_idle_timeout_in_minutes(&self) -> ::std::option::Option<i32> {
+        self.session_idle_timeout_in_minutes
     }
     /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
@@ -45,6 +51,7 @@ pub struct SessionConfigurationBuilder {
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) working_directory: ::std::option::Option<::std::string::String>,
     pub(crate) idle_timeout_seconds: ::std::option::Option<i64>,
+    pub(crate) session_idle_timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl SessionConfigurationBuilder {
@@ -90,6 +97,20 @@ impl SessionConfigurationBuilder {
     pub fn get_idle_timeout_seconds(&self) -> &::std::option::Option<i64> {
         &self.idle_timeout_seconds
     }
+    /// <p>The idle timeout in seconds for the session.</p>
+    pub fn session_idle_timeout_in_minutes(mut self, input: i32) -> Self {
+        self.session_idle_timeout_in_minutes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The idle timeout in seconds for the session.</p>
+    pub fn set_session_idle_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.session_idle_timeout_in_minutes = input;
+        self
+    }
+    /// <p>The idle timeout in seconds for the session.</p>
+    pub fn get_session_idle_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.session_idle_timeout_in_minutes
+    }
     /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
@@ -110,6 +131,7 @@ impl SessionConfigurationBuilder {
             execution_role: self.execution_role,
             working_directory: self.working_directory,
             idle_timeout_seconds: self.idle_timeout_seconds,
+            session_idle_timeout_in_minutes: self.session_idle_timeout_in_minutes,
             encryption_configuration: self.encryption_configuration,
         }
     }

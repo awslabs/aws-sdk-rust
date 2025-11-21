@@ -19,6 +19,7 @@
 ///     EffectivePolicyType::InspectorPolicy => { /* ... */ },
 ///     EffectivePolicyType::SecurityhubPolicy => { /* ... */ },
 ///     EffectivePolicyType::TagPolicy => { /* ... */ },
+///     EffectivePolicyType::UpgradeRolloutPolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -61,6 +62,8 @@ pub enum EffectivePolicyType {
     SecurityhubPolicy,
     #[allow(missing_docs)] // documentation missing in model
     TagPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    UpgradeRolloutPolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for EffectivePolicyType {
             "INSPECTOR_POLICY" => EffectivePolicyType::InspectorPolicy,
             "SECURITYHUB_POLICY" => EffectivePolicyType::SecurityhubPolicy,
             "TAG_POLICY" => EffectivePolicyType::TagPolicy,
+            "UPGRADE_ROLLOUT_POLICY" => EffectivePolicyType::UpgradeRolloutPolicy,
             other => EffectivePolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -97,6 +101,7 @@ impl EffectivePolicyType {
             EffectivePolicyType::InspectorPolicy => "INSPECTOR_POLICY",
             EffectivePolicyType::SecurityhubPolicy => "SECURITYHUB_POLICY",
             EffectivePolicyType::TagPolicy => "TAG_POLICY",
+            EffectivePolicyType::UpgradeRolloutPolicy => "UPGRADE_ROLLOUT_POLICY",
             EffectivePolicyType::Unknown(value) => value.as_str(),
         }
     }
@@ -110,6 +115,7 @@ impl EffectivePolicyType {
             "INSPECTOR_POLICY",
             "SECURITYHUB_POLICY",
             "TAG_POLICY",
+            "UPGRADE_ROLLOUT_POLICY",
         ]
     }
 }
@@ -140,6 +146,7 @@ impl ::std::fmt::Display for EffectivePolicyType {
             EffectivePolicyType::InspectorPolicy => write!(f, "INSPECTOR_POLICY"),
             EffectivePolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             EffectivePolicyType::TagPolicy => write!(f, "TAG_POLICY"),
+            EffectivePolicyType::UpgradeRolloutPolicy => write!(f, "UPGRADE_ROLLOUT_POLICY"),
             EffectivePolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }

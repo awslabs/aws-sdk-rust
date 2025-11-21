@@ -8,7 +8,7 @@ pub struct WorkGroupConfiguration {
     pub result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
     /// <p>The configuration for storing results in Athena owned storage, which includes whether this feature is enabled; whether encryption configuration, if any, is used for encrypting query results.</p>
     pub managed_query_results_configuration: ::std::option::Option<crate::types::ManagedQueryResultsConfiguration>,
-    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. This property is not required for Apache Spark enabled workgroups. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub enforce_work_group_configuration: ::std::option::Option<bool>,
     /// <p>Indicates that the Amazon CloudWatch metrics are enabled for the workgroup.</p>
     pub publish_cloud_watch_metrics_enabled: ::std::option::Option<bool>,
@@ -22,6 +22,10 @@ pub struct WorkGroupConfiguration {
     pub additional_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the execution role used to access user resources for Spark sessions and IAM Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and IAM Identity Center enabled workgroups. The property is required for IAM Identity Center enabled workgroups.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     pub customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries.</p>
@@ -41,7 +45,7 @@ impl WorkGroupConfiguration {
     pub fn managed_query_results_configuration(&self) -> ::std::option::Option<&crate::types::ManagedQueryResultsConfiguration> {
         self.managed_query_results_configuration.as_ref()
     }
-    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. This property is not required for Apache Spark enabled workgroups. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn enforce_work_group_configuration(&self) -> ::std::option::Option<bool> {
         self.enforce_work_group_configuration
     }
@@ -68,6 +72,14 @@ impl WorkGroupConfiguration {
     /// <p>The ARN of the execution role used to access user resources for Spark sessions and IAM Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and IAM Identity Center enabled workgroups. The property is required for IAM Identity Center enabled workgroups.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn engine_configuration(&self) -> ::std::option::Option<&crate::types::EngineConfiguration> {
+        self.engine_configuration.as_ref()
     }
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     pub fn customer_content_encryption_configuration(&self) -> ::std::option::Option<&crate::types::CustomerContentEncryptionConfiguration> {
@@ -107,6 +119,8 @@ pub struct WorkGroupConfigurationBuilder {
     pub(crate) engine_version: ::std::option::Option<crate::types::EngineVersion>,
     pub(crate) additional_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
+    pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    pub(crate) engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
     pub(crate) customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
     pub(crate) enable_minimum_encryption_configuration: ::std::option::Option<bool>,
     pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
@@ -141,17 +155,17 @@ impl WorkGroupConfigurationBuilder {
     pub fn get_managed_query_results_configuration(&self) -> &::std::option::Option<crate::types::ManagedQueryResultsConfiguration> {
         &self.managed_query_results_configuration
     }
-    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. This property is not required for Apache Spark enabled workgroups. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn enforce_work_group_configuration(mut self, input: bool) -> Self {
         self.enforce_work_group_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. This property is not required for Apache Spark enabled workgroups. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn set_enforce_work_group_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enforce_work_group_configuration = input;
         self
     }
-    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false", client-side settings are used. This property is not required for Apache Spark enabled workgroups. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn get_enforce_work_group_configuration(&self) -> &::std::option::Option<bool> {
         &self.enforce_work_group_configuration
     }
@@ -239,6 +253,34 @@ impl WorkGroupConfigurationBuilder {
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.monitoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring_configuration = input;
+        self
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring_configuration
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn engine_configuration(mut self, input: crate::types::EngineConfiguration) -> Self {
+        self.engine_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn set_engine_configuration(mut self, input: ::std::option::Option<crate::types::EngineConfiguration>) -> Self {
+        self.engine_configuration = input;
+        self
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn get_engine_configuration(&self) -> &::std::option::Option<crate::types::EngineConfiguration> {
+        &self.engine_configuration
+    }
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     pub fn customer_content_encryption_configuration(mut self, input: crate::types::CustomerContentEncryptionConfiguration) -> Self {
         self.customer_content_encryption_configuration = ::std::option::Option::Some(input);
@@ -316,6 +358,8 @@ impl WorkGroupConfigurationBuilder {
             engine_version: self.engine_version,
             additional_configuration: self.additional_configuration,
             execution_role: self.execution_role,
+            monitoring_configuration: self.monitoring_configuration,
+            engine_configuration: self.engine_configuration,
             customer_content_encryption_configuration: self.customer_content_encryption_configuration,
             enable_minimum_encryption_configuration: self.enable_minimum_encryption_configuration,
             identity_center_configuration: self.identity_center_configuration,

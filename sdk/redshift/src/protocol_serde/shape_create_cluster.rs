@@ -101,6 +101,24 @@ pub fn de_create_cluster_http_error(
             }
             tmp
         }),
+        "DependentServiceAccessDenied" => crate::operation::create_cluster::CreateClusterError::DependentServiceAccessDeniedFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DependentServiceAccessDeniedFaultBuilder::default();
+                output = crate::protocol_serde::shape_dependent_service_access_denied_fault::de_dependent_service_access_denied_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DependentServiceRequestThrottlingFault" => {
             crate::operation::create_cluster::CreateClusterError::DependentServiceRequestThrottlingFault({
                 #[allow(unused_mut)]
@@ -117,6 +135,24 @@ pub fn de_create_cluster_http_error(
                 tmp
             })
         }
+        "DependentServiceUnavailableFault" => crate::operation::create_cluster::CreateClusterError::DependentServiceUnavailableFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DependentServiceUnavailableFaultBuilder::default();
+                output = crate::protocol_serde::shape_dependent_service_unavailable_fault::de_dependent_service_unavailable_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "HsmClientCertificateNotFoundFault" => crate::operation::create_cluster::CreateClusterError::HsmClientCertificateNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

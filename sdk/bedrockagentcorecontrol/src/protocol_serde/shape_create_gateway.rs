@@ -208,6 +208,11 @@ pub(crate) fn de_create_gateway(
                             .transpose()?,
                     );
                 }
+                "interceptorConfigurations" => {
+                    builder = builder.set_interceptor_configurations(
+                        crate::protocol_serde::shape_gateway_interceptor_configurations::de_gateway_interceptor_configurations(tokens)?,
+                    );
+                }
                 "kmsKeyArn" => {
                     builder = builder.set_kms_key_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

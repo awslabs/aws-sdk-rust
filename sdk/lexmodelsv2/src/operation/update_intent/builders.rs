@@ -136,6 +136,20 @@ impl UpdateIntentFluentBuilder {
     pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_intent_name()
     }
+    /// <p>The new display name for the intent.</p>
+    pub fn intent_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.intent_display_name(input.into());
+        self
+    }
+    /// <p>The new display name for the intent.</p>
+    pub fn set_intent_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_intent_display_name(input);
+        self
+    }
+    /// <p>The new display name for the intent.</p>
+    pub fn get_intent_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_intent_display_name()
+    }
     /// <p>The new description of the intent.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());

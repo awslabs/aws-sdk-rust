@@ -229,11 +229,15 @@ mod delete_repository_creation_template;
 
 mod delete_repository_policy;
 
+mod delete_signing_configuration;
+
 mod deregister_pull_time_update_exclusion;
 
 mod describe_image_replication_status;
 
 mod describe_image_scan_findings;
+
+mod describe_image_signing_status;
 
 mod describe_images;
 
@@ -261,6 +265,8 @@ mod get_registry_scanning_configuration;
 
 mod get_repository_policy;
 
+mod get_signing_configuration;
+
 mod initiate_layer_upload;
 
 mod list_image_referrers;
@@ -286,6 +292,8 @@ mod put_registry_policy;
 mod put_registry_scanning_configuration;
 
 mod put_replication_configuration;
+
+mod put_signing_configuration;
 
 mod register_pull_time_update_exclusion;
 

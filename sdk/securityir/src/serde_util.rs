@@ -164,6 +164,15 @@ pub(crate) fn get_membership_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_investigations_output_output_correct_errors(
+    mut builder: crate::operation::list_investigations::builders::ListInvestigationsOutputBuilder,
+) -> crate::operation::list_investigations::builders::ListInvestigationsOutputBuilder {
+    if builder.investigation_actions.is_none() {
+        builder.investigation_actions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
@@ -212,6 +221,18 @@ pub(crate) fn case_attachment_attributes_correct_errors(
     builder
 }
 
+pub(crate) fn case_metadata_entry_correct_errors(
+    mut builder: crate::types::builders::CaseMetadataEntryBuilder,
+) -> crate::types::builders::CaseMetadataEntryBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_membership_account_detail_error_correct_errors(
     mut builder: crate::types::builders::GetMembershipAccountDetailErrorBuilder,
 ) -> crate::types::builders::GetMembershipAccountDetailErrorBuilder {
@@ -247,6 +268,30 @@ pub(crate) fn incident_responder_correct_errors(
     }
     if builder.email.is_none() {
         builder.email = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn investigation_action_correct_errors(
+    mut builder: crate::types::builders::InvestigationActionBuilder,
+) -> crate::types::builders::InvestigationActionBuilder {
+    if builder.investigation_id.is_none() {
+        builder.investigation_id = Some(Default::default())
+    }
+    if builder.action_type.is_none() {
+        builder.action_type = "no value was set".parse::<crate::types::ActionType>().ok()
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.content.is_none() {
+        builder.content = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ExecutionStatus>().ok()
+    }
+    if builder.last_updated.is_none() {
+        builder.last_updated = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

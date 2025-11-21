@@ -31,6 +31,10 @@ pub use crate::types::_workflow_step_type::WorkflowStepType;
 
 pub use crate::types::_listed_workflow::ListedWorkflow;
 
+pub use crate::types::_update_web_app_endpoint_details::UpdateWebAppEndpointDetails;
+
+pub use crate::types::_update_web_app_vpc_config::UpdateWebAppVpcConfig;
+
 pub use crate::types::_web_app_units::WebAppUnits;
 
 pub use crate::types::_update_web_app_identity_provider_details::UpdateWebAppIdentityProviderDetails;
@@ -39,11 +43,21 @@ pub use crate::types::_update_web_app_identity_center_config::UpdateWebAppIdenti
 
 pub use crate::types::_described_web_app::DescribedWebApp;
 
+pub use crate::types::_described_web_app_endpoint_details::DescribedWebAppEndpointDetails;
+
+pub use crate::types::_described_web_app_vpc_config::DescribedWebAppVpcConfig;
+
+pub use crate::types::_web_app_endpoint_type::WebAppEndpointType;
+
 pub use crate::types::_web_app_endpoint_policy::WebAppEndpointPolicy;
 
 pub use crate::types::_described_web_app_identity_provider_details::DescribedWebAppIdentityProviderDetails;
 
 pub use crate::types::_described_identity_center_config::DescribedIdentityCenterConfig;
+
+pub use crate::types::_web_app_endpoint_details::WebAppEndpointDetails;
+
+pub use crate::types::_web_app_vpc_config::WebAppVpcConfig;
 
 pub use crate::types::_web_app_identity_provider_details::WebAppIdentityProviderDetails;
 
@@ -281,7 +295,11 @@ mod _described_web_app;
 
 mod _described_web_app_customization;
 
+mod _described_web_app_endpoint_details;
+
 mod _described_web_app_identity_provider_details;
+
+mod _described_web_app_vpc_config;
 
 mod _described_workflow;
 
@@ -411,17 +429,27 @@ mod _update_connector_egress_config;
 
 mod _update_connector_vpc_lattice_egress_config;
 
+mod _update_web_app_endpoint_details;
+
 mod _update_web_app_identity_center_config;
 
 mod _update_web_app_identity_provider_details;
 
+mod _update_web_app_vpc_config;
+
 mod _user_details;
 
+mod _web_app_endpoint_details;
+
 mod _web_app_endpoint_policy;
+
+mod _web_app_endpoint_type;
 
 mod _web_app_identity_provider_details;
 
 mod _web_app_units;
+
+mod _web_app_vpc_config;
 
 mod _workflow_detail;
 

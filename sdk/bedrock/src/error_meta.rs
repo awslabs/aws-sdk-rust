@@ -1091,6 +1091,55 @@ impl From<crate::operation::delete_custom_model_deployment::DeleteCustomModelDep
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_enforced_guardrail_configuration::DeleteEnforcedGuardrailConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_enforced_guardrail_configuration::DeleteEnforcedGuardrailConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_enforced_guardrail_configuration::DeleteEnforcedGuardrailConfigurationError> for Error {
+    fn from(err: crate::operation::delete_enforced_guardrail_configuration::DeleteEnforcedGuardrailConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_enforced_guardrail_configuration::DeleteEnforcedGuardrailConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_enforced_guardrail_configuration::DeleteEnforcedGuardrailConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_enforced_guardrail_configuration::DeleteEnforcedGuardrailConfigurationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_enforced_guardrail_configuration::DeleteEnforcedGuardrailConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_enforced_guardrail_configuration::DeleteEnforcedGuardrailConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_enforced_guardrail_configuration::DeleteEnforcedGuardrailConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_foundation_model_agreement::DeleteFoundationModelAgreementError,
             R,
         >,
@@ -2596,6 +2645,55 @@ impl From<crate::operation::list_custom_models::ListCustomModelsError> for Error
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationError> for Error {
+    fn from(err: crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationError) -> Self {
+        match err {
+            crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_evaluation_jobs::ListEvaluationJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3046,6 +3144,58 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_enforced_guardrail_configuration::PutEnforcedGuardrailConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_enforced_guardrail_configuration::PutEnforcedGuardrailConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_enforced_guardrail_configuration::PutEnforcedGuardrailConfigurationError> for Error {
+    fn from(err: crate::operation::put_enforced_guardrail_configuration::PutEnforcedGuardrailConfigurationError) -> Self {
+        match err {
+            crate::operation::put_enforced_guardrail_configuration::PutEnforcedGuardrailConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_enforced_guardrail_configuration::PutEnforcedGuardrailConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_enforced_guardrail_configuration::PutEnforcedGuardrailConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_enforced_guardrail_configuration::PutEnforcedGuardrailConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_enforced_guardrail_configuration::PutEnforcedGuardrailConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_enforced_guardrail_configuration::PutEnforcedGuardrailConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_enforced_guardrail_configuration::PutEnforcedGuardrailConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

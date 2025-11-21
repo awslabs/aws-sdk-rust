@@ -8,6 +8,8 @@ pub struct InstanceGroupScalingMetadata {
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The desired number of instances for the group after scaling.</p>
     pub target_count: ::std::option::Option<i32>,
+    /// <p>Minimum instance count of the instance group.</p>
+    pub min_count: ::std::option::Option<i32>,
     /// <p>An error message describing why the scaling operation failed, if applicable.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
 }
@@ -19,6 +21,10 @@ impl InstanceGroupScalingMetadata {
     /// <p>The desired number of instances for the group after scaling.</p>
     pub fn target_count(&self) -> ::std::option::Option<i32> {
         self.target_count
+    }
+    /// <p>Minimum instance count of the instance group.</p>
+    pub fn min_count(&self) -> ::std::option::Option<i32> {
+        self.min_count
     }
     /// <p>An error message describing why the scaling operation failed, if applicable.</p>
     pub fn failure_message(&self) -> ::std::option::Option<&str> {
@@ -38,6 +44,7 @@ impl InstanceGroupScalingMetadata {
 pub struct InstanceGroupScalingMetadataBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) target_count: ::std::option::Option<i32>,
+    pub(crate) min_count: ::std::option::Option<i32>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
 }
 impl InstanceGroupScalingMetadataBuilder {
@@ -69,6 +76,20 @@ impl InstanceGroupScalingMetadataBuilder {
     pub fn get_target_count(&self) -> &::std::option::Option<i32> {
         &self.target_count
     }
+    /// <p>Minimum instance count of the instance group.</p>
+    pub fn min_count(mut self, input: i32) -> Self {
+        self.min_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Minimum instance count of the instance group.</p>
+    pub fn set_min_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.min_count = input;
+        self
+    }
+    /// <p>Minimum instance count of the instance group.</p>
+    pub fn get_min_count(&self) -> &::std::option::Option<i32> {
+        &self.min_count
+    }
     /// <p>An error message describing why the scaling operation failed, if applicable.</p>
     pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
@@ -88,6 +109,7 @@ impl InstanceGroupScalingMetadataBuilder {
         crate::types::InstanceGroupScalingMetadata {
             instance_count: self.instance_count,
             target_count: self.target_count,
+            min_count: self.min_count,
             failure_message: self.failure_message,
         }
     }

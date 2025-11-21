@@ -99,7 +99,7 @@ pub fn de_render_message_template_http_response(
         output = crate::protocol_serde::shape_render_message_template::de_render_message_template(_response_body, output)
             .map_err(crate::operation::render_message_template::RenderMessageTemplateError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        crate::serde_util::render_message_template_output_output_correct_errors(output).build()
+        output.build()
     })
 }
 
@@ -139,6 +139,13 @@ pub(crate) fn de_render_message_template(
                 "content" => {
                     builder = builder
                         .set_content(crate::protocol_serde::shape_message_template_content_provider::de_message_template_content_provider(tokens)?);
+                }
+                "sourceConfigurationSummary" => {
+                    builder = builder.set_source_configuration_summary(
+                        crate::protocol_serde::shape_message_template_source_configuration_summary::de_message_template_source_configuration_summary(
+                            tokens,
+                        )?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

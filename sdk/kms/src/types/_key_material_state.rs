@@ -14,6 +14,7 @@
 /// match keymaterialstate {
 ///     KeyMaterialState::Current => { /* ... */ },
 ///     KeyMaterialState::NonCurrent => { /* ... */ },
+///     KeyMaterialState::PendingMultiRegionImportAndRotation => { /* ... */ },
 ///     KeyMaterialState::PendingRotation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum KeyMaterialState {
     #[allow(missing_docs)] // documentation missing in model
     NonCurrent,
     #[allow(missing_docs)] // documentation missing in model
+    PendingMultiRegionImportAndRotation,
+    #[allow(missing_docs)] // documentation missing in model
     PendingRotation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for KeyMaterialState {
         match s {
             "CURRENT" => KeyMaterialState::Current,
             "NON_CURRENT" => KeyMaterialState::NonCurrent,
+            "PENDING_MULTI_REGION_IMPORT_AND_ROTATION" => KeyMaterialState::PendingMultiRegionImportAndRotation,
             "PENDING_ROTATION" => KeyMaterialState::PendingRotation,
             other => KeyMaterialState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl KeyMaterialState {
         match self {
             KeyMaterialState::Current => "CURRENT",
             KeyMaterialState::NonCurrent => "NON_CURRENT",
+            KeyMaterialState::PendingMultiRegionImportAndRotation => "PENDING_MULTI_REGION_IMPORT_AND_ROTATION",
             KeyMaterialState::PendingRotation => "PENDING_ROTATION",
             KeyMaterialState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CURRENT", "NON_CURRENT", "PENDING_ROTATION"]
+        &["CURRENT", "NON_CURRENT", "PENDING_MULTI_REGION_IMPORT_AND_ROTATION", "PENDING_ROTATION"]
     }
 }
 impl ::std::convert::AsRef<str> for KeyMaterialState {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for KeyMaterialState {
         match self {
             KeyMaterialState::Current => write!(f, "CURRENT"),
             KeyMaterialState::NonCurrent => write!(f, "NON_CURRENT"),
+            KeyMaterialState::PendingMultiRegionImportAndRotation => write!(f, "PENDING_MULTI_REGION_IMPORT_AND_ROTATION"),
             KeyMaterialState::PendingRotation => write!(f, "PENDING_ROTATION"),
             KeyMaterialState::Unknown(value) => write!(f, "{value}"),
         }

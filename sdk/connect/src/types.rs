@@ -629,6 +629,8 @@ pub use crate::types::_contact_flow_search_filter::ContactFlowSearchFilter;
 
 pub use crate::types::_contact_flow_module::ContactFlowModule;
 
+pub use crate::types::_external_invocation_configuration::ExternalInvocationConfiguration;
+
 pub use crate::types::_contact_flow_module_status::ContactFlowModuleStatus;
 
 pub use crate::types::_contact_flow_module_search_criteria::ContactFlowModuleSearchCriteria;
@@ -813,7 +815,11 @@ pub use crate::types::_contact_flow_version_summary::ContactFlowVersionSummary;
 
 pub use crate::types::_contact_flow_summary::ContactFlowSummary;
 
+pub use crate::types::_contact_flow_module_version_summary::ContactFlowModuleVersionSummary;
+
 pub use crate::types::_contact_flow_module_summary::ContactFlowModuleSummary;
+
+pub use crate::types::_contact_flow_module_alias_summary::ContactFlowModuleAliasSummary;
 
 pub use crate::types::_evaluation_summary::EvaluationSummary;
 
@@ -964,6 +970,8 @@ pub use crate::types::_instance::Instance;
 pub use crate::types::_instance_status_reason::InstanceStatusReason;
 
 pub use crate::types::_evaluation_form::EvaluationForm;
+
+pub use crate::types::_contact_flow_module_alias_info::ContactFlowModuleAliasInfo;
 
 pub use crate::types::_evaluation_form_content::EvaluationFormContent;
 
@@ -1247,6 +1255,10 @@ mod _contact_flow;
 
 mod _contact_flow_module;
 
+mod _contact_flow_module_alias_info;
+
+mod _contact_flow_module_alias_summary;
+
 mod _contact_flow_module_search_criteria;
 
 mod _contact_flow_module_search_filter;
@@ -1256,6 +1268,8 @@ mod _contact_flow_module_state;
 mod _contact_flow_module_status;
 
 mod _contact_flow_module_summary;
+
+mod _contact_flow_module_version_summary;
 
 mod _contact_flow_search_criteria;
 
@@ -1534,6 +1548,8 @@ mod _event_source_name;
 mod _expiry;
 
 mod _expression;
+
+mod _external_invocation_configuration;
 
 mod _failed_request;
 

@@ -18,23 +18,35 @@ pub fn ser_update_gateway_input_input(
     if let Some(var_5) = &input.exception_level {
         object.key("exceptionLevel").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_6.as_str());
+    if let Some(var_6) = &input.interceptor_configurations {
+        let mut array_7 = object.key("interceptorConfigurations").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_gateway_interceptor_configuration::ser_gateway_interceptor_configuration(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
+    if let Some(var_10) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_10.as_str());
     }
-    if let Some(var_8) = &input.protocol_configuration {
+    if let Some(var_11) = &input.name {
+        object.key("name").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.protocol_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("protocolConfiguration").start_object();
-        crate::protocol_serde::shape_gateway_protocol_configuration::ser_gateway_protocol_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_13 = object.key("protocolConfiguration").start_object();
+        crate::protocol_serde::shape_gateway_protocol_configuration::ser_gateway_protocol_configuration(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_10) = &input.protocol_type {
-        object.key("protocolType").string(var_10.as_str());
+    if let Some(var_14) = &input.protocol_type {
+        object.key("protocolType").string(var_14.as_str());
     }
-    if let Some(var_11) = &input.role_arn {
-        object.key("roleArn").string(var_11.as_str());
+    if let Some(var_15) = &input.role_arn {
+        object.key("roleArn").string(var_15.as_str());
     }
     Ok(())
 }

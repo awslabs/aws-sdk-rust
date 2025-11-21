@@ -11,6 +11,8 @@ pub struct UpdateWebAppInput {
     pub access_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>A union that contains the value for number of concurrent connections or the user sessions on your web app.</p>
     pub web_app_units: ::std::option::Option<crate::types::WebAppUnits>,
+    /// <p>The updated endpoint configuration for the web app. You can modify the endpoint type and VPC configuration settings.</p>
+    pub endpoint_details: ::std::option::Option<crate::types::UpdateWebAppEndpointDetails>,
 }
 impl UpdateWebAppInput {
     /// <p>Provide the identifier of the web app that you are updating.</p>
@@ -29,6 +31,10 @@ impl UpdateWebAppInput {
     pub fn web_app_units(&self) -> ::std::option::Option<&crate::types::WebAppUnits> {
         self.web_app_units.as_ref()
     }
+    /// <p>The updated endpoint configuration for the web app. You can modify the endpoint type and VPC configuration settings.</p>
+    pub fn endpoint_details(&self) -> ::std::option::Option<&crate::types::UpdateWebAppEndpointDetails> {
+        self.endpoint_details.as_ref()
+    }
 }
 impl UpdateWebAppInput {
     /// Creates a new builder-style object to manufacture [`UpdateWebAppInput`](crate::operation::update_web_app::UpdateWebAppInput).
@@ -45,6 +51,7 @@ pub struct UpdateWebAppInputBuilder {
     pub(crate) identity_provider_details: ::std::option::Option<crate::types::UpdateWebAppIdentityProviderDetails>,
     pub(crate) access_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) web_app_units: ::std::option::Option<crate::types::WebAppUnits>,
+    pub(crate) endpoint_details: ::std::option::Option<crate::types::UpdateWebAppEndpointDetails>,
 }
 impl UpdateWebAppInputBuilder {
     /// <p>Provide the identifier of the web app that you are updating.</p>
@@ -104,6 +111,20 @@ impl UpdateWebAppInputBuilder {
     pub fn get_web_app_units(&self) -> &::std::option::Option<crate::types::WebAppUnits> {
         &self.web_app_units
     }
+    /// <p>The updated endpoint configuration for the web app. You can modify the endpoint type and VPC configuration settings.</p>
+    pub fn endpoint_details(mut self, input: crate::types::UpdateWebAppEndpointDetails) -> Self {
+        self.endpoint_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated endpoint configuration for the web app. You can modify the endpoint type and VPC configuration settings.</p>
+    pub fn set_endpoint_details(mut self, input: ::std::option::Option<crate::types::UpdateWebAppEndpointDetails>) -> Self {
+        self.endpoint_details = input;
+        self
+    }
+    /// <p>The updated endpoint configuration for the web app. You can modify the endpoint type and VPC configuration settings.</p>
+    pub fn get_endpoint_details(&self) -> &::std::option::Option<crate::types::UpdateWebAppEndpointDetails> {
+        &self.endpoint_details
+    }
     /// Consumes the builder and constructs a [`UpdateWebAppInput`](crate::operation::update_web_app::UpdateWebAppInput).
     pub fn build(
         self,
@@ -113,6 +134,7 @@ impl UpdateWebAppInputBuilder {
             identity_provider_details: self.identity_provider_details,
             access_endpoint: self.access_endpoint,
             web_app_units: self.web_app_units,
+            endpoint_details: self.endpoint_details,
         })
     }
 }

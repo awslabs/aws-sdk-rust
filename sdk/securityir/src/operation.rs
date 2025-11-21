@@ -40,11 +40,17 @@ pub mod list_cases;
 /// Types for the `ListComments` operation.
 pub mod list_comments;
 
+/// Types for the `ListInvestigations` operation.
+pub mod list_investigations;
+
 /// Types for the `ListMemberships` operation.
 pub mod list_memberships;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `SendFeedback` operation.
+pub mod send_feedback;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

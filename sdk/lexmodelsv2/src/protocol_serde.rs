@@ -957,6 +957,8 @@ pub(crate) mod shape_exact_response_fields;
 
 pub(crate) mod shape_intent_classification_test_result_item;
 
+pub(crate) mod shape_intent_disambiguation_settings;
+
 pub(crate) mod shape_intent_level_slot_resolution_test_result_item;
 
 pub(crate) mod shape_invoked_intent_sample;

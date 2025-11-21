@@ -55,6 +55,8 @@ pub use crate::types::_quick_response_query_field::QuickResponseQueryFieldBuilde
 
 pub use crate::types::_message_template_search_result_data::MessageTemplateSearchResultDataBuilder;
 
+pub use crate::types::_whats_app_message_template_source_configuration_summary::WhatsAppMessageTemplateSourceConfigurationSummaryBuilder;
+
 pub use crate::types::_message_template_search_expression::MessageTemplateSearchExpressionBuilder;
 
 pub use crate::types::_message_template_order_field::MessageTemplateOrderFieldBuilder;
@@ -89,6 +91,18 @@ pub use crate::types::_system_attributes::SystemAttributesBuilder;
 
 pub use crate::types::_system_endpoint_attributes::SystemEndpointAttributesBuilder;
 
+pub use crate::types::_push_message_template_content::PushMessageTemplateContentBuilder;
+
+pub use crate::types::_push_baidu_message_template_content::PushBaiduMessageTemplateContentBuilder;
+
+pub use crate::types::_push_fcm_message_template_content::PushFcmMessageTemplateContentBuilder;
+
+pub use crate::types::_push_apns_message_template_content::PushApnsMessageTemplateContentBuilder;
+
+pub use crate::types::_push_adm_message_template_content::PushAdmMessageTemplateContentBuilder;
+
+pub use crate::types::_whats_app_message_template_content::WhatsAppMessageTemplateContentBuilder;
+
 pub use crate::types::_sms_message_template_content::SmsMessageTemplateContentBuilder;
 
 pub use crate::types::_sms_message_template_content_body::SmsMessageTemplateContentBodyBuilder;
@@ -104,6 +118,8 @@ pub use crate::types::_message_template_attachment::MessageTemplateAttachmentBui
 pub use crate::types::_message_template_version_summary::MessageTemplateVersionSummaryBuilder;
 
 pub use crate::types::_extended_message_template_data::ExtendedMessageTemplateDataBuilder;
+
+pub use crate::types::_whats_app_message_template_source_configuration::WhatsAppMessageTemplateSourceConfigurationBuilder;
 
 pub use crate::types::_message_template_summary::MessageTemplateSummaryBuilder;
 

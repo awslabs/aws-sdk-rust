@@ -41,6 +41,12 @@ pub struct GetCapacityReservationUsageOutput {
     pub state: ::std::option::Option<crate::types::CapacityReservationState>,
     /// <p>Information about the Capacity Reservation usage.</p>
     pub instance_usages: ::std::option::Option<::std::vec::Vec<crate::types::InstanceUsage>>,
+    /// <p>Indicates whether the Capacity Reservation is interruptible, meaning instances may be terminated when the owner reclaims capacity.</p>
+    pub interruptible: ::std::option::Option<bool>,
+    /// <p>Information about the capacity allocated to the interruptible Capacity Reservation, including instance counts and allocation status.</p>
+    pub interruptible_capacity_allocation: ::std::option::Option<crate::types::InterruptibleCapacityAllocation>,
+    /// <p>Details about the interruption configuration and source reservation for interruptible Capacity Reservations.</p>
+    pub interruption_info: ::std::option::Option<crate::types::InterruptionInfo>,
     _request_id: Option<String>,
 }
 impl GetCapacityReservationUsageOutput {
@@ -98,6 +104,18 @@ impl GetCapacityReservationUsageOutput {
     pub fn instance_usages(&self) -> &[crate::types::InstanceUsage] {
         self.instance_usages.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether the Capacity Reservation is interruptible, meaning instances may be terminated when the owner reclaims capacity.</p>
+    pub fn interruptible(&self) -> ::std::option::Option<bool> {
+        self.interruptible
+    }
+    /// <p>Information about the capacity allocated to the interruptible Capacity Reservation, including instance counts and allocation status.</p>
+    pub fn interruptible_capacity_allocation(&self) -> ::std::option::Option<&crate::types::InterruptibleCapacityAllocation> {
+        self.interruptible_capacity_allocation.as_ref()
+    }
+    /// <p>Details about the interruption configuration and source reservation for interruptible Capacity Reservations.</p>
+    pub fn interruption_info(&self) -> ::std::option::Option<&crate::types::InterruptionInfo> {
+        self.interruption_info.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetCapacityReservationUsageOutput {
     fn request_id(&self) -> Option<&str> {
@@ -122,6 +140,9 @@ pub struct GetCapacityReservationUsageOutputBuilder {
     pub(crate) available_instance_count: ::std::option::Option<i32>,
     pub(crate) state: ::std::option::Option<crate::types::CapacityReservationState>,
     pub(crate) instance_usages: ::std::option::Option<::std::vec::Vec<crate::types::InstanceUsage>>,
+    pub(crate) interruptible: ::std::option::Option<bool>,
+    pub(crate) interruptible_capacity_allocation: ::std::option::Option<crate::types::InterruptibleCapacityAllocation>,
+    pub(crate) interruption_info: ::std::option::Option<crate::types::InterruptionInfo>,
     _request_id: Option<String>,
 }
 impl GetCapacityReservationUsageOutputBuilder {
@@ -301,6 +322,48 @@ impl GetCapacityReservationUsageOutputBuilder {
     pub fn get_instance_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceUsage>> {
         &self.instance_usages
     }
+    /// <p>Indicates whether the Capacity Reservation is interruptible, meaning instances may be terminated when the owner reclaims capacity.</p>
+    pub fn interruptible(mut self, input: bool) -> Self {
+        self.interruptible = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the Capacity Reservation is interruptible, meaning instances may be terminated when the owner reclaims capacity.</p>
+    pub fn set_interruptible(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.interruptible = input;
+        self
+    }
+    /// <p>Indicates whether the Capacity Reservation is interruptible, meaning instances may be terminated when the owner reclaims capacity.</p>
+    pub fn get_interruptible(&self) -> &::std::option::Option<bool> {
+        &self.interruptible
+    }
+    /// <p>Information about the capacity allocated to the interruptible Capacity Reservation, including instance counts and allocation status.</p>
+    pub fn interruptible_capacity_allocation(mut self, input: crate::types::InterruptibleCapacityAllocation) -> Self {
+        self.interruptible_capacity_allocation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the capacity allocated to the interruptible Capacity Reservation, including instance counts and allocation status.</p>
+    pub fn set_interruptible_capacity_allocation(mut self, input: ::std::option::Option<crate::types::InterruptibleCapacityAllocation>) -> Self {
+        self.interruptible_capacity_allocation = input;
+        self
+    }
+    /// <p>Information about the capacity allocated to the interruptible Capacity Reservation, including instance counts and allocation status.</p>
+    pub fn get_interruptible_capacity_allocation(&self) -> &::std::option::Option<crate::types::InterruptibleCapacityAllocation> {
+        &self.interruptible_capacity_allocation
+    }
+    /// <p>Details about the interruption configuration and source reservation for interruptible Capacity Reservations.</p>
+    pub fn interruption_info(mut self, input: crate::types::InterruptionInfo) -> Self {
+        self.interruption_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the interruption configuration and source reservation for interruptible Capacity Reservations.</p>
+    pub fn set_interruption_info(mut self, input: ::std::option::Option<crate::types::InterruptionInfo>) -> Self {
+        self.interruption_info = input;
+        self
+    }
+    /// <p>Details about the interruption configuration and source reservation for interruptible Capacity Reservations.</p>
+    pub fn get_interruption_info(&self) -> &::std::option::Option<crate::types::InterruptionInfo> {
+        &self.interruption_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -320,6 +383,9 @@ impl GetCapacityReservationUsageOutputBuilder {
             available_instance_count: self.available_instance_count,
             state: self.state,
             instance_usages: self.instance_usages,
+            interruptible: self.interruptible,
+            interruptible_capacity_allocation: self.interruptible_capacity_allocation,
+            interruption_info: self.interruption_info,
             _request_id: self._request_id,
         }
     }

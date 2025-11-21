@@ -202,6 +202,9 @@ pub(crate) fn de_get_case(
                 "caseAttachments" => {
                     builder = builder.set_case_attachments(crate::protocol_serde::shape_case_attachments_list::de_case_attachments_list(tokens)?);
                 }
+                "caseMetadata" => {
+                    builder = builder.set_case_metadata(crate::protocol_serde::shape_case_metadata::de_case_metadata(tokens)?);
+                }
                 "caseStatus" => {
                     builder = builder.set_case_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

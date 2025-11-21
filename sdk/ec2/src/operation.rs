@@ -256,6 +256,9 @@ pub mod create_instance_export_task;
 /// Types for the `CreateInternetGateway` operation.
 pub mod create_internet_gateway;
 
+/// Types for the `CreateInterruptibleCapacityReservationAllocation` operation.
+pub mod create_interruptible_capacity_reservation_allocation;
+
 /// Types for the `CreateIpam` operation.
 pub mod create_ipam;
 
@@ -2232,6 +2235,9 @@ pub mod unmonitor_instances;
 
 /// Types for the `UpdateCapacityManagerOrganizationsAccess` operation.
 pub mod update_capacity_manager_organizations_access;
+
+/// Types for the `UpdateInterruptibleCapacityReservationAllocation` operation.
+pub mod update_interruptible_capacity_reservation_allocation;
 
 /// Types for the `UpdateSecurityGroupRuleDescriptionsEgress` operation.
 pub mod update_security_group_rule_descriptions_egress;

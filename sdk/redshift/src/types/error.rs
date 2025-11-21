@@ -51,6 +51,8 @@ pub use crate::types::error::_reserved_node_already_migrated_fault::ReservedNode
 
 pub use crate::types::error::_reserved_node_already_exists_fault::ReservedNodeAlreadyExistsFault;
 
+pub use crate::types::error::_redshift_idc_application_not_exists_fault::RedshiftIdcApplicationNotExistsFault;
+
 pub use crate::types::error::_number_of_nodes_quota_exceeded_fault::NumberOfNodesQuotaExceededFault;
 
 pub use crate::types::error::_number_of_nodes_per_cluster_limit_exceeded_fault::NumberOfNodesPerClusterLimitExceededFault;
@@ -80,6 +82,8 @@ pub use crate::types::error::_hsm_configuration_not_found_fault::HsmConfiguratio
 pub use crate::types::error::_hsm_client_certificate_not_found_fault::HsmClientCertificateNotFoundFault;
 
 pub use crate::types::error::_dependent_service_unavailable_fault::DependentServiceUnavailableFault;
+
+pub use crate::types::error::_dependent_service_access_denied_fault::DependentServiceAccessDeniedFault;
 
 pub use crate::types::error::_cluster_subnet_group_not_found_fault::ClusterSubnetGroupNotFoundFault;
 
@@ -122,10 +126,6 @@ pub use crate::types::error::_scheduled_action_type_unsupported_fault::Scheduled
 pub use crate::types::error::_scheduled_action_not_found_fault::ScheduledActionNotFoundFault;
 
 pub use crate::types::error::_invalid_scheduled_action_fault::InvalidScheduledActionFault;
-
-pub use crate::types::error::_redshift_idc_application_not_exists_fault::RedshiftIdcApplicationNotExistsFault;
-
-pub use crate::types::error::_dependent_service_access_denied_fault::DependentServiceAccessDeniedFault;
 
 pub use crate::types::error::_integration_not_found_fault::IntegrationNotFoundFault;
 

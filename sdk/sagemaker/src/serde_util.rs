@@ -5911,6 +5911,15 @@ pub(crate) fn model_package_validation_profile_correct_errors(
     builder
 }
 
+pub(crate) fn model_speculative_decoding_config_correct_errors(
+    mut builder: crate::types::builders::ModelSpeculativeDecodingConfigBuilder,
+) -> crate::types::builders::ModelSpeculativeDecodingConfigBuilder {
+    if builder.technique.is_none() {
+        builder.technique = "no value was set".parse::<crate::types::ModelSpeculativeDecodingTechnique>().ok()
+    }
+    builder
+}
+
 pub(crate) fn monitoring_app_specification_correct_errors(
     mut builder: crate::types::builders::MonitoringAppSpecificationBuilder,
 ) -> crate::types::builders::MonitoringAppSpecificationBuilder {
@@ -6254,6 +6263,18 @@ pub(crate) fn clarify_text_config_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_kubernetes_taint_correct_errors(
+    mut builder: crate::types::builders::ClusterKubernetesTaintBuilder,
+) -> crate::types::builders::ClusterKubernetesTaintBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.effect.is_none() {
+        builder.effect = "no value was set".parse::<crate::types::ClusterKubernetesTaintEffect>().ok()
+    }
+    builder
+}
+
 pub(crate) fn code_repository_correct_errors(
     mut builder: crate::types::builders::CodeRepositoryBuilder,
 ) -> crate::types::builders::CodeRepositoryBuilder {
@@ -6423,6 +6444,18 @@ pub(crate) fn integer_parameter_range_correct_errors(
 pub(crate) fn model_input_correct_errors(mut builder: crate::types::builders::ModelInputBuilder) -> crate::types::builders::ModelInputBuilder {
     if builder.data_input_config.is_none() {
         builder.data_input_config = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn model_speculative_decoding_training_data_source_correct_errors(
+    mut builder: crate::types::builders::ModelSpeculativeDecodingTrainingDataSourceBuilder,
+) -> crate::types::builders::ModelSpeculativeDecodingTrainingDataSourceBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
+    }
+    if builder.s3_data_type.is_none() {
+        builder.s3_data_type = "no value was set".parse::<crate::types::ModelSpeculativeDecodingS3DataType>().ok()
     }
     builder
 }

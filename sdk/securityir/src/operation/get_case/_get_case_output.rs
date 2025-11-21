@@ -41,6 +41,8 @@ pub struct GetCaseOutput {
     pub case_attachments: ::std::option::Option<::std::vec::Vec<crate::types::CaseAttachmentAttributes>>,
     /// <p>Response element for GetCase that provides the date a specified case was closed.</p>
     pub closed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Case response metadata</p>
+    pub case_metadata: ::std::option::Option<::std::vec::Vec<crate::types::CaseMetadataEntry>>,
     _request_id: Option<String>,
 }
 impl GetCaseOutput {
@@ -132,6 +134,12 @@ impl GetCaseOutput {
     pub fn closed_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.closed_date.as_ref()
     }
+    /// <p>Case response metadata</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.case_metadata.is_none()`.
+    pub fn case_metadata(&self) -> &[crate::types::CaseMetadataEntry] {
+        self.case_metadata.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetCaseOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -155,6 +163,7 @@ impl ::std::fmt::Debug for GetCaseOutput {
         formatter.field("impacted_services", &self.impacted_services);
         formatter.field("case_attachments", &self.case_attachments);
         formatter.field("closed_date", &self.closed_date);
+        formatter.field("case_metadata", &self.case_metadata);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -194,6 +203,7 @@ pub struct GetCaseOutputBuilder {
     pub(crate) impacted_services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) case_attachments: ::std::option::Option<::std::vec::Vec<crate::types::CaseAttachmentAttributes>>,
     pub(crate) closed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) case_metadata: ::std::option::Option<::std::vec::Vec<crate::types::CaseMetadataEntry>>,
     _request_id: Option<String>,
 }
 impl GetCaseOutputBuilder {
@@ -499,6 +509,26 @@ impl GetCaseOutputBuilder {
     pub fn get_closed_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.closed_date
     }
+    /// Appends an item to `case_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_case_metadata`](Self::set_case_metadata).
+    ///
+    /// <p>Case response metadata</p>
+    pub fn case_metadata(mut self, input: crate::types::CaseMetadataEntry) -> Self {
+        let mut v = self.case_metadata.unwrap_or_default();
+        v.push(input);
+        self.case_metadata = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Case response metadata</p>
+    pub fn set_case_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaseMetadataEntry>>) -> Self {
+        self.case_metadata = input;
+        self
+    }
+    /// <p>Case response metadata</p>
+    pub fn get_case_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaseMetadataEntry>> {
+        &self.case_metadata
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -530,6 +560,7 @@ impl GetCaseOutputBuilder {
             impacted_services: self.impacted_services,
             case_attachments: self.case_attachments,
             closed_date: self.closed_date,
+            case_metadata: self.case_metadata,
             _request_id: self._request_id,
         }
     }
@@ -556,6 +587,7 @@ impl ::std::fmt::Debug for GetCaseOutputBuilder {
         formatter.field("impacted_services", &self.impacted_services);
         formatter.field("case_attachments", &self.case_attachments);
         formatter.field("closed_date", &self.closed_date);
+        formatter.field("case_metadata", &self.case_metadata);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

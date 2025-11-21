@@ -35,6 +35,13 @@ pub(crate) fn resume_cluster_message_correct_errors(
     builder
 }
 
+pub(crate) fn connect_correct_errors(mut builder: crate::types::builders::ConnectBuilder) -> crate::types::builders::ConnectBuilder {
+    if builder.authorization.is_none() {
+        builder.authorization = "no value was set".parse::<crate::types::ServiceAuthorization>().ok()
+    }
+    builder
+}
+
 pub(crate) fn lake_formation_query_correct_errors(
     mut builder: crate::types::builders::LakeFormationQueryBuilder,
 ) -> crate::types::builders::LakeFormationQueryBuilder {

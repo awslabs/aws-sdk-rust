@@ -5,13 +5,13 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
 
-pub use crate::types::error::_not_authorized_exception::NotAuthorizedExceptionBuilder;
-
 pub use crate::types::error::_invalid_argument_exception::InvalidArgumentExceptionBuilder;
 
 pub use crate::types::error::_client_limit_exceeded_exception::ClientLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
+pub use crate::types::error::_not_authorized_exception::NotAuthorizedExceptionBuilder;
 
 pub use crate::types::error::_no_data_retention_exception::NoDataRetentionExceptionBuilder;
 

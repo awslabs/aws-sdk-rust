@@ -236,6 +236,11 @@ pub fn ser_create_cluster_input_input_input(
     if let Some(var_90) = &input.redshift_idc_application_arn {
         scope_89.string(var_90);
     }
+    #[allow(unused_mut)]
+    let mut scope_91 = writer.prefix("CatalogName");
+    if let Some(var_92) = &input.catalog_name {
+        scope_91.string(var_92);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

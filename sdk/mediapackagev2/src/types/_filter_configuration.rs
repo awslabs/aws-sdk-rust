@@ -6,6 +6,8 @@
 pub struct FilterConfiguration {
     /// <p>Optionally specify one or more manifest filters for all of your manifest egress requests. When you include a manifest filter, note that you cannot use an identical manifest filter query parameter for this manifest's endpoint URL.</p>
     pub manifest_filter: ::std::option::Option<::std::string::String>,
+    /// <p>Optionally specify one or more DRM settings for all of your manifest egress requests. When you include a DRM setting, note that you cannot use an identical DRM setting query parameter for this manifest's endpoint URL.</p>
+    pub drm_settings: ::std::option::Option<::std::string::String>,
     /// <p>Optionally specify the start time for all of your manifest egress requests. When you include start time, note that you cannot use start time query parameters for this manifest's endpoint URL.</p>
     pub start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Optionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.</p>
@@ -19,6 +21,10 @@ impl FilterConfiguration {
     /// <p>Optionally specify one or more manifest filters for all of your manifest egress requests. When you include a manifest filter, note that you cannot use an identical manifest filter query parameter for this manifest's endpoint URL.</p>
     pub fn manifest_filter(&self) -> ::std::option::Option<&str> {
         self.manifest_filter.as_deref()
+    }
+    /// <p>Optionally specify one or more DRM settings for all of your manifest egress requests. When you include a DRM setting, note that you cannot use an identical DRM setting query parameter for this manifest's endpoint URL.</p>
+    pub fn drm_settings(&self) -> ::std::option::Option<&str> {
+        self.drm_settings.as_deref()
     }
     /// <p>Optionally specify the start time for all of your manifest egress requests. When you include start time, note that you cannot use start time query parameters for this manifest's endpoint URL.</p>
     pub fn start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -49,6 +55,7 @@ impl FilterConfiguration {
 #[non_exhaustive]
 pub struct FilterConfigurationBuilder {
     pub(crate) manifest_filter: ::std::option::Option<::std::string::String>,
+    pub(crate) drm_settings: ::std::option::Option<::std::string::String>,
     pub(crate) start: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) time_delay_seconds: ::std::option::Option<i32>,
@@ -68,6 +75,20 @@ impl FilterConfigurationBuilder {
     /// <p>Optionally specify one or more manifest filters for all of your manifest egress requests. When you include a manifest filter, note that you cannot use an identical manifest filter query parameter for this manifest's endpoint URL.</p>
     pub fn get_manifest_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.manifest_filter
+    }
+    /// <p>Optionally specify one or more DRM settings for all of your manifest egress requests. When you include a DRM setting, note that you cannot use an identical DRM setting query parameter for this manifest's endpoint URL.</p>
+    pub fn drm_settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.drm_settings = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Optionally specify one or more DRM settings for all of your manifest egress requests. When you include a DRM setting, note that you cannot use an identical DRM setting query parameter for this manifest's endpoint URL.</p>
+    pub fn set_drm_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.drm_settings = input;
+        self
+    }
+    /// <p>Optionally specify one or more DRM settings for all of your manifest egress requests. When you include a DRM setting, note that you cannot use an identical DRM setting query parameter for this manifest's endpoint URL.</p>
+    pub fn get_drm_settings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.drm_settings
     }
     /// <p>Optionally specify the start time for all of your manifest egress requests. When you include start time, note that you cannot use start time query parameters for this manifest's endpoint URL.</p>
     pub fn start(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,6 +150,7 @@ impl FilterConfigurationBuilder {
     pub fn build(self) -> crate::types::FilterConfiguration {
         crate::types::FilterConfiguration {
             manifest_filter: self.manifest_filter,
+            drm_settings: self.drm_settings,
             start: self.start,
             end: self.end,
             time_delay_seconds: self.time_delay_seconds,

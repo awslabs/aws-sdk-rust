@@ -304,4 +304,18 @@ impl UpdateClusterConfigFluentBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection()
     }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn control_plane_scaling_config(mut self, input: crate::types::ControlPlaneScalingConfig) -> Self {
+        self.inner = self.inner.control_plane_scaling_config(input);
+        self
+    }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn set_control_plane_scaling_config(mut self, input: ::std::option::Option<crate::types::ControlPlaneScalingConfig>) -> Self {
+        self.inner = self.inner.set_control_plane_scaling_config(input);
+        self
+    }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn get_control_plane_scaling_config(&self) -> &::std::option::Option<crate::types::ControlPlaneScalingConfig> {
+        self.inner.get_control_plane_scaling_config()
+    }
 }

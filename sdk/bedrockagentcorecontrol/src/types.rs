@@ -203,6 +203,16 @@ pub use crate::types::_exception_level::ExceptionLevel;
 
 pub use crate::types::_workload_identity_details::WorkloadIdentityDetails;
 
+pub use crate::types::_gateway_interceptor_configuration::GatewayInterceptorConfiguration;
+
+pub use crate::types::_interceptor_input_configuration::InterceptorInputConfiguration;
+
+pub use crate::types::_gateway_interception_point::GatewayInterceptionPoint;
+
+pub use crate::types::_interceptor_configuration::InterceptorConfiguration;
+
+pub use crate::types::_lambda_interceptor_configuration::LambdaInterceptorConfiguration;
+
 pub use crate::types::_authorizer_configuration::AuthorizerConfiguration;
 
 pub use crate::types::_custom_jwt_authorizer_configuration::CustomJwtAuthorizerConfiguration;
@@ -373,6 +383,10 @@ mod _extraction_configuration;
 
 mod _gateway_api_key_credential_provider;
 
+mod _gateway_interception_point;
+
+mod _gateway_interceptor_configuration;
+
 mod _gateway_protocol_configuration;
 
 mod _gateway_protocol_type;
@@ -395,6 +409,10 @@ mod _included_oauth2_provider_config_input;
 
 mod _included_oauth2_provider_config_output;
 
+mod _interceptor_configuration;
+
+mod _interceptor_input_configuration;
+
 mod _invocation_configuration;
 
 mod _invocation_configuration_input;
@@ -402,6 +420,8 @@ mod _invocation_configuration_input;
 mod _key_type;
 
 mod _kms_configuration;
+
+mod _lambda_interceptor_configuration;
 
 mod _lifecycle_configuration;
 

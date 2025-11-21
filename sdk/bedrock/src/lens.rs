@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_custom_models_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_enforced_guardrails_configuration_output_output_next_token(
+    input: &crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_evaluation_jobs_output_output_next_token(
     input: &crate::operation::list_evaluation_jobs::ListEvaluationJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -208,6 +218,13 @@ pub(crate) fn lens_list_custom_models_output_output_model_summaries(
     input: crate::operation::list_custom_models::ListCustomModelsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CustomModelSummary>> {
     let input = input.model_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_enforced_guardrails_configuration_output_output_guardrails_config(
+    input: crate::operation::list_enforced_guardrails_configuration::ListEnforcedGuardrailsConfigurationOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountEnforcedGuardrailOutputConfiguration>> {
+    let input = input.guardrails_config;
     ::std::option::Option::Some(input)
 }
 

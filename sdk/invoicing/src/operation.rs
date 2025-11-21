@@ -7,8 +7,14 @@ pub mod batch_get_invoice_profile;
 /// Types for the `CreateInvoiceUnit` operation.
 pub mod create_invoice_unit;
 
+/// Types for the `CreateProcurementPortalPreference` operation.
+pub mod create_procurement_portal_preference;
+
 /// Types for the `DeleteInvoiceUnit` operation.
 pub mod delete_invoice_unit;
+
+/// Types for the `DeleteProcurementPortalPreference` operation.
+pub mod delete_procurement_portal_preference;
 
 /// Types for the `GetInvoicePDF` operation.
 pub mod get_invoice_pdf;
@@ -16,14 +22,23 @@ pub mod get_invoice_pdf;
 /// Types for the `GetInvoiceUnit` operation.
 pub mod get_invoice_unit;
 
+/// Types for the `GetProcurementPortalPreference` operation.
+pub mod get_procurement_portal_preference;
+
 /// Types for the `ListInvoiceSummaries` operation.
 pub mod list_invoice_summaries;
 
 /// Types for the `ListInvoiceUnits` operation.
 pub mod list_invoice_units;
 
+/// Types for the `ListProcurementPortalPreferences` operation.
+pub mod list_procurement_portal_preferences;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PutProcurementPortalPreference` operation.
+pub mod put_procurement_portal_preference;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
@@ -33,3 +48,6 @@ pub mod untag_resource;
 
 /// Types for the `UpdateInvoiceUnit` operation.
 pub mod update_invoice_unit;
+
+/// Types for the `UpdateProcurementPortalPreferenceStatus` operation.
+pub mod update_procurement_portal_preference_status;

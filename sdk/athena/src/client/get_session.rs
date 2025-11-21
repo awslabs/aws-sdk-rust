@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`engine_version(Option<String>)`](crate::operation::get_session::GetSessionOutput::engine_version): <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>). You can get a list of engine versions by calling <code>ListEngineVersions</code>.</p>
     ///   - [`engine_configuration(Option<EngineConfiguration>)`](crate::operation::get_session::GetSessionOutput::engine_configuration): <p>Contains engine configuration information like DPU usage.</p>
     ///   - [`notebook_version(Option<String>)`](crate::operation::get_session::GetSessionOutput::notebook_version): <p>The notebook version.</p>
+    ///   - [`monitoring_configuration(Option<MonitoringConfiguration>)`](crate::operation::get_session::GetSessionOutput::monitoring_configuration): <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
     ///   - [`session_configuration(Option<SessionConfiguration>)`](crate::operation::get_session::GetSessionOutput::session_configuration): <p>Contains the workgroup configuration information used by the session.</p>
     ///   - [`status(Option<SessionStatus>)`](crate::operation::get_session::GetSessionOutput::status): <p>Contains information about the status of the session.</p>
     ///   - [`statistics(Option<SessionStatistics>)`](crate::operation::get_session::GetSessionOutput::statistics): <p>Contains the DPU execution time.</p>

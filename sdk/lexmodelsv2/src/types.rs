@@ -205,6 +205,8 @@ pub use crate::types::_path_format::PathFormat;
 
 pub use crate::types::_bot_recommendation_status::BotRecommendationStatus;
 
+pub use crate::types::_speech_detection_sensitivity::SpeechDetectionSensitivity;
+
 pub use crate::types::_generative_ai_settings::GenerativeAiSettings;
 
 pub use crate::types::_buildtime_settings::BuildtimeSettings;
@@ -216,6 +218,8 @@ pub use crate::types::_descriptive_bot_builder_specification::DescriptiveBotBuil
 pub use crate::types::_runtime_settings::RuntimeSettings;
 
 pub use crate::types::_nlu_improvement_specification::NluImprovementSpecification;
+
+pub use crate::types::_intent_disambiguation_settings::IntentDisambiguationSettings;
 
 pub use crate::types::_assisted_nlu_mode::AssistedNluMode;
 
@@ -1139,6 +1143,8 @@ mod _intent_closing_setting;
 
 mod _intent_confirmation_setting;
 
+mod _intent_disambiguation_settings;
+
 mod _intent_filter;
 
 mod _intent_filter_name;
@@ -1320,6 +1326,8 @@ mod _slot_value_selection_setting;
 mod _sort_order;
 
 mod _specifications;
+
+mod _speech_detection_sensitivity;
 
 mod _ssml_message;
 

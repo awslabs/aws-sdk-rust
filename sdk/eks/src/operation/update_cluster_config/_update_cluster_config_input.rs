@@ -31,6 +31,8 @@ pub struct UpdateClusterConfigInput {
     pub remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>,
     /// <p>Specifies whether to enable or disable deletion protection for the cluster. When enabled (<code>true</code>), the cluster cannot be deleted until deletion protection is explicitly disabled. When disabled (<code>false</code>), the cluster can be deleted normally.</p>
     pub deletion_protection: ::std::option::Option<bool>,
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub control_plane_scaling_config: ::std::option::Option<crate::types::ControlPlaneScalingConfig>,
 }
 impl UpdateClusterConfigInput {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -85,6 +87,10 @@ impl UpdateClusterConfigInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn control_plane_scaling_config(&self) -> ::std::option::Option<&crate::types::ControlPlaneScalingConfig> {
+        self.control_plane_scaling_config.as_ref()
+    }
 }
 impl UpdateClusterConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
@@ -109,6 +115,7 @@ pub struct UpdateClusterConfigInputBuilder {
     pub(crate) storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
     pub(crate) remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) control_plane_scaling_config: ::std::option::Option<crate::types::ControlPlaneScalingConfig>,
 }
 impl UpdateClusterConfigInputBuilder {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -292,6 +299,20 @@ impl UpdateClusterConfigInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn control_plane_scaling_config(mut self, input: crate::types::ControlPlaneScalingConfig) -> Self {
+        self.control_plane_scaling_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn set_control_plane_scaling_config(mut self, input: ::std::option::Option<crate::types::ControlPlaneScalingConfig>) -> Self {
+        self.control_plane_scaling_config = input;
+        self
+    }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn get_control_plane_scaling_config(&self) -> &::std::option::Option<crate::types::ControlPlaneScalingConfig> {
+        &self.control_plane_scaling_config
+    }
     /// Consumes the builder and constructs a [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
     pub fn build(
         self,
@@ -310,6 +331,7 @@ impl UpdateClusterConfigInputBuilder {
             storage_config: self.storage_config,
             remote_network_config: self.remote_network_config,
             deletion_protection: self.deletion_protection,
+            control_plane_scaling_config: self.control_plane_scaling_config,
         })
     }
 }

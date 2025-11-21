@@ -39,6 +39,8 @@ pub struct UpdateCaseInput {
     /// <p>AWS account ID's may appear less than 12 characters and need to be zero-prepended. An example would be <code>123123123</code> which is nine digits, and with zero-prepend would be <code>000123123123</code>. Not zero-prepending to 12 digits could result in errors.</p>
     /// </note>
     pub impacted_accounts_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Update the case request with case metadata</p>
+    pub case_metadata: ::std::option::Option<::std::vec::Vec<crate::types::CaseMetadataEntry>>,
 }
 impl UpdateCaseInput {
     /// <p>Required element for UpdateCase to identify the case ID for updates.</p>
@@ -129,6 +131,12 @@ impl UpdateCaseInput {
     pub fn impacted_accounts_to_delete(&self) -> &[::std::string::String] {
         self.impacted_accounts_to_delete.as_deref().unwrap_or_default()
     }
+    /// <p>Update the case request with case metadata</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.case_metadata.is_none()`.
+    pub fn case_metadata(&self) -> &[crate::types::CaseMetadataEntry] {
+        self.case_metadata.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for UpdateCaseInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -149,6 +157,7 @@ impl ::std::fmt::Debug for UpdateCaseInput {
         formatter.field("impacted_aws_regions_to_delete", &self.impacted_aws_regions_to_delete);
         formatter.field("impacted_accounts_to_add", &self.impacted_accounts_to_add);
         formatter.field("impacted_accounts_to_delete", &self.impacted_accounts_to_delete);
+        formatter.field("case_metadata", &self.case_metadata);
         formatter.finish()
     }
 }
@@ -179,6 +188,7 @@ pub struct UpdateCaseInputBuilder {
     pub(crate) impacted_aws_regions_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::ImpactedAwsRegion>>,
     pub(crate) impacted_accounts_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) impacted_accounts_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) case_metadata: ::std::option::Option<::std::vec::Vec<crate::types::CaseMetadataEntry>>,
 }
 impl UpdateCaseInputBuilder {
     /// <p>Required element for UpdateCase to identify the case ID for updates.</p>
@@ -478,6 +488,26 @@ impl UpdateCaseInputBuilder {
     pub fn get_impacted_accounts_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.impacted_accounts_to_delete
     }
+    /// Appends an item to `case_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_case_metadata`](Self::set_case_metadata).
+    ///
+    /// <p>Update the case request with case metadata</p>
+    pub fn case_metadata(mut self, input: crate::types::CaseMetadataEntry) -> Self {
+        let mut v = self.case_metadata.unwrap_or_default();
+        v.push(input);
+        self.case_metadata = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Update the case request with case metadata</p>
+    pub fn set_case_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaseMetadataEntry>>) -> Self {
+        self.case_metadata = input;
+        self
+    }
+    /// <p>Update the case request with case metadata</p>
+    pub fn get_case_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaseMetadataEntry>> {
+        &self.case_metadata
+    }
     /// Consumes the builder and constructs a [`UpdateCaseInput`](crate::operation::update_case::UpdateCaseInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_case::UpdateCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_case::UpdateCaseInput {
@@ -497,6 +527,7 @@ impl UpdateCaseInputBuilder {
             impacted_aws_regions_to_delete: self.impacted_aws_regions_to_delete,
             impacted_accounts_to_add: self.impacted_accounts_to_add,
             impacted_accounts_to_delete: self.impacted_accounts_to_delete,
+            case_metadata: self.case_metadata,
         })
     }
 }
@@ -519,6 +550,7 @@ impl ::std::fmt::Debug for UpdateCaseInputBuilder {
         formatter.field("impacted_aws_regions_to_delete", &self.impacted_aws_regions_to_delete);
         formatter.field("impacted_accounts_to_add", &self.impacted_accounts_to_add);
         formatter.field("impacted_accounts_to_delete", &self.impacted_accounts_to_delete);
+        formatter.field("case_metadata", &self.case_metadata);
         formatter.finish()
     }
 }

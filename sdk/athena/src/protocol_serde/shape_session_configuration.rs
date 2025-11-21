@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SessionIdleTimeoutInMinutes" => {
+                            builder = builder.set_session_idle_timeout_in_minutes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "EncryptionConfiguration" => {
                             builder = builder.set_encryption_configuration(
                                 crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,

@@ -15,9 +15,15 @@ pub use crate::types::_membership_accounts_configurations::MembershipAccountsCon
 
 pub use crate::types::_list_membership_item::ListMembershipItemBuilder;
 
+pub use crate::types::_investigation_action::InvestigationActionBuilder;
+
+pub use crate::types::_investigation_feedback::InvestigationFeedbackBuilder;
+
 pub use crate::types::_list_comments_item::ListCommentsItemBuilder;
 
 pub use crate::types::_case_edit_item::CaseEditItemBuilder;
+
+pub use crate::types::_case_metadata_entry::CaseMetadataEntryBuilder;
 
 pub use crate::types::_impacted_aws_region::ImpactedAwsRegionBuilder;
 

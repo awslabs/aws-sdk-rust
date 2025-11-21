@@ -14,6 +14,7 @@
 /// match authorizertype {
 ///     AuthorizerType::AwsIam => { /* ... */ },
 ///     AuthorizerType::CustomJwt => { /* ... */ },
+///     AuthorizerType::None => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum AuthorizerType {
     AwsIam,
     #[allow(missing_docs)] // documentation missing in model
     CustomJwt,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for AuthorizerType {
         match s {
             "AWS_IAM" => AuthorizerType::AwsIam,
             "CUSTOM_JWT" => AuthorizerType::CustomJwt,
+            "NONE" => AuthorizerType::None,
             other => AuthorizerType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl AuthorizerType {
         match self {
             AuthorizerType::AwsIam => "AWS_IAM",
             AuthorizerType::CustomJwt => "CUSTOM_JWT",
+            AuthorizerType::None => "NONE",
             AuthorizerType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_IAM", "CUSTOM_JWT"]
+        &["AWS_IAM", "CUSTOM_JWT", "NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthorizerType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for AuthorizerType {
         match self {
             AuthorizerType::AwsIam => write!(f, "AWS_IAM"),
             AuthorizerType::CustomJwt => write!(f, "CUSTOM_JWT"),
+            AuthorizerType::None => write!(f, "NONE"),
             AuthorizerType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -196,6 +196,10 @@ pub struct Cluster {
     pub multi_az: ::std::option::Option<::std::string::String>,
     /// <p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.</p>
     pub multi_az_secondary: ::std::option::Option<crate::types::SecondaryClusterInfo>,
+    /// <p>The status of the lakehouse registration for the cluster. Indicates whether the cluster is successfully registered with Amazon Redshift federated permissions.</p>
+    pub lakehouse_registration_status: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Glue data catalog associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    pub catalog_arn: ::std::option::Option<::std::string::String>,
 }
 impl Cluster {
     /// <p>The unique identifier of the cluster.</p>
@@ -526,6 +530,14 @@ impl Cluster {
     pub fn multi_az_secondary(&self) -> ::std::option::Option<&crate::types::SecondaryClusterInfo> {
         self.multi_az_secondary.as_ref()
     }
+    /// <p>The status of the lakehouse registration for the cluster. Indicates whether the cluster is successfully registered with Amazon Redshift federated permissions.</p>
+    pub fn lakehouse_registration_status(&self) -> ::std::option::Option<&str> {
+        self.lakehouse_registration_status.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Glue data catalog associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    pub fn catalog_arn(&self) -> ::std::option::Option<&str> {
+        self.catalog_arn.as_deref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -598,6 +610,8 @@ pub struct ClusterBuilder {
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az_secondary: ::std::option::Option<crate::types::SecondaryClusterInfo>,
+    pub(crate) lakehouse_registration_status: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_arn: ::std::option::Option<::std::string::String>,
 }
 impl ClusterBuilder {
     /// <p>The unique identifier of the cluster.</p>
@@ -1710,6 +1724,34 @@ impl ClusterBuilder {
     pub fn get_multi_az_secondary(&self) -> &::std::option::Option<crate::types::SecondaryClusterInfo> {
         &self.multi_az_secondary
     }
+    /// <p>The status of the lakehouse registration for the cluster. Indicates whether the cluster is successfully registered with Amazon Redshift federated permissions.</p>
+    pub fn lakehouse_registration_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lakehouse_registration_status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The status of the lakehouse registration for the cluster. Indicates whether the cluster is successfully registered with Amazon Redshift federated permissions.</p>
+    pub fn set_lakehouse_registration_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lakehouse_registration_status = input;
+        self
+    }
+    /// <p>The status of the lakehouse registration for the cluster. Indicates whether the cluster is successfully registered with Amazon Redshift federated permissions.</p>
+    pub fn get_lakehouse_registration_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lakehouse_registration_status
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Glue data catalog associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    pub fn catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Glue data catalog associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    pub fn set_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Glue data catalog associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    pub fn get_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_arn
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -1773,6 +1815,8 @@ impl ClusterBuilder {
             ip_address_type: self.ip_address_type,
             multi_az: self.multi_az,
             multi_az_secondary: self.multi_az_secondary,
+            lakehouse_registration_status: self.lakehouse_registration_status,
+            catalog_arn: self.catalog_arn,
         }
     }
 }

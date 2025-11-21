@@ -43,6 +43,9 @@ pub mod delete_repository_creation_template;
 /// Types for the `DeleteRepositoryPolicy` operation.
 pub mod delete_repository_policy;
 
+/// Types for the `DeleteSigningConfiguration` operation.
+pub mod delete_signing_configuration;
+
 /// Types for the `DeregisterPullTimeUpdateExclusion` operation.
 pub mod deregister_pull_time_update_exclusion;
 
@@ -51,6 +54,9 @@ pub mod describe_image_replication_status;
 
 /// Types for the `DescribeImageScanFindings` operation.
 pub mod describe_image_scan_findings;
+
+/// Types for the `DescribeImageSigningStatus` operation.
+pub mod describe_image_signing_status;
 
 /// Types for the `DescribeImages` operation.
 pub mod describe_images;
@@ -91,6 +97,9 @@ pub mod get_registry_scanning_configuration;
 /// Types for the `GetRepositoryPolicy` operation.
 pub mod get_repository_policy;
 
+/// Types for the `GetSigningConfiguration` operation.
+pub mod get_signing_configuration;
+
 /// Types for the `InitiateLayerUpload` operation.
 pub mod initiate_layer_upload;
 
@@ -129,6 +138,9 @@ pub mod put_registry_scanning_configuration;
 
 /// Types for the `PutReplicationConfiguration` operation.
 pub mod put_replication_configuration;
+
+/// Types for the `PutSigningConfiguration` operation.
+pub mod put_signing_configuration;
 
 /// Types for the `RegisterPullTimeUpdateExclusion` operation.
 pub mod register_pull_time_update_exclusion;

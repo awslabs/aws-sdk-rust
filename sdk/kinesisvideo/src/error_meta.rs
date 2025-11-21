@@ -574,6 +574,52 @@ impl From<crate::operation::describe_stream::DescribeStreamError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_stream_storage_configuration::DescribeStreamStorageConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_stream_storage_configuration::DescribeStreamStorageConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_stream_storage_configuration::DescribeStreamStorageConfigurationError> for Error {
+    fn from(err: crate::operation::describe_stream_storage_configuration::DescribeStreamStorageConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_stream_storage_configuration::DescribeStreamStorageConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_stream_storage_configuration::DescribeStreamStorageConfigurationError::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::operation::describe_stream_storage_configuration::DescribeStreamStorageConfigurationError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::describe_stream_storage_configuration::DescribeStreamStorageConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_stream_storage_configuration::DescribeStreamStorageConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_endpoint::GetDataEndpointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1205,6 +1251,56 @@ impl From<crate::operation::update_stream::UpdateStreamError> for Error {
             crate::operation::update_stream::UpdateStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_stream::UpdateStreamError::VersionMismatchException(inner) => Error::VersionMismatchException(inner),
             crate::operation::update_stream::UpdateStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_stream_storage_configuration::UpdateStreamStorageConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_stream_storage_configuration::UpdateStreamStorageConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_stream_storage_configuration::UpdateStreamStorageConfigurationError> for Error {
+    fn from(err: crate::operation::update_stream_storage_configuration::UpdateStreamStorageConfigurationError) -> Self {
+        match err {
+            crate::operation::update_stream_storage_configuration::UpdateStreamStorageConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_stream_storage_configuration::UpdateStreamStorageConfigurationError::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::operation::update_stream_storage_configuration::UpdateStreamStorageConfigurationError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::update_stream_storage_configuration::UpdateStreamStorageConfigurationError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::update_stream_storage_configuration::UpdateStreamStorageConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_stream_storage_configuration::UpdateStreamStorageConfigurationError::VersionMismatchException(inner) => {
+                Error::VersionMismatchException(inner)
+            }
+            crate::operation::update_stream_storage_configuration::UpdateStreamStorageConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

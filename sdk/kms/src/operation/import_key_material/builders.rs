@@ -24,7 +24,15 @@ impl crate::operation::import_key_material::builders::ImportKeyMaterialInputBuil
 ///
 /// <p>Imports or reimports key material into an existing KMS key that was created without key material. You can also use this operation to set or update the expiration model and expiration date of the imported key material.</p>
 /// <p>By default, KMS creates KMS keys with key material that it generates. You can also generate and import your own key material. For more information about importing key material, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing key material</a>.</p>
-/// <p>For asymmetric, HMAC and multi-Region keys, you cannot change the key material after the initial import. You can import multiple key materials into single-Region, symmetric encryption keys and rotate the key material on demand using <code>RotateKeyOnDemand</code>.</p>
+/// <p>For asymmetric and HMAC keys, you cannot change the key material after the initial import. You can import multiple key materials into symmetric encryption keys and rotate the key material on demand using <code>RotateKeyOnDemand</code>.</p>
+/// <p>You can import new key materials into multi-Region symmetric encryption keys. To do so, you must import the new key material into the primary Region key. Then you can import the same key materials into the replica Region keys. You cannot directly import new key material into the replica Region keys.</p>
+/// <p>To import new key material for a multi-Region symmetric key, you’ll need to complete the following:</p>
+/// <ol>
+/// <li>
+/// <p>Call <code>ImportKeyMaterial</code> on the primary Region key with the <code>ImportType</code>set to <code>NEW_KEY_MATERIAL</code>.</p></li>
+/// <li>
+/// <p>Call <code>ImportKeyMaterial</code> on the replica Region key with the <code>ImportType</code> set to <code>EXISTING_KEY_MATERIAL</code> using the same key material imported to the primary Region key. You must do this for every replica Region key before you can perform the <code>RotateKeyOnDemand</code> operation on the primary Region key.</p></li>
+/// </ol>
 /// <p>After you import key material, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#reimport-key-material">reimport the same key material</a> into that KMS key or, if the key supports on-demand rotation, import new key material. You can use the <code>ImportType</code> parameter to indicate whether you are importing new key material or re-importing previously imported key material. You might reimport key material to replace key material that expired or key material that you deleted. You might also reimport key material to change the expiration model or expiration date of the key material.</p>
 /// <p>Each time you import key material into KMS, you can determine whether (<code>ExpirationModel</code>) and when (<code>ValidTo</code>) the key material expires. To change the expiration of your key material, you must import it again, either by calling <code>ImportKeyMaterial</code> or using the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import features</a> of the KMS console.</p>
 /// <p>Before you call <code>ImportKeyMaterial</code>, complete these steps:</p>
@@ -40,7 +48,7 @@ impl crate::operation::import_key_material::builders::ImportKeyMaterialInputBuil
 /// <p>Then, in an <code>ImportKeyMaterial</code> request, you submit your encrypted key material and import token. When calling this operation, you must specify the following values:</p>
 /// <ul>
 /// <li>
-/// <p>The key ID or key ARN of the KMS key to associate with the imported key material. Its <code>Origin</code> must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>. You cannot perform this operation on a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, or on a KMS key in a different Amazon Web Services account. To get the <code>Origin</code> and <code>KeyState</code> of a KMS key, call <code>DescribeKey</code>.</p></li>
+/// <p>The key ID or key ARN of the KMS key to associate with the imported key material. Its <code>Origin</code> must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code> or <code>Enabled</code>. You cannot perform this operation on a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, or on a KMS key in a different Amazon Web Services account. To get the <code>Origin</code> and <code>KeyState</code> of a KMS key, call <code>DescribeKey</code>.</p></li>
 /// <li>
 /// <p>The encrypted key material.</p></li>
 /// <li>
@@ -49,7 +57,7 @@ impl crate::operation::import_key_material::builders::ImportKeyMaterialInputBuil
 /// <p>Whether the key material expires (<code>ExpirationModel</code>) and, if so, when (<code>ValidTo</code>). For help with this choice, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p>If you set an expiration date, KMS deletes the key material from the KMS key on the specified date, making the KMS key unusable. To use the KMS key in cryptographic operations again, you must reimport the same key material. However, you can delete and reimport the key material at any time, including before the key material expires. Each time you reimport, you can eliminate or reset the expiration time.</p></li>
 /// </ul>
-/// <p>When this operation is successful, the key state of the KMS key changes from <code>PendingImport</code> to <code>Enabled</code>, and you can use the KMS key in cryptographic operations. For single-Region, symmetric encryption keys, you will need to import all of the key materials associated with the KMS key to change its state to <code>Enabled</code>. Use the <code>ListKeyRotations</code> operation to list the ID and import state of each key material associated with a KMS key.</p>
+/// <p>When this operation is successful, the state of the KMS key changes to <code>Enabled</code>, and you can use the KMS key in cryptographic operations. For symmetric encryption keys, you will need to import all of the key materials associated with the KMS key to change its state to <code>Enabled</code>. Use the <code>ListKeyRotations</code> operation to list the ID and import state of each key material associated with a KMS key.</p>
 /// <p>If this operation fails, use the exception to help determine the problem. If the error is related to the key material, the import token, or wrapping key, use <code>GetParametersForImport</code> to get a new public key and import token for the KMS key and repeat the import procedure. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-conceptual.html">Create a KMS key with imported key material</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p>The KMS key that you use for this operation must be in a compatible key state. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p><b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a different Amazon Web Services account.</p>
@@ -267,16 +275,19 @@ impl ImportKeyMaterialFluentBuilder {
         self.inner.get_expiration_model()
     }
     /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>. After the first key material is imported, if this parameter is omitted then the parameter defaults to <code>EXISTING_KEY_MATERIAL</code>.</p>
+    /// <p>For multi-Region keys, you must first import new key material into the primary Region key. You should use the <code>NEW_KEY_MATERIAL</code> import type when importing key material into the primary Region key. Then, you can import the same key material into the replica Region key. The import type for the replica Region key should be <code>EXISTING_KEY_MATERIAL</code>.</p>
     pub fn import_type(mut self, input: crate::types::ImportType) -> Self {
         self.inner = self.inner.import_type(input);
         self
     }
     /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>. After the first key material is imported, if this parameter is omitted then the parameter defaults to <code>EXISTING_KEY_MATERIAL</code>.</p>
+    /// <p>For multi-Region keys, you must first import new key material into the primary Region key. You should use the <code>NEW_KEY_MATERIAL</code> import type when importing key material into the primary Region key. Then, you can import the same key material into the replica Region key. The import type for the replica Region key should be <code>EXISTING_KEY_MATERIAL</code>.</p>
     pub fn set_import_type(mut self, input: ::std::option::Option<crate::types::ImportType>) -> Self {
         self.inner = self.inner.set_import_type(input);
         self
     }
     /// <p>Indicates whether the key material being imported is previously associated with this KMS key or not. This parameter is optional and only usable with symmetric encryption keys. If no key material has ever been imported into the KMS key, and this parameter is omitted, the parameter defaults to <code>NEW_KEY_MATERIAL</code>. After the first key material is imported, if this parameter is omitted then the parameter defaults to <code>EXISTING_KEY_MATERIAL</code>.</p>
+    /// <p>For multi-Region keys, you must first import new key material into the primary Region key. You should use the <code>NEW_KEY_MATERIAL</code> import type when importing key material into the primary Region key. Then, you can import the same key material into the replica Region key. The import type for the replica Region key should be <code>EXISTING_KEY_MATERIAL</code>.</p>
     pub fn get_import_type(&self) -> &::std::option::Option<crate::types::ImportType> {
         self.inner.get_import_type()
     }

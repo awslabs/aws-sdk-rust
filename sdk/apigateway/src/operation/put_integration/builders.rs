@@ -392,4 +392,18 @@ impl PutIntegrationFluentBuilder {
     pub fn get_response_transfer_mode(&self) -> &::std::option::Option<crate::types::ResponseTransferMode> {
         self.inner.get_response_transfer_mode()
     }
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub fn integration_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.integration_target(input.into());
+        self
+    }
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub fn set_integration_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_integration_target(input);
+        self
+    }
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub fn get_integration_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_integration_target()
+    }
 }

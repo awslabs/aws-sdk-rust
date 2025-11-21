@@ -84,6 +84,8 @@ pub struct CloudVmClusterSummary {
     pub percent_progress: ::std::option::Option<f32>,
     /// <p>The OCI model compute model used when you create or clone an instance: ECPU or OCPU. An ECPU is an abstracted measure of compute resources. ECPUs are based on the number of cores elastically allocated from a pool of compute and storage servers. An OCPU is a legacy physical measure of compute resources. OCPUs are based on the physical core of a processor with hyper-threading enabled.</p>
     pub compute_model: ::std::option::Option<crate::types::ComputeModel>,
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) service roles associated with the VM cluster in the summary information.</p>
+    pub iam_roles: ::std::option::Option<::std::vec::Vec<crate::types::IamRole>>,
 }
 impl CloudVmClusterSummary {
     /// <p>The unique identifier of the VM cluster.</p>
@@ -255,6 +257,12 @@ impl CloudVmClusterSummary {
     pub fn compute_model(&self) -> ::std::option::Option<&crate::types::ComputeModel> {
         self.compute_model.as_ref()
     }
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) service roles associated with the VM cluster in the summary information.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_roles.is_none()`.
+    pub fn iam_roles(&self) -> &[crate::types::IamRole] {
+        self.iam_roles.as_deref().unwrap_or_default()
+    }
 }
 impl CloudVmClusterSummary {
     /// Creates a new builder-style object to manufacture [`CloudVmClusterSummary`](crate::types::CloudVmClusterSummary).
@@ -307,6 +315,7 @@ pub struct CloudVmClusterSummaryBuilder {
     pub(crate) odb_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) percent_progress: ::std::option::Option<f32>,
     pub(crate) compute_model: ::std::option::Option<crate::types::ComputeModel>,
+    pub(crate) iam_roles: ::std::option::Option<::std::vec::Vec<crate::types::IamRole>>,
 }
 impl CloudVmClusterSummaryBuilder {
     /// <p>The unique identifier of the VM cluster.</p>
@@ -894,6 +903,26 @@ impl CloudVmClusterSummaryBuilder {
     pub fn get_compute_model(&self) -> &::std::option::Option<crate::types::ComputeModel> {
         &self.compute_model
     }
+    /// Appends an item to `iam_roles`.
+    ///
+    /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).
+    ///
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) service roles associated with the VM cluster in the summary information.</p>
+    pub fn iam_roles(mut self, input: crate::types::IamRole) -> Self {
+        let mut v = self.iam_roles.unwrap_or_default();
+        v.push(input);
+        self.iam_roles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) service roles associated with the VM cluster in the summary information.</p>
+    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IamRole>>) -> Self {
+        self.iam_roles = input;
+        self
+    }
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) service roles associated with the VM cluster in the summary information.</p>
+    pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IamRole>> {
+        &self.iam_roles
+    }
     /// Consumes the builder and constructs a [`CloudVmClusterSummary`](crate::types::CloudVmClusterSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`cloud_vm_cluster_id`](crate::types::builders::CloudVmClusterSummaryBuilder::cloud_vm_cluster_id)
@@ -944,6 +973,7 @@ impl CloudVmClusterSummaryBuilder {
             odb_network_id: self.odb_network_id,
             percent_progress: self.percent_progress,
             compute_model: self.compute_model,
+            iam_roles: self.iam_roles,
         })
     }
 }

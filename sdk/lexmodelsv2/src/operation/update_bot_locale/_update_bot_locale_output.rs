@@ -29,6 +29,8 @@ pub struct UpdateBotLocaleOutput {
     pub recommended_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains settings for generative AI features powered by Amazon Bedrock for your bot locale.</p>
     pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
+    /// <p>The updated sensitivity level for voice activity detection (VAD) in the bot locale.</p>
+    pub speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
     _request_id: Option<String>,
 }
 impl UpdateBotLocaleOutput {
@@ -88,6 +90,10 @@ impl UpdateBotLocaleOutput {
     pub fn generative_ai_settings(&self) -> ::std::option::Option<&crate::types::GenerativeAiSettings> {
         self.generative_ai_settings.as_ref()
     }
+    /// <p>The updated sensitivity level for voice activity detection (VAD) in the bot locale.</p>
+    pub fn speech_detection_sensitivity(&self) -> ::std::option::Option<&crate::types::SpeechDetectionSensitivity> {
+        self.speech_detection_sensitivity.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateBotLocaleOutput {
     fn request_id(&self) -> Option<&str> {
@@ -118,6 +124,7 @@ pub struct UpdateBotLocaleOutputBuilder {
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) recommended_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
+    pub(crate) speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
     _request_id: Option<String>,
 }
 impl UpdateBotLocaleOutputBuilder {
@@ -315,6 +322,20 @@ impl UpdateBotLocaleOutputBuilder {
     pub fn get_generative_ai_settings(&self) -> &::std::option::Option<crate::types::GenerativeAiSettings> {
         &self.generative_ai_settings
     }
+    /// <p>The updated sensitivity level for voice activity detection (VAD) in the bot locale.</p>
+    pub fn speech_detection_sensitivity(mut self, input: crate::types::SpeechDetectionSensitivity) -> Self {
+        self.speech_detection_sensitivity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated sensitivity level for voice activity detection (VAD) in the bot locale.</p>
+    pub fn set_speech_detection_sensitivity(mut self, input: ::std::option::Option<crate::types::SpeechDetectionSensitivity>) -> Self {
+        self.speech_detection_sensitivity = input;
+        self
+    }
+    /// <p>The updated sensitivity level for voice activity detection (VAD) in the bot locale.</p>
+    pub fn get_speech_detection_sensitivity(&self) -> &::std::option::Option<crate::types::SpeechDetectionSensitivity> {
+        &self.speech_detection_sensitivity
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -340,6 +361,7 @@ impl UpdateBotLocaleOutputBuilder {
             last_updated_date_time: self.last_updated_date_time,
             recommended_actions: self.recommended_actions,
             generative_ai_settings: self.generative_ai_settings,
+            speech_detection_sensitivity: self.speech_detection_sensitivity,
             _request_id: self._request_id,
         }
     }

@@ -85,6 +85,12 @@ pub mod create_contact_flow;
 /// Types for the `CreateContactFlowModule` operation.
 pub mod create_contact_flow_module;
 
+/// Types for the `CreateContactFlowModuleAlias` operation.
+pub mod create_contact_flow_module_alias;
+
+/// Types for the `CreateContactFlowModuleVersion` operation.
+pub mod create_contact_flow_module_version;
+
 /// Types for the `CreateContactFlowVersion` operation.
 pub mod create_contact_flow_version;
 
@@ -175,6 +181,12 @@ pub mod delete_contact_flow;
 /// Types for the `DeleteContactFlowModule` operation.
 pub mod delete_contact_flow_module;
 
+/// Types for the `DeleteContactFlowModuleAlias` operation.
+pub mod delete_contact_flow_module_alias;
+
+/// Types for the `DeleteContactFlowModuleVersion` operation.
+pub mod delete_contact_flow_module_version;
+
 /// Types for the `DeleteContactFlowVersion` operation.
 pub mod delete_contact_flow_version;
 
@@ -261,6 +273,9 @@ pub mod describe_contact_flow;
 
 /// Types for the `DescribeContactFlowModule` operation.
 pub mod describe_contact_flow_module;
+
+/// Types for the `DescribeContactFlowModuleAlias` operation.
+pub mod describe_contact_flow_module_alias;
 
 /// Types for the `DescribeEmailAddress` operation.
 pub mod describe_email_address;
@@ -435,6 +450,12 @@ pub mod list_bots;
 
 /// Types for the `ListContactEvaluations` operation.
 pub mod list_contact_evaluations;
+
+/// Types for the `ListContactFlowModuleAliases` operation.
+pub mod list_contact_flow_module_aliases;
+
+/// Types for the `ListContactFlowModuleVersions` operation.
+pub mod list_contact_flow_module_versions;
 
 /// Types for the `ListContactFlowModules` operation.
 pub mod list_contact_flow_modules;
@@ -735,6 +756,9 @@ pub mod update_contact_flow_content;
 
 /// Types for the `UpdateContactFlowMetadata` operation.
 pub mod update_contact_flow_metadata;
+
+/// Types for the `UpdateContactFlowModuleAlias` operation.
+pub mod update_contact_flow_module_alias;
 
 /// Types for the `UpdateContactFlowModuleContent` operation.
 pub mod update_contact_flow_module_content;

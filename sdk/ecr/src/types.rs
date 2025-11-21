@@ -27,6 +27,14 @@ pub use crate::types::_image_scan_status::ImageScanStatus;
 
 pub use crate::types::_scan_status::ScanStatus;
 
+pub use crate::types::_signing_configuration::SigningConfiguration;
+
+pub use crate::types::_signing_rule::SigningRule;
+
+pub use crate::types::_signing_repository_filter::SigningRepositoryFilter;
+
+pub use crate::types::_signing_repository_filter_type::SigningRepositoryFilterType;
+
 pub use crate::types::_replication_configuration::ReplicationConfiguration;
 
 pub use crate::types::_replication_rule::ReplicationRule;
@@ -94,6 +102,10 @@ pub use crate::types::_encryption_configuration::EncryptionConfiguration;
 pub use crate::types::_pull_through_cache_rule::PullThroughCacheRule;
 
 pub use crate::types::_upstream_registry::UpstreamRegistry;
+
+pub use crate::types::_image_signing_status::ImageSigningStatus;
+
+pub use crate::types::_signing_status::SigningStatus;
 
 pub use crate::types::_image_scan_findings::ImageScanFindings;
 
@@ -209,6 +221,8 @@ mod _image_scan_status;
 
 mod _image_scanning_configuration;
 
+mod _image_signing_status;
+
 mod _image_status;
 
 mod _image_status_filter;
@@ -296,6 +310,16 @@ mod _scanning_repository_filter;
 mod _scanning_repository_filter_type;
 
 mod _score_details;
+
+mod _signing_configuration;
+
+mod _signing_repository_filter;
+
+mod _signing_repository_filter_type;
+
+mod _signing_rule;
+
+mod _signing_status;
 
 mod _subject_identifier;
 

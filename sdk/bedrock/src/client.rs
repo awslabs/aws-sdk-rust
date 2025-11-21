@@ -211,6 +211,8 @@ mod delete_custom_model;
 
 mod delete_custom_model_deployment;
 
+mod delete_enforced_guardrail_configuration;
+
 mod delete_foundation_model_agreement;
 
 mod delete_guardrail;
@@ -291,6 +293,8 @@ mod list_custom_model_deployments;
 
 mod list_custom_models;
 
+mod list_enforced_guardrails_configuration;
+
 mod list_evaluation_jobs;
 
 mod list_foundation_model_agreement_offers;
@@ -318,6 +322,8 @@ mod list_prompt_routers;
 mod list_provisioned_model_throughputs;
 
 mod list_tags_for_resource;
+
+mod put_enforced_guardrail_configuration;
 
 mod put_model_invocation_logging_configuration;
 

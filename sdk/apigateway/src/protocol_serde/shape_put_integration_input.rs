@@ -30,49 +30,52 @@ pub fn ser_put_integration_input_input(
     if let Some(var_9) = &input.integration_http_method {
         object.key("httpMethod").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.passthrough_behavior {
-        object.key("passthroughBehavior").string(var_10.as_str());
+    if let Some(var_10) = &input.integration_target {
+        object.key("integrationTarget").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.request_parameters {
+    if let Some(var_11) = &input.passthrough_behavior {
+        object.key("passthroughBehavior").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.request_parameters {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("requestParameters").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_13 = object.key("requestParameters").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_15) = &input.request_templates {
+    if let Some(var_16) = &input.request_templates {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("requestTemplates").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_17 = object.key("requestTemplates").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_16.finish();
+        object_17.finish();
     }
-    if let Some(var_19) = &input.response_transfer_mode {
-        object.key("responseTransferMode").string(var_19.as_str());
+    if let Some(var_20) = &input.response_transfer_mode {
+        object.key("responseTransferMode").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.timeout_in_millis {
+    if let Some(var_21) = &input.timeout_in_millis {
         object.key("timeoutInMillis").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if let Some(var_21) = &input.tls_config {
+    if let Some(var_22) = &input.tls_config {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("tlsConfig").start_object();
-        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_23 = object.key("tlsConfig").start_object();
+        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_23, var_22)?;
+        object_23.finish();
     }
-    if let Some(var_23) = &input.r#type {
-        object.key("type").string(var_23.as_str());
+    if let Some(var_24) = &input.r#type {
+        object.key("type").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.uri {
-        object.key("uri").string(var_24.as_str());
+    if let Some(var_25) = &input.uri {
+        object.key("uri").string(var_25.as_str());
     }
     Ok(())
 }

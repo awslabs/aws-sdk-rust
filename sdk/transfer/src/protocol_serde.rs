@@ -413,7 +413,11 @@ pub(crate) mod shape_tags;
 
 pub(crate) mod shape_update_connector_egress_config;
 
+pub(crate) mod shape_update_web_app_endpoint_details;
+
 pub(crate) mod shape_update_web_app_identity_provider_details;
+
+pub(crate) mod shape_web_app_endpoint_details;
 
 pub(crate) mod shape_web_app_identity_provider_details;
 
@@ -438,6 +442,8 @@ pub(crate) mod shape_decrypt_step_details;
 pub(crate) mod shape_delete_step_details;
 
 pub(crate) mod shape_described_connector_egress_config;
+
+pub(crate) mod shape_described_web_app_endpoint_details;
 
 pub(crate) mod shape_described_web_app_identity_provider_details;
 
@@ -493,6 +499,10 @@ pub(crate) mod shape_update_connector_vpc_lattice_egress_config;
 
 pub(crate) mod shape_update_web_app_identity_center_config;
 
+pub(crate) mod shape_update_web_app_vpc_config;
+
+pub(crate) mod shape_web_app_vpc_config;
+
 pub(crate) mod shape_workflow_detail;
 
 pub(crate) mod shape_workflow_steps;
@@ -504,6 +514,8 @@ pub(crate) mod shape_as2_transports;
 pub(crate) mod shape_described_connector_vpc_lattice_egress_config;
 
 pub(crate) mod shape_described_identity_center_config;
+
+pub(crate) mod shape_described_web_app_vpc_config;
 
 pub(crate) mod shape_efs_file_location;
 

@@ -85,7 +85,11 @@ pub(crate) mod shape_get_query_results;
 
 pub(crate) mod shape_get_query_runtime_statistics;
 
+pub(crate) mod shape_get_resource_dashboard;
+
 pub(crate) mod shape_get_session;
+
+pub(crate) mod shape_get_session_endpoint;
 
 pub(crate) mod shape_get_session_status;
 
@@ -229,6 +233,10 @@ pub(crate) mod shape_get_query_results_input;
 
 pub(crate) mod shape_get_query_runtime_statistics_input;
 
+pub(crate) mod shape_get_resource_dashboard_input;
+
+pub(crate) mod shape_get_session_endpoint_input;
+
 pub(crate) mod shape_get_session_input;
 
 pub(crate) mod shape_get_session_status_input;
@@ -351,6 +359,8 @@ pub(crate) mod shape_executors_summary_list;
 
 pub(crate) mod shape_filter_definition;
 
+pub(crate) mod shape_monitoring_configuration;
+
 pub(crate) mod shape_named_query;
 
 pub(crate) mod shape_named_query_id_list;
@@ -425,6 +435,12 @@ pub(crate) mod shape_capacity_allocation;
 
 pub(crate) mod shape_capacity_assignments_list;
 
+pub(crate) mod shape_classification;
+
+pub(crate) mod shape_classification_list;
+
+pub(crate) mod shape_cloud_watch_logging_configuration;
+
 pub(crate) mod shape_column_list;
 
 pub(crate) mod shape_customer_content_encryption_configuration;
@@ -440,6 +456,8 @@ pub(crate) mod shape_execution_parameters;
 pub(crate) mod shape_executors_summary;
 
 pub(crate) mod shape_identity_center_configuration;
+
+pub(crate) mod shape_managed_logging_configuration;
 
 pub(crate) mod shape_managed_query_results_configuration;
 
@@ -471,6 +489,8 @@ pub(crate) mod shape_result_set_metadata;
 
 pub(crate) mod shape_row_list;
 
+pub(crate) mod shape_s3_logging_configuration;
+
 pub(crate) mod shape_session_summary;
 
 pub(crate) mod shape_unprocessed_named_query_id;
@@ -487,6 +507,8 @@ pub(crate) mod shape_column;
 
 pub(crate) mod shape_column_info_list;
 
+pub(crate) mod shape_log_types_map;
+
 pub(crate) mod shape_managed_query_results_encryption_configuration;
 
 pub(crate) mod shape_query_stage_plan_node;
@@ -502,6 +524,8 @@ pub(crate) mod shape_supported_dpu_size_list;
 pub(crate) mod shape_column_info;
 
 pub(crate) mod shape_datum_list;
+
+pub(crate) mod shape_log_type_values_list;
 
 pub(crate) mod shape_query_stage_plan_nodes;
 

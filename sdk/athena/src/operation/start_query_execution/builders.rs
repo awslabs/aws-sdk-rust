@@ -217,4 +217,18 @@ impl StartQueryExecutionFluentBuilder {
     pub fn get_result_reuse_configuration(&self) -> &::std::option::Option<crate::types::ResultReuseConfiguration> {
         self.inner.get_result_reuse_configuration()
     }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn engine_configuration(mut self, input: crate::types::EngineConfiguration) -> Self {
+        self.inner = self.inner.engine_configuration(input);
+        self
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn set_engine_configuration(mut self, input: ::std::option::Option<crate::types::EngineConfiguration>) -> Self {
+        self.inner = self.inner.set_engine_configuration(input);
+        self
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn get_engine_configuration(&self) -> &::std::option::Option<crate::types::EngineConfiguration> {
+        self.inner.get_engine_configuration()
+    }
 }

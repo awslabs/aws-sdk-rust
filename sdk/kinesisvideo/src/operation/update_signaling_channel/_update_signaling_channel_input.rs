@@ -7,7 +7,7 @@ pub struct UpdateSignalingChannelInput {
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the signaling channel that you want to update.</p>
     pub current_version: ::std::option::Option<::std::string::String>,
-    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update.</p>
+    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. This parameter and the channel message's time-to-live are required for channels with the <code>SINGLE_MASTER</code> channel type.</p>
     pub single_master_configuration: ::std::option::Option<crate::types::SingleMasterConfiguration>,
 }
 impl UpdateSignalingChannelInput {
@@ -19,7 +19,7 @@ impl UpdateSignalingChannelInput {
     pub fn current_version(&self) -> ::std::option::Option<&str> {
         self.current_version.as_deref()
     }
-    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update.</p>
+    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. This parameter and the channel message's time-to-live are required for channels with the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn single_master_configuration(&self) -> ::std::option::Option<&crate::types::SingleMasterConfiguration> {
         self.single_master_configuration.as_ref()
     }
@@ -70,17 +70,17 @@ impl UpdateSignalingChannelInputBuilder {
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_version
     }
-    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update.</p>
+    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. This parameter and the channel message's time-to-live are required for channels with the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn single_master_configuration(mut self, input: crate::types::SingleMasterConfiguration) -> Self {
         self.single_master_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update.</p>
+    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. This parameter and the channel message's time-to-live are required for channels with the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn set_single_master_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterConfiguration>) -> Self {
         self.single_master_configuration = input;
         self
     }
-    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update.</p>
+    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. This parameter and the channel message's time-to-live are required for channels with the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn get_single_master_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
         &self.single_master_configuration
     }

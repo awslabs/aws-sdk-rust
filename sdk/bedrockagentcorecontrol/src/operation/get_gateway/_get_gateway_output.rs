@@ -33,6 +33,8 @@ pub struct GetGatewayOutput {
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the gateway.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The interceptors configured on the gateway.</p>
+    pub interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
     /// <p>The workload identity details for the gateway.</p>
     pub workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
     /// <p>The level of detail in error messages returned when invoking the gateway.</p>
@@ -111,6 +113,12 @@ impl GetGatewayOutput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>The interceptors configured on the gateway.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interceptor_configurations.is_none()`.
+    pub fn interceptor_configurations(&self) -> &[crate::types::GatewayInterceptorConfiguration] {
+        self.interceptor_configurations.as_deref().unwrap_or_default()
+    }
     /// <p>The workload identity details for the gateway.</p>
     pub fn workload_identity_details(&self) -> ::std::option::Option<&crate::types::WorkloadIdentityDetails> {
         self.workload_identity_details.as_ref()
@@ -144,6 +152,7 @@ impl ::std::fmt::Debug for GetGatewayOutput {
         formatter.field("authorizer_type", &self.authorizer_type);
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("interceptor_configurations", &self.interceptor_configurations);
         formatter.field("workload_identity_details", &self.workload_identity_details);
         formatter.field("exception_level", &self.exception_level);
         formatter.field("_request_id", &self._request_id);
@@ -181,6 +190,7 @@ pub struct GetGatewayOutputBuilder {
     pub(crate) authorizer_type: ::std::option::Option<crate::types::AuthorizerType>,
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
     pub(crate) workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
     pub(crate) exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
     _request_id: Option<String>,
@@ -410,6 +420,29 @@ impl GetGatewayOutputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// Appends an item to `interceptor_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_interceptor_configurations`](Self::set_interceptor_configurations).
+    ///
+    /// <p>The interceptors configured on the gateway.</p>
+    pub fn interceptor_configurations(mut self, input: crate::types::GatewayInterceptorConfiguration) -> Self {
+        let mut v = self.interceptor_configurations.unwrap_or_default();
+        v.push(input);
+        self.interceptor_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The interceptors configured on the gateway.</p>
+    pub fn set_interceptor_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
+    ) -> Self {
+        self.interceptor_configurations = input;
+        self
+    }
+    /// <p>The interceptors configured on the gateway.</p>
+    pub fn get_interceptor_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>> {
+        &self.interceptor_configurations
+    }
     /// <p>The workload identity details for the gateway.</p>
     pub fn workload_identity_details(mut self, input: crate::types::WorkloadIdentityDetails) -> Self {
         self.workload_identity_details = ::std::option::Option::Some(input);
@@ -532,6 +565,7 @@ impl GetGatewayOutputBuilder {
             })?,
             authorizer_configuration: self.authorizer_configuration,
             kms_key_arn: self.kms_key_arn,
+            interceptor_configurations: self.interceptor_configurations,
             workload_identity_details: self.workload_identity_details,
             exception_level: self.exception_level,
             _request_id: self._request_id,
@@ -556,6 +590,7 @@ impl ::std::fmt::Debug for GetGatewayOutputBuilder {
         formatter.field("authorizer_type", &self.authorizer_type);
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("interceptor_configurations", &self.interceptor_configurations);
         formatter.field("workload_identity_details", &self.workload_identity_details);
         formatter.field("exception_level", &self.exception_level);
         formatter.field("_request_id", &self._request_id);

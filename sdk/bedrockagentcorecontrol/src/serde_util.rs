@@ -1154,6 +1154,18 @@ pub(crate) fn custom_oauth2_provider_config_output_correct_errors(
     builder
 }
 
+pub(crate) fn gateway_interceptor_configuration_correct_errors(
+    mut builder: crate::types::builders::GatewayInterceptorConfigurationBuilder,
+) -> crate::types::builders::GatewayInterceptorConfigurationBuilder {
+    if builder.interceptor.is_none() {
+        builder.interceptor = Some(crate::types::InterceptorConfiguration::Unknown)
+    }
+    if builder.interception_points.is_none() {
+        builder.interception_points = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn gateway_summary_correct_errors(
     mut builder: crate::types::builders::GatewaySummaryBuilder,
 ) -> crate::types::builders::GatewaySummaryBuilder {
@@ -1372,6 +1384,15 @@ pub(crate) fn workload_identity_type_correct_errors(
     builder
 }
 
+pub(crate) fn interceptor_input_configuration_correct_errors(
+    mut builder: crate::types::builders::InterceptorInputConfigurationBuilder,
+) -> crate::types::builders::InterceptorInputConfigurationBuilder {
+    if builder.pass_request_headers.is_none() {
+        builder.pass_request_headers = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn mcp_lambda_target_configuration_correct_errors(
     mut builder: crate::types::builders::McpLambdaTargetConfigurationBuilder,
 ) -> crate::types::builders::McpLambdaTargetConfigurationBuilder {
@@ -1416,6 +1437,15 @@ pub(crate) fn gateway_api_key_credential_provider_correct_errors(
 ) -> crate::types::builders::GatewayApiKeyCredentialProviderBuilder {
     if builder.provider_arn.is_none() {
         builder.provider_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn lambda_interceptor_configuration_correct_errors(
+    mut builder: crate::types::builders::LambdaInterceptorConfigurationBuilder,
+) -> crate::types::builders::LambdaInterceptorConfigurationBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }

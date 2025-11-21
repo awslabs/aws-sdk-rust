@@ -12,6 +12,12 @@ pub struct GetDataAutomationStatusOutput {
     pub error_message: ::std::option::Option<::std::string::String>,
     /// Output configuration.
     pub output_configuration: ::std::option::Option<crate::types::OutputConfiguration>,
+    /// Job Submission time.
+    pub job_submission_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// Job completion time.
+    pub job_completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// Job duration in seconds.
+    pub job_duration_in_seconds: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetDataAutomationStatusOutput {
@@ -30,6 +36,18 @@ impl GetDataAutomationStatusOutput {
     /// Output configuration.
     pub fn output_configuration(&self) -> ::std::option::Option<&crate::types::OutputConfiguration> {
         self.output_configuration.as_ref()
+    }
+    /// Job Submission time.
+    pub fn job_submission_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.job_submission_time.as_ref()
+    }
+    /// Job completion time.
+    pub fn job_completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.job_completion_time.as_ref()
+    }
+    /// Job duration in seconds.
+    pub fn job_duration_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.job_duration_in_seconds
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataAutomationStatusOutput {
@@ -52,6 +70,9 @@ pub struct GetDataAutomationStatusOutputBuilder {
     pub(crate) error_type: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) output_configuration: ::std::option::Option<crate::types::OutputConfiguration>,
+    pub(crate) job_submission_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) job_completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) job_duration_in_seconds: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetDataAutomationStatusOutputBuilder {
@@ -111,6 +132,48 @@ impl GetDataAutomationStatusOutputBuilder {
     pub fn get_output_configuration(&self) -> &::std::option::Option<crate::types::OutputConfiguration> {
         &self.output_configuration
     }
+    /// Job Submission time.
+    pub fn job_submission_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.job_submission_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// Job Submission time.
+    pub fn set_job_submission_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.job_submission_time = input;
+        self
+    }
+    /// Job Submission time.
+    pub fn get_job_submission_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.job_submission_time
+    }
+    /// Job completion time.
+    pub fn job_completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.job_completion_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// Job completion time.
+    pub fn set_job_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.job_completion_time = input;
+        self
+    }
+    /// Job completion time.
+    pub fn get_job_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.job_completion_time
+    }
+    /// Job duration in seconds.
+    pub fn job_duration_in_seconds(mut self, input: i32) -> Self {
+        self.job_duration_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// Job duration in seconds.
+    pub fn set_job_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.job_duration_in_seconds = input;
+        self
+    }
+    /// Job duration in seconds.
+    pub fn get_job_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.job_duration_in_seconds
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -127,6 +190,9 @@ impl GetDataAutomationStatusOutputBuilder {
             error_type: self.error_type,
             error_message: self.error_message,
             output_configuration: self.output_configuration,
+            job_submission_time: self.job_submission_time,
+            job_completion_time: self.job_completion_time,
+            job_duration_in_seconds: self.job_duration_in_seconds,
             _request_id: self._request_id,
         }
     }

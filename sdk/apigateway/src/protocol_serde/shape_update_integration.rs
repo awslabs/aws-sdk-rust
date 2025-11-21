@@ -217,6 +217,13 @@ pub(crate) fn de_update_integration(
                         crate::protocol_serde::shape_map_of_integration_response::de_map_of_integration_response(tokens)?,
                     );
                 }
+                "integrationTarget" => {
+                    builder = builder.set_integration_target(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "passthroughBehavior" => {
                     builder = builder.set_passthrough_behavior(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

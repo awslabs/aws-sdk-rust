@@ -49,6 +49,11 @@ where
                                 crate::protocol_serde::shape_guardrail_invocation_metrics::de_guardrail_invocation_metrics(tokens)?,
                             );
                         }
+                        "appliedGuardrailDetails" => {
+                            builder = builder.set_applied_guardrail_details(
+                                crate::protocol_serde::shape_applied_guardrail_details::de_applied_guardrail_details(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

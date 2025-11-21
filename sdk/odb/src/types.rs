@@ -15,9 +15,15 @@ pub use crate::types::_odb_network::OdbNetwork;
 
 pub use crate::types::_managed_services::ManagedServices;
 
-pub use crate::types::_s3_access::S3Access;
+pub use crate::types::_cross_region_s3_restore_sources_access::CrossRegionS3RestoreSourcesAccess;
 
 pub use crate::types::_managed_resource_status::ManagedResourceStatus;
+
+pub use crate::types::_kms_access::KmsAccess;
+
+pub use crate::types::_sts_access::StsAccess;
+
+pub use crate::types::_s3_access::S3Access;
 
 pub use crate::types::_zero_etl_access::ZeroEtlAccess;
 
@@ -40,6 +46,12 @@ pub use crate::types::_db_node_maintenance_type::DbNodeMaintenanceType;
 pub use crate::types::_db_node_summary::DbNodeSummary;
 
 pub use crate::types::_cloud_vm_cluster::CloudVmCluster;
+
+pub use crate::types::_iam_role::IamRole;
+
+pub use crate::types::_supported_aws_integration::SupportedAwsIntegration;
+
+pub use crate::types::_iam_role_status::IamRoleStatus;
 
 pub use crate::types::_compute_model::ComputeModel;
 
@@ -105,6 +117,8 @@ pub use crate::types::_db_system_shape_summary::DbSystemShapeSummary;
 
 pub use crate::types::_shape_type::ShapeType;
 
+pub use crate::types::_oci_identity_domain::OciIdentityDomain;
+
 pub use crate::types::_oci_onboarding_status::OciOnboardingStatus;
 
 mod _access;
@@ -128,6 +142,8 @@ mod _cloud_vm_cluster;
 mod _cloud_vm_cluster_summary;
 
 mod _compute_model;
+
+mod _cross_region_s3_restore_sources_access;
 
 mod _customer_contact;
 
@@ -163,7 +179,13 @@ mod _exadata_iorm_config;
 
 mod _gi_version_summary;
 
+mod _iam_role;
+
+mod _iam_role_status;
+
 mod _iorm_lifecycle_state;
+
+mod _kms_access;
 
 mod _license_model;
 
@@ -182,6 +204,8 @@ mod _month_name;
 mod _objective;
 
 mod _oci_dns_forwarding_config;
+
+mod _oci_identity_domain;
 
 mod _oci_onboarding_status;
 
@@ -204,6 +228,10 @@ mod _s3_access;
 mod _service_network_endpoint;
 
 mod _shape_type;
+
+mod _sts_access;
+
+mod _supported_aws_integration;
 
 mod _system_version_summary;
 

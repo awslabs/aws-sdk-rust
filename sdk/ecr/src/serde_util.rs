@@ -8,6 +8,15 @@ pub(crate) fn replication_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn signing_configuration_correct_errors(
+    mut builder: crate::types::builders::SigningConfigurationBuilder,
+) -> crate::types::builders::SigningConfigurationBuilder {
+    if builder.rules.is_none() {
+        builder.rules = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn encryption_configuration_correct_errors(
     mut builder: crate::types::builders::EncryptionConfigurationBuilder,
 ) -> crate::types::builders::EncryptionConfigurationBuilder {
@@ -84,6 +93,13 @@ pub(crate) fn replication_rule_correct_errors(
     builder
 }
 
+pub(crate) fn signing_rule_correct_errors(mut builder: crate::types::builders::SigningRuleBuilder) -> crate::types::builders::SigningRuleBuilder {
+    if builder.signing_profile_arn.is_none() {
+        builder.signing_profile_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn scanning_repository_filter_correct_errors(
     mut builder: crate::types::builders::ScanningRepositoryFilterBuilder,
 ) -> crate::types::builders::ScanningRepositoryFilterBuilder {
@@ -123,6 +139,18 @@ pub(crate) fn repository_filter_correct_errors(
     }
     if builder.filter_type.is_none() {
         builder.filter_type = "no value was set".parse::<crate::types::RepositoryFilterType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn signing_repository_filter_correct_errors(
+    mut builder: crate::types::builders::SigningRepositoryFilterBuilder,
+) -> crate::types::builders::SigningRepositoryFilterBuilder {
+    if builder.filter.is_none() {
+        builder.filter = Some(Default::default())
+    }
+    if builder.filter_type.is_none() {
+        builder.filter_type = "no value was set".parse::<crate::types::SigningRepositoryFilterType>().ok()
     }
     builder
 }

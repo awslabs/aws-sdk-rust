@@ -9,6 +9,8 @@ pub struct UpdateContactFlowModuleContentInput {
     pub contact_flow_module_id: ::std::option::Option<::std::string::String>,
     /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
     pub content: ::std::option::Option<::std::string::String>,
+    /// <p>Serialized JSON string of the flow module Settings schema.</p>
+    pub settings: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContactFlowModuleContentInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -22,6 +24,10 @@ impl UpdateContactFlowModuleContentInput {
     /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
+    }
+    /// <p>Serialized JSON string of the flow module Settings schema.</p>
+    pub fn settings(&self) -> ::std::option::Option<&str> {
+        self.settings.as_deref()
     }
 }
 impl UpdateContactFlowModuleContentInput {
@@ -38,6 +44,7 @@ pub struct UpdateContactFlowModuleContentInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) contact_flow_module_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) settings: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContactFlowModuleContentInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -71,7 +78,6 @@ impl UpdateContactFlowModuleContentInputBuilder {
         &self.contact_flow_module_id
     }
     /// <p>The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example flow in Amazon Connect Flow language</a>.</p>
-    /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
@@ -85,6 +91,20 @@ impl UpdateContactFlowModuleContentInputBuilder {
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
     }
+    /// <p>Serialized JSON string of the flow module Settings schema.</p>
+    pub fn settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.settings = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Serialized JSON string of the flow module Settings schema.</p>
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.settings = input;
+        self
+    }
+    /// <p>Serialized JSON string of the flow module Settings schema.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.settings
+    }
     /// Consumes the builder and constructs a [`UpdateContactFlowModuleContentInput`](crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentInput).
     pub fn build(
         self,
@@ -97,6 +117,7 @@ impl UpdateContactFlowModuleContentInputBuilder {
                 instance_id: self.instance_id,
                 contact_flow_module_id: self.contact_flow_module_id,
                 content: self.content,
+                settings: self.settings,
             },
         )
     }

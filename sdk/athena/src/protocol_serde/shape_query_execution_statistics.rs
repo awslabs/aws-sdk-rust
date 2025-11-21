@@ -75,6 +75,11 @@ where
                                 crate::protocol_serde::shape_result_reuse_information::de_result_reuse_information(tokens)?,
                             );
                         }
+                        "DpuCount" => {
+                            builder = builder.set_dpu_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

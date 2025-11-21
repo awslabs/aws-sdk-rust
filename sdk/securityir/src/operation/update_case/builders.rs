@@ -394,4 +394,23 @@ impl UpdateCaseFluentBuilder {
     pub fn get_impacted_accounts_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_impacted_accounts_to_delete()
     }
+    ///
+    /// Appends an item to `caseMetadata`.
+    ///
+    /// To override the contents of this collection use [`set_case_metadata`](Self::set_case_metadata).
+    ///
+    /// <p>Update the case request with case metadata</p>
+    pub fn case_metadata(mut self, input: crate::types::CaseMetadataEntry) -> Self {
+        self.inner = self.inner.case_metadata(input);
+        self
+    }
+    /// <p>Update the case request with case metadata</p>
+    pub fn set_case_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CaseMetadataEntry>>) -> Self {
+        self.inner = self.inner.set_case_metadata(input);
+        self
+    }
+    /// <p>Update the case request with case metadata</p>
+    pub fn get_case_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaseMetadataEntry>> {
+        self.inner.get_case_metadata()
+    }
 }

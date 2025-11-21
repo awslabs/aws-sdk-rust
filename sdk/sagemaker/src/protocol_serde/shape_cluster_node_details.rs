@@ -122,6 +122,20 @@ where
                         "UltraServerInfo" => {
                             builder = builder.set_ultra_server_info(crate::protocol_serde::shape_ultra_server_info::de_ultra_server_info(tokens)?);
                         }
+                        "KubernetesConfig" => {
+                            builder = builder.set_kubernetes_config(
+                                crate::protocol_serde::shape_cluster_kubernetes_config_node_details::de_cluster_kubernetes_config_node_details(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "CapacityType" => {
+                            builder = builder.set_capacity_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ClusterCapacityType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

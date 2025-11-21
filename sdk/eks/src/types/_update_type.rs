@@ -18,6 +18,7 @@
 ///     UpdateType::AssociateIdentityProviderConfig => { /* ... */ },
 ///     UpdateType::AutoModeUpdate => { /* ... */ },
 ///     UpdateType::ConfigUpdate => { /* ... */ },
+///     UpdateType::ControlPlaneScalingConfigUpdate => { /* ... */ },
 ///     UpdateType::DeletionProtectionUpdate => { /* ... */ },
 ///     UpdateType::DisassociateIdentityProviderConfig => { /* ... */ },
 ///     UpdateType::EndpointAccessUpdate => { /* ... */ },
@@ -68,6 +69,8 @@ pub enum UpdateType {
     #[allow(missing_docs)] // documentation missing in model
     ConfigUpdate,
     #[allow(missing_docs)] // documentation missing in model
+    ControlPlaneScalingConfigUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     DeletionProtectionUpdate,
     #[allow(missing_docs)] // documentation missing in model
     DisassociateIdentityProviderConfig,
@@ -98,6 +101,7 @@ impl ::std::convert::From<&str> for UpdateType {
             "AssociateIdentityProviderConfig" => UpdateType::AssociateIdentityProviderConfig,
             "AutoModeUpdate" => UpdateType::AutoModeUpdate,
             "ConfigUpdate" => UpdateType::ConfigUpdate,
+            "ControlPlaneScalingConfigUpdate" => UpdateType::ControlPlaneScalingConfigUpdate,
             "DeletionProtectionUpdate" => UpdateType::DeletionProtectionUpdate,
             "DisassociateIdentityProviderConfig" => UpdateType::DisassociateIdentityProviderConfig,
             "EndpointAccessUpdate" => UpdateType::EndpointAccessUpdate,
@@ -128,6 +132,7 @@ impl UpdateType {
             UpdateType::AssociateIdentityProviderConfig => "AssociateIdentityProviderConfig",
             UpdateType::AutoModeUpdate => "AutoModeUpdate",
             UpdateType::ConfigUpdate => "ConfigUpdate",
+            UpdateType::ControlPlaneScalingConfigUpdate => "ControlPlaneScalingConfigUpdate",
             UpdateType::DeletionProtectionUpdate => "DeletionProtectionUpdate",
             UpdateType::DisassociateIdentityProviderConfig => "DisassociateIdentityProviderConfig",
             UpdateType::EndpointAccessUpdate => "EndpointAccessUpdate",
@@ -149,6 +154,7 @@ impl UpdateType {
             "AssociateIdentityProviderConfig",
             "AutoModeUpdate",
             "ConfigUpdate",
+            "ControlPlaneScalingConfigUpdate",
             "DeletionProtectionUpdate",
             "DisassociateIdentityProviderConfig",
             "EndpointAccessUpdate",
@@ -187,6 +193,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::AssociateIdentityProviderConfig => write!(f, "AssociateIdentityProviderConfig"),
             UpdateType::AutoModeUpdate => write!(f, "AutoModeUpdate"),
             UpdateType::ConfigUpdate => write!(f, "ConfigUpdate"),
+            UpdateType::ControlPlaneScalingConfigUpdate => write!(f, "ControlPlaneScalingConfigUpdate"),
             UpdateType::DeletionProtectionUpdate => write!(f, "DeletionProtectionUpdate"),
             UpdateType::DisassociateIdentityProviderConfig => write!(f, "DisassociateIdentityProviderConfig"),
             UpdateType::EndpointAccessUpdate => write!(f, "EndpointAccessUpdate"),

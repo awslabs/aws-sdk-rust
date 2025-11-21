@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PollerGroupName" => {
+                            builder = builder.set_poller_group_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -60,6 +67,9 @@ pub fn ser_provisioned_poller_config(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
+    }
+    if let Some(var_3) = &input.poller_group_name {
+        object.key("PollerGroupName").string(var_3.as_str());
     }
     Ok(())
 }

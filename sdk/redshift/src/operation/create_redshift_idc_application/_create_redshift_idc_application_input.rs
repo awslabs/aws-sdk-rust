@@ -17,6 +17,8 @@ pub struct CreateRedshiftIdcApplicationInput {
     pub authorized_token_issuer_list: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>>,
     /// <p>A collection of service integrations for the Redshift IAM Identity Center application.</p>
     pub service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>>,
+    /// <p>The type of application being created. Valid values are <code>None</code> or <code>Lakehouse</code>. Use <code>Lakehouse</code> to enable Amazon Redshift federated permissions on cluster.</p>
+    pub application_type: ::std::option::Option<crate::types::ApplicationType>,
     /// <p>A list of tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A list of tags keys that Redshift Identity Center applications copy to IAM Identity Center. For each input key, the tag corresponding to the key-value pair is propagated.</p>
@@ -55,6 +57,10 @@ impl CreateRedshiftIdcApplicationInput {
     pub fn service_integrations(&self) -> &[crate::types::ServiceIntegrationsUnion] {
         self.service_integrations.as_deref().unwrap_or_default()
     }
+    /// <p>The type of application being created. Valid values are <code>None</code> or <code>Lakehouse</code>. Use <code>Lakehouse</code> to enable Amazon Redshift federated permissions on cluster.</p>
+    pub fn application_type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
+        self.application_type.as_ref()
+    }
     /// <p>A list of tags.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -86,6 +92,7 @@ pub struct CreateRedshiftIdcApplicationInputBuilder {
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) authorized_token_issuer_list: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>>,
     pub(crate) service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>>,
+    pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) sso_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -204,6 +211,20 @@ impl CreateRedshiftIdcApplicationInputBuilder {
     pub fn get_service_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>> {
         &self.service_integrations
     }
+    /// <p>The type of application being created. Valid values are <code>None</code> or <code>Lakehouse</code>. Use <code>Lakehouse</code> to enable Amazon Redshift federated permissions on cluster.</p>
+    pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
+        self.application_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of application being created. Valid values are <code>None</code> or <code>Lakehouse</code>. Use <code>Lakehouse</code> to enable Amazon Redshift federated permissions on cluster.</p>
+    pub fn set_application_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
+        self.application_type = input;
+        self
+    }
+    /// <p>The type of application being created. Valid values are <code>None</code> or <code>Lakehouse</code>. Use <code>Lakehouse</code> to enable Amazon Redshift federated permissions on cluster.</p>
+    pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        &self.application_type
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -259,6 +280,7 @@ impl CreateRedshiftIdcApplicationInputBuilder {
             iam_role_arn: self.iam_role_arn,
             authorized_token_issuer_list: self.authorized_token_issuer_list,
             service_integrations: self.service_integrations,
+            application_type: self.application_type,
             tags: self.tags,
             sso_tag_keys: self.sso_tag_keys,
         })

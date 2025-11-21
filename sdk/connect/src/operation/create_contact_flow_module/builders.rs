@@ -197,4 +197,32 @@ impl CreateContactFlowModuleFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The configuration settings for the flow module.</p>
+    pub fn settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.settings(input.into());
+        self
+    }
+    /// <p>The configuration settings for the flow module.</p>
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_settings(input);
+        self
+    }
+    /// <p>The configuration settings for the flow module.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_settings()
+    }
+    /// <p>The external invocation configuration for the flow module.</p>
+    pub fn external_invocation_configuration(mut self, input: crate::types::ExternalInvocationConfiguration) -> Self {
+        self.inner = self.inner.external_invocation_configuration(input);
+        self
+    }
+    /// <p>The external invocation configuration for the flow module.</p>
+    pub fn set_external_invocation_configuration(mut self, input: ::std::option::Option<crate::types::ExternalInvocationConfiguration>) -> Self {
+        self.inner = self.inner.set_external_invocation_configuration(input);
+        self
+    }
+    /// <p>The external invocation configuration for the flow module.</p>
+    pub fn get_external_invocation_configuration(&self) -> &::std::option::Option<crate::types::ExternalInvocationConfiguration> {
+        self.inner.get_external_invocation_configuration()
+    }
 }

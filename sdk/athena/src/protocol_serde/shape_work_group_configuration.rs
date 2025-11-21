@@ -42,32 +42,44 @@ pub fn ser_work_group_configuration(
     if let Some(var_12) = &input.execution_role {
         object.key("ExecutionRole").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.customer_content_encryption_configuration {
+    if let Some(var_13) = &input.monitoring_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("CustomerContentEncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_customer_content_encryption_configuration::ser_customer_content_encryption_configuration(
-            &mut object_14,
-            var_13,
-        )?;
+        let mut object_14 = object.key("MonitoringConfiguration").start_object();
+        crate::protocol_serde::shape_monitoring_configuration::ser_monitoring_configuration(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.enable_minimum_encryption_configuration {
-        object.key("EnableMinimumEncryptionConfiguration").boolean(*var_15);
-    }
-    if let Some(var_16) = &input.identity_center_configuration {
+    if let Some(var_15) = &input.engine_configuration {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("IdentityCenterConfiguration").start_object();
-        crate::protocol_serde::shape_identity_center_configuration::ser_identity_center_configuration(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_16 = object.key("EngineConfiguration").start_object();
+        crate::protocol_serde::shape_engine_configuration::ser_engine_configuration(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_18) = &input.query_results_s3_access_grants_configuration {
+    if let Some(var_17) = &input.customer_content_encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("QueryResultsS3AccessGrantsConfiguration").start_object();
-        crate::protocol_serde::shape_query_results_s3_access_grants_configuration::ser_query_results_s3_access_grants_configuration(
-            &mut object_19,
-            var_18,
+        let mut object_18 = object.key("CustomerContentEncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_customer_content_encryption_configuration::ser_customer_content_encryption_configuration(
+            &mut object_18,
+            var_17,
         )?;
-        object_19.finish();
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.enable_minimum_encryption_configuration {
+        object.key("EnableMinimumEncryptionConfiguration").boolean(*var_19);
+    }
+    if let Some(var_20) = &input.identity_center_configuration {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("IdentityCenterConfiguration").start_object();
+        crate::protocol_serde::shape_identity_center_configuration::ser_identity_center_configuration(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.query_results_s3_access_grants_configuration {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("QueryResultsS3AccessGrantsConfiguration").start_object();
+        crate::protocol_serde::shape_query_results_s3_access_grants_configuration::ser_query_results_s3_access_grants_configuration(
+            &mut object_23,
+            var_22,
+        )?;
+        object_23.finish();
     }
     Ok(())
 }
@@ -130,6 +142,15 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "MonitoringConfiguration" => {
+                            builder = builder.set_monitoring_configuration(
+                                crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens)?,
+                            );
+                        }
+                        "EngineConfiguration" => {
+                            builder =
+                                builder.set_engine_configuration(crate::protocol_serde::shape_engine_configuration::de_engine_configuration(tokens)?);
                         }
                         "CustomerContentEncryptionConfiguration" => {
                             builder = builder.set_customer_content_encryption_configuration(

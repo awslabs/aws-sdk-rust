@@ -8,6 +8,8 @@ pub struct AutoDeployment {
     pub enabled: ::std::option::Option<bool>,
     /// <p>If set to <code>true</code>, stack resources are retained when an account is removed from a target organization or OU. If set to <code>false</code>, stack resources are deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
     pub retain_stacks_on_account_removal: ::std::option::Option<bool>,
+    /// <p>A list of StackSet ARNs that this StackSet depends on for auto-deployment operations. When auto-deployment is triggered, operations will be sequenced to ensure all dependencies complete successfully before this StackSet's operation begins.</p>
+    pub depends_on: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AutoDeployment {
     /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances to Organizations accounts that are added to a target organization or organizational unit (OU) in the specified Regions. If an account is removed from a target organization or OU, StackSets deletes stack instances from the account in the specified Regions.</p>
@@ -17,6 +19,12 @@ impl AutoDeployment {
     /// <p>If set to <code>true</code>, stack resources are retained when an account is removed from a target organization or OU. If set to <code>false</code>, stack resources are deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.</p>
     pub fn retain_stacks_on_account_removal(&self) -> ::std::option::Option<bool> {
         self.retain_stacks_on_account_removal
+    }
+    /// <p>A list of StackSet ARNs that this StackSet depends on for auto-deployment operations. When auto-deployment is triggered, operations will be sequenced to ensure all dependencies complete successfully before this StackSet's operation begins.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.depends_on.is_none()`.
+    pub fn depends_on(&self) -> &[::std::string::String] {
+        self.depends_on.as_deref().unwrap_or_default()
     }
 }
 impl AutoDeployment {
@@ -32,6 +40,7 @@ impl AutoDeployment {
 pub struct AutoDeploymentBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) retain_stacks_on_account_removal: ::std::option::Option<bool>,
+    pub(crate) depends_on: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AutoDeploymentBuilder {
     /// <p>If set to <code>true</code>, StackSets automatically deploys additional stack instances to Organizations accounts that are added to a target organization or organizational unit (OU) in the specified Regions. If an account is removed from a target organization or OU, StackSets deletes stack instances from the account in the specified Regions.</p>
@@ -62,11 +71,32 @@ impl AutoDeploymentBuilder {
     pub fn get_retain_stacks_on_account_removal(&self) -> &::std::option::Option<bool> {
         &self.retain_stacks_on_account_removal
     }
+    /// Appends an item to `depends_on`.
+    ///
+    /// To override the contents of this collection use [`set_depends_on`](Self::set_depends_on).
+    ///
+    /// <p>A list of StackSet ARNs that this StackSet depends on for auto-deployment operations. When auto-deployment is triggered, operations will be sequenced to ensure all dependencies complete successfully before this StackSet's operation begins.</p>
+    pub fn depends_on(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.depends_on.unwrap_or_default();
+        v.push(input.into());
+        self.depends_on = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of StackSet ARNs that this StackSet depends on for auto-deployment operations. When auto-deployment is triggered, operations will be sequenced to ensure all dependencies complete successfully before this StackSet's operation begins.</p>
+    pub fn set_depends_on(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.depends_on = input;
+        self
+    }
+    /// <p>A list of StackSet ARNs that this StackSet depends on for auto-deployment operations. When auto-deployment is triggered, operations will be sequenced to ensure all dependencies complete successfully before this StackSet's operation begins.</p>
+    pub fn get_depends_on(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.depends_on
+    }
     /// Consumes the builder and constructs a [`AutoDeployment`](crate::types::AutoDeployment).
     pub fn build(self) -> crate::types::AutoDeployment {
         crate::types::AutoDeployment {
             enabled: self.enabled,
             retain_stacks_on_account_removal: self.retain_stacks_on_account_removal,
+            depends_on: self.depends_on,
         }
     }
 }

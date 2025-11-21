@@ -69,6 +69,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "MaxInstanceCount" => {
+                            builder = builder.set_max_instance_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "OptimizationTypes" => {
                             builder = builder.set_optimization_types(crate::protocol_serde::shape_optimization_types::de_optimization_types(tokens)?);
                         }

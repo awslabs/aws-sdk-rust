@@ -199,6 +199,8 @@ impl CreateGatewayFluentBuilder {
     /// <p><code>CUSTOM_JWT</code> - Authorize with a bearer token.</p></li>
     /// <li>
     /// <p><code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - No authorization</p></li>
     /// </ul>
     pub fn authorizer_type(mut self, input: crate::types::AuthorizerType) -> Self {
         self.inner = self.inner.authorizer_type(input);
@@ -210,6 +212,8 @@ impl CreateGatewayFluentBuilder {
     /// <p><code>CUSTOM_JWT</code> - Authorize with a bearer token.</p></li>
     /// <li>
     /// <p><code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - No authorization</p></li>
     /// </ul>
     pub fn set_authorizer_type(mut self, input: ::std::option::Option<crate::types::AuthorizerType>) -> Self {
         self.inner = self.inner.set_authorizer_type(input);
@@ -221,6 +225,8 @@ impl CreateGatewayFluentBuilder {
     /// <p><code>CUSTOM_JWT</code> - Authorize with a bearer token.</p></li>
     /// <li>
     /// <p><code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - No authorization</p></li>
     /// </ul>
     pub fn get_authorizer_type(&self) -> &::std::option::Option<crate::types::AuthorizerType> {
         self.inner.get_authorizer_type()
@@ -252,6 +258,28 @@ impl CreateGatewayFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt data associated with the gateway.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
+    }
+    ///
+    /// Appends an item to `interceptorConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_interceptor_configurations`](Self::set_interceptor_configurations).
+    ///
+    /// <p>A list of configuration settings for a gateway interceptor. Gateway interceptors allow custom code to be invoked during gateway invocations.</p>
+    pub fn interceptor_configurations(mut self, input: crate::types::GatewayInterceptorConfiguration) -> Self {
+        self.inner = self.inner.interceptor_configurations(input);
+        self
+    }
+    /// <p>A list of configuration settings for a gateway interceptor. Gateway interceptors allow custom code to be invoked during gateway invocations.</p>
+    pub fn set_interceptor_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
+    ) -> Self {
+        self.inner = self.inner.set_interceptor_configurations(input);
+        self
+    }
+    /// <p>A list of configuration settings for a gateway interceptor. Gateway interceptors allow custom code to be invoked during gateway invocations.</p>
+    pub fn get_interceptor_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>> {
+        self.inner.get_interceptor_configurations()
     }
     /// <p>The level of detail in error messages returned when invoking the gateway.</p>
     /// <ul>

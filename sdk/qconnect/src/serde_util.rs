@@ -236,15 +236,6 @@ pub(crate) fn query_assistant_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn render_message_template_output_output_correct_errors(
-    mut builder: crate::operation::render_message_template::builders::RenderMessageTemplateOutputBuilder,
-) -> crate::operation::render_message_template::builders::RenderMessageTemplateOutputBuilder {
-    if builder.content.is_none() {
-        builder.content = Some(crate::types::MessageTemplateContentProvider::Unknown)
-    }
-    builder
-}
-
 pub(crate) fn search_content_output_output_correct_errors(
     mut builder: crate::operation::search_content::builders::SearchContentOutputBuilder,
 ) -> crate::operation::search_content::builders::SearchContentOutputBuilder {
@@ -632,9 +623,6 @@ pub(crate) fn extended_message_template_data_correct_errors(
     if builder.last_modified_by.is_none() {
         builder.last_modified_by = Some(Default::default())
     }
-    if builder.content.is_none() {
-        builder.content = Some(crate::types::MessageTemplateContentProvider::Unknown)
-    }
     if builder.message_template_content_sha256.is_none() {
         builder.message_template_content_sha256 = Some(Default::default())
     }
@@ -751,9 +739,6 @@ pub(crate) fn message_template_data_correct_errors(
     }
     if builder.last_modified_by.is_none() {
         builder.last_modified_by = Some(Default::default())
-    }
-    if builder.content.is_none() {
-        builder.content = Some(crate::types::MessageTemplateContentProvider::Unknown)
     }
     if builder.message_template_content_sha256.is_none() {
         builder.message_template_content_sha256 = Some(Default::default())
@@ -1306,6 +1291,18 @@ pub(crate) fn session_summary_correct_errors(
     builder
 }
 
+pub(crate) fn whats_app_message_template_source_configuration_summary_correct_errors(
+    mut builder: crate::types::builders::WhatsAppMessageTemplateSourceConfigurationSummaryBuilder,
+) -> crate::types::builders::WhatsAppMessageTemplateSourceConfigurationSummaryBuilder {
+    if builder.business_account_id.is_none() {
+        builder.business_account_id = Some(Default::default())
+    }
+    if builder.template_id.is_none() {
+        builder.template_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ai_agent_configuration_data_correct_errors(
     mut builder: crate::types::builders::AiAgentConfigurationDataBuilder,
 ) -> crate::types::builders::AiAgentConfigurationDataBuilder {
@@ -1521,6 +1518,18 @@ pub(crate) fn web_crawler_configuration_correct_errors(
             let builder = crate::types::builders::UrlConfigurationBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn whats_app_message_template_source_configuration_correct_errors(
+    mut builder: crate::types::builders::WhatsAppMessageTemplateSourceConfigurationBuilder,
+) -> crate::types::builders::WhatsAppMessageTemplateSourceConfigurationBuilder {
+    if builder.business_account_id.is_none() {
+        builder.business_account_id = Some(Default::default())
+    }
+    if builder.template_id.is_none() {
+        builder.template_id = Some(Default::default())
     }
     builder
 }

@@ -9,6 +9,9 @@ impl super::Client {
     ///   - [`error_type(Option<String>)`](crate::operation::get_data_automation_status::GetDataAutomationStatusOutput::error_type): Error Type.
     ///   - [`error_message(Option<String>)`](crate::operation::get_data_automation_status::GetDataAutomationStatusOutput::error_message): Error Message.
     ///   - [`output_configuration(Option<OutputConfiguration>)`](crate::operation::get_data_automation_status::GetDataAutomationStatusOutput::output_configuration): Output configuration.
+    ///   - [`job_submission_time(Option<DateTime>)`](crate::operation::get_data_automation_status::GetDataAutomationStatusOutput::job_submission_time): Job Submission time.
+    ///   - [`job_completion_time(Option<DateTime>)`](crate::operation::get_data_automation_status::GetDataAutomationStatusOutput::job_completion_time): Job completion time.
+    ///   - [`job_duration_in_seconds(Option<i32>)`](crate::operation::get_data_automation_status::GetDataAutomationStatusOutput::job_duration_in_seconds): Job duration in seconds.
     /// - On failure, responds with [`SdkError<GetDataAutomationStatusError>`](crate::operation::get_data_automation_status::GetDataAutomationStatusError)
     pub fn get_data_automation_status(&self) -> crate::operation::get_data_automation_status::builders::GetDataAutomationStatusFluentBuilder {
         crate::operation::get_data_automation_status::builders::GetDataAutomationStatusFluentBuilder::new(self.handle.clone())

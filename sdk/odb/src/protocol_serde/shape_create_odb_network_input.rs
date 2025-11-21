@@ -33,18 +33,39 @@ pub fn ser_create_odb_network_input_input(
     if let Some(var_10) = &input.zero_etl_access {
         object.key("zeroEtlAccess").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.s3_policy_document {
-        object.key("s3PolicyDocument").string(var_11.as_str());
+    if let Some(var_11) = &input.sts_access {
+        object.key("stsAccess").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+    if let Some(var_12) = &input.kms_access {
+        object.key("kmsAccess").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.s3_policy_document {
+        object.key("s3PolicyDocument").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.sts_policy_document {
+        object.key("stsPolicyDocument").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.kms_policy_document {
+        object.key("kmsPolicyDocument").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.cross_region_s3_restore_sources_to_enable {
+        let mut array_17 = object.key("crossRegionS3RestoreSourcesToEnable").start_array();
+        for item_18 in var_16 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                array_17.value().string(item_18.as_str());
             }
         }
-        object_13.finish();
+        array_17.finish();
+    }
+    if let Some(var_19) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("tags").start_object();
+        for (key_21, value_22) in var_19 {
+            {
+                object_20.key(key_21.as_str()).string(value_22.as_str());
+            }
+        }
+        object_20.finish();
     }
     Ok(())
 }

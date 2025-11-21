@@ -114,17 +114,17 @@ impl ListManagedWorkgroupsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_managed_workgroups::paginator::ListManagedWorkgroupsPaginator {
         crate::operation::list_managed_workgroups::paginator::ListManagedWorkgroupsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data Catalog.</p>
+    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data Catalog.</p>
+    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data Catalog.</p>
+    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_arn()
     }

@@ -3,9 +3,39 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_procurement_portal_preference_status::ProcurementPortalPreferenceStatus;
+
 pub use crate::types::_invoice_unit_rule::InvoiceUnitRule;
 
 pub use crate::types::_resource_tag::ResourceTag;
+
+pub use crate::types::_contact::Contact;
+
+pub use crate::types::_einvoice_delivery_preference::EinvoiceDeliveryPreference;
+
+pub use crate::types::_connection_testing_method::ConnectionTestingMethod;
+
+pub use crate::types::_purchase_order_data_source::PurchaseOrderDataSource;
+
+pub use crate::types::_purchase_order_data_source_type::PurchaseOrderDataSourceType;
+
+pub use crate::types::_einvoice_delivery_document_type::EinvoiceDeliveryDocumentType;
+
+pub use crate::types::_protocol::Protocol;
+
+pub use crate::types::_einvoice_delivery_attachment_type::EinvoiceDeliveryAttachmentType;
+
+pub use crate::types::_test_env_preference_input::TestEnvPreferenceInput;
+
+pub use crate::types::_supplier_domain::SupplierDomain;
+
+pub use crate::types::_buyer_domain::BuyerDomain;
+
+pub use crate::types::_procurement_portal_preference_selector::ProcurementPortalPreferenceSelector;
+
+pub use crate::types::_procurement_portal_preference_summary::ProcurementPortalPreferenceSummary;
+
+pub use crate::types::_procurement_portal_name::ProcurementPortalName;
 
 pub use crate::types::_invoice_unit::InvoiceUnit;
 
@@ -45,6 +75,10 @@ pub use crate::types::_invoice_summaries_selector::InvoiceSummariesSelector;
 
 pub use crate::types::_list_invoice_summaries_resource_type::ListInvoiceSummariesResourceType;
 
+pub use crate::types::_procurement_portal_preference::ProcurementPortalPreference;
+
+pub use crate::types::_test_env_preference::TestEnvPreference;
+
 pub use crate::types::_invoice_pdf::InvoicePdf;
 
 pub use crate::types::_supplemental_document::SupplementalDocument;
@@ -57,6 +91,12 @@ mod _amount_breakdown;
 
 mod _billing_period;
 
+mod _buyer_domain;
+
+mod _connection_testing_method;
+
+mod _contact;
+
 mod _currency_exchange_details;
 
 mod _date_interval;
@@ -64,6 +104,12 @@ mod _date_interval;
 mod _discounts_breakdown;
 
 mod _discounts_breakdown_amount;
+
+mod _einvoice_delivery_attachment_type;
+
+mod _einvoice_delivery_document_type;
+
+mod _einvoice_delivery_preference;
 
 mod _entity;
 
@@ -93,15 +139,37 @@ mod _invoice_unit_rule;
 
 mod _list_invoice_summaries_resource_type;
 
+mod _procurement_portal_name;
+
+mod _procurement_portal_preference;
+
+mod _procurement_portal_preference_selector;
+
+mod _procurement_portal_preference_status;
+
+mod _procurement_portal_preference_summary;
+
+mod _protocol;
+
+mod _purchase_order_data_source;
+
+mod _purchase_order_data_source_type;
+
 mod _receiver_address;
 
 mod _resource_tag;
 
 mod _supplemental_document;
 
+mod _supplier_domain;
+
 mod _taxes_breakdown;
 
 mod _taxes_breakdown_amount;
+
+mod _test_env_preference;
+
+mod _test_env_preference_input;
 
 mod _validation_exception_field;
 

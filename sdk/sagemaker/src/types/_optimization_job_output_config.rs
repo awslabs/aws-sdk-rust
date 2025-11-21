@@ -8,6 +8,8 @@ pub struct OptimizationJobOutputConfig {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI for where to store the optimized model that you create with an optimization job.</p>
     pub s3_output_location: ::std::option::Option<::std::string::String>,
+    /// <p>The name of a SageMaker model to use as the output destination for an optimization job.</p>
+    pub sage_maker_model: ::std::option::Option<crate::types::OptimizationSageMakerModel>,
 }
 impl OptimizationJobOutputConfig {
     /// <p>The Amazon Resource Name (ARN) of a key in Amazon Web Services KMS. SageMaker uses they key to encrypt the artifacts of the optimized model when SageMaker uploads the model to Amazon S3.</p>
@@ -17,6 +19,10 @@ impl OptimizationJobOutputConfig {
     /// <p>The Amazon S3 URI for where to store the optimized model that you create with an optimization job.</p>
     pub fn s3_output_location(&self) -> ::std::option::Option<&str> {
         self.s3_output_location.as_deref()
+    }
+    /// <p>The name of a SageMaker model to use as the output destination for an optimization job.</p>
+    pub fn sage_maker_model(&self) -> ::std::option::Option<&crate::types::OptimizationSageMakerModel> {
+        self.sage_maker_model.as_ref()
     }
 }
 impl OptimizationJobOutputConfig {
@@ -32,6 +38,7 @@ impl OptimizationJobOutputConfig {
 pub struct OptimizationJobOutputConfigBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_output_location: ::std::option::Option<::std::string::String>,
+    pub(crate) sage_maker_model: ::std::option::Option<crate::types::OptimizationSageMakerModel>,
 }
 impl OptimizationJobOutputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of a key in Amazon Web Services KMS. SageMaker uses they key to encrypt the artifacts of the optimized model when SageMaker uploads the model to Amazon S3.</p>
@@ -63,11 +70,26 @@ impl OptimizationJobOutputConfigBuilder {
     pub fn get_s3_output_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_output_location
     }
+    /// <p>The name of a SageMaker model to use as the output destination for an optimization job.</p>
+    pub fn sage_maker_model(mut self, input: crate::types::OptimizationSageMakerModel) -> Self {
+        self.sage_maker_model = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The name of a SageMaker model to use as the output destination for an optimization job.</p>
+    pub fn set_sage_maker_model(mut self, input: ::std::option::Option<crate::types::OptimizationSageMakerModel>) -> Self {
+        self.sage_maker_model = input;
+        self
+    }
+    /// <p>The name of a SageMaker model to use as the output destination for an optimization job.</p>
+    pub fn get_sage_maker_model(&self) -> &::std::option::Option<crate::types::OptimizationSageMakerModel> {
+        &self.sage_maker_model
+    }
     /// Consumes the builder and constructs a [`OptimizationJobOutputConfig`](crate::types::OptimizationJobOutputConfig).
     pub fn build(self) -> crate::types::OptimizationJobOutputConfig {
         crate::types::OptimizationJobOutputConfig {
             kms_key_id: self.kms_key_id,
             s3_output_location: self.s3_output_location,
+            sage_maker_model: self.sage_maker_model,
         }
     }
 }

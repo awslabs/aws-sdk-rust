@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The submitted action has conflicts.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>This exception is thrown when the request was successful, but dry run was enabled so no action was taken.</p>
+    DryRunException(crate::types::error::DryRunException),
     /// <p>There is an insufficient capacity to perform the action.</p>
     InsufficientCapacityException(crate::types::error::InsufficientCapacityException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
@@ -23,7 +25,7 @@ pub enum Error {
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request exceeded the number of tags allowed for a resource.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
-    /// <p>The input failed to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input failed to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -39,6 +41,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::DryRunException(inner) => inner.fmt(f),
             Error::InsufficientCapacityException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidPaginationException(inner) => inner.fmt(f),
@@ -71,6 +74,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::DryRunException(inner) => inner.meta(),
             Self::InsufficientCapacityException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::InvalidPaginationException(inner) => inner.meta(),
@@ -1838,6 +1842,49 @@ impl From<crate::operation::update_endpoint_access::UpdateEndpointAccessError> f
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_lakehouse_configuration::UpdateLakehouseConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_lakehouse_configuration::UpdateLakehouseConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_lakehouse_configuration::UpdateLakehouseConfigurationError> for Error {
+    fn from(err: crate::operation::update_lakehouse_configuration::UpdateLakehouseConfigurationError) -> Self {
+        match err {
+            crate::operation::update_lakehouse_configuration::UpdateLakehouseConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_lakehouse_configuration::UpdateLakehouseConfigurationError::DryRunException(inner) => {
+                Error::DryRunException(inner)
+            }
+            crate::operation::update_lakehouse_configuration::UpdateLakehouseConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_lakehouse_configuration::UpdateLakehouseConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_lakehouse_configuration::UpdateLakehouseConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_lakehouse_configuration::UpdateLakehouseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_namespace::UpdateNamespaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2027,6 +2074,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::DryRunException(inner) => inner.source(),
             Error::InsufficientCapacityException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::InvalidPaginationException(inner) => inner.source(),
@@ -2045,6 +2093,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::DryRunException(e) => e.request_id(),
             Self::InsufficientCapacityException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::InvalidPaginationException(e) => e.request_id(),

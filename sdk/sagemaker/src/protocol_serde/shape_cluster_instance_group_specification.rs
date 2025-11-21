@@ -9,65 +9,83 @@ pub fn ser_cluster_instance_group_specification(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.instance_group_name {
-        object.key("InstanceGroupName").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.instance_type {
-        object.key("InstanceType").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.life_cycle_config {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("LifeCycleConfig").start_object();
-        crate::protocol_serde::shape_cluster_life_cycle_config::ser_cluster_life_cycle_config(&mut object_5, var_4)?;
-        object_5.finish();
-    }
-    if let Some(var_6) = &input.execution_role {
-        object.key("ExecutionRole").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.threads_per_core {
-        object.key("ThreadsPerCore").number(
+    if let Some(var_2) = &input.min_instance_count {
+        object.key("MinInstanceCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_8) = &input.instance_storage_configs {
-        let mut array_9 = object.key("InstanceStorageConfigs").start_array();
-        for item_10 in var_8 {
+    if let Some(var_3) = &input.instance_group_name {
+        object.key("InstanceGroupName").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.instance_type {
+        object.key("InstanceType").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.life_cycle_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("LifeCycleConfig").start_object();
+        crate::protocol_serde::shape_cluster_life_cycle_config::ser_cluster_life_cycle_config(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.execution_role {
+        object.key("ExecutionRole").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.threads_per_core {
+        object.key("ThreadsPerCore").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    if let Some(var_9) = &input.instance_storage_configs {
+        let mut array_10 = object.key("InstanceStorageConfigs").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_cluster_instance_storage_config::ser_cluster_instance_storage_config(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_cluster_instance_storage_config::ser_cluster_instance_storage_config(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.on_start_deep_health_checks {
-        let mut array_13 = object.key("OnStartDeepHealthChecks").start_array();
-        for item_14 in var_12 {
+    if let Some(var_13) = &input.on_start_deep_health_checks {
+        let mut array_14 = object.key("OnStartDeepHealthChecks").start_array();
+        for item_15 in var_13 {
             {
-                array_13.value().string(item_14.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.training_plan_arn {
-        object.key("TrainingPlanArn").string(var_15.as_str());
+    if let Some(var_16) = &input.training_plan_arn {
+        object.key("TrainingPlanArn").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.override_vpc_config {
+    if let Some(var_17) = &input.override_vpc_config {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("OverrideVpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_18 = object.key("OverrideVpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_18) = &input.scheduled_update_config {
+    if let Some(var_19) = &input.scheduled_update_config {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("ScheduledUpdateConfig").start_object();
-        crate::protocol_serde::shape_scheduled_update_config::ser_scheduled_update_config(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_20 = object.key("ScheduledUpdateConfig").start_object();
+        crate::protocol_serde::shape_scheduled_update_config::ser_scheduled_update_config(&mut object_20, var_19)?;
+        object_20.finish();
     }
-    if let Some(var_20) = &input.image_id {
-        object.key("ImageId").string(var_20.as_str());
+    if let Some(var_21) = &input.image_id {
+        object.key("ImageId").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.kubernetes_config {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("KubernetesConfig").start_object();
+        crate::protocol_serde::shape_cluster_kubernetes_config::ser_cluster_kubernetes_config(&mut object_23, var_22)?;
+        object_23.finish();
+    }
+    if let Some(var_24) = &input.capacity_requirements {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("CapacityRequirements").start_object();
+        crate::protocol_serde::shape_cluster_capacity_requirements::ser_cluster_capacity_requirements(&mut object_25, var_24)?;
+        object_25.finish();
     }
     Ok(())
 }

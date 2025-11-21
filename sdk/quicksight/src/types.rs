@@ -2385,6 +2385,8 @@ pub use crate::types::_embedding_identity_type::EmbeddingIdentityType;
 
 pub use crate::types::_registered_user_embedding_experience_configuration::RegisteredUserEmbeddingExperienceConfiguration;
 
+pub use crate::types::_registered_user_quick_chat_embedding_configuration::RegisteredUserQuickChatEmbeddingConfiguration;
+
 pub use crate::types::_registered_user_generative_qn_a_embedding_configuration::RegisteredUserGenerativeQnAEmbeddingConfiguration;
 
 pub use crate::types::_registered_user_dashboard_visual_embedding_configuration::RegisteredUserDashboardVisualEmbeddingConfiguration;
@@ -4408,6 +4410,8 @@ mod _registered_user_embedding_experience_configuration;
 mod _registered_user_generative_qn_a_embedding_configuration;
 
 mod _registered_user_q_search_bar_embedding_configuration;
+
+mod _registered_user_quick_chat_embedding_configuration;
 
 mod _registered_user_quick_sight_console_embedding_configuration;
 

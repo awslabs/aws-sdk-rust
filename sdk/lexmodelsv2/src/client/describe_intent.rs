@@ -10,6 +10,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeIntentOutput`](crate::operation::describe_intent::DescribeIntentOutput) with field(s):
     ///   - [`intent_id(Option<String>)`](crate::operation::describe_intent::DescribeIntentOutput::intent_id): <p>The unique identifier assigned to the intent when it was created.</p>
     ///   - [`intent_name(Option<String>)`](crate::operation::describe_intent::DescribeIntentOutput::intent_name): <p>The name specified for the intent.</p>
+    ///   - [`intent_display_name(Option<String>)`](crate::operation::describe_intent::DescribeIntentOutput::intent_display_name): <p>The display name specified for the intent.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_intent::DescribeIntentOutput::description): <p>The description of the intent.</p>
     ///   - [`parent_intent_signature(Option<String>)`](crate::operation::describe_intent::DescribeIntentOutput::parent_intent_signature): <p>The identifier of the built-in intent that this intent is derived from, if any.</p>
     ///   - [`sample_utterances(Option<Vec::<SampleUtterance>>)`](crate::operation::describe_intent::DescribeIntentOutput::sample_utterances): <p>User utterances that trigger this intent.</p>

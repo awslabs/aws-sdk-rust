@@ -23,6 +23,8 @@ pub struct CreateOptimizationJobInput {
     pub model_source: ::std::option::Option<crate::types::OptimizationJobModelSource>,
     /// <p>The type of instance that hosts the optimized model that you create with the optimization job.</p>
     pub deployment_instance_type: ::std::option::Option<crate::types::OptimizationJobDeploymentInstanceType>,
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub max_instance_count: ::std::option::Option<i32>,
     /// <p>The environment variables to set in the model container.</p>
     pub optimization_environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Settings for each of the optimization techniques that the job applies.</p>
@@ -68,6 +70,10 @@ impl CreateOptimizationJobInput {
     /// <p>The type of instance that hosts the optimized model that you create with the optimization job.</p>
     pub fn deployment_instance_type(&self) -> ::std::option::Option<&crate::types::OptimizationJobDeploymentInstanceType> {
         self.deployment_instance_type.as_ref()
+    }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn max_instance_count(&self) -> ::std::option::Option<i32> {
+        self.max_instance_count
     }
     /// <p>The environment variables to set in the model container.</p>
     pub fn optimization_environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -117,6 +123,7 @@ pub struct CreateOptimizationJobInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_source: ::std::option::Option<crate::types::OptimizationJobModelSource>,
     pub(crate) deployment_instance_type: ::std::option::Option<crate::types::OptimizationJobDeploymentInstanceType>,
+    pub(crate) max_instance_count: ::std::option::Option<i32>,
     pub(crate) optimization_environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) optimization_configs: ::std::option::Option<::std::vec::Vec<crate::types::OptimizationConfig>>,
     pub(crate) output_config: ::std::option::Option<crate::types::OptimizationJobOutputConfig>,
@@ -220,6 +227,20 @@ impl CreateOptimizationJobInputBuilder {
     /// <p>The type of instance that hosts the optimized model that you create with the optimization job.</p>
     pub fn get_deployment_instance_type(&self) -> &::std::option::Option<crate::types::OptimizationJobDeploymentInstanceType> {
         &self.deployment_instance_type
+    }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn max_instance_count(mut self, input: i32) -> Self {
+        self.max_instance_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn set_max_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_instance_count = input;
+        self
+    }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn get_max_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.max_instance_count
     }
     /// Adds a key-value pair to `optimization_environment`.
     ///
@@ -354,6 +375,7 @@ impl CreateOptimizationJobInputBuilder {
             role_arn: self.role_arn,
             model_source: self.model_source,
             deployment_instance_type: self.deployment_instance_type,
+            max_instance_count: self.max_instance_count,
             optimization_environment: self.optimization_environment,
             optimization_configs: self.optimization_configs,
             output_config: self.output_config,

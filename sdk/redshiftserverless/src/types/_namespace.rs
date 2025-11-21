@@ -30,6 +30,10 @@ pub struct Namespace {
     pub admin_password_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.</p>
     pub admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the lakehouse registration for the namespace. Indicates whether the namespace is successfully registered with Amazon Redshift federated permissions.</p>
+    pub lakehouse_registration_status: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Glue Data Catalog associated with the namespace enabled with Amazon Redshift federated permissions.</p>
+    pub catalog_arn: ::std::option::Option<::std::string::String>,
 }
 impl Namespace {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
@@ -88,6 +92,14 @@ impl Namespace {
     pub fn admin_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.admin_password_secret_kms_key_id.as_deref()
     }
+    /// <p>The status of the lakehouse registration for the namespace. Indicates whether the namespace is successfully registered with Amazon Redshift federated permissions.</p>
+    pub fn lakehouse_registration_status(&self) -> ::std::option::Option<&str> {
+        self.lakehouse_registration_status.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Glue Data Catalog associated with the namespace enabled with Amazon Redshift federated permissions.</p>
+    pub fn catalog_arn(&self) -> ::std::option::Option<&str> {
+        self.catalog_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for Namespace {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -105,6 +117,8 @@ impl ::std::fmt::Debug for Namespace {
         formatter.field("creation_date", &self.creation_date);
         formatter.field("admin_password_secret_arn", &self.admin_password_secret_arn);
         formatter.field("admin_password_secret_kms_key_id", &self.admin_password_secret_kms_key_id);
+        formatter.field("lakehouse_registration_status", &self.lakehouse_registration_status);
+        formatter.field("catalog_arn", &self.catalog_arn);
         formatter.finish()
     }
 }
@@ -132,6 +146,8 @@ pub struct NamespaceBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) admin_password_secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) lakehouse_registration_status: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_arn: ::std::option::Option<::std::string::String>,
 }
 impl NamespaceBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
@@ -328,6 +344,34 @@ impl NamespaceBuilder {
     pub fn get_admin_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_password_secret_kms_key_id
     }
+    /// <p>The status of the lakehouse registration for the namespace. Indicates whether the namespace is successfully registered with Amazon Redshift federated permissions.</p>
+    pub fn lakehouse_registration_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lakehouse_registration_status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The status of the lakehouse registration for the namespace. Indicates whether the namespace is successfully registered with Amazon Redshift federated permissions.</p>
+    pub fn set_lakehouse_registration_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lakehouse_registration_status = input;
+        self
+    }
+    /// <p>The status of the lakehouse registration for the namespace. Indicates whether the namespace is successfully registered with Amazon Redshift federated permissions.</p>
+    pub fn get_lakehouse_registration_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lakehouse_registration_status
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Glue Data Catalog associated with the namespace enabled with Amazon Redshift federated permissions.</p>
+    pub fn catalog_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Glue Data Catalog associated with the namespace enabled with Amazon Redshift federated permissions.</p>
+    pub fn set_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Glue Data Catalog associated with the namespace enabled with Amazon Redshift federated permissions.</p>
+    pub fn get_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_arn
+    }
     /// Consumes the builder and constructs a [`Namespace`](crate::types::Namespace).
     pub fn build(self) -> crate::types::Namespace {
         crate::types::Namespace {
@@ -344,6 +388,8 @@ impl NamespaceBuilder {
             creation_date: self.creation_date,
             admin_password_secret_arn: self.admin_password_secret_arn,
             admin_password_secret_kms_key_id: self.admin_password_secret_kms_key_id,
+            lakehouse_registration_status: self.lakehouse_registration_status,
+            catalog_arn: self.catalog_arn,
         }
     }
 }
@@ -363,6 +409,8 @@ impl ::std::fmt::Debug for NamespaceBuilder {
         formatter.field("creation_date", &self.creation_date);
         formatter.field("admin_password_secret_arn", &self.admin_password_secret_arn);
         formatter.field("admin_password_secret_kms_key_id", &self.admin_password_secret_kms_key_id);
+        formatter.field("lakehouse_registration_status", &self.lakehouse_registration_status);
+        formatter.field("catalog_arn", &self.catalog_arn);
         formatter.finish()
     }
 }

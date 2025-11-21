@@ -38,6 +38,30 @@ pub(crate) fn get_capacity_reservation_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_resource_dashboard_output_output_correct_errors(
+    mut builder: crate::operation::get_resource_dashboard::builders::GetResourceDashboardOutputBuilder,
+) -> crate::operation::get_resource_dashboard::builders::GetResourceDashboardOutputBuilder {
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_session_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::get_session_endpoint::builders::GetSessionEndpointOutputBuilder,
+) -> crate::operation::get_session_endpoint::builders::GetSessionEndpointOutputBuilder {
+    if builder.endpoint_url.is_none() {
+        builder.endpoint_url = Some(Default::default())
+    }
+    if builder.auth_token.is_none() {
+        builder.auth_token = Some(Default::default())
+    }
+    if builder.auth_token_expiration_time.is_none() {
+        builder.auth_token_expiration_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn list_capacity_reservations_output_output_correct_errors(
     mut builder: crate::operation::list_capacity_reservations::builders::ListCapacityReservationsOutputBuilder,
 ) -> crate::operation::list_capacity_reservations::builders::ListCapacityReservationsOutputBuilder {
@@ -103,15 +127,6 @@ pub(crate) fn database_correct_errors(mut builder: crate::types::builders::Datab
     builder
 }
 
-pub(crate) fn engine_configuration_correct_errors(
-    mut builder: crate::types::builders::EngineConfigurationBuilder,
-) -> crate::types::builders::EngineConfigurationBuilder {
-    if builder.max_concurrent_dpus.is_none() {
-        builder.max_concurrent_dpus = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn named_query_correct_errors(mut builder: crate::types::builders::NamedQueryBuilder) -> crate::types::builders::NamedQueryBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -153,6 +168,15 @@ pub(crate) fn capacity_allocation_correct_errors(
     builder
 }
 
+pub(crate) fn cloud_watch_logging_configuration_correct_errors(
+    mut builder: crate::types::builders::CloudWatchLoggingConfigurationBuilder,
+) -> crate::types::builders::CloudWatchLoggingConfigurationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn encryption_configuration_correct_errors(
     mut builder: crate::types::builders::EncryptionConfigurationBuilder,
 ) -> crate::types::builders::EncryptionConfigurationBuilder {
@@ -167,6 +191,15 @@ pub(crate) fn executors_summary_correct_errors(
 ) -> crate::types::builders::ExecutorsSummaryBuilder {
     if builder.executor_id.is_none() {
         builder.executor_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_logging_configuration_correct_errors(
+    mut builder: crate::types::builders::ManagedLoggingConfigurationBuilder,
+) -> crate::types::builders::ManagedLoggingConfigurationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
     }
     builder
 }
@@ -188,6 +221,15 @@ pub(crate) fn query_results_s3_access_grants_configuration_correct_errors(
     }
     if builder.authentication_type.is_none() {
         builder.authentication_type = "no value was set".parse::<crate::types::AuthenticationType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn s3_logging_configuration_correct_errors(
+    mut builder: crate::types::builders::S3LoggingConfigurationBuilder,
+) -> crate::types::builders::S3LoggingConfigurationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
     }
     builder
 }

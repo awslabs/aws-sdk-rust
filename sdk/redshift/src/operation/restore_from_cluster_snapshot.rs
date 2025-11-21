@@ -278,6 +278,8 @@ pub enum RestoreFromClusterSnapshotError {
     ClusterSnapshotNotFoundFault(crate::types::error::ClusterSnapshotNotFoundFault),
     /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
     ClusterSubnetGroupNotFoundFault(crate::types::error::ClusterSubnetGroupNotFoundFault),
+    /// <p>A dependent service denied access for the integration.</p>
+    DependentServiceAccessDeniedFault(crate::types::error::DependentServiceAccessDeniedFault),
     /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::types::error::DependentServiceRequestThrottlingFault),
     /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
@@ -314,6 +316,8 @@ pub enum RestoreFromClusterSnapshotError {
     NumberOfNodesPerClusterLimitExceededFault(crate::types::error::NumberOfNodesPerClusterLimitExceededFault),
     /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     NumberOfNodesQuotaExceededFault(crate::types::error::NumberOfNodesQuotaExceededFault),
+    /// <p>The application you attempted to find doesn't exist.</p>
+    RedshiftIdcApplicationNotExistsFault(crate::types::error::RedshiftIdcApplicationNotExistsFault),
     /// <p>User already has a reservation with the given identifier.</p>
     ReservedNodeAlreadyExistsFault(crate::types::error::ReservedNodeAlreadyExistsFault),
     /// <p>Indicates that the reserved node has already been exchanged.</p>
@@ -370,6 +374,7 @@ impl RestoreFromClusterSnapshotError {
             Self::ClusterSecurityGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterSnapshotNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DependentServiceAccessDeniedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DependentServiceRequestThrottlingFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DependentServiceUnavailableFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::HsmClientCertificateNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -388,6 +393,7 @@ impl RestoreFromClusterSnapshotError {
             Self::LimitExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NumberOfNodesPerClusterLimitExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NumberOfNodesQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RedshiftIdcApplicationNotExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ReservedNodeAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ReservedNodeAlreadyMigratedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ReservedNodeNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -426,6 +432,10 @@ impl RestoreFromClusterSnapshotError {
     /// Returns `true` if the error kind is `RestoreFromClusterSnapshotError::ClusterSubnetGroupNotFoundFault`.
     pub fn is_cluster_subnet_group_not_found_fault(&self) -> bool {
         matches!(self, Self::ClusterSubnetGroupNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotError::DependentServiceAccessDeniedFault`.
+    pub fn is_dependent_service_access_denied_fault(&self) -> bool {
+        matches!(self, Self::DependentServiceAccessDeniedFault(_))
     }
     /// Returns `true` if the error kind is `RestoreFromClusterSnapshotError::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
@@ -499,6 +509,10 @@ impl RestoreFromClusterSnapshotError {
     pub fn is_number_of_nodes_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::NumberOfNodesQuotaExceededFault(_))
     }
+    /// Returns `true` if the error kind is `RestoreFromClusterSnapshotError::RedshiftIdcApplicationNotExistsFault`.
+    pub fn is_redshift_idc_application_not_exists_fault(&self) -> bool {
+        matches!(self, Self::RedshiftIdcApplicationNotExistsFault(_))
+    }
     /// Returns `true` if the error kind is `RestoreFromClusterSnapshotError::ReservedNodeAlreadyExistsFault`.
     pub fn is_reserved_node_already_exists_fault(&self) -> bool {
         matches!(self, Self::ReservedNodeAlreadyExistsFault(_))
@@ -542,6 +556,7 @@ impl ::std::error::Error for RestoreFromClusterSnapshotError {
             Self::ClusterSecurityGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterSnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DependentServiceAccessDeniedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DependentServiceRequestThrottlingFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DependentServiceUnavailableFault(_inner) => ::std::option::Option::Some(_inner),
             Self::HsmClientCertificateNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -560,6 +575,7 @@ impl ::std::error::Error for RestoreFromClusterSnapshotError {
             Self::LimitExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::NumberOfNodesQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::RedshiftIdcApplicationNotExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ReservedNodeAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ReservedNodeAlreadyMigratedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ReservedNodeNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -582,6 +598,7 @@ impl ::std::fmt::Display for RestoreFromClusterSnapshotError {
             Self::ClusterSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::ClusterSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             Self::ClusterSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DependentServiceAccessDeniedFault(_inner) => _inner.fmt(f),
             Self::DependentServiceRequestThrottlingFault(_inner) => _inner.fmt(f),
             Self::DependentServiceUnavailableFault(_inner) => _inner.fmt(f),
             Self::HsmClientCertificateNotFoundFault(_inner) => _inner.fmt(f),
@@ -600,6 +617,7 @@ impl ::std::fmt::Display for RestoreFromClusterSnapshotError {
             Self::LimitExceededFault(_inner) => _inner.fmt(f),
             Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => _inner.fmt(f),
             Self::NumberOfNodesQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::RedshiftIdcApplicationNotExistsFault(_inner) => _inner.fmt(f),
             Self::ReservedNodeAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::ReservedNodeAlreadyMigratedFault(_inner) => _inner.fmt(f),
             Self::ReservedNodeNotFoundFault(_inner) => _inner.fmt(f),
@@ -636,6 +654,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreFromCl
             Self::ClusterSecurityGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterSnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DependentServiceAccessDeniedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DependentServiceRequestThrottlingFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DependentServiceUnavailableFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::HsmClientCertificateNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -654,6 +673,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreFromCl
             Self::LimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NumberOfNodesQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RedshiftIdcApplicationNotExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ReservedNodeAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ReservedNodeAlreadyMigratedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ReservedNodeNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

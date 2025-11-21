@@ -131,24 +131,38 @@ pub fn de_redshift_idc_application(
                 builder = builder.set_service_integrations(var_10);
             }
             ,
-            s if s.matches("Tags") /* Tags com.amazonaws.redshift#RedshiftIdcApplication$Tags */ =>  {
+            s if s.matches("ApplicationType") /* ApplicationType com.amazonaws.redshift#RedshiftIdcApplication$ApplicationType */ =>  {
                 let var_11 =
+                    Some(
+                        Result::<crate::types::ApplicationType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ApplicationType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_application_type(var_11);
+            }
+            ,
+            s if s.matches("Tags") /* Tags com.amazonaws.redshift#RedshiftIdcApplication$Tags */ =>  {
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_11);
+                builder = builder.set_tags(var_12);
             }
             ,
             s if s.matches("SsoTagKeys") /* SsoTagKeys com.amazonaws.redshift#RedshiftIdcApplication$SsoTagKeys */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_tag_key_list::de_tag_key_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_sso_tag_keys(var_12);
+                builder = builder.set_sso_tag_keys(var_13);
             }
             ,
             _ => {}

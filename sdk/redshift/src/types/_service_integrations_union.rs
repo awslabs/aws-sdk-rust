@@ -6,6 +6,8 @@
 pub enum ServiceIntegrationsUnion {
     /// <p>A list of scopes set up for Lake Formation integration.</p>
     LakeFormation(::std::vec::Vec<crate::types::LakeFormationScopeUnion>),
+    /// <p>A list of scopes set up for Amazon Redshift integration.</p>
+    Redshift(::std::vec::Vec<crate::types::RedshiftScopeUnion>),
     /// <p>A list of scopes set up for S3 Access Grants integration.</p>
     S3AccessGrants(::std::vec::Vec<crate::types::S3AccessGrantsScopeUnion>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,19 @@ impl ServiceIntegrationsUnion {
     /// Returns true if this is a [`LakeFormation`](crate::types::ServiceIntegrationsUnion::LakeFormation).
     pub fn is_lake_formation(&self) -> bool {
         self.as_lake_formation().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Redshift`](crate::types::ServiceIntegrationsUnion::Redshift), extracting the inner [`Vec`](::std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_redshift(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::RedshiftScopeUnion>, &Self> {
+        if let ServiceIntegrationsUnion::Redshift(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Redshift`](crate::types::ServiceIntegrationsUnion::Redshift).
+    pub fn is_redshift(&self) -> bool {
+        self.as_redshift().is_ok()
     }
     /// Tries to convert the enum instance into [`S3AccessGrants`](crate::types::ServiceIntegrationsUnion::S3AccessGrants), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.

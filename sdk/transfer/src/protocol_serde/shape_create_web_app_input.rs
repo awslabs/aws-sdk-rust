@@ -33,5 +33,11 @@ pub fn ser_create_web_app_input_input(
     if let Some(var_10) = &input.web_app_endpoint_policy {
         object.key("WebAppEndpointPolicy").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.endpoint_details {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("EndpointDetails").start_object();
+        crate::protocol_serde::shape_web_app_endpoint_details::ser_web_app_endpoint_details(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

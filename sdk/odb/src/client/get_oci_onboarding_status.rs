@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`status(Option<OciOnboardingStatus>)`](crate::operation::get_oci_onboarding_status::GetOciOnboardingStatusOutput::status): <p></p>
     ///   - [`existing_tenancy_activation_link(Option<String>)`](crate::operation::get_oci_onboarding_status::GetOciOnboardingStatusOutput::existing_tenancy_activation_link): <p>The existing OCI tenancy activation link for your Amazon Web Services account.</p>
     ///   - [`new_tenancy_activation_link(Option<String>)`](crate::operation::get_oci_onboarding_status::GetOciOnboardingStatusOutput::new_tenancy_activation_link): <p>A new OCI tenancy activation link for your Amazon Web Services account.</p>
+    ///   - [`oci_identity_domain(Option<OciIdentityDomain>)`](crate::operation::get_oci_onboarding_status::GetOciOnboardingStatusOutput::oci_identity_domain): <p>The Oracle Cloud Infrastructure (OCI) identity domain information in the onboarding status response.</p>
     /// - On failure, responds with [`SdkError<GetOciOnboardingStatusError>`](crate::operation::get_oci_onboarding_status::GetOciOnboardingStatusError)
     pub fn get_oci_onboarding_status(&self) -> crate::operation::get_oci_onboarding_status::builders::GetOciOnboardingStatusFluentBuilder {
         crate::operation::get_oci_onboarding_status::builders::GetOciOnboardingStatusFluentBuilder::new(self.handle.clone())

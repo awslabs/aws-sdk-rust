@@ -2409,6 +2409,8 @@ pub(crate) mod shape_channel_specifications;
 
 pub(crate) mod shape_clarify_explainer_config;
 
+pub(crate) mod shape_cluster_capacity_requirements;
+
 pub(crate) mod shape_cluster_event_summary;
 
 pub(crate) mod shape_cluster_instance_group_details;
@@ -2420,6 +2422,10 @@ pub(crate) mod shape_cluster_instance_status_details;
 pub(crate) mod shape_cluster_instance_storage_config;
 
 pub(crate) mod shape_cluster_instance_storage_configs;
+
+pub(crate) mod shape_cluster_kubernetes_config;
+
+pub(crate) mod shape_cluster_kubernetes_config_node_details;
 
 pub(crate) mod shape_cluster_life_cycle_config;
 
@@ -2703,6 +2709,8 @@ pub(crate) mod shape_model_quantization_config;
 
 pub(crate) mod shape_model_sharding_config;
 
+pub(crate) mod shape_model_speculative_decoding_config;
+
 pub(crate) mod shape_model_summary;
 
 pub(crate) mod shape_model_variant_config_summary;
@@ -2756,6 +2764,8 @@ pub(crate) mod shape_online_store_security_config;
 pub(crate) mod shape_optimization_job_model_source_s3;
 
 pub(crate) mod shape_optimization_job_summary;
+
+pub(crate) mod shape_optimization_sage_maker_model;
 
 pub(crate) mod shape_optimization_vpc_security_group_ids;
 
@@ -2983,6 +2993,8 @@ pub(crate) mod shape_workforce_vpc_config_response;
 
 pub(crate) mod shape_accelerator_partition_config;
 
+pub(crate) mod shape_active_operations;
+
 pub(crate) mod shape_alarm;
 
 pub(crate) mod shape_alarm_list;
@@ -3040,6 +3052,18 @@ pub(crate) mod shape_clarify_inference_config;
 pub(crate) mod shape_clarify_shap_config;
 
 pub(crate) mod shape_cluster_ebs_volume_config;
+
+pub(crate) mod shape_cluster_kubernetes_config_details;
+
+pub(crate) mod shape_cluster_kubernetes_labels;
+
+pub(crate) mod shape_cluster_kubernetes_taint;
+
+pub(crate) mod shape_cluster_kubernetes_taints;
+
+pub(crate) mod shape_cluster_on_demand_options;
+
+pub(crate) mod shape_cluster_spot_options;
 
 pub(crate) mod shape_code_repositories;
 
@@ -3186,6 +3210,8 @@ pub(crate) mod shape_model_package_group;
 pub(crate) mod shape_model_package_status_item;
 
 pub(crate) mod shape_model_register_settings;
+
+pub(crate) mod shape_model_speculative_decoding_training_data_source;
 
 pub(crate) mod shape_monitoring_alert_actions;
 

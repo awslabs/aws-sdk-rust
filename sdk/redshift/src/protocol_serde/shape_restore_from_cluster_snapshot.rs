@@ -147,6 +147,26 @@ pub fn de_restore_from_cluster_snapshot_http_error(
                 tmp
             })
         }
+        "DependentServiceAccessDenied" => {
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::DependentServiceAccessDeniedFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DependentServiceAccessDeniedFaultBuilder::default();
+                    output = crate::protocol_serde::shape_dependent_service_access_denied_fault::de_dependent_service_access_denied_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "DependentServiceRequestThrottlingFault" => {
             crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::DependentServiceRequestThrottlingFault({
                 #[allow(unused_mut)]
@@ -461,6 +481,27 @@ pub fn de_restore_from_cluster_snapshot_http_error(
                         output,
                     )
                     .map_err(crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "RedshiftIdcApplicationNotExists" => {
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::RedshiftIdcApplicationNotExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RedshiftIdcApplicationNotExistsFaultBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_redshift_idc_application_not_exists_fault::de_redshift_idc_application_not_exists_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

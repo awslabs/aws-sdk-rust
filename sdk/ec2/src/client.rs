@@ -537,6 +537,8 @@ mod create_instance_export_task;
 
 mod create_internet_gateway;
 
+mod create_interruptible_capacity_reservation_allocation;
+
 mod create_ipam;
 
 mod create_ipam_external_resource_verification_token;
@@ -1881,6 +1883,8 @@ mod unlock_snapshot;
 mod unmonitor_instances;
 
 mod update_capacity_manager_organizations_access;
+
+mod update_interruptible_capacity_reservation_allocation;
 
 mod update_security_group_rule_descriptions_egress;
 

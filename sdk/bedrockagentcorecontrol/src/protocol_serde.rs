@@ -261,6 +261,10 @@ pub(crate) mod shape_credential_provider_configurations;
 
 pub(crate) mod shape_environment_variables_map;
 
+pub(crate) mod shape_gateway_interceptor_configuration;
+
+pub(crate) mod shape_gateway_interceptor_configurations;
+
 pub(crate) mod shape_gateway_protocol_configuration;
 
 pub(crate) mod shape_gateway_summaries;
@@ -357,6 +361,10 @@ pub(crate) mod shape_included_oauth2_provider_config_input;
 
 pub(crate) mod shape_included_oauth2_provider_config_output;
 
+pub(crate) mod shape_interceptor_configuration;
+
+pub(crate) mod shape_interceptor_input_configuration;
+
 pub(crate) mod shape_linkedin_oauth2_provider_config_input;
 
 pub(crate) mod shape_linkedin_oauth2_provider_config_output;
@@ -416,6 +424,10 @@ pub(crate) mod shape_custom_configuration_input;
 pub(crate) mod shape_entry_points;
 
 pub(crate) mod shape_gateway_api_key_credential_provider;
+
+pub(crate) mod shape_gateway_interception_points;
+
+pub(crate) mod shape_lambda_interceptor_configuration;
 
 pub(crate) mod shape_mcp_lambda_target_configuration;
 

@@ -27,6 +27,17 @@ pub fn ser_service_integrations_union(
             }
             list_6.finish();
         }
+        crate::types::ServiceIntegrationsUnion::Redshift(inner) => {
+            let mut list_10 = writer.start_list(false, None);
+            for item_9 in inner {
+                #[allow(unused_mut)]
+                let mut entry_11 = list_10.entry();
+                #[allow(unused_mut)]
+                let mut scope_12 = entry_11.prefix("member");
+                crate::protocol_serde::shape_redshift_scope_union::ser_redshift_scope_union(scope_12, item_9)?;
+            }
+            list_10.finish();
+        }
         crate::types::ServiceIntegrationsUnion::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ServiceIntegrationsUnion",
@@ -56,6 +67,14 @@ pub fn de_service_integrations_union(
                     ?
                 ;
                 base = Some(crate::types::ServiceIntegrationsUnion::S3AccessGrants(tmp));
+            }
+            ,
+            s if s.matches("Redshift") /* Redshift com.amazonaws.redshift#ServiceIntegrationsUnion$Redshift */ =>  {
+                let tmp =
+                    crate::protocol_serde::shape_redshift_service_integrations::de_redshift_service_integrations(&mut tag)
+                    ?
+                ;
+                base = Some(crate::types::ServiceIntegrationsUnion::Redshift(tmp));
             }
             ,
             _unknown => base = Some(crate::types::ServiceIntegrationsUnion::Unknown),

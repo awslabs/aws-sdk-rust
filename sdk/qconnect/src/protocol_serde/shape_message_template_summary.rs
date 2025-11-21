@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "channel" => {
+                            builder = builder.set_channel(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "channelSubtype" => {
                             builder = builder.set_channel_subtype(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -73,6 +80,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "sourceConfiguration" => {
+                            builder = builder.set_source_configuration(
+                                crate::protocol_serde::shape_message_template_source_configuration::de_message_template_source_configuration(tokens)?,
                             );
                         }
                         "activeVersionNumber" => {

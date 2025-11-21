@@ -358,6 +358,9 @@ pub mod modify_event_subscription;
 /// Types for the `ModifyIntegration` operation.
 pub mod modify_integration;
 
+/// Types for the `ModifyLakehouseConfiguration` operation.
+pub mod modify_lakehouse_configuration;
+
 /// Types for the `ModifyRedshiftIdcApplication` operation.
 pub mod modify_redshift_idc_application;
 

@@ -9,6 +9,8 @@ pub struct GetOciOnboardingStatusOutput {
     pub existing_tenancy_activation_link: ::std::option::Option<::std::string::String>,
     /// <p>A new OCI tenancy activation link for your Amazon Web Services account.</p>
     pub new_tenancy_activation_link: ::std::option::Option<::std::string::String>,
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain information in the onboarding status response.</p>
+    pub oci_identity_domain: ::std::option::Option<crate::types::OciIdentityDomain>,
     _request_id: Option<String>,
 }
 impl GetOciOnboardingStatusOutput {
@@ -23,6 +25,10 @@ impl GetOciOnboardingStatusOutput {
     /// <p>A new OCI tenancy activation link for your Amazon Web Services account.</p>
     pub fn new_tenancy_activation_link(&self) -> ::std::option::Option<&str> {
         self.new_tenancy_activation_link.as_deref()
+    }
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain information in the onboarding status response.</p>
+    pub fn oci_identity_domain(&self) -> ::std::option::Option<&crate::types::OciIdentityDomain> {
+        self.oci_identity_domain.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOciOnboardingStatusOutput {
@@ -44,6 +50,7 @@ pub struct GetOciOnboardingStatusOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::OciOnboardingStatus>,
     pub(crate) existing_tenancy_activation_link: ::std::option::Option<::std::string::String>,
     pub(crate) new_tenancy_activation_link: ::std::option::Option<::std::string::String>,
+    pub(crate) oci_identity_domain: ::std::option::Option<crate::types::OciIdentityDomain>,
     _request_id: Option<String>,
 }
 impl GetOciOnboardingStatusOutputBuilder {
@@ -89,6 +96,20 @@ impl GetOciOnboardingStatusOutputBuilder {
     pub fn get_new_tenancy_activation_link(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_tenancy_activation_link
     }
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain information in the onboarding status response.</p>
+    pub fn oci_identity_domain(mut self, input: crate::types::OciIdentityDomain) -> Self {
+        self.oci_identity_domain = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain information in the onboarding status response.</p>
+    pub fn set_oci_identity_domain(mut self, input: ::std::option::Option<crate::types::OciIdentityDomain>) -> Self {
+        self.oci_identity_domain = input;
+        self
+    }
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain information in the onboarding status response.</p>
+    pub fn get_oci_identity_domain(&self) -> &::std::option::Option<crate::types::OciIdentityDomain> {
+        &self.oci_identity_domain
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -104,6 +125,7 @@ impl GetOciOnboardingStatusOutputBuilder {
             status: self.status,
             existing_tenancy_activation_link: self.existing_tenancy_activation_link,
             new_tenancy_activation_link: self.new_tenancy_activation_link,
+            oci_identity_domain: self.oci_identity_domain,
             _request_id: self._request_id,
         }
     }

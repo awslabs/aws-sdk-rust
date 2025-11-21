@@ -225,7 +225,11 @@ mod get_query_results;
 
 mod get_query_runtime_statistics;
 
+mod get_resource_dashboard;
+
 mod get_session;
+
+mod get_session_endpoint;
 
 mod get_session_status;
 

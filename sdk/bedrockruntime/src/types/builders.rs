@@ -77,6 +77,8 @@ pub use crate::types::_guardrail_trace_assessment::GuardrailTraceAssessmentBuild
 
 pub use crate::types::_guardrail_assessment::GuardrailAssessmentBuilder;
 
+pub use crate::types::_applied_guardrail_details::AppliedGuardrailDetailsBuilder;
+
 pub use crate::types::_guardrail_invocation_metrics::GuardrailInvocationMetricsBuilder;
 
 pub use crate::types::_guardrail_coverage::GuardrailCoverageBuilder;

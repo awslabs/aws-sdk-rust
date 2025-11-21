@@ -21,6 +21,10 @@ pub struct DescribedWebApp {
     /// <p>Setting for the type of endpoint policy for the web app. The default value is <code>STANDARD</code>.</p>
     /// <p>If your web app was created in an Amazon Web Services GovCloud (US) Region, the value of this parameter can be <code>FIPS</code>, which indicates the web app endpoint is FIPS-compliant.</p>
     pub web_app_endpoint_policy: ::std::option::Option<crate::types::WebAppEndpointPolicy>,
+    /// <p>The type of endpoint hosting the web app. Valid values are <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for VPC-hosted endpoints that provide network isolation.</p>
+    pub endpoint_type: ::std::option::Option<crate::types::WebAppEndpointType>,
+    /// <p>The endpoint configuration details for the web app, including VPC settings if the endpoint is hosted within a VPC.</p>
+    pub described_endpoint_details: ::std::option::Option<crate::types::DescribedWebAppEndpointDetails>,
 }
 impl DescribedWebApp {
     /// <p>The Amazon Resource Name (ARN) of the web app.</p>
@@ -60,6 +64,14 @@ impl DescribedWebApp {
     pub fn web_app_endpoint_policy(&self) -> ::std::option::Option<&crate::types::WebAppEndpointPolicy> {
         self.web_app_endpoint_policy.as_ref()
     }
+    /// <p>The type of endpoint hosting the web app. Valid values are <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for VPC-hosted endpoints that provide network isolation.</p>
+    pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::WebAppEndpointType> {
+        self.endpoint_type.as_ref()
+    }
+    /// <p>The endpoint configuration details for the web app, including VPC settings if the endpoint is hosted within a VPC.</p>
+    pub fn described_endpoint_details(&self) -> ::std::option::Option<&crate::types::DescribedWebAppEndpointDetails> {
+        self.described_endpoint_details.as_ref()
+    }
 }
 impl DescribedWebApp {
     /// Creates a new builder-style object to manufacture [`DescribedWebApp`](crate::types::DescribedWebApp).
@@ -80,6 +92,8 @@ pub struct DescribedWebAppBuilder {
     pub(crate) web_app_units: ::std::option::Option<crate::types::WebAppUnits>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) web_app_endpoint_policy: ::std::option::Option<crate::types::WebAppEndpointPolicy>,
+    pub(crate) endpoint_type: ::std::option::Option<crate::types::WebAppEndpointType>,
+    pub(crate) described_endpoint_details: ::std::option::Option<crate::types::DescribedWebAppEndpointDetails>,
 }
 impl DescribedWebAppBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web app.</p>
@@ -208,6 +222,34 @@ impl DescribedWebAppBuilder {
     pub fn get_web_app_endpoint_policy(&self) -> &::std::option::Option<crate::types::WebAppEndpointPolicy> {
         &self.web_app_endpoint_policy
     }
+    /// <p>The type of endpoint hosting the web app. Valid values are <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for VPC-hosted endpoints that provide network isolation.</p>
+    pub fn endpoint_type(mut self, input: crate::types::WebAppEndpointType) -> Self {
+        self.endpoint_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of endpoint hosting the web app. Valid values are <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for VPC-hosted endpoints that provide network isolation.</p>
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::WebAppEndpointType>) -> Self {
+        self.endpoint_type = input;
+        self
+    }
+    /// <p>The type of endpoint hosting the web app. Valid values are <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for VPC-hosted endpoints that provide network isolation.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::WebAppEndpointType> {
+        &self.endpoint_type
+    }
+    /// <p>The endpoint configuration details for the web app, including VPC settings if the endpoint is hosted within a VPC.</p>
+    pub fn described_endpoint_details(mut self, input: crate::types::DescribedWebAppEndpointDetails) -> Self {
+        self.described_endpoint_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The endpoint configuration details for the web app, including VPC settings if the endpoint is hosted within a VPC.</p>
+    pub fn set_described_endpoint_details(mut self, input: ::std::option::Option<crate::types::DescribedWebAppEndpointDetails>) -> Self {
+        self.described_endpoint_details = input;
+        self
+    }
+    /// <p>The endpoint configuration details for the web app, including VPC settings if the endpoint is hosted within a VPC.</p>
+    pub fn get_described_endpoint_details(&self) -> &::std::option::Option<crate::types::DescribedWebAppEndpointDetails> {
+        &self.described_endpoint_details
+    }
     /// Consumes the builder and constructs a [`DescribedWebApp`](crate::types::DescribedWebApp).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedWebAppBuilder::arn)
@@ -232,6 +274,8 @@ impl DescribedWebAppBuilder {
             web_app_units: self.web_app_units,
             tags: self.tags,
             web_app_endpoint_policy: self.web_app_endpoint_policy,
+            endpoint_type: self.endpoint_type,
+            described_endpoint_details: self.described_endpoint_details,
         })
     }
 }

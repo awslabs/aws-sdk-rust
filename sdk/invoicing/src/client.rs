@@ -140,6 +140,8 @@ mod batch_get_invoice_profile;
 
 mod create_invoice_unit;
 
+mod create_procurement_portal_preference;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -169,18 +171,28 @@ pub mod customize;
 
 mod delete_invoice_unit;
 
+mod delete_procurement_portal_preference;
+
 mod get_invoice_pdf;
 
 mod get_invoice_unit;
+
+mod get_procurement_portal_preference;
 
 mod list_invoice_summaries;
 
 mod list_invoice_units;
 
+mod list_procurement_portal_preferences;
+
 mod list_tags_for_resource;
+
+mod put_procurement_portal_preference;
 
 mod tag_resource;
 
 mod untag_resource;
 
 mod update_invoice_unit;
+
+mod update_procurement_portal_preference_status;

@@ -94,8 +94,14 @@ pub mod get_query_results;
 /// Types for the `GetQueryRuntimeStatistics` operation.
 pub mod get_query_runtime_statistics;
 
+/// Types for the `GetResourceDashboard` operation.
+pub mod get_resource_dashboard;
+
 /// Types for the `GetSession` operation.
 pub mod get_session;
+
+/// Types for the `GetSessionEndpoint` operation.
+pub mod get_session_endpoint;
 
 /// Types for the `GetSessionStatus` operation.
 pub mod get_session_status;

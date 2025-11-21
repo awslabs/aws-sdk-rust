@@ -39,5 +39,11 @@ pub fn ser_start_query_execution_input_input(
         crate::protocol_serde::shape_result_reuse_configuration::ser_result_reuse_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.engine_configuration {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("EngineConfiguration").start_object();
+        crate::protocol_serde::shape_engine_configuration::ser_engine_configuration(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }

@@ -27,23 +27,35 @@ pub(crate) mod shape_batch_get_invoice_profile;
 
 pub(crate) mod shape_create_invoice_unit;
 
+pub(crate) mod shape_create_procurement_portal_preference;
+
 pub(crate) mod shape_delete_invoice_unit;
+
+pub(crate) mod shape_delete_procurement_portal_preference;
 
 pub(crate) mod shape_get_invoice_pdf;
 
 pub(crate) mod shape_get_invoice_unit;
 
+pub(crate) mod shape_get_procurement_portal_preference;
+
 pub(crate) mod shape_list_invoice_summaries;
 
 pub(crate) mod shape_list_invoice_units;
 
+pub(crate) mod shape_list_procurement_portal_preferences;
+
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_procurement_portal_preference;
 
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_invoice_unit;
+
+pub(crate) mod shape_update_procurement_portal_preference_status;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -57,13 +69,21 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_batch_get_invoice_profile_input;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_invoice_unit_input;
 
+pub(crate) mod shape_create_procurement_portal_preference_input;
+
 pub(crate) mod shape_delete_invoice_unit_input;
+
+pub(crate) mod shape_delete_procurement_portal_preference_input;
 
 pub(crate) mod shape_get_invoice_pdf_input;
 
 pub(crate) mod shape_get_invoice_unit_input;
+
+pub(crate) mod shape_get_procurement_portal_preference_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -71,7 +91,11 @@ pub(crate) mod shape_list_invoice_summaries_input;
 
 pub(crate) mod shape_list_invoice_units_input;
 
+pub(crate) mod shape_list_procurement_portal_preferences_input;
+
 pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_put_procurement_portal_preference_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -85,7 +109,13 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_invoice_unit_input;
 
+pub(crate) mod shape_update_procurement_portal_preference_status_input;
+
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_contact;
+
+pub(crate) mod shape_einvoice_delivery_preference;
 
 pub(crate) mod shape_filters;
 
@@ -101,15 +131,25 @@ pub(crate) mod shape_invoice_unit_rule;
 
 pub(crate) mod shape_invoice_units;
 
+pub(crate) mod shape_procurement_portal_preference;
+
+pub(crate) mod shape_procurement_portal_preference_selector;
+
+pub(crate) mod shape_procurement_portal_preference_summaries;
+
 pub(crate) mod shape_profile_list;
 
 pub(crate) mod shape_resource_tag;
 
 pub(crate) mod shape_resource_tag_list;
 
+pub(crate) mod shape_test_env_preference_input;
+
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_billing_period;
+
+pub(crate) mod shape_contacts;
 
 pub(crate) mod shape_date_interval;
 
@@ -119,17 +159,33 @@ pub(crate) mod shape_invoice_summary;
 
 pub(crate) mod shape_invoice_unit;
 
+pub(crate) mod shape_procurement_portal_preference_summary;
+
+pub(crate) mod shape_purchase_order_data_source;
+
 pub(crate) mod shape_rule_account_id_list;
 
 pub(crate) mod shape_supplemental_documents;
 
+pub(crate) mod shape_test_env_preference;
+
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_einvoice_delivery_attachment_types;
+
+pub(crate) mod shape_einvoice_delivery_document_types;
 
 pub(crate) mod shape_entity;
 
 pub(crate) mod shape_invoice_currency_amount;
 
+pub(crate) mod shape_invoice_unit_arns;
+
+pub(crate) mod shape_purchase_order_data_sources;
+
 pub(crate) mod shape_receiver_address;
+
+pub(crate) mod shape_seller_of_records;
 
 pub(crate) mod shape_supplemental_document;
 

@@ -8,44 +8,44 @@ pub fn ser_update_case_input_input(
             .key("actualIncidentStartDate")
             .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.engagement_type {
-        object.key("engagementType").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.impacted_accounts_to_add {
-        let mut array_5 = object.key("impactedAccountsToAdd").start_array();
-        for item_6 in var_4 {
-            {
-                array_5.value().string(item_6.as_str());
-            }
-        }
-        array_5.finish();
-    }
-    if let Some(var_7) = &input.impacted_accounts_to_delete {
-        let mut array_8 = object.key("impactedAccountsToDelete").start_array();
-        for item_9 in var_7 {
-            {
-                array_8.value().string(item_9.as_str());
-            }
-        }
-        array_8.finish();
-    }
-    if let Some(var_10) = &input.impacted_aws_regions_to_add {
-        let mut array_11 = object.key("impactedAwsRegionsToAdd").start_array();
-        for item_12 in var_10 {
+    if let Some(var_2) = &input.case_metadata {
+        let mut array_3 = object.key("caseMetadata").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_impacted_aws_region::ser_impacted_aws_region(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_case_metadata_entry::ser_case_metadata_entry(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_11.finish();
+        array_3.finish();
     }
-    if let Some(var_14) = &input.impacted_aws_regions_to_delete {
-        let mut array_15 = object.key("impactedAwsRegionsToDelete").start_array();
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.engagement_type {
+        object.key("engagementType").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.impacted_accounts_to_add {
+        let mut array_9 = object.key("impactedAccountsToAdd").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_11) = &input.impacted_accounts_to_delete {
+        let mut array_12 = object.key("impactedAccountsToDelete").start_array();
+        for item_13 in var_11 {
+            {
+                array_12.value().string(item_13.as_str());
+            }
+        }
+        array_12.finish();
+    }
+    if let Some(var_14) = &input.impacted_aws_regions_to_add {
+        let mut array_15 = object.key("impactedAwsRegionsToAdd").start_array();
         for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
@@ -56,43 +56,43 @@ pub fn ser_update_case_input_input(
         }
         array_15.finish();
     }
-    if let Some(var_18) = &input.impacted_services_to_add {
-        let mut array_19 = object.key("impactedServicesToAdd").start_array();
+    if let Some(var_18) = &input.impacted_aws_regions_to_delete {
+        let mut array_19 = object.key("impactedAwsRegionsToDelete").start_array();
         for item_20 in var_18 {
             {
-                array_19.value().string(item_20.as_str());
+                #[allow(unused_mut)]
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_impacted_aws_region::ser_impacted_aws_region(&mut object_21, item_20)?;
+                object_21.finish();
             }
         }
         array_19.finish();
     }
-    if let Some(var_21) = &input.impacted_services_to_delete {
-        let mut array_22 = object.key("impactedServicesToDelete").start_array();
-        for item_23 in var_21 {
+    if let Some(var_22) = &input.impacted_services_to_add {
+        let mut array_23 = object.key("impactedServicesToAdd").start_array();
+        for item_24 in var_22 {
             {
-                array_22.value().string(item_23.as_str());
+                array_23.value().string(item_24.as_str());
             }
         }
-        array_22.finish();
+        array_23.finish();
     }
-    if let Some(var_24) = &input.reported_incident_start_date {
-        object
-            .key("reportedIncidentStartDate")
-            .date_time(var_24, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
-    }
-    if let Some(var_25) = &input.threat_actor_ip_addresses_to_add {
-        let mut array_26 = object.key("threatActorIpAddressesToAdd").start_array();
+    if let Some(var_25) = &input.impacted_services_to_delete {
+        let mut array_26 = object.key("impactedServicesToDelete").start_array();
         for item_27 in var_25 {
             {
-                #[allow(unused_mut)]
-                let mut object_28 = array_26.value().start_object();
-                crate::protocol_serde::shape_threat_actor_ip::ser_threat_actor_ip(&mut object_28, item_27)?;
-                object_28.finish();
+                array_26.value().string(item_27.as_str());
             }
         }
         array_26.finish();
     }
-    if let Some(var_29) = &input.threat_actor_ip_addresses_to_delete {
-        let mut array_30 = object.key("threatActorIpAddressesToDelete").start_array();
+    if let Some(var_28) = &input.reported_incident_start_date {
+        object
+            .key("reportedIncidentStartDate")
+            .date_time(var_28, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
+    if let Some(var_29) = &input.threat_actor_ip_addresses_to_add {
+        let mut array_30 = object.key("threatActorIpAddressesToAdd").start_array();
         for item_31 in var_29 {
             {
                 #[allow(unused_mut)]
@@ -103,23 +103,23 @@ pub fn ser_update_case_input_input(
         }
         array_30.finish();
     }
-    if let Some(var_33) = &input.title {
-        object.key("title").string(var_33.as_str());
-    }
-    if let Some(var_34) = &input.watchers_to_add {
-        let mut array_35 = object.key("watchersToAdd").start_array();
-        for item_36 in var_34 {
+    if let Some(var_33) = &input.threat_actor_ip_addresses_to_delete {
+        let mut array_34 = object.key("threatActorIpAddressesToDelete").start_array();
+        for item_35 in var_33 {
             {
                 #[allow(unused_mut)]
-                let mut object_37 = array_35.value().start_object();
-                crate::protocol_serde::shape_watcher::ser_watcher(&mut object_37, item_36)?;
-                object_37.finish();
+                let mut object_36 = array_34.value().start_object();
+                crate::protocol_serde::shape_threat_actor_ip::ser_threat_actor_ip(&mut object_36, item_35)?;
+                object_36.finish();
             }
         }
-        array_35.finish();
+        array_34.finish();
     }
-    if let Some(var_38) = &input.watchers_to_delete {
-        let mut array_39 = object.key("watchersToDelete").start_array();
+    if let Some(var_37) = &input.title {
+        object.key("title").string(var_37.as_str());
+    }
+    if let Some(var_38) = &input.watchers_to_add {
+        let mut array_39 = object.key("watchersToAdd").start_array();
         for item_40 in var_38 {
             {
                 #[allow(unused_mut)]
@@ -129,6 +129,18 @@ pub fn ser_update_case_input_input(
             }
         }
         array_39.finish();
+    }
+    if let Some(var_42) = &input.watchers_to_delete {
+        let mut array_43 = object.key("watchersToDelete").start_array();
+        for item_44 in var_42 {
+            {
+                #[allow(unused_mut)]
+                let mut object_45 = array_43.value().start_object();
+                crate::protocol_serde::shape_watcher::ser_watcher(&mut object_45, item_44)?;
+                object_45.finish();
+            }
+        }
+        array_43.finish();
     }
     Ok(())
 }

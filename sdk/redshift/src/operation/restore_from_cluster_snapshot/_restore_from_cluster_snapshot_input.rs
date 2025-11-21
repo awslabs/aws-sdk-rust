@@ -125,6 +125,19 @@ pub struct RestoreFromClusterSnapshotInput {
     pub ip_address_type: ::std::option::Option<::std::string::String>,
     /// <p>If true, the snapshot will be restored to a cluster deployed in two Availability Zones.</p>
     pub multi_az: ::std::option::Option<bool>,
+    /// <p>The name of the Glue Data Catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub catalog_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a cluster enabled with Amazon Redshift federated permissions.</p>
+    pub redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl RestoreFromClusterSnapshotInput {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
@@ -328,6 +341,23 @@ impl RestoreFromClusterSnapshotInput {
     pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
+    /// <p>The name of the Glue Data Catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub fn catalog_name(&self) -> ::std::option::Option<&str> {
+        self.catalog_name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a cluster enabled with Amazon Redshift federated permissions.</p>
+    pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<&str> {
+        self.redshift_idc_application_arn.as_deref()
+    }
 }
 impl RestoreFromClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreFromClusterSnapshotInput`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput).
@@ -377,6 +407,8 @@ pub struct RestoreFromClusterSnapshotInputBuilder {
     pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<bool>,
+    pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
+    pub(crate) redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl RestoreFromClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster that will be created from restoring the snapshot.</p>
@@ -1057,6 +1089,61 @@ impl RestoreFromClusterSnapshotInputBuilder {
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         &self.multi_az
     }
+    /// <p>The name of the Glue Data Catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the Glue Data Catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub fn set_catalog_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_name = input;
+        self
+    }
+    /// <p>The name of the Glue Data Catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub fn get_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_name
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a cluster enabled with Amazon Redshift federated permissions.</p>
+    pub fn redshift_idc_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.redshift_idc_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a cluster enabled with Amazon Redshift federated permissions.</p>
+    pub fn set_redshift_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.redshift_idc_application_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a cluster enabled with Amazon Redshift federated permissions.</p>
+    pub fn get_redshift_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.redshift_idc_application_arn
+    }
     /// Consumes the builder and constructs a [`RestoreFromClusterSnapshotInput`](crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput).
     pub fn build(
         self,
@@ -1102,6 +1189,8 @@ impl RestoreFromClusterSnapshotInputBuilder {
             master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
             ip_address_type: self.ip_address_type,
             multi_az: self.multi_az,
+            catalog_name: self.catalog_name,
+            redshift_idc_application_arn: self.redshift_idc_application_arn,
         })
     }
 }

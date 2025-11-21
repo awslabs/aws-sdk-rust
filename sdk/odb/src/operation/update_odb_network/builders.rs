@@ -202,6 +202,34 @@ impl UpdateOdbNetworkFluentBuilder {
     pub fn get_zero_etl_access(&self) -> &::std::option::Option<crate::types::Access> {
         self.inner.get_zero_etl_access()
     }
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for the ODB network.</p>
+    pub fn sts_access(mut self, input: crate::types::Access) -> Self {
+        self.inner = self.inner.sts_access(input);
+        self
+    }
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for the ODB network.</p>
+    pub fn set_sts_access(mut self, input: ::std::option::Option<crate::types::Access>) -> Self {
+        self.inner = self.inner.set_sts_access(input);
+        self
+    }
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for the ODB network.</p>
+    pub fn get_sts_access(&self) -> &::std::option::Option<crate::types::Access> {
+        self.inner.get_sts_access()
+    }
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for the ODB network.</p>
+    pub fn kms_access(mut self, input: crate::types::Access) -> Self {
+        self.inner = self.inner.kms_access(input);
+        self
+    }
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for the ODB network.</p>
+    pub fn set_kms_access(mut self, input: ::std::option::Option<crate::types::Access>) -> Self {
+        self.inner = self.inner.set_kms_access(input);
+        self
+    }
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for the ODB network.</p>
+    pub fn get_kms_access(&self) -> &::std::option::Option<crate::types::Access> {
+        self.inner.get_kms_access()
+    }
     /// <p>Specifies the updated endpoint policy for Amazon S3 access from the ODB network.</p>
     pub fn s3_policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_policy_document(input.into());
@@ -215,5 +243,71 @@ impl UpdateOdbNetworkFluentBuilder {
     /// <p>Specifies the updated endpoint policy for Amazon S3 access from the ODB network.</p>
     pub fn get_s3_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_policy_document()
+    }
+    /// <p>The STS policy document that defines permissions for token service usage within the ODB network.</p>
+    pub fn sts_policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.sts_policy_document(input.into());
+        self
+    }
+    /// <p>The STS policy document that defines permissions for token service usage within the ODB network.</p>
+    pub fn set_sts_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_sts_policy_document(input);
+        self
+    }
+    /// <p>The STS policy document that defines permissions for token service usage within the ODB network.</p>
+    pub fn get_sts_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sts_policy_document()
+    }
+    /// <p>The KMS policy document that defines permissions for key usage within the ODB network.</p>
+    pub fn kms_policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.kms_policy_document(input.into());
+        self
+    }
+    /// <p>The KMS policy document that defines permissions for key usage within the ODB network.</p>
+    pub fn set_kms_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_kms_policy_document(input);
+        self
+    }
+    /// <p>The KMS policy document that defines permissions for key usage within the ODB network.</p>
+    pub fn get_kms_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_policy_document()
+    }
+    ///
+    /// Appends an item to `crossRegionS3RestoreSourcesToEnable`.
+    ///
+    /// To override the contents of this collection use [`set_cross_region_s3_restore_sources_to_enable`](Self::set_cross_region_s3_restore_sources_to_enable).
+    ///
+    /// <p>The cross-Region Amazon S3 restore sources to enable for the ODB network.</p>
+    pub fn cross_region_s3_restore_sources_to_enable(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cross_region_s3_restore_sources_to_enable(input.into());
+        self
+    }
+    /// <p>The cross-Region Amazon S3 restore sources to enable for the ODB network.</p>
+    pub fn set_cross_region_s3_restore_sources_to_enable(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_cross_region_s3_restore_sources_to_enable(input);
+        self
+    }
+    /// <p>The cross-Region Amazon S3 restore sources to enable for the ODB network.</p>
+    pub fn get_cross_region_s3_restore_sources_to_enable(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cross_region_s3_restore_sources_to_enable()
+    }
+    ///
+    /// Appends an item to `crossRegionS3RestoreSourcesToDisable`.
+    ///
+    /// To override the contents of this collection use [`set_cross_region_s3_restore_sources_to_disable`](Self::set_cross_region_s3_restore_sources_to_disable).
+    ///
+    /// <p>The cross-Region Amazon S3 restore sources to disable for the ODB network.</p>
+    pub fn cross_region_s3_restore_sources_to_disable(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cross_region_s3_restore_sources_to_disable(input.into());
+        self
+    }
+    /// <p>The cross-Region Amazon S3 restore sources to disable for the ODB network.</p>
+    pub fn set_cross_region_s3_restore_sources_to_disable(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_cross_region_s3_restore_sources_to_disable(input);
+        self
+    }
+    /// <p>The cross-Region Amazon S3 restore sources to disable for the ODB network.</p>
+    pub fn get_cross_region_s3_restore_sources_to_disable(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cross_region_s3_restore_sources_to_disable()
     }
 }

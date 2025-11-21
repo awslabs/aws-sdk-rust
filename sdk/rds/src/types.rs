@@ -37,6 +37,8 @@ pub use crate::types::_pending_modified_values::PendingModifiedValues;
 
 pub use crate::types::_pending_cloudwatch_logs_exports::PendingCloudwatchLogsExports;
 
+pub use crate::types::_upgrade_rollout_order::UpgradeRolloutOrder;
+
 pub use crate::types::_db_subnet_group::DbSubnetGroup;
 
 pub use crate::types::_subnet::Subnet;
@@ -612,6 +614,8 @@ mod _tenant_database;
 mod _tenant_database_pending_modified_values;
 
 mod _timezone;
+
+mod _upgrade_rollout_order;
 
 mod _upgrade_target;
 

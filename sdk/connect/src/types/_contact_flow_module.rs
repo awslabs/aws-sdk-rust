@@ -20,6 +20,16 @@ pub struct ContactFlowModule {
     pub status: ::std::option::Option<crate::types::ContactFlowModuleStatus>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Hash of the module content for integrity verification.</p>
+    pub flow_module_content_sha256: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the flow module.</p>
+    pub version: ::std::option::Option<i64>,
+    /// <p>Description of the version.</p>
+    pub version_description: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration settings for the flow module.</p>
+    pub settings: ::std::option::Option<::std::string::String>,
+    /// <p>The external invocation configuration for the flow module</p>
+    pub external_invocation_configuration: ::std::option::Option<crate::types::ExternalInvocationConfiguration>,
 }
 impl ContactFlowModule {
     /// <p>The Amazon Resource Name (ARN).</p>
@@ -54,6 +64,26 @@ impl ContactFlowModule {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Hash of the module content for integrity verification.</p>
+    pub fn flow_module_content_sha256(&self) -> ::std::option::Option<&str> {
+        self.flow_module_content_sha256.as_deref()
+    }
+    /// <p>The version of the flow module.</p>
+    pub fn version(&self) -> ::std::option::Option<i64> {
+        self.version
+    }
+    /// <p>Description of the version.</p>
+    pub fn version_description(&self) -> ::std::option::Option<&str> {
+        self.version_description.as_deref()
+    }
+    /// <p>The configuration settings for the flow module.</p>
+    pub fn settings(&self) -> ::std::option::Option<&str> {
+        self.settings.as_deref()
+    }
+    /// <p>The external invocation configuration for the flow module</p>
+    pub fn external_invocation_configuration(&self) -> ::std::option::Option<&crate::types::ExternalInvocationConfiguration> {
+        self.external_invocation_configuration.as_ref()
+    }
 }
 impl ContactFlowModule {
     /// Creates a new builder-style object to manufacture [`ContactFlowModule`](crate::types::ContactFlowModule).
@@ -74,6 +104,11 @@ pub struct ContactFlowModuleBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ContactFlowModuleState>,
     pub(crate) status: ::std::option::Option<crate::types::ContactFlowModuleStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) flow_module_content_sha256: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<i64>,
+    pub(crate) version_description: ::std::option::Option<::std::string::String>,
+    pub(crate) settings: ::std::option::Option<::std::string::String>,
+    pub(crate) external_invocation_configuration: ::std::option::Option<crate::types::ExternalInvocationConfiguration>,
 }
 impl ContactFlowModuleBuilder {
     /// <p>The Amazon Resource Name (ARN).</p>
@@ -194,6 +229,76 @@ impl ContactFlowModuleBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Hash of the module content for integrity verification.</p>
+    pub fn flow_module_content_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.flow_module_content_sha256 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Hash of the module content for integrity verification.</p>
+    pub fn set_flow_module_content_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.flow_module_content_sha256 = input;
+        self
+    }
+    /// <p>Hash of the module content for integrity verification.</p>
+    pub fn get_flow_module_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_module_content_sha256
+    }
+    /// <p>The version of the flow module.</p>
+    pub fn version(mut self, input: i64) -> Self {
+        self.version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version of the flow module.</p>
+    pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.version = input;
+        self
+    }
+    /// <p>The version of the flow module.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
+    }
+    /// <p>Description of the version.</p>
+    pub fn version_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Description of the version.</p>
+    pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_description = input;
+        self
+    }
+    /// <p>Description of the version.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_description
+    }
+    /// <p>The configuration settings for the flow module.</p>
+    pub fn settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.settings = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The configuration settings for the flow module.</p>
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.settings = input;
+        self
+    }
+    /// <p>The configuration settings for the flow module.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.settings
+    }
+    /// <p>The external invocation configuration for the flow module</p>
+    pub fn external_invocation_configuration(mut self, input: crate::types::ExternalInvocationConfiguration) -> Self {
+        self.external_invocation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The external invocation configuration for the flow module</p>
+    pub fn set_external_invocation_configuration(mut self, input: ::std::option::Option<crate::types::ExternalInvocationConfiguration>) -> Self {
+        self.external_invocation_configuration = input;
+        self
+    }
+    /// <p>The external invocation configuration for the flow module</p>
+    pub fn get_external_invocation_configuration(&self) -> &::std::option::Option<crate::types::ExternalInvocationConfiguration> {
+        &self.external_invocation_configuration
+    }
     /// Consumes the builder and constructs a [`ContactFlowModule`](crate::types::ContactFlowModule).
     pub fn build(self) -> crate::types::ContactFlowModule {
         crate::types::ContactFlowModule {
@@ -205,6 +310,11 @@ impl ContactFlowModuleBuilder {
             state: self.state,
             status: self.status,
             tags: self.tags,
+            flow_module_content_sha256: self.flow_module_content_sha256,
+            version: self.version,
+            version_description: self.version_description,
+            settings: self.settings,
+            external_invocation_configuration: self.external_invocation_configuration,
         }
     }
 }

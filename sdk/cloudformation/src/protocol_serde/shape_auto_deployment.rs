@@ -14,6 +14,17 @@ pub fn ser_auto_deployment(
     if let Some(var_4) = &input.retain_stacks_on_account_removal {
         scope_3.boolean(*var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("DependsOn");
+    if let Some(var_6) = &input.depends_on {
+        let mut list_8 = scope_5.start_list(false, None);
+        for item_7 in var_6 {
+            #[allow(unused_mut)]
+            let mut entry_9 = list_8.entry();
+            entry_9.string(item_7);
+        }
+        list_8.finish();
+    }
     Ok(())
 }
 
@@ -26,7 +37,7 @@ pub fn de_auto_deployment(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudformation#AutoDeployment$Enabled */ =>  {
-                let var_5 =
+                let var_10 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -37,11 +48,11 @@ pub fn de_auto_deployment(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_5);
+                builder = builder.set_enabled(var_10);
             }
             ,
             s if s.matches("RetainStacksOnAccountRemoval") /* RetainStacksOnAccountRemoval com.amazonaws.cloudformation#AutoDeployment$RetainStacksOnAccountRemoval */ =>  {
-                let var_6 =
+                let var_11 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -52,7 +63,17 @@ pub fn de_auto_deployment(
                         ?
                     )
                 ;
-                builder = builder.set_retain_stacks_on_account_removal(var_6);
+                builder = builder.set_retain_stacks_on_account_removal(var_11);
+            }
+            ,
+            s if s.matches("DependsOn") /* DependsOn com.amazonaws.cloudformation#AutoDeployment$DependsOn */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_stack_set_arn_list::de_stack_set_arn_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_depends_on(var_12);
             }
             ,
             _ => {}

@@ -47,6 +47,8 @@ pub struct CreateClusterInput {
     pub storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
     /// <p>Indicates whether to enable deletion protection for the cluster. When enabled, the cluster cannot be deleted unless deletion protection is first disabled. This helps prevent accidental cluster deletion. Default value is <code>false</code>.</p>
     pub deletion_protection: ::std::option::Option<bool>,
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub control_plane_scaling_config: ::std::option::Option<crate::types::ControlPlaneScalingConfig>,
 }
 impl CreateClusterInput {
     /// <p>The unique name to give to your cluster. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphanumeric character and can't be longer than 100 characters. The name must be unique within the Amazon Web Services Region and Amazon Web Services account that you're creating the cluster in.</p>
@@ -131,6 +133,10 @@ impl CreateClusterInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn control_plane_scaling_config(&self) -> ::std::option::Option<&crate::types::ControlPlaneScalingConfig> {
+        self.control_plane_scaling_config.as_ref()
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -161,6 +167,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) compute_config: ::std::option::Option<crate::types::ComputeConfigRequest>,
     pub(crate) storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) control_plane_scaling_config: ::std::option::Option<crate::types::ControlPlaneScalingConfig>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The unique name to give to your cluster. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphanumeric character and can't be longer than 100 characters. The name must be unique within the Amazon Web Services Region and Amazon Web Services account that you're creating the cluster in.</p>
@@ -454,6 +461,20 @@ impl CreateClusterInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn control_plane_scaling_config(mut self, input: crate::types::ControlPlaneScalingConfig) -> Self {
+        self.control_plane_scaling_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn set_control_plane_scaling_config(mut self, input: ::std::option::Option<crate::types::ControlPlaneScalingConfig>) -> Self {
+        self.control_plane_scaling_config = input;
+        self
+    }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn get_control_plane_scaling_config(&self) -> &::std::option::Option<crate::types::ControlPlaneScalingConfig> {
+        &self.control_plane_scaling_config
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -477,6 +498,7 @@ impl CreateClusterInputBuilder {
             compute_config: self.compute_config,
             storage_config: self.storage_config,
             deletion_protection: self.deletion_protection,
+            control_plane_scaling_config: self.control_plane_scaling_config,
         })
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>The extended data of a message template.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExtendedMessageTemplateData {
     /// <p>The Amazon Resource Name (ARN) of the message template.</p>
     pub message_template_arn: ::std::string::String,
@@ -14,6 +14,8 @@ pub struct ExtendedMessageTemplateData {
     pub knowledge_base_id: ::std::string::String,
     /// <p>The name of the message template.</p>
     pub name: ::std::string::String,
+    /// <p>The channel of the message template.</p>
+    pub channel: ::std::option::Option<::std::string::String>,
     /// <p>The channel subtype this message template applies to.</p>
     pub channel_subtype: crate::types::ChannelSubtype,
     /// <p>The timestamp when the message template was created.</p>
@@ -28,6 +30,8 @@ pub struct ExtendedMessageTemplateData {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub language: ::std::option::Option<::std::string::String>,
+    /// <p>The source configuration summary of the message template.</p>
+    pub source_configuration_summary: ::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary>,
     /// <p>The configuration information of the grouping of Amazon Q in Connect users.</p>
     pub grouping_configuration: ::std::option::Option<crate::types::GroupingConfiguration>,
     /// <p>An object that specifies the default values to use for variables in the message template. This object contains different categories of key-value pairs. Each key defines a variable or placeholder in the message template. The corresponding value defines the default value for that variable.</p>
@@ -71,6 +75,10 @@ impl ExtendedMessageTemplateData {
         use std::ops::Deref;
         self.name.deref()
     }
+    /// <p>The channel of the message template.</p>
+    pub fn channel(&self) -> ::std::option::Option<&str> {
+        self.channel.as_deref()
+    }
     /// <p>The channel subtype this message template applies to.</p>
     pub fn channel_subtype(&self) -> &crate::types::ChannelSubtype {
         &self.channel_subtype
@@ -99,6 +107,10 @@ impl ExtendedMessageTemplateData {
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
+    }
+    /// <p>The source configuration summary of the message template.</p>
+    pub fn source_configuration_summary(&self) -> ::std::option::Option<&crate::types::MessageTemplateSourceConfigurationSummary> {
+        self.source_configuration_summary.as_ref()
     }
     /// <p>The configuration information of the grouping of Amazon Q in Connect users.</p>
     pub fn grouping_configuration(&self) -> ::std::option::Option<&crate::types::GroupingConfiguration> {
@@ -138,6 +150,34 @@ impl ExtendedMessageTemplateData {
         self.tags.as_ref()
     }
 }
+impl ::std::fmt::Debug for ExtendedMessageTemplateData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ExtendedMessageTemplateData");
+        formatter.field("message_template_arn", &self.message_template_arn);
+        formatter.field("message_template_id", &self.message_template_id);
+        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
+        formatter.field("knowledge_base_id", &self.knowledge_base_id);
+        formatter.field("name", &self.name);
+        formatter.field("channel", &"*** Sensitive Data Redacted ***");
+        formatter.field("channel_subtype", &self.channel_subtype);
+        formatter.field("created_time", &self.created_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_by", &self.last_modified_by);
+        formatter.field("content", &self.content);
+        formatter.field("description", &self.description);
+        formatter.field("language", &self.language);
+        formatter.field("source_configuration_summary", &self.source_configuration_summary);
+        formatter.field("grouping_configuration", &self.grouping_configuration);
+        formatter.field("default_attributes", &self.default_attributes);
+        formatter.field("attribute_types", &self.attribute_types);
+        formatter.field("attachments", &self.attachments);
+        formatter.field("is_active", &self.is_active);
+        formatter.field("version_number", &self.version_number);
+        formatter.field("message_template_content_sha256", &self.message_template_content_sha256);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
 impl ExtendedMessageTemplateData {
     /// Creates a new builder-style object to manufacture [`ExtendedMessageTemplateData`](crate::types::ExtendedMessageTemplateData).
     pub fn builder() -> crate::types::builders::ExtendedMessageTemplateDataBuilder {
@@ -146,7 +186,7 @@ impl ExtendedMessageTemplateData {
 }
 
 /// A builder for [`ExtendedMessageTemplateData`](crate::types::ExtendedMessageTemplateData).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ExtendedMessageTemplateDataBuilder {
     pub(crate) message_template_arn: ::std::option::Option<::std::string::String>,
@@ -154,6 +194,7 @@ pub struct ExtendedMessageTemplateDataBuilder {
     pub(crate) knowledge_base_arn: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) channel: ::std::option::Option<::std::string::String>,
     pub(crate) channel_subtype: ::std::option::Option<crate::types::ChannelSubtype>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -161,6 +202,7 @@ pub struct ExtendedMessageTemplateDataBuilder {
     pub(crate) content: ::std::option::Option<crate::types::MessageTemplateContentProvider>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
+    pub(crate) source_configuration_summary: ::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary>,
     pub(crate) grouping_configuration: ::std::option::Option<crate::types::GroupingConfiguration>,
     pub(crate) default_attributes: ::std::option::Option<crate::types::MessageTemplateAttributes>,
     pub(crate) attribute_types: ::std::option::Option<::std::vec::Vec<crate::types::MessageTemplateAttributeType>>,
@@ -246,6 +288,20 @@ impl ExtendedMessageTemplateDataBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The channel of the message template.</p>
+    pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The channel of the message template.</p>
+    pub fn set_channel(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.channel = input;
+        self
+    }
+    /// <p>The channel of the message template.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel
+    }
     /// <p>The channel subtype this message template applies to.</p>
     /// This field is required.
     pub fn channel_subtype(mut self, input: crate::types::ChannelSubtype) -> Self {
@@ -307,7 +363,6 @@ impl ExtendedMessageTemplateDataBuilder {
         &self.last_modified_by
     }
     /// <p>The content of the message template.</p>
-    /// This field is required.
     pub fn content(mut self, input: crate::types::MessageTemplateContentProvider) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -348,6 +403,20 @@ impl ExtendedMessageTemplateDataBuilder {
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
+    }
+    /// <p>The source configuration summary of the message template.</p>
+    pub fn source_configuration_summary(mut self, input: crate::types::MessageTemplateSourceConfigurationSummary) -> Self {
+        self.source_configuration_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source configuration summary of the message template.</p>
+    pub fn set_source_configuration_summary(mut self, input: ::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary>) -> Self {
+        self.source_configuration_summary = input;
+        self
+    }
+    /// <p>The source configuration summary of the message template.</p>
+    pub fn get_source_configuration_summary(&self) -> &::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary> {
+        &self.source_configuration_summary
     }
     /// <p>The configuration information of the grouping of Amazon Q in Connect users.</p>
     pub fn grouping_configuration(mut self, input: crate::types::GroupingConfiguration) -> Self {
@@ -524,6 +593,7 @@ impl ExtendedMessageTemplateDataBuilder {
                     "name was not specified but it is required when building ExtendedMessageTemplateData",
                 )
             })?,
+            channel: self.channel,
             channel_subtype: self.channel_subtype.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_subtype",
@@ -551,6 +621,7 @@ impl ExtendedMessageTemplateDataBuilder {
             content: self.content,
             description: self.description,
             language: self.language,
+            source_configuration_summary: self.source_configuration_summary,
             grouping_configuration: self.grouping_configuration,
             default_attributes: self.default_attributes,
             attribute_types: self.attribute_types,
@@ -565,5 +636,33 @@ impl ExtendedMessageTemplateDataBuilder {
             })?,
             tags: self.tags,
         })
+    }
+}
+impl ::std::fmt::Debug for ExtendedMessageTemplateDataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ExtendedMessageTemplateDataBuilder");
+        formatter.field("message_template_arn", &self.message_template_arn);
+        formatter.field("message_template_id", &self.message_template_id);
+        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
+        formatter.field("knowledge_base_id", &self.knowledge_base_id);
+        formatter.field("name", &self.name);
+        formatter.field("channel", &"*** Sensitive Data Redacted ***");
+        formatter.field("channel_subtype", &self.channel_subtype);
+        formatter.field("created_time", &self.created_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_by", &self.last_modified_by);
+        formatter.field("content", &self.content);
+        formatter.field("description", &self.description);
+        formatter.field("language", &self.language);
+        formatter.field("source_configuration_summary", &self.source_configuration_summary);
+        formatter.field("grouping_configuration", &self.grouping_configuration);
+        formatter.field("default_attributes", &self.default_attributes);
+        formatter.field("attribute_types", &self.attribute_types);
+        formatter.field("attachments", &self.attachments);
+        formatter.field("is_active", &self.is_active);
+        formatter.field("version_number", &self.version_number);
+        formatter.field("message_template_content_sha256", &self.message_template_content_sha256);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
     }
 }

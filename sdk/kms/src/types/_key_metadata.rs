@@ -74,7 +74,7 @@ pub struct KeyMetadata {
     /// <p>Information about the external key that is associated with a KMS key in an external key store.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub xks_key_configuration: ::std::option::Option<crate::types::XksKeyConfigurationType>,
-    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric encryption keys with <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
+    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> or <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
     pub current_key_material_id: ::std::option::Option<::std::string::String>,
 }
 impl KeyMetadata {
@@ -206,7 +206,7 @@ impl KeyMetadata {
     pub fn xks_key_configuration(&self) -> ::std::option::Option<&crate::types::XksKeyConfigurationType> {
         self.xks_key_configuration.as_ref()
     }
-    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric encryption keys with <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
+    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> or <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
     pub fn current_key_material_id(&self) -> ::std::option::Option<&str> {
         self.current_key_material_id.as_deref()
     }
@@ -682,17 +682,17 @@ impl KeyMetadataBuilder {
     pub fn get_xks_key_configuration(&self) -> &::std::option::Option<crate::types::XksKeyConfigurationType> {
         &self.xks_key_configuration
     }
-    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric encryption keys with <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
+    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> or <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
     pub fn current_key_material_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.current_key_material_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric encryption keys with <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
+    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> or <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
     pub fn set_current_key_material_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.current_key_material_id = input;
         self
     }
-    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> origin and single-Region, symmetric encryption keys with <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
+    /// <p>Identifies the current key material. This value is present for symmetric encryption keys with <code>AWS_KMS</code> or <code>EXTERNAL</code> origin. These KMS keys support automatic or on-demand key rotation and can have multiple key materials associated with them. KMS uses the current key material for both encryption and decryption, and the non-current key material for decryption operations only.</p>
     pub fn get_current_key_material_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_key_material_id
     }

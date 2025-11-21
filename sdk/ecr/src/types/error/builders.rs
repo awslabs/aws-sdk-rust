@@ -55,6 +55,8 @@ pub use crate::types::error::_image_digest_does_not_match_exception::ImageDigest
 
 pub use crate::types::error::_image_already_exists_exception::ImageAlreadyExistsExceptionBuilder;
 
+pub use crate::types::error::_signing_configuration_not_found_exception::SigningConfigurationNotFoundExceptionBuilder;
+
 pub use crate::types::error::_repository_policy_not_found_exception::RepositoryPolicyNotFoundExceptionBuilder;
 
 pub use crate::types::error::_registry_policy_not_found_exception::RegistryPolicyNotFoundExceptionBuilder;

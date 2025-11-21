@@ -111,6 +111,48 @@ impl From<crate::operation::accept_marketplace_registration::AcceptMarketplaceRe
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_iam_role_to_resource::AssociateIamRoleToResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_iam_role_to_resource::AssociateIamRoleToResourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_iam_role_to_resource::AssociateIamRoleToResourceError> for Error {
+    fn from(err: crate::operation::associate_iam_role_to_resource::AssociateIamRoleToResourceError) -> Self {
+        match err {
+            crate::operation::associate_iam_role_to_resource::AssociateIamRoleToResourceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_iam_role_to_resource::AssociateIamRoleToResourceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::associate_iam_role_to_resource::AssociateIamRoleToResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_iam_role_to_resource::AssociateIamRoleToResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_iam_role_to_resource::AssociateIamRoleToResourceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_iam_role_to_resource::AssociateIamRoleToResourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::associate_iam_role_to_resource::AssociateIamRoleToResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -512,6 +554,56 @@ impl From<crate::operation::delete_odb_peering_connection::DeleteOdbPeeringConne
                 Error::ValidationException(inner)
             }
             crate::operation::delete_odb_peering_connection::DeleteOdbPeeringConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError> for Error {
+    fn from(err: crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError) -> Self {
+        match err {
+            crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

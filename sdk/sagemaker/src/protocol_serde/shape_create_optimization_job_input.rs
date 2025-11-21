@@ -18,57 +18,63 @@ pub fn ser_create_optimization_job_input_input(
     if let Some(var_5) = &input.deployment_instance_type {
         object.key("DeploymentInstanceType").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.optimization_environment {
+    if let Some(var_6) = &input.max_instance_count {
+        object.key("MaxInstanceCount").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
+    }
+    if let Some(var_7) = &input.optimization_environment {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("OptimizationEnvironment").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_8 = object.key("OptimizationEnvironment").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_10) = &input.optimization_configs {
-        let mut array_11 = object.key("OptimizationConfigs").start_array();
-        for item_12 in var_10 {
-            {
-                #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_optimization_config::ser_optimization_config(&mut object_13, item_12)?;
-                object_13.finish();
-            }
-        }
-        array_11.finish();
-    }
-    if let Some(var_14) = &input.output_config {
-        #[allow(unused_mut)]
-        let mut object_15 = object.key("OutputConfig").start_object();
-        crate::protocol_serde::shape_optimization_job_output_config::ser_optimization_job_output_config(&mut object_15, var_14)?;
-        object_15.finish();
-    }
-    if let Some(var_16) = &input.stopping_condition {
-        #[allow(unused_mut)]
-        let mut object_17 = object.key("StoppingCondition").start_object();
-        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_17, var_16)?;
-        object_17.finish();
-    }
-    if let Some(var_18) = &input.tags {
-        let mut array_19 = object.key("Tags").start_array();
-        for item_20 in var_18 {
+    if let Some(var_11) = &input.optimization_configs {
+        let mut array_12 = object.key("OptimizationConfigs").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_optimization_config::ser_optimization_config(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_19.finish();
+        array_12.finish();
     }
-    if let Some(var_22) = &input.vpc_config {
+    if let Some(var_15) = &input.output_config {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_optimization_vpc_config::ser_optimization_vpc_config(&mut object_23, var_22)?;
-        object_23.finish();
+        let mut object_16 = object.key("OutputConfig").start_object();
+        crate::protocol_serde::shape_optimization_job_output_config::ser_optimization_job_output_config(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.stopping_condition {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("StoppingCondition").start_object();
+        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.tags {
+        let mut array_20 = object.key("Tags").start_array();
+        for item_21 in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_22, item_21)?;
+                object_22.finish();
+            }
+        }
+        array_20.finish();
+    }
+    if let Some(var_23) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_optimization_vpc_config::ser_optimization_vpc_config(&mut object_24, var_23)?;
+        object_24.finish();
     }
     Ok(())
 }

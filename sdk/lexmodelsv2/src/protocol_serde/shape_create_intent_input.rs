@@ -48,53 +48,56 @@ pub fn ser_create_intent_input_input(
         crate::protocol_serde::shape_intent_confirmation_setting::ser_intent_confirmation_setting(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.intent_name {
-        object.key("intentName").string(var_16.as_str());
+    if let Some(var_16) = &input.intent_display_name {
+        object.key("intentDisplayName").string(var_16.as_str());
     }
-    if let Some(var_17) = &input.kendra_configuration {
+    if let Some(var_17) = &input.intent_name {
+        object.key("intentName").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.kendra_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("kendraConfiguration").start_object();
-        crate::protocol_serde::shape_kendra_configuration::ser_kendra_configuration(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("kendraConfiguration").start_object();
+        crate::protocol_serde::shape_kendra_configuration::ser_kendra_configuration(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_19) = &input.output_contexts {
-        let mut array_20 = object.key("outputContexts").start_array();
-        for item_21 in var_19 {
+    if let Some(var_20) = &input.output_contexts {
+        let mut array_21 = object.key("outputContexts").start_array();
+        for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
-                let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_output_context::ser_output_context(&mut object_22, item_21)?;
-                object_22.finish();
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_output_context::ser_output_context(&mut object_23, item_22)?;
+                object_23.finish();
             }
         }
-        array_20.finish();
+        array_21.finish();
     }
-    if let Some(var_23) = &input.parent_intent_signature {
-        object.key("parentIntentSignature").string(var_23.as_str());
+    if let Some(var_24) = &input.parent_intent_signature {
+        object.key("parentIntentSignature").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.q_in_connect_intent_configuration {
+    if let Some(var_25) = &input.q_in_connect_intent_configuration {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("qInConnectIntentConfiguration").start_object();
-        crate::protocol_serde::shape_q_in_connect_intent_configuration::ser_q_in_connect_intent_configuration(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_26 = object.key("qInConnectIntentConfiguration").start_object();
+        crate::protocol_serde::shape_q_in_connect_intent_configuration::ser_q_in_connect_intent_configuration(&mut object_26, var_25)?;
+        object_26.finish();
     }
-    if let Some(var_26) = &input.qn_a_intent_configuration {
+    if let Some(var_27) = &input.qn_a_intent_configuration {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("qnAIntentConfiguration").start_object();
-        crate::protocol_serde::shape_qn_a_intent_configuration::ser_qn_a_intent_configuration(&mut object_27, var_26)?;
-        object_27.finish();
+        let mut object_28 = object.key("qnAIntentConfiguration").start_object();
+        crate::protocol_serde::shape_qn_a_intent_configuration::ser_qn_a_intent_configuration(&mut object_28, var_27)?;
+        object_28.finish();
     }
-    if let Some(var_28) = &input.sample_utterances {
-        let mut array_29 = object.key("sampleUtterances").start_array();
-        for item_30 in var_28 {
+    if let Some(var_29) = &input.sample_utterances {
+        let mut array_30 = object.key("sampleUtterances").start_array();
+        for item_31 in var_29 {
             {
                 #[allow(unused_mut)]
-                let mut object_31 = array_29.value().start_object();
-                crate::protocol_serde::shape_sample_utterance::ser_sample_utterance(&mut object_31, item_30)?;
-                object_31.finish();
+                let mut object_32 = array_30.value().start_object();
+                crate::protocol_serde::shape_sample_utterance::ser_sample_utterance(&mut object_32, item_31)?;
+                object_32.finish();
             }
         }
-        array_29.finish();
+        array_30.finish();
     }
     Ok(())
 }

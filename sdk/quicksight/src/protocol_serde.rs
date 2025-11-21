@@ -1375,6 +1375,8 @@ pub(crate) mod shape_registered_user_generative_qn_a_embedding_configuration;
 
 pub(crate) mod shape_registered_user_q_search_bar_embedding_configuration;
 
+pub(crate) mod shape_registered_user_quick_chat_embedding_configuration;
+
 pub(crate) mod shape_registered_user_quick_sight_console_embedding_configuration;
 
 pub(crate) mod shape_relational_table;

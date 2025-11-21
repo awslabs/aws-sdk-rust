@@ -55,6 +55,16 @@ pub struct DbCluster {
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
+    /// <p>This data type represents the order in which the clusters are upgraded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>\[first\] - Typically used for development or testing environments.</p></li>
+    /// <li>
+    /// <p>\[second\] - Default order for resources not specifically configured.</p></li>
+    /// <li>
+    /// <p>\[last\] - Usually reserved for production environments.</p></li>
+    /// </ul>
+    pub upgrade_rollout_order: ::std::option::Option<crate::types::UpgradeRolloutOrder>,
     /// <p>The identifier of the source DB cluster if this DB cluster is a read replica.</p>
     pub replication_source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more identifiers of the read replicas associated with this DB cluster.</p>
@@ -322,6 +332,18 @@ impl DbCluster {
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>This data type represents the order in which the clusters are upgraded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>\[first\] - Typically used for development or testing environments.</p></li>
+    /// <li>
+    /// <p>\[second\] - Default order for resources not specifically configured.</p></li>
+    /// <li>
+    /// <p>\[last\] - Usually reserved for production environments.</p></li>
+    /// </ul>
+    pub fn upgrade_rollout_order(&self) -> ::std::option::Option<&crate::types::UpgradeRolloutOrder> {
+        self.upgrade_rollout_order.as_ref()
     }
     /// <p>The identifier of the source DB cluster if this DB cluster is a read replica.</p>
     pub fn replication_source_identifier(&self) -> ::std::option::Option<&str> {
@@ -663,6 +685,7 @@ pub struct DbClusterBuilder {
     pub(crate) db_cluster_option_group_memberships: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterOptionGroupStatus>>,
     pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
+    pub(crate) upgrade_rollout_order: ::std::option::Option<crate::types::UpgradeRolloutOrder>,
     pub(crate) replication_source_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) read_replica_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterStatusInfo>>,
@@ -1071,6 +1094,44 @@ impl DbClusterBuilder {
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
+    }
+    /// <p>This data type represents the order in which the clusters are upgraded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>\[first\] - Typically used for development or testing environments.</p></li>
+    /// <li>
+    /// <p>\[second\] - Default order for resources not specifically configured.</p></li>
+    /// <li>
+    /// <p>\[last\] - Usually reserved for production environments.</p></li>
+    /// </ul>
+    pub fn upgrade_rollout_order(mut self, input: crate::types::UpgradeRolloutOrder) -> Self {
+        self.upgrade_rollout_order = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This data type represents the order in which the clusters are upgraded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>\[first\] - Typically used for development or testing environments.</p></li>
+    /// <li>
+    /// <p>\[second\] - Default order for resources not specifically configured.</p></li>
+    /// <li>
+    /// <p>\[last\] - Usually reserved for production environments.</p></li>
+    /// </ul>
+    pub fn set_upgrade_rollout_order(mut self, input: ::std::option::Option<crate::types::UpgradeRolloutOrder>) -> Self {
+        self.upgrade_rollout_order = input;
+        self
+    }
+    /// <p>This data type represents the order in which the clusters are upgraded.</p>
+    /// <ul>
+    /// <li>
+    /// <p>\[first\] - Typically used for development or testing environments.</p></li>
+    /// <li>
+    /// <p>\[second\] - Default order for resources not specifically configured.</p></li>
+    /// <li>
+    /// <p>\[last\] - Usually reserved for production environments.</p></li>
+    /// </ul>
+    pub fn get_upgrade_rollout_order(&self) -> &::std::option::Option<crate::types::UpgradeRolloutOrder> {
+        &self.upgrade_rollout_order
     }
     /// <p>The identifier of the source DB cluster if this DB cluster is a read replica.</p>
     pub fn replication_source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -2138,6 +2199,7 @@ impl DbClusterBuilder {
             db_cluster_option_group_memberships: self.db_cluster_option_group_memberships,
             preferred_backup_window: self.preferred_backup_window,
             preferred_maintenance_window: self.preferred_maintenance_window,
+            upgrade_rollout_order: self.upgrade_rollout_order,
             replication_source_identifier: self.replication_source_identifier,
             read_replica_identifiers: self.read_replica_identifiers,
             status_infos: self.status_infos,

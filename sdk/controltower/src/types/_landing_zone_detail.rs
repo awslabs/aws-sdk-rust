@@ -6,8 +6,6 @@
 pub struct LandingZoneDetail {
     /// <p>The landing zone's current deployed version.</p>
     pub version: ::std::string::String,
-    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
-    pub manifest: ::aws_smithy_types::Document,
     /// <p>The types of remediation actions configured for the landing zone, such as automatic drift correction or compliance enforcement.</p>
     pub remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     /// <p>The ARN of the landing zone.</p>
@@ -18,16 +16,14 @@ pub struct LandingZoneDetail {
     pub latest_available_version: ::std::option::Option<::std::string::String>,
     /// <p>The drift status of the landing zone.</p>
     pub drift_status: ::std::option::Option<crate::types::LandingZoneDriftStatusSummary>,
+    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
+    pub manifest: ::aws_smithy_types::Document,
 }
 impl LandingZoneDetail {
     /// <p>The landing zone's current deployed version.</p>
     pub fn version(&self) -> &str {
         use std::ops::Deref;
         self.version.deref()
-    }
-    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
-    pub fn manifest(&self) -> &::aws_smithy_types::Document {
-        &self.manifest
     }
     /// <p>The types of remediation actions configured for the landing zone, such as automatic drift correction or compliance enforcement.</p>
     ///
@@ -51,6 +47,10 @@ impl LandingZoneDetail {
     pub fn drift_status(&self) -> ::std::option::Option<&crate::types::LandingZoneDriftStatusSummary> {
         self.drift_status.as_ref()
     }
+    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
+    pub fn manifest(&self) -> &::aws_smithy_types::Document {
+        &self.manifest
+    }
 }
 impl LandingZoneDetail {
     /// Creates a new builder-style object to manufacture [`LandingZoneDetail`](crate::types::LandingZoneDetail).
@@ -64,12 +64,12 @@ impl LandingZoneDetail {
 #[non_exhaustive]
 pub struct LandingZoneDetailBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) manifest: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::LandingZoneStatus>,
     pub(crate) latest_available_version: ::std::option::Option<::std::string::String>,
     pub(crate) drift_status: ::std::option::Option<crate::types::LandingZoneDriftStatusSummary>,
+    pub(crate) manifest: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl LandingZoneDetailBuilder {
     /// <p>The landing zone's current deployed version.</p>
@@ -86,21 +86,6 @@ impl LandingZoneDetailBuilder {
     /// <p>The landing zone's current deployed version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
-    }
-    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
-    /// This field is required.
-    pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
-        self.manifest = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
-    pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.manifest = input;
-        self
-    }
-    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
-    pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
-        &self.manifest
     }
     /// Appends an item to `remediation_types`.
     ///
@@ -178,6 +163,21 @@ impl LandingZoneDetailBuilder {
     pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::LandingZoneDriftStatusSummary> {
         &self.drift_status
     }
+    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
+    /// This field is required.
+    pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.manifest = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
+    pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.manifest = input;
+        self
+    }
+    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
+    pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.manifest
+    }
     /// Consumes the builder and constructs a [`LandingZoneDetail`](crate::types::LandingZoneDetail).
     /// This method will fail if any of the following fields are not set:
     /// - [`version`](crate::types::builders::LandingZoneDetailBuilder::version)
@@ -190,17 +190,17 @@ impl LandingZoneDetailBuilder {
                     "version was not specified but it is required when building LandingZoneDetail",
                 )
             })?,
+            remediation_types: self.remediation_types,
+            arn: self.arn,
+            status: self.status,
+            latest_available_version: self.latest_available_version,
+            drift_status: self.drift_status,
             manifest: self.manifest.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "manifest",
                     "manifest was not specified but it is required when building LandingZoneDetail",
                 )
             })?,
-            remediation_types: self.remediation_types,
-            arn: self.arn,
-            status: self.status,
-            latest_available_version: self.latest_available_version,
-            drift_status: self.drift_status,
         })
     }
 }

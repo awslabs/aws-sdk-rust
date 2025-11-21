@@ -247,11 +247,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://metering.marketplace.eusc-de-east-1.amazonaws.eu");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://metering-marketplace.eusc-de-east-1.amazonaws.eu");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://metering.marketplace.eusc-de-east-1.amazonaws.eu")
+                .url("https://metering-marketplace.eusc-de-east-1.amazonaws.eu")
                 .build()
         );
     }

@@ -3,6 +3,18 @@ pub use crate::types::_work_group_state::WorkGroupState;
 
 pub use crate::types::_work_group_configuration_updates::WorkGroupConfigurationUpdates;
 
+pub use crate::types::_engine_configuration::EngineConfiguration;
+
+pub use crate::types::_classification::Classification;
+
+pub use crate::types::_monitoring_configuration::MonitoringConfiguration;
+
+pub use crate::types::_s3_logging_configuration::S3LoggingConfiguration;
+
+pub use crate::types::_managed_logging_configuration::ManagedLoggingConfiguration;
+
+pub use crate::types::_cloud_watch_logging_configuration::CloudWatchLoggingConfiguration;
+
 pub use crate::types::_query_results_s3_access_grants_configuration::QueryResultsS3AccessGrantsConfiguration;
 
 pub use crate::types::_authentication_type::AuthenticationType;
@@ -36,8 +48,6 @@ pub use crate::types::_session_state::SessionState;
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_calculation_execution_state::CalculationExecutionState;
-
-pub use crate::types::_engine_configuration::EngineConfiguration;
 
 pub use crate::types::_result_reuse_configuration::ResultReuseConfiguration;
 
@@ -197,6 +207,10 @@ mod _capacity_reservation;
 
 mod _capacity_reservation_status;
 
+mod _classification;
+
+mod _cloud_watch_logging_configuration;
+
 mod _column;
 
 mod _column_info;
@@ -237,11 +251,15 @@ mod _filter_definition;
 
 mod _identity_center_configuration;
 
+mod _managed_logging_configuration;
+
 mod _managed_query_results_configuration;
 
 mod _managed_query_results_configuration_updates;
 
 mod _managed_query_results_encryption_configuration;
+
+mod _monitoring_configuration;
 
 mod _named_query;
 
@@ -296,6 +314,8 @@ mod _result_set_metadata;
 mod _row;
 
 mod _s3_acl_option;
+
+mod _s3_logging_configuration;
 
 mod _session_configuration;
 

@@ -1046,8 +1046,14 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
             crate::operation::create_cluster::CreateClusterError::ClusterSubnetGroupNotFoundFault(inner) => {
                 Error::ClusterSubnetGroupNotFoundFault(inner)
             }
+            crate::operation::create_cluster::CreateClusterError::DependentServiceAccessDeniedFault(inner) => {
+                Error::DependentServiceAccessDeniedFault(inner)
+            }
             crate::operation::create_cluster::CreateClusterError::DependentServiceRequestThrottlingFault(inner) => {
                 Error::DependentServiceRequestThrottlingFault(inner)
+            }
+            crate::operation::create_cluster::CreateClusterError::DependentServiceUnavailableFault(inner) => {
+                Error::DependentServiceUnavailableFault(inner)
             }
             crate::operation::create_cluster::CreateClusterError::HsmClientCertificateNotFoundFault(inner) => {
                 Error::HsmClientCertificateNotFoundFault(inner)
@@ -4579,6 +4585,55 @@ impl From<crate::operation::modify_integration::ModifyIntegrationError> for Erro
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError> for Error {
+    fn from(err: crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError) -> Self {
+        match err {
+            crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError::ClusterNotFoundFault(inner) => {
+                Error::ClusterNotFoundFault(inner)
+            }
+            crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError::DependentServiceAccessDeniedFault(inner) => {
+                Error::DependentServiceAccessDeniedFault(inner)
+            }
+            crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError::DependentServiceUnavailableFault(inner) => {
+                Error::DependentServiceUnavailableFault(inner)
+            }
+            crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError::InvalidClusterStateFault(inner) => {
+                Error::InvalidClusterStateFault(inner)
+            }
+            crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError::RedshiftIdcApplicationNotExistsFault(inner) => {
+                Error::RedshiftIdcApplicationNotExistsFault(inner)
+            }
+            crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError::UnauthorizedOperation(inner) => {
+                Error::UnauthorizedOperation(inner)
+            }
+            crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::modify_lakehouse_configuration::ModifyLakehouseConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationError, R>>
     for Error
 where
@@ -5046,6 +5101,9 @@ impl From<crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSna
             crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ClusterSubnetGroupNotFoundFault(inner) => {
                 Error::ClusterSubnetGroupNotFoundFault(inner)
             }
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::DependentServiceAccessDeniedFault(inner) => {
+                Error::DependentServiceAccessDeniedFault(inner)
+            }
             crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::DependentServiceRequestThrottlingFault(inner) => {
                 Error::DependentServiceRequestThrottlingFault(inner)
             }
@@ -5095,6 +5153,9 @@ impl From<crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSna
             }
             crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::NumberOfNodesQuotaExceededFault(inner) => {
                 Error::NumberOfNodesQuotaExceededFault(inner)
+            }
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::RedshiftIdcApplicationNotExistsFault(inner) => {
+                Error::RedshiftIdcApplicationNotExistsFault(inner)
             }
             crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError::ReservedNodeAlreadyExistsFault(inner) => {
                 Error::ReservedNodeAlreadyExistsFault(inner)

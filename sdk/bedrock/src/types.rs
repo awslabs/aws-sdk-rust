@@ -399,6 +399,14 @@ pub use crate::types::_batch_delete_evaluation_job_item::BatchDeleteEvaluationJo
 
 pub use crate::types::_batch_delete_evaluation_job_error::BatchDeleteEvaluationJobError;
 
+pub use crate::types::_account_enforced_guardrail_inference_input_configuration::AccountEnforcedGuardrailInferenceInputConfiguration;
+
+pub use crate::types::_input_tags::InputTags;
+
+pub use crate::types::_account_enforced_guardrail_output_configuration::AccountEnforcedGuardrailOutputConfiguration;
+
+pub use crate::types::_configuration_owner::ConfigurationOwner;
+
 pub use crate::types::_custom_model_summary::CustomModelSummary;
 
 pub use crate::types::_model_status::ModelStatus;
@@ -576,6 +584,10 @@ pub use crate::types::_automated_reasoning_policy_definition_type_value_pair::Au
 pub use crate::types::_automated_reasoning_policy_build_result_asset_type::AutomatedReasoningPolicyBuildResultAssetType;
 
 pub use crate::types::_automated_reasoning_policy_summary::AutomatedReasoningPolicySummary;
+
+mod _account_enforced_guardrail_inference_input_configuration;
+
+mod _account_enforced_guardrail_output_configuration;
 
 mod _agreement_availability;
 
@@ -764,6 +776,8 @@ mod _byte_content_doc;
 mod _cloud_watch_config;
 
 mod _commitment_duration;
+
+mod _configuration_owner;
 
 mod _custom_metric_bedrock_evaluator_model;
 
@@ -976,6 +990,8 @@ mod _inference_profile_summary;
 mod _inference_profile_type;
 
 mod _inference_type;
+
+mod _input_tags;
 
 mod _invocation_log_source;
 

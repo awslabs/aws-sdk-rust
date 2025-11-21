@@ -18,6 +18,12 @@ pub struct ManagedServices {
     pub zero_etl_access: ::std::option::Option<crate::types::ZeroEtlAccess>,
     /// <p>The Amazon S3 access configuration.</p>
     pub s3_access: ::std::option::Option<crate::types::S3Access>,
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for managed services.</p>
+    pub sts_access: ::std::option::Option<crate::types::StsAccess>,
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for managed services.</p>
+    pub kms_access: ::std::option::Option<crate::types::KmsAccess>,
+    /// <p>The access configuration for the cross-Region Amazon S3 database restore source.</p>
+    pub cross_region_s3_restore_sources_access: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionS3RestoreSourcesAccess>>,
 }
 impl ManagedServices {
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
@@ -50,6 +56,20 @@ impl ManagedServices {
     pub fn s3_access(&self) -> ::std::option::Option<&crate::types::S3Access> {
         self.s3_access.as_ref()
     }
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for managed services.</p>
+    pub fn sts_access(&self) -> ::std::option::Option<&crate::types::StsAccess> {
+        self.sts_access.as_ref()
+    }
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for managed services.</p>
+    pub fn kms_access(&self) -> ::std::option::Option<&crate::types::KmsAccess> {
+        self.kms_access.as_ref()
+    }
+    /// <p>The access configuration for the cross-Region Amazon S3 database restore source.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_region_s3_restore_sources_access.is_none()`.
+    pub fn cross_region_s3_restore_sources_access(&self) -> &[crate::types::CrossRegionS3RestoreSourcesAccess] {
+        self.cross_region_s3_restore_sources_access.as_deref().unwrap_or_default()
+    }
 }
 impl ManagedServices {
     /// Creates a new builder-style object to manufacture [`ManagedServices`](crate::types::ManagedServices).
@@ -69,6 +89,9 @@ pub struct ManagedServicesBuilder {
     pub(crate) managed_s3_backup_access: ::std::option::Option<crate::types::ManagedS3BackupAccess>,
     pub(crate) zero_etl_access: ::std::option::Option<crate::types::ZeroEtlAccess>,
     pub(crate) s3_access: ::std::option::Option<crate::types::S3Access>,
+    pub(crate) sts_access: ::std::option::Option<crate::types::StsAccess>,
+    pub(crate) kms_access: ::std::option::Option<crate::types::KmsAccess>,
+    pub(crate) cross_region_s3_restore_sources_access: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionS3RestoreSourcesAccess>>,
 }
 impl ManagedServicesBuilder {
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
@@ -175,6 +198,59 @@ impl ManagedServicesBuilder {
     pub fn get_s3_access(&self) -> &::std::option::Option<crate::types::S3Access> {
         &self.s3_access
     }
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for managed services.</p>
+    pub fn sts_access(mut self, input: crate::types::StsAccess) -> Self {
+        self.sts_access = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for managed services.</p>
+    pub fn set_sts_access(mut self, input: ::std::option::Option<crate::types::StsAccess>) -> Self {
+        self.sts_access = input;
+        self
+    }
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for managed services.</p>
+    pub fn get_sts_access(&self) -> &::std::option::Option<crate::types::StsAccess> {
+        &self.sts_access
+    }
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for managed services.</p>
+    pub fn kms_access(mut self, input: crate::types::KmsAccess) -> Self {
+        self.kms_access = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for managed services.</p>
+    pub fn set_kms_access(mut self, input: ::std::option::Option<crate::types::KmsAccess>) -> Self {
+        self.kms_access = input;
+        self
+    }
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for managed services.</p>
+    pub fn get_kms_access(&self) -> &::std::option::Option<crate::types::KmsAccess> {
+        &self.kms_access
+    }
+    /// Appends an item to `cross_region_s3_restore_sources_access`.
+    ///
+    /// To override the contents of this collection use [`set_cross_region_s3_restore_sources_access`](Self::set_cross_region_s3_restore_sources_access).
+    ///
+    /// <p>The access configuration for the cross-Region Amazon S3 database restore source.</p>
+    pub fn cross_region_s3_restore_sources_access(mut self, input: crate::types::CrossRegionS3RestoreSourcesAccess) -> Self {
+        let mut v = self.cross_region_s3_restore_sources_access.unwrap_or_default();
+        v.push(input);
+        self.cross_region_s3_restore_sources_access = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The access configuration for the cross-Region Amazon S3 database restore source.</p>
+    pub fn set_cross_region_s3_restore_sources_access(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionS3RestoreSourcesAccess>>,
+    ) -> Self {
+        self.cross_region_s3_restore_sources_access = input;
+        self
+    }
+    /// <p>The access configuration for the cross-Region Amazon S3 database restore source.</p>
+    pub fn get_cross_region_s3_restore_sources_access(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossRegionS3RestoreSourcesAccess>> {
+        &self.cross_region_s3_restore_sources_access
+    }
     /// Consumes the builder and constructs a [`ManagedServices`](crate::types::ManagedServices).
     pub fn build(self) -> crate::types::ManagedServices {
         crate::types::ManagedServices {
@@ -185,6 +261,9 @@ impl ManagedServicesBuilder {
             managed_s3_backup_access: self.managed_s3_backup_access,
             zero_etl_access: self.zero_etl_access,
             s3_access: self.s3_access,
+            sts_access: self.sts_access,
+            kms_access: self.kms_access,
+            cross_region_s3_restore_sources_access: self.cross_region_s3_restore_sources_access,
         }
     }
 }

@@ -435,6 +435,8 @@ pub use crate::types::_contact_flow_search_filter::ContactFlowSearchFilterBuilde
 
 pub use crate::types::_contact_flow_module::ContactFlowModuleBuilder;
 
+pub use crate::types::_external_invocation_configuration::ExternalInvocationConfigurationBuilder;
+
 pub use crate::types::_contact_flow_module_search_criteria::ContactFlowModuleSearchCriteriaBuilder;
 
 pub use crate::types::_contact_flow_module_search_filter::ContactFlowModuleSearchFilterBuilder;
@@ -561,7 +563,11 @@ pub use crate::types::_contact_flow_version_summary::ContactFlowVersionSummaryBu
 
 pub use crate::types::_contact_flow_summary::ContactFlowSummaryBuilder;
 
+pub use crate::types::_contact_flow_module_version_summary::ContactFlowModuleVersionSummaryBuilder;
+
 pub use crate::types::_contact_flow_module_summary::ContactFlowModuleSummaryBuilder;
+
+pub use crate::types::_contact_flow_module_alias_summary::ContactFlowModuleAliasSummaryBuilder;
 
 pub use crate::types::_evaluation_summary::EvaluationSummaryBuilder;
 
@@ -684,6 +690,8 @@ pub use crate::types::_instance::InstanceBuilder;
 pub use crate::types::_instance_status_reason::InstanceStatusReasonBuilder;
 
 pub use crate::types::_evaluation_form::EvaluationFormBuilder;
+
+pub use crate::types::_contact_flow_module_alias_info::ContactFlowModuleAliasInfoBuilder;
 
 pub use crate::types::_evaluation_form_content::EvaluationFormContentBuilder;
 

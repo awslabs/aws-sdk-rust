@@ -24,6 +24,7 @@ impl super::Client {
     ///   - [`impacted_services(Option<Vec::<String>>)`](crate::operation::get_case::GetCaseOutput::impacted_services): <p>Response element for GetCase that provides a list of impacted services.</p>
     ///   - [`case_attachments(Option<Vec::<CaseAttachmentAttributes>>)`](crate::operation::get_case::GetCaseOutput::case_attachments): <p>Response element for GetCase that provides a list of current case attachments.</p>
     ///   - [`closed_date(Option<DateTime>)`](crate::operation::get_case::GetCaseOutput::closed_date): <p>Response element for GetCase that provides the date a specified case was closed.</p>
+    ///   - [`case_metadata(Option<Vec::<CaseMetadataEntry>>)`](crate::operation::get_case::GetCaseOutput::case_metadata): <p>Case response metadata</p>
     /// - On failure, responds with [`SdkError<GetCaseError>`](crate::operation::get_case::GetCaseError)
     pub fn get_case(&self) -> crate::operation::get_case::builders::GetCaseFluentBuilder {
         crate::operation::get_case::builders::GetCaseFluentBuilder::new(self.handle.clone())

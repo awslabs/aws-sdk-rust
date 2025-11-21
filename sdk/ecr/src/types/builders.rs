@@ -11,6 +11,12 @@ pub use crate::types::_image_identifier::ImageIdentifierBuilder;
 
 pub use crate::types::_image_scan_status::ImageScanStatusBuilder;
 
+pub use crate::types::_signing_configuration::SigningConfigurationBuilder;
+
+pub use crate::types::_signing_rule::SigningRuleBuilder;
+
+pub use crate::types::_signing_repository_filter::SigningRepositoryFilterBuilder;
+
 pub use crate::types::_replication_configuration::ReplicationConfigurationBuilder;
 
 pub use crate::types::_replication_rule::ReplicationRuleBuilder;
@@ -54,6 +60,8 @@ pub use crate::types::_repository::RepositoryBuilder;
 pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
 
 pub use crate::types::_pull_through_cache_rule::PullThroughCacheRuleBuilder;
+
+pub use crate::types::_image_signing_status::ImageSigningStatusBuilder;
 
 pub use crate::types::_image_scan_findings::ImageScanFindingsBuilder;
 

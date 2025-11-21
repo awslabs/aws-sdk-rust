@@ -419,6 +419,10 @@ pub(crate) mod shape_message_template_search_expression;
 
 pub(crate) mod shape_message_template_search_results_list;
 
+pub(crate) mod shape_message_template_source_configuration;
+
+pub(crate) mod shape_message_template_source_configuration_summary;
+
 pub(crate) mod shape_message_template_summary_list;
 
 pub(crate) mod shape_message_template_version_summary_list;
@@ -573,6 +577,8 @@ pub(crate) mod shape_or_condition;
 
 pub(crate) mod shape_parsing_configuration;
 
+pub(crate) mod shape_push_message_template_content;
+
 pub(crate) mod shape_query_condition_item;
 
 pub(crate) mod shape_query_text_input_data;
@@ -612,6 +618,12 @@ pub(crate) mod shape_system_attributes;
 pub(crate) mod shape_tag_condition;
 
 pub(crate) mod shape_text_full_ai_prompt_edit_template_configuration;
+
+pub(crate) mod shape_whats_app_message_template_content;
+
+pub(crate) mod shape_whats_app_message_template_source_configuration;
+
+pub(crate) mod shape_whats_app_message_template_source_configuration_summary;
 
 pub(crate) mod shape_and_conditions;
 
@@ -659,6 +671,14 @@ pub(crate) mod shape_knowledge_base_association_data;
 
 pub(crate) mod shape_or_conditions;
 
+pub(crate) mod shape_push_adm_message_template_content;
+
+pub(crate) mod shape_push_apns_message_template_content;
+
+pub(crate) mod shape_push_baidu_message_template_content;
+
+pub(crate) mod shape_push_fcm_message_template_content;
+
 pub(crate) mod shape_quick_response_content_provider;
 
 pub(crate) mod shape_recommendation_trigger_data;
@@ -672,6 +692,8 @@ pub(crate) mod shape_system_endpoint_attributes;
 pub(crate) mod shape_text_message;
 
 pub(crate) mod shape_web_crawler_configuration;
+
+pub(crate) mod shape_whats_app_message_template_components;
 
 pub(crate) mod shape_association_configuration_data;
 

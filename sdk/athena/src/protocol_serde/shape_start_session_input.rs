@@ -15,17 +15,41 @@ pub fn ser_start_session_input_input(
         crate::protocol_serde::shape_engine_configuration::ser_engine_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.notebook_version {
-        object.key("NotebookVersion").string(var_5.as_str());
+    if let Some(var_5) = &input.execution_role {
+        object.key("ExecutionRole").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.session_idle_timeout_in_minutes {
+    if let Some(var_6) = &input.monitoring_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("MonitoringConfiguration").start_object();
+        crate::protocol_serde::shape_monitoring_configuration::ser_monitoring_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.notebook_version {
+        object.key("NotebookVersion").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.session_idle_timeout_in_minutes {
         object.key("SessionIdleTimeoutInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_7) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_7.as_str());
+    if let Some(var_10) = &input.client_request_token {
+        object.key("ClientRequestToken").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("Tags").start_array();
+        for item_13 in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
+            }
+        }
+        array_12.finish();
+    }
+    if let Some(var_15) = &input.copy_work_group_tags {
+        object.key("CopyWorkGroupTags").boolean(*var_15);
     }
     Ok(())
 }

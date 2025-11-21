@@ -24,6 +24,13 @@ impl crate::operation::delete_imported_key_material::builders::DeleteImportedKey
 ///
 /// <p>Deletes key material that was previously imported. This operation makes the specified KMS key temporarily unusable. To restore the usability of the KMS key, reimport the same key material. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p>When the specified KMS key is in the <code>PendingDeletion</code> state, this operation does not change the KMS key's state. Otherwise, it changes the KMS key's state to <code>PendingImport</code>.</p>
+/// <p class="title"><b>Considerations for multi-Region symmetric encryption keys</b></p>
+/// <ul>
+/// <li>
+/// <p>When you delete the key material of a primary Region key that is in <code>PENDING_ROTATION</code> or <code>PENDING_MULTI_REGION_IMPORT_AND_ROTATION</code>state, you'll also be deleting the key materials for the replica Region keys.</p></li>
+/// <li>
+/// <p>If you delete any key material of a replica Region key, the primary Region key and other replica Region keys remain unchanged.</p></li>
+/// </ul>
 /// <p>The KMS key that you use for this operation must be in a compatible key state. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p><b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a different Amazon Web Services account.</p>
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DeleteImportedKeyMaterial</a> (key policy)</p>

@@ -72,5 +72,17 @@ pub fn ser_work_group_configuration_updates(
         )?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.monitoring_configuration {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("MonitoringConfiguration").start_object();
+        crate::protocol_serde::shape_monitoring_configuration::ser_monitoring_configuration(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.engine_configuration {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("EngineConfiguration").start_object();
+        crate::protocol_serde::shape_engine_configuration::ser_engine_configuration(&mut object_23, var_22)?;
+        object_23.finish();
+    }
     Ok(())
 }

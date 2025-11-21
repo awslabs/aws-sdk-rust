@@ -113,21 +113,21 @@ impl CreateStreamFluentBuilder {
         self
     }
     /// <p>The name of the device that is writing to the stream.</p><note>
-    /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
+    /// <p>In the current implementation, Kinesis Video Streams doesn't use this name.</p>
     /// </note>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_name(input.into());
         self
     }
     /// <p>The name of the device that is writing to the stream.</p><note>
-    /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
+    /// <p>In the current implementation, Kinesis Video Streams doesn't use this name.</p>
     /// </note>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_name(input);
         self
     }
     /// <p>The name of the device that is writing to the stream.</p><note>
-    /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
+    /// <p>In the current implementation, Kinesis Video Streams doesn't use this name.</p>
     /// </note>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_device_name()
@@ -170,41 +170,41 @@ impl CreateStreamFluentBuilder {
         self.inner.get_media_type()
     }
     /// <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
-    /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>) is used.</p>
+    /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
     /// <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
-    /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>) is used.</p>
+    /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
     /// <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>
-    /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>Amazon Web Services/kinesisvideo</code>) is used.</p>
+    /// <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
     /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
-    /// <p>The default value is 0, indicating that the stream does not persist data.</p>
+    /// <p>The default value is 0, indicating that the stream does not persist data. The minimum is 1 hour.</p>
     /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
     pub fn data_retention_in_hours(mut self, input: i32) -> Self {
         self.inner = self.inner.data_retention_in_hours(input);
         self
     }
     /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
-    /// <p>The default value is 0, indicating that the stream does not persist data.</p>
+    /// <p>The default value is 0, indicating that the stream does not persist data. The minimum is 1 hour.</p>
     /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
     pub fn set_data_retention_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_data_retention_in_hours(input);
         self
     }
     /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
-    /// <p>The default value is 0, indicating that the stream does not persist data.</p>
+    /// <p>The default value is 0, indicating that the stream does not persist data. The minimum is 1 hour.</p>
     /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
     pub fn get_data_retention_in_hours(&self) -> &::std::option::Option<i32> {
         self.inner.get_data_retention_in_hours()
@@ -227,5 +227,22 @@ impl CreateStreamFluentBuilder {
     /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
+    }
+    /// <p>The configuration for the stream's storage, including the default storage tier for stream data. This configuration determines how stream data is stored and accessed, with different tiers offering varying levels of performance and cost optimization.</p>
+    /// <p>If not specified, the stream will use the default storage configuration with HOT tier for optimal performance.</p>
+    pub fn stream_storage_configuration(mut self, input: crate::types::StreamStorageConfiguration) -> Self {
+        self.inner = self.inner.stream_storage_configuration(input);
+        self
+    }
+    /// <p>The configuration for the stream's storage, including the default storage tier for stream data. This configuration determines how stream data is stored and accessed, with different tiers offering varying levels of performance and cost optimization.</p>
+    /// <p>If not specified, the stream will use the default storage configuration with HOT tier for optimal performance.</p>
+    pub fn set_stream_storage_configuration(mut self, input: ::std::option::Option<crate::types::StreamStorageConfiguration>) -> Self {
+        self.inner = self.inner.set_stream_storage_configuration(input);
+        self
+    }
+    /// <p>The configuration for the stream's storage, including the default storage tier for stream data. This configuration determines how stream data is stored and accessed, with different tiers offering varying levels of performance and cost optimization.</p>
+    /// <p>If not specified, the stream will use the default storage configuration with HOT tier for optimal performance.</p>
+    pub fn get_stream_storage_configuration(&self) -> &::std::option::Option<crate::types::StreamStorageConfiguration> {
+        self.inner.get_stream_storage_configuration()
     }
 }

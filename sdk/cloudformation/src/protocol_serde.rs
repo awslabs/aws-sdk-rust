@@ -721,6 +721,8 @@ pub(crate) mod shape_stack_refactor_untag_resources;
 
 pub(crate) mod shape_stack_resource_drift_information_summary;
 
+pub(crate) mod shape_stack_set_arn_list;
+
 pub(crate) mod shape_supported_major_versions;
 
 pub(crate) mod shape_warning_details;

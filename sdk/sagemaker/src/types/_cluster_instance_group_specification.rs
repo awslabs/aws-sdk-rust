@@ -6,6 +6,8 @@
 pub struct ClusterInstanceGroupSpecification {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
     pub instance_count: ::std::option::Option<i32>,
+    /// <p>Defines the minimum number of instances required for an instance group to become <code>InService</code>. If this threshold isn't met within 3 hours, the instance group rolls back to its previous state - zero instances for new instance groups, or previous settings for existing instance groups. <code>MinInstanceCount</code> only affects the initial transition to <code>InService</code> and does not guarantee maintaining this minimum afterward.</p>
+    pub min_instance_count: ::std::option::Option<i32>,
     /// <p>Specifies the name of the instance group.</p>
     pub instance_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the instance type of the instance group.</p>
@@ -64,11 +66,19 @@ pub struct ClusterInstanceGroupSpecification {
     /// </ul>
     /// <p>When updating the instance group's AMI through the <code>UpdateClusterSoftware</code> operation, if an instance group uses a custom AMI, you must provide an <code>ImageId</code> or use the default as input. Note that if you don't specify an instance group in your <code>UpdateClusterSoftware</code> request, then all of the instance groups are patched with the specified image.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the Kubernetes configuration for the instance group. You describe what you want the labels and taints to look like, and the cluster works to reconcile the actual state with the declared state for nodes in this instance group.</p>
+    pub kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfig>,
+    /// <p>Specifies the capacity requirements for the instance group.</p>
+    pub capacity_requirements: ::std::option::Option<crate::types::ClusterCapacityRequirements>,
 }
 impl ClusterInstanceGroupSpecification {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
+    }
+    /// <p>Defines the minimum number of instances required for an instance group to become <code>InService</code>. If this threshold isn't met within 3 hours, the instance group rolls back to its previous state - zero instances for new instance groups, or previous settings for existing instance groups. <code>MinInstanceCount</code> only affects the initial transition to <code>InService</code> and does not guarantee maintaining this minimum afterward.</p>
+    pub fn min_instance_count(&self) -> ::std::option::Option<i32> {
+        self.min_instance_count
     }
     /// <p>Specifies the name of the instance group.</p>
     pub fn instance_group_name(&self) -> ::std::option::Option<&str> {
@@ -154,6 +164,14 @@ impl ClusterInstanceGroupSpecification {
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
+    /// <p>Specifies the Kubernetes configuration for the instance group. You describe what you want the labels and taints to look like, and the cluster works to reconcile the actual state with the declared state for nodes in this instance group.</p>
+    pub fn kubernetes_config(&self) -> ::std::option::Option<&crate::types::ClusterKubernetesConfig> {
+        self.kubernetes_config.as_ref()
+    }
+    /// <p>Specifies the capacity requirements for the instance group.</p>
+    pub fn capacity_requirements(&self) -> ::std::option::Option<&crate::types::ClusterCapacityRequirements> {
+        self.capacity_requirements.as_ref()
+    }
 }
 impl ClusterInstanceGroupSpecification {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
@@ -167,6 +185,7 @@ impl ClusterInstanceGroupSpecification {
 #[non_exhaustive]
 pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
+    pub(crate) min_instance_count: ::std::option::Option<i32>,
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     pub(crate) life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
@@ -178,6 +197,8 @@ pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) scheduled_update_config: ::std::option::Option<crate::types::ScheduledUpdateConfig>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfig>,
+    pub(crate) capacity_requirements: ::std::option::Option<crate::types::ClusterCapacityRequirements>,
 }
 impl ClusterInstanceGroupSpecificationBuilder {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -194,6 +215,20 @@ impl ClusterInstanceGroupSpecificationBuilder {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         &self.instance_count
+    }
+    /// <p>Defines the minimum number of instances required for an instance group to become <code>InService</code>. If this threshold isn't met within 3 hours, the instance group rolls back to its previous state - zero instances for new instance groups, or previous settings for existing instance groups. <code>MinInstanceCount</code> only affects the initial transition to <code>InService</code> and does not guarantee maintaining this minimum afterward.</p>
+    pub fn min_instance_count(mut self, input: i32) -> Self {
+        self.min_instance_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines the minimum number of instances required for an instance group to become <code>InService</code>. If this threshold isn't met within 3 hours, the instance group rolls back to its previous state - zero instances for new instance groups, or previous settings for existing instance groups. <code>MinInstanceCount</code> only affects the initial transition to <code>InService</code> and does not guarantee maintaining this minimum afterward.</p>
+    pub fn set_min_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.min_instance_count = input;
+        self
+    }
+    /// <p>Defines the minimum number of instances required for an instance group to become <code>InService</code>. If this threshold isn't met within 3 hours, the instance group rolls back to its previous state - zero instances for new instance groups, or previous settings for existing instance groups. <code>MinInstanceCount</code> only affects the initial transition to <code>InService</code> and does not guarantee maintaining this minimum afterward.</p>
+    pub fn get_min_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.min_instance_count
     }
     /// <p>Specifies the name of the instance group.</p>
     /// This field is required.
@@ -473,10 +508,39 @@ impl ClusterInstanceGroupSpecificationBuilder {
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
     }
+    /// <p>Specifies the Kubernetes configuration for the instance group. You describe what you want the labels and taints to look like, and the cluster works to reconcile the actual state with the declared state for nodes in this instance group.</p>
+    pub fn kubernetes_config(mut self, input: crate::types::ClusterKubernetesConfig) -> Self {
+        self.kubernetes_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the Kubernetes configuration for the instance group. You describe what you want the labels and taints to look like, and the cluster works to reconcile the actual state with the declared state for nodes in this instance group.</p>
+    pub fn set_kubernetes_config(mut self, input: ::std::option::Option<crate::types::ClusterKubernetesConfig>) -> Self {
+        self.kubernetes_config = input;
+        self
+    }
+    /// <p>Specifies the Kubernetes configuration for the instance group. You describe what you want the labels and taints to look like, and the cluster works to reconcile the actual state with the declared state for nodes in this instance group.</p>
+    pub fn get_kubernetes_config(&self) -> &::std::option::Option<crate::types::ClusterKubernetesConfig> {
+        &self.kubernetes_config
+    }
+    /// <p>Specifies the capacity requirements for the instance group.</p>
+    pub fn capacity_requirements(mut self, input: crate::types::ClusterCapacityRequirements) -> Self {
+        self.capacity_requirements = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the capacity requirements for the instance group.</p>
+    pub fn set_capacity_requirements(mut self, input: ::std::option::Option<crate::types::ClusterCapacityRequirements>) -> Self {
+        self.capacity_requirements = input;
+        self
+    }
+    /// <p>Specifies the capacity requirements for the instance group.</p>
+    pub fn get_capacity_requirements(&self) -> &::std::option::Option<crate::types::ClusterCapacityRequirements> {
+        &self.capacity_requirements
+    }
     /// Consumes the builder and constructs a [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
     pub fn build(self) -> crate::types::ClusterInstanceGroupSpecification {
         crate::types::ClusterInstanceGroupSpecification {
             instance_count: self.instance_count,
+            min_instance_count: self.min_instance_count,
             instance_group_name: self.instance_group_name,
             instance_type: self.instance_type,
             life_cycle_config: self.life_cycle_config,
@@ -488,6 +552,8 @@ impl ClusterInstanceGroupSpecificationBuilder {
             override_vpc_config: self.override_vpc_config,
             scheduled_update_config: self.scheduled_update_config,
             image_id: self.image_id,
+            kubernetes_config: self.kubernetes_config,
+            capacity_requirements: self.capacity_requirements,
         }
     }
 }

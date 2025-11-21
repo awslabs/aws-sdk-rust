@@ -73,6 +73,9 @@ pub mod delete_custom_model;
 /// Types for the `DeleteCustomModelDeployment` operation.
 pub mod delete_custom_model_deployment;
 
+/// Types for the `DeleteEnforcedGuardrailConfiguration` operation.
+pub mod delete_enforced_guardrail_configuration;
+
 /// Types for the `DeleteFoundationModelAgreement` operation.
 pub mod delete_foundation_model_agreement;
 
@@ -193,6 +196,9 @@ pub mod list_custom_model_deployments;
 /// Types for the `ListCustomModels` operation.
 pub mod list_custom_models;
 
+/// Types for the `ListEnforcedGuardrailsConfiguration` operation.
+pub mod list_enforced_guardrails_configuration;
+
 /// Types for the `ListEvaluationJobs` operation.
 pub mod list_evaluation_jobs;
 
@@ -234,6 +240,9 @@ pub mod list_provisioned_model_throughputs;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PutEnforcedGuardrailConfiguration` operation.
+pub mod put_enforced_guardrail_configuration;
 
 /// Types for the `PutModelInvocationLoggingConfiguration` operation.
 pub mod put_model_invocation_logging_configuration;

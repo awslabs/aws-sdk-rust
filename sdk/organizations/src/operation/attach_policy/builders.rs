@@ -41,6 +41,8 @@ impl crate::operation::attach_policy::builders::AttachPolicyInputBuilder {
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a></p></li>
 /// <li>
+/// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_upgrade_rollout.html">UPGRADE_ROLLOUT_POLICY</a></p></li>
+/// <li>
 /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a></p></li>
 /// </ul>
 /// <p>You can only call this operation from the management account or a member account that is a delegated administrator.</p>

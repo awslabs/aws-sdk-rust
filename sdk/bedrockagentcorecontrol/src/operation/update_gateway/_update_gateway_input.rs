@@ -21,6 +21,8 @@ pub struct UpdateGatewayInput {
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     /// <p>The updated ARN of the KMS key used to encrypt the gateway.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The updated interceptor configurations for the gateway.</p>
+    pub interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
     /// <p>The level of detail in error messages returned when invoking the gateway.</p>
     /// <ul>
     /// <li>
@@ -67,6 +69,12 @@ impl UpdateGatewayInput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>The updated interceptor configurations for the gateway.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interceptor_configurations.is_none()`.
+    pub fn interceptor_configurations(&self) -> &[crate::types::GatewayInterceptorConfiguration] {
+        self.interceptor_configurations.as_deref().unwrap_or_default()
+    }
     /// <p>The level of detail in error messages returned when invoking the gateway.</p>
     /// <ul>
     /// <li>
@@ -90,6 +98,7 @@ impl ::std::fmt::Debug for UpdateGatewayInput {
         formatter.field("authorizer_type", &self.authorizer_type);
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("interceptor_configurations", &self.interceptor_configurations);
         formatter.field("exception_level", &self.exception_level);
         formatter.finish()
     }
@@ -114,6 +123,7 @@ pub struct UpdateGatewayInputBuilder {
     pub(crate) authorizer_type: ::std::option::Option<crate::types::AuthorizerType>,
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
     pub(crate) exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
 }
 impl UpdateGatewayInputBuilder {
@@ -248,6 +258,29 @@ impl UpdateGatewayInputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// Appends an item to `interceptor_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_interceptor_configurations`](Self::set_interceptor_configurations).
+    ///
+    /// <p>The updated interceptor configurations for the gateway.</p>
+    pub fn interceptor_configurations(mut self, input: crate::types::GatewayInterceptorConfiguration) -> Self {
+        let mut v = self.interceptor_configurations.unwrap_or_default();
+        v.push(input);
+        self.interceptor_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The updated interceptor configurations for the gateway.</p>
+    pub fn set_interceptor_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
+    ) -> Self {
+        self.interceptor_configurations = input;
+        self
+    }
+    /// <p>The updated interceptor configurations for the gateway.</p>
+    pub fn get_interceptor_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>> {
+        &self.interceptor_configurations
+    }
     /// <p>The level of detail in error messages returned when invoking the gateway.</p>
     /// <ul>
     /// <li>
@@ -294,6 +327,7 @@ impl UpdateGatewayInputBuilder {
             authorizer_type: self.authorizer_type,
             authorizer_configuration: self.authorizer_configuration,
             kms_key_arn: self.kms_key_arn,
+            interceptor_configurations: self.interceptor_configurations,
             exception_level: self.exception_level,
         })
     }
@@ -310,6 +344,7 @@ impl ::std::fmt::Debug for UpdateGatewayInputBuilder {
         formatter.field("authorizer_type", &self.authorizer_type);
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("interceptor_configurations", &self.interceptor_configurations);
         formatter.field("exception_level", &self.exception_level);
         formatter.finish()
     }

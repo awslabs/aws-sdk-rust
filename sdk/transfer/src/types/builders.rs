@@ -25,11 +25,17 @@ pub use crate::types::_copy_step_details::CopyStepDetailsBuilder;
 
 pub use crate::types::_listed_workflow::ListedWorkflowBuilder;
 
+pub use crate::types::_update_web_app_vpc_config::UpdateWebAppVpcConfigBuilder;
+
 pub use crate::types::_update_web_app_identity_center_config::UpdateWebAppIdentityCenterConfigBuilder;
 
 pub use crate::types::_described_web_app::DescribedWebAppBuilder;
 
+pub use crate::types::_described_web_app_vpc_config::DescribedWebAppVpcConfigBuilder;
+
 pub use crate::types::_described_identity_center_config::DescribedIdentityCenterConfigBuilder;
+
+pub use crate::types::_web_app_vpc_config::WebAppVpcConfigBuilder;
 
 pub use crate::types::_identity_center_config::IdentityCenterConfigBuilder;
 

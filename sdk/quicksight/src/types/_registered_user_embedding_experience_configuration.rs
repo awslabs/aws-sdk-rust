@@ -26,6 +26,8 @@ pub struct RegisteredUserEmbeddingExperienceConfiguration {
     /// <p>The configuration details for embedding the Generative Q&amp;A experience.</p>
     /// <p>For more information about embedding the Generative Q&amp;A experience, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon Quick Sight User Guide</i>.</p>
     pub generative_qn_a: ::std::option::Option<crate::types::RegisteredUserGenerativeQnAEmbeddingConfiguration>,
+    /// <p>The configuration details for embedding the Quick chat agent.</p>
+    pub quick_chat: ::std::option::Option<crate::types::RegisteredUserQuickChatEmbeddingConfiguration>,
 }
 impl RegisteredUserEmbeddingExperienceConfiguration {
     /// <p>The configuration details for providing a dashboard embedding experience.</p>
@@ -58,6 +60,10 @@ impl RegisteredUserEmbeddingExperienceConfiguration {
     pub fn generative_qn_a(&self) -> ::std::option::Option<&crate::types::RegisteredUserGenerativeQnAEmbeddingConfiguration> {
         self.generative_qn_a.as_ref()
     }
+    /// <p>The configuration details for embedding the Quick chat agent.</p>
+    pub fn quick_chat(&self) -> ::std::option::Option<&crate::types::RegisteredUserQuickChatEmbeddingConfiguration> {
+        self.quick_chat.as_ref()
+    }
 }
 impl RegisteredUserEmbeddingExperienceConfiguration {
     /// Creates a new builder-style object to manufacture [`RegisteredUserEmbeddingExperienceConfiguration`](crate::types::RegisteredUserEmbeddingExperienceConfiguration).
@@ -75,6 +81,7 @@ pub struct RegisteredUserEmbeddingExperienceConfigurationBuilder {
     pub(crate) q_search_bar: ::std::option::Option<crate::types::RegisteredUserQSearchBarEmbeddingConfiguration>,
     pub(crate) dashboard_visual: ::std::option::Option<crate::types::RegisteredUserDashboardVisualEmbeddingConfiguration>,
     pub(crate) generative_qn_a: ::std::option::Option<crate::types::RegisteredUserGenerativeQnAEmbeddingConfiguration>,
+    pub(crate) quick_chat: ::std::option::Option<crate::types::RegisteredUserQuickChatEmbeddingConfiguration>,
 }
 impl RegisteredUserEmbeddingExperienceConfigurationBuilder {
     /// <p>The configuration details for providing a dashboard embedding experience.</p>
@@ -180,6 +187,20 @@ impl RegisteredUserEmbeddingExperienceConfigurationBuilder {
     pub fn get_generative_qn_a(&self) -> &::std::option::Option<crate::types::RegisteredUserGenerativeQnAEmbeddingConfiguration> {
         &self.generative_qn_a
     }
+    /// <p>The configuration details for embedding the Quick chat agent.</p>
+    pub fn quick_chat(mut self, input: crate::types::RegisteredUserQuickChatEmbeddingConfiguration) -> Self {
+        self.quick_chat = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration details for embedding the Quick chat agent.</p>
+    pub fn set_quick_chat(mut self, input: ::std::option::Option<crate::types::RegisteredUserQuickChatEmbeddingConfiguration>) -> Self {
+        self.quick_chat = input;
+        self
+    }
+    /// <p>The configuration details for embedding the Quick chat agent.</p>
+    pub fn get_quick_chat(&self) -> &::std::option::Option<crate::types::RegisteredUserQuickChatEmbeddingConfiguration> {
+        &self.quick_chat
+    }
     /// Consumes the builder and constructs a [`RegisteredUserEmbeddingExperienceConfiguration`](crate::types::RegisteredUserEmbeddingExperienceConfiguration).
     pub fn build(self) -> crate::types::RegisteredUserEmbeddingExperienceConfiguration {
         crate::types::RegisteredUserEmbeddingExperienceConfiguration {
@@ -188,6 +209,7 @@ impl RegisteredUserEmbeddingExperienceConfigurationBuilder {
             q_search_bar: self.q_search_bar,
             dashboard_visual: self.dashboard_visual,
             generative_qn_a: self.generative_qn_a,
+            quick_chat: self.quick_chat,
         }
     }
 }

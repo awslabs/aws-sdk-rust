@@ -102,6 +102,12 @@ pub struct CapacityReservation {
     pub delivery_preference: ::std::option::Option<crate::types::CapacityReservationDeliveryPreference>,
     /// <p>The ID of the Capacity Block.</p>
     pub capacity_block_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether this Capacity Reservation is interruptible, meaning instances may be terminated when the owner reclaims capacity.</p>
+    pub interruptible: ::std::option::Option<bool>,
+    /// <p>Contains allocation details for interruptible reservations, including current allocated instances and target instance counts within the interruptibleCapacityAllocation object.</p>
+    pub interruptible_capacity_allocation: ::std::option::Option<crate::types::InterruptibleCapacityAllocation>,
+    /// <p>Information about the interruption configuration and association with the source reservation for interruptible Capacity Reservations.</p>
+    pub interruption_info: ::std::option::Option<crate::types::InterruptionInfo>,
 }
 impl CapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -262,6 +268,18 @@ impl CapacityReservation {
     pub fn capacity_block_id(&self) -> ::std::option::Option<&str> {
         self.capacity_block_id.as_deref()
     }
+    /// <p>Indicates whether this Capacity Reservation is interruptible, meaning instances may be terminated when the owner reclaims capacity.</p>
+    pub fn interruptible(&self) -> ::std::option::Option<bool> {
+        self.interruptible
+    }
+    /// <p>Contains allocation details for interruptible reservations, including current allocated instances and target instance counts within the interruptibleCapacityAllocation object.</p>
+    pub fn interruptible_capacity_allocation(&self) -> ::std::option::Option<&crate::types::InterruptibleCapacityAllocation> {
+        self.interruptible_capacity_allocation.as_ref()
+    }
+    /// <p>Information about the interruption configuration and association with the source reservation for interruptible Capacity Reservations.</p>
+    pub fn interruption_info(&self) -> ::std::option::Option<&crate::types::InterruptionInfo> {
+        self.interruption_info.as_ref()
+    }
 }
 impl CapacityReservation {
     /// Creates a new builder-style object to manufacture [`CapacityReservation`](crate::types::CapacityReservation).
@@ -302,6 +320,9 @@ pub struct CapacityReservationBuilder {
     pub(crate) commitment_info: ::std::option::Option<crate::types::CapacityReservationCommitmentInfo>,
     pub(crate) delivery_preference: ::std::option::Option<crate::types::CapacityReservationDeliveryPreference>,
     pub(crate) capacity_block_id: ::std::option::Option<::std::string::String>,
+    pub(crate) interruptible: ::std::option::Option<bool>,
+    pub(crate) interruptible_capacity_allocation: ::std::option::Option<crate::types::InterruptibleCapacityAllocation>,
+    pub(crate) interruption_info: ::std::option::Option<crate::types::InterruptionInfo>,
 }
 impl CapacityReservationBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -834,6 +855,48 @@ impl CapacityReservationBuilder {
     pub fn get_capacity_block_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_block_id
     }
+    /// <p>Indicates whether this Capacity Reservation is interruptible, meaning instances may be terminated when the owner reclaims capacity.</p>
+    pub fn interruptible(mut self, input: bool) -> Self {
+        self.interruptible = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this Capacity Reservation is interruptible, meaning instances may be terminated when the owner reclaims capacity.</p>
+    pub fn set_interruptible(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.interruptible = input;
+        self
+    }
+    /// <p>Indicates whether this Capacity Reservation is interruptible, meaning instances may be terminated when the owner reclaims capacity.</p>
+    pub fn get_interruptible(&self) -> &::std::option::Option<bool> {
+        &self.interruptible
+    }
+    /// <p>Contains allocation details for interruptible reservations, including current allocated instances and target instance counts within the interruptibleCapacityAllocation object.</p>
+    pub fn interruptible_capacity_allocation(mut self, input: crate::types::InterruptibleCapacityAllocation) -> Self {
+        self.interruptible_capacity_allocation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains allocation details for interruptible reservations, including current allocated instances and target instance counts within the interruptibleCapacityAllocation object.</p>
+    pub fn set_interruptible_capacity_allocation(mut self, input: ::std::option::Option<crate::types::InterruptibleCapacityAllocation>) -> Self {
+        self.interruptible_capacity_allocation = input;
+        self
+    }
+    /// <p>Contains allocation details for interruptible reservations, including current allocated instances and target instance counts within the interruptibleCapacityAllocation object.</p>
+    pub fn get_interruptible_capacity_allocation(&self) -> &::std::option::Option<crate::types::InterruptibleCapacityAllocation> {
+        &self.interruptible_capacity_allocation
+    }
+    /// <p>Information about the interruption configuration and association with the source reservation for interruptible Capacity Reservations.</p>
+    pub fn interruption_info(mut self, input: crate::types::InterruptionInfo) -> Self {
+        self.interruption_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the interruption configuration and association with the source reservation for interruptible Capacity Reservations.</p>
+    pub fn set_interruption_info(mut self, input: ::std::option::Option<crate::types::InterruptionInfo>) -> Self {
+        self.interruption_info = input;
+        self
+    }
+    /// <p>Information about the interruption configuration and association with the source reservation for interruptible Capacity Reservations.</p>
+    pub fn get_interruption_info(&self) -> &::std::option::Option<crate::types::InterruptionInfo> {
+        &self.interruption_info
+    }
     /// Consumes the builder and constructs a [`CapacityReservation`](crate::types::CapacityReservation).
     pub fn build(self) -> crate::types::CapacityReservation {
         crate::types::CapacityReservation {
@@ -865,6 +928,9 @@ impl CapacityReservationBuilder {
             commitment_info: self.commitment_info,
             delivery_preference: self.delivery_preference,
             capacity_block_id: self.capacity_block_id,
+            interruptible: self.interruptible,
+            interruptible_capacity_allocation: self.interruptible_capacity_allocation,
+            interruption_info: self.interruption_info,
         }
     }
 }

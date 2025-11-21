@@ -7,7 +7,7 @@ pub struct CreateSignalingChannelInput {
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type.</p>
     pub channel_type: ::std::option::Option<crate::types::ChannelType>,
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. The default configuration for the channel message's time to live is 60 seconds (1 minute).</p>
     pub single_master_configuration: ::std::option::Option<crate::types::SingleMasterConfiguration>,
     /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -21,7 +21,7 @@ impl CreateSignalingChannelInput {
     pub fn channel_type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
         self.channel_type.as_ref()
     }
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. The default configuration for the channel message's time to live is 60 seconds (1 minute).</p>
     pub fn single_master_configuration(&self) -> ::std::option::Option<&crate::types::SingleMasterConfiguration> {
         self.single_master_configuration.as_ref()
     }
@@ -78,17 +78,17 @@ impl CreateSignalingChannelInputBuilder {
     pub fn get_channel_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
         &self.channel_type
     }
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. The default configuration for the channel message's time to live is 60 seconds (1 minute).</p>
     pub fn single_master_configuration(mut self, input: crate::types::SingleMasterConfiguration) -> Self {
         self.single_master_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. The default configuration for the channel message's time to live is 60 seconds (1 minute).</p>
     pub fn set_single_master_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterConfiguration>) -> Self {
         self.single_master_configuration = input;
         self
     }
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. The default configuration for the channel message's time to live is 60 seconds (1 minute).</p>
     pub fn get_single_master_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
         &self.single_master_configuration
     }

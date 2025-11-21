@@ -21,11 +21,14 @@ pub fn ser_create_bot_locale_input_input(
             ::aws_smithy_types::Number::Float((*var_5).into()),
         );
     }
-    if let Some(var_6) = &input.voice_settings {
+    if let Some(var_6) = &input.speech_detection_sensitivity {
+        object.key("speechDetectionSensitivity").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.voice_settings {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("voiceSettings").start_object();
-        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("voiceSettings").start_object();
+        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

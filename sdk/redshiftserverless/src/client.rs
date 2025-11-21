@@ -277,6 +277,8 @@ mod update_custom_domain_association;
 
 mod update_endpoint_access;
 
+mod update_lakehouse_configuration;
+
 mod update_namespace;
 
 mod update_scheduled_action;

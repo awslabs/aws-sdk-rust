@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListManagedWorkgroupsInput {
-    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data Catalog.</p>
+    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>If your initial ListManagedWorkgroups operation returns a nextToken, you can include the returned nextToken in following ListManagedWorkgroups operations, which returns results in the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListManagedWorkgroupsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListManagedWorkgroupsInput {
-    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data Catalog.</p>
+    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.</p>
     pub fn source_arn(&self) -> ::std::option::Option<&str> {
         self.source_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListManagedWorkgroupsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListManagedWorkgroupsInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data Catalog.</p>
+    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data Catalog.</p>
+    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data Catalog.</p>
+    /// <p>The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_arn
     }

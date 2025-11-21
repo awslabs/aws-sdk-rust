@@ -253,6 +253,8 @@ pub(crate) mod shape_compute_config_request;
 
 pub(crate) mod shape_connector_config_request;
 
+pub(crate) mod shape_control_plane_scaling_config;
+
 pub(crate) mod shape_create_access_config_request;
 
 pub(crate) mod shape_eks_anywhere_subscription;

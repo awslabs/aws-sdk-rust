@@ -24,6 +24,7 @@ impl super::Client {
     ///   - [`integration_responses(Option<HashMap::<String, IntegrationResponse>>)`](crate::operation::update_integration::UpdateIntegrationOutput::integration_responses): <p>Specifies the integration's responses.</p>
     ///   - [`tls_config(Option<TlsConfig>)`](crate::operation::update_integration::UpdateIntegrationOutput::tls_config): <p>Specifies the TLS configuration for an integration.</p>
     ///   - [`response_transfer_mode(Option<ResponseTransferMode>)`](crate::operation::update_integration::UpdateIntegrationOutput::response_transfer_mode): <p>The response transfer mode of the integration.</p>
+    ///   - [`integration_target(Option<String>)`](crate::operation::update_integration::UpdateIntegrationOutput::integration_target): <p>The ALB or NLB listener to send the request to.</p>
     /// - On failure, responds with [`SdkError<UpdateIntegrationError>`](crate::operation::update_integration::UpdateIntegrationError)
     pub fn update_integration(&self) -> crate::operation::update_integration::builders::UpdateIntegrationFluentBuilder {
         crate::operation::update_integration::builders::UpdateIntegrationFluentBuilder::new(self.handle.clone())

@@ -21,5 +21,11 @@ pub fn ser_update_web_app_input_input(
         crate::protocol_serde::shape_web_app_units::ser_web_app_units(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.endpoint_details {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("EndpointDetails").start_object();
+        crate::protocol_serde::shape_update_web_app_endpoint_details::ser_update_web_app_endpoint_details(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

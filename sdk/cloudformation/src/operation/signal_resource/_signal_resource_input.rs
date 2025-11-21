@@ -8,7 +8,7 @@ pub struct SignalResourceInput {
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of the resource that given in the template.</p>
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
+    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Amazon EC2 Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
     pub unique_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the signal, which is either success or failure. A failure signal causes CloudFormation to immediately fail the stack creation or update.</p>
     pub status: ::std::option::Option<crate::types::ResourceSignalStatus>,
@@ -22,7 +22,7 @@ impl SignalResourceInput {
     pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
-    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
+    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Amazon EC2 Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
     pub fn unique_id(&self) -> ::std::option::Option<&str> {
         self.unique_id.as_deref()
     }
@@ -78,18 +78,18 @@ impl SignalResourceInputBuilder {
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.logical_resource_id
     }
-    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
+    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Amazon EC2 Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
     /// This field is required.
     pub fn unique_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unique_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
+    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Amazon EC2 Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
     pub fn set_unique_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unique_id = input;
         self
     }
-    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
+    /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Amazon EC2 Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
     pub fn get_unique_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.unique_id
     }

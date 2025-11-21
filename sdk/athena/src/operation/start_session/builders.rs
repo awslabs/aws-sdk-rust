@@ -150,6 +150,34 @@ impl StartSessionFluentBuilder {
     pub fn get_engine_configuration(&self) -> &::std::option::Option<crate::types::EngineConfiguration> {
         self.inner.get_engine_configuration()
     }
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
+    pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.execution_role(input.into());
+        self
+    }
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
+    pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_execution_role(input);
+        self
+    }
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
+    pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role()
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.inner = self.inner.monitoring_configuration(input);
+        self
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.inner = self.inner.set_monitoring_configuration(input);
+        self
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        self.inner.get_monitoring_configuration()
+    }
     /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
     pub fn notebook_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notebook_version(input.into());
@@ -197,5 +225,38 @@ impl StartSessionFluentBuilder {
     /// </important>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
+    }
+    ///
+    /// Appends an item to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of comma separated tags to add to the session that is created.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>A list of comma separated tags to add to the session that is created.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>A list of comma separated tags to add to the session that is created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
+    /// <p>Copies the tags from the Workgroup to the Session when.</p>
+    pub fn copy_work_group_tags(mut self, input: bool) -> Self {
+        self.inner = self.inner.copy_work_group_tags(input);
+        self
+    }
+    /// <p>Copies the tags from the Workgroup to the Session when.</p>
+    pub fn set_copy_work_group_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_copy_work_group_tags(input);
+        self
+    }
+    /// <p>Copies the tags from the Workgroup to the Session when.</p>
+    pub fn get_copy_work_group_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_work_group_tags()
     }
 }

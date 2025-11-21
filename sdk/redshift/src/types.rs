@@ -117,19 +117,29 @@ pub use crate::types::_resize_cluster_message::ResizeClusterMessage;
 
 pub use crate::types::_redshift_idc_application::RedshiftIdcApplication;
 
+pub use crate::types::_application_type::ApplicationType;
+
 pub use crate::types::_service_integrations_union::ServiceIntegrationsUnion;
+
+pub use crate::types::_redshift_scope_union::RedshiftScopeUnion;
+
+pub use crate::types::_connect::Connect;
+
+pub use crate::types::_service_authorization::ServiceAuthorization;
 
 pub use crate::types::_s3_access_grants_scope_union::S3AccessGrantsScopeUnion;
 
 pub use crate::types::_read_write_access::ReadWriteAccess;
-
-pub use crate::types::_service_authorization::ServiceAuthorization;
 
 pub use crate::types::_lake_formation_scope_union::LakeFormationScopeUnion;
 
 pub use crate::types::_lake_formation_query::LakeFormationQuery;
 
 pub use crate::types::_authorized_token_issuer::AuthorizedTokenIssuer;
+
+pub use crate::types::_lakehouse_idc_registration::LakehouseIdcRegistration;
+
+pub use crate::types::_lakehouse_registration::LakehouseRegistration;
 
 pub use crate::types::_integration_error::IntegrationError;
 
@@ -267,6 +277,8 @@ mod _account_with_restore_access;
 
 mod _action_type;
 
+mod _application_type;
+
 mod _aqua_configuration;
 
 mod _aqua_configuration_status;
@@ -312,6 +324,8 @@ mod _cluster_snapshot_copy_status;
 mod _cluster_subnet_group;
 
 mod _cluster_version;
+
+mod _connect;
 
 mod _data_share;
 
@@ -375,6 +389,10 @@ mod _lake_formation_query;
 
 mod _lake_formation_scope_union;
 
+mod _lakehouse_idc_registration;
+
+mod _lakehouse_registration;
+
 mod _log_destination_type;
 
 mod _maintenance_track;
@@ -422,6 +440,8 @@ mod _recommended_action_type;
 mod _recurring_charge;
 
 mod _redshift_idc_application;
+
+mod _redshift_scope_union;
 
 mod _reference_link;
 

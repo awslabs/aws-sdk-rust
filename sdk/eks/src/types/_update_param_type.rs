@@ -36,6 +36,7 @@
 ///     UpdateParamType::NodeRepairEnabled => { /* ... */ },
 ///     UpdateParamType::PlatformVersion => { /* ... */ },
 ///     UpdateParamType::PodIdentityAssociations => { /* ... */ },
+///     UpdateParamType::PreviousTier => { /* ... */ },
 ///     UpdateParamType::PublicAccessCidrs => { /* ... */ },
 ///     UpdateParamType::ReleaseVersion => { /* ... */ },
 ///     UpdateParamType::RemoteNetworkConfig => { /* ... */ },
@@ -47,6 +48,7 @@
 ///     UpdateParamType::TaintsToAdd => { /* ... */ },
 ///     UpdateParamType::TaintsToRemove => { /* ... */ },
 ///     UpdateParamType::UpdateStrategy => { /* ... */ },
+///     UpdateParamType::UpdatedTier => { /* ... */ },
 ///     UpdateParamType::UpgradePolicy => { /* ... */ },
 ///     UpdateParamType::Version => { /* ... */ },
 ///     UpdateParamType::ZonalShiftConfig => { /* ... */ },
@@ -127,6 +129,8 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     PodIdentityAssociations,
     #[allow(missing_docs)] // documentation missing in model
+    PreviousTier,
+    #[allow(missing_docs)] // documentation missing in model
     PublicAccessCidrs,
     #[allow(missing_docs)] // documentation missing in model
     ReleaseVersion,
@@ -148,6 +152,8 @@ pub enum UpdateParamType {
     TaintsToRemove,
     #[allow(missing_docs)] // documentation missing in model
     UpdateStrategy,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdatedTier,
     #[allow(missing_docs)] // documentation missing in model
     UpgradePolicy,
     #[allow(missing_docs)] // documentation missing in model
@@ -185,6 +191,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "NodeRepairEnabled" => UpdateParamType::NodeRepairEnabled,
             "PlatformVersion" => UpdateParamType::PlatformVersion,
             "PodIdentityAssociations" => UpdateParamType::PodIdentityAssociations,
+            "PreviousTier" => UpdateParamType::PreviousTier,
             "PublicAccessCidrs" => UpdateParamType::PublicAccessCidrs,
             "ReleaseVersion" => UpdateParamType::ReleaseVersion,
             "RemoteNetworkConfig" => UpdateParamType::RemoteNetworkConfig,
@@ -196,6 +203,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "TaintsToAdd" => UpdateParamType::TaintsToAdd,
             "TaintsToRemove" => UpdateParamType::TaintsToRemove,
             "UpdateStrategy" => UpdateParamType::UpdateStrategy,
+            "UpdatedTier" => UpdateParamType::UpdatedTier,
             "UpgradePolicy" => UpdateParamType::UpgradePolicy,
             "Version" => UpdateParamType::Version,
             "ZonalShiftConfig" => UpdateParamType::ZonalShiftConfig,
@@ -238,6 +246,7 @@ impl UpdateParamType {
             UpdateParamType::NodeRepairEnabled => "NodeRepairEnabled",
             UpdateParamType::PlatformVersion => "PlatformVersion",
             UpdateParamType::PodIdentityAssociations => "PodIdentityAssociations",
+            UpdateParamType::PreviousTier => "PreviousTier",
             UpdateParamType::PublicAccessCidrs => "PublicAccessCidrs",
             UpdateParamType::ReleaseVersion => "ReleaseVersion",
             UpdateParamType::RemoteNetworkConfig => "RemoteNetworkConfig",
@@ -249,6 +258,7 @@ impl UpdateParamType {
             UpdateParamType::TaintsToAdd => "TaintsToAdd",
             UpdateParamType::TaintsToRemove => "TaintsToRemove",
             UpdateParamType::UpdateStrategy => "UpdateStrategy",
+            UpdateParamType::UpdatedTier => "UpdatedTier",
             UpdateParamType::UpgradePolicy => "UpgradePolicy",
             UpdateParamType::Version => "Version",
             UpdateParamType::ZonalShiftConfig => "ZonalShiftConfig",
@@ -282,6 +292,7 @@ impl UpdateParamType {
             "NodeRepairEnabled",
             "PlatformVersion",
             "PodIdentityAssociations",
+            "PreviousTier",
             "PublicAccessCidrs",
             "ReleaseVersion",
             "RemoteNetworkConfig",
@@ -293,6 +304,7 @@ impl UpdateParamType {
             "TaintsToAdd",
             "TaintsToRemove",
             "UpdateStrategy",
+            "UpdatedTier",
             "UpgradePolicy",
             "Version",
             "ZonalShiftConfig",
@@ -343,6 +355,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::NodeRepairEnabled => write!(f, "NodeRepairEnabled"),
             UpdateParamType::PlatformVersion => write!(f, "PlatformVersion"),
             UpdateParamType::PodIdentityAssociations => write!(f, "PodIdentityAssociations"),
+            UpdateParamType::PreviousTier => write!(f, "PreviousTier"),
             UpdateParamType::PublicAccessCidrs => write!(f, "PublicAccessCidrs"),
             UpdateParamType::ReleaseVersion => write!(f, "ReleaseVersion"),
             UpdateParamType::RemoteNetworkConfig => write!(f, "RemoteNetworkConfig"),
@@ -354,6 +367,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::TaintsToAdd => write!(f, "TaintsToAdd"),
             UpdateParamType::TaintsToRemove => write!(f, "TaintsToRemove"),
             UpdateParamType::UpdateStrategy => write!(f, "UpdateStrategy"),
+            UpdateParamType::UpdatedTier => write!(f, "UpdatedTier"),
             UpdateParamType::UpgradePolicy => write!(f, "UpgradePolicy"),
             UpdateParamType::Version => write!(f, "Version"),
             UpdateParamType::ZonalShiftConfig => write!(f, "ZonalShiftConfig"),

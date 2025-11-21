@@ -62,6 +62,15 @@ pub(crate) fn notification_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn stream_storage_configuration_correct_errors(
+    mut builder: crate::types::builders::StreamStorageConfigurationBuilder,
+) -> crate::types::builders::StreamStorageConfigurationBuilder {
+    if builder.default_storage_tier.is_none() {
+        builder.default_storage_tier = "no value was set".parse::<crate::types::DefaultStorageTier>().ok()
+    }
+    builder
+}
+
 pub(crate) fn image_generation_destination_config_correct_errors(
     mut builder: crate::types::builders::ImageGenerationDestinationConfigBuilder,
 ) -> crate::types::builders::ImageGenerationDestinationConfigBuilder {

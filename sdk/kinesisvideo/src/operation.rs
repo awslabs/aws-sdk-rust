@@ -37,6 +37,9 @@ pub mod describe_signaling_channel;
 /// Types for the `DescribeStream` operation.
 pub mod describe_stream;
 
+/// Types for the `DescribeStreamStorageConfiguration` operation.
+pub mod describe_stream_storage_configuration;
+
 /// Types for the `GetDataEndpoint` operation.
 pub mod get_data_endpoint;
 
@@ -90,3 +93,6 @@ pub mod update_signaling_channel;
 
 /// Types for the `UpdateStream` operation.
 pub mod update_stream;
+
+/// Types for the `UpdateStreamStorageConfiguration` operation.
+pub mod update_stream_storage_configuration;

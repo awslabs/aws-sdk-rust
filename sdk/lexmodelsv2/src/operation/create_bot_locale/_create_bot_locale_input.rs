@@ -28,6 +28,8 @@ pub struct CreateBotLocaleInput {
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
     pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
+    /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
 }
 impl CreateBotLocaleInput {
     /// <p>The identifier of the bot to create the locale for.</p>
@@ -69,6 +71,10 @@ impl CreateBotLocaleInput {
     pub fn generative_ai_settings(&self) -> ::std::option::Option<&crate::types::GenerativeAiSettings> {
         self.generative_ai_settings.as_ref()
     }
+    /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn speech_detection_sensitivity(&self) -> ::std::option::Option<&crate::types::SpeechDetectionSensitivity> {
+        self.speech_detection_sensitivity.as_ref()
+    }
 }
 impl CreateBotLocaleInput {
     /// Creates a new builder-style object to manufacture [`CreateBotLocaleInput`](crate::operation::create_bot_locale::CreateBotLocaleInput).
@@ -88,6 +94,7 @@ pub struct CreateBotLocaleInputBuilder {
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
+    pub(crate) speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
 }
 impl CreateBotLocaleInputBuilder {
     /// <p>The identifier of the bot to create the locale for.</p>
@@ -225,6 +232,20 @@ impl CreateBotLocaleInputBuilder {
     pub fn get_generative_ai_settings(&self) -> &::std::option::Option<crate::types::GenerativeAiSettings> {
         &self.generative_ai_settings
     }
+    /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn speech_detection_sensitivity(mut self, input: crate::types::SpeechDetectionSensitivity) -> Self {
+        self.speech_detection_sensitivity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn set_speech_detection_sensitivity(mut self, input: ::std::option::Option<crate::types::SpeechDetectionSensitivity>) -> Self {
+        self.speech_detection_sensitivity = input;
+        self
+    }
+    /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn get_speech_detection_sensitivity(&self) -> &::std::option::Option<crate::types::SpeechDetectionSensitivity> {
+        &self.speech_detection_sensitivity
+    }
     /// Consumes the builder and constructs a [`CreateBotLocaleInput`](crate::operation::create_bot_locale::CreateBotLocaleInput).
     pub fn build(
         self,
@@ -237,6 +258,7 @@ impl CreateBotLocaleInputBuilder {
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
             generative_ai_settings: self.generative_ai_settings,
+            speech_detection_sensitivity: self.speech_detection_sensitivity,
         })
     }
 }

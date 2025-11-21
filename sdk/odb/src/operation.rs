@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AcceptMarketplaceRegistration` operation.
 pub mod accept_marketplace_registration;
 
+/// Types for the `AssociateIamRoleToResource` operation.
+pub mod associate_iam_role_to_resource;
+
 /// Types for the `CreateCloudAutonomousVmCluster` operation.
 pub mod create_cloud_autonomous_vm_cluster;
 
@@ -33,6 +36,9 @@ pub mod delete_odb_network;
 
 /// Types for the `DeleteOdbPeeringConnection` operation.
 pub mod delete_odb_peering_connection;
+
+/// Types for the `DisassociateIamRoleFromResource` operation.
+pub mod disassociate_iam_role_from_resource;
 
 /// Types for the `GetCloudAutonomousVmCluster` operation.
 pub mod get_cloud_autonomous_vm_cluster;

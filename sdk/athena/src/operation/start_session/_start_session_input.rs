@@ -9,6 +9,10 @@ pub struct StartSessionInput {
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
     pub engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
+    pub execution_role: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
     /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
     pub notebook_version: ::std::option::Option<::std::string::String>,
     /// <p>The idle timeout in minutes for the session.</p>
@@ -17,6 +21,10 @@ pub struct StartSessionInput {
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub client_request_token: ::std::option::Option<::std::string::String>,
+    /// <p>A list of comma separated tags to add to the session that is created.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Copies the tags from the Workgroup to the Session when.</p>
+    pub copy_work_group_tags: ::std::option::Option<bool>,
 }
 impl StartSessionInput {
     /// <p>The session description.</p>
@@ -31,6 +39,14 @@ impl StartSessionInput {
     pub fn engine_configuration(&self) -> ::std::option::Option<&crate::types::EngineConfiguration> {
         self.engine_configuration.as_ref()
     }
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
+    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+        self.execution_role.as_deref()
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
+    }
     /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
     pub fn notebook_version(&self) -> ::std::option::Option<&str> {
         self.notebook_version.as_deref()
@@ -44,6 +60,16 @@ impl StartSessionInput {
     /// </important>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
+    }
+    /// <p>A list of comma separated tags to add to the session that is created.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>Copies the tags from the Workgroup to the Session when.</p>
+    pub fn copy_work_group_tags(&self) -> ::std::option::Option<bool> {
+        self.copy_work_group_tags
     }
 }
 impl StartSessionInput {
@@ -60,9 +86,13 @@ pub struct StartSessionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
+    pub(crate) execution_role: ::std::option::Option<::std::string::String>,
+    pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
     pub(crate) notebook_version: ::std::option::Option<::std::string::String>,
     pub(crate) session_idle_timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) copy_work_group_tags: ::std::option::Option<bool>,
 }
 impl StartSessionInputBuilder {
     /// <p>The session description.</p>
@@ -108,6 +138,34 @@ impl StartSessionInputBuilder {
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
     pub fn get_engine_configuration(&self) -> &::std::option::Option<crate::types::EngineConfiguration> {
         &self.engine_configuration
+    }
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
+    pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
+    pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role = input;
+        self
+    }
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
+    pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.monitoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring_configuration = input;
+        self
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring_configuration
     }
     /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
     pub fn notebook_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +215,40 @@ impl StartSessionInputBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of comma separated tags to add to the session that is created.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of comma separated tags to add to the session that is created.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A list of comma separated tags to add to the session that is created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
+    /// <p>Copies the tags from the Workgroup to the Session when.</p>
+    pub fn copy_work_group_tags(mut self, input: bool) -> Self {
+        self.copy_work_group_tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Copies the tags from the Workgroup to the Session when.</p>
+    pub fn set_copy_work_group_tags(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.copy_work_group_tags = input;
+        self
+    }
+    /// <p>Copies the tags from the Workgroup to the Session when.</p>
+    pub fn get_copy_work_group_tags(&self) -> &::std::option::Option<bool> {
+        &self.copy_work_group_tags
+    }
     /// Consumes the builder and constructs a [`StartSessionInput`](crate::operation::start_session::StartSessionInput).
     pub fn build(
         self,
@@ -165,9 +257,13 @@ impl StartSessionInputBuilder {
             description: self.description,
             work_group: self.work_group,
             engine_configuration: self.engine_configuration,
+            execution_role: self.execution_role,
+            monitoring_configuration: self.monitoring_configuration,
             notebook_version: self.notebook_version,
             session_idle_timeout_in_minutes: self.session_idle_timeout_in_minutes,
             client_request_token: self.client_request_token,
+            tags: self.tags,
+            copy_work_group_tags: self.copy_work_group_tags,
         })
     }
 }

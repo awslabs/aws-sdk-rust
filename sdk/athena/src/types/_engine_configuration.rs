@@ -14,6 +14,8 @@ pub struct EngineConfiguration {
     pub additional_configs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general Spark tuning.</p>
     pub spark_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The configuration classifications that can be specified for the engine.</p>
+    pub classifications: ::std::option::Option<::std::vec::Vec<crate::types::Classification>>,
 }
 impl EngineConfiguration {
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>
@@ -36,6 +38,12 @@ impl EngineConfiguration {
     pub fn spark_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.spark_properties.as_ref()
     }
+    /// <p>The configuration classifications that can be specified for the engine.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classifications.is_none()`.
+    pub fn classifications(&self) -> &[crate::types::Classification] {
+        self.classifications.as_deref().unwrap_or_default()
+    }
 }
 impl EngineConfiguration {
     /// Creates a new builder-style object to manufacture [`EngineConfiguration`](crate::types::EngineConfiguration).
@@ -53,6 +61,7 @@ pub struct EngineConfigurationBuilder {
     pub(crate) default_executor_dpu_size: ::std::option::Option<i32>,
     pub(crate) additional_configs: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) spark_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) classifications: ::std::option::Option<::std::vec::Vec<crate::types::Classification>>,
 }
 impl EngineConfigurationBuilder {
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>
@@ -70,7 +79,6 @@ impl EngineConfigurationBuilder {
         &self.coordinator_dpu_size
     }
     /// <p>The maximum number of DPUs that can run concurrently.</p>
-    /// This field is required.
     pub fn max_concurrent_dpus(mut self, input: i32) -> Self {
         self.max_concurrent_dpus = ::std::option::Option::Some(input);
         self
@@ -152,21 +160,35 @@ impl EngineConfigurationBuilder {
     pub fn get_spark_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.spark_properties
     }
+    /// Appends an item to `classifications`.
+    ///
+    /// To override the contents of this collection use [`set_classifications`](Self::set_classifications).
+    ///
+    /// <p>The configuration classifications that can be specified for the engine.</p>
+    pub fn classifications(mut self, input: crate::types::Classification) -> Self {
+        let mut v = self.classifications.unwrap_or_default();
+        v.push(input);
+        self.classifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configuration classifications that can be specified for the engine.</p>
+    pub fn set_classifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Classification>>) -> Self {
+        self.classifications = input;
+        self
+    }
+    /// <p>The configuration classifications that can be specified for the engine.</p>
+    pub fn get_classifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Classification>> {
+        &self.classifications
+    }
     /// Consumes the builder and constructs a [`EngineConfiguration`](crate::types::EngineConfiguration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`max_concurrent_dpus`](crate::types::builders::EngineConfigurationBuilder::max_concurrent_dpus)
-    pub fn build(self) -> ::std::result::Result<crate::types::EngineConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EngineConfiguration {
+    pub fn build(self) -> crate::types::EngineConfiguration {
+        crate::types::EngineConfiguration {
             coordinator_dpu_size: self.coordinator_dpu_size,
-            max_concurrent_dpus: self.max_concurrent_dpus.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_concurrent_dpus",
-                    "max_concurrent_dpus was not specified but it is required when building EngineConfiguration",
-                )
-            })?,
+            max_concurrent_dpus: self.max_concurrent_dpus.unwrap_or(20),
             default_executor_dpu_size: self.default_executor_dpu_size,
             additional_configs: self.additional_configs,
             spark_properties: self.spark_properties,
-        })
+            classifications: self.classifications,
+        }
     }
 }

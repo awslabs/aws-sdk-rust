@@ -363,6 +363,10 @@ pub(crate) mod shape_create_internet_gateway;
 
 pub(crate) mod shape_create_internet_gateway_input;
 
+pub(crate) mod shape_create_interruptible_capacity_reservation_allocation;
+
+pub(crate) mod shape_create_interruptible_capacity_reservation_allocation_input;
+
 pub(crate) mod shape_create_ipam;
 
 pub(crate) mod shape_create_ipam_external_resource_verification_token;
@@ -2999,6 +3003,10 @@ pub(crate) mod shape_update_capacity_manager_organizations_access;
 
 pub(crate) mod shape_update_capacity_manager_organizations_access_input;
 
+pub(crate) mod shape_update_interruptible_capacity_reservation_allocation;
+
+pub(crate) mod shape_update_interruptible_capacity_reservation_allocation_input;
+
 pub(crate) mod shape_update_security_group_rule_descriptions_egress;
 
 pub(crate) mod shape_update_security_group_rule_descriptions_egress_input;
@@ -3644,6 +3652,10 @@ pub(crate) mod shape_instance_usage_set;
 pub(crate) mod shape_internet_gateway;
 
 pub(crate) mod shape_internet_gateway_list;
+
+pub(crate) mod shape_interruptible_capacity_allocation;
+
+pub(crate) mod shape_interruption_info;
 
 pub(crate) mod shape_ip_permission_list;
 

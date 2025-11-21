@@ -1020,6 +1020,15 @@ pub(crate) fn intent_classification_test_result_item_correct_errors(
     builder
 }
 
+pub(crate) fn intent_disambiguation_settings_correct_errors(
+    mut builder: crate::types::builders::IntentDisambiguationSettingsBuilder,
+) -> crate::types::builders::IntentDisambiguationSettingsBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn intent_level_slot_resolution_test_result_item_correct_errors(
     mut builder: crate::types::builders::IntentLevelSlotResolutionTestResultItemBuilder,
 ) -> crate::types::builders::IntentLevelSlotResolutionTestResultItemBuilder {

@@ -18,11 +18,14 @@ pub fn ser_update_bot_locale_input_input(
             ::aws_smithy_types::Number::Float((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.voice_settings {
+    if let Some(var_5) = &input.speech_detection_sensitivity {
+        object.key("speechDetectionSensitivity").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.voice_settings {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("voiceSettings").start_object();
-        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("voiceSettings").start_object();
+        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

@@ -280,7 +280,7 @@ pub enum CreateSnapshotCopyConfigurationError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The service limit was exceeded.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>The input failed to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input failed to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

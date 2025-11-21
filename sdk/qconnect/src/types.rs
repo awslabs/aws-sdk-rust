@@ -91,6 +91,12 @@ pub use crate::types::_quick_response_query_operator::QuickResponseQueryOperator
 
 pub use crate::types::_message_template_search_result_data::MessageTemplateSearchResultData;
 
+pub use crate::types::_message_template_source_configuration_summary::MessageTemplateSourceConfigurationSummary;
+
+pub use crate::types::_whats_app_message_template_source_configuration_summary::WhatsAppMessageTemplateSourceConfigurationSummary;
+
+pub use crate::types::_whats_app_source_configuration_status::WhatsAppSourceConfigurationStatus;
+
 pub use crate::types::_channel_subtype::ChannelSubtype;
 
 pub use crate::types::_message_template_search_expression::MessageTemplateSearchExpression;
@@ -143,11 +149,25 @@ pub use crate::types::_system_endpoint_attributes::SystemEndpointAttributes;
 
 pub use crate::types::_message_template_content_provider::MessageTemplateContentProvider;
 
+pub use crate::types::_push_message_template_content::PushMessageTemplateContent;
+
+pub use crate::types::_push_baidu_message_template_content::PushBaiduMessageTemplateContent;
+
+pub use crate::types::_message_template_body_content_provider::MessageTemplateBodyContentProvider;
+
+pub use crate::types::_push_message_action::PushMessageAction;
+
+pub use crate::types::_push_fcm_message_template_content::PushFcmMessageTemplateContent;
+
+pub use crate::types::_push_apns_message_template_content::PushApnsMessageTemplateContent;
+
+pub use crate::types::_push_adm_message_template_content::PushAdmMessageTemplateContent;
+
+pub use crate::types::_whats_app_message_template_content::WhatsAppMessageTemplateContent;
+
 pub use crate::types::_sms_message_template_content::SmsMessageTemplateContent;
 
 pub use crate::types::_sms_message_template_content_body::SmsMessageTemplateContentBody;
-
-pub use crate::types::_message_template_body_content_provider::MessageTemplateBodyContentProvider;
 
 pub use crate::types::_email_message_template_content::EmailMessageTemplateContent;
 
@@ -162,6 +182,10 @@ pub use crate::types::_content_disposition::ContentDisposition;
 pub use crate::types::_message_template_version_summary::MessageTemplateVersionSummary;
 
 pub use crate::types::_extended_message_template_data::ExtendedMessageTemplateData;
+
+pub use crate::types::_message_template_source_configuration::MessageTemplateSourceConfiguration;
+
+pub use crate::types::_whats_app_message_template_source_configuration::WhatsAppMessageTemplateSourceConfiguration;
 
 pub use crate::types::_message_template_summary::MessageTemplateSummary;
 
@@ -707,6 +731,10 @@ mod _message_template_search_expression;
 
 mod _message_template_search_result_data;
 
+mod _message_template_source_configuration;
+
+mod _message_template_source_configuration_summary;
+
 mod _message_template_summary;
 
 mod _message_template_version_summary;
@@ -730,6 +758,18 @@ mod _parsing_strategy;
 mod _participant;
 
 mod _priority;
+
+mod _push_adm_message_template_content;
+
+mod _push_apns_message_template_content;
+
+mod _push_baidu_message_template_content;
+
+mod _push_fcm_message_template_content;
+
+mod _push_message_action;
+
+mod _push_message_template_content;
 
 mod _query_condition;
 
@@ -862,6 +902,14 @@ mod _web_crawler_configuration;
 mod _web_crawler_limits;
 
 mod _web_scope_type;
+
+mod _whats_app_message_template_content;
+
+mod _whats_app_message_template_source_configuration;
+
+mod _whats_app_message_template_source_configuration_summary;
+
+mod _whats_app_source_configuration_status;
 
 /// Builders
 pub mod builders;

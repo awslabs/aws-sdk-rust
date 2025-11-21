@@ -38,6 +38,12 @@ pub struct LoadBalancerAttribute {
     /// <li>
     /// <p><code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection logs.</p></li>
     /// <li>
+    /// <p><code>health_check_logs.s3.enabled</code> - Indicates whether health check logs are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.bucket</code> - The name of the S3 bucket for the health check logs. This attribute is required if health check logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the health check logs.</p></li>
+    /// <li>
     /// <p><code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
     /// <li>
     /// <p><code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The default is <code>false</code>.</p></li>
@@ -107,6 +113,12 @@ impl LoadBalancerAttribute {
     /// <p><code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection logs. This attribute is required if connection logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.</p></li>
     /// <li>
     /// <p><code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection logs.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.enabled</code> - Indicates whether health check logs are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.bucket</code> - The name of the S3 bucket for the health check logs. This attribute is required if health check logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the health check logs.</p></li>
     /// <li>
     /// <p><code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
     /// <li>
@@ -196,6 +208,12 @@ impl LoadBalancerAttributeBuilder {
     /// <li>
     /// <p><code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection logs.</p></li>
     /// <li>
+    /// <p><code>health_check_logs.s3.enabled</code> - Indicates whether health check logs are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.bucket</code> - The name of the S3 bucket for the health check logs. This attribute is required if health check logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the health check logs.</p></li>
+    /// <li>
     /// <p><code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
     /// <li>
     /// <p><code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The default is <code>false</code>.</p></li>
@@ -265,6 +283,12 @@ impl LoadBalancerAttributeBuilder {
     /// <li>
     /// <p><code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection logs.</p></li>
     /// <li>
+    /// <p><code>health_check_logs.s3.enabled</code> - Indicates whether health check logs are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.bucket</code> - The name of the S3 bucket for the health check logs. This attribute is required if health check logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the health check logs.</p></li>
+    /// <li>
     /// <p><code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
     /// <li>
     /// <p><code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The default is <code>false</code>.</p></li>
@@ -333,6 +357,12 @@ impl LoadBalancerAttributeBuilder {
     /// <p><code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection logs. This attribute is required if connection logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.</p></li>
     /// <li>
     /// <p><code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection logs.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.enabled</code> - Indicates whether health check logs are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.bucket</code> - The name of the S3 bucket for the health check logs. This attribute is required if health check logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.</p></li>
+    /// <li>
+    /// <p><code>health_check_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the health check logs.</p></li>
     /// <li>
     /// <p><code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p></li>
     /// <li>

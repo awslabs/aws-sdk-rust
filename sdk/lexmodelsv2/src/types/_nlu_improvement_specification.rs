@@ -8,6 +8,8 @@ pub struct NluImprovementSpecification {
     pub enabled: bool,
     /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, or <code>Fallback</code> to use it only when standard NLU confidence is low.</p>
     pub assisted_nlu_mode: ::std::option::Option<crate::types::AssistedNluMode>,
+    /// <p>An object containing specifications for the Intent Disambiguation feature within the Assisted NLU settings. These settings determine how the bot handles ambiguous user inputs that could match multiple intents.</p>
+    pub intent_disambiguation_settings: ::std::option::Option<crate::types::IntentDisambiguationSettings>,
 }
 impl NluImprovementSpecification {
     /// <p>Determines whether the Assisted NLU feature is enabled for the bot. When set to <code>true</code>, Amazon Lex uses advanced models to improve intent recognition and slot resolution, with the default being <code>false</code>.</p>
@@ -17,6 +19,10 @@ impl NluImprovementSpecification {
     /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, or <code>Fallback</code> to use it only when standard NLU confidence is low.</p>
     pub fn assisted_nlu_mode(&self) -> ::std::option::Option<&crate::types::AssistedNluMode> {
         self.assisted_nlu_mode.as_ref()
+    }
+    /// <p>An object containing specifications for the Intent Disambiguation feature within the Assisted NLU settings. These settings determine how the bot handles ambiguous user inputs that could match multiple intents.</p>
+    pub fn intent_disambiguation_settings(&self) -> ::std::option::Option<&crate::types::IntentDisambiguationSettings> {
+        self.intent_disambiguation_settings.as_ref()
     }
 }
 impl NluImprovementSpecification {
@@ -32,6 +38,7 @@ impl NluImprovementSpecification {
 pub struct NluImprovementSpecificationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) assisted_nlu_mode: ::std::option::Option<crate::types::AssistedNluMode>,
+    pub(crate) intent_disambiguation_settings: ::std::option::Option<crate::types::IntentDisambiguationSettings>,
 }
 impl NluImprovementSpecificationBuilder {
     /// <p>Determines whether the Assisted NLU feature is enabled for the bot. When set to <code>true</code>, Amazon Lex uses advanced models to improve intent recognition and slot resolution, with the default being <code>false</code>.</p>
@@ -63,11 +70,26 @@ impl NluImprovementSpecificationBuilder {
     pub fn get_assisted_nlu_mode(&self) -> &::std::option::Option<crate::types::AssistedNluMode> {
         &self.assisted_nlu_mode
     }
+    /// <p>An object containing specifications for the Intent Disambiguation feature within the Assisted NLU settings. These settings determine how the bot handles ambiguous user inputs that could match multiple intents.</p>
+    pub fn intent_disambiguation_settings(mut self, input: crate::types::IntentDisambiguationSettings) -> Self {
+        self.intent_disambiguation_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object containing specifications for the Intent Disambiguation feature within the Assisted NLU settings. These settings determine how the bot handles ambiguous user inputs that could match multiple intents.</p>
+    pub fn set_intent_disambiguation_settings(mut self, input: ::std::option::Option<crate::types::IntentDisambiguationSettings>) -> Self {
+        self.intent_disambiguation_settings = input;
+        self
+    }
+    /// <p>An object containing specifications for the Intent Disambiguation feature within the Assisted NLU settings. These settings determine how the bot handles ambiguous user inputs that could match multiple intents.</p>
+    pub fn get_intent_disambiguation_settings(&self) -> &::std::option::Option<crate::types::IntentDisambiguationSettings> {
+        &self.intent_disambiguation_settings
+    }
     /// Consumes the builder and constructs a [`NluImprovementSpecification`](crate::types::NluImprovementSpecification).
     pub fn build(self) -> crate::types::NluImprovementSpecification {
         crate::types::NluImprovementSpecification {
             enabled: self.enabled.unwrap_or_default(),
             assisted_nlu_mode: self.assisted_nlu_mode,
+            intent_disambiguation_settings: self.intent_disambiguation_settings,
         }
     }
 }

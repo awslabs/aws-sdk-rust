@@ -220,6 +220,16 @@ pub fn ser_restore_from_cluster_snapshot_input_input_input(
     if let Some(var_83) = &input.multi_az {
         scope_82.boolean(*var_83);
     }
+    #[allow(unused_mut)]
+    let mut scope_84 = writer.prefix("CatalogName");
+    if let Some(var_85) = &input.catalog_name {
+        scope_84.string(var_85);
+    }
+    #[allow(unused_mut)]
+    let mut scope_86 = writer.prefix("RedshiftIdcApplicationArn");
+    if let Some(var_87) = &input.redshift_idc_application_arn {
+        scope_86.string(var_87);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

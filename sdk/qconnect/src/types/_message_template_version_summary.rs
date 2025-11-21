@@ -2,7 +2,7 @@
 
 /// <p>The summary of the message template version.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MessageTemplateVersionSummary {
     /// <p>The Amazon Resource Name (ARN) of the message template.</p>
     pub message_template_arn: ::std::string::String,
@@ -14,6 +14,8 @@ pub struct MessageTemplateVersionSummary {
     pub knowledge_base_id: ::std::string::String,
     /// <p>The name of the message template.</p>
     pub name: ::std::string::String,
+    /// <p>The channel of the message template.</p>
+    pub channel: ::std::option::Option<::std::string::String>,
     /// <p>The channel subtype this message template applies to.</p>
     pub channel_subtype: crate::types::ChannelSubtype,
     /// <p>Whether the version of the message template is activated.</p>
@@ -47,6 +49,10 @@ impl MessageTemplateVersionSummary {
         use std::ops::Deref;
         self.name.deref()
     }
+    /// <p>The channel of the message template.</p>
+    pub fn channel(&self) -> ::std::option::Option<&str> {
+        self.channel.as_deref()
+    }
     /// <p>The channel subtype this message template applies to.</p>
     pub fn channel_subtype(&self) -> &crate::types::ChannelSubtype {
         &self.channel_subtype
@@ -60,6 +66,21 @@ impl MessageTemplateVersionSummary {
         self.version_number
     }
 }
+impl ::std::fmt::Debug for MessageTemplateVersionSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageTemplateVersionSummary");
+        formatter.field("message_template_arn", &self.message_template_arn);
+        formatter.field("message_template_id", &self.message_template_id);
+        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
+        formatter.field("knowledge_base_id", &self.knowledge_base_id);
+        formatter.field("name", &self.name);
+        formatter.field("channel", &"*** Sensitive Data Redacted ***");
+        formatter.field("channel_subtype", &self.channel_subtype);
+        formatter.field("is_active", &self.is_active);
+        formatter.field("version_number", &self.version_number);
+        formatter.finish()
+    }
+}
 impl MessageTemplateVersionSummary {
     /// Creates a new builder-style object to manufacture [`MessageTemplateVersionSummary`](crate::types::MessageTemplateVersionSummary).
     pub fn builder() -> crate::types::builders::MessageTemplateVersionSummaryBuilder {
@@ -68,7 +89,7 @@ impl MessageTemplateVersionSummary {
 }
 
 /// A builder for [`MessageTemplateVersionSummary`](crate::types::MessageTemplateVersionSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct MessageTemplateVersionSummaryBuilder {
     pub(crate) message_template_arn: ::std::option::Option<::std::string::String>,
@@ -76,6 +97,7 @@ pub struct MessageTemplateVersionSummaryBuilder {
     pub(crate) knowledge_base_arn: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) channel: ::std::option::Option<::std::string::String>,
     pub(crate) channel_subtype: ::std::option::Option<crate::types::ChannelSubtype>,
     pub(crate) is_active: ::std::option::Option<bool>,
     pub(crate) version_number: ::std::option::Option<i64>,
@@ -155,6 +177,20 @@ impl MessageTemplateVersionSummaryBuilder {
     /// <p>The name of the message template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The channel of the message template.</p>
+    pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The channel of the message template.</p>
+    pub fn set_channel(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.channel = input;
+        self
+    }
+    /// <p>The channel of the message template.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel
     }
     /// <p>The channel subtype this message template applies to.</p>
     /// This field is required.
@@ -243,6 +279,7 @@ impl MessageTemplateVersionSummaryBuilder {
                     "name was not specified but it is required when building MessageTemplateVersionSummary",
                 )
             })?,
+            channel: self.channel,
             channel_subtype: self.channel_subtype.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_subtype",
@@ -262,5 +299,20 @@ impl MessageTemplateVersionSummaryBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for MessageTemplateVersionSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageTemplateVersionSummaryBuilder");
+        formatter.field("message_template_arn", &self.message_template_arn);
+        formatter.field("message_template_id", &self.message_template_id);
+        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
+        formatter.field("knowledge_base_id", &self.knowledge_base_id);
+        formatter.field("name", &self.name);
+        formatter.field("channel", &"*** Sensitive Data Redacted ***");
+        formatter.field("channel_subtype", &self.channel_subtype);
+        formatter.field("is_active", &self.is_active);
+        formatter.field("version_number", &self.version_number);
+        formatter.finish()
     }
 }

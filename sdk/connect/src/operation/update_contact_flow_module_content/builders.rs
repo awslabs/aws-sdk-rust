@@ -151,4 +151,18 @@ impl UpdateContactFlowModuleContentFluentBuilder {
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content()
     }
+    /// <p>Serialized JSON string of the flow module Settings schema.</p>
+    pub fn settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.settings(input.into());
+        self
+    }
+    /// <p>Serialized JSON string of the flow module Settings schema.</p>
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_settings(input);
+        self
+    }
+    /// <p>Serialized JSON string of the flow module Settings schema.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_settings()
+    }
 }

@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "MinCount" => {
+                            builder = builder.set_min_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "FailureMessage" => {
                             builder = builder.set_failure_message(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

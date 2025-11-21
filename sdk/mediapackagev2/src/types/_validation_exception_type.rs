@@ -41,6 +41,7 @@
 ///     ValidationExceptionType::IncompatibleDashCompactnessConfiguration => { /* ... */ },
 ///     ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration => { /* ... */ },
 ///     ValidationExceptionType::IncompatibleXmlEncoding => { /* ... */ },
+///     ValidationExceptionType::InvalidDrmSettings => { /* ... */ },
 ///     ValidationExceptionType::InvalidHarvestJobDuration => { /* ... */ },
 ///     ValidationExceptionType::InvalidManifestFilter => { /* ... */ },
 ///     ValidationExceptionType::InvalidPaginationMaxResults => { /* ... */ },
@@ -186,6 +187,8 @@ pub enum ValidationExceptionType {
     IncompatibleDashProfileDvbDashConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     IncompatibleXmlEncoding,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidDrmSettings,
     #[allow(missing_docs)] // documentation missing in model
     InvalidHarvestJobDuration,
     #[allow(missing_docs)] // documentation missing in model
@@ -344,6 +347,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION" => ValidationExceptionType::IncompatibleDashCompactnessConfiguration,
             "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION" => ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration,
             "INCOMPATIBLE_XML_ENCODING" => ValidationExceptionType::IncompatibleXmlEncoding,
+            "INVALID_DRM_SETTINGS" => ValidationExceptionType::InvalidDrmSettings,
             "INVALID_HARVEST_JOB_DURATION" => ValidationExceptionType::InvalidHarvestJobDuration,
             "INVALID_MANIFEST_FILTER" => ValidationExceptionType::InvalidManifestFilter,
             "INVALID_PAGINATION_MAX_RESULTS" => ValidationExceptionType::InvalidPaginationMaxResults,
@@ -453,6 +457,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::IncompatibleDashCompactnessConfiguration => "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION",
             ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration => "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION",
             ValidationExceptionType::IncompatibleXmlEncoding => "INCOMPATIBLE_XML_ENCODING",
+            ValidationExceptionType::InvalidDrmSettings => "INVALID_DRM_SETTINGS",
             ValidationExceptionType::InvalidHarvestJobDuration => "INVALID_HARVEST_JOB_DURATION",
             ValidationExceptionType::InvalidManifestFilter => "INVALID_MANIFEST_FILTER",
             ValidationExceptionType::InvalidPaginationMaxResults => "INVALID_PAGINATION_MAX_RESULTS",
@@ -549,6 +554,7 @@ impl ValidationExceptionType {
             "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION",
             "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION",
             "INCOMPATIBLE_XML_ENCODING",
+            "INVALID_DRM_SETTINGS",
             "INVALID_HARVEST_JOB_DURATION",
             "INVALID_MANIFEST_FILTER",
             "INVALID_PAGINATION_MAX_RESULTS",
@@ -668,6 +674,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::IncompatibleDashCompactnessConfiguration => write!(f, "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION"),
             ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration => write!(f, "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION"),
             ValidationExceptionType::IncompatibleXmlEncoding => write!(f, "INCOMPATIBLE_XML_ENCODING"),
+            ValidationExceptionType::InvalidDrmSettings => write!(f, "INVALID_DRM_SETTINGS"),
             ValidationExceptionType::InvalidHarvestJobDuration => write!(f, "INVALID_HARVEST_JOB_DURATION"),
             ValidationExceptionType::InvalidManifestFilter => write!(f, "INVALID_MANIFEST_FILTER"),
             ValidationExceptionType::InvalidPaginationMaxResults => write!(f, "INVALID_PAGINATION_MAX_RESULTS"),

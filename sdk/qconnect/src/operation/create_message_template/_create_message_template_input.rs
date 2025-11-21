@@ -15,6 +15,8 @@ pub struct CreateMessageTemplateInput {
     pub channel_subtype: ::std::option::Option<crate::types::ChannelSubtype>,
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub language: ::std::option::Option<::std::string::String>,
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub source_configuration: ::std::option::Option<crate::types::MessageTemplateSourceConfiguration>,
     /// <p>An object that specifies the default values to use for variables in the message template. This object contains different categories of key-value pairs. Each key defines a variable or placeholder in the message template. The corresponding value defines the default value for that variable.</p>
     pub default_attributes: ::std::option::Option<crate::types::MessageTemplateAttributes>,
     /// <p>The configuration information of the grouping of Amazon Q in Connect users.</p>
@@ -48,6 +50,10 @@ impl CreateMessageTemplateInput {
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
+    }
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::MessageTemplateSourceConfiguration> {
+        self.source_configuration.as_ref()
     }
     /// <p>An object that specifies the default values to use for variables in the message template. This object contains different categories of key-value pairs. Each key defines a variable or placeholder in the message template. The corresponding value defines the default value for that variable.</p>
     pub fn default_attributes(&self) -> ::std::option::Option<&crate::types::MessageTemplateAttributes> {
@@ -83,6 +89,7 @@ pub struct CreateMessageTemplateInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) channel_subtype: ::std::option::Option<crate::types::ChannelSubtype>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
+    pub(crate) source_configuration: ::std::option::Option<crate::types::MessageTemplateSourceConfiguration>,
     pub(crate) default_attributes: ::std::option::Option<crate::types::MessageTemplateAttributes>,
     pub(crate) grouping_configuration: ::std::option::Option<crate::types::GroupingConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -105,7 +112,6 @@ impl CreateMessageTemplateInputBuilder {
         &self.knowledge_base_id
     }
     /// <p>The name of the message template.</p>
-    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -120,7 +126,6 @@ impl CreateMessageTemplateInputBuilder {
         &self.name
     }
     /// <p>The content of the message template.</p>
-    /// This field is required.
     pub fn content(mut self, input: crate::types::MessageTemplateContentProvider) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -176,6 +181,20 @@ impl CreateMessageTemplateInputBuilder {
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
+    }
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub fn source_configuration(mut self, input: crate::types::MessageTemplateSourceConfiguration) -> Self {
+        self.source_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::MessageTemplateSourceConfiguration>) -> Self {
+        self.source_configuration = input;
+        self
+    }
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::MessageTemplateSourceConfiguration> {
+        &self.source_configuration
     }
     /// <p>An object that specifies the default values to use for variables in the message template. This object contains different categories of key-value pairs. Each key defines a variable or placeholder in the message template. The corresponding value defines the default value for that variable.</p>
     pub fn default_attributes(mut self, input: crate::types::MessageTemplateAttributes) -> Self {
@@ -251,6 +270,7 @@ impl CreateMessageTemplateInputBuilder {
             description: self.description,
             channel_subtype: self.channel_subtype,
             language: self.language,
+            source_configuration: self.source_configuration,
             default_attributes: self.default_attributes,
             grouping_configuration: self.grouping_configuration,
             client_token: self.client_token,

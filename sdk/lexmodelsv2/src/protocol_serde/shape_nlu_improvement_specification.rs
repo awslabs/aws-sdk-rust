@@ -24,6 +24,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "intentDisambiguationSettings" => {
+                            builder = builder.set_intent_disambiguation_settings(
+                                crate::protocol_serde::shape_intent_disambiguation_settings::de_intent_disambiguation_settings(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -50,6 +55,12 @@ pub fn ser_nlu_improvement_specification(
     }
     if let Some(var_1) = &input.assisted_nlu_mode {
         object.key("assistedNluMode").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.intent_disambiguation_settings {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("intentDisambiguationSettings").start_object();
+        crate::protocol_serde::shape_intent_disambiguation_settings::ser_intent_disambiguation_settings(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }

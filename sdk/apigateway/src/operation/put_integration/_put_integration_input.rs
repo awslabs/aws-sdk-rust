@@ -41,6 +41,8 @@ pub struct PutIntegrationInput {
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
     /// <p>The response transfer mode of the integration.</p>
     pub response_transfer_mode: ::std::option::Option<crate::types::ResponseTransferMode>,
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub integration_target: ::std::option::Option<::std::string::String>,
 }
 impl PutIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -118,6 +120,10 @@ impl PutIntegrationInput {
     pub fn response_transfer_mode(&self) -> ::std::option::Option<&crate::types::ResponseTransferMode> {
         self.response_transfer_mode.as_ref()
     }
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub fn integration_target(&self) -> ::std::option::Option<&str> {
+        self.integration_target.as_deref()
+    }
 }
 impl PutIntegrationInput {
     /// Creates a new builder-style object to manufacture [`PutIntegrationInput`](crate::operation::put_integration::PutIntegrationInput).
@@ -148,6 +154,7 @@ pub struct PutIntegrationInputBuilder {
     pub(crate) timeout_in_millis: ::std::option::Option<i32>,
     pub(crate) tls_config: ::std::option::Option<crate::types::TlsConfig>,
     pub(crate) response_transfer_mode: ::std::option::Option<crate::types::ResponseTransferMode>,
+    pub(crate) integration_target: ::std::option::Option<::std::string::String>,
 }
 impl PutIntegrationInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
@@ -441,6 +448,20 @@ impl PutIntegrationInputBuilder {
     pub fn get_response_transfer_mode(&self) -> &::std::option::Option<crate::types::ResponseTransferMode> {
         &self.response_transfer_mode
     }
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub fn integration_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.integration_target = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub fn set_integration_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.integration_target = input;
+        self
+    }
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub fn get_integration_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_target
+    }
     /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::operation::put_integration::PutIntegrationInput).
     pub fn build(
         self,
@@ -464,6 +485,7 @@ impl PutIntegrationInputBuilder {
             timeout_in_millis: self.timeout_in_millis,
             tls_config: self.tls_config,
             response_transfer_mode: self.response_transfer_mode,
+            integration_target: self.integration_target,
         })
     }
 }

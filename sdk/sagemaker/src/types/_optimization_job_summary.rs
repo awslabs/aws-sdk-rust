@@ -20,6 +20,8 @@ pub struct OptimizationJobSummary {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of instance that hosts the optimized model that you create with the optimization job.</p>
     pub deployment_instance_type: ::std::option::Option<crate::types::OptimizationJobDeploymentInstanceType>,
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub max_instance_count: ::std::option::Option<i32>,
     /// <p>The optimization techniques that are applied by the optimization job.</p>
     pub optimization_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -56,6 +58,10 @@ impl OptimizationJobSummary {
     pub fn deployment_instance_type(&self) -> ::std::option::Option<&crate::types::OptimizationJobDeploymentInstanceType> {
         self.deployment_instance_type.as_ref()
     }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn max_instance_count(&self) -> ::std::option::Option<i32> {
+        self.max_instance_count
+    }
     /// <p>The optimization techniques that are applied by the optimization job.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.optimization_types.is_none()`.
@@ -82,6 +88,7 @@ pub struct OptimizationJobSummaryBuilder {
     pub(crate) optimization_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deployment_instance_type: ::std::option::Option<crate::types::OptimizationJobDeploymentInstanceType>,
+    pub(crate) max_instance_count: ::std::option::Option<i32>,
     pub(crate) optimization_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OptimizationJobSummaryBuilder {
@@ -202,6 +209,20 @@ impl OptimizationJobSummaryBuilder {
     pub fn get_deployment_instance_type(&self) -> &::std::option::Option<crate::types::OptimizationJobDeploymentInstanceType> {
         &self.deployment_instance_type
     }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn max_instance_count(mut self, input: i32) -> Self {
+        self.max_instance_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn set_max_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_instance_count = input;
+        self
+    }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn get_max_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.max_instance_count
+    }
     /// Appends an item to `optimization_types`.
     ///
     /// To override the contents of this collection use [`set_optimization_types`](Self::set_optimization_types).
@@ -233,6 +254,7 @@ impl OptimizationJobSummaryBuilder {
             optimization_end_time: self.optimization_end_time,
             last_modified_time: self.last_modified_time,
             deployment_instance_type: self.deployment_instance_type,
+            max_instance_count: self.max_instance_count,
             optimization_types: self.optimization_types,
         }
     }

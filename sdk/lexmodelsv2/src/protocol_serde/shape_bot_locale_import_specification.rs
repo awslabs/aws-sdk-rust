@@ -43,6 +43,13 @@ where
                         "voiceSettings" => {
                             builder = builder.set_voice_settings(crate::protocol_serde::shape_voice_settings::de_voice_settings(tokens)?);
                         }
+                        "speechDetectionSensitivity" => {
+                            builder = builder.set_speech_detection_sensitivity(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SpeechDetectionSensitivity::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -88,6 +95,9 @@ pub fn ser_bot_locale_import_specification(
         let mut object_3 = object.key("voiceSettings").start_object();
         crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_3, var_2)?;
         object_3.finish();
+    }
+    if let Some(var_4) = &input.speech_detection_sensitivity {
+        object.key("speechDetectionSensitivity").string(var_4.as_str());
     }
     Ok(())
 }

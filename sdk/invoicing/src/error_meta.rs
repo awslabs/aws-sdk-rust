@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>You don't have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The request could not be completed due to a conflict with the current state of the resource. This exception occurs when a concurrent modification is detected during an update operation, or when attempting to create a resource that already exists.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The processing request failed because of an unknown error, exception, or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource could not be found.</p>
@@ -28,6 +30,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
@@ -55,6 +58,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
@@ -124,6 +128,58 @@ impl From<crate::operation::create_invoice_unit::CreateInvoiceUnitError> for Err
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_procurement_portal_preference::CreateProcurementPortalPreferenceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_procurement_portal_preference::CreateProcurementPortalPreferenceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_procurement_portal_preference::CreateProcurementPortalPreferenceError> for Error {
+    fn from(err: crate::operation::create_procurement_portal_preference::CreateProcurementPortalPreferenceError) -> Self {
+        match err {
+            crate::operation::create_procurement_portal_preference::CreateProcurementPortalPreferenceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_procurement_portal_preference::CreateProcurementPortalPreferenceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_procurement_portal_preference::CreateProcurementPortalPreferenceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_procurement_portal_preference::CreateProcurementPortalPreferenceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_procurement_portal_preference::CreateProcurementPortalPreferenceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_procurement_portal_preference::CreateProcurementPortalPreferenceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_procurement_portal_preference::CreateProcurementPortalPreferenceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_invoice_unit::DeleteInvoiceUnitError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -149,6 +205,58 @@ impl From<crate::operation::delete_invoice_unit::DeleteInvoiceUnitError> for Err
             crate::operation::delete_invoice_unit::DeleteInvoiceUnitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_invoice_unit::DeleteInvoiceUnitError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_invoice_unit::DeleteInvoiceUnitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError> for Error {
+    fn from(err: crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError) -> Self {
+        match err {
+            crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -201,6 +309,59 @@ impl From<crate::operation::get_invoice_unit::GetInvoiceUnitError> for Error {
             crate::operation::get_invoice_unit::GetInvoiceUnitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_invoice_unit::GetInvoiceUnitError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_invoice_unit::GetInvoiceUnitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError> for Error {
+    fn from(err: crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError) -> Self {
+        match err {
+            crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_procurement_portal_preference::GetProcurementPortalPreferenceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -259,6 +420,56 @@ impl From<crate::operation::list_invoice_units::ListInvoiceUnitsError> for Error
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesError> for Error {
+    fn from(err: crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesError) -> Self {
+        match err {
+            crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -286,6 +497,59 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError> for Error {
+    fn from(err: crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError) -> Self {
+        match err {
+            crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_procurement_portal_preference::PutProcurementPortalPreferenceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -370,10 +634,50 @@ impl From<crate::operation::update_invoice_unit::UpdateInvoiceUnitError> for Err
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError> for Error {
+    fn from(err: crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError) -> Self {
+        match err {
+            crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_procurement_portal_preference_status::UpdateProcurementPortalPreferenceStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
@@ -387,6 +691,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),

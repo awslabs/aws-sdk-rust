@@ -44,7 +44,6 @@ pub struct GuardrailConfigurationBuilder {
 }
 impl GuardrailConfigurationBuilder {
     /// <p>The identifier for the guardrail.</p>
-    /// This field is required.
     pub fn guardrail_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.guardrail_identifier = ::std::option::Option::Some(input.into());
         self
@@ -59,7 +58,6 @@ impl GuardrailConfigurationBuilder {
         &self.guardrail_identifier
     }
     /// <p>The version of the guardrail.</p>
-    /// This field is required.
     pub fn guardrail_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.guardrail_version = ::std::option::Option::Some(input.into());
         self
@@ -88,28 +86,15 @@ impl GuardrailConfigurationBuilder {
         &self.trace
     }
     /// Consumes the builder and constructs a [`GuardrailConfiguration`](crate::types::GuardrailConfiguration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`guardrail_identifier`](crate::types::builders::GuardrailConfigurationBuilder::guardrail_identifier)
-    /// - [`guardrail_version`](crate::types::builders::GuardrailConfigurationBuilder::guardrail_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::GuardrailConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GuardrailConfiguration {
-            guardrail_identifier: self.guardrail_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "guardrail_identifier",
-                    "guardrail_identifier was not specified but it is required when building GuardrailConfiguration",
-                )
-            })?,
-            guardrail_version: self.guardrail_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "guardrail_version",
-                    "guardrail_version was not specified but it is required when building GuardrailConfiguration",
-                )
-            })?,
+    pub fn build(self) -> crate::types::GuardrailConfiguration {
+        crate::types::GuardrailConfiguration {
+            guardrail_identifier: self.guardrail_identifier.unwrap_or_default(),
+            guardrail_version: self.guardrail_version.unwrap_or_default(),
             trace: self.trace.unwrap_or(
                 "disabled"
                     .parse::<crate::types::GuardrailTrace>()
                     .expect("static value validated to member"),
             ),
-        })
+        }
     }
 }

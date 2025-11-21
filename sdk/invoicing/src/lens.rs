@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_invoice_units_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_procurement_portal_preferences_output_output_next_token(
+    input: &crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_invoice_summaries_output_output_invoice_summaries(
     input: crate::operation::list_invoice_summaries::ListInvoiceSummariesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InvoiceSummary>> {
@@ -30,5 +40,12 @@ pub(crate) fn lens_list_invoice_units_output_output_invoice_units(
     input: crate::operation::list_invoice_units::ListInvoiceUnitsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InvoiceUnit>> {
     let input = input.invoice_units?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_procurement_portal_preferences_output_output_procurement_portal_preferences(
+    input: crate::operation::list_procurement_portal_preferences::ListProcurementPortalPreferencesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProcurementPortalPreferenceSummary>> {
+    let input = input.procurement_portal_preferences?;
     ::std::option::Option::Some(input)
 }

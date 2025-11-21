@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "MinCount" => {
+                            builder = builder.set_min_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "InstanceGroupName" => {
                             builder = builder.set_instance_group_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -112,6 +119,19 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "ActiveOperations" => {
+                            builder = builder.set_active_operations(crate::protocol_serde::shape_active_operations::de_active_operations(tokens)?);
+                        }
+                        "KubernetesConfig" => {
+                            builder = builder.set_kubernetes_config(
+                                crate::protocol_serde::shape_cluster_kubernetes_config_details::de_cluster_kubernetes_config_details(tokens)?,
+                            );
+                        }
+                        "CapacityRequirements" => {
+                            builder = builder.set_capacity_requirements(
+                                crate::protocol_serde::shape_cluster_capacity_requirements::de_cluster_capacity_requirements(tokens)?,
                             );
                         }
                         "TargetStateCount" => {

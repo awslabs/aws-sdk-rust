@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "channel" => {
+                            builder = builder.set_channel(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "channelSubtype" => {
                             builder = builder.set_channel_subtype(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -91,6 +98,11 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "sourceConfigurationSummary" => {
+                            builder = builder.set_source_configuration_summary(
+                                    crate::protocol_serde::shape_message_template_source_configuration_summary::de_message_template_source_configuration_summary(tokens)?
+                                );
                         }
                         "groupingConfiguration" => {
                             builder = builder

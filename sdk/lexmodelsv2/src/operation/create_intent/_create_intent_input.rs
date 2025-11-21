@@ -5,6 +5,8 @@
 pub struct CreateIntentInput {
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
     pub intent_name: ::std::option::Option<::std::string::String>,
+    /// <p>A display name for the intent. If configured, This name will be shown to users during Intent Disambiguation instead of the intent name. Display names should be user-friendly, descriptive and match the intent's purpose to improve user experience during disambiguation.</p>
+    pub intent_display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the built-in intent to base this intent on.</p>
@@ -51,6 +53,10 @@ impl CreateIntentInput {
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
     pub fn intent_name(&self) -> ::std::option::Option<&str> {
         self.intent_name.as_deref()
+    }
+    /// <p>A display name for the intent. If configured, This name will be shown to users during Intent Disambiguation instead of the intent name. Display names should be user-friendly, descriptive and match the intent's purpose to improve user experience during disambiguation.</p>
+    pub fn intent_display_name(&self) -> ::std::option::Option<&str> {
+        self.intent_display_name.as_deref()
     }
     /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -144,6 +150,7 @@ impl CreateIntentInput {
 #[non_exhaustive]
 pub struct CreateIntentInputBuilder {
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
+    pub(crate) intent_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) parent_intent_signature: ::std::option::Option<::std::string::String>,
     pub(crate) sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
@@ -176,6 +183,20 @@ impl CreateIntentInputBuilder {
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
     pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.intent_name
+    }
+    /// <p>A display name for the intent. If configured, This name will be shown to users during Intent Disambiguation instead of the intent name. Display names should be user-friendly, descriptive and match the intent's purpose to improve user experience during disambiguation.</p>
+    pub fn intent_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.intent_display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A display name for the intent. If configured, This name will be shown to users during Intent Disambiguation instead of the intent name. Display names should be user-friendly, descriptive and match the intent's purpose to improve user experience during disambiguation.</p>
+    pub fn set_intent_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.intent_display_name = input;
+        self
+    }
+    /// <p>A display name for the intent. If configured, This name will be shown to users during Intent Disambiguation instead of the intent name. Display names should be user-friendly, descriptive and match the intent's purpose to improve user experience during disambiguation.</p>
+    pub fn get_intent_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_display_name
     }
     /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -455,6 +476,7 @@ impl CreateIntentInputBuilder {
     ) -> ::std::result::Result<crate::operation::create_intent::CreateIntentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_intent::CreateIntentInput {
             intent_name: self.intent_name,
+            intent_display_name: self.intent_display_name,
             description: self.description,
             parent_intent_signature: self.parent_intent_signature,
             sample_utterances: self.sample_utterances,

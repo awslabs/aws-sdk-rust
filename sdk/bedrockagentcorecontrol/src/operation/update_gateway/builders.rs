@@ -234,6 +234,28 @@ impl UpdateGatewayFluentBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
     }
+    ///
+    /// Appends an item to `interceptorConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_interceptor_configurations`](Self::set_interceptor_configurations).
+    ///
+    /// <p>The updated interceptor configurations for the gateway.</p>
+    pub fn interceptor_configurations(mut self, input: crate::types::GatewayInterceptorConfiguration) -> Self {
+        self.inner = self.inner.interceptor_configurations(input);
+        self
+    }
+    /// <p>The updated interceptor configurations for the gateway.</p>
+    pub fn set_interceptor_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
+    ) -> Self {
+        self.inner = self.inner.set_interceptor_configurations(input);
+        self
+    }
+    /// <p>The updated interceptor configurations for the gateway.</p>
+    pub fn get_interceptor_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>> {
+        self.inner.get_interceptor_configurations()
+    }
     /// <p>The level of detail in error messages returned when invoking the gateway.</p>
     /// <ul>
     /// <li>

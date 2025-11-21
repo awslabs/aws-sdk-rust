@@ -380,6 +380,41 @@ pub fn de_capacity_reservation(
                 builder = builder.set_capacity_block_id(var_28);
             }
             ,
+            s if s.matches("interruptible") /* Interruptible com.amazonaws.ec2#CapacityReservation$Interruptible */ =>  {
+                let var_29 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#BoxedBoolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_interruptible(var_29);
+            }
+            ,
+            s if s.matches("interruptibleCapacityAllocation") /* InterruptibleCapacityAllocation com.amazonaws.ec2#CapacityReservation$InterruptibleCapacityAllocation */ =>  {
+                let var_30 =
+                    Some(
+                        crate::protocol_serde::shape_interruptible_capacity_allocation::de_interruptible_capacity_allocation(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_interruptible_capacity_allocation(var_30);
+            }
+            ,
+            s if s.matches("interruptionInfo") /* InterruptionInfo com.amazonaws.ec2#CapacityReservation$InterruptionInfo */ =>  {
+                let var_31 =
+                    Some(
+                        crate::protocol_serde::shape_interruption_info::de_interruption_info(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_interruption_info(var_31);
+            }
+            ,
             _ => {}
         }
     }

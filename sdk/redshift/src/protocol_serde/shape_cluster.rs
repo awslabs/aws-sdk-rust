@@ -751,6 +751,32 @@ pub fn de_cluster(
                 builder = builder.set_multi_az_secondary(var_60);
             }
             ,
+            s if s.matches("LakehouseRegistrationStatus") /* LakehouseRegistrationStatus com.amazonaws.redshift#Cluster$LakehouseRegistrationStatus */ =>  {
+                let var_61 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_lakehouse_registration_status(var_61);
+            }
+            ,
+            s if s.matches("CatalogArn") /* CatalogArn com.amazonaws.redshift#Cluster$CatalogArn */ =>  {
+                let var_62 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_catalog_arn(var_62);
+            }
+            ,
             _ => {}
         }
     }

@@ -19,6 +19,10 @@ pub use crate::types::_ip_range::IpRange;
 
 pub use crate::types::_user_id_group_pair::UserIdGroupPair;
 
+pub use crate::types::_interruption_type::InterruptionType;
+
+pub use crate::types::_interruptible_capacity_reservation_allocation_status::InterruptibleCapacityReservationAllocationStatus;
+
 pub use crate::types::_capacity_manager_status::CapacityManagerStatus;
 
 pub use crate::types::_instance_monitoring::InstanceMonitoring;
@@ -530,6 +534,10 @@ pub use crate::types::_capacity_block::CapacityBlock;
 pub use crate::types::_capacity_block_resource_state::CapacityBlockResourceState;
 
 pub use crate::types::_capacity_reservation::CapacityReservation;
+
+pub use crate::types::_interruption_info::InterruptionInfo;
+
+pub use crate::types::_interruptible_capacity_allocation::InterruptibleCapacityAllocation;
 
 pub use crate::types::_capacity_reservation_delivery_preference::CapacityReservationDeliveryPreference;
 
@@ -3698,6 +3706,14 @@ mod _internet_gateway_attachment;
 mod _internet_gateway_block_mode;
 
 mod _internet_gateway_exclusion_mode;
+
+mod _interruptible_capacity_allocation;
+
+mod _interruptible_capacity_reservation_allocation_status;
+
+mod _interruption_info;
+
+mod _interruption_type;
 
 mod _ip_address_type;
 

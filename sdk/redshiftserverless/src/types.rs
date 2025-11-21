@@ -59,6 +59,10 @@ pub use crate::types::_offering_type::OfferingType;
 
 pub use crate::types::_recovery_point::RecoveryPoint;
 
+pub use crate::types::_lakehouse_idc_registration::LakehouseIdcRegistration;
+
+pub use crate::types::_lakehouse_registration::LakehouseRegistration;
+
 pub use crate::types::_managed_workgroup_list_item::ManagedWorkgroupListItem;
 
 pub use crate::types::_managed_workgroup_status::ManagedWorkgroupStatus;
@@ -84,6 +88,10 @@ mod _create_snapshot_schedule_action_parameters;
 mod _endpoint;
 
 mod _endpoint_access;
+
+mod _lakehouse_idc_registration;
+
+mod _lakehouse_registration;
 
 mod _log_export;
 

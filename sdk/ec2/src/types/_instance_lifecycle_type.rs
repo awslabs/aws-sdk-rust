@@ -13,6 +13,7 @@
 /// # let instancelifecycletype = unimplemented!();
 /// match instancelifecycletype {
 ///     InstanceLifecycleType::CapacityBlock => { /* ... */ },
+///     InstanceLifecycleType::InterruptibleCapacityReservation => { /* ... */ },
 ///     InstanceLifecycleType::Scheduled => { /* ... */ },
 ///     InstanceLifecycleType::Spot => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum InstanceLifecycleType {
     #[allow(missing_docs)] // documentation missing in model
     CapacityBlock,
     #[allow(missing_docs)] // documentation missing in model
+    InterruptibleCapacityReservation,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
     #[allow(missing_docs)] // documentation missing in model
     Spot,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for InstanceLifecycleType {
     fn from(s: &str) -> Self {
         match s {
             "capacity-block" => InstanceLifecycleType::CapacityBlock,
+            "interruptible-capacity-reservation" => InstanceLifecycleType::InterruptibleCapacityReservation,
             "scheduled" => InstanceLifecycleType::Scheduled,
             "spot" => InstanceLifecycleType::Spot,
             other => InstanceLifecycleType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl InstanceLifecycleType {
     pub fn as_str(&self) -> &str {
         match self {
             InstanceLifecycleType::CapacityBlock => "capacity-block",
+            InstanceLifecycleType::InterruptibleCapacityReservation => "interruptible-capacity-reservation",
             InstanceLifecycleType::Scheduled => "scheduled",
             InstanceLifecycleType::Spot => "spot",
             InstanceLifecycleType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl InstanceLifecycleType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["capacity-block", "scheduled", "spot"]
+        &["capacity-block", "interruptible-capacity-reservation", "scheduled", "spot"]
     }
 }
 impl ::std::convert::AsRef<str> for InstanceLifecycleType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for InstanceLifecycleType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InstanceLifecycleType::CapacityBlock => write!(f, "capacity-block"),
+            InstanceLifecycleType::InterruptibleCapacityReservation => write!(f, "interruptible-capacity-reservation"),
             InstanceLifecycleType::Scheduled => write!(f, "scheduled"),
             InstanceLifecycleType::Spot => write!(f, "spot"),
             InstanceLifecycleType::Unknown(value) => write!(f, "{value}"),

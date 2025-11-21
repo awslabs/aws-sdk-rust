@@ -37,9 +37,21 @@ pub use crate::types::_case_status::CaseStatus;
 
 pub use crate::types::_self_managed_case_status::SelfManagedCaseStatus;
 
+pub use crate::types::_usefulness_rating::UsefulnessRating;
+
+pub use crate::types::_investigation_action::InvestigationAction;
+
+pub use crate::types::_investigation_feedback::InvestigationFeedback;
+
+pub use crate::types::_execution_status::ExecutionStatus;
+
+pub use crate::types::_action_type::ActionType;
+
 pub use crate::types::_list_comments_item::ListCommentsItem;
 
 pub use crate::types::_case_edit_item::CaseEditItem;
+
+pub use crate::types::_case_metadata_entry::CaseMetadataEntry;
 
 pub use crate::types::_impacted_aws_region::ImpactedAwsRegion;
 
@@ -59,6 +71,8 @@ pub use crate::types::_pending_action::PendingAction;
 
 pub use crate::types::_list_cases_item::ListCasesItem;
 
+mod _action_type;
+
 mod _aws_region;
 
 mod _case_attachment_attributes;
@@ -66,6 +80,8 @@ mod _case_attachment_attributes;
 mod _case_attachment_status;
 
 mod _case_edit_item;
+
+mod _case_metadata_entry;
 
 mod _case_status;
 
@@ -77,6 +93,8 @@ mod _customer_type;
 
 mod _engagement_type;
 
+mod _execution_status;
+
 mod _get_membership_account_detail_error;
 
 mod _get_membership_account_detail_item;
@@ -84,6 +102,10 @@ mod _get_membership_account_detail_item;
 mod _impacted_aws_region;
 
 mod _incident_responder;
+
+mod _investigation_action;
+
+mod _investigation_feedback;
 
 mod _list_cases_item;
 
@@ -112,6 +134,8 @@ mod _resolver_type;
 mod _self_managed_case_status;
 
 mod _threat_actor_ip;
+
+mod _usefulness_rating;
 
 mod _validation_exception_field;
 

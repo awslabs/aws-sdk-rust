@@ -43,6 +43,8 @@
 ///     OptimizationJobDeploymentInstanceType::MlP4D24Xlarge => { /* ... */ },
 ///     OptimizationJobDeploymentInstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     OptimizationJobDeploymentInstanceType::MlP548Xlarge => { /* ... */ },
+///     OptimizationJobDeploymentInstanceType::MlP5E48Xlarge => { /* ... */ },
+///     OptimizationJobDeploymentInstanceType::MlP5En48Xlarge => { /* ... */ },
 ///     OptimizationJobDeploymentInstanceType::MlTrn12Xlarge => { /* ... */ },
 ///     OptimizationJobDeploymentInstanceType::MlTrn132Xlarge => { /* ... */ },
 ///     OptimizationJobDeploymentInstanceType::MlTrn1N32Xlarge => { /* ... */ },
@@ -137,6 +139,10 @@ pub enum OptimizationJobDeploymentInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP548Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP5E48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP5En48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlTrn12Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlTrn132Xlarge,
@@ -180,6 +186,8 @@ impl ::std::convert::From<&str> for OptimizationJobDeploymentInstanceType {
             "ml.p4d.24xlarge" => OptimizationJobDeploymentInstanceType::MlP4D24Xlarge,
             "ml.p4de.24xlarge" => OptimizationJobDeploymentInstanceType::MlP4De24Xlarge,
             "ml.p5.48xlarge" => OptimizationJobDeploymentInstanceType::MlP548Xlarge,
+            "ml.p5e.48xlarge" => OptimizationJobDeploymentInstanceType::MlP5E48Xlarge,
+            "ml.p5en.48xlarge" => OptimizationJobDeploymentInstanceType::MlP5En48Xlarge,
             "ml.trn1.2xlarge" => OptimizationJobDeploymentInstanceType::MlTrn12Xlarge,
             "ml.trn1.32xlarge" => OptimizationJobDeploymentInstanceType::MlTrn132Xlarge,
             "ml.trn1n.32xlarge" => OptimizationJobDeploymentInstanceType::MlTrn1N32Xlarge,
@@ -229,6 +237,8 @@ impl OptimizationJobDeploymentInstanceType {
             OptimizationJobDeploymentInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
             OptimizationJobDeploymentInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             OptimizationJobDeploymentInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
+            OptimizationJobDeploymentInstanceType::MlP5E48Xlarge => "ml.p5e.48xlarge",
+            OptimizationJobDeploymentInstanceType::MlP5En48Xlarge => "ml.p5en.48xlarge",
             OptimizationJobDeploymentInstanceType::MlTrn12Xlarge => "ml.trn1.2xlarge",
             OptimizationJobDeploymentInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
             OptimizationJobDeploymentInstanceType::MlTrn1N32Xlarge => "ml.trn1n.32xlarge",
@@ -269,6 +279,8 @@ impl OptimizationJobDeploymentInstanceType {
             "ml.p4d.24xlarge",
             "ml.p4de.24xlarge",
             "ml.p5.48xlarge",
+            "ml.p5e.48xlarge",
+            "ml.p5en.48xlarge",
             "ml.trn1.2xlarge",
             "ml.trn1.32xlarge",
             "ml.trn1n.32xlarge",
@@ -326,6 +338,8 @@ impl ::std::fmt::Display for OptimizationJobDeploymentInstanceType {
             OptimizationJobDeploymentInstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
             OptimizationJobDeploymentInstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
             OptimizationJobDeploymentInstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
+            OptimizationJobDeploymentInstanceType::MlP5E48Xlarge => write!(f, "ml.p5e.48xlarge"),
+            OptimizationJobDeploymentInstanceType::MlP5En48Xlarge => write!(f, "ml.p5en.48xlarge"),
             OptimizationJobDeploymentInstanceType::MlTrn12Xlarge => write!(f, "ml.trn1.2xlarge"),
             OptimizationJobDeploymentInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
             OptimizationJobDeploymentInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),

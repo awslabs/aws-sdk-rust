@@ -12,18 +12,27 @@ pub fn ser_create_contact_flow_module_input_input(
     if let Some(var_3) = &input.description {
         object.key("Description").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.name {
-        object.key("Name").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.tags {
+    if let Some(var_4) = &input.external_invocation_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Tags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_5 = object.key("ExternalInvocationConfiguration").start_object();
+        crate::protocol_serde::shape_external_invocation_configuration::ser_external_invocation_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.name {
+        object.key("Name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.settings {
+        object.key("Settings").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("Tags").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_6.finish();
+        object_9.finish();
     }
     Ok(())
 }

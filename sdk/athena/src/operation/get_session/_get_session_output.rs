@@ -15,6 +15,8 @@ pub struct GetSessionOutput {
     pub engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
     /// <p>The notebook version.</p>
     pub notebook_version: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
     /// <p>Contains the workgroup configuration information used by the session.</p>
     pub session_configuration: ::std::option::Option<crate::types::SessionConfiguration>,
     /// <p>Contains information about the status of the session.</p>
@@ -47,6 +49,10 @@ impl GetSessionOutput {
     /// <p>The notebook version.</p>
     pub fn notebook_version(&self) -> ::std::option::Option<&str> {
         self.notebook_version.as_deref()
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
     }
     /// <p>Contains the workgroup configuration information used by the session.</p>
     pub fn session_configuration(&self) -> ::std::option::Option<&crate::types::SessionConfiguration> {
@@ -83,6 +89,7 @@ pub struct GetSessionOutputBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
     pub(crate) notebook_version: ::std::option::Option<::std::string::String>,
+    pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
     pub(crate) session_configuration: ::std::option::Option<crate::types::SessionConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::SessionStatus>,
     pub(crate) statistics: ::std::option::Option<crate::types::SessionStatistics>,
@@ -173,6 +180,20 @@ impl GetSessionOutputBuilder {
     pub fn get_notebook_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_version
     }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.monitoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring_configuration = input;
+        self
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring_configuration
+    }
     /// <p>Contains the workgroup configuration information used by the session.</p>
     pub fn session_configuration(mut self, input: crate::types::SessionConfiguration) -> Self {
         self.session_configuration = ::std::option::Option::Some(input);
@@ -233,6 +254,7 @@ impl GetSessionOutputBuilder {
             engine_version: self.engine_version,
             engine_configuration: self.engine_configuration,
             notebook_version: self.notebook_version,
+            monitoring_configuration: self.monitoring_configuration,
             session_configuration: self.session_configuration,
             status: self.status,
             statistics: self.statistics,

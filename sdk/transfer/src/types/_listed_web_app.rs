@@ -12,6 +12,8 @@ pub struct ListedWebApp {
     pub access_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The <code>WebAppEndpoint</code> is the unique URL for your Transfer Family web app. This is the value that you use when you configure <b>Origins</b> on CloudFront.</p>
     pub web_app_endpoint: ::std::option::Option<::std::string::String>,
+    /// <p>The type of endpoint hosting the web app. Valid values are <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for VPC-hosted endpoints.</p>
+    pub endpoint_type: ::std::option::Option<crate::types::WebAppEndpointType>,
 }
 impl ListedWebApp {
     /// <p>The Amazon Resource Name (ARN) for the web app.</p>
@@ -32,6 +34,10 @@ impl ListedWebApp {
     pub fn web_app_endpoint(&self) -> ::std::option::Option<&str> {
         self.web_app_endpoint.as_deref()
     }
+    /// <p>The type of endpoint hosting the web app. Valid values are <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for VPC-hosted endpoints.</p>
+    pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::WebAppEndpointType> {
+        self.endpoint_type.as_ref()
+    }
 }
 impl ListedWebApp {
     /// Creates a new builder-style object to manufacture [`ListedWebApp`](crate::types::ListedWebApp).
@@ -48,6 +54,7 @@ pub struct ListedWebAppBuilder {
     pub(crate) web_app_id: ::std::option::Option<::std::string::String>,
     pub(crate) access_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) web_app_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_type: ::std::option::Option<crate::types::WebAppEndpointType>,
 }
 impl ListedWebAppBuilder {
     /// <p>The Amazon Resource Name (ARN) for the web app.</p>
@@ -108,6 +115,20 @@ impl ListedWebAppBuilder {
     pub fn get_web_app_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.web_app_endpoint
     }
+    /// <p>The type of endpoint hosting the web app. Valid values are <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for VPC-hosted endpoints.</p>
+    pub fn endpoint_type(mut self, input: crate::types::WebAppEndpointType) -> Self {
+        self.endpoint_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of endpoint hosting the web app. Valid values are <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for VPC-hosted endpoints.</p>
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::WebAppEndpointType>) -> Self {
+        self.endpoint_type = input;
+        self
+    }
+    /// <p>The type of endpoint hosting the web app. Valid values are <code>PUBLIC</code> for publicly accessible endpoints and <code>VPC</code> for VPC-hosted endpoints.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::WebAppEndpointType> {
+        &self.endpoint_type
+    }
     /// Consumes the builder and constructs a [`ListedWebApp`](crate::types::ListedWebApp).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ListedWebAppBuilder::arn)
@@ -128,6 +149,7 @@ impl ListedWebAppBuilder {
             })?,
             access_endpoint: self.access_endpoint,
             web_app_endpoint: self.web_app_endpoint,
+            endpoint_type: self.endpoint_type,
         })
     }
 }

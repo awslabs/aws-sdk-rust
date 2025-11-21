@@ -149,6 +149,11 @@ where
                         "deletionProtection" => {
                             builder = builder.set_deletion_protection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "controlPlaneScalingConfig" => {
+                            builder = builder.set_control_plane_scaling_config(
+                                crate::protocol_serde::shape_control_plane_scaling_config::de_control_plane_scaling_config(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

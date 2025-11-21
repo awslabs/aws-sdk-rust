@@ -22,7 +22,7 @@ impl crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeSt
 }
 /// Fluent builder constructing a request to `GetQueryRuntimeStatistics`.
 ///
-/// <p>Returns query execution runtime statistics related to a single execution of a query if you have access to the workgroup in which the query ran. Statistics from the <code>Timeline</code> section of the response object are available as soon as <code>QueryExecutionStatus$State</code> is in a SUCCEEDED or FAILED state. The remaining non-timeline statistics in the response (like stage-level input and output row count and data size) are updated asynchronously and may not be available immediately after a query completes. The non-timeline statistics are also not included when a query has row-level filters defined in Lake Formation.</p>
+/// <p>Returns query execution runtime statistics related to a single execution of a query if you have access to the workgroup in which the query ran. Statistics from the <code>Timeline</code> section of the response object are available as soon as <code>QueryExecutionStatus$State</code> is in a SUCCEEDED or FAILED state. The remaining non-timeline statistics in the response (like stage-level input and output row count and data size) are updated asynchronously and may not be available immediately after a query completes or, in some cases, may not be returned. The non-timeline statistics are also not included when a query has row-level filters defined in Lake Formation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetQueryRuntimeStatisticsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -79,6 +79,10 @@ pub(crate) mod shape_create_contact_flow;
 
 pub(crate) mod shape_create_contact_flow_module;
 
+pub(crate) mod shape_create_contact_flow_module_alias;
+
+pub(crate) mod shape_create_contact_flow_module_version;
+
 pub(crate) mod shape_create_contact_flow_version;
 
 pub(crate) mod shape_create_email_address;
@@ -139,6 +143,10 @@ pub(crate) mod shape_delete_contact_flow;
 
 pub(crate) mod shape_delete_contact_flow_module;
 
+pub(crate) mod shape_delete_contact_flow_module_alias;
+
+pub(crate) mod shape_delete_contact_flow_module_version;
+
 pub(crate) mod shape_delete_contact_flow_version;
 
 pub(crate) mod shape_delete_email_address;
@@ -196,6 +204,8 @@ pub(crate) mod shape_describe_contact_evaluation;
 pub(crate) mod shape_describe_contact_flow;
 
 pub(crate) mod shape_describe_contact_flow_module;
+
+pub(crate) mod shape_describe_contact_flow_module_alias;
 
 pub(crate) mod shape_describe_email_address;
 
@@ -312,6 +322,10 @@ pub(crate) mod shape_list_authentication_profiles;
 pub(crate) mod shape_list_bots;
 
 pub(crate) mod shape_list_contact_evaluations;
+
+pub(crate) mod shape_list_contact_flow_module_aliases;
+
+pub(crate) mod shape_list_contact_flow_module_versions;
 
 pub(crate) mod shape_list_contact_flow_modules;
 
@@ -513,6 +527,8 @@ pub(crate) mod shape_update_contact_flow_content;
 
 pub(crate) mod shape_update_contact_flow_metadata;
 
+pub(crate) mod shape_update_contact_flow_module_alias;
+
 pub(crate) mod shape_update_contact_flow_module_content;
 
 pub(crate) mod shape_update_contact_flow_module_metadata;
@@ -669,7 +685,11 @@ pub(crate) mod shape_create_agent_status_input;
 
 pub(crate) mod shape_create_contact_flow_input;
 
+pub(crate) mod shape_create_contact_flow_module_alias_input;
+
 pub(crate) mod shape_create_contact_flow_module_input;
+
+pub(crate) mod shape_create_contact_flow_module_version_input;
 
 pub(crate) mod shape_create_contact_flow_version_input;
 
@@ -905,6 +925,8 @@ pub(crate) mod shape_update_contact_flow_content_input;
 
 pub(crate) mod shape_update_contact_flow_metadata_input;
 
+pub(crate) mod shape_update_contact_flow_module_alias_input;
+
 pub(crate) mod shape_update_contact_flow_module_content_input;
 
 pub(crate) mod shape_update_contact_flow_module_metadata_input;
@@ -1065,11 +1087,17 @@ pub(crate) mod shape_contact_flow;
 
 pub(crate) mod shape_contact_flow_module;
 
+pub(crate) mod shape_contact_flow_module_alias_info;
+
+pub(crate) mod shape_contact_flow_module_alias_summary_list;
+
 pub(crate) mod shape_contact_flow_module_search_criteria;
 
 pub(crate) mod shape_contact_flow_module_search_filter;
 
 pub(crate) mod shape_contact_flow_module_search_summary_list;
+
+pub(crate) mod shape_contact_flow_module_version_summary_list;
 
 pub(crate) mod shape_contact_flow_modules_summary_list;
 
@@ -1158,6 +1186,8 @@ pub(crate) mod shape_evaluation_search_summary_list;
 pub(crate) mod shape_evaluation_summary_list;
 
 pub(crate) mod shape_evaluator_user_union;
+
+pub(crate) mod shape_external_invocation_configuration;
 
 pub(crate) mod shape_failed_request_list;
 
@@ -1501,7 +1531,11 @@ pub(crate) mod shape_contact_evaluations;
 
 pub(crate) mod shape_contact_filter;
 
+pub(crate) mod shape_contact_flow_module_alias_summary;
+
 pub(crate) mod shape_contact_flow_module_summary;
+
+pub(crate) mod shape_contact_flow_module_version_summary;
 
 pub(crate) mod shape_contact_flow_summary;
 

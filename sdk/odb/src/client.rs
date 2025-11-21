@@ -138,6 +138,8 @@ impl Client {
 
 mod accept_marketplace_registration;
 
+mod associate_iam_role_to_resource;
+
 mod create_cloud_autonomous_vm_cluster;
 
 mod create_cloud_exadata_infrastructure;
@@ -184,6 +186,8 @@ mod delete_cloud_vm_cluster;
 mod delete_odb_network;
 
 mod delete_odb_peering_connection;
+
+mod disassociate_iam_role_from_resource;
 
 mod get_cloud_autonomous_vm_cluster;
 

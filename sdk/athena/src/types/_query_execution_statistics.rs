@@ -22,6 +22,8 @@ pub struct QueryExecutionStatistics {
     pub service_processing_time_in_millis: ::std::option::Option<i64>,
     /// <p>Contains information about whether previous query results were reused for the query.</p>
     pub result_reuse_information: ::std::option::Option<crate::types::ResultReuseInformation>,
+    /// <p>The number of Data Processing Units (DPUs) that Athena used to run the query.</p>
+    pub dpu_count: ::std::option::Option<f64>,
 }
 impl QueryExecutionStatistics {
     /// <p>The number of milliseconds that the query took to execute.</p>
@@ -60,6 +62,10 @@ impl QueryExecutionStatistics {
     pub fn result_reuse_information(&self) -> ::std::option::Option<&crate::types::ResultReuseInformation> {
         self.result_reuse_information.as_ref()
     }
+    /// <p>The number of Data Processing Units (DPUs) that Athena used to run the query.</p>
+    pub fn dpu_count(&self) -> ::std::option::Option<f64> {
+        self.dpu_count
+    }
 }
 impl QueryExecutionStatistics {
     /// Creates a new builder-style object to manufacture [`QueryExecutionStatistics`](crate::types::QueryExecutionStatistics).
@@ -81,6 +87,7 @@ pub struct QueryExecutionStatisticsBuilder {
     pub(crate) query_planning_time_in_millis: ::std::option::Option<i64>,
     pub(crate) service_processing_time_in_millis: ::std::option::Option<i64>,
     pub(crate) result_reuse_information: ::std::option::Option<crate::types::ResultReuseInformation>,
+    pub(crate) dpu_count: ::std::option::Option<f64>,
 }
 impl QueryExecutionStatisticsBuilder {
     /// <p>The number of milliseconds that the query took to execute.</p>
@@ -209,6 +216,20 @@ impl QueryExecutionStatisticsBuilder {
     pub fn get_result_reuse_information(&self) -> &::std::option::Option<crate::types::ResultReuseInformation> {
         &self.result_reuse_information
     }
+    /// <p>The number of Data Processing Units (DPUs) that Athena used to run the query.</p>
+    pub fn dpu_count(mut self, input: f64) -> Self {
+        self.dpu_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of Data Processing Units (DPUs) that Athena used to run the query.</p>
+    pub fn set_dpu_count(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.dpu_count = input;
+        self
+    }
+    /// <p>The number of Data Processing Units (DPUs) that Athena used to run the query.</p>
+    pub fn get_dpu_count(&self) -> &::std::option::Option<f64> {
+        &self.dpu_count
+    }
     /// Consumes the builder and constructs a [`QueryExecutionStatistics`](crate::types::QueryExecutionStatistics).
     pub fn build(self) -> crate::types::QueryExecutionStatistics {
         crate::types::QueryExecutionStatistics {
@@ -221,6 +242,7 @@ impl QueryExecutionStatisticsBuilder {
             query_planning_time_in_millis: self.query_planning_time_in_millis,
             service_processing_time_in_millis: self.service_processing_time_in_millis,
             result_reuse_information: self.result_reuse_information,
+            dpu_count: self.dpu_count,
         }
     }
 }

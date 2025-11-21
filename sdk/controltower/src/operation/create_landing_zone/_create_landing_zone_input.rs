@@ -5,21 +5,17 @@
 pub struct CreateLandingZoneInput {
     /// <p>The landing zone version, for example, 3.0.</p>
     pub version: ::std::option::Option<::std::string::String>,
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
-    pub manifest: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.</p>
     pub remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     /// <p>Tags to be applied to the landing zone.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    pub manifest: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl CreateLandingZoneInput {
     /// <p>The landing zone version, for example, 3.0.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
-    }
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
-    pub fn manifest(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
-        self.manifest.as_ref()
     }
     /// <p>Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.</p>
     ///
@@ -30,6 +26,10 @@ impl CreateLandingZoneInput {
     /// <p>Tags to be applied to the landing zone.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    pub fn manifest(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.manifest.as_ref()
     }
 }
 impl CreateLandingZoneInput {
@@ -44,9 +44,9 @@ impl CreateLandingZoneInput {
 #[non_exhaustive]
 pub struct CreateLandingZoneInputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) manifest: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) remediation_types: ::std::option::Option<::std::vec::Vec<crate::types::RemediationType>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) manifest: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl CreateLandingZoneInputBuilder {
     /// <p>The landing zone version, for example, 3.0.</p>
@@ -63,21 +63,6 @@ impl CreateLandingZoneInputBuilder {
     /// <p>The landing zone version, for example, 3.0.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
-    }
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
-    /// This field is required.
-    pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
-        self.manifest = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
-    pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.manifest = input;
-        self
-    }
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
-    pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
-        &self.manifest
     }
     /// Appends an item to `remediation_types`.
     ///
@@ -119,15 +104,29 @@ impl CreateLandingZoneInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.manifest = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.manifest = input;
+        self
+    }
+    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.manifest
+    }
     /// Consumes the builder and constructs a [`CreateLandingZoneInput`](crate::operation::create_landing_zone::CreateLandingZoneInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_landing_zone::CreateLandingZoneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_landing_zone::CreateLandingZoneInput {
             version: self.version,
-            manifest: self.manifest,
             remediation_types: self.remediation_types,
             tags: self.tags,
+            manifest: self.manifest,
         })
     }
 }

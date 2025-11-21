@@ -216,6 +216,20 @@ impl CreateRedshiftIdcApplicationFluentBuilder {
     pub fn get_service_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>> {
         self.inner.get_service_integrations()
     }
+    /// <p>The type of application being created. Valid values are <code>None</code> or <code>Lakehouse</code>. Use <code>Lakehouse</code> to enable Amazon Redshift federated permissions on cluster.</p>
+    pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
+        self.inner = self.inner.application_type(input);
+        self
+    }
+    /// <p>The type of application being created. Valid values are <code>None</code> or <code>Lakehouse</code>. Use <code>Lakehouse</code> to enable Amazon Redshift federated permissions on cluster.</p>
+    pub fn set_application_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
+        self.inner = self.inner.set_application_type(input);
+        self
+    }
+    /// <p>The type of application being created. Valid values are <code>None</code> or <code>Lakehouse</code>. Use <code>Lakehouse</code> to enable Amazon Redshift federated permissions on cluster.</p>
+    pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        self.inner.get_application_type()
+    }
     ///
     /// Appends an item to `Tags`.
     ///

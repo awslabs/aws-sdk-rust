@@ -47,6 +47,17 @@ where
                         "s3Access" => {
                             builder = builder.set_s3_access(crate::protocol_serde::shape_s3_access::de_s3_access(tokens)?);
                         }
+                        "stsAccess" => {
+                            builder = builder.set_sts_access(crate::protocol_serde::shape_sts_access::de_sts_access(tokens)?);
+                        }
+                        "kmsAccess" => {
+                            builder = builder.set_kms_access(crate::protocol_serde::shape_kms_access::de_kms_access(tokens)?);
+                        }
+                        "crossRegionS3RestoreSourcesAccess" => {
+                            builder = builder.set_cross_region_s3_restore_sources_access(
+                                    crate::protocol_serde::shape_cross_region_s3_restore_sources_access_list::de_cross_region_s3_restore_sources_access_list(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -8,6 +8,8 @@ pub struct ClusterInstanceGroupDetails {
     pub current_count: ::std::option::Option<i32>,
     /// <p>The number of instances you specified to add to the instance group of a SageMaker HyperPod cluster.</p>
     pub target_count: ::std::option::Option<i32>,
+    /// <p>The minimum number of instances that must be available in the instance group of a SageMaker HyperPod cluster before it transitions to <code>InService</code> status.</p>
+    pub min_count: ::std::option::Option<i32>,
     /// <p>The name of the instance group of a SageMaker HyperPod cluster.</p>
     pub instance_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance type of the instance group of a SageMaker HyperPod cluster.</p>
@@ -51,6 +53,12 @@ pub struct ClusterInstanceGroupDetails {
     pub current_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) desired for the instance group.</p>
     pub desired_image_id: ::std::option::Option<::std::string::String>,
+    /// <p>A map indicating active operations currently in progress for the instance group of a SageMaker HyperPod cluster. When there is a scaling operation in progress, this map contains a key <code>Scaling</code> with value 1.</p>
+    pub active_operations: ::std::option::Option<::std::collections::HashMap<crate::types::ActiveClusterOperationName, i32>>,
+    /// <p>The Kubernetes configuration for the instance group that contains labels and taints to be applied for the nodes in this instance group.</p>
+    pub kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfigDetails>,
+    /// <p>The instance capacity requirements for the instance group.</p>
+    pub capacity_requirements: ::std::option::Option<crate::types::ClusterCapacityRequirements>,
     /// <p>The number of nodes running a specific image ID since the last software update request.</p>
     pub target_state_count: ::std::option::Option<i32>,
     /// <p>Status of the last software udpate request.</p>
@@ -66,6 +74,10 @@ impl ClusterInstanceGroupDetails {
     /// <p>The number of instances you specified to add to the instance group of a SageMaker HyperPod cluster.</p>
     pub fn target_count(&self) -> ::std::option::Option<i32> {
         self.target_count
+    }
+    /// <p>The minimum number of instances that must be available in the instance group of a SageMaker HyperPod cluster before it transitions to <code>InService</code> status.</p>
+    pub fn min_count(&self) -> ::std::option::Option<i32> {
+        self.min_count
     }
     /// <p>The name of the instance group of a SageMaker HyperPod cluster.</p>
     pub fn instance_group_name(&self) -> ::std::option::Option<&str> {
@@ -142,6 +154,18 @@ impl ClusterInstanceGroupDetails {
     pub fn desired_image_id(&self) -> ::std::option::Option<&str> {
         self.desired_image_id.as_deref()
     }
+    /// <p>A map indicating active operations currently in progress for the instance group of a SageMaker HyperPod cluster. When there is a scaling operation in progress, this map contains a key <code>Scaling</code> with value 1.</p>
+    pub fn active_operations(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ActiveClusterOperationName, i32>> {
+        self.active_operations.as_ref()
+    }
+    /// <p>The Kubernetes configuration for the instance group that contains labels and taints to be applied for the nodes in this instance group.</p>
+    pub fn kubernetes_config(&self) -> ::std::option::Option<&crate::types::ClusterKubernetesConfigDetails> {
+        self.kubernetes_config.as_ref()
+    }
+    /// <p>The instance capacity requirements for the instance group.</p>
+    pub fn capacity_requirements(&self) -> ::std::option::Option<&crate::types::ClusterCapacityRequirements> {
+        self.capacity_requirements.as_ref()
+    }
     /// <p>The number of nodes running a specific image ID since the last software update request.</p>
     pub fn target_state_count(&self) -> ::std::option::Option<i32> {
         self.target_state_count
@@ -168,6 +192,7 @@ impl ClusterInstanceGroupDetails {
 pub struct ClusterInstanceGroupDetailsBuilder {
     pub(crate) current_count: ::std::option::Option<i32>,
     pub(crate) target_count: ::std::option::Option<i32>,
+    pub(crate) min_count: ::std::option::Option<i32>,
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
     pub(crate) life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
@@ -182,6 +207,9 @@ pub struct ClusterInstanceGroupDetailsBuilder {
     pub(crate) scheduled_update_config: ::std::option::Option<crate::types::ScheduledUpdateConfig>,
     pub(crate) current_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) desired_image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) active_operations: ::std::option::Option<::std::collections::HashMap<crate::types::ActiveClusterOperationName, i32>>,
+    pub(crate) kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfigDetails>,
+    pub(crate) capacity_requirements: ::std::option::Option<crate::types::ClusterCapacityRequirements>,
     pub(crate) target_state_count: ::std::option::Option<i32>,
     pub(crate) software_update_status: ::std::option::Option<crate::types::SoftwareUpdateStatus>,
     pub(crate) active_software_update_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
@@ -214,6 +242,20 @@ impl ClusterInstanceGroupDetailsBuilder {
     /// <p>The number of instances you specified to add to the instance group of a SageMaker HyperPod cluster.</p>
     pub fn get_target_count(&self) -> &::std::option::Option<i32> {
         &self.target_count
+    }
+    /// <p>The minimum number of instances that must be available in the instance group of a SageMaker HyperPod cluster before it transitions to <code>InService</code> status.</p>
+    pub fn min_count(mut self, input: i32) -> Self {
+        self.min_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The minimum number of instances that must be available in the instance group of a SageMaker HyperPod cluster before it transitions to <code>InService</code> status.</p>
+    pub fn set_min_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.min_count = input;
+        self
+    }
+    /// <p>The minimum number of instances that must be available in the instance group of a SageMaker HyperPod cluster before it transitions to <code>InService</code> status.</p>
+    pub fn get_min_count(&self) -> &::std::option::Option<i32> {
+        &self.min_count
     }
     /// <p>The name of the instance group of a SageMaker HyperPod cluster.</p>
     pub fn instance_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -468,6 +510,57 @@ impl ClusterInstanceGroupDetailsBuilder {
     pub fn get_desired_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.desired_image_id
     }
+    /// Adds a key-value pair to `active_operations`.
+    ///
+    /// To override the contents of this collection use [`set_active_operations`](Self::set_active_operations).
+    ///
+    /// <p>A map indicating active operations currently in progress for the instance group of a SageMaker HyperPod cluster. When there is a scaling operation in progress, this map contains a key <code>Scaling</code> with value 1.</p>
+    pub fn active_operations(mut self, k: crate::types::ActiveClusterOperationName, v: i32) -> Self {
+        let mut hash_map = self.active_operations.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.active_operations = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map indicating active operations currently in progress for the instance group of a SageMaker HyperPod cluster. When there is a scaling operation in progress, this map contains a key <code>Scaling</code> with value 1.</p>
+    pub fn set_active_operations(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ActiveClusterOperationName, i32>>,
+    ) -> Self {
+        self.active_operations = input;
+        self
+    }
+    /// <p>A map indicating active operations currently in progress for the instance group of a SageMaker HyperPod cluster. When there is a scaling operation in progress, this map contains a key <code>Scaling</code> with value 1.</p>
+    pub fn get_active_operations(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::ActiveClusterOperationName, i32>> {
+        &self.active_operations
+    }
+    /// <p>The Kubernetes configuration for the instance group that contains labels and taints to be applied for the nodes in this instance group.</p>
+    pub fn kubernetes_config(mut self, input: crate::types::ClusterKubernetesConfigDetails) -> Self {
+        self.kubernetes_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Kubernetes configuration for the instance group that contains labels and taints to be applied for the nodes in this instance group.</p>
+    pub fn set_kubernetes_config(mut self, input: ::std::option::Option<crate::types::ClusterKubernetesConfigDetails>) -> Self {
+        self.kubernetes_config = input;
+        self
+    }
+    /// <p>The Kubernetes configuration for the instance group that contains labels and taints to be applied for the nodes in this instance group.</p>
+    pub fn get_kubernetes_config(&self) -> &::std::option::Option<crate::types::ClusterKubernetesConfigDetails> {
+        &self.kubernetes_config
+    }
+    /// <p>The instance capacity requirements for the instance group.</p>
+    pub fn capacity_requirements(mut self, input: crate::types::ClusterCapacityRequirements) -> Self {
+        self.capacity_requirements = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance capacity requirements for the instance group.</p>
+    pub fn set_capacity_requirements(mut self, input: ::std::option::Option<crate::types::ClusterCapacityRequirements>) -> Self {
+        self.capacity_requirements = input;
+        self
+    }
+    /// <p>The instance capacity requirements for the instance group.</p>
+    pub fn get_capacity_requirements(&self) -> &::std::option::Option<crate::types::ClusterCapacityRequirements> {
+        &self.capacity_requirements
+    }
     /// <p>The number of nodes running a specific image ID since the last software update request.</p>
     pub fn target_state_count(mut self, input: i32) -> Self {
         self.target_state_count = ::std::option::Option::Some(input);
@@ -515,6 +608,7 @@ impl ClusterInstanceGroupDetailsBuilder {
         crate::types::ClusterInstanceGroupDetails {
             current_count: self.current_count,
             target_count: self.target_count,
+            min_count: self.min_count,
             instance_group_name: self.instance_group_name,
             instance_type: self.instance_type,
             life_cycle_config: self.life_cycle_config,
@@ -529,6 +623,9 @@ impl ClusterInstanceGroupDetailsBuilder {
             scheduled_update_config: self.scheduled_update_config,
             current_image_id: self.current_image_id,
             desired_image_id: self.desired_image_id,
+            active_operations: self.active_operations,
+            kubernetes_config: self.kubernetes_config,
+            capacity_requirements: self.capacity_requirements,
             target_state_count: self.target_state_count,
             software_update_status: self.software_update_status,
             active_software_update_config: self.active_software_update_config,

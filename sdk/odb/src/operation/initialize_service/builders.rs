@@ -108,4 +108,18 @@ impl InitializeServiceFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p>
+    pub fn oci_identity_domain(mut self, input: bool) -> Self {
+        self.inner = self.inner.oci_identity_domain(input);
+        self
+    }
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p>
+    pub fn set_oci_identity_domain(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_oci_identity_domain(input);
+        self
+    }
+    /// <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p>
+    pub fn get_oci_identity_domain(&self) -> &::std::option::Option<bool> {
+        self.inner.get_oci_identity_domain()
+    }
 }

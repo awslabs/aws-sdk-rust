@@ -25,6 +25,8 @@ pub struct DescribeOptimizationJobOutput {
     pub optimization_environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of instance that hosts the optimized model that you create with the optimization job.</p>
     pub deployment_instance_type: ::std::option::Option<crate::types::OptimizationJobDeploymentInstanceType>,
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub max_instance_count: ::std::option::Option<i32>,
     /// <p>Settings for each of the optimization techniques that the job applies.</p>
     pub optimization_configs: ::std::option::Option<::std::vec::Vec<crate::types::OptimizationConfig>>,
     /// <p>Details for where to store the optimized model that you create with the optimization job.</p>
@@ -88,6 +90,10 @@ impl DescribeOptimizationJobOutput {
     pub fn deployment_instance_type(&self) -> ::std::option::Option<&crate::types::OptimizationJobDeploymentInstanceType> {
         self.deployment_instance_type.as_ref()
     }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn max_instance_count(&self) -> ::std::option::Option<i32> {
+        self.max_instance_count
+    }
     /// <p>Settings for each of the optimization techniques that the job applies.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.optimization_configs.is_none()`.
@@ -146,6 +152,7 @@ pub struct DescribeOptimizationJobOutputBuilder {
     pub(crate) model_source: ::std::option::Option<crate::types::OptimizationJobModelSource>,
     pub(crate) optimization_environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) deployment_instance_type: ::std::option::Option<crate::types::OptimizationJobDeploymentInstanceType>,
+    pub(crate) max_instance_count: ::std::option::Option<i32>,
     pub(crate) optimization_configs: ::std::option::Option<::std::vec::Vec<crate::types::OptimizationConfig>>,
     pub(crate) output_config: ::std::option::Option<crate::types::OptimizationJobOutputConfig>,
     pub(crate) optimization_output: ::std::option::Option<crate::types::OptimizationOutput>,
@@ -329,6 +336,20 @@ impl DescribeOptimizationJobOutputBuilder {
     pub fn get_deployment_instance_type(&self) -> &::std::option::Option<crate::types::OptimizationJobDeploymentInstanceType> {
         &self.deployment_instance_type
     }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn max_instance_count(mut self, input: i32) -> Self {
+        self.max_instance_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn set_max_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_instance_count = input;
+        self
+    }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn get_max_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.max_instance_count
+    }
     /// Appends an item to `optimization_configs`.
     ///
     /// To override the contents of this collection use [`set_optimization_configs`](Self::set_optimization_configs).
@@ -457,6 +478,7 @@ impl DescribeOptimizationJobOutputBuilder {
             model_source: self.model_source,
             optimization_environment: self.optimization_environment,
             deployment_instance_type: self.deployment_instance_type,
+            max_instance_count: self.max_instance_count,
             optimization_configs: self.optimization_configs,
             output_config: self.output_config,
             optimization_output: self.optimization_output,

@@ -191,6 +191,17 @@ pub struct CreateClusterInput {
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
     pub redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the Glue data catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub catalog_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateClusterInput {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -466,6 +477,19 @@ impl CreateClusterInput {
     pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<&str> {
         self.redshift_idc_application_arn.as_deref()
     }
+    /// <p>The name of the Glue data catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub fn catalog_name(&self) -> ::std::option::Option<&str> {
+        self.catalog_name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -509,6 +533,7 @@ impl ::std::fmt::Debug for CreateClusterInput {
         formatter.field("ip_address_type", &self.ip_address_type);
         formatter.field("multi_az", &self.multi_az);
         formatter.field("redshift_idc_application_arn", &self.redshift_idc_application_arn);
+        formatter.field("catalog_name", &self.catalog_name);
         formatter.finish()
     }
 }
@@ -562,6 +587,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<bool>,
     pub(crate) redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -1464,6 +1490,47 @@ impl CreateClusterInputBuilder {
     pub fn get_redshift_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.redshift_idc_application_arn
     }
+    /// <p>The name of the Glue data catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the Glue data catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub fn set_catalog_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_name = input;
+        self
+    }
+    /// <p>The name of the Glue data catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub fn get_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_name
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -1508,6 +1575,7 @@ impl CreateClusterInputBuilder {
             ip_address_type: self.ip_address_type,
             multi_az: self.multi_az,
             redshift_idc_application_arn: self.redshift_idc_application_arn,
+            catalog_name: self.catalog_name,
         })
     }
 }
@@ -1553,6 +1621,7 @@ impl ::std::fmt::Debug for CreateClusterInputBuilder {
         formatter.field("ip_address_type", &self.ip_address_type);
         formatter.field("multi_az", &self.multi_az);
         formatter.field("redshift_idc_application_arn", &self.redshift_idc_application_arn);
+        formatter.field("catalog_name", &self.catalog_name);
         formatter.finish()
     }
 }

@@ -17,6 +17,8 @@ pub struct UpdateBotLocaleInput {
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     /// <p>Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see LINK.</p>
     pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
+    /// <p>The new sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
 }
 impl UpdateBotLocaleInput {
     /// <p>The unique identifier of the bot that contains the locale.</p>
@@ -47,6 +49,10 @@ impl UpdateBotLocaleInput {
     pub fn generative_ai_settings(&self) -> ::std::option::Option<&crate::types::GenerativeAiSettings> {
         self.generative_ai_settings.as_ref()
     }
+    /// <p>The new sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn speech_detection_sensitivity(&self) -> ::std::option::Option<&crate::types::SpeechDetectionSensitivity> {
+        self.speech_detection_sensitivity.as_ref()
+    }
 }
 impl UpdateBotLocaleInput {
     /// Creates a new builder-style object to manufacture [`UpdateBotLocaleInput`](crate::operation::update_bot_locale::UpdateBotLocaleInput).
@@ -66,6 +72,7 @@ pub struct UpdateBotLocaleInputBuilder {
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
+    pub(crate) speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
 }
 impl UpdateBotLocaleInputBuilder {
     /// <p>The unique identifier of the bot that contains the locale.</p>
@@ -170,6 +177,20 @@ impl UpdateBotLocaleInputBuilder {
     pub fn get_generative_ai_settings(&self) -> &::std::option::Option<crate::types::GenerativeAiSettings> {
         &self.generative_ai_settings
     }
+    /// <p>The new sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn speech_detection_sensitivity(mut self, input: crate::types::SpeechDetectionSensitivity) -> Self {
+        self.speech_detection_sensitivity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The new sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn set_speech_detection_sensitivity(mut self, input: ::std::option::Option<crate::types::SpeechDetectionSensitivity>) -> Self {
+        self.speech_detection_sensitivity = input;
+        self
+    }
+    /// <p>The new sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn get_speech_detection_sensitivity(&self) -> &::std::option::Option<crate::types::SpeechDetectionSensitivity> {
+        &self.speech_detection_sensitivity
+    }
     /// Consumes the builder and constructs a [`UpdateBotLocaleInput`](crate::operation::update_bot_locale::UpdateBotLocaleInput).
     pub fn build(
         self,
@@ -182,6 +203,7 @@ impl UpdateBotLocaleInputBuilder {
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
             generative_ai_settings: self.generative_ai_settings,
+            speech_detection_sensitivity: self.speech_detection_sensitivity,
         })
     }
 }

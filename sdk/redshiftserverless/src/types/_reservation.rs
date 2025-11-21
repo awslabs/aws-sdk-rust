@@ -8,7 +8,7 @@ pub struct Reservation {
     pub reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the serverless reservation.</p>
     pub reservation_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The start date for the serverless reservation. This is the date you specified for the reservation to start when you created the reservation.</p>
+    /// <p>The start date for the serverless reservation. This is the date you created the reservation.</p>
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end date for the serverless reservation. This date is one year after the start date that you specify.</p>
     pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -38,7 +38,7 @@ impl Reservation {
     pub fn reservation_arn(&self) -> ::std::option::Option<&str> {
         self.reservation_arn.as_deref()
     }
-    /// <p>The start date for the serverless reservation. This is the date you specified for the reservation to start when you created the reservation.</p>
+    /// <p>The start date for the serverless reservation. This is the date you created the reservation.</p>
     pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
@@ -117,17 +117,17 @@ impl ReservationBuilder {
     pub fn get_reservation_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.reservation_arn
     }
-    /// <p>The start date for the serverless reservation. This is the date you specified for the reservation to start when you created the reservation.</p>
+    /// <p>The start date for the serverless reservation. This is the date you created the reservation.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start date for the serverless reservation. This is the date you specified for the reservation to start when you created the reservation.</p>
+    /// <p>The start date for the serverless reservation. This is the date you created the reservation.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
-    /// <p>The start date for the serverless reservation. This is the date you specified for the reservation to start when you created the reservation.</p>
+    /// <p>The start date for the serverless reservation. This is the date you created the reservation.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_date
     }

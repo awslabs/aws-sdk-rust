@@ -71,6 +71,8 @@ pub enum Error {
     SecretNotFoundException(crate::types::error::SecretNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::types::error::ServerException),
+    /// <p>The specified signing configuration was not found. This occurs when attempting to retrieve or delete a signing configuration that does not exist.</p>
+    SigningConfigurationNotFoundException(crate::types::error::SigningConfigurationNotFoundException),
     /// <p>The repository creation template already exists. Specify a unique prefix and try again.</p>
     TemplateAlreadyExistsException(crate::types::error::TemplateAlreadyExistsException),
     /// <p>The specified repository creation template can't be found. Verify the registry ID and prefix and try again.</p>
@@ -139,6 +141,7 @@ impl ::std::fmt::Display for Error {
             Error::ScanNotFoundException(inner) => inner.fmt(f),
             Error::SecretNotFoundException(inner) => inner.fmt(f),
             Error::ServerException(inner) => inner.fmt(f),
+            Error::SigningConfigurationNotFoundException(inner) => inner.fmt(f),
             Error::TemplateAlreadyExistsException(inner) => inner.fmt(f),
             Error::TemplateNotFoundException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
@@ -205,6 +208,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ScanNotFoundException(inner) => inner.meta(),
             Self::SecretNotFoundException(inner) => inner.meta(),
             Self::ServerException(inner) => inner.meta(),
+            Self::SigningConfigurationNotFoundException(inner) => inner.meta(),
             Self::TemplateAlreadyExistsException(inner) => inner.meta(),
             Self::TemplateNotFoundException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
@@ -723,6 +727,37 @@ impl From<crate::operation::delete_repository_policy::DeleteRepositoryPolicyErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_signing_configuration::DeleteSigningConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_signing_configuration::DeleteSigningConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_signing_configuration::DeleteSigningConfigurationError> for Error {
+    fn from(err: crate::operation::delete_signing_configuration::DeleteSigningConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_signing_configuration::DeleteSigningConfigurationError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_signing_configuration::DeleteSigningConfigurationError::SigningConfigurationNotFoundException(inner) => {
+                Error::SigningConfigurationNotFoundException(inner)
+            }
+            crate::operation::delete_signing_configuration::DeleteSigningConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_signing_configuration::DeleteSigningConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -881,6 +916,43 @@ impl From<crate::operation::describe_image_scan_findings::DescribeImageScanFindi
                 Error::ValidationException(inner)
             }
             crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_image_signing_status::DescribeImageSigningStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_image_signing_status::DescribeImageSigningStatusError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_image_signing_status::DescribeImageSigningStatusError> for Error {
+    fn from(err: crate::operation::describe_image_signing_status::DescribeImageSigningStatusError) -> Self {
+        match err {
+            crate::operation::describe_image_signing_status::DescribeImageSigningStatusError::ImageNotFoundException(inner) => {
+                Error::ImageNotFoundException(inner)
+            }
+            crate::operation::describe_image_signing_status::DescribeImageSigningStatusError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_image_signing_status::DescribeImageSigningStatusError::RepositoryNotFoundException(inner) => {
+                Error::RepositoryNotFoundException(inner)
+            }
+            crate::operation::describe_image_signing_status::DescribeImageSigningStatusError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_image_signing_status::DescribeImageSigningStatusError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_image_signing_status::DescribeImageSigningStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1283,6 +1355,40 @@ impl From<crate::operation::get_repository_policy::GetRepositoryPolicyError> for
             }
             crate::operation::get_repository_policy::GetRepositoryPolicyError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::get_repository_policy::GetRepositoryPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_signing_configuration::GetSigningConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_signing_configuration::GetSigningConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_signing_configuration::GetSigningConfigurationError> for Error {
+    fn from(err: crate::operation::get_signing_configuration::GetSigningConfigurationError) -> Self {
+        match err {
+            crate::operation::get_signing_configuration::GetSigningConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_signing_configuration::GetSigningConfigurationError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::get_signing_configuration::GetSigningConfigurationError::SigningConfigurationNotFoundException(inner) => {
+                Error::SigningConfigurationNotFoundException(inner)
+            }
+            crate::operation::get_signing_configuration::GetSigningConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_signing_configuration::GetSigningConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1694,6 +1800,37 @@ impl From<crate::operation::put_replication_configuration::PutReplicationConfigu
                 Error::ValidationException(inner)
             }
             crate::operation::put_replication_configuration::PutReplicationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_signing_configuration::PutSigningConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_signing_configuration::PutSigningConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_signing_configuration::PutSigningConfigurationError> for Error {
+    fn from(err: crate::operation::put_signing_configuration::PutSigningConfigurationError) -> Self {
+        match err {
+            crate::operation::put_signing_configuration::PutSigningConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::put_signing_configuration::PutSigningConfigurationError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::put_signing_configuration::PutSigningConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_signing_configuration::PutSigningConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2149,6 +2286,7 @@ impl ::std::error::Error for Error {
             Error::ScanNotFoundException(inner) => inner.source(),
             Error::SecretNotFoundException(inner) => inner.source(),
             Error::ServerException(inner) => inner.source(),
+            Error::SigningConfigurationNotFoundException(inner) => inner.source(),
             Error::TemplateAlreadyExistsException(inner) => inner.source(),
             Error::TemplateNotFoundException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
@@ -2201,6 +2339,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ScanNotFoundException(e) => e.request_id(),
             Self::SecretNotFoundException(e) => e.request_id(),
             Self::ServerException(e) => e.request_id(),
+            Self::SigningConfigurationNotFoundException(e) => e.request_id(),
             Self::TemplateAlreadyExistsException(e) => e.request_id(),
             Self::TemplateNotFoundException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),

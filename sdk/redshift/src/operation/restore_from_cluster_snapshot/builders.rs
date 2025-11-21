@@ -796,4 +796,59 @@ impl RestoreFromClusterSnapshotFluentBuilder {
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_az()
     }
+    /// <p>The name of the Glue Data Catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.catalog_name(input.into());
+        self
+    }
+    /// <p>The name of the Glue Data Catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub fn set_catalog_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_catalog_name(input);
+        self
+    }
+    /// <p>The name of the Glue Data Catalog that will be associated with the cluster enabled with Amazon Redshift federated permissions.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens (-).</p></li>
+    /// </ul>
+    /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
+    /// <p>Example: <code>my-catalog_01</code></p>
+    pub fn get_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_name()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a cluster enabled with Amazon Redshift federated permissions.</p>
+    pub fn redshift_idc_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.redshift_idc_application_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a cluster enabled with Amazon Redshift federated permissions.</p>
+    pub fn set_redshift_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_redshift_idc_application_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a cluster enabled with Amazon Redshift federated permissions.</p>
+    pub fn get_redshift_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_redshift_idc_application_arn()
+    }
 }

@@ -445,6 +445,8 @@ mod modify_event_subscription;
 
 mod modify_integration;
 
+mod modify_lakehouse_configuration;
+
 mod modify_redshift_idc_application;
 
 mod modify_scheduled_action;

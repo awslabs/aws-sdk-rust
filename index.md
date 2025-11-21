@@ -327,6 +327,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon SageMaker Feature Store Runtime | [aws-sdk-sagemakerfeaturestoreruntime](https://crates.io/crates/aws-sdk-sagemakerfeaturestoreruntime) ([docs](https://docs.rs/aws-sdk-sagemakerfeaturestoreruntime)) |
 | Amazon SageMaker Metrics Service | [aws-sdk-sagemakermetrics](https://crates.io/crates/aws-sdk-sagemakermetrics) ([docs](https://docs.rs/aws-sdk-sagemakermetrics)) |
 | Amazon SageMaker Runtime | [aws-sdk-sagemakerruntime](https://crates.io/crates/aws-sdk-sagemakerruntime) ([docs](https://docs.rs/aws-sdk-sagemakerruntime)) |
+| Amazon SageMaker Runtime HTTP2 | [aws-sdk-sagemakerruntimehttp2](https://crates.io/crates/aws-sdk-sagemakerruntimehttp2) ([docs](https://docs.rs/aws-sdk-sagemakerruntimehttp2)) |
 | Amazon SageMaker Service | [aws-sdk-sagemaker](https://crates.io/crates/aws-sdk-sagemaker) ([docs](https://docs.rs/aws-sdk-sagemaker)) |
 | Amazon SageMaker geospatial capabilities | [aws-sdk-sagemakergeospatial](https://crates.io/crates/aws-sdk-sagemakergeospatial) ([docs](https://docs.rs/aws-sdk-sagemakergeospatial)) |
 | Amazon Sagemaker Edge Manager | [aws-sdk-sagemakeredge](https://crates.io/crates/aws-sdk-sagemakeredge) ([docs](https://docs.rs/aws-sdk-sagemakeredge)) |
@@ -371,6 +372,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | CloudWatch Observability Admin Service | [aws-sdk-observabilityadmin](https://crates.io/crates/aws-sdk-observabilityadmin) ([docs](https://docs.rs/aws-sdk-observabilityadmin)) |
 | CloudWatch RUM | [aws-sdk-rum](https://crates.io/crates/aws-sdk-rum) ([docs](https://docs.rs/aws-sdk-rum)) |
 | CodeArtifact | [aws-sdk-codeartifact](https://crates.io/crates/aws-sdk-codeartifact) ([docs](https://docs.rs/aws-sdk-codeartifact)) |
+| Compute Optimizer Automation | [aws-sdk-computeoptimizerautomation](https://crates.io/crates/aws-sdk-computeoptimizerautomation) ([docs](https://docs.rs/aws-sdk-computeoptimizerautomation)) |
 | Cost Optimization Hub | [aws-sdk-costoptimizationhub](https://crates.io/crates/aws-sdk-costoptimizationhub) ([docs](https://docs.rs/aws-sdk-costoptimizationhub)) |
 | Data Automation for Amazon Bedrock | [aws-sdk-bedrockdataautomation](https://crates.io/crates/aws-sdk-bedrockdataautomation) ([docs](https://docs.rs/aws-sdk-bedrockdataautomation)) |
 | EC2 Image Builder | [aws-sdk-imagebuilder](https://crates.io/crates/aws-sdk-imagebuilder) ([docs](https://docs.rs/aws-sdk-imagebuilder)) |

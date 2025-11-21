@@ -7,6 +7,8 @@ pub struct UpdateIntentInput {
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the intent.</p>
     pub intent_name: ::std::option::Option<::std::string::String>,
+    /// <p>The new display name for the intent.</p>
+    pub intent_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The new description of the intent.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The signature of the new built-in intent to use as the parent of this intent.</p>
@@ -50,6 +52,10 @@ impl UpdateIntentInput {
     /// <p>The new name for the intent.</p>
     pub fn intent_name(&self) -> ::std::option::Option<&str> {
         self.intent_name.as_deref()
+    }
+    /// <p>The new display name for the intent.</p>
+    pub fn intent_display_name(&self) -> ::std::option::Option<&str> {
+        self.intent_display_name.as_deref()
     }
     /// <p>The new description of the intent.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -141,6 +147,7 @@ impl UpdateIntentInput {
 pub struct UpdateIntentInputBuilder {
     pub(crate) intent_id: ::std::option::Option<::std::string::String>,
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
+    pub(crate) intent_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) parent_intent_signature: ::std::option::Option<::std::string::String>,
     pub(crate) sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
@@ -189,6 +196,20 @@ impl UpdateIntentInputBuilder {
     /// <p>The new name for the intent.</p>
     pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.intent_name
+    }
+    /// <p>The new display name for the intent.</p>
+    pub fn intent_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.intent_display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The new display name for the intent.</p>
+    pub fn set_intent_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.intent_display_name = input;
+        self
+    }
+    /// <p>The new display name for the intent.</p>
+    pub fn get_intent_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_display_name
     }
     /// <p>The new description of the intent.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -462,6 +483,7 @@ impl UpdateIntentInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_intent::UpdateIntentInput {
             intent_id: self.intent_id,
             intent_name: self.intent_name,
+            intent_display_name: self.intent_display_name,
             description: self.description,
             parent_intent_signature: self.parent_intent_signature,
             sample_utterances: self.sample_utterances,

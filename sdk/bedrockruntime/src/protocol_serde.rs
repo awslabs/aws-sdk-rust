@@ -201,6 +201,8 @@ pub(crate) mod shape_tool_choice;
 
 pub(crate) mod shape_any_tool_choice;
 
+pub(crate) mod shape_applied_guardrail_details;
+
 pub(crate) mod shape_auto_tool_choice;
 
 pub(crate) mod shape_citations_content_block;
@@ -280,6 +282,8 @@ pub(crate) mod shape_guardrail_converse_image_source;
 pub(crate) mod shape_guardrail_custom_word_list;
 
 pub(crate) mod shape_guardrail_managed_word_list;
+
+pub(crate) mod shape_guardrail_origin_list;
 
 pub(crate) mod shape_guardrail_pii_entity_filter_list;
 

@@ -22,7 +22,8 @@ impl crate::operation::update_web_app::builders::UpdateWebAppInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateWebApp`.
 ///
-/// <p>Assigns new properties to a web app. You can modify the access point, identity provider details, and the web app units.</p>
+/// <p>Assigns new properties to a web app. You can modify the access point, identity provider details, endpoint configuration, and the web app units.</p>
+/// <p>For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create a Transfer Family web app in a VPC</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWebAppFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -163,5 +164,19 @@ impl UpdateWebAppFluentBuilder {
     /// <p>A union that contains the value for number of concurrent connections or the user sessions on your web app.</p>
     pub fn get_web_app_units(&self) -> &::std::option::Option<crate::types::WebAppUnits> {
         self.inner.get_web_app_units()
+    }
+    /// <p>The updated endpoint configuration for the web app. You can modify the endpoint type and VPC configuration settings.</p>
+    pub fn endpoint_details(mut self, input: crate::types::UpdateWebAppEndpointDetails) -> Self {
+        self.inner = self.inner.endpoint_details(input);
+        self
+    }
+    /// <p>The updated endpoint configuration for the web app. You can modify the endpoint type and VPC configuration settings.</p>
+    pub fn set_endpoint_details(mut self, input: ::std::option::Option<crate::types::UpdateWebAppEndpointDetails>) -> Self {
+        self.inner = self.inner.set_endpoint_details(input);
+        self
+    }
+    /// <p>The updated endpoint configuration for the web app. You can modify the endpoint type and VPC configuration settings.</p>
+    pub fn get_endpoint_details(&self) -> &::std::option::Option<crate::types::UpdateWebAppEndpointDetails> {
+        self.inner.get_endpoint_details()
     }
 }

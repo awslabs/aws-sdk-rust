@@ -5,6 +5,8 @@
 pub struct RenderMessageTemplateOutput {
     /// <p>The content of the message template.</p>
     pub content: ::std::option::Option<crate::types::MessageTemplateContentProvider>,
+    /// <p>The source configuration of the message template.</p>
+    pub source_configuration_summary: ::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary>,
     /// <p>The attribute keys that are not resolved.</p>
     pub attributes_not_interpolated: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The message template attachments.</p>
@@ -15,6 +17,10 @@ impl RenderMessageTemplateOutput {
     /// <p>The content of the message template.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::MessageTemplateContentProvider> {
         self.content.as_ref()
+    }
+    /// <p>The source configuration of the message template.</p>
+    pub fn source_configuration_summary(&self) -> ::std::option::Option<&crate::types::MessageTemplateSourceConfigurationSummary> {
+        self.source_configuration_summary.as_ref()
     }
     /// <p>The attribute keys that are not resolved.</p>
     ///
@@ -33,6 +39,7 @@ impl ::std::fmt::Debug for RenderMessageTemplateOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RenderMessageTemplateOutput");
         formatter.field("content", &self.content);
+        formatter.field("source_configuration_summary", &self.source_configuration_summary);
         formatter.field("attributes_not_interpolated", &"*** Sensitive Data Redacted ***");
         formatter.field("attachments", &self.attachments);
         formatter.field("_request_id", &self._request_id);
@@ -56,13 +63,13 @@ impl RenderMessageTemplateOutput {
 #[non_exhaustive]
 pub struct RenderMessageTemplateOutputBuilder {
     pub(crate) content: ::std::option::Option<crate::types::MessageTemplateContentProvider>,
+    pub(crate) source_configuration_summary: ::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary>,
     pub(crate) attributes_not_interpolated: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::MessageTemplateAttachment>>,
     _request_id: Option<String>,
 }
 impl RenderMessageTemplateOutputBuilder {
     /// <p>The content of the message template.</p>
-    /// This field is required.
     pub fn content(mut self, input: crate::types::MessageTemplateContentProvider) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
@@ -75,6 +82,20 @@ impl RenderMessageTemplateOutputBuilder {
     /// <p>The content of the message template.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::MessageTemplateContentProvider> {
         &self.content
+    }
+    /// <p>The source configuration of the message template.</p>
+    pub fn source_configuration_summary(mut self, input: crate::types::MessageTemplateSourceConfigurationSummary) -> Self {
+        self.source_configuration_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source configuration of the message template.</p>
+    pub fn set_source_configuration_summary(mut self, input: ::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary>) -> Self {
+        self.source_configuration_summary = input;
+        self
+    }
+    /// <p>The source configuration of the message template.</p>
+    pub fn get_source_configuration_summary(&self) -> &::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary> {
+        &self.source_configuration_summary
     }
     /// Appends an item to `attributes_not_interpolated`.
     ///
@@ -129,6 +150,7 @@ impl RenderMessageTemplateOutputBuilder {
     pub fn build(self) -> crate::operation::render_message_template::RenderMessageTemplateOutput {
         crate::operation::render_message_template::RenderMessageTemplateOutput {
             content: self.content,
+            source_configuration_summary: self.source_configuration_summary,
             attributes_not_interpolated: self.attributes_not_interpolated,
             attachments: self.attachments,
             _request_id: self._request_id,
@@ -139,6 +161,7 @@ impl ::std::fmt::Debug for RenderMessageTemplateOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RenderMessageTemplateOutputBuilder");
         formatter.field("content", &self.content);
+        formatter.field("source_configuration_summary", &self.source_configuration_summary);
         formatter.field("attributes_not_interpolated", &"*** Sensitive Data Redacted ***");
         formatter.field("attachments", &self.attachments);
         formatter.field("_request_id", &self._request_id);

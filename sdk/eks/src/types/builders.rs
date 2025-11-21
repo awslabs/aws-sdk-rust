@@ -29,6 +29,8 @@ pub use crate::types::_license::LicenseBuilder;
 
 pub use crate::types::_eks_anywhere_subscription_term::EksAnywhereSubscriptionTermBuilder;
 
+pub use crate::types::_control_plane_scaling_config::ControlPlaneScalingConfigBuilder;
+
 pub use crate::types::_remote_network_config_request::RemoteNetworkConfigRequestBuilder;
 
 pub use crate::types::_remote_pod_network::RemotePodNetworkBuilder;

@@ -49,9 +49,13 @@ pub(crate) mod shape_list_cases;
 
 pub(crate) mod shape_list_comments;
 
+pub(crate) mod shape_list_investigations;
+
 pub(crate) mod shape_list_memberships;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_send_feedback;
 
 pub(crate) mod shape_tag_resource;
 
@@ -105,6 +109,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_security_incident_response_not_active_exception;
 
+pub(crate) mod shape_send_feedback_input;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_tag_resource_input;
@@ -127,6 +133,10 @@ pub(crate) mod shape_case_attachments_list;
 
 pub(crate) mod shape_case_edit_items;
 
+pub(crate) mod shape_case_metadata;
+
+pub(crate) mod shape_case_metadata_entry;
+
 pub(crate) mod shape_get_membership_account_detail_errors;
 
 pub(crate) mod shape_get_membership_account_detail_items;
@@ -142,6 +152,8 @@ pub(crate) mod shape_impacted_services_list;
 pub(crate) mod shape_incident_responder;
 
 pub(crate) mod shape_incident_response_team;
+
+pub(crate) mod shape_investigation_action_list;
 
 pub(crate) mod shape_list_cases_items;
 
@@ -177,6 +189,8 @@ pub(crate) mod shape_get_membership_account_detail_error;
 
 pub(crate) mod shape_get_membership_account_detail_item;
 
+pub(crate) mod shape_investigation_action;
+
 pub(crate) mod shape_list_cases_item;
 
 pub(crate) mod shape_list_comments_item;
@@ -188,3 +202,5 @@ pub(crate) mod shape_organizational_units;
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_communication_preferences;
+
+pub(crate) mod shape_investigation_feedback;

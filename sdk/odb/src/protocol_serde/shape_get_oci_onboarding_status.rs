@@ -144,6 +144,9 @@ pub(crate) fn de_get_oci_onboarding_status(
                             .transpose()?,
                     );
                 }
+                "ociIdentityDomain" => {
+                    builder = builder.set_oci_identity_domain(crate::protocol_serde::shape_oci_identity_domain::de_oci_identity_domain(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

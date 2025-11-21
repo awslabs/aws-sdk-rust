@@ -51,11 +51,15 @@ pub(crate) mod shape_delete_repository_creation_template;
 
 pub(crate) mod shape_delete_repository_policy;
 
+pub(crate) mod shape_delete_signing_configuration;
+
 pub(crate) mod shape_deregister_pull_time_update_exclusion;
 
 pub(crate) mod shape_describe_image_replication_status;
 
 pub(crate) mod shape_describe_image_scan_findings;
+
+pub(crate) mod shape_describe_image_signing_status;
 
 pub(crate) mod shape_describe_images;
 
@@ -83,6 +87,8 @@ pub(crate) mod shape_get_registry_scanning_configuration;
 
 pub(crate) mod shape_get_repository_policy;
 
+pub(crate) mod shape_get_signing_configuration;
+
 pub(crate) mod shape_initiate_layer_upload;
 
 pub(crate) mod shape_list_image_referrers;
@@ -108,6 +114,8 @@ pub(crate) mod shape_put_registry_policy;
 pub(crate) mod shape_put_registry_scanning_configuration;
 
 pub(crate) mod shape_put_replication_configuration;
+
+pub(crate) mod shape_put_signing_configuration;
 
 pub(crate) mod shape_register_pull_time_update_exclusion;
 
@@ -172,6 +180,8 @@ pub(crate) mod shape_deregister_pull_time_update_exclusion_input;
 pub(crate) mod shape_describe_image_replication_status_input;
 
 pub(crate) mod shape_describe_image_scan_findings_input;
+
+pub(crate) mod shape_describe_image_signing_status_input;
 
 pub(crate) mod shape_describe_images_input;
 
@@ -267,6 +277,8 @@ pub(crate) mod shape_put_registry_scanning_configuration_input;
 
 pub(crate) mod shape_put_replication_configuration_input;
 
+pub(crate) mod shape_put_signing_configuration_input;
+
 pub(crate) mod shape_referenced_images_not_found_exception;
 
 pub(crate) mod shape_register_pull_time_update_exclusion_input;
@@ -288,6 +300,8 @@ pub(crate) mod shape_secret_not_found_exception;
 pub(crate) mod shape_server_exception;
 
 pub(crate) mod shape_set_repository_policy_input;
+
+pub(crate) mod shape_signing_configuration_not_found_exception;
 
 pub(crate) mod shape_start_image_scan_input;
 
@@ -359,6 +373,8 @@ pub(crate) mod shape_image_scan_status;
 
 pub(crate) mod shape_image_scanning_configuration;
 
+pub(crate) mod shape_image_signing_status_list;
+
 pub(crate) mod shape_image_tag_mutability_exclusion_filter;
 
 pub(crate) mod shape_image_tag_mutability_exclusion_filters;
@@ -399,6 +415,8 @@ pub(crate) mod shape_repository_scanning_configuration_failure_list;
 
 pub(crate) mod shape_repository_scanning_configuration_list;
 
+pub(crate) mod shape_signing_configuration;
+
 pub(crate) mod shape_subject_identifier;
 
 pub(crate) mod shape_tag;
@@ -420,6 +438,8 @@ pub(crate) mod shape_image_referrer;
 pub(crate) mod shape_image_replication_status;
 
 pub(crate) mod shape_image_scan_finding_list;
+
+pub(crate) mod shape_image_signing_status;
 
 pub(crate) mod shape_layer;
 
@@ -443,6 +463,10 @@ pub(crate) mod shape_repository_scanning_configuration_failure;
 
 pub(crate) mod shape_scanning_repository_filter;
 
+pub(crate) mod shape_signing_rule;
+
+pub(crate) mod shape_signing_rule_list;
+
 pub(crate) mod shape_transitioning_image_total_counts;
 
 pub(crate) mod shape_annotations;
@@ -463,6 +487,8 @@ pub(crate) mod shape_repository_filter;
 
 pub(crate) mod shape_scanning_repository_filter_list;
 
+pub(crate) mod shape_signing_repository_filter;
+
 pub(crate) mod shape_transitioning_image_total_count;
 
 pub(crate) mod shape_attribute_list;
@@ -478,6 +504,8 @@ pub(crate) mod shape_repository_filter_list;
 pub(crate) mod shape_resource_list;
 
 pub(crate) mod shape_score_details;
+
+pub(crate) mod shape_signing_repository_filter_list;
 
 pub(crate) mod shape_attribute;
 

@@ -485,6 +485,18 @@ pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfig;
 
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecification;
 
+pub use crate::types::_cluster_capacity_requirements::ClusterCapacityRequirements;
+
+pub use crate::types::_cluster_on_demand_options::ClusterOnDemandOptions;
+
+pub use crate::types::_cluster_spot_options::ClusterSpotOptions;
+
+pub use crate::types::_cluster_kubernetes_config::ClusterKubernetesConfig;
+
+pub use crate::types::_cluster_kubernetes_taint::ClusterKubernetesTaint;
+
+pub use crate::types::_cluster_kubernetes_taint_effect::ClusterKubernetesTaintEffect;
+
 pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfig;
 
 pub use crate::types::_code_editor_app_image_config::CodeEditorAppImageConfig;
@@ -1593,7 +1605,17 @@ pub use crate::types::_optimization_output::OptimizationOutput;
 
 pub use crate::types::_optimization_job_output_config::OptimizationJobOutputConfig;
 
+pub use crate::types::_optimization_sage_maker_model::OptimizationSageMakerModel;
+
 pub use crate::types::_optimization_config::OptimizationConfig;
+
+pub use crate::types::_model_speculative_decoding_config::ModelSpeculativeDecodingConfig;
+
+pub use crate::types::_model_speculative_decoding_training_data_source::ModelSpeculativeDecodingTrainingDataSource;
+
+pub use crate::types::_model_speculative_decoding_s3_data_type::ModelSpeculativeDecodingS3DataType;
+
+pub use crate::types::_model_speculative_decoding_technique::ModelSpeculativeDecodingTechnique;
 
 pub use crate::types::_model_sharding_config::ModelShardingConfig;
 
@@ -1837,6 +1859,10 @@ pub use crate::types::_model_digests::ModelDigests;
 
 pub use crate::types::_cluster_node_details::ClusterNodeDetails;
 
+pub use crate::types::_cluster_capacity_type::ClusterCapacityType;
+
+pub use crate::types::_cluster_kubernetes_config_node_details::ClusterKubernetesConfigNodeDetails;
+
 pub use crate::types::_cluster_instance_placement::ClusterInstancePlacement;
 
 pub use crate::types::_cluster_event_detail::ClusterEventDetail;
@@ -1876,6 +1902,10 @@ pub use crate::types::_instance_group_status::InstanceGroupStatus;
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
 
 pub use crate::types::_software_update_status::SoftwareUpdateStatus;
+
+pub use crate::types::_cluster_kubernetes_config_details::ClusterKubernetesConfigDetails;
+
+pub use crate::types::_active_cluster_operation_name::ActiveClusterOperationName;
 
 pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfig;
 
@@ -2048,6 +2078,8 @@ mod _action_status;
 mod _action_summary;
 
 mod _activation_state;
+
+mod _active_cluster_operation_name;
 
 mod _add_cluster_node_specification;
 
@@ -2363,6 +2395,10 @@ mod _cluster_auto_scaling_mode;
 
 mod _cluster_auto_scaling_status;
 
+mod _cluster_capacity_requirements;
+
+mod _cluster_capacity_type;
+
 mod _cluster_config_mode;
 
 mod _cluster_ebs_volume_config;
@@ -2387,6 +2423,16 @@ mod _cluster_instance_storage_config;
 
 mod _cluster_instance_type;
 
+mod _cluster_kubernetes_config;
+
+mod _cluster_kubernetes_config_details;
+
+mod _cluster_kubernetes_config_node_details;
+
+mod _cluster_kubernetes_taint;
+
+mod _cluster_kubernetes_taint_effect;
+
 mod _cluster_life_cycle_config;
 
 mod _cluster_metadata;
@@ -2399,6 +2445,8 @@ mod _cluster_node_recovery;
 
 mod _cluster_node_summary;
 
+mod _cluster_on_demand_options;
+
 mod _cluster_orchestrator;
 
 mod _cluster_orchestrator_eks_config;
@@ -2410,6 +2458,8 @@ mod _cluster_restricted_instance_group_specification;
 mod _cluster_scheduler_config_summary;
 
 mod _cluster_sort_by;
+
+mod _cluster_spot_options;
 
 mod _cluster_status;
 
@@ -3217,6 +3267,14 @@ mod _model_sharding_config;
 
 mod _model_sort_key;
 
+mod _model_speculative_decoding_config;
+
+mod _model_speculative_decoding_s3_data_type;
+
+mod _model_speculative_decoding_technique;
+
+mod _model_speculative_decoding_training_data_source;
+
 mod _model_step_metadata;
 
 mod _model_summary;
@@ -3370,6 +3428,8 @@ mod _optimization_job_summary;
 mod _optimization_model_access_config;
 
 mod _optimization_output;
+
+mod _optimization_sage_maker_model;
 
 mod _optimization_vpc_config;
 

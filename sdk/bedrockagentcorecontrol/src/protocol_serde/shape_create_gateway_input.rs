@@ -21,33 +21,45 @@ pub fn ser_create_gateway_input_input(
     if let Some(var_6) = &input.exception_level {
         object.key("exceptionLevel").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.name {
-        object.key("name").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.protocol_configuration {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("protocolConfiguration").start_object();
-        crate::protocol_serde::shape_gateway_protocol_configuration::ser_gateway_protocol_configuration(&mut object_10, var_9)?;
-        object_10.finish();
-    }
-    if let Some(var_11) = &input.protocol_type {
-        object.key("protocolType").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.role_arn {
-        object.key("roleArn").string(var_12.as_str());
-    }
-    if let Some(var_13) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("tags").start_object();
-        for (key_15, value_16) in var_13 {
+    if let Some(var_7) = &input.interceptor_configurations {
+        let mut array_8 = object.key("interceptorConfigurations").start_array();
+        for item_9 in var_7 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_gateway_interceptor_configuration::ser_gateway_interceptor_configuration(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
+        array_8.finish();
+    }
+    if let Some(var_11) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.name {
+        object.key("name").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.protocol_configuration {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("protocolConfiguration").start_object();
+        crate::protocol_serde::shape_gateway_protocol_configuration::ser_gateway_protocol_configuration(&mut object_14, var_13)?;
         object_14.finish();
+    }
+    if let Some(var_15) = &input.protocol_type {
+        object.key("protocolType").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.role_arn {
+        object.key("roleArn").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("tags").start_object();
+        for (key_19, value_20) in var_17 {
+            {
+                object_18.key(key_19.as_str()).string(value_20.as_str());
+            }
+        }
+        object_18.finish();
     }
     Ok(())
 }

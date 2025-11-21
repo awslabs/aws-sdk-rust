@@ -122,20 +122,6 @@ impl CreateLandingZoneFluentBuilder {
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version()
     }
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
-    pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
-        self.inner = self.inner.manifest(input);
-        self
-    }
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
-    pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.inner = self.inner.set_manifest(input);
-        self
-    }
-    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
-    pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
-        self.inner.get_manifest()
-    }
     ///
     /// Appends an item to `remediationTypes`.
     ///
@@ -173,5 +159,19 @@ impl CreateLandingZoneFluentBuilder {
     /// <p>Tags to be applied to the landing zone.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
+    }
+    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.inner = self.inner.manifest(input);
+        self
+    }
+    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.inner = self.inner.set_manifest(input);
+        self
+    }
+    /// <p>The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch your landing zone</a>.</p>
+    pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        self.inner.get_manifest()
     }
 }

@@ -39,6 +39,8 @@ pub struct UpdateIntegrationOutput {
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
     /// <p>The response transfer mode of the integration.</p>
     pub response_transfer_mode: ::std::option::Option<crate::types::ResponseTransferMode>,
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub integration_target: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateIntegrationOutput {
@@ -113,6 +115,10 @@ impl UpdateIntegrationOutput {
     pub fn response_transfer_mode(&self) -> ::std::option::Option<&crate::types::ResponseTransferMode> {
         self.response_transfer_mode.as_ref()
     }
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub fn integration_target(&self) -> ::std::option::Option<&str> {
+        self.integration_target.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateIntegrationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -146,6 +152,7 @@ pub struct UpdateIntegrationOutputBuilder {
     pub(crate) integration_responses: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IntegrationResponse>>,
     pub(crate) tls_config: ::std::option::Option<crate::types::TlsConfig>,
     pub(crate) response_transfer_mode: ::std::option::Option<crate::types::ResponseTransferMode>,
+    pub(crate) integration_target: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateIntegrationOutputBuilder {
@@ -425,6 +432,20 @@ impl UpdateIntegrationOutputBuilder {
     pub fn get_response_transfer_mode(&self) -> &::std::option::Option<crate::types::ResponseTransferMode> {
         &self.response_transfer_mode
     }
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub fn integration_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.integration_target = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub fn set_integration_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.integration_target = input;
+        self
+    }
+    /// <p>The ALB or NLB listener to send the request to.</p>
+    pub fn get_integration_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_target
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -453,6 +474,7 @@ impl UpdateIntegrationOutputBuilder {
             integration_responses: self.integration_responses,
             tls_config: self.tls_config,
             response_transfer_mode: self.response_transfer_mode,
+            integration_target: self.integration_target,
             _request_id: self._request_id,
         }
     }

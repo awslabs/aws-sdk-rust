@@ -6,24 +6,27 @@ pub fn ser_filter_configuration(
     if let Some(var_1) = &input.manifest_filter {
         object.key("ManifestFilter").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.start {
+    if let Some(var_2) = &input.drm_settings {
+        object.key("DrmSettings").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.start {
         object
             .key("Start")
-            .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_3) = &input.end {
-        object.key("End").date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    if let Some(var_4) = &input.end {
+        object.key("End").date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.time_delay_seconds {
+    if let Some(var_5) = &input.time_delay_seconds {
         object.key("TimeDelaySeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.clip_start_time {
+    if let Some(var_6) = &input.clip_start_time {
         object
             .key("ClipStartTime")
-            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }
@@ -45,6 +48,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ManifestFilter" => {
                             builder = builder.set_manifest_filter(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DrmSettings" => {
+                            builder = builder.set_drm_settings(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

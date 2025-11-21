@@ -137,6 +137,8 @@ pub(crate) mod shape_update_custom_domain_association;
 
 pub(crate) mod shape_update_endpoint_access;
 
+pub(crate) mod shape_update_lakehouse_configuration;
+
 pub(crate) mod shape_update_namespace;
 
 pub(crate) mod shape_update_scheduled_action;
@@ -198,6 +200,8 @@ pub(crate) mod shape_delete_snapshot_input;
 pub(crate) mod shape_delete_usage_limit_input;
 
 pub(crate) mod shape_delete_workgroup_input;
+
+pub(crate) mod shape_dry_run_exception;
 
 pub(crate) mod shape_get_credentials_input;
 
@@ -290,6 +294,8 @@ pub(crate) mod shape_untag_resource_input;
 pub(crate) mod shape_update_custom_domain_association_input;
 
 pub(crate) mod shape_update_endpoint_access_input;
+
+pub(crate) mod shape_update_lakehouse_configuration_input;
 
 pub(crate) mod shape_update_namespace_input;
 

@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_accept_marketplace_registration;
 
+pub(crate) mod shape_associate_iam_role_to_resource;
+
 pub(crate) mod shape_create_cloud_autonomous_vm_cluster;
 
 pub(crate) mod shape_create_cloud_exadata_infrastructure;
@@ -44,6 +46,8 @@ pub(crate) mod shape_delete_cloud_vm_cluster;
 pub(crate) mod shape_delete_odb_network;
 
 pub(crate) mod shape_delete_odb_peering_connection;
+
+pub(crate) mod shape_disassociate_iam_role_from_resource;
 
 pub(crate) mod shape_get_cloud_autonomous_vm_cluster;
 
@@ -117,6 +121,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_associate_iam_role_to_resource_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_cloud_autonomous_vm_cluster_input;
@@ -139,6 +145,8 @@ pub(crate) mod shape_delete_odb_network_input;
 
 pub(crate) mod shape_delete_odb_peering_connection_input;
 
+pub(crate) mod shape_disassociate_iam_role_from_resource_input;
+
 pub(crate) mod shape_get_cloud_autonomous_vm_cluster_input;
 
 pub(crate) mod shape_get_cloud_exadata_infrastructure_input;
@@ -154,6 +162,8 @@ pub(crate) mod shape_get_db_server_input;
 pub(crate) mod shape_get_odb_network_input;
 
 pub(crate) mod shape_get_odb_peering_connection_input;
+
+pub(crate) mod shape_initialize_service_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -239,6 +249,8 @@ pub(crate) mod shape_gi_version_list;
 
 pub(crate) mod shape_maintenance_window;
 
+pub(crate) mod shape_oci_identity_domain;
+
 pub(crate) mod shape_odb_network;
 
 pub(crate) mod shape_odb_network_list;
@@ -279,6 +291,8 @@ pub(crate) mod shape_exadata_iorm_config;
 
 pub(crate) mod shape_gi_version_summary;
 
+pub(crate) mod shape_iam_role_list;
+
 pub(crate) mod shape_managed_services;
 
 pub(crate) mod shape_month;
@@ -301,11 +315,17 @@ pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_cloud_autonomous_vm_cluster_resource_details;
 
+pub(crate) mod shape_cross_region_s3_restore_sources_access_list;
+
 pub(crate) mod shape_days_of_week;
 
 pub(crate) mod shape_db_iorm_config_list;
 
 pub(crate) mod shape_hours_of_day;
+
+pub(crate) mod shape_iam_role;
+
+pub(crate) mod shape_kms_access;
 
 pub(crate) mod shape_managed_s3_backup_access;
 
@@ -317,8 +337,12 @@ pub(crate) mod shape_s3_access;
 
 pub(crate) mod shape_service_network_endpoint;
 
+pub(crate) mod shape_sts_access;
+
 pub(crate) mod shape_weeks_of_month;
 
 pub(crate) mod shape_zero_etl_access;
+
+pub(crate) mod shape_cross_region_s3_restore_sources_access;
 
 pub(crate) mod shape_db_iorm_config;

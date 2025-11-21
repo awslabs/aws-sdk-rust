@@ -499,6 +499,10 @@ pub(crate) mod shape_modify_integration;
 
 pub(crate) mod shape_modify_integration_input;
 
+pub(crate) mod shape_modify_lakehouse_configuration;
+
+pub(crate) mod shape_modify_lakehouse_configuration_input;
+
 pub(crate) mod shape_modify_redshift_idc_application;
 
 pub(crate) mod shape_modify_redshift_idc_application_input;
@@ -987,6 +991,8 @@ pub(crate) mod shape_redshift_idc_application;
 
 pub(crate) mod shape_redshift_idc_application_list;
 
+pub(crate) mod shape_redshift_scope_union;
+
 pub(crate) mod shape_reserved_node;
 
 pub(crate) mod shape_reserved_node_configuration_option_list;
@@ -1070,6 +1076,8 @@ pub(crate) mod shape_cluster_security_group_membership_list;
 pub(crate) mod shape_cluster_snapshot_copy_status;
 
 pub(crate) mod shape_cluster_version;
+
+pub(crate) mod shape_connect;
 
 pub(crate) mod shape_data_share;
 
@@ -1218,6 +1226,8 @@ pub(crate) mod shape_event_info_map;
 pub(crate) mod shape_lake_formation_service_integrations;
 
 pub(crate) mod shape_recommended_action;
+
+pub(crate) mod shape_redshift_service_integrations;
 
 pub(crate) mod shape_reference_link;
 

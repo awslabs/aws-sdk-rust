@@ -11,6 +11,8 @@ pub struct UpdateMessageTemplateInput {
     pub content: ::std::option::Option<crate::types::MessageTemplateContentProvider>,
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub language: ::std::option::Option<::std::string::String>,
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub source_configuration: ::std::option::Option<crate::types::MessageTemplateSourceConfiguration>,
     /// <p>An object that specifies the default values to use for variables in the message template. This object contains different categories of key-value pairs. Each key defines a variable or placeholder in the message template. The corresponding value defines the default value for that variable.</p>
     pub default_attributes: ::std::option::Option<crate::types::MessageTemplateAttributes>,
 }
@@ -30,6 +32,10 @@ impl UpdateMessageTemplateInput {
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
+    }
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::MessageTemplateSourceConfiguration> {
+        self.source_configuration.as_ref()
     }
     /// <p>An object that specifies the default values to use for variables in the message template. This object contains different categories of key-value pairs. Each key defines a variable or placeholder in the message template. The corresponding value defines the default value for that variable.</p>
     pub fn default_attributes(&self) -> ::std::option::Option<&crate::types::MessageTemplateAttributes> {
@@ -51,6 +57,7 @@ pub struct UpdateMessageTemplateInputBuilder {
     pub(crate) message_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<crate::types::MessageTemplateContentProvider>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
+    pub(crate) source_configuration: ::std::option::Option<crate::types::MessageTemplateSourceConfiguration>,
     pub(crate) default_attributes: ::std::option::Option<crate::types::MessageTemplateAttributes>,
 }
 impl UpdateMessageTemplateInputBuilder {
@@ -112,6 +119,20 @@ impl UpdateMessageTemplateInputBuilder {
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
     }
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub fn source_configuration(mut self, input: crate::types::MessageTemplateSourceConfiguration) -> Self {
+        self.source_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::MessageTemplateSourceConfiguration>) -> Self {
+        self.source_configuration = input;
+        self
+    }
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::MessageTemplateSourceConfiguration> {
+        &self.source_configuration
+    }
     /// <p>An object that specifies the default values to use for variables in the message template. This object contains different categories of key-value pairs. Each key defines a variable or placeholder in the message template. The corresponding value defines the default value for that variable.</p>
     pub fn default_attributes(mut self, input: crate::types::MessageTemplateAttributes) -> Self {
         self.default_attributes = ::std::option::Option::Some(input);
@@ -136,6 +157,7 @@ impl UpdateMessageTemplateInputBuilder {
             message_template_id: self.message_template_id,
             content: self.content,
             language: self.language,
+            source_configuration: self.source_configuration,
             default_attributes: self.default_attributes,
         })
     }

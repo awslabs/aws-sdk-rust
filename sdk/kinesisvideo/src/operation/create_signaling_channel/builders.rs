@@ -137,17 +137,17 @@ impl CreateSignalingChannelFluentBuilder {
     pub fn get_channel_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
         self.inner.get_channel_type()
     }
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. The default configuration for the channel message's time to live is 60 seconds (1 minute).</p>
     pub fn single_master_configuration(mut self, input: crate::types::SingleMasterConfiguration) -> Self {
         self.inner = self.inner.single_master_configuration(input);
         self
     }
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. The default configuration for the channel message's time to live is 60 seconds (1 minute).</p>
     pub fn set_single_master_configuration(mut self, input: ::std::option::Option<crate::types::SingleMasterConfiguration>) -> Self {
         self.inner = self.inner.set_single_master_configuration(input);
         self
     }
-    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. The default configuration for the channel message's time to live is 60 seconds (1 minute).</p>
     pub fn get_single_master_configuration(&self) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
         self.inner.get_single_master_configuration()
     }

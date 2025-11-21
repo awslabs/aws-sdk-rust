@@ -21,6 +21,7 @@
 ///     PolicyType::SecurityhubPolicy => { /* ... */ },
 ///     PolicyType::ServiceControlPolicy => { /* ... */ },
 ///     PolicyType::TagPolicy => { /* ... */ },
+///     PolicyType::UpgradeRolloutPolicy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -67,6 +68,8 @@ pub enum PolicyType {
     ServiceControlPolicy,
     #[allow(missing_docs)] // documentation missing in model
     TagPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    UpgradeRolloutPolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -83,6 +86,7 @@ impl ::std::convert::From<&str> for PolicyType {
             "SECURITYHUB_POLICY" => PolicyType::SecurityhubPolicy,
             "SERVICE_CONTROL_POLICY" => PolicyType::ServiceControlPolicy,
             "TAG_POLICY" => PolicyType::TagPolicy,
+            "UPGRADE_ROLLOUT_POLICY" => PolicyType::UpgradeRolloutPolicy,
             other => PolicyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -107,6 +111,7 @@ impl PolicyType {
             PolicyType::SecurityhubPolicy => "SECURITYHUB_POLICY",
             PolicyType::ServiceControlPolicy => "SERVICE_CONTROL_POLICY",
             PolicyType::TagPolicy => "TAG_POLICY",
+            PolicyType::UpgradeRolloutPolicy => "UPGRADE_ROLLOUT_POLICY",
             PolicyType::Unknown(value) => value.as_str(),
         }
     }
@@ -122,6 +127,7 @@ impl PolicyType {
             "SECURITYHUB_POLICY",
             "SERVICE_CONTROL_POLICY",
             "TAG_POLICY",
+            "UPGRADE_ROLLOUT_POLICY",
         ]
     }
 }
@@ -154,6 +160,7 @@ impl ::std::fmt::Display for PolicyType {
             PolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             PolicyType::ServiceControlPolicy => write!(f, "SERVICE_CONTROL_POLICY"),
             PolicyType::TagPolicy => write!(f, "TAG_POLICY"),
+            PolicyType::UpgradeRolloutPolicy => write!(f, "UPGRADE_ROLLOUT_POLICY"),
             PolicyType::Unknown(value) => write!(f, "{value}"),
         }
     }

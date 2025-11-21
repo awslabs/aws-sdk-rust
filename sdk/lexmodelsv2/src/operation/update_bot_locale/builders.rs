@@ -206,4 +206,18 @@ impl UpdateBotLocaleFluentBuilder {
     pub fn get_generative_ai_settings(&self) -> &::std::option::Option<crate::types::GenerativeAiSettings> {
         self.inner.get_generative_ai_settings()
     }
+    /// <p>The new sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn speech_detection_sensitivity(mut self, input: crate::types::SpeechDetectionSensitivity) -> Self {
+        self.inner = self.inner.speech_detection_sensitivity(input);
+        self
+    }
+    /// <p>The new sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn set_speech_detection_sensitivity(mut self, input: ::std::option::Option<crate::types::SpeechDetectionSensitivity>) -> Self {
+        self.inner = self.inner.set_speech_detection_sensitivity(input);
+        self
+    }
+    /// <p>The new sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn get_speech_detection_sensitivity(&self) -> &::std::option::Option<crate::types::SpeechDetectionSensitivity> {
+        self.inner.get_speech_detection_sensitivity()
+    }
 }

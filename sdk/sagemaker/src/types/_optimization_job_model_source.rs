@@ -6,11 +6,17 @@
 pub struct OptimizationJobModelSource {
     /// <p>The Amazon S3 location of a source model to optimize with an optimization job.</p>
     pub s3: ::std::option::Option<crate::types::OptimizationJobModelSourceS3>,
+    /// <p>The name of an existing SageMaker model to optimize with an optimization job.</p>
+    pub sage_maker_model: ::std::option::Option<crate::types::OptimizationSageMakerModel>,
 }
 impl OptimizationJobModelSource {
     /// <p>The Amazon S3 location of a source model to optimize with an optimization job.</p>
     pub fn s3(&self) -> ::std::option::Option<&crate::types::OptimizationJobModelSourceS3> {
         self.s3.as_ref()
+    }
+    /// <p>The name of an existing SageMaker model to optimize with an optimization job.</p>
+    pub fn sage_maker_model(&self) -> ::std::option::Option<&crate::types::OptimizationSageMakerModel> {
+        self.sage_maker_model.as_ref()
     }
 }
 impl OptimizationJobModelSource {
@@ -25,6 +31,7 @@ impl OptimizationJobModelSource {
 #[non_exhaustive]
 pub struct OptimizationJobModelSourceBuilder {
     pub(crate) s3: ::std::option::Option<crate::types::OptimizationJobModelSourceS3>,
+    pub(crate) sage_maker_model: ::std::option::Option<crate::types::OptimizationSageMakerModel>,
 }
 impl OptimizationJobModelSourceBuilder {
     /// <p>The Amazon S3 location of a source model to optimize with an optimization job.</p>
@@ -41,8 +48,25 @@ impl OptimizationJobModelSourceBuilder {
     pub fn get_s3(&self) -> &::std::option::Option<crate::types::OptimizationJobModelSourceS3> {
         &self.s3
     }
+    /// <p>The name of an existing SageMaker model to optimize with an optimization job.</p>
+    pub fn sage_maker_model(mut self, input: crate::types::OptimizationSageMakerModel) -> Self {
+        self.sage_maker_model = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The name of an existing SageMaker model to optimize with an optimization job.</p>
+    pub fn set_sage_maker_model(mut self, input: ::std::option::Option<crate::types::OptimizationSageMakerModel>) -> Self {
+        self.sage_maker_model = input;
+        self
+    }
+    /// <p>The name of an existing SageMaker model to optimize with an optimization job.</p>
+    pub fn get_sage_maker_model(&self) -> &::std::option::Option<crate::types::OptimizationSageMakerModel> {
+        &self.sage_maker_model
+    }
     /// Consumes the builder and constructs a [`OptimizationJobModelSource`](crate::types::OptimizationJobModelSource).
     pub fn build(self) -> crate::types::OptimizationJobModelSource {
-        crate::types::OptimizationJobModelSource { s3: self.s3 }
+        crate::types::OptimizationJobModelSource {
+            s3: self.s3,
+            sage_maker_model: self.sage_maker_model,
+        }
     }
 }

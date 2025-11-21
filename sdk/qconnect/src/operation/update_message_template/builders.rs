@@ -164,6 +164,20 @@ impl UpdateMessageTemplateFluentBuilder {
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_language()
     }
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub fn source_configuration(mut self, input: crate::types::MessageTemplateSourceConfiguration) -> Self {
+        self.inner = self.inner.source_configuration(input);
+        self
+    }
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::MessageTemplateSourceConfiguration>) -> Self {
+        self.inner = self.inner.set_source_configuration(input);
+        self
+    }
+    /// <p>The source configuration of the message template. Only set this argument for WHATSAPP channel subtype.</p>
+    pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::MessageTemplateSourceConfiguration> {
+        self.inner.get_source_configuration()
+    }
     /// <p>An object that specifies the default values to use for variables in the message template. This object contains different categories of key-value pairs. Each key defines a variable or placeholder in the message template. The corresponding value defines the default value for that variable.</p>
     pub fn default_attributes(mut self, input: crate::types::MessageTemplateAttributes) -> Self {
         self.inner = self.inner.default_attributes(input);

@@ -187,6 +187,8 @@ mod describe_signaling_channel;
 
 mod describe_stream;
 
+mod describe_stream_storage_configuration;
+
 mod get_data_endpoint;
 
 mod get_signaling_channel_endpoint;
@@ -222,3 +224,5 @@ mod update_notification_configuration;
 mod update_signaling_channel;
 
 mod update_stream;
+
+mod update_stream_storage_configuration;

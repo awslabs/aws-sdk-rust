@@ -567,6 +567,42 @@ impl From<crate::operation::list_comments::ListCommentsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_investigations::ListInvestigationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_investigations::ListInvestigationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_investigations::ListInvestigationsError> for Error {
+    fn from(err: crate::operation::list_investigations::ListInvestigationsError) -> Self {
+        match err {
+            crate::operation::list_investigations::ListInvestigationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_investigations::ListInvestigationsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_investigations::ListInvestigationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_investigations::ListInvestigationsError::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
+            crate::operation::list_investigations::ListInvestigationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_investigations::ListInvestigationsError::SecurityIncidentResponseNotActiveException(inner) => {
+                Error::SecurityIncidentResponseNotActiveException(inner)
+            }
+            crate::operation::list_investigations::ListInvestigationsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_investigations::ListInvestigationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_investigations::ListInvestigationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_investigations::ListInvestigationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_memberships::ListMembershipsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -636,6 +672,38 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_feedback::SendFeedbackError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_feedback::SendFeedbackError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_feedback::SendFeedbackError> for Error {
+    fn from(err: crate::operation::send_feedback::SendFeedbackError) -> Self {
+        match err {
+            crate::operation::send_feedback::SendFeedbackError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::send_feedback::SendFeedbackError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::send_feedback::SendFeedbackError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::send_feedback::SendFeedbackError::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
+            crate::operation::send_feedback::SendFeedbackError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::send_feedback::SendFeedbackError::SecurityIncidentResponseNotActiveException(inner) => {
+                Error::SecurityIncidentResponseNotActiveException(inner)
+            }
+            crate::operation::send_feedback::SendFeedbackError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::send_feedback::SendFeedbackError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::send_feedback::SendFeedbackError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::send_feedback::SendFeedbackError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

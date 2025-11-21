@@ -157,6 +157,13 @@ pub(crate) fn de_describe_optimization_job(
                             .transpose()?,
                     );
                 }
+                "MaxInstanceCount" => {
+                    builder = builder.set_max_instance_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "OptimizationConfigs" => {
                     builder = builder.set_optimization_configs(crate::protocol_serde::shape_optimization_configs::de_optimization_configs(tokens)?);
                 }

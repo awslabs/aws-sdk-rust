@@ -36,6 +36,8 @@ pub struct BotLocaleImportSpecification {
     /// <p><code>generative</code></p></li>
     /// </ul>
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
 }
 impl BotLocaleImportSpecification {
     /// <p>The identifier of the bot to import the locale to.</p>
@@ -83,6 +85,10 @@ impl BotLocaleImportSpecification {
     pub fn voice_settings(&self) -> ::std::option::Option<&crate::types::VoiceSettings> {
         self.voice_settings.as_ref()
     }
+    /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn speech_detection_sensitivity(&self) -> ::std::option::Option<&crate::types::SpeechDetectionSensitivity> {
+        self.speech_detection_sensitivity.as_ref()
+    }
 }
 impl BotLocaleImportSpecification {
     /// Creates a new builder-style object to manufacture [`BotLocaleImportSpecification`](crate::types::BotLocaleImportSpecification).
@@ -100,6 +106,7 @@ pub struct BotLocaleImportSpecificationBuilder {
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    pub(crate) speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
 }
 impl BotLocaleImportSpecificationBuilder {
     /// <p>The identifier of the bot to import the locale to.</p>
@@ -241,6 +248,20 @@ impl BotLocaleImportSpecificationBuilder {
     pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
         &self.voice_settings
     }
+    /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn speech_detection_sensitivity(mut self, input: crate::types::SpeechDetectionSensitivity) -> Self {
+        self.speech_detection_sensitivity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn set_speech_detection_sensitivity(mut self, input: ::std::option::Option<crate::types::SpeechDetectionSensitivity>) -> Self {
+        self.speech_detection_sensitivity = input;
+        self
+    }
+    /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
+    pub fn get_speech_detection_sensitivity(&self) -> &::std::option::Option<crate::types::SpeechDetectionSensitivity> {
+        &self.speech_detection_sensitivity
+    }
     /// Consumes the builder and constructs a [`BotLocaleImportSpecification`](crate::types::BotLocaleImportSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`bot_id`](crate::types::builders::BotLocaleImportSpecificationBuilder::bot_id)
@@ -268,6 +289,7 @@ impl BotLocaleImportSpecificationBuilder {
             })?,
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
+            speech_detection_sensitivity: self.speech_detection_sensitivity,
         })
     }
 }

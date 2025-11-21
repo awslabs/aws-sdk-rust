@@ -6,8 +6,12 @@
 pub enum MessageTemplateContentProvider {
     /// <p>The content of the message template that applies to the email channel subtype.</p>
     Email(crate::types::EmailMessageTemplateContent),
+    /// <p>The content of the message template that applies to the push channel subtype.</p>
+    Push(crate::types::PushMessageTemplateContent),
     /// <p>The content of the message template that applies to the SMS channel subtype.</p>
     Sms(crate::types::SmsMessageTemplateContent),
+    /// <p>The content of the message template that applies to the WHATSAPP channel subtype.</p>
+    WhatsApp(crate::types::WhatsAppMessageTemplateContent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -32,6 +36,19 @@ impl MessageTemplateContentProvider {
     pub fn is_email(&self) -> bool {
         self.as_email().is_ok()
     }
+    /// Tries to convert the enum instance into [`Push`](crate::types::MessageTemplateContentProvider::Push), extracting the inner [`PushMessageTemplateContent`](crate::types::PushMessageTemplateContent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_push(&self) -> ::std::result::Result<&crate::types::PushMessageTemplateContent, &Self> {
+        if let MessageTemplateContentProvider::Push(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Push`](crate::types::MessageTemplateContentProvider::Push).
+    pub fn is_push(&self) -> bool {
+        self.as_push().is_ok()
+    }
     /// Tries to convert the enum instance into [`Sms`](crate::types::MessageTemplateContentProvider::Sms), extracting the inner [`SmsMessageTemplateContent`](crate::types::SmsMessageTemplateContent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sms(&self) -> ::std::result::Result<&crate::types::SmsMessageTemplateContent, &Self> {
@@ -44,6 +61,19 @@ impl MessageTemplateContentProvider {
     /// Returns true if this is a [`Sms`](crate::types::MessageTemplateContentProvider::Sms).
     pub fn is_sms(&self) -> bool {
         self.as_sms().is_ok()
+    }
+    /// Tries to convert the enum instance into [`WhatsApp`](crate::types::MessageTemplateContentProvider::WhatsApp), extracting the inner [`WhatsAppMessageTemplateContent`](crate::types::WhatsAppMessageTemplateContent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_whats_app(&self) -> ::std::result::Result<&crate::types::WhatsAppMessageTemplateContent, &Self> {
+        if let MessageTemplateContentProvider::WhatsApp(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`WhatsApp`](crate::types::MessageTemplateContentProvider::WhatsApp).
+    pub fn is_whats_app(&self) -> bool {
+        self.as_whats_app().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

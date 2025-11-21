@@ -18,6 +18,8 @@ pub struct GuardrailAssessment {
     pub automated_reasoning_policy: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyAssessment>,
     /// <p>The invocation metrics for the guardrail assessment.</p>
     pub invocation_metrics: ::std::option::Option<crate::types::GuardrailInvocationMetrics>,
+    /// <p>Details about the specific guardrail that was applied during this assessment, including its identifier, version, ARN, origin, and ownership information.</p>
+    pub applied_guardrail_details: ::std::option::Option<crate::types::AppliedGuardrailDetails>,
 }
 impl GuardrailAssessment {
     /// <p>The topic policy.</p>
@@ -48,6 +50,10 @@ impl GuardrailAssessment {
     pub fn invocation_metrics(&self) -> ::std::option::Option<&crate::types::GuardrailInvocationMetrics> {
         self.invocation_metrics.as_ref()
     }
+    /// <p>Details about the specific guardrail that was applied during this assessment, including its identifier, version, ARN, origin, and ownership information.</p>
+    pub fn applied_guardrail_details(&self) -> ::std::option::Option<&crate::types::AppliedGuardrailDetails> {
+        self.applied_guardrail_details.as_ref()
+    }
 }
 impl GuardrailAssessment {
     /// Creates a new builder-style object to manufacture [`GuardrailAssessment`](crate::types::GuardrailAssessment).
@@ -67,6 +73,7 @@ pub struct GuardrailAssessmentBuilder {
     pub(crate) contextual_grounding_policy: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyAssessment>,
     pub(crate) automated_reasoning_policy: ::std::option::Option<crate::types::GuardrailAutomatedReasoningPolicyAssessment>,
     pub(crate) invocation_metrics: ::std::option::Option<crate::types::GuardrailInvocationMetrics>,
+    pub(crate) applied_guardrail_details: ::std::option::Option<crate::types::AppliedGuardrailDetails>,
 }
 impl GuardrailAssessmentBuilder {
     /// <p>The topic policy.</p>
@@ -173,6 +180,20 @@ impl GuardrailAssessmentBuilder {
     pub fn get_invocation_metrics(&self) -> &::std::option::Option<crate::types::GuardrailInvocationMetrics> {
         &self.invocation_metrics
     }
+    /// <p>Details about the specific guardrail that was applied during this assessment, including its identifier, version, ARN, origin, and ownership information.</p>
+    pub fn applied_guardrail_details(mut self, input: crate::types::AppliedGuardrailDetails) -> Self {
+        self.applied_guardrail_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the specific guardrail that was applied during this assessment, including its identifier, version, ARN, origin, and ownership information.</p>
+    pub fn set_applied_guardrail_details(mut self, input: ::std::option::Option<crate::types::AppliedGuardrailDetails>) -> Self {
+        self.applied_guardrail_details = input;
+        self
+    }
+    /// <p>Details about the specific guardrail that was applied during this assessment, including its identifier, version, ARN, origin, and ownership information.</p>
+    pub fn get_applied_guardrail_details(&self) -> &::std::option::Option<crate::types::AppliedGuardrailDetails> {
+        &self.applied_guardrail_details
+    }
     /// Consumes the builder and constructs a [`GuardrailAssessment`](crate::types::GuardrailAssessment).
     pub fn build(self) -> crate::types::GuardrailAssessment {
         crate::types::GuardrailAssessment {
@@ -183,6 +204,7 @@ impl GuardrailAssessmentBuilder {
             contextual_grounding_policy: self.contextual_grounding_policy,
             automated_reasoning_policy: self.automated_reasoning_policy,
             invocation_metrics: self.invocation_metrics,
+            applied_guardrail_details: self.applied_guardrail_details,
         }
     }
 }

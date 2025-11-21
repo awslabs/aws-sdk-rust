@@ -1,9 +1,9 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/no-default-features",
     "tests/telemetry",
-    "tests/webassembly"
+    "tests/webassembly",
+    "tests/no-default-features"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -129,6 +129,7 @@ members = [
     "sdk/comprehend",
     "sdk/comprehendmedical",
     "sdk/computeoptimizer",
+    "sdk/computeoptimizerautomation",
     "sdk/config",
     "sdk/connect",
     "sdk/connectcampaigns",
@@ -375,6 +376,7 @@ members = [
     "sdk/sagemakergeospatial",
     "sdk/sagemakermetrics",
     "sdk/sagemakerruntime",
+    "sdk/sagemakerruntimehttp2",
     "sdk/savingsplans",
     "sdk/scheduler",
     "sdk/schemas",

@@ -170,6 +170,25 @@ pub(crate) fn de_get_data_automation_status(
                 "outputConfiguration" => {
                     builder = builder.set_output_configuration(crate::protocol_serde::shape_output_configuration::de_output_configuration(tokens)?);
                 }
+                "jobSubmissionTime" => {
+                    builder = builder.set_job_submission_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "jobCompletionTime" => {
+                    builder = builder.set_job_completion_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "jobDurationInSeconds" => {
+                    builder = builder.set_job_duration_in_seconds(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

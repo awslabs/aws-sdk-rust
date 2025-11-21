@@ -5,6 +5,18 @@ pub use crate::types::_invoice_unit_rule::InvoiceUnitRuleBuilder;
 
 pub use crate::types::_resource_tag::ResourceTagBuilder;
 
+pub use crate::types::_contact::ContactBuilder;
+
+pub use crate::types::_einvoice_delivery_preference::EinvoiceDeliveryPreferenceBuilder;
+
+pub use crate::types::_purchase_order_data_source::PurchaseOrderDataSourceBuilder;
+
+pub use crate::types::_test_env_preference_input::TestEnvPreferenceInputBuilder;
+
+pub use crate::types::_procurement_portal_preference_selector::ProcurementPortalPreferenceSelectorBuilder;
+
+pub use crate::types::_procurement_portal_preference_summary::ProcurementPortalPreferenceSummaryBuilder;
+
 pub use crate::types::_invoice_unit::InvoiceUnitBuilder;
 
 pub use crate::types::_filters::FiltersBuilder;
@@ -38,6 +50,10 @@ pub use crate::types::_invoice_summaries_filter::InvoiceSummariesFilterBuilder;
 pub use crate::types::_date_interval::DateIntervalBuilder;
 
 pub use crate::types::_invoice_summaries_selector::InvoiceSummariesSelectorBuilder;
+
+pub use crate::types::_procurement_portal_preference::ProcurementPortalPreferenceBuilder;
+
+pub use crate::types::_test_env_preference::TestEnvPreferenceBuilder;
 
 pub use crate::types::_invoice_pdf::InvoicePdfBuilder;
 

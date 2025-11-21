@@ -21,9 +21,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "manifest" => {
-                            builder = builder.set_manifest(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
-                        }
                         "remediationTypes" => {
                             builder = builder.set_remediation_types(crate::protocol_serde::shape_remediation_types::de_remediation_types(tokens)?);
                         }
@@ -52,6 +49,9 @@ where
                             builder = builder.set_drift_status(
                                 crate::protocol_serde::shape_landing_zone_drift_status_summary::de_landing_zone_drift_status_summary(tokens)?,
                             );
+                        }
+                        "manifest" => {
+                            builder = builder.set_manifest(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

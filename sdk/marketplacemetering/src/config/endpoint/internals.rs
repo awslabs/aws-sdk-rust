@@ -92,6 +92,22 @@ pub(super) fn resolve_endpoint(
                     }
                 }
             }
+            if (partition_result.name()) == ("aws-eusc") {
+                if (*use_fips) == (false) {
+                    if (*use_dual_stack) == (false) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://metering-marketplace.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region.as_ref() as &str);
+                                out.push_str(".amazonaws.eu");
+                                out
+                            })
+                            .build());
+                    }
+                }
+            }
             if (*use_fips) == (true) {
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {

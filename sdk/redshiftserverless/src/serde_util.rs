@@ -221,6 +221,15 @@ pub(crate) fn list_workgroups_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn dry_run_exception_correct_errors(
+    mut builder: crate::types::error::builders::DryRunExceptionBuilder,
+) -> crate::types::error::builders::DryRunExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_namespace_output_output_correct_errors(
     mut builder: crate::operation::update_namespace::builders::UpdateNamespaceOutputBuilder,
 ) -> crate::operation::update_namespace::builders::UpdateNamespaceOutputBuilder {

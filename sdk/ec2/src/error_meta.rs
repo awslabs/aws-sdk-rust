@@ -2222,6 +2222,40 @@ impl From<crate::operation::create_internet_gateway::CreateInternetGatewayError>
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_interruptible_capacity_reservation_allocation::CreateInterruptibleCapacityReservationAllocationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_interruptible_capacity_reservation_allocation::CreateInterruptibleCapacityReservationAllocationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_interruptible_capacity_reservation_allocation::CreateInterruptibleCapacityReservationAllocationError> for Error {
+    fn from(
+        err: crate::operation::create_interruptible_capacity_reservation_allocation::CreateInterruptibleCapacityReservationAllocationError,
+    ) -> Self {
+        match err {
+            crate::operation::create_interruptible_capacity_reservation_allocation::CreateInterruptibleCapacityReservationAllocationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ipam::CreateIpamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -20061,6 +20095,40 @@ impl From<crate::operation::update_capacity_manager_organizations_access::Update
             crate::operation::update_capacity_manager_organizations_access::UpdateCapacityManagerOrganizationsAccessError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_interruptible_capacity_reservation_allocation::UpdateInterruptibleCapacityReservationAllocationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_interruptible_capacity_reservation_allocation::UpdateInterruptibleCapacityReservationAllocationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_interruptible_capacity_reservation_allocation::UpdateInterruptibleCapacityReservationAllocationError> for Error {
+    fn from(
+        err: crate::operation::update_interruptible_capacity_reservation_allocation::UpdateInterruptibleCapacityReservationAllocationError,
+    ) -> Self {
+        match err {
+            crate::operation::update_interruptible_capacity_reservation_allocation::UpdateInterruptibleCapacityReservationAllocationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

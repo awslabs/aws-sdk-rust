@@ -265,8 +265,12 @@ pub enum CreateClusterError {
     ClusterSecurityGroupNotFoundFault(crate::types::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
     ClusterSubnetGroupNotFoundFault(crate::types::error::ClusterSubnetGroupNotFoundFault),
+    /// <p>A dependent service denied access for the integration.</p>
+    DependentServiceAccessDeniedFault(crate::types::error::DependentServiceAccessDeniedFault),
     /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::types::error::DependentServiceRequestThrottlingFault),
+    /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+    DependentServiceUnavailableFault(crate::types::error::DependentServiceUnavailableFault),
     /// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
     HsmClientCertificateNotFoundFault(crate::types::error::HsmClientCertificateNotFoundFault),
     /// <p>There is no Amazon Redshift HSM configuration with the specified identifier.</p>
@@ -344,7 +348,9 @@ impl CreateClusterError {
             Self::ClusterQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterSecurityGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DependentServiceAccessDeniedFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DependentServiceRequestThrottlingFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DependentServiceUnavailableFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::HsmClientCertificateNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::HsmConfigurationNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InsufficientClusterCapacityFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -387,9 +393,17 @@ impl CreateClusterError {
     pub fn is_cluster_subnet_group_not_found_fault(&self) -> bool {
         matches!(self, Self::ClusterSubnetGroupNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `CreateClusterError::DependentServiceAccessDeniedFault`.
+    pub fn is_dependent_service_access_denied_fault(&self) -> bool {
+        matches!(self, Self::DependentServiceAccessDeniedFault(_))
+    }
     /// Returns `true` if the error kind is `CreateClusterError::DependentServiceRequestThrottlingFault`.
     pub fn is_dependent_service_request_throttling_fault(&self) -> bool {
         matches!(self, Self::DependentServiceRequestThrottlingFault(_))
+    }
+    /// Returns `true` if the error kind is `CreateClusterError::DependentServiceUnavailableFault`.
+    pub fn is_dependent_service_unavailable_fault(&self) -> bool {
+        matches!(self, Self::DependentServiceUnavailableFault(_))
     }
     /// Returns `true` if the error kind is `CreateClusterError::HsmClientCertificateNotFoundFault`.
     pub fn is_hsm_client_certificate_not_found_fault(&self) -> bool {
@@ -476,7 +490,9 @@ impl ::std::error::Error for CreateClusterError {
             Self::ClusterQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterSecurityGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DependentServiceAccessDeniedFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DependentServiceRequestThrottlingFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DependentServiceUnavailableFault(_inner) => ::std::option::Option::Some(_inner),
             Self::HsmClientCertificateNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::HsmConfigurationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientClusterCapacityFault(_inner) => ::std::option::Option::Some(_inner),
@@ -508,7 +524,9 @@ impl ::std::fmt::Display for CreateClusterError {
             Self::ClusterQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::ClusterSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::ClusterSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DependentServiceAccessDeniedFault(_inner) => _inner.fmt(f),
             Self::DependentServiceRequestThrottlingFault(_inner) => _inner.fmt(f),
+            Self::DependentServiceUnavailableFault(_inner) => _inner.fmt(f),
             Self::HsmClientCertificateNotFoundFault(_inner) => _inner.fmt(f),
             Self::HsmConfigurationNotFoundFault(_inner) => _inner.fmt(f),
             Self::InsufficientClusterCapacityFault(_inner) => _inner.fmt(f),
@@ -554,7 +572,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateCluster
             Self::ClusterQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterSecurityGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DependentServiceAccessDeniedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DependentServiceRequestThrottlingFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DependentServiceUnavailableFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::HsmClientCertificateNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::HsmConfigurationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InsufficientClusterCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

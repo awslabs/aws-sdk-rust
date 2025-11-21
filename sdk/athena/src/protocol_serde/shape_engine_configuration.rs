@@ -41,6 +41,9 @@ where
                         "SparkProperties" => {
                             builder = builder.set_spark_properties(crate::protocol_serde::shape_parameters_map::de_parameters_map(tokens)?);
                         }
+                        "Classifications" => {
+                            builder = builder.set_classifications(crate::protocol_serde::shape_classification_list::de_classification_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -50,9 +53,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::engine_configuration_correct_errors(builder).build().map_err(
-                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
-            )?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -101,6 +102,18 @@ pub fn ser_engine_configuration(
             }
         }
         object_8.finish();
+    }
+    if let Some(var_11) = &input.classifications {
+        let mut array_12 = object.key("Classifications").start_array();
+        for item_13 in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_classification::ser_classification(&mut object_14, item_13)?;
+                object_14.finish();
+            }
+        }
+        array_12.finish();
     }
     Ok(())
 }

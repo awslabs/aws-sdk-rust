@@ -201,6 +201,20 @@ impl CreateOptimizationJobFluentBuilder {
     pub fn get_deployment_instance_type(&self) -> &::std::option::Option<crate::types::OptimizationJobDeploymentInstanceType> {
         self.inner.get_deployment_instance_type()
     }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn max_instance_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_instance_count(input);
+        self
+    }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn set_max_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_instance_count(input);
+        self
+    }
+    /// <p>The maximum number of instances to use for the optimization job.</p>
+    pub fn get_max_instance_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_instance_count()
+    }
     ///
     /// Adds a key-value pair to `OptimizationEnvironment`.
     ///

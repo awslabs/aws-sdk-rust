@@ -55,6 +55,8 @@ pub use crate::types::error::_image_digest_does_not_match_exception::ImageDigest
 
 pub use crate::types::error::_image_already_exists_exception::ImageAlreadyExistsException;
 
+pub use crate::types::error::_signing_configuration_not_found_exception::SigningConfigurationNotFoundException;
+
 pub use crate::types::error::_repository_policy_not_found_exception::RepositoryPolicyNotFoundException;
 
 pub use crate::types::error::_registry_policy_not_found_exception::RegistryPolicyNotFoundException;
@@ -156,6 +158,8 @@ mod _scan_not_found_exception;
 mod _secret_not_found_exception;
 
 mod _server_exception;
+
+mod _signing_configuration_not_found_exception;
 
 mod _template_already_exists_exception;
 

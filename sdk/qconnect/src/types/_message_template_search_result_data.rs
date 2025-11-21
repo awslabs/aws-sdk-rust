@@ -2,7 +2,7 @@
 
 /// <p>The result of message template search.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MessageTemplateSearchResultData {
     /// <p>The Amazon Resource Name (ARN) of the message template.</p>
     pub message_template_arn: ::std::string::String,
@@ -14,6 +14,8 @@ pub struct MessageTemplateSearchResultData {
     pub knowledge_base_id: ::std::string::String,
     /// <p>The name of the message template.</p>
     pub name: ::std::string::String,
+    /// <p>The channel of the message template.</p>
+    pub channel: ::std::option::Option<::std::string::String>,
     /// <p>The channel subtype this message template applies to.</p>
     pub channel_subtype: crate::types::ChannelSubtype,
     /// <p>The timestamp when the message template was created.</p>
@@ -28,6 +30,8 @@ pub struct MessageTemplateSearchResultData {
     pub version_number: ::std::option::Option<i64>,
     /// <p>The description of the message template.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The source configuration summary of the message template.</p>
+    pub source_configuration_summary: ::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary>,
     /// <p>The configuration information of the grouping of Amazon Q in Connect users.</p>
     pub grouping_configuration: ::std::option::Option<crate::types::GroupingConfiguration>,
     /// <p>The language code value for the language in which the quick response is written. The supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code></p>
@@ -61,6 +65,10 @@ impl MessageTemplateSearchResultData {
         use std::ops::Deref;
         self.name.deref()
     }
+    /// <p>The channel of the message template.</p>
+    pub fn channel(&self) -> ::std::option::Option<&str> {
+        self.channel.as_deref()
+    }
     /// <p>The channel subtype this message template applies to.</p>
     pub fn channel_subtype(&self) -> &crate::types::ChannelSubtype {
         &self.channel_subtype
@@ -90,6 +98,10 @@ impl MessageTemplateSearchResultData {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The source configuration summary of the message template.</p>
+    pub fn source_configuration_summary(&self) -> ::std::option::Option<&crate::types::MessageTemplateSourceConfigurationSummary> {
+        self.source_configuration_summary.as_ref()
+    }
     /// <p>The configuration information of the grouping of Amazon Q in Connect users.</p>
     pub fn grouping_configuration(&self) -> ::std::option::Option<&crate::types::GroupingConfiguration> {
         self.grouping_configuration.as_ref()
@@ -103,6 +115,29 @@ impl MessageTemplateSearchResultData {
         self.tags.as_ref()
     }
 }
+impl ::std::fmt::Debug for MessageTemplateSearchResultData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageTemplateSearchResultData");
+        formatter.field("message_template_arn", &self.message_template_arn);
+        formatter.field("message_template_id", &self.message_template_id);
+        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
+        formatter.field("knowledge_base_id", &self.knowledge_base_id);
+        formatter.field("name", &self.name);
+        formatter.field("channel", &"*** Sensitive Data Redacted ***");
+        formatter.field("channel_subtype", &self.channel_subtype);
+        formatter.field("created_time", &self.created_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_by", &self.last_modified_by);
+        formatter.field("is_active", &self.is_active);
+        formatter.field("version_number", &self.version_number);
+        formatter.field("description", &self.description);
+        formatter.field("source_configuration_summary", &self.source_configuration_summary);
+        formatter.field("grouping_configuration", &self.grouping_configuration);
+        formatter.field("language", &self.language);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
 impl MessageTemplateSearchResultData {
     /// Creates a new builder-style object to manufacture [`MessageTemplateSearchResultData`](crate::types::MessageTemplateSearchResultData).
     pub fn builder() -> crate::types::builders::MessageTemplateSearchResultDataBuilder {
@@ -111,7 +146,7 @@ impl MessageTemplateSearchResultData {
 }
 
 /// A builder for [`MessageTemplateSearchResultData`](crate::types::MessageTemplateSearchResultData).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct MessageTemplateSearchResultDataBuilder {
     pub(crate) message_template_arn: ::std::option::Option<::std::string::String>,
@@ -119,6 +154,7 @@ pub struct MessageTemplateSearchResultDataBuilder {
     pub(crate) knowledge_base_arn: ::std::option::Option<::std::string::String>,
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) channel: ::std::option::Option<::std::string::String>,
     pub(crate) channel_subtype: ::std::option::Option<crate::types::ChannelSubtype>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -126,6 +162,7 @@ pub struct MessageTemplateSearchResultDataBuilder {
     pub(crate) is_active: ::std::option::Option<bool>,
     pub(crate) version_number: ::std::option::Option<i64>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) source_configuration_summary: ::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary>,
     pub(crate) grouping_configuration: ::std::option::Option<crate::types::GroupingConfiguration>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -205,6 +242,20 @@ impl MessageTemplateSearchResultDataBuilder {
     /// <p>The name of the message template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The channel of the message template.</p>
+    pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The channel of the message template.</p>
+    pub fn set_channel(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.channel = input;
+        self
+    }
+    /// <p>The channel of the message template.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel
     }
     /// <p>The channel subtype this message template applies to.</p>
     /// This field is required.
@@ -308,6 +359,20 @@ impl MessageTemplateSearchResultDataBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The source configuration summary of the message template.</p>
+    pub fn source_configuration_summary(mut self, input: crate::types::MessageTemplateSourceConfigurationSummary) -> Self {
+        self.source_configuration_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source configuration summary of the message template.</p>
+    pub fn set_source_configuration_summary(mut self, input: ::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary>) -> Self {
+        self.source_configuration_summary = input;
+        self
+    }
+    /// <p>The source configuration summary of the message template.</p>
+    pub fn get_source_configuration_summary(&self) -> &::std::option::Option<crate::types::MessageTemplateSourceConfigurationSummary> {
+        &self.source_configuration_summary
+    }
     /// <p>The configuration information of the grouping of Amazon Q in Connect users.</p>
     pub fn grouping_configuration(mut self, input: crate::types::GroupingConfiguration) -> Self {
         self.grouping_configuration = ::std::option::Option::Some(input);
@@ -399,6 +464,7 @@ impl MessageTemplateSearchResultDataBuilder {
                     "name was not specified but it is required when building MessageTemplateSearchResultData",
                 )
             })?,
+            channel: self.channel,
             channel_subtype: self.channel_subtype.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_subtype",
@@ -426,9 +492,33 @@ impl MessageTemplateSearchResultDataBuilder {
             is_active: self.is_active,
             version_number: self.version_number,
             description: self.description,
+            source_configuration_summary: self.source_configuration_summary,
             grouping_configuration: self.grouping_configuration,
             language: self.language,
             tags: self.tags,
         })
+    }
+}
+impl ::std::fmt::Debug for MessageTemplateSearchResultDataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageTemplateSearchResultDataBuilder");
+        formatter.field("message_template_arn", &self.message_template_arn);
+        formatter.field("message_template_id", &self.message_template_id);
+        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
+        formatter.field("knowledge_base_id", &self.knowledge_base_id);
+        formatter.field("name", &self.name);
+        formatter.field("channel", &"*** Sensitive Data Redacted ***");
+        formatter.field("channel_subtype", &self.channel_subtype);
+        formatter.field("created_time", &self.created_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_by", &self.last_modified_by);
+        formatter.field("is_active", &self.is_active);
+        formatter.field("version_number", &self.version_number);
+        formatter.field("description", &self.description);
+        formatter.field("source_configuration_summary", &self.source_configuration_summary);
+        formatter.field("grouping_configuration", &self.grouping_configuration);
+        formatter.field("language", &self.language);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
     }
 }

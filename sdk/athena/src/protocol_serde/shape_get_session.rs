@@ -142,6 +142,11 @@ pub(crate) fn de_get_session(
                             .transpose()?,
                     );
                 }
+                "MonitoringConfiguration" => {
+                    builder = builder.set_monitoring_configuration(
+                        crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens)?,
+                    );
+                }
                 "SessionConfiguration" => {
                     builder =
                         builder.set_session_configuration(crate::protocol_serde::shape_session_configuration::de_session_configuration(tokens)?);

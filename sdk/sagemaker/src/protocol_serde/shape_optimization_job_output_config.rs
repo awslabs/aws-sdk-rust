@@ -9,6 +9,12 @@ pub fn ser_optimization_job_output_config(
     if let Some(var_2) = &input.s3_output_location {
         object.key("S3OutputLocation").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.sage_maker_model {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("SageMakerModel").start_object();
+        crate::protocol_serde::shape_optimization_sage_maker_model::ser_optimization_sage_maker_model(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -39,6 +45,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "SageMakerModel" => {
+                            builder = builder.set_sage_maker_model(
+                                crate::protocol_serde::shape_optimization_sage_maker_model::de_optimization_sage_maker_model(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

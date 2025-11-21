@@ -343,6 +343,16 @@ pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfigBuilder;
 
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecificationBuilder;
 
+pub use crate::types::_cluster_capacity_requirements::ClusterCapacityRequirementsBuilder;
+
+pub use crate::types::_cluster_on_demand_options::ClusterOnDemandOptionsBuilder;
+
+pub use crate::types::_cluster_spot_options::ClusterSpotOptionsBuilder;
+
+pub use crate::types::_cluster_kubernetes_config::ClusterKubernetesConfigBuilder;
+
+pub use crate::types::_cluster_kubernetes_taint::ClusterKubernetesTaintBuilder;
+
 pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfigBuilder;
 
 pub use crate::types::_code_editor_app_image_config::CodeEditorAppImageConfigBuilder;
@@ -1021,6 +1031,12 @@ pub use crate::types::_optimization_output::OptimizationOutputBuilder;
 
 pub use crate::types::_optimization_job_output_config::OptimizationJobOutputConfigBuilder;
 
+pub use crate::types::_optimization_sage_maker_model::OptimizationSageMakerModelBuilder;
+
+pub use crate::types::_model_speculative_decoding_config::ModelSpeculativeDecodingConfigBuilder;
+
+pub use crate::types::_model_speculative_decoding_training_data_source::ModelSpeculativeDecodingTrainingDataSourceBuilder;
+
 pub use crate::types::_model_sharding_config::ModelShardingConfigBuilder;
 
 pub use crate::types::_model_compilation_config::ModelCompilationConfigBuilder;
@@ -1215,6 +1231,8 @@ pub use crate::types::_model_digests::ModelDigestsBuilder;
 
 pub use crate::types::_cluster_node_details::ClusterNodeDetailsBuilder;
 
+pub use crate::types::_cluster_kubernetes_config_node_details::ClusterKubernetesConfigNodeDetailsBuilder;
+
 pub use crate::types::_cluster_instance_placement::ClusterInstancePlacementBuilder;
 
 pub use crate::types::_cluster_event_detail::ClusterEventDetailBuilder;
@@ -1244,6 +1262,8 @@ pub use crate::types::_cluster_restricted_instance_group_details::ClusterRestric
 pub use crate::types::_environment_config_details::EnvironmentConfigDetailsBuilder;
 
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetailsBuilder;
+
+pub use crate::types::_cluster_kubernetes_config_details::ClusterKubernetesConfigDetailsBuilder;
 
 pub use crate::types::_auto_ml_compute_config::AutoMlComputeConfigBuilder;
 

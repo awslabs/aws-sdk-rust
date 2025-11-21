@@ -10,6 +10,8 @@ pub enum OptimizationConfig {
     ModelQuantizationConfig(crate::types::ModelQuantizationConfig),
     /// <p>Settings for the model sharding technique that's applied by a model optimization job.</p>
     ModelShardingConfig(crate::types::ModelShardingConfig),
+    /// <p>Settings for the model speculative decoding technique that's applied by a model optimization job.</p>
+    ModelSpeculativeDecodingConfig(crate::types::ModelSpeculativeDecodingConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -59,6 +61,19 @@ impl OptimizationConfig {
     /// Returns true if this is a [`ModelShardingConfig`](crate::types::OptimizationConfig::ModelShardingConfig).
     pub fn is_model_sharding_config(&self) -> bool {
         self.as_model_sharding_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ModelSpeculativeDecodingConfig`](crate::types::OptimizationConfig::ModelSpeculativeDecodingConfig), extracting the inner [`ModelSpeculativeDecodingConfig`](crate::types::ModelSpeculativeDecodingConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_model_speculative_decoding_config(&self) -> ::std::result::Result<&crate::types::ModelSpeculativeDecodingConfig, &Self> {
+        if let OptimizationConfig::ModelSpeculativeDecodingConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ModelSpeculativeDecodingConfig`](crate::types::OptimizationConfig::ModelSpeculativeDecodingConfig).
+    pub fn is_model_speculative_decoding_config(&self) -> bool {
+        self.as_model_speculative_decoding_config().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

@@ -8,6 +8,8 @@ pub struct IntentSummary {
     pub intent_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the intent.</p>
     pub intent_name: ::std::option::Option<::std::string::String>,
+    /// <p>The display name of the intent.</p>
+    pub intent_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the intent.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>If this intent is derived from a built-in intent, the name of the parent intent.</p>
@@ -27,6 +29,10 @@ impl IntentSummary {
     /// <p>The name of the intent.</p>
     pub fn intent_name(&self) -> ::std::option::Option<&str> {
         self.intent_name.as_deref()
+    }
+    /// <p>The display name of the intent.</p>
+    pub fn intent_display_name(&self) -> ::std::option::Option<&str> {
+        self.intent_display_name.as_deref()
     }
     /// <p>The description of the intent.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -66,6 +72,7 @@ impl IntentSummary {
 pub struct IntentSummaryBuilder {
     pub(crate) intent_id: ::std::option::Option<::std::string::String>,
     pub(crate) intent_name: ::std::option::Option<::std::string::String>,
+    pub(crate) intent_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) parent_intent_signature: ::std::option::Option<::std::string::String>,
     pub(crate) input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
@@ -100,6 +107,20 @@ impl IntentSummaryBuilder {
     /// <p>The name of the intent.</p>
     pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.intent_name
+    }
+    /// <p>The display name of the intent.</p>
+    pub fn intent_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.intent_display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The display name of the intent.</p>
+    pub fn set_intent_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.intent_display_name = input;
+        self
+    }
+    /// <p>The display name of the intent.</p>
+    pub fn get_intent_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_display_name
     }
     /// <p>The description of the intent.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -188,6 +209,7 @@ impl IntentSummaryBuilder {
         crate::types::IntentSummary {
             intent_id: self.intent_id,
             intent_name: self.intent_name,
+            intent_display_name: self.intent_display_name,
             description: self.description,
             parent_intent_signature: self.parent_intent_signature,
             input_contexts: self.input_contexts,

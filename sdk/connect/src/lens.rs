@@ -89,6 +89,26 @@ pub(crate) fn reflens_list_contact_evaluations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_contact_flow_module_aliases_output_output_next_token(
+    input: &crate::operation::list_contact_flow_module_aliases::ListContactFlowModuleAliasesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_contact_flow_module_versions_output_output_next_token(
+    input: &crate::operation::list_contact_flow_module_versions::ListContactFlowModuleVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_contact_flow_modules_output_output_next_token(
     input: &crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -701,6 +721,20 @@ pub(crate) fn lens_list_contact_evaluations_output_output_evaluation_summary_lis
     input: crate::operation::list_contact_evaluations::ListContactEvaluationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluationSummary>> {
     let input = input.evaluation_summary_list;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_contact_flow_module_aliases_output_output_contact_flow_module_alias_summary_list(
+    input: crate::operation::list_contact_flow_module_aliases::ListContactFlowModuleAliasesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleAliasSummary>> {
+    let input = input.contact_flow_module_alias_summary_list?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_contact_flow_module_versions_output_output_contact_flow_module_version_summary_list(
+    input: crate::operation::list_contact_flow_module_versions::ListContactFlowModuleVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactFlowModuleVersionSummary>> {
+    let input = input.contact_flow_module_version_summary_list?;
     ::std::option::Option::Some(input)
 }
 

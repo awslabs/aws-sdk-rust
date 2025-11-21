@@ -16,6 +16,8 @@ pub struct CreateWebAppInput {
     /// <p>Setting for the type of endpoint policy for the web app. The default value is <code>STANDARD</code>.</p>
     /// <p>If you are creating the web app in an Amazon Web Services GovCloud (US) Region, you can set this parameter to <code>FIPS</code>.</p>
     pub web_app_endpoint_policy: ::std::option::Option<crate::types::WebAppEndpointPolicy>,
+    /// <p>The endpoint configuration for the web app. You can specify whether the web app endpoint is publicly accessible or hosted within a VPC.</p>
+    pub endpoint_details: ::std::option::Option<crate::types::WebAppEndpointDetails>,
 }
 impl CreateWebAppInput {
     /// <p>You can provide a structure that contains the details for the identity provider to use with your web app.</p>
@@ -43,6 +45,10 @@ impl CreateWebAppInput {
     pub fn web_app_endpoint_policy(&self) -> ::std::option::Option<&crate::types::WebAppEndpointPolicy> {
         self.web_app_endpoint_policy.as_ref()
     }
+    /// <p>The endpoint configuration for the web app. You can specify whether the web app endpoint is publicly accessible or hosted within a VPC.</p>
+    pub fn endpoint_details(&self) -> ::std::option::Option<&crate::types::WebAppEndpointDetails> {
+        self.endpoint_details.as_ref()
+    }
 }
 impl CreateWebAppInput {
     /// Creates a new builder-style object to manufacture [`CreateWebAppInput`](crate::operation::create_web_app::CreateWebAppInput).
@@ -60,6 +66,7 @@ pub struct CreateWebAppInputBuilder {
     pub(crate) web_app_units: ::std::option::Option<crate::types::WebAppUnits>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) web_app_endpoint_policy: ::std::option::Option<crate::types::WebAppEndpointPolicy>,
+    pub(crate) endpoint_details: ::std::option::Option<crate::types::WebAppEndpointDetails>,
 }
 impl CreateWebAppInputBuilder {
     /// <p>You can provide a structure that contains the details for the identity provider to use with your web app.</p>
@@ -148,6 +155,20 @@ impl CreateWebAppInputBuilder {
     pub fn get_web_app_endpoint_policy(&self) -> &::std::option::Option<crate::types::WebAppEndpointPolicy> {
         &self.web_app_endpoint_policy
     }
+    /// <p>The endpoint configuration for the web app. You can specify whether the web app endpoint is publicly accessible or hosted within a VPC.</p>
+    pub fn endpoint_details(mut self, input: crate::types::WebAppEndpointDetails) -> Self {
+        self.endpoint_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The endpoint configuration for the web app. You can specify whether the web app endpoint is publicly accessible or hosted within a VPC.</p>
+    pub fn set_endpoint_details(mut self, input: ::std::option::Option<crate::types::WebAppEndpointDetails>) -> Self {
+        self.endpoint_details = input;
+        self
+    }
+    /// <p>The endpoint configuration for the web app. You can specify whether the web app endpoint is publicly accessible or hosted within a VPC.</p>
+    pub fn get_endpoint_details(&self) -> &::std::option::Option<crate::types::WebAppEndpointDetails> {
+        &self.endpoint_details
+    }
     /// Consumes the builder and constructs a [`CreateWebAppInput`](crate::operation::create_web_app::CreateWebAppInput).
     pub fn build(
         self,
@@ -158,6 +179,7 @@ impl CreateWebAppInputBuilder {
             web_app_units: self.web_app_units,
             tags: self.tags,
             web_app_endpoint_policy: self.web_app_endpoint_policy,
+            endpoint_details: self.endpoint_details,
         })
     }
 }

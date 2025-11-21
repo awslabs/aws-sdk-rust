@@ -71,6 +71,8 @@ pub(crate) mod shape_delete_custom_model;
 
 pub(crate) mod shape_delete_custom_model_deployment;
 
+pub(crate) mod shape_delete_enforced_guardrail_configuration;
+
 pub(crate) mod shape_delete_foundation_model_agreement;
 
 pub(crate) mod shape_delete_guardrail;
@@ -151,6 +153,8 @@ pub(crate) mod shape_list_custom_model_deployments;
 
 pub(crate) mod shape_list_custom_models;
 
+pub(crate) mod shape_list_enforced_guardrails_configuration;
+
 pub(crate) mod shape_list_evaluation_jobs;
 
 pub(crate) mod shape_list_foundation_model_agreement_offers;
@@ -178,6 +182,8 @@ pub(crate) mod shape_list_prompt_routers;
 pub(crate) mod shape_list_provisioned_model_throughputs;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_enforced_guardrail_configuration;
 
 pub(crate) mod shape_put_model_invocation_logging_configuration;
 
@@ -273,6 +279,8 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
+pub(crate) mod shape_put_enforced_guardrail_configuration_input;
+
 pub(crate) mod shape_put_model_invocation_logging_configuration_input;
 
 pub(crate) mod shape_put_use_case_for_model_access_input;
@@ -310,6 +318,10 @@ pub(crate) mod shape_update_marketplace_model_endpoint_input;
 pub(crate) mod shape_update_provisioned_model_throughput_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_account_enforced_guardrail_inference_input_configuration;
+
+pub(crate) mod shape_account_enforced_guardrails_output_configuration;
 
 pub(crate) mod shape_agreement_availability;
 
@@ -458,6 +470,8 @@ pub(crate) mod shape_validation_data_config;
 pub(crate) mod shape_validation_metrics;
 
 pub(crate) mod shape_vpc_config;
+
+pub(crate) mod shape_account_enforced_guardrail_output_configuration;
 
 pub(crate) mod shape_automated_evaluation_config;
 

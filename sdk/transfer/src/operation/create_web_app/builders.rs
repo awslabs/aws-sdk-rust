@@ -22,7 +22,8 @@ impl crate::operation::create_web_app::builders::CreateWebAppInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateWebApp`.
 ///
-/// <p>Creates a web app based on specified parameters, and returns the ID for the new web app.</p>
+/// <p>Creates a web app based on specified parameters, and returns the ID for the new web app. You can configure the web app to be publicly accessible or hosted within a VPC.</p>
+/// <p>For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create a Transfer Family web app in a VPC</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWebAppFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -191,5 +192,19 @@ impl CreateWebAppFluentBuilder {
     /// <p>If you are creating the web app in an Amazon Web Services GovCloud (US) Region, you can set this parameter to <code>FIPS</code>.</p>
     pub fn get_web_app_endpoint_policy(&self) -> &::std::option::Option<crate::types::WebAppEndpointPolicy> {
         self.inner.get_web_app_endpoint_policy()
+    }
+    /// <p>The endpoint configuration for the web app. You can specify whether the web app endpoint is publicly accessible or hosted within a VPC.</p>
+    pub fn endpoint_details(mut self, input: crate::types::WebAppEndpointDetails) -> Self {
+        self.inner = self.inner.endpoint_details(input);
+        self
+    }
+    /// <p>The endpoint configuration for the web app. You can specify whether the web app endpoint is publicly accessible or hosted within a VPC.</p>
+    pub fn set_endpoint_details(mut self, input: ::std::option::Option<crate::types::WebAppEndpointDetails>) -> Self {
+        self.inner = self.inner.set_endpoint_details(input);
+        self
+    }
+    /// <p>The endpoint configuration for the web app. You can specify whether the web app endpoint is publicly accessible or hosted within a VPC.</p>
+    pub fn get_endpoint_details(&self) -> &::std::option::Option<crate::types::WebAppEndpointDetails> {
+        self.inner.get_endpoint_details()
     }
 }

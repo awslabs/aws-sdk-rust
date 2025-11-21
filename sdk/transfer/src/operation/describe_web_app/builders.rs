@@ -22,7 +22,8 @@ impl crate::operation::describe_web_app::builders::DescribeWebAppInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeWebApp`.
 ///
-/// <p>Describes the web app that's identified by <code>WebAppId</code>.</p>
+/// <p>Describes the web app that's identified by <code>WebAppId</code>. The response includes endpoint configuration details such as whether the web app is publicly accessible or VPC hosted.</p>
+/// <p>For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create a Transfer Family web app in a VPC</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeWebAppFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -39,5 +39,14 @@ pub fn ser_registered_user_embedding_experience_configuration(
         crate::protocol_serde::shape_registered_user_generative_qn_a_embedding_configuration::ser_registered_user_generative_qn_a_embedding_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.quick_chat {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("QuickChat").start_object();
+        crate::protocol_serde::shape_registered_user_quick_chat_embedding_configuration::ser_registered_user_quick_chat_embedding_configuration(
+            &mut object_12,
+            var_11,
+        )?;
+        object_12.finish();
+    }
     Ok(())
 }

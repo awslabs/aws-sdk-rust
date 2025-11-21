@@ -9,6 +9,12 @@ pub use crate::types::_odb_network::OdbNetworkBuilder;
 
 pub use crate::types::_managed_services::ManagedServicesBuilder;
 
+pub use crate::types::_cross_region_s3_restore_sources_access::CrossRegionS3RestoreSourcesAccessBuilder;
+
+pub use crate::types::_kms_access::KmsAccessBuilder;
+
+pub use crate::types::_sts_access::StsAccessBuilder;
+
 pub use crate::types::_s3_access::S3AccessBuilder;
 
 pub use crate::types::_zero_etl_access::ZeroEtlAccessBuilder;
@@ -26,6 +32,8 @@ pub use crate::types::_db_node::DbNodeBuilder;
 pub use crate::types::_db_node_summary::DbNodeSummaryBuilder;
 
 pub use crate::types::_cloud_vm_cluster::CloudVmClusterBuilder;
+
+pub use crate::types::_iam_role::IamRoleBuilder;
 
 pub use crate::types::_exadata_iorm_config::ExadataIormConfigBuilder;
 
@@ -68,3 +76,5 @@ pub use crate::types::_system_version_summary::SystemVersionSummaryBuilder;
 pub use crate::types::_gi_version_summary::GiVersionSummaryBuilder;
 
 pub use crate::types::_db_system_shape_summary::DbSystemShapeSummaryBuilder;
+
+pub use crate::types::_oci_identity_domain::OciIdentityDomainBuilder;

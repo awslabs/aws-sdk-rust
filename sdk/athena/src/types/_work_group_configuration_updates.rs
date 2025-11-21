@@ -33,6 +33,10 @@ pub struct WorkGroupConfigurationUpdates {
     pub enable_minimum_encryption_configuration: ::std::option::Option<bool>,
     /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
     pub query_results_s3_access_grants_configuration: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
 }
 impl WorkGroupConfigurationUpdates {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -92,6 +96,14 @@ impl WorkGroupConfigurationUpdates {
     pub fn query_results_s3_access_grants_configuration(&self) -> ::std::option::Option<&crate::types::QueryResultsS3AccessGrantsConfiguration> {
         self.query_results_s3_access_grants_configuration.as_ref()
     }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
+        self.monitoring_configuration.as_ref()
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn engine_configuration(&self) -> ::std::option::Option<&crate::types::EngineConfiguration> {
+        self.engine_configuration.as_ref()
+    }
 }
 impl WorkGroupConfigurationUpdates {
     /// Creates a new builder-style object to manufacture [`WorkGroupConfigurationUpdates`](crate::types::WorkGroupConfigurationUpdates).
@@ -118,6 +130,8 @@ pub struct WorkGroupConfigurationUpdatesBuilder {
     pub(crate) customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
     pub(crate) enable_minimum_encryption_configuration: ::std::option::Option<bool>,
     pub(crate) query_results_s3_access_grants_configuration: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
+    pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    pub(crate) engine_configuration: ::std::option::Option<crate::types::EngineConfiguration>,
 }
 impl WorkGroupConfigurationUpdatesBuilder {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -328,6 +342,34 @@ impl WorkGroupConfigurationUpdatesBuilder {
     pub fn get_query_results_s3_access_grants_configuration(&self) -> &::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration> {
         &self.query_results_s3_access_grants_configuration
     }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
+        self.monitoring_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn set_monitoring_configuration(mut self, input: ::std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring_configuration = input;
+        self
+    }
+    /// <p>Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.</p>
+    pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring_configuration
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn engine_configuration(mut self, input: crate::types::EngineConfiguration) -> Self {
+        self.engine_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn set_engine_configuration(mut self, input: ::std::option::Option<crate::types::EngineConfiguration>) -> Self {
+        self.engine_configuration = input;
+        self
+    }
+    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    pub fn get_engine_configuration(&self) -> &::std::option::Option<crate::types::EngineConfiguration> {
+        &self.engine_configuration
+    }
     /// Consumes the builder and constructs a [`WorkGroupConfigurationUpdates`](crate::types::WorkGroupConfigurationUpdates).
     pub fn build(self) -> crate::types::WorkGroupConfigurationUpdates {
         crate::types::WorkGroupConfigurationUpdates {
@@ -345,6 +387,8 @@ impl WorkGroupConfigurationUpdatesBuilder {
             customer_content_encryption_configuration: self.customer_content_encryption_configuration,
             enable_minimum_encryption_configuration: self.enable_minimum_encryption_configuration,
             query_results_s3_access_grants_configuration: self.query_results_s3_access_grants_configuration,
+            monitoring_configuration: self.monitoring_configuration,
+            engine_configuration: self.engine_configuration,
         }
     }
 }

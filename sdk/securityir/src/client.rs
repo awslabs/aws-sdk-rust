@@ -189,9 +189,13 @@ mod list_cases;
 
 mod list_comments;
 
+mod list_investigations;
+
 mod list_memberships;
 
 mod list_tags_for_resource;
+
+mod send_feedback;
 
 mod tag_resource;
 

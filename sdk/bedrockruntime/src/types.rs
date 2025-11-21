@@ -143,6 +143,12 @@ pub use crate::types::_guardrail_trace_assessment::GuardrailTraceAssessment;
 
 pub use crate::types::_guardrail_assessment::GuardrailAssessment;
 
+pub use crate::types::_applied_guardrail_details::AppliedGuardrailDetails;
+
+pub use crate::types::_guardrail_ownership::GuardrailOwnership;
+
+pub use crate::types::_guardrail_origin::GuardrailOrigin;
+
 pub use crate::types::_guardrail_invocation_metrics::GuardrailInvocationMetrics;
 
 pub use crate::types::_guardrail_coverage::GuardrailCoverage;
@@ -323,6 +329,8 @@ pub use crate::types::_sort_async_invocation_by::SortAsyncInvocationBy;
 
 mod _any_tool_choice;
 
+mod _applied_guardrail_details;
+
 mod _async_invoke_output_data_config;
 
 mod _async_invoke_s3_output_data_config;
@@ -499,9 +507,13 @@ mod _guardrail_managed_word;
 
 mod _guardrail_managed_word_type;
 
+mod _guardrail_origin;
+
 mod _guardrail_output_content;
 
 mod _guardrail_output_scope;
+
+mod _guardrail_ownership;
 
 mod _guardrail_pii_entity_filter;
 

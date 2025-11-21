@@ -60,6 +60,18 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EndpointType" => {
+                            builder = builder.set_endpoint_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::WebAppEndpointType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DescribedEndpointDetails" => {
+                            builder = builder.set_described_endpoint_details(
+                                crate::protocol_serde::shape_described_web_app_endpoint_details::de_described_web_app_endpoint_details(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

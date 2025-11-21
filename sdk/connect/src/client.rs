@@ -192,6 +192,10 @@ mod create_contact_flow;
 
 mod create_contact_flow_module;
 
+mod create_contact_flow_module_alias;
+
+mod create_contact_flow_module_version;
+
 mod create_contact_flow_version;
 
 mod create_email_address;
@@ -279,6 +283,10 @@ mod delete_contact_flow;
 
 mod delete_contact_flow_module;
 
+mod delete_contact_flow_module_alias;
+
+mod delete_contact_flow_module_version;
+
 mod delete_contact_flow_version;
 
 mod delete_email_address;
@@ -336,6 +344,8 @@ mod describe_contact_evaluation;
 mod describe_contact_flow;
 
 mod describe_contact_flow_module;
+
+mod describe_contact_flow_module_alias;
 
 mod describe_email_address;
 
@@ -452,6 +462,10 @@ mod list_authentication_profiles;
 mod list_bots;
 
 mod list_contact_evaluations;
+
+mod list_contact_flow_module_aliases;
+
+mod list_contact_flow_module_versions;
 
 mod list_contact_flow_modules;
 
@@ -652,6 +666,8 @@ mod update_contact_evaluation;
 mod update_contact_flow_content;
 
 mod update_contact_flow_metadata;
+
+mod update_contact_flow_module_alias;
 
 mod update_contact_flow_module_content;
 

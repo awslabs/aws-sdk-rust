@@ -927,6 +927,36 @@ impl From<crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatist
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_dashboard::GetResourceDashboardError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_dashboard::GetResourceDashboardError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resource_dashboard::GetResourceDashboardError> for Error {
+    fn from(err: crate::operation::get_resource_dashboard::GetResourceDashboardError) -> Self {
+        match err {
+            crate::operation::get_resource_dashboard::GetResourceDashboardError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_resource_dashboard::GetResourceDashboardError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_resource_dashboard::GetResourceDashboardError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_resource_dashboard::GetResourceDashboardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session::GetSessionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -948,6 +978,32 @@ impl From<crate::operation::get_session::GetSessionError> for Error {
             crate::operation::get_session::GetSessionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::get_session::GetSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_session::GetSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session_endpoint::GetSessionEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session_endpoint::GetSessionEndpointError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_session_endpoint::GetSessionEndpointError> for Error {
+    fn from(err: crate::operation::get_session_endpoint::GetSessionEndpointError) -> Self {
+        match err {
+            crate::operation::get_session_endpoint::GetSessionEndpointError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_session_endpoint::GetSessionEndpointError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_session_endpoint::GetSessionEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_session_endpoint::GetSessionEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

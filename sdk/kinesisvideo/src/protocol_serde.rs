@@ -47,6 +47,8 @@ pub(crate) mod shape_describe_signaling_channel;
 
 pub(crate) mod shape_describe_stream;
 
+pub(crate) mod shape_describe_stream_storage_configuration;
+
 pub(crate) mod shape_get_data_endpoint;
 
 pub(crate) mod shape_get_signaling_channel_endpoint;
@@ -82,6 +84,8 @@ pub(crate) mod shape_update_notification_configuration;
 pub(crate) mod shape_update_signaling_channel;
 
 pub(crate) mod shape_update_stream;
+
+pub(crate) mod shape_update_stream_storage_configuration;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -122,6 +126,8 @@ pub(crate) mod shape_describe_notification_configuration_input;
 pub(crate) mod shape_describe_signaling_channel_input;
 
 pub(crate) mod shape_describe_stream_input;
+
+pub(crate) mod shape_describe_stream_storage_configuration_input;
 
 pub(crate) mod shape_device_stream_limit_exceeded_exception;
 
@@ -179,6 +185,8 @@ pub(crate) mod shape_update_signaling_channel_input;
 
 pub(crate) mod shape_update_stream_input;
 
+pub(crate) mod shape_update_stream_storage_configuration_input;
+
 pub(crate) mod shape_version_mismatch_exception;
 
 pub(crate) mod shape_channel_info;
@@ -214,6 +222,8 @@ pub(crate) mod shape_stream_info;
 pub(crate) mod shape_stream_info_list;
 
 pub(crate) mod shape_stream_name_condition;
+
+pub(crate) mod shape_stream_storage_configuration;
 
 pub(crate) mod shape_tag;
 

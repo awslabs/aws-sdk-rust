@@ -15,6 +15,10 @@ pub struct CreateContactFlowModuleInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration settings for the flow module.</p>
+    pub settings: ::std::option::Option<::std::string::String>,
+    /// <p>The external invocation configuration for the flow module.</p>
+    pub external_invocation_configuration: ::std::option::Option<crate::types::ExternalInvocationConfiguration>,
 }
 impl CreateContactFlowModuleInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -41,6 +45,14 @@ impl CreateContactFlowModuleInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The configuration settings for the flow module.</p>
+    pub fn settings(&self) -> ::std::option::Option<&str> {
+        self.settings.as_deref()
+    }
+    /// <p>The external invocation configuration for the flow module.</p>
+    pub fn external_invocation_configuration(&self) -> ::std::option::Option<&crate::types::ExternalInvocationConfiguration> {
+        self.external_invocation_configuration.as_ref()
+    }
 }
 impl CreateContactFlowModuleInput {
     /// Creates a new builder-style object to manufacture [`CreateContactFlowModuleInput`](crate::operation::create_contact_flow_module::CreateContactFlowModuleInput).
@@ -59,6 +71,8 @@ pub struct CreateContactFlowModuleInputBuilder {
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) settings: ::std::option::Option<::std::string::String>,
+    pub(crate) external_invocation_configuration: ::std::option::Option<crate::types::ExternalInvocationConfiguration>,
 }
 impl CreateContactFlowModuleInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -154,6 +168,34 @@ impl CreateContactFlowModuleInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The configuration settings for the flow module.</p>
+    pub fn settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.settings = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The configuration settings for the flow module.</p>
+    pub fn set_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.settings = input;
+        self
+    }
+    /// <p>The configuration settings for the flow module.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.settings
+    }
+    /// <p>The external invocation configuration for the flow module.</p>
+    pub fn external_invocation_configuration(mut self, input: crate::types::ExternalInvocationConfiguration) -> Self {
+        self.external_invocation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The external invocation configuration for the flow module.</p>
+    pub fn set_external_invocation_configuration(mut self, input: ::std::option::Option<crate::types::ExternalInvocationConfiguration>) -> Self {
+        self.external_invocation_configuration = input;
+        self
+    }
+    /// <p>The external invocation configuration for the flow module.</p>
+    pub fn get_external_invocation_configuration(&self) -> &::std::option::Option<crate::types::ExternalInvocationConfiguration> {
+        &self.external_invocation_configuration
+    }
     /// Consumes the builder and constructs a [`CreateContactFlowModuleInput`](crate::operation::create_contact_flow_module::CreateContactFlowModuleInput).
     pub fn build(
         self,
@@ -168,6 +210,8 @@ impl CreateContactFlowModuleInputBuilder {
             content: self.content,
             tags: self.tags,
             client_token: self.client_token,
+            settings: self.settings,
+            external_invocation_configuration: self.external_invocation_configuration,
         })
     }
 }

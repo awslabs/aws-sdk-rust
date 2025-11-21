@@ -6,5 +6,8 @@ pub fn ser_update_contact_flow_module_content_input_input(
     if let Some(var_1) = &input.content {
         object.key("Content").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.settings {
+        object.key("Settings").string(var_2.as_str());
+    }
     Ok(())
 }

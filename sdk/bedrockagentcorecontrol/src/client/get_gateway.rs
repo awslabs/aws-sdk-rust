@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`authorizer_type(AuthorizerType)`](crate::operation::get_gateway::GetGatewayOutput::authorizer_type): <p>Authorizer type for the gateway.</p>
     ///   - [`authorizer_configuration(Option<AuthorizerConfiguration>)`](crate::operation::get_gateway::GetGatewayOutput::authorizer_configuration): <p>The authorizer configuration for the gateway.</p>
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_gateway::GetGatewayOutput::kms_key_arn): <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the gateway.</p>
+    ///   - [`interceptor_configurations(Option<Vec::<GatewayInterceptorConfiguration>>)`](crate::operation::get_gateway::GetGatewayOutput::interceptor_configurations): <p>The interceptors configured on the gateway.</p>
     ///   - [`workload_identity_details(Option<WorkloadIdentityDetails>)`](crate::operation::get_gateway::GetGatewayOutput::workload_identity_details): <p>The workload identity details for the gateway.</p>
     ///   - [`exception_level(Option<ExceptionLevel>)`](crate::operation::get_gateway::GetGatewayOutput::exception_level): <p>The level of detail in error messages returned when invoking the gateway.</p> <ul>  <li>   <p>If the value is <code>DEBUG</code>, granular exception messages are returned to help a user debug the gateway.</p></li>  <li>   <p>If the value is omitted, a generic error message is returned to the end user.</p></li> </ul>
     /// - On failure, responds with [`SdkError<GetGatewayError>`](crate::operation::get_gateway::GetGatewayError)

@@ -690,6 +690,15 @@ pub(crate) fn list_automated_reasoning_policy_test_results_output_output_correct
     builder
 }
 
+pub(crate) fn list_enforced_guardrails_configuration_output_output_correct_errors(
+    mut builder: crate::operation::list_enforced_guardrails_configuration::builders::ListEnforcedGuardrailsConfigurationOutputBuilder,
+) -> crate::operation::list_enforced_guardrails_configuration::builders::ListEnforcedGuardrailsConfigurationOutputBuilder {
+    if builder.guardrails_config.is_none() {
+        builder.guardrails_config = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_foundation_model_agreement_offers_output_output_correct_errors(
     mut builder: crate::operation::list_foundation_model_agreement_offers::builders::ListFoundationModelAgreementOffersOutputBuilder,
 ) -> crate::operation::list_foundation_model_agreement_offers::builders::ListFoundationModelAgreementOffersOutputBuilder {

@@ -59,6 +59,8 @@ pub struct Cluster {
     pub storage_config: ::std::option::Option<crate::types::StorageConfigResponse>,
     /// <p>The current deletion protection setting for the cluster. When <code>true</code>, deletion protection is enabled and the cluster cannot be deleted until protection is disabled. When <code>false</code>, the cluster can be deleted normally. This setting only applies to clusters in an active state.</p>
     pub deletion_protection: ::std::option::Option<bool>,
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub control_plane_scaling_config: ::std::option::Option<crate::types::ControlPlaneScalingConfig>,
 }
 impl Cluster {
     /// <p>The name of your cluster.</p>
@@ -172,6 +174,10 @@ impl Cluster {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn control_plane_scaling_config(&self) -> ::std::option::Option<&crate::types::ControlPlaneScalingConfig> {
+        self.control_plane_scaling_config.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -211,6 +217,7 @@ pub struct ClusterBuilder {
     pub(crate) compute_config: ::std::option::Option<crate::types::ComputeConfigResponse>,
     pub(crate) storage_config: ::std::option::Option<crate::types::StorageConfigResponse>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) control_plane_scaling_config: ::std::option::Option<crate::types::ControlPlaneScalingConfig>,
 }
 impl ClusterBuilder {
     /// <p>The name of your cluster.</p>
@@ -606,6 +613,20 @@ impl ClusterBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn control_plane_scaling_config(mut self, input: crate::types::ControlPlaneScalingConfig) -> Self {
+        self.control_plane_scaling_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn set_control_plane_scaling_config(mut self, input: ::std::option::Option<crate::types::ControlPlaneScalingConfig>) -> Self {
+        self.control_plane_scaling_config = input;
+        self
+    }
+    /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    pub fn get_control_plane_scaling_config(&self) -> &::std::option::Option<crate::types::ControlPlaneScalingConfig> {
+        &self.control_plane_scaling_config
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -636,6 +657,7 @@ impl ClusterBuilder {
             compute_config: self.compute_config,
             storage_config: self.storage_config,
             deletion_protection: self.deletion_protection,
+            control_plane_scaling_config: self.control_plane_scaling_config,
         }
     }
 }

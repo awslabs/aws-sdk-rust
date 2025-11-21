@@ -351,6 +351,10 @@ pub use crate::types::_capacity_block::CapacityBlockBuilder;
 
 pub use crate::types::_capacity_reservation::CapacityReservationBuilder;
 
+pub use crate::types::_interruption_info::InterruptionInfoBuilder;
+
+pub use crate::types::_interruptible_capacity_allocation::InterruptibleCapacityAllocationBuilder;
+
 pub use crate::types::_capacity_reservation_commitment_info::CapacityReservationCommitmentInfoBuilder;
 
 pub use crate::types::_capacity_allocation::CapacityAllocationBuilder;

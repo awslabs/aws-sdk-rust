@@ -47,6 +47,10 @@ pub use crate::types::_eks_anywhere_subscription_term_unit::EksAnywhereSubscript
 
 pub use crate::types::_eks_anywhere_subscription_license_type::EksAnywhereSubscriptionLicenseType;
 
+pub use crate::types::_control_plane_scaling_config::ControlPlaneScalingConfig;
+
+pub use crate::types::_provisioned_control_plane_tier::ProvisionedControlPlaneTier;
+
 pub use crate::types::_remote_network_config_request::RemoteNetworkConfigRequest;
 
 pub use crate::types::_remote_pod_network::RemotePodNetwork;
@@ -333,6 +337,8 @@ mod _control_plane_placement_request;
 
 mod _control_plane_placement_response;
 
+mod _control_plane_scaling_config;
+
 mod _create_access_config_request;
 
 mod _deprecation_detail;
@@ -444,6 +450,8 @@ mod _pod_identity_association;
 mod _pod_identity_association_summary;
 
 mod _provider;
+
+mod _provisioned_control_plane_tier;
 
 mod _remote_access_config;
 

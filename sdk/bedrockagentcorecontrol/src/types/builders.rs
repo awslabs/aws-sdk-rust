@@ -141,6 +141,12 @@ pub use crate::types::_target_summary::TargetSummaryBuilder;
 
 pub use crate::types::_workload_identity_details::WorkloadIdentityDetailsBuilder;
 
+pub use crate::types::_gateway_interceptor_configuration::GatewayInterceptorConfigurationBuilder;
+
+pub use crate::types::_interceptor_input_configuration::InterceptorInputConfigurationBuilder;
+
+pub use crate::types::_lambda_interceptor_configuration::LambdaInterceptorConfigurationBuilder;
+
 pub use crate::types::_custom_jwt_authorizer_configuration::CustomJwtAuthorizerConfigurationBuilder;
 
 pub use crate::types::_mcp_gateway_configuration::McpGatewayConfigurationBuilder;

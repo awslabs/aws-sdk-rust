@@ -21,9 +21,13 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_throttling_exception::ThrottlingException;
 
+pub use crate::types::error::_dry_run_exception::DryRunException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
+
+mod _dry_run_exception;
 
 mod _insufficient_capacity_exception;
 
