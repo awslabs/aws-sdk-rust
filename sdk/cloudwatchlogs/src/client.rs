@@ -319,6 +319,8 @@ mod put_integration;
 
 mod put_log_events;
 
+mod put_log_group_deletion_protection;
+
 mod put_metric_filter;
 
 mod put_query_definition;

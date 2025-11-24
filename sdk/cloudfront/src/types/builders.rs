@@ -7,6 +7,10 @@ pub use crate::types::_vpc_origin_endpoint_config::VpcOriginEndpointConfigBuilde
 
 pub use crate::types::_origin_ssl_protocols::OriginSslProtocolsBuilder;
 
+pub use crate::types::_trust_store::TrustStoreBuilder;
+
+pub use crate::types::_ca_certificates_bundle_s3_location::CaCertificatesBundleS3LocationBuilder;
+
 pub use crate::types::_streaming_distribution::StreamingDistributionBuilder;
 
 pub use crate::types::_streaming_distribution_config::StreamingDistributionConfigBuilder;
@@ -143,6 +147,12 @@ pub use crate::types::_alias_icp_recordal::AliasIcpRecordalBuilder;
 
 pub use crate::types::_distribution_config::DistributionConfigBuilder;
 
+pub use crate::types::_connection_function_association::ConnectionFunctionAssociationBuilder;
+
+pub use crate::types::_viewer_mtls_config::ViewerMtlsConfigBuilder;
+
+pub use crate::types::_trust_store_config::TrustStoreConfigBuilder;
+
 pub use crate::types::_tenant_config::TenantConfigBuilder;
 
 pub use crate::types::_parameter_definition::ParameterDefinitionBuilder;
@@ -261,6 +271,8 @@ pub use crate::types::_staging_distribution_dns_names::StagingDistributionDnsNam
 
 pub use crate::types::_connection_group::ConnectionGroupBuilder;
 
+pub use crate::types::_connection_function_summary::ConnectionFunctionSummaryBuilder;
+
 pub use crate::types::_cloud_front_origin_access_identity::CloudFrontOriginAccessIdentityBuilder;
 
 pub use crate::types::_cloud_front_origin_access_identity_config::CloudFrontOriginAccessIdentityConfigBuilder;
@@ -287,9 +299,13 @@ pub use crate::types::_tag_keys::TagKeysBuilder;
 
 pub use crate::types::_test_result::TestResultBuilder;
 
+pub use crate::types::_connection_function_test_result::ConnectionFunctionTestResultBuilder;
+
 pub use crate::types::_vpc_origin_list::VpcOriginListBuilder;
 
 pub use crate::types::_vpc_origin_summary::VpcOriginSummaryBuilder;
+
+pub use crate::types::_trust_store_summary::TrustStoreSummaryBuilder;
 
 pub use crate::types::_streaming_distribution_list::StreamingDistributionListBuilder;
 

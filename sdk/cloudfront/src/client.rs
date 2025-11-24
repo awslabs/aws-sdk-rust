@@ -204,6 +204,8 @@ mod create_cache_policy;
 
 mod create_cloud_front_origin_access_identity;
 
+mod create_connection_function;
+
 mod create_connection_group;
 
 mod create_continuous_deployment_policy;
@@ -244,6 +246,8 @@ mod create_streaming_distribution;
 
 mod create_streaming_distribution_with_tags;
 
+mod create_trust_store;
+
 mod create_vpc_origin;
 
 /// Operation customization and supporting types.
@@ -279,6 +283,8 @@ mod delete_cache_policy;
 
 mod delete_cloud_front_origin_access_identity;
 
+mod delete_connection_function;
+
 mod delete_connection_group;
 
 mod delete_continuous_deployment_policy;
@@ -313,7 +319,11 @@ mod delete_response_headers_policy;
 
 mod delete_streaming_distribution;
 
+mod delete_trust_store;
+
 mod delete_vpc_origin;
+
+mod describe_connection_function;
 
 mod describe_function;
 
@@ -332,6 +342,8 @@ mod get_cache_policy_config;
 mod get_cloud_front_origin_access_identity;
 
 mod get_cloud_front_origin_access_identity_config;
+
+mod get_connection_function;
 
 mod get_connection_group;
 
@@ -395,6 +407,8 @@ mod get_streaming_distribution;
 
 mod get_streaming_distribution_config;
 
+mod get_trust_store;
+
 mod get_vpc_origin;
 
 mod list_anycast_ip_lists;
@@ -404,6 +418,8 @@ mod list_cache_policies;
 mod list_cloud_front_origin_access_identities;
 
 mod list_conflicting_aliases;
+
+mod list_connection_functions;
 
 mod list_connection_groups;
 
@@ -419,6 +435,8 @@ mod list_distributions_by_anycast_ip_list_id;
 
 mod list_distributions_by_cache_policy_id;
 
+mod list_distributions_by_connection_function;
+
 mod list_distributions_by_connection_mode;
 
 mod list_distributions_by_key_group;
@@ -430,6 +448,8 @@ mod list_distributions_by_owned_resource;
 mod list_distributions_by_realtime_log_config;
 
 mod list_distributions_by_response_headers_policy_id;
+
+mod list_distributions_by_trust_store;
 
 mod list_distributions_by_vpc_origin_id;
 
@@ -465,13 +485,19 @@ mod list_streaming_distributions;
 
 mod list_tags_for_resource;
 
+mod list_trust_stores;
+
 mod list_vpc_origins;
+
+mod publish_connection_function;
 
 mod publish_function;
 
 mod put_resource_policy;
 
 mod tag_resource;
+
+mod test_connection_function;
 
 mod test_function;
 
@@ -482,6 +508,8 @@ mod update_anycast_ip_list;
 mod update_cache_policy;
 
 mod update_cloud_front_origin_access_identity;
+
+mod update_connection_function;
 
 mod update_connection_group;
 
@@ -516,6 +544,8 @@ mod update_realtime_log_config;
 mod update_response_headers_policy;
 
 mod update_streaming_distribution;
+
+mod update_trust_store;
 
 mod update_vpc_origin;
 

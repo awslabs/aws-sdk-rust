@@ -102,6 +102,10 @@ pub struct DistributionConfig {
     pub tenant_config: ::std::option::Option<crate::types::TenantConfig>,
     /// <p>This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants (tenant-only).</p>
     pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
+    /// <p>The distribution's viewer mTLS configuration.</p>
+    pub viewer_mtls_config: ::std::option::Option<crate::types::ViewerMtlsConfig>,
+    /// <p>The distribution's connection function association.</p>
+    pub connection_function_association: ::std::option::Option<crate::types::ConnectionFunctionAssociation>,
 }
 impl DistributionConfig {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
@@ -248,6 +252,14 @@ impl DistributionConfig {
     pub fn connection_mode(&self) -> ::std::option::Option<&crate::types::ConnectionMode> {
         self.connection_mode.as_ref()
     }
+    /// <p>The distribution's viewer mTLS configuration.</p>
+    pub fn viewer_mtls_config(&self) -> ::std::option::Option<&crate::types::ViewerMtlsConfig> {
+        self.viewer_mtls_config.as_ref()
+    }
+    /// <p>The distribution's connection function association.</p>
+    pub fn connection_function_association(&self) -> ::std::option::Option<&crate::types::ConnectionFunctionAssociation> {
+        self.connection_function_association.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DistributionConfig {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -274,6 +286,8 @@ impl ::std::fmt::Debug for DistributionConfig {
         formatter.field("anycast_ip_list_id", &self.anycast_ip_list_id);
         formatter.field("tenant_config", &self.tenant_config);
         formatter.field("connection_mode", &self.connection_mode);
+        formatter.field("viewer_mtls_config", &self.viewer_mtls_config);
+        formatter.field("connection_function_association", &self.connection_function_association);
         formatter.finish()
     }
 }
@@ -310,6 +324,8 @@ pub struct DistributionConfigBuilder {
     pub(crate) anycast_ip_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_config: ::std::option::Option<crate::types::TenantConfig>,
     pub(crate) connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
+    pub(crate) viewer_mtls_config: ::std::option::Option<crate::types::ViewerMtlsConfig>,
+    pub(crate) connection_function_association: ::std::option::Option<crate::types::ConnectionFunctionAssociation>,
 }
 impl DistributionConfigBuilder {
     /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
@@ -787,6 +803,34 @@ impl DistributionConfigBuilder {
     pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
         &self.connection_mode
     }
+    /// <p>The distribution's viewer mTLS configuration.</p>
+    pub fn viewer_mtls_config(mut self, input: crate::types::ViewerMtlsConfig) -> Self {
+        self.viewer_mtls_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distribution's viewer mTLS configuration.</p>
+    pub fn set_viewer_mtls_config(mut self, input: ::std::option::Option<crate::types::ViewerMtlsConfig>) -> Self {
+        self.viewer_mtls_config = input;
+        self
+    }
+    /// <p>The distribution's viewer mTLS configuration.</p>
+    pub fn get_viewer_mtls_config(&self) -> &::std::option::Option<crate::types::ViewerMtlsConfig> {
+        &self.viewer_mtls_config
+    }
+    /// <p>The distribution's connection function association.</p>
+    pub fn connection_function_association(mut self, input: crate::types::ConnectionFunctionAssociation) -> Self {
+        self.connection_function_association = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distribution's connection function association.</p>
+    pub fn set_connection_function_association(mut self, input: ::std::option::Option<crate::types::ConnectionFunctionAssociation>) -> Self {
+        self.connection_function_association = input;
+        self
+    }
+    /// <p>The distribution's connection function association.</p>
+    pub fn get_connection_function_association(&self) -> &::std::option::Option<crate::types::ConnectionFunctionAssociation> {
+        &self.connection_function_association
+    }
     /// Consumes the builder and constructs a [`DistributionConfig`](crate::types::DistributionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`caller_reference`](crate::types::builders::DistributionConfigBuilder::caller_reference)
@@ -831,6 +875,8 @@ impl DistributionConfigBuilder {
             anycast_ip_list_id: self.anycast_ip_list_id,
             tenant_config: self.tenant_config,
             connection_mode: self.connection_mode,
+            viewer_mtls_config: self.viewer_mtls_config,
+            connection_function_association: self.connection_function_association,
         })
     }
 }
@@ -859,6 +905,8 @@ impl ::std::fmt::Debug for DistributionConfigBuilder {
         formatter.field("anycast_ip_list_id", &self.anycast_ip_list_id);
         formatter.field("tenant_config", &self.tenant_config);
         formatter.field("connection_mode", &self.connection_mode);
+        formatter.field("viewer_mtls_config", &self.viewer_mtls_config);
+        formatter.field("connection_function_association", &self.connection_function_association);
         formatter.finish()
     }
 }

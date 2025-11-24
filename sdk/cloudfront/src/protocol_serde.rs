@@ -45,6 +45,8 @@ pub(crate) mod shape_create_cloud_front_origin_access_identity;
 
 pub(crate) mod shape_create_cloud_front_origin_access_identity_input;
 
+pub(crate) mod shape_create_connection_function;
+
 pub(crate) mod shape_create_connection_group;
 
 pub(crate) mod shape_create_continuous_deployment_policy;
@@ -115,6 +117,8 @@ pub(crate) mod shape_create_streaming_distribution_with_tags;
 
 pub(crate) mod shape_create_streaming_distribution_with_tags_input;
 
+pub(crate) mod shape_create_trust_store;
+
 pub(crate) mod shape_create_vpc_origin;
 
 pub(crate) mod shape_delete_anycast_ip_list;
@@ -122,6 +126,8 @@ pub(crate) mod shape_delete_anycast_ip_list;
 pub(crate) mod shape_delete_cache_policy;
 
 pub(crate) mod shape_delete_cloud_front_origin_access_identity;
+
+pub(crate) mod shape_delete_connection_function;
 
 pub(crate) mod shape_delete_connection_group;
 
@@ -157,7 +163,11 @@ pub(crate) mod shape_delete_response_headers_policy;
 
 pub(crate) mod shape_delete_streaming_distribution;
 
+pub(crate) mod shape_delete_trust_store;
+
 pub(crate) mod shape_delete_vpc_origin;
+
+pub(crate) mod shape_describe_connection_function;
 
 pub(crate) mod shape_describe_function;
 
@@ -176,6 +186,8 @@ pub(crate) mod shape_get_cache_policy_config;
 pub(crate) mod shape_get_cloud_front_origin_access_identity;
 
 pub(crate) mod shape_get_cloud_front_origin_access_identity_config;
+
+pub(crate) mod shape_get_connection_function;
 
 pub(crate) mod shape_get_connection_group;
 
@@ -239,6 +251,8 @@ pub(crate) mod shape_get_streaming_distribution;
 
 pub(crate) mod shape_get_streaming_distribution_config;
 
+pub(crate) mod shape_get_trust_store;
+
 pub(crate) mod shape_get_vpc_origin;
 
 pub(crate) mod shape_list_anycast_ip_lists;
@@ -248,6 +262,8 @@ pub(crate) mod shape_list_cache_policies;
 pub(crate) mod shape_list_cloud_front_origin_access_identities;
 
 pub(crate) mod shape_list_conflicting_aliases;
+
+pub(crate) mod shape_list_connection_functions;
 
 pub(crate) mod shape_list_connection_groups;
 
@@ -263,6 +279,8 @@ pub(crate) mod shape_list_distributions_by_anycast_ip_list_id;
 
 pub(crate) mod shape_list_distributions_by_cache_policy_id;
 
+pub(crate) mod shape_list_distributions_by_connection_function;
+
 pub(crate) mod shape_list_distributions_by_connection_mode;
 
 pub(crate) mod shape_list_distributions_by_key_group;
@@ -274,6 +292,8 @@ pub(crate) mod shape_list_distributions_by_owned_resource;
 pub(crate) mod shape_list_distributions_by_realtime_log_config;
 
 pub(crate) mod shape_list_distributions_by_response_headers_policy_id;
+
+pub(crate) mod shape_list_distributions_by_trust_store;
 
 pub(crate) mod shape_list_distributions_by_vpc_origin_id;
 
@@ -309,7 +329,11 @@ pub(crate) mod shape_list_streaming_distributions;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_trust_stores;
+
 pub(crate) mod shape_list_vpc_origins;
+
+pub(crate) mod shape_publish_connection_function;
 
 pub(crate) mod shape_publish_function;
 
@@ -318,6 +342,8 @@ pub(crate) mod shape_put_resource_policy;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_test_connection_function;
 
 pub(crate) mod shape_test_function;
 
@@ -334,6 +360,8 @@ pub(crate) mod shape_update_cache_policy_input;
 pub(crate) mod shape_update_cloud_front_origin_access_identity;
 
 pub(crate) mod shape_update_cloud_front_origin_access_identity_input;
+
+pub(crate) mod shape_update_connection_function;
 
 pub(crate) mod shape_update_connection_group;
 
@@ -389,6 +417,14 @@ pub(crate) mod shape_update_streaming_distribution;
 
 pub(crate) mod shape_update_streaming_distribution_input;
 
+pub(crate) mod shape_update_trust_store;
+
+pub fn rest_xml_unset_union_payload() -> ::std::vec::Vec<u8> {
+    ::std::vec::Vec::new()
+}
+
+pub(crate) mod shape_update_trust_store_input;
+
 pub(crate) mod shape_update_vpc_origin;
 
 pub(crate) mod shape_update_vpc_origin_input;
@@ -439,6 +475,10 @@ pub(crate) mod shape_create_cache_policy_output;
 
 pub(crate) mod shape_create_cloud_front_origin_access_identity_output;
 
+pub(crate) mod shape_create_connection_function_input;
+
+pub(crate) mod shape_create_connection_function_output;
+
 pub(crate) mod shape_create_connection_group_input;
 
 pub(crate) mod shape_create_connection_group_output;
@@ -487,6 +527,10 @@ pub(crate) mod shape_create_streaming_distribution_output;
 
 pub(crate) mod shape_create_streaming_distribution_with_tags_output;
 
+pub(crate) mod shape_create_trust_store_input;
+
+pub(crate) mod shape_create_trust_store_output;
+
 pub(crate) mod shape_create_vpc_origin_input;
 
 pub(crate) mod shape_create_vpc_origin_output;
@@ -496,6 +540,8 @@ pub(crate) mod shape_delete_realtime_log_config_input;
 pub(crate) mod shape_delete_resource_policy_input;
 
 pub(crate) mod shape_delete_vpc_origin_output;
+
+pub(crate) mod shape_describe_connection_function_output;
 
 pub(crate) mod shape_describe_function_output;
 
@@ -542,6 +588,8 @@ pub(crate) mod shape_get_cache_policy_output;
 pub(crate) mod shape_get_cloud_front_origin_access_identity_config_output;
 
 pub(crate) mod shape_get_cloud_front_origin_access_identity_output;
+
+pub(crate) mod shape_get_connection_function_output;
 
 pub(crate) mod shape_get_connection_group_by_routing_endpoint_output;
 
@@ -604,6 +652,8 @@ pub(crate) mod shape_get_response_headers_policy_output;
 pub(crate) mod shape_get_streaming_distribution_config_output;
 
 pub(crate) mod shape_get_streaming_distribution_output;
+
+pub(crate) mod shape_get_trust_store_output;
 
 pub(crate) mod shape_get_vpc_origin_output;
 
@@ -681,6 +731,8 @@ pub(crate) mod shape_list_cloud_front_origin_access_identities_output;
 
 pub(crate) mod shape_list_conflicting_aliases_output;
 
+pub(crate) mod shape_list_connection_functions_input;
+
 pub(crate) mod shape_list_connection_groups_input;
 
 pub(crate) mod shape_list_continuous_deployment_policies_output;
@@ -692,6 +744,8 @@ pub(crate) mod shape_list_distribution_tenants_input;
 pub(crate) mod shape_list_distributions_by_anycast_ip_list_id_output;
 
 pub(crate) mod shape_list_distributions_by_cache_policy_id_output;
+
+pub(crate) mod shape_list_distributions_by_connection_function_output;
 
 pub(crate) mod shape_list_distributions_by_connection_mode_output;
 
@@ -706,6 +760,8 @@ pub(crate) mod shape_list_distributions_by_realtime_log_config_input;
 pub(crate) mod shape_list_distributions_by_realtime_log_config_output;
 
 pub(crate) mod shape_list_distributions_by_response_headers_policy_id_output;
+
+pub(crate) mod shape_list_distributions_by_trust_store_output;
 
 pub(crate) mod shape_list_distributions_by_vpc_origin_id_output;
 
@@ -742,6 +798,8 @@ pub(crate) mod shape_list_response_headers_policies_output;
 pub(crate) mod shape_list_streaming_distributions_output;
 
 pub(crate) mod shape_list_tags_for_resource_output;
+
+pub(crate) mod shape_list_trust_stores_input;
 
 pub(crate) mod shape_list_vpc_origins_output;
 
@@ -797,6 +855,8 @@ pub(crate) mod shape_public_key_already_exists;
 
 pub(crate) mod shape_public_key_in_use;
 
+pub(crate) mod shape_publish_connection_function_output;
+
 pub(crate) mod shape_publish_function_output;
 
 pub(crate) mod shape_put_resource_policy_input;
@@ -822,6 +882,10 @@ pub(crate) mod shape_staging_distribution_in_use;
 pub(crate) mod shape_streaming_distribution_already_exists;
 
 pub(crate) mod shape_streaming_distribution_not_disabled;
+
+pub(crate) mod shape_test_connection_function_input;
+
+pub(crate) mod shape_test_connection_function_output;
 
 pub(crate) mod shape_test_function_failed;
 
@@ -947,6 +1011,10 @@ pub(crate) mod shape_update_cache_policy_output;
 
 pub(crate) mod shape_update_cloud_front_origin_access_identity_output;
 
+pub(crate) mod shape_update_connection_function_input;
+
+pub(crate) mod shape_update_connection_function_output;
+
 pub(crate) mod shape_update_connection_group_input;
 
 pub(crate) mod shape_update_connection_group_output;
@@ -991,13 +1059,19 @@ pub(crate) mod shape_update_response_headers_policy_output;
 
 pub(crate) mod shape_update_streaming_distribution_output;
 
+pub(crate) mod shape_update_trust_store_output;
+
 pub(crate) mod shape_update_vpc_origin_output;
 
 pub(crate) mod shape_verify_dns_configuration_input;
 
+pub(crate) mod shape_ca_certificates_bundle_source;
+
 pub(crate) mod shape_cache_policy_config;
 
 pub(crate) mod shape_cloud_front_origin_access_identity_config;
+
+pub(crate) mod shape_connection_function_summary_list;
 
 pub(crate) mod shape_connection_group_association_filter;
 
@@ -1063,6 +1137,8 @@ pub(crate) mod shape_tag_keys;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_trust_store_list;
+
 pub(crate) mod shape_vpc_origin_endpoint_config;
 
 pub(crate) mod shape_aliases;
@@ -1070,6 +1146,8 @@ pub(crate) mod shape_aliases;
 pub(crate) mod shape_anycast_ip_list;
 
 pub(crate) mod shape_anycast_ip_list_collection;
+
+pub(crate) mod shape_ca_certificates_bundle_s3_location;
 
 pub(crate) mod shape_cache_behaviors;
 
@@ -1084,6 +1162,12 @@ pub(crate) mod shape_cloud_front_origin_access_identity;
 pub(crate) mod shape_cloud_front_origin_access_identity_list;
 
 pub(crate) mod shape_conflicting_aliases_list;
+
+pub(crate) mod shape_connection_function_association;
+
+pub(crate) mod shape_connection_function_summary;
+
+pub(crate) mod shape_connection_function_test_result;
 
 pub(crate) mod shape_connection_group;
 
@@ -1223,9 +1307,15 @@ pub(crate) mod shape_test_result;
 
 pub(crate) mod shape_traffic_config;
 
+pub(crate) mod shape_trust_store;
+
+pub(crate) mod shape_trust_store_summary;
+
 pub(crate) mod shape_trusted_signers;
 
 pub(crate) mod shape_viewer_certificate;
+
+pub(crate) mod shape_viewer_mtls_config;
 
 pub(crate) mod shape_vpc_origin;
 
@@ -1364,6 +1454,8 @@ pub(crate) mod shape_response_headers_policy_xss_protection;
 pub(crate) mod shape_streaming_distribution_summary_list;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_trust_store_config;
 
 pub(crate) mod shape_trusted_key_groups;
 

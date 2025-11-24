@@ -13,6 +13,14 @@ pub use crate::types::_ssl_protocol::SslProtocol;
 
 pub use crate::types::_origin_protocol_policy::OriginProtocolPolicy;
 
+pub use crate::types::_trust_store::TrustStore;
+
+pub use crate::types::_trust_store_status::TrustStoreStatus;
+
+pub use crate::types::_ca_certificates_bundle_source::CaCertificatesBundleSource;
+
+pub use crate::types::_ca_certificates_bundle_s3_location::CaCertificatesBundleS3Location;
+
 pub use crate::types::_streaming_distribution::StreamingDistribution;
 
 pub use crate::types::_streaming_distribution_config::StreamingDistributionConfig;
@@ -177,6 +185,14 @@ pub use crate::types::_icp_recordal_status::IcpRecordalStatus;
 
 pub use crate::types::_distribution_config::DistributionConfig;
 
+pub use crate::types::_connection_function_association::ConnectionFunctionAssociation;
+
+pub use crate::types::_viewer_mtls_config::ViewerMtlsConfig;
+
+pub use crate::types::_trust_store_config::TrustStoreConfig;
+
+pub use crate::types::_viewer_mtls_mode::ViewerMtlsMode;
+
 pub use crate::types::_connection_mode::ConnectionMode;
 
 pub use crate::types::_tenant_config::TenantConfig;
@@ -329,6 +345,8 @@ pub use crate::types::_staging_distribution_dns_names::StagingDistributionDnsNam
 
 pub use crate::types::_connection_group::ConnectionGroup;
 
+pub use crate::types::_connection_function_summary::ConnectionFunctionSummary;
+
 pub use crate::types::_cloud_front_origin_access_identity::CloudFrontOriginAccessIdentity;
 
 pub use crate::types::_cloud_front_origin_access_identity_config::CloudFrontOriginAccessIdentityConfig;
@@ -363,9 +381,13 @@ pub use crate::types::_tag_keys::TagKeys;
 
 pub use crate::types::_test_result::TestResult;
 
+pub use crate::types::_connection_function_test_result::ConnectionFunctionTestResult;
+
 pub use crate::types::_vpc_origin_list::VpcOriginList;
 
 pub use crate::types::_vpc_origin_summary::VpcOriginSummary;
+
+pub use crate::types::_trust_store_summary::TrustStoreSummary;
 
 pub use crate::types::_streaming_distribution_list::StreamingDistributionList;
 
@@ -499,6 +521,10 @@ mod _anycast_ip_list_collection;
 
 mod _anycast_ip_list_summary;
 
+mod _ca_certificates_bundle_s3_location;
+
+mod _ca_certificates_bundle_source;
+
 mod _cache_behavior;
 
 mod _cache_behaviors;
@@ -544,6 +570,12 @@ mod _cloud_front_origin_access_identity_summary;
 mod _conflicting_alias;
 
 mod _conflicting_aliases_list;
+
+mod _connection_function_association;
+
+mod _connection_function_summary;
+
+mod _connection_function_test_result;
 
 mod _connection_group;
 
@@ -943,6 +975,14 @@ mod _test_result;
 
 mod _traffic_config;
 
+mod _trust_store;
+
+mod _trust_store_config;
+
+mod _trust_store_status;
+
+mod _trust_store_summary;
+
 mod _trusted_key_groups;
 
 mod _trusted_signers;
@@ -952,6 +992,10 @@ mod _validation_token_detail;
 mod _validation_token_host;
 
 mod _viewer_certificate;
+
+mod _viewer_mtls_config;
+
+mod _viewer_mtls_mode;
 
 mod _viewer_protocol_policy;
 

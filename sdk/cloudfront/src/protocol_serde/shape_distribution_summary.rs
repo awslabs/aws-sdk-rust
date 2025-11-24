@@ -302,6 +302,26 @@ pub fn de_distribution_summary(
                 builder = builder.set_anycast_ip_list_id(var_24);
             }
             ,
+            s if s.matches("ViewerMtlsConfig") /* ViewerMtlsConfig com.amazonaws.cloudfront#DistributionSummary$ViewerMtlsConfig */ =>  {
+                let var_25 =
+                    Some(
+                        crate::protocol_serde::shape_viewer_mtls_config::de_viewer_mtls_config(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_viewer_mtls_config(var_25);
+            }
+            ,
+            s if s.matches("ConnectionFunctionAssociation") /* ConnectionFunctionAssociation com.amazonaws.cloudfront#DistributionSummary$ConnectionFunctionAssociation */ =>  {
+                let var_26 =
+                    Some(
+                        crate::protocol_serde::shape_connection_function_association::de_connection_function_association(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_connection_function_association(var_26);
+            }
+            ,
             _ => {}
         }
     }

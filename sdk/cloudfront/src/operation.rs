@@ -22,6 +22,9 @@ pub mod create_cache_policy;
 /// Types for the `CreateCloudFrontOriginAccessIdentity` operation.
 pub mod create_cloud_front_origin_access_identity;
 
+/// Types for the `CreateConnectionFunction` operation.
+pub mod create_connection_function;
+
 /// Types for the `CreateConnectionGroup` operation.
 pub mod create_connection_group;
 
@@ -82,6 +85,9 @@ pub mod create_streaming_distribution;
 /// Types for the `CreateStreamingDistributionWithTags` operation.
 pub mod create_streaming_distribution_with_tags;
 
+/// Types for the `CreateTrustStore` operation.
+pub mod create_trust_store;
+
 /// Types for the `CreateVpcOrigin` operation.
 pub mod create_vpc_origin;
 
@@ -93,6 +99,9 @@ pub mod delete_cache_policy;
 
 /// Types for the `DeleteCloudFrontOriginAccessIdentity` operation.
 pub mod delete_cloud_front_origin_access_identity;
+
+/// Types for the `DeleteConnectionFunction` operation.
+pub mod delete_connection_function;
 
 /// Types for the `DeleteConnectionGroup` operation.
 pub mod delete_connection_group;
@@ -145,8 +154,14 @@ pub mod delete_response_headers_policy;
 /// Types for the `DeleteStreamingDistribution` operation.
 pub mod delete_streaming_distribution;
 
+/// Types for the `DeleteTrustStore` operation.
+pub mod delete_trust_store;
+
 /// Types for the `DeleteVpcOrigin` operation.
 pub mod delete_vpc_origin;
+
+/// Types for the `DescribeConnectionFunction` operation.
+pub mod describe_connection_function;
 
 /// Types for the `DescribeFunction` operation.
 pub mod describe_function;
@@ -174,6 +189,9 @@ pub mod get_cloud_front_origin_access_identity;
 
 /// Types for the `GetCloudFrontOriginAccessIdentityConfig` operation.
 pub mod get_cloud_front_origin_access_identity_config;
+
+/// Types for the `GetConnectionFunction` operation.
+pub mod get_connection_function;
 
 /// Types for the `GetConnectionGroup` operation.
 pub mod get_connection_group;
@@ -268,6 +286,9 @@ pub mod get_streaming_distribution;
 /// Types for the `GetStreamingDistributionConfig` operation.
 pub mod get_streaming_distribution_config;
 
+/// Types for the `GetTrustStore` operation.
+pub mod get_trust_store;
+
 /// Types for the `GetVpcOrigin` operation.
 pub mod get_vpc_origin;
 
@@ -282,6 +303,9 @@ pub mod list_cloud_front_origin_access_identities;
 
 /// Types for the `ListConflictingAliases` operation.
 pub mod list_conflicting_aliases;
+
+/// Types for the `ListConnectionFunctions` operation.
+pub mod list_connection_functions;
 
 /// Types for the `ListConnectionGroups` operation.
 pub mod list_connection_groups;
@@ -304,6 +328,9 @@ pub mod list_distributions_by_anycast_ip_list_id;
 /// Types for the `ListDistributionsByCachePolicyId` operation.
 pub mod list_distributions_by_cache_policy_id;
 
+/// Types for the `ListDistributionsByConnectionFunction` operation.
+pub mod list_distributions_by_connection_function;
+
 /// Types for the `ListDistributionsByConnectionMode` operation.
 pub mod list_distributions_by_connection_mode;
 
@@ -321,6 +348,9 @@ pub mod list_distributions_by_realtime_log_config;
 
 /// Types for the `ListDistributionsByResponseHeadersPolicyId` operation.
 pub mod list_distributions_by_response_headers_policy_id;
+
+/// Types for the `ListDistributionsByTrustStore` operation.
+pub mod list_distributions_by_trust_store;
 
 /// Types for the `ListDistributionsByVpcOriginId` operation.
 pub mod list_distributions_by_vpc_origin_id;
@@ -373,8 +403,14 @@ pub mod list_streaming_distributions;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListTrustStores` operation.
+pub mod list_trust_stores;
+
 /// Types for the `ListVpcOrigins` operation.
 pub mod list_vpc_origins;
+
+/// Types for the `PublishConnectionFunction` operation.
+pub mod publish_connection_function;
 
 /// Types for the `PublishFunction` operation.
 pub mod publish_function;
@@ -384,6 +420,9 @@ pub mod put_resource_policy;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
+
+/// Types for the `TestConnectionFunction` operation.
+pub mod test_connection_function;
 
 /// Types for the `TestFunction` operation.
 pub mod test_function;
@@ -399,6 +438,9 @@ pub mod update_cache_policy;
 
 /// Types for the `UpdateCloudFrontOriginAccessIdentity` operation.
 pub mod update_cloud_front_origin_access_identity;
+
+/// Types for the `UpdateConnectionFunction` operation.
+pub mod update_connection_function;
 
 /// Types for the `UpdateConnectionGroup` operation.
 pub mod update_connection_group;
@@ -450,6 +492,9 @@ pub mod update_response_headers_policy;
 
 /// Types for the `UpdateStreamingDistribution` operation.
 pub mod update_streaming_distribution;
+
+/// Types for the `UpdateTrustStore` operation.
+pub mod update_trust_store;
 
 /// Types for the `UpdateVpcOrigin` operation.
 pub mod update_vpc_origin;

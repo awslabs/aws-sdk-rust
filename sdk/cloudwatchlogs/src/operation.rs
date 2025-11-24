@@ -235,6 +235,9 @@ pub mod put_integration;
 /// Types for the `PutLogEvents` operation.
 pub mod put_log_events;
 
+/// Types for the `PutLogGroupDeletionProtection` operation.
+pub mod put_log_group_deletion_protection;
+
 /// Types for the `PutMetricFilter` operation.
 pub mod put_metric_filter;
 

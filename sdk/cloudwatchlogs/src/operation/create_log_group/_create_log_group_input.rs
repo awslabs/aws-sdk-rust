@@ -24,6 +24,8 @@ pub struct CreateLogGroupInput {
     /// </important>
     /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
     pub log_group_class: ::std::option::Option<crate::types::LogGroupClass>,
+    /// <p>Use this parameter to enable deletion protection for the new log group. When enabled on a log group, deletion protection blocks all deletion operations until it is explicitly disabled. By default log groups are created without deletion protection enabled.</p>
+    pub deletion_protection_enabled: ::std::option::Option<bool>,
 }
 impl CreateLogGroupInput {
     /// <p>A name for the log group.</p>
@@ -55,6 +57,10 @@ impl CreateLogGroupInput {
     pub fn log_group_class(&self) -> ::std::option::Option<&crate::types::LogGroupClass> {
         self.log_group_class.as_ref()
     }
+    /// <p>Use this parameter to enable deletion protection for the new log group. When enabled on a log group, deletion protection blocks all deletion operations until it is explicitly disabled. By default log groups are created without deletion protection enabled.</p>
+    pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
+        self.deletion_protection_enabled
+    }
 }
 impl CreateLogGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateLogGroupInput`](crate::operation::create_log_group::CreateLogGroupInput).
@@ -71,6 +77,7 @@ pub struct CreateLogGroupInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) log_group_class: ::std::option::Option<crate::types::LogGroupClass>,
+    pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
 }
 impl CreateLogGroupInputBuilder {
     /// <p>A name for the log group.</p>
@@ -175,6 +182,20 @@ impl CreateLogGroupInputBuilder {
     pub fn get_log_group_class(&self) -> &::std::option::Option<crate::types::LogGroupClass> {
         &self.log_group_class
     }
+    /// <p>Use this parameter to enable deletion protection for the new log group. When enabled on a log group, deletion protection blocks all deletion operations until it is explicitly disabled. By default log groups are created without deletion protection enabled.</p>
+    pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
+        self.deletion_protection_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this parameter to enable deletion protection for the new log group. When enabled on a log group, deletion protection blocks all deletion operations until it is explicitly disabled. By default log groups are created without deletion protection enabled.</p>
+    pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.deletion_protection_enabled = input;
+        self
+    }
+    /// <p>Use this parameter to enable deletion protection for the new log group. When enabled on a log group, deletion protection blocks all deletion operations until it is explicitly disabled. By default log groups are created without deletion protection enabled.</p>
+    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection_enabled
+    }
     /// Consumes the builder and constructs a [`CreateLogGroupInput`](crate::operation::create_log_group::CreateLogGroupInput).
     pub fn build(
         self,
@@ -184,6 +205,7 @@ impl CreateLogGroupInputBuilder {
             kms_key_id: self.kms_key_id,
             tags: self.tags,
             log_group_class: self.log_group_class,
+            deletion_protection_enabled: self.deletion_protection_enabled,
         })
     }
 }

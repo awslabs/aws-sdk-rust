@@ -1007,6 +1007,45 @@ impl From<crate::operation::create_cloud_front_origin_access_identity::CreateClo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_connection_function::CreateConnectionFunctionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_connection_function::CreateConnectionFunctionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_connection_function::CreateConnectionFunctionError> for Error {
+    fn from(err: crate::operation::create_connection_function::CreateConnectionFunctionError) -> Self {
+        match err {
+            crate::operation::create_connection_function::CreateConnectionFunctionError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::create_connection_function::CreateConnectionFunctionError::EntityAlreadyExists(inner) => {
+                Error::EntityAlreadyExists(inner)
+            }
+            crate::operation::create_connection_function::CreateConnectionFunctionError::EntityLimitExceeded(inner) => {
+                Error::EntityLimitExceeded(inner)
+            }
+            crate::operation::create_connection_function::CreateConnectionFunctionError::EntitySizeLimitExceeded(inner) => {
+                Error::EntitySizeLimitExceeded(inner)
+            }
+            crate::operation::create_connection_function::CreateConnectionFunctionError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::create_connection_function::CreateConnectionFunctionError::InvalidTagging(inner) => Error::InvalidTagging(inner),
+            crate::operation::create_connection_function::CreateConnectionFunctionError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::create_connection_function::CreateConnectionFunctionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_connection_group::CreateConnectionGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1934,6 +1973,33 @@ impl From<crate::operation::create_streaming_distribution_with_tags::CreateStrea
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trust_store::CreateTrustStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trust_store::CreateTrustStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_trust_store::CreateTrustStoreError> for Error {
+    fn from(err: crate::operation::create_trust_store::CreateTrustStoreError) -> Self {
+        match err {
+            crate::operation::create_trust_store::CreateTrustStoreError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::create_trust_store::CreateTrustStoreError::EntityAlreadyExists(inner) => Error::EntityAlreadyExists(inner),
+            crate::operation::create_trust_store::CreateTrustStoreError::EntityLimitExceeded(inner) => Error::EntityLimitExceeded(inner),
+            crate::operation::create_trust_store::CreateTrustStoreError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::create_trust_store::CreateTrustStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::create_trust_store::CreateTrustStoreError::InvalidTagging(inner) => Error::InvalidTagging(inner),
+            crate::operation::create_trust_store::CreateTrustStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_origin::CreateVpcOriginError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2054,6 +2120,45 @@ impl From<crate::operation::delete_cloud_front_origin_access_identity::DeleteClo
             crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
             crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
             crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connection_function::DeleteConnectionFunctionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connection_function::DeleteConnectionFunctionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_connection_function::DeleteConnectionFunctionError> for Error {
+    fn from(err: crate::operation::delete_connection_function::DeleteConnectionFunctionError) -> Self {
+        match err {
+            crate::operation::delete_connection_function::DeleteConnectionFunctionError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::delete_connection_function::DeleteConnectionFunctionError::CannotDeleteEntityWhileInUse(inner) => {
+                Error::CannotDeleteEntityWhileInUse(inner)
+            }
+            crate::operation::delete_connection_function::DeleteConnectionFunctionError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::delete_connection_function::DeleteConnectionFunctionError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::delete_connection_function::DeleteConnectionFunctionError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::delete_connection_function::DeleteConnectionFunctionError::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::operation::delete_connection_function::DeleteConnectionFunctionError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::delete_connection_function::DeleteConnectionFunctionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2657,6 +2762,35 @@ impl From<crate::operation::delete_streaming_distribution::DeleteStreamingDistri
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_trust_store::DeleteTrustStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_trust_store::DeleteTrustStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_trust_store::DeleteTrustStoreError> for Error {
+    fn from(err: crate::operation::delete_trust_store::DeleteTrustStoreError) -> Self {
+        match err {
+            crate::operation::delete_trust_store::DeleteTrustStoreError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::delete_trust_store::DeleteTrustStoreError::CannotDeleteEntityWhileInUse(inner) => {
+                Error::CannotDeleteEntityWhileInUse(inner)
+            }
+            crate::operation::delete_trust_store::DeleteTrustStoreError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::delete_trust_store::DeleteTrustStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::delete_trust_store::DeleteTrustStoreError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::delete_trust_store::DeleteTrustStoreError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_trust_store::DeleteTrustStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpc_origin::DeleteVpcOriginError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2685,6 +2819,36 @@ impl From<crate::operation::delete_vpc_origin::DeleteVpcOriginError> for Error {
             crate::operation::delete_vpc_origin::DeleteVpcOriginError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
             crate::operation::delete_vpc_origin::DeleteVpcOriginError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::delete_vpc_origin::DeleteVpcOriginError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_connection_function::DescribeConnectionFunctionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_connection_function::DescribeConnectionFunctionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_connection_function::DescribeConnectionFunctionError> for Error {
+    fn from(err: crate::operation::describe_connection_function::DescribeConnectionFunctionError) -> Self {
+        match err {
+            crate::operation::describe_connection_function::DescribeConnectionFunctionError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::describe_connection_function::DescribeConnectionFunctionError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::describe_connection_function::DescribeConnectionFunctionError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::describe_connection_function::DescribeConnectionFunctionError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::describe_connection_function::DescribeConnectionFunctionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2972,6 +3136,32 @@ impl From<crate::operation::get_cloud_front_origin_access_identity_config::GetCl
             crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigError::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
             crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connection_function::GetConnectionFunctionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connection_function::GetConnectionFunctionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_connection_function::GetConnectionFunctionError> for Error {
+    fn from(err: crate::operation::get_connection_function::GetConnectionFunctionError) -> Self {
+        match err {
+            crate::operation::get_connection_function::GetConnectionFunctionError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_connection_function::GetConnectionFunctionError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::get_connection_function::GetConnectionFunctionError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::operation::get_connection_function::GetConnectionFunctionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3911,6 +4101,30 @@ impl From<crate::operation::get_streaming_distribution_config::GetStreamingDistr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trust_store::GetTrustStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trust_store::GetTrustStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trust_store::GetTrustStoreError> for Error {
+    fn from(err: crate::operation::get_trust_store::GetTrustStoreError) -> Self {
+        match err {
+            crate::operation::get_trust_store::GetTrustStoreError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::get_trust_store::GetTrustStoreError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::get_trust_store::GetTrustStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::get_trust_store::GetTrustStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vpc_origin::GetVpcOriginError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4044,6 +4258,35 @@ impl From<crate::operation::list_conflicting_aliases::ListConflictingAliasesErro
             crate::operation::list_conflicting_aliases::ListConflictingAliasesError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::list_conflicting_aliases::ListConflictingAliasesError::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
             crate::operation::list_conflicting_aliases::ListConflictingAliasesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connection_functions::ListConnectionFunctionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connection_functions::ListConnectionFunctionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_connection_functions::ListConnectionFunctionsError> for Error {
+    fn from(err: crate::operation::list_connection_functions::ListConnectionFunctionsError) -> Self {
+        match err {
+            crate::operation::list_connection_functions::ListConnectionFunctionsError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::list_connection_functions::ListConnectionFunctionsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_connection_functions::ListConnectionFunctionsError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::list_connection_functions::ListConnectionFunctionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4218,6 +4461,49 @@ impl From<crate::operation::list_distributions_by_cache_policy_id::ListDistribut
                 Error::NoSuchCachePolicy(inner)
             }
             crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_connection_function::ListDistributionsByConnectionFunctionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_connection_function::ListDistributionsByConnectionFunctionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_distributions_by_connection_function::ListDistributionsByConnectionFunctionError> for Error {
+    fn from(err: crate::operation::list_distributions_by_connection_function::ListDistributionsByConnectionFunctionError) -> Self {
+        match err {
+            crate::operation::list_distributions_by_connection_function::ListDistributionsByConnectionFunctionError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::list_distributions_by_connection_function::ListDistributionsByConnectionFunctionError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::list_distributions_by_connection_function::ListDistributionsByConnectionFunctionError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::list_distributions_by_connection_function::ListDistributionsByConnectionFunctionError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -4447,6 +4733,47 @@ impl From<crate::operation::list_distributions_by_response_headers_policy_id::Li
             crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
             crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_trust_store::ListDistributionsByTrustStoreError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_distributions_by_trust_store::ListDistributionsByTrustStoreError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_distributions_by_trust_store::ListDistributionsByTrustStoreError> for Error {
+    fn from(err: crate::operation::list_distributions_by_trust_store::ListDistributionsByTrustStoreError) -> Self {
+        match err {
+            crate::operation::list_distributions_by_trust_store::ListDistributionsByTrustStoreError::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::operation::list_distributions_by_trust_store::ListDistributionsByTrustStoreError::EntityNotFound(inner) => {
+                Error::EntityNotFound(inner)
+            }
+            crate::operation::list_distributions_by_trust_store::ListDistributionsByTrustStoreError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::operation::list_distributions_by_trust_store::ListDistributionsByTrustStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5020,6 +5347,30 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_trust_stores::ListTrustStoresError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_trust_stores::ListTrustStoresError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_trust_stores::ListTrustStoresError> for Error {
+    fn from(err: crate::operation::list_trust_stores::ListTrustStoresError) -> Self {
+        match err {
+            crate::operation::list_trust_stores::ListTrustStoresError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::list_trust_stores::ListTrustStoresError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::list_trust_stores::ListTrustStoresError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_trust_stores::ListTrustStoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vpc_origins::ListVpcOriginsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5042,6 +5393,42 @@ impl From<crate::operation::list_vpc_origins::ListVpcOriginsError> for Error {
             crate::operation::list_vpc_origins::ListVpcOriginsError::InvalidArgument(inner) => Error::InvalidArgument(inner),
             crate::operation::list_vpc_origins::ListVpcOriginsError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::list_vpc_origins::ListVpcOriginsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_connection_function::PublishConnectionFunctionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_connection_function::PublishConnectionFunctionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::publish_connection_function::PublishConnectionFunctionError> for Error {
+    fn from(err: crate::operation::publish_connection_function::PublishConnectionFunctionError) -> Self {
+        match err {
+            crate::operation::publish_connection_function::PublishConnectionFunctionError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::publish_connection_function::PublishConnectionFunctionError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::publish_connection_function::PublishConnectionFunctionError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::publish_connection_function::PublishConnectionFunctionError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::publish_connection_function::PublishConnectionFunctionError::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::operation::publish_connection_function::PublishConnectionFunctionError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::publish_connection_function::PublishConnectionFunctionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5120,6 +5507,39 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::InvalidTagging(inner) => Error::InvalidTagging(inner),
             crate::operation::tag_resource::TagResourceError::NoSuchResource(inner) => Error::NoSuchResource(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_connection_function::TestConnectionFunctionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_connection_function::TestConnectionFunctionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::test_connection_function::TestConnectionFunctionError> for Error {
+    fn from(err: crate::operation::test_connection_function::TestConnectionFunctionError) -> Self {
+        match err {
+            crate::operation::test_connection_function::TestConnectionFunctionError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::test_connection_function::TestConnectionFunctionError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::test_connection_function::TestConnectionFunctionError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::test_connection_function::TestConnectionFunctionError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::test_connection_function::TestConnectionFunctionError::TestFunctionFailed(inner) => Error::TestFunctionFailed(inner),
+            crate::operation::test_connection_function::TestConnectionFunctionError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::test_connection_function::TestConnectionFunctionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5276,6 +5696,45 @@ impl From<crate::operation::update_cloud_front_origin_access_identity::UpdateClo
             crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
             crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
             crate::operation::update_cloud_front_origin_access_identity::UpdateCloudFrontOriginAccessIdentityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_connection_function::UpdateConnectionFunctionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_connection_function::UpdateConnectionFunctionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_connection_function::UpdateConnectionFunctionError> for Error {
+    fn from(err: crate::operation::update_connection_function::UpdateConnectionFunctionError) -> Self {
+        match err {
+            crate::operation::update_connection_function::UpdateConnectionFunctionError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::update_connection_function::UpdateConnectionFunctionError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::update_connection_function::UpdateConnectionFunctionError::EntitySizeLimitExceeded(inner) => {
+                Error::EntitySizeLimitExceeded(inner)
+            }
+            crate::operation::update_connection_function::UpdateConnectionFunctionError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_connection_function::UpdateConnectionFunctionError::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::operation::update_connection_function::UpdateConnectionFunctionError::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::operation::update_connection_function::UpdateConnectionFunctionError::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::operation::update_connection_function::UpdateConnectionFunctionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6131,6 +6590,32 @@ impl From<crate::operation::update_streaming_distribution::UpdateStreamingDistri
                 Error::TrustedSignerDoesNotExist(inner)
             }
             crate::operation::update_streaming_distribution::UpdateStreamingDistributionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_trust_store::UpdateTrustStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_trust_store::UpdateTrustStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_trust_store::UpdateTrustStoreError> for Error {
+    fn from(err: crate::operation::update_trust_store::UpdateTrustStoreError) -> Self {
+        match err {
+            crate::operation::update_trust_store::UpdateTrustStoreError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::update_trust_store::UpdateTrustStoreError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::update_trust_store::UpdateTrustStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_trust_store::UpdateTrustStoreError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::update_trust_store::UpdateTrustStoreError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::update_trust_store::UpdateTrustStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

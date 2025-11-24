@@ -159,6 +159,39 @@ pub(crate) fn cloud_front_origin_access_identity_list_correct_errors(
     builder
 }
 
+pub(crate) fn connection_function_summary_correct_errors(
+    mut builder: crate::types::builders::ConnectionFunctionSummaryBuilder,
+) -> crate::types::builders::ConnectionFunctionSummaryBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.connection_function_config.is_none() {
+        builder.connection_function_config = {
+            let builder = crate::types::builders::FunctionConfigBuilder::default();
+            crate::serde_util::function_config_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.connection_function_arn.is_none() {
+        builder.connection_function_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.stage.is_none() {
+        builder.stage = "no value was set".parse::<crate::types::FunctionStage>().ok()
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn connection_group_summary_correct_errors(
     mut builder: crate::types::builders::ConnectionGroupSummaryBuilder,
 ) -> crate::types::builders::ConnectionGroupSummaryBuilder {
@@ -910,6 +943,33 @@ pub(crate) fn streaming_distribution_list_correct_errors(
     builder
 }
 
+pub(crate) fn trust_store_summary_correct_errors(
+    mut builder: crate::types::builders::TrustStoreSummaryBuilder,
+) -> crate::types::builders::TrustStoreSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TrustStoreStatus>().ok()
+    }
+    if builder.number_of_ca_certificates.is_none() {
+        builder.number_of_ca_certificates = Some(Default::default())
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.e_tag.is_none() {
+        builder.e_tag = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn vpc_origin_correct_errors(mut builder: crate::types::builders::VpcOriginBuilder) -> crate::types::builders::VpcOriginBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
@@ -989,6 +1049,15 @@ pub(crate) fn cache_behaviors_correct_errors(
 ) -> crate::types::builders::CacheBehaviorsBuilder {
     if builder.quantity.is_none() {
         builder.quantity = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn connection_function_association_correct_errors(
+    mut builder: crate::types::builders::ConnectionFunctionAssociationBuilder,
+) -> crate::types::builders::ConnectionFunctionAssociationBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     builder
 }
@@ -2011,6 +2080,15 @@ pub(crate) fn streaming_distribution_summary_correct_errors(
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trust_store_config_correct_errors(
+    mut builder: crate::types::builders::TrustStoreConfigBuilder,
+) -> crate::types::builders::TrustStoreConfigBuilder {
+    if builder.trust_store_id.is_none() {
+        builder.trust_store_id = Some(Default::default())
     }
     builder
 }

@@ -56,6 +56,10 @@ pub struct DistributionSummary {
     pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
     /// <p>ID of the Anycast static IP list that is associated with the distribution.</p>
     pub anycast_ip_list_id: ::std::option::Option<::std::string::String>,
+    /// <p>The distribution's viewer mTLS configuration.</p>
+    pub viewer_mtls_config: ::std::option::Option<crate::types::ViewerMtlsConfig>,
+    /// <p>The distribution's connection function association.</p>
+    pub connection_function_association: ::std::option::Option<crate::types::ConnectionFunctionAssociation>,
 }
 impl DistributionSummary {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
@@ -166,6 +170,14 @@ impl DistributionSummary {
     pub fn anycast_ip_list_id(&self) -> ::std::option::Option<&str> {
         self.anycast_ip_list_id.as_deref()
     }
+    /// <p>The distribution's viewer mTLS configuration.</p>
+    pub fn viewer_mtls_config(&self) -> ::std::option::Option<&crate::types::ViewerMtlsConfig> {
+        self.viewer_mtls_config.as_ref()
+    }
+    /// <p>The distribution's connection function association.</p>
+    pub fn connection_function_association(&self) -> ::std::option::Option<&crate::types::ConnectionFunctionAssociation> {
+        self.connection_function_association.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DistributionSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -194,6 +206,8 @@ impl ::std::fmt::Debug for DistributionSummary {
         formatter.field("staging", &self.staging);
         formatter.field("connection_mode", &self.connection_mode);
         formatter.field("anycast_ip_list_id", &self.anycast_ip_list_id);
+        formatter.field("viewer_mtls_config", &self.viewer_mtls_config);
+        formatter.field("connection_function_association", &self.connection_function_association);
         formatter.finish()
     }
 }
@@ -232,6 +246,8 @@ pub struct DistributionSummaryBuilder {
     pub(crate) staging: ::std::option::Option<bool>,
     pub(crate) connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
     pub(crate) anycast_ip_list_id: ::std::option::Option<::std::string::String>,
+    pub(crate) viewer_mtls_config: ::std::option::Option<crate::types::ViewerMtlsConfig>,
+    pub(crate) connection_function_association: ::std::option::Option<crate::types::ConnectionFunctionAssociation>,
 }
 impl DistributionSummaryBuilder {
     /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.</p>
@@ -607,6 +623,34 @@ impl DistributionSummaryBuilder {
     pub fn get_anycast_ip_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.anycast_ip_list_id
     }
+    /// <p>The distribution's viewer mTLS configuration.</p>
+    pub fn viewer_mtls_config(mut self, input: crate::types::ViewerMtlsConfig) -> Self {
+        self.viewer_mtls_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distribution's viewer mTLS configuration.</p>
+    pub fn set_viewer_mtls_config(mut self, input: ::std::option::Option<crate::types::ViewerMtlsConfig>) -> Self {
+        self.viewer_mtls_config = input;
+        self
+    }
+    /// <p>The distribution's viewer mTLS configuration.</p>
+    pub fn get_viewer_mtls_config(&self) -> &::std::option::Option<crate::types::ViewerMtlsConfig> {
+        &self.viewer_mtls_config
+    }
+    /// <p>The distribution's connection function association.</p>
+    pub fn connection_function_association(mut self, input: crate::types::ConnectionFunctionAssociation) -> Self {
+        self.connection_function_association = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distribution's connection function association.</p>
+    pub fn set_connection_function_association(mut self, input: ::std::option::Option<crate::types::ConnectionFunctionAssociation>) -> Self {
+        self.connection_function_association = input;
+        self
+    }
+    /// <p>The distribution's connection function association.</p>
+    pub fn get_connection_function_association(&self) -> &::std::option::Option<crate::types::ConnectionFunctionAssociation> {
+        &self.connection_function_association
+    }
     /// Consumes the builder and constructs a [`DistributionSummary`](crate::types::DistributionSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DistributionSummaryBuilder::id)
@@ -707,6 +751,8 @@ impl DistributionSummaryBuilder {
             })?,
             connection_mode: self.connection_mode,
             anycast_ip_list_id: self.anycast_ip_list_id,
+            viewer_mtls_config: self.viewer_mtls_config,
+            connection_function_association: self.connection_function_association,
         })
     }
 }
@@ -737,6 +783,8 @@ impl ::std::fmt::Debug for DistributionSummaryBuilder {
         formatter.field("staging", &self.staging);
         formatter.field("connection_mode", &self.connection_mode);
         formatter.field("anycast_ip_list_id", &self.anycast_ip_list_id);
+        formatter.field("viewer_mtls_config", &self.viewer_mtls_config);
+        formatter.field("connection_function_association", &self.connection_function_association);
         formatter.finish()
     }
 }

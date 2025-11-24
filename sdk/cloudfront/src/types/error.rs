@@ -199,6 +199,8 @@ pub use crate::types::error::_continuous_deployment_policy_in_use::ContinuousDep
 
 pub use crate::types::error::_resource_in_use::ResourceInUse;
 
+pub use crate::types::error::_entity_size_limit_exceeded::EntitySizeLimitExceeded;
+
 pub use crate::types::error::_no_such_cloud_front_origin_access_identity::NoSuchCloudFrontOriginAccessIdentity;
 
 pub use crate::types::error::_too_many_query_strings_in_cache_policy::TooManyQueryStringsInCachePolicy;
@@ -268,8 +270,6 @@ pub use crate::types::error::_too_many_origin_request_policies::TooManyOriginReq
 pub use crate::types::error::_too_many_origin_access_controls::TooManyOriginAccessControls;
 
 pub use crate::types::error::_monitoring_subscription_already_exists::MonitoringSubscriptionAlreadyExists;
-
-pub use crate::types::error::_entity_size_limit_exceeded::EntitySizeLimitExceeded;
 
 pub use crate::types::error::_too_many_key_groups::TooManyKeyGroups;
 

@@ -13,6 +13,16 @@ pub(crate) fn reflens_list_cloud_front_origin_access_identities_output_output_cl
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_connection_functions_output_output_next_marker(
+    input: &crate::operation::list_connection_functions::ListConnectionFunctionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_connection_groups_output_output_next_marker(
     input: &crate::operation::list_connection_groups::ListConnectionGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -57,8 +67,36 @@ pub(crate) fn reflens_list_distributions_output_output_distribution_list_next_ma
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_distributions_by_connection_function_output_output_distribution_list_next_marker(
+    input: &crate::operation::list_distributions_by_connection_function::ListDistributionsByConnectionFunctionOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.distribution_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_distributions_by_connection_mode_output_output_distribution_list_next_marker(
     input: &crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.distribution_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_distributions_by_trust_store_output_output_distribution_list_next_marker(
+    input: &crate::operation::list_distributions_by_trust_store::ListDistributionsByTrustStoreOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.distribution_list {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -165,11 +203,28 @@ pub(crate) fn reflens_list_streaming_distributions_output_output_streaming_distr
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_trust_stores_output_output_next_marker(
+    input: &crate::operation::list_trust_stores::ListTrustStoresOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_cloud_front_origin_access_identities_output_output_cloud_front_origin_access_identity_list_items(
     input: crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>> {
     let input = input.cloud_front_origin_access_identity_list?;
     let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_connection_functions_output_output_connection_functions(
+    input: crate::operation::list_connection_functions::ListConnectionFunctionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectionFunctionSummary>> {
+    let input = input.connection_functions?;
     ::std::option::Option::Some(input)
 }
 
@@ -202,8 +257,24 @@ pub(crate) fn lens_list_distributions_output_output_distribution_list_items(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_distributions_by_connection_function_output_output_distribution_list_items(
+    input: crate::operation::list_distributions_by_connection_function::ListDistributionsByConnectionFunctionOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionSummary>> {
+    let input = input.distribution_list?;
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_distributions_by_connection_mode_output_output_distribution_list_items(
     input: crate::operation::list_distributions_by_connection_mode::ListDistributionsByConnectionModeOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionSummary>> {
+    let input = input.distribution_list?;
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_distributions_by_trust_store_output_output_distribution_list_items(
+    input: crate::operation::list_distributions_by_trust_store::ListDistributionsByTrustStoreOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DistributionSummary>> {
     let input = input.distribution_list?;
     let input = input.items?;
@@ -262,5 +333,12 @@ pub(crate) fn lens_list_streaming_distributions_output_output_streaming_distribu
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StreamingDistributionSummary>> {
     let input = input.streaming_distribution_list?;
     let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_trust_stores_output_output_trust_store_list(
+    input: crate::operation::list_trust_stores::ListTrustStoresOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreSummary>> {
+    let input = input.trust_store_list?;
     ::std::option::Option::Some(input)
 }

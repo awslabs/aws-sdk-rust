@@ -179,6 +179,8 @@ pub(crate) mod shape_put_integration;
 
 pub(crate) mod shape_put_log_events;
 
+pub(crate) mod shape_put_log_group_deletion_protection;
+
 pub(crate) mod shape_put_metric_filter;
 
 pub(crate) mod shape_put_query_definition;
@@ -404,6 +406,8 @@ pub(crate) mod shape_put_index_policy_input;
 pub(crate) mod shape_put_integration_input;
 
 pub(crate) mod shape_put_log_events_input;
+
+pub(crate) mod shape_put_log_group_deletion_protection_input;
 
 pub(crate) mod shape_put_metric_filter_input;
 

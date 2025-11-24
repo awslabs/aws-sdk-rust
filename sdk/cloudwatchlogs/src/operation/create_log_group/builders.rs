@@ -224,4 +224,18 @@ impl CreateLogGroupFluentBuilder {
     pub fn get_log_group_class(&self) -> &::std::option::Option<crate::types::LogGroupClass> {
         self.inner.get_log_group_class()
     }
+    /// <p>Use this parameter to enable deletion protection for the new log group. When enabled on a log group, deletion protection blocks all deletion operations until it is explicitly disabled. By default log groups are created without deletion protection enabled.</p>
+    pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.deletion_protection_enabled(input);
+        self
+    }
+    /// <p>Use this parameter to enable deletion protection for the new log group. When enabled on a log group, deletion protection blocks all deletion operations until it is explicitly disabled. By default log groups are created without deletion protection enabled.</p>
+    pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_deletion_protection_enabled(input);
+        self
+    }
+    /// <p>Use this parameter to enable deletion protection for the new log group. When enabled on a log group, deletion protection blocks all deletion operations until it is explicitly disabled. By default log groups are created without deletion protection enabled.</p>
+    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protection_enabled()
+    }
 }
