@@ -1907,6 +1907,14 @@ pub use crate::types::_network_acl_association::NetworkAclAssociation;
 
 pub use crate::types::_nat_gateway::NatGateway;
 
+pub use crate::types::_nat_gateway_attached_appliance::NatGatewayAttachedAppliance;
+
+pub use crate::types::_nat_gateway_appliance_modify_state::NatGatewayApplianceModifyState;
+
+pub use crate::types::_nat_gateway_appliance_state::NatGatewayApplianceState;
+
+pub use crate::types::_nat_gateway_appliance_type::NatGatewayApplianceType;
+
 pub use crate::types::_auto_provision_zones_state::AutoProvisionZonesState;
 
 pub use crate::types::_auto_scaling_ips_state::AutoScalingIpsState;
@@ -4160,6 +4168,14 @@ mod _nat_gateway;
 mod _nat_gateway_address;
 
 mod _nat_gateway_address_status;
+
+mod _nat_gateway_appliance_modify_state;
+
+mod _nat_gateway_appliance_state;
+
+mod _nat_gateway_appliance_type;
+
+mod _nat_gateway_attached_appliance;
 
 mod _nat_gateway_state;
 

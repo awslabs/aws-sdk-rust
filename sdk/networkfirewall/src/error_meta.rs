@@ -249,6 +249,52 @@ impl From<crate::operation::associate_subnets::AssociateSubnetsError> for Error 
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationError> for Error {
+    fn from(err: crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationError) -> Self {
+        match err {
+            crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_firewall::CreateFirewallError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -307,6 +353,127 @@ impl From<crate::operation::create_firewall_policy::CreateFirewallPolicyError> f
             }
             crate::operation::create_firewall_policy::CreateFirewallPolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_firewall_policy::CreateFirewallPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_proxy::CreateProxyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_proxy::CreateProxyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_proxy::CreateProxyError> for Error {
+    fn from(err: crate::operation::create_proxy::CreateProxyError) -> Self {
+        match err {
+            crate::operation::create_proxy::CreateProxyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_proxy::CreateProxyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_proxy::CreateProxyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_proxy::CreateProxyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_proxy::CreateProxyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_proxy::CreateProxyError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::create_proxy::CreateProxyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_proxy_configuration::CreateProxyConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_proxy_configuration::CreateProxyConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_proxy_configuration::CreateProxyConfigurationError> for Error {
+    fn from(err: crate::operation::create_proxy_configuration::CreateProxyConfigurationError) -> Self {
+        match err {
+            crate::operation::create_proxy_configuration::CreateProxyConfigurationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::create_proxy_configuration::CreateProxyConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_proxy_configuration::CreateProxyConfigurationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_proxy_configuration::CreateProxyConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_proxy_configuration::CreateProxyConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_proxy_configuration::CreateProxyConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_proxy_rule_group::CreateProxyRuleGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_proxy_rule_group::CreateProxyRuleGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_proxy_rule_group::CreateProxyRuleGroupError> for Error {
+    fn from(err: crate::operation::create_proxy_rule_group::CreateProxyRuleGroupError) -> Self {
+        match err {
+            crate::operation::create_proxy_rule_group::CreateProxyRuleGroupError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_proxy_rule_group::CreateProxyRuleGroupError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_proxy_rule_group::CreateProxyRuleGroupError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_proxy_rule_group::CreateProxyRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_proxy_rule_group::CreateProxyRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_proxy_rules::CreateProxyRulesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_proxy_rules::CreateProxyRulesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_proxy_rules::CreateProxyRulesError> for Error {
+    fn from(err: crate::operation::create_proxy_rules::CreateProxyRulesError) -> Self {
+        match err {
+            crate::operation::create_proxy_rules::CreateProxyRulesError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_proxy_rules::CreateProxyRulesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_proxy_rules::CreateProxyRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_proxy_rules::CreateProxyRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -531,6 +698,124 @@ impl From<crate::operation::delete_network_firewall_transit_gateway_attachment::
             crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_network_firewall_transit_gateway_attachment::DeleteNetworkFirewallTransitGatewayAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_proxy::DeleteProxyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_proxy::DeleteProxyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_proxy::DeleteProxyError> for Error {
+    fn from(err: crate::operation::delete_proxy::DeleteProxyError) -> Self {
+        match err {
+            crate::operation::delete_proxy::DeleteProxyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_proxy::DeleteProxyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_proxy::DeleteProxyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_proxy::DeleteProxyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_proxy::DeleteProxyError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::delete_proxy::DeleteProxyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_proxy_configuration::DeleteProxyConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_proxy_configuration::DeleteProxyConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_proxy_configuration::DeleteProxyConfigurationError> for Error {
+    fn from(err: crate::operation::delete_proxy_configuration::DeleteProxyConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_proxy_configuration::DeleteProxyConfigurationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::delete_proxy_configuration::DeleteProxyConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_proxy_configuration::DeleteProxyConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_proxy_configuration::DeleteProxyConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_proxy_configuration::DeleteProxyConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_proxy_rule_group::DeleteProxyRuleGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_proxy_rule_group::DeleteProxyRuleGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_proxy_rule_group::DeleteProxyRuleGroupError> for Error {
+    fn from(err: crate::operation::delete_proxy_rule_group::DeleteProxyRuleGroupError) -> Self {
+        match err {
+            crate::operation::delete_proxy_rule_group::DeleteProxyRuleGroupError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_proxy_rule_group::DeleteProxyRuleGroupError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_proxy_rule_group::DeleteProxyRuleGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_proxy_rule_group::DeleteProxyRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_proxy_rule_group::DeleteProxyRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_proxy_rules::DeleteProxyRulesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_proxy_rules::DeleteProxyRulesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_proxy_rules::DeleteProxyRulesError> for Error {
+    fn from(err: crate::operation::delete_proxy_rules::DeleteProxyRulesError) -> Self {
+        match err {
+            crate::operation::delete_proxy_rules::DeleteProxyRulesError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_proxy_rules::DeleteProxyRulesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_proxy_rules::DeleteProxyRulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_proxy_rules::DeleteProxyRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_proxy_rules::DeleteProxyRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -848,6 +1133,126 @@ impl From<crate::operation::describe_logging_configuration::DescribeLoggingConfi
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_proxy::DescribeProxyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_proxy::DescribeProxyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_proxy::DescribeProxyError> for Error {
+    fn from(err: crate::operation::describe_proxy::DescribeProxyError) -> Self {
+        match err {
+            crate::operation::describe_proxy::DescribeProxyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_proxy::DescribeProxyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_proxy::DescribeProxyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_proxy::DescribeProxyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_proxy::DescribeProxyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_proxy_configuration::DescribeProxyConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_proxy_configuration::DescribeProxyConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_proxy_configuration::DescribeProxyConfigurationError> for Error {
+    fn from(err: crate::operation::describe_proxy_configuration::DescribeProxyConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_proxy_configuration::DescribeProxyConfigurationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_proxy_configuration::DescribeProxyConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_proxy_configuration::DescribeProxyConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_proxy_configuration::DescribeProxyConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_proxy_configuration::DescribeProxyConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_proxy_rule::DescribeProxyRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_proxy_rule::DescribeProxyRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_proxy_rule::DescribeProxyRuleError> for Error {
+    fn from(err: crate::operation::describe_proxy_rule::DescribeProxyRuleError) -> Self {
+        match err {
+            crate::operation::describe_proxy_rule::DescribeProxyRuleError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_proxy_rule::DescribeProxyRuleError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_proxy_rule::DescribeProxyRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_proxy_rule::DescribeProxyRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_proxy_rule::DescribeProxyRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_proxy_rule_group::DescribeProxyRuleGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_proxy_rule_group::DescribeProxyRuleGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_proxy_rule_group::DescribeProxyRuleGroupError> for Error {
+    fn from(err: crate::operation::describe_proxy_rule_group::DescribeProxyRuleGroupError) -> Self {
+        match err {
+            crate::operation::describe_proxy_rule_group::DescribeProxyRuleGroupError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_proxy_rule_group::DescribeProxyRuleGroupError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_proxy_rule_group::DescribeProxyRuleGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_proxy_rule_group::DescribeProxyRuleGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_proxy_rule_group::DescribeProxyRuleGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resource_policy::DescribeResourcePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1065,6 +1470,52 @@ impl From<crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpoi
                 Error::ThrottlingException(inner)
             }
             crate::operation::describe_vpc_endpoint_association::DescribeVpcEndpointAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::detach_rule_groups_from_proxy_configuration::DetachRuleGroupsFromProxyConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::detach_rule_groups_from_proxy_configuration::DetachRuleGroupsFromProxyConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::detach_rule_groups_from_proxy_configuration::DetachRuleGroupsFromProxyConfigurationError> for Error {
+    fn from(err: crate::operation::detach_rule_groups_from_proxy_configuration::DetachRuleGroupsFromProxyConfigurationError) -> Self {
+        match err {
+            crate::operation::detach_rule_groups_from_proxy_configuration::DetachRuleGroupsFromProxyConfigurationError::InternalServerError(
+                inner,
+            ) => Error::InternalServerError(inner),
+            crate::operation::detach_rule_groups_from_proxy_configuration::DetachRuleGroupsFromProxyConfigurationError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::detach_rule_groups_from_proxy_configuration::DetachRuleGroupsFromProxyConfigurationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::detach_rule_groups_from_proxy_configuration::DetachRuleGroupsFromProxyConfigurationError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
+            crate::operation::detach_rule_groups_from_proxy_configuration::DetachRuleGroupsFromProxyConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1320,6 +1771,95 @@ impl From<crate::operation::list_flow_operations::ListFlowOperationsError> for E
             }
             crate::operation::list_flow_operations::ListFlowOperationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_flow_operations::ListFlowOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_proxies::ListProxiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_proxies::ListProxiesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_proxies::ListProxiesError> for Error {
+    fn from(err: crate::operation::list_proxies::ListProxiesError) -> Self {
+        match err {
+            crate::operation::list_proxies::ListProxiesError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_proxies::ListProxiesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_proxies::ListProxiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_proxies::ListProxiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_proxy_configurations::ListProxyConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_proxy_configurations::ListProxyConfigurationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_proxy_configurations::ListProxyConfigurationsError> for Error {
+    fn from(err: crate::operation::list_proxy_configurations::ListProxyConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_proxy_configurations::ListProxyConfigurationsError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::list_proxy_configurations::ListProxyConfigurationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_proxy_configurations::ListProxyConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_proxy_configurations::ListProxyConfigurationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_proxy_configurations::ListProxyConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_proxy_rule_groups::ListProxyRuleGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_proxy_rule_groups::ListProxyRuleGroupsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_proxy_rule_groups::ListProxyRuleGroupsError> for Error {
+    fn from(err: crate::operation::list_proxy_rule_groups::ListProxyRuleGroupsError) -> Self {
+        match err {
+            crate::operation::list_proxy_rule_groups::ListProxyRuleGroupsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_proxy_rule_groups::ListProxyRuleGroupsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_proxy_rule_groups::ListProxyRuleGroupsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_proxy_rule_groups::ListProxyRuleGroupsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_proxy_rule_groups::ListProxyRuleGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1996,6 +2536,173 @@ impl From<crate::operation::update_logging_configuration::UpdateLoggingConfigura
                 Error::ThrottlingException(inner)
             }
             crate::operation::update_logging_configuration::UpdateLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_proxy::UpdateProxyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_proxy::UpdateProxyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_proxy::UpdateProxyError> for Error {
+    fn from(err: crate::operation::update_proxy::UpdateProxyError) -> Self {
+        match err {
+            crate::operation::update_proxy::UpdateProxyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_proxy::UpdateProxyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_proxy::UpdateProxyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_proxy::UpdateProxyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_proxy::UpdateProxyError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::update_proxy::UpdateProxyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_proxy_configuration::UpdateProxyConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_proxy_configuration::UpdateProxyConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_proxy_configuration::UpdateProxyConfigurationError> for Error {
+    fn from(err: crate::operation::update_proxy_configuration::UpdateProxyConfigurationError) -> Self {
+        match err {
+            crate::operation::update_proxy_configuration::UpdateProxyConfigurationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::update_proxy_configuration::UpdateProxyConfigurationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_proxy_configuration::UpdateProxyConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_proxy_configuration::UpdateProxyConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_proxy_configuration::UpdateProxyConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_proxy_rule::UpdateProxyRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_proxy_rule::UpdateProxyRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_proxy_rule::UpdateProxyRuleError> for Error {
+    fn from(err: crate::operation::update_proxy_rule::UpdateProxyRuleError) -> Self {
+        match err {
+            crate::operation::update_proxy_rule::UpdateProxyRuleError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_proxy_rule::UpdateProxyRuleError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_proxy_rule::UpdateProxyRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_proxy_rule::UpdateProxyRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_proxy_rule::UpdateProxyRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_proxy_rule_group_priorities::UpdateProxyRuleGroupPrioritiesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_proxy_rule_group_priorities::UpdateProxyRuleGroupPrioritiesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_proxy_rule_group_priorities::UpdateProxyRuleGroupPrioritiesError> for Error {
+    fn from(err: crate::operation::update_proxy_rule_group_priorities::UpdateProxyRuleGroupPrioritiesError) -> Self {
+        match err {
+            crate::operation::update_proxy_rule_group_priorities::UpdateProxyRuleGroupPrioritiesError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::update_proxy_rule_group_priorities::UpdateProxyRuleGroupPrioritiesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_proxy_rule_group_priorities::UpdateProxyRuleGroupPrioritiesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_proxy_rule_group_priorities::UpdateProxyRuleGroupPrioritiesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_proxy_rule_group_priorities::UpdateProxyRuleGroupPrioritiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_proxy_rule_priorities::UpdateProxyRulePrioritiesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_proxy_rule_priorities::UpdateProxyRulePrioritiesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_proxy_rule_priorities::UpdateProxyRulePrioritiesError> for Error {
+    fn from(err: crate::operation::update_proxy_rule_priorities::UpdateProxyRulePrioritiesError) -> Self {
+        match err {
+            crate::operation::update_proxy_rule_priorities::UpdateProxyRulePrioritiesError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::update_proxy_rule_priorities::UpdateProxyRulePrioritiesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_proxy_rule_priorities::UpdateProxyRulePrioritiesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_proxy_rule_priorities::UpdateProxyRulePrioritiesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_proxy_rule_priorities::UpdateProxyRulePrioritiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

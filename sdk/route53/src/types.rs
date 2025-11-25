@@ -7,6 +7,12 @@ pub use crate::types::_traffic_policy::TrafficPolicy;
 
 pub use crate::types::_hosted_zone::HostedZone;
 
+pub use crate::types::_hosted_zone_features::HostedZoneFeatures;
+
+pub use crate::types::_hosted_zone_failure_reasons::HostedZoneFailureReasons;
+
+pub use crate::types::_accelerated_recovery_status::AcceleratedRecoveryStatus;
+
 pub use crate::types::_linked_service::LinkedService;
 
 pub use crate::types::_hosted_zone_config::HostedZoneConfig;
@@ -119,6 +125,8 @@ pub use crate::types::_cidr_collection_change::CidrCollectionChange;
 
 pub use crate::types::_cidr_collection_change_action::CidrCollectionChangeAction;
 
+mod _accelerated_recovery_status;
+
 mod _account_limit;
 
 mod _account_limit_type;
@@ -182,6 +190,10 @@ mod _health_check_type;
 mod _hosted_zone;
 
 mod _hosted_zone_config;
+
+mod _hosted_zone_failure_reasons;
+
+mod _hosted_zone_features;
 
 mod _hosted_zone_limit;
 

@@ -14,10 +14,12 @@
 /// match policytype {
 ///     PolicyType::AiservicesOptOutPolicy => { /* ... */ },
 ///     PolicyType::BackupPolicy => { /* ... */ },
+///     PolicyType::BedrockPolicy => { /* ... */ },
 ///     PolicyType::ChatbotPolicy => { /* ... */ },
 ///     PolicyType::DeclarativePolicyEc2 => { /* ... */ },
 ///     PolicyType::InspectorPolicy => { /* ... */ },
 ///     PolicyType::ResourceControlPolicy => { /* ... */ },
+///     PolicyType::S3Policy => { /* ... */ },
 ///     PolicyType::SecurityhubPolicy => { /* ... */ },
 ///     PolicyType::ServiceControlPolicy => { /* ... */ },
 ///     PolicyType::TagPolicy => { /* ... */ },
@@ -55,6 +57,8 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     BackupPolicy,
     #[allow(missing_docs)] // documentation missing in model
+    BedrockPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     ChatbotPolicy,
     #[allow(missing_docs)] // documentation missing in model
     DeclarativePolicyEc2,
@@ -62,6 +66,8 @@ pub enum PolicyType {
     InspectorPolicy,
     #[allow(missing_docs)] // documentation missing in model
     ResourceControlPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    S3Policy,
     #[allow(missing_docs)] // documentation missing in model
     SecurityhubPolicy,
     #[allow(missing_docs)] // documentation missing in model
@@ -79,10 +85,12 @@ impl ::std::convert::From<&str> for PolicyType {
         match s {
             "AISERVICES_OPT_OUT_POLICY" => PolicyType::AiservicesOptOutPolicy,
             "BACKUP_POLICY" => PolicyType::BackupPolicy,
+            "BEDROCK_POLICY" => PolicyType::BedrockPolicy,
             "CHATBOT_POLICY" => PolicyType::ChatbotPolicy,
             "DECLARATIVE_POLICY_EC2" => PolicyType::DeclarativePolicyEc2,
             "INSPECTOR_POLICY" => PolicyType::InspectorPolicy,
             "RESOURCE_CONTROL_POLICY" => PolicyType::ResourceControlPolicy,
+            "S3_POLICY" => PolicyType::S3Policy,
             "SECURITYHUB_POLICY" => PolicyType::SecurityhubPolicy,
             "SERVICE_CONTROL_POLICY" => PolicyType::ServiceControlPolicy,
             "TAG_POLICY" => PolicyType::TagPolicy,
@@ -104,10 +112,12 @@ impl PolicyType {
         match self {
             PolicyType::AiservicesOptOutPolicy => "AISERVICES_OPT_OUT_POLICY",
             PolicyType::BackupPolicy => "BACKUP_POLICY",
+            PolicyType::BedrockPolicy => "BEDROCK_POLICY",
             PolicyType::ChatbotPolicy => "CHATBOT_POLICY",
             PolicyType::DeclarativePolicyEc2 => "DECLARATIVE_POLICY_EC2",
             PolicyType::InspectorPolicy => "INSPECTOR_POLICY",
             PolicyType::ResourceControlPolicy => "RESOURCE_CONTROL_POLICY",
+            PolicyType::S3Policy => "S3_POLICY",
             PolicyType::SecurityhubPolicy => "SECURITYHUB_POLICY",
             PolicyType::ServiceControlPolicy => "SERVICE_CONTROL_POLICY",
             PolicyType::TagPolicy => "TAG_POLICY",
@@ -120,10 +130,12 @@ impl PolicyType {
         &[
             "AISERVICES_OPT_OUT_POLICY",
             "BACKUP_POLICY",
+            "BEDROCK_POLICY",
             "CHATBOT_POLICY",
             "DECLARATIVE_POLICY_EC2",
             "INSPECTOR_POLICY",
             "RESOURCE_CONTROL_POLICY",
+            "S3_POLICY",
             "SECURITYHUB_POLICY",
             "SERVICE_CONTROL_POLICY",
             "TAG_POLICY",
@@ -153,10 +165,12 @@ impl ::std::fmt::Display for PolicyType {
         match self {
             PolicyType::AiservicesOptOutPolicy => write!(f, "AISERVICES_OPT_OUT_POLICY"),
             PolicyType::BackupPolicy => write!(f, "BACKUP_POLICY"),
+            PolicyType::BedrockPolicy => write!(f, "BEDROCK_POLICY"),
             PolicyType::ChatbotPolicy => write!(f, "CHATBOT_POLICY"),
             PolicyType::DeclarativePolicyEc2 => write!(f, "DECLARATIVE_POLICY_EC2"),
             PolicyType::InspectorPolicy => write!(f, "INSPECTOR_POLICY"),
             PolicyType::ResourceControlPolicy => write!(f, "RESOURCE_CONTROL_POLICY"),
+            PolicyType::S3Policy => write!(f, "S3_POLICY"),
             PolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             PolicyType::ServiceControlPolicy => write!(f, "SERVICE_CONTROL_POLICY"),
             PolicyType::TagPolicy => write!(f, "TAG_POLICY"),

@@ -13,6 +13,8 @@ pub use crate::types::error::_concurrent_modification::ConcurrentModificationBui
 
 pub use crate::types::error::_no_such_hosted_zone::NoSuchHostedZoneBuilder;
 
+pub use crate::types::error::_limits_exceeded::LimitsExceededBuilder;
+
 pub use crate::types::error::_no_such_health_check::NoSuchHealthCheckBuilder;
 
 pub use crate::types::error::_health_check_version_mismatch::HealthCheckVersionMismatchBuilder;
@@ -92,8 +94,6 @@ pub use crate::types::error::_too_many_traffic_policy_instances::TooManyTrafficP
 pub use crate::types::error::_traffic_policy_already_exists::TrafficPolicyAlreadyExistsBuilder;
 
 pub use crate::types::error::_too_many_traffic_policies::TooManyTrafficPoliciesBuilder;
-
-pub use crate::types::error::_limits_exceeded::LimitsExceededBuilder;
 
 pub use crate::types::error::_hosted_zone_not_found::HostedZoneNotFoundBuilder;
 

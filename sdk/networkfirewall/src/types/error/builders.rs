@@ -11,13 +11,13 @@ pub use crate::types::error::_internal_server_error::InternalServerErrorBuilder;
 
 pub use crate::types::error::_resource_owner_check_exception::ResourceOwnerCheckExceptionBuilder;
 
+pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperationExceptionBuilder;
+
 pub use crate::types::error::_log_destination_permission_exception::LogDestinationPermissionExceptionBuilder;
 
 pub use crate::types::error::_invalid_resource_policy_exception::InvalidResourcePolicyExceptionBuilder;
 
 pub use crate::types::error::_invalid_operation_exception::InvalidOperationExceptionBuilder;
-
-pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperationExceptionBuilder;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
 

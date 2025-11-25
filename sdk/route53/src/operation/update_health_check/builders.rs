@@ -385,19 +385,19 @@ impl UpdateHealthCheckFluentBuilder {
         self.inner.get_search_string()
     }
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
+    /// <p>Otherwise, if you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     pub fn failure_threshold(mut self, input: i32) -> Self {
         self.inner = self.inner.failure_threshold(input);
         self
     }
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
+    /// <p>Otherwise, if you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     pub fn set_failure_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_failure_threshold(input);
         self
     }
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
+    /// <p>Otherwise, if you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     pub fn get_failure_threshold(&self) -> &::std::option::Option<i32> {
         self.inner.get_failure_threshold()
     }

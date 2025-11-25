@@ -2420,6 +2420,36 @@ impl From<crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesError> for Error {
+    fn from(err: crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesError) -> Self {
+        match err {
+            crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesError::LimitsExceeded(inner) => Error::LimitsExceeded(inner),
+            crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
+            crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesError::PriorRequestNotComplete(inner) => {
+                Error::PriorRequestNotComplete(inner)
+            }
+            crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentError, R>>
     for Error
 where

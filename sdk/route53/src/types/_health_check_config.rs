@@ -82,15 +82,18 @@ pub struct HealthCheckConfig {
     /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p>
     /// <p>Route 53 considers case when searching for <code>SearchString</code> in the response body.</p>
     pub search_string: ::std::option::Option<::std::string::String>,
-    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p><important>
+    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p>
+    /// <p><code>RequestInterval</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p><important>
     /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p>
     /// </important>
     /// <p>If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
     pub request_interval: ::std::option::Option<i32>,
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
+    /// <p><code>FailureThreshold</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p>
+    /// <p>Otherwise, if you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     pub failure_threshold: ::std::option::Option<i32>,
-    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p><important>
+    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p>
+    /// <p><code>MeasureLatency</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p><important>
     /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
     /// </important>
     pub measure_latency: ::std::option::Option<bool>,
@@ -234,7 +237,8 @@ impl HealthCheckConfig {
     pub fn search_string(&self) -> ::std::option::Option<&str> {
         self.search_string.as_deref()
     }
-    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p><important>
+    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p>
+    /// <p><code>RequestInterval</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p><important>
     /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p>
     /// </important>
     /// <p>If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
@@ -242,11 +246,13 @@ impl HealthCheckConfig {
         self.request_interval
     }
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
+    /// <p><code>FailureThreshold</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p>
+    /// <p>Otherwise, if you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     pub fn failure_threshold(&self) -> ::std::option::Option<i32> {
         self.failure_threshold
     }
-    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p><important>
+    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p>
+    /// <p><code>MeasureLatency</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p><important>
     /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
     /// </important>
     pub fn measure_latency(&self) -> ::std::option::Option<bool> {
@@ -637,7 +643,8 @@ impl HealthCheckConfigBuilder {
     pub fn get_search_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.search_string
     }
-    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p><important>
+    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p>
+    /// <p><code>RequestInterval</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p><important>
     /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p>
     /// </important>
     /// <p>If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
@@ -645,7 +652,8 @@ impl HealthCheckConfigBuilder {
         self.request_interval = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p><important>
+    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p>
+    /// <p><code>RequestInterval</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p><important>
     /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p>
     /// </important>
     /// <p>If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
@@ -653,7 +661,8 @@ impl HealthCheckConfigBuilder {
         self.request_interval = input;
         self
     }
-    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p><important>
+    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p>
+    /// <p><code>RequestInterval</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p><important>
     /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p>
     /// </important>
     /// <p>If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
@@ -661,37 +670,43 @@ impl HealthCheckConfigBuilder {
         &self.request_interval
     }
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
+    /// <p><code>FailureThreshold</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p>
+    /// <p>Otherwise, if you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     pub fn failure_threshold(mut self, input: i32) -> Self {
         self.failure_threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
+    /// <p><code>FailureThreshold</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p>
+    /// <p>Otherwise, if you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     pub fn set_failure_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failure_threshold = input;
         self
     }
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
+    /// <p><code>FailureThreshold</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p>
+    /// <p>Otherwise, if you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     pub fn get_failure_threshold(&self) -> &::std::option::Option<i32> {
         &self.failure_threshold
     }
-    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p><important>
+    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p>
+    /// <p><code>MeasureLatency</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p><important>
     /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
     /// </important>
     pub fn measure_latency(mut self, input: bool) -> Self {
         self.measure_latency = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p><important>
+    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p>
+    /// <p><code>MeasureLatency</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p><important>
     /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
     /// </important>
     pub fn set_measure_latency(mut self, input: ::std::option::Option<bool>) -> Self {
         self.measure_latency = input;
         self
     }
-    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p><important>
+    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p>
+    /// <p><code>MeasureLatency</code> is not supported when you specify a value for <code>Type</code> of <code>RECOVERY_CONTROL</code>.</p><important>
     /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
     /// </important>
     pub fn get_measure_latency(&self) -> &::std::option::Option<bool> {

@@ -4659,6 +4659,8 @@ pub(crate) mod shape_moving_address_status;
 
 pub(crate) mod shape_nat_gateway_address;
 
+pub(crate) mod shape_nat_gateway_attached_appliance_list;
+
 pub(crate) mod shape_native_application_oidc_options;
 
 pub(crate) mod shape_network_acl_association_list;
@@ -5186,6 +5188,8 @@ pub(crate) mod shape_metric_points;
 pub(crate) mod shape_metric_value_set;
 
 pub(crate) mod shape_monitoring;
+
+pub(crate) mod shape_nat_gateway_attached_appliance;
 
 pub(crate) mod shape_network_acl_association;
 

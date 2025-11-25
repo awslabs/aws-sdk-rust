@@ -71,6 +71,32 @@ pub use crate::types::_port_set::PortSetBuilder;
 
 pub use crate::types::_ip_set::IpSetBuilder;
 
+pub use crate::types::_proxy_rule_priority::ProxyRulePriorityBuilder;
+
+pub use crate::types::_proxy_rule_group_priority_result::ProxyRuleGroupPriorityResultBuilder;
+
+pub use crate::types::_proxy_rule_group_priority::ProxyRuleGroupPriorityBuilder;
+
+pub use crate::types::_proxy_rule_condition::ProxyRuleConditionBuilder;
+
+pub use crate::types::_proxy_rule::ProxyRuleBuilder;
+
+pub use crate::types::_proxy_configuration::ProxyConfigurationBuilder;
+
+pub use crate::types::_proxy_config_default_rule_phase_actions_request::ProxyConfigDefaultRulePhaseActionsRequestBuilder;
+
+pub use crate::types::_proxy_config_rule_group::ProxyConfigRuleGroupBuilder;
+
+pub use crate::types::_proxy::ProxyBuilder;
+
+pub use crate::types::_tls_intercept_properties::TlsInterceptPropertiesBuilder;
+
+pub use crate::types::_listener_property::ListenerPropertyBuilder;
+
+pub use crate::types::_tls_intercept_properties_request::TlsInterceptPropertiesRequestBuilder;
+
+pub use crate::types::_listener_property_request::ListenerPropertyRequestBuilder;
+
 pub use crate::types::_logging_configuration::LoggingConfigurationBuilder;
 
 pub use crate::types::_log_destination_config::LogDestinationConfigBuilder;
@@ -98,6 +124,12 @@ pub use crate::types::_vpc_endpoint_association_metadata::VpcEndpointAssociation
 pub use crate::types::_tls_inspection_configuration_metadata::TlsInspectionConfigurationMetadataBuilder;
 
 pub use crate::types::_rule_group_metadata::RuleGroupMetadataBuilder;
+
+pub use crate::types::_proxy_rule_group_metadata::ProxyRuleGroupMetadataBuilder;
+
+pub use crate::types::_proxy_configuration_metadata::ProxyConfigurationMetadataBuilder;
+
+pub use crate::types::_proxy_metadata::ProxyMetadataBuilder;
 
 pub use crate::types::_flow_operation_metadata::FlowOperationMetadataBuilder;
 
@@ -131,6 +163,12 @@ pub use crate::types::_summary::SummaryBuilder;
 
 pub use crate::types::_rule_summary::RuleSummaryBuilder;
 
+pub use crate::types::_proxy_rule_group::ProxyRuleGroupBuilder;
+
+pub use crate::types::_proxy_rules_by_request_phase::ProxyRulesByRequestPhaseBuilder;
+
+pub use crate::types::_describe_proxy_resource::DescribeProxyResourceBuilder;
+
 pub use crate::types::_flow_operation::FlowOperationBuilder;
 
 pub use crate::types::_availability_zone_metadata::AvailabilityZoneMetadataBuilder;
@@ -150,3 +188,9 @@ pub use crate::types::_sync_state::SyncStateBuilder;
 pub use crate::types::_per_object_status::PerObjectStatusBuilder;
 
 pub use crate::types::_firewall::FirewallBuilder;
+
+pub use crate::types::_create_proxy_rules_by_request_phase::CreateProxyRulesByRequestPhaseBuilder;
+
+pub use crate::types::_create_proxy_rule::CreateProxyRuleBuilder;
+
+pub use crate::types::_proxy_rule_group_attachment::ProxyRuleGroupAttachmentBuilder;

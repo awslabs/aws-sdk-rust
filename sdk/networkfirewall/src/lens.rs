@@ -59,6 +59,36 @@ pub(crate) fn reflens_list_flow_operations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_proxies_output_output_next_token(
+    input: &crate::operation::list_proxies::ListProxiesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_proxy_configurations_output_output_next_token(
+    input: &crate::operation::list_proxy_configurations::ListProxyConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_proxy_rule_groups_output_output_next_token(
+    input: &crate::operation::list_proxy_rule_groups::ListProxyRuleGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_rule_groups_output_output_next_token(
     input: &crate::operation::list_rule_groups::ListRuleGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -138,6 +168,27 @@ pub(crate) fn lens_list_flow_operations_output_output_flow_operations(
     input: crate::operation::list_flow_operations::ListFlowOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowOperationMetadata>> {
     let input = input.flow_operations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_proxies_output_output_proxies(
+    input: crate::operation::list_proxies::ListProxiesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProxyMetadata>> {
+    let input = input.proxies?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_proxy_configurations_output_output_proxy_configurations(
+    input: crate::operation::list_proxy_configurations::ListProxyConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProxyConfigurationMetadata>> {
+    let input = input.proxy_configurations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_proxy_rule_groups_output_output_proxy_rule_groups(
+    input: crate::operation::list_proxy_rule_groups::ListProxyRuleGroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProxyRuleGroupMetadata>> {
+    let input = input.proxy_rule_groups?;
     ::std::option::Option::Some(input)
 }
 

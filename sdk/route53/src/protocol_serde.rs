@@ -159,6 +159,8 @@ pub(crate) mod shape_update_health_check;
 
 pub(crate) mod shape_update_hosted_zone_comment;
 
+pub(crate) mod shape_update_hosted_zone_features;
+
 pub(crate) mod shape_update_traffic_policy_comment;
 
 pub(crate) mod shape_update_traffic_policy_instance;
@@ -353,6 +355,8 @@ pub(crate) mod shape_update_health_check_input;
 
 pub(crate) mod shape_update_hosted_zone_comment_input;
 
+pub(crate) mod shape_update_hosted_zone_features_input;
+
 pub(crate) mod shape_update_traffic_policy_comment_input;
 
 pub(crate) mod shape_update_traffic_policy_instance_input;
@@ -457,6 +461,8 @@ pub(crate) mod shape_delegation_set_name_servers;
 
 pub(crate) mod shape_health_check_observation;
 
+pub(crate) mod shape_hosted_zone_features;
+
 pub(crate) mod shape_hosted_zone_summary;
 
 pub(crate) mod shape_linked_service;
@@ -482,6 +488,8 @@ pub(crate) mod shape_geo_location;
 pub(crate) mod shape_geo_proximity_location;
 
 pub(crate) mod shape_health_check_region_list;
+
+pub(crate) mod shape_hosted_zone_failure_reasons;
 
 pub(crate) mod shape_hosted_zone_owner;
 

@@ -5,6 +5,10 @@ pub use crate::types::_traffic_policy::TrafficPolicyBuilder;
 
 pub use crate::types::_hosted_zone::HostedZoneBuilder;
 
+pub use crate::types::_hosted_zone_features::HostedZoneFeaturesBuilder;
+
+pub use crate::types::_hosted_zone_failure_reasons::HostedZoneFailureReasonsBuilder;
+
 pub use crate::types::_linked_service::LinkedServiceBuilder;
 
 pub use crate::types::_hosted_zone_config::HostedZoneConfigBuilder;

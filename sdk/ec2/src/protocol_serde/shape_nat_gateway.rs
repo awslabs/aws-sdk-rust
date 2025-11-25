@@ -200,8 +200,18 @@ pub fn de_nat_gateway(
                 builder = builder.set_auto_provision_zones(var_15);
             }
             ,
-            s if s.matches("routeTableId") /* RouteTableId com.amazonaws.ec2#NatGateway$RouteTableId */ =>  {
+            s if s.matches("attachedApplianceSet") /* AttachedAppliances com.amazonaws.ec2#NatGateway$AttachedAppliances */ =>  {
                 let var_16 =
+                    Some(
+                        crate::protocol_serde::shape_nat_gateway_attached_appliance_list::de_nat_gateway_attached_appliance_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_attached_appliances(var_16);
+            }
+            ,
+            s if s.matches("routeTableId") /* RouteTableId com.amazonaws.ec2#NatGateway$RouteTableId */ =>  {
+                let var_17 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -210,7 +220,7 @@ pub fn de_nat_gateway(
                         ?
                     )
                 ;
-                builder = builder.set_route_table_id(var_16);
+                builder = builder.set_route_table_id(var_17);
             }
             ,
             _ => {}

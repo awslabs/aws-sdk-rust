@@ -17,6 +17,8 @@ pub struct HostedZone {
     pub resource_record_set_count: ::std::option::Option<i64>,
     /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53.</p>
     pub linked_service: ::std::option::Option<crate::types::LinkedService>,
+    /// <p>The features configuration for the hosted zone, including accelerated recovery settings and status information.</p>
+    pub features: ::std::option::Option<crate::types::HostedZoneFeatures>,
 }
 impl HostedZone {
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
@@ -47,6 +49,10 @@ impl HostedZone {
     pub fn linked_service(&self) -> ::std::option::Option<&crate::types::LinkedService> {
         self.linked_service.as_ref()
     }
+    /// <p>The features configuration for the hosted zone, including accelerated recovery settings and status information.</p>
+    pub fn features(&self) -> ::std::option::Option<&crate::types::HostedZoneFeatures> {
+        self.features.as_ref()
+    }
 }
 impl HostedZone {
     /// Creates a new builder-style object to manufacture [`HostedZone`](crate::types::HostedZone).
@@ -65,6 +71,7 @@ pub struct HostedZoneBuilder {
     pub(crate) config: ::std::option::Option<crate::types::HostedZoneConfig>,
     pub(crate) resource_record_set_count: ::std::option::Option<i64>,
     pub(crate) linked_service: ::std::option::Option<crate::types::LinkedService>,
+    pub(crate) features: ::std::option::Option<crate::types::HostedZoneFeatures>,
 }
 impl HostedZoneBuilder {
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
@@ -157,6 +164,20 @@ impl HostedZoneBuilder {
     pub fn get_linked_service(&self) -> &::std::option::Option<crate::types::LinkedService> {
         &self.linked_service
     }
+    /// <p>The features configuration for the hosted zone, including accelerated recovery settings and status information.</p>
+    pub fn features(mut self, input: crate::types::HostedZoneFeatures) -> Self {
+        self.features = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The features configuration for the hosted zone, including accelerated recovery settings and status information.</p>
+    pub fn set_features(mut self, input: ::std::option::Option<crate::types::HostedZoneFeatures>) -> Self {
+        self.features = input;
+        self
+    }
+    /// <p>The features configuration for the hosted zone, including accelerated recovery settings and status information.</p>
+    pub fn get_features(&self) -> &::std::option::Option<crate::types::HostedZoneFeatures> {
+        &self.features
+    }
     /// Consumes the builder and constructs a [`HostedZone`](crate::types::HostedZone).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::HostedZoneBuilder::id)
@@ -185,6 +206,7 @@ impl HostedZoneBuilder {
             config: self.config,
             resource_record_set_count: self.resource_record_set_count,
             linked_service: self.linked_service,
+            features: self.features,
         })
     }
 }

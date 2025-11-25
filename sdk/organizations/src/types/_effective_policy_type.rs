@@ -14,9 +14,11 @@
 /// match effectivepolicytype {
 ///     EffectivePolicyType::AiservicesOptOutPolicy => { /* ... */ },
 ///     EffectivePolicyType::BackupPolicy => { /* ... */ },
+///     EffectivePolicyType::BedrockPolicy => { /* ... */ },
 ///     EffectivePolicyType::ChatbotPolicy => { /* ... */ },
 ///     EffectivePolicyType::DeclarativePolicyEc2 => { /* ... */ },
 ///     EffectivePolicyType::InspectorPolicy => { /* ... */ },
+///     EffectivePolicyType::S3Policy => { /* ... */ },
 ///     EffectivePolicyType::SecurityhubPolicy => { /* ... */ },
 ///     EffectivePolicyType::TagPolicy => { /* ... */ },
 ///     EffectivePolicyType::UpgradeRolloutPolicy => { /* ... */ },
@@ -53,11 +55,15 @@ pub enum EffectivePolicyType {
     #[allow(missing_docs)] // documentation missing in model
     BackupPolicy,
     #[allow(missing_docs)] // documentation missing in model
+    BedrockPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     ChatbotPolicy,
     #[allow(missing_docs)] // documentation missing in model
     DeclarativePolicyEc2,
     #[allow(missing_docs)] // documentation missing in model
     InspectorPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    S3Policy,
     #[allow(missing_docs)] // documentation missing in model
     SecurityhubPolicy,
     #[allow(missing_docs)] // documentation missing in model
@@ -73,9 +79,11 @@ impl ::std::convert::From<&str> for EffectivePolicyType {
         match s {
             "AISERVICES_OPT_OUT_POLICY" => EffectivePolicyType::AiservicesOptOutPolicy,
             "BACKUP_POLICY" => EffectivePolicyType::BackupPolicy,
+            "BEDROCK_POLICY" => EffectivePolicyType::BedrockPolicy,
             "CHATBOT_POLICY" => EffectivePolicyType::ChatbotPolicy,
             "DECLARATIVE_POLICY_EC2" => EffectivePolicyType::DeclarativePolicyEc2,
             "INSPECTOR_POLICY" => EffectivePolicyType::InspectorPolicy,
+            "S3_POLICY" => EffectivePolicyType::S3Policy,
             "SECURITYHUB_POLICY" => EffectivePolicyType::SecurityhubPolicy,
             "TAG_POLICY" => EffectivePolicyType::TagPolicy,
             "UPGRADE_ROLLOUT_POLICY" => EffectivePolicyType::UpgradeRolloutPolicy,
@@ -96,9 +104,11 @@ impl EffectivePolicyType {
         match self {
             EffectivePolicyType::AiservicesOptOutPolicy => "AISERVICES_OPT_OUT_POLICY",
             EffectivePolicyType::BackupPolicy => "BACKUP_POLICY",
+            EffectivePolicyType::BedrockPolicy => "BEDROCK_POLICY",
             EffectivePolicyType::ChatbotPolicy => "CHATBOT_POLICY",
             EffectivePolicyType::DeclarativePolicyEc2 => "DECLARATIVE_POLICY_EC2",
             EffectivePolicyType::InspectorPolicy => "INSPECTOR_POLICY",
+            EffectivePolicyType::S3Policy => "S3_POLICY",
             EffectivePolicyType::SecurityhubPolicy => "SECURITYHUB_POLICY",
             EffectivePolicyType::TagPolicy => "TAG_POLICY",
             EffectivePolicyType::UpgradeRolloutPolicy => "UPGRADE_ROLLOUT_POLICY",
@@ -110,9 +120,11 @@ impl EffectivePolicyType {
         &[
             "AISERVICES_OPT_OUT_POLICY",
             "BACKUP_POLICY",
+            "BEDROCK_POLICY",
             "CHATBOT_POLICY",
             "DECLARATIVE_POLICY_EC2",
             "INSPECTOR_POLICY",
+            "S3_POLICY",
             "SECURITYHUB_POLICY",
             "TAG_POLICY",
             "UPGRADE_ROLLOUT_POLICY",
@@ -141,9 +153,11 @@ impl ::std::fmt::Display for EffectivePolicyType {
         match self {
             EffectivePolicyType::AiservicesOptOutPolicy => write!(f, "AISERVICES_OPT_OUT_POLICY"),
             EffectivePolicyType::BackupPolicy => write!(f, "BACKUP_POLICY"),
+            EffectivePolicyType::BedrockPolicy => write!(f, "BEDROCK_POLICY"),
             EffectivePolicyType::ChatbotPolicy => write!(f, "CHATBOT_POLICY"),
             EffectivePolicyType::DeclarativePolicyEc2 => write!(f, "DECLARATIVE_POLICY_EC2"),
             EffectivePolicyType::InspectorPolicy => write!(f, "INSPECTOR_POLICY"),
+            EffectivePolicyType::S3Policy => write!(f, "S3_POLICY"),
             EffectivePolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             EffectivePolicyType::TagPolicy => write!(f, "TAG_POLICY"),
             EffectivePolicyType::UpgradeRolloutPolicy => write!(f, "UPGRADE_ROLLOUT_POLICY"),

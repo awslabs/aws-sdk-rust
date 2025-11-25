@@ -205,6 +205,9 @@ pub mod update_health_check;
 /// Types for the `UpdateHostedZoneComment` operation.
 pub mod update_hosted_zone_comment;
 
+/// Types for the `UpdateHostedZoneFeatures` operation.
+pub mod update_hosted_zone_features;
+
 /// Types for the `UpdateTrafficPolicyComment` operation.
 pub mod update_traffic_policy_comment;
 

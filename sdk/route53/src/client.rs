@@ -328,6 +328,8 @@ mod update_health_check;
 
 mod update_hosted_zone_comment;
 
+mod update_hosted_zone_features;
+
 mod update_traffic_policy_comment;
 
 mod update_traffic_policy_instance;

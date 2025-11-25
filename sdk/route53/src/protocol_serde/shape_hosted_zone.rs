@@ -81,6 +81,16 @@ pub fn de_hosted_zone(
                 builder = builder.set_linked_service(var_6);
             }
             ,
+            s if s.matches("Features") /* Features com.amazonaws.route53#HostedZone$Features */ =>  {
+                let var_7 =
+                    Some(
+                        crate::protocol_serde::shape_hosted_zone_features::de_hosted_zone_features(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_features(var_7);
+            }
+            ,
             _ => {}
         }
     }

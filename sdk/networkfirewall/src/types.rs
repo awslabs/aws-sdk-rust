@@ -97,6 +97,44 @@ pub use crate::types::_port_set::PortSet;
 
 pub use crate::types::_ip_set::IpSet;
 
+pub use crate::types::_proxy_rule_priority::ProxyRulePriority;
+
+pub use crate::types::_rule_group_request_phase::RuleGroupRequestPhase;
+
+pub use crate::types::_proxy_rule_group_priority_result::ProxyRuleGroupPriorityResult;
+
+pub use crate::types::_proxy_rule_group_priority::ProxyRuleGroupPriority;
+
+pub use crate::types::_proxy_rule_condition::ProxyRuleCondition;
+
+pub use crate::types::_proxy_rule::ProxyRule;
+
+pub use crate::types::_proxy_rule_phase_action::ProxyRulePhaseAction;
+
+pub use crate::types::_proxy_configuration::ProxyConfiguration;
+
+pub use crate::types::_proxy_config_default_rule_phase_actions_request::ProxyConfigDefaultRulePhaseActionsRequest;
+
+pub use crate::types::_proxy_config_rule_group::ProxyConfigRuleGroup;
+
+pub use crate::types::_proxy::Proxy;
+
+pub use crate::types::_tls_intercept_properties::TlsInterceptProperties;
+
+pub use crate::types::_tls_intercept_mode::TlsInterceptMode;
+
+pub use crate::types::_listener_property::ListenerProperty;
+
+pub use crate::types::_listener_property_type::ListenerPropertyType;
+
+pub use crate::types::_proxy_modify_state::ProxyModifyState;
+
+pub use crate::types::_proxy_state::ProxyState;
+
+pub use crate::types::_tls_intercept_properties_request::TlsInterceptPropertiesRequest;
+
+pub use crate::types::_listener_property_request::ListenerPropertyRequest;
+
 pub use crate::types::_logging_configuration::LoggingConfiguration;
 
 pub use crate::types::_log_destination_config::LogDestinationConfig;
@@ -145,6 +183,12 @@ pub use crate::types::_resource_managed_type::ResourceManagedType;
 
 pub use crate::types::_resource_managed_status::ResourceManagedStatus;
 
+pub use crate::types::_proxy_rule_group_metadata::ProxyRuleGroupMetadata;
+
+pub use crate::types::_proxy_configuration_metadata::ProxyConfigurationMetadata;
+
+pub use crate::types::_proxy_metadata::ProxyMetadata;
+
 pub use crate::types::_flow_operation_metadata::FlowOperationMetadata;
 
 pub use crate::types::_flow_operation_type::FlowOperationType;
@@ -185,6 +229,12 @@ pub use crate::types::_summary::Summary;
 
 pub use crate::types::_rule_summary::RuleSummary;
 
+pub use crate::types::_proxy_rule_group::ProxyRuleGroup;
+
+pub use crate::types::_proxy_rules_by_request_phase::ProxyRulesByRequestPhase;
+
+pub use crate::types::_describe_proxy_resource::DescribeProxyResource;
+
 pub use crate::types::_flow_operation::FlowOperation;
 
 pub use crate::types::_availability_zone_metadata::AvailabilityZoneMetadata;
@@ -208,6 +258,12 @@ pub use crate::types::_per_object_sync_status::PerObjectSyncStatus;
 pub use crate::types::_configuration_sync_state::ConfigurationSyncState;
 
 pub use crate::types::_firewall::Firewall;
+
+pub use crate::types::_create_proxy_rules_by_request_phase::CreateProxyRulesByRequestPhase;
+
+pub use crate::types::_create_proxy_rule::CreateProxyRule;
+
+pub use crate::types::_proxy_rule_group_attachment::ProxyRuleGroupAttachment;
 
 mod _action_definition;
 
@@ -237,7 +293,13 @@ mod _cidr_summary;
 
 mod _configuration_sync_state;
 
+mod _create_proxy_rule;
+
+mod _create_proxy_rules_by_request_phase;
+
 mod _custom_action;
+
+mod _describe_proxy_resource;
 
 mod _dimension;
 
@@ -291,6 +353,12 @@ mod _ip_set_metadata;
 
 mod _ip_set_reference;
 
+mod _listener_property;
+
+mod _listener_property_request;
+
+mod _listener_property_type;
+
 mod _log_destination_config;
 
 mod _log_destination_type;
@@ -313,6 +381,42 @@ mod _port_range;
 
 mod _port_set;
 
+mod _proxy;
+
+mod _proxy_config_default_rule_phase_actions_request;
+
+mod _proxy_config_rule_group;
+
+mod _proxy_configuration;
+
+mod _proxy_configuration_metadata;
+
+mod _proxy_metadata;
+
+mod _proxy_modify_state;
+
+mod _proxy_rule;
+
+mod _proxy_rule_condition;
+
+mod _proxy_rule_group;
+
+mod _proxy_rule_group_attachment;
+
+mod _proxy_rule_group_metadata;
+
+mod _proxy_rule_group_priority;
+
+mod _proxy_rule_group_priority_result;
+
+mod _proxy_rule_phase_action;
+
+mod _proxy_rule_priority;
+
+mod _proxy_rules_by_request_phase;
+
+mod _proxy_state;
+
 mod _publish_metric_action;
 
 mod _reference_sets;
@@ -330,6 +434,8 @@ mod _rule_definition;
 mod _rule_group;
 
 mod _rule_group_metadata;
+
+mod _rule_group_request_phase;
 
 mod _rule_group_response;
 
@@ -406,6 +512,12 @@ mod _tls_inspection_configuration;
 mod _tls_inspection_configuration_metadata;
 
 mod _tls_inspection_configuration_response;
+
+mod _tls_intercept_mode;
+
+mod _tls_intercept_properties;
+
+mod _tls_intercept_properties_request;
 
 mod _transit_gateway_attachment_status;
 

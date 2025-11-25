@@ -1255,6 +1255,8 @@ pub use crate::types::_network_acl_association::NetworkAclAssociationBuilder;
 
 pub use crate::types::_nat_gateway::NatGatewayBuilder;
 
+pub use crate::types::_nat_gateway_attached_appliance::NatGatewayAttachedApplianceBuilder;
+
 pub use crate::types::_provisioned_bandwidth::ProvisionedBandwidthBuilder;
 
 pub use crate::types::_moving_address_status::MovingAddressStatusBuilder;

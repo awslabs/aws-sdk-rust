@@ -21,6 +21,10 @@ pub struct DescribeEffectivePolicyInput {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_upgrade_rollout.html">UPGRADE_ROLLOUT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a></p></li>
     /// </ul>
     pub policy_type: ::std::option::Option<crate::types::EffectivePolicyType>,
     /// <p>When you're signed in as the management account, specify the ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.</p>
@@ -45,6 +49,10 @@ impl DescribeEffectivePolicyInput {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_upgrade_rollout.html">UPGRADE_ROLLOUT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a></p></li>
     /// </ul>
     pub fn policy_type(&self) -> ::std::option::Option<&crate::types::EffectivePolicyType> {
         self.policy_type.as_ref()
@@ -87,6 +95,10 @@ impl DescribeEffectivePolicyInputBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_upgrade_rollout.html">UPGRADE_ROLLOUT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a></p></li>
     /// </ul>
     /// This field is required.
     pub fn policy_type(mut self, input: crate::types::EffectivePolicyType) -> Self {
@@ -111,6 +123,10 @@ impl DescribeEffectivePolicyInputBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_upgrade_rollout.html">UPGRADE_ROLLOUT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a></p></li>
     /// </ul>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::EffectivePolicyType>) -> Self {
         self.policy_type = input;
@@ -134,6 +150,10 @@ impl DescribeEffectivePolicyInputBuilder {
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_upgrade_rollout.html">UPGRADE_ROLLOUT_POLICY</a></p></li>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a></p></li>
     /// </ul>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::EffectivePolicyType> {
         &self.policy_type

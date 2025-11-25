@@ -11,13 +11,13 @@ pub use crate::types::error::_internal_server_error::InternalServerError;
 
 pub use crate::types::error::_resource_owner_check_exception::ResourceOwnerCheckException;
 
+pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperationException;
+
 pub use crate::types::error::_log_destination_permission_exception::LogDestinationPermissionException;
 
 pub use crate::types::error::_invalid_resource_policy_exception::InvalidResourcePolicyException;
 
 pub use crate::types::error::_invalid_operation_exception::InvalidOperationException;
-
-pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperationException;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 

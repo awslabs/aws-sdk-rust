@@ -65,6 +65,8 @@ pub struct NatGateway {
     /// <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub auto_provision_zones: ::std::option::Option<crate::types::AutoProvisionZonesState>,
+    /// <p>The proxy appliances attached to the NAT Gateway for filtering and inspecting traffic to prevent data exfiltration.</p>
+    pub attached_appliances: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachedAppliance>>,
     /// <p>For regional NAT gateways only, this is the ID of the NAT gateway.</p>
     pub route_table_id: ::std::option::Option<::std::string::String>,
 }
@@ -164,6 +166,12 @@ impl NatGateway {
     pub fn auto_provision_zones(&self) -> ::std::option::Option<&crate::types::AutoProvisionZonesState> {
         self.auto_provision_zones.as_ref()
     }
+    /// <p>The proxy appliances attached to the NAT Gateway for filtering and inspecting traffic to prevent data exfiltration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_appliances.is_none()`.
+    pub fn attached_appliances(&self) -> &[crate::types::NatGatewayAttachedAppliance] {
+        self.attached_appliances.as_deref().unwrap_or_default()
+    }
     /// <p>For regional NAT gateways only, this is the ID of the NAT gateway.</p>
     pub fn route_table_id(&self) -> ::std::option::Option<&str> {
         self.route_table_id.as_deref()
@@ -195,6 +203,7 @@ pub struct NatGatewayBuilder {
     pub(crate) availability_mode: ::std::option::Option<crate::types::AvailabilityMode>,
     pub(crate) auto_scaling_ips: ::std::option::Option<crate::types::AutoScalingIpsState>,
     pub(crate) auto_provision_zones: ::std::option::Option<crate::types::AutoProvisionZonesState>,
+    pub(crate) attached_appliances: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachedAppliance>>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
 }
 impl NatGatewayBuilder {
@@ -513,6 +522,26 @@ impl NatGatewayBuilder {
     pub fn get_auto_provision_zones(&self) -> &::std::option::Option<crate::types::AutoProvisionZonesState> {
         &self.auto_provision_zones
     }
+    /// Appends an item to `attached_appliances`.
+    ///
+    /// To override the contents of this collection use [`set_attached_appliances`](Self::set_attached_appliances).
+    ///
+    /// <p>The proxy appliances attached to the NAT Gateway for filtering and inspecting traffic to prevent data exfiltration.</p>
+    pub fn attached_appliances(mut self, input: crate::types::NatGatewayAttachedAppliance) -> Self {
+        let mut v = self.attached_appliances.unwrap_or_default();
+        v.push(input);
+        self.attached_appliances = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The proxy appliances attached to the NAT Gateway for filtering and inspecting traffic to prevent data exfiltration.</p>
+    pub fn set_attached_appliances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachedAppliance>>) -> Self {
+        self.attached_appliances = input;
+        self
+    }
+    /// <p>The proxy appliances attached to the NAT Gateway for filtering and inspecting traffic to prevent data exfiltration.</p>
+    pub fn get_attached_appliances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachedAppliance>> {
+        &self.attached_appliances
+    }
     /// <p>For regional NAT gateways only, this is the ID of the NAT gateway.</p>
     pub fn route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_table_id = ::std::option::Option::Some(input.into());
@@ -545,6 +574,7 @@ impl NatGatewayBuilder {
             availability_mode: self.availability_mode,
             auto_scaling_ips: self.auto_scaling_ips,
             auto_provision_zones: self.auto_provision_zones,
+            attached_appliances: self.attached_appliances,
             route_table_id: self.route_table_id,
         }
     }

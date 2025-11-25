@@ -144,9 +144,19 @@ mod associate_firewall_policy;
 
 mod associate_subnets;
 
+mod attach_rule_groups_to_proxy_configuration;
+
 mod create_firewall;
 
 mod create_firewall_policy;
+
+mod create_proxy;
+
+mod create_proxy_configuration;
+
+mod create_proxy_rule_group;
+
+mod create_proxy_rules;
 
 mod create_rule_group;
 
@@ -187,6 +197,14 @@ mod delete_firewall_policy;
 
 mod delete_network_firewall_transit_gateway_attachment;
 
+mod delete_proxy;
+
+mod delete_proxy_configuration;
+
+mod delete_proxy_rule_group;
+
+mod delete_proxy_rules;
+
 mod delete_resource_policy;
 
 mod delete_rule_group;
@@ -205,6 +223,14 @@ mod describe_flow_operation;
 
 mod describe_logging_configuration;
 
+mod describe_proxy;
+
+mod describe_proxy_configuration;
+
+mod describe_proxy_rule;
+
+mod describe_proxy_rule_group;
+
 mod describe_resource_policy;
 
 mod describe_rule_group;
@@ -216,6 +242,8 @@ mod describe_rule_group_summary;
 mod describe_tls_inspection_configuration;
 
 mod describe_vpc_endpoint_association;
+
+mod detach_rule_groups_from_proxy_configuration;
 
 mod disassociate_availability_zones;
 
@@ -232,6 +260,12 @@ mod list_firewalls;
 mod list_flow_operation_results;
 
 mod list_flow_operations;
+
+mod list_proxies;
+
+mod list_proxy_configurations;
+
+mod list_proxy_rule_groups;
 
 mod list_rule_groups;
 
@@ -270,6 +304,16 @@ mod update_firewall_policy;
 mod update_firewall_policy_change_protection;
 
 mod update_logging_configuration;
+
+mod update_proxy;
+
+mod update_proxy_configuration;
+
+mod update_proxy_rule;
+
+mod update_proxy_rule_group_priorities;
+
+mod update_proxy_rule_priorities;
 
 mod update_rule_group;
 
