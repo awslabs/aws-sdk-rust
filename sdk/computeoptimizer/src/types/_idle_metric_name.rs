@@ -12,6 +12,7 @@
 /// ```text
 /// # let idlemetricname = unimplemented!();
 /// match idlemetricname {
+///     IdleMetricName::ActiveConnectionCount => { /* ... */ },
 ///     IdleMetricName::Cpu => { /* ... */ },
 ///     IdleMetricName::DatabaseConnections => { /* ... */ },
 ///     IdleMetricName::EbsVolumeReadIops => { /* ... */ },
@@ -19,6 +20,8 @@
 ///     IdleMetricName::Memory => { /* ... */ },
 ///     IdleMetricName::NetworkInBytesPerSecond => { /* ... */ },
 ///     IdleMetricName::NetworkOutBytesPerSecond => { /* ... */ },
+///     IdleMetricName::PacketsInFromDestination => { /* ... */ },
+///     IdleMetricName::PacketsInFromSource => { /* ... */ },
 ///     IdleMetricName::VolumeReadOpsPerSecond => { /* ... */ },
 ///     IdleMetricName::VolumeWriteOpsPerSecond => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -50,6 +53,8 @@
 )]
 pub enum IdleMetricName {
     #[allow(missing_docs)] // documentation missing in model
+    ActiveConnectionCount,
+    #[allow(missing_docs)] // documentation missing in model
     Cpu,
     #[allow(missing_docs)] // documentation missing in model
     DatabaseConnections,
@@ -64,6 +69,10 @@ pub enum IdleMetricName {
     #[allow(missing_docs)] // documentation missing in model
     NetworkOutBytesPerSecond,
     #[allow(missing_docs)] // documentation missing in model
+    PacketsInFromDestination,
+    #[allow(missing_docs)] // documentation missing in model
+    PacketsInFromSource,
+    #[allow(missing_docs)] // documentation missing in model
     VolumeReadOpsPerSecond,
     #[allow(missing_docs)] // documentation missing in model
     VolumeWriteOpsPerSecond,
@@ -74,6 +83,7 @@ pub enum IdleMetricName {
 impl ::std::convert::From<&str> for IdleMetricName {
     fn from(s: &str) -> Self {
         match s {
+            "ActiveConnectionCount" => IdleMetricName::ActiveConnectionCount,
             "CPU" => IdleMetricName::Cpu,
             "DatabaseConnections" => IdleMetricName::DatabaseConnections,
             "EBSVolumeReadIOPS" => IdleMetricName::EbsVolumeReadIops,
@@ -81,6 +91,8 @@ impl ::std::convert::From<&str> for IdleMetricName {
             "Memory" => IdleMetricName::Memory,
             "NetworkInBytesPerSecond" => IdleMetricName::NetworkInBytesPerSecond,
             "NetworkOutBytesPerSecond" => IdleMetricName::NetworkOutBytesPerSecond,
+            "PacketsInFromDestination" => IdleMetricName::PacketsInFromDestination,
+            "PacketsInFromSource" => IdleMetricName::PacketsInFromSource,
             "VolumeReadOpsPerSecond" => IdleMetricName::VolumeReadOpsPerSecond,
             "VolumeWriteOpsPerSecond" => IdleMetricName::VolumeWriteOpsPerSecond,
             other => IdleMetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -98,6 +110,7 @@ impl IdleMetricName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            IdleMetricName::ActiveConnectionCount => "ActiveConnectionCount",
             IdleMetricName::Cpu => "CPU",
             IdleMetricName::DatabaseConnections => "DatabaseConnections",
             IdleMetricName::EbsVolumeReadIops => "EBSVolumeReadIOPS",
@@ -105,6 +118,8 @@ impl IdleMetricName {
             IdleMetricName::Memory => "Memory",
             IdleMetricName::NetworkInBytesPerSecond => "NetworkInBytesPerSecond",
             IdleMetricName::NetworkOutBytesPerSecond => "NetworkOutBytesPerSecond",
+            IdleMetricName::PacketsInFromDestination => "PacketsInFromDestination",
+            IdleMetricName::PacketsInFromSource => "PacketsInFromSource",
             IdleMetricName::VolumeReadOpsPerSecond => "VolumeReadOpsPerSecond",
             IdleMetricName::VolumeWriteOpsPerSecond => "VolumeWriteOpsPerSecond",
             IdleMetricName::Unknown(value) => value.as_str(),
@@ -113,6 +128,7 @@ impl IdleMetricName {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ActiveConnectionCount",
             "CPU",
             "DatabaseConnections",
             "EBSVolumeReadIOPS",
@@ -120,6 +136,8 @@ impl IdleMetricName {
             "Memory",
             "NetworkInBytesPerSecond",
             "NetworkOutBytesPerSecond",
+            "PacketsInFromDestination",
+            "PacketsInFromSource",
             "VolumeReadOpsPerSecond",
             "VolumeWriteOpsPerSecond",
         ]
@@ -145,6 +163,7 @@ impl IdleMetricName {
 impl ::std::fmt::Display for IdleMetricName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            IdleMetricName::ActiveConnectionCount => write!(f, "ActiveConnectionCount"),
             IdleMetricName::Cpu => write!(f, "CPU"),
             IdleMetricName::DatabaseConnections => write!(f, "DatabaseConnections"),
             IdleMetricName::EbsVolumeReadIops => write!(f, "EBSVolumeReadIOPS"),
@@ -152,6 +171,8 @@ impl ::std::fmt::Display for IdleMetricName {
             IdleMetricName::Memory => write!(f, "Memory"),
             IdleMetricName::NetworkInBytesPerSecond => write!(f, "NetworkInBytesPerSecond"),
             IdleMetricName::NetworkOutBytesPerSecond => write!(f, "NetworkOutBytesPerSecond"),
+            IdleMetricName::PacketsInFromDestination => write!(f, "PacketsInFromDestination"),
+            IdleMetricName::PacketsInFromSource => write!(f, "PacketsInFromSource"),
             IdleMetricName::VolumeReadOpsPerSecond => write!(f, "VolumeReadOpsPerSecond"),
             IdleMetricName::VolumeWriteOpsPerSecond => write!(f, "VolumeWriteOpsPerSecond"),
             IdleMetricName::Unknown(value) => write!(f, "{value}"),

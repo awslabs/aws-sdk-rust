@@ -24,6 +24,7 @@
 ///     ResourceType::ElastiCacheReservedInstances => { /* ... */ },
 ///     ResourceType::LambdaFunction => { /* ... */ },
 ///     ResourceType::MemoryDbReservedInstances => { /* ... */ },
+///     ResourceType::NatGateway => { /* ... */ },
 ///     ResourceType::OpenSearchReservedInstances => { /* ... */ },
 ///     ResourceType::RdsDbInstance => { /* ... */ },
 ///     ResourceType::RdsDbInstanceStorage => { /* ... */ },
@@ -83,6 +84,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     MemoryDbReservedInstances,
     #[allow(missing_docs)] // documentation missing in model
+    NatGateway,
+    #[allow(missing_docs)] // documentation missing in model
     OpenSearchReservedInstances,
     #[allow(missing_docs)] // documentation missing in model
     RdsDbInstance,
@@ -113,6 +116,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "ElastiCacheReservedInstances" => ResourceType::ElastiCacheReservedInstances,
             "LambdaFunction" => ResourceType::LambdaFunction,
             "MemoryDbReservedInstances" => ResourceType::MemoryDbReservedInstances,
+            "NatGateway" => ResourceType::NatGateway,
             "OpenSearchReservedInstances" => ResourceType::OpenSearchReservedInstances,
             "RdsDbInstance" => ResourceType::RdsDbInstance,
             "RdsDbInstanceStorage" => ResourceType::RdsDbInstanceStorage,
@@ -146,6 +150,7 @@ impl ResourceType {
             ResourceType::ElastiCacheReservedInstances => "ElastiCacheReservedInstances",
             ResourceType::LambdaFunction => "LambdaFunction",
             ResourceType::MemoryDbReservedInstances => "MemoryDbReservedInstances",
+            ResourceType::NatGateway => "NatGateway",
             ResourceType::OpenSearchReservedInstances => "OpenSearchReservedInstances",
             ResourceType::RdsDbInstance => "RdsDbInstance",
             ResourceType::RdsDbInstanceStorage => "RdsDbInstanceStorage",
@@ -170,6 +175,7 @@ impl ResourceType {
             "ElastiCacheReservedInstances",
             "LambdaFunction",
             "MemoryDbReservedInstances",
+            "NatGateway",
             "OpenSearchReservedInstances",
             "RdsDbInstance",
             "RdsDbInstanceStorage",
@@ -211,6 +217,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::ElastiCacheReservedInstances => write!(f, "ElastiCacheReservedInstances"),
             ResourceType::LambdaFunction => write!(f, "LambdaFunction"),
             ResourceType::MemoryDbReservedInstances => write!(f, "MemoryDbReservedInstances"),
+            ResourceType::NatGateway => write!(f, "NatGateway"),
             ResourceType::OpenSearchReservedInstances => write!(f, "OpenSearchReservedInstances"),
             ResourceType::RdsDbInstance => write!(f, "RdsDbInstance"),
             ResourceType::RdsDbInstanceStorage => write!(f, "RdsDbInstanceStorage"),

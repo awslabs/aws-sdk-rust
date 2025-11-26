@@ -16,6 +16,7 @@
 ///     IdleRecommendationResourceType::EbsVolume => { /* ... */ },
 ///     IdleRecommendationResourceType::Ec2Instance => { /* ... */ },
 ///     IdleRecommendationResourceType::EcsService => { /* ... */ },
+///     IdleRecommendationResourceType::NatGateway => { /* ... */ },
 ///     IdleRecommendationResourceType::RdsDbInstance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum IdleRecommendationResourceType {
     #[allow(missing_docs)] // documentation missing in model
     EcsService,
     #[allow(missing_docs)] // documentation missing in model
+    NatGateway,
+    #[allow(missing_docs)] // documentation missing in model
     RdsDbInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for IdleRecommendationResourceType {
             "EBSVolume" => IdleRecommendationResourceType::EbsVolume,
             "EC2Instance" => IdleRecommendationResourceType::Ec2Instance,
             "ECSService" => IdleRecommendationResourceType::EcsService,
+            "NatGateway" => IdleRecommendationResourceType::NatGateway,
             "RDSDBInstance" => IdleRecommendationResourceType::RdsDbInstance,
             other => IdleRecommendationResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -86,13 +90,21 @@ impl IdleRecommendationResourceType {
             IdleRecommendationResourceType::EbsVolume => "EBSVolume",
             IdleRecommendationResourceType::Ec2Instance => "EC2Instance",
             IdleRecommendationResourceType::EcsService => "ECSService",
+            IdleRecommendationResourceType::NatGateway => "NatGateway",
             IdleRecommendationResourceType::RdsDbInstance => "RDSDBInstance",
             IdleRecommendationResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AutoScalingGroup", "EBSVolume", "EC2Instance", "ECSService", "RDSDBInstance"]
+        &[
+            "AutoScalingGroup",
+            "EBSVolume",
+            "EC2Instance",
+            "ECSService",
+            "NatGateway",
+            "RDSDBInstance",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for IdleRecommendationResourceType {
@@ -119,6 +131,7 @@ impl ::std::fmt::Display for IdleRecommendationResourceType {
             IdleRecommendationResourceType::EbsVolume => write!(f, "EBSVolume"),
             IdleRecommendationResourceType::Ec2Instance => write!(f, "EC2Instance"),
             IdleRecommendationResourceType::EcsService => write!(f, "ECSService"),
+            IdleRecommendationResourceType::NatGateway => write!(f, "NatGateway"),
             IdleRecommendationResourceType::RdsDbInstance => write!(f, "RDSDBInstance"),
             IdleRecommendationResourceType::Unknown(value) => write!(f, "{value}"),
         }

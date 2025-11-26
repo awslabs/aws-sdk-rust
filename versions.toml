@@ -318,9 +318,9 @@ model_hash = '21e472ef685975052d0530121481678091e466ee484091a5643e668526189d09'
 
 [crates.aws-sdk-bedrockruntime]
 category = 'AwsSdk'
-version = '1.117.0'
-source_hash = '44b0f990fea57bd535e167461af018d9daafc0422d20cefc67c05da9744639d0'
-model_hash = 'a1db28e496b0dc3fc03f26dbc73cdc6d187f99517ab824ae075f3b88ee3ae2ce'
+version = '1.118.0'
+source_hash = 'ff38085d8754e972f41f451a725486b0cb2c5cadde83534478e91170c217c866'
+model_hash = '38eab3fe9553df0b4ebb02067fc33feb8a3c74bef678533cc7a7b0eebfff0d5e'
 
 [crates.aws-sdk-billing]
 category = 'AwsSdk'
@@ -594,9 +594,9 @@ model_hash = '7d1c3d90c58ef03fb85fbfe0831c4bfbaadda476d9a26479c3357ce1b6b4a80a'
 
 [crates.aws-sdk-computeoptimizer]
 category = 'AwsSdk'
-version = '1.94.0'
-source_hash = '657623b28d310c6f100ec89be3e9507a39d649e65d2d00ed0a5a593efed5c85e'
-model_hash = 'a5316a3f0a87778de9532c0d31025831f621755b749ee4585ddba1d7e64908a7'
+version = '1.95.0'
+source_hash = '0799d9a89fa6ad185ed60550a172ca709cb2075f9c6e4ac85d125be2f5a1df08'
+model_hash = '2a3eeb6d72a6588923b97b158dfcccf22b7dd135eac39bd39b95c4fac36afd94'
 
 [crates.aws-sdk-computeoptimizerautomation]
 category = 'AwsSdk'
@@ -672,9 +672,9 @@ model_hash = '27efdb9c65ac573b0e8ea8724e573eae6624dc21079aeeb8b530dc13225fb821'
 
 [crates.aws-sdk-costoptimizationhub]
 category = 'AwsSdk'
-version = '1.96.0'
-source_hash = 'b30ad8721f9f8583494b3d3e62472aed910c4862cdcad53297f27cab24307c4d'
-model_hash = '0449435d503467954f57e534bd66bde38aa057ce3507ecb1eb316c1af6571a04'
+version = '1.97.0'
+source_hash = '89db1934bfe3b0ba04e4a43bf5287063d262bc19383dfe5a4f3c9583acc8f852'
+model_hash = '1d8ee28425b54e8587027bf73cd716661537857998d1a65f699663fed6bfe800'
 
 [crates.aws-sdk-customerprofiles]
 category = 'AwsSdk'
@@ -2627,12 +2627,7 @@ source_hash = '8e56d7772057a546723f36aff594683f21519a393b3d0bd63069a7818d3f9f79'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'fa8112d0390ec9009a3079619ea062a2b5260374fd3ec4b981674caa113c46a5'
-
-[release]
-tag = 'release-2025-11-25'
-
 [release.crates]
-aws-sdk-ec2 = '1.194.0'
-aws-sdk-networkfirewall = '1.101.0'
-aws-sdk-organizations = '1.104.0'
-aws-sdk-route53 = '1.103.0'
+aws-sdk-bedrockruntime = '1.118.0'
+aws-sdk-computeoptimizer = '1.95.0'
+aws-sdk-costoptimizationhub = '1.97.0'

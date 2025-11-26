@@ -2,7 +2,7 @@
 
 /// <p>Describes the scope of a recommendation preference.</p>
 /// <p>Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p><note>
-/// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
+/// <p>You cannot create recommendation preferences for Amazon EC2 Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Amazon EC2 Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Amazon EC2 Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Amazon EC2 Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Amazon EC2 Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -26,9 +26,9 @@ pub struct Scope {
     /// <li>
     /// <p><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p></li>
     /// <li>
-    /// <p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p></li>
+    /// <p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Amazon EC2 Auto Scaling group.</p></li>
     /// </ul>
-    /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    /// <p>Only EC2 instance and Amazon EC2 Auto Scaling group ARNs are currently supported.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl Scope {
@@ -53,9 +53,9 @@ impl Scope {
     /// <li>
     /// <p><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p></li>
     /// <li>
-    /// <p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p></li>
+    /// <p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Amazon EC2 Auto Scaling group.</p></li>
     /// </ul>
-    /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    /// <p>Only EC2 instance and Amazon EC2 Auto Scaling group ARNs are currently supported.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -124,9 +124,9 @@ impl ScopeBuilder {
     /// <li>
     /// <p><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p></li>
     /// <li>
-    /// <p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p></li>
+    /// <p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Amazon EC2 Auto Scaling group.</p></li>
     /// </ul>
-    /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    /// <p>Only EC2 instance and Amazon EC2 Auto Scaling group ARNs are currently supported.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
@@ -139,9 +139,9 @@ impl ScopeBuilder {
     /// <li>
     /// <p><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p></li>
     /// <li>
-    /// <p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p></li>
+    /// <p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Amazon EC2 Auto Scaling group.</p></li>
     /// </ul>
-    /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    /// <p>Only EC2 instance and Amazon EC2 Auto Scaling group ARNs are currently supported.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
@@ -154,9 +154,9 @@ impl ScopeBuilder {
     /// <li>
     /// <p><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services account ID.</p></li>
     /// <li>
-    /// <p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Auto Scaling group.</p></li>
+    /// <p><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name (ARN) of an EC2 instance or an Amazon EC2 Auto Scaling group.</p></li>
     /// </ul>
-    /// <p>Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    /// <p>Only EC2 instance and Amazon EC2 Auto Scaling group ARNs are currently supported.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

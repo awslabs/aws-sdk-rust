@@ -123,6 +123,8 @@ pub(crate) mod shape_lambda_function;
 
 pub(crate) mod shape_memory_db_reserved_instances;
 
+pub(crate) mod shape_nat_gateway;
+
 pub(crate) mod shape_open_search_reserved_instances;
 
 pub(crate) mod shape_rds_db_instance;
@@ -168,6 +170,8 @@ pub(crate) mod shape_lambda_function_configuration;
 pub(crate) mod shape_memory_db_reserved_instances_configuration;
 
 pub(crate) mod shape_metrics_by_time_list;
+
+pub(crate) mod shape_nat_gateway_configuration;
 
 pub(crate) mod shape_open_search_reserved_instances_configuration;
 

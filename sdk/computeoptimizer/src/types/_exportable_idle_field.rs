@@ -23,6 +23,7 @@
 ///     ExportableIdleField::SavingsOpportunity => { /* ... */ },
 ///     ExportableIdleField::SavingsOpportunityAfterDiscount => { /* ... */ },
 ///     ExportableIdleField::Tags => { /* ... */ },
+///     ExportableIdleField::UtilizationMetricsActiveConnectionCountMaximum => { /* ... */ },
 ///     ExportableIdleField::UtilizationMetricsCpuMaximum => { /* ... */ },
 ///     ExportableIdleField::UtilizationMetricsDatabaseConnectionsMaximum => { /* ... */ },
 ///     ExportableIdleField::UtilizationMetricsEbsVolumeReadIopsMaximum => { /* ... */ },
@@ -30,6 +31,8 @@
 ///     ExportableIdleField::UtilizationMetricsMemoryMaximum => { /* ... */ },
 ///     ExportableIdleField::UtilizationMetricsNetworkInBytesPerSecondMaximum => { /* ... */ },
 ///     ExportableIdleField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => { /* ... */ },
+///     ExportableIdleField::UtilizationMetricsPacketsInFromDestinationMaximum => { /* ... */ },
+///     ExportableIdleField::UtilizationMetricsPacketsInFromSourceMaximum => { /* ... */ },
 ///     ExportableIdleField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => { /* ... */ },
 ///     ExportableIdleField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -83,6 +86,8 @@ pub enum ExportableIdleField {
     #[allow(missing_docs)] // documentation missing in model
     Tags,
     #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsActiveConnectionCountMaximum,
+    #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsCpuMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsDatabaseConnectionsMaximum,
@@ -96,6 +101,10 @@ pub enum ExportableIdleField {
     UtilizationMetricsNetworkInBytesPerSecondMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsNetworkOutBytesPerSecondMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsPacketsInFromDestinationMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationMetricsPacketsInFromSourceMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsVolumeReadOpsPerSecondMaximum,
     #[allow(missing_docs)] // documentation missing in model
@@ -118,6 +127,7 @@ impl ::std::convert::From<&str> for ExportableIdleField {
             "SavingsOpportunity" => ExportableIdleField::SavingsOpportunity,
             "SavingsOpportunityAfterDiscount" => ExportableIdleField::SavingsOpportunityAfterDiscount,
             "Tags" => ExportableIdleField::Tags,
+            "UtilizationMetricsActiveConnectionCountMaximum" => ExportableIdleField::UtilizationMetricsActiveConnectionCountMaximum,
             "UtilizationMetricsCpuMaximum" => ExportableIdleField::UtilizationMetricsCpuMaximum,
             "UtilizationMetricsDatabaseConnectionsMaximum" => ExportableIdleField::UtilizationMetricsDatabaseConnectionsMaximum,
             "UtilizationMetricsEBSVolumeReadIOPSMaximum" => ExportableIdleField::UtilizationMetricsEbsVolumeReadIopsMaximum,
@@ -125,6 +135,8 @@ impl ::std::convert::From<&str> for ExportableIdleField {
             "UtilizationMetricsMemoryMaximum" => ExportableIdleField::UtilizationMetricsMemoryMaximum,
             "UtilizationMetricsNetworkInBytesPerSecondMaximum" => ExportableIdleField::UtilizationMetricsNetworkInBytesPerSecondMaximum,
             "UtilizationMetricsNetworkOutBytesPerSecondMaximum" => ExportableIdleField::UtilizationMetricsNetworkOutBytesPerSecondMaximum,
+            "UtilizationMetricsPacketsInFromDestinationMaximum" => ExportableIdleField::UtilizationMetricsPacketsInFromDestinationMaximum,
+            "UtilizationMetricsPacketsInFromSourceMaximum" => ExportableIdleField::UtilizationMetricsPacketsInFromSourceMaximum,
             "UtilizationMetricsVolumeReadOpsPerSecondMaximum" => ExportableIdleField::UtilizationMetricsVolumeReadOpsPerSecondMaximum,
             "UtilizationMetricsVolumeWriteOpsPerSecondMaximum" => ExportableIdleField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum,
             other => ExportableIdleField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -153,6 +165,7 @@ impl ExportableIdleField {
             ExportableIdleField::SavingsOpportunity => "SavingsOpportunity",
             ExportableIdleField::SavingsOpportunityAfterDiscount => "SavingsOpportunityAfterDiscount",
             ExportableIdleField::Tags => "Tags",
+            ExportableIdleField::UtilizationMetricsActiveConnectionCountMaximum => "UtilizationMetricsActiveConnectionCountMaximum",
             ExportableIdleField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
             ExportableIdleField::UtilizationMetricsDatabaseConnectionsMaximum => "UtilizationMetricsDatabaseConnectionsMaximum",
             ExportableIdleField::UtilizationMetricsEbsVolumeReadIopsMaximum => "UtilizationMetricsEBSVolumeReadIOPSMaximum",
@@ -160,6 +173,8 @@ impl ExportableIdleField {
             ExportableIdleField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
             ExportableIdleField::UtilizationMetricsNetworkInBytesPerSecondMaximum => "UtilizationMetricsNetworkInBytesPerSecondMaximum",
             ExportableIdleField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
+            ExportableIdleField::UtilizationMetricsPacketsInFromDestinationMaximum => "UtilizationMetricsPacketsInFromDestinationMaximum",
+            ExportableIdleField::UtilizationMetricsPacketsInFromSourceMaximum => "UtilizationMetricsPacketsInFromSourceMaximum",
             ExportableIdleField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => "UtilizationMetricsVolumeReadOpsPerSecondMaximum",
             ExportableIdleField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => "UtilizationMetricsVolumeWriteOpsPerSecondMaximum",
             ExportableIdleField::Unknown(value) => value.as_str(),
@@ -179,6 +194,7 @@ impl ExportableIdleField {
             "SavingsOpportunity",
             "SavingsOpportunityAfterDiscount",
             "Tags",
+            "UtilizationMetricsActiveConnectionCountMaximum",
             "UtilizationMetricsCpuMaximum",
             "UtilizationMetricsDatabaseConnectionsMaximum",
             "UtilizationMetricsEBSVolumeReadIOPSMaximum",
@@ -186,6 +202,8 @@ impl ExportableIdleField {
             "UtilizationMetricsMemoryMaximum",
             "UtilizationMetricsNetworkInBytesPerSecondMaximum",
             "UtilizationMetricsNetworkOutBytesPerSecondMaximum",
+            "UtilizationMetricsPacketsInFromDestinationMaximum",
+            "UtilizationMetricsPacketsInFromSourceMaximum",
             "UtilizationMetricsVolumeReadOpsPerSecondMaximum",
             "UtilizationMetricsVolumeWriteOpsPerSecondMaximum",
         ]
@@ -222,6 +240,7 @@ impl ::std::fmt::Display for ExportableIdleField {
             ExportableIdleField::SavingsOpportunity => write!(f, "SavingsOpportunity"),
             ExportableIdleField::SavingsOpportunityAfterDiscount => write!(f, "SavingsOpportunityAfterDiscount"),
             ExportableIdleField::Tags => write!(f, "Tags"),
+            ExportableIdleField::UtilizationMetricsActiveConnectionCountMaximum => write!(f, "UtilizationMetricsActiveConnectionCountMaximum"),
             ExportableIdleField::UtilizationMetricsCpuMaximum => write!(f, "UtilizationMetricsCpuMaximum"),
             ExportableIdleField::UtilizationMetricsDatabaseConnectionsMaximum => write!(f, "UtilizationMetricsDatabaseConnectionsMaximum"),
             ExportableIdleField::UtilizationMetricsEbsVolumeReadIopsMaximum => write!(f, "UtilizationMetricsEBSVolumeReadIOPSMaximum"),
@@ -229,6 +248,8 @@ impl ::std::fmt::Display for ExportableIdleField {
             ExportableIdleField::UtilizationMetricsMemoryMaximum => write!(f, "UtilizationMetricsMemoryMaximum"),
             ExportableIdleField::UtilizationMetricsNetworkInBytesPerSecondMaximum => write!(f, "UtilizationMetricsNetworkInBytesPerSecondMaximum"),
             ExportableIdleField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => write!(f, "UtilizationMetricsNetworkOutBytesPerSecondMaximum"),
+            ExportableIdleField::UtilizationMetricsPacketsInFromDestinationMaximum => write!(f, "UtilizationMetricsPacketsInFromDestinationMaximum"),
+            ExportableIdleField::UtilizationMetricsPacketsInFromSourceMaximum => write!(f, "UtilizationMetricsPacketsInFromSourceMaximum"),
             ExportableIdleField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => write!(f, "UtilizationMetricsVolumeReadOpsPerSecondMaximum"),
             ExportableIdleField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => write!(f, "UtilizationMetricsVolumeWriteOpsPerSecondMaximum"),
             ExportableIdleField::Unknown(value) => write!(f, "{value}"),

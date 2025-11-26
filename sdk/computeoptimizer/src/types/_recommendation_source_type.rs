@@ -19,6 +19,7 @@
 ///     RecommendationSourceType::EcsService => { /* ... */ },
 ///     RecommendationSourceType::LambdaFunction => { /* ... */ },
 ///     RecommendationSourceType::License => { /* ... */ },
+///     RecommendationSourceType::NatGateway => { /* ... */ },
 ///     RecommendationSourceType::RdsDbInstance => { /* ... */ },
 ///     RecommendationSourceType::RdsDbInstanceStorage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -64,6 +65,8 @@ pub enum RecommendationSourceType {
     #[allow(missing_docs)] // documentation missing in model
     License,
     #[allow(missing_docs)] // documentation missing in model
+    NatGateway,
+    #[allow(missing_docs)] // documentation missing in model
     RdsDbInstance,
     #[allow(missing_docs)] // documentation missing in model
     RdsDbInstanceStorage,
@@ -81,6 +84,7 @@ impl ::std::convert::From<&str> for RecommendationSourceType {
             "EcsService" => RecommendationSourceType::EcsService,
             "LambdaFunction" => RecommendationSourceType::LambdaFunction,
             "License" => RecommendationSourceType::License,
+            "NatGateway" => RecommendationSourceType::NatGateway,
             "RdsDBInstance" => RecommendationSourceType::RdsDbInstance,
             "RdsDBInstanceStorage" => RecommendationSourceType::RdsDbInstanceStorage,
             other => RecommendationSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -105,6 +109,7 @@ impl RecommendationSourceType {
             RecommendationSourceType::EcsService => "EcsService",
             RecommendationSourceType::LambdaFunction => "LambdaFunction",
             RecommendationSourceType::License => "License",
+            RecommendationSourceType::NatGateway => "NatGateway",
             RecommendationSourceType::RdsDbInstance => "RdsDBInstance",
             RecommendationSourceType::RdsDbInstanceStorage => "RdsDBInstanceStorage",
             RecommendationSourceType::Unknown(value) => value.as_str(),
@@ -120,6 +125,7 @@ impl RecommendationSourceType {
             "EcsService",
             "LambdaFunction",
             "License",
+            "NatGateway",
             "RdsDBInstance",
             "RdsDBInstanceStorage",
         ]
@@ -152,6 +158,7 @@ impl ::std::fmt::Display for RecommendationSourceType {
             RecommendationSourceType::EcsService => write!(f, "EcsService"),
             RecommendationSourceType::LambdaFunction => write!(f, "LambdaFunction"),
             RecommendationSourceType::License => write!(f, "License"),
+            RecommendationSourceType::NatGateway => write!(f, "NatGateway"),
             RecommendationSourceType::RdsDbInstance => write!(f, "RdsDBInstance"),
             RecommendationSourceType::RdsDbInstanceStorage => write!(f, "RdsDBInstanceStorage"),
             RecommendationSourceType::Unknown(value) => write!(f, "{value}"),

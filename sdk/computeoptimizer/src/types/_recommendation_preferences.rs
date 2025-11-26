@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationPreferences {
-    /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
+    /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct RecommendationPreferences {
     pub cpu_vendor_architectures: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
 }
 impl RecommendationPreferences {
-    /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
+    /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
     /// <li>
@@ -51,7 +51,7 @@ impl RecommendationPreferencesBuilder {
     ///
     /// To override the contents of this collection use [`set_cpu_vendor_architectures`](Self::set_cpu_vendor_architectures).
     ///
-    /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
+    /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
     /// <li>
@@ -67,7 +67,7 @@ impl RecommendationPreferencesBuilder {
         self.cpu_vendor_architectures = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
+    /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
     /// <li>
@@ -81,7 +81,7 @@ impl RecommendationPreferencesBuilder {
         self.cpu_vendor_architectures = input;
         self
     }
-    /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
+    /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
     /// <li>

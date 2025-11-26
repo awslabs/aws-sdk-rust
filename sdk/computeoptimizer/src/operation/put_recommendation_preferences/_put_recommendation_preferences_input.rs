@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecommendationPreferencesInput {
     /// <p>The target resource type of the recommendation preference to create.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Amazon EC2 Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Amazon EC2 Auto Scaling group.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>An object that describes the scope of the recommendation preference to create.</p>
     /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p><note>
-    /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
+    /// <p>You cannot create recommendation preferences for Amazon EC2 Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Amazon EC2 Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Amazon EC2 Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Amazon EC2 Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Amazon EC2 Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
     /// </note>
     pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
@@ -27,12 +27,12 @@ pub struct PutRecommendationPreferencesInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
     /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p><note>
     /// <ul>
     /// <li>
     /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
     /// <li>
-    /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// <p>Amazon EC2 Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
     /// </ul>
     /// </note>
     pub look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
@@ -58,7 +58,7 @@ pub struct PutRecommendationPreferencesInput {
     /// </note>
     pub utilization_preferences: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>,
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p>
     /// </note>
     pub preferred_resources: ::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>>,
     /// <p>The status of the savings estimation mode preference to create or update.</p>
@@ -69,13 +69,13 @@ pub struct PutRecommendationPreferencesInput {
 }
 impl PutRecommendationPreferencesInput {
     /// <p>The target resource type of the recommendation preference to create.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Amazon EC2 Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Amazon EC2 Auto Scaling group.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>An object that describes the scope of the recommendation preference to create.</p>
     /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p><note>
-    /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
+    /// <p>You cannot create recommendation preferences for Amazon EC2 Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Amazon EC2 Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Amazon EC2 Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Amazon EC2 Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Amazon EC2 Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
     /// </note>
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
@@ -102,12 +102,12 @@ impl PutRecommendationPreferencesInput {
         self.external_metrics_preference.as_ref()
     }
     /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p><note>
     /// <ul>
     /// <li>
     /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
     /// <li>
-    /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// <p>Amazon EC2 Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
     /// </ul>
     /// </note>
     pub fn look_back_period(&self) -> ::std::option::Option<&crate::types::LookBackPeriodPreference> {
@@ -139,7 +139,7 @@ impl PutRecommendationPreferencesInput {
         self.utilization_preferences.as_deref().unwrap_or_default()
     }
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_resources.is_none()`.
@@ -177,26 +177,26 @@ pub struct PutRecommendationPreferencesInputBuilder {
 }
 impl PutRecommendationPreferencesInputBuilder {
     /// <p>The target resource type of the recommendation preference to create.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Amazon EC2 Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Amazon EC2 Auto Scaling group.</p>
     /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target resource type of the recommendation preference to create.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Amazon EC2 Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Amazon EC2 Auto Scaling group.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The target resource type of the recommendation preference to create.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Amazon EC2 Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Amazon EC2 Auto Scaling group.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
     /// <p>An object that describes the scope of the recommendation preference to create.</p>
     /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p><note>
-    /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
+    /// <p>You cannot create recommendation preferences for Amazon EC2 Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Amazon EC2 Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Amazon EC2 Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Amazon EC2 Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Amazon EC2 Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
     /// </note>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = ::std::option::Option::Some(input);
@@ -204,7 +204,7 @@ impl PutRecommendationPreferencesInputBuilder {
     }
     /// <p>An object that describes the scope of the recommendation preference to create.</p>
     /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p><note>
-    /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
+    /// <p>You cannot create recommendation preferences for Amazon EC2 Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Amazon EC2 Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Amazon EC2 Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Amazon EC2 Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Amazon EC2 Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
     /// </note>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
@@ -212,7 +212,7 @@ impl PutRecommendationPreferencesInputBuilder {
     }
     /// <p>An object that describes the scope of the recommendation preference to create.</p>
     /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p><note>
-    /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
+    /// <p>You cannot create recommendation preferences for Amazon EC2 Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Amazon EC2 Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Amazon EC2 Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Amazon EC2 Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Amazon EC2 Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
     /// </note>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope
@@ -287,12 +287,12 @@ impl PutRecommendationPreferencesInputBuilder {
         &self.external_metrics_preference
     }
     /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p><note>
     /// <ul>
     /// <li>
     /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
     /// <li>
-    /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// <p>Amazon EC2 Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
     /// </ul>
     /// </note>
     pub fn look_back_period(mut self, input: crate::types::LookBackPeriodPreference) -> Self {
@@ -300,12 +300,12 @@ impl PutRecommendationPreferencesInputBuilder {
         self
     }
     /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p><note>
     /// <ul>
     /// <li>
     /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
     /// <li>
-    /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// <p>Amazon EC2 Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
     /// </ul>
     /// </note>
     pub fn set_look_back_period(mut self, input: ::std::option::Option<crate::types::LookBackPeriodPreference>) -> Self {
@@ -313,12 +313,12 @@ impl PutRecommendationPreferencesInputBuilder {
         self
     }
     /// <p>The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>.</p>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p><note>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p><note>
     /// <ul>
     /// <li>
     /// <p>Amazon EC2 instance lookback preferences can be set at the organization, account, and resource levels.</p></li>
     /// <li>
-    /// <p>Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
+    /// <p>Amazon EC2 Auto Scaling group lookback preferences can only be set at the resource level.</p></li>
     /// </ul>
     /// </note>
     pub fn get_look_back_period(&self) -> &::std::option::Option<crate::types::LookBackPeriodPreference> {
@@ -406,7 +406,7 @@ impl PutRecommendationPreferencesInputBuilder {
     /// To override the contents of this collection use [`set_preferred_resources`](Self::set_preferred_resources).
     ///
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p>
     /// </note>
     pub fn preferred_resources(mut self, input: crate::types::PreferredResource) -> Self {
         let mut v = self.preferred_resources.unwrap_or_default();
@@ -415,14 +415,14 @@ impl PutRecommendationPreferencesInputBuilder {
         self
     }
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p>
     /// </note>
     pub fn set_preferred_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>>) -> Self {
         self.preferred_resources = input;
         self
     }
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
-    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p>
     /// </note>
     pub fn get_preferred_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>> {
         &self.preferred_resources

@@ -28,6 +28,8 @@ pub enum ResourceDetails {
     LambdaFunction(crate::types::LambdaFunction),
     /// <p>The MemoryDB reserved instances recommendation details.</p>
     MemoryDbReservedInstances(crate::types::MemoryDbReservedInstances),
+    /// <p>The NAT Gateway recommendation details.</p>
+    NatGateway(crate::types::NatGateway),
     /// <p>The OpenSearch reserved instances recommendation details.</p>
     OpenSearchReservedInstances(crate::types::OpenSearchReservedInstances),
     /// <p>The DB instance recommendation details.</p>
@@ -206,6 +208,19 @@ impl ResourceDetails {
     /// Returns true if this is a [`MemoryDbReservedInstances`](crate::types::ResourceDetails::MemoryDbReservedInstances).
     pub fn is_memory_db_reserved_instances(&self) -> bool {
         self.as_memory_db_reserved_instances().is_ok()
+    }
+    /// Tries to convert the enum instance into [`NatGateway`](crate::types::ResourceDetails::NatGateway), extracting the inner [`NatGateway`](crate::types::NatGateway).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_nat_gateway(&self) -> ::std::result::Result<&crate::types::NatGateway, &Self> {
+        if let ResourceDetails::NatGateway(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`NatGateway`](crate::types::ResourceDetails::NatGateway).
+    pub fn is_nat_gateway(&self) -> bool {
+        self.as_nat_gateway().is_ok()
     }
     /// Tries to convert the enum instance into [`OpenSearchReservedInstances`](crate::types::ResourceDetails::OpenSearchReservedInstances), extracting the inner [`OpenSearchReservedInstances`](crate::types::OpenSearchReservedInstances).
     /// Returns `Err(&Self)` if it can't be converted.

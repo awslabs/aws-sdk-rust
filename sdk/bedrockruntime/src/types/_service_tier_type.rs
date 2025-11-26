@@ -15,6 +15,7 @@
 ///     ServiceTierType::Default => { /* ... */ },
 ///     ServiceTierType::Flex => { /* ... */ },
 ///     ServiceTierType::Priority => { /* ... */ },
+///     ServiceTierType::Reserved => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum ServiceTierType {
     Flex,
     #[allow(missing_docs)] // documentation missing in model
     Priority,
+    #[allow(missing_docs)] // documentation missing in model
+    Reserved,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for ServiceTierType {
             "default" => ServiceTierType::Default,
             "flex" => ServiceTierType::Flex,
             "priority" => ServiceTierType::Priority,
+            "reserved" => ServiceTierType::Reserved,
             other => ServiceTierType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl ServiceTierType {
             ServiceTierType::Default => "default",
             ServiceTierType::Flex => "flex",
             ServiceTierType::Priority => "priority",
+            ServiceTierType::Reserved => "reserved",
             ServiceTierType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["default", "flex", "priority"]
+        &["default", "flex", "priority", "reserved"]
     }
 }
 impl ::std::convert::AsRef<str> for ServiceTierType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for ServiceTierType {
             ServiceTierType::Default => write!(f, "default"),
             ServiceTierType::Flex => write!(f, "flex"),
             ServiceTierType::Priority => write!(f, "priority"),
+            ServiceTierType::Reserved => write!(f, "reserved"),
             ServiceTierType::Unknown(value) => write!(f, "{value}"),
         }
     }

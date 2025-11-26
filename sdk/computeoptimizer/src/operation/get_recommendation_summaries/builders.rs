@@ -28,7 +28,7 @@ impl crate::operation::get_recommendation_summaries::builders::GetRecommendation
 /// <li>
 /// <p>Amazon EC2 instances in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code>.</p></li>
 /// <li>
-/// <p>EC2Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p></li>
+/// <p>EC2Amazon EC2 Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p></li>
 /// <li>
 /// <p>Amazon EBS volumes in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.</p></li>
 /// <li>

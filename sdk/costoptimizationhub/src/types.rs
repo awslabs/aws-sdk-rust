@@ -51,6 +51,18 @@ pub use crate::types::_granularity_type::GranularityType;
 
 pub use crate::types::_resource_details::ResourceDetails;
 
+pub use crate::types::_nat_gateway::NatGateway;
+
+pub use crate::types::_resource_cost_calculation::ResourceCostCalculation;
+
+pub use crate::types::_resource_pricing::ResourcePricing;
+
+pub use crate::types::_estimated_discounts::EstimatedDiscounts;
+
+pub use crate::types::_usage::Usage;
+
+pub use crate::types::_nat_gateway_configuration::NatGatewayConfiguration;
+
 pub use crate::types::_memory_db_reserved_instances::MemoryDbReservedInstances;
 
 pub use crate::types::_reserved_instances_cost_calculation::ReservedInstancesCostCalculation;
@@ -64,14 +76,6 @@ pub use crate::types::_dynamo_db_reserved_capacity::DynamoDbReservedCapacity;
 pub use crate::types::_dynamo_db_reserved_capacity_configuration::DynamoDbReservedCapacityConfiguration;
 
 pub use crate::types::_aurora_db_cluster_storage::AuroraDbClusterStorage;
-
-pub use crate::types::_resource_cost_calculation::ResourceCostCalculation;
-
-pub use crate::types::_resource_pricing::ResourcePricing;
-
-pub use crate::types::_estimated_discounts::EstimatedDiscounts;
-
-pub use crate::types::_usage::Usage;
 
 pub use crate::types::_aurora_db_cluster_storage_configuration::AuroraDbClusterStorageConfiguration;
 
@@ -236,6 +240,10 @@ mod _memory_db_reserved_instances_configuration;
 mod _metrics_by_time;
 
 mod _mixed_instance_configuration;
+
+mod _nat_gateway;
+
+mod _nat_gateway_configuration;
 
 mod _open_search_reserved_instances;
 

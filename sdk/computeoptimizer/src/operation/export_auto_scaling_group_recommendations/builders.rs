@@ -22,9 +22,9 @@ impl crate::operation::export_auto_scaling_group_recommendations::builders::Expo
 }
 /// Fluent builder constructing a request to `ExportAutoScalingGroupRecommendations`.
 ///
-/// <p>Exports optimization recommendations for Auto Scaling groups.</p>
+/// <p>Exports optimization recommendations for Amazon EC2 Auto Scaling groups.</p>
 /// <p>Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p>
-/// <p>You can have only one Auto Scaling group export job in progress per Amazon Web Services Region.</p>
+/// <p>You can have only one Amazon EC2 Auto Scaling group export job in progress per Amazon Web Services Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportAutoScalingGroupRecommendationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -118,7 +118,7 @@ impl ExportAutoScalingGroupRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group recommendations.</p>
+    /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
@@ -127,7 +127,7 @@ impl ExportAutoScalingGroupRecommendationsFluentBuilder {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group recommendations.</p>
+    /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
@@ -136,7 +136,7 @@ impl ExportAutoScalingGroupRecommendationsFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
-    /// <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group recommendations.</p>
+    /// <p>The IDs of the Amazon Web Services accounts for which to export Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
@@ -149,17 +149,17 @@ impl ExportAutoScalingGroupRecommendationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An array of objects to specify a filter that exports a more specific set of Auto Scaling group recommendations.</p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon EC2 Auto Scaling group recommendations.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>An array of objects to specify a filter that exports a more specific set of Auto Scaling group recommendations.</p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon EC2 Auto Scaling group recommendations.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>An array of objects to specify a filter that exports a more specific set of Auto Scaling group recommendations.</p>
+    /// <p>An array of objects to specify a filter that exports a more specific set of Amazon EC2 Auto Scaling group recommendations.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
@@ -242,17 +242,17 @@ impl ExportAutoScalingGroupRecommendationsFluentBuilder {
     pub fn get_include_member_accounts(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_member_accounts()
     }
-    /// <p>An object to specify the preferences for the Auto Scaling group recommendations to export.</p>
+    /// <p>An object to specify the preferences for the Amazon EC2 Auto Scaling group recommendations to export.</p>
     pub fn recommendation_preferences(mut self, input: crate::types::RecommendationPreferences) -> Self {
         self.inner = self.inner.recommendation_preferences(input);
         self
     }
-    /// <p>An object to specify the preferences for the Auto Scaling group recommendations to export.</p>
+    /// <p>An object to specify the preferences for the Amazon EC2 Auto Scaling group recommendations to export.</p>
     pub fn set_recommendation_preferences(mut self, input: ::std::option::Option<crate::types::RecommendationPreferences>) -> Self {
         self.inner = self.inner.set_recommendation_preferences(input);
         self
     }
-    /// <p>An object to specify the preferences for the Auto Scaling group recommendations to export.</p>
+    /// <p>An object to specify the preferences for the Amazon EC2 Auto Scaling group recommendations to export.</p>
     pub fn get_recommendation_preferences(&self) -> &::std::option::Option<crate::types::RecommendationPreferences> {
         self.inner.get_recommendation_preferences()
     }

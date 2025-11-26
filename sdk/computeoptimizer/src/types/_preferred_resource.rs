@@ -3,7 +3,7 @@
 /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/rightsizing-preferences.html"> Rightsizing recommendation preferences</a> in the <i>Compute Optimizer User Guide</i>.</p><note>
 /// <ul>
 /// <li>
-/// <p>This preference is only available for the Amazon EC2 instance and Auto Scaling group resource types.</p></li>
+/// <p>This preference is only available for the Amazon EC2 instance and Amazon EC2 Auto Scaling group resource types.</p></li>
 /// <li>
 /// <p>Compute Optimizer only supports the customization of <code>Ec2InstanceTypes</code>.</p></li>
 /// </ul>

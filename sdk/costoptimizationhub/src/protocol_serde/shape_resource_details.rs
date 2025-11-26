@@ -131,6 +131,11 @@ where
                                 )
                             })?,
                         )),
+                        "natGateway" => Some(crate::types::ResourceDetails::NatGateway(
+                            crate::protocol_serde::shape_nat_gateway::de_nat_gateway(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'natGateway' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ResourceDetails::Unknown)

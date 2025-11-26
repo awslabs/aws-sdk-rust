@@ -3,53 +3,53 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAutoScalingGroupRecommendationsInput {
-    /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
-    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
+    /// <p>The ID of the Amazon Web Services account for which to return Amazon EC2 Auto Scaling group recommendations.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Auto Scaling groups for which to return recommendations.</p>
     pub auto_scaling_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon EC2 Auto Scaling group recommendations.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of Auto Scaling group recommendations to return with a single request.</p>
+    /// <p>The maximum number of Amazon EC2 Auto Scaling group recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon EC2 Auto Scaling group recommendations.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
+    /// <p>An object to specify the preferences for the Amazon EC2 Auto Scaling group recommendations to return in the response.</p>
     pub recommendation_preferences: ::std::option::Option<crate::types::RecommendationPreferences>,
 }
 impl GetAutoScalingGroupRecommendationsInput {
-    /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
-    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
+    /// <p>The ID of the Amazon Web Services account for which to return Amazon EC2 Auto Scaling group recommendations.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
     pub fn account_ids(&self) -> &[::std::string::String] {
         self.account_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Auto Scaling groups for which to return recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_group_arns.is_none()`.
     pub fn auto_scaling_group_arns(&self) -> &[::std::string::String] {
         self.auto_scaling_group_arns.as_deref().unwrap_or_default()
     }
-    /// <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon EC2 Auto Scaling group recommendations.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of Auto Scaling group recommendations to return with a single request.</p>
+    /// <p>The maximum number of Amazon EC2 Auto Scaling group recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon EC2 Auto Scaling group recommendations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
+    /// <p>An object to specify the preferences for the Amazon EC2 Auto Scaling group recommendations to return in the response.</p>
     pub fn recommendation_preferences(&self) -> ::std::option::Option<&crate::types::RecommendationPreferences> {
         self.recommendation_preferences.as_ref()
     }
@@ -77,8 +77,8 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
-    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
+    /// <p>The ID of the Amazon Web Services account for which to return Amazon EC2 Auto Scaling group recommendations.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
@@ -86,15 +86,15 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
         self.account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
-    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
+    /// <p>The ID of the Amazon Web Services account for which to return Amazon EC2 Auto Scaling group recommendations.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
-    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
+    /// <p>The ID of the Amazon Web Services account for which to return Amazon EC2 Auto Scaling group recommendations.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Amazon EC2 Auto Scaling group recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
@@ -103,49 +103,49 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_auto_scaling_group_arns`](Self::set_auto_scaling_group_arns).
     ///
-    /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Auto Scaling groups for which to return recommendations.</p>
     pub fn auto_scaling_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.auto_scaling_group_arns.unwrap_or_default();
         v.push(input.into());
         self.auto_scaling_group_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Auto Scaling groups for which to return recommendations.</p>
     pub fn set_auto_scaling_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.auto_scaling_group_arns = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon EC2 Auto Scaling groups for which to return recommendations.</p>
     pub fn get_auto_scaling_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.auto_scaling_group_arns
     }
-    /// <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon EC2 Auto Scaling group recommendations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon EC2 Auto Scaling group recommendations.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
+    /// <p>The token to advance to the next page of Amazon EC2 Auto Scaling group recommendations.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of Auto Scaling group recommendations to return with a single request.</p>
+    /// <p>The maximum number of Amazon EC2 Auto Scaling group recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of Auto Scaling group recommendations to return with a single request.</p>
+    /// <p>The maximum number of Amazon EC2 Auto Scaling group recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of Auto Scaling group recommendations to return with a single request.</p>
+    /// <p>The maximum number of Amazon EC2 Auto Scaling group recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
@@ -154,33 +154,33 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon EC2 Auto Scaling group recommendations.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon EC2 Auto Scaling group recommendations.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
+    /// <p>An array of objects to specify a filter that returns a more specific list of Amazon EC2 Auto Scaling group recommendations.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
+    /// <p>An object to specify the preferences for the Amazon EC2 Auto Scaling group recommendations to return in the response.</p>
     pub fn recommendation_preferences(mut self, input: crate::types::RecommendationPreferences) -> Self {
         self.recommendation_preferences = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
+    /// <p>An object to specify the preferences for the Amazon EC2 Auto Scaling group recommendations to return in the response.</p>
     pub fn set_recommendation_preferences(mut self, input: ::std::option::Option<crate::types::RecommendationPreferences>) -> Self {
         self.recommendation_preferences = input;
         self
     }
-    /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
+    /// <p>An object to specify the preferences for the Amazon EC2 Auto Scaling group recommendations to return in the response.</p>
     pub fn get_recommendation_preferences(&self) -> &::std::option::Option<crate::types::RecommendationPreferences> {
         &self.recommendation_preferences
     }

@@ -23,6 +23,18 @@ pub use crate::types::_metrics_by_time::MetricsByTimeBuilder;
 
 pub use crate::types::_time_period::TimePeriodBuilder;
 
+pub use crate::types::_nat_gateway::NatGatewayBuilder;
+
+pub use crate::types::_resource_cost_calculation::ResourceCostCalculationBuilder;
+
+pub use crate::types::_resource_pricing::ResourcePricingBuilder;
+
+pub use crate::types::_estimated_discounts::EstimatedDiscountsBuilder;
+
+pub use crate::types::_usage::UsageBuilder;
+
+pub use crate::types::_nat_gateway_configuration::NatGatewayConfigurationBuilder;
+
 pub use crate::types::_memory_db_reserved_instances::MemoryDbReservedInstancesBuilder;
 
 pub use crate::types::_reserved_instances_cost_calculation::ReservedInstancesCostCalculationBuilder;
@@ -36,14 +48,6 @@ pub use crate::types::_dynamo_db_reserved_capacity::DynamoDbReservedCapacityBuil
 pub use crate::types::_dynamo_db_reserved_capacity_configuration::DynamoDbReservedCapacityConfigurationBuilder;
 
 pub use crate::types::_aurora_db_cluster_storage::AuroraDbClusterStorageBuilder;
-
-pub use crate::types::_resource_cost_calculation::ResourceCostCalculationBuilder;
-
-pub use crate::types::_resource_pricing::ResourcePricingBuilder;
-
-pub use crate::types::_estimated_discounts::EstimatedDiscountsBuilder;
-
-pub use crate::types::_usage::UsageBuilder;
 
 pub use crate::types::_aurora_db_cluster_storage_configuration::AuroraDbClusterStorageConfigurationBuilder;
 
