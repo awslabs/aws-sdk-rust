@@ -12,6 +12,8 @@ pub struct CommunicationTimeConfig {
     pub sms: ::std::option::Option<crate::types::TimeWindow>,
     /// Time window config
     pub email: ::std::option::Option<crate::types::TimeWindow>,
+    /// Time window config
+    pub whats_app: ::std::option::Option<crate::types::TimeWindow>,
 }
 impl CommunicationTimeConfig {
     /// Local time zone config
@@ -30,6 +32,10 @@ impl CommunicationTimeConfig {
     pub fn email(&self) -> ::std::option::Option<&crate::types::TimeWindow> {
         self.email.as_ref()
     }
+    /// Time window config
+    pub fn whats_app(&self) -> ::std::option::Option<&crate::types::TimeWindow> {
+        self.whats_app.as_ref()
+    }
 }
 impl CommunicationTimeConfig {
     /// Creates a new builder-style object to manufacture [`CommunicationTimeConfig`](crate::types::CommunicationTimeConfig).
@@ -46,6 +52,7 @@ pub struct CommunicationTimeConfigBuilder {
     pub(crate) telephony: ::std::option::Option<crate::types::TimeWindow>,
     pub(crate) sms: ::std::option::Option<crate::types::TimeWindow>,
     pub(crate) email: ::std::option::Option<crate::types::TimeWindow>,
+    pub(crate) whats_app: ::std::option::Option<crate::types::TimeWindow>,
 }
 impl CommunicationTimeConfigBuilder {
     /// Local time zone config
@@ -105,6 +112,20 @@ impl CommunicationTimeConfigBuilder {
     pub fn get_email(&self) -> &::std::option::Option<crate::types::TimeWindow> {
         &self.email
     }
+    /// Time window config
+    pub fn whats_app(mut self, input: crate::types::TimeWindow) -> Self {
+        self.whats_app = ::std::option::Option::Some(input);
+        self
+    }
+    /// Time window config
+    pub fn set_whats_app(mut self, input: ::std::option::Option<crate::types::TimeWindow>) -> Self {
+        self.whats_app = input;
+        self
+    }
+    /// Time window config
+    pub fn get_whats_app(&self) -> &::std::option::Option<crate::types::TimeWindow> {
+        &self.whats_app
+    }
     /// Consumes the builder and constructs a [`CommunicationTimeConfig`](crate::types::CommunicationTimeConfig).
     pub fn build(self) -> crate::types::CommunicationTimeConfig {
         crate::types::CommunicationTimeConfig {
@@ -112,6 +133,7 @@ impl CommunicationTimeConfigBuilder {
             telephony: self.telephony,
             sms: self.sms,
             email: self.email,
+            whats_app: self.whats_app,
         }
     }
 }

@@ -433,6 +433,8 @@ pub(crate) mod shape_schema_list;
 
 pub(crate) mod shape_schema_summary_list;
 
+pub(crate) mod shape_synthetic_data_parameters;
+
 pub(crate) mod shape_table_reference;
 
 pub(crate) mod shape_tag_map;
@@ -547,6 +549,8 @@ pub(crate) mod shape_membership_summary;
 
 pub(crate) mod shape_ml_payment_config;
 
+pub(crate) mod shape_ml_synthetic_data_parameters;
+
 pub(crate) mod shape_privacy_budget_summary;
 
 pub(crate) mod shape_privacy_budget_template_parameters_output;
@@ -619,6 +623,8 @@ pub(crate) mod shape_change;
 
 pub(crate) mod shape_column;
 
+pub(crate) mod shape_column_classification_details;
+
 pub(crate) mod shape_configured_table_association_analysis_rule_aggregation;
 
 pub(crate) mod shape_configured_table_association_analysis_rule_custom;
@@ -648,6 +654,8 @@ pub(crate) mod shape_member_change_specification;
 pub(crate) mod shape_membership_model_inference_payment_config;
 
 pub(crate) mod shape_membership_model_training_payment_config;
+
+pub(crate) mod shape_membership_synthetic_data_generation_payment_config;
 
 pub(crate) mod shape_model_inference_payment_config;
 
@@ -682,6 +690,8 @@ pub(crate) mod shape_receiver_configurations_list;
 pub(crate) mod shape_schema_status_detail;
 
 pub(crate) mod shape_snowflake_table_schema;
+
+pub(crate) mod shape_synthetic_data_generation_payment_config;
 
 pub(crate) mod shape_worker_compute_configuration_properties;
 
@@ -749,6 +759,8 @@ pub(crate) mod shape_schema_status_reason_list;
 
 pub(crate) mod shape_snowflake_table_schema_v1;
 
+pub(crate) mod shape_synthetic_data_column_properties;
+
 pub(crate) mod shape_access_budget_details_list;
 
 pub(crate) mod shape_aggregate_column_list;
@@ -766,6 +778,8 @@ pub(crate) mod shape_allowed_result_receivers;
 pub(crate) mod shape_analysis_rule_column_list;
 
 pub(crate) mod shape_analysis_template_validation_status_reason;
+
+pub(crate) mod shape_column_mapping_list;
 
 pub(crate) mod shape_configuration_details;
 

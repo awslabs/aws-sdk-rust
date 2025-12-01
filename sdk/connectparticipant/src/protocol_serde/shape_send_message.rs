@@ -147,6 +147,11 @@ pub(crate) fn de_send_message(
                             .transpose()?,
                     );
                 }
+                "MessageMetadata" => {
+                    builder = builder.set_message_metadata(crate::protocol_serde::shape_message_processing_metadata::de_message_processing_metadata(
+                        tokens,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -74,6 +74,10 @@ pub struct CreateFunctionInput {
     pub snap_start: ::std::option::Option<crate::types::SnapStart>,
     /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
     /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
     pub tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
 }
@@ -203,6 +207,14 @@ impl CreateFunctionInput {
     pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn capacity_provider_config(&self) -> ::std::option::Option<&crate::types::CapacityProviderConfig> {
+        self.capacity_provider_config.as_ref()
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn publish_to(&self) -> ::std::option::Option<&crate::types::FunctionVersionLatestPublished> {
+        self.publish_to.as_ref()
+    }
     /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
     pub fn tenancy_config(&self) -> ::std::option::Option<&crate::types::TenancyConfig> {
         self.tenancy_config.as_ref()
@@ -243,6 +255,8 @@ pub struct CreateFunctionInputBuilder {
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) snap_start: ::std::option::Option<crate::types::SnapStart>,
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    pub(crate) capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
+    pub(crate) publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
     pub(crate) tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
 }
 impl CreateFunctionInputBuilder {
@@ -678,6 +692,34 @@ impl CreateFunctionInputBuilder {
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
         &self.logging_config
     }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn capacity_provider_config(mut self, input: crate::types::CapacityProviderConfig) -> Self {
+        self.capacity_provider_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn set_capacity_provider_config(mut self, input: ::std::option::Option<crate::types::CapacityProviderConfig>) -> Self {
+        self.capacity_provider_config = input;
+        self
+    }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn get_capacity_provider_config(&self) -> &::std::option::Option<crate::types::CapacityProviderConfig> {
+        &self.capacity_provider_config
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn publish_to(mut self, input: crate::types::FunctionVersionLatestPublished) -> Self {
+        self.publish_to = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn set_publish_to(mut self, input: ::std::option::Option<crate::types::FunctionVersionLatestPublished>) -> Self {
+        self.publish_to = input;
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn get_publish_to(&self) -> &::std::option::Option<crate::types::FunctionVersionLatestPublished> {
+        &self.publish_to
+    }
     /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
     pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
         self.tenancy_config = ::std::option::Option::Some(input);
@@ -721,6 +763,8 @@ impl CreateFunctionInputBuilder {
             ephemeral_storage: self.ephemeral_storage,
             snap_start: self.snap_start,
             logging_config: self.logging_config,
+            capacity_provider_config: self.capacity_provider_config,
+            publish_to: self.publish_to,
             tenancy_config: self.tenancy_config,
         })
     }

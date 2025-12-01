@@ -9,17 +9,23 @@ pub fn ser_update_ai_prompt_input_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.model_id {
-        object.key("modelId").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.template_configuration {
+    if let Some(var_3) = &input.inference_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("templateConfiguration").start_object();
-        crate::protocol_serde::shape_ai_prompt_template_configuration::ser_ai_prompt_template_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_4 = object.key("inferenceConfiguration").start_object();
+        crate::protocol_serde::shape_ai_prompt_inference_configuration::ser_ai_prompt_inference_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_6) = &input.visibility_status {
-        object.key("visibilityStatus").string(var_6.as_str());
+    if let Some(var_5) = &input.model_id {
+        object.key("modelId").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.template_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("templateConfiguration").start_object();
+        crate::protocol_serde::shape_ai_prompt_template_configuration::ser_ai_prompt_template_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.visibility_status {
+        object.key("visibilityStatus").string(var_8.as_str());
     }
     Ok(())
 }

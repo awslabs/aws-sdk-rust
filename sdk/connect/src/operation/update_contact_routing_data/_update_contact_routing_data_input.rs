@@ -11,7 +11,7 @@ pub struct UpdateContactRoutingDataInput {
     pub queue_time_adjustment_seconds: ::std::option::Option<i32>,
     /// <p>Priority of the contact in the queue. The default priority for new contacts is 5. You can raise the priority of a contact compared to other contacts in the queue by assigning them a higher priority, such as 1 or 2.</p>
     pub queue_priority: ::std::option::Option<i64>,
-    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a contact is routed within the queue.</p>
     pub routing_criteria: ::std::option::Option<crate::types::RoutingCriteriaInput>,
 }
 impl UpdateContactRoutingDataInput {
@@ -31,7 +31,7 @@ impl UpdateContactRoutingDataInput {
     pub fn queue_priority(&self) -> ::std::option::Option<i64> {
         self.queue_priority
     }
-    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a contact is routed within the queue.</p>
     pub fn routing_criteria(&self) -> ::std::option::Option<&crate::types::RoutingCriteriaInput> {
         self.routing_criteria.as_ref()
     }
@@ -112,17 +112,17 @@ impl UpdateContactRoutingDataInputBuilder {
     pub fn get_queue_priority(&self) -> &::std::option::Option<i64> {
         &self.queue_priority
     }
-    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a contact is routed within the queue.</p>
     pub fn routing_criteria(mut self, input: crate::types::RoutingCriteriaInput) -> Self {
         self.routing_criteria = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a contact is routed within the queue.</p>
     pub fn set_routing_criteria(mut self, input: ::std::option::Option<crate::types::RoutingCriteriaInput>) -> Self {
         self.routing_criteria = input;
         self
     }
-    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a contact is routed within the queue.</p>
     pub fn get_routing_criteria(&self) -> &::std::option::Option<crate::types::RoutingCriteriaInput> {
         &self.routing_criteria
     }

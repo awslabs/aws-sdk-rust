@@ -17,6 +17,10 @@ pub struct GetEngagementOutput {
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current count of members participating in the Engagement. This count includes all active members regardless of their roles or permissions within the Engagement.</p>
     pub member_count: ::std::option::Option<i32>,
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z". This helps track the most recent changes to the engagement.</p>
+    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The AWS account ID of the user who last modified the engagement. This field helps track who made the most recent changes to the engagement.</p>
+    pub modified_by: ::std::option::Option<::std::string::String>,
     /// <p>A list of context objects associated with the engagement. Each context provides additional information related to the Engagement, such as customer projects or documents.</p>
     pub contexts: ::std::option::Option<::std::vec::Vec<crate::types::EngagementContextDetails>>,
     _request_id: Option<String>,
@@ -50,6 +54,14 @@ impl GetEngagementOutput {
     pub fn member_count(&self) -> ::std::option::Option<i32> {
         self.member_count
     }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z". This helps track the most recent changes to the engagement.</p>
+    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.modified_at.as_ref()
+    }
+    /// <p>The AWS account ID of the user who last modified the engagement. This field helps track who made the most recent changes to the engagement.</p>
+    pub fn modified_by(&self) -> ::std::option::Option<&str> {
+        self.modified_by.as_deref()
+    }
     /// <p>A list of context objects associated with the engagement. Each context provides additional information related to the Engagement, such as customer projects or documents.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contexts.is_none()`.
@@ -67,6 +79,8 @@ impl ::std::fmt::Debug for GetEngagementOutput {
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &"*** Sensitive Data Redacted ***");
         formatter.field("member_count", &self.member_count);
+        formatter.field("modified_at", &self.modified_at);
+        formatter.field("modified_by", &"*** Sensitive Data Redacted ***");
         formatter.field("contexts", &self.contexts);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -95,6 +109,8 @@ pub struct GetEngagementOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) member_count: ::std::option::Option<i32>,
+    pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_by: ::std::option::Option<::std::string::String>,
     pub(crate) contexts: ::std::option::Option<::std::vec::Vec<crate::types::EngagementContextDetails>>,
     _request_id: Option<String>,
 }
@@ -197,6 +213,34 @@ impl GetEngagementOutputBuilder {
     pub fn get_member_count(&self) -> &::std::option::Option<i32> {
         &self.member_count
     }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z". This helps track the most recent changes to the engagement.</p>
+    pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z". This helps track the most recent changes to the engagement.</p>
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.modified_at = input;
+        self
+    }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z". This helps track the most recent changes to the engagement.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
+    }
+    /// <p>The AWS account ID of the user who last modified the engagement. This field helps track who made the most recent changes to the engagement.</p>
+    pub fn modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.modified_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID of the user who last modified the engagement. This field helps track who made the most recent changes to the engagement.</p>
+    pub fn set_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.modified_by = input;
+        self
+    }
+    /// <p>The AWS account ID of the user who last modified the engagement. This field helps track who made the most recent changes to the engagement.</p>
+    pub fn get_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.modified_by
+    }
     /// Appends an item to `contexts`.
     ///
     /// To override the contents of this collection use [`set_contexts`](Self::set_contexts).
@@ -236,6 +280,8 @@ impl GetEngagementOutputBuilder {
             created_at: self.created_at,
             created_by: self.created_by,
             member_count: self.member_count,
+            modified_at: self.modified_at,
+            modified_by: self.modified_by,
             contexts: self.contexts,
             _request_id: self._request_id,
         }
@@ -251,6 +297,8 @@ impl ::std::fmt::Debug for GetEngagementOutputBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &"*** Sensitive Data Redacted ***");
         formatter.field("member_count", &self.member_count);
+        formatter.field("modified_at", &self.modified_at);
+        formatter.field("modified_by", &"*** Sensitive Data Redacted ***");
         formatter.field("contexts", &self.contexts);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

@@ -16,6 +16,8 @@ pub struct UpdateDomainInput {
     pub matching: ::std::option::Option<crate::types::MatchingRequest>,
     /// <p>The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     pub rule_based_matching: ::std::option::Option<crate::types::RuleBasedMatchingRequest>,
+    /// <p>Set to true to enabled data store for this domain.</p>
+    pub data_store: ::std::option::Option<crate::types::DataStoreRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -45,6 +47,10 @@ impl UpdateDomainInput {
     pub fn rule_based_matching(&self) -> ::std::option::Option<&crate::types::RuleBasedMatchingRequest> {
         self.rule_based_matching.as_ref()
     }
+    /// <p>Set to true to enabled data store for this domain.</p>
+    pub fn data_store(&self) -> ::std::option::Option<&crate::types::DataStoreRequest> {
+        self.data_store.as_ref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -67,6 +73,7 @@ pub struct UpdateDomainInputBuilder {
     pub(crate) dead_letter_queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) matching: ::std::option::Option<crate::types::MatchingRequest>,
     pub(crate) rule_based_matching: ::std::option::Option<crate::types::RuleBasedMatchingRequest>,
+    pub(crate) data_store: ::std::option::Option<crate::types::DataStoreRequest>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateDomainInputBuilder {
@@ -158,6 +165,20 @@ impl UpdateDomainInputBuilder {
     pub fn get_rule_based_matching(&self) -> &::std::option::Option<crate::types::RuleBasedMatchingRequest> {
         &self.rule_based_matching
     }
+    /// <p>Set to true to enabled data store for this domain.</p>
+    pub fn data_store(mut self, input: crate::types::DataStoreRequest) -> Self {
+        self.data_store = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to true to enabled data store for this domain.</p>
+    pub fn set_data_store(mut self, input: ::std::option::Option<crate::types::DataStoreRequest>) -> Self {
+        self.data_store = input;
+        self
+    }
+    /// <p>Set to true to enabled data store for this domain.</p>
+    pub fn get_data_store(&self) -> &::std::option::Option<crate::types::DataStoreRequest> {
+        &self.data_store
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -189,6 +210,7 @@ impl UpdateDomainInputBuilder {
             dead_letter_queue_url: self.dead_letter_queue_url,
             matching: self.matching,
             rule_based_matching: self.rule_based_matching,
+            data_store: self.data_store,
             tags: self.tags,
         })
     }

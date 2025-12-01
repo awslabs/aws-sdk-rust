@@ -28,21 +28,36 @@ pub fn ser_create_session_input_input(
     if let Some(var_9) = &input.name {
         object.key("name").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.tag_filter {
-        #[allow(unused_mut)]
-        let mut object_11 = object.key("tagFilter").start_object();
-        crate::protocol_serde::shape_tag_filter::ser_tag_filter(&mut object_11, var_10)?;
-        object_11.finish();
-    }
-    if let Some(var_12) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+    if let Some(var_10) = &input.orchestrator_configuration_list {
+        let mut array_11 = object.key("orchestratorConfigurationList").start_array();
+        for item_12 in var_10 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_orchestrator_configuration_entry::ser_orchestrator_configuration_entry(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        object_13.finish();
+        array_11.finish();
+    }
+    if let Some(var_14) = &input.remove_orchestrator_configuration_list {
+        object.key("removeOrchestratorConfigurationList").boolean(*var_14);
+    }
+    if let Some(var_15) = &input.tag_filter {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("tagFilter").start_object();
+        crate::protocol_serde::shape_tag_filter::ser_tag_filter(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("tags").start_object();
+        for (key_19, value_20) in var_17 {
+            {
+                object_18.key(key_19.as_str()).string(value_20.as_str());
+            }
+        }
+        object_18.finish();
     }
     Ok(())
 }

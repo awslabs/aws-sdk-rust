@@ -299,6 +299,22 @@ pub fn de_invoke_http_error(
             }
             tmp
         }),
+        "NoPublishedVersionException" => crate::operation::invoke::InvokeError::NoPublishedVersionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoPublishedVersionExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_no_published_version_exception::de_no_published_version_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "RecursiveInvocationException" => crate::operation::invoke::InvokeError::RecursiveInvocationException({
             #[allow(unused_mut)]
             let mut tmp = {

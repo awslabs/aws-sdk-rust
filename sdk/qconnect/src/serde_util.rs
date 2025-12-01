@@ -206,6 +206,15 @@ pub(crate) fn list_quick_responses_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_spans_output_output_correct_errors(
+    mut builder: crate::operation::list_spans::builders::ListSpansOutputBuilder,
+) -> crate::operation::list_spans::builders::ListSpansOutputBuilder {
+    if builder.spans.is_none() {
+        builder.spans = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn put_feedback_output_output_correct_errors(
     mut builder: crate::operation::put_feedback::builders::PutFeedbackOutputBuilder,
 ) -> crate::operation::put_feedback::builders::PutFeedbackOutputBuilder {
@@ -230,6 +239,15 @@ pub(crate) fn put_feedback_output_output_correct_errors(
 pub(crate) fn query_assistant_output_output_correct_errors(
     mut builder: crate::operation::query_assistant::builders::QueryAssistantOutputBuilder,
 ) -> crate::operation::query_assistant::builders::QueryAssistantOutputBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn retrieve_output_output_correct_errors(
+    mut builder: crate::operation::retrieve::builders::RetrieveOutputBuilder,
+) -> crate::operation::retrieve::builders::RetrieveOutputBuilder {
     if builder.results.is_none() {
         builder.results = Some(Default::default())
     }
@@ -1261,6 +1279,24 @@ pub(crate) fn result_data_correct_errors(mut builder: crate::types::builders::Re
     builder
 }
 
+pub(crate) fn retrieve_result_correct_errors(
+    mut builder: crate::types::builders::RetrieveResultBuilder,
+) -> crate::types::builders::RetrieveResultBuilder {
+    if builder.association_id.is_none() {
+        builder.association_id = Some(Default::default())
+    }
+    if builder.source_id.is_none() {
+        builder.source_id = Some(Default::default())
+    }
+    if builder.reference_type.is_none() {
+        builder.reference_type = "no value was set".parse::<crate::types::ReferenceType>().ok()
+    }
+    if builder.content_text.is_none() {
+        builder.content_text = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn runtime_session_data_correct_errors(
     mut builder: crate::types::builders::RuntimeSessionDataBuilder,
 ) -> crate::types::builders::RuntimeSessionDataBuilder {
@@ -1287,6 +1323,43 @@ pub(crate) fn session_summary_correct_errors(
     }
     if builder.assistant_arn.is_none() {
         builder.assistant_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn span_correct_errors(mut builder: crate::types::builders::SpanBuilder) -> crate::types::builders::SpanBuilder {
+    if builder.span_id.is_none() {
+        builder.span_id = Some(Default::default())
+    }
+    if builder.assistant_id.is_none() {
+        builder.assistant_id = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.span_name.is_none() {
+        builder.span_name = Some(Default::default())
+    }
+    if builder.span_type.is_none() {
+        builder.span_type = "no value was set".parse::<crate::types::SpanType>().ok()
+    }
+    if builder.start_timestamp.is_none() {
+        builder.start_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.end_timestamp.is_none() {
+        builder.end_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SpanStatus>().ok()
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.attributes.is_none() {
+        builder.attributes = {
+            let builder = crate::types::builders::SpanAttributesBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -1350,6 +1423,36 @@ pub(crate) fn document_correct_errors(mut builder: crate::types::builders::Docum
     builder
 }
 
+pub(crate) fn external_bedrock_knowledge_base_config_correct_errors(
+    mut builder: crate::types::builders::ExternalBedrockKnowledgeBaseConfigBuilder,
+) -> crate::types::builders::ExternalBedrockKnowledgeBaseConfigBuilder {
+    if builder.bedrock_knowledge_base_arn.is_none() {
+        builder.bedrock_knowledge_base_arn = Some(Default::default())
+    }
+    if builder.access_role_arn.is_none() {
+        builder.access_role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn orchestration_ai_agent_configuration_correct_errors(
+    mut builder: crate::types::builders::OrchestrationAiAgentConfigurationBuilder,
+) -> crate::types::builders::OrchestrationAiAgentConfigurationBuilder {
+    if builder.orchestration_ai_prompt_id.is_none() {
+        builder.orchestration_ai_prompt_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn orchestrator_configuration_entry_correct_errors(
+    mut builder: crate::types::builders::OrchestratorConfigurationEntryBuilder,
+) -> crate::types::builders::OrchestratorConfigurationEntryBuilder {
+    if builder.orchestrator_use_case.is_none() {
+        builder.orchestrator_use_case = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn parsing_configuration_correct_errors(
     mut builder: crate::types::builders::ParsingConfigurationBuilder,
 ) -> crate::types::builders::ParsingConfigurationBuilder {
@@ -1371,6 +1474,30 @@ pub(crate) fn text_full_ai_prompt_edit_template_configuration_correct_errors(
 ) -> crate::types::builders::TextFullAiPromptEditTemplateConfigurationBuilder {
     if builder.text.is_none() {
         builder.text = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn tool_use_result_data_correct_errors(
+    mut builder: crate::types::builders::ToolUseResultDataBuilder,
+) -> crate::types::builders::ToolUseResultDataBuilder {
+    if builder.tool_use_id.is_none() {
+        builder.tool_use_id = Some(Default::default())
+    }
+    if builder.tool_name.is_none() {
+        builder.tool_name = Some(Default::default())
+    }
+    if builder.tool_result.is_none() {
+        builder.tool_result = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_guardrail_assessment_correct_errors(
+    mut builder: crate::types::builders::AiGuardrailAssessmentBuilder,
+) -> crate::types::builders::AiGuardrailAssessmentBuilder {
+    if builder.blocked.is_none() {
+        builder.blocked = Some(Default::default())
     }
     builder
 }
@@ -1534,6 +1661,19 @@ pub(crate) fn whats_app_message_template_source_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn citation_correct_errors(mut builder: crate::types::builders::CitationBuilder) -> crate::types::builders::CitationBuilder {
+    if builder.citation_span.is_none() {
+        builder.citation_span = {
+            let builder = crate::types::builders::CitationSpanBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.reference_type.is_none() {
+        builder.reference_type = "no value was set".parse::<crate::types::ReferenceType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn content_data_details_correct_errors(
     mut builder: crate::types::builders::ContentDataDetailsBuilder,
 ) -> crate::types::builders::ContentDataDetailsBuilder {
@@ -1615,11 +1755,129 @@ pub(crate) fn source_content_data_details_correct_errors(
     builder
 }
 
+pub(crate) fn span_message_correct_errors(mut builder: crate::types::builders::SpanMessageBuilder) -> crate::types::builders::SpanMessageBuilder {
+    if builder.message_id.is_none() {
+        builder.message_id = Some(Default::default())
+    }
+    if builder.participant.is_none() {
+        builder.participant = "no value was set".parse::<crate::types::Participant>().ok()
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn suggested_message_data_details_correct_errors(
+    mut builder: crate::types::builders::SuggestedMessageDataDetailsBuilder,
+) -> crate::types::builders::SuggestedMessageDataDetailsBuilder {
+    if builder.message_text.is_none() {
+        builder.message_text = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn suggested_message_reference_correct_errors(
+    mut builder: crate::types::builders::SuggestedMessageReferenceBuilder,
+) -> crate::types::builders::SuggestedMessageReferenceBuilder {
+    if builder.ai_agent_id.is_none() {
+        builder.ai_agent_id = Some(Default::default())
+    }
+    if builder.ai_agent_arn.is_none() {
+        builder.ai_agent_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn tool_configuration_correct_errors(
+    mut builder: crate::types::builders::ToolConfigurationBuilder,
+) -> crate::types::builders::ToolConfigurationBuilder {
+    if builder.tool_name.is_none() {
+        builder.tool_name = Some(Default::default())
+    }
+    if builder.tool_type.is_none() {
+        builder.tool_type = "no value was set".parse::<crate::types::ToolType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn hierarchical_chunking_level_configuration_correct_errors(
     mut builder: crate::types::builders::HierarchicalChunkingLevelConfigurationBuilder,
 ) -> crate::types::builders::HierarchicalChunkingLevelConfigurationBuilder {
     if builder.max_tokens.is_none() {
         builder.max_tokens = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn span_text_value_correct_errors(
+    mut builder: crate::types::builders::SpanTextValueBuilder,
+) -> crate::types::builders::SpanTextValueBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn span_tool_result_value_correct_errors(
+    mut builder: crate::types::builders::SpanToolResultValueBuilder,
+) -> crate::types::builders::SpanToolResultValueBuilder {
+    if builder.tool_use_id.is_none() {
+        builder.tool_use_id = Some(Default::default())
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn span_tool_use_value_correct_errors(
+    mut builder: crate::types::builders::SpanToolUseValueBuilder,
+) -> crate::types::builders::SpanToolUseValueBuilder {
+    if builder.tool_use_id.is_none() {
+        builder.tool_use_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arguments.is_none() {
+        builder.arguments = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn tool_output_filter_correct_errors(
+    mut builder: crate::types::builders::ToolOutputFilterBuilder,
+) -> crate::types::builders::ToolOutputFilterBuilder {
+    if builder.json_path.is_none() {
+        builder.json_path = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn tool_override_input_value_correct_errors(
+    mut builder: crate::types::builders::ToolOverrideInputValueBuilder,
+) -> crate::types::builders::ToolOverrideInputValueBuilder {
+    if builder.json_path.is_none() {
+        builder.json_path = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::ToolOverrideInputValueConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn tool_override_constant_input_value_correct_errors(
+    mut builder: crate::types::builders::ToolOverrideConstantInputValueBuilder,
+) -> crate::types::builders::ToolOverrideConstantInputValueBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ToolOverrideInputValueType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

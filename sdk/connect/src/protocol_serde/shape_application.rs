@@ -15,6 +15,9 @@ pub fn ser_application(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.r#type {
+        object.key("Type").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -43,6 +46,13 @@ where
                         "ApplicationPermissions" => {
                             builder = builder.set_application_permissions(
                                 crate::protocol_serde::shape_application_permissions::de_application_permissions(tokens)?,
+                            );
+                        }
+                        "Type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ApplicationType::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

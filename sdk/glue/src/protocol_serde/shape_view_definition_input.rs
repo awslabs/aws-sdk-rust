@@ -21,14 +21,44 @@ pub fn ser_view_definition_input(
         }
         array_4.finish();
     }
-    if let Some(var_7) = &input.sub_objects {
-        let mut array_8 = object.key("SubObjects").start_array();
-        for item_9 in var_7 {
+    if input.view_version_id != 0 {
+        object.key("ViewVersionId").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.view_version_id).into()),
+        );
+    }
+    if let Some(var_7) = &input.view_version_token {
+        object.key("ViewVersionToken").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.refresh_seconds {
+        object.key("RefreshSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    if let Some(var_9) = &input.last_refresh_type {
+        object.key("LastRefreshType").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.sub_objects {
+        let mut array_11 = object.key("SubObjects").start_array();
+        for item_12 in var_10 {
             {
-                array_8.value().string(item_9.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_8.finish();
+        array_11.finish();
+    }
+    if let Some(var_13) = &input.sub_object_version_ids {
+        let mut array_14 = object.key("SubObjectVersionIds").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::NegInt((*item_15).into()),
+                );
+            }
+        }
+        array_14.finish();
     }
     Ok(())
 }

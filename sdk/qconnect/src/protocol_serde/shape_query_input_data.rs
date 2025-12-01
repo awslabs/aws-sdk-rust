@@ -16,6 +16,12 @@ pub fn ser_query_input_data(
             crate::protocol_serde::shape_intent_input_data::ser_intent_input_data(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::QueryInputData::CaseSummarizationInputData(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_9.key("caseSummarizationInputData").start_object();
+            crate::protocol_serde::shape_case_summarization_input_data::ser_case_summarization_input_data(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::QueryInputData::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "QueryInputData",

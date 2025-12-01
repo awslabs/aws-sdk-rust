@@ -8,6 +8,8 @@ pub struct MessageMetadata {
     pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of receipt information for a message for different recipients.</p>
     pub receipts: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>,
+    /// <p>The status of Message Processing for the message.</p>
+    pub message_processing_status: ::std::option::Option<crate::types::MessageProcessingStatus>,
 }
 impl MessageMetadata {
     /// <p>The identifier of the message that contains the metadata information.</p>
@@ -19,6 +21,10 @@ impl MessageMetadata {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.receipts.is_none()`.
     pub fn receipts(&self) -> &[crate::types::Receipt] {
         self.receipts.as_deref().unwrap_or_default()
+    }
+    /// <p>The status of Message Processing for the message.</p>
+    pub fn message_processing_status(&self) -> ::std::option::Option<&crate::types::MessageProcessingStatus> {
+        self.message_processing_status.as_ref()
     }
 }
 impl MessageMetadata {
@@ -34,6 +40,7 @@ impl MessageMetadata {
 pub struct MessageMetadataBuilder {
     pub(crate) message_id: ::std::option::Option<::std::string::String>,
     pub(crate) receipts: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>,
+    pub(crate) message_processing_status: ::std::option::Option<crate::types::MessageProcessingStatus>,
 }
 impl MessageMetadataBuilder {
     /// <p>The identifier of the message that contains the metadata information.</p>
@@ -70,11 +77,26 @@ impl MessageMetadataBuilder {
     pub fn get_receipts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Receipt>> {
         &self.receipts
     }
+    /// <p>The status of Message Processing for the message.</p>
+    pub fn message_processing_status(mut self, input: crate::types::MessageProcessingStatus) -> Self {
+        self.message_processing_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of Message Processing for the message.</p>
+    pub fn set_message_processing_status(mut self, input: ::std::option::Option<crate::types::MessageProcessingStatus>) -> Self {
+        self.message_processing_status = input;
+        self
+    }
+    /// <p>The status of Message Processing for the message.</p>
+    pub fn get_message_processing_status(&self) -> &::std::option::Option<crate::types::MessageProcessingStatus> {
+        &self.message_processing_status
+    }
     /// Consumes the builder and constructs a [`MessageMetadata`](crate::types::MessageMetadata).
     pub fn build(self) -> crate::types::MessageMetadata {
         crate::types::MessageMetadata {
             message_id: self.message_id,
             receipts: self.receipts,
+            message_processing_status: self.message_processing_status,
         }
     }
 }

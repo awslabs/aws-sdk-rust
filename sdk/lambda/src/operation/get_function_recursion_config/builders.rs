@@ -108,17 +108,17 @@ impl GetFunctionRecursionConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p></p>
+    /// <p>The name of the function.</p>
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The name of the function.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
-    /// <p></p>
+    /// <p>The name of the function.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_function_name()
     }

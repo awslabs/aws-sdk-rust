@@ -17,6 +17,10 @@ pub struct CreateBotLocaleOutput {
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    /// <p>The unified speech settings configured for the created bot locale.</p>
+    pub unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    /// <p>The speech-to-text settings configured for the created bot locale.</p>
+    pub speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     /// <p>The status of the bot.</p>
     /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
     /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>
@@ -58,6 +62,14 @@ impl CreateBotLocaleOutput {
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
     pub fn voice_settings(&self) -> ::std::option::Option<&crate::types::VoiceSettings> {
         self.voice_settings.as_ref()
+    }
+    /// <p>The unified speech settings configured for the created bot locale.</p>
+    pub fn unified_speech_settings(&self) -> ::std::option::Option<&crate::types::UnifiedSpeechSettings> {
+        self.unified_speech_settings.as_ref()
+    }
+    /// <p>The speech-to-text settings configured for the created bot locale.</p>
+    pub fn speech_recognition_settings(&self) -> ::std::option::Option<&crate::types::SpeechRecognitionSettings> {
+        self.speech_recognition_settings.as_ref()
     }
     /// <p>The status of the bot.</p>
     /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
@@ -102,6 +114,8 @@ pub struct CreateBotLocaleOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    pub(crate) unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    pub(crate) speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     pub(crate) bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
@@ -207,6 +221,34 @@ impl CreateBotLocaleOutputBuilder {
     pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
         &self.voice_settings
     }
+    /// <p>The unified speech settings configured for the created bot locale.</p>
+    pub fn unified_speech_settings(mut self, input: crate::types::UnifiedSpeechSettings) -> Self {
+        self.unified_speech_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The unified speech settings configured for the created bot locale.</p>
+    pub fn set_unified_speech_settings(mut self, input: ::std::option::Option<crate::types::UnifiedSpeechSettings>) -> Self {
+        self.unified_speech_settings = input;
+        self
+    }
+    /// <p>The unified speech settings configured for the created bot locale.</p>
+    pub fn get_unified_speech_settings(&self) -> &::std::option::Option<crate::types::UnifiedSpeechSettings> {
+        &self.unified_speech_settings
+    }
+    /// <p>The speech-to-text settings configured for the created bot locale.</p>
+    pub fn speech_recognition_settings(mut self, input: crate::types::SpeechRecognitionSettings) -> Self {
+        self.speech_recognition_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The speech-to-text settings configured for the created bot locale.</p>
+    pub fn set_speech_recognition_settings(mut self, input: ::std::option::Option<crate::types::SpeechRecognitionSettings>) -> Self {
+        self.speech_recognition_settings = input;
+        self
+    }
+    /// <p>The speech-to-text settings configured for the created bot locale.</p>
+    pub fn get_speech_recognition_settings(&self) -> &::std::option::Option<crate::types::SpeechRecognitionSettings> {
+        &self.speech_recognition_settings
+    }
     /// <p>The status of the bot.</p>
     /// <p>When the status is <code>Creating</code> the bot locale is being configured. When the status is <code>Building</code> Amazon Lex is building the bot for testing and use.</p>
     /// <p>If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot using the exact utterances specified in the bots' intents. When the bot is ready for full testing or to run, the status is <code>Built</code>.</p>
@@ -291,6 +333,8 @@ impl CreateBotLocaleOutputBuilder {
             description: self.description,
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
+            unified_speech_settings: self.unified_speech_settings,
+            speech_recognition_settings: self.speech_recognition_settings,
             bot_locale_status: self.bot_locale_status,
             creation_date_time: self.creation_date_time,
             generative_ai_settings: self.generative_ai_settings,

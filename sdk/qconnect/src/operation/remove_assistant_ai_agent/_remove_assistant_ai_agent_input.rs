@@ -7,6 +7,8 @@ pub struct RemoveAssistantAiAgentInput {
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the AI Agent being removed for use by default from the Amazon Q in Connect Assistant.</p>
     pub ai_agent_type: ::std::option::Option<crate::types::AiAgentType>,
+    /// <p>The orchestrator use case for the AI Agent being removed.</p>
+    pub orchestrator_use_case: ::std::option::Option<::std::string::String>,
 }
 impl RemoveAssistantAiAgentInput {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -16,6 +18,10 @@ impl RemoveAssistantAiAgentInput {
     /// <p>The type of the AI Agent being removed for use by default from the Amazon Q in Connect Assistant.</p>
     pub fn ai_agent_type(&self) -> ::std::option::Option<&crate::types::AiAgentType> {
         self.ai_agent_type.as_ref()
+    }
+    /// <p>The orchestrator use case for the AI Agent being removed.</p>
+    pub fn orchestrator_use_case(&self) -> ::std::option::Option<&str> {
+        self.orchestrator_use_case.as_deref()
     }
 }
 impl RemoveAssistantAiAgentInput {
@@ -31,6 +37,7 @@ impl RemoveAssistantAiAgentInput {
 pub struct RemoveAssistantAiAgentInputBuilder {
     pub(crate) assistant_id: ::std::option::Option<::std::string::String>,
     pub(crate) ai_agent_type: ::std::option::Option<crate::types::AiAgentType>,
+    pub(crate) orchestrator_use_case: ::std::option::Option<::std::string::String>,
 }
 impl RemoveAssistantAiAgentInputBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -63,6 +70,20 @@ impl RemoveAssistantAiAgentInputBuilder {
     pub fn get_ai_agent_type(&self) -> &::std::option::Option<crate::types::AiAgentType> {
         &self.ai_agent_type
     }
+    /// <p>The orchestrator use case for the AI Agent being removed.</p>
+    pub fn orchestrator_use_case(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.orchestrator_use_case = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The orchestrator use case for the AI Agent being removed.</p>
+    pub fn set_orchestrator_use_case(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.orchestrator_use_case = input;
+        self
+    }
+    /// <p>The orchestrator use case for the AI Agent being removed.</p>
+    pub fn get_orchestrator_use_case(&self) -> &::std::option::Option<::std::string::String> {
+        &self.orchestrator_use_case
+    }
     /// Consumes the builder and constructs a [`RemoveAssistantAiAgentInput`](crate::operation::remove_assistant_ai_agent::RemoveAssistantAiAgentInput).
     pub fn build(
         self,
@@ -73,6 +94,7 @@ impl RemoveAssistantAiAgentInputBuilder {
         ::std::result::Result::Ok(crate::operation::remove_assistant_ai_agent::RemoveAssistantAiAgentInput {
             assistant_id: self.assistant_id,
             ai_agent_type: self.ai_agent_type,
+            orchestrator_use_case: self.orchestrator_use_case,
         })
     }
 }

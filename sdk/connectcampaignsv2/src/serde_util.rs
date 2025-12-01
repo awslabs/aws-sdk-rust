@@ -96,12 +96,6 @@ pub(crate) fn campaign_correct_errors(mut builder: crate::types::builders::Campa
     if builder.connect_instance_id.is_none() {
         builder.connect_instance_id = Some(Default::default())
     }
-    if builder.channel_subtype_config.is_none() {
-        builder.channel_subtype_config = {
-            let builder = crate::types::builders::ChannelSubtypeConfigBuilder::default();
-            Some(builder.build())
-        }
-    }
     builder
 }
 
@@ -214,6 +208,15 @@ pub(crate) fn email_channel_subtype_config_correct_errors(
     builder
 }
 
+pub(crate) fn lambda_integration_summary_correct_errors(
+    mut builder: crate::types::builders::LambdaIntegrationSummaryBuilder,
+) -> crate::types::builders::LambdaIntegrationSummaryBuilder {
+    if builder.function_arn.is_none() {
+        builder.function_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn q_connect_integration_summary_correct_errors(
     mut builder: crate::types::builders::QConnectIntegrationSummaryBuilder,
 ) -> crate::types::builders::QConnectIntegrationSummaryBuilder {
@@ -256,6 +259,21 @@ pub(crate) fn telephony_channel_subtype_config_correct_errors(
 pub(crate) fn time_window_correct_errors(mut builder: crate::types::builders::TimeWindowBuilder) -> crate::types::builders::TimeWindowBuilder {
     if builder.open_hours.is_none() {
         builder.open_hours = Some(crate::types::OpenHours::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn whats_app_channel_subtype_config_correct_errors(
+    mut builder: crate::types::builders::WhatsAppChannelSubtypeConfigBuilder,
+) -> crate::types::builders::WhatsAppChannelSubtypeConfigBuilder {
+    if builder.outbound_mode.is_none() {
+        builder.outbound_mode = Some(crate::types::WhatsAppOutboundMode::Unknown)
+    }
+    if builder.default_outbound_config.is_none() {
+        builder.default_outbound_config = {
+            let builder = crate::types::builders::WhatsAppOutboundConfigBuilder::default();
+            crate::serde_util::whats_app_outbound_config_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -304,6 +322,18 @@ pub(crate) fn telephony_outbound_config_correct_errors(
 ) -> crate::types::builders::TelephonyOutboundConfigBuilder {
     if builder.connect_contact_flow_id.is_none() {
         builder.connect_contact_flow_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn whats_app_outbound_config_correct_errors(
+    mut builder: crate::types::builders::WhatsAppOutboundConfigBuilder,
+) -> crate::types::builders::WhatsAppOutboundConfigBuilder {
+    if builder.connect_source_phone_number_arn.is_none() {
+        builder.connect_source_phone_number_arn = Some(Default::default())
+    }
+    if builder.wisdom_template_arn.is_none() {
+        builder.wisdom_template_arn = Some(Default::default())
     }
     builder
 }

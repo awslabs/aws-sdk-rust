@@ -15,6 +15,12 @@ pub fn ser_ml_payment_config(
         crate::protocol_serde::shape_model_inference_payment_config::ser_model_inference_payment_config(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.synthetic_data_generation {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("syntheticDataGeneration").start_object();
+        crate::protocol_serde::shape_synthetic_data_generation_payment_config::ser_synthetic_data_generation_payment_config(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -32,19 +38,26 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "modelTraining" => {
-                            builder = builder.set_model_training(
-                                crate::protocol_serde::shape_model_training_payment_config::de_model_training_payment_config(tokens)?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "modelTraining" => {
+                                builder = builder.set_model_training(
+                                    crate::protocol_serde::shape_model_training_payment_config::de_model_training_payment_config(tokens)?,
+                                );
+                            }
+                            "modelInference" => {
+                                builder = builder.set_model_inference(
+                                    crate::protocol_serde::shape_model_inference_payment_config::de_model_inference_payment_config(tokens)?,
+                                );
+                            }
+                            "syntheticDataGeneration" => {
+                                builder = builder.set_synthetic_data_generation(
+                                    crate::protocol_serde::shape_synthetic_data_generation_payment_config::de_synthetic_data_generation_payment_config(tokens)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "modelInference" => {
-                            builder = builder.set_model_inference(
-                                crate::protocol_serde::shape_model_inference_payment_config::de_model_inference_payment_config(tokens)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

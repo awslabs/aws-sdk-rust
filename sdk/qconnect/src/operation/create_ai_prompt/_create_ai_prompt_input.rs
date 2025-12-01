@@ -30,6 +30,8 @@ pub struct CreateAiPromptInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The description of the AI Prompt.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The inference configuration for the AI Prompt being created.</p>
+    pub inference_configuration: ::std::option::Option<crate::types::AiPromptInferenceConfiguration>,
 }
 impl CreateAiPromptInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>..</p>
@@ -81,6 +83,10 @@ impl CreateAiPromptInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The inference configuration for the AI Prompt being created.</p>
+    pub fn inference_configuration(&self) -> ::std::option::Option<&crate::types::AiPromptInferenceConfiguration> {
+        self.inference_configuration.as_ref()
+    }
 }
 impl CreateAiPromptInput {
     /// Creates a new builder-style object to manufacture [`CreateAiPromptInput`](crate::operation::create_ai_prompt::CreateAiPromptInput).
@@ -104,6 +110,7 @@ pub struct CreateAiPromptInputBuilder {
     pub(crate) api_format: ::std::option::Option<crate::types::AiPromptApiFormat>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) inference_configuration: ::std::option::Option<crate::types::AiPromptInferenceConfiguration>,
 }
 impl CreateAiPromptInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>..</p>
@@ -289,6 +296,20 @@ impl CreateAiPromptInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The inference configuration for the AI Prompt being created.</p>
+    pub fn inference_configuration(mut self, input: crate::types::AiPromptInferenceConfiguration) -> Self {
+        self.inference_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The inference configuration for the AI Prompt being created.</p>
+    pub fn set_inference_configuration(mut self, input: ::std::option::Option<crate::types::AiPromptInferenceConfiguration>) -> Self {
+        self.inference_configuration = input;
+        self
+    }
+    /// <p>The inference configuration for the AI Prompt being created.</p>
+    pub fn get_inference_configuration(&self) -> &::std::option::Option<crate::types::AiPromptInferenceConfiguration> {
+        &self.inference_configuration
+    }
     /// Consumes the builder and constructs a [`CreateAiPromptInput`](crate::operation::create_ai_prompt::CreateAiPromptInput).
     pub fn build(
         self,
@@ -305,6 +326,7 @@ impl CreateAiPromptInputBuilder {
             api_format: self.api_format,
             tags: self.tags,
             description: self.description,
+            inference_configuration: self.inference_configuration,
         })
     }
 }

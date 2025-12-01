@@ -21,6 +21,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AiAgents" => {
+                            builder = builder.set_ai_agents(crate::protocol_serde::shape_ai_agents::de_ai_agents(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

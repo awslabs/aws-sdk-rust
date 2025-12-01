@@ -10,6 +10,8 @@ pub struct EvaluationScore {
     pub not_applicable: bool,
     /// <p>The flag that marks the item as automatic fail. If the item or a child item gets an automatic fail answer, this flag will be true.</p>
     pub automatic_fail: bool,
+    /// <p>Weight applied to this evaluation score.</p>
+    pub applied_weight: ::std::option::Option<f64>,
 }
 impl EvaluationScore {
     /// <p>The score percentage for an item in a contact evaluation.</p>
@@ -23,6 +25,10 @@ impl EvaluationScore {
     /// <p>The flag that marks the item as automatic fail. If the item or a child item gets an automatic fail answer, this flag will be true.</p>
     pub fn automatic_fail(&self) -> bool {
         self.automatic_fail
+    }
+    /// <p>Weight applied to this evaluation score.</p>
+    pub fn applied_weight(&self) -> ::std::option::Option<f64> {
+        self.applied_weight
     }
 }
 impl EvaluationScore {
@@ -39,6 +45,7 @@ pub struct EvaluationScoreBuilder {
     pub(crate) percentage: ::std::option::Option<f64>,
     pub(crate) not_applicable: ::std::option::Option<bool>,
     pub(crate) automatic_fail: ::std::option::Option<bool>,
+    pub(crate) applied_weight: ::std::option::Option<f64>,
 }
 impl EvaluationScoreBuilder {
     /// <p>The score percentage for an item in a contact evaluation.</p>
@@ -83,12 +90,27 @@ impl EvaluationScoreBuilder {
     pub fn get_automatic_fail(&self) -> &::std::option::Option<bool> {
         &self.automatic_fail
     }
+    /// <p>Weight applied to this evaluation score.</p>
+    pub fn applied_weight(mut self, input: f64) -> Self {
+        self.applied_weight = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Weight applied to this evaluation score.</p>
+    pub fn set_applied_weight(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.applied_weight = input;
+        self
+    }
+    /// <p>Weight applied to this evaluation score.</p>
+    pub fn get_applied_weight(&self) -> &::std::option::Option<f64> {
+        &self.applied_weight
+    }
     /// Consumes the builder and constructs a [`EvaluationScore`](crate::types::EvaluationScore).
     pub fn build(self) -> crate::types::EvaluationScore {
         crate::types::EvaluationScore {
             percentage: self.percentage.unwrap_or_default(),
             not_applicable: self.not_applicable.unwrap_or_default(),
             automatic_fail: self.automatic_fail.unwrap_or_default(),
+            applied_weight: self.applied_weight,
         }
     }
 }

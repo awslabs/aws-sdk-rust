@@ -28,6 +28,10 @@ where
                         "performAutoTraining" => {
                             builder = builder.set_perform_auto_training(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "performIncrementalUpdate" => {
+                            builder =
+                                builder.set_perform_incremental_update(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "creationDateTime" => {
                             builder = builder.set_creation_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

@@ -19,6 +19,10 @@ pub struct RetrievalResultContent {
     pub text: ::std::string::String,
     /// <p>A data URI with base64-encoded content from the data source. The URI is in the following format: returned in the following format: <code>data:image/jpeg;base64,${base64-encoded string}</code>.</p>
     pub byte_content: ::std::option::Option<::std::string::String>,
+    /// <p>Video segment information when the retrieval result contains video content.</p>
+    pub video: ::std::option::Option<crate::types::VideoSegment>,
+    /// <p>Audio segment information when the retrieval result contains audio content.</p>
+    pub audio: ::std::option::Option<crate::types::AudioSegment>,
     /// <p>Specifies information about the rows with the cells to return in retrieval.</p>
     pub row: ::std::option::Option<::std::vec::Vec<crate::types::RetrievalResultContentColumn>>,
 }
@@ -36,6 +40,14 @@ impl RetrievalResultContent {
     pub fn byte_content(&self) -> ::std::option::Option<&str> {
         self.byte_content.as_deref()
     }
+    /// <p>Video segment information when the retrieval result contains video content.</p>
+    pub fn video(&self) -> ::std::option::Option<&crate::types::VideoSegment> {
+        self.video.as_ref()
+    }
+    /// <p>Audio segment information when the retrieval result contains audio content.</p>
+    pub fn audio(&self) -> ::std::option::Option<&crate::types::AudioSegment> {
+        self.audio.as_ref()
+    }
     /// <p>Specifies information about the rows with the cells to return in retrieval.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.row.is_none()`.
@@ -49,6 +61,8 @@ impl ::std::fmt::Debug for RetrievalResultContent {
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("byte_content", &"*** Sensitive Data Redacted ***");
+        formatter.field("video", &"*** Sensitive Data Redacted ***");
+        formatter.field("audio", &"*** Sensitive Data Redacted ***");
         formatter.field("row", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -67,6 +81,8 @@ pub struct RetrievalResultContentBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RetrievalResultContentType>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
     pub(crate) byte_content: ::std::option::Option<::std::string::String>,
+    pub(crate) video: ::std::option::Option<crate::types::VideoSegment>,
+    pub(crate) audio: ::std::option::Option<crate::types::AudioSegment>,
     pub(crate) row: ::std::option::Option<::std::vec::Vec<crate::types::RetrievalResultContentColumn>>,
 }
 impl RetrievalResultContentBuilder {
@@ -112,6 +128,34 @@ impl RetrievalResultContentBuilder {
     pub fn get_byte_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.byte_content
     }
+    /// <p>Video segment information when the retrieval result contains video content.</p>
+    pub fn video(mut self, input: crate::types::VideoSegment) -> Self {
+        self.video = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Video segment information when the retrieval result contains video content.</p>
+    pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoSegment>) -> Self {
+        self.video = input;
+        self
+    }
+    /// <p>Video segment information when the retrieval result contains video content.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::VideoSegment> {
+        &self.video
+    }
+    /// <p>Audio segment information when the retrieval result contains audio content.</p>
+    pub fn audio(mut self, input: crate::types::AudioSegment) -> Self {
+        self.audio = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Audio segment information when the retrieval result contains audio content.</p>
+    pub fn set_audio(mut self, input: ::std::option::Option<crate::types::AudioSegment>) -> Self {
+        self.audio = input;
+        self
+    }
+    /// <p>Audio segment information when the retrieval result contains audio content.</p>
+    pub fn get_audio(&self) -> &::std::option::Option<crate::types::AudioSegment> {
+        &self.audio
+    }
     /// Appends an item to `row`.
     ///
     /// To override the contents of this collection use [`set_row`](Self::set_row).
@@ -138,6 +182,8 @@ impl RetrievalResultContentBuilder {
             r#type: self.r#type,
             text: self.text.unwrap_or_default(),
             byte_content: self.byte_content,
+            video: self.video,
+            audio: self.audio,
             row: self.row,
         }
     }
@@ -148,6 +194,8 @@ impl ::std::fmt::Debug for RetrievalResultContentBuilder {
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("byte_content", &"*** Sensitive Data Redacted ***");
+        formatter.field("video", &"*** Sensitive Data Redacted ***");
+        formatter.field("audio", &"*** Sensitive Data Redacted ***");
         formatter.field("row", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

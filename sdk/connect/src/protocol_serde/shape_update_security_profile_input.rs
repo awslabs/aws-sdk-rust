@@ -16,47 +16,65 @@ pub fn ser_update_security_profile_input_input(
         }
         object_3.finish();
     }
-    if let Some(var_6) = &input.applications {
-        let mut array_7 = object.key("Applications").start_array();
+    if let Some(var_6) = &input.allowed_flow_modules {
+        let mut array_7 = object.key("AllowedFlowModules").start_array();
         for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_application::ser_application(&mut object_9, item_8)?;
+                crate::protocol_serde::shape_flow_module::ser_flow_module(&mut object_9, item_8)?;
                 object_9.finish();
             }
         }
         array_7.finish();
     }
-    if let Some(var_10) = &input.description {
-        object.key("Description").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.hierarchy_restricted_resources {
-        let mut array_12 = object.key("HierarchyRestrictedResources").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.applications {
+        let mut array_11 = object.key("Applications").start_array();
+        for item_12 in var_10 {
             {
-                array_12.value().string(item_13.as_str());
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_application::ser_application(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_12.finish();
+        array_11.finish();
     }
-    if let Some(var_14) = &input.permissions {
-        let mut array_15 = object.key("Permissions").start_array();
-        for item_16 in var_14 {
-            {
-                array_15.value().string(item_16.as_str());
-            }
-        }
-        array_15.finish();
+    if let Some(var_14) = &input.description {
+        object.key("Description").string(var_14.as_str());
     }
-    if let Some(var_17) = &input.tag_restricted_resources {
-        let mut array_18 = object.key("TagRestrictedResources").start_array();
+    if let Some(var_15) = &input.granular_access_control_configuration {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("GranularAccessControlConfiguration").start_object();
+        crate::protocol_serde::shape_granular_access_control_configuration::ser_granular_access_control_configuration(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.hierarchy_restricted_resources {
+        let mut array_18 = object.key("HierarchyRestrictedResources").start_array();
         for item_19 in var_17 {
             {
                 array_18.value().string(item_19.as_str());
             }
         }
         array_18.finish();
+    }
+    if let Some(var_20) = &input.permissions {
+        let mut array_21 = object.key("Permissions").start_array();
+        for item_22 in var_20 {
+            {
+                array_21.value().string(item_22.as_str());
+            }
+        }
+        array_21.finish();
+    }
+    if let Some(var_23) = &input.tag_restricted_resources {
+        let mut array_24 = object.key("TagRestrictedResources").start_array();
+        for item_25 in var_23 {
+            {
+                array_24.value().string(item_25.as_str());
+            }
+        }
+        array_24.finish();
     }
     Ok(())
 }

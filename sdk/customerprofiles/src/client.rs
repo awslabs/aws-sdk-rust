@@ -156,6 +156,8 @@ mod create_integration_workflow;
 
 mod create_profile;
 
+mod create_recommender;
+
 mod create_segment_definition;
 
 mod create_segment_estimate;
@@ -197,6 +199,8 @@ mod delete_domain;
 
 mod delete_domain_layout;
 
+mod delete_domain_object_type;
+
 mod delete_event_stream;
 
 mod delete_event_trigger;
@@ -210,6 +214,8 @@ mod delete_profile_key;
 mod delete_profile_object;
 
 mod delete_profile_object_type;
+
+mod delete_recommender;
 
 mod delete_segment_definition;
 
@@ -227,6 +233,8 @@ mod get_domain;
 
 mod get_domain_layout;
 
+mod get_domain_object_type;
+
 mod get_event_stream;
 
 mod get_event_trigger;
@@ -237,11 +245,17 @@ mod get_integration;
 
 mod get_matches;
 
+mod get_object_type_attribute_statistics;
+
 mod get_profile_history_record;
 
 mod get_profile_object_type;
 
 mod get_profile_object_type_template;
+
+mod get_profile_recommendations;
+
+mod get_recommender;
 
 mod get_segment_definition;
 
@@ -269,6 +283,8 @@ mod list_calculated_attributes_for_profile;
 
 mod list_domain_layouts;
 
+mod list_domain_object_types;
+
 mod list_domains;
 
 mod list_event_streams;
@@ -278,6 +294,8 @@ mod list_event_triggers;
 mod list_identity_resolution_jobs;
 
 mod list_integrations;
+
+mod list_object_type_attribute_values;
 
 mod list_object_type_attributes;
 
@@ -291,6 +309,10 @@ mod list_profile_object_types;
 
 mod list_profile_objects;
 
+mod list_recommender_recipes;
+
+mod list_recommenders;
+
 mod list_rule_based_matches;
 
 mod list_segment_definitions;
@@ -303,6 +325,8 @@ mod list_workflows;
 
 mod merge_profiles;
 
+mod put_domain_object_type;
+
 mod put_integration;
 
 mod put_profile_object;
@@ -311,7 +335,11 @@ mod put_profile_object_type;
 
 mod search_profiles;
 
+mod start_recommender;
+
 mod start_upload_job;
+
+mod stop_recommender;
 
 mod stop_upload_job;
 
@@ -328,3 +356,5 @@ mod update_domain_layout;
 mod update_event_trigger;
 
 mod update_profile;
+
+mod update_recommender;

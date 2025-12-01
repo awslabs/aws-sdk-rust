@@ -27,6 +27,12 @@ pub fn ser_communication_time_config(
         crate::protocol_serde::shape_time_window::ser_time_window(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.whats_app {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("whatsApp").start_object();
+        crate::protocol_serde::shape_time_window::ser_time_window(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -57,6 +63,9 @@ where
                         }
                         "email" => {
                             builder = builder.set_email(crate::protocol_serde::shape_time_window::de_time_window(tokens)?);
+                        }
+                        "whatsApp" => {
+                            builder = builder.set_whats_app(crate::protocol_serde::shape_time_window::de_time_window(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

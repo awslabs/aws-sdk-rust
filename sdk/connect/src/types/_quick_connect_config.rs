@@ -12,6 +12,8 @@ pub struct QuickConnectConfig {
     pub queue_config: ::std::option::Option<crate::types::QueueQuickConnectConfig>,
     /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
     pub phone_config: ::std::option::Option<crate::types::PhoneNumberQuickConnectConfig>,
+    /// <p>Flow configuration for quick connect setup.</p>
+    pub flow_config: ::std::option::Option<crate::types::FlowQuickConnectConfig>,
 }
 impl QuickConnectConfig {
     /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
@@ -30,6 +32,10 @@ impl QuickConnectConfig {
     pub fn phone_config(&self) -> ::std::option::Option<&crate::types::PhoneNumberQuickConnectConfig> {
         self.phone_config.as_ref()
     }
+    /// <p>Flow configuration for quick connect setup.</p>
+    pub fn flow_config(&self) -> ::std::option::Option<&crate::types::FlowQuickConnectConfig> {
+        self.flow_config.as_ref()
+    }
 }
 impl QuickConnectConfig {
     /// Creates a new builder-style object to manufacture [`QuickConnectConfig`](crate::types::QuickConnectConfig).
@@ -46,6 +52,7 @@ pub struct QuickConnectConfigBuilder {
     pub(crate) user_config: ::std::option::Option<crate::types::UserQuickConnectConfig>,
     pub(crate) queue_config: ::std::option::Option<crate::types::QueueQuickConnectConfig>,
     pub(crate) phone_config: ::std::option::Option<crate::types::PhoneNumberQuickConnectConfig>,
+    pub(crate) flow_config: ::std::option::Option<crate::types::FlowQuickConnectConfig>,
 }
 impl QuickConnectConfigBuilder {
     /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
@@ -105,6 +112,20 @@ impl QuickConnectConfigBuilder {
     pub fn get_phone_config(&self) -> &::std::option::Option<crate::types::PhoneNumberQuickConnectConfig> {
         &self.phone_config
     }
+    /// <p>Flow configuration for quick connect setup.</p>
+    pub fn flow_config(mut self, input: crate::types::FlowQuickConnectConfig) -> Self {
+        self.flow_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Flow configuration for quick connect setup.</p>
+    pub fn set_flow_config(mut self, input: ::std::option::Option<crate::types::FlowQuickConnectConfig>) -> Self {
+        self.flow_config = input;
+        self
+    }
+    /// <p>Flow configuration for quick connect setup.</p>
+    pub fn get_flow_config(&self) -> &::std::option::Option<crate::types::FlowQuickConnectConfig> {
+        &self.flow_config
+    }
     /// Consumes the builder and constructs a [`QuickConnectConfig`](crate::types::QuickConnectConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`quick_connect_type`](crate::types::builders::QuickConnectConfigBuilder::quick_connect_type)
@@ -119,6 +140,7 @@ impl QuickConnectConfigBuilder {
             user_config: self.user_config,
             queue_config: self.queue_config,
             phone_config: self.phone_config,
+            flow_config: self.flow_config,
         })
     }
 }

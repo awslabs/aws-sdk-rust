@@ -4,12 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngagementContextDetails {
+    /// <p>The unique identifier of the engagement context. This ID is used to reference and manage the specific context within the engagement.</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of Engagement context. Valid values are "CustomerProject" or "Document", indicating whether the context relates to a customer project or a document respectively.</p>
     pub r#type: crate::types::EngagementContextType,
     /// <p>Contains the specific details of the Engagement context. The structure of this payload varies depending on the Type field.</p>
     pub payload: ::std::option::Option<crate::types::EngagementContextPayload>,
 }
 impl EngagementContextDetails {
+    /// <p>The unique identifier of the engagement context. This ID is used to reference and manage the specific context within the engagement.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
+    }
     /// <p>Specifies the type of Engagement context. Valid values are "CustomerProject" or "Document", indicating whether the context relates to a customer project or a document respectively.</p>
     pub fn r#type(&self) -> &crate::types::EngagementContextType {
         &self.r#type
@@ -30,10 +36,25 @@ impl EngagementContextDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct EngagementContextDetailsBuilder {
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::EngagementContextType>,
     pub(crate) payload: ::std::option::Option<crate::types::EngagementContextPayload>,
 }
 impl EngagementContextDetailsBuilder {
+    /// <p>The unique identifier of the engagement context. This ID is used to reference and manage the specific context within the engagement.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the engagement context. This ID is used to reference and manage the specific context within the engagement.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>The unique identifier of the engagement context. This ID is used to reference and manage the specific context within the engagement.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Specifies the type of Engagement context. Valid values are "CustomerProject" or "Document", indicating whether the context relates to a customer project or a document respectively.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::EngagementContextType) -> Self {
@@ -68,6 +89,7 @@ impl EngagementContextDetailsBuilder {
     /// - [`r#type`](crate::types::builders::EngagementContextDetailsBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::EngagementContextDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EngagementContextDetails {
+            id: self.id,
             r#type: self.r#type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",

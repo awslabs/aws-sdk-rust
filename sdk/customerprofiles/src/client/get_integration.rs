@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`is_unstructured(Option<bool>)`](crate::operation::get_integration::GetIntegrationOutput::is_unstructured): <p>Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
     ///   - [`event_trigger_names(Option<Vec::<String>>)`](crate::operation::get_integration::GetIntegrationOutput::event_trigger_names): <p>A list of unique names for active event triggers associated with the integration. This list would be empty if no Event Trigger is associated with the integration.</p>
+    ///   - [`scope(Option<Scope>)`](crate::operation::get_integration::GetIntegrationOutput::scope): <p>Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.</p>
     /// - On failure, responds with [`SdkError<GetIntegrationError>`](crate::operation::get_integration::GetIntegrationError)
     pub fn get_integration(&self) -> crate::operation::get_integration::builders::GetIntegrationFluentBuilder {
         crate::operation::get_integration::builders::GetIntegrationFluentBuilder::new(self.handle.clone())

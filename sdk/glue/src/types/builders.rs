@@ -43,6 +43,8 @@ pub use crate::types::_update_iceberg_table_input::UpdateIcebergTableInputBuilde
 
 pub use crate::types::_iceberg_table_update::IcebergTableUpdateBuilder;
 
+pub use crate::types::_iceberg_encrypted_key::IcebergEncryptedKeyBuilder;
+
 pub use crate::types::_iceberg_sort_order::IcebergSortOrderBuilder;
 
 pub use crate::types::_iceberg_sort_field::IcebergSortFieldBuilder;

@@ -12,8 +12,11 @@
 /// ```text
 /// # let recommendationtype = unimplemented!();
 /// match recommendationtype {
+///     RecommendationType::BlockedCaseSummarizationChunk => { /* ... */ },
 ///     RecommendationType::BlockedGenerativeAnswerChunk => { /* ... */ },
 ///     RecommendationType::BlockedIntentAnswerChunk => { /* ... */ },
+///     RecommendationType::BlockedNotesChunk => { /* ... */ },
+///     RecommendationType::CaseSummarizationChunk => { /* ... */ },
 ///     RecommendationType::DetectedIntent => { /* ... */ },
 ///     RecommendationType::EmailGenerativeAnswerChunk => { /* ... */ },
 ///     RecommendationType::EmailOverviewChunk => { /* ... */ },
@@ -23,6 +26,8 @@
 ///     RecommendationType::GenerativeResponse => { /* ... */ },
 ///     RecommendationType::IntentAnswerChunk => { /* ... */ },
 ///     RecommendationType::KnowledgeContent => { /* ... */ },
+///     RecommendationType::NotesChunk => { /* ... */ },
+///     RecommendationType::SuggestedMessage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,9 +57,15 @@
 )]
 pub enum RecommendationType {
     #[allow(missing_docs)] // documentation missing in model
+    BlockedCaseSummarizationChunk,
+    #[allow(missing_docs)] // documentation missing in model
     BlockedGenerativeAnswerChunk,
     #[allow(missing_docs)] // documentation missing in model
     BlockedIntentAnswerChunk,
+    #[allow(missing_docs)] // documentation missing in model
+    BlockedNotesChunk,
+    #[allow(missing_docs)] // documentation missing in model
+    CaseSummarizationChunk,
     #[allow(missing_docs)] // documentation missing in model
     DetectedIntent,
     #[allow(missing_docs)] // documentation missing in model
@@ -73,6 +84,10 @@ pub enum RecommendationType {
     IntentAnswerChunk,
     #[allow(missing_docs)] // documentation missing in model
     KnowledgeContent,
+    #[allow(missing_docs)] // documentation missing in model
+    NotesChunk,
+    #[allow(missing_docs)] // documentation missing in model
+    SuggestedMessage,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -80,8 +95,11 @@ pub enum RecommendationType {
 impl ::std::convert::From<&str> for RecommendationType {
     fn from(s: &str) -> Self {
         match s {
+            "BLOCKED_CASE_SUMMARIZATION_CHUNK" => RecommendationType::BlockedCaseSummarizationChunk,
             "BLOCKED_GENERATIVE_ANSWER_CHUNK" => RecommendationType::BlockedGenerativeAnswerChunk,
             "BLOCKED_INTENT_ANSWER_CHUNK" => RecommendationType::BlockedIntentAnswerChunk,
+            "BLOCKED_NOTES_CHUNK" => RecommendationType::BlockedNotesChunk,
+            "CASE_SUMMARIZATION_CHUNK" => RecommendationType::CaseSummarizationChunk,
             "DETECTED_INTENT" => RecommendationType::DetectedIntent,
             "EMAIL_GENERATIVE_ANSWER_CHUNK" => RecommendationType::EmailGenerativeAnswerChunk,
             "EMAIL_OVERVIEW_CHUNK" => RecommendationType::EmailOverviewChunk,
@@ -91,6 +109,8 @@ impl ::std::convert::From<&str> for RecommendationType {
             "GENERATIVE_RESPONSE" => RecommendationType::GenerativeResponse,
             "INTENT_ANSWER_CHUNK" => RecommendationType::IntentAnswerChunk,
             "KNOWLEDGE_CONTENT" => RecommendationType::KnowledgeContent,
+            "NOTES_CHUNK" => RecommendationType::NotesChunk,
+            "SUGGESTED_MESSAGE" => RecommendationType::SuggestedMessage,
             other => RecommendationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -106,8 +126,11 @@ impl RecommendationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RecommendationType::BlockedCaseSummarizationChunk => "BLOCKED_CASE_SUMMARIZATION_CHUNK",
             RecommendationType::BlockedGenerativeAnswerChunk => "BLOCKED_GENERATIVE_ANSWER_CHUNK",
             RecommendationType::BlockedIntentAnswerChunk => "BLOCKED_INTENT_ANSWER_CHUNK",
+            RecommendationType::BlockedNotesChunk => "BLOCKED_NOTES_CHUNK",
+            RecommendationType::CaseSummarizationChunk => "CASE_SUMMARIZATION_CHUNK",
             RecommendationType::DetectedIntent => "DETECTED_INTENT",
             RecommendationType::EmailGenerativeAnswerChunk => "EMAIL_GENERATIVE_ANSWER_CHUNK",
             RecommendationType::EmailOverviewChunk => "EMAIL_OVERVIEW_CHUNK",
@@ -117,14 +140,19 @@ impl RecommendationType {
             RecommendationType::GenerativeResponse => "GENERATIVE_RESPONSE",
             RecommendationType::IntentAnswerChunk => "INTENT_ANSWER_CHUNK",
             RecommendationType::KnowledgeContent => "KNOWLEDGE_CONTENT",
+            RecommendationType::NotesChunk => "NOTES_CHUNK",
+            RecommendationType::SuggestedMessage => "SUGGESTED_MESSAGE",
             RecommendationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "BLOCKED_CASE_SUMMARIZATION_CHUNK",
             "BLOCKED_GENERATIVE_ANSWER_CHUNK",
             "BLOCKED_INTENT_ANSWER_CHUNK",
+            "BLOCKED_NOTES_CHUNK",
+            "CASE_SUMMARIZATION_CHUNK",
             "DETECTED_INTENT",
             "EMAIL_GENERATIVE_ANSWER_CHUNK",
             "EMAIL_OVERVIEW_CHUNK",
@@ -134,6 +162,8 @@ impl RecommendationType {
             "GENERATIVE_RESPONSE",
             "INTENT_ANSWER_CHUNK",
             "KNOWLEDGE_CONTENT",
+            "NOTES_CHUNK",
+            "SUGGESTED_MESSAGE",
         ]
     }
 }
@@ -157,8 +187,11 @@ impl RecommendationType {
 impl ::std::fmt::Display for RecommendationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RecommendationType::BlockedCaseSummarizationChunk => write!(f, "BLOCKED_CASE_SUMMARIZATION_CHUNK"),
             RecommendationType::BlockedGenerativeAnswerChunk => write!(f, "BLOCKED_GENERATIVE_ANSWER_CHUNK"),
             RecommendationType::BlockedIntentAnswerChunk => write!(f, "BLOCKED_INTENT_ANSWER_CHUNK"),
+            RecommendationType::BlockedNotesChunk => write!(f, "BLOCKED_NOTES_CHUNK"),
+            RecommendationType::CaseSummarizationChunk => write!(f, "CASE_SUMMARIZATION_CHUNK"),
             RecommendationType::DetectedIntent => write!(f, "DETECTED_INTENT"),
             RecommendationType::EmailGenerativeAnswerChunk => write!(f, "EMAIL_GENERATIVE_ANSWER_CHUNK"),
             RecommendationType::EmailOverviewChunk => write!(f, "EMAIL_OVERVIEW_CHUNK"),
@@ -168,6 +201,8 @@ impl ::std::fmt::Display for RecommendationType {
             RecommendationType::GenerativeResponse => write!(f, "GENERATIVE_RESPONSE"),
             RecommendationType::IntentAnswerChunk => write!(f, "INTENT_ANSWER_CHUNK"),
             RecommendationType::KnowledgeContent => write!(f, "KNOWLEDGE_CONTENT"),
+            RecommendationType::NotesChunk => write!(f, "NOTES_CHUNK"),
+            RecommendationType::SuggestedMessage => write!(f, "SUGGESTED_MESSAGE"),
             RecommendationType::Unknown(value) => write!(f, "{value}"),
         }
     }

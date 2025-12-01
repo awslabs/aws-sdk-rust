@@ -52,5 +52,8 @@ pub fn ser_create_campaign_input_input(
         }
         object_15.finish();
     }
+    if let Some(var_18) = &input.r#type {
+        object.key("type").string(var_18.as_str());
+    }
     Ok(())
 }

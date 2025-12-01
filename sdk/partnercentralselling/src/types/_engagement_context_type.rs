@@ -13,6 +13,7 @@
 /// # let engagementcontexttype = unimplemented!();
 /// match engagementcontexttype {
 ///     EngagementContextType::CustomerProject => { /* ... */ },
+///     EngagementContextType::Lead => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum EngagementContextType {
     #[allow(missing_docs)] // documentation missing in model
     CustomerProject,
+    #[allow(missing_docs)] // documentation missing in model
+    Lead,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for EngagementContextType {
     fn from(s: &str) -> Self {
         match s {
             "CustomerProject" => EngagementContextType::CustomerProject,
+            "Lead" => EngagementContextType::Lead,
             other => EngagementContextType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl EngagementContextType {
     pub fn as_str(&self) -> &str {
         match self {
             EngagementContextType::CustomerProject => "CustomerProject",
+            EngagementContextType::Lead => "Lead",
             EngagementContextType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CustomerProject"]
+        &["CustomerProject", "Lead"]
     }
 }
 impl ::std::convert::AsRef<str> for EngagementContextType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for EngagementContextType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EngagementContextType::CustomerProject => write!(f, "CustomerProject"),
+            EngagementContextType::Lead => write!(f, "Lead"),
             EngagementContextType::Unknown(value) => write!(f, "{value}"),
         }
     }

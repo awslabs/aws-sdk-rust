@@ -180,6 +180,13 @@ pub(crate) fn de_get_integration(
                             .transpose()?,
                     );
                 }
+                "Scope" => {
+                    builder = builder.set_scope(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::Scope::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "Tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                 }

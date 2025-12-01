@@ -89,6 +89,10 @@ pub struct UpdateFunctionCodeOutput {
     pub runtime_version_config: ::std::option::Option<crate::types::RuntimeVersionConfig>,
     /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
+    /// <p>The SHA256 hash of the function configuration.</p>
+    pub config_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
     pub tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
     _request_id: Option<String>,
@@ -257,6 +261,14 @@ impl UpdateFunctionCodeOutput {
     pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn capacity_provider_config(&self) -> ::std::option::Option<&crate::types::CapacityProviderConfig> {
+        self.capacity_provider_config.as_ref()
+    }
+    /// <p>The SHA256 hash of the function configuration.</p>
+    pub fn config_sha256(&self) -> ::std::option::Option<&str> {
+        self.config_sha256.as_deref()
+    }
     /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
     pub fn tenancy_config(&self) -> ::std::option::Option<&crate::types::TenancyConfig> {
         self.tenancy_config.as_ref()
@@ -314,6 +326,8 @@ pub struct UpdateFunctionCodeOutputBuilder {
     pub(crate) snap_start: ::std::option::Option<crate::types::SnapStartResponse>,
     pub(crate) runtime_version_config: ::std::option::Option<crate::types::RuntimeVersionConfig>,
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    pub(crate) capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
+    pub(crate) config_sha256: ::std::option::Option<::std::string::String>,
     pub(crate) tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
     _request_id: Option<String>,
 }
@@ -879,6 +893,34 @@ impl UpdateFunctionCodeOutputBuilder {
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
         &self.logging_config
     }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn capacity_provider_config(mut self, input: crate::types::CapacityProviderConfig) -> Self {
+        self.capacity_provider_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn set_capacity_provider_config(mut self, input: ::std::option::Option<crate::types::CapacityProviderConfig>) -> Self {
+        self.capacity_provider_config = input;
+        self
+    }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn get_capacity_provider_config(&self) -> &::std::option::Option<crate::types::CapacityProviderConfig> {
+        &self.capacity_provider_config
+    }
+    /// <p>The SHA256 hash of the function configuration.</p>
+    pub fn config_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.config_sha256 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The SHA256 hash of the function configuration.</p>
+    pub fn set_config_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.config_sha256 = input;
+        self
+    }
+    /// <p>The SHA256 hash of the function configuration.</p>
+    pub fn get_config_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_sha256
+    }
     /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
     pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
         self.tenancy_config = ::std::option::Option::Some(input);
@@ -941,6 +983,8 @@ impl UpdateFunctionCodeOutputBuilder {
             snap_start: self.snap_start,
             runtime_version_config: self.runtime_version_config,
             logging_config: self.logging_config,
+            capacity_provider_config: self.capacity_provider_config,
+            config_sha256: self.config_sha256,
             tenancy_config: self.tenancy_config,
             _request_id: self._request_id,
         }

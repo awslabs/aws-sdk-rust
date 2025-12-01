@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EvaluationFormTitle" => {
+                            builder = builder.set_evaluation_form_title(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Metadata" => {
                             builder = builder.set_metadata(crate::protocol_serde::shape_evaluation_search_metadata::de_evaluation_search_metadata(
                                 tokens,

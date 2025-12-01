@@ -23,6 +23,10 @@ pub use crate::types::_tenancy_config::TenancyConfig;
 
 pub use crate::types::_tenant_isolation_mode::TenantIsolationMode;
 
+pub use crate::types::_capacity_provider_config::CapacityProviderConfig;
+
+pub use crate::types::_lambda_managed_instances_capacity_provider_config::LambdaManagedInstancesCapacityProviderConfig;
+
 pub use crate::types::_logging_config::LoggingConfig;
 
 pub use crate::types::_system_log_level::SystemLogLevel;
@@ -75,9 +79,15 @@ pub use crate::types::_dead_letter_config::DeadLetterConfig;
 
 pub use crate::types::_vpc_config_response::VpcConfigResponse;
 
+pub use crate::types::_function_version_latest_published::FunctionVersionLatestPublished;
+
 pub use crate::types::_alias_routing_configuration::AliasRoutingConfiguration;
 
 pub use crate::types::_alias_configuration::AliasConfiguration;
+
+pub use crate::types::_update_runtime_on::UpdateRuntimeOn;
+
+pub use crate::types::_function_scaling_config::FunctionScalingConfig;
 
 pub use crate::types::_recursive_loop::RecursiveLoop;
 
@@ -93,8 +103,6 @@ pub use crate::types::_response_streaming_invocation_type::ResponseStreamingInvo
 
 pub use crate::types::_invocation_type::InvocationType;
 
-pub use crate::types::_update_runtime_on::UpdateRuntimeOn;
-
 pub use crate::types::_concurrency::Concurrency;
 
 pub use crate::types::_tags_error::TagsError;
@@ -104,12 +112,6 @@ pub use crate::types::_function_code_location::FunctionCodeLocation;
 pub use crate::types::_invoke_mode::InvokeMode;
 
 pub use crate::types::_cors::Cors;
-
-pub use crate::types::_destination_config::DestinationConfig;
-
-pub use crate::types::_on_failure::OnFailure;
-
-pub use crate::types::_on_success::OnSuccess;
 
 pub use crate::types::_snap_start::SnapStart;
 
@@ -122,8 +124,6 @@ pub use crate::types::_vpc_config::VpcConfig;
 pub use crate::types::_provisioned_concurrency_config_list_item::ProvisionedConcurrencyConfigListItem;
 
 pub use crate::types::_function_url_config::FunctionUrlConfig;
-
-pub use crate::types::_function_event_invoke_config::FunctionEventInvokeConfig;
 
 pub use crate::types::_function_code::FunctionCode;
 
@@ -169,6 +169,12 @@ pub use crate::types::_source_access_configuration::SourceAccessConfiguration;
 
 pub use crate::types::_source_access_type::SourceAccessType;
 
+pub use crate::types::_destination_config::DestinationConfig;
+
+pub use crate::types::_on_failure::OnFailure;
+
+pub use crate::types::_on_success::OnSuccess;
+
 pub use crate::types::_filter_criteria::FilterCriteria;
 
 pub use crate::types::_filter::Filter;
@@ -184,6 +190,28 @@ pub use crate::types::_code_signing_policies::CodeSigningPolicies;
 pub use crate::types::_code_signing_policy::CodeSigningPolicy;
 
 pub use crate::types::_allowed_publishers::AllowedPublishers;
+
+pub use crate::types::_function_versions_by_capacity_provider_list_item::FunctionVersionsByCapacityProviderListItem;
+
+pub use crate::types::_capacity_provider::CapacityProvider;
+
+pub use crate::types::_capacity_provider_scaling_config::CapacityProviderScalingConfig;
+
+pub use crate::types::_target_tracking_scaling_policy::TargetTrackingScalingPolicy;
+
+pub use crate::types::_capacity_provider_predefined_metric_type::CapacityProviderPredefinedMetricType;
+
+pub use crate::types::_capacity_provider_scaling_mode::CapacityProviderScalingMode;
+
+pub use crate::types::_instance_requirements::InstanceRequirements;
+
+pub use crate::types::_capacity_provider_permissions_config::CapacityProviderPermissionsConfig;
+
+pub use crate::types::_capacity_provider_vpc_config::CapacityProviderVpcConfig;
+
+pub use crate::types::_capacity_provider_state::CapacityProviderState;
+
+pub use crate::types::_function_event_invoke_config::FunctionEventInvokeConfig;
 
 pub use crate::types::_account_usage::AccountUsage;
 
@@ -204,6 +232,22 @@ mod _amazon_managed_kafka_event_source_config;
 mod _application_log_level;
 
 mod _architecture;
+
+mod _capacity_provider;
+
+mod _capacity_provider_config;
+
+mod _capacity_provider_permissions_config;
+
+mod _capacity_provider_predefined_metric_type;
+
+mod _capacity_provider_scaling_config;
+
+mod _capacity_provider_scaling_mode;
+
+mod _capacity_provider_state;
+
+mod _capacity_provider_vpc_config;
 
 mod _code_signing_config;
 
@@ -259,17 +303,25 @@ mod _function_event_invoke_config;
 
 mod _function_response_type;
 
+mod _function_scaling_config;
+
 mod _function_url_auth_type;
 
 mod _function_url_config;
 
 mod _function_version;
 
+mod _function_version_latest_published;
+
+mod _function_versions_by_capacity_provider_list_item;
+
 mod _image_config;
 
 mod _image_config_error;
 
 mod _image_config_response;
+
+mod _instance_requirements;
 
 mod _invocation_type;
 
@@ -290,6 +342,8 @@ mod _kafka_schema_registry_config;
 mod _kafka_schema_validation_attribute;
 
 mod _kafka_schema_validation_config;
+
+mod _lambda_managed_instances_capacity_provider_config;
 
 mod _last_update_status;
 
@@ -360,6 +414,8 @@ mod _state_reason_code;
 mod _system_log_level;
 
 mod _tags_error;
+
+mod _target_tracking_scaling_policy;
 
 mod _tenancy_config;
 

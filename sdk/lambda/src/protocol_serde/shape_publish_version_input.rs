@@ -9,8 +9,11 @@ pub fn ser_publish_version_input_input(
     if let Some(var_2) = &input.description {
         object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.revision_id {
-        object.key("RevisionId").string(var_3.as_str());
+    if let Some(var_3) = &input.publish_to {
+        object.key("PublishTo").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.revision_id {
+        object.key("RevisionId").string(var_4.as_str());
     }
     Ok(())
 }

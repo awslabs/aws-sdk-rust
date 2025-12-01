@@ -103,6 +103,8 @@ pub(crate) mod shape_usage_based_pricing_term;
 
 pub(crate) mod shape_validity_term;
 
+pub(crate) mod shape_variable_payment_term;
+
 pub(crate) mod shape_configurable_upfront_pricing_term_configuration;
 
 pub(crate) mod shape_configurable_upfront_rate_card_list;
@@ -116,6 +118,8 @@ pub(crate) mod shape_renewal_term_configuration;
 pub(crate) mod shape_schedule_list;
 
 pub(crate) mod shape_usage_based_rate_card_list;
+
+pub(crate) mod shape_variable_payment_term_configuration;
 
 pub(crate) mod shape_configurable_upfront_rate_card_item;
 

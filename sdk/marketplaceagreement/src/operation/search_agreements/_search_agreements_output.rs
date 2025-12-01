@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchAgreementsOutput {
-    /// <p>A summary of the agreement, including top-level attributes (for example, the agreement ID, version, proposer, and acceptor).</p>
+    /// <p>A summary of the agreement, including top-level attributes (for example, the agreement ID, proposer, and acceptor).</p>
     pub agreement_view_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AgreementViewSummary>>,
     /// <p>The token used for pagination. The field is <code>null</code> if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchAgreementsOutput {
-    /// <p>A summary of the agreement, including top-level attributes (for example, the agreement ID, version, proposer, and acceptor).</p>
+    /// <p>A summary of the agreement, including top-level attributes (for example, the agreement ID, proposer, and acceptor).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agreement_view_summaries.is_none()`.
     pub fn agreement_view_summaries(&self) -> &[crate::types::AgreementViewSummary] {
@@ -46,19 +46,19 @@ impl SearchAgreementsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_agreement_view_summaries`](Self::set_agreement_view_summaries).
     ///
-    /// <p>A summary of the agreement, including top-level attributes (for example, the agreement ID, version, proposer, and acceptor).</p>
+    /// <p>A summary of the agreement, including top-level attributes (for example, the agreement ID, proposer, and acceptor).</p>
     pub fn agreement_view_summaries(mut self, input: crate::types::AgreementViewSummary) -> Self {
         let mut v = self.agreement_view_summaries.unwrap_or_default();
         v.push(input);
         self.agreement_view_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A summary of the agreement, including top-level attributes (for example, the agreement ID, version, proposer, and acceptor).</p>
+    /// <p>A summary of the agreement, including top-level attributes (for example, the agreement ID, proposer, and acceptor).</p>
     pub fn set_agreement_view_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgreementViewSummary>>) -> Self {
         self.agreement_view_summaries = input;
         self
     }
-    /// <p>A summary of the agreement, including top-level attributes (for example, the agreement ID, version, proposer, and acceptor).</p>
+    /// <p>A summary of the agreement, including top-level attributes (for example, the agreement ID, proposer, and acceptor).</p>
     pub fn get_agreement_view_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgreementViewSummary>> {
         &self.agreement_view_summaries
     }

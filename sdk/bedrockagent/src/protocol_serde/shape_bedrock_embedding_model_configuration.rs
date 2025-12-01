@@ -12,6 +12,30 @@ pub fn ser_bedrock_embedding_model_configuration(
     if let Some(var_2) = &input.embedding_data_type {
         object.key("embeddingDataType").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.audio {
+        let mut array_4 = object.key("audio").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_audio_configuration::ser_audio_configuration(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_7) = &input.video {
+        let mut array_8 = object.key("video").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_video_configuration::ser_video_configuration(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }
 
@@ -43,6 +67,12 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::EmbeddingDataType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "audio" => {
+                            builder = builder.set_audio(crate::protocol_serde::shape_audio_configurations::de_audio_configurations(tokens)?);
+                        }
+                        "video" => {
+                            builder = builder.set_video(crate::protocol_serde::shape_video_configurations::de_video_configurations(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

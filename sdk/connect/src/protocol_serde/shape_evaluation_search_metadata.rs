@@ -83,6 +83,34 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SamplingJobId" => {
+                            builder = builder.set_sampling_job_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ReviewId" => {
+                            builder = builder.set_review_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ContactParticipantRole" => {
+                            builder = builder.set_contact_participant_role(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ContactParticipantRole::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ContactParticipantId" => {
+                            builder = builder.set_contact_participant_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

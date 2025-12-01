@@ -21,6 +21,8 @@ pub struct PublishVersionInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing a version if the function configuration has changed since you last updated it.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
 }
 impl PublishVersionInput {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -49,6 +51,10 @@ impl PublishVersionInput {
     pub fn revision_id(&self) -> ::std::option::Option<&str> {
         self.revision_id.as_deref()
     }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn publish_to(&self) -> ::std::option::Option<&crate::types::FunctionVersionLatestPublished> {
+        self.publish_to.as_ref()
+    }
 }
 impl PublishVersionInput {
     /// Creates a new builder-style object to manufacture [`PublishVersionInput`](crate::operation::publish_version::PublishVersionInput).
@@ -65,6 +71,7 @@ pub struct PublishVersionInputBuilder {
     pub(crate) code_sha256: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
+    pub(crate) publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
 }
 impl PublishVersionInputBuilder {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -154,6 +161,20 @@ impl PublishVersionInputBuilder {
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn publish_to(mut self, input: crate::types::FunctionVersionLatestPublished) -> Self {
+        self.publish_to = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn set_publish_to(mut self, input: ::std::option::Option<crate::types::FunctionVersionLatestPublished>) -> Self {
+        self.publish_to = input;
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn get_publish_to(&self) -> &::std::option::Option<crate::types::FunctionVersionLatestPublished> {
+        &self.publish_to
+    }
     /// Consumes the builder and constructs a [`PublishVersionInput`](crate::operation::publish_version::PublishVersionInput).
     pub fn build(
         self,
@@ -163,6 +184,7 @@ impl PublishVersionInputBuilder {
             code_sha256: self.code_sha256,
             description: self.description,
             revision_id: self.revision_id,
+            publish_to: self.publish_to,
         })
     }
 }

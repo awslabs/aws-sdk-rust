@@ -14,6 +14,12 @@ pub struct IcebergTableUpdate {
     pub location: ::std::string::String,
     /// <p>Updated key-value pairs of table properties and configuration settings for the Iceberg table.</p>
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The type of update action to be performed on the Iceberg table. Defines the specific operation such as adding schema, setting current schema, adding partition spec, or managing encryption keys.</p>
+    pub action: ::std::option::Option<crate::types::IcebergUpdateAction>,
+    /// <p>Encryption key information associated with an Iceberg table update operation. Used when adding or removing encryption keys from the table metadata during table evolution.</p>
+    pub encryption_key: ::std::option::Option<crate::types::IcebergEncryptedKey>,
+    /// <p>Identifier of the encryption key involved in an Iceberg table update operation. References the specific key being added to or removed from the table's encryption configuration.</p>
+    pub key_id: ::std::option::Option<::std::string::String>,
 }
 impl IcebergTableUpdate {
     /// <p>The updated schema definition for the Iceberg table, specifying any changes to field structure, data types, or schema metadata.</p>
@@ -37,6 +43,18 @@ impl IcebergTableUpdate {
     pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
+    /// <p>The type of update action to be performed on the Iceberg table. Defines the specific operation such as adding schema, setting current schema, adding partition spec, or managing encryption keys.</p>
+    pub fn action(&self) -> ::std::option::Option<&crate::types::IcebergUpdateAction> {
+        self.action.as_ref()
+    }
+    /// <p>Encryption key information associated with an Iceberg table update operation. Used when adding or removing encryption keys from the table metadata during table evolution.</p>
+    pub fn encryption_key(&self) -> ::std::option::Option<&crate::types::IcebergEncryptedKey> {
+        self.encryption_key.as_ref()
+    }
+    /// <p>Identifier of the encryption key involved in an Iceberg table update operation. References the specific key being added to or removed from the table's encryption configuration.</p>
+    pub fn key_id(&self) -> ::std::option::Option<&str> {
+        self.key_id.as_deref()
+    }
 }
 impl IcebergTableUpdate {
     /// Creates a new builder-style object to manufacture [`IcebergTableUpdate`](crate::types::IcebergTableUpdate).
@@ -54,6 +72,9 @@ pub struct IcebergTableUpdateBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::IcebergSortOrder>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) action: ::std::option::Option<crate::types::IcebergUpdateAction>,
+    pub(crate) encryption_key: ::std::option::Option<crate::types::IcebergEncryptedKey>,
+    pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
 impl IcebergTableUpdateBuilder {
     /// <p>The updated schema definition for the Iceberg table, specifying any changes to field structure, data types, or schema metadata.</p>
@@ -134,6 +155,48 @@ impl IcebergTableUpdateBuilder {
     pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.properties
     }
+    /// <p>The type of update action to be performed on the Iceberg table. Defines the specific operation such as adding schema, setting current schema, adding partition spec, or managing encryption keys.</p>
+    pub fn action(mut self, input: crate::types::IcebergUpdateAction) -> Self {
+        self.action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of update action to be performed on the Iceberg table. Defines the specific operation such as adding schema, setting current schema, adding partition spec, or managing encryption keys.</p>
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::IcebergUpdateAction>) -> Self {
+        self.action = input;
+        self
+    }
+    /// <p>The type of update action to be performed on the Iceberg table. Defines the specific operation such as adding schema, setting current schema, adding partition spec, or managing encryption keys.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::IcebergUpdateAction> {
+        &self.action
+    }
+    /// <p>Encryption key information associated with an Iceberg table update operation. Used when adding or removing encryption keys from the table metadata during table evolution.</p>
+    pub fn encryption_key(mut self, input: crate::types::IcebergEncryptedKey) -> Self {
+        self.encryption_key = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Encryption key information associated with an Iceberg table update operation. Used when adding or removing encryption keys from the table metadata during table evolution.</p>
+    pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::IcebergEncryptedKey>) -> Self {
+        self.encryption_key = input;
+        self
+    }
+    /// <p>Encryption key information associated with an Iceberg table update operation. Used when adding or removing encryption keys from the table metadata during table evolution.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<crate::types::IcebergEncryptedKey> {
+        &self.encryption_key
+    }
+    /// <p>Identifier of the encryption key involved in an Iceberg table update operation. References the specific key being added to or removed from the table's encryption configuration.</p>
+    pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifier of the encryption key involved in an Iceberg table update operation. References the specific key being added to or removed from the table's encryption configuration.</p>
+    pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_id = input;
+        self
+    }
+    /// <p>Identifier of the encryption key involved in an Iceberg table update operation. References the specific key being added to or removed from the table's encryption configuration.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// Consumes the builder and constructs a [`IcebergTableUpdate`](crate::types::IcebergTableUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`location`](crate::types::builders::IcebergTableUpdateBuilder::location)
@@ -149,6 +212,9 @@ impl IcebergTableUpdateBuilder {
                 )
             })?,
             properties: self.properties,
+            action: self.action,
+            encryption_key: self.encryption_key,
+            key_id: self.key_id,
         })
     }
 }

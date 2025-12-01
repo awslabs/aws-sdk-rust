@@ -9,11 +9,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RetrieveAndGenerateInput {
-    /// <p>The query made to the knowledge base.</p>
+    /// <p>The query made to the knowledge base, in characters.</p>
     pub text: ::std::string::String,
 }
 impl RetrieveAndGenerateInput {
-    /// <p>The query made to the knowledge base.</p>
+    /// <p>The query made to the knowledge base, in characters.</p>
     pub fn text(&self) -> &str {
         use std::ops::Deref;
         self.text.deref()
@@ -40,18 +40,18 @@ pub struct RetrieveAndGenerateInputBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
 impl RetrieveAndGenerateInputBuilder {
-    /// <p>The query made to the knowledge base.</p>
+    /// <p>The query made to the knowledge base, in characters.</p>
     /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The query made to the knowledge base.</p>
+    /// <p>The query made to the knowledge base, in characters.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
-    /// <p>The query made to the knowledge base.</p>
+    /// <p>The query made to the knowledge base, in characters.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
     }

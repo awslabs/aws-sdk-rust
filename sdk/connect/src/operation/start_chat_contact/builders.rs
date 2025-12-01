@@ -191,6 +191,20 @@ impl StartChatContactFluentBuilder {
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetails> {
         self.inner.get_participant_details()
     }
+    /// <p>The configuration of the participant.</p>
+    pub fn participant_configuration(mut self, input: crate::types::ParticipantConfiguration) -> Self {
+        self.inner = self.inner.participant_configuration(input);
+        self
+    }
+    /// <p>The configuration of the participant.</p>
+    pub fn set_participant_configuration(mut self, input: ::std::option::Option<crate::types::ParticipantConfiguration>) -> Self {
+        self.inner = self.inner.set_participant_configuration(input);
+        self
+    }
+    /// <p>The configuration of the participant.</p>
+    pub fn get_participant_configuration(&self) -> &::std::option::Option<crate::types::ParticipantConfiguration> {
+        self.inner.get_participant_configuration()
+    }
     /// <p>The initial message to be sent to the newly created chat.</p>
     pub fn initial_message(mut self, input: crate::types::ChatMessage) -> Self {
         self.inner = self.inner.initial_message(input);

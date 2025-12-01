@@ -150,6 +150,20 @@ impl CreateCampaignFluentBuilder {
     pub fn get_channel_subtype_config(&self) -> &::std::option::Option<crate::types::ChannelSubtypeConfig> {
         self.inner.get_channel_subtype_config()
     }
+    /// The type of campaign externally exposed in APIs.
+    pub fn r#type(mut self, input: crate::types::ExternalCampaignType) -> Self {
+        self.inner = self.inner.r#type(input);
+        self
+    }
+    /// The type of campaign externally exposed in APIs.
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ExternalCampaignType>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// The type of campaign externally exposed in APIs.
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ExternalCampaignType> {
+        self.inner.get_type()
+    }
     /// Source of the campaign
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.inner = self.inner.source(input);

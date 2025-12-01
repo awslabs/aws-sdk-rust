@@ -6,6 +6,8 @@
 pub enum MessageData {
     /// <p>The message data in text type.</p>
     Text(crate::types::TextMessage),
+    /// <p>The result of tool usage in the message.</p>
+    ToolUseResult(crate::types::ToolUseResultData),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum MessageData {
     Unknown,
 }
 impl MessageData {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Text`](crate::types::MessageData::Text), extracting the inner [`TextMessage`](crate::types::TextMessage).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text(&self) -> ::std::result::Result<&crate::types::TextMessage, &Self> {
@@ -30,6 +31,19 @@ impl MessageData {
     /// Returns true if this is a [`Text`](crate::types::MessageData::Text).
     pub fn is_text(&self) -> bool {
         self.as_text().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ToolUseResult`](crate::types::MessageData::ToolUseResult), extracting the inner [`ToolUseResultData`](crate::types::ToolUseResultData).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_tool_use_result(&self) -> ::std::result::Result<&crate::types::ToolUseResultData, &Self> {
+        if let MessageData::ToolUseResult(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ToolUseResult`](crate::types::MessageData::ToolUseResult).
+    pub fn is_tool_use_result(&self) -> bool {
+        self.as_tool_use_result().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

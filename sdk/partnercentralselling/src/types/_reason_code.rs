@@ -12,6 +12,9 @@
 /// ```text
 /// # let reasoncode = unimplemented!();
 /// match reasoncode {
+///     ReasonCode::ContextNotFound => { /* ... */ },
+///     ReasonCode::CustomerProjectContextNotPermitted => { /* ... */ },
+///     ReasonCode::DisqualifiedLeadNotPermitted => { /* ... */ },
 ///     ReasonCode::EngagementAccessDenied => { /* ... */ },
 ///     ReasonCode::EngagementConflict => { /* ... */ },
 ///     ReasonCode::EngagementInvitationConflict => { /* ... */ },
@@ -60,6 +63,12 @@
 )]
 pub enum ReasonCode {
     #[allow(missing_docs)] // documentation missing in model
+    ContextNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomerProjectContextNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
+    DisqualifiedLeadNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
     EngagementAccessDenied,
     #[allow(missing_docs)] // documentation missing in model
     EngagementConflict,
@@ -104,6 +113,9 @@ pub enum ReasonCode {
 impl ::std::convert::From<&str> for ReasonCode {
     fn from(s: &str) -> Self {
         match s {
+            "ContextNotFound" => ReasonCode::ContextNotFound,
+            "CustomerProjectContextNotPermitted" => ReasonCode::CustomerProjectContextNotPermitted,
+            "DisqualifiedLeadNotPermitted" => ReasonCode::DisqualifiedLeadNotPermitted,
             "EngagementAccessDenied" => ReasonCode::EngagementAccessDenied,
             "EngagementConflict" => ReasonCode::EngagementConflict,
             "EngagementInvitationConflict" => ReasonCode::EngagementInvitationConflict,
@@ -138,6 +150,9 @@ impl ReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ReasonCode::ContextNotFound => "ContextNotFound",
+            ReasonCode::CustomerProjectContextNotPermitted => "CustomerProjectContextNotPermitted",
+            ReasonCode::DisqualifiedLeadNotPermitted => "DisqualifiedLeadNotPermitted",
             ReasonCode::EngagementAccessDenied => "EngagementAccessDenied",
             ReasonCode::EngagementConflict => "EngagementConflict",
             ReasonCode::EngagementInvitationConflict => "EngagementInvitationConflict",
@@ -163,6 +178,9 @@ impl ReasonCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ContextNotFound",
+            "CustomerProjectContextNotPermitted",
+            "DisqualifiedLeadNotPermitted",
             "EngagementAccessDenied",
             "EngagementConflict",
             "EngagementInvitationConflict",
@@ -205,6 +223,9 @@ impl ReasonCode {
 impl ::std::fmt::Display for ReasonCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ReasonCode::ContextNotFound => write!(f, "ContextNotFound"),
+            ReasonCode::CustomerProjectContextNotPermitted => write!(f, "CustomerProjectContextNotPermitted"),
+            ReasonCode::DisqualifiedLeadNotPermitted => write!(f, "DisqualifiedLeadNotPermitted"),
             ReasonCode::EngagementAccessDenied => write!(f, "EngagementAccessDenied"),
             ReasonCode::EngagementConflict => write!(f, "EngagementConflict"),
             ReasonCode::EngagementInvitationConflict => write!(f, "EngagementInvitationConflict"),

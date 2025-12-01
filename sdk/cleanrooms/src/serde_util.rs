@@ -2350,6 +2350,15 @@ pub(crate) fn protected_job_error_correct_errors(
     builder
 }
 
+pub(crate) fn protected_job_parameters_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobParametersBuilder,
+) -> crate::types::builders::ProtectedJobParametersBuilder {
+    if builder.analysis_template_arn.is_none() {
+        builder.analysis_template_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn protected_job_result_correct_errors(
     mut builder: crate::types::builders::ProtectedJobResultBuilder,
 ) -> crate::types::builders::ProtectedJobResultBuilder {
@@ -2667,6 +2676,24 @@ pub(crate) fn membership_job_compute_payment_config_correct_errors(
     builder
 }
 
+pub(crate) fn ml_synthetic_data_parameters_correct_errors(
+    mut builder: crate::types::builders::MlSyntheticDataParametersBuilder,
+) -> crate::types::builders::MlSyntheticDataParametersBuilder {
+    if builder.epsilon.is_none() {
+        builder.epsilon = Some(Default::default())
+    }
+    if builder.max_membership_inference_attack_score.is_none() {
+        builder.max_membership_inference_attack_score = Some(Default::default())
+    }
+    if builder.column_classification.is_none() {
+        builder.column_classification = {
+            let builder = crate::types::builders::ColumnClassificationDetailsBuilder::default();
+            crate::serde_util::column_classification_details_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn payment_configuration_correct_errors(
     mut builder: crate::types::builders::PaymentConfigurationBuilder,
 ) -> crate::types::builders::PaymentConfigurationBuilder {
@@ -2806,6 +2833,15 @@ pub(crate) fn analysis_template_artifact_correct_errors(
     builder
 }
 
+pub(crate) fn column_classification_details_correct_errors(
+    mut builder: crate::types::builders::ColumnClassificationDetailsBuilder,
+) -> crate::types::builders::ColumnClassificationDetailsBuilder {
+    if builder.column_mapping.is_none() {
+        builder.column_mapping = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn consolidated_policy_aggregation_correct_errors(
     mut builder: crate::types::builders::ConsolidatedPolicyAggregationBuilder,
 ) -> crate::types::builders::ConsolidatedPolicyAggregationBuilder {
@@ -2920,6 +2956,15 @@ pub(crate) fn membership_model_inference_payment_config_correct_errors(
 pub(crate) fn membership_model_training_payment_config_correct_errors(
     mut builder: crate::types::builders::MembershipModelTrainingPaymentConfigBuilder,
 ) -> crate::types::builders::MembershipModelTrainingPaymentConfigBuilder {
+    if builder.is_responsible.is_none() {
+        builder.is_responsible = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn membership_synthetic_data_generation_payment_config_correct_errors(
+    mut builder: crate::types::builders::MembershipSyntheticDataGenerationPaymentConfigBuilder,
+) -> crate::types::builders::MembershipSyntheticDataGenerationPaymentConfigBuilder {
     if builder.is_responsible.is_none() {
         builder.is_responsible = Some(Default::default())
     }
@@ -3128,6 +3173,15 @@ pub(crate) fn schema_status_reason_correct_errors(
     builder
 }
 
+pub(crate) fn synthetic_data_generation_payment_config_correct_errors(
+    mut builder: crate::types::builders::SyntheticDataGenerationPaymentConfigBuilder,
+) -> crate::types::builders::SyntheticDataGenerationPaymentConfigBuilder {
+    if builder.is_responsible.is_none() {
+        builder.is_responsible = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn access_budget_details_correct_errors(
     mut builder: crate::types::builders::AccessBudgetDetailsBuilder,
 ) -> crate::types::builders::AccessBudgetDetailsBuilder {
@@ -3196,6 +3250,21 @@ pub(crate) fn snowflake_table_schema_v1_correct_errors(
     }
     if builder.column_type.is_none() {
         builder.column_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn synthetic_data_column_properties_correct_errors(
+    mut builder: crate::types::builders::SyntheticDataColumnPropertiesBuilder,
+) -> crate::types::builders::SyntheticDataColumnPropertiesBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.column_type.is_none() {
+        builder.column_type = "no value was set".parse::<crate::types::SyntheticDataColumnType>().ok()
+    }
+    if builder.is_predictive_value.is_none() {
+        builder.is_predictive_value = Some(Default::default())
     }
     builder
 }

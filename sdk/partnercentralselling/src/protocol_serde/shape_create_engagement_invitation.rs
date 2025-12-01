@@ -50,6 +50,21 @@ pub fn de_create_engagement_invitation_http_error(
             }
             tmp
         }),
+        "InternalServerException" => crate::operation::create_engagement_invitation::CreateEngagementInvitationError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_engagement_invitation::CreateEngagementInvitationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::create_engagement_invitation::CreateEngagementInvitationError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

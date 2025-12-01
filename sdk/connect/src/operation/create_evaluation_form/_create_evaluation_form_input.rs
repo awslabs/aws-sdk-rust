@@ -17,8 +17,14 @@ pub struct CreateEvaluationFormInput {
     pub auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>A boolean flag indicating whether to create evaluation form in draft state.</p>
+    pub as_draft: ::std::option::Option<bool>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
 }
 impl CreateEvaluationFormInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -51,9 +57,21 @@ impl CreateEvaluationFormInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>A boolean flag indicating whether to create evaluation form in draft state.</p>
+    pub fn as_draft(&self) -> ::std::option::Option<bool> {
+        self.as_draft
+    }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormTargetConfiguration> {
+        self.target_configuration.as_ref()
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn language_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormLanguageConfiguration> {
+        self.language_configuration.as_ref()
     }
 }
 impl CreateEvaluationFormInput {
@@ -74,7 +92,10 @@ pub struct CreateEvaluationFormInputBuilder {
     pub(crate) scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
     pub(crate) auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) as_draft: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
+    pub(crate) language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
 }
 impl CreateEvaluationFormInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -186,6 +207,20 @@ impl CreateEvaluationFormInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>A boolean flag indicating whether to create evaluation form in draft state.</p>
+    pub fn as_draft(mut self, input: bool) -> Self {
+        self.as_draft = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A boolean flag indicating whether to create evaluation form in draft state.</p>
+    pub fn set_as_draft(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.as_draft = input;
+        self
+    }
+    /// <p>A boolean flag indicating whether to create evaluation form in draft state.</p>
+    pub fn get_as_draft(&self) -> &::std::option::Option<bool> {
+        &self.as_draft
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -206,6 +241,34 @@ impl CreateEvaluationFormInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn target_configuration(mut self, input: crate::types::EvaluationFormTargetConfiguration) -> Self {
+        self.target_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn set_target_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>) -> Self {
+        self.target_configuration = input;
+        self
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormTargetConfiguration> {
+        &self.target_configuration
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn language_configuration(mut self, input: crate::types::EvaluationFormLanguageConfiguration) -> Self {
+        self.language_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn set_language_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>) -> Self {
+        self.language_configuration = input;
+        self
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn get_language_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormLanguageConfiguration> {
+        &self.language_configuration
+    }
     /// Consumes the builder and constructs a [`CreateEvaluationFormInput`](crate::operation::create_evaluation_form::CreateEvaluationFormInput).
     pub fn build(
         self,
@@ -219,7 +282,10 @@ impl CreateEvaluationFormInputBuilder {
             scoring_strategy: self.scoring_strategy,
             auto_evaluation_configuration: self.auto_evaluation_configuration,
             client_token: self.client_token,
+            as_draft: self.as_draft,
             tags: self.tags,
+            target_configuration: self.target_configuration,
+            language_configuration: self.language_configuration,
         })
     }
 }

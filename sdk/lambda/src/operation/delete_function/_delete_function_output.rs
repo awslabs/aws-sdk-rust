@@ -3,7 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFunctionOutput {
+    /// <p>The HTTP status code returned by the operation.</p>
+    pub status_code: i32,
     _request_id: Option<String>,
+}
+impl DeleteFunctionOutput {
+    /// <p>The HTTP status code returned by the operation.</p>
+    pub fn status_code(&self) -> i32 {
+        self.status_code
+    }
 }
 impl ::aws_types::request_id::RequestId for DeleteFunctionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +29,24 @@ impl DeleteFunctionOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteFunctionOutputBuilder {
+    pub(crate) status_code: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl DeleteFunctionOutputBuilder {
+    /// <p>The HTTP status code returned by the operation.</p>
+    pub fn status_code(mut self, input: i32) -> Self {
+        self.status_code = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The HTTP status code returned by the operation.</p>
+    pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.status_code = input;
+        self
+    }
+    /// <p>The HTTP status code returned by the operation.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        &self.status_code
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +59,7 @@ impl DeleteFunctionOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteFunctionOutput`](crate::operation::delete_function::DeleteFunctionOutput).
     pub fn build(self) -> crate::operation::delete_function::DeleteFunctionOutput {
         crate::operation::delete_function::DeleteFunctionOutput {
+            status_code: self.status_code.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }

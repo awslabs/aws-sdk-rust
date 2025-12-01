@@ -10,6 +10,8 @@ pub struct AssigneeContact {
     pub first_name: ::std::string::String,
     /// <p>Specifies the last name of the assignee managing the opportunity. The system automatically retrieves this value from the user profile by referencing the associated email address.</p>
     pub last_name: ::std::string::String,
+    /// <p>Specifies the contact phone number of the assignee responsible for the opportunity or engagement. This field enables direct communication for time-sensitive matters and facilitates coordination between AWS and partner teams.</p>
+    pub phone: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the business title of the assignee managing the opportunity. This helps clarify the individual's role and responsibilities within the organization. Use the value <code>PartnerAccountManager</code> to update details of the opportunity owner.</p>
     pub business_title: ::std::string::String,
 }
@@ -29,6 +31,10 @@ impl AssigneeContact {
         use std::ops::Deref;
         self.last_name.deref()
     }
+    /// <p>Specifies the contact phone number of the assignee responsible for the opportunity or engagement. This field enables direct communication for time-sensitive matters and facilitates coordination between AWS and partner teams.</p>
+    pub fn phone(&self) -> ::std::option::Option<&str> {
+        self.phone.as_deref()
+    }
     /// <p>Specifies the business title of the assignee managing the opportunity. This helps clarify the individual's role and responsibilities within the organization. Use the value <code>PartnerAccountManager</code> to update details of the opportunity owner.</p>
     pub fn business_title(&self) -> &str {
         use std::ops::Deref;
@@ -41,6 +47,7 @@ impl ::std::fmt::Debug for AssigneeContact {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("first_name", &"*** Sensitive Data Redacted ***");
         formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("phone", &"*** Sensitive Data Redacted ***");
         formatter.field("business_title", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -59,6 +66,7 @@ pub struct AssigneeContactBuilder {
     pub(crate) email: ::std::option::Option<::std::string::String>,
     pub(crate) first_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_name: ::std::option::Option<::std::string::String>,
+    pub(crate) phone: ::std::option::Option<::std::string::String>,
     pub(crate) business_title: ::std::option::Option<::std::string::String>,
 }
 impl AssigneeContactBuilder {
@@ -107,6 +115,20 @@ impl AssigneeContactBuilder {
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_name
     }
+    /// <p>Specifies the contact phone number of the assignee responsible for the opportunity or engagement. This field enables direct communication for time-sensitive matters and facilitates coordination between AWS and partner teams.</p>
+    pub fn phone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.phone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the contact phone number of the assignee responsible for the opportunity or engagement. This field enables direct communication for time-sensitive matters and facilitates coordination between AWS and partner teams.</p>
+    pub fn set_phone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.phone = input;
+        self
+    }
+    /// <p>Specifies the contact phone number of the assignee responsible for the opportunity or engagement. This field enables direct communication for time-sensitive matters and facilitates coordination between AWS and partner teams.</p>
+    pub fn get_phone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone
+    }
     /// <p>Specifies the business title of the assignee managing the opportunity. This helps clarify the individual's role and responsibilities within the organization. Use the value <code>PartnerAccountManager</code> to update details of the opportunity owner.</p>
     /// This field is required.
     pub fn business_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +170,7 @@ impl AssigneeContactBuilder {
                     "last_name was not specified but it is required when building AssigneeContact",
                 )
             })?,
+            phone: self.phone,
             business_title: self.business_title.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "business_title",
@@ -163,6 +186,7 @@ impl ::std::fmt::Debug for AssigneeContactBuilder {
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("first_name", &"*** Sensitive Data Redacted ***");
         formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("phone", &"*** Sensitive Data Redacted ***");
         formatter.field("business_title", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluationFormQuestionTypeProperties {
+    /// <p>Properties for multi-select question types.</p>
+    MultiSelect(crate::types::EvaluationFormMultiSelectQuestionProperties),
     /// <p>The properties of the numeric question.</p>
     Numeric(crate::types::EvaluationFormNumericQuestionProperties),
     /// <p>The properties of the numeric question.</p>
@@ -21,6 +23,19 @@ pub enum EvaluationFormQuestionTypeProperties {
     Unknown,
 }
 impl EvaluationFormQuestionTypeProperties {
+    /// Tries to convert the enum instance into [`MultiSelect`](crate::types::EvaluationFormQuestionTypeProperties::MultiSelect), extracting the inner [`EvaluationFormMultiSelectQuestionProperties`](crate::types::EvaluationFormMultiSelectQuestionProperties).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_multi_select(&self) -> ::std::result::Result<&crate::types::EvaluationFormMultiSelectQuestionProperties, &Self> {
+        if let EvaluationFormQuestionTypeProperties::MultiSelect(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MultiSelect`](crate::types::EvaluationFormQuestionTypeProperties::MultiSelect).
+    pub fn is_multi_select(&self) -> bool {
+        self.as_multi_select().is_ok()
+    }
     /// Tries to convert the enum instance into [`Numeric`](crate::types::EvaluationFormQuestionTypeProperties::Numeric), extracting the inner [`EvaluationFormNumericQuestionProperties`](crate::types::EvaluationFormNumericQuestionProperties).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_numeric(&self) -> ::std::result::Result<&crate::types::EvaluationFormNumericQuestionProperties, &Self> {

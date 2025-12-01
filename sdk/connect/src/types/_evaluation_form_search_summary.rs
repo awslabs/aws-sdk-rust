@@ -32,6 +32,10 @@ pub struct EvaluationFormSearchSummary {
     pub active_version: ::std::option::Option<i32>,
     /// <p>Whether automated evaluation is enabled.</p>
     pub auto_evaluation_enabled: bool,
+    /// <p>The language of the evaluation form.</p>
+    pub evaluation_form_language: ::std::option::Option<crate::types::EvaluationFormLanguageCode>,
+    /// <p>The contact interaction type for this evaluation form.</p>
+    pub contact_interaction_type: ::std::option::Option<crate::types::ContactInteractionType>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -97,6 +101,14 @@ impl EvaluationFormSearchSummary {
     pub fn auto_evaluation_enabled(&self) -> bool {
         self.auto_evaluation_enabled
     }
+    /// <p>The language of the evaluation form.</p>
+    pub fn evaluation_form_language(&self) -> ::std::option::Option<&crate::types::EvaluationFormLanguageCode> {
+        self.evaluation_form_language.as_ref()
+    }
+    /// <p>The contact interaction type for this evaluation form.</p>
+    pub fn contact_interaction_type(&self) -> ::std::option::Option<&crate::types::ContactInteractionType> {
+        self.contact_interaction_type.as_ref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -127,6 +139,8 @@ pub struct EvaluationFormSearchSummaryBuilder {
     pub(crate) latest_version: ::std::option::Option<i32>,
     pub(crate) active_version: ::std::option::Option<i32>,
     pub(crate) auto_evaluation_enabled: ::std::option::Option<bool>,
+    pub(crate) evaluation_form_language: ::std::option::Option<crate::types::EvaluationFormLanguageCode>,
+    pub(crate) contact_interaction_type: ::std::option::Option<crate::types::ContactInteractionType>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EvaluationFormSearchSummaryBuilder {
@@ -335,6 +349,34 @@ impl EvaluationFormSearchSummaryBuilder {
     pub fn get_auto_evaluation_enabled(&self) -> &::std::option::Option<bool> {
         &self.auto_evaluation_enabled
     }
+    /// <p>The language of the evaluation form.</p>
+    pub fn evaluation_form_language(mut self, input: crate::types::EvaluationFormLanguageCode) -> Self {
+        self.evaluation_form_language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The language of the evaluation form.</p>
+    pub fn set_evaluation_form_language(mut self, input: ::std::option::Option<crate::types::EvaluationFormLanguageCode>) -> Self {
+        self.evaluation_form_language = input;
+        self
+    }
+    /// <p>The language of the evaluation form.</p>
+    pub fn get_evaluation_form_language(&self) -> &::std::option::Option<crate::types::EvaluationFormLanguageCode> {
+        &self.evaluation_form_language
+    }
+    /// <p>The contact interaction type for this evaluation form.</p>
+    pub fn contact_interaction_type(mut self, input: crate::types::ContactInteractionType) -> Self {
+        self.contact_interaction_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The contact interaction type for this evaluation form.</p>
+    pub fn set_contact_interaction_type(mut self, input: ::std::option::Option<crate::types::ContactInteractionType>) -> Self {
+        self.contact_interaction_type = input;
+        self
+    }
+    /// <p>The contact interaction type for this evaluation form.</p>
+    pub fn get_contact_interaction_type(&self) -> &::std::option::Option<crate::types::ContactInteractionType> {
+        &self.contact_interaction_type
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -427,6 +469,8 @@ impl EvaluationFormSearchSummaryBuilder {
             })?,
             active_version: self.active_version,
             auto_evaluation_enabled: self.auto_evaluation_enabled.unwrap_or_default(),
+            evaluation_form_language: self.evaluation_form_language,
+            contact_interaction_type: self.contact_interaction_type,
             tags: self.tags,
         })
     }

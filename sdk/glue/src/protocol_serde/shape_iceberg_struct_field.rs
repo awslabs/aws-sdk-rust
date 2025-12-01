@@ -21,5 +21,11 @@ pub fn ser_iceberg_struct_field(
     if let Some(var_1) = &input.doc {
         object.key("Doc").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.initial_default {
+        object.key("InitialDefault").document(var_2);
+    }
+    if let Some(var_3) = &input.write_default {
+        object.key("WriteDefault").document(var_3);
+    }
     Ok(())
 }

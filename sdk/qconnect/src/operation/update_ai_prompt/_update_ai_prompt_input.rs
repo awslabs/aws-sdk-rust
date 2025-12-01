@@ -19,6 +19,8 @@ pub struct UpdateAiPromptInput {
     /// <p>For information about which models are supported in each Amazon Web Services Region, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-ai-prompts.html#cli-create-aiprompt">Supported models for system/custom prompts</a>.</p>
     /// </note>
     pub model_id: ::std::option::Option<::std::string::String>,
+    /// <p>The updated inference configuration for the AI Prompt.</p>
+    pub inference_configuration: ::std::option::Option<crate::types::AiPromptInferenceConfiguration>,
 }
 impl UpdateAiPromptInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>..</p>
@@ -51,6 +53,10 @@ impl UpdateAiPromptInput {
     pub fn model_id(&self) -> ::std::option::Option<&str> {
         self.model_id.as_deref()
     }
+    /// <p>The updated inference configuration for the AI Prompt.</p>
+    pub fn inference_configuration(&self) -> ::std::option::Option<&crate::types::AiPromptInferenceConfiguration> {
+        self.inference_configuration.as_ref()
+    }
 }
 impl UpdateAiPromptInput {
     /// Creates a new builder-style object to manufacture [`UpdateAiPromptInput`](crate::operation::update_ai_prompt::UpdateAiPromptInput).
@@ -70,6 +76,7 @@ pub struct UpdateAiPromptInputBuilder {
     pub(crate) template_configuration: ::std::option::Option<crate::types::AiPromptTemplateConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
+    pub(crate) inference_configuration: ::std::option::Option<crate::types::AiPromptInferenceConfiguration>,
 }
 impl UpdateAiPromptInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>..</p>
@@ -179,6 +186,20 @@ impl UpdateAiPromptInputBuilder {
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }
+    /// <p>The updated inference configuration for the AI Prompt.</p>
+    pub fn inference_configuration(mut self, input: crate::types::AiPromptInferenceConfiguration) -> Self {
+        self.inference_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated inference configuration for the AI Prompt.</p>
+    pub fn set_inference_configuration(mut self, input: ::std::option::Option<crate::types::AiPromptInferenceConfiguration>) -> Self {
+        self.inference_configuration = input;
+        self
+    }
+    /// <p>The updated inference configuration for the AI Prompt.</p>
+    pub fn get_inference_configuration(&self) -> &::std::option::Option<crate::types::AiPromptInferenceConfiguration> {
+        &self.inference_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateAiPromptInput`](crate::operation::update_ai_prompt::UpdateAiPromptInput).
     pub fn build(
         self,
@@ -191,6 +212,7 @@ impl UpdateAiPromptInputBuilder {
             template_configuration: self.template_configuration,
             description: self.description,
             model_id: self.model_id,
+            inference_configuration: self.inference_configuration,
         })
     }
 }

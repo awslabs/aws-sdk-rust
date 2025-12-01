@@ -35,6 +35,12 @@ where
                                     .transpose()?,
                             );
                         }
+                        "video" => {
+                            builder = builder.set_video(crate::protocol_serde::shape_video_segment::de_video_segment(tokens)?);
+                        }
+                        "audio" => {
+                            builder = builder.set_audio(crate::protocol_serde::shape_audio_segment::de_audio_segment(tokens)?);
+                        }
                         "row" => {
                             builder =
                                 builder.set_row(crate::protocol_serde::shape_retrieval_result_content_row::de_retrieval_result_content_row(tokens)?);

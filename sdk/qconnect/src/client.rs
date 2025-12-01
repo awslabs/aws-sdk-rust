@@ -291,6 +291,8 @@ mod list_messages;
 
 mod list_quick_responses;
 
+mod list_spans;
+
 mod list_tags_for_resource;
 
 mod notify_recommendations_received;
@@ -304,6 +306,8 @@ mod remove_assistant_ai_agent;
 mod remove_knowledge_base_template_uri;
 
 mod render_message_template;
+
+mod retrieve;
 
 mod search_content;
 

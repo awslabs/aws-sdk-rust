@@ -13,6 +13,8 @@ pub struct GetRecommendationsInput {
     pub wait_time_seconds: ::std::option::Option<i32>,
     /// <p>The token for the next set of chunks. Use the value returned in the previous response in the next request to retrieve the next set of chunks.</p>
     pub next_chunk_token: ::std::option::Option<::std::string::String>,
+    /// <p>The type of recommendation being requested.</p>
+    pub recommendation_type: ::std::option::Option<crate::types::RecommendationType>,
 }
 impl GetRecommendationsInput {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -35,6 +37,10 @@ impl GetRecommendationsInput {
     pub fn next_chunk_token(&self) -> ::std::option::Option<&str> {
         self.next_chunk_token.as_deref()
     }
+    /// <p>The type of recommendation being requested.</p>
+    pub fn recommendation_type(&self) -> ::std::option::Option<&crate::types::RecommendationType> {
+        self.recommendation_type.as_ref()
+    }
 }
 impl GetRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
@@ -52,6 +58,7 @@ pub struct GetRecommendationsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) wait_time_seconds: ::std::option::Option<i32>,
     pub(crate) next_chunk_token: ::std::option::Option<::std::string::String>,
+    pub(crate) recommendation_type: ::std::option::Option<crate::types::RecommendationType>,
 }
 impl GetRecommendationsInputBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -126,6 +133,20 @@ impl GetRecommendationsInputBuilder {
     pub fn get_next_chunk_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_chunk_token
     }
+    /// <p>The type of recommendation being requested.</p>
+    pub fn recommendation_type(mut self, input: crate::types::RecommendationType) -> Self {
+        self.recommendation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of recommendation being requested.</p>
+    pub fn set_recommendation_type(mut self, input: ::std::option::Option<crate::types::RecommendationType>) -> Self {
+        self.recommendation_type = input;
+        self
+    }
+    /// <p>The type of recommendation being requested.</p>
+    pub fn get_recommendation_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
+        &self.recommendation_type
+    }
     /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
     pub fn build(
         self,
@@ -136,6 +157,7 @@ impl GetRecommendationsInputBuilder {
             max_results: self.max_results,
             wait_time_seconds: self.wait_time_seconds,
             next_chunk_token: self.next_chunk_token,
+            recommendation_type: self.recommendation_type,
         })
     }
 }

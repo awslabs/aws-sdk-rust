@@ -32,6 +32,15 @@ pub(crate) fn renewal_term_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn variable_payment_term_configuration_correct_errors(
+    mut builder: crate::types::builders::VariablePaymentTermConfigurationBuilder,
+) -> crate::types::builders::VariablePaymentTermConfigurationBuilder {
+    if builder.payment_request_approval_strategy.is_none() {
+        builder.payment_request_approval_strategy = "no value was set".parse::<crate::types::PaymentRequestApprovalStrategy>().ok()
+    }
+    builder
+}
+
 pub(crate) fn dimension_correct_errors(mut builder: crate::types::builders::DimensionBuilder) -> crate::types::builders::DimensionBuilder {
     if builder.dimension_key.is_none() {
         builder.dimension_key = Some(Default::default())

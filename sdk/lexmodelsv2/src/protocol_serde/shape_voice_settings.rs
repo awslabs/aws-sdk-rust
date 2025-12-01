@@ -14,17 +14,17 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "voiceId" => {
-                            builder = builder.set_voice_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
                         "engine" => {
                             builder = builder.set_engine(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::VoiceEngine::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "voiceId" => {
+                            builder = builder.set_voice_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
@@ -51,11 +51,11 @@ pub fn ser_voice_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VoiceSettings,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("voiceId").string(input.voice_id.as_str());
-    }
     if let Some(var_1) = &input.engine {
         object.key("engine").string(var_1.as_str());
+    }
+    {
+        object.key("voiceId").string(input.voice_id.as_str());
     }
     Ok(())
 }

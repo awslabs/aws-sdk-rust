@@ -166,17 +166,17 @@ impl UpdateContactRoutingDataFluentBuilder {
     pub fn get_queue_priority(&self) -> &::std::option::Option<i64> {
         self.inner.get_queue_priority()
     }
-    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a contact is routed within the queue.</p>
     pub fn routing_criteria(mut self, input: crate::types::RoutingCriteriaInput) -> Self {
         self.inner = self.inner.routing_criteria(input);
         self
     }
-    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a contact is routed within the queue.</p>
     pub fn set_routing_criteria(mut self, input: ::std::option::Option<crate::types::RoutingCriteriaInput>) -> Self {
         self.inner = self.inner.set_routing_criteria(input);
         self
     }
-    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a  contact is routed within the queue.</p>
+    /// <p>Updates the routing criteria on the contact. These properties can be used to change how a contact is routed within the queue.</p>
     pub fn get_routing_criteria(&self) -> &::std::option::Option<crate::types::RoutingCriteriaInput> {
         self.inner.get_routing_criteria()
     }

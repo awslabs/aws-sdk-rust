@@ -21,6 +21,10 @@ pub struct UpdateSecurityProfileInput {
     pub hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool</p>
+    pub allowed_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::FlowModule>>,
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub granular_access_control_configuration: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
 }
 impl UpdateSecurityProfileInput {
     /// <p>The description of the security profile.</p>
@@ -67,6 +71,16 @@ impl UpdateSecurityProfileInput {
     pub fn allowed_access_control_hierarchy_group_id(&self) -> ::std::option::Option<&str> {
         self.allowed_access_control_hierarchy_group_id.as_deref()
     }
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_flow_modules.is_none()`.
+    pub fn allowed_flow_modules(&self) -> &[crate::types::FlowModule] {
+        self.allowed_flow_modules.as_deref().unwrap_or_default()
+    }
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub fn granular_access_control_configuration(&self) -> ::std::option::Option<&crate::types::GranularAccessControlConfiguration> {
+        self.granular_access_control_configuration.as_ref()
+    }
 }
 impl UpdateSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
@@ -88,6 +102,8 @@ pub struct UpdateSecurityProfileInputBuilder {
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     pub(crate) hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) allowed_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::FlowModule>>,
+    pub(crate) granular_access_control_configuration: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
 }
 impl UpdateSecurityProfileInputBuilder {
     /// <p>The description of the security profile.</p>
@@ -257,6 +273,43 @@ impl UpdateSecurityProfileInputBuilder {
     pub fn get_allowed_access_control_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.allowed_access_control_hierarchy_group_id
     }
+    /// Appends an item to `allowed_flow_modules`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_flow_modules`](Self::set_allowed_flow_modules).
+    ///
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool</p>
+    pub fn allowed_flow_modules(mut self, input: crate::types::FlowModule) -> Self {
+        let mut v = self.allowed_flow_modules.unwrap_or_default();
+        v.push(input);
+        self.allowed_flow_modules = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool</p>
+    pub fn set_allowed_flow_modules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowModule>>) -> Self {
+        self.allowed_flow_modules = input;
+        self
+    }
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool</p>
+    pub fn get_allowed_flow_modules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowModule>> {
+        &self.allowed_flow_modules
+    }
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub fn granular_access_control_configuration(mut self, input: crate::types::GranularAccessControlConfiguration) -> Self {
+        self.granular_access_control_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub fn set_granular_access_control_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
+    ) -> Self {
+        self.granular_access_control_configuration = input;
+        self
+    }
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub fn get_granular_access_control_configuration(&self) -> &::std::option::Option<crate::types::GranularAccessControlConfiguration> {
+        &self.granular_access_control_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
     pub fn build(
         self,
@@ -272,6 +325,8 @@ impl UpdateSecurityProfileInputBuilder {
             applications: self.applications,
             hierarchy_restricted_resources: self.hierarchy_restricted_resources,
             allowed_access_control_hierarchy_group_id: self.allowed_access_control_hierarchy_group_id,
+            allowed_flow_modules: self.allowed_flow_modules,
+            granular_access_control_configuration: self.granular_access_control_configuration,
         })
     }
 }

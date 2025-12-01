@@ -178,6 +178,20 @@ impl CreateSegmentDefinitionFluentBuilder {
     pub fn get_segment_groups(&self) -> &::std::option::Option<crate::types::SegmentGroup> {
         self.inner.get_segment_groups()
     }
+    /// <p>The segment SQL query.</p>
+    pub fn segment_sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.segment_sql_query(input.into());
+        self
+    }
+    /// <p>The segment SQL query.</p>
+    pub fn set_segment_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_segment_sql_query(input);
+        self
+    }
+    /// <p>The segment SQL query.</p>
+    pub fn get_segment_sql_query(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_segment_sql_query()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

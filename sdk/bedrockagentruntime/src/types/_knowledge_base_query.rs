@@ -9,20 +9,34 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KnowledgeBaseQuery {
+    /// <p>The type of query being performed.</p>
+    pub r#type: crate::types::KnowledgeBaseQueryType,
     /// <p>The text of the query made to the knowledge base.</p>
     pub text: ::std::string::String,
+    /// <p>An image to include in the knowledge base query for multimodal retrieval.</p>
+    pub image: ::std::option::Option<crate::types::InputImage>,
 }
 impl KnowledgeBaseQuery {
+    /// <p>The type of query being performed.</p>
+    pub fn r#type(&self) -> &crate::types::KnowledgeBaseQueryType {
+        &self.r#type
+    }
     /// <p>The text of the query made to the knowledge base.</p>
     pub fn text(&self) -> &str {
         use std::ops::Deref;
         self.text.deref()
     }
+    /// <p>An image to include in the knowledge base query for multimodal retrieval.</p>
+    pub fn image(&self) -> ::std::option::Option<&crate::types::InputImage> {
+        self.image.as_ref()
+    }
 }
 impl ::std::fmt::Debug for KnowledgeBaseQuery {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("KnowledgeBaseQuery");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.field("image", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -37,11 +51,26 @@ impl KnowledgeBaseQuery {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct KnowledgeBaseQueryBuilder {
+    pub(crate) r#type: ::std::option::Option<crate::types::KnowledgeBaseQueryType>,
     pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) image: ::std::option::Option<crate::types::InputImage>,
 }
 impl KnowledgeBaseQueryBuilder {
+    /// <p>The type of query being performed.</p>
+    pub fn r#type(mut self, input: crate::types::KnowledgeBaseQueryType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of query being performed.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseQueryType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of query being performed.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::KnowledgeBaseQueryType> {
+        &self.r#type
+    }
     /// <p>The text of the query made to the knowledge base.</p>
-    /// This field is required.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
         self
@@ -55,24 +84,39 @@ impl KnowledgeBaseQueryBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
     }
+    /// <p>An image to include in the knowledge base query for multimodal retrieval.</p>
+    pub fn image(mut self, input: crate::types::InputImage) -> Self {
+        self.image = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An image to include in the knowledge base query for multimodal retrieval.</p>
+    pub fn set_image(mut self, input: ::std::option::Option<crate::types::InputImage>) -> Self {
+        self.image = input;
+        self
+    }
+    /// <p>An image to include in the knowledge base query for multimodal retrieval.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::InputImage> {
+        &self.image
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseQuery`](crate::types::KnowledgeBaseQuery).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`text`](crate::types::builders::KnowledgeBaseQueryBuilder::text)
-    pub fn build(self) -> ::std::result::Result<crate::types::KnowledgeBaseQuery, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KnowledgeBaseQuery {
-            text: self.text.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text",
-                    "text was not specified but it is required when building KnowledgeBaseQuery",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::KnowledgeBaseQuery {
+        crate::types::KnowledgeBaseQuery {
+            r#type: self.r#type.unwrap_or(
+                "TEXT"
+                    .parse::<crate::types::KnowledgeBaseQueryType>()
+                    .expect("static value validated to member"),
+            ),
+            text: self.text.unwrap_or_default(),
+            image: self.image,
+        }
     }
 }
 impl ::std::fmt::Debug for KnowledgeBaseQueryBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("KnowledgeBaseQueryBuilder");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.field("image", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

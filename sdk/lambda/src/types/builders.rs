@@ -11,6 +11,10 @@ pub use crate::types::_function_configuration::FunctionConfigurationBuilder;
 
 pub use crate::types::_tenancy_config::TenancyConfigBuilder;
 
+pub use crate::types::_capacity_provider_config::CapacityProviderConfigBuilder;
+
+pub use crate::types::_lambda_managed_instances_capacity_provider_config::LambdaManagedInstancesCapacityProviderConfigBuilder;
+
 pub use crate::types::_logging_config::LoggingConfigBuilder;
 
 pub use crate::types::_runtime_version_config::RuntimeVersionConfigBuilder;
@@ -45,6 +49,8 @@ pub use crate::types::_alias_routing_configuration::AliasRoutingConfigurationBui
 
 pub use crate::types::_alias_configuration::AliasConfigurationBuilder;
 
+pub use crate::types::_function_scaling_config::FunctionScalingConfigBuilder;
+
 pub use crate::types::_invoke_with_response_stream_complete_event::InvokeWithResponseStreamCompleteEventBuilder;
 
 pub use crate::types::_invoke_response_stream_update::InvokeResponseStreamUpdateBuilder;
@@ -57,12 +63,6 @@ pub use crate::types::_function_code_location::FunctionCodeLocationBuilder;
 
 pub use crate::types::_cors::CorsBuilder;
 
-pub use crate::types::_destination_config::DestinationConfigBuilder;
-
-pub use crate::types::_on_failure::OnFailureBuilder;
-
-pub use crate::types::_on_success::OnSuccessBuilder;
-
 pub use crate::types::_snap_start::SnapStartBuilder;
 
 pub use crate::types::_tracing_config::TracingConfigBuilder;
@@ -74,8 +74,6 @@ pub use crate::types::_vpc_config::VpcConfigBuilder;
 pub use crate::types::_provisioned_concurrency_config_list_item::ProvisionedConcurrencyConfigListItemBuilder;
 
 pub use crate::types::_function_url_config::FunctionUrlConfigBuilder;
-
-pub use crate::types::_function_event_invoke_config::FunctionEventInvokeConfigBuilder;
 
 pub use crate::types::_function_code::FunctionCodeBuilder;
 
@@ -103,6 +101,12 @@ pub use crate::types::_self_managed_event_source::SelfManagedEventSourceBuilder;
 
 pub use crate::types::_source_access_configuration::SourceAccessConfigurationBuilder;
 
+pub use crate::types::_destination_config::DestinationConfigBuilder;
+
+pub use crate::types::_on_failure::OnFailureBuilder;
+
+pub use crate::types::_on_success::OnSuccessBuilder;
+
 pub use crate::types::_filter_criteria::FilterCriteriaBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
@@ -114,6 +118,22 @@ pub use crate::types::_code_signing_config::CodeSigningConfigBuilder;
 pub use crate::types::_code_signing_policies::CodeSigningPoliciesBuilder;
 
 pub use crate::types::_allowed_publishers::AllowedPublishersBuilder;
+
+pub use crate::types::_function_versions_by_capacity_provider_list_item::FunctionVersionsByCapacityProviderListItemBuilder;
+
+pub use crate::types::_capacity_provider::CapacityProviderBuilder;
+
+pub use crate::types::_capacity_provider_scaling_config::CapacityProviderScalingConfigBuilder;
+
+pub use crate::types::_target_tracking_scaling_policy::TargetTrackingScalingPolicyBuilder;
+
+pub use crate::types::_instance_requirements::InstanceRequirementsBuilder;
+
+pub use crate::types::_capacity_provider_permissions_config::CapacityProviderPermissionsConfigBuilder;
+
+pub use crate::types::_capacity_provider_vpc_config::CapacityProviderVpcConfigBuilder;
+
+pub use crate::types::_function_event_invoke_config::FunctionEventInvokeConfigBuilder;
 
 pub use crate::types::_account_usage::AccountUsageBuilder;
 

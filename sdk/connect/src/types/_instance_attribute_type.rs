@@ -20,6 +20,7 @@
 ///     InstanceAttributeType::EnhancedContactMonitoring => { /* ... */ },
 ///     InstanceAttributeType::HighVolumeOutbound => { /* ... */ },
 ///     InstanceAttributeType::InboundCalls => { /* ... */ },
+///     InstanceAttributeType::MessageStreaming => { /* ... */ },
 ///     InstanceAttributeType::MultiPartyChatConference => { /* ... */ },
 ///     InstanceAttributeType::MultiPartyConference => { /* ... */ },
 ///     InstanceAttributeType::OutboundCalls => { /* ... */ },
@@ -69,6 +70,8 @@ pub enum InstanceAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     InboundCalls,
     #[allow(missing_docs)] // documentation missing in model
+    MessageStreaming,
+    #[allow(missing_docs)] // documentation missing in model
     MultiPartyChatConference,
     #[allow(missing_docs)] // documentation missing in model
     MultiPartyConference,
@@ -91,6 +94,7 @@ impl ::std::convert::From<&str> for InstanceAttributeType {
             "ENHANCED_CONTACT_MONITORING" => InstanceAttributeType::EnhancedContactMonitoring,
             "HIGH_VOLUME_OUTBOUND" => InstanceAttributeType::HighVolumeOutbound,
             "INBOUND_CALLS" => InstanceAttributeType::InboundCalls,
+            "MESSAGE_STREAMING" => InstanceAttributeType::MessageStreaming,
             "MULTI_PARTY_CHAT_CONFERENCE" => InstanceAttributeType::MultiPartyChatConference,
             "MULTI_PARTY_CONFERENCE" => InstanceAttributeType::MultiPartyConference,
             "OUTBOUND_CALLS" => InstanceAttributeType::OutboundCalls,
@@ -118,6 +122,7 @@ impl InstanceAttributeType {
             InstanceAttributeType::EnhancedContactMonitoring => "ENHANCED_CONTACT_MONITORING",
             InstanceAttributeType::HighVolumeOutbound => "HIGH_VOLUME_OUTBOUND",
             InstanceAttributeType::InboundCalls => "INBOUND_CALLS",
+            InstanceAttributeType::MessageStreaming => "MESSAGE_STREAMING",
             InstanceAttributeType::MultiPartyChatConference => "MULTI_PARTY_CHAT_CONFERENCE",
             InstanceAttributeType::MultiPartyConference => "MULTI_PARTY_CONFERENCE",
             InstanceAttributeType::OutboundCalls => "OUTBOUND_CALLS",
@@ -136,6 +141,7 @@ impl InstanceAttributeType {
             "ENHANCED_CONTACT_MONITORING",
             "HIGH_VOLUME_OUTBOUND",
             "INBOUND_CALLS",
+            "MESSAGE_STREAMING",
             "MULTI_PARTY_CHAT_CONFERENCE",
             "MULTI_PARTY_CONFERENCE",
             "OUTBOUND_CALLS",
@@ -171,6 +177,7 @@ impl ::std::fmt::Display for InstanceAttributeType {
             InstanceAttributeType::EnhancedContactMonitoring => write!(f, "ENHANCED_CONTACT_MONITORING"),
             InstanceAttributeType::HighVolumeOutbound => write!(f, "HIGH_VOLUME_OUTBOUND"),
             InstanceAttributeType::InboundCalls => write!(f, "INBOUND_CALLS"),
+            InstanceAttributeType::MessageStreaming => write!(f, "MESSAGE_STREAMING"),
             InstanceAttributeType::MultiPartyChatConference => write!(f, "MULTI_PARTY_CHAT_CONFERENCE"),
             InstanceAttributeType::MultiPartyConference => write!(f, "MULTI_PARTY_CONFERENCE"),
             InstanceAttributeType::OutboundCalls => write!(f, "OUTBOUND_CALLS"),

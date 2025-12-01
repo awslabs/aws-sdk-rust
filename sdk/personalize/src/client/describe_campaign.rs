@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`campaign_arn(impl Into<String>)`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::campaign_arn) / [`set_campaign_arn(Option<String>)`](crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::set_campaign_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the campaign.</p><br>
     /// - On success, responds with [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput) with field(s):
-    ///   - [`campaign(Option<Campaign>)`](crate::operation::describe_campaign::DescribeCampaignOutput::campaign): <p>The properties of the campaign.</p>
+    ///   - [`campaign(Option<Campaign>)`](crate::operation::describe_campaign::DescribeCampaignOutput::campaign): <note>  <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p> </note> <p>The properties of the campaign.</p><note>  <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p> </note>
     /// - On failure, responds with [`SdkError<DescribeCampaignError>`](crate::operation::describe_campaign::DescribeCampaignError)
     pub fn describe_campaign(&self) -> crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder {
         crate::operation::describe_campaign::builders::DescribeCampaignFluentBuilder::new(self.handle.clone())

@@ -274,7 +274,7 @@ pub enum CreateSessionError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>An error occurred while calling a dependency. For example, calling <code>connect:DecribeContact</code> as part of <code>CreateSession</code> with a contactArn.</p>
+    /// <p>The request failed because it depends on another request that failed.</p>
     DependencyFailedException(crate::types::error::DependencyFailedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

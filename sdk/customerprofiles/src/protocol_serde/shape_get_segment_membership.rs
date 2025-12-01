@@ -145,6 +145,12 @@ pub(crate) fn de_get_segment_membership(
                 "Failures" => {
                     builder = builder.set_failures(crate::protocol_serde::shape_failures::de_failures(tokens)?);
                 }
+                "LastComputedAt" => {
+                    builder = builder.set_last_computed_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "Profiles" => {
                     builder = builder.set_profiles(crate::protocol_serde::shape_profiles::de_profiles(tokens)?);
                 }

@@ -8,6 +8,8 @@ pub struct SendMessageOutput {
     /// <p>The time when the message was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub absolute_time: ::std::option::Option<::std::string::String>,
+    /// <p>Contains metadata for the message.</p>
+    pub message_metadata: ::std::option::Option<crate::types::MessageProcessingMetadata>,
     _request_id: Option<String>,
 }
 impl SendMessageOutput {
@@ -19,6 +21,10 @@ impl SendMessageOutput {
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn absolute_time(&self) -> ::std::option::Option<&str> {
         self.absolute_time.as_deref()
+    }
+    /// <p>Contains metadata for the message.</p>
+    pub fn message_metadata(&self) -> ::std::option::Option<&crate::types::MessageProcessingMetadata> {
+        self.message_metadata.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SendMessageOutput {
@@ -39,6 +45,7 @@ impl SendMessageOutput {
 pub struct SendMessageOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) absolute_time: ::std::option::Option<::std::string::String>,
+    pub(crate) message_metadata: ::std::option::Option<crate::types::MessageProcessingMetadata>,
     _request_id: Option<String>,
 }
 impl SendMessageOutputBuilder {
@@ -73,6 +80,20 @@ impl SendMessageOutputBuilder {
     pub fn get_absolute_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.absolute_time
     }
+    /// <p>Contains metadata for the message.</p>
+    pub fn message_metadata(mut self, input: crate::types::MessageProcessingMetadata) -> Self {
+        self.message_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains metadata for the message.</p>
+    pub fn set_message_metadata(mut self, input: ::std::option::Option<crate::types::MessageProcessingMetadata>) -> Self {
+        self.message_metadata = input;
+        self
+    }
+    /// <p>Contains metadata for the message.</p>
+    pub fn get_message_metadata(&self) -> &::std::option::Option<crate::types::MessageProcessingMetadata> {
+        &self.message_metadata
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -87,6 +108,7 @@ impl SendMessageOutputBuilder {
         crate::operation::send_message::SendMessageOutput {
             id: self.id,
             absolute_time: self.absolute_time,
+            message_metadata: self.message_metadata,
             _request_id: self._request_id,
         }
     }

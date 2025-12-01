@@ -6,11 +6,19 @@
 pub struct WisdomInfo {
     /// <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
     pub session_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The array of AI agents involved in the contact.</p>
+    pub ai_agents: ::std::option::Option<::std::vec::Vec<crate::types::AiAgentInfo>>,
 }
 impl WisdomInfo {
     /// <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
     pub fn session_arn(&self) -> ::std::option::Option<&str> {
         self.session_arn.as_deref()
+    }
+    /// <p>The array of AI agents involved in the contact.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ai_agents.is_none()`.
+    pub fn ai_agents(&self) -> &[crate::types::AiAgentInfo] {
+        self.ai_agents.as_deref().unwrap_or_default()
     }
 }
 impl WisdomInfo {
@@ -25,6 +33,7 @@ impl WisdomInfo {
 #[non_exhaustive]
 pub struct WisdomInfoBuilder {
     pub(crate) session_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ai_agents: ::std::option::Option<::std::vec::Vec<crate::types::AiAgentInfo>>,
 }
 impl WisdomInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
@@ -41,10 +50,31 @@ impl WisdomInfoBuilder {
     pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_arn
     }
+    /// Appends an item to `ai_agents`.
+    ///
+    /// To override the contents of this collection use [`set_ai_agents`](Self::set_ai_agents).
+    ///
+    /// <p>The array of AI agents involved in the contact.</p>
+    pub fn ai_agents(mut self, input: crate::types::AiAgentInfo) -> Self {
+        let mut v = self.ai_agents.unwrap_or_default();
+        v.push(input);
+        self.ai_agents = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The array of AI agents involved in the contact.</p>
+    pub fn set_ai_agents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AiAgentInfo>>) -> Self {
+        self.ai_agents = input;
+        self
+    }
+    /// <p>The array of AI agents involved in the contact.</p>
+    pub fn get_ai_agents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AiAgentInfo>> {
+        &self.ai_agents
+    }
     /// Consumes the builder and constructs a [`WisdomInfo`](crate::types::WisdomInfo).
     pub fn build(self) -> crate::types::WisdomInfo {
         crate::types::WisdomInfo {
             session_arn: self.session_arn,
+            ai_agents: self.ai_agents,
         }
     }
 }

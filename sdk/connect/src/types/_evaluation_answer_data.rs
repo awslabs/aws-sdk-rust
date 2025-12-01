@@ -4,12 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluationAnswerData {
+    /// <p>Date and time value provided as an answer to an evaluation question.</p>
+    DateTimeValue(::std::string::String),
     /// <p>The flag to mark the question as not applicable.</p>
     NotApplicable(bool),
     /// <p>The numeric value for an answer in a contact evaluation.</p>
     NumericValue(f64),
     /// <p>The string value for an answer in a contact evaluation.</p>
     StringValue(::std::string::String),
+    /// <p>String values provided as answers to evaluation questions.</p>
+    StringValues(::std::vec::Vec<::std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -21,6 +25,19 @@ pub enum EvaluationAnswerData {
     Unknown,
 }
 impl EvaluationAnswerData {
+    /// Tries to convert the enum instance into [`DateTimeValue`](crate::types::EvaluationAnswerData::DateTimeValue), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_date_time_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let EvaluationAnswerData::DateTimeValue(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DateTimeValue`](crate::types::EvaluationAnswerData::DateTimeValue).
+    pub fn is_date_time_value(&self) -> bool {
+        self.as_date_time_value().is_ok()
+    }
     /// Tries to convert the enum instance into [`NotApplicable`](crate::types::EvaluationAnswerData::NotApplicable), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_not_applicable(&self) -> ::std::result::Result<&bool, &Self> {
@@ -59,6 +76,19 @@ impl EvaluationAnswerData {
     /// Returns true if this is a [`StringValue`](crate::types::EvaluationAnswerData::StringValue).
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
+    }
+    /// Tries to convert the enum instance into [`StringValues`](crate::types::EvaluationAnswerData::StringValues), extracting the inner [`Vec`](::std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_string_values(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+        if let EvaluationAnswerData::StringValues(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`StringValues`](crate::types::EvaluationAnswerData::StringValues).
+    pub fn is_string_values(&self) -> bool {
+        self.as_string_values().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

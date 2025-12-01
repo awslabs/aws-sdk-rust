@@ -6,6 +6,24 @@ pub fn ser_text_message(
     if let Some(var_1) = &input.value {
         object.key("value").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.citations {
+        let mut array_3 = object.key("citations").start_array();
+        for item_4 in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_citation::ser_citation(&mut object_5, item_4)?;
+                object_5.finish();
+            }
+        }
+        array_3.finish();
+    }
+    if let Some(var_6) = &input.ai_guardrail_assessment {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("aiGuardrailAssessment").start_object();
+        crate::protocol_serde::shape_ai_guardrail_assessment::ser_ai_guardrail_assessment(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +47,14 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "citations" => {
+                            builder = builder.set_citations(crate::protocol_serde::shape_citations::de_citations(tokens)?);
+                        }
+                        "aiGuardrailAssessment" => {
+                            builder = builder.set_ai_guardrail_assessment(
+                                crate::protocol_serde::shape_ai_guardrail_assessment::de_ai_guardrail_assessment(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

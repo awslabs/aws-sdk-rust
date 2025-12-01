@@ -9,11 +9,14 @@ pub fn ser_update_solution_input_input(
     if let Some(var_2) = &input.perform_auto_training {
         object.key("performAutoTraining").boolean(*var_2);
     }
-    if let Some(var_3) = &input.solution_update_config {
+    if let Some(var_3) = &input.perform_incremental_update {
+        object.key("performIncrementalUpdate").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.solution_update_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("solutionUpdateConfig").start_object();
-        crate::protocol_serde::shape_solution_update_config::ser_solution_update_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("solutionUpdateConfig").start_object();
+        crate::protocol_serde::shape_solution_update_config::ser_solution_update_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

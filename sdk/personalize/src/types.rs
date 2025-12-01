@@ -19,6 +19,8 @@ pub use crate::types::_metric_attribute::MetricAttribute;
 
 pub use crate::types::_campaign_config::CampaignConfig;
 
+pub use crate::types::_ranking_influence_type::RankingInfluenceType;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_solution_version_summary::SolutionVersionSummary;
@@ -288,6 +290,8 @@ mod _metric_attribution_summary;
 mod _objective_sensitivity;
 
 mod _optimization_objective;
+
+mod _ranking_influence_type;
 
 mod _recipe;
 

@@ -12,6 +12,8 @@ pub enum EntityTypeSort {
     DataProductSort(crate::types::DataProductSort),
     /// <p>The sort options for machine learning products.</p>
     MachineLearningProductSort(crate::types::MachineLearningProductSort),
+    /// <p>A sort for offer sets.</p>
+    OfferSetSort(crate::types::OfferSetSort),
     /// <p>A sort for offers.</p>
     OfferSort(crate::types::OfferSort),
     /// <p>A sort for Resale Authorizations.</p>
@@ -80,6 +82,19 @@ impl EntityTypeSort {
     /// Returns true if this is a [`MachineLearningProductSort`](crate::types::EntityTypeSort::MachineLearningProductSort).
     pub fn is_machine_learning_product_sort(&self) -> bool {
         self.as_machine_learning_product_sort().is_ok()
+    }
+    /// Tries to convert the enum instance into [`OfferSetSort`](crate::types::EntityTypeSort::OfferSetSort), extracting the inner [`OfferSetSort`](crate::types::OfferSetSort).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_offer_set_sort(&self) -> ::std::result::Result<&crate::types::OfferSetSort, &Self> {
+        if let EntityTypeSort::OfferSetSort(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`OfferSetSort`](crate::types::EntityTypeSort::OfferSetSort).
+    pub fn is_offer_set_sort(&self) -> bool {
+        self.as_offer_set_sort().is_ok()
     }
     /// Tries to convert the enum instance into [`OfferSort`](crate::types::EntityTypeSort::OfferSort), extracting the inner [`OfferSort`](crate::types::OfferSort).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -6,6 +6,8 @@
 pub enum AiAgentConfiguration {
     /// <p>The configuration for AI Agents of type <code>ANSWER_RECOMMENDATION</code>.</p>
     AnswerRecommendationAiAgentConfiguration(crate::types::AnswerRecommendationAiAgentConfiguration),
+    /// <p>The configuration for AI Agents of type <code>CASE_SUMMARIZATION</code>.</p>
+    CaseSummarizationAiAgentConfiguration(crate::types::CaseSummarizationAiAgentConfiguration),
     /// <p>Configuration for the EMAIL_GENERATIVE_ANSWER AI agent that provides comprehensive knowledge-based answers for customer queries.</p>
     EmailGenerativeAnswerAiAgentConfiguration(crate::types::EmailGenerativeAnswerAiAgentConfiguration),
     /// <p>Configuration for the EMAIL_OVERVIEW AI agent that generates structured overview of email conversations.</p>
@@ -14,6 +16,10 @@ pub enum AiAgentConfiguration {
     EmailResponseAiAgentConfiguration(crate::types::EmailResponseAiAgentConfiguration),
     /// <p>The configuration for AI Agents of type <code>MANUAL_SEARCH</code>.</p>
     ManualSearchAiAgentConfiguration(crate::types::ManualSearchAiAgentConfiguration),
+    /// <p>The configuration for AI Agents of type <code>NOTE_TAKING</code>.</p>
+    NoteTakingAiAgentConfiguration(crate::types::NoteTakingAiAgentConfiguration),
+    /// <p>The configuration for AI Agents of type <code>ORCHESTRATION</code>.</p>
+    OrchestrationAiAgentConfiguration(crate::types::OrchestrationAiAgentConfiguration),
     /// <p>The configuration for AI Agents of type SELF_SERVICE.</p>
     SelfServiceAiAgentConfiguration(crate::types::SelfServiceAiAgentConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -41,6 +47,19 @@ impl AiAgentConfiguration {
     /// Returns true if this is a [`AnswerRecommendationAiAgentConfiguration`](crate::types::AiAgentConfiguration::AnswerRecommendationAiAgentConfiguration).
     pub fn is_answer_recommendation_ai_agent_configuration(&self) -> bool {
         self.as_answer_recommendation_ai_agent_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`CaseSummarizationAiAgentConfiguration`](crate::types::AiAgentConfiguration::CaseSummarizationAiAgentConfiguration), extracting the inner [`CaseSummarizationAiAgentConfiguration`](crate::types::CaseSummarizationAiAgentConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_case_summarization_ai_agent_configuration(&self) -> ::std::result::Result<&crate::types::CaseSummarizationAiAgentConfiguration, &Self> {
+        if let AiAgentConfiguration::CaseSummarizationAiAgentConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CaseSummarizationAiAgentConfiguration`](crate::types::AiAgentConfiguration::CaseSummarizationAiAgentConfiguration).
+    pub fn is_case_summarization_ai_agent_configuration(&self) -> bool {
+        self.as_case_summarization_ai_agent_configuration().is_ok()
     }
     /// Tries to convert the enum instance into [`EmailGenerativeAnswerAiAgentConfiguration`](crate::types::AiAgentConfiguration::EmailGenerativeAnswerAiAgentConfiguration), extracting the inner [`EmailGenerativeAnswerAiAgentConfiguration`](crate::types::EmailGenerativeAnswerAiAgentConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -95,6 +114,32 @@ impl AiAgentConfiguration {
     /// Returns true if this is a [`ManualSearchAiAgentConfiguration`](crate::types::AiAgentConfiguration::ManualSearchAiAgentConfiguration).
     pub fn is_manual_search_ai_agent_configuration(&self) -> bool {
         self.as_manual_search_ai_agent_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`NoteTakingAiAgentConfiguration`](crate::types::AiAgentConfiguration::NoteTakingAiAgentConfiguration), extracting the inner [`NoteTakingAiAgentConfiguration`](crate::types::NoteTakingAiAgentConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_note_taking_ai_agent_configuration(&self) -> ::std::result::Result<&crate::types::NoteTakingAiAgentConfiguration, &Self> {
+        if let AiAgentConfiguration::NoteTakingAiAgentConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`NoteTakingAiAgentConfiguration`](crate::types::AiAgentConfiguration::NoteTakingAiAgentConfiguration).
+    pub fn is_note_taking_ai_agent_configuration(&self) -> bool {
+        self.as_note_taking_ai_agent_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`OrchestrationAiAgentConfiguration`](crate::types::AiAgentConfiguration::OrchestrationAiAgentConfiguration), extracting the inner [`OrchestrationAiAgentConfiguration`](crate::types::OrchestrationAiAgentConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_orchestration_ai_agent_configuration(&self) -> ::std::result::Result<&crate::types::OrchestrationAiAgentConfiguration, &Self> {
+        if let AiAgentConfiguration::OrchestrationAiAgentConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`OrchestrationAiAgentConfiguration`](crate::types::AiAgentConfiguration::OrchestrationAiAgentConfiguration).
+    pub fn is_orchestration_ai_agent_configuration(&self) -> bool {
+        self.as_orchestration_ai_agent_configuration().is_ok()
     }
     /// Tries to convert the enum instance into [`SelfServiceAiAgentConfiguration`](crate::types::AiAgentConfiguration::SelfServiceAiAgentConfiguration), extracting the inner [`SelfServiceAiAgentConfiguration`](crate::types::SelfServiceAiAgentConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -33,6 +33,8 @@ pub(crate) mod shape_create_access_entry;
 
 pub(crate) mod shape_create_addon;
 
+pub(crate) mod shape_create_capability;
+
 pub(crate) mod shape_create_cluster;
 
 pub(crate) mod shape_create_eks_anywhere_subscription;
@@ -46,6 +48,8 @@ pub(crate) mod shape_create_pod_identity_association;
 pub(crate) mod shape_delete_access_entry;
 
 pub(crate) mod shape_delete_addon;
+
+pub(crate) mod shape_delete_capability;
 
 pub(crate) mod shape_delete_cluster;
 
@@ -66,6 +70,8 @@ pub(crate) mod shape_describe_addon;
 pub(crate) mod shape_describe_addon_configuration;
 
 pub(crate) mod shape_describe_addon_versions;
+
+pub(crate) mod shape_describe_capability;
 
 pub(crate) mod shape_describe_cluster;
 
@@ -99,6 +105,8 @@ pub(crate) mod shape_list_addons;
 
 pub(crate) mod shape_list_associated_access_policies;
 
+pub(crate) mod shape_list_capabilities;
+
 pub(crate) mod shape_list_clusters;
 
 pub(crate) mod shape_list_eks_anywhere_subscriptions;
@@ -128,6 +136,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_access_entry;
 
 pub(crate) mod shape_update_addon;
+
+pub(crate) mod shape_update_capability;
 
 pub(crate) mod shape_update_cluster_config;
 
@@ -164,6 +174,8 @@ pub(crate) mod shape_client_exception;
 pub(crate) mod shape_create_access_entry_input;
 
 pub(crate) mod shape_create_addon_input;
+
+pub(crate) mod shape_create_capability_input;
 
 pub(crate) mod shape_create_cluster_input;
 
@@ -213,6 +225,8 @@ pub(crate) mod shape_update_access_entry_input;
 
 pub(crate) mod shape_update_addon_input;
 
+pub(crate) mod shape_update_capability_input;
+
 pub(crate) mod shape_update_cluster_config_input;
 
 pub(crate) mod shape_update_cluster_version_input;
@@ -244,6 +258,12 @@ pub(crate) mod shape_addons;
 pub(crate) mod shape_associated_access_policies_list;
 
 pub(crate) mod shape_associated_access_policy;
+
+pub(crate) mod shape_capability;
+
+pub(crate) mod shape_capability_configuration_request;
+
+pub(crate) mod shape_capability_summary_list;
 
 pub(crate) mod shape_cluster;
 
@@ -319,6 +339,8 @@ pub(crate) mod shape_update;
 
 pub(crate) mod shape_update_access_config_request;
 
+pub(crate) mod shape_update_capability_configuration;
+
 pub(crate) mod shape_update_labels_payload;
 
 pub(crate) mod shape_update_taints_payload;
@@ -343,7 +365,15 @@ pub(crate) mod shape_addon_namespace_config_response;
 
 pub(crate) mod shape_addon_pod_identity_configuration;
 
+pub(crate) mod shape_argo_cd_config_request;
+
 pub(crate) mod shape_block_storage;
+
+pub(crate) mod shape_capability_configuration_response;
+
+pub(crate) mod shape_capability_health;
+
+pub(crate) mod shape_capability_summary;
 
 pub(crate) mod shape_certificate;
 
@@ -411,6 +441,8 @@ pub(crate) mod shape_storage_config_response;
 
 pub(crate) mod shape_taints_list;
 
+pub(crate) mod shape_update_argo_cd_config;
+
 pub(crate) mod shape_update_params;
 
 pub(crate) mod shape_upgrade_policy_response;
@@ -425,7 +457,17 @@ pub(crate) mod shape_addon_issue_list;
 
 pub(crate) mod shape_addon_version_info_list;
 
+pub(crate) mod shape_argo_cd_aws_idc_config_request;
+
+pub(crate) mod shape_argo_cd_config_response;
+
+pub(crate) mod shape_argo_cd_network_access_config_request;
+
+pub(crate) mod shape_argo_cd_role_mapping;
+
 pub(crate) mod shape_auto_scaling_group_list;
+
+pub(crate) mod shape_capability_issue_list;
 
 pub(crate) mod shape_cluster_issue_list;
 
@@ -457,13 +499,23 @@ pub(crate) mod shape_required_claims_map;
 
 pub(crate) mod shape_update_param;
 
+pub(crate) mod shape_update_role_mappings;
+
 pub(crate) mod shape_addon_compatibility_detail;
 
 pub(crate) mod shape_addon_issue;
 
 pub(crate) mod shape_addon_version_info;
 
+pub(crate) mod shape_argo_cd_aws_idc_config_response;
+
+pub(crate) mod shape_argo_cd_network_access_config_response;
+
+pub(crate) mod shape_argo_cd_role_mapping_list;
+
 pub(crate) mod shape_auto_scaling_group;
+
+pub(crate) mod shape_capability_issue;
 
 pub(crate) mod shape_cluster_issue;
 
@@ -475,6 +527,8 @@ pub(crate) mod shape_fargate_profile_label;
 
 pub(crate) mod shape_issue;
 
+pub(crate) mod shape_sso_identity;
+
 pub(crate) mod shape_client_stats;
 
 pub(crate) mod shape_compatibilities;
@@ -484,3 +538,5 @@ pub(crate) mod shape_log_types;
 pub(crate) mod shape_client_stat;
 
 pub(crate) mod shape_compatibility;
+
+pub(crate) mod shape_sso_identity_list;

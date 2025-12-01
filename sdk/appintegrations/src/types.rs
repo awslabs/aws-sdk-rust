@@ -7,6 +7,8 @@ pub use crate::types::_on_demand_configuration::OnDemandConfiguration;
 
 pub use crate::types::_execution_mode::ExecutionMode;
 
+pub use crate::types::_application_type::ApplicationType;
+
 pub use crate::types::_iframe_config::IframeConfig;
 
 pub use crate::types::_application_config::ApplicationConfig;
@@ -50,6 +52,8 @@ mod _application_config;
 mod _application_source_config;
 
 mod _application_summary;
+
+mod _application_type;
 
 mod _contact_handling;
 

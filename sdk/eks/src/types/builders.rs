@@ -59,6 +59,18 @@ pub use crate::types::_log_setup::LogSetupBuilder;
 
 pub use crate::types::_vpc_config_request::VpcConfigRequestBuilder;
 
+pub use crate::types::_update_capability_configuration::UpdateCapabilityConfigurationBuilder;
+
+pub use crate::types::_update_argo_cd_config::UpdateArgoCdConfigBuilder;
+
+pub use crate::types::_argo_cd_network_access_config_request::ArgoCdNetworkAccessConfigRequestBuilder;
+
+pub use crate::types::_update_role_mappings::UpdateRoleMappingsBuilder;
+
+pub use crate::types::_argo_cd_role_mapping::ArgoCdRoleMappingBuilder;
+
+pub use crate::types::_sso_identity::SsoIdentityBuilder;
+
 pub use crate::types::_addon_pod_identity_associations::AddonPodIdentityAssociationsBuilder;
 
 pub use crate::types::_access_entry::AccessEntryBuilder;
@@ -113,6 +125,8 @@ pub use crate::types::_insights_filter::InsightsFilterBuilder;
 
 pub use crate::types::_identity_provider_config::IdentityProviderConfigBuilder;
 
+pub use crate::types::_capability_summary::CapabilitySummaryBuilder;
+
 pub use crate::types::_associated_access_policy::AssociatedAccessPolicyBuilder;
 
 pub use crate::types::_access_scope::AccessScopeBuilder;
@@ -157,6 +171,20 @@ pub use crate::types::_fargate_profile_selector::FargateProfileSelectorBuilder;
 
 pub use crate::types::_cluster_version_information::ClusterVersionInformationBuilder;
 
+pub use crate::types::_capability::CapabilityBuilder;
+
+pub use crate::types::_capability_health::CapabilityHealthBuilder;
+
+pub use crate::types::_capability_issue::CapabilityIssueBuilder;
+
+pub use crate::types::_capability_configuration_response::CapabilityConfigurationResponseBuilder;
+
+pub use crate::types::_argo_cd_config_response::ArgoCdConfigResponseBuilder;
+
+pub use crate::types::_argo_cd_network_access_config_response::ArgoCdNetworkAccessConfigResponseBuilder;
+
+pub use crate::types::_argo_cd_aws_idc_config_response::ArgoCdAwsIdcConfigResponseBuilder;
+
 pub use crate::types::_addon_info::AddonInfoBuilder;
 
 pub use crate::types::_marketplace_information::MarketplaceInformationBuilder;
@@ -180,6 +208,12 @@ pub use crate::types::_create_access_config_request::CreateAccessConfigRequestBu
 pub use crate::types::_outpost_config_request::OutpostConfigRequestBuilder;
 
 pub use crate::types::_control_plane_placement_request::ControlPlanePlacementRequestBuilder;
+
+pub use crate::types::_capability_configuration_request::CapabilityConfigurationRequestBuilder;
+
+pub use crate::types::_argo_cd_config_request::ArgoCdConfigRequestBuilder;
+
+pub use crate::types::_argo_cd_aws_idc_config_request::ArgoCdAwsIdcConfigRequestBuilder;
 
 pub use crate::types::_addon_namespace_config_request::AddonNamespaceConfigRequestBuilder;
 

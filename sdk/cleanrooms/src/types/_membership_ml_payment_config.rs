@@ -8,6 +8,8 @@ pub struct MembershipMlPaymentConfig {
     pub model_training: ::std::option::Option<crate::types::MembershipModelTrainingPaymentConfig>,
     /// <p>The payment responsibilities accepted by the member for model inference.</p>
     pub model_inference: ::std::option::Option<crate::types::MembershipModelInferencePaymentConfig>,
+    /// <p>The payment configuration for synthetic data generation for this machine learning membership.</p>
+    pub synthetic_data_generation: ::std::option::Option<crate::types::MembershipSyntheticDataGenerationPaymentConfig>,
 }
 impl MembershipMlPaymentConfig {
     /// <p>The payment responsibilities accepted by the member for model training.</p>
@@ -17,6 +19,10 @@ impl MembershipMlPaymentConfig {
     /// <p>The payment responsibilities accepted by the member for model inference.</p>
     pub fn model_inference(&self) -> ::std::option::Option<&crate::types::MembershipModelInferencePaymentConfig> {
         self.model_inference.as_ref()
+    }
+    /// <p>The payment configuration for synthetic data generation for this machine learning membership.</p>
+    pub fn synthetic_data_generation(&self) -> ::std::option::Option<&crate::types::MembershipSyntheticDataGenerationPaymentConfig> {
+        self.synthetic_data_generation.as_ref()
     }
 }
 impl MembershipMlPaymentConfig {
@@ -32,6 +38,7 @@ impl MembershipMlPaymentConfig {
 pub struct MembershipMlPaymentConfigBuilder {
     pub(crate) model_training: ::std::option::Option<crate::types::MembershipModelTrainingPaymentConfig>,
     pub(crate) model_inference: ::std::option::Option<crate::types::MembershipModelInferencePaymentConfig>,
+    pub(crate) synthetic_data_generation: ::std::option::Option<crate::types::MembershipSyntheticDataGenerationPaymentConfig>,
 }
 impl MembershipMlPaymentConfigBuilder {
     /// <p>The payment responsibilities accepted by the member for model training.</p>
@@ -62,11 +69,29 @@ impl MembershipMlPaymentConfigBuilder {
     pub fn get_model_inference(&self) -> &::std::option::Option<crate::types::MembershipModelInferencePaymentConfig> {
         &self.model_inference
     }
+    /// <p>The payment configuration for synthetic data generation for this machine learning membership.</p>
+    pub fn synthetic_data_generation(mut self, input: crate::types::MembershipSyntheticDataGenerationPaymentConfig) -> Self {
+        self.synthetic_data_generation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The payment configuration for synthetic data generation for this machine learning membership.</p>
+    pub fn set_synthetic_data_generation(
+        mut self,
+        input: ::std::option::Option<crate::types::MembershipSyntheticDataGenerationPaymentConfig>,
+    ) -> Self {
+        self.synthetic_data_generation = input;
+        self
+    }
+    /// <p>The payment configuration for synthetic data generation for this machine learning membership.</p>
+    pub fn get_synthetic_data_generation(&self) -> &::std::option::Option<crate::types::MembershipSyntheticDataGenerationPaymentConfig> {
+        &self.synthetic_data_generation
+    }
     /// Consumes the builder and constructs a [`MembershipMlPaymentConfig`](crate::types::MembershipMlPaymentConfig).
     pub fn build(self) -> crate::types::MembershipMlPaymentConfig {
         crate::types::MembershipMlPaymentConfig {
             model_training: self.model_training,
             model_inference: self.model_inference,
+            synthetic_data_generation: self.synthetic_data_generation,
         }
     }
 }

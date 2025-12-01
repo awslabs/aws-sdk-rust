@@ -12,6 +12,8 @@ pub struct DescribeUpdateInput {
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>. This parameter is required if the update is an add-on update.</p>
     pub addon_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the capability for which you want to describe updates.</p>
+    pub capability_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUpdateInput {
     /// <p>The name of the Amazon EKS cluster associated with the update.</p>
@@ -30,6 +32,10 @@ impl DescribeUpdateInput {
     pub fn addon_name(&self) -> ::std::option::Option<&str> {
         self.addon_name.as_deref()
     }
+    /// <p>The name of the capability for which you want to describe updates.</p>
+    pub fn capability_name(&self) -> ::std::option::Option<&str> {
+        self.capability_name.as_deref()
+    }
 }
 impl DescribeUpdateInput {
     /// Creates a new builder-style object to manufacture [`DescribeUpdateInput`](crate::operation::describe_update::DescribeUpdateInput).
@@ -46,6 +52,7 @@ pub struct DescribeUpdateInputBuilder {
     pub(crate) update_id: ::std::option::Option<::std::string::String>,
     pub(crate) nodegroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) addon_name: ::std::option::Option<::std::string::String>,
+    pub(crate) capability_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUpdateInputBuilder {
     /// <p>The name of the Amazon EKS cluster associated with the update.</p>
@@ -106,6 +113,20 @@ impl DescribeUpdateInputBuilder {
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.addon_name
     }
+    /// <p>The name of the capability for which you want to describe updates.</p>
+    pub fn capability_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.capability_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the capability for which you want to describe updates.</p>
+    pub fn set_capability_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.capability_name = input;
+        self
+    }
+    /// <p>The name of the capability for which you want to describe updates.</p>
+    pub fn get_capability_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capability_name
+    }
     /// Consumes the builder and constructs a [`DescribeUpdateInput`](crate::operation::describe_update::DescribeUpdateInput).
     pub fn build(
         self,
@@ -115,6 +136,7 @@ impl DescribeUpdateInputBuilder {
             update_id: self.update_id,
             nodegroup_name: self.nodegroup_name,
             addon_name: self.addon_name,
+            capability_name: self.capability_name,
         })
     }
 }

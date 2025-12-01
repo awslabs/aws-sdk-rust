@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Payload {
+    /// <p>Specifies the details of the lead invitation within the Engagement Invitation payload. This data helps partners understand the lead context, customer information, and interaction history for the lead opportunity from AWS.</p>
+    LeadInvitation(crate::types::LeadInvitationPayload),
     /// <p>Specifies the details of the opportunity invitation within the Engagement Invitation payload. This data helps partners understand the context, scope, and expected involvement for the opportunity from AWS.</p>
     OpportunityInvitation(crate::types::OpportunityInvitationPayload),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum Payload {
     Unknown,
 }
 impl Payload {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`LeadInvitation`](crate::types::Payload::LeadInvitation), extracting the inner [`LeadInvitationPayload`](crate::types::LeadInvitationPayload).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_lead_invitation(&self) -> ::std::result::Result<&crate::types::LeadInvitationPayload, &Self> {
+        if let Payload::LeadInvitation(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`LeadInvitation`](crate::types::Payload::LeadInvitation).
+    pub fn is_lead_invitation(&self) -> bool {
+        self.as_lead_invitation().is_ok()
+    }
     /// Tries to convert the enum instance into [`OpportunityInvitation`](crate::types::Payload::OpportunityInvitation), extracting the inner [`OpportunityInvitationPayload`](crate::types::OpportunityInvitationPayload).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_opportunity_invitation(&self) -> ::std::result::Result<&crate::types::OpportunityInvitationPayload, &Self> {

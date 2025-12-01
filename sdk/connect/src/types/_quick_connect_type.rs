@@ -12,6 +12,7 @@
 /// ```text
 /// # let quickconnecttype = unimplemented!();
 /// match quickconnecttype {
+///     QuickConnectType::Flow => { /* ... */ },
 ///     QuickConnectType::PhoneNumber => { /* ... */ },
 ///     QuickConnectType::Queue => { /* ... */ },
 ///     QuickConnectType::User => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum QuickConnectType {
     #[allow(missing_docs)] // documentation missing in model
+    Flow,
+    #[allow(missing_docs)] // documentation missing in model
     PhoneNumber,
     #[allow(missing_docs)] // documentation missing in model
     Queue,
@@ -56,6 +59,7 @@ pub enum QuickConnectType {
 impl ::std::convert::From<&str> for QuickConnectType {
     fn from(s: &str) -> Self {
         match s {
+            "FLOW" => QuickConnectType::Flow,
             "PHONE_NUMBER" => QuickConnectType::PhoneNumber,
             "QUEUE" => QuickConnectType::Queue,
             "USER" => QuickConnectType::User,
@@ -74,6 +78,7 @@ impl QuickConnectType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            QuickConnectType::Flow => "FLOW",
             QuickConnectType::PhoneNumber => "PHONE_NUMBER",
             QuickConnectType::Queue => "QUEUE",
             QuickConnectType::User => "USER",
@@ -82,7 +87,7 @@ impl QuickConnectType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PHONE_NUMBER", "QUEUE", "USER"]
+        &["FLOW", "PHONE_NUMBER", "QUEUE", "USER"]
     }
 }
 impl ::std::convert::AsRef<str> for QuickConnectType {
@@ -105,6 +110,7 @@ impl QuickConnectType {
 impl ::std::fmt::Display for QuickConnectType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            QuickConnectType::Flow => write!(f, "FLOW"),
             QuickConnectType::PhoneNumber => write!(f, "PHONE_NUMBER"),
             QuickConnectType::Queue => write!(f, "QUEUE"),
             QuickConnectType::User => write!(f, "USER"),

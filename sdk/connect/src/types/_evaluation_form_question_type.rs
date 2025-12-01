@@ -12,6 +12,8 @@
 /// ```text
 /// # let evaluationformquestiontype = unimplemented!();
 /// match evaluationformquestiontype {
+///     EvaluationFormQuestionType::Datetime => { /* ... */ },
+///     EvaluationFormQuestionType::Multiselect => { /* ... */ },
 ///     EvaluationFormQuestionType::Numeric => { /* ... */ },
 ///     EvaluationFormQuestionType::Singleselect => { /* ... */ },
 ///     EvaluationFormQuestionType::Text => { /* ... */ },
@@ -44,6 +46,10 @@
 )]
 pub enum EvaluationFormQuestionType {
     #[allow(missing_docs)] // documentation missing in model
+    Datetime,
+    #[allow(missing_docs)] // documentation missing in model
+    Multiselect,
+    #[allow(missing_docs)] // documentation missing in model
     Numeric,
     #[allow(missing_docs)] // documentation missing in model
     Singleselect,
@@ -56,6 +62,8 @@ pub enum EvaluationFormQuestionType {
 impl ::std::convert::From<&str> for EvaluationFormQuestionType {
     fn from(s: &str) -> Self {
         match s {
+            "DATETIME" => EvaluationFormQuestionType::Datetime,
+            "MULTISELECT" => EvaluationFormQuestionType::Multiselect,
             "NUMERIC" => EvaluationFormQuestionType::Numeric,
             "SINGLESELECT" => EvaluationFormQuestionType::Singleselect,
             "TEXT" => EvaluationFormQuestionType::Text,
@@ -74,6 +82,8 @@ impl EvaluationFormQuestionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EvaluationFormQuestionType::Datetime => "DATETIME",
+            EvaluationFormQuestionType::Multiselect => "MULTISELECT",
             EvaluationFormQuestionType::Numeric => "NUMERIC",
             EvaluationFormQuestionType::Singleselect => "SINGLESELECT",
             EvaluationFormQuestionType::Text => "TEXT",
@@ -82,7 +92,7 @@ impl EvaluationFormQuestionType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NUMERIC", "SINGLESELECT", "TEXT"]
+        &["DATETIME", "MULTISELECT", "NUMERIC", "SINGLESELECT", "TEXT"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationFormQuestionType {
@@ -105,6 +115,8 @@ impl EvaluationFormQuestionType {
 impl ::std::fmt::Display for EvaluationFormQuestionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EvaluationFormQuestionType::Datetime => write!(f, "DATETIME"),
+            EvaluationFormQuestionType::Multiselect => write!(f, "MULTISELECT"),
             EvaluationFormQuestionType::Numeric => write!(f, "NUMERIC"),
             EvaluationFormQuestionType::Singleselect => write!(f, "SINGLESELECT"),
             EvaluationFormQuestionType::Text => write!(f, "TEXT"),

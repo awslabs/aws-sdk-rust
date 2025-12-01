@@ -13,6 +13,8 @@ impl super::Client {
     ///   - [`segment_definition_arn(String)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::segment_definition_arn): <p>The arn of the segment definition.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::created_at): <p>The timestamp of when the segment definition was created.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`segment_sql_query(Option<String>)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::segment_sql_query): <p>The segment SQL query.</p>
+    ///   - [`segment_type(Option<SegmentType>)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::segment_type): <p>The segment type.</p> <p>Classic : Segments created using traditional SegmentGroup structure</p> <p>Enhanced : Segments created using SQL queries</p>
     /// - On failure, responds with [`SdkError<GetSegmentDefinitionError>`](crate::operation::get_segment_definition::GetSegmentDefinitionError)
     pub fn get_segment_definition(&self) -> crate::operation::get_segment_definition::builders::GetSegmentDefinitionFluentBuilder {
         crate::operation::get_segment_definition::builders::GetSegmentDefinitionFluentBuilder::new(self.handle.clone())

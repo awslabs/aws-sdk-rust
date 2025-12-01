@@ -16,6 +16,9 @@ pub mod create_access_entry;
 /// Types for the `CreateAddon` operation.
 pub mod create_addon;
 
+/// Types for the `CreateCapability` operation.
+pub mod create_capability;
+
 /// Types for the `CreateCluster` operation.
 pub mod create_cluster;
 
@@ -36,6 +39,9 @@ pub mod delete_access_entry;
 
 /// Types for the `DeleteAddon` operation.
 pub mod delete_addon;
+
+/// Types for the `DeleteCapability` operation.
+pub mod delete_capability;
 
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
@@ -66,6 +72,9 @@ pub mod describe_addon_configuration;
 
 /// Types for the `DescribeAddonVersions` operation.
 pub mod describe_addon_versions;
+
+/// Types for the `DescribeCapability` operation.
+pub mod describe_capability;
 
 /// Types for the `DescribeCluster` operation.
 pub mod describe_cluster;
@@ -115,6 +124,9 @@ pub mod list_addons;
 /// Types for the `ListAssociatedAccessPolicies` operation.
 pub mod list_associated_access_policies;
 
+/// Types for the `ListCapabilities` operation.
+pub mod list_capabilities;
+
 /// Types for the `ListClusters` operation.
 pub mod list_clusters;
 
@@ -159,6 +171,9 @@ pub mod update_access_entry;
 
 /// Types for the `UpdateAddon` operation.
 pub mod update_addon;
+
+/// Types for the `UpdateCapability` operation.
+pub mod update_capability;
 
 /// Types for the `UpdateClusterConfig` operation.
 pub mod update_cluster_config;

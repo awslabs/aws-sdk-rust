@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and  <code>value</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>value</code>.</p>
     /// </note>
     pub string_condition: ::std::option::Option<crate::types::StringCondition>,
     /// <p>A leaf node condition which can be used to specify a numeric condition.</p>
@@ -13,7 +13,7 @@ pub struct Condition {
 }
 impl Condition {
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and  <code>value</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>value</code>.</p>
     /// </note>
     pub fn string_condition(&self) -> ::std::option::Option<&crate::types::StringCondition> {
         self.string_condition.as_ref()
@@ -39,21 +39,21 @@ pub struct ConditionBuilder {
 }
 impl ConditionBuilder {
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and  <code>value</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>value</code>.</p>
     /// </note>
     pub fn string_condition(mut self, input: crate::types::StringCondition) -> Self {
         self.string_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and  <code>value</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>value</code>.</p>
     /// </note>
     pub fn set_string_condition(mut self, input: ::std::option::Option<crate::types::StringCondition>) -> Self {
         self.string_condition = input;
         self
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and  <code>value</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>value</code>.</p>
     /// </note>
     pub fn get_string_condition(&self) -> &::std::option::Option<crate::types::StringCondition> {
         &self.string_condition

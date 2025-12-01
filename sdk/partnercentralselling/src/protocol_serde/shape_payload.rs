@@ -38,6 +38,11 @@ where
                                 },
                             )?,
                         )),
+                        "LeadInvitation" => Some(crate::types::Payload::LeadInvitation(
+                            crate::protocol_serde::shape_lead_invitation_payload::de_lead_invitation_payload(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'LeadInvitation' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::Payload::Unknown)
@@ -75,6 +80,12 @@ pub fn ser_payload(
             let mut object_1 = object_4.key("OpportunityInvitation").start_object();
             crate::protocol_serde::shape_opportunity_invitation_payload::ser_opportunity_invitation_payload(&mut object_1, inner)?;
             object_1.finish();
+        }
+        crate::types::Payload::LeadInvitation(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_4.key("LeadInvitation").start_object();
+            crate::protocol_serde::shape_lead_invitation_payload::ser_lead_invitation_payload(&mut object_2, inner)?;
+            object_2.finish();
         }
         crate::types::Payload::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Payload")),
     }

@@ -210,6 +210,8 @@ mod create_access_entry;
 
 mod create_addon;
 
+mod create_capability;
+
 mod create_cluster;
 
 mod create_eks_anywhere_subscription;
@@ -251,6 +253,8 @@ mod delete_access_entry;
 
 mod delete_addon;
 
+mod delete_capability;
+
 mod delete_cluster;
 
 mod delete_eks_anywhere_subscription;
@@ -270,6 +274,8 @@ mod describe_addon;
 mod describe_addon_configuration;
 
 mod describe_addon_versions;
+
+mod describe_capability;
 
 mod describe_cluster;
 
@@ -303,6 +309,8 @@ mod list_addons;
 
 mod list_associated_access_policies;
 
+mod list_capabilities;
+
 mod list_clusters;
 
 mod list_eks_anywhere_subscriptions;
@@ -332,6 +340,8 @@ mod untag_resource;
 mod update_access_entry;
 
 mod update_addon;
+
+mod update_capability;
 
 mod update_cluster_config;
 

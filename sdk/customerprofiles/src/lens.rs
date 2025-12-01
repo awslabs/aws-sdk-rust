@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_domain_layouts_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_domain_object_types_output_output_next_token(
+    input: &crate::operation::list_domain_object_types::ListDomainObjectTypesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_event_streams_output_output_next_token(
     input: &crate::operation::list_event_streams::ListEventStreamsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -41,6 +51,26 @@ pub(crate) fn reflens_list_event_triggers_output_output_next_token(
 
 pub(crate) fn reflens_list_object_type_attributes_output_output_next_token(
     input: &crate::operation::list_object_type_attributes::ListObjectTypeAttributesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_recommender_recipes_output_output_next_token(
+    input: &crate::operation::list_recommender_recipes::ListRecommenderRecipesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_recommenders_output_output_next_token(
+    input: &crate::operation::list_recommenders::ListRecommendersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -93,6 +123,13 @@ pub(crate) fn lens_list_domain_layouts_output_output_items(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_domain_object_types_output_output_items(
+    input: crate::operation::list_domain_object_types::ListDomainObjectTypesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainObjectTypesListItem>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_event_streams_output_output_items(
     input: crate::operation::list_event_streams::ListEventStreamsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EventStreamSummary>> {
@@ -111,6 +148,20 @@ pub(crate) fn lens_list_object_type_attributes_output_output_items(
     input: crate::operation::list_object_type_attributes::ListObjectTypeAttributesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListObjectTypeAttributeItem>> {
     let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_recommender_recipes_output_output_recommender_recipes(
+    input: crate::operation::list_recommender_recipes::ListRecommenderRecipesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommenderRecipe>> {
+    let input = input.recommender_recipes?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_recommenders_output_output_recommenders(
+    input: crate::operation::list_recommenders::ListRecommendersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommenderSummary>> {
+    let input = input.recommenders?;
     ::std::option::Option::Some(input)
 }
 

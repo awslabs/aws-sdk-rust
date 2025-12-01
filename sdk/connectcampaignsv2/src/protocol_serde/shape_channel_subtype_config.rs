@@ -21,6 +21,12 @@ pub fn ser_channel_subtype_config(
         crate::protocol_serde::shape_email_channel_subtype_config::ser_email_channel_subtype_config(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.whats_app {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("whatsApp").start_object();
+        crate::protocol_serde::shape_whats_app_channel_subtype_config::ser_whats_app_channel_subtype_config(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -52,6 +58,11 @@ where
                         "email" => {
                             builder = builder
                                 .set_email(crate::protocol_serde::shape_email_channel_subtype_config::de_email_channel_subtype_config(tokens)?);
+                        }
+                        "whatsApp" => {
+                            builder = builder.set_whats_app(
+                                crate::protocol_serde::shape_whats_app_channel_subtype_config::de_whats_app_channel_subtype_config(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

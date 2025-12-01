@@ -189,6 +189,16 @@ pub use crate::types::_intent_disambiguation_settings::IntentDisambiguationSetti
 
 pub use crate::types::_slot_resolution_improvement_specification::SlotResolutionImprovementSpecificationBuilder;
 
+pub use crate::types::_speech_recognition_settings::SpeechRecognitionSettingsBuilder;
+
+pub use crate::types::_speech_model_config::SpeechModelConfigBuilder;
+
+pub use crate::types::_deepgram_speech_model_config::DeepgramSpeechModelConfigBuilder;
+
+pub use crate::types::_unified_speech_settings::UnifiedSpeechSettingsBuilder;
+
+pub use crate::types::_speech_foundation_model::SpeechFoundationModelBuilder;
+
 pub use crate::types::_voice_settings::VoiceSettingsBuilder;
 
 pub use crate::types::_sentiment_analysis_settings::SentimentAnalysisSettingsBuilder;

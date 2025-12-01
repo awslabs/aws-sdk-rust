@@ -303,4 +303,18 @@ impl UpdateFunctionCodeFluentBuilder {
     pub fn get_source_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_kms_key_arn()
     }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn publish_to(mut self, input: crate::types::FunctionVersionLatestPublished) -> Self {
+        self.inner = self.inner.publish_to(input);
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn set_publish_to(mut self, input: ::std::option::Option<crate::types::FunctionVersionLatestPublished>) -> Self {
+        self.inner = self.inner.set_publish_to(input);
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn get_publish_to(&self) -> &::std::option::Option<crate::types::FunctionVersionLatestPublished> {
+        self.inner.get_publish_to()
+    }
 }

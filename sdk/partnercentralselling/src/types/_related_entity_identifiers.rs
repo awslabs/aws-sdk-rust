@@ -7,6 +7,8 @@ pub struct RelatedEntityIdentifiers {
     /// <p>Takes one value per opportunity. Each value is an Amazon Resource Name (ARN), in this format: <code>"offers": \["arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/Offer/offer-sampleOffer32"\]</code>.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a> action in the Marketplace Catalog APIs for a list of offers in the associated Marketplace seller account.</p>
     pub aws_marketplace_offers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Enables the association of AWS Marketplace offer sets with the <code>Opportunity</code>. Offer sets allow grouping multiple related marketplace offers together for comprehensive solution packaging. Each value is an Amazon Resource Name (ARN) in this format: <code>arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/OfferSet/offerset-sampleOfferSet32</code>.</p>
+    pub aws_marketplace_offer_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Enables partner solutions or offerings' association with an opportunity. To associate a solution, provide the solution's unique identifier, which you can obtain with the <code>ListSolutions</code> operation.</p>
     /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. But when the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
     /// <p>By associating the relevant solutions with the opportunity, you can communicate the offerings that are being considered or implemented to address the customer's business problem.</p>
@@ -22,6 +24,12 @@ impl RelatedEntityIdentifiers {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_marketplace_offers.is_none()`.
     pub fn aws_marketplace_offers(&self) -> &[::std::string::String] {
         self.aws_marketplace_offers.as_deref().unwrap_or_default()
+    }
+    /// <p>Enables the association of AWS Marketplace offer sets with the <code>Opportunity</code>. Offer sets allow grouping multiple related marketplace offers together for comprehensive solution packaging. Each value is an Amazon Resource Name (ARN) in this format: <code>arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/OfferSet/offerset-sampleOfferSet32</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_marketplace_offer_sets.is_none()`.
+    pub fn aws_marketplace_offer_sets(&self) -> &[::std::string::String] {
+        self.aws_marketplace_offer_sets.as_deref().unwrap_or_default()
     }
     /// <p>Enables partner solutions or offerings' association with an opportunity. To associate a solution, provide the solution's unique identifier, which you can obtain with the <code>ListSolutions</code> operation.</p>
     /// <p>If the specific solution identifier is not available, you can use the value <code>Other</code> and provide details about the solution in the <code>otherSolutionOffered</code> field. But when the opportunity reaches the <code>Committed</code> stage or beyond, the <code>Other</code> value cannot be used, and a valid solution identifier must be provided.</p>
@@ -51,6 +59,7 @@ impl RelatedEntityIdentifiers {
 #[non_exhaustive]
 pub struct RelatedEntityIdentifiersBuilder {
     pub(crate) aws_marketplace_offers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_marketplace_offer_sets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) solutions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) aws_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -77,6 +86,26 @@ impl RelatedEntityIdentifiersBuilder {
     /// <p>Use the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a> action in the Marketplace Catalog APIs for a list of offers in the associated Marketplace seller account.</p>
     pub fn get_aws_marketplace_offers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.aws_marketplace_offers
+    }
+    /// Appends an item to `aws_marketplace_offer_sets`.
+    ///
+    /// To override the contents of this collection use [`set_aws_marketplace_offer_sets`](Self::set_aws_marketplace_offer_sets).
+    ///
+    /// <p>Enables the association of AWS Marketplace offer sets with the <code>Opportunity</code>. Offer sets allow grouping multiple related marketplace offers together for comprehensive solution packaging. Each value is an Amazon Resource Name (ARN) in this format: <code>arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/OfferSet/offerset-sampleOfferSet32</code>.</p>
+    pub fn aws_marketplace_offer_sets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.aws_marketplace_offer_sets.unwrap_or_default();
+        v.push(input.into());
+        self.aws_marketplace_offer_sets = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Enables the association of AWS Marketplace offer sets with the <code>Opportunity</code>. Offer sets allow grouping multiple related marketplace offers together for comprehensive solution packaging. Each value is an Amazon Resource Name (ARN) in this format: <code>arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/OfferSet/offerset-sampleOfferSet32</code>.</p>
+    pub fn set_aws_marketplace_offer_sets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.aws_marketplace_offer_sets = input;
+        self
+    }
+    /// <p>Enables the association of AWS Marketplace offer sets with the <code>Opportunity</code>. Offer sets allow grouping multiple related marketplace offers together for comprehensive solution packaging. Each value is an Amazon Resource Name (ARN) in this format: <code>arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/OfferSet/offerset-sampleOfferSet32</code>.</p>
+    pub fn get_aws_marketplace_offer_sets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aws_marketplace_offer_sets
     }
     /// Appends an item to `solutions`.
     ///
@@ -131,6 +160,7 @@ impl RelatedEntityIdentifiersBuilder {
     pub fn build(self) -> crate::types::RelatedEntityIdentifiers {
         crate::types::RelatedEntityIdentifiers {
             aws_marketplace_offers: self.aws_marketplace_offers,
+            aws_marketplace_offer_sets: self.aws_marketplace_offer_sets,
             solutions: self.solutions,
             aws_products: self.aws_products,
         }

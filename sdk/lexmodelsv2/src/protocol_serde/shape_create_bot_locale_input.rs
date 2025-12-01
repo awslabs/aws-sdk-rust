@@ -24,11 +24,23 @@ pub fn ser_create_bot_locale_input_input(
     if let Some(var_6) = &input.speech_detection_sensitivity {
         object.key("speechDetectionSensitivity").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.voice_settings {
+    if let Some(var_7) = &input.speech_recognition_settings {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("voiceSettings").start_object();
-        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_8, var_7)?;
+        let mut object_8 = object.key("speechRecognitionSettings").start_object();
+        crate::protocol_serde::shape_speech_recognition_settings::ser_speech_recognition_settings(&mut object_8, var_7)?;
         object_8.finish();
+    }
+    if let Some(var_9) = &input.unified_speech_settings {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("unifiedSpeechSettings").start_object();
+        crate::protocol_serde::shape_unified_speech_settings::ser_unified_speech_settings(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.voice_settings {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("voiceSettings").start_object();
+        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

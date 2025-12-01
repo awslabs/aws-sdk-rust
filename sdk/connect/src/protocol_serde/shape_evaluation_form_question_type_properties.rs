@@ -31,6 +31,15 @@ pub fn ser_evaluation_form_question_type_properties(
             )?;
             object_3.finish();
         }
+        crate::types::EvaluationFormQuestionTypeProperties::MultiSelect(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_3.key("MultiSelect").start_object();
+            crate::protocol_serde::shape_evaluation_form_multi_select_question_properties::ser_evaluation_form_multi_select_question_properties(
+                &mut object_4,
+                inner,
+            )?;
+            object_4.finish();
+        }
         crate::types::EvaluationFormQuestionTypeProperties::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EvaluationFormQuestionTypeProperties",
@@ -86,6 +95,12 @@ where
                                 Some(crate::types::EvaluationFormQuestionTypeProperties::Text(
                                     crate::protocol_serde::shape_evaluation_form_text_question_properties::de_evaluation_form_text_question_properties(tokens)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Text' cannot be null"))?
+                                ))
+                            }
+                            "MultiSelect" => {
+                                Some(crate::types::EvaluationFormQuestionTypeProperties::MultiSelect(
+                                    crate::protocol_serde::shape_evaluation_form_multi_select_question_properties::de_evaluation_form_multi_select_question_properties(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MultiSelect' cannot be null"))?
                                 ))
                             }
                             _ => {

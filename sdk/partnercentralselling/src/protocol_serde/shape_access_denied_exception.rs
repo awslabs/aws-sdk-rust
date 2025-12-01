@@ -17,6 +17,13 @@ pub(crate) fn de_access_denied_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "Reason" => {
+                    builder = builder.set_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::AccessDeniedExceptionErrorCode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

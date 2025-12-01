@@ -15,6 +15,10 @@ pub use crate::types::_sort::SortBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
 
+pub use crate::types::_variable_payment_term::VariablePaymentTermBuilder;
+
+pub use crate::types::_variable_payment_term_configuration::VariablePaymentTermConfigurationBuilder;
+
 pub use crate::types::_fixed_upfront_pricing_term::FixedUpfrontPricingTermBuilder;
 
 pub use crate::types::_grant_item::GrantItemBuilder;

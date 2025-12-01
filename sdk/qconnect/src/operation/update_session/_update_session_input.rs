@@ -13,6 +13,10 @@ pub struct UpdateSessionInput {
     pub tag_filter: ::std::option::Option<crate::types::TagFilter>,
     /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that should be used by Amazon Q in Connect for this Session.</p>
     pub ai_agent_configuration: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
+    /// <p>The updated list of orchestrator configurations for the session.</p>
+    pub orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub remove_orchestrator_configuration_list: ::std::option::Option<bool>,
 }
 impl UpdateSessionInput {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -37,6 +41,16 @@ impl UpdateSessionInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
         self.ai_agent_configuration.as_ref()
     }
+    /// <p>The updated list of orchestrator configurations for the session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.orchestrator_configuration_list.is_none()`.
+    pub fn orchestrator_configuration_list(&self) -> &[crate::types::OrchestratorConfigurationEntry] {
+        self.orchestrator_configuration_list.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub fn remove_orchestrator_configuration_list(&self) -> ::std::option::Option<bool> {
+        self.remove_orchestrator_configuration_list
+    }
 }
 impl UpdateSessionInput {
     /// Creates a new builder-style object to manufacture [`UpdateSessionInput`](crate::operation::update_session::UpdateSessionInput).
@@ -55,6 +69,8 @@ pub struct UpdateSessionInputBuilder {
     pub(crate) tag_filter: ::std::option::Option<crate::types::TagFilter>,
     pub(crate) ai_agent_configuration:
         ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
+    pub(crate) orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    pub(crate) remove_orchestrator_configuration_list: ::std::option::Option<bool>,
 }
 impl UpdateSessionInputBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -140,6 +156,43 @@ impl UpdateSessionInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
         &self.ai_agent_configuration
     }
+    /// Appends an item to `orchestrator_configuration_list`.
+    ///
+    /// To override the contents of this collection use [`set_orchestrator_configuration_list`](Self::set_orchestrator_configuration_list).
+    ///
+    /// <p>The updated list of orchestrator configurations for the session.</p>
+    pub fn orchestrator_configuration_list(mut self, input: crate::types::OrchestratorConfigurationEntry) -> Self {
+        let mut v = self.orchestrator_configuration_list.unwrap_or_default();
+        v.push(input);
+        self.orchestrator_configuration_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The updated list of orchestrator configurations for the session.</p>
+    pub fn set_orchestrator_configuration_list(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    ) -> Self {
+        self.orchestrator_configuration_list = input;
+        self
+    }
+    /// <p>The updated list of orchestrator configurations for the session.</p>
+    pub fn get_orchestrator_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>> {
+        &self.orchestrator_configuration_list
+    }
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub fn remove_orchestrator_configuration_list(mut self, input: bool) -> Self {
+        self.remove_orchestrator_configuration_list = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub fn set_remove_orchestrator_configuration_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.remove_orchestrator_configuration_list = input;
+        self
+    }
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub fn get_remove_orchestrator_configuration_list(&self) -> &::std::option::Option<bool> {
+        &self.remove_orchestrator_configuration_list
+    }
     /// Consumes the builder and constructs a [`UpdateSessionInput`](crate::operation::update_session::UpdateSessionInput).
     pub fn build(
         self,
@@ -150,6 +203,8 @@ impl UpdateSessionInputBuilder {
             description: self.description,
             tag_filter: self.tag_filter,
             ai_agent_configuration: self.ai_agent_configuration,
+            orchestrator_configuration_list: self.orchestrator_configuration_list,
+            remove_orchestrator_configuration_list: self.remove_orchestrator_configuration_list,
         })
     }
 }

@@ -17,6 +17,10 @@ pub use crate::types::error::_policy_length_exceeded_exception::PolicyLengthExce
 
 pub use crate::types::error::_code_storage_exceeded_exception::CodeStorageExceededExceptionBuilder;
 
+pub use crate::types::error::_function_versions_per_capacity_provider_limit_exceeded_exception::FunctionVersionsPerCapacityProviderLimitExceededExceptionBuilder;
+
+pub use crate::types::error::_code_signing_config_not_found_exception::CodeSigningConfigNotFoundExceptionBuilder;
+
 pub use crate::types::error::_unsupported_media_type_exception::UnsupportedMediaTypeExceptionBuilder;
 
 pub use crate::types::error::_subnet_ip_address_limit_reached_exception::SubnetIpAddressLimitReachedExceptionBuilder;
@@ -34,6 +38,8 @@ pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExce
 pub use crate::types::error::_request_too_large_exception::RequestTooLargeExceptionBuilder;
 
 pub use crate::types::error::_recursive_invocation_exception::RecursiveInvocationExceptionBuilder;
+
+pub use crate::types::error::_no_published_version_exception::NoPublishedVersionExceptionBuilder;
 
 pub use crate::types::error::_kms_not_found_exception::KmsNotFoundExceptionBuilder;
 
@@ -73,6 +79,6 @@ pub use crate::types::error::_invalid_code_signature_exception::InvalidCodeSigna
 
 pub use crate::types::error::_code_verification_failed_exception::CodeVerificationFailedExceptionBuilder;
 
-pub use crate::types::error::_code_signing_config_not_found_exception::CodeSigningConfigNotFoundExceptionBuilder;
-
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
+
+pub use crate::types::error::_capacity_provider_limit_exceeded_exception::CapacityProviderLimitExceededExceptionBuilder;

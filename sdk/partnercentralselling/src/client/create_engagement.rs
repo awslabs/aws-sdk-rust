@@ -11,6 +11,7 @@ impl super::Client {
     /// - On success, responds with [`CreateEngagementOutput`](crate::operation::create_engagement::CreateEngagementOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_engagement::CreateEngagementOutput::id): <p>Unique identifier assigned to the newly created engagement.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_engagement::CreateEngagementOutput::arn): <p>The Amazon Resource Name (ARN) that identifies the engagement.</p>
+    ///   - [`modified_at(Option<DateTime>)`](crate::operation::create_engagement::CreateEngagementOutput::modified_at): <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). For newly created engagements, this value matches the creation timestamp. Example: "2023-05-01T20:37:46Z".</p>
     /// - On failure, responds with [`SdkError<CreateEngagementError>`](crate::operation::create_engagement::CreateEngagementError)
     pub fn create_engagement(&self) -> crate::operation::create_engagement::builders::CreateEngagementFluentBuilder {
         crate::operation::create_engagement::builders::CreateEngagementFluentBuilder::new(self.handle.clone())

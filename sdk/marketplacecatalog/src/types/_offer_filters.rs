@@ -26,6 +26,8 @@ pub struct OfferFilters {
     pub targeting: ::std::option::Option<crate::types::OfferTargetingFilter>,
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer.</p>
     pub last_modified_date: ::std::option::Option<crate::types::OfferLastModifiedDateFilter>,
+    /// <p>Allows filtering on the <code>OfferSetId</code> of an offer.</p>
+    pub offer_set_id: ::std::option::Option<crate::types::OfferSetIdFilter>,
 }
 impl OfferFilters {
     /// <p>Allows filtering on <code>EntityId</code> of an offer.</p>
@@ -70,6 +72,10 @@ impl OfferFilters {
     pub fn last_modified_date(&self) -> ::std::option::Option<&crate::types::OfferLastModifiedDateFilter> {
         self.last_modified_date.as_ref()
     }
+    /// <p>Allows filtering on the <code>OfferSetId</code> of an offer.</p>
+    pub fn offer_set_id(&self) -> ::std::option::Option<&crate::types::OfferSetIdFilter> {
+        self.offer_set_id.as_ref()
+    }
 }
 impl OfferFilters {
     /// Creates a new builder-style object to manufacture [`OfferFilters`](crate::types::OfferFilters).
@@ -92,6 +98,7 @@ pub struct OfferFiltersBuilder {
     pub(crate) state: ::std::option::Option<crate::types::OfferStateFilter>,
     pub(crate) targeting: ::std::option::Option<crate::types::OfferTargetingFilter>,
     pub(crate) last_modified_date: ::std::option::Option<crate::types::OfferLastModifiedDateFilter>,
+    pub(crate) offer_set_id: ::std::option::Option<crate::types::OfferSetIdFilter>,
 }
 impl OfferFiltersBuilder {
     /// <p>Allows filtering on <code>EntityId</code> of an offer.</p>
@@ -240,6 +247,20 @@ impl OfferFiltersBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<crate::types::OfferLastModifiedDateFilter> {
         &self.last_modified_date
     }
+    /// <p>Allows filtering on the <code>OfferSetId</code> of an offer.</p>
+    pub fn offer_set_id(mut self, input: crate::types::OfferSetIdFilter) -> Self {
+        self.offer_set_id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows filtering on the <code>OfferSetId</code> of an offer.</p>
+    pub fn set_offer_set_id(mut self, input: ::std::option::Option<crate::types::OfferSetIdFilter>) -> Self {
+        self.offer_set_id = input;
+        self
+    }
+    /// <p>Allows filtering on the <code>OfferSetId</code> of an offer.</p>
+    pub fn get_offer_set_id(&self) -> &::std::option::Option<crate::types::OfferSetIdFilter> {
+        &self.offer_set_id
+    }
     /// Consumes the builder and constructs a [`OfferFilters`](crate::types::OfferFilters).
     pub fn build(self) -> crate::types::OfferFilters {
         crate::types::OfferFilters {
@@ -253,6 +274,7 @@ impl OfferFiltersBuilder {
             state: self.state,
             targeting: self.targeting,
             last_modified_date: self.last_modified_date,
+            offer_set_id: self.offer_set_id,
         }
     }
 }

@@ -9,6 +9,10 @@ pub use crate::types::_entity::Entity;
 
 pub use crate::types::_entity_summary::EntitySummary;
 
+pub use crate::types::_offer_set_summary::OfferSetSummary;
+
+pub use crate::types::_offer_set_state_string::OfferSetStateString;
+
 pub use crate::types::_machine_learning_product_summary::MachineLearningProductSummary;
 
 pub use crate::types::_machine_learning_product_visibility_string::MachineLearningProductVisibilityString;
@@ -41,9 +45,13 @@ pub use crate::types::_ami_product_visibility_string::AmiProductVisibilityString
 
 pub use crate::types::_entity_type_sort::EntityTypeSort;
 
-pub use crate::types::_machine_learning_product_sort::MachineLearningProductSort;
+pub use crate::types::_offer_set_sort::OfferSetSort;
 
 pub use crate::types::_sort_order::SortOrder;
+
+pub use crate::types::_offer_set_sort_by::OfferSetSortBy;
+
+pub use crate::types::_machine_learning_product_sort::MachineLearningProductSort;
 
 pub use crate::types::_machine_learning_product_sort_by::MachineLearningProductSortBy;
 
@@ -72,6 +80,26 @@ pub use crate::types::_data_product_sort::DataProductSort;
 pub use crate::types::_data_product_sort_by::DataProductSortBy;
 
 pub use crate::types::_entity_type_filters::EntityTypeFilters;
+
+pub use crate::types::_offer_set_filters::OfferSetFilters;
+
+pub use crate::types::_offer_set_last_modified_date_filter::OfferSetLastModifiedDateFilter;
+
+pub use crate::types::_offer_set_last_modified_date_filter_date_range::OfferSetLastModifiedDateFilterDateRange;
+
+pub use crate::types::_offer_set_solution_id_filter::OfferSetSolutionIdFilter;
+
+pub use crate::types::_offer_set_associated_offer_ids_filter::OfferSetAssociatedOfferIdsFilter;
+
+pub use crate::types::_offer_set_release_date_filter::OfferSetReleaseDateFilter;
+
+pub use crate::types::_offer_set_release_date_filter_date_range::OfferSetReleaseDateFilterDateRange;
+
+pub use crate::types::_offer_set_state_filter::OfferSetStateFilter;
+
+pub use crate::types::_offer_set_name_filter::OfferSetNameFilter;
+
+pub use crate::types::_offer_set_entity_id_filter::OfferSetEntityIdFilter;
 
 pub use crate::types::_machine_learning_product_filters::MachineLearningProductFilters;
 
@@ -132,6 +160,8 @@ pub use crate::types::_container_product_last_modified_date_filter_date_range::C
 pub use crate::types::_container_product_entity_id_filter::ContainerProductEntityIdFilter;
 
 pub use crate::types::_offer_filters::OfferFilters;
+
+pub use crate::types::_offer_set_id_filter::OfferSetIdFilter;
 
 pub use crate::types::_offer_last_modified_date_filter::OfferLastModifiedDateFilter;
 
@@ -350,6 +380,36 @@ mod _offer_release_date_filter;
 mod _offer_release_date_filter_date_range;
 
 mod _offer_resale_authorization_id_filter;
+
+mod _offer_set_associated_offer_ids_filter;
+
+mod _offer_set_entity_id_filter;
+
+mod _offer_set_filters;
+
+mod _offer_set_id_filter;
+
+mod _offer_set_last_modified_date_filter;
+
+mod _offer_set_last_modified_date_filter_date_range;
+
+mod _offer_set_name_filter;
+
+mod _offer_set_release_date_filter;
+
+mod _offer_set_release_date_filter_date_range;
+
+mod _offer_set_solution_id_filter;
+
+mod _offer_set_sort;
+
+mod _offer_set_sort_by;
+
+mod _offer_set_state_filter;
+
+mod _offer_set_state_string;
+
+mod _offer_set_summary;
 
 mod _offer_sort;
 

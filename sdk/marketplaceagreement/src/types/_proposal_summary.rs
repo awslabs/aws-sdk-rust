@@ -8,6 +8,8 @@ pub struct ProposalSummary {
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>The unique identifier of the offer in AWS Marketplace.</p>
     pub offer_id: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p>
+    pub offer_set_id: ::std::option::Option<::std::string::String>,
 }
 impl ProposalSummary {
     /// <p>The list of resources involved in the agreement.</p>
@@ -19,6 +21,10 @@ impl ProposalSummary {
     /// <p>The unique identifier of the offer in AWS Marketplace.</p>
     pub fn offer_id(&self) -> ::std::option::Option<&str> {
         self.offer_id.as_deref()
+    }
+    /// <p>A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p>
+    pub fn offer_set_id(&self) -> ::std::option::Option<&str> {
+        self.offer_set_id.as_deref()
     }
 }
 impl ProposalSummary {
@@ -34,6 +40,7 @@ impl ProposalSummary {
 pub struct ProposalSummaryBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) offer_id: ::std::option::Option<::std::string::String>,
+    pub(crate) offer_set_id: ::std::option::Option<::std::string::String>,
 }
 impl ProposalSummaryBuilder {
     /// Appends an item to `resources`.
@@ -70,11 +77,26 @@ impl ProposalSummaryBuilder {
     pub fn get_offer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.offer_id
     }
+    /// <p>A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p>
+    pub fn offer_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.offer_set_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p>
+    pub fn set_offer_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.offer_set_id = input;
+        self
+    }
+    /// <p>A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p>
+    pub fn get_offer_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offer_set_id
+    }
     /// Consumes the builder and constructs a [`ProposalSummary`](crate::types::ProposalSummary).
     pub fn build(self) -> crate::types::ProposalSummary {
         crate::types::ProposalSummary {
             resources: self.resources,
             offer_id: self.offer_id,
+            offer_set_id: self.offer_set_id,
         }
     }
 }

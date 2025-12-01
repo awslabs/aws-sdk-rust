@@ -127,6 +127,14 @@ pub use crate::types::_embedding_model_configuration::EmbeddingModelConfiguratio
 
 pub use crate::types::_bedrock_embedding_model_configuration::BedrockEmbeddingModelConfigurationBuilder;
 
+pub use crate::types::_video_configuration::VideoConfigurationBuilder;
+
+pub use crate::types::_video_segmentation_configuration::VideoSegmentationConfigurationBuilder;
+
+pub use crate::types::_audio_configuration::AudioConfigurationBuilder;
+
+pub use crate::types::_audio_segmentation_configuration::AudioSegmentationConfigurationBuilder;
+
 pub use crate::types::_agent_knowledge_base::AgentKnowledgeBaseBuilder;
 
 pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummaryBuilder;

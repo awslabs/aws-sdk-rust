@@ -46,6 +46,13 @@ where
                             builder =
                                 builder.set_channel_subtypes(crate::protocol_serde::shape_channel_subtype_list::de_channel_subtype_list(tokens)?);
                         }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExternalCampaignType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "schedule" => {
                             builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens)?);
                         }

@@ -64,6 +64,13 @@ where
                         "Targeting" => {
                             builder = builder.set_targeting(crate::protocol_serde::shape_offer_targeting_list::de_offer_targeting_list(tokens)?);
                         }
+                        "OfferSetId" => {
+                            builder = builder.set_offer_set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

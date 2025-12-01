@@ -10,6 +10,8 @@ pub enum ChannelSubtypeParameters {
     Sms(crate::types::SmsChannelSubtypeParameters),
     /// Parameters for the Telephony Channel Subtype
     Telephony(crate::types::TelephonyChannelSubtypeParameters),
+    /// Parameters for the WhatsApp Channel Subtype
+    WhatsApp(crate::types::WhatsAppChannelSubtypeParameters),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -59,6 +61,19 @@ impl ChannelSubtypeParameters {
     /// Returns true if this is a [`Telephony`](crate::types::ChannelSubtypeParameters::Telephony).
     pub fn is_telephony(&self) -> bool {
         self.as_telephony().is_ok()
+    }
+    /// Tries to convert the enum instance into [`WhatsApp`](crate::types::ChannelSubtypeParameters::WhatsApp), extracting the inner [`WhatsAppChannelSubtypeParameters`](crate::types::WhatsAppChannelSubtypeParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_whats_app(&self) -> ::std::result::Result<&crate::types::WhatsAppChannelSubtypeParameters, &Self> {
+        if let ChannelSubtypeParameters::WhatsApp(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`WhatsApp`](crate::types::ChannelSubtypeParameters::WhatsApp).
+    pub fn is_whats_app(&self) -> bool {
+        self.as_whats_app().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

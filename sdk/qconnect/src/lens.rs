@@ -159,6 +159,16 @@ pub(crate) fn reflens_list_quick_responses_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_spans_output_output_next_token(
+    input: &crate::operation::list_spans::ListSpansOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_query_assistant_output_output_next_token(
     input: &crate::operation::query_assistant::QueryAssistantOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -318,6 +328,13 @@ pub(crate) fn lens_list_quick_responses_output_output_quick_response_summaries(
     input: crate::operation::list_quick_responses::ListQuickResponsesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseSummary>> {
     let input = input.quick_response_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_spans_output_output_spans(
+    input: crate::operation::list_spans::ListSpansOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Span>> {
+    let input = input.spans;
     ::std::option::Option::Some(input)
 }
 

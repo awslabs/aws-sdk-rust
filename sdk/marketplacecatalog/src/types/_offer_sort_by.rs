@@ -17,6 +17,7 @@
 ///     OfferSortBy::EntityId => { /* ... */ },
 ///     OfferSortBy::LastModifiedDate => { /* ... */ },
 ///     OfferSortBy::Name => { /* ... */ },
+///     OfferSortBy::OfferSetId => { /* ... */ },
 ///     OfferSortBy::ProductId => { /* ... */ },
 ///     OfferSortBy::ReleaseDate => { /* ... */ },
 ///     OfferSortBy::ResaleAuthorizationId => { /* ... */ },
@@ -61,6 +62,8 @@ pub enum OfferSortBy {
     #[allow(missing_docs)] // documentation missing in model
     Name,
     #[allow(missing_docs)] // documentation missing in model
+    OfferSetId,
+    #[allow(missing_docs)] // documentation missing in model
     ProductId,
     #[allow(missing_docs)] // documentation missing in model
     ReleaseDate,
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for OfferSortBy {
             "EntityId" => OfferSortBy::EntityId,
             "LastModifiedDate" => OfferSortBy::LastModifiedDate,
             "Name" => OfferSortBy::Name,
+            "OfferSetId" => OfferSortBy::OfferSetId,
             "ProductId" => OfferSortBy::ProductId,
             "ReleaseDate" => OfferSortBy::ReleaseDate,
             "ResaleAuthorizationId" => OfferSortBy::ResaleAuthorizationId,
@@ -107,6 +111,7 @@ impl OfferSortBy {
             OfferSortBy::EntityId => "EntityId",
             OfferSortBy::LastModifiedDate => "LastModifiedDate",
             OfferSortBy::Name => "Name",
+            OfferSortBy::OfferSetId => "OfferSetId",
             OfferSortBy::ProductId => "ProductId",
             OfferSortBy::ReleaseDate => "ReleaseDate",
             OfferSortBy::ResaleAuthorizationId => "ResaleAuthorizationId",
@@ -123,6 +128,7 @@ impl OfferSortBy {
             "EntityId",
             "LastModifiedDate",
             "Name",
+            "OfferSetId",
             "ProductId",
             "ReleaseDate",
             "ResaleAuthorizationId",
@@ -156,6 +162,7 @@ impl ::std::fmt::Display for OfferSortBy {
             OfferSortBy::EntityId => write!(f, "EntityId"),
             OfferSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
             OfferSortBy::Name => write!(f, "Name"),
+            OfferSortBy::OfferSetId => write!(f, "OfferSetId"),
             OfferSortBy::ProductId => write!(f, "ProductId"),
             OfferSortBy::ReleaseDate => write!(f, "ReleaseDate"),
             OfferSortBy::ResaleAuthorizationId => write!(f, "ResaleAuthorizationId"),

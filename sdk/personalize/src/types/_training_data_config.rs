@@ -7,6 +7,8 @@ pub struct TrainingDataConfig {
     /// <p>Specifies the columns to exclude from training. Each key is a dataset type, and each value is a list of columns. Exclude columns to control what data Amazon Personalize uses to generate recommendations.</p>
     /// <p>For example, you might have a column that you want to use only to filter recommendations. You can exclude this column from training and Amazon Personalize considers it only when filtering.</p>
     pub excluded_dataset_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    /// <p>A map that specifies which columns to include from each dataset during training. The map can contain up to 3 entries, where each key is a dataset name (maximum length of 256 characters, must contain only letters and underscores) and each value is an array of up to 50 column names. Column names can be up to 150 characters long, must start with a letter or underscore, and can contain only letters, numbers, and underscores.</p>
+    pub included_dataset_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl TrainingDataConfig {
     /// <p>Specifies the columns to exclude from training. Each key is a dataset type, and each value is a list of columns. Exclude columns to control what data Amazon Personalize uses to generate recommendations.</p>
@@ -15,6 +17,12 @@ impl TrainingDataConfig {
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.excluded_dataset_columns.as_ref()
+    }
+    /// <p>A map that specifies which columns to include from each dataset during training. The map can contain up to 3 entries, where each key is a dataset name (maximum length of 256 characters, must contain only letters and underscores) and each value is an array of up to 50 column names. Column names can be up to 150 characters long, must start with a letter or underscore, and can contain only letters, numbers, and underscores.</p>
+    pub fn included_dataset_columns(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        self.included_dataset_columns.as_ref()
     }
 }
 impl TrainingDataConfig {
@@ -29,6 +37,8 @@ impl TrainingDataConfig {
 #[non_exhaustive]
 pub struct TrainingDataConfigBuilder {
     pub(crate) excluded_dataset_columns:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) included_dataset_columns:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl TrainingDataConfigBuilder {
@@ -64,10 +74,40 @@ impl TrainingDataConfigBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.excluded_dataset_columns
     }
+    /// Adds a key-value pair to `included_dataset_columns`.
+    ///
+    /// To override the contents of this collection use [`set_included_dataset_columns`](Self::set_included_dataset_columns).
+    ///
+    /// <p>A map that specifies which columns to include from each dataset during training. The map can contain up to 3 entries, where each key is a dataset name (maximum length of 256 characters, must contain only letters and underscores) and each value is an array of up to 50 column names. Column names can be up to 150 characters long, must start with a letter or underscore, and can contain only letters, numbers, and underscores.</p>
+    pub fn included_dataset_columns(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.included_dataset_columns.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.included_dataset_columns = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map that specifies which columns to include from each dataset during training. The map can contain up to 3 entries, where each key is a dataset name (maximum length of 256 characters, must contain only letters and underscores) and each value is an array of up to 50 column names. Column names can be up to 150 characters long, must start with a letter or underscore, and can contain only letters, numbers, and underscores.</p>
+    pub fn set_included_dataset_columns(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    ) -> Self {
+        self.included_dataset_columns = input;
+        self
+    }
+    /// <p>A map that specifies which columns to include from each dataset during training. The map can contain up to 3 entries, where each key is a dataset name (maximum length of 256 characters, must contain only letters and underscores) and each value is an array of up to 50 column names. Column names can be up to 150 characters long, must start with a letter or underscore, and can contain only letters, numbers, and underscores.</p>
+    pub fn get_included_dataset_columns(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        &self.included_dataset_columns
+    }
     /// Consumes the builder and constructs a [`TrainingDataConfig`](crate::types::TrainingDataConfig).
     pub fn build(self) -> crate::types::TrainingDataConfig {
         crate::types::TrainingDataConfig {
             excluded_dataset_columns: self.excluded_dataset_columns,
+            included_dataset_columns: self.included_dataset_columns,
         }
     }
 }

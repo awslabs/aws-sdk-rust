@@ -1,5 +1,7 @@
 # aws-sdk-lexmodelsv2
 
+Amazon Lex Model Building Service provides APIs for creating, managing, and deploying conversational bots and their components.
+
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
@@ -12,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-lexmodelsv2 = "1.98.0"
+aws-sdk-lexmodelsv2 = "1.99.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -16,6 +16,10 @@ pub struct SegmentDefinitionItem {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags belonging to the segment definition.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The segment type.</p>
+    /// <p>Classic : Segments created using traditional SegmentGroup structure</p>
+    /// <p>Enhanced : Segments created using SQL queries</p>
+    pub segment_type: ::std::option::Option<crate::types::SegmentType>,
 }
 impl SegmentDefinitionItem {
     /// <p>Name of the segment definition.</p>
@@ -42,6 +46,12 @@ impl SegmentDefinitionItem {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The segment type.</p>
+    /// <p>Classic : Segments created using traditional SegmentGroup structure</p>
+    /// <p>Enhanced : Segments created using SQL queries</p>
+    pub fn segment_type(&self) -> ::std::option::Option<&crate::types::SegmentType> {
+        self.segment_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for SegmentDefinitionItem {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -52,6 +62,7 @@ impl ::std::fmt::Debug for SegmentDefinitionItem {
         formatter.field("segment_definition_arn", &self.segment_definition_arn);
         formatter.field("created_at", &self.created_at);
         formatter.field("tags", &self.tags);
+        formatter.field("segment_type", &self.segment_type);
         formatter.finish()
     }
 }
@@ -72,6 +83,7 @@ pub struct SegmentDefinitionItemBuilder {
     pub(crate) segment_definition_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) segment_type: ::std::option::Option<crate::types::SegmentType>,
 }
 impl SegmentDefinitionItemBuilder {
     /// <p>Name of the segment definition.</p>
@@ -164,6 +176,26 @@ impl SegmentDefinitionItemBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The segment type.</p>
+    /// <p>Classic : Segments created using traditional SegmentGroup structure</p>
+    /// <p>Enhanced : Segments created using SQL queries</p>
+    pub fn segment_type(mut self, input: crate::types::SegmentType) -> Self {
+        self.segment_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The segment type.</p>
+    /// <p>Classic : Segments created using traditional SegmentGroup structure</p>
+    /// <p>Enhanced : Segments created using SQL queries</p>
+    pub fn set_segment_type(mut self, input: ::std::option::Option<crate::types::SegmentType>) -> Self {
+        self.segment_type = input;
+        self
+    }
+    /// <p>The segment type.</p>
+    /// <p>Classic : Segments created using traditional SegmentGroup structure</p>
+    /// <p>Enhanced : Segments created using SQL queries</p>
+    pub fn get_segment_type(&self) -> &::std::option::Option<crate::types::SegmentType> {
+        &self.segment_type
+    }
     /// Consumes the builder and constructs a [`SegmentDefinitionItem`](crate::types::SegmentDefinitionItem).
     pub fn build(self) -> crate::types::SegmentDefinitionItem {
         crate::types::SegmentDefinitionItem {
@@ -173,6 +205,7 @@ impl SegmentDefinitionItemBuilder {
             segment_definition_arn: self.segment_definition_arn,
             created_at: self.created_at,
             tags: self.tags,
+            segment_type: self.segment_type,
         }
     }
 }
@@ -185,6 +218,7 @@ impl ::std::fmt::Debug for SegmentDefinitionItemBuilder {
         formatter.field("segment_definition_arn", &self.segment_definition_arn);
         formatter.field("created_at", &self.created_at);
         formatter.field("tags", &self.tags);
+        formatter.field("segment_type", &self.segment_type);
         formatter.finish()
     }
 }

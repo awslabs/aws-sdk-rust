@@ -63,5 +63,11 @@ pub fn ser_offer_filters(
         crate::protocol_serde::shape_offer_last_modified_date_filter::ser_offer_last_modified_date_filter(&mut object_20, var_19)?;
         object_20.finish();
     }
+    if let Some(var_21) = &input.offer_set_id {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("OfferSetId").start_object();
+        crate::protocol_serde::shape_offer_set_id_filter::ser_offer_set_id_filter(&mut object_22, var_21)?;
+        object_22.finish();
+    }
     Ok(())
 }

@@ -43,11 +43,21 @@ where
                         "voiceSettings" => {
                             builder = builder.set_voice_settings(crate::protocol_serde::shape_voice_settings::de_voice_settings(tokens)?);
                         }
+                        "speechRecognitionSettings" => {
+                            builder = builder.set_speech_recognition_settings(
+                                crate::protocol_serde::shape_speech_recognition_settings::de_speech_recognition_settings(tokens)?,
+                            );
+                        }
                         "speechDetectionSensitivity" => {
                             builder = builder.set_speech_detection_sensitivity(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::SpeechDetectionSensitivity::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "unifiedSpeechSettings" => {
+                            builder = builder.set_unified_speech_settings(
+                                crate::protocol_serde::shape_unified_speech_settings::de_unified_speech_settings(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -96,8 +106,20 @@ pub fn ser_bot_locale_import_specification(
         crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.speech_detection_sensitivity {
-        object.key("speechDetectionSensitivity").string(var_4.as_str());
+    if let Some(var_4) = &input.speech_recognition_settings {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("speechRecognitionSettings").start_object();
+        crate::protocol_serde::shape_speech_recognition_settings::ser_speech_recognition_settings(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.speech_detection_sensitivity {
+        object.key("speechDetectionSensitivity").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.unified_speech_settings {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("unifiedSpeechSettings").start_object();
+        crate::protocol_serde::shape_unified_speech_settings::ser_unified_speech_settings(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

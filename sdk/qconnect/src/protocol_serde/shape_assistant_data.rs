@@ -79,6 +79,11 @@ where
                                 crate::protocol_serde::shape_ai_agent_configuration_map::de_ai_agent_configuration_map(tokens)?,
                             );
                         }
+                        "orchestratorConfigurationList" => {
+                            builder = builder.set_orchestrator_configuration_list(
+                                crate::protocol_serde::shape_orchestrator_configuration_list::de_orchestrator_configuration_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -33,6 +33,22 @@ pub fn de_publish_version_http_error(
             }
             tmp
         }),
+        "FunctionVersionsPerCapacityProviderLimitExceededException" => {
+            crate::operation::publish_version::PublishVersionError::FunctionVersionsPerCapacityProviderLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::FunctionVersionsPerCapacityProviderLimitExceededExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_function_versions_per_capacity_provider_limit_exceeded_exception::de_function_versions_per_capacity_provider_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::publish_version::PublishVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidParameterValueException" => crate::operation::publish_version::PublishVersionError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -181,6 +197,11 @@ pub(crate) fn de_publish_version(
                 "Architectures" => {
                     builder = builder.set_architectures(crate::protocol_serde::shape_architectures_list::de_architectures_list(tokens)?);
                 }
+                "CapacityProviderConfig" => {
+                    builder = builder.set_capacity_provider_config(
+                        crate::protocol_serde::shape_capacity_provider_config::de_capacity_provider_config(tokens)?,
+                    );
+                }
                 "CodeSha256" => {
                     builder = builder.set_code_sha256(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -192,6 +213,13 @@ pub(crate) fn de_publish_version(
                     builder = builder.set_code_size(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "ConfigSha256" => {
+                    builder = builder.set_config_sha256(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

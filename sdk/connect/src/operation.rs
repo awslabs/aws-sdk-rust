@@ -46,14 +46,29 @@ pub mod associate_routing_profile_queues;
 /// Types for the `AssociateSecurityKey` operation.
 pub mod associate_security_key;
 
+/// Types for the `AssociateSecurityProfiles` operation.
+pub mod associate_security_profiles;
+
 /// Types for the `AssociateTrafficDistributionGroupUser` operation.
 pub mod associate_traffic_distribution_group_user;
 
 /// Types for the `AssociateUserProficiencies` operation.
 pub mod associate_user_proficiencies;
 
+/// Types for the `AssociateWorkspace` operation.
+pub mod associate_workspace;
+
 /// Types for the `BatchAssociateAnalyticsDataSet` operation.
 pub mod batch_associate_analytics_data_set;
+
+/// Types for the `BatchCreateDataTableValue` operation.
+pub mod batch_create_data_table_value;
+
+/// Types for the `BatchDeleteDataTableValue` operation.
+pub mod batch_delete_data_table_value;
+
+/// Types for the `BatchDescribeDataTableValue` operation.
+pub mod batch_describe_data_table_value;
 
 /// Types for the `BatchDisassociateAnalyticsDataSet` operation.
 pub mod batch_disassociate_analytics_data_set;
@@ -66,6 +81,9 @@ pub mod batch_get_flow_association;
 
 /// Types for the `BatchPutContact` operation.
 pub mod batch_put_contact;
+
+/// Types for the `BatchUpdateDataTableValue` operation.
+pub mod batch_update_data_table_value;
 
 /// Types for the `ClaimPhoneNumber` operation.
 pub mod claim_phone_number;
@@ -93,6 +111,12 @@ pub mod create_contact_flow_module_version;
 
 /// Types for the `CreateContactFlowVersion` operation.
 pub mod create_contact_flow_version;
+
+/// Types for the `CreateDataTable` operation.
+pub mod create_data_table;
+
+/// Types for the `CreateDataTableAttribute` operation.
+pub mod create_data_table_attribute;
 
 /// Types for the `CreateEmailAddress` operation.
 pub mod create_email_address;
@@ -166,6 +190,12 @@ pub mod create_view_version;
 /// Types for the `CreateVocabulary` operation.
 pub mod create_vocabulary;
 
+/// Types for the `CreateWorkspace` operation.
+pub mod create_workspace;
+
+/// Types for the `CreateWorkspacePage` operation.
+pub mod create_workspace_page;
+
 /// Types for the `DeactivateEvaluationForm` operation.
 pub mod deactivate_evaluation_form;
 
@@ -189,6 +219,12 @@ pub mod delete_contact_flow_module_version;
 
 /// Types for the `DeleteContactFlowVersion` operation.
 pub mod delete_contact_flow_version;
+
+/// Types for the `DeleteDataTable` operation.
+pub mod delete_data_table;
+
+/// Types for the `DeleteDataTableAttribute` operation.
+pub mod delete_data_table_attribute;
 
 /// Types for the `DeleteEmailAddress` operation.
 pub mod delete_email_address;
@@ -256,6 +292,15 @@ pub mod delete_view_version;
 /// Types for the `DeleteVocabulary` operation.
 pub mod delete_vocabulary;
 
+/// Types for the `DeleteWorkspace` operation.
+pub mod delete_workspace;
+
+/// Types for the `DeleteWorkspaceMedia` operation.
+pub mod delete_workspace_media;
+
+/// Types for the `DeleteWorkspacePage` operation.
+pub mod delete_workspace_page;
+
 /// Types for the `DescribeAgentStatus` operation.
 pub mod describe_agent_status;
 
@@ -276,6 +321,12 @@ pub mod describe_contact_flow_module;
 
 /// Types for the `DescribeContactFlowModuleAlias` operation.
 pub mod describe_contact_flow_module_alias;
+
+/// Types for the `DescribeDataTable` operation.
+pub mod describe_data_table;
+
+/// Types for the `DescribeDataTableAttribute` operation.
+pub mod describe_data_table_attribute;
 
 /// Types for the `DescribeEmailAddress` operation.
 pub mod describe_email_address;
@@ -340,6 +391,9 @@ pub mod describe_view;
 /// Types for the `DescribeVocabulary` operation.
 pub mod describe_vocabulary;
 
+/// Types for the `DescribeWorkspace` operation.
+pub mod describe_workspace;
+
 /// Types for the `DisassociateAnalyticsDataSet` operation.
 pub mod disassociate_analytics_data_set;
 
@@ -376,14 +430,23 @@ pub mod disassociate_routing_profile_queues;
 /// Types for the `DisassociateSecurityKey` operation.
 pub mod disassociate_security_key;
 
+/// Types for the `DisassociateSecurityProfiles` operation.
+pub mod disassociate_security_profiles;
+
 /// Types for the `DisassociateTrafficDistributionGroupUser` operation.
 pub mod disassociate_traffic_distribution_group_user;
 
 /// Types for the `DisassociateUserProficiencies` operation.
 pub mod disassociate_user_proficiencies;
 
+/// Types for the `DisassociateWorkspace` operation.
+pub mod disassociate_workspace;
+
 /// Types for the `DismissUserContact` operation.
 pub mod dismiss_user_contact;
+
+/// Types for the `EvaluateDataTableValues` operation.
+pub mod evaluate_data_table_values;
 
 /// Types for the `GetAttachedFile` operation.
 pub mod get_attached_file;
@@ -427,6 +490,9 @@ pub mod get_traffic_distribution;
 /// Types for the `ImportPhoneNumber` operation.
 pub mod import_phone_number;
 
+/// Types for the `ImportWorkspaceMedia` operation.
+pub mod import_workspace_media;
+
 /// Types for the `ListAgentStatuses` operation.
 pub mod list_agent_statuses;
 
@@ -469,8 +535,23 @@ pub mod list_contact_flows;
 /// Types for the `ListContactReferences` operation.
 pub mod list_contact_references;
 
+/// Types for the `ListDataTableAttributes` operation.
+pub mod list_data_table_attributes;
+
+/// Types for the `ListDataTablePrimaryValues` operation.
+pub mod list_data_table_primary_values;
+
+/// Types for the `ListDataTableValues` operation.
+pub mod list_data_table_values;
+
+/// Types for the `ListDataTables` operation.
+pub mod list_data_tables;
+
 /// Types for the `ListDefaultVocabularies` operation.
 pub mod list_default_vocabularies;
+
+/// Types for the `ListEntitySecurityProfiles` operation.
+pub mod list_entity_security_profiles;
 
 /// Types for the `ListEvaluationFormVersions` operation.
 pub mod list_evaluation_form_versions;
@@ -547,6 +628,9 @@ pub mod list_security_keys;
 /// Types for the `ListSecurityProfileApplications` operation.
 pub mod list_security_profile_applications;
 
+/// Types for the `ListSecurityProfileFlowModules` operation.
+pub mod list_security_profile_flow_modules;
+
 /// Types for the `ListSecurityProfilePermissions` operation.
 pub mod list_security_profile_permissions;
 
@@ -582,6 +666,15 @@ pub mod list_view_versions;
 
 /// Types for the `ListViews` operation.
 pub mod list_views;
+
+/// Types for the `ListWorkspaceMedia` operation.
+pub mod list_workspace_media;
+
+/// Types for the `ListWorkspacePages` operation.
+pub mod list_workspace_pages;
+
+/// Types for the `ListWorkspaces` operation.
+pub mod list_workspaces;
 
 /// Types for the `MonitorContact` operation.
 pub mod monitor_contact;
@@ -622,6 +715,9 @@ pub mod search_contact_flows;
 /// Types for the `SearchContacts` operation.
 pub mod search_contacts;
 
+/// Types for the `SearchDataTables` operation.
+pub mod search_data_tables;
+
 /// Types for the `SearchEmailAddresses` operation.
 pub mod search_email_addresses;
 
@@ -661,8 +757,17 @@ pub mod search_user_hierarchy_groups;
 /// Types for the `SearchUsers` operation.
 pub mod search_users;
 
+/// Types for the `SearchViews` operation.
+pub mod search_views;
+
 /// Types for the `SearchVocabularies` operation.
 pub mod search_vocabularies;
+
+/// Types for the `SearchWorkspaceAssociations` operation.
+pub mod search_workspace_associations;
+
+/// Types for the `SearchWorkspaces` operation.
+pub mod search_workspaces;
 
 /// Types for the `SendChatIntegrationEvent` operation.
 pub mod send_chat_integration_event;
@@ -678,6 +783,9 @@ pub mod start_chat_contact;
 
 /// Types for the `StartContactEvaluation` operation.
 pub mod start_contact_evaluation;
+
+/// Types for the `StartContactMediaProcessing` operation.
+pub mod start_contact_media_processing;
 
 /// Types for the `StartContactRecording` operation.
 pub mod start_contact_recording;
@@ -708,6 +816,9 @@ pub mod start_web_rtc_contact;
 
 /// Types for the `StopContact` operation.
 pub mod stop_contact;
+
+/// Types for the `StopContactMediaProcessing` operation.
+pub mod stop_contact_media_processing;
 
 /// Types for the `StopContactRecording` operation.
 pub mod stop_contact_recording;
@@ -774,6 +885,15 @@ pub mod update_contact_routing_data;
 
 /// Types for the `UpdateContactSchedule` operation.
 pub mod update_contact_schedule;
+
+/// Types for the `UpdateDataTableAttribute` operation.
+pub mod update_data_table_attribute;
+
+/// Types for the `UpdateDataTableMetadata` operation.
+pub mod update_data_table_metadata;
+
+/// Types for the `UpdateDataTablePrimaryValues` operation.
+pub mod update_data_table_primary_values;
 
 /// Types for the `UpdateEmailAddressMetadata` operation.
 pub mod update_email_address_metadata;
@@ -891,3 +1011,15 @@ pub mod update_view_content;
 
 /// Types for the `UpdateViewMetadata` operation.
 pub mod update_view_metadata;
+
+/// Types for the `UpdateWorkspaceMetadata` operation.
+pub mod update_workspace_metadata;
+
+/// Types for the `UpdateWorkspacePage` operation.
+pub mod update_workspace_page;
+
+/// Types for the `UpdateWorkspaceTheme` operation.
+pub mod update_workspace_theme;
+
+/// Types for the `UpdateWorkspaceVisibility` operation.
+pub mod update_workspace_visibility;

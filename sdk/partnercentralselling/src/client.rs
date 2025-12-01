@@ -144,6 +144,8 @@ mod associate_opportunity;
 
 mod create_engagement;
 
+mod create_engagement_context;
+
 mod create_engagement_invitation;
 
 mod create_opportunity;
@@ -211,6 +213,8 @@ mod list_engagements;
 
 mod list_opportunities;
 
+mod list_opportunity_from_engagement_tasks;
+
 mod list_resource_snapshot_jobs;
 
 mod list_resource_snapshots;
@@ -227,6 +231,8 @@ mod start_engagement_by_accepting_invitation_task;
 
 mod start_engagement_from_opportunity_task;
 
+mod start_opportunity_from_engagement_task;
+
 mod start_resource_snapshot_job;
 
 mod stop_resource_snapshot_job;
@@ -236,5 +242,7 @@ mod submit_opportunity;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_engagement_context;
 
 mod update_opportunity;

@@ -29,6 +29,8 @@ pub(crate) mod shape_add_permission;
 
 pub(crate) mod shape_create_alias;
 
+pub(crate) mod shape_create_capacity_provider;
+
 pub(crate) mod shape_create_code_signing_config;
 
 pub(crate) mod shape_create_event_source_mapping;
@@ -38,6 +40,8 @@ pub(crate) mod shape_create_function;
 pub(crate) mod shape_create_function_url_config;
 
 pub(crate) mod shape_delete_alias;
+
+pub(crate) mod shape_delete_capacity_provider;
 
 pub(crate) mod shape_delete_code_signing_config;
 
@@ -61,6 +65,8 @@ pub(crate) mod shape_get_account_settings;
 
 pub(crate) mod shape_get_alias;
 
+pub(crate) mod shape_get_capacity_provider;
+
 pub(crate) mod shape_get_code_signing_config;
 
 pub(crate) mod shape_get_event_source_mapping;
@@ -76,6 +82,8 @@ pub(crate) mod shape_get_function_configuration;
 pub(crate) mod shape_get_function_event_invoke_config;
 
 pub(crate) mod shape_get_function_recursion_config;
+
+pub(crate) mod shape_get_function_scaling_config;
 
 pub(crate) mod shape_get_function_url_config;
 
@@ -105,6 +113,8 @@ pub(crate) mod shape_invoke_with_response_stream_input;
 
 pub(crate) mod shape_list_aliases;
 
+pub(crate) mod shape_list_capacity_providers;
+
 pub(crate) mod shape_list_code_signing_configs;
 
 pub(crate) mod shape_list_event_source_mappings;
@@ -112,6 +122,8 @@ pub(crate) mod shape_list_event_source_mappings;
 pub(crate) mod shape_list_function_event_invoke_configs;
 
 pub(crate) mod shape_list_function_url_configs;
+
+pub(crate) mod shape_list_function_versions_by_capacity_provider;
 
 pub(crate) mod shape_list_functions;
 
@@ -139,6 +151,8 @@ pub(crate) mod shape_put_function_event_invoke_config;
 
 pub(crate) mod shape_put_function_recursion_config;
 
+pub(crate) mod shape_put_function_scaling_config;
+
 pub(crate) mod shape_put_provisioned_concurrency_config;
 
 pub(crate) mod shape_put_runtime_management_config;
@@ -152,6 +166,8 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_alias;
+
+pub(crate) mod shape_update_capacity_provider;
 
 pub(crate) mod shape_update_code_signing_config;
 
@@ -177,6 +193,8 @@ pub(crate) mod shape_add_layer_version_permission_input;
 
 pub(crate) mod shape_add_permission_input;
 
+pub(crate) mod shape_capacity_provider_limit_exceeded_exception;
+
 pub(crate) mod shape_code_signing_config_not_found_exception;
 
 pub(crate) mod shape_code_storage_exceeded_exception;
@@ -184,6 +202,8 @@ pub(crate) mod shape_code_storage_exceeded_exception;
 pub(crate) mod shape_code_verification_failed_exception;
 
 pub(crate) mod shape_create_alias_input;
+
+pub(crate) mod shape_create_capacity_provider_input;
 
 pub(crate) mod shape_create_code_signing_config_input;
 
@@ -208,6 +228,8 @@ pub(crate) mod shape_efs_mount_timeout_exception;
 pub(crate) mod shape_efsio_exception;
 
 pub(crate) mod shape_eni_limit_reached_exception;
+
+pub(crate) mod shape_function_versions_per_capacity_provider_limit_exceeded_exception;
 
 pub(crate) mod shape_invalid_code_signature_exception;
 
@@ -235,6 +257,8 @@ pub(crate) mod shape_kms_invalid_state_exception;
 
 pub(crate) mod shape_kms_not_found_exception;
 
+pub(crate) mod shape_no_published_version_exception;
+
 pub(crate) mod shape_policy_length_exceeded_exception;
 
 pub(crate) mod shape_precondition_failed_exception;
@@ -252,6 +276,8 @@ pub(crate) mod shape_put_function_concurrency_input;
 pub(crate) mod shape_put_function_event_invoke_config_input;
 
 pub(crate) mod shape_put_function_recursion_config_input;
+
+pub(crate) mod shape_put_function_scaling_config_input;
 
 pub(crate) mod shape_put_provisioned_concurrency_config_input;
 
@@ -289,6 +315,8 @@ pub(crate) mod shape_unsupported_media_type_exception;
 
 pub(crate) mod shape_update_alias_input;
 
+pub(crate) mod shape_update_capacity_provider_input;
+
 pub(crate) mod shape_update_code_signing_config_input;
 
 pub(crate) mod shape_update_event_source_mapping_input;
@@ -320,6 +348,18 @@ pub(crate) mod shape_allowed_publishers;
 pub(crate) mod shape_amazon_managed_kafka_event_source_config;
 
 pub(crate) mod shape_architectures_list;
+
+pub(crate) mod shape_capacity_provider;
+
+pub(crate) mod shape_capacity_provider_config;
+
+pub(crate) mod shape_capacity_provider_permissions_config;
+
+pub(crate) mod shape_capacity_provider_scaling_config;
+
+pub(crate) mod shape_capacity_provider_vpc_config;
+
+pub(crate) mod shape_capacity_providers_list;
 
 pub(crate) mod shape_code_signing_config;
 
@@ -373,11 +413,17 @@ pub(crate) mod shape_function_list;
 
 pub(crate) mod shape_function_response_type_list;
 
+pub(crate) mod shape_function_scaling_config;
+
 pub(crate) mod shape_function_url_config_list;
+
+pub(crate) mod shape_function_versions_by_capacity_provider_list;
 
 pub(crate) mod shape_image_config;
 
 pub(crate) mod shape_image_config_response;
+
+pub(crate) mod shape_instance_requirements;
 
 pub(crate) mod shape_layer_version_content_input;
 
@@ -455,6 +501,8 @@ pub(crate) mod shape_function_event_invoke_config;
 
 pub(crate) mod shape_function_url_config;
 
+pub(crate) mod shape_function_versions_by_capacity_provider_list_item;
+
 pub(crate) mod shape_headers_list;
 
 pub(crate) mod shape_image_config_error;
@@ -462,6 +510,8 @@ pub(crate) mod shape_image_config_error;
 pub(crate) mod shape_invoke_with_response_stream_complete_event;
 
 pub(crate) mod shape_kafka_schema_registry_config;
+
+pub(crate) mod shape_lambda_managed_instances_capacity_provider_config;
 
 pub(crate) mod shape_layer;
 
@@ -481,7 +531,17 @@ pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_subnet_ids;
 
+pub(crate) mod shape_target_tracking_scaling_policy;
+
+pub(crate) mod shape_capacity_provider_scaling_policies_list;
+
+pub(crate) mod shape_capacity_provider_security_group_ids;
+
+pub(crate) mod shape_capacity_provider_subnet_ids;
+
 pub(crate) mod shape_endpoint_lists;
+
+pub(crate) mod shape_instance_type_set;
 
 pub(crate) mod shape_kafka_schema_registry_access_config;
 

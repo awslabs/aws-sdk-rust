@@ -17,7 +17,10 @@ pub struct ApplicationSummary {
     /// <p>The time when the application was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub is_service: bool,
+    /// <p>The type of application.</p>
+    pub application_type: ::std::option::Option<crate::types::ApplicationType>,
 }
 impl ApplicationSummary {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
@@ -45,8 +48,13 @@ impl ApplicationSummary {
         self.last_modified_time.as_ref()
     }
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn is_service(&self) -> bool {
         self.is_service
+    }
+    /// <p>The type of application.</p>
+    pub fn application_type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
+        self.application_type.as_ref()
     }
 }
 impl ApplicationSummary {
@@ -67,6 +75,7 @@ pub struct ApplicationSummaryBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) is_service: ::std::option::Option<bool>,
+    pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
 }
 impl ApplicationSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
@@ -154,18 +163,35 @@ impl ApplicationSummaryBuilder {
         &self.last_modified_time
     }
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn is_service(mut self, input: bool) -> Self {
         self.is_service = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn set_is_service(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_service = input;
         self
     }
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn get_is_service(&self) -> &::std::option::Option<bool> {
         &self.is_service
+    }
+    /// <p>The type of application.</p>
+    pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
+        self.application_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of application.</p>
+    pub fn set_application_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
+        self.application_type = input;
+        self
+    }
+    /// <p>The type of application.</p>
+    pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        &self.application_type
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {
@@ -177,6 +203,7 @@ impl ApplicationSummaryBuilder {
             created_time: self.created_time,
             last_modified_time: self.last_modified_time,
             is_service: self.is_service.unwrap_or_default(),
+            application_type: self.application_type,
         }
     }
 }

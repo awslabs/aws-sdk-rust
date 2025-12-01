@@ -136,4 +136,18 @@ impl RemoveAssistantAIAgentFluentBuilder {
     pub fn get_ai_agent_type(&self) -> &::std::option::Option<crate::types::AiAgentType> {
         self.inner.get_ai_agent_type()
     }
+    /// <p>The orchestrator use case for the AI Agent being removed.</p>
+    pub fn orchestrator_use_case(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.orchestrator_use_case(input.into());
+        self
+    }
+    /// <p>The orchestrator use case for the AI Agent being removed.</p>
+    pub fn set_orchestrator_use_case(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_orchestrator_use_case(input);
+        self
+    }
+    /// <p>The orchestrator use case for the AI Agent being removed.</p>
+    pub fn get_orchestrator_use_case(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_orchestrator_use_case()
+    }
 }

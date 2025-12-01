@@ -456,4 +456,18 @@ impl UpdateFunctionConfigurationFluentBuilder {
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
         self.inner.get_logging_config()
     }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn capacity_provider_config(mut self, input: crate::types::CapacityProviderConfig) -> Self {
+        self.inner = self.inner.capacity_provider_config(input);
+        self
+    }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn set_capacity_provider_config(mut self, input: ::std::option::Option<crate::types::CapacityProviderConfig>) -> Self {
+        self.inner = self.inner.set_capacity_provider_config(input);
+        self
+    }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn get_capacity_provider_config(&self) -> &::std::option::Option<crate::types::CapacityProviderConfig> {
+        self.inner.get_capacity_provider_config()
+    }
 }

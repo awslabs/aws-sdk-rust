@@ -7,6 +7,8 @@ pub struct CreateEngagementOutput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the engagement.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). For newly created engagements, this value matches the creation timestamp. Example: "2023-05-01T20:37:46Z".</p>
+    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl CreateEngagementOutput {
@@ -17,6 +19,10 @@ impl CreateEngagementOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the engagement.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). For newly created engagements, this value matches the creation timestamp. Example: "2023-05-01T20:37:46Z".</p>
+    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.modified_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateEngagementOutput {
@@ -37,6 +43,7 @@ impl CreateEngagementOutput {
 pub struct CreateEngagementOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl CreateEngagementOutputBuilder {
@@ -68,6 +75,20 @@ impl CreateEngagementOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). For newly created engagements, this value matches the creation timestamp. Example: "2023-05-01T20:37:46Z".</p>
+    pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). For newly created engagements, this value matches the creation timestamp. Example: "2023-05-01T20:37:46Z".</p>
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.modified_at = input;
+        self
+    }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). For newly created engagements, this value matches the creation timestamp. Example: "2023-05-01T20:37:46Z".</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl CreateEngagementOutputBuilder {
         crate::operation::create_engagement::CreateEngagementOutput {
             id: self.id,
             arn: self.arn,
+            modified_at: self.modified_at,
             _request_id: self._request_id,
         }
     }

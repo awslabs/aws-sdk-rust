@@ -8,6 +8,8 @@ pub enum DataReference {
     ContentReference(crate::types::ContentReference),
     /// <p>Reference information about the generative content.</p>
     GenerativeReference(crate::types::GenerativeReference),
+    /// <p>Reference information for suggested messages.</p>
+    SuggestedMessageReference(crate::types::SuggestedMessageReference),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +46,19 @@ impl DataReference {
     /// Returns true if this is a [`GenerativeReference`](crate::types::DataReference::GenerativeReference).
     pub fn is_generative_reference(&self) -> bool {
         self.as_generative_reference().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SuggestedMessageReference`](crate::types::DataReference::SuggestedMessageReference), extracting the inner [`SuggestedMessageReference`](crate::types::SuggestedMessageReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_suggested_message_reference(&self) -> ::std::result::Result<&crate::types::SuggestedMessageReference, &Self> {
+        if let DataReference::SuggestedMessageReference(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SuggestedMessageReference`](crate::types::DataReference::SuggestedMessageReference).
+    pub fn is_suggested_message_reference(&self) -> bool {
+        self.as_suggested_message_reference().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

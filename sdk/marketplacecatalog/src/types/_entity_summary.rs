@@ -30,6 +30,8 @@ pub struct EntitySummary {
     pub resale_authorization_summary: ::std::option::Option<crate::types::ResaleAuthorizationSummary>,
     /// <p>A summary of a machine learning product.</p>
     pub machine_learning_product_summary: ::std::option::Option<crate::types::MachineLearningProductSummary>,
+    /// <p>An object that contains summary information about the offer set.</p>
+    pub offer_set_summary: ::std::option::Option<crate::types::OfferSetSummary>,
 }
 impl EntitySummary {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
@@ -84,6 +86,10 @@ impl EntitySummary {
     pub fn machine_learning_product_summary(&self) -> ::std::option::Option<&crate::types::MachineLearningProductSummary> {
         self.machine_learning_product_summary.as_ref()
     }
+    /// <p>An object that contains summary information about the offer set.</p>
+    pub fn offer_set_summary(&self) -> ::std::option::Option<&crate::types::OfferSetSummary> {
+        self.offer_set_summary.as_ref()
+    }
 }
 impl EntitySummary {
     /// Creates a new builder-style object to manufacture [`EntitySummary`](crate::types::EntitySummary).
@@ -109,6 +115,7 @@ pub struct EntitySummaryBuilder {
     pub(crate) offer_summary: ::std::option::Option<crate::types::OfferSummary>,
     pub(crate) resale_authorization_summary: ::std::option::Option<crate::types::ResaleAuthorizationSummary>,
     pub(crate) machine_learning_product_summary: ::std::option::Option<crate::types::MachineLearningProductSummary>,
+    pub(crate) offer_set_summary: ::std::option::Option<crate::types::OfferSetSummary>,
 }
 impl EntitySummaryBuilder {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
@@ -293,6 +300,20 @@ impl EntitySummaryBuilder {
     pub fn get_machine_learning_product_summary(&self) -> &::std::option::Option<crate::types::MachineLearningProductSummary> {
         &self.machine_learning_product_summary
     }
+    /// <p>An object that contains summary information about the offer set.</p>
+    pub fn offer_set_summary(mut self, input: crate::types::OfferSetSummary) -> Self {
+        self.offer_set_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains summary information about the offer set.</p>
+    pub fn set_offer_set_summary(mut self, input: ::std::option::Option<crate::types::OfferSetSummary>) -> Self {
+        self.offer_set_summary = input;
+        self
+    }
+    /// <p>An object that contains summary information about the offer set.</p>
+    pub fn get_offer_set_summary(&self) -> &::std::option::Option<crate::types::OfferSetSummary> {
+        &self.offer_set_summary
+    }
     /// Consumes the builder and constructs a [`EntitySummary`](crate::types::EntitySummary).
     pub fn build(self) -> crate::types::EntitySummary {
         crate::types::EntitySummary {
@@ -309,6 +330,7 @@ impl EntitySummaryBuilder {
             offer_summary: self.offer_summary,
             resale_authorization_summary: self.resale_authorization_summary,
             machine_learning_product_summary: self.machine_learning_product_summary,
+            offer_set_summary: self.offer_set_summary,
         }
     }
 }

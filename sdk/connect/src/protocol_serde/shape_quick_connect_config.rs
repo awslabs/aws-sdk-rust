@@ -24,6 +24,12 @@ pub fn ser_quick_connect_config(
         crate::protocol_serde::shape_phone_number_quick_connect_config::ser_phone_number_quick_connect_config(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.flow_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("FlowConfig").start_object();
+        crate::protocol_serde::shape_flow_quick_connect_config::ser_flow_quick_connect_config(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +69,11 @@ where
                             builder = builder.set_phone_config(
                                 crate::protocol_serde::shape_phone_number_quick_connect_config::de_phone_number_quick_connect_config(tokens)?,
                             );
+                        }
+                        "FlowConfig" => {
+                            builder = builder.set_flow_config(crate::protocol_serde::shape_flow_quick_connect_config::de_flow_quick_connect_config(
+                                tokens,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -13,6 +13,9 @@ pub mod associate_opportunity;
 /// Types for the `CreateEngagement` operation.
 pub mod create_engagement;
 
+/// Types for the `CreateEngagementContext` operation.
+pub mod create_engagement_context;
+
 /// Types for the `CreateEngagementInvitation` operation.
 pub mod create_engagement_invitation;
 
@@ -73,6 +76,9 @@ pub mod list_engagements;
 /// Types for the `ListOpportunities` operation.
 pub mod list_opportunities;
 
+/// Types for the `ListOpportunityFromEngagementTasks` operation.
+pub mod list_opportunity_from_engagement_tasks;
+
 /// Types for the `ListResourceSnapshotJobs` operation.
 pub mod list_resource_snapshot_jobs;
 
@@ -97,6 +103,9 @@ pub mod start_engagement_by_accepting_invitation_task;
 /// Types for the `StartEngagementFromOpportunityTask` operation.
 pub mod start_engagement_from_opportunity_task;
 
+/// Types for the `StartOpportunityFromEngagementTask` operation.
+pub mod start_opportunity_from_engagement_task;
+
 /// Types for the `StartResourceSnapshotJob` operation.
 pub mod start_resource_snapshot_job;
 
@@ -111,6 +120,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateEngagementContext` operation.
+pub mod update_engagement_context;
 
 /// Types for the `UpdateOpportunity` operation.
 pub mod update_opportunity;

@@ -12,6 +12,14 @@
 /// ```text
 /// # let referencetype = unimplemented!();
 /// match referencetype {
+///     ReferenceType::BedrockKbConfluence => { /* ... */ },
+///     ReferenceType::BedrockKbCustomDocument => { /* ... */ },
+///     ReferenceType::BedrockKbKendra => { /* ... */ },
+///     ReferenceType::BedrockKbS3 => { /* ... */ },
+///     ReferenceType::BedrockKbSalesforce => { /* ... */ },
+///     ReferenceType::BedrockKbSharepoint => { /* ... */ },
+///     ReferenceType::BedrockKbSql => { /* ... */ },
+///     ReferenceType::BedrockKbWeb => { /* ... */ },
 ///     ReferenceType::KnowledgeBase => { /* ... */ },
 ///     ReferenceType::WebCrawler => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +51,22 @@
 )]
 pub enum ReferenceType {
     #[allow(missing_docs)] // documentation missing in model
+    BedrockKbConfluence,
+    #[allow(missing_docs)] // documentation missing in model
+    BedrockKbCustomDocument,
+    #[allow(missing_docs)] // documentation missing in model
+    BedrockKbKendra,
+    #[allow(missing_docs)] // documentation missing in model
+    BedrockKbS3,
+    #[allow(missing_docs)] // documentation missing in model
+    BedrockKbSalesforce,
+    #[allow(missing_docs)] // documentation missing in model
+    BedrockKbSharepoint,
+    #[allow(missing_docs)] // documentation missing in model
+    BedrockKbSql,
+    #[allow(missing_docs)] // documentation missing in model
+    BedrockKbWeb,
+    #[allow(missing_docs)] // documentation missing in model
     KnowledgeBase,
     #[allow(missing_docs)] // documentation missing in model
     WebCrawler,
@@ -53,6 +77,14 @@ pub enum ReferenceType {
 impl ::std::convert::From<&str> for ReferenceType {
     fn from(s: &str) -> Self {
         match s {
+            "BEDROCK_KB_CONFLUENCE" => ReferenceType::BedrockKbConfluence,
+            "BEDROCK_KB_CUSTOM_DOCUMENT" => ReferenceType::BedrockKbCustomDocument,
+            "BEDROCK_KB_KENDRA" => ReferenceType::BedrockKbKendra,
+            "BEDROCK_KB_S3" => ReferenceType::BedrockKbS3,
+            "BEDROCK_KB_SALESFORCE" => ReferenceType::BedrockKbSalesforce,
+            "BEDROCK_KB_SHAREPOINT" => ReferenceType::BedrockKbSharepoint,
+            "BEDROCK_KB_SQL" => ReferenceType::BedrockKbSql,
+            "BEDROCK_KB_WEB" => ReferenceType::BedrockKbWeb,
             "KNOWLEDGE_BASE" => ReferenceType::KnowledgeBase,
             "WEB_CRAWLER" => ReferenceType::WebCrawler,
             other => ReferenceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +102,14 @@ impl ReferenceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ReferenceType::BedrockKbConfluence => "BEDROCK_KB_CONFLUENCE",
+            ReferenceType::BedrockKbCustomDocument => "BEDROCK_KB_CUSTOM_DOCUMENT",
+            ReferenceType::BedrockKbKendra => "BEDROCK_KB_KENDRA",
+            ReferenceType::BedrockKbS3 => "BEDROCK_KB_S3",
+            ReferenceType::BedrockKbSalesforce => "BEDROCK_KB_SALESFORCE",
+            ReferenceType::BedrockKbSharepoint => "BEDROCK_KB_SHAREPOINT",
+            ReferenceType::BedrockKbSql => "BEDROCK_KB_SQL",
+            ReferenceType::BedrockKbWeb => "BEDROCK_KB_WEB",
             ReferenceType::KnowledgeBase => "KNOWLEDGE_BASE",
             ReferenceType::WebCrawler => "WEB_CRAWLER",
             ReferenceType::Unknown(value) => value.as_str(),
@@ -77,7 +117,18 @@ impl ReferenceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KNOWLEDGE_BASE", "WEB_CRAWLER"]
+        &[
+            "BEDROCK_KB_CONFLUENCE",
+            "BEDROCK_KB_CUSTOM_DOCUMENT",
+            "BEDROCK_KB_KENDRA",
+            "BEDROCK_KB_S3",
+            "BEDROCK_KB_SALESFORCE",
+            "BEDROCK_KB_SHAREPOINT",
+            "BEDROCK_KB_SQL",
+            "BEDROCK_KB_WEB",
+            "KNOWLEDGE_BASE",
+            "WEB_CRAWLER",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ReferenceType {
@@ -100,6 +151,14 @@ impl ReferenceType {
 impl ::std::fmt::Display for ReferenceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ReferenceType::BedrockKbConfluence => write!(f, "BEDROCK_KB_CONFLUENCE"),
+            ReferenceType::BedrockKbCustomDocument => write!(f, "BEDROCK_KB_CUSTOM_DOCUMENT"),
+            ReferenceType::BedrockKbKendra => write!(f, "BEDROCK_KB_KENDRA"),
+            ReferenceType::BedrockKbS3 => write!(f, "BEDROCK_KB_S3"),
+            ReferenceType::BedrockKbSalesforce => write!(f, "BEDROCK_KB_SALESFORCE"),
+            ReferenceType::BedrockKbSharepoint => write!(f, "BEDROCK_KB_SHAREPOINT"),
+            ReferenceType::BedrockKbSql => write!(f, "BEDROCK_KB_SQL"),
+            ReferenceType::BedrockKbWeb => write!(f, "BEDROCK_KB_WEB"),
             ReferenceType::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
             ReferenceType::WebCrawler => write!(f, "WEB_CRAWLER"),
             ReferenceType::Unknown(value) => write!(f, "{value}"),

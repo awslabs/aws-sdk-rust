@@ -17,6 +17,10 @@ pub use crate::types::error::_policy_length_exceeded_exception::PolicyLengthExce
 
 pub use crate::types::error::_code_storage_exceeded_exception::CodeStorageExceededException;
 
+pub use crate::types::error::_function_versions_per_capacity_provider_limit_exceeded_exception::FunctionVersionsPerCapacityProviderLimitExceededException;
+
+pub use crate::types::error::_code_signing_config_not_found_exception::CodeSigningConfigNotFoundException;
+
 pub use crate::types::error::_unsupported_media_type_exception::UnsupportedMediaTypeException;
 
 pub use crate::types::error::_subnet_ip_address_limit_reached_exception::SubnetIpAddressLimitReachedException;
@@ -34,6 +38,8 @@ pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExce
 pub use crate::types::error::_request_too_large_exception::RequestTooLargeException;
 
 pub use crate::types::error::_recursive_invocation_exception::RecursiveInvocationException;
+
+pub use crate::types::error::_no_published_version_exception::NoPublishedVersionException;
 
 pub use crate::types::error::_kms_not_found_exception::KmsNotFoundException;
 
@@ -166,9 +172,11 @@ pub use crate::types::error::_invalid_code_signature_exception::InvalidCodeSigna
 
 pub use crate::types::error::_code_verification_failed_exception::CodeVerificationFailedException;
 
-pub use crate::types::error::_code_signing_config_not_found_exception::CodeSigningConfigNotFoundException;
-
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
+
+pub use crate::types::error::_capacity_provider_limit_exceeded_exception::CapacityProviderLimitExceededException;
+
+mod _capacity_provider_limit_exceeded_exception;
 
 mod _code_signing_config_not_found_exception;
 
@@ -192,6 +200,8 @@ mod _efsio_exception;
 
 mod _eni_limit_reached_exception;
 
+mod _function_versions_per_capacity_provider_limit_exceeded_exception;
+
 mod _invalid_code_signature_exception;
 
 mod _invalid_parameter_value_exception;
@@ -213,6 +223,8 @@ mod _kms_disabled_exception;
 mod _kms_invalid_state_exception;
 
 mod _kms_not_found_exception;
+
+mod _no_published_version_exception;
 
 mod _policy_length_exceeded_exception;
 

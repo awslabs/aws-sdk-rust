@@ -13,6 +13,8 @@ pub struct CreateSegmentDefinitionInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the base segments and dimensions for a segment definition along with their respective relationship.</p>
     pub segment_groups: ::std::option::Option<crate::types::SegmentGroup>,
+    /// <p>The segment SQL query.</p>
+    pub segment_sql_query: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -37,6 +39,10 @@ impl CreateSegmentDefinitionInput {
     pub fn segment_groups(&self) -> ::std::option::Option<&crate::types::SegmentGroup> {
         self.segment_groups.as_ref()
     }
+    /// <p>The segment SQL query.</p>
+    pub fn segment_sql_query(&self) -> ::std::option::Option<&str> {
+        self.segment_sql_query.as_deref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -50,6 +56,7 @@ impl ::std::fmt::Debug for CreateSegmentDefinitionInput {
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_groups", &"*** Sensitive Data Redacted ***");
+        formatter.field("segment_sql_query", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -70,6 +77,7 @@ pub struct CreateSegmentDefinitionInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) segment_groups: ::std::option::Option<crate::types::SegmentGroup>,
+    pub(crate) segment_sql_query: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSegmentDefinitionInputBuilder {
@@ -133,7 +141,6 @@ impl CreateSegmentDefinitionInputBuilder {
         &self.description
     }
     /// <p>Specifies the base segments and dimensions for a segment definition along with their respective relationship.</p>
-    /// This field is required.
     pub fn segment_groups(mut self, input: crate::types::SegmentGroup) -> Self {
         self.segment_groups = ::std::option::Option::Some(input);
         self
@@ -146,6 +153,20 @@ impl CreateSegmentDefinitionInputBuilder {
     /// <p>Specifies the base segments and dimensions for a segment definition along with their respective relationship.</p>
     pub fn get_segment_groups(&self) -> &::std::option::Option<crate::types::SegmentGroup> {
         &self.segment_groups
+    }
+    /// <p>The segment SQL query.</p>
+    pub fn segment_sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment_sql_query = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The segment SQL query.</p>
+    pub fn set_segment_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.segment_sql_query = input;
+        self
+    }
+    /// <p>The segment SQL query.</p>
+    pub fn get_segment_sql_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_sql_query
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -180,6 +201,7 @@ impl CreateSegmentDefinitionInputBuilder {
             display_name: self.display_name,
             description: self.description,
             segment_groups: self.segment_groups,
+            segment_sql_query: self.segment_sql_query,
             tags: self.tags,
         })
     }
@@ -192,6 +214,7 @@ impl ::std::fmt::Debug for CreateSegmentDefinitionInputBuilder {
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_groups", &"*** Sensitive Data Redacted ***");
+        formatter.field("segment_sql_query", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

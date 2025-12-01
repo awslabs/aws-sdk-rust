@@ -213,6 +213,11 @@ pub(crate) fn de_get_ml_input_channel(
                 "statusDetails" => {
                     builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens)?);
                 }
+                "syntheticDataConfiguration" => {
+                    builder = builder.set_synthetic_data_configuration(
+                        crate::protocol_serde::shape_synthetic_data_configuration::de_synthetic_data_configuration(tokens)?,
+                    );
+                }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                 }

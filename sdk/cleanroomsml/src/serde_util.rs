@@ -856,6 +856,18 @@ pub(crate) fn resource_config_correct_errors(
     builder
 }
 
+pub(crate) fn synthetic_data_configuration_correct_errors(
+    mut builder: crate::types::builders::SyntheticDataConfigurationBuilder,
+) -> crate::types::builders::SyntheticDataConfigurationBuilder {
+    if builder.synthetic_data_parameters.is_none() {
+        builder.synthetic_data_parameters = {
+            let builder = crate::types::builders::MlSyntheticDataParametersBuilder::default();
+            crate::serde_util::ml_synthetic_data_parameters_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn audience_destination_correct_errors(
     mut builder: crate::types::builders::AudienceDestinationBuilder,
 ) -> crate::types::builders::AudienceDestinationBuilder {
@@ -1258,6 +1270,24 @@ pub(crate) fn ml_input_channel_summary_correct_errors(
     builder
 }
 
+pub(crate) fn ml_synthetic_data_parameters_correct_errors(
+    mut builder: crate::types::builders::MlSyntheticDataParametersBuilder,
+) -> crate::types::builders::MlSyntheticDataParametersBuilder {
+    if builder.epsilon.is_none() {
+        builder.epsilon = Some(Default::default())
+    }
+    if builder.max_membership_inference_attack_score.is_none() {
+        builder.max_membership_inference_attack_score = Some(Default::default())
+    }
+    if builder.column_classification.is_none() {
+        builder.column_classification = {
+            let builder = crate::types::builders::ColumnClassificationDetailsBuilder::default();
+            crate::serde_util::column_classification_details_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn model_training_data_channel_correct_errors(
     mut builder: crate::types::builders::ModelTrainingDataChannelBuilder,
 ) -> crate::types::builders::ModelTrainingDataChannelBuilder {
@@ -1273,6 +1303,18 @@ pub(crate) fn model_training_data_channel_correct_errors(
 pub(crate) fn s3_config_map_correct_errors(mut builder: crate::types::builders::S3ConfigMapBuilder) -> crate::types::builders::S3ConfigMapBuilder {
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn synthetic_data_evaluation_scores_correct_errors(
+    mut builder: crate::types::builders::SyntheticDataEvaluationScoresBuilder,
+) -> crate::types::builders::SyntheticDataEvaluationScoresBuilder {
+    if builder.data_privacy_scores.is_none() {
+        builder.data_privacy_scores = {
+            let builder = crate::types::builders::DataPrivacyScoresBuilder::default();
+            crate::serde_util::data_privacy_scores_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -1383,6 +1425,24 @@ pub(crate) fn audience_size_correct_errors(mut builder: crate::types::builders::
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn column_classification_details_correct_errors(
+    mut builder: crate::types::builders::ColumnClassificationDetailsBuilder,
+) -> crate::types::builders::ColumnClassificationDetailsBuilder {
+    if builder.column_mapping.is_none() {
+        builder.column_mapping = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_privacy_scores_correct_errors(
+    mut builder: crate::types::builders::DataPrivacyScoresBuilder,
+) -> crate::types::builders::DataPrivacyScoresBuilder {
+    if builder.membership_inference_attack_scores.is_none() {
+        builder.membership_inference_attack_scores = Some(Default::default())
     }
     builder
 }
@@ -1573,6 +1633,33 @@ pub(crate) fn logs_configuration_policy_correct_errors(
 ) -> crate::types::builders::LogsConfigurationPolicyBuilder {
     if builder.allowed_account_ids.is_none() {
         builder.allowed_account_ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn membership_inference_attack_score_correct_errors(
+    mut builder: crate::types::builders::MembershipInferenceAttackScoreBuilder,
+) -> crate::types::builders::MembershipInferenceAttackScoreBuilder {
+    if builder.attack_version.is_none() {
+        builder.attack_version = "no value was set".parse::<crate::types::MembershipInferenceAttackVersion>().ok()
+    }
+    if builder.score.is_none() {
+        builder.score = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn synthetic_data_column_properties_correct_errors(
+    mut builder: crate::types::builders::SyntheticDataColumnPropertiesBuilder,
+) -> crate::types::builders::SyntheticDataColumnPropertiesBuilder {
+    if builder.column_name.is_none() {
+        builder.column_name = Some(Default::default())
+    }
+    if builder.column_type.is_none() {
+        builder.column_type = "no value was set".parse::<crate::types::SyntheticDataColumnType>().ok()
+    }
+    if builder.is_predictive_value.is_none() {
+        builder.is_predictive_value = Some(Default::default())
     }
     builder
 }

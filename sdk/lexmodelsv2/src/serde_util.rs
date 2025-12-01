@@ -114,6 +114,18 @@ pub(crate) fn test_set_storage_location_correct_errors(
     builder
 }
 
+pub(crate) fn unified_speech_settings_correct_errors(
+    mut builder: crate::types::builders::UnifiedSpeechSettingsBuilder,
+) -> crate::types::builders::UnifiedSpeechSettingsBuilder {
+    if builder.speech_foundation_model.is_none() {
+        builder.speech_foundation_model = {
+            let builder = crate::types::builders::SpeechFoundationModelBuilder::default();
+            crate::serde_util::speech_foundation_model_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn utterance_aggregation_duration_correct_errors(
     mut builder: crate::types::builders::UtteranceAggregationDurationBuilder,
 ) -> crate::types::builders::UtteranceAggregationDurationBuilder {
@@ -569,6 +581,15 @@ pub(crate) fn slot_value_regex_filter_correct_errors(
     builder
 }
 
+pub(crate) fn speech_foundation_model_correct_errors(
+    mut builder: crate::types::builders::SpeechFoundationModelBuilder,
+) -> crate::types::builders::SpeechFoundationModelBuilder {
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn test_set_discrepancy_report_bot_alias_target_correct_errors(
     mut builder: crate::types::builders::TestSetDiscrepancyReportBotAliasTargetBuilder,
 ) -> crate::types::builders::TestSetDiscrepancyReportBotAliasTargetBuilder {
@@ -721,6 +742,15 @@ pub(crate) fn conversation_logs_data_source_filter_by_correct_errors(
     }
     if builder.input_mode.is_none() {
         builder.input_mode = "no value was set".parse::<crate::types::ConversationLogsInputModeFilter>().ok()
+    }
+    builder
+}
+
+pub(crate) fn deepgram_speech_model_config_correct_errors(
+    mut builder: crate::types::builders::DeepgramSpeechModelConfigBuilder,
+) -> crate::types::builders::DeepgramSpeechModelConfigBuilder {
+    if builder.api_token_secret_arn.is_none() {
+        builder.api_token_secret_arn = Some(Default::default())
     }
     builder
 }

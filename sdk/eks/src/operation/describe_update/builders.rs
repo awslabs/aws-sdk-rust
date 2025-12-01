@@ -165,4 +165,18 @@ impl DescribeUpdateFluentBuilder {
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_addon_name()
     }
+    /// <p>The name of the capability for which you want to describe updates.</p>
+    pub fn capability_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.capability_name(input.into());
+        self
+    }
+    /// <p>The name of the capability for which you want to describe updates.</p>
+    pub fn set_capability_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_capability_name(input);
+        self
+    }
+    /// <p>The name of the capability for which you want to describe updates.</p>
+    pub fn get_capability_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_capability_name()
+    }
 }

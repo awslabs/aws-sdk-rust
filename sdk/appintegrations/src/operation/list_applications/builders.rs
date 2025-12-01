@@ -142,4 +142,18 @@ impl ListApplicationsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The type of application.</p>
+    pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
+        self.inner = self.inner.application_type(input);
+        self
+    }
+    /// <p>The type of application.</p>
+    pub fn set_application_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
+        self.inner = self.inner.set_application_type(input);
+        self
+    }
+    /// <p>The type of application.</p>
+    pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        self.inner.get_application_type()
+    }
 }

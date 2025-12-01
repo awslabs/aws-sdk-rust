@@ -6,11 +6,17 @@
 pub struct MessageConfiguration {
     /// <p>Generates a filler response when tool selection is <code>QUESTION</code>.</p>
     pub generate_filler_message: ::std::option::Option<bool>,
+    /// <p>Configuration for generating chunked messages.</p>
+    pub generate_chunked_message: ::std::option::Option<bool>,
 }
 impl MessageConfiguration {
     /// <p>Generates a filler response when tool selection is <code>QUESTION</code>.</p>
     pub fn generate_filler_message(&self) -> ::std::option::Option<bool> {
         self.generate_filler_message
+    }
+    /// <p>Configuration for generating chunked messages.</p>
+    pub fn generate_chunked_message(&self) -> ::std::option::Option<bool> {
+        self.generate_chunked_message
     }
 }
 impl MessageConfiguration {
@@ -25,6 +31,7 @@ impl MessageConfiguration {
 #[non_exhaustive]
 pub struct MessageConfigurationBuilder {
     pub(crate) generate_filler_message: ::std::option::Option<bool>,
+    pub(crate) generate_chunked_message: ::std::option::Option<bool>,
 }
 impl MessageConfigurationBuilder {
     /// <p>Generates a filler response when tool selection is <code>QUESTION</code>.</p>
@@ -41,10 +48,25 @@ impl MessageConfigurationBuilder {
     pub fn get_generate_filler_message(&self) -> &::std::option::Option<bool> {
         &self.generate_filler_message
     }
+    /// <p>Configuration for generating chunked messages.</p>
+    pub fn generate_chunked_message(mut self, input: bool) -> Self {
+        self.generate_chunked_message = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for generating chunked messages.</p>
+    pub fn set_generate_chunked_message(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.generate_chunked_message = input;
+        self
+    }
+    /// <p>Configuration for generating chunked messages.</p>
+    pub fn get_generate_chunked_message(&self) -> &::std::option::Option<bool> {
+        &self.generate_chunked_message
+    }
     /// Consumes the builder and constructs a [`MessageConfiguration`](crate::types::MessageConfiguration).
     pub fn build(self) -> crate::types::MessageConfiguration {
         crate::types::MessageConfiguration {
             generate_filler_message: self.generate_filler_message,
+            generate_chunked_message: self.generate_chunked_message,
         }
     }
 }

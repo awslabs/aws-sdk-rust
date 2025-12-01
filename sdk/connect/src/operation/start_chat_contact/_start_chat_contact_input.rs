@@ -13,6 +13,8 @@ pub struct StartChatContactInput {
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information identifying the participant.</p>
     pub participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
+    /// <p>The configuration of the participant.</p>
+    pub participant_configuration: ::std::option::Option<crate::types::ParticipantConfiguration>,
     /// <p>The initial message to be sent to the newly created chat.</p>
     pub initial_message: ::std::option::Option<crate::types::ChatMessage>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -57,6 +59,10 @@ impl StartChatContactInput {
     /// <p>Information identifying the participant.</p>
     pub fn participant_details(&self) -> ::std::option::Option<&crate::types::ParticipantDetails> {
         self.participant_details.as_ref()
+    }
+    /// <p>The configuration of the participant.</p>
+    pub fn participant_configuration(&self) -> ::std::option::Option<&crate::types::ParticipantConfiguration> {
+        self.participant_configuration.as_ref()
     }
     /// <p>The initial message to be sent to the newly created chat.</p>
     pub fn initial_message(&self) -> ::std::option::Option<&crate::types::ChatMessage> {
@@ -111,6 +117,7 @@ impl ::std::fmt::Debug for StartChatContactInput {
         formatter.field("contact_flow_id", &self.contact_flow_id);
         formatter.field("attributes", &self.attributes);
         formatter.field("participant_details", &self.participant_details);
+        formatter.field("participant_configuration", &self.participant_configuration);
         formatter.field("initial_message", &self.initial_message);
         formatter.field("client_token", &self.client_token);
         formatter.field("chat_duration_in_minutes", &self.chat_duration_in_minutes);
@@ -137,6 +144,7 @@ pub struct StartChatContactInputBuilder {
     pub(crate) contact_flow_id: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
+    pub(crate) participant_configuration: ::std::option::Option<crate::types::ParticipantConfiguration>,
     pub(crate) initial_message: ::std::option::Option<crate::types::ChatMessage>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) chat_duration_in_minutes: ::std::option::Option<i32>,
@@ -217,6 +225,20 @@ impl StartChatContactInputBuilder {
     /// <p>Information identifying the participant.</p>
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetails> {
         &self.participant_details
+    }
+    /// <p>The configuration of the participant.</p>
+    pub fn participant_configuration(mut self, input: crate::types::ParticipantConfiguration) -> Self {
+        self.participant_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the participant.</p>
+    pub fn set_participant_configuration(mut self, input: ::std::option::Option<crate::types::ParticipantConfiguration>) -> Self {
+        self.participant_configuration = input;
+        self
+    }
+    /// <p>The configuration of the participant.</p>
+    pub fn get_participant_configuration(&self) -> &::std::option::Option<crate::types::ParticipantConfiguration> {
+        &self.participant_configuration
     }
     /// <p>The initial message to be sent to the newly created chat.</p>
     pub fn initial_message(mut self, input: crate::types::ChatMessage) -> Self {
@@ -383,6 +405,7 @@ impl StartChatContactInputBuilder {
             contact_flow_id: self.contact_flow_id,
             attributes: self.attributes,
             participant_details: self.participant_details,
+            participant_configuration: self.participant_configuration,
             initial_message: self.initial_message,
             client_token: self.client_token,
             chat_duration_in_minutes: self.chat_duration_in_minutes,
@@ -401,6 +424,7 @@ impl ::std::fmt::Debug for StartChatContactInputBuilder {
         formatter.field("contact_flow_id", &self.contact_flow_id);
         formatter.field("attributes", &self.attributes);
         formatter.field("participant_details", &self.participant_details);
+        formatter.field("participant_configuration", &self.participant_configuration);
         formatter.field("initial_message", &self.initial_message);
         formatter.field("client_token", &self.client_token);
         formatter.field("chat_duration_in_minutes", &self.chat_duration_in_minutes);

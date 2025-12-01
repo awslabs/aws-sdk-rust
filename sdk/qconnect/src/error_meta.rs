@@ -7,7 +7,7 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>An error occurred while calling a dependency. For example, calling <code>connect:DecribeContact</code> as part of <code>CreateSession</code> with a contactArn.</p>
+    /// <p>The request failed because it depends on another request that failed.</p>
     DependencyFailedException(crate::types::error::DependencyFailedException),
     /// <p>The provided <code>revisionId</code> does not match, indicating the content has been modified since it was last read.</p>
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
@@ -23,6 +23,8 @@ pub enum Error {
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>You do not have permission to perform this action.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
+    /// <p>The server has a failure of processing the message</p>
+    UnprocessableContentException(crate::types::error::UnprocessableContentException),
     /// <p>The input fails to satisfy the constraints specified by a service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -47,6 +49,7 @@ impl ::std::fmt::Display for Error {
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::UnauthorizedException(inner) => inner.fmt(f),
+            Error::UnprocessableContentException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -79,6 +82,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ThrottlingException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
             Self::UnauthorizedException(inner) => inner.meta(),
+            Self::UnprocessableContentException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -1514,6 +1518,9 @@ impl From<crate::operation::get_next_message::GetNextMessageError> for Error {
         match err {
             crate::operation::get_next_message::GetNextMessageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_next_message::GetNextMessageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_next_message::GetNextMessageError::UnprocessableContentException(inner) => {
+                Error::UnprocessableContentException(inner)
+            }
             crate::operation::get_next_message::GetNextMessageError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_next_message::GetNextMessageError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2050,6 +2057,30 @@ impl From<crate::operation::list_quick_responses::ListQuickResponsesError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_spans::ListSpansError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_spans::ListSpansError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_spans::ListSpansError> for Error {
+    fn from(err: crate::operation::list_spans::ListSpansError) -> Self {
+        match err {
+            crate::operation::list_spans::ListSpansError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_spans::ListSpansError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_spans::ListSpansError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_spans::ListSpansError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2264,6 +2295,35 @@ impl From<crate::operation::render_message_template::RenderMessageTemplateError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::retrieve::RetrieveError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::retrieve::RetrieveError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::retrieve::RetrieveError> for Error {
+    fn from(err: crate::operation::retrieve::RetrieveError) -> Self {
+        match err {
+            crate::operation::retrieve::RetrieveError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::retrieve::RetrieveError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::retrieve::RetrieveError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::retrieve::RetrieveError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::retrieve::RetrieveError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::retrieve::RetrieveError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::retrieve::RetrieveError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::retrieve::RetrieveError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::retrieve::RetrieveError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_content::SearchContentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2397,8 +2457,10 @@ impl From<crate::operation::send_message::SendMessageError> for Error {
         match err {
             crate::operation::send_message::SendMessageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::send_message::SendMessageError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::send_message::SendMessageError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
             crate::operation::send_message::SendMessageError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::send_message::SendMessageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::send_message::SendMessageError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::send_message::SendMessageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::send_message::SendMessageError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::send_message::SendMessageError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2860,6 +2922,7 @@ impl ::std::error::Error for Error {
             Error::ThrottlingException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::UnauthorizedException(inner) => inner.source(),
+            Error::UnprocessableContentException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -2878,6 +2941,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ThrottlingException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
             Self::UnauthorizedException(e) => e.request_id(),
+            Self::UnprocessableContentException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

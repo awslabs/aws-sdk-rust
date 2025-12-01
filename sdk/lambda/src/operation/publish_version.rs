@@ -267,6 +267,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PublishVersio
 pub enum PublishVersionError {
     /// <p>Your Amazon Web Services account has exceeded its maximum total code size. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     CodeStorageExceededException(crate::types::error::CodeStorageExceededException),
+    /// <p>The maximum number of function versions that can be associated with a single capacity provider has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
+    FunctionVersionsPerCapacityProviderLimitExceededException(crate::types::error::FunctionVersionsPerCapacityProviderLimitExceededException),
     /// <p>One of the parameters in the request is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias.</p>
@@ -319,6 +321,7 @@ impl PublishVersionError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::CodeStorageExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FunctionVersionsPerCapacityProviderLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PreconditionFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -331,6 +334,10 @@ impl PublishVersionError {
     /// Returns `true` if the error kind is `PublishVersionError::CodeStorageExceededException`.
     pub fn is_code_storage_exceeded_exception(&self) -> bool {
         matches!(self, Self::CodeStorageExceededException(_))
+    }
+    /// Returns `true` if the error kind is `PublishVersionError::FunctionVersionsPerCapacityProviderLimitExceededException`.
+    pub fn is_function_versions_per_capacity_provider_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::FunctionVersionsPerCapacityProviderLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `PublishVersionError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -361,6 +368,7 @@ impl ::std::error::Error for PublishVersionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::CodeStorageExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::FunctionVersionsPerCapacityProviderLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::PreconditionFailedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
@@ -375,6 +383,7 @@ impl ::std::fmt::Display for PublishVersionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::CodeStorageExceededException(_inner) => _inner.fmt(f),
+            Self::FunctionVersionsPerCapacityProviderLimitExceededException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::PreconditionFailedException(_inner) => _inner.fmt(f),
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
@@ -403,6 +412,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PublishVersio
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::CodeStorageExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FunctionVersionsPerCapacityProviderLimitExceededException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PreconditionFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

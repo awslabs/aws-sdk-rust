@@ -184,4 +184,18 @@ impl GetRecommendationsFluentBuilder {
     pub fn get_next_chunk_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_chunk_token()
     }
+    /// <p>The type of recommendation being requested.</p>
+    pub fn recommendation_type(mut self, input: crate::types::RecommendationType) -> Self {
+        self.inner = self.inner.recommendation_type(input);
+        self
+    }
+    /// <p>The type of recommendation being requested.</p>
+    pub fn set_recommendation_type(mut self, input: ::std::option::Option<crate::types::RecommendationType>) -> Self {
+        self.inner = self.inner.set_recommendation_type(input);
+        self
+    }
+    /// <p>The type of recommendation being requested.</p>
+    pub fn get_recommendation_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
+        self.inner.get_recommendation_type()
+    }
 }

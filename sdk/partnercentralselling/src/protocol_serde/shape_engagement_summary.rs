@@ -55,6 +55,24 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ModifiedAt" => {
+                            builder = builder.set_modified_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
+                        "ModifiedBy" => {
+                            builder = builder.set_modified_by(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ContextTypes" => {
+                            builder = builder.set_context_types(
+                                crate::protocol_serde::shape_engagement_context_type_list::de_engagement_context_type_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

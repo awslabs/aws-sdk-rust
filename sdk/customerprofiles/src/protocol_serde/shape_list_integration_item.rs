@@ -74,6 +74,13 @@ where
                             builder =
                                 builder.set_event_trigger_names(crate::protocol_serde::shape_event_trigger_names::de_event_trigger_names(tokens)?);
                         }
+                        "Scope" => {
+                            builder = builder.set_scope(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Scope::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

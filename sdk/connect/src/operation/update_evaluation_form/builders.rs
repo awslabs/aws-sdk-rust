@@ -243,6 +243,20 @@ impl UpdateEvaluationFormFluentBuilder {
     pub fn get_auto_evaluation_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration> {
         self.inner.get_auto_evaluation_configuration()
     }
+    /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
+    pub fn as_draft(mut self, input: bool) -> Self {
+        self.inner = self.inner.as_draft(input);
+        self
+    }
+    /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
+    pub fn set_as_draft(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_as_draft(input);
+        self
+    }
+    /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
+    pub fn get_as_draft(&self) -> &::std::option::Option<bool> {
+        self.inner.get_as_draft()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -256,5 +270,33 @@ impl UpdateEvaluationFormFluentBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn target_configuration(mut self, input: crate::types::EvaluationFormTargetConfiguration) -> Self {
+        self.inner = self.inner.target_configuration(input);
+        self
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn set_target_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>) -> Self {
+        self.inner = self.inner.set_target_configuration(input);
+        self
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormTargetConfiguration> {
+        self.inner.get_target_configuration()
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn language_configuration(mut self, input: crate::types::EvaluationFormLanguageConfiguration) -> Self {
+        self.inner = self.inner.language_configuration(input);
+        self
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn set_language_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>) -> Self {
+        self.inner = self.inner.set_language_configuration(input);
+        self
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn get_language_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormLanguageConfiguration> {
+        self.inner.get_language_configuration()
     }
 }

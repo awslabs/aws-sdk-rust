@@ -3,12 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCampaignOutput {
-    /// <p>The properties of the campaign.</p>
+    /// <note>
+    /// <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p>
+    /// </note>
+    /// <p>The properties of the campaign.</p><note>
+    /// <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p>
+    /// </note>
     pub campaign: ::std::option::Option<crate::types::Campaign>,
     _request_id: Option<String>,
 }
 impl DescribeCampaignOutput {
-    /// <p>The properties of the campaign.</p>
+    /// <note>
+    /// <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p>
+    /// </note>
+    /// <p>The properties of the campaign.</p><note>
+    /// <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p>
+    /// </note>
     pub fn campaign(&self) -> ::std::option::Option<&crate::types::Campaign> {
         self.campaign.as_ref()
     }
@@ -33,17 +43,32 @@ pub struct DescribeCampaignOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeCampaignOutputBuilder {
-    /// <p>The properties of the campaign.</p>
+    /// <note>
+    /// <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p>
+    /// </note>
+    /// <p>The properties of the campaign.</p><note>
+    /// <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p>
+    /// </note>
     pub fn campaign(mut self, input: crate::types::Campaign) -> Self {
         self.campaign = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The properties of the campaign.</p>
+    /// <note>
+    /// <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p>
+    /// </note>
+    /// <p>The properties of the campaign.</p><note>
+    /// <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p>
+    /// </note>
     pub fn set_campaign(mut self, input: ::std::option::Option<crate::types::Campaign>) -> Self {
         self.campaign = input;
         self
     }
-    /// <p>The properties of the campaign.</p>
+    /// <note>
+    /// <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p>
+    /// </note>
+    /// <p>The properties of the campaign.</p><note>
+    /// <p>The <code>latestCampaignUpdate</code> field is only returned when the campaign has had at least one <code>UpdateCampaign</code> call.</p>
+    /// </note>
     pub fn get_campaign(&self) -> &::std::option::Option<crate::types::Campaign> {
         &self.campaign
     }

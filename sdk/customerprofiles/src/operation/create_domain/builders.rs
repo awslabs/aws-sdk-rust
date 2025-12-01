@@ -201,6 +201,20 @@ impl CreateDomainFluentBuilder {
     pub fn get_rule_based_matching(&self) -> &::std::option::Option<crate::types::RuleBasedMatchingRequest> {
         self.inner.get_rule_based_matching()
     }
+    /// <p>Set to true to enabled data store for this domain.</p>
+    pub fn data_store(mut self, input: crate::types::DataStoreRequest) -> Self {
+        self.inner = self.inner.data_store(input);
+        self
+    }
+    /// <p>Set to true to enabled data store for this domain.</p>
+    pub fn set_data_store(mut self, input: ::std::option::Option<crate::types::DataStoreRequest>) -> Self {
+        self.inner = self.inner.set_data_store(input);
+        self
+    }
+    /// <p>Set to true to enabled data store for this domain.</p>
+    pub fn get_data_store(&self) -> &::std::option::Option<crate::types::DataStoreRequest> {
+        self.inner.get_data_store()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

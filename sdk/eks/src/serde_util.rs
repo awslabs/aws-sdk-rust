@@ -22,3 +22,25 @@ pub(crate) fn outpost_config_response_correct_errors(
     }
     builder
 }
+
+pub(crate) fn argo_cd_role_mapping_correct_errors(
+    mut builder: crate::types::builders::ArgoCdRoleMappingBuilder,
+) -> crate::types::builders::ArgoCdRoleMappingBuilder {
+    if builder.role.is_none() {
+        builder.role = "no value was set".parse::<crate::types::ArgoCdRole>().ok()
+    }
+    if builder.identities.is_none() {
+        builder.identities = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn sso_identity_correct_errors(mut builder: crate::types::builders::SsoIdentityBuilder) -> crate::types::builders::SsoIdentityBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::SsoIdentityType>().ok()
+    }
+    builder
+}

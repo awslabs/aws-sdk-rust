@@ -15,5 +15,11 @@ pub fn ser_filter_v2(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.string_condition {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("StringCondition").start_object();
+        crate::protocol_serde::shape_filter_v2_string_condition::ser_filter_v2_string_condition(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

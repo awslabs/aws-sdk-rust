@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>The maximum number of capacity providers for your account has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a></p>
+    CapacityProviderLimitExceededException(crate::types::error::CapacityProviderLimitExceededException),
     /// <p>The specified code signing configuration does not exist.</p>
     CodeSigningConfigNotFoundException(crate::types::error::CodeSigningConfigNotFoundException),
     /// <p>Your Amazon Web Services account has exceeded its maximum total code size. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
@@ -25,6 +27,8 @@ pub enum Error {
     EfsMountTimeoutException(crate::types::error::EfsMountTimeoutException),
     /// <p>Lambda couldn't create an elastic network interface in the VPC, specified as part of Lambda function configuration, because the limit for network interfaces has been reached. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     EniLimitReachedException(crate::types::error::EniLimitReachedException),
+    /// <p>The maximum number of function versions that can be associated with a single capacity provider has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
+    FunctionVersionsPerCapacityProviderLimitExceededException(crate::types::error::FunctionVersionsPerCapacityProviderLimitExceededException),
     /// <p>The code signature failed the integrity check. If the integrity check fails, then Lambda blocks deployment, even if the code signing policy is set to WARN.</p>
     InvalidCodeSignatureException(crate::types::error::InvalidCodeSignatureException),
     /// <p>One of the parameters in the request is not valid.</p>
@@ -47,6 +51,8 @@ pub enum Error {
     KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
     /// <p>Lambda couldn't decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings.</p>
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
+    /// <p>The function has no published versions available.</p>
+    NoPublishedVersionException(crate::types::error::NoPublishedVersionException),
     /// <p>The permissions policy for the resource is too large. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     PolicyLengthExceededException(crate::types::error::PolicyLengthExceededException),
     /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias.</p>
@@ -71,7 +77,7 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
     ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
-    /// <p>The processed request payload exceeded the <code>Invoke</code> request body size limit for asynchronous invocations. While the event payload may be under 1 MB, the size after internal serialization exceeds the maximum allowed size for asynchronous invocations.</p>
+    /// <p>The request payload exceeded the maximum allowed size for serialized request entities.</p>
     SerializedRequestEntityTooLargeException(crate::types::error::SerializedRequestEntityTooLargeException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::types::error::ServiceException),
@@ -99,6 +105,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::CapacityProviderLimitExceededException(inner) => inner.fmt(f),
             Error::CodeSigningConfigNotFoundException(inner) => inner.fmt(f),
             Error::CodeStorageExceededException(inner) => inner.fmt(f),
             Error::CodeVerificationFailedException(inner) => inner.fmt(f),
@@ -110,6 +117,7 @@ impl ::std::fmt::Display for Error {
             Error::EfsMountFailureException(inner) => inner.fmt(f),
             Error::EfsMountTimeoutException(inner) => inner.fmt(f),
             Error::EniLimitReachedException(inner) => inner.fmt(f),
+            Error::FunctionVersionsPerCapacityProviderLimitExceededException(inner) => inner.fmt(f),
             Error::InvalidCodeSignatureException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
             Error::InvalidRequestContentException(inner) => inner.fmt(f),
@@ -121,6 +129,7 @@ impl ::std::fmt::Display for Error {
             Error::KmsDisabledException(inner) => inner.fmt(f),
             Error::KmsInvalidStateException(inner) => inner.fmt(f),
             Error::KmsNotFoundException(inner) => inner.fmt(f),
+            Error::NoPublishedVersionException(inner) => inner.fmt(f),
             Error::PolicyLengthExceededException(inner) => inner.fmt(f),
             Error::PreconditionFailedException(inner) => inner.fmt(f),
             Error::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.fmt(f),
@@ -159,6 +168,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::CapacityProviderLimitExceededException(inner) => inner.meta(),
             Self::CodeSigningConfigNotFoundException(inner) => inner.meta(),
             Self::CodeStorageExceededException(inner) => inner.meta(),
             Self::CodeVerificationFailedException(inner) => inner.meta(),
@@ -170,6 +180,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::EfsMountFailureException(inner) => inner.meta(),
             Self::EfsMountTimeoutException(inner) => inner.meta(),
             Self::EniLimitReachedException(inner) => inner.meta(),
+            Self::FunctionVersionsPerCapacityProviderLimitExceededException(inner) => inner.meta(),
             Self::InvalidCodeSignatureException(inner) => inner.meta(),
             Self::InvalidParameterValueException(inner) => inner.meta(),
             Self::InvalidRequestContentException(inner) => inner.meta(),
@@ -181,6 +192,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::KmsDisabledException(inner) => inner.meta(),
             Self::KmsInvalidStateException(inner) => inner.meta(),
             Self::KmsNotFoundException(inner) => inner.meta(),
+            Self::NoPublishedVersionException(inner) => inner.meta(),
             Self::PolicyLengthExceededException(inner) => inner.meta(),
             Self::PreconditionFailedException(inner) => inner.meta(),
             Self::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.meta(),
@@ -301,6 +313,42 @@ impl From<crate::operation::create_alias::CreateAliasError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_capacity_provider::CreateCapacityProviderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_capacity_provider::CreateCapacityProviderError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_capacity_provider::CreateCapacityProviderError> for Error {
+    fn from(err: crate::operation::create_capacity_provider::CreateCapacityProviderError) -> Self {
+        match err {
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::CapacityProviderLimitExceededException(inner) => {
+                Error::CapacityProviderLimitExceededException(inner)
+            }
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_code_signing_config::CreateCodeSigningConfigError, R>>
     for Error
 where
@@ -390,6 +438,9 @@ impl From<crate::operation::create_function::CreateFunctionError> for Error {
             crate::operation::create_function::CreateFunctionError::CodeVerificationFailedException(inner) => {
                 Error::CodeVerificationFailedException(inner)
             }
+            crate::operation::create_function::CreateFunctionError::FunctionVersionsPerCapacityProviderLimitExceededException(inner) => {
+                Error::FunctionVersionsPerCapacityProviderLimitExceededException(inner)
+            }
             crate::operation::create_function::CreateFunctionError::InvalidCodeSignatureException(inner) => {
                 Error::InvalidCodeSignatureException(inner)
             }
@@ -463,6 +514,42 @@ impl From<crate::operation::delete_alias::DeleteAliasError> for Error {
             crate::operation::delete_alias::DeleteAliasError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::delete_alias::DeleteAliasError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_alias::DeleteAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_capacity_provider::DeleteCapacityProviderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_capacity_provider::DeleteCapacityProviderError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_capacity_provider::DeleteCapacityProviderError> for Error {
+    fn from(err: crate::operation::delete_capacity_provider::DeleteCapacityProviderError) -> Self {
+        match err {
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -860,6 +947,37 @@ impl From<crate::operation::get_alias::GetAliasError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_capacity_provider::GetCapacityProviderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_capacity_provider::GetCapacityProviderError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_capacity_provider::GetCapacityProviderError> for Error {
+    fn from(err: crate::operation::get_capacity_provider::GetCapacityProviderError) -> Self {
+        match err {
+            crate::operation::get_capacity_provider::GetCapacityProviderError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_capacity_provider::GetCapacityProviderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_capacity_provider::GetCapacityProviderError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_capacity_provider::GetCapacityProviderError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_capacity_provider::GetCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_code_signing_config::GetCodeSigningConfigError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1131,6 +1249,40 @@ impl From<crate::operation::get_function_recursion_config::GetFunctionRecursionC
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function_scaling_config::GetFunctionScalingConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function_scaling_config::GetFunctionScalingConfigError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_function_scaling_config::GetFunctionScalingConfigError> for Error {
+    fn from(err: crate::operation::get_function_scaling_config::GetFunctionScalingConfigError) -> Self {
+        match err {
+            crate::operation::get_function_scaling_config::GetFunctionScalingConfigError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_function_scaling_config::GetFunctionScalingConfigError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_function_scaling_config::GetFunctionScalingConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_function_scaling_config::GetFunctionScalingConfigError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_function_scaling_config::GetFunctionScalingConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function_url_config::GetFunctionUrlConfigError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1390,6 +1542,7 @@ impl From<crate::operation::invoke::InvokeError> for Error {
             crate::operation::invoke::InvokeError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
             crate::operation::invoke::InvokeError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
             crate::operation::invoke::InvokeError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
+            crate::operation::invoke::InvokeError::NoPublishedVersionException(inner) => Error::NoPublishedVersionException(inner),
             crate::operation::invoke::InvokeError::RecursiveInvocationException(inner) => Error::RecursiveInvocationException(inner),
             crate::operation::invoke::InvokeError::RequestTooLargeException(inner) => Error::RequestTooLargeException(inner),
             crate::operation::invoke::InvokeError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
@@ -1507,6 +1660,9 @@ impl From<crate::operation::invoke_with_response_stream::InvokeWithResponseStrea
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::KmsNotFoundException(inner) => {
                 Error::KmsNotFoundException(inner)
             }
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::NoPublishedVersionException(inner) => {
+                Error::NoPublishedVersionException(inner)
+            }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::RecursiveInvocationException(inner) => {
                 Error::RecursiveInvocationException(inner)
             }
@@ -1570,6 +1726,36 @@ impl From<crate::operation::list_aliases::ListAliasesError> for Error {
             crate::operation::list_aliases::ListAliasesError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_aliases::ListAliasesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_aliases::ListAliasesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_capacity_providers::ListCapacityProvidersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_capacity_providers::ListCapacityProvidersError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_capacity_providers::ListCapacityProvidersError> for Error {
+    fn from(err: crate::operation::list_capacity_providers::ListCapacityProvidersError) -> Self {
+        match err {
+            crate::operation::list_capacity_providers::ListCapacityProvidersError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_capacity_providers::ListCapacityProvidersError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_capacity_providers::ListCapacityProvidersError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_capacity_providers::ListCapacityProvidersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1779,6 +1965,42 @@ impl From<crate::operation::list_function_url_configs::ListFunctionUrlConfigsErr
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::list_function_url_configs::ListFunctionUrlConfigsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_function_versions_by_capacity_provider::ListFunctionVersionsByCapacityProviderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_function_versions_by_capacity_provider::ListFunctionVersionsByCapacityProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_function_versions_by_capacity_provider::ListFunctionVersionsByCapacityProviderError> for Error {
+    fn from(err: crate::operation::list_function_versions_by_capacity_provider::ListFunctionVersionsByCapacityProviderError) -> Self {
+        match err {
+            crate::operation::list_function_versions_by_capacity_provider::ListFunctionVersionsByCapacityProviderError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_function_versions_by_capacity_provider::ListFunctionVersionsByCapacityProviderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_function_versions_by_capacity_provider::ListFunctionVersionsByCapacityProviderError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_function_versions_by_capacity_provider::ListFunctionVersionsByCapacityProviderError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_function_versions_by_capacity_provider::ListFunctionVersionsByCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1992,6 +2214,9 @@ impl From<crate::operation::publish_version::PublishVersionError> for Error {
     fn from(err: crate::operation::publish_version::PublishVersionError) -> Self {
         match err {
             crate::operation::publish_version::PublishVersionError::CodeStorageExceededException(inner) => Error::CodeStorageExceededException(inner),
+            crate::operation::publish_version::PublishVersionError::FunctionVersionsPerCapacityProviderLimitExceededException(inner) => {
+                Error::FunctionVersionsPerCapacityProviderLimitExceededException(inner)
+            }
             crate::operation::publish_version::PublishVersionError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
@@ -2165,6 +2390,43 @@ impl From<crate::operation::put_function_recursion_config::PutFunctionRecursionC
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::put_function_recursion_config::PutFunctionRecursionConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_function_scaling_config::PutFunctionScalingConfigError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_function_scaling_config::PutFunctionScalingConfigError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_function_scaling_config::PutFunctionScalingConfigError> for Error {
+    fn from(err: crate::operation::put_function_scaling_config::PutFunctionScalingConfigError) -> Self {
+        match err {
+            crate::operation::put_function_scaling_config::PutFunctionScalingConfigError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::put_function_scaling_config::PutFunctionScalingConfigError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::put_function_scaling_config::PutFunctionScalingConfigError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_function_scaling_config::PutFunctionScalingConfigError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::put_function_scaling_config::PutFunctionScalingConfigError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_function_scaling_config::PutFunctionScalingConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2405,6 +2667,42 @@ impl From<crate::operation::update_alias::UpdateAliasError> for Error {
             crate::operation::update_alias::UpdateAliasError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::update_alias::UpdateAliasError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_alias::UpdateAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_capacity_provider::UpdateCapacityProviderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_capacity_provider::UpdateCapacityProviderError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_capacity_provider::UpdateCapacityProviderError> for Error {
+    fn from(err: crate::operation::update_capacity_provider::UpdateCapacityProviderError) -> Self {
+        match err {
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2699,6 +2997,7 @@ impl From<crate::types::error::InvokeWithResponseStreamResponseEventError> for E
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::CapacityProviderLimitExceededException(inner) => inner.source(),
             Error::CodeSigningConfigNotFoundException(inner) => inner.source(),
             Error::CodeStorageExceededException(inner) => inner.source(),
             Error::CodeVerificationFailedException(inner) => inner.source(),
@@ -2710,6 +3009,7 @@ impl ::std::error::Error for Error {
             Error::EfsMountFailureException(inner) => inner.source(),
             Error::EfsMountTimeoutException(inner) => inner.source(),
             Error::EniLimitReachedException(inner) => inner.source(),
+            Error::FunctionVersionsPerCapacityProviderLimitExceededException(inner) => inner.source(),
             Error::InvalidCodeSignatureException(inner) => inner.source(),
             Error::InvalidParameterValueException(inner) => inner.source(),
             Error::InvalidRequestContentException(inner) => inner.source(),
@@ -2721,6 +3021,7 @@ impl ::std::error::Error for Error {
             Error::KmsDisabledException(inner) => inner.source(),
             Error::KmsInvalidStateException(inner) => inner.source(),
             Error::KmsNotFoundException(inner) => inner.source(),
+            Error::NoPublishedVersionException(inner) => inner.source(),
             Error::PolicyLengthExceededException(inner) => inner.source(),
             Error::PreconditionFailedException(inner) => inner.source(),
             Error::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.source(),
@@ -2745,6 +3046,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::CapacityProviderLimitExceededException(e) => e.request_id(),
             Self::CodeSigningConfigNotFoundException(e) => e.request_id(),
             Self::CodeStorageExceededException(e) => e.request_id(),
             Self::CodeVerificationFailedException(e) => e.request_id(),
@@ -2756,6 +3058,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::EfsMountFailureException(e) => e.request_id(),
             Self::EfsMountTimeoutException(e) => e.request_id(),
             Self::EniLimitReachedException(e) => e.request_id(),
+            Self::FunctionVersionsPerCapacityProviderLimitExceededException(e) => e.request_id(),
             Self::InvalidCodeSignatureException(e) => e.request_id(),
             Self::InvalidParameterValueException(e) => e.request_id(),
             Self::InvalidRequestContentException(e) => e.request_id(),
@@ -2767,6 +3070,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::KmsDisabledException(e) => e.request_id(),
             Self::KmsInvalidStateException(e) => e.request_id(),
             Self::KmsNotFoundException(e) => e.request_id(),
+            Self::NoPublishedVersionException(e) => e.request_id(),
             Self::PolicyLengthExceededException(e) => e.request_id(),
             Self::PreconditionFailedException(e) => e.request_id(),
             Self::ProvisionedConcurrencyConfigNotFoundException(e) => e.request_id(),

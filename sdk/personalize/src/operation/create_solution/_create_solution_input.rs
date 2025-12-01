@@ -18,6 +18,8 @@ pub struct CreateSolutionInput {
     /// <p>Automatic solution version creation starts within one hour after the solution is ACTIVE. If you manually create a solution version within the hour, the solution skips the first automatic training.</p>
     /// <p>After training starts, you can get the solution version's Amazon Resource Name (ARN) with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a> API operation. To get its status, use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.</p>
     pub perform_auto_training: ::std::option::Option<bool>,
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub perform_incremental_update: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This is required when <code>performAutoML</code> is false. For information about different Amazon Personalize recipes and their ARNs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     pub recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
@@ -55,6 +57,10 @@ impl CreateSolutionInput {
     /// <p>After training starts, you can get the solution version's Amazon Resource Name (ARN) with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a> API operation. To get its status, use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.</p>
     pub fn perform_auto_training(&self) -> ::std::option::Option<bool> {
         self.perform_auto_training
+    }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn perform_incremental_update(&self) -> ::std::option::Option<bool> {
+        self.perform_incremental_update
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This is required when <code>performAutoML</code> is false. For information about different Amazon Personalize recipes and their ARNs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     pub fn recipe_arn(&self) -> ::std::option::Option<&str> {
@@ -97,6 +103,7 @@ pub struct CreateSolutionInputBuilder {
     pub(crate) perform_hpo: ::std::option::Option<bool>,
     pub(crate) perform_auto_ml: ::std::option::Option<bool>,
     pub(crate) perform_auto_training: ::std::option::Option<bool>,
+    pub(crate) perform_incremental_update: ::std::option::Option<bool>,
     pub(crate) recipe_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<::std::string::String>,
@@ -181,6 +188,20 @@ impl CreateSolutionInputBuilder {
     /// <p>After training starts, you can get the solution version's Amazon Resource Name (ARN) with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a> API operation. To get its status, use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.</p>
     pub fn get_perform_auto_training(&self) -> &::std::option::Option<bool> {
         &self.perform_auto_training
+    }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn perform_incremental_update(mut self, input: bool) -> Self {
+        self.perform_incremental_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn set_perform_incremental_update(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.perform_incremental_update = input;
+        self
+    }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn get_perform_incremental_update(&self) -> &::std::option::Option<bool> {
+        &self.perform_incremental_update
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This is required when <code>performAutoML</code> is false. For information about different Amazon Personalize recipes and their ARNs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -277,6 +298,7 @@ impl CreateSolutionInputBuilder {
             perform_hpo: self.perform_hpo,
             perform_auto_ml: self.perform_auto_ml,
             perform_auto_training: self.perform_auto_training,
+            perform_incremental_update: self.perform_incremental_update,
             recipe_arn: self.recipe_arn,
             dataset_group_arn: self.dataset_group_arn,
             event_type: self.event_type,

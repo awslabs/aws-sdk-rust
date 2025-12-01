@@ -12,6 +12,8 @@ pub struct ContactFlowSearchFilter {
     /// <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
     /// </ul>
     pub tag_filter: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
+    /// <p>Flow attribute filter for contact flow search operations.</p>
+    pub flow_attribute_filter: ::std::option::Option<crate::types::ContactFlowAttributeFilter>,
 }
 impl ContactFlowSearchFilter {
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
@@ -23,6 +25,10 @@ impl ContactFlowSearchFilter {
     /// </ul>
     pub fn tag_filter(&self) -> ::std::option::Option<&crate::types::ControlPlaneTagFilter> {
         self.tag_filter.as_ref()
+    }
+    /// <p>Flow attribute filter for contact flow search operations.</p>
+    pub fn flow_attribute_filter(&self) -> ::std::option::Option<&crate::types::ContactFlowAttributeFilter> {
+        self.flow_attribute_filter.as_ref()
     }
 }
 impl ContactFlowSearchFilter {
@@ -37,6 +43,7 @@ impl ContactFlowSearchFilter {
 #[non_exhaustive]
 pub struct ContactFlowSearchFilterBuilder {
     pub(crate) tag_filter: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
+    pub(crate) flow_attribute_filter: ::std::option::Option<crate::types::ContactFlowAttributeFilter>,
 }
 impl ContactFlowSearchFilterBuilder {
     /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
@@ -71,8 +78,25 @@ impl ContactFlowSearchFilterBuilder {
     pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::ControlPlaneTagFilter> {
         &self.tag_filter
     }
+    /// <p>Flow attribute filter for contact flow search operations.</p>
+    pub fn flow_attribute_filter(mut self, input: crate::types::ContactFlowAttributeFilter) -> Self {
+        self.flow_attribute_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Flow attribute filter for contact flow search operations.</p>
+    pub fn set_flow_attribute_filter(mut self, input: ::std::option::Option<crate::types::ContactFlowAttributeFilter>) -> Self {
+        self.flow_attribute_filter = input;
+        self
+    }
+    /// <p>Flow attribute filter for contact flow search operations.</p>
+    pub fn get_flow_attribute_filter(&self) -> &::std::option::Option<crate::types::ContactFlowAttributeFilter> {
+        &self.flow_attribute_filter
+    }
     /// Consumes the builder and constructs a [`ContactFlowSearchFilter`](crate::types::ContactFlowSearchFilter).
     pub fn build(self) -> crate::types::ContactFlowSearchFilter {
-        crate::types::ContactFlowSearchFilter { tag_filter: self.tag_filter }
+        crate::types::ContactFlowSearchFilter {
+            tag_filter: self.tag_filter,
+            flow_attribute_filter: self.flow_attribute_filter,
+        }
     }
 }

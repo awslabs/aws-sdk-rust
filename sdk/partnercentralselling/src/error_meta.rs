@@ -192,6 +192,7 @@ impl From<crate::operation::create_engagement::CreateEngagementError> for Error 
         match err {
             crate::operation::create_engagement::CreateEngagementError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_engagement::CreateEngagementError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_engagement::CreateEngagementError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_engagement::CreateEngagementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_engagement::CreateEngagementError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
@@ -199,6 +200,49 @@ impl From<crate::operation::create_engagement::CreateEngagementError> for Error 
             crate::operation::create_engagement::CreateEngagementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_engagement::CreateEngagementError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_engagement::CreateEngagementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_engagement_context::CreateEngagementContextError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_engagement_context::CreateEngagementContextError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_engagement_context::CreateEngagementContextError> for Error {
+    fn from(err: crate::operation::create_engagement_context::CreateEngagementContextError) -> Self {
+        match err {
+            crate::operation::create_engagement_context::CreateEngagementContextError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_engagement_context::CreateEngagementContextError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_engagement_context::CreateEngagementContextError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_engagement_context::CreateEngagementContextError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_engagement_context::CreateEngagementContextError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_engagement_context::CreateEngagementContextError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_engagement_context::CreateEngagementContextError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_engagement_context::CreateEngagementContextError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -227,6 +271,9 @@ impl From<crate::operation::create_engagement_invitation::CreateEngagementInvita
             }
             crate::operation::create_engagement_invitation::CreateEngagementInvitationError::ConflictException(inner) => {
                 Error::ConflictException(inner)
+            }
+            crate::operation::create_engagement_invitation::CreateEngagementInvitationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
             }
             crate::operation::create_engagement_invitation::CreateEngagementInvitationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -294,6 +341,9 @@ impl From<crate::operation::create_resource_snapshot::CreateResourceSnapshotErro
                 Error::AccessDeniedException(inner)
             }
             crate::operation::create_resource_snapshot::CreateResourceSnapshotError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_resource_snapshot::CreateResourceSnapshotError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::create_resource_snapshot::CreateResourceSnapshotError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -331,6 +381,9 @@ impl From<crate::operation::create_resource_snapshot_job::CreateResourceSnapshot
             }
             crate::operation::create_resource_snapshot_job::CreateResourceSnapshotJobError::ConflictException(inner) => {
                 Error::ConflictException(inner)
+            }
+            crate::operation::create_resource_snapshot_job::CreateResourceSnapshotJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
             }
             crate::operation::create_resource_snapshot_job::CreateResourceSnapshotJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -373,6 +426,9 @@ impl From<crate::operation::delete_resource_snapshot_job::DeleteResourceSnapshot
             }
             crate::operation::delete_resource_snapshot_job::DeleteResourceSnapshotJobError::ConflictException(inner) => {
                 Error::ConflictException(inner)
+            }
+            crate::operation::delete_resource_snapshot_job::DeleteResourceSnapshotJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
             }
             crate::operation::delete_resource_snapshot_job::DeleteResourceSnapshotJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -479,6 +535,7 @@ impl From<crate::operation::get_engagement::GetEngagementError> for Error {
     fn from(err: crate::operation::get_engagement::GetEngagementError) -> Self {
         match err {
             crate::operation::get_engagement::GetEngagementError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_engagement::GetEngagementError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_engagement::GetEngagementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_engagement::GetEngagementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_engagement::GetEngagementError::ValidationException(inner) => Error::ValidationException(inner),
@@ -569,6 +626,9 @@ impl From<crate::operation::get_resource_snapshot::GetResourceSnapshotError> for
     fn from(err: crate::operation::get_resource_snapshot::GetResourceSnapshotError) -> Self {
         match err {
             crate::operation::get_resource_snapshot::GetResourceSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_resource_snapshot::GetResourceSnapshotError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::get_resource_snapshot::GetResourceSnapshotError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -601,6 +661,9 @@ impl From<crate::operation::get_resource_snapshot_job::GetResourceSnapshotJobErr
             crate::operation::get_resource_snapshot_job::GetResourceSnapshotJobError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::get_resource_snapshot_job::GetResourceSnapshotJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::get_resource_snapshot_job::GetResourceSnapshotJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -632,6 +695,9 @@ impl From<crate::operation::get_selling_system_settings::GetSellingSystemSetting
         match err {
             crate::operation::get_selling_system_settings::GetSellingSystemSettingsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_selling_system_settings::GetSellingSystemSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
             }
             crate::operation::get_selling_system_settings::GetSellingSystemSettingsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -675,6 +741,7 @@ impl From<crate::operation::list_engagement_by_accepting_invitation_tasks::ListE
     fn from(err: crate::operation::list_engagement_by_accepting_invitation_tasks::ListEngagementByAcceptingInvitationTasksError) -> Self {
         match err {
             crate::operation::list_engagement_by_accepting_invitation_tasks::ListEngagementByAcceptingInvitationTasksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_engagement_by_accepting_invitation_tasks::ListEngagementByAcceptingInvitationTasksError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_engagement_by_accepting_invitation_tasks::ListEngagementByAcceptingInvitationTasksError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_engagement_by_accepting_invitation_tasks::ListEngagementByAcceptingInvitationTasksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_engagement_by_accepting_invitation_tasks::ListEngagementByAcceptingInvitationTasksError::ValidationException(inner) => Error::ValidationException(inner),
@@ -712,6 +779,9 @@ impl From<crate::operation::list_engagement_from_opportunity_tasks::ListEngageme
         match err {
             crate::operation::list_engagement_from_opportunity_tasks::ListEngagementFromOpportunityTasksError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_engagement_from_opportunity_tasks::ListEngagementFromOpportunityTasksError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
             }
             crate::operation::list_engagement_from_opportunity_tasks::ListEngagementFromOpportunityTasksError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -789,6 +859,9 @@ impl From<crate::operation::list_engagement_members::ListEngagementMembersError>
             crate::operation::list_engagement_members::ListEngagementMembersError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::list_engagement_members::ListEngagementMembersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::list_engagement_members::ListEngagementMembersError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -829,6 +902,9 @@ impl From<crate::operation::list_engagement_resource_associations::ListEngagemen
             crate::operation::list_engagement_resource_associations::ListEngagementResourceAssociationsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::list_engagement_resource_associations::ListEngagementResourceAssociationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::list_engagement_resource_associations::ListEngagementResourceAssociationsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -862,6 +938,7 @@ impl From<crate::operation::list_engagements::ListEngagementsError> for Error {
     fn from(err: crate::operation::list_engagements::ListEngagementsError) -> Self {
         match err {
             crate::operation::list_engagements::ListEngagementsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_engagements::ListEngagementsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_engagements::ListEngagementsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_engagements::ListEngagementsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_engagements::ListEngagementsError::ValidationException(inner) => Error::ValidationException(inner),
@@ -895,6 +972,55 @@ impl From<crate::operation::list_opportunities::ListOpportunitiesError> for Erro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_opportunity_from_engagement_tasks::ListOpportunityFromEngagementTasksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_opportunity_from_engagement_tasks::ListOpportunityFromEngagementTasksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_opportunity_from_engagement_tasks::ListOpportunityFromEngagementTasksError> for Error {
+    fn from(err: crate::operation::list_opportunity_from_engagement_tasks::ListOpportunityFromEngagementTasksError) -> Self {
+        match err {
+            crate::operation::list_opportunity_from_engagement_tasks::ListOpportunityFromEngagementTasksError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_opportunity_from_engagement_tasks::ListOpportunityFromEngagementTasksError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_opportunity_from_engagement_tasks::ListOpportunityFromEngagementTasksError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_opportunity_from_engagement_tasks::ListOpportunityFromEngagementTasksError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_opportunity_from_engagement_tasks::ListOpportunityFromEngagementTasksError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_opportunity_from_engagement_tasks::ListOpportunityFromEngagementTasksError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_snapshot_jobs::ListResourceSnapshotJobsError, R>>
     for Error
 where
@@ -917,6 +1043,9 @@ impl From<crate::operation::list_resource_snapshot_jobs::ListResourceSnapshotJob
         match err {
             crate::operation::list_resource_snapshot_jobs::ListResourceSnapshotJobsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_resource_snapshot_jobs::ListResourceSnapshotJobsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
             }
             crate::operation::list_resource_snapshot_jobs::ListResourceSnapshotJobsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -953,6 +1082,9 @@ impl From<crate::operation::list_resource_snapshots::ListResourceSnapshotsError>
             crate::operation::list_resource_snapshots::ListResourceSnapshotsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::list_resource_snapshots::ListResourceSnapshotsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::list_resource_snapshots::ListResourceSnapshotsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -982,6 +1114,7 @@ impl From<crate::operation::list_solutions::ListSolutionsError> for Error {
             crate::operation::list_solutions::ListSolutionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_solutions::ListSolutionsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_solutions::ListSolutionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_solutions::ListSolutionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_solutions::ListSolutionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_solutions::ListSolutionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1039,6 +1172,9 @@ impl From<crate::operation::put_selling_system_settings::PutSellingSystemSetting
         match err {
             crate::operation::put_selling_system_settings::PutSellingSystemSettingsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_selling_system_settings::PutSellingSystemSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
             }
             crate::operation::put_selling_system_settings::PutSellingSystemSettingsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1189,6 +1325,61 @@ impl From<crate::operation::start_engagement_from_opportunity_task::StartEngagem
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError> for Error {
+    fn from(err: crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError) -> Self {
+        match err {
+            crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_opportunity_from_engagement_task::StartOpportunityFromEngagementTaskError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_resource_snapshot_job::StartResourceSnapshotJobError, R>>
     for Error
 where
@@ -1211,6 +1402,9 @@ impl From<crate::operation::start_resource_snapshot_job::StartResourceSnapshotJo
         match err {
             crate::operation::start_resource_snapshot_job::StartResourceSnapshotJobError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_resource_snapshot_job::StartResourceSnapshotJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
             }
             crate::operation::start_resource_snapshot_job::StartResourceSnapshotJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1247,6 +1441,9 @@ impl From<crate::operation::stop_resource_snapshot_job::StopResourceSnapshotJobE
         match err {
             crate::operation::stop_resource_snapshot_job::StopResourceSnapshotJobError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::stop_resource_snapshot_job::StopResourceSnapshotJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
             }
             crate::operation::stop_resource_snapshot_job::StopResourceSnapshotJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1338,6 +1535,49 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_engagement_context::UpdateEngagementContextError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_engagement_context::UpdateEngagementContextError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_engagement_context::UpdateEngagementContextError> for Error {
+    fn from(err: crate::operation::update_engagement_context::UpdateEngagementContextError) -> Self {
+        match err {
+            crate::operation::update_engagement_context::UpdateEngagementContextError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_engagement_context::UpdateEngagementContextError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_engagement_context::UpdateEngagementContextError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_engagement_context::UpdateEngagementContextError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_engagement_context::UpdateEngagementContextError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_engagement_context::UpdateEngagementContextError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_engagement_context::UpdateEngagementContextError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_engagement_context::UpdateEngagementContextError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

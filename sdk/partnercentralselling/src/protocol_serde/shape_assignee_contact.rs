@@ -12,6 +12,9 @@ pub fn ser_assignee_contact(
     {
         object.key("LastName").string(input.last_name.as_str());
     }
+    if let Some(var_1) = &input.phone {
+        object.key("Phone").string(var_1.as_str());
+    }
     {
         object.key("BusinessTitle").string(input.business_title.as_str());
     }

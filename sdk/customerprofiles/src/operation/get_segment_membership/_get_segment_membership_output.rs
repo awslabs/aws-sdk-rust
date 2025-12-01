@@ -9,6 +9,8 @@ pub struct GetSegmentMembershipOutput {
     pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQueryResult>>,
     /// <p>An array of maps where each contains a response per profile failed for the request.</p>
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQueryFailures>>,
+    /// <p>The timestamp indicating when the segment membership was last computed or updated.</p>
+    pub last_computed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetSegmentMembershipOutput {
@@ -27,6 +29,10 @@ impl GetSegmentMembershipOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
     pub fn failures(&self) -> &[crate::types::ProfileQueryFailures] {
         self.failures.as_deref().unwrap_or_default()
+    }
+    /// <p>The timestamp indicating when the segment membership was last computed or updated.</p>
+    pub fn last_computed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_computed_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSegmentMembershipOutput {
@@ -48,6 +54,7 @@ pub struct GetSegmentMembershipOutputBuilder {
     pub(crate) segment_definition_name: ::std::option::Option<::std::string::String>,
     pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQueryResult>>,
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::ProfileQueryFailures>>,
+    pub(crate) last_computed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetSegmentMembershipOutputBuilder {
@@ -105,6 +112,20 @@ impl GetSegmentMembershipOutputBuilder {
     pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQueryFailures>> {
         &self.failures
     }
+    /// <p>The timestamp indicating when the segment membership was last computed or updated.</p>
+    pub fn last_computed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_computed_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp indicating when the segment membership was last computed or updated.</p>
+    pub fn set_last_computed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_computed_at = input;
+        self
+    }
+    /// <p>The timestamp indicating when the segment membership was last computed or updated.</p>
+    pub fn get_last_computed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_computed_at
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -120,6 +141,7 @@ impl GetSegmentMembershipOutputBuilder {
             segment_definition_name: self.segment_definition_name,
             profiles: self.profiles,
             failures: self.failures,
+            last_computed_at: self.last_computed_at,
             _request_id: self._request_id,
         }
     }

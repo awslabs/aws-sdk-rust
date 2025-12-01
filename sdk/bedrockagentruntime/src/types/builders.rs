@@ -35,6 +35,10 @@ pub use crate::types::_retrieval_result_content::RetrievalResultContentBuilder;
 
 pub use crate::types::_retrieval_result_content_column::RetrievalResultContentColumnBuilder;
 
+pub use crate::types::_audio_segment::AudioSegmentBuilder;
+
+pub use crate::types::_video_segment::VideoSegmentBuilder;
+
 pub use crate::types::_guardrail_configuration::GuardrailConfigurationBuilder;
 
 pub use crate::types::_knowledge_base_retrieval_configuration::KnowledgeBaseRetrievalConfigurationBuilder;
@@ -58,6 +62,8 @@ pub use crate::types::_vector_search_bedrock_reranking_model_configuration::Vect
 pub use crate::types::_filter_attribute::FilterAttributeBuilder;
 
 pub use crate::types::_knowledge_base_query::KnowledgeBaseQueryBuilder;
+
+pub use crate::types::_input_image::InputImageBuilder;
 
 pub use crate::types::_guardrail_event::GuardrailEventBuilder;
 

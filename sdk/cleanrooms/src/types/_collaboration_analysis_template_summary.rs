@@ -22,6 +22,8 @@ pub struct CollaborationAnalysisTemplateSummary {
     pub creator_account_id: ::std::string::String,
     /// <p>The description of the analysis template.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates if this collaboration analysis template uses synthetic data generation.</p>
+    pub is_synthetic_data: ::std::option::Option<bool>,
 }
 impl CollaborationAnalysisTemplateSummary {
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
@@ -66,6 +68,10 @@ impl CollaborationAnalysisTemplateSummary {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Indicates if this collaboration analysis template uses synthetic data generation.</p>
+    pub fn is_synthetic_data(&self) -> ::std::option::Option<bool> {
+        self.is_synthetic_data
+    }
 }
 impl CollaborationAnalysisTemplateSummary {
     /// Creates a new builder-style object to manufacture [`CollaborationAnalysisTemplateSummary`](crate::types::CollaborationAnalysisTemplateSummary).
@@ -87,6 +93,7 @@ pub struct CollaborationAnalysisTemplateSummaryBuilder {
     pub(crate) collaboration_id: ::std::option::Option<::std::string::String>,
     pub(crate) creator_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) is_synthetic_data: ::std::option::Option<bool>,
 }
 impl CollaborationAnalysisTemplateSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
@@ -223,6 +230,20 @@ impl CollaborationAnalysisTemplateSummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Indicates if this collaboration analysis template uses synthetic data generation.</p>
+    pub fn is_synthetic_data(mut self, input: bool) -> Self {
+        self.is_synthetic_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if this collaboration analysis template uses synthetic data generation.</p>
+    pub fn set_is_synthetic_data(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_synthetic_data = input;
+        self
+    }
+    /// <p>Indicates if this collaboration analysis template uses synthetic data generation.</p>
+    pub fn get_is_synthetic_data(&self) -> &::std::option::Option<bool> {
+        &self.is_synthetic_data
+    }
     /// Consumes the builder and constructs a [`CollaborationAnalysisTemplateSummary`](crate::types::CollaborationAnalysisTemplateSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::CollaborationAnalysisTemplateSummaryBuilder::arn)
@@ -286,6 +307,7 @@ impl CollaborationAnalysisTemplateSummaryBuilder {
                 )
             })?,
             description: self.description,
+            is_synthetic_data: self.is_synthetic_data,
         })
     }
 }

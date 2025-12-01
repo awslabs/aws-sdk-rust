@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/telemetry",
     "tests/webassembly",
+    "tests/telemetry",
     "tests/no-default-features"
 ]
 members = [
@@ -318,6 +318,8 @@ members = [
     "sdk/osis",
     "sdk/outposts",
     "sdk/panorama",
+    "sdk/partnercentralaccount",
+    "sdk/partnercentralbenefits",
     "sdk/partnercentralchannel",
     "sdk/partnercentralselling",
     "sdk/paymentcryptography",
@@ -357,6 +359,7 @@ members = [
     "sdk/rolesanywhere",
     "sdk/route53",
     "sdk/route53domains",
+    "sdk/route53globalresolver",
     "sdk/route53profiles",
     "sdk/route53recoverycluster",
     "sdk/route53recoverycontrolconfig",

@@ -34,6 +34,10 @@ pub struct EvaluationForm {
     pub auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Configuration that specifies the target for this evaluation form.</p>
+    pub target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
+    /// <p>Configuration for language settings of this evaluation form.</p>
+    pub language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
 }
 impl EvaluationForm {
     /// <p>The unique identifier for the evaluation form.</p>
@@ -102,6 +106,14 @@ impl EvaluationForm {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Configuration that specifies the target for this evaluation form.</p>
+    pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormTargetConfiguration> {
+        self.target_configuration.as_ref()
+    }
+    /// <p>Configuration for language settings of this evaluation form.</p>
+    pub fn language_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormLanguageConfiguration> {
+        self.language_configuration.as_ref()
+    }
 }
 impl EvaluationForm {
     /// Creates a new builder-style object to manufacture [`EvaluationForm`](crate::types::EvaluationForm).
@@ -129,6 +141,8 @@ pub struct EvaluationFormBuilder {
     pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
     pub(crate) auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
+    pub(crate) language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
 }
 impl EvaluationFormBuilder {
     /// <p>The unique identifier for the evaluation form.</p>
@@ -366,6 +380,34 @@ impl EvaluationFormBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Configuration that specifies the target for this evaluation form.</p>
+    pub fn target_configuration(mut self, input: crate::types::EvaluationFormTargetConfiguration) -> Self {
+        self.target_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration that specifies the target for this evaluation form.</p>
+    pub fn set_target_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>) -> Self {
+        self.target_configuration = input;
+        self
+    }
+    /// <p>Configuration that specifies the target for this evaluation form.</p>
+    pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormTargetConfiguration> {
+        &self.target_configuration
+    }
+    /// <p>Configuration for language settings of this evaluation form.</p>
+    pub fn language_configuration(mut self, input: crate::types::EvaluationFormLanguageConfiguration) -> Self {
+        self.language_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for language settings of this evaluation form.</p>
+    pub fn set_language_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>) -> Self {
+        self.language_configuration = input;
+        self
+    }
+    /// <p>Configuration for language settings of this evaluation form.</p>
+    pub fn get_language_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormLanguageConfiguration> {
+        &self.language_configuration
+    }
     /// Consumes the builder and constructs a [`EvaluationForm`](crate::types::EvaluationForm).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluation_form_id`](crate::types::builders::EvaluationFormBuilder::evaluation_form_id)
@@ -439,6 +481,8 @@ impl EvaluationFormBuilder {
             })?,
             auto_evaluation_configuration: self.auto_evaluation_configuration,
             tags: self.tags,
+            target_configuration: self.target_configuration,
+            language_configuration: self.language_configuration,
         })
     }
 }

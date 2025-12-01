@@ -17,6 +17,10 @@ pub struct DescribeBotLocaleOutput {
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>The Amazon Polly voice Amazon Lex uses for voice interaction with the user.</p>
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    /// <p>The unified speech settings configured for the bot locale.</p>
+    pub unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    /// <p>The speech-to-text settings configured for the bot locale.</p>
+    pub speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     /// <p>The number of intents defined for the locale.</p>
     pub intents_count: ::std::option::Option<i32>,
     /// <p>The number of slot types defined for the locale.</p>
@@ -69,6 +73,14 @@ impl DescribeBotLocaleOutput {
     /// <p>The Amazon Polly voice Amazon Lex uses for voice interaction with the user.</p>
     pub fn voice_settings(&self) -> ::std::option::Option<&crate::types::VoiceSettings> {
         self.voice_settings.as_ref()
+    }
+    /// <p>The unified speech settings configured for the bot locale.</p>
+    pub fn unified_speech_settings(&self) -> ::std::option::Option<&crate::types::UnifiedSpeechSettings> {
+        self.unified_speech_settings.as_ref()
+    }
+    /// <p>The speech-to-text settings configured for the bot locale.</p>
+    pub fn speech_recognition_settings(&self) -> ::std::option::Option<&crate::types::SpeechRecognitionSettings> {
+        self.speech_recognition_settings.as_ref()
     }
     /// <p>The number of intents defined for the locale.</p>
     pub fn intents_count(&self) -> ::std::option::Option<i32> {
@@ -144,6 +156,8 @@ pub struct DescribeBotLocaleOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    pub(crate) unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    pub(crate) speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     pub(crate) intents_count: ::std::option::Option<i32>,
     pub(crate) slot_types_count: ::std::option::Option<i32>,
     pub(crate) bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
@@ -255,6 +269,34 @@ impl DescribeBotLocaleOutputBuilder {
     /// <p>The Amazon Polly voice Amazon Lex uses for voice interaction with the user.</p>
     pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
         &self.voice_settings
+    }
+    /// <p>The unified speech settings configured for the bot locale.</p>
+    pub fn unified_speech_settings(mut self, input: crate::types::UnifiedSpeechSettings) -> Self {
+        self.unified_speech_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The unified speech settings configured for the bot locale.</p>
+    pub fn set_unified_speech_settings(mut self, input: ::std::option::Option<crate::types::UnifiedSpeechSettings>) -> Self {
+        self.unified_speech_settings = input;
+        self
+    }
+    /// <p>The unified speech settings configured for the bot locale.</p>
+    pub fn get_unified_speech_settings(&self) -> &::std::option::Option<crate::types::UnifiedSpeechSettings> {
+        &self.unified_speech_settings
+    }
+    /// <p>The speech-to-text settings configured for the bot locale.</p>
+    pub fn speech_recognition_settings(mut self, input: crate::types::SpeechRecognitionSettings) -> Self {
+        self.speech_recognition_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The speech-to-text settings configured for the bot locale.</p>
+    pub fn set_speech_recognition_settings(mut self, input: ::std::option::Option<crate::types::SpeechRecognitionSettings>) -> Self {
+        self.speech_recognition_settings = input;
+        self
+    }
+    /// <p>The speech-to-text settings configured for the bot locale.</p>
+    pub fn get_speech_recognition_settings(&self) -> &::std::option::Option<crate::types::SpeechRecognitionSettings> {
+        &self.speech_recognition_settings
     }
     /// <p>The number of intents defined for the locale.</p>
     pub fn intents_count(mut self, input: i32) -> Self {
@@ -447,6 +489,8 @@ impl DescribeBotLocaleOutputBuilder {
             description: self.description,
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
+            unified_speech_settings: self.unified_speech_settings,
+            speech_recognition_settings: self.speech_recognition_settings,
             intents_count: self.intents_count,
             slot_types_count: self.slot_types_count,
             bot_locale_status: self.bot_locale_status,

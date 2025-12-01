@@ -21,23 +21,26 @@ pub fn ser_update_function_code_input_input(
     if let Some(var_6) = &input.publish {
         object.key("Publish").boolean(*var_6);
     }
-    if let Some(var_7) = &input.revision_id {
-        object.key("RevisionId").string(var_7.as_str());
+    if let Some(var_7) = &input.publish_to {
+        object.key("PublishTo").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.s3_bucket {
-        object.key("S3Bucket").string(var_8.as_str());
+    if let Some(var_8) = &input.revision_id {
+        object.key("RevisionId").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.s3_key {
-        object.key("S3Key").string(var_9.as_str());
+    if let Some(var_9) = &input.s3_bucket {
+        object.key("S3Bucket").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.s3_object_version {
-        object.key("S3ObjectVersion").string(var_10.as_str());
+    if let Some(var_10) = &input.s3_key {
+        object.key("S3Key").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.source_kms_key_arn {
-        object.key("SourceKMSKeyArn").string(var_11.as_str());
+    if let Some(var_11) = &input.s3_object_version {
+        object.key("S3ObjectVersion").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.zip_file {
-        object.key("ZipFile").string_unchecked(&::aws_smithy_types::base64::encode(var_12));
+    if let Some(var_12) = &input.source_kms_key_arn {
+        object.key("SourceKMSKeyArn").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.zip_file {
+        object.key("ZipFile").string_unchecked(&::aws_smithy_types::base64::encode(var_13));
     }
     Ok(())
 }

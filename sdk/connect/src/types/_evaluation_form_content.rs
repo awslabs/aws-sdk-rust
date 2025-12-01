@@ -20,6 +20,10 @@ pub struct EvaluationFormContent {
     pub scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
     /// <p>The configuration of the automated evaluation.</p>
     pub auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    /// <p>Configuration that specifies the target for this evaluation form content.</p>
+    pub target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
+    /// <p>Configuration for language settings of this evaluation form content.</p>
+    pub language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
 }
 impl EvaluationFormContent {
     /// <p>A version of the evaluation form.</p>
@@ -58,6 +62,14 @@ impl EvaluationFormContent {
     pub fn auto_evaluation_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormAutoEvaluationConfiguration> {
         self.auto_evaluation_configuration.as_ref()
     }
+    /// <p>Configuration that specifies the target for this evaluation form content.</p>
+    pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormTargetConfiguration> {
+        self.target_configuration.as_ref()
+    }
+    /// <p>Configuration for language settings of this evaluation form content.</p>
+    pub fn language_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormLanguageConfiguration> {
+        self.language_configuration.as_ref()
+    }
 }
 impl EvaluationFormContent {
     /// Creates a new builder-style object to manufacture [`EvaluationFormContent`](crate::types::EvaluationFormContent).
@@ -78,6 +90,8 @@ pub struct EvaluationFormContentBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     pub(crate) scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
     pub(crate) auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    pub(crate) target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
+    pub(crate) language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
 }
 impl EvaluationFormContentBuilder {
     /// <p>A version of the evaluation form.</p>
@@ -205,6 +219,34 @@ impl EvaluationFormContentBuilder {
     pub fn get_auto_evaluation_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration> {
         &self.auto_evaluation_configuration
     }
+    /// <p>Configuration that specifies the target for this evaluation form content.</p>
+    pub fn target_configuration(mut self, input: crate::types::EvaluationFormTargetConfiguration) -> Self {
+        self.target_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration that specifies the target for this evaluation form content.</p>
+    pub fn set_target_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>) -> Self {
+        self.target_configuration = input;
+        self
+    }
+    /// <p>Configuration that specifies the target for this evaluation form content.</p>
+    pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormTargetConfiguration> {
+        &self.target_configuration
+    }
+    /// <p>Configuration for language settings of this evaluation form content.</p>
+    pub fn language_configuration(mut self, input: crate::types::EvaluationFormLanguageConfiguration) -> Self {
+        self.language_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for language settings of this evaluation form content.</p>
+    pub fn set_language_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>) -> Self {
+        self.language_configuration = input;
+        self
+    }
+    /// <p>Configuration for language settings of this evaluation form content.</p>
+    pub fn get_language_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormLanguageConfiguration> {
+        &self.language_configuration
+    }
     /// Consumes the builder and constructs a [`EvaluationFormContent`](crate::types::EvaluationFormContent).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluation_form_id`](crate::types::builders::EvaluationFormContentBuilder::evaluation_form_id)
@@ -241,6 +283,8 @@ impl EvaluationFormContentBuilder {
             })?,
             scoring_strategy: self.scoring_strategy,
             auto_evaluation_configuration: self.auto_evaluation_configuration,
+            target_configuration: self.target_configuration,
+            language_configuration: self.language_configuration,
         })
     }
 }

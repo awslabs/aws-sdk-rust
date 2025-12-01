@@ -30,6 +30,15 @@ pub fn ser_answer_recommendation_ai_agent_configuration(
     if let Some(var_9) = &input.locale {
         object.key("locale").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.suggested_messages {
+        let mut array_11 = object.key("suggestedMessages").start_array();
+        for item_12 in var_10 {
+            {
+                array_11.value().string(item_12.as_str());
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }
 
@@ -87,6 +96,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "suggestedMessages" => {
+                            builder = builder
+                                .set_suggested_messages(crate::protocol_serde::shape_suggested_messages_list::de_suggested_messages_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

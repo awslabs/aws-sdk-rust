@@ -7,6 +7,8 @@ pub struct ListApplicationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The type of application.</p>
+    pub application_type: ::std::option::Option<crate::types::ApplicationType>,
 }
 impl ListApplicationsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -16,6 +18,10 @@ impl ListApplicationsInput {
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>The type of application.</p>
+    pub fn application_type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
+        self.application_type.as_ref()
     }
 }
 impl ListApplicationsInput {
@@ -31,6 +37,7 @@ impl ListApplicationsInput {
 pub struct ListApplicationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
 }
 impl ListApplicationsInputBuilder {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -61,6 +68,20 @@ impl ListApplicationsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The type of application.</p>
+    pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
+        self.application_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of application.</p>
+    pub fn set_application_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
+        self.application_type = input;
+        self
+    }
+    /// <p>The type of application.</p>
+    pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        &self.application_type
+    }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(
         self,
@@ -68,6 +89,7 @@ impl ListApplicationsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
             next_token: self.next_token,
             max_results: self.max_results,
+            application_type: self.application_type,
         })
     }
 }

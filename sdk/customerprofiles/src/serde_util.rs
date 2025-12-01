@@ -74,6 +74,15 @@ pub(crate) fn create_profile_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_recommender_output_output_correct_errors(
+    mut builder: crate::operation::create_recommender::builders::CreateRecommenderOutputBuilder,
+) -> crate::operation::create_recommender::builders::CreateRecommenderOutputBuilder {
+    if builder.recommender_arn.is_none() {
+        builder.recommender_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_segment_definition_output_output_correct_errors(
     mut builder: crate::operation::create_segment_definition::builders::CreateSegmentDefinitionOutputBuilder,
 ) -> crate::operation::create_segment_definition::builders::CreateSegmentDefinitionOutputBuilder {
@@ -200,6 +209,15 @@ pub(crate) fn get_domain_layout_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_domain_object_type_output_output_correct_errors(
+    mut builder: crate::operation::get_domain_object_type::builders::GetDomainObjectTypeOutputBuilder,
+) -> crate::operation::get_domain_object_type::builders::GetDomainObjectTypeOutputBuilder {
+    if builder.object_type_name.is_none() {
+        builder.object_type_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_event_stream_output_output_correct_errors(
     mut builder: crate::operation::get_event_stream::builders::GetEventStreamOutputBuilder,
 ) -> crate::operation::get_event_stream::builders::GetEventStreamOutputBuilder {
@@ -242,6 +260,23 @@ pub(crate) fn get_integration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_object_type_attribute_statistics_output_output_correct_errors(
+    mut builder: crate::operation::get_object_type_attribute_statistics::builders::GetObjectTypeAttributeStatisticsOutputBuilder,
+) -> crate::operation::get_object_type_attribute_statistics::builders::GetObjectTypeAttributeStatisticsOutputBuilder {
+    if builder.statistics.is_none() {
+        builder.statistics = {
+            let builder = crate::types::builders::GetObjectTypeAttributeStatisticsStatsBuilder::default();
+            crate::serde_util::get_object_type_attribute_statistics_stats_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.calculated_at.is_none() {
+        builder.calculated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_profile_history_record_output_output_correct_errors(
     mut builder: crate::operation::get_profile_history_record::builders::GetProfileHistoryRecordOutputBuilder,
 ) -> crate::operation::get_profile_history_record::builders::GetProfileHistoryRecordOutputBuilder {
@@ -268,6 +303,18 @@ pub(crate) fn get_profile_object_type_output_output_correct_errors(
     }
     if builder.description.is_none() {
         builder.description = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_recommender_output_output_correct_errors(
+    mut builder: crate::operation::get_recommender::builders::GetRecommenderOutputBuilder,
+) -> crate::operation::get_recommender::builders::GetRecommenderOutputBuilder {
+    if builder.recommender_name.is_none() {
+        builder.recommender_name = Some(Default::default())
+    }
+    if builder.recommender_recipe_name.is_none() {
+        builder.recommender_recipe_name = "no value was set".parse::<crate::types::RecommenderRecipeName>().ok()
     }
     builder
 }
@@ -359,6 +406,15 @@ pub(crate) fn update_profile_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_recommender_output_output_correct_errors(
+    mut builder: crate::operation::update_recommender::builders::UpdateRecommenderOutputBuilder,
+) -> crate::operation::update_recommender::builders::UpdateRecommenderOutputBuilder {
+    if builder.recommender_name.is_none() {
+        builder.recommender_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn event_stream_destination_details_correct_errors(
     mut builder: crate::types::builders::EventStreamDestinationDetailsBuilder,
 ) -> crate::types::builders::EventStreamDestinationDetailsBuilder {
@@ -367,6 +423,32 @@ pub(crate) fn event_stream_destination_details_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::EventStreamDestinationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_object_type_attribute_statistics_stats_correct_errors(
+    mut builder: crate::types::builders::GetObjectTypeAttributeStatisticsStatsBuilder,
+) -> crate::types::builders::GetObjectTypeAttributeStatisticsStatsBuilder {
+    if builder.maximum.is_none() {
+        builder.maximum = Some(Default::default())
+    }
+    if builder.minimum.is_none() {
+        builder.minimum = Some(Default::default())
+    }
+    if builder.average.is_none() {
+        builder.average = Some(Default::default())
+    }
+    if builder.standard_deviation.is_none() {
+        builder.standard_deviation = Some(Default::default())
+    }
+    if builder.percentiles.is_none() {
+        builder.percentiles = {
+            let builder = crate::types::builders::GetObjectTypeAttributeStatisticsPercentilesBuilder::default();
+            crate::serde_util::get_object_type_attribute_statistics_percentiles_correct_errors(builder)
+                .build()
+                .ok()
+        }
     }
     builder
 }
@@ -396,6 +478,39 @@ pub(crate) fn filter_correct_errors(mut builder: crate::types::builders::FilterB
     }
     if builder.groups.is_none() {
         builder.groups = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recommender_config_correct_errors(
+    mut builder: crate::types::builders::RecommenderConfigBuilder,
+) -> crate::types::builders::RecommenderConfigBuilder {
+    if builder.events_config.is_none() {
+        builder.events_config = {
+            let builder = crate::types::builders::EventsConfigBuilder::default();
+            crate::serde_util::events_config_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_object_type_attribute_statistics_percentiles_correct_errors(
+    mut builder: crate::types::builders::GetObjectTypeAttributeStatisticsPercentilesBuilder,
+) -> crate::types::builders::GetObjectTypeAttributeStatisticsPercentilesBuilder {
+    if builder.p5.is_none() {
+        builder.p5 = Some(Default::default())
+    }
+    if builder.p25.is_none() {
+        builder.p25 = Some(Default::default())
+    }
+    if builder.p50.is_none() {
+        builder.p50 = Some(Default::default())
+    }
+    if builder.p75.is_none() {
+        builder.p75 = Some(Default::default())
+    }
+    if builder.p95.is_none() {
+        builder.p95 = Some(Default::default())
     }
     builder
 }
@@ -484,6 +599,27 @@ pub(crate) fn consolidation_correct_errors(
     builder
 }
 
+pub(crate) fn domain_object_type_field_correct_errors(
+    mut builder: crate::types::builders::DomainObjectTypeFieldBuilder,
+) -> crate::types::builders::DomainObjectTypeFieldBuilder {
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn domain_object_types_list_item_correct_errors(
+    mut builder: crate::types::builders::DomainObjectTypesListItemBuilder,
+) -> crate::types::builders::DomainObjectTypesListItemBuilder {
+    if builder.object_type_name.is_none() {
+        builder.object_type_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn event_stream_summary_correct_errors(
     mut builder: crate::types::builders::EventStreamSummaryBuilder,
 ) -> crate::types::builders::EventStreamSummaryBuilder {
@@ -510,6 +646,13 @@ pub(crate) fn event_trigger_condition_correct_errors(
     }
     if builder.logical_operator.is_none() {
         builder.logical_operator = "no value was set".parse::<crate::types::EventTriggerLogicalOperator>().ok()
+    }
+    builder
+}
+
+pub(crate) fn events_config_correct_errors(mut builder: crate::types::builders::EventsConfigBuilder) -> crate::types::builders::EventsConfigBuilder {
+    if builder.event_parameters_list.is_none() {
+        builder.event_parameters_list = Some(Default::default())
     }
     builder
 }
@@ -584,6 +727,18 @@ pub(crate) fn list_object_type_attribute_item_correct_errors(
 ) -> crate::types::builders::ListObjectTypeAttributeItemBuilder {
     if builder.attribute_name.is_none() {
         builder.attribute_name = Some(Default::default())
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn list_object_type_attribute_values_item_correct_errors(
+    mut builder: crate::types::builders::ListObjectTypeAttributeValuesItemBuilder,
+) -> crate::types::builders::ListObjectTypeAttributeValuesItemBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     if builder.last_updated_at.is_none() {
         builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -784,6 +939,15 @@ pub(crate) fn value_range_correct_errors(mut builder: crate::types::builders::Va
     }
     if builder.end.is_none() {
         builder.end = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn event_parameters_correct_errors(
+    mut builder: crate::types::builders::EventParametersBuilder,
+) -> crate::types::builders::EventParametersBuilder {
+    if builder.event_type.is_none() {
+        builder.event_type = Some(Default::default())
     }
     builder
 }

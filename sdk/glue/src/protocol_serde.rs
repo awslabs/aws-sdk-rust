@@ -2227,6 +2227,8 @@ pub(crate) mod shape_view_representation_input;
 
 pub(crate) mod shape_view_representation_list;
 
+pub(crate) mod shape_view_sub_object_version_ids_list;
+
 pub(crate) mod shape_view_sub_objects_list;
 
 pub(crate) mod shape_allowed_value;
@@ -2324,6 +2326,8 @@ pub(crate) mod shape_glue_schemas;
 pub(crate) mod shape_glue_studio_path_list;
 
 pub(crate) mod shape_group_filters_list;
+
+pub(crate) mod shape_iceberg_encrypted_key;
 
 pub(crate) mod shape_iceberg_partition_field;
 

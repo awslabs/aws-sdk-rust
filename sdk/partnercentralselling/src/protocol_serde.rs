@@ -31,6 +31,8 @@ pub(crate) mod shape_associate_opportunity;
 
 pub(crate) mod shape_create_engagement;
 
+pub(crate) mod shape_create_engagement_context;
+
 pub(crate) mod shape_create_engagement_invitation;
 
 pub(crate) mod shape_create_opportunity;
@@ -71,6 +73,8 @@ pub(crate) mod shape_list_engagements;
 
 pub(crate) mod shape_list_opportunities;
 
+pub(crate) mod shape_list_opportunity_from_engagement_tasks;
+
 pub(crate) mod shape_list_resource_snapshot_jobs;
 
 pub(crate) mod shape_list_resource_snapshots;
@@ -87,6 +91,8 @@ pub(crate) mod shape_start_engagement_by_accepting_invitation_task;
 
 pub(crate) mod shape_start_engagement_from_opportunity_task;
 
+pub(crate) mod shape_start_opportunity_from_engagement_task;
+
 pub(crate) mod shape_start_resource_snapshot_job;
 
 pub(crate) mod shape_stop_resource_snapshot_job;
@@ -96,6 +102,8 @@ pub(crate) mod shape_submit_opportunity;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_engagement_context;
 
 pub(crate) mod shape_update_opportunity;
 
@@ -116,6 +124,8 @@ pub(crate) mod shape_assign_opportunity_input;
 pub(crate) mod shape_associate_opportunity_input;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_engagement_context_input;
 
 pub(crate) mod shape_create_engagement_input;
 
@@ -161,6 +171,8 @@ pub(crate) mod shape_list_engagements_input;
 
 pub(crate) mod shape_list_opportunities_input;
 
+pub(crate) mod shape_list_opportunity_from_engagement_tasks_input;
+
 pub(crate) mod shape_list_resource_snapshot_jobs_input;
 
 pub(crate) mod shape_list_resource_snapshots_input;
@@ -181,6 +193,8 @@ pub(crate) mod shape_start_engagement_by_accepting_invitation_task_input;
 
 pub(crate) mod shape_start_engagement_from_opportunity_task_input;
 
+pub(crate) mod shape_start_opportunity_from_engagement_task_input;
+
 pub(crate) mod shape_start_resource_snapshot_job_input;
 
 pub(crate) mod shape_stop_resource_snapshot_job_input;
@@ -192,6 +206,8 @@ pub(crate) mod shape_tag_resource_input;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_engagement_context_input;
 
 pub(crate) mod shape_update_opportunity_input;
 
@@ -219,6 +235,8 @@ pub(crate) mod shape_customer;
 
 pub(crate) mod shape_engagement_context_details;
 
+pub(crate) mod shape_engagement_context_payload;
+
 pub(crate) mod shape_engagement_contexts;
 
 pub(crate) mod shape_engagement_invitation_summaries;
@@ -242,6 +260,8 @@ pub(crate) mod shape_life_cycle;
 pub(crate) mod shape_list_engagement_by_accepting_invitation_task_summaries;
 
 pub(crate) mod shape_list_engagement_from_opportunity_task_summaries;
+
+pub(crate) mod shape_list_opportunity_from_engagement_task_summaries;
 
 pub(crate) mod shape_list_tasks_sort_base;
 
@@ -283,6 +303,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_update_engagement_context_payload;
+
 pub(crate) mod shape_validation_exception_error_list;
 
 pub(crate) mod shape_account;
@@ -293,6 +315,8 @@ pub(crate) mod shape_apn_programs;
 
 pub(crate) mod shape_aws_marketplace_offer_identifiers;
 
+pub(crate) mod shape_aws_marketplace_offer_set_identifiers;
+
 pub(crate) mod shape_aws_product_identifiers;
 
 pub(crate) mod shape_aws_team_member;
@@ -301,9 +325,9 @@ pub(crate) mod shape_channels;
 
 pub(crate) mod shape_customer_contacts_list;
 
-pub(crate) mod shape_delivery_models;
+pub(crate) mod shape_customer_projects_context;
 
-pub(crate) mod shape_engagement_context_payload;
+pub(crate) mod shape_delivery_models;
 
 pub(crate) mod shape_engagement_invitation_summary;
 
@@ -319,9 +343,15 @@ pub(crate) mod shape_expected_customer_spend;
 
 pub(crate) mod shape_expected_customer_spend_list;
 
+pub(crate) mod shape_lead_context;
+
+pub(crate) mod shape_lead_invitation_payload;
+
 pub(crate) mod shape_list_engagement_by_accepting_invitation_task_summary;
 
 pub(crate) mod shape_list_engagement_from_opportunity_task_summary;
+
+pub(crate) mod shape_list_opportunity_from_engagement_task_summary;
 
 pub(crate) mod shape_monetary_value;
 
@@ -347,17 +377,29 @@ pub(crate) mod shape_solution_base;
 
 pub(crate) mod shape_solution_identifiers;
 
+pub(crate) mod shape_update_lead_context;
+
 pub(crate) mod shape_use_cases;
 
 pub(crate) mod shape_validation_exception_error;
 
 pub(crate) mod shape_address;
 
-pub(crate) mod shape_customer_projects_context;
-
 pub(crate) mod shape_customer_summary;
 
+pub(crate) mod shape_engagement_context_type_list;
+
 pub(crate) mod shape_engagement_customer;
+
+pub(crate) mod shape_engagement_customer_project_details;
+
+pub(crate) mod shape_lead_customer;
+
+pub(crate) mod shape_lead_interaction;
+
+pub(crate) mod shape_lead_invitation_customer;
+
+pub(crate) mod shape_lead_invitation_interaction;
 
 pub(crate) mod shape_life_cycle_for_view;
 
@@ -377,8 +419,10 @@ pub(crate) mod shape_sender_contact_list;
 
 pub(crate) mod shape_account_summary;
 
-pub(crate) mod shape_engagement_customer_project_details;
+pub(crate) mod shape_address_summary;
+
+pub(crate) mod shape_lead_contact;
 
 pub(crate) mod shape_sender_contact;
 
-pub(crate) mod shape_address_summary;
+pub(crate) mod shape_lead_interaction_list;

@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_aliases_output_output_next_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_capacity_providers_output_output_next_marker(
+    input: &crate::operation::list_capacity_providers::ListCapacityProvidersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_code_signing_configs_output_output_next_marker(
     input: &crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -41,6 +51,16 @@ pub(crate) fn reflens_list_function_event_invoke_configs_output_output_next_mark
 
 pub(crate) fn reflens_list_function_url_configs_output_output_next_marker(
     input: &crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_function_versions_by_capacity_provider_output_output_next_marker(
+    input: &crate::operation::list_function_versions_by_capacity_provider::ListFunctionVersionsByCapacityProviderOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_marker {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -116,6 +136,13 @@ pub(crate) fn lens_list_aliases_output_output_aliases(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_capacity_providers_output_output_capacity_providers(
+    input: crate::operation::list_capacity_providers::ListCapacityProvidersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityProvider>> {
+    let input = input.capacity_providers;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_code_signing_configs_output_output_code_signing_configs(
     input: crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CodeSigningConfig>> {
@@ -141,6 +168,13 @@ pub(crate) fn lens_list_function_url_configs_output_output_function_url_configs(
     input: crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FunctionUrlConfig>> {
     let input = input.function_url_configs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_function_versions_by_capacity_provider_output_output_function_versions(
+    input: crate::operation::list_function_versions_by_capacity_provider::ListFunctionVersionsByCapacityProviderOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FunctionVersionsByCapacityProviderListItem>> {
+    let input = input.function_versions;
     ::std::option::Option::Some(input)
 }
 

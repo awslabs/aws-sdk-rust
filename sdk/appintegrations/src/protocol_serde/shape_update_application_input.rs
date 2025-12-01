@@ -15,59 +15,62 @@ pub fn ser_update_application_input_input(
         crate::protocol_serde::shape_application_source_config::ser_application_source_config(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.description {
-        object.key("Description").string(var_5.as_str());
+    if let Some(var_5) = &input.application_type {
+        object.key("ApplicationType").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.iframe_config {
+    if let Some(var_6) = &input.description {
+        object.key("Description").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.iframe_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("IframeConfig").start_object();
-        crate::protocol_serde::shape_iframe_config::ser_iframe_config(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("IframeConfig").start_object();
+        crate::protocol_serde::shape_iframe_config::ser_iframe_config(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.initialization_timeout {
+    if let Some(var_9) = &input.initialization_timeout {
         object.key("InitializationTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.is_service {
-        object.key("IsService").boolean(*var_9);
+    if let Some(var_10) = &input.is_service {
+        object.key("IsService").boolean(*var_10);
     }
-    if let Some(var_10) = &input.name {
-        object.key("Name").string(var_10.as_str());
+    if let Some(var_11) = &input.name {
+        object.key("Name").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.permissions {
-        let mut array_12 = object.key("Permissions").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.permissions {
+        let mut array_13 = object.key("Permissions").start_array();
+        for item_14 in var_12 {
             {
-                array_12.value().string(item_13.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_14) = &input.publications {
-        let mut array_15 = object.key("Publications").start_array();
-        for item_16 in var_14 {
-            {
-                #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_publication::ser_publication(&mut object_17, item_16)?;
-                object_17.finish();
-            }
-        }
-        array_15.finish();
-    }
-    if let Some(var_18) = &input.subscriptions {
-        let mut array_19 = object.key("Subscriptions").start_array();
-        for item_20 in var_18 {
+    if let Some(var_15) = &input.publications {
+        let mut array_16 = object.key("Publications").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_subscription::ser_subscription(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_publication::ser_publication(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_19.finish();
+        array_16.finish();
+    }
+    if let Some(var_19) = &input.subscriptions {
+        let mut array_20 = object.key("Subscriptions").start_array();
+        for item_21 in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_subscription::ser_subscription(&mut object_22, item_21)?;
+                object_22.finish();
+            }
+        }
+        array_20.finish();
     }
     Ok(())
 }

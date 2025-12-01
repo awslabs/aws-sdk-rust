@@ -38,6 +38,8 @@ pub struct AnalysisTemplate {
     pub validations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>,
     /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
     pub error_message_configuration: ::std::option::Option<crate::types::ErrorMessageConfiguration>,
+    /// <p>The parameters used to generate synthetic data for this analysis template.</p>
+    pub synthetic_data_parameters: ::std::option::Option<crate::types::SyntheticDataParameters>,
 }
 impl AnalysisTemplate {
     /// <p>The identifier for the analysis template.</p>
@@ -119,6 +121,10 @@ impl AnalysisTemplate {
     pub fn error_message_configuration(&self) -> ::std::option::Option<&crate::types::ErrorMessageConfiguration> {
         self.error_message_configuration.as_ref()
     }
+    /// <p>The parameters used to generate synthetic data for this analysis template.</p>
+    pub fn synthetic_data_parameters(&self) -> ::std::option::Option<&crate::types::SyntheticDataParameters> {
+        self.synthetic_data_parameters.as_ref()
+    }
 }
 impl AnalysisTemplate {
     /// Creates a new builder-style object to manufacture [`AnalysisTemplate`](crate::types::AnalysisTemplate).
@@ -148,6 +154,7 @@ pub struct AnalysisTemplateBuilder {
     pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
     pub(crate) validations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>,
     pub(crate) error_message_configuration: ::std::option::Option<crate::types::ErrorMessageConfiguration>,
+    pub(crate) synthetic_data_parameters: ::std::option::Option<crate::types::SyntheticDataParameters>,
 }
 impl AnalysisTemplateBuilder {
     /// <p>The identifier for the analysis template.</p>
@@ -412,6 +419,20 @@ impl AnalysisTemplateBuilder {
     pub fn get_error_message_configuration(&self) -> &::std::option::Option<crate::types::ErrorMessageConfiguration> {
         &self.error_message_configuration
     }
+    /// <p>The parameters used to generate synthetic data for this analysis template.</p>
+    pub fn synthetic_data_parameters(mut self, input: crate::types::SyntheticDataParameters) -> Self {
+        self.synthetic_data_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The parameters used to generate synthetic data for this analysis template.</p>
+    pub fn set_synthetic_data_parameters(mut self, input: ::std::option::Option<crate::types::SyntheticDataParameters>) -> Self {
+        self.synthetic_data_parameters = input;
+        self
+    }
+    /// <p>The parameters used to generate synthetic data for this analysis template.</p>
+    pub fn get_synthetic_data_parameters(&self) -> &::std::option::Option<crate::types::SyntheticDataParameters> {
+        &self.synthetic_data_parameters
+    }
     /// Consumes the builder and constructs a [`AnalysisTemplate`](crate::types::AnalysisTemplate).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::AnalysisTemplateBuilder::id)
@@ -493,6 +514,7 @@ impl AnalysisTemplateBuilder {
             analysis_parameters: self.analysis_parameters,
             validations: self.validations,
             error_message_configuration: self.error_message_configuration,
+            synthetic_data_parameters: self.synthetic_data_parameters,
         })
     }
 }

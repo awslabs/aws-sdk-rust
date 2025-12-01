@@ -10,6 +10,8 @@ pub struct ChannelSubtypeConfig {
     pub sms: ::std::option::Option<crate::types::SmsChannelSubtypeConfig>,
     /// Email Channel Subtype config
     pub email: ::std::option::Option<crate::types::EmailChannelSubtypeConfig>,
+    /// WhatsApp Channel Subtype config
+    pub whats_app: ::std::option::Option<crate::types::WhatsAppChannelSubtypeConfig>,
 }
 impl ChannelSubtypeConfig {
     /// Telephony Channel Subtype config
@@ -23,6 +25,10 @@ impl ChannelSubtypeConfig {
     /// Email Channel Subtype config
     pub fn email(&self) -> ::std::option::Option<&crate::types::EmailChannelSubtypeConfig> {
         self.email.as_ref()
+    }
+    /// WhatsApp Channel Subtype config
+    pub fn whats_app(&self) -> ::std::option::Option<&crate::types::WhatsAppChannelSubtypeConfig> {
+        self.whats_app.as_ref()
     }
 }
 impl ChannelSubtypeConfig {
@@ -39,6 +45,7 @@ pub struct ChannelSubtypeConfigBuilder {
     pub(crate) telephony: ::std::option::Option<crate::types::TelephonyChannelSubtypeConfig>,
     pub(crate) sms: ::std::option::Option<crate::types::SmsChannelSubtypeConfig>,
     pub(crate) email: ::std::option::Option<crate::types::EmailChannelSubtypeConfig>,
+    pub(crate) whats_app: ::std::option::Option<crate::types::WhatsAppChannelSubtypeConfig>,
 }
 impl ChannelSubtypeConfigBuilder {
     /// Telephony Channel Subtype config
@@ -83,12 +90,27 @@ impl ChannelSubtypeConfigBuilder {
     pub fn get_email(&self) -> &::std::option::Option<crate::types::EmailChannelSubtypeConfig> {
         &self.email
     }
+    /// WhatsApp Channel Subtype config
+    pub fn whats_app(mut self, input: crate::types::WhatsAppChannelSubtypeConfig) -> Self {
+        self.whats_app = ::std::option::Option::Some(input);
+        self
+    }
+    /// WhatsApp Channel Subtype config
+    pub fn set_whats_app(mut self, input: ::std::option::Option<crate::types::WhatsAppChannelSubtypeConfig>) -> Self {
+        self.whats_app = input;
+        self
+    }
+    /// WhatsApp Channel Subtype config
+    pub fn get_whats_app(&self) -> &::std::option::Option<crate::types::WhatsAppChannelSubtypeConfig> {
+        &self.whats_app
+    }
     /// Consumes the builder and constructs a [`ChannelSubtypeConfig`](crate::types::ChannelSubtypeConfig).
     pub fn build(self) -> crate::types::ChannelSubtypeConfig {
         crate::types::ChannelSubtypeConfig {
             telephony: self.telephony,
             sms: self.sms,
             email: self.email,
+            whats_app: self.whats_app,
         }
     }
 }

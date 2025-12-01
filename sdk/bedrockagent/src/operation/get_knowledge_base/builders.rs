@@ -22,7 +22,7 @@ impl crate::operation::get_knowledge_base::builders::GetKnowledgeBaseInputBuilde
 }
 /// Fluent builder constructing a request to `GetKnowledgeBase`.
 ///
-/// <p>Gets information about a knoweldge base.</p>
+/// <p>Gets information about a knowledge base.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetKnowledgeBaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

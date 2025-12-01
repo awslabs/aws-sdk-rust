@@ -259,6 +259,8 @@ pub enum CreateFunctionError {
     CodeStorageExceededException(crate::types::error::CodeStorageExceededException),
     /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.</p>
     CodeVerificationFailedException(crate::types::error::CodeVerificationFailedException),
+    /// <p>The maximum number of function versions that can be associated with a single capacity provider has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
+    FunctionVersionsPerCapacityProviderLimitExceededException(crate::types::error::FunctionVersionsPerCapacityProviderLimitExceededException),
     /// <p>The code signature failed the integrity check. If the integrity check fails, then Lambda blocks deployment, even if the code signing policy is set to WARN.</p>
     InvalidCodeSignatureException(crate::types::error::InvalidCodeSignatureException),
     /// <p>One of the parameters in the request is not valid.</p>
@@ -307,6 +309,7 @@ impl CreateFunctionError {
             Self::CodeSigningConfigNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CodeStorageExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CodeVerificationFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::FunctionVersionsPerCapacityProviderLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidCodeSignatureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -327,6 +330,10 @@ impl CreateFunctionError {
     /// Returns `true` if the error kind is `CreateFunctionError::CodeVerificationFailedException`.
     pub fn is_code_verification_failed_exception(&self) -> bool {
         matches!(self, Self::CodeVerificationFailedException(_))
+    }
+    /// Returns `true` if the error kind is `CreateFunctionError::FunctionVersionsPerCapacityProviderLimitExceededException`.
+    pub fn is_function_versions_per_capacity_provider_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::FunctionVersionsPerCapacityProviderLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateFunctionError::InvalidCodeSignatureException`.
     pub fn is_invalid_code_signature_exception(&self) -> bool {
@@ -359,6 +366,7 @@ impl ::std::error::Error for CreateFunctionError {
             Self::CodeSigningConfigNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::CodeStorageExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::CodeVerificationFailedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::FunctionVersionsPerCapacityProviderLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidCodeSignatureException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
@@ -375,6 +383,7 @@ impl ::std::fmt::Display for CreateFunctionError {
             Self::CodeSigningConfigNotFoundException(_inner) => _inner.fmt(f),
             Self::CodeStorageExceededException(_inner) => _inner.fmt(f),
             Self::CodeVerificationFailedException(_inner) => _inner.fmt(f),
+            Self::FunctionVersionsPerCapacityProviderLimitExceededException(_inner) => _inner.fmt(f),
             Self::InvalidCodeSignatureException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
@@ -405,6 +414,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateFunctio
             Self::CodeSigningConfigNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CodeStorageExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CodeVerificationFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FunctionVersionsPerCapacityProviderLimitExceededException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::InvalidCodeSignatureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

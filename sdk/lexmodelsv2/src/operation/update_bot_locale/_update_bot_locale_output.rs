@@ -17,6 +17,10 @@ pub struct UpdateBotLocaleOutput {
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    /// <p>The updated unified speech settings for the bot locale.</p>
+    pub unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    /// <p>The updated speech-to-text settings for the bot locale.</p>
+    pub speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
     pub bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
@@ -61,6 +65,14 @@ impl UpdateBotLocaleOutput {
     /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
     pub fn voice_settings(&self) -> ::std::option::Option<&crate::types::VoiceSettings> {
         self.voice_settings.as_ref()
+    }
+    /// <p>The updated unified speech settings for the bot locale.</p>
+    pub fn unified_speech_settings(&self) -> ::std::option::Option<&crate::types::UnifiedSpeechSettings> {
+        self.unified_speech_settings.as_ref()
+    }
+    /// <p>The updated speech-to-text settings for the bot locale.</p>
+    pub fn speech_recognition_settings(&self) -> ::std::option::Option<&crate::types::SpeechRecognitionSettings> {
+        self.speech_recognition_settings.as_ref()
     }
     /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
     pub fn bot_locale_status(&self) -> ::std::option::Option<&crate::types::BotLocaleStatus> {
@@ -118,6 +130,8 @@ pub struct UpdateBotLocaleOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    pub(crate) unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    pub(crate) speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     pub(crate) bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -225,6 +239,34 @@ impl UpdateBotLocaleOutputBuilder {
     /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
     pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
         &self.voice_settings
+    }
+    /// <p>The updated unified speech settings for the bot locale.</p>
+    pub fn unified_speech_settings(mut self, input: crate::types::UnifiedSpeechSettings) -> Self {
+        self.unified_speech_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated unified speech settings for the bot locale.</p>
+    pub fn set_unified_speech_settings(mut self, input: ::std::option::Option<crate::types::UnifiedSpeechSettings>) -> Self {
+        self.unified_speech_settings = input;
+        self
+    }
+    /// <p>The updated unified speech settings for the bot locale.</p>
+    pub fn get_unified_speech_settings(&self) -> &::std::option::Option<crate::types::UnifiedSpeechSettings> {
+        &self.unified_speech_settings
+    }
+    /// <p>The updated speech-to-text settings for the bot locale.</p>
+    pub fn speech_recognition_settings(mut self, input: crate::types::SpeechRecognitionSettings) -> Self {
+        self.speech_recognition_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated speech-to-text settings for the bot locale.</p>
+    pub fn set_speech_recognition_settings(mut self, input: ::std::option::Option<crate::types::SpeechRecognitionSettings>) -> Self {
+        self.speech_recognition_settings = input;
+        self
+    }
+    /// <p>The updated speech-to-text settings for the bot locale.</p>
+    pub fn get_speech_recognition_settings(&self) -> &::std::option::Option<crate::types::SpeechRecognitionSettings> {
+        &self.speech_recognition_settings
     }
     /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
     pub fn bot_locale_status(mut self, input: crate::types::BotLocaleStatus) -> Self {
@@ -355,6 +397,8 @@ impl UpdateBotLocaleOutputBuilder {
             description: self.description,
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
+            unified_speech_settings: self.unified_speech_settings,
+            speech_recognition_settings: self.speech_recognition_settings,
             bot_locale_status: self.bot_locale_status,
             failure_reasons: self.failure_reasons,
             creation_date_time: self.creation_date_time,

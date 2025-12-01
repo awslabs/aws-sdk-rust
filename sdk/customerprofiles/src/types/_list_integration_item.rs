@@ -12,7 +12,7 @@ pub struct ListIntegrationItem {
     pub object_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The timestamp of when the domain was most recently edited.</p>
+    /// <p>The timestamp of when the integration was most recently edited.</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -26,6 +26,8 @@ pub struct ListIntegrationItem {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of unique names for active event triggers associated with the integration.</p>
     pub event_trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The scope or boundary of the integration item's applicability.</p>
+    pub scope: ::std::option::Option<crate::types::Scope>,
 }
 impl ListIntegrationItem {
     /// <p>The unique name of the domain.</p>
@@ -46,7 +48,7 @@ impl ListIntegrationItem {
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>The timestamp of when the domain was most recently edited.</p>
+    /// <p>The timestamp of when the integration was most recently edited.</p>
     pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_at
     }
@@ -76,6 +78,10 @@ impl ListIntegrationItem {
     pub fn event_trigger_names(&self) -> &[::std::string::String] {
         self.event_trigger_names.as_deref().unwrap_or_default()
     }
+    /// <p>The scope or boundary of the integration item's applicability.</p>
+    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+        self.scope.as_ref()
+    }
 }
 impl ListIntegrationItem {
     /// Creates a new builder-style object to manufacture [`ListIntegrationItem`](crate::types::ListIntegrationItem).
@@ -99,6 +105,7 @@ pub struct ListIntegrationItemBuilder {
     pub(crate) is_unstructured: ::std::option::Option<bool>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scope: ::std::option::Option<crate::types::Scope>,
 }
 impl ListIntegrationItemBuilder {
     /// <p>The unique name of the domain.</p>
@@ -160,18 +167,18 @@ impl ListIntegrationItemBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The timestamp of when the domain was most recently edited.</p>
+    /// <p>The timestamp of when the integration was most recently edited.</p>
     /// This field is required.
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp of when the domain was most recently edited.</p>
+    /// <p>The timestamp of when the integration was most recently edited.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>The timestamp of when the domain was most recently edited.</p>
+    /// <p>The timestamp of when the integration was most recently edited.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
@@ -284,6 +291,20 @@ impl ListIntegrationItemBuilder {
     pub fn get_event_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_trigger_names
     }
+    /// <p>The scope or boundary of the integration item's applicability.</p>
+    pub fn scope(mut self, input: crate::types::Scope) -> Self {
+        self.scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope or boundary of the integration item's applicability.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
+        self.scope = input;
+        self
+    }
+    /// <p>The scope or boundary of the integration item's applicability.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
+    }
     /// Consumes the builder and constructs a [`ListIntegrationItem`](crate::types::ListIntegrationItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_name`](crate::types::builders::ListIntegrationItemBuilder::domain_name)
@@ -323,6 +344,7 @@ impl ListIntegrationItemBuilder {
             is_unstructured: self.is_unstructured,
             role_arn: self.role_arn,
             event_trigger_names: self.event_trigger_names,
+            scope: self.scope,
         })
     }
 }

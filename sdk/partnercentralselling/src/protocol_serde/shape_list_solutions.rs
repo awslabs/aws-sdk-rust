@@ -62,6 +62,21 @@ pub fn de_list_solutions_http_error(
             }
             tmp
         }),
+        "ThrottlingException" => crate::operation::list_solutions::ListSolutionsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_solutions::ListSolutionsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ValidationException" => crate::operation::list_solutions::ListSolutionsError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

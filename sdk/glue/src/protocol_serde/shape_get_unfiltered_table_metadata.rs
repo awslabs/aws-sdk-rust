@@ -220,6 +220,9 @@ pub(crate) fn de_get_unfiltered_table_metadata(
                 "IsMultiDialectView" => {
                     builder = builder.set_is_multi_dialect_view(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "IsMaterializedView" => {
+                    builder = builder.set_is_materialized_view(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "ResourceArn" => {
                     builder = builder.set_resource_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

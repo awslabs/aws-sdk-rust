@@ -185,6 +185,24 @@ pub(crate) fn put_selling_system_settings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_engagement_context_output_output_correct_errors(
+    mut builder: crate::operation::update_engagement_context::builders::UpdateEngagementContextOutputBuilder,
+) -> crate::operation::update_engagement_context::builders::UpdateEngagementContextOutputBuilder {
+    if builder.engagement_id.is_none() {
+        builder.engagement_id = Some(Default::default())
+    }
+    if builder.engagement_arn.is_none() {
+        builder.engagement_arn = Some(Default::default())
+    }
+    if builder.engagement_last_modified_at.is_none() {
+        builder.engagement_last_modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.context_id.is_none() {
+        builder.context_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_opportunity_output_output_correct_errors(
     mut builder: crate::operation::update_opportunity::builders::UpdateOpportunityOutputBuilder,
 ) -> crate::operation::update_opportunity::builders::UpdateOpportunityOutputBuilder {
@@ -239,6 +257,24 @@ pub(crate) fn engagement_resource_association_summary_correct_errors(
 ) -> crate::types::builders::EngagementResourceAssociationSummaryBuilder {
     if builder.catalog.is_none() {
         builder.catalog = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn lead_invitation_payload_correct_errors(
+    mut builder: crate::types::builders::LeadInvitationPayloadBuilder,
+) -> crate::types::builders::LeadInvitationPayloadBuilder {
+    if builder.customer.is_none() {
+        builder.customer = {
+            let builder = crate::types::builders::LeadInvitationCustomerBuilder::default();
+            crate::serde_util::lead_invitation_customer_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.interaction.is_none() {
+        builder.interaction = {
+            let builder = crate::types::builders::LeadInvitationInteractionBuilder::default();
+            crate::serde_util::lead_invitation_interaction_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -365,6 +401,36 @@ pub(crate) fn expected_customer_spend_correct_errors(
     builder
 }
 
+pub(crate) fn lead_invitation_customer_correct_errors(
+    mut builder: crate::types::builders::LeadInvitationCustomerBuilder,
+) -> crate::types::builders::LeadInvitationCustomerBuilder {
+    if builder.company_name.is_none() {
+        builder.company_name = Some(Default::default())
+    }
+    if builder.country_code.is_none() {
+        builder.country_code = "no value was set".parse::<crate::types::CountryCode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn lead_invitation_interaction_correct_errors(
+    mut builder: crate::types::builders::LeadInvitationInteractionBuilder,
+) -> crate::types::builders::LeadInvitationInteractionBuilder {
+    if builder.source_type.is_none() {
+        builder.source_type = Some(Default::default())
+    }
+    if builder.source_id.is_none() {
+        builder.source_id = Some(Default::default())
+    }
+    if builder.source_name.is_none() {
+        builder.source_name = Some(Default::default())
+    }
+    if builder.contact_business_title.is_none() {
+        builder.contact_business_title = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn next_steps_history_correct_errors(
     mut builder: crate::types::builders::NextStepsHistoryBuilder,
 ) -> crate::types::builders::NextStepsHistoryBuilder {
@@ -416,6 +482,19 @@ pub(crate) fn account_summary_correct_errors(
     builder
 }
 
+pub(crate) fn lead_context_correct_errors(mut builder: crate::types::builders::LeadContextBuilder) -> crate::types::builders::LeadContextBuilder {
+    if builder.customer.is_none() {
+        builder.customer = {
+            let builder = crate::types::builders::LeadCustomerBuilder::default();
+            crate::serde_util::lead_customer_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.interactions.is_none() {
+        builder.interactions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn sender_contact_correct_errors(
     mut builder: crate::types::builders::SenderContactBuilder,
 ) -> crate::types::builders::SenderContactBuilder {
@@ -436,6 +515,59 @@ pub(crate) fn engagement_customer_project_details_correct_errors(
     }
     if builder.target_completion_date.is_none() {
         builder.target_completion_date = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn lead_customer_correct_errors(mut builder: crate::types::builders::LeadCustomerBuilder) -> crate::types::builders::LeadCustomerBuilder {
+    if builder.company_name.is_none() {
+        builder.company_name = Some(Default::default())
+    }
+    if builder.address.is_none() {
+        builder.address = {
+            let builder = crate::types::builders::AddressSummaryBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn lead_interaction_correct_errors(
+    mut builder: crate::types::builders::LeadInteractionBuilder,
+) -> crate::types::builders::LeadInteractionBuilder {
+    if builder.source_type.is_none() {
+        builder.source_type = Some(Default::default())
+    }
+    if builder.source_id.is_none() {
+        builder.source_id = Some(Default::default())
+    }
+    if builder.source_name.is_none() {
+        builder.source_name = Some(Default::default())
+    }
+    if builder.customer_action.is_none() {
+        builder.customer_action = Some(Default::default())
+    }
+    if builder.contact.is_none() {
+        builder.contact = {
+            let builder = crate::types::builders::LeadContactBuilder::default();
+            crate::serde_util::lead_contact_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn lead_contact_correct_errors(mut builder: crate::types::builders::LeadContactBuilder) -> crate::types::builders::LeadContactBuilder {
+    if builder.business_title.is_none() {
+        builder.business_title = Some(Default::default())
+    }
+    if builder.email.is_none() {
+        builder.email = Some(Default::default())
+    }
+    if builder.first_name.is_none() {
+        builder.first_name = Some(Default::default())
+    }
+    if builder.last_name.is_none() {
+        builder.last_name = Some(Default::default())
     }
     builder
 }

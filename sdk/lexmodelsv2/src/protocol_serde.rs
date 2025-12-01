@@ -599,6 +599,8 @@ pub(crate) mod shape_slot_value_elicitation_setting;
 
 pub(crate) mod shape_slot_value_selection_setting;
 
+pub(crate) mod shape_speech_recognition_settings;
+
 pub(crate) mod shape_sub_slot_setting;
 
 pub(crate) mod shape_tag_map;
@@ -628,6 +630,8 @@ pub(crate) mod shape_test_set_summary_list;
 pub(crate) mod shape_test_set_turn_record_list;
 
 pub(crate) mod shape_transcript_source_setting;
+
+pub(crate) mod shape_unified_speech_settings;
 
 pub(crate) mod shape_utterance_aggregation_duration;
 
@@ -775,6 +779,10 @@ pub(crate) mod shape_slot_value_regex_filter;
 
 pub(crate) mod shape_specifications;
 
+pub(crate) mod shape_speech_foundation_model;
+
+pub(crate) mod shape_speech_model_config;
+
 pub(crate) mod shape_sub_slot_specification_map;
 
 pub(crate) mod shape_sub_slot_type_composition;
@@ -840,6 +848,8 @@ pub(crate) mod shape_conditional_branches;
 pub(crate) mod shape_conversation_level_test_result_item_list;
 
 pub(crate) mod shape_conversation_logs_data_source_filter_by;
+
+pub(crate) mod shape_deepgram_speech_model_config;
 
 pub(crate) mod shape_default_conditional_branch;
 

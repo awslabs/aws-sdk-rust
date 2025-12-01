@@ -15,5 +15,10 @@ pub fn ser_self_service_conversation_history(
     if let Some(var_2) = &input.bot_response {
         object.key("botResponse").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.timestamp {
+        object
+            .key("timestamp")
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
     Ok(())
 }

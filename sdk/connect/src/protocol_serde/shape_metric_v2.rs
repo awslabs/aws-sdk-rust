@@ -18,17 +18,20 @@ pub fn ser_metric_v2(
         }
         array_3.finish();
     }
-    if let Some(var_6) = &input.metric_filters {
-        let mut array_7 = object.key("MetricFilters").start_array();
-        for item_8 in var_6 {
+    if let Some(var_6) = &input.metric_id {
+        object.key("MetricId").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.metric_filters {
+        let mut array_8 = object.key("MetricFilters").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_metric_filter_v2::ser_metric_filter_v2(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_metric_filter_v2::ser_metric_filter_v2(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
     Ok(())
 }
@@ -57,6 +60,13 @@ where
                         }
                         "Threshold" => {
                             builder = builder.set_threshold(crate::protocol_serde::shape_threshold_collections::de_threshold_collections(tokens)?);
+                        }
+                        "MetricId" => {
+                            builder = builder.set_metric_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         "MetricFilters" => {
                             builder =

@@ -38,6 +38,8 @@ pub struct RecordingInfo {
     pub status: ::std::option::Option<crate::types::RecordingStatus>,
     /// <p>If the recording/transcript was deleted, this is the reason entered for the deletion.</p>
     pub deletion_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The location, in Amazon S3, for the unprocessed transcript if any media processing was performed.</p>
+    pub unprocessed_transcript_location: ::std::option::Option<::std::string::String>,
 }
 impl RecordingInfo {
     /// <p>Where the recording/transcript is stored.</p>
@@ -94,6 +96,10 @@ impl RecordingInfo {
     pub fn deletion_reason(&self) -> ::std::option::Option<&str> {
         self.deletion_reason.as_deref()
     }
+    /// <p>The location, in Amazon S3, for the unprocessed transcript if any media processing was performed.</p>
+    pub fn unprocessed_transcript_location(&self) -> ::std::option::Option<&str> {
+        self.unprocessed_transcript_location.as_deref()
+    }
 }
 impl RecordingInfo {
     /// Creates a new builder-style object to manufacture [`RecordingInfo`](crate::types::RecordingInfo).
@@ -116,6 +122,7 @@ pub struct RecordingInfoBuilder {
     pub(crate) stop_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::RecordingStatus>,
     pub(crate) deletion_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) unprocessed_transcript_location: ::std::option::Option<::std::string::String>,
 }
 impl RecordingInfoBuilder {
     /// <p>Where the recording/transcript is stored.</p>
@@ -300,6 +307,20 @@ impl RecordingInfoBuilder {
     pub fn get_deletion_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.deletion_reason
     }
+    /// <p>The location, in Amazon S3, for the unprocessed transcript if any media processing was performed.</p>
+    pub fn unprocessed_transcript_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unprocessed_transcript_location = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The location, in Amazon S3, for the unprocessed transcript if any media processing was performed.</p>
+    pub fn set_unprocessed_transcript_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.unprocessed_transcript_location = input;
+        self
+    }
+    /// <p>The location, in Amazon S3, for the unprocessed transcript if any media processing was performed.</p>
+    pub fn get_unprocessed_transcript_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unprocessed_transcript_location
+    }
     /// Consumes the builder and constructs a [`RecordingInfo`](crate::types::RecordingInfo).
     pub fn build(self) -> crate::types::RecordingInfo {
         crate::types::RecordingInfo {
@@ -313,6 +334,7 @@ impl RecordingInfoBuilder {
             stop_timestamp: self.stop_timestamp,
             status: self.status,
             deletion_reason: self.deletion_reason,
+            unprocessed_transcript_location: self.unprocessed_transcript_location,
         }
     }
 }

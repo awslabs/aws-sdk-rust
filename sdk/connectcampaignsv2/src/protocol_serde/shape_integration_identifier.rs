@@ -19,6 +19,12 @@ pub fn ser_integration_identifier(
             crate::protocol_serde::shape_q_connect_integration_identifier::ser_q_connect_integration_identifier(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::IntegrationIdentifier::Lambda(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("lambda").start_object();
+            crate::protocol_serde::shape_lambda_integration_identifier::ser_lambda_integration_identifier(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::IntegrationIdentifier::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "IntegrationIdentifier",

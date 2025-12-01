@@ -222,6 +222,18 @@ where
                         "LoggingConfig" => {
                             builder = builder.set_logging_config(crate::protocol_serde::shape_logging_config::de_logging_config(tokens)?);
                         }
+                        "CapacityProviderConfig" => {
+                            builder = builder.set_capacity_provider_config(
+                                crate::protocol_serde::shape_capacity_provider_config::de_capacity_provider_config(tokens)?,
+                            );
+                        }
+                        "ConfigSha256" => {
+                            builder = builder.set_config_sha256(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "TenancyConfig" => {
                             builder = builder.set_tenancy_config(crate::protocol_serde::shape_tenancy_config::de_tenancy_config(tokens)?);
                         }

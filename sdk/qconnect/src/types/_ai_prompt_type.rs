@@ -13,11 +13,14 @@
 /// # let aiprompttype = unimplemented!();
 /// match aiprompttype {
 ///     AiPromptType::AnswerGeneration => { /* ... */ },
+///     AiPromptType::CaseSummarization => { /* ... */ },
 ///     AiPromptType::EmailGenerativeAnswer => { /* ... */ },
 ///     AiPromptType::EmailOverview => { /* ... */ },
 ///     AiPromptType::EmailQueryReformulation => { /* ... */ },
 ///     AiPromptType::EmailResponse => { /* ... */ },
 ///     AiPromptType::IntentLabelingGeneration => { /* ... */ },
+///     AiPromptType::NoteTaking => { /* ... */ },
+///     AiPromptType::Orchestration => { /* ... */ },
 ///     AiPromptType::QueryReformulation => { /* ... */ },
 ///     AiPromptType::SelfServiceAnswerGeneration => { /* ... */ },
 ///     AiPromptType::SelfServicePreProcessing => { /* ... */ },
@@ -52,6 +55,8 @@ pub enum AiPromptType {
     #[allow(missing_docs)] // documentation missing in model
     AnswerGeneration,
     #[allow(missing_docs)] // documentation missing in model
+    CaseSummarization,
+    #[allow(missing_docs)] // documentation missing in model
     EmailGenerativeAnswer,
     #[allow(missing_docs)] // documentation missing in model
     EmailOverview,
@@ -61,6 +66,10 @@ pub enum AiPromptType {
     EmailResponse,
     #[allow(missing_docs)] // documentation missing in model
     IntentLabelingGeneration,
+    #[allow(missing_docs)] // documentation missing in model
+    NoteTaking,
+    #[allow(missing_docs)] // documentation missing in model
+    Orchestration,
     #[allow(missing_docs)] // documentation missing in model
     QueryReformulation,
     #[allow(missing_docs)] // documentation missing in model
@@ -75,11 +84,14 @@ impl ::std::convert::From<&str> for AiPromptType {
     fn from(s: &str) -> Self {
         match s {
             "ANSWER_GENERATION" => AiPromptType::AnswerGeneration,
+            "CASE_SUMMARIZATION" => AiPromptType::CaseSummarization,
             "EMAIL_GENERATIVE_ANSWER" => AiPromptType::EmailGenerativeAnswer,
             "EMAIL_OVERVIEW" => AiPromptType::EmailOverview,
             "EMAIL_QUERY_REFORMULATION" => AiPromptType::EmailQueryReformulation,
             "EMAIL_RESPONSE" => AiPromptType::EmailResponse,
             "INTENT_LABELING_GENERATION" => AiPromptType::IntentLabelingGeneration,
+            "NOTE_TAKING" => AiPromptType::NoteTaking,
+            "ORCHESTRATION" => AiPromptType::Orchestration,
             "QUERY_REFORMULATION" => AiPromptType::QueryReformulation,
             "SELF_SERVICE_ANSWER_GENERATION" => AiPromptType::SelfServiceAnswerGeneration,
             "SELF_SERVICE_PRE_PROCESSING" => AiPromptType::SelfServicePreProcessing,
@@ -99,11 +111,14 @@ impl AiPromptType {
     pub fn as_str(&self) -> &str {
         match self {
             AiPromptType::AnswerGeneration => "ANSWER_GENERATION",
+            AiPromptType::CaseSummarization => "CASE_SUMMARIZATION",
             AiPromptType::EmailGenerativeAnswer => "EMAIL_GENERATIVE_ANSWER",
             AiPromptType::EmailOverview => "EMAIL_OVERVIEW",
             AiPromptType::EmailQueryReformulation => "EMAIL_QUERY_REFORMULATION",
             AiPromptType::EmailResponse => "EMAIL_RESPONSE",
             AiPromptType::IntentLabelingGeneration => "INTENT_LABELING_GENERATION",
+            AiPromptType::NoteTaking => "NOTE_TAKING",
+            AiPromptType::Orchestration => "ORCHESTRATION",
             AiPromptType::QueryReformulation => "QUERY_REFORMULATION",
             AiPromptType::SelfServiceAnswerGeneration => "SELF_SERVICE_ANSWER_GENERATION",
             AiPromptType::SelfServicePreProcessing => "SELF_SERVICE_PRE_PROCESSING",
@@ -114,11 +129,14 @@ impl AiPromptType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ANSWER_GENERATION",
+            "CASE_SUMMARIZATION",
             "EMAIL_GENERATIVE_ANSWER",
             "EMAIL_OVERVIEW",
             "EMAIL_QUERY_REFORMULATION",
             "EMAIL_RESPONSE",
             "INTENT_LABELING_GENERATION",
+            "NOTE_TAKING",
+            "ORCHESTRATION",
             "QUERY_REFORMULATION",
             "SELF_SERVICE_ANSWER_GENERATION",
             "SELF_SERVICE_PRE_PROCESSING",
@@ -146,11 +164,14 @@ impl ::std::fmt::Display for AiPromptType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AiPromptType::AnswerGeneration => write!(f, "ANSWER_GENERATION"),
+            AiPromptType::CaseSummarization => write!(f, "CASE_SUMMARIZATION"),
             AiPromptType::EmailGenerativeAnswer => write!(f, "EMAIL_GENERATIVE_ANSWER"),
             AiPromptType::EmailOverview => write!(f, "EMAIL_OVERVIEW"),
             AiPromptType::EmailQueryReformulation => write!(f, "EMAIL_QUERY_REFORMULATION"),
             AiPromptType::EmailResponse => write!(f, "EMAIL_RESPONSE"),
             AiPromptType::IntentLabelingGeneration => write!(f, "INTENT_LABELING_GENERATION"),
+            AiPromptType::NoteTaking => write!(f, "NOTE_TAKING"),
+            AiPromptType::Orchestration => write!(f, "ORCHESTRATION"),
             AiPromptType::QueryReformulation => write!(f, "QUERY_REFORMULATION"),
             AiPromptType::SelfServiceAnswerGeneration => write!(f, "SELF_SERVICE_ANSWER_GENERATION"),
             AiPromptType::SelfServicePreProcessing => write!(f, "SELF_SERVICE_PRE_PROCESSING"),

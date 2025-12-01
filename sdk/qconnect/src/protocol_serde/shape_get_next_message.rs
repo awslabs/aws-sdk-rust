@@ -47,6 +47,22 @@ pub fn de_get_next_message_http_error(
             }
             tmp
         }),
+        "UnprocessableContentException" => crate::operation::get_next_message::GetNextMessageError::UnprocessableContentException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnprocessableContentExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_unprocessable_content_exception::de_unprocessable_content_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_next_message::GetNextMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ValidationException" => crate::operation::get_next_message::GetNextMessageError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -98,6 +114,9 @@ pub(crate) fn de_get_next_message(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "chunkedResponseTerminated" => {
+                    builder = builder.set_chunked_response_terminated(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "conversationSessionData" => {
                     builder = builder.set_conversation_session_data(
                         crate::protocol_serde::shape_runtime_session_data_list::de_runtime_session_data_list(tokens)?,

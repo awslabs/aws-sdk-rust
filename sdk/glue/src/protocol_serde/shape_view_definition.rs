@@ -24,8 +24,41 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ViewVersionId" => {
+                            builder = builder.set_view_version_id(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ViewVersionToken" => {
+                            builder = builder.set_view_version_token(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "RefreshSeconds" => {
+                            builder = builder.set_refresh_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "LastRefreshType" => {
+                            builder = builder.set_last_refresh_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LastRefreshType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "SubObjects" => {
                             builder = builder.set_sub_objects(crate::protocol_serde::shape_view_sub_objects_list::de_view_sub_objects_list(tokens)?);
+                        }
+                        "SubObjectVersionIds" => {
+                            builder = builder.set_sub_object_version_ids(
+                                crate::protocol_serde::shape_view_sub_object_version_ids_list::de_view_sub_object_version_ids_list(tokens)?,
+                            );
                         }
                         "Representations" => {
                             builder = builder.set_representations(

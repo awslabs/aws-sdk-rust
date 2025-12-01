@@ -19,6 +19,22 @@ pub fn ser_training_data_config(
         }
         object_2.finish();
     }
+    if let Some(var_7) = &input.included_dataset_columns {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("includedDatasetColumns").start_object();
+        for (key_9, value_10) in var_7 {
+            {
+                let mut array_11 = object_8.key(key_9.as_str()).start_array();
+                for item_12 in value_10 {
+                    {
+                        array_11.value().string(item_12.as_str());
+                    }
+                }
+                array_11.finish();
+            }
+        }
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +56,11 @@ where
                         "excludedDatasetColumns" => {
                             builder = builder.set_excluded_dataset_columns(
                                 crate::protocol_serde::shape_excluded_dataset_columns::de_excluded_dataset_columns(tokens)?,
+                            );
+                        }
+                        "includedDatasetColumns" => {
+                            builder = builder.set_included_dataset_columns(
+                                crate::protocol_serde::shape_included_dataset_columns::de_included_dataset_columns(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

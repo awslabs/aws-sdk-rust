@@ -82,6 +82,11 @@ where
                                 crate::protocol_serde::shape_ai_prompt_template_configuration::de_ai_prompt_template_configuration(tokens)?,
                             );
                         }
+                        "inferenceConfiguration" => {
+                            builder = builder.set_inference_configuration(
+                                crate::protocol_serde::shape_ai_prompt_inference_configuration::de_ai_prompt_inference_configuration(tokens)?,
+                            );
+                        }
                         "modifiedTime" => {
                             builder = builder.set_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

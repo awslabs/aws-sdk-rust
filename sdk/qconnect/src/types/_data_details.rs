@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DataDetails {
+    /// <p>Details about case summarization chunk data.</p>
+    CaseSummarizationChunkData(crate::types::CaseSummarizationChunkDataDetails),
     /// <p>Details about the content data.</p>
     ContentData(crate::types::ContentDataDetails),
     /// <p>Streaming chunk data for email generative answers containing partial knowledge-based response content.</p>
@@ -18,8 +20,14 @@ pub enum DataDetails {
     GenerativeData(crate::types::GenerativeDataDetails),
     /// <p>Details about the intent data.</p>
     IntentDetectedData(crate::types::IntentDetectedDataDetails),
+    /// <p>Details about notes chunk data.</p>
+    NotesChunkData(crate::types::NotesChunkDataDetails),
+    /// <p>Details about notes data.</p>
+    NotesData(crate::types::NotesDataDetails),
     /// <p>Details about the content data.</p>
     SourceContentData(crate::types::SourceContentDataDetails),
+    /// <p>Details about suggested message data.</p>
+    SuggestedMessageData(crate::types::SuggestedMessageDataDetails),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -31,6 +39,19 @@ pub enum DataDetails {
     Unknown,
 }
 impl DataDetails {
+    /// Tries to convert the enum instance into [`CaseSummarizationChunkData`](crate::types::DataDetails::CaseSummarizationChunkData), extracting the inner [`CaseSummarizationChunkDataDetails`](crate::types::CaseSummarizationChunkDataDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_case_summarization_chunk_data(&self) -> ::std::result::Result<&crate::types::CaseSummarizationChunkDataDetails, &Self> {
+        if let DataDetails::CaseSummarizationChunkData(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CaseSummarizationChunkData`](crate::types::DataDetails::CaseSummarizationChunkData).
+    pub fn is_case_summarization_chunk_data(&self) -> bool {
+        self.as_case_summarization_chunk_data().is_ok()
+    }
     /// Tries to convert the enum instance into [`ContentData`](crate::types::DataDetails::ContentData), extracting the inner [`ContentDataDetails`](crate::types::ContentDataDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_content_data(&self) -> ::std::result::Result<&crate::types::ContentDataDetails, &Self> {
@@ -122,6 +143,32 @@ impl DataDetails {
     pub fn is_intent_detected_data(&self) -> bool {
         self.as_intent_detected_data().is_ok()
     }
+    /// Tries to convert the enum instance into [`NotesChunkData`](crate::types::DataDetails::NotesChunkData), extracting the inner [`NotesChunkDataDetails`](crate::types::NotesChunkDataDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_notes_chunk_data(&self) -> ::std::result::Result<&crate::types::NotesChunkDataDetails, &Self> {
+        if let DataDetails::NotesChunkData(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`NotesChunkData`](crate::types::DataDetails::NotesChunkData).
+    pub fn is_notes_chunk_data(&self) -> bool {
+        self.as_notes_chunk_data().is_ok()
+    }
+    /// Tries to convert the enum instance into [`NotesData`](crate::types::DataDetails::NotesData), extracting the inner [`NotesDataDetails`](crate::types::NotesDataDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_notes_data(&self) -> ::std::result::Result<&crate::types::NotesDataDetails, &Self> {
+        if let DataDetails::NotesData(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`NotesData`](crate::types::DataDetails::NotesData).
+    pub fn is_notes_data(&self) -> bool {
+        self.as_notes_data().is_ok()
+    }
     /// Tries to convert the enum instance into [`SourceContentData`](crate::types::DataDetails::SourceContentData), extracting the inner [`SourceContentDataDetails`](crate::types::SourceContentDataDetails).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_source_content_data(&self) -> ::std::result::Result<&crate::types::SourceContentDataDetails, &Self> {
@@ -134,6 +181,19 @@ impl DataDetails {
     /// Returns true if this is a [`SourceContentData`](crate::types::DataDetails::SourceContentData).
     pub fn is_source_content_data(&self) -> bool {
         self.as_source_content_data().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SuggestedMessageData`](crate::types::DataDetails::SuggestedMessageData), extracting the inner [`SuggestedMessageDataDetails`](crate::types::SuggestedMessageDataDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_suggested_message_data(&self) -> ::std::result::Result<&crate::types::SuggestedMessageDataDetails, &Self> {
+        if let DataDetails::SuggestedMessageData(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SuggestedMessageData`](crate::types::DataDetails::SuggestedMessageData).
+    pub fn is_suggested_message_data(&self) -> bool {
+        self.as_suggested_message_data().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

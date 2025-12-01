@@ -24,6 +24,7 @@ pub struct CreateApplicationInput {
     /// <p>The configuration of events or requests that the application has access to.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub is_service: ::std::option::Option<bool>,
     /// <p>The maximum time in milliseconds allowed to establish a connection with the workspace.</p>
     pub initialization_timeout: ::std::option::Option<i32>,
@@ -31,6 +32,8 @@ pub struct CreateApplicationInput {
     pub application_config: ::std::option::Option<crate::types::ApplicationConfig>,
     /// <p>The iframe configuration for the application.</p>
     pub iframe_config: ::std::option::Option<crate::types::IframeConfig>,
+    /// <p>The type of application.</p>
+    pub application_type: ::std::option::Option<crate::types::ApplicationType>,
 }
 impl CreateApplicationInput {
     /// <p>The name of the application.</p>
@@ -78,6 +81,7 @@ impl CreateApplicationInput {
         self.permissions.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn is_service(&self) -> ::std::option::Option<bool> {
         self.is_service
     }
@@ -92,6 +96,10 @@ impl CreateApplicationInput {
     /// <p>The iframe configuration for the application.</p>
     pub fn iframe_config(&self) -> ::std::option::Option<&crate::types::IframeConfig> {
         self.iframe_config.as_ref()
+    }
+    /// <p>The type of application.</p>
+    pub fn application_type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
+        self.application_type.as_ref()
     }
 }
 impl CreateApplicationInput {
@@ -118,6 +126,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) initialization_timeout: ::std::option::Option<i32>,
     pub(crate) application_config: ::std::option::Option<crate::types::ApplicationConfig>,
     pub(crate) iframe_config: ::std::option::Option<crate::types::IframeConfig>,
+    pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application.</p>
@@ -280,16 +289,19 @@ impl CreateApplicationInputBuilder {
         &self.permissions
     }
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn is_service(mut self, input: bool) -> Self {
         self.is_service = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn set_is_service(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_service = input;
         self
     }
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn get_is_service(&self) -> &::std::option::Option<bool> {
         &self.is_service
     }
@@ -335,6 +347,20 @@ impl CreateApplicationInputBuilder {
     pub fn get_iframe_config(&self) -> &::std::option::Option<crate::types::IframeConfig> {
         &self.iframe_config
     }
+    /// <p>The type of application.</p>
+    pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
+        self.application_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of application.</p>
+    pub fn set_application_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
+        self.application_type = input;
+        self
+    }
+    /// <p>The type of application.</p>
+    pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        &self.application_type
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -353,6 +379,7 @@ impl CreateApplicationInputBuilder {
             initialization_timeout: self.initialization_timeout,
             application_config: self.application_config,
             iframe_config: self.iframe_config,
+            application_type: self.application_type,
         })
     }
 }

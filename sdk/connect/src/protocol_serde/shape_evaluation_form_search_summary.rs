@@ -105,6 +105,20 @@ where
                         "AutoEvaluationEnabled" => {
                             builder = builder.set_auto_evaluation_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "EvaluationFormLanguage" => {
+                            builder = builder.set_evaluation_form_language(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EvaluationFormLanguageCode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ContactInteractionType" => {
+                            builder = builder.set_contact_interaction_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ContactInteractionType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }

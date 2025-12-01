@@ -250,6 +250,9 @@ where
                         "Attributes" => {
                             builder = builder.set_attributes(crate::protocol_serde::shape_attributes::de_attributes(tokens)?);
                         }
+                        "NextContacts" => {
+                            builder = builder.set_next_contacts(crate::protocol_serde::shape_next_contacts::de_next_contacts(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

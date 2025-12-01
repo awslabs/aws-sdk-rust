@@ -32,6 +32,8 @@ pub struct EvaluationSummary {
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the evaluation was last updated.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
+    /// <p>Information about a contact participant in the evaluation.</p>
+    pub contact_participant: ::std::option::Option<crate::types::EvaluationContactParticipant>,
 }
 impl EvaluationSummary {
     /// <p>A unique identifier for the contact evaluation.</p>
@@ -95,6 +97,10 @@ impl EvaluationSummary {
     pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
+    /// <p>Information about a contact participant in the evaluation.</p>
+    pub fn contact_participant(&self) -> ::std::option::Option<&crate::types::EvaluationContactParticipant> {
+        self.contact_participant.as_ref()
+    }
 }
 impl EvaluationSummary {
     /// Creates a new builder-style object to manufacture [`EvaluationSummary`](crate::types::EvaluationSummary).
@@ -121,6 +127,7 @@ pub struct EvaluationSummaryBuilder {
     pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) contact_participant: ::std::option::Option<crate::types::EvaluationContactParticipant>,
 }
 impl EvaluationSummaryBuilder {
     /// <p>A unique identifier for the contact evaluation.</p>
@@ -327,6 +334,20 @@ impl EvaluationSummaryBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>Information about a contact participant in the evaluation.</p>
+    pub fn contact_participant(mut self, input: crate::types::EvaluationContactParticipant) -> Self {
+        self.contact_participant = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about a contact participant in the evaluation.</p>
+    pub fn set_contact_participant(mut self, input: ::std::option::Option<crate::types::EvaluationContactParticipant>) -> Self {
+        self.contact_participant = input;
+        self
+    }
+    /// <p>Information about a contact participant in the evaluation.</p>
+    pub fn get_contact_participant(&self) -> &::std::option::Option<crate::types::EvaluationContactParticipant> {
+        &self.contact_participant
+    }
     /// Consumes the builder and constructs a [`EvaluationSummary`](crate::types::EvaluationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluation_id`](crate::types::builders::EvaluationSummaryBuilder::evaluation_id)
@@ -393,6 +414,7 @@ impl EvaluationSummaryBuilder {
                     "last_modified_time was not specified but it is required when building EvaluationSummary",
                 )
             })?,
+            contact_participant: self.contact_participant,
         })
     }
 }

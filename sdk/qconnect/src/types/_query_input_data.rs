@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum QueryInputData {
+    /// <p>Input data for case summarization queries.</p>
+    CaseSummarizationInputData(crate::types::CaseSummarizationInputData),
     /// <p>Input information for the intent.</p>
     IntentInputData(crate::types::IntentInputData),
     /// <p>Input information for the query.</p>
@@ -19,6 +21,19 @@ pub enum QueryInputData {
     Unknown,
 }
 impl QueryInputData {
+    /// Tries to convert the enum instance into [`CaseSummarizationInputData`](crate::types::QueryInputData::CaseSummarizationInputData), extracting the inner [`CaseSummarizationInputData`](crate::types::CaseSummarizationInputData).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_case_summarization_input_data(&self) -> ::std::result::Result<&crate::types::CaseSummarizationInputData, &Self> {
+        if let QueryInputData::CaseSummarizationInputData(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CaseSummarizationInputData`](crate::types::QueryInputData::CaseSummarizationInputData).
+    pub fn is_case_summarization_input_data(&self) -> bool {
+        self.as_case_summarization_input_data().is_ok()
+    }
     /// Tries to convert the enum instance into [`IntentInputData`](crate::types::QueryInputData::IntentInputData), extracting the inner [`IntentInputData`](crate::types::IntentInputData).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_intent_input_data(&self) -> ::std::result::Result<&crate::types::IntentInputData, &Self> {

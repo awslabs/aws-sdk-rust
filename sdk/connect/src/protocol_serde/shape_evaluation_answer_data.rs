@@ -13,6 +13,18 @@ pub fn ser_evaluation_answer_data(
                 ::aws_smithy_types::Number::Float((*inner).into()),
             );
         }
+        crate::types::EvaluationAnswerData::StringValues(inner) => {
+            let mut array_1 = object_2.key("StringValues").start_array();
+            for item_2 in inner {
+                {
+                    array_1.value().string(item_2.as_str());
+                }
+            }
+            array_1.finish();
+        }
+        crate::types::EvaluationAnswerData::DateTimeValue(inner) => {
+            object_2.key("DateTimeValue").string(inner.as_str());
+        }
         crate::types::EvaluationAnswerData::NotApplicable(inner) => {
             object_2.key("NotApplicable").boolean(*inner);
         }
@@ -67,6 +79,22 @@ where
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                 .map(|v| v.to_f64_lossy())
                                 .unwrap_or_default(),
+                        )),
+                        "StringValues" => Some(crate::types::EvaluationAnswerData::StringValues(
+                            crate::protocol_serde::shape_evaluation_answer_data_string_value_list::de_evaluation_answer_data_string_value_list(
+                                tokens,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringValues' cannot be null")
+                            })?,
+                        )),
+                        "DateTimeValue" => Some(crate::types::EvaluationAnswerData::DateTimeValue(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DateTimeValue' cannot be null")
+                                })?,
                         )),
                         "NotApplicable" => Some(crate::types::EvaluationAnswerData::NotApplicable(
                             ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?.unwrap_or_default(),

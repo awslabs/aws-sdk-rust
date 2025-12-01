@@ -282,4 +282,18 @@ impl CreateAIPromptFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>The inference configuration for the AI Prompt being created.</p>
+    pub fn inference_configuration(mut self, input: crate::types::AiPromptInferenceConfiguration) -> Self {
+        self.inner = self.inner.inference_configuration(input);
+        self
+    }
+    /// <p>The inference configuration for the AI Prompt being created.</p>
+    pub fn set_inference_configuration(mut self, input: ::std::option::Option<crate::types::AiPromptInferenceConfiguration>) -> Self {
+        self.inner = self.inner.set_inference_configuration(input);
+        self
+    }
+    /// <p>The inference configuration for the AI Prompt being created.</p>
+    pub fn get_inference_configuration(&self) -> &::std::option::Option<crate::types::AiPromptInferenceConfiguration> {
+        self.inner.get_inference_configuration()
+    }
 }

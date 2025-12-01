@@ -11,6 +11,8 @@ pub struct ListMessagesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The filter criteria for listing messages.</p>
+    pub filter: ::std::option::Option<crate::types::MessageFilterType>,
 }
 impl ListMessagesInput {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -29,6 +31,10 @@ impl ListMessagesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>The filter criteria for listing messages.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::MessageFilterType> {
+        self.filter.as_ref()
+    }
 }
 impl ListMessagesInput {
     /// Creates a new builder-style object to manufacture [`ListMessagesInput`](crate::operation::list_messages::ListMessagesInput).
@@ -45,6 +51,7 @@ pub struct ListMessagesInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) filter: ::std::option::Option<crate::types::MessageFilterType>,
 }
 impl ListMessagesInputBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -105,6 +112,20 @@ impl ListMessagesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The filter criteria for listing messages.</p>
+    pub fn filter(mut self, input: crate::types::MessageFilterType) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The filter criteria for listing messages.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::MessageFilterType>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>The filter criteria for listing messages.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::MessageFilterType> {
+        &self.filter
+    }
     /// Consumes the builder and constructs a [`ListMessagesInput`](crate::operation::list_messages::ListMessagesInput).
     pub fn build(
         self,
@@ -114,6 +135,7 @@ impl ListMessagesInputBuilder {
             session_id: self.session_id,
             next_token: self.next_token,
             max_results: self.max_results,
+            filter: self.filter,
         })
     }
 }

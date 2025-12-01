@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFunctionRecursionConfigInput {
-    /// <p></p>
+    /// <p>The name of the function.</p>
     pub function_name: ::std::option::Option<::std::string::String>,
 }
 impl GetFunctionRecursionConfigInput {
-    /// <p></p>
+    /// <p>The name of the function.</p>
     pub fn function_name(&self) -> ::std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetFunctionRecursionConfigInputBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
 }
 impl GetFunctionRecursionConfigInputBuilder {
-    /// <p></p>
+    /// <p>The name of the function.</p>
     /// This field is required.
     pub fn function_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The name of the function.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_name = input;
         self
     }
-    /// <p></p>
+    /// <p>The name of the function.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.function_name
     }

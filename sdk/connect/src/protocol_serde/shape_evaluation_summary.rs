@@ -100,6 +100,11 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "ContactParticipant" => {
+                            builder = builder.set_contact_participant(
+                                crate::protocol_serde::shape_evaluation_contact_participant::de_evaluation_contact_participant(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

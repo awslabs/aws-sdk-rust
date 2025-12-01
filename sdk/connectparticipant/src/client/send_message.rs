@@ -10,6 +10,7 @@ impl super::Client {
     /// - On success, responds with [`SendMessageOutput`](crate::operation::send_message::SendMessageOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::send_message::SendMessageOutput::id): <p>The ID of the message.</p>
     ///   - [`absolute_time(Option<String>)`](crate::operation::send_message::SendMessageOutput::absolute_time): <p>The time when the message was sent.</p> <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    ///   - [`message_metadata(Option<MessageProcessingMetadata>)`](crate::operation::send_message::SendMessageOutput::message_metadata): <p>Contains metadata for the message.</p>
     /// - On failure, responds with [`SdkError<SendMessageError>`](crate::operation::send_message::SendMessageError)
     pub fn send_message(&self) -> crate::operation::send_message::builders::SendMessageFluentBuilder {
         crate::operation::send_message::builders::SendMessageFluentBuilder::new(self.handle.clone())

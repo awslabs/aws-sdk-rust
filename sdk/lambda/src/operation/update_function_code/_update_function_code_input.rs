@@ -35,6 +35,8 @@ pub struct UpdateFunctionCodeInput {
     pub architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's .zip deployment package. If you don't provide a customer managed key, Lambda uses an Amazon Web Services managed key.</p>
     pub source_kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
 }
 impl UpdateFunctionCodeInput {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -93,6 +95,10 @@ impl UpdateFunctionCodeInput {
     pub fn source_kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.source_kms_key_arn.as_deref()
     }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn publish_to(&self) -> ::std::option::Option<&crate::types::FunctionVersionLatestPublished> {
+        self.publish_to.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateFunctionCodeInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -108,6 +114,7 @@ impl ::std::fmt::Debug for UpdateFunctionCodeInput {
         formatter.field("revision_id", &self.revision_id);
         formatter.field("architectures", &self.architectures);
         formatter.field("source_kms_key_arn", &self.source_kms_key_arn);
+        formatter.field("publish_to", &self.publish_to);
         formatter.finish()
     }
 }
@@ -133,6 +140,7 @@ pub struct UpdateFunctionCodeInputBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) architectures: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     pub(crate) source_kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
 }
 impl UpdateFunctionCodeInputBuilder {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -326,6 +334,20 @@ impl UpdateFunctionCodeInputBuilder {
     pub fn get_source_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_kms_key_arn
     }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn publish_to(mut self, input: crate::types::FunctionVersionLatestPublished) -> Self {
+        self.publish_to = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn set_publish_to(mut self, input: ::std::option::Option<crate::types::FunctionVersionLatestPublished>) -> Self {
+        self.publish_to = input;
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn get_publish_to(&self) -> &::std::option::Option<crate::types::FunctionVersionLatestPublished> {
+        &self.publish_to
+    }
     /// Consumes the builder and constructs a [`UpdateFunctionCodeInput`](crate::operation::update_function_code::UpdateFunctionCodeInput).
     pub fn build(
         self,
@@ -343,6 +365,7 @@ impl UpdateFunctionCodeInputBuilder {
             revision_id: self.revision_id,
             architectures: self.architectures,
             source_kms_key_arn: self.source_kms_key_arn,
+            publish_to: self.publish_to,
         })
     }
 }
@@ -360,6 +383,7 @@ impl ::std::fmt::Debug for UpdateFunctionCodeInputBuilder {
         formatter.field("revision_id", &self.revision_id);
         formatter.field("architectures", &self.architectures);
         formatter.field("source_kms_key_arn", &self.source_kms_key_arn);
+        formatter.field("publish_to", &self.publish_to);
         formatter.finish()
     }
 }

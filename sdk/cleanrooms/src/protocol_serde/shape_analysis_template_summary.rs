@@ -82,6 +82,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "isSyntheticData" => {
+                            builder = builder.set_is_synthetic_data(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

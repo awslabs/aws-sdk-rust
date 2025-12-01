@@ -26,6 +26,8 @@ pub enum AcceptedTerm {
     UsageBasedPricingTerm(crate::types::UsageBasedPricingTerm),
     /// <p>Defines the conditions that will keep an agreement created from this offer valid.</p>
     ValidityTerm(crate::types::ValidityTerm),
+    /// <p>Defines a payment model where sellers can submit variable payment requests up to a maximum charge amount, with configurable approval strategies and expiration timelines.</p>
+    VariablePaymentTerm(crate::types::VariablePaymentTerm),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -179,6 +181,19 @@ impl AcceptedTerm {
     /// Returns true if this is a [`ValidityTerm`](crate::types::AcceptedTerm::ValidityTerm).
     pub fn is_validity_term(&self) -> bool {
         self.as_validity_term().is_ok()
+    }
+    /// Tries to convert the enum instance into [`VariablePaymentTerm`](crate::types::AcceptedTerm::VariablePaymentTerm), extracting the inner [`VariablePaymentTerm`](crate::types::VariablePaymentTerm).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_variable_payment_term(&self) -> ::std::result::Result<&crate::types::VariablePaymentTerm, &Self> {
+        if let AcceptedTerm::VariablePaymentTerm(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`VariablePaymentTerm`](crate::types::AcceptedTerm::VariablePaymentTerm).
+    pub fn is_variable_payment_term(&self) -> bool {
+        self.as_variable_payment_term().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

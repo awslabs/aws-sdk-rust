@@ -10,7 +10,7 @@ pub struct ListProfileObjectTypeItem {
     pub description: ::std::string::String,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The timestamp of when the domain was most recently edited.</p>
+    /// <p>The timestamp of when the profile object type was most recently edited.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The amount of profile object max count assigned to the object type.</p>
     pub max_profile_object_count: ::std::option::Option<i32>,
@@ -34,7 +34,7 @@ impl ListProfileObjectTypeItem {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The timestamp of when the domain was most recently edited.</p>
+    /// <p>The timestamp of when the profile object type was most recently edited.</p>
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -115,17 +115,17 @@ impl ListProfileObjectTypeItemBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The timestamp of when the domain was most recently edited.</p>
+    /// <p>The timestamp of when the profile object type was most recently edited.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp of when the domain was most recently edited.</p>
+    /// <p>The timestamp of when the profile object type was most recently edited.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>The timestamp of when the domain was most recently edited.</p>
+    /// <p>The timestamp of when the profile object type was most recently edited.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }

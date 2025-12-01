@@ -21,8 +21,14 @@ pub struct UpdateEvaluationFormInput {
     pub scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
     /// <p>Whether automated evaluations are enabled.</p>
     pub auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
+    pub as_draft: ::std::option::Option<bool>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
 }
 impl UpdateEvaluationFormInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -63,9 +69,21 @@ impl UpdateEvaluationFormInput {
     pub fn auto_evaluation_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormAutoEvaluationConfiguration> {
         self.auto_evaluation_configuration.as_ref()
     }
+    /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
+    pub fn as_draft(&self) -> ::std::option::Option<bool> {
+        self.as_draft
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormTargetConfiguration> {
+        self.target_configuration.as_ref()
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn language_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormLanguageConfiguration> {
+        self.language_configuration.as_ref()
     }
 }
 impl UpdateEvaluationFormInput {
@@ -88,7 +106,10 @@ pub struct UpdateEvaluationFormInputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     pub(crate) scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
     pub(crate) auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    pub(crate) as_draft: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
+    pub(crate) language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
 }
 impl UpdateEvaluationFormInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -230,6 +251,20 @@ impl UpdateEvaluationFormInputBuilder {
     pub fn get_auto_evaluation_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration> {
         &self.auto_evaluation_configuration
     }
+    /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
+    pub fn as_draft(mut self, input: bool) -> Self {
+        self.as_draft = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
+    pub fn set_as_draft(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.as_draft = input;
+        self
+    }
+    /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
+    pub fn get_as_draft(&self) -> &::std::option::Option<bool> {
+        &self.as_draft
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -243,6 +278,34 @@ impl UpdateEvaluationFormInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn target_configuration(mut self, input: crate::types::EvaluationFormTargetConfiguration) -> Self {
+        self.target_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn set_target_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>) -> Self {
+        self.target_configuration = input;
+        self
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormTargetConfiguration> {
+        &self.target_configuration
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn language_configuration(mut self, input: crate::types::EvaluationFormLanguageConfiguration) -> Self {
+        self.language_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn set_language_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>) -> Self {
+        self.language_configuration = input;
+        self
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn get_language_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormLanguageConfiguration> {
+        &self.language_configuration
     }
     /// Consumes the builder and constructs a [`UpdateEvaluationFormInput`](crate::operation::update_evaluation_form::UpdateEvaluationFormInput).
     pub fn build(
@@ -259,7 +322,10 @@ impl UpdateEvaluationFormInputBuilder {
             items: self.items,
             scoring_strategy: self.scoring_strategy,
             auto_evaluation_configuration: self.auto_evaluation_configuration,
+            as_draft: self.as_draft,
             client_token: self.client_token,
+            target_configuration: self.target_configuration,
+            language_configuration: self.language_configuration,
         })
     }
 }

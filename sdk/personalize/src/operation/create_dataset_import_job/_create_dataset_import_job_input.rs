@@ -128,7 +128,6 @@ impl CreateDatasetImportJobInputBuilder {
         &self.data_source
     }
     /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</p>
-    /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self

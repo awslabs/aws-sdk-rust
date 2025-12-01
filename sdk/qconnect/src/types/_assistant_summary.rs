@@ -28,6 +28,8 @@ pub struct AssistantSummary {
     pub capability_configuration: ::std::option::Option<crate::types::AssistantCapabilityConfiguration>,
     /// <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that is set on the Amazon Q in Connect Assistant.</p>
     pub ai_agent_configuration: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
+    /// <p>The list of orchestrator configurations for the assistant.</p>
+    pub orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
 }
 impl AssistantSummary {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -81,6 +83,12 @@ impl AssistantSummary {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
         self.ai_agent_configuration.as_ref()
     }
+    /// <p>The list of orchestrator configurations for the assistant.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.orchestrator_configuration_list.is_none()`.
+    pub fn orchestrator_configuration_list(&self) -> &[crate::types::OrchestratorConfigurationEntry] {
+        self.orchestrator_configuration_list.as_deref().unwrap_or_default()
+    }
 }
 impl AssistantSummary {
     /// Creates a new builder-style object to manufacture [`AssistantSummary`](crate::types::AssistantSummary).
@@ -105,6 +113,7 @@ pub struct AssistantSummaryBuilder {
     pub(crate) capability_configuration: ::std::option::Option<crate::types::AssistantCapabilityConfiguration>,
     pub(crate) ai_agent_configuration:
         ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
+    pub(crate) orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
 }
 impl AssistantSummaryBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -289,6 +298,29 @@ impl AssistantSummaryBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
         &self.ai_agent_configuration
     }
+    /// Appends an item to `orchestrator_configuration_list`.
+    ///
+    /// To override the contents of this collection use [`set_orchestrator_configuration_list`](Self::set_orchestrator_configuration_list).
+    ///
+    /// <p>The list of orchestrator configurations for the assistant.</p>
+    pub fn orchestrator_configuration_list(mut self, input: crate::types::OrchestratorConfigurationEntry) -> Self {
+        let mut v = self.orchestrator_configuration_list.unwrap_or_default();
+        v.push(input);
+        self.orchestrator_configuration_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of orchestrator configurations for the assistant.</p>
+    pub fn set_orchestrator_configuration_list(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    ) -> Self {
+        self.orchestrator_configuration_list = input;
+        self
+    }
+    /// <p>The list of orchestrator configurations for the assistant.</p>
+    pub fn get_orchestrator_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>> {
+        &self.orchestrator_configuration_list
+    }
     /// Consumes the builder and constructs a [`AssistantSummary`](crate::types::AssistantSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`assistant_id`](crate::types::builders::AssistantSummaryBuilder::assistant_id)
@@ -334,6 +366,7 @@ impl AssistantSummaryBuilder {
             integration_configuration: self.integration_configuration,
             capability_configuration: self.capability_configuration,
             ai_agent_configuration: self.ai_agent_configuration,
+            orchestrator_configuration_list: self.orchestrator_configuration_list,
         })
     }
 }

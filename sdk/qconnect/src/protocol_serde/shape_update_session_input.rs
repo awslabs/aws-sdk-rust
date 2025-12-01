@@ -19,11 +19,26 @@ pub fn ser_update_session_input_input(
     if let Some(var_6) = &input.description {
         object.key("description").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.tag_filter {
+    if let Some(var_7) = &input.orchestrator_configuration_list {
+        let mut array_8 = object.key("orchestratorConfigurationList").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_orchestrator_configuration_entry::ser_orchestrator_configuration_entry(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
+    if let Some(var_11) = &input.remove_orchestrator_configuration_list {
+        object.key("removeOrchestratorConfigurationList").boolean(*var_11);
+    }
+    if let Some(var_12) = &input.tag_filter {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tagFilter").start_object();
-        crate::protocol_serde::shape_tag_filter::ser_tag_filter(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_13 = object.key("tagFilter").start_object();
+        crate::protocol_serde::shape_tag_filter::ser_tag_filter(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }

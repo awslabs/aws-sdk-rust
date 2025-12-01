@@ -26,6 +26,10 @@ pub struct CreateBotLocaleInput {
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    /// <p>Unified speech settings to configure for the new bot locale.</p>
+    pub unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    /// <p>Speech-to-text settings to configure for the new bot locale.</p>
+    pub speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
     pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
@@ -67,6 +71,14 @@ impl CreateBotLocaleInput {
     pub fn voice_settings(&self) -> ::std::option::Option<&crate::types::VoiceSettings> {
         self.voice_settings.as_ref()
     }
+    /// <p>Unified speech settings to configure for the new bot locale.</p>
+    pub fn unified_speech_settings(&self) -> ::std::option::Option<&crate::types::UnifiedSpeechSettings> {
+        self.unified_speech_settings.as_ref()
+    }
+    /// <p>Speech-to-text settings to configure for the new bot locale.</p>
+    pub fn speech_recognition_settings(&self) -> ::std::option::Option<&crate::types::SpeechRecognitionSettings> {
+        self.speech_recognition_settings.as_ref()
+    }
     /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
     pub fn generative_ai_settings(&self) -> ::std::option::Option<&crate::types::GenerativeAiSettings> {
         self.generative_ai_settings.as_ref()
@@ -93,6 +105,8 @@ pub struct CreateBotLocaleInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    pub(crate) unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
+    pub(crate) speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     pub(crate) speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
 }
@@ -218,6 +232,34 @@ impl CreateBotLocaleInputBuilder {
     pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
         &self.voice_settings
     }
+    /// <p>Unified speech settings to configure for the new bot locale.</p>
+    pub fn unified_speech_settings(mut self, input: crate::types::UnifiedSpeechSettings) -> Self {
+        self.unified_speech_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Unified speech settings to configure for the new bot locale.</p>
+    pub fn set_unified_speech_settings(mut self, input: ::std::option::Option<crate::types::UnifiedSpeechSettings>) -> Self {
+        self.unified_speech_settings = input;
+        self
+    }
+    /// <p>Unified speech settings to configure for the new bot locale.</p>
+    pub fn get_unified_speech_settings(&self) -> &::std::option::Option<crate::types::UnifiedSpeechSettings> {
+        &self.unified_speech_settings
+    }
+    /// <p>Speech-to-text settings to configure for the new bot locale.</p>
+    pub fn speech_recognition_settings(mut self, input: crate::types::SpeechRecognitionSettings) -> Self {
+        self.speech_recognition_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Speech-to-text settings to configure for the new bot locale.</p>
+    pub fn set_speech_recognition_settings(mut self, input: ::std::option::Option<crate::types::SpeechRecognitionSettings>) -> Self {
+        self.speech_recognition_settings = input;
+        self
+    }
+    /// <p>Speech-to-text settings to configure for the new bot locale.</p>
+    pub fn get_speech_recognition_settings(&self) -> &::std::option::Option<crate::types::SpeechRecognitionSettings> {
+        &self.speech_recognition_settings
+    }
     /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
     pub fn generative_ai_settings(mut self, input: crate::types::GenerativeAiSettings) -> Self {
         self.generative_ai_settings = ::std::option::Option::Some(input);
@@ -257,6 +299,8 @@ impl CreateBotLocaleInputBuilder {
             description: self.description,
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
+            unified_speech_settings: self.unified_speech_settings,
+            speech_recognition_settings: self.speech_recognition_settings,
             generative_ai_settings: self.generative_ai_settings,
             speech_detection_sensitivity: self.speech_detection_sensitivity,
         })

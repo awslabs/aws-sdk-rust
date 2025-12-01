@@ -238,6 +238,15 @@ pub(crate) fn de_update_bot_locale(
                             .transpose()?,
                     );
                 }
+                "speechRecognitionSettings" => {
+                    builder = builder.set_speech_recognition_settings(
+                        crate::protocol_serde::shape_speech_recognition_settings::de_speech_recognition_settings(tokens)?,
+                    );
+                }
+                "unifiedSpeechSettings" => {
+                    builder = builder
+                        .set_unified_speech_settings(crate::protocol_serde::shape_unified_speech_settings::de_unified_speech_settings(tokens)?);
+                }
                 "voiceSettings" => {
                     builder = builder.set_voice_settings(crate::protocol_serde::shape_voice_settings::de_voice_settings(tokens)?);
                 }

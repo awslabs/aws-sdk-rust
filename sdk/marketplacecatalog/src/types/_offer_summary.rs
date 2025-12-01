@@ -20,6 +20,8 @@ pub struct OfferSummary {
     pub state: ::std::option::Option<crate::types::OfferStateString>,
     /// <p>The targeting in the offer.</p>
     pub targeting: ::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>>,
+    /// <p>The offer set ID of the offer.</p>
+    pub offer_set_id: ::std::option::Option<::std::string::String>,
 }
 impl OfferSummary {
     /// <p>The name of the offer.</p>
@@ -58,6 +60,10 @@ impl OfferSummary {
     pub fn targeting(&self) -> &[crate::types::OfferTargetingString] {
         self.targeting.as_deref().unwrap_or_default()
     }
+    /// <p>The offer set ID of the offer.</p>
+    pub fn offer_set_id(&self) -> ::std::option::Option<&str> {
+        self.offer_set_id.as_deref()
+    }
 }
 impl OfferSummary {
     /// Creates a new builder-style object to manufacture [`OfferSummary`](crate::types::OfferSummary).
@@ -78,6 +84,7 @@ pub struct OfferSummaryBuilder {
     pub(crate) buyer_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) state: ::std::option::Option<crate::types::OfferStateString>,
     pub(crate) targeting: ::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>>,
+    pub(crate) offer_set_id: ::std::option::Option<::std::string::String>,
 }
 impl OfferSummaryBuilder {
     /// <p>The name of the offer.</p>
@@ -204,6 +211,20 @@ impl OfferSummaryBuilder {
     pub fn get_targeting(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>> {
         &self.targeting
     }
+    /// <p>The offer set ID of the offer.</p>
+    pub fn offer_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.offer_set_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The offer set ID of the offer.</p>
+    pub fn set_offer_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.offer_set_id = input;
+        self
+    }
+    /// <p>The offer set ID of the offer.</p>
+    pub fn get_offer_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offer_set_id
+    }
     /// Consumes the builder and constructs a [`OfferSummary`](crate::types::OfferSummary).
     pub fn build(self) -> crate::types::OfferSummary {
         crate::types::OfferSummary {
@@ -215,6 +236,7 @@ impl OfferSummaryBuilder {
             buyer_accounts: self.buyer_accounts,
             state: self.state,
             targeting: self.targeting,
+            offer_set_id: self.offer_set_id,
         }
     }
 }

@@ -17,12 +17,16 @@ pub struct CreateSecurityProfileInput {
     pub allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. For a list of Amazon Connect resources that you can tag, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Add tags to resources in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of third-party applications that the security profile will give access to.</p>
+    /// <p>A list of third-party applications or MCP Servers that the security profile will give access to.</p>
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
     pub hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool.</p>
+    pub allowed_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::FlowModule>>,
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub granular_access_control_configuration: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
 }
 impl CreateSecurityProfileInput {
     /// <p>The name of the security profile.</p>
@@ -57,7 +61,7 @@ impl CreateSecurityProfileInput {
     pub fn tag_restricted_resources(&self) -> &[::std::string::String] {
         self.tag_restricted_resources.as_deref().unwrap_or_default()
     }
-    /// <p>A list of third-party applications that the security profile will give access to.</p>
+    /// <p>A list of third-party applications or MCP Servers that the security profile will give access to.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
     pub fn applications(&self) -> &[crate::types::Application] {
@@ -72,6 +76,16 @@ impl CreateSecurityProfileInput {
     /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub fn allowed_access_control_hierarchy_group_id(&self) -> ::std::option::Option<&str> {
         self.allowed_access_control_hierarchy_group_id.as_deref()
+    }
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_flow_modules.is_none()`.
+    pub fn allowed_flow_modules(&self) -> &[crate::types::FlowModule] {
+        self.allowed_flow_modules.as_deref().unwrap_or_default()
+    }
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub fn granular_access_control_configuration(&self) -> ::std::option::Option<&crate::types::GranularAccessControlConfiguration> {
+        self.granular_access_control_configuration.as_ref()
     }
 }
 impl CreateSecurityProfileInput {
@@ -95,6 +109,8 @@ pub struct CreateSecurityProfileInputBuilder {
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     pub(crate) hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) allowed_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::FlowModule>>,
+    pub(crate) granular_access_control_configuration: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
 }
 impl CreateSecurityProfileInputBuilder {
     /// <p>The name of the security profile.</p>
@@ -234,19 +250,19 @@ impl CreateSecurityProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
     ///
-    /// <p>A list of third-party applications that the security profile will give access to.</p>
+    /// <p>A list of third-party applications or MCP Servers that the security profile will give access to.</p>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         let mut v = self.applications.unwrap_or_default();
         v.push(input);
         self.applications = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of third-party applications that the security profile will give access to.</p>
+    /// <p>A list of third-party applications or MCP Servers that the security profile will give access to.</p>
     pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.applications = input;
         self
     }
-    /// <p>A list of third-party applications that the security profile will give access to.</p>
+    /// <p>A list of third-party applications or MCP Servers that the security profile will give access to.</p>
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         &self.applications
     }
@@ -284,6 +300,43 @@ impl CreateSecurityProfileInputBuilder {
     pub fn get_allowed_access_control_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.allowed_access_control_hierarchy_group_id
     }
+    /// Appends an item to `allowed_flow_modules`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_flow_modules`](Self::set_allowed_flow_modules).
+    ///
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool.</p>
+    pub fn allowed_flow_modules(mut self, input: crate::types::FlowModule) -> Self {
+        let mut v = self.allowed_flow_modules.unwrap_or_default();
+        v.push(input);
+        self.allowed_flow_modules = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool.</p>
+    pub fn set_allowed_flow_modules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowModule>>) -> Self {
+        self.allowed_flow_modules = input;
+        self
+    }
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool.</p>
+    pub fn get_allowed_flow_modules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowModule>> {
+        &self.allowed_flow_modules
+    }
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub fn granular_access_control_configuration(mut self, input: crate::types::GranularAccessControlConfiguration) -> Self {
+        self.granular_access_control_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub fn set_granular_access_control_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
+    ) -> Self {
+        self.granular_access_control_configuration = input;
+        self
+    }
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub fn get_granular_access_control_configuration(&self) -> &::std::option::Option<crate::types::GranularAccessControlConfiguration> {
+        &self.granular_access_control_configuration
+    }
     /// Consumes the builder and constructs a [`CreateSecurityProfileInput`](crate::operation::create_security_profile::CreateSecurityProfileInput).
     pub fn build(
         self,
@@ -300,6 +353,8 @@ impl CreateSecurityProfileInputBuilder {
             applications: self.applications,
             hierarchy_restricted_resources: self.hierarchy_restricted_resources,
             allowed_access_control_hierarchy_group_id: self.allowed_access_control_hierarchy_group_id,
+            allowed_flow_modules: self.allowed_flow_modules,
+            granular_access_control_configuration: self.granular_access_control_configuration,
         })
     }
 }

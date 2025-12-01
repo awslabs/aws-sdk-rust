@@ -41,6 +41,20 @@ pub use crate::types::_model_training_data_channel::ModelTrainingDataChannelBuil
 
 pub use crate::types::_incremental_training_data_channel::IncrementalTrainingDataChannelBuilder;
 
+pub use crate::types::_synthetic_data_configuration::SyntheticDataConfigurationBuilder;
+
+pub use crate::types::_synthetic_data_evaluation_scores::SyntheticDataEvaluationScoresBuilder;
+
+pub use crate::types::_data_privacy_scores::DataPrivacyScoresBuilder;
+
+pub use crate::types::_membership_inference_attack_score::MembershipInferenceAttackScoreBuilder;
+
+pub use crate::types::_ml_synthetic_data_parameters::MlSyntheticDataParametersBuilder;
+
+pub use crate::types::_column_classification_details::ColumnClassificationDetailsBuilder;
+
+pub use crate::types::_synthetic_data_column_properties::SyntheticDataColumnPropertiesBuilder;
+
 pub use crate::types::_access_budget::AccessBudgetBuilder;
 
 pub use crate::types::_access_budget_details::AccessBudgetDetailsBuilder;

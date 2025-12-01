@@ -15,6 +15,7 @@
 ///     CommunicationTimeConfigType::Email => { /* ... */ },
 ///     CommunicationTimeConfigType::Sms => { /* ... */ },
 ///     CommunicationTimeConfigType::Telephony => { /* ... */ },
+///     CommunicationTimeConfigType::Whatsapp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum CommunicationTimeConfigType {
     Sms,
     #[allow(missing_docs)] // documentation missing in model
     Telephony,
+    #[allow(missing_docs)] // documentation missing in model
+    Whatsapp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for CommunicationTimeConfigType {
             "EMAIL" => CommunicationTimeConfigType::Email,
             "SMS" => CommunicationTimeConfigType::Sms,
             "TELEPHONY" => CommunicationTimeConfigType::Telephony,
+            "WHATSAPP" => CommunicationTimeConfigType::Whatsapp,
             other => CommunicationTimeConfigType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl CommunicationTimeConfigType {
             CommunicationTimeConfigType::Email => "EMAIL",
             CommunicationTimeConfigType::Sms => "SMS",
             CommunicationTimeConfigType::Telephony => "TELEPHONY",
+            CommunicationTimeConfigType::Whatsapp => "WHATSAPP",
             CommunicationTimeConfigType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EMAIL", "SMS", "TELEPHONY"]
+        &["EMAIL", "SMS", "TELEPHONY", "WHATSAPP"]
     }
 }
 impl ::std::convert::AsRef<str> for CommunicationTimeConfigType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for CommunicationTimeConfigType {
             CommunicationTimeConfigType::Email => write!(f, "EMAIL"),
             CommunicationTimeConfigType::Sms => write!(f, "SMS"),
             CommunicationTimeConfigType::Telephony => write!(f, "TELEPHONY"),
+            CommunicationTimeConfigType::Whatsapp => write!(f, "WHATSAPP"),
             CommunicationTimeConfigType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -11,6 +11,8 @@ pub struct SolutionUpdateSummary {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Whether the solution automatically creates solution versions.</p>
     pub perform_auto_training: ::std::option::Option<bool>,
+    /// <p>A Boolean value that indicates whether incremental training updates are performed on the model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub perform_incremental_update: ::std::option::Option<bool>,
     /// <p>The date and time (in Unix format) that the solution update was created.</p>
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the solution update was last updated.</p>
@@ -31,6 +33,10 @@ impl SolutionUpdateSummary {
     /// <p>Whether the solution automatically creates solution versions.</p>
     pub fn perform_auto_training(&self) -> ::std::option::Option<bool> {
         self.perform_auto_training
+    }
+    /// <p>A Boolean value that indicates whether incremental training updates are performed on the model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn perform_incremental_update(&self) -> ::std::option::Option<bool> {
+        self.perform_incremental_update
     }
     /// <p>The date and time (in Unix format) that the solution update was created.</p>
     pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -59,6 +65,7 @@ pub struct SolutionUpdateSummaryBuilder {
     pub(crate) solution_update_config: ::std::option::Option<crate::types::SolutionUpdateConfig>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) perform_auto_training: ::std::option::Option<bool>,
+    pub(crate) perform_incremental_update: ::std::option::Option<bool>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
@@ -109,6 +116,20 @@ impl SolutionUpdateSummaryBuilder {
     pub fn get_perform_auto_training(&self) -> &::std::option::Option<bool> {
         &self.perform_auto_training
     }
+    /// <p>A Boolean value that indicates whether incremental training updates are performed on the model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn perform_incremental_update(mut self, input: bool) -> Self {
+        self.perform_incremental_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean value that indicates whether incremental training updates are performed on the model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn set_perform_incremental_update(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.perform_incremental_update = input;
+        self
+    }
+    /// <p>A Boolean value that indicates whether incremental training updates are performed on the model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn get_perform_incremental_update(&self) -> &::std::option::Option<bool> {
+        &self.perform_incremental_update
+    }
     /// <p>The date and time (in Unix format) that the solution update was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -157,6 +178,7 @@ impl SolutionUpdateSummaryBuilder {
             solution_update_config: self.solution_update_config,
             status: self.status,
             perform_auto_training: self.perform_auto_training,
+            perform_incremental_update: self.perform_incremental_update,
             creation_date_time: self.creation_date_time,
             last_updated_date_time: self.last_updated_date_time,
             failure_reason: self.failure_reason,

@@ -22,6 +22,8 @@ pub struct Solution {
     /// <p>Specifies whether the solution automatically creates solution versions. The default is <code>True</code> and the solution automatically creates new solution versions every 7 days.</p>
     /// <p>For more information about auto training, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating and configuring a solution</a>.</p>
     pub perform_auto_training: ::std::option::Option<bool>,
+    /// <p>A Boolean value that indicates whether incremental training updates are performed on the model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe</p>
+    pub perform_incremental_update: ::std::option::Option<bool>,
     /// <p>The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.</p>
     pub recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
@@ -74,6 +76,10 @@ impl Solution {
     /// <p>For more information about auto training, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating and configuring a solution</a>.</p>
     pub fn perform_auto_training(&self) -> ::std::option::Option<bool> {
         self.perform_auto_training
+    }
+    /// <p>A Boolean value that indicates whether incremental training updates are performed on the model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe</p>
+    pub fn perform_incremental_update(&self) -> ::std::option::Option<bool> {
+        self.perform_incremental_update
     }
     /// <p>The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.</p>
     pub fn recipe_arn(&self) -> ::std::option::Option<&str> {
@@ -139,6 +145,7 @@ pub struct SolutionBuilder {
     pub(crate) perform_hpo: ::std::option::Option<bool>,
     pub(crate) perform_auto_ml: ::std::option::Option<bool>,
     pub(crate) perform_auto_training: ::std::option::Option<bool>,
+    pub(crate) perform_incremental_update: ::std::option::Option<bool>,
     pub(crate) recipe_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<::std::string::String>,
@@ -232,6 +239,20 @@ impl SolutionBuilder {
     /// <p>For more information about auto training, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating and configuring a solution</a>.</p>
     pub fn get_perform_auto_training(&self) -> &::std::option::Option<bool> {
         &self.perform_auto_training
+    }
+    /// <p>A Boolean value that indicates whether incremental training updates are performed on the model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe</p>
+    pub fn perform_incremental_update(mut self, input: bool) -> Self {
+        self.perform_incremental_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean value that indicates whether incremental training updates are performed on the model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe</p>
+    pub fn set_perform_incremental_update(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.perform_incremental_update = input;
+        self
+    }
+    /// <p>A Boolean value that indicates whether incremental training updates are performed on the model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe</p>
+    pub fn get_perform_incremental_update(&self) -> &::std::option::Option<bool> {
+        &self.perform_incremental_update
     }
     /// <p>The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code> is false.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -402,6 +423,7 @@ impl SolutionBuilder {
             perform_hpo: self.perform_hpo.unwrap_or_default(),
             perform_auto_ml: self.perform_auto_ml.unwrap_or_default(),
             perform_auto_training: self.perform_auto_training,
+            perform_incremental_update: self.perform_incremental_update,
             recipe_arn: self.recipe_arn,
             dataset_group_arn: self.dataset_group_arn,
             event_type: self.event_type,

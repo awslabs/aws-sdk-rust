@@ -145,6 +145,20 @@ impl UpdateSolutionFluentBuilder {
     pub fn get_perform_auto_training(&self) -> &::std::option::Option<bool> {
         self.inner.get_perform_auto_training()
     }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn perform_incremental_update(mut self, input: bool) -> Self {
+        self.inner = self.inner.perform_incremental_update(input);
+        self
+    }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn set_perform_incremental_update(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_perform_incremental_update(input);
+        self
+    }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn get_perform_incremental_update(&self) -> &::std::option::Option<bool> {
+        self.inner.get_perform_incremental_update()
+    }
     /// <p>The new configuration details of the solution.</p>
     pub fn solution_update_config(mut self, input: crate::types::SolutionUpdateConfig) -> Self {
         self.inner = self.inner.solution_update_config(input);

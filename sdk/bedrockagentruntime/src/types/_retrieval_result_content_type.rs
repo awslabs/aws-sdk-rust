@@ -12,9 +12,11 @@
 /// ```text
 /// # let retrievalresultcontenttype = unimplemented!();
 /// match retrievalresultcontenttype {
+///     RetrievalResultContentType::Audio => { /* ... */ },
 ///     RetrievalResultContentType::Image => { /* ... */ },
 ///     RetrievalResultContentType::Row => { /* ... */ },
 ///     RetrievalResultContentType::Text => { /* ... */ },
+///     RetrievalResultContentType::Video => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -44,11 +46,15 @@
 )]
 pub enum RetrievalResultContentType {
     #[allow(missing_docs)] // documentation missing in model
+    Audio,
+    #[allow(missing_docs)] // documentation missing in model
     Image,
     #[allow(missing_docs)] // documentation missing in model
     Row,
     #[allow(missing_docs)] // documentation missing in model
     Text,
+    #[allow(missing_docs)] // documentation missing in model
+    Video,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -56,9 +62,11 @@ pub enum RetrievalResultContentType {
 impl ::std::convert::From<&str> for RetrievalResultContentType {
     fn from(s: &str) -> Self {
         match s {
+            "AUDIO" => RetrievalResultContentType::Audio,
             "IMAGE" => RetrievalResultContentType::Image,
             "ROW" => RetrievalResultContentType::Row,
             "TEXT" => RetrievalResultContentType::Text,
+            "VIDEO" => RetrievalResultContentType::Video,
             other => RetrievalResultContentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -74,15 +82,17 @@ impl RetrievalResultContentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RetrievalResultContentType::Audio => "AUDIO",
             RetrievalResultContentType::Image => "IMAGE",
             RetrievalResultContentType::Row => "ROW",
             RetrievalResultContentType::Text => "TEXT",
+            RetrievalResultContentType::Video => "VIDEO",
             RetrievalResultContentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IMAGE", "ROW", "TEXT"]
+        &["AUDIO", "IMAGE", "ROW", "TEXT", "VIDEO"]
     }
 }
 impl ::std::convert::AsRef<str> for RetrievalResultContentType {
@@ -105,9 +115,11 @@ impl RetrievalResultContentType {
 impl ::std::fmt::Display for RetrievalResultContentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RetrievalResultContentType::Audio => write!(f, "AUDIO"),
             RetrievalResultContentType::Image => write!(f, "IMAGE"),
             RetrievalResultContentType::Row => write!(f, "ROW"),
             RetrievalResultContentType::Text => write!(f, "TEXT"),
+            RetrievalResultContentType::Video => write!(f, "VIDEO"),
             RetrievalResultContentType::Unknown(value) => write!(f, "{value}"),
         }
     }

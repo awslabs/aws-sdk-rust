@@ -34,5 +34,17 @@ pub fn ser_iceberg_table_update(
         }
         object_8.finish();
     }
+    if let Some(var_11) = &input.action {
+        object.key("Action").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.encryption_key {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("EncryptionKey").start_object();
+        crate::protocol_serde::shape_iceberg_encrypted_key::ser_iceberg_encrypted_key(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.key_id {
+        object.key("KeyId").string(var_14.as_str());
+    }
     Ok(())
 }

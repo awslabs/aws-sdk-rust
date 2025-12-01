@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AssistantAssociationInputData {
+    /// <p>The configuration for an external Bedrock knowledge base association.</p>
+    ExternalBedrockKnowledgeBaseConfig(crate::types::ExternalBedrockKnowledgeBaseConfig),
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base.</p>
     KnowledgeBaseId(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum AssistantAssociationInputData {
     Unknown,
 }
 impl AssistantAssociationInputData {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`ExternalBedrockKnowledgeBaseConfig`](crate::types::AssistantAssociationInputData::ExternalBedrockKnowledgeBaseConfig), extracting the inner [`ExternalBedrockKnowledgeBaseConfig`](crate::types::ExternalBedrockKnowledgeBaseConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_external_bedrock_knowledge_base_config(&self) -> ::std::result::Result<&crate::types::ExternalBedrockKnowledgeBaseConfig, &Self> {
+        if let AssistantAssociationInputData::ExternalBedrockKnowledgeBaseConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ExternalBedrockKnowledgeBaseConfig`](crate::types::AssistantAssociationInputData::ExternalBedrockKnowledgeBaseConfig).
+    pub fn is_external_bedrock_knowledge_base_config(&self) -> bool {
+        self.as_external_bedrock_knowledge_base_config().is_ok()
+    }
     /// Tries to convert the enum instance into [`KnowledgeBaseId`](crate::types::AssistantAssociationInputData::KnowledgeBaseId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_knowledge_base_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {

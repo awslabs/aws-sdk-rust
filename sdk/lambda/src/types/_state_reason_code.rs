@@ -12,17 +12,28 @@
 /// ```text
 /// # let statereasoncode = unimplemented!();
 /// match statereasoncode {
+///     StateReasonCode::CapacityProviderScalingLimitExceeded => { /* ... */ },
 ///     StateReasonCode::Creating => { /* ... */ },
 ///     StateReasonCode::DisabledKmsKey => { /* ... */ },
+///     StateReasonCode::Ec2RequestLimitExceeded => { /* ... */ },
 ///     StateReasonCode::EfsioError => { /* ... */ },
 ///     StateReasonCode::EfsMountConnectivityError => { /* ... */ },
 ///     StateReasonCode::EfsMountFailure => { /* ... */ },
 ///     StateReasonCode::EfsMountTimeout => { /* ... */ },
 ///     StateReasonCode::EniLimitExceeded => { /* ... */ },
 ///     StateReasonCode::FunctionError => { /* ... */ },
+///     StateReasonCode::FunctionErrorExtensionInitError => { /* ... */ },
+///     StateReasonCode::FunctionErrorInitResourceExhausted => { /* ... */ },
+///     StateReasonCode::FunctionErrorInitTimeout => { /* ... */ },
+///     StateReasonCode::FunctionErrorInvalidEntryPoint => { /* ... */ },
+///     StateReasonCode::FunctionErrorInvalidWorkingDirectory => { /* ... */ },
+///     StateReasonCode::FunctionErrorPermissionDenied => { /* ... */ },
+///     StateReasonCode::FunctionErrorRuntimeInitError => { /* ... */ },
+///     StateReasonCode::FunctionErrorTooManyExtensions => { /* ... */ },
 ///     StateReasonCode::Idle => { /* ... */ },
 ///     StateReasonCode::ImageAccessDenied => { /* ... */ },
 ///     StateReasonCode::ImageDeleted => { /* ... */ },
+///     StateReasonCode::InsufficientCapacity => { /* ... */ },
 ///     StateReasonCode::InsufficientRolePermissions => { /* ... */ },
 ///     StateReasonCode::InternalError => { /* ... */ },
 ///     StateReasonCode::InvalidConfiguration => { /* ... */ },
@@ -36,6 +47,7 @@
 ///     StateReasonCode::KmsKeyNotFound => { /* ... */ },
 ///     StateReasonCode::Restoring => { /* ... */ },
 ///     StateReasonCode::SubnetOutOfIpAddresses => { /* ... */ },
+///     StateReasonCode::VcpuLimitExceeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -65,9 +77,13 @@
 )]
 pub enum StateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityProviderScalingLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
     DisabledKmsKey,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2RequestLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     EfsioError,
     #[allow(missing_docs)] // documentation missing in model
@@ -81,11 +97,29 @@ pub enum StateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     FunctionError,
     #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorExtensionInitError,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorInitResourceExhausted,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorInitTimeout,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorInvalidEntryPoint,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorInvalidWorkingDirectory,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorPermissionDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorRuntimeInitError,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorTooManyExtensions,
+    #[allow(missing_docs)] // documentation missing in model
     Idle,
     #[allow(missing_docs)] // documentation missing in model
     ImageAccessDenied,
     #[allow(missing_docs)] // documentation missing in model
     ImageDeleted,
+    #[allow(missing_docs)] // documentation missing in model
+    InsufficientCapacity,
     #[allow(missing_docs)] // documentation missing in model
     InsufficientRolePermissions,
     #[allow(missing_docs)] // documentation missing in model
@@ -112,6 +146,8 @@ pub enum StateReasonCode {
     Restoring,
     #[allow(missing_docs)] // documentation missing in model
     SubnetOutOfIpAddresses,
+    #[allow(missing_docs)] // documentation missing in model
+    VcpuLimitExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -119,17 +155,28 @@ pub enum StateReasonCode {
 impl ::std::convert::From<&str> for StateReasonCode {
     fn from(s: &str) -> Self {
         match s {
+            "CapacityProviderScalingLimitExceeded" => StateReasonCode::CapacityProviderScalingLimitExceeded,
             "Creating" => StateReasonCode::Creating,
             "DisabledKMSKey" => StateReasonCode::DisabledKmsKey,
+            "EC2RequestLimitExceeded" => StateReasonCode::Ec2RequestLimitExceeded,
             "EFSIOError" => StateReasonCode::EfsioError,
             "EFSMountConnectivityError" => StateReasonCode::EfsMountConnectivityError,
             "EFSMountFailure" => StateReasonCode::EfsMountFailure,
             "EFSMountTimeout" => StateReasonCode::EfsMountTimeout,
             "EniLimitExceeded" => StateReasonCode::EniLimitExceeded,
             "FunctionError" => StateReasonCode::FunctionError,
+            "FunctionError.ExtensionInitError" => StateReasonCode::FunctionErrorExtensionInitError,
+            "FunctionError.InitResourceExhausted" => StateReasonCode::FunctionErrorInitResourceExhausted,
+            "FunctionError.InitTimeout" => StateReasonCode::FunctionErrorInitTimeout,
+            "FunctionError.InvalidEntryPoint" => StateReasonCode::FunctionErrorInvalidEntryPoint,
+            "FunctionError.InvalidWorkingDirectory" => StateReasonCode::FunctionErrorInvalidWorkingDirectory,
+            "FunctionError.PermissionDenied" => StateReasonCode::FunctionErrorPermissionDenied,
+            "FunctionError.RuntimeInitError" => StateReasonCode::FunctionErrorRuntimeInitError,
+            "FunctionError.TooManyExtensions" => StateReasonCode::FunctionErrorTooManyExtensions,
             "Idle" => StateReasonCode::Idle,
             "ImageAccessDenied" => StateReasonCode::ImageAccessDenied,
             "ImageDeleted" => StateReasonCode::ImageDeleted,
+            "InsufficientCapacity" => StateReasonCode::InsufficientCapacity,
             "InsufficientRolePermissions" => StateReasonCode::InsufficientRolePermissions,
             "InternalError" => StateReasonCode::InternalError,
             "InvalidConfiguration" => StateReasonCode::InvalidConfiguration,
@@ -143,6 +190,7 @@ impl ::std::convert::From<&str> for StateReasonCode {
             "KMSKeyNotFound" => StateReasonCode::KmsKeyNotFound,
             "Restoring" => StateReasonCode::Restoring,
             "SubnetOutOfIPAddresses" => StateReasonCode::SubnetOutOfIpAddresses,
+            "VcpuLimitExceeded" => StateReasonCode::VcpuLimitExceeded,
             other => StateReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -158,17 +206,28 @@ impl StateReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            StateReasonCode::CapacityProviderScalingLimitExceeded => "CapacityProviderScalingLimitExceeded",
             StateReasonCode::Creating => "Creating",
             StateReasonCode::DisabledKmsKey => "DisabledKMSKey",
+            StateReasonCode::Ec2RequestLimitExceeded => "EC2RequestLimitExceeded",
             StateReasonCode::EfsioError => "EFSIOError",
             StateReasonCode::EfsMountConnectivityError => "EFSMountConnectivityError",
             StateReasonCode::EfsMountFailure => "EFSMountFailure",
             StateReasonCode::EfsMountTimeout => "EFSMountTimeout",
             StateReasonCode::EniLimitExceeded => "EniLimitExceeded",
             StateReasonCode::FunctionError => "FunctionError",
+            StateReasonCode::FunctionErrorExtensionInitError => "FunctionError.ExtensionInitError",
+            StateReasonCode::FunctionErrorInitResourceExhausted => "FunctionError.InitResourceExhausted",
+            StateReasonCode::FunctionErrorInitTimeout => "FunctionError.InitTimeout",
+            StateReasonCode::FunctionErrorInvalidEntryPoint => "FunctionError.InvalidEntryPoint",
+            StateReasonCode::FunctionErrorInvalidWorkingDirectory => "FunctionError.InvalidWorkingDirectory",
+            StateReasonCode::FunctionErrorPermissionDenied => "FunctionError.PermissionDenied",
+            StateReasonCode::FunctionErrorRuntimeInitError => "FunctionError.RuntimeInitError",
+            StateReasonCode::FunctionErrorTooManyExtensions => "FunctionError.TooManyExtensions",
             StateReasonCode::Idle => "Idle",
             StateReasonCode::ImageAccessDenied => "ImageAccessDenied",
             StateReasonCode::ImageDeleted => "ImageDeleted",
+            StateReasonCode::InsufficientCapacity => "InsufficientCapacity",
             StateReasonCode::InsufficientRolePermissions => "InsufficientRolePermissions",
             StateReasonCode::InternalError => "InternalError",
             StateReasonCode::InvalidConfiguration => "InvalidConfiguration",
@@ -182,23 +241,35 @@ impl StateReasonCode {
             StateReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
             StateReasonCode::Restoring => "Restoring",
             StateReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
+            StateReasonCode::VcpuLimitExceeded => "VcpuLimitExceeded",
             StateReasonCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CapacityProviderScalingLimitExceeded",
             "Creating",
             "DisabledKMSKey",
+            "EC2RequestLimitExceeded",
             "EFSIOError",
             "EFSMountConnectivityError",
             "EFSMountFailure",
             "EFSMountTimeout",
             "EniLimitExceeded",
             "FunctionError",
+            "FunctionError.ExtensionInitError",
+            "FunctionError.InitResourceExhausted",
+            "FunctionError.InitTimeout",
+            "FunctionError.InvalidEntryPoint",
+            "FunctionError.InvalidWorkingDirectory",
+            "FunctionError.PermissionDenied",
+            "FunctionError.RuntimeInitError",
+            "FunctionError.TooManyExtensions",
             "Idle",
             "ImageAccessDenied",
             "ImageDeleted",
+            "InsufficientCapacity",
             "InsufficientRolePermissions",
             "InternalError",
             "InvalidConfiguration",
@@ -212,6 +283,7 @@ impl StateReasonCode {
             "KMSKeyNotFound",
             "Restoring",
             "SubnetOutOfIPAddresses",
+            "VcpuLimitExceeded",
         ]
     }
 }
@@ -235,17 +307,28 @@ impl StateReasonCode {
 impl ::std::fmt::Display for StateReasonCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            StateReasonCode::CapacityProviderScalingLimitExceeded => write!(f, "CapacityProviderScalingLimitExceeded"),
             StateReasonCode::Creating => write!(f, "Creating"),
             StateReasonCode::DisabledKmsKey => write!(f, "DisabledKMSKey"),
+            StateReasonCode::Ec2RequestLimitExceeded => write!(f, "EC2RequestLimitExceeded"),
             StateReasonCode::EfsioError => write!(f, "EFSIOError"),
             StateReasonCode::EfsMountConnectivityError => write!(f, "EFSMountConnectivityError"),
             StateReasonCode::EfsMountFailure => write!(f, "EFSMountFailure"),
             StateReasonCode::EfsMountTimeout => write!(f, "EFSMountTimeout"),
             StateReasonCode::EniLimitExceeded => write!(f, "EniLimitExceeded"),
             StateReasonCode::FunctionError => write!(f, "FunctionError"),
+            StateReasonCode::FunctionErrorExtensionInitError => write!(f, "FunctionError.ExtensionInitError"),
+            StateReasonCode::FunctionErrorInitResourceExhausted => write!(f, "FunctionError.InitResourceExhausted"),
+            StateReasonCode::FunctionErrorInitTimeout => write!(f, "FunctionError.InitTimeout"),
+            StateReasonCode::FunctionErrorInvalidEntryPoint => write!(f, "FunctionError.InvalidEntryPoint"),
+            StateReasonCode::FunctionErrorInvalidWorkingDirectory => write!(f, "FunctionError.InvalidWorkingDirectory"),
+            StateReasonCode::FunctionErrorPermissionDenied => write!(f, "FunctionError.PermissionDenied"),
+            StateReasonCode::FunctionErrorRuntimeInitError => write!(f, "FunctionError.RuntimeInitError"),
+            StateReasonCode::FunctionErrorTooManyExtensions => write!(f, "FunctionError.TooManyExtensions"),
             StateReasonCode::Idle => write!(f, "Idle"),
             StateReasonCode::ImageAccessDenied => write!(f, "ImageAccessDenied"),
             StateReasonCode::ImageDeleted => write!(f, "ImageDeleted"),
+            StateReasonCode::InsufficientCapacity => write!(f, "InsufficientCapacity"),
             StateReasonCode::InsufficientRolePermissions => write!(f, "InsufficientRolePermissions"),
             StateReasonCode::InternalError => write!(f, "InternalError"),
             StateReasonCode::InvalidConfiguration => write!(f, "InvalidConfiguration"),
@@ -259,6 +342,7 @@ impl ::std::fmt::Display for StateReasonCode {
             StateReasonCode::KmsKeyNotFound => write!(f, "KMSKeyNotFound"),
             StateReasonCode::Restoring => write!(f, "Restoring"),
             StateReasonCode::SubnetOutOfIpAddresses => write!(f, "SubnetOutOfIPAddresses"),
+            StateReasonCode::VcpuLimitExceeded => write!(f, "VcpuLimitExceeded"),
             StateReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }

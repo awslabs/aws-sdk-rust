@@ -13,6 +13,19 @@ pub fn ser_batch_inference_job_config(
         }
         object_2.finish();
     }
+    if let Some(var_5) = &input.ranking_influence {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("rankingInfluence").start_object();
+        for (key_7, value_8) in var_5 {
+            {
+                object_6.key(key_7.as_str()).number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::Float((*value_8).into()),
+                );
+            }
+        }
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -34,6 +47,9 @@ where
                         "itemExplorationConfig" => {
                             builder =
                                 builder.set_item_exploration_config(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                        }
+                        "rankingInfluence" => {
+                            builder = builder.set_ranking_influence(crate::protocol_serde::shape_ranking_influence::de_ranking_influence(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -19,6 +19,7 @@
 ///     IntegrationType::CognitoUserPool => { /* ... */ },
 ///     IntegrationType::Event => { /* ... */ },
 ///     IntegrationType::FileScanner => { /* ... */ },
+///     IntegrationType::MessageProcessor => { /* ... */ },
 ///     IntegrationType::PinpointApp => { /* ... */ },
 ///     IntegrationType::QMessageTemplates => { /* ... */ },
 ///     IntegrationType::SesIdentity => { /* ... */ },
@@ -69,6 +70,8 @@ pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
     FileScanner,
     #[allow(missing_docs)] // documentation missing in model
+    MessageProcessor,
+    #[allow(missing_docs)] // documentation missing in model
     PinpointApp,
     #[allow(missing_docs)] // documentation missing in model
     QMessageTemplates,
@@ -96,6 +99,7 @@ impl ::std::convert::From<&str> for IntegrationType {
             "COGNITO_USER_POOL" => IntegrationType::CognitoUserPool,
             "EVENT" => IntegrationType::Event,
             "FILE_SCANNER" => IntegrationType::FileScanner,
+            "MESSAGE_PROCESSOR" => IntegrationType::MessageProcessor,
             "PINPOINT_APP" => IntegrationType::PinpointApp,
             "Q_MESSAGE_TEMPLATES" => IntegrationType::QMessageTemplates,
             "SES_IDENTITY" => IntegrationType::SesIdentity,
@@ -125,6 +129,7 @@ impl IntegrationType {
             IntegrationType::CognitoUserPool => "COGNITO_USER_POOL",
             IntegrationType::Event => "EVENT",
             IntegrationType::FileScanner => "FILE_SCANNER",
+            IntegrationType::MessageProcessor => "MESSAGE_PROCESSOR",
             IntegrationType::PinpointApp => "PINPOINT_APP",
             IntegrationType::QMessageTemplates => "Q_MESSAGE_TEMPLATES",
             IntegrationType::SesIdentity => "SES_IDENTITY",
@@ -145,6 +150,7 @@ impl IntegrationType {
             "COGNITO_USER_POOL",
             "EVENT",
             "FILE_SCANNER",
+            "MESSAGE_PROCESSOR",
             "PINPOINT_APP",
             "Q_MESSAGE_TEMPLATES",
             "SES_IDENTITY",
@@ -182,6 +188,7 @@ impl ::std::fmt::Display for IntegrationType {
             IntegrationType::CognitoUserPool => write!(f, "COGNITO_USER_POOL"),
             IntegrationType::Event => write!(f, "EVENT"),
             IntegrationType::FileScanner => write!(f, "FILE_SCANNER"),
+            IntegrationType::MessageProcessor => write!(f, "MESSAGE_PROCESSOR"),
             IntegrationType::PinpointApp => write!(f, "PINPOINT_APP"),
             IntegrationType::QMessageTemplates => write!(f, "Q_MESSAGE_TEMPLATES"),
             IntegrationType::SesIdentity => write!(f, "SES_IDENTITY"),

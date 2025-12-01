@@ -19,6 +19,11 @@ where
                                 crate::protocol_serde::shape_aws_marketplace_offer_identifiers::de_aws_marketplace_offer_identifiers(tokens)?,
                             );
                         }
+                        "AwsMarketplaceOfferSets" => {
+                            builder = builder.set_aws_marketplace_offer_sets(
+                                crate::protocol_serde::shape_aws_marketplace_offer_set_identifiers::de_aws_marketplace_offer_set_identifiers(tokens)?,
+                            );
+                        }
                         "Solutions" => {
                             builder = builder.set_solutions(crate::protocol_serde::shape_solution_identifiers::de_solution_identifiers(tokens)?);
                         }

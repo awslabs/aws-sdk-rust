@@ -144,6 +144,9 @@ pub(crate) fn de_update_domain(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "DataStore" => {
+                    builder = builder.set_data_store(crate::protocol_serde::shape_data_store_response::de_data_store_response(tokens)?);
+                }
                 "DeadLetterQueueUrl" => {
                     builder = builder.set_dead_letter_queue_url(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -19,6 +19,8 @@ pub use crate::types::error::_precondition_failed_exception::PreconditionFailedE
 
 pub use crate::types::error::_dependency_failed_exception::DependencyFailedException;
 
+pub use crate::types::error::_unprocessable_content_exception::UnprocessableContentException;
+
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
 mod _access_denied_exception;
@@ -40,6 +42,8 @@ mod _throttling_exception;
 mod _too_many_tags_exception;
 
 mod _unauthorized_exception;
+
+mod _unprocessable_content_exception;
 
 mod _validation_exception;
 

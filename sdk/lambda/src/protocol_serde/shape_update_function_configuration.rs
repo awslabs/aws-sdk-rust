@@ -242,6 +242,11 @@ pub(crate) fn de_update_function_configuration(
                 "Architectures" => {
                     builder = builder.set_architectures(crate::protocol_serde::shape_architectures_list::de_architectures_list(tokens)?);
                 }
+                "CapacityProviderConfig" => {
+                    builder = builder.set_capacity_provider_config(
+                        crate::protocol_serde::shape_capacity_provider_config::de_capacity_provider_config(tokens)?,
+                    );
+                }
                 "CodeSha256" => {
                     builder = builder.set_code_sha256(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -253,6 +258,13 @@ pub(crate) fn de_update_function_configuration(
                     builder = builder.set_code_size(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "ConfigSha256" => {
+                    builder = builder.set_config_sha256(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

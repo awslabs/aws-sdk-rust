@@ -12,5 +12,17 @@ pub fn ser_update_assistant_ai_agent_input_input(
         crate::protocol_serde::shape_ai_agent_configuration_data::ser_ai_agent_configuration_data(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.orchestrator_configuration_list {
+        let mut array_5 = object.key("orchestratorConfigurationList").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_orchestrator_configuration_entry::ser_orchestrator_configuration_entry(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }

@@ -78,6 +78,30 @@ where
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'emailGenerativeAnswerChunkData' cannot be null"))?
                                 ))
                             }
+                            "caseSummarizationChunkData" => {
+                                Some(crate::types::DataDetails::CaseSummarizationChunkData(
+                                    crate::protocol_serde::shape_case_summarization_chunk_data_details::de_case_summarization_chunk_data_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'caseSummarizationChunkData' cannot be null"))?
+                                ))
+                            }
+                            "suggestedMessageData" => {
+                                Some(crate::types::DataDetails::SuggestedMessageData(
+                                    crate::protocol_serde::shape_suggested_message_data_details::de_suggested_message_data_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'suggestedMessageData' cannot be null"))?
+                                ))
+                            }
+                            "notesData" => {
+                                Some(crate::types::DataDetails::NotesData(
+                                    crate::protocol_serde::shape_notes_data_details::de_notes_data_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notesData' cannot be null"))?
+                                ))
+                            }
+                            "notesChunkData" => {
+                                Some(crate::types::DataDetails::NotesChunkData(
+                                    crate::protocol_serde::shape_notes_chunk_data_details::de_notes_chunk_data_details(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notesChunkData' cannot be null"))?
+                                ))
+                            }
                             _ => {
                                                                               ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                                                                               Some(crate::types::DataDetails::Unknown)

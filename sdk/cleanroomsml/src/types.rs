@@ -63,6 +63,24 @@ pub use crate::types::_s3_data_distribution_type::S3DataDistributionType;
 
 pub use crate::types::_incremental_training_data_channel::IncrementalTrainingDataChannel;
 
+pub use crate::types::_synthetic_data_configuration::SyntheticDataConfiguration;
+
+pub use crate::types::_synthetic_data_evaluation_scores::SyntheticDataEvaluationScores;
+
+pub use crate::types::_data_privacy_scores::DataPrivacyScores;
+
+pub use crate::types::_membership_inference_attack_score::MembershipInferenceAttackScore;
+
+pub use crate::types::_membership_inference_attack_version::MembershipInferenceAttackVersion;
+
+pub use crate::types::_ml_synthetic_data_parameters::MlSyntheticDataParameters;
+
+pub use crate::types::_column_classification_details::ColumnClassificationDetails;
+
+pub use crate::types::_synthetic_data_column_properties::SyntheticDataColumnProperties;
+
+pub use crate::types::_synthetic_data_column_type::SyntheticDataColumnType;
+
 pub use crate::types::_privacy_budgets::PrivacyBudgets;
 
 pub use crate::types::_access_budget::AccessBudget;
@@ -239,6 +257,8 @@ mod _collaboration_trained_model_inference_job_summary;
 
 mod _collaboration_trained_model_summary;
 
+mod _column_classification_details;
+
 mod _column_schema;
 
 mod _column_type;
@@ -258,6 +278,8 @@ mod _configured_model_algorithm_summary;
 mod _container_config;
 
 mod _custom_entity_config;
+
+mod _data_privacy_scores;
 
 mod _data_source;
 
@@ -303,6 +325,10 @@ mod _logs_configuration_policy;
 
 mod _logs_status;
 
+mod _membership_inference_attack_score;
+
+mod _membership_inference_attack_version;
+
 mod _metric_definition;
 
 mod _metrics_configuration_policy;
@@ -314,6 +340,8 @@ mod _ml_input_channel_status;
 mod _ml_input_channel_summary;
 
 mod _ml_output_configuration;
+
+mod _ml_synthetic_data_parameters;
 
 mod _model_inference_data_source;
 
@@ -348,6 +376,14 @@ mod _shared_audience_metrics;
 mod _status_details;
 
 mod _stopping_condition;
+
+mod _synthetic_data_column_properties;
+
+mod _synthetic_data_column_type;
+
+mod _synthetic_data_configuration;
+
+mod _synthetic_data_evaluation_scores;
 
 mod _tag_on_create_policy;
 

@@ -6,11 +6,17 @@
 pub struct BatchInferenceJobConfig {
     /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</p>
     pub item_exploration_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A map of ranking influence values for POPULARITY and FRESHNESS. For each key, specify a numerical value between 0.0 and 1.0 that determines how much influence that ranking factor has on the final recommendations. A value closer to 1.0 gives more weight to the factor, while a value closer to 0.0 reduces its influence.</p>
+    pub ranking_influence: ::std::option::Option<::std::collections::HashMap<crate::types::RankingInfluenceType, f64>>,
 }
 impl BatchInferenceJobConfig {
     /// <p>A string to string map specifying the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</p>
     pub fn item_exploration_config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.item_exploration_config.as_ref()
+    }
+    /// <p>A map of ranking influence values for POPULARITY and FRESHNESS. For each key, specify a numerical value between 0.0 and 1.0 that determines how much influence that ranking factor has on the final recommendations. A value closer to 1.0 gives more weight to the factor, while a value closer to 0.0 reduces its influence.</p>
+    pub fn ranking_influence(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::RankingInfluenceType, f64>> {
+        self.ranking_influence.as_ref()
     }
 }
 impl BatchInferenceJobConfig {
@@ -25,6 +31,7 @@ impl BatchInferenceJobConfig {
 #[non_exhaustive]
 pub struct BatchInferenceJobConfigBuilder {
     pub(crate) item_exploration_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) ranking_influence: ::std::option::Option<::std::collections::HashMap<crate::types::RankingInfluenceType, f64>>,
 }
 impl BatchInferenceJobConfigBuilder {
     /// Adds a key-value pair to `item_exploration_config`.
@@ -54,10 +61,34 @@ impl BatchInferenceJobConfigBuilder {
     pub fn get_item_exploration_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.item_exploration_config
     }
+    /// Adds a key-value pair to `ranking_influence`.
+    ///
+    /// To override the contents of this collection use [`set_ranking_influence`](Self::set_ranking_influence).
+    ///
+    /// <p>A map of ranking influence values for POPULARITY and FRESHNESS. For each key, specify a numerical value between 0.0 and 1.0 that determines how much influence that ranking factor has on the final recommendations. A value closer to 1.0 gives more weight to the factor, while a value closer to 0.0 reduces its influence.</p>
+    pub fn ranking_influence(mut self, k: crate::types::RankingInfluenceType, v: f64) -> Self {
+        let mut hash_map = self.ranking_influence.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.ranking_influence = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of ranking influence values for POPULARITY and FRESHNESS. For each key, specify a numerical value between 0.0 and 1.0 that determines how much influence that ranking factor has on the final recommendations. A value closer to 1.0 gives more weight to the factor, while a value closer to 0.0 reduces its influence.</p>
+    pub fn set_ranking_influence(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::RankingInfluenceType, f64>>,
+    ) -> Self {
+        self.ranking_influence = input;
+        self
+    }
+    /// <p>A map of ranking influence values for POPULARITY and FRESHNESS. For each key, specify a numerical value between 0.0 and 1.0 that determines how much influence that ranking factor has on the final recommendations. A value closer to 1.0 gives more weight to the factor, while a value closer to 0.0 reduces its influence.</p>
+    pub fn get_ranking_influence(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::RankingInfluenceType, f64>> {
+        &self.ranking_influence
+    }
     /// Consumes the builder and constructs a [`BatchInferenceJobConfig`](crate::types::BatchInferenceJobConfig).
     pub fn build(self) -> crate::types::BatchInferenceJobConfig {
         crate::types::BatchInferenceJobConfig {
             item_exploration_config: self.item_exploration_config,
+            ranking_influence: self.ranking_influence,
         }
     }
 }

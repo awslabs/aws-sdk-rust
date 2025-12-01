@@ -24,29 +24,47 @@ pub fn ser_list_engagements_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_8) = &input.sort {
-        #[allow(unused_mut)]
-        let mut object_9 = object.key("Sort").start_object();
-        crate::protocol_serde::shape_engagement_sort::ser_engagement_sort(&mut object_9, var_8)?;
-        object_9.finish();
-    }
-    if let Some(var_10) = &input.max_results {
-        object.key("MaxResults").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
-        );
-    }
-    if let Some(var_11) = &input.next_token {
-        object.key("NextToken").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.engagement_identifier {
-        let mut array_13 = object.key("EngagementIdentifier").start_array();
-        for item_14 in var_12 {
+    if let Some(var_8) = &input.context_types {
+        let mut array_9 = object.key("ContextTypes").start_array();
+        for item_10 in var_8 {
             {
-                array_13.value().string(item_14.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_13.finish();
+        array_9.finish();
+    }
+    if let Some(var_11) = &input.exclude_context_types {
+        let mut array_12 = object.key("ExcludeContextTypes").start_array();
+        for item_13 in var_11 {
+            {
+                array_12.value().string(item_13.as_str());
+            }
+        }
+        array_12.finish();
+    }
+    if let Some(var_14) = &input.sort {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("Sort").start_object();
+        crate::protocol_serde::shape_engagement_sort::ser_engagement_sort(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.max_results {
+        object.key("MaxResults").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+        );
+    }
+    if let Some(var_17) = &input.next_token {
+        object.key("NextToken").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.engagement_identifier {
+        let mut array_19 = object.key("EngagementIdentifier").start_array();
+        for item_20 in var_18 {
+            {
+                array_19.value().string(item_20.as_str());
+            }
+        }
+        array_19.finish();
     }
     Ok(())
 }

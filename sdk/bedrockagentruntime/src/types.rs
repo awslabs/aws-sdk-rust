@@ -51,6 +51,10 @@ pub use crate::types::_retrieval_result_content_column::RetrievalResultContentCo
 
 pub use crate::types::_retrieval_result_content_column_type::RetrievalResultContentColumnType;
 
+pub use crate::types::_audio_segment::AudioSegment;
+
+pub use crate::types::_video_segment::VideoSegment;
+
 pub use crate::types::_retrieval_result_content_type::RetrievalResultContentType;
 
 pub use crate::types::_guardrail_configuration::GuardrailConfiguration;
@@ -88,6 +92,12 @@ pub use crate::types::_filter_attribute::FilterAttribute;
 pub use crate::types::_search_type::SearchType;
 
 pub use crate::types::_knowledge_base_query::KnowledgeBaseQuery;
+
+pub use crate::types::_input_image::InputImage;
+
+pub use crate::types::_input_image_format::InputImageFormat;
+
+pub use crate::types::_knowledge_base_query_type::KnowledgeBaseQueryType;
 
 pub use crate::types::_retrieve_and_generate_stream_response_output::RetrieveAndGenerateStreamResponseOutput;
 
@@ -639,6 +649,8 @@ mod _attribute_type;
 
 mod _attribution;
 
+mod _audio_segment;
+
 mod _bedrock_model_configurations;
 
 mod _bedrock_reranking_configuration;
@@ -897,6 +909,10 @@ mod _inline_session_state;
 
 mod _input_file;
 
+mod _input_image;
+
+mod _input_image_format;
+
 mod _input_prompt;
 
 mod _input_query_type;
@@ -926,6 +942,8 @@ mod _knowledge_base_lookup_input;
 mod _knowledge_base_lookup_output;
 
 mod _knowledge_base_query;
+
+mod _knowledge_base_query_type;
 
 mod _knowledge_base_retrieval_configuration;
 
@@ -1202,6 +1220,8 @@ mod _vector_search_bedrock_reranking_model_configuration;
 mod _vector_search_reranking_configuration;
 
 mod _vector_search_reranking_configuration_type;
+
+mod _video_segment;
 
 /// Builders
 pub mod builders;

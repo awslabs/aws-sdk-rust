@@ -7,6 +7,12 @@ pub fn ser_assistant_association_input_data(
         crate::types::AssistantAssociationInputData::KnowledgeBaseId(inner) => {
             object_2.key("knowledgeBaseId").string(inner.as_str());
         }
+        crate::types::AssistantAssociationInputData::ExternalBedrockKnowledgeBaseConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_2.key("externalBedrockKnowledgeBaseConfig").start_object();
+            crate::protocol_serde::shape_external_bedrock_knowledge_base_config::ser_external_bedrock_knowledge_base_config(&mut object_1, inner)?;
+            object_1.finish();
+        }
         crate::types::AssistantAssociationInputData::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AssistantAssociationInputData",

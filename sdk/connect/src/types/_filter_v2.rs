@@ -8,6 +8,9 @@ pub struct FilterV2 {
     pub filter_key: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers to use for filtering data. For example, if you have a filter key of <code>QUEUE</code>, you would add queue IDs or ARNs in <code>FilterValues</code>.</p>
     pub filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>System defined filtering condition. For example, the NOT_EXISTS StringCondition returns documents where the field specified by FilterKey does not exist in the document.</p>
+    /// <p>When the NOT_EXISTS StringCondition is added to a FilterV2 object, FilterValues must be null or empty.</p>
+    pub string_condition: ::std::option::Option<crate::types::FilterV2StringCondition>,
 }
 impl FilterV2 {
     /// <p>The key to use for filtering data. For example, <code>QUEUE</code>, <code>ROUTING_PROFILE, AGENT</code>, <code>CHANNEL</code>, <code>AGENT_HIERARCHY_LEVEL_ONE</code>, <code>AGENT_HIERARCHY_LEVEL_TWO</code>, <code>AGENT_HIERARCHY_LEVEL_THREE</code>, <code>AGENT_HIERARCHY_LEVEL_FOUR</code>, <code>AGENT_HIERARCHY_LEVEL_FIVE</code>. There must be at least 1 key and a maximum 5 keys.</p>
@@ -19,6 +22,11 @@ impl FilterV2 {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_values.is_none()`.
     pub fn filter_values(&self) -> &[::std::string::String] {
         self.filter_values.as_deref().unwrap_or_default()
+    }
+    /// <p>System defined filtering condition. For example, the NOT_EXISTS StringCondition returns documents where the field specified by FilterKey does not exist in the document.</p>
+    /// <p>When the NOT_EXISTS StringCondition is added to a FilterV2 object, FilterValues must be null or empty.</p>
+    pub fn string_condition(&self) -> ::std::option::Option<&crate::types::FilterV2StringCondition> {
+        self.string_condition.as_ref()
     }
 }
 impl FilterV2 {
@@ -34,6 +42,7 @@ impl FilterV2 {
 pub struct FilterV2Builder {
     pub(crate) filter_key: ::std::option::Option<::std::string::String>,
     pub(crate) filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) string_condition: ::std::option::Option<crate::types::FilterV2StringCondition>,
 }
 impl FilterV2Builder {
     /// <p>The key to use for filtering data. For example, <code>QUEUE</code>, <code>ROUTING_PROFILE, AGENT</code>, <code>CHANNEL</code>, <code>AGENT_HIERARCHY_LEVEL_ONE</code>, <code>AGENT_HIERARCHY_LEVEL_TWO</code>, <code>AGENT_HIERARCHY_LEVEL_THREE</code>, <code>AGENT_HIERARCHY_LEVEL_FOUR</code>, <code>AGENT_HIERARCHY_LEVEL_FIVE</code>. There must be at least 1 key and a maximum 5 keys.</p>
@@ -70,11 +79,29 @@ impl FilterV2Builder {
     pub fn get_filter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_values
     }
+    /// <p>System defined filtering condition. For example, the NOT_EXISTS StringCondition returns documents where the field specified by FilterKey does not exist in the document.</p>
+    /// <p>When the NOT_EXISTS StringCondition is added to a FilterV2 object, FilterValues must be null or empty.</p>
+    pub fn string_condition(mut self, input: crate::types::FilterV2StringCondition) -> Self {
+        self.string_condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>System defined filtering condition. For example, the NOT_EXISTS StringCondition returns documents where the field specified by FilterKey does not exist in the document.</p>
+    /// <p>When the NOT_EXISTS StringCondition is added to a FilterV2 object, FilterValues must be null or empty.</p>
+    pub fn set_string_condition(mut self, input: ::std::option::Option<crate::types::FilterV2StringCondition>) -> Self {
+        self.string_condition = input;
+        self
+    }
+    /// <p>System defined filtering condition. For example, the NOT_EXISTS StringCondition returns documents where the field specified by FilterKey does not exist in the document.</p>
+    /// <p>When the NOT_EXISTS StringCondition is added to a FilterV2 object, FilterValues must be null or empty.</p>
+    pub fn get_string_condition(&self) -> &::std::option::Option<crate::types::FilterV2StringCondition> {
+        &self.string_condition
+    }
     /// Consumes the builder and constructs a [`FilterV2`](crate::types::FilterV2).
     pub fn build(self) -> crate::types::FilterV2 {
         crate::types::FilterV2 {
             filter_key: self.filter_key,
             filter_values: self.filter_values,
+            string_condition: self.string_condition,
         }
     }
 }

@@ -5,6 +5,8 @@ pub use crate::types::_validation_exception_error_code::ValidationExceptionError
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_access_denied_exception_error_code::AccessDeniedExceptionErrorCode;
+
 pub use crate::types::_solution_base::SolutionBase;
 
 pub use crate::types::_solution_status::SolutionStatus;
@@ -70,6 +72,16 @@ pub use crate::types::_stage::Stage;
 pub use crate::types::_review_status::ReviewStatus;
 
 pub use crate::types::_opportunity_type::OpportunityType;
+
+pub use crate::types::_reason_code::ReasonCode;
+
+pub use crate::types::_task_status::TaskStatus;
+
+pub use crate::types::_list_opportunity_from_engagement_task_summary::ListOpportunityFromEngagementTaskSummary;
+
+pub use crate::types::_list_tasks_sort_base::ListTasksSortBase;
+
+pub use crate::types::_list_tasks_sort_name::ListTasksSortName;
 
 pub use crate::types::_visibility::Visibility;
 
@@ -153,6 +165,14 @@ pub use crate::types::_engagement_member_summary::EngagementMemberSummary;
 
 pub use crate::types::_payload::Payload;
 
+pub use crate::types::_lead_invitation_payload::LeadInvitationPayload;
+
+pub use crate::types::_lead_invitation_interaction::LeadInvitationInteraction;
+
+pub use crate::types::_lead_invitation_customer::LeadInvitationCustomer;
+
+pub use crate::types::_market_segment::MarketSegment;
+
 pub use crate::types::_opportunity_invitation_payload::OpportunityInvitationPayload;
 
 pub use crate::types::_project_details::ProjectDetails;
@@ -181,17 +201,9 @@ pub use crate::types::_opportunity_engagement_invitation_sort::OpportunityEngage
 
 pub use crate::types::_opportunity_engagement_invitation_sort_name::OpportunityEngagementInvitationSortName;
 
-pub use crate::types::_reason_code::ReasonCode;
-
-pub use crate::types::_task_status::TaskStatus;
-
 pub use crate::types::_aws_submission::AwsSubmission;
 
 pub use crate::types::_list_engagement_from_opportunity_task_summary::ListEngagementFromOpportunityTaskSummary;
-
-pub use crate::types::_list_tasks_sort_base::ListTasksSortBase;
-
-pub use crate::types::_list_tasks_sort_name::ListTasksSortName;
 
 pub use crate::types::_list_engagement_by_accepting_invitation_task_summary::ListEngagementByAcceptingInvitationTaskSummary;
 
@@ -200,6 +212,14 @@ pub use crate::types::_engagement_member::EngagementMember;
 pub use crate::types::_engagement_context_details::EngagementContextDetails;
 
 pub use crate::types::_engagement_context_payload::EngagementContextPayload;
+
+pub use crate::types::_lead_context::LeadContext;
+
+pub use crate::types::_lead_interaction::LeadInteraction;
+
+pub use crate::types::_lead_contact::LeadContact;
+
+pub use crate::types::_lead_customer::LeadCustomer;
 
 pub use crate::types::_customer_projects_context::CustomerProjectsContext;
 
@@ -212,6 +232,12 @@ pub use crate::types::_engagement_summary::EngagementSummary;
 pub use crate::types::_engagement_sort::EngagementSort;
 
 pub use crate::types::_engagement_sort_name::EngagementSortName;
+
+pub use crate::types::_update_engagement_context_payload::UpdateEngagementContextPayload;
+
+pub use crate::types::_update_lead_context::UpdateLeadContext;
+
+mod _access_denied_exception_error_code;
 
 mod _account;
 
@@ -307,6 +333,20 @@ mod _involvement_type_change_reason;
 
 mod _last_modified_date;
 
+mod _lead_contact;
+
+mod _lead_context;
+
+mod _lead_customer;
+
+mod _lead_interaction;
+
+mod _lead_invitation_customer;
+
+mod _lead_invitation_interaction;
+
+mod _lead_invitation_payload;
+
 mod _life_cycle;
 
 mod _life_cycle_for_view;
@@ -317,9 +357,13 @@ mod _list_engagement_by_accepting_invitation_task_summary;
 
 mod _list_engagement_from_opportunity_task_summary;
 
+mod _list_opportunity_from_engagement_task_summary;
+
 mod _list_tasks_sort_base;
 
 mod _list_tasks_sort_name;
+
+mod _market_segment;
 
 mod _marketing;
 
@@ -418,6 +462,10 @@ mod _stage;
 mod _tag;
 
 mod _task_status;
+
+mod _update_engagement_context_payload;
+
+mod _update_lead_context;
 
 mod _validation_exception_error;
 

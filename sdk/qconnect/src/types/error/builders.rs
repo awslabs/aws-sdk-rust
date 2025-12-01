@@ -19,4 +19,6 @@ pub use crate::types::error::_precondition_failed_exception::PreconditionFailedE
 
 pub use crate::types::error::_dependency_failed_exception::DependencyFailedExceptionBuilder;
 
+pub use crate::types::error::_unprocessable_content_exception::UnprocessableContentExceptionBuilder;
+
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;

@@ -301,6 +301,8 @@ pub enum InvokeError {
     KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
     /// <p>Lambda couldn't decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings.</p>
     KmsNotFoundException(crate::types::error::KmsNotFoundException),
+    /// <p>The function has no published versions available.</p>
+    NoPublishedVersionException(crate::types::error::NoPublishedVersionException),
     /// <p>Lambda has detected your function being invoked in a recursive loop with other Amazon Web Services resources and stopped your function's invocation.</p>
     RecursiveInvocationException(crate::types::error::RecursiveInvocationException),
     /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input quota. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
@@ -311,7 +313,7 @@ pub enum InvokeError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
     ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
-    /// <p>The processed request payload exceeded the <code>Invoke</code> request body size limit for asynchronous invocations. While the event payload may be under 1 MB, the size after internal serialization exceeds the maximum allowed size for asynchronous invocations.</p>
+    /// <p>The request payload exceeded the maximum allowed size for serialized request entities.</p>
     SerializedRequestEntityTooLargeException(crate::types::error::SerializedRequestEntityTooLargeException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::types::error::ServiceException),
@@ -378,6 +380,7 @@ impl InvokeError {
             Self::KmsDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsInvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoPublishedVersionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RecursiveInvocationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RequestTooLargeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -466,6 +469,10 @@ impl InvokeError {
     pub fn is_kms_not_found_exception(&self) -> bool {
         matches!(self, Self::KmsNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `InvokeError::NoPublishedVersionException`.
+    pub fn is_no_published_version_exception(&self) -> bool {
+        matches!(self, Self::NoPublishedVersionException(_))
+    }
     /// Returns `true` if the error kind is `InvokeError::RecursiveInvocationException`.
     pub fn is_recursive_invocation_exception(&self) -> bool {
         matches!(self, Self::RecursiveInvocationException(_))
@@ -540,6 +547,7 @@ impl ::std::error::Error for InvokeError {
             Self::KmsDisabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NoPublishedVersionException(_inner) => ::std::option::Option::Some(_inner),
             Self::RecursiveInvocationException(_inner) => ::std::option::Option::Some(_inner),
             Self::RequestTooLargeException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
@@ -578,6 +586,7 @@ impl ::std::fmt::Display for InvokeError {
             Self::KmsDisabledException(_inner) => _inner.fmt(f),
             Self::KmsInvalidStateException(_inner) => _inner.fmt(f),
             Self::KmsNotFoundException(_inner) => _inner.fmt(f),
+            Self::NoPublishedVersionException(_inner) => _inner.fmt(f),
             Self::RecursiveInvocationException(_inner) => _inner.fmt(f),
             Self::RequestTooLargeException(_inner) => _inner.fmt(f),
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
@@ -630,6 +639,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeError {
             Self::KmsDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoPublishedVersionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RecursiveInvocationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RequestTooLargeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

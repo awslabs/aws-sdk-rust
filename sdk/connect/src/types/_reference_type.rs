@@ -17,6 +17,7 @@
 ///     ReferenceType::Date => { /* ... */ },
 ///     ReferenceType::Email => { /* ... */ },
 ///     ReferenceType::EmailMessage => { /* ... */ },
+///     ReferenceType::EmailMessagePlainText => { /* ... */ },
 ///     ReferenceType::Number => { /* ... */ },
 ///     ReferenceType::String => { /* ... */ },
 ///     ReferenceType::Url => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum ReferenceType {
     #[allow(missing_docs)] // documentation missing in model
     EmailMessage,
     #[allow(missing_docs)] // documentation missing in model
+    EmailMessagePlainText,
+    #[allow(missing_docs)] // documentation missing in model
     Number,
     #[allow(missing_docs)] // documentation missing in model
     String,
@@ -76,6 +79,7 @@ impl ::std::convert::From<&str> for ReferenceType {
             "DATE" => ReferenceType::Date,
             "EMAIL" => ReferenceType::Email,
             "EMAIL_MESSAGE" => ReferenceType::EmailMessage,
+            "EMAIL_MESSAGE_PLAIN_TEXT" => ReferenceType::EmailMessagePlainText,
             "NUMBER" => ReferenceType::Number,
             "STRING" => ReferenceType::String,
             "URL" => ReferenceType::Url,
@@ -99,6 +103,7 @@ impl ReferenceType {
             ReferenceType::Date => "DATE",
             ReferenceType::Email => "EMAIL",
             ReferenceType::EmailMessage => "EMAIL_MESSAGE",
+            ReferenceType::EmailMessagePlainText => "EMAIL_MESSAGE_PLAIN_TEXT",
             ReferenceType::Number => "NUMBER",
             ReferenceType::String => "STRING",
             ReferenceType::Url => "URL",
@@ -113,6 +118,7 @@ impl ReferenceType {
             "DATE",
             "EMAIL",
             "EMAIL_MESSAGE",
+            "EMAIL_MESSAGE_PLAIN_TEXT",
             "NUMBER",
             "STRING",
             "URL",
@@ -144,6 +150,7 @@ impl ::std::fmt::Display for ReferenceType {
             ReferenceType::Date => write!(f, "DATE"),
             ReferenceType::Email => write!(f, "EMAIL"),
             ReferenceType::EmailMessage => write!(f, "EMAIL_MESSAGE"),
+            ReferenceType::EmailMessagePlainText => write!(f, "EMAIL_MESSAGE_PLAIN_TEXT"),
             ReferenceType::Number => write!(f, "NUMBER"),
             ReferenceType::String => write!(f, "STRING"),
             ReferenceType::Url => write!(f, "URL"),

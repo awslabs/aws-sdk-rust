@@ -14,6 +14,87 @@ pub(crate) fn activate_evaluation_form_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_create_data_table_value_output_output_correct_errors(
+    mut builder: crate::operation::batch_create_data_table_value::builders::BatchCreateDataTableValueOutputBuilder,
+) -> crate::operation::batch_create_data_table_value::builders::BatchCreateDataTableValueOutputBuilder {
+    if builder.successful.is_none() {
+        builder.successful = Some(Default::default())
+    }
+    if builder.failed.is_none() {
+        builder.failed = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_delete_data_table_value_output_output_correct_errors(
+    mut builder: crate::operation::batch_delete_data_table_value::builders::BatchDeleteDataTableValueOutputBuilder,
+) -> crate::operation::batch_delete_data_table_value::builders::BatchDeleteDataTableValueOutputBuilder {
+    if builder.successful.is_none() {
+        builder.successful = Some(Default::default())
+    }
+    if builder.failed.is_none() {
+        builder.failed = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_describe_data_table_value_output_output_correct_errors(
+    mut builder: crate::operation::batch_describe_data_table_value::builders::BatchDescribeDataTableValueOutputBuilder,
+) -> crate::operation::batch_describe_data_table_value::builders::BatchDescribeDataTableValueOutputBuilder {
+    if builder.successful.is_none() {
+        builder.successful = Some(Default::default())
+    }
+    if builder.failed.is_none() {
+        builder.failed = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_data_table_value_output_output_correct_errors(
+    mut builder: crate::operation::batch_update_data_table_value::builders::BatchUpdateDataTableValueOutputBuilder,
+) -> crate::operation::batch_update_data_table_value::builders::BatchUpdateDataTableValueOutputBuilder {
+    if builder.successful.is_none() {
+        builder.successful = Some(Default::default())
+    }
+    if builder.failed.is_none() {
+        builder.failed = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_data_table_output_output_correct_errors(
+    mut builder: crate::operation::create_data_table::builders::CreateDataTableOutputBuilder,
+) -> crate::operation::create_data_table::builders::CreateDataTableOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.lock_version.is_none() {
+        builder.lock_version = {
+            let builder = crate::types::builders::DataTableLockVersionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn create_data_table_attribute_output_output_correct_errors(
+    mut builder: crate::operation::create_data_table_attribute::builders::CreateDataTableAttributeOutputBuilder,
+) -> crate::operation::create_data_table_attribute::builders::CreateDataTableAttributeOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.lock_version.is_none() {
+        builder.lock_version = {
+            let builder = crate::types::builders::DataTableLockVersionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_evaluation_form_output_output_correct_errors(
     mut builder: crate::operation::create_evaluation_form::builders::CreateEvaluationFormOutputBuilder,
 ) -> crate::operation::create_evaluation_form::builders::CreateEvaluationFormOutputBuilder {
@@ -83,6 +164,18 @@ pub(crate) fn create_vocabulary_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_workspace_output_output_correct_errors(
+    mut builder: crate::operation::create_workspace::builders::CreateWorkspaceOutputBuilder,
+) -> crate::operation::create_workspace::builders::CreateWorkspaceOutputBuilder {
+    if builder.workspace_id.is_none() {
+        builder.workspace_id = Some(Default::default())
+    }
+    if builder.workspace_arn.is_none() {
+        builder.workspace_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn deactivate_evaluation_form_output_output_correct_errors(
     mut builder: crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormOutputBuilder,
 ) -> crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormOutputBuilder {
@@ -94,6 +187,18 @@ pub(crate) fn deactivate_evaluation_form_output_output_correct_errors(
     }
     if builder.evaluation_form_version.is_none() {
         builder.evaluation_form_version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_data_table_attribute_output_output_correct_errors(
+    mut builder: crate::operation::delete_data_table_attribute::builders::DeleteDataTableAttributeOutputBuilder,
+) -> crate::operation::delete_data_table_attribute::builders::DeleteDataTableAttributeOutputBuilder {
+    if builder.lock_version.is_none() {
+        builder.lock_version = {
+            let builder = crate::types::builders::DataTableLockVersionBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -126,6 +231,30 @@ pub(crate) fn describe_contact_evaluation_output_output_correct_errors(
         builder.evaluation_form = {
             let builder = crate::types::builders::EvaluationFormContentBuilder::default();
             crate::serde_util::evaluation_form_content_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn describe_data_table_output_output_correct_errors(
+    mut builder: crate::operation::describe_data_table::builders::DescribeDataTableOutputBuilder,
+) -> crate::operation::describe_data_table::builders::DescribeDataTableOutputBuilder {
+    if builder.data_table.is_none() {
+        builder.data_table = {
+            let builder = crate::types::builders::DataTableBuilder::default();
+            crate::serde_util::data_table_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn describe_data_table_attribute_output_output_correct_errors(
+    mut builder: crate::operation::describe_data_table_attribute::builders::DescribeDataTableAttributeOutputBuilder,
+) -> crate::operation::describe_data_table_attribute::builders::DescribeDataTableAttributeOutputBuilder {
+    if builder.attribute.is_none() {
+        builder.attribute = {
+            let builder = crate::types::builders::DataTableAttributeBuilder::default();
+            crate::serde_util::data_table_attribute_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -167,6 +296,27 @@ pub(crate) fn describe_vocabulary_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_workspace_output_output_correct_errors(
+    mut builder: crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder,
+) -> crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder {
+    if builder.workspace.is_none() {
+        builder.workspace = {
+            let builder = crate::types::builders::WorkspaceBuilder::default();
+            crate::serde_util::workspace_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn evaluate_data_table_values_output_output_correct_errors(
+    mut builder: crate::operation::evaluate_data_table_values::builders::EvaluateDataTableValuesOutputBuilder,
+) -> crate::operation::evaluate_data_table_values::builders::EvaluateDataTableValuesOutputBuilder {
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_attached_file_output_output_correct_errors(
     mut builder: crate::operation::get_attached_file::builders::GetAttachedFileOutputBuilder,
 ) -> crate::operation::get_attached_file::builders::GetAttachedFileOutputBuilder {
@@ -196,6 +346,42 @@ pub(crate) fn list_contact_evaluations_output_output_correct_errors(
 ) -> crate::operation::list_contact_evaluations::builders::ListContactEvaluationsOutputBuilder {
     if builder.evaluation_summary_list.is_none() {
         builder.evaluation_summary_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_data_table_attributes_output_output_correct_errors(
+    mut builder: crate::operation::list_data_table_attributes::builders::ListDataTableAttributesOutputBuilder,
+) -> crate::operation::list_data_table_attributes::builders::ListDataTableAttributesOutputBuilder {
+    if builder.attributes.is_none() {
+        builder.attributes = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_data_table_primary_values_output_output_correct_errors(
+    mut builder: crate::operation::list_data_table_primary_values::builders::ListDataTablePrimaryValuesOutputBuilder,
+) -> crate::operation::list_data_table_primary_values::builders::ListDataTablePrimaryValuesOutputBuilder {
+    if builder.primary_values_list.is_none() {
+        builder.primary_values_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_data_table_values_output_output_correct_errors(
+    mut builder: crate::operation::list_data_table_values::builders::ListDataTableValuesOutputBuilder,
+) -> crate::operation::list_data_table_values::builders::ListDataTableValuesOutputBuilder {
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_data_tables_output_output_correct_errors(
+    mut builder: crate::operation::list_data_tables::builders::ListDataTablesOutputBuilder,
+) -> crate::operation::list_data_tables::builders::ListDataTablesOutputBuilder {
+    if builder.data_table_summary_list.is_none() {
+        builder.data_table_summary_list = Some(Default::default())
     }
     builder
 }
@@ -251,6 +437,24 @@ pub(crate) fn list_rules_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_workspace_pages_output_output_correct_errors(
+    mut builder: crate::operation::list_workspace_pages::builders::ListWorkspacePagesOutputBuilder,
+) -> crate::operation::list_workspace_pages::builders::ListWorkspacePagesOutputBuilder {
+    if builder.workspace_page_list.is_none() {
+        builder.workspace_page_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_workspaces_output_output_correct_errors(
+    mut builder: crate::operation::list_workspaces::builders::ListWorkspacesOutputBuilder,
+) -> crate::operation::list_workspaces::builders::ListWorkspacesOutputBuilder {
+    if builder.workspace_summary_list.is_none() {
+        builder.workspace_summary_list = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn search_contacts_output_output_correct_errors(
     mut builder: crate::operation::search_contacts::builders::SearchContactsOutputBuilder,
 ) -> crate::operation::search_contacts::builders::SearchContactsOutputBuilder {
@@ -301,6 +505,45 @@ pub(crate) fn update_contact_evaluation_output_output_correct_errors(
     }
     if builder.evaluation_arn.is_none() {
         builder.evaluation_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_data_table_attribute_output_output_correct_errors(
+    mut builder: crate::operation::update_data_table_attribute::builders::UpdateDataTableAttributeOutputBuilder,
+) -> crate::operation::update_data_table_attribute::builders::UpdateDataTableAttributeOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.lock_version.is_none() {
+        builder.lock_version = {
+            let builder = crate::types::builders::DataTableLockVersionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_data_table_metadata_output_output_correct_errors(
+    mut builder: crate::operation::update_data_table_metadata::builders::UpdateDataTableMetadataOutputBuilder,
+) -> crate::operation::update_data_table_metadata::builders::UpdateDataTableMetadataOutputBuilder {
+    if builder.lock_version.is_none() {
+        builder.lock_version = {
+            let builder = crate::types::builders::DataTableLockVersionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_data_table_primary_values_output_output_correct_errors(
+    mut builder: crate::operation::update_data_table_primary_values::builders::UpdateDataTablePrimaryValuesOutputBuilder,
+) -> crate::operation::update_data_table_primary_values::builders::UpdateDataTablePrimaryValuesOutputBuilder {
+    if builder.lock_version.is_none() {
+        builder.lock_version = {
+            let builder = crate::types::builders::DataTableLockVersionBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -368,6 +611,37 @@ pub(crate) fn evaluation_form_content_correct_errors(
     }
     if builder.items.is_none() {
         builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_table_correct_errors(mut builder: crate::types::builders::DataTableBuilder) -> crate::types::builders::DataTableBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.time_zone.is_none() {
+        builder.time_zone = Some(Default::default())
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn data_table_attribute_correct_errors(
+    mut builder: crate::types::builders::DataTableAttributeBuilder,
+) -> crate::types::builders::DataTableAttributeBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.value_type.is_none() {
+        builder.value_type = "no value was set".parse::<crate::types::DataTableAttributeValueType>().ok()
     }
     builder
 }
@@ -470,6 +744,22 @@ pub(crate) fn vocabulary_correct_errors(mut builder: crate::types::builders::Voc
     builder
 }
 
+pub(crate) fn workspace_correct_errors(mut builder: crate::types::builders::WorkspaceBuilder) -> crate::types::builders::WorkspaceBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn agent_config_correct_errors(mut builder: crate::types::builders::AgentConfigBuilder) -> crate::types::builders::AgentConfigBuilder {
     if builder.distributions.is_none() {
         builder.distributions = Some(Default::default())
@@ -554,6 +844,147 @@ pub(crate) fn attached_file_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn batch_create_data_table_value_failure_result_correct_errors(
+    mut builder: crate::types::builders::BatchCreateDataTableValueFailureResultBuilder,
+) -> crate::types::builders::BatchCreateDataTableValueFailureResultBuilder {
+    if builder.primary_values.is_none() {
+        builder.primary_values = Some(Default::default())
+    }
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_create_data_table_value_success_result_correct_errors(
+    mut builder: crate::types::builders::BatchCreateDataTableValueSuccessResultBuilder,
+) -> crate::types::builders::BatchCreateDataTableValueSuccessResultBuilder {
+    if builder.primary_values.is_none() {
+        builder.primary_values = Some(Default::default())
+    }
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.record_id.is_none() {
+        builder.record_id = Some(Default::default())
+    }
+    if builder.lock_version.is_none() {
+        builder.lock_version = {
+            let builder = crate::types::builders::DataTableLockVersionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn batch_delete_data_table_value_failure_result_correct_errors(
+    mut builder: crate::types::builders::BatchDeleteDataTableValueFailureResultBuilder,
+) -> crate::types::builders::BatchDeleteDataTableValueFailureResultBuilder {
+    if builder.primary_values.is_none() {
+        builder.primary_values = Some(Default::default())
+    }
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_delete_data_table_value_success_result_correct_errors(
+    mut builder: crate::types::builders::BatchDeleteDataTableValueSuccessResultBuilder,
+) -> crate::types::builders::BatchDeleteDataTableValueSuccessResultBuilder {
+    if builder.primary_values.is_none() {
+        builder.primary_values = Some(Default::default())
+    }
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.lock_version.is_none() {
+        builder.lock_version = {
+            let builder = crate::types::builders::DataTableLockVersionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn batch_describe_data_table_value_failure_result_correct_errors(
+    mut builder: crate::types::builders::BatchDescribeDataTableValueFailureResultBuilder,
+) -> crate::types::builders::BatchDescribeDataTableValueFailureResultBuilder {
+    if builder.primary_values.is_none() {
+        builder.primary_values = Some(Default::default())
+    }
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_describe_data_table_value_success_result_correct_errors(
+    mut builder: crate::types::builders::BatchDescribeDataTableValueSuccessResultBuilder,
+) -> crate::types::builders::BatchDescribeDataTableValueSuccessResultBuilder {
+    if builder.record_id.is_none() {
+        builder.record_id = Some(Default::default())
+    }
+    if builder.attribute_id.is_none() {
+        builder.attribute_id = Some(Default::default())
+    }
+    if builder.primary_values.is_none() {
+        builder.primary_values = Some(Default::default())
+    }
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.lock_version.is_none() {
+        builder.lock_version = {
+            let builder = crate::types::builders::DataTableLockVersionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn batch_update_data_table_value_failure_result_correct_errors(
+    mut builder: crate::types::builders::BatchUpdateDataTableValueFailureResultBuilder,
+) -> crate::types::builders::BatchUpdateDataTableValueFailureResultBuilder {
+    if builder.primary_values.is_none() {
+        builder.primary_values = Some(Default::default())
+    }
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_data_table_value_success_result_correct_errors(
+    mut builder: crate::types::builders::BatchUpdateDataTableValueSuccessResultBuilder,
+) -> crate::types::builders::BatchUpdateDataTableValueSuccessResultBuilder {
+    if builder.primary_values.is_none() {
+        builder.primary_values = Some(Default::default())
+    }
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.lock_version.is_none() {
+        builder.lock_version = {
+            let builder = crate::types::builders::DataTableLockVersionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn contact_metric_result_correct_errors(
     mut builder: crate::types::builders::ContactMetricResultBuilder,
 ) -> crate::types::builders::ContactMetricResultBuilder {
@@ -562,6 +993,51 @@ pub(crate) fn contact_metric_result_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(crate::types::ContactMetricValue::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn data_table_evaluated_value_correct_errors(
+    mut builder: crate::types::builders::DataTableEvaluatedValueBuilder,
+) -> crate::types::builders::DataTableEvaluatedValueBuilder {
+    if builder.record_id.is_none() {
+        builder.record_id = Some(Default::default())
+    }
+    if builder.primary_values.is_none() {
+        builder.primary_values = Some(Default::default())
+    }
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.value_type.is_none() {
+        builder.value_type = "no value was set".parse::<crate::types::DataTableAttributeValueType>().ok()
+    }
+    if builder.found.is_none() {
+        builder.found = Some(Default::default())
+    }
+    if builder.error.is_none() {
+        builder.error = Some(Default::default())
+    }
+    if builder.evaluated_value.is_none() {
+        builder.evaluated_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_table_value_summary_correct_errors(
+    mut builder: crate::types::builders::DataTableValueSummaryBuilder,
+) -> crate::types::builders::DataTableValueSummaryBuilder {
+    if builder.primary_values.is_none() {
+        builder.primary_values = Some(Default::default())
+    }
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.value_type.is_none() {
+        builder.value_type = "no value was set".parse::<crate::types::DataTableAttributeValueType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }
@@ -664,6 +1140,15 @@ pub(crate) fn evaluation_form_summary_correct_errors(
     }
     if builder.latest_version.is_none() {
         builder.latest_version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_form_target_configuration_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormTargetConfigurationBuilder,
+) -> crate::types::builders::EvaluationFormTargetConfigurationBuilder {
+    if builder.contact_interaction_type.is_none() {
+        builder.contact_interaction_type = "no value was set".parse::<crate::types::ContactInteractionType>().ok()
     }
     builder
 }
@@ -1035,6 +1520,15 @@ pub(crate) fn evaluation_search_metadata_correct_errors(
     builder
 }
 
+pub(crate) fn flow_quick_connect_config_correct_errors(
+    mut builder: crate::types::builders::FlowQuickConnectConfigBuilder,
+) -> crate::types::builders::FlowQuickConnectConfigBuilder {
+    if builder.contact_flow_id.is_none() {
+        builder.contact_flow_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn hours_of_operation_config_correct_errors(
     mut builder: crate::types::builders::HoursOfOperationConfigBuilder,
 ) -> crate::types::builders::HoursOfOperationConfigBuilder {
@@ -1308,6 +1802,16 @@ pub(crate) fn override_time_slice_correct_errors(
     builder
 }
 
+pub(crate) fn primary_value_correct_errors(mut builder: crate::types::builders::PrimaryValueBuilder) -> crate::types::builders::PrimaryValueBuilder {
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn send_notification_action_definition_correct_errors(
     mut builder: crate::types::builders::SendNotificationActionDefinitionBuilder,
 ) -> crate::types::builders::SendNotificationActionDefinitionBuilder {
@@ -1455,6 +1959,15 @@ pub(crate) fn evaluation_form_item_enablement_condition_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_form_multi_select_question_properties_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormMultiSelectQuestionPropertiesBuilder,
+) -> crate::types::builders::EvaluationFormMultiSelectQuestionPropertiesBuilder {
+    if builder.options.is_none() {
+        builder.options = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn evaluation_form_numeric_question_properties_correct_errors(
     mut builder: crate::types::builders::EvaluationFormNumericQuestionPropertiesBuilder,
 ) -> crate::types::builders::EvaluationFormNumericQuestionPropertiesBuilder {
@@ -1522,6 +2035,18 @@ pub(crate) fn real_time_contact_analysis_transcript_item_with_content_correct_er
 ) -> crate::types::builders::RealTimeContactAnalysisTranscriptItemWithContentBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_form_multi_select_question_option_correct_errors(
+    mut builder: crate::types::builders::EvaluationFormMultiSelectQuestionOptionBuilder,
+) -> crate::types::builders::EvaluationFormMultiSelectQuestionOptionBuilder {
+    if builder.ref_id.is_none() {
+        builder.ref_id = Some(Default::default())
+    }
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
     }
     builder
 }
@@ -1625,6 +2150,23 @@ pub(crate) fn evaluation_suggested_answer_transcript_millisecond_offsets_correct
 ) -> crate::types::builders::EvaluationSuggestedAnswerTranscriptMillisecondOffsetsBuilder {
     if builder.begin_offset_millis.is_none() {
         builder.begin_offset_millis = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn multi_select_question_rule_category_automation_correct_errors(
+    mut builder: crate::types::builders::MultiSelectQuestionRuleCategoryAutomationBuilder,
+) -> crate::types::builders::MultiSelectQuestionRuleCategoryAutomationBuilder {
+    if builder.category.is_none() {
+        builder.category = Some(Default::default())
+    }
+    if builder.condition.is_none() {
+        builder.condition = "no value was set"
+            .parse::<crate::types::MultiSelectQuestionRuleCategoryAutomationCondition>()
+            .ok()
+    }
+    if builder.option_ref_ids.is_none() {
+        builder.option_ref_ids = Some(Default::default())
     }
     builder
 }

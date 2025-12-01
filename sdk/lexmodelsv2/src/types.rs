@@ -227,6 +227,18 @@ pub use crate::types::_slot_resolution_improvement_specification::SlotResolution
 
 pub use crate::types::_bot_locale_status::BotLocaleStatus;
 
+pub use crate::types::_speech_recognition_settings::SpeechRecognitionSettings;
+
+pub use crate::types::_speech_model_config::SpeechModelConfig;
+
+pub use crate::types::_deepgram_speech_model_config::DeepgramSpeechModelConfig;
+
+pub use crate::types::_speech_model_preference::SpeechModelPreference;
+
+pub use crate::types::_unified_speech_settings::UnifiedSpeechSettings;
+
+pub use crate::types::_speech_foundation_model::SpeechFoundationModel;
+
 pub use crate::types::_voice_settings::VoiceSettings;
 
 pub use crate::types::_voice_engine::VoiceEngine;
@@ -1033,6 +1045,8 @@ mod _data_source_configuration;
 
 mod _date_range_filter;
 
+mod _deepgram_speech_model_config;
+
 mod _default_conditional_branch;
 
 mod _descriptive_bot_builder_specification;
@@ -1329,6 +1343,14 @@ mod _specifications;
 
 mod _speech_detection_sensitivity;
 
+mod _speech_foundation_model;
+
+mod _speech_model_config;
+
+mod _speech_model_preference;
+
+mod _speech_recognition_settings;
+
 mod _ssml_message;
 
 mod _still_waiting_response_specification;
@@ -1414,6 +1436,8 @@ mod _transcript_format;
 mod _transcript_source_setting;
 
 mod _turn_specification;
+
+mod _unified_speech_settings;
 
 mod _user_turn_input_specification;
 

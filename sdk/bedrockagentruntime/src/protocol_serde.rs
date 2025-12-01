@@ -299,6 +299,8 @@ pub(crate) mod shape_inline_agent_trace_part;
 
 pub(crate) mod shape_input_file;
 
+pub(crate) mod shape_input_image;
+
 pub(crate) mod shape_invocation_result_member;
 
 pub(crate) mod shape_invocation_step_summary;
@@ -411,6 +413,8 @@ pub(crate) mod shape_vector_search_reranking_configuration;
 
 pub(crate) mod shape_attribution;
 
+pub(crate) mod shape_audio_segment;
+
 pub(crate) mod shape_byte_content_doc;
 
 pub(crate) mod shape_byte_content_file;
@@ -488,6 +492,8 @@ pub(crate) mod shape_text_response_part;
 pub(crate) mod shape_trace;
 
 pub(crate) mod shape_vector_search_bedrock_reranking_configuration;
+
+pub(crate) mod shape_video_segment;
 
 pub(crate) mod shape_agent_traces;
 

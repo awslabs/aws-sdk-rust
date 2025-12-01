@@ -11,9 +11,9 @@ pub struct SearchAgreementsInput {
     /// <li>
     /// <p><code>ResourceIdentifier</code> – The unique identifier of the resource.</p></li>
     /// <li>
-    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, or <code>SaaSProduct</code>).</p></li>
+    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>) of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>
@@ -25,10 +25,12 @@ pub struct SearchAgreementsInput {
     /// <li>
     /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
     /// <li>
-    /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
+    /// <p><code>AgreementType</code> – The type of agreement. Supported value includes <code>PurchaseAgreement</code>.</p></li>
+    /// <li>
+    /// <p><code>OfferSetId</code> – A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.</p>
+    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. Only <code>EndTime</code> is supported for <code>SearchAgreements</code>. The default sort is <code>EndTime</code> descending.</p>
     pub sort: ::std::option::Option<crate::types::Sort>,
     /// <p>The maximum number of agreements to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -46,9 +48,9 @@ impl SearchAgreementsInput {
     /// <li>
     /// <p><code>ResourceIdentifier</code> – The unique identifier of the resource.</p></li>
     /// <li>
-    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, or <code>SaaSProduct</code>).</p></li>
+    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>) of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>
@@ -60,14 +62,16 @@ impl SearchAgreementsInput {
     /// <li>
     /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
     /// <li>
-    /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
+    /// <p><code>AgreementType</code> – The type of agreement. Supported value includes <code>PurchaseAgreement</code>.</p></li>
+    /// <li>
+    /// <p><code>OfferSetId</code> – A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.</p>
+    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. Only <code>EndTime</code> is supported for <code>SearchAgreements</code>. The default sort is <code>EndTime</code> descending.</p>
     pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
         self.sort.as_ref()
     }
@@ -122,9 +126,9 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>ResourceIdentifier</code> – The unique identifier of the resource.</p></li>
     /// <li>
-    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, or <code>SaaSProduct</code>).</p></li>
+    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>) of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>
@@ -136,7 +140,9 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
     /// <li>
-    /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
+    /// <p><code>AgreementType</code> – The type of agreement. Supported value includes <code>PurchaseAgreement</code>.</p></li>
+    /// <li>
+    /// <p><code>OfferSetId</code> – A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -150,9 +156,9 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>ResourceIdentifier</code> – The unique identifier of the resource.</p></li>
     /// <li>
-    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, or <code>SaaSProduct</code>).</p></li>
+    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>) of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>
@@ -164,7 +170,9 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
     /// <li>
-    /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
+    /// <p><code>AgreementType</code> – The type of agreement. Supported value includes <code>PurchaseAgreement</code>.</p></li>
+    /// <li>
+    /// <p><code>OfferSetId</code> – A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -176,9 +184,9 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>ResourceIdentifier</code> – The unique identifier of the resource.</p></li>
     /// <li>
-    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, or <code>SaaSProduct</code>).</p></li>
+    /// <p><code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>, <code>ContainerProduct</code>, <code>SaaSProduct</code>, <code>ProfessionalServicesProduct</code>, or <code>MachineLearningProduct</code>).</p></li>
     /// <li>
-    /// <p><code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>) of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code> filter.</p></li>
+    /// <p><code>PartyType</code> – The party type of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code> filter.</p></li>
     /// <li>
     /// <p><code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement terms.</p></li>
     /// <li>
@@ -190,22 +198,24 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
     /// <li>
-    /// <p><code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p></li>
+    /// <p><code>AgreementType</code> – The type of agreement. Supported value includes <code>PurchaseAgreement</code>.</p></li>
+    /// <li>
+    /// <p><code>OfferSetId</code> – A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.</p>
+    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. Only <code>EndTime</code> is supported for <code>SearchAgreements</code>. The default sort is <code>EndTime</code> descending.</p>
     pub fn sort(mut self, input: crate::types::Sort) -> Self {
         self.sort = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.</p>
+    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. Only <code>EndTime</code> is supported for <code>SearchAgreements</code>. The default sort is <code>EndTime</code> descending.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
         self.sort = input;
         self
     }
-    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.</p>
+    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. Only <code>EndTime</code> is supported for <code>SearchAgreements</code>. The default sort is <code>EndTime</code> descending.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
         &self.sort
     }

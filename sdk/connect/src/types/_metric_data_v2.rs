@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDataV2 {
-    /// <p>The metric name, thresholds, and metric filters of the returned metric.</p>
+    /// <p>The metric name or metricId, thresholds, and metric filters of the returned metric.</p>
     pub metric: ::std::option::Option<crate::types::MetricV2>,
     /// <p>The corresponding value of the metric returned in the response.</p>
     pub value: ::std::option::Option<f64>,
 }
 impl MetricDataV2 {
-    /// <p>The metric name, thresholds, and metric filters of the returned metric.</p>
+    /// <p>The metric name or metricId, thresholds, and metric filters of the returned metric.</p>
     pub fn metric(&self) -> ::std::option::Option<&crate::types::MetricV2> {
         self.metric.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct MetricDataV2Builder {
     pub(crate) value: ::std::option::Option<f64>,
 }
 impl MetricDataV2Builder {
-    /// <p>The metric name, thresholds, and metric filters of the returned metric.</p>
+    /// <p>The metric name or metricId, thresholds, and metric filters of the returned metric.</p>
     pub fn metric(mut self, input: crate::types::MetricV2) -> Self {
         self.metric = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The metric name, thresholds, and metric filters of the returned metric.</p>
+    /// <p>The metric name or metricId, thresholds, and metric filters of the returned metric.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricV2>) -> Self {
         self.metric = input;
         self
     }
-    /// <p>The metric name, thresholds, and metric filters of the returned metric.</p>
+    /// <p>The metric name or metricId, thresholds, and metric filters of the returned metric.</p>
     pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricV2> {
         &self.metric
     }

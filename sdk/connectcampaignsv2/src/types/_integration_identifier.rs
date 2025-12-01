@@ -6,6 +6,8 @@
 pub enum IntegrationIdentifier {
     /// Customer Profiles integration identifier
     CustomerProfiles(crate::types::CustomerProfilesIntegrationIdentifier),
+    /// Lambda integration identifier
+    Lambda(crate::types::LambdaIntegrationIdentifier),
     /// Q Connect integration identifier
     QConnect(crate::types::QConnectIntegrationIdentifier),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,19 @@ impl IntegrationIdentifier {
     /// Returns true if this is a [`CustomerProfiles`](crate::types::IntegrationIdentifier::CustomerProfiles).
     pub fn is_customer_profiles(&self) -> bool {
         self.as_customer_profiles().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Lambda`](crate::types::IntegrationIdentifier::Lambda), extracting the inner [`LambdaIntegrationIdentifier`](crate::types::LambdaIntegrationIdentifier).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_lambda(&self) -> ::std::result::Result<&crate::types::LambdaIntegrationIdentifier, &Self> {
+        if let IntegrationIdentifier::Lambda(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Lambda`](crate::types::IntegrationIdentifier::Lambda).
+    pub fn is_lambda(&self) -> bool {
+        self.as_lambda().is_ok()
     }
     /// Tries to convert the enum instance into [`QConnect`](crate::types::IntegrationIdentifier::QConnect), extracting the inner [`QConnectIntegrationIdentifier`](crate::types::QConnectIntegrationIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -16,6 +16,8 @@ pub struct CreateDomainOutput {
     pub matching: ::std::option::Option<crate::types::MatchingResponse>,
     /// <p>The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     pub rule_based_matching: ::std::option::Option<crate::types::RuleBasedMatchingResponse>,
+    /// <p>The data store.</p>
+    pub data_store: ::std::option::Option<crate::types::DataStoreResponse>,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when the domain was most recently edited.</p>
@@ -50,6 +52,10 @@ impl CreateDomainOutput {
     /// <p>The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     pub fn rule_based_matching(&self) -> ::std::option::Option<&crate::types::RuleBasedMatchingResponse> {
         self.rule_based_matching.as_ref()
+    }
+    /// <p>The data store.</p>
+    pub fn data_store(&self) -> ::std::option::Option<&crate::types::DataStoreResponse> {
+        self.data_store.as_ref()
     }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -86,6 +92,7 @@ pub struct CreateDomainOutputBuilder {
     pub(crate) dead_letter_queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) matching: ::std::option::Option<crate::types::MatchingResponse>,
     pub(crate) rule_based_matching: ::std::option::Option<crate::types::RuleBasedMatchingResponse>,
+    pub(crate) data_store: ::std::option::Option<crate::types::DataStoreResponse>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -181,6 +188,20 @@ impl CreateDomainOutputBuilder {
     pub fn get_rule_based_matching(&self) -> &::std::option::Option<crate::types::RuleBasedMatchingResponse> {
         &self.rule_based_matching
     }
+    /// <p>The data store.</p>
+    pub fn data_store(mut self, input: crate::types::DataStoreResponse) -> Self {
+        self.data_store = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data store.</p>
+    pub fn set_data_store(mut self, input: ::std::option::Option<crate::types::DataStoreResponse>) -> Self {
+        self.data_store = input;
+        self
+    }
+    /// <p>The data store.</p>
+    pub fn get_data_store(&self) -> &::std::option::Option<crate::types::DataStoreResponse> {
+        &self.data_store
+    }
     /// <p>The timestamp of when the domain was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -266,6 +287,7 @@ impl CreateDomainOutputBuilder {
             dead_letter_queue_url: self.dead_letter_queue_url,
             matching: self.matching,
             rule_based_matching: self.rule_based_matching,
+            data_store: self.data_store,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",

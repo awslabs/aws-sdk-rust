@@ -87,6 +87,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fixedUpfrontPricingTerm' cannot be null")
                             })?,
                         )),
+                        "variablePaymentTerm" => Some(crate::types::AcceptedTerm::VariablePaymentTerm(
+                            crate::protocol_serde::shape_variable_payment_term::de_variable_payment_term(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'variablePaymentTerm' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::AcceptedTerm::Unknown)

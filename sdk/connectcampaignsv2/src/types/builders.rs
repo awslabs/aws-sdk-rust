@@ -19,11 +19,15 @@ pub use crate::types::_communication_limit::CommunicationLimitBuilder;
 
 pub use crate::types::_channel_subtype_config::ChannelSubtypeConfigBuilder;
 
+pub use crate::types::_whats_app_channel_subtype_config::WhatsAppChannelSubtypeConfigBuilder;
+
+pub use crate::types::_whats_app_outbound_config::WhatsAppOutboundConfigBuilder;
+
+pub use crate::types::_agentless_config::AgentlessConfigBuilder;
+
 pub use crate::types::_email_channel_subtype_config::EmailChannelSubtypeConfigBuilder;
 
 pub use crate::types::_email_outbound_config::EmailOutboundConfigBuilder;
-
-pub use crate::types::_agentless_config::AgentlessConfigBuilder;
 
 pub use crate::types::_sms_channel_subtype_config::SmsChannelSubtypeConfigBuilder;
 
@@ -59,6 +63,8 @@ pub use crate::types::_successful_request::SuccessfulRequestBuilder;
 
 pub use crate::types::_outbound_request::OutboundRequestBuilder;
 
+pub use crate::types::_whats_app_channel_subtype_parameters::WhatsAppChannelSubtypeParametersBuilder;
+
 pub use crate::types::_email_channel_subtype_parameters::EmailChannelSubtypeParametersBuilder;
 
 pub use crate::types::_sms_channel_subtype_parameters::SmsChannelSubtypeParametersBuilder;
@@ -67,9 +73,13 @@ pub use crate::types::_telephony_channel_subtype_parameters::TelephonyChannelSub
 
 pub use crate::types::_instance_communication_limits_config::InstanceCommunicationLimitsConfigBuilder;
 
+pub use crate::types::_lambda_integration_config::LambdaIntegrationConfigBuilder;
+
 pub use crate::types::_q_connect_integration_config::QConnectIntegrationConfigBuilder;
 
 pub use crate::types::_customer_profiles_integration_config::CustomerProfilesIntegrationConfigBuilder;
+
+pub use crate::types::_lambda_integration_summary::LambdaIntegrationSummaryBuilder;
 
 pub use crate::types::_q_connect_integration_summary::QConnectIntegrationSummaryBuilder;
 
@@ -88,6 +98,8 @@ pub use crate::types::_failed_campaign_state_response::FailedCampaignStateRespon
 pub use crate::types::_successful_campaign_state_response::SuccessfulCampaignStateResponseBuilder;
 
 pub use crate::types::_campaign::CampaignBuilder;
+
+pub use crate::types::_lambda_integration_identifier::LambdaIntegrationIdentifierBuilder;
 
 pub use crate::types::_q_connect_integration_identifier::QConnectIntegrationIdentifierBuilder;
 

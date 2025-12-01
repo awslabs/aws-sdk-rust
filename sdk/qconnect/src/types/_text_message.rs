@@ -6,17 +6,33 @@
 pub struct TextMessage {
     /// <p>The value of the message data in text type.</p>
     pub value: ::std::option::Option<::std::string::String>,
+    /// <p>The citations associated with the text message.</p>
+    pub citations: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>,
+    /// <p>The AI Guardrail assessment for the text message.</p>
+    pub ai_guardrail_assessment: ::std::option::Option<crate::types::AiGuardrailAssessment>,
 }
 impl TextMessage {
     /// <p>The value of the message data in text type.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
+    /// <p>The citations associated with the text message.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.citations.is_none()`.
+    pub fn citations(&self) -> &[crate::types::Citation] {
+        self.citations.as_deref().unwrap_or_default()
+    }
+    /// <p>The AI Guardrail assessment for the text message.</p>
+    pub fn ai_guardrail_assessment(&self) -> ::std::option::Option<&crate::types::AiGuardrailAssessment> {
+        self.ai_guardrail_assessment.as_ref()
+    }
 }
 impl ::std::fmt::Debug for TextMessage {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TextMessage");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("citations", &self.citations);
+        formatter.field("ai_guardrail_assessment", &self.ai_guardrail_assessment);
         formatter.finish()
     }
 }
@@ -32,6 +48,8 @@ impl TextMessage {
 #[non_exhaustive]
 pub struct TextMessageBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) citations: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>,
+    pub(crate) ai_guardrail_assessment: ::std::option::Option<crate::types::AiGuardrailAssessment>,
 }
 impl TextMessageBuilder {
     /// <p>The value of the message data in text type.</p>
@@ -48,15 +66,55 @@ impl TextMessageBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
+    /// Appends an item to `citations`.
+    ///
+    /// To override the contents of this collection use [`set_citations`](Self::set_citations).
+    ///
+    /// <p>The citations associated with the text message.</p>
+    pub fn citations(mut self, input: crate::types::Citation) -> Self {
+        let mut v = self.citations.unwrap_or_default();
+        v.push(input);
+        self.citations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The citations associated with the text message.</p>
+    pub fn set_citations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>) -> Self {
+        self.citations = input;
+        self
+    }
+    /// <p>The citations associated with the text message.</p>
+    pub fn get_citations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Citation>> {
+        &self.citations
+    }
+    /// <p>The AI Guardrail assessment for the text message.</p>
+    pub fn ai_guardrail_assessment(mut self, input: crate::types::AiGuardrailAssessment) -> Self {
+        self.ai_guardrail_assessment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The AI Guardrail assessment for the text message.</p>
+    pub fn set_ai_guardrail_assessment(mut self, input: ::std::option::Option<crate::types::AiGuardrailAssessment>) -> Self {
+        self.ai_guardrail_assessment = input;
+        self
+    }
+    /// <p>The AI Guardrail assessment for the text message.</p>
+    pub fn get_ai_guardrail_assessment(&self) -> &::std::option::Option<crate::types::AiGuardrailAssessment> {
+        &self.ai_guardrail_assessment
+    }
     /// Consumes the builder and constructs a [`TextMessage`](crate::types::TextMessage).
     pub fn build(self) -> crate::types::TextMessage {
-        crate::types::TextMessage { value: self.value }
+        crate::types::TextMessage {
+            value: self.value,
+            citations: self.citations,
+            ai_guardrail_assessment: self.ai_guardrail_assessment,
+        }
     }
 }
 impl ::std::fmt::Debug for TextMessageBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TextMessageBuilder");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.field("citations", &self.citations);
+        formatter.field("ai_guardrail_assessment", &self.ai_guardrail_assessment);
         formatter.finish()
     }
 }

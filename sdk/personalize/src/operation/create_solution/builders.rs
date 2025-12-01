@@ -222,6 +222,20 @@ impl CreateSolutionFluentBuilder {
     pub fn get_perform_auto_training(&self) -> &::std::option::Option<bool> {
         self.inner.get_perform_auto_training()
     }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn perform_incremental_update(mut self, input: bool) -> Self {
+        self.inner = self.inner.perform_incremental_update(input);
+        self
+    }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn set_perform_incremental_update(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_perform_incremental_update(input);
+        self
+    }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn get_perform_incremental_update(&self) -> &::std::option::Option<bool> {
+        self.inner.get_perform_incremental_update()
+    }
     /// <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This is required when <code>performAutoML</code> is false. For information about different Amazon Personalize recipes and their ARNs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recipe_arn(input.into());

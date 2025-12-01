@@ -19,6 +19,19 @@ pub fn ser_campaign_config(
     if let Some(var_6) = &input.sync_with_latest_solution_version {
         object.key("syncWithLatestSolutionVersion").boolean(*var_6);
     }
+    if let Some(var_7) = &input.ranking_influence {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("rankingInfluence").start_object();
+        for (key_9, value_10) in var_7 {
+            {
+                object_8.key(key_9.as_str()).number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::Float((*value_10).into()),
+                );
+            }
+        }
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -48,6 +61,9 @@ where
                         "syncWithLatestSolutionVersion" => {
                             builder = builder
                                 .set_sync_with_latest_solution_version(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "rankingInfluence" => {
+                            builder = builder.set_ranking_influence(crate::protocol_serde::shape_ranking_influence::de_ranking_influence(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

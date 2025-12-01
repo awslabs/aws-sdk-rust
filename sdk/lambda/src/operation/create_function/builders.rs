@@ -541,6 +541,34 @@ impl CreateFunctionFluentBuilder {
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
         self.inner.get_logging_config()
     }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn capacity_provider_config(mut self, input: crate::types::CapacityProviderConfig) -> Self {
+        self.inner = self.inner.capacity_provider_config(input);
+        self
+    }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn set_capacity_provider_config(mut self, input: ::std::option::Option<crate::types::CapacityProviderConfig>) -> Self {
+        self.inner = self.inner.set_capacity_provider_config(input);
+        self
+    }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn get_capacity_provider_config(&self) -> &::std::option::Option<crate::types::CapacityProviderConfig> {
+        self.inner.get_capacity_provider_config()
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn publish_to(mut self, input: crate::types::FunctionVersionLatestPublished) -> Self {
+        self.inner = self.inner.publish_to(input);
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn set_publish_to(mut self, input: ::std::option::Option<crate::types::FunctionVersionLatestPublished>) -> Self {
+        self.inner = self.inner.set_publish_to(input);
+        self
+    }
+    /// <p>Specifies where to publish the function version or configuration.</p>
+    pub fn get_publish_to(&self) -> &::std::option::Option<crate::types::FunctionVersionLatestPublished> {
+        self.inner.get_publish_to()
+    }
     /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
     pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
         self.inner = self.inner.tenancy_config(input);

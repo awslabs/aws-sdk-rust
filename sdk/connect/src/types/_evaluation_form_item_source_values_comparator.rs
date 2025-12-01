@@ -12,6 +12,8 @@
 /// ```text
 /// # let evaluationformitemsourcevaluescomparator = unimplemented!();
 /// match evaluationformitemsourcevaluescomparator {
+///     EvaluationFormItemSourceValuesComparator::AllIn => { /* ... */ },
+///     EvaluationFormItemSourceValuesComparator::Exact => { /* ... */ },
 ///     EvaluationFormItemSourceValuesComparator::In => { /* ... */ },
 ///     EvaluationFormItemSourceValuesComparator::NotIn => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +45,10 @@
 )]
 pub enum EvaluationFormItemSourceValuesComparator {
     #[allow(missing_docs)] // documentation missing in model
+    AllIn,
+    #[allow(missing_docs)] // documentation missing in model
+    Exact,
+    #[allow(missing_docs)] // documentation missing in model
     In,
     #[allow(missing_docs)] // documentation missing in model
     NotIn,
@@ -53,6 +59,8 @@ pub enum EvaluationFormItemSourceValuesComparator {
 impl ::std::convert::From<&str> for EvaluationFormItemSourceValuesComparator {
     fn from(s: &str) -> Self {
         match s {
+            "ALL_IN" => EvaluationFormItemSourceValuesComparator::AllIn,
+            "EXACT" => EvaluationFormItemSourceValuesComparator::Exact,
             "IN" => EvaluationFormItemSourceValuesComparator::In,
             "NOT_IN" => EvaluationFormItemSourceValuesComparator::NotIn,
             other => EvaluationFormItemSourceValuesComparator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +78,8 @@ impl EvaluationFormItemSourceValuesComparator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EvaluationFormItemSourceValuesComparator::AllIn => "ALL_IN",
+            EvaluationFormItemSourceValuesComparator::Exact => "EXACT",
             EvaluationFormItemSourceValuesComparator::In => "IN",
             EvaluationFormItemSourceValuesComparator::NotIn => "NOT_IN",
             EvaluationFormItemSourceValuesComparator::Unknown(value) => value.as_str(),
@@ -77,7 +87,7 @@ impl EvaluationFormItemSourceValuesComparator {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IN", "NOT_IN"]
+        &["ALL_IN", "EXACT", "IN", "NOT_IN"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationFormItemSourceValuesComparator {
@@ -100,6 +110,8 @@ impl EvaluationFormItemSourceValuesComparator {
 impl ::std::fmt::Display for EvaluationFormItemSourceValuesComparator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EvaluationFormItemSourceValuesComparator::AllIn => write!(f, "ALL_IN"),
+            EvaluationFormItemSourceValuesComparator::Exact => write!(f, "EXACT"),
             EvaluationFormItemSourceValuesComparator::In => write!(f, "IN"),
             EvaluationFormItemSourceValuesComparator::NotIn => write!(f, "NOT_IN"),
             EvaluationFormItemSourceValuesComparator::Unknown(value) => write!(f, "{value}"),

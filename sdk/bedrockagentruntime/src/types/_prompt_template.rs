@@ -15,7 +15,7 @@ pub struct PromptTemplate {
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge base prompt templates</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with Anthropic Claude models</a></p></li>
+    /// <p><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags">Use XML tags with Anthropic Claude models</a></p></li>
     /// </ul>
     pub text_prompt_template: ::std::option::Option<::std::string::String>,
 }
@@ -26,7 +26,7 @@ impl PromptTemplate {
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge base prompt templates</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with Anthropic Claude models</a></p></li>
+    /// <p><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags">Use XML tags with Anthropic Claude models</a></p></li>
     /// </ul>
     pub fn text_prompt_template(&self) -> ::std::option::Option<&str> {
         self.text_prompt_template.as_deref()
@@ -59,7 +59,7 @@ impl PromptTemplateBuilder {
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge base prompt templates</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with Anthropic Claude models</a></p></li>
+    /// <p><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags">Use XML tags with Anthropic Claude models</a></p></li>
     /// </ul>
     pub fn text_prompt_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text_prompt_template = ::std::option::Option::Some(input.into());
@@ -71,7 +71,7 @@ impl PromptTemplateBuilder {
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge base prompt templates</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with Anthropic Claude models</a></p></li>
+    /// <p><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags">Use XML tags with Anthropic Claude models</a></p></li>
     /// </ul>
     pub fn set_text_prompt_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text_prompt_template = input;
@@ -83,7 +83,7 @@ impl PromptTemplateBuilder {
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt">Knowledge base prompt templates</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with Anthropic Claude models</a></p></li>
+    /// <p><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags">Use XML tags with Anthropic Claude models</a></p></li>
     /// </ul>
     pub fn get_text_prompt_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.text_prompt_template

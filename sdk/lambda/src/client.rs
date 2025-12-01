@@ -196,6 +196,8 @@ mod add_permission;
 
 mod create_alias;
 
+mod create_capacity_provider;
+
 mod create_code_signing_config;
 
 mod create_event_source_mapping;
@@ -233,6 +235,8 @@ pub mod customize;
 
 mod delete_alias;
 
+mod delete_capacity_provider;
+
 mod delete_code_signing_config;
 
 mod delete_event_source_mapping;
@@ -255,6 +259,8 @@ mod get_account_settings;
 
 mod get_alias;
 
+mod get_capacity_provider;
+
 mod get_code_signing_config;
 
 mod get_event_source_mapping;
@@ -270,6 +276,8 @@ mod get_function_configuration;
 mod get_function_event_invoke_config;
 
 mod get_function_recursion_config;
+
+mod get_function_scaling_config;
 
 mod get_function_url_config;
 
@@ -293,6 +301,8 @@ mod invoke_with_response_stream;
 
 mod list_aliases;
 
+mod list_capacity_providers;
+
 mod list_code_signing_configs;
 
 mod list_event_source_mappings;
@@ -300,6 +310,8 @@ mod list_event_source_mappings;
 mod list_function_event_invoke_configs;
 
 mod list_function_url_configs;
+
+mod list_function_versions_by_capacity_provider;
 
 mod list_functions;
 
@@ -327,6 +339,8 @@ mod put_function_event_invoke_config;
 
 mod put_function_recursion_config;
 
+mod put_function_scaling_config;
+
 mod put_provisioned_concurrency_config;
 
 mod put_runtime_management_config;
@@ -340,6 +354,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_alias;
+
+mod update_capacity_provider;
 
 mod update_code_signing_config;
 

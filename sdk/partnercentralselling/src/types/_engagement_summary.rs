@@ -16,6 +16,12 @@ pub struct EngagementSummary {
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The number of members in the Engagement.</p>
     pub member_count: ::std::option::Option<i32>,
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z".</p>
+    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The AWS account ID of the user who last modified the engagement. This field helps track who made the most recent changes to the engagement.</p>
+    pub modified_by: ::std::option::Option<::std::string::String>,
+    /// <p>An array of context types associated with the engagement, such as "CustomerProject" or "Lead". This provides a quick overview of the types of contexts included in the engagement.</p>
+    pub context_types: ::std::option::Option<::std::vec::Vec<crate::types::EngagementContextType>>,
 }
 impl EngagementSummary {
     /// <p>The Amazon Resource Name (ARN) of the created Engagement.</p>
@@ -42,6 +48,20 @@ impl EngagementSummary {
     pub fn member_count(&self) -> ::std::option::Option<i32> {
         self.member_count
     }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z".</p>
+    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.modified_at.as_ref()
+    }
+    /// <p>The AWS account ID of the user who last modified the engagement. This field helps track who made the most recent changes to the engagement.</p>
+    pub fn modified_by(&self) -> ::std::option::Option<&str> {
+        self.modified_by.as_deref()
+    }
+    /// <p>An array of context types associated with the engagement, such as "CustomerProject" or "Lead". This provides a quick overview of the types of contexts included in the engagement.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.context_types.is_none()`.
+    pub fn context_types(&self) -> &[crate::types::EngagementContextType] {
+        self.context_types.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for EngagementSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -52,6 +72,9 @@ impl ::std::fmt::Debug for EngagementSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &"*** Sensitive Data Redacted ***");
         formatter.field("member_count", &self.member_count);
+        formatter.field("modified_at", &self.modified_at);
+        formatter.field("modified_by", &"*** Sensitive Data Redacted ***");
+        formatter.field("context_types", &self.context_types);
         formatter.finish()
     }
 }
@@ -72,6 +95,9 @@ pub struct EngagementSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) member_count: ::std::option::Option<i32>,
+    pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_by: ::std::option::Option<::std::string::String>,
+    pub(crate) context_types: ::std::option::Option<::std::vec::Vec<crate::types::EngagementContextType>>,
 }
 impl EngagementSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the created Engagement.</p>
@@ -158,6 +184,54 @@ impl EngagementSummaryBuilder {
     pub fn get_member_count(&self) -> &::std::option::Option<i32> {
         &self.member_count
     }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z".</p>
+    pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z".</p>
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.modified_at = input;
+        self
+    }
+    /// <p>The timestamp indicating when the engagement was last modified, in ISO 8601 format (UTC). Example: "2023-05-01T20:37:46Z".</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
+    }
+    /// <p>The AWS account ID of the user who last modified the engagement. This field helps track who made the most recent changes to the engagement.</p>
+    pub fn modified_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.modified_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS account ID of the user who last modified the engagement. This field helps track who made the most recent changes to the engagement.</p>
+    pub fn set_modified_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.modified_by = input;
+        self
+    }
+    /// <p>The AWS account ID of the user who last modified the engagement. This field helps track who made the most recent changes to the engagement.</p>
+    pub fn get_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.modified_by
+    }
+    /// Appends an item to `context_types`.
+    ///
+    /// To override the contents of this collection use [`set_context_types`](Self::set_context_types).
+    ///
+    /// <p>An array of context types associated with the engagement, such as "CustomerProject" or "Lead". This provides a quick overview of the types of contexts included in the engagement.</p>
+    pub fn context_types(mut self, input: crate::types::EngagementContextType) -> Self {
+        let mut v = self.context_types.unwrap_or_default();
+        v.push(input);
+        self.context_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of context types associated with the engagement, such as "CustomerProject" or "Lead". This provides a quick overview of the types of contexts included in the engagement.</p>
+    pub fn set_context_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngagementContextType>>) -> Self {
+        self.context_types = input;
+        self
+    }
+    /// <p>An array of context types associated with the engagement, such as "CustomerProject" or "Lead". This provides a quick overview of the types of contexts included in the engagement.</p>
+    pub fn get_context_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngagementContextType>> {
+        &self.context_types
+    }
     /// Consumes the builder and constructs a [`EngagementSummary`](crate::types::EngagementSummary).
     pub fn build(self) -> crate::types::EngagementSummary {
         crate::types::EngagementSummary {
@@ -167,6 +241,9 @@ impl EngagementSummaryBuilder {
             created_at: self.created_at,
             created_by: self.created_by,
             member_count: self.member_count,
+            modified_at: self.modified_at,
+            modified_by: self.modified_by,
+            context_types: self.context_types,
         }
     }
 }
@@ -179,6 +256,9 @@ impl ::std::fmt::Debug for EngagementSummaryBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &"*** Sensitive Data Redacted ***");
         formatter.field("member_count", &self.member_count);
+        formatter.field("modified_at", &self.modified_at);
+        formatter.field("modified_by", &"*** Sensitive Data Redacted ***");
+        formatter.field("context_types", &self.context_types);
         formatter.finish()
     }
 }

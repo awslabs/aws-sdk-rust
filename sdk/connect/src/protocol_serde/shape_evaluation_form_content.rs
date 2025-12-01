@@ -64,6 +64,18 @@ where
                                     crate::protocol_serde::shape_evaluation_form_auto_evaluation_configuration::de_evaluation_form_auto_evaluation_configuration(tokens)?
                                 );
                         }
+                        "TargetConfiguration" => {
+                            builder = builder.set_target_configuration(
+                                crate::protocol_serde::shape_evaluation_form_target_configuration::de_evaluation_form_target_configuration(tokens)?,
+                            );
+                        }
+                        "LanguageConfiguration" => {
+                            builder = builder.set_language_configuration(
+                                crate::protocol_serde::shape_evaluation_form_language_configuration::de_evaluation_form_language_configuration(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

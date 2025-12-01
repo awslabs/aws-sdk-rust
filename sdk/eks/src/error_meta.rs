@@ -287,6 +287,36 @@ impl From<crate::operation::create_addon::CreateAddonError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_capability::CreateCapabilityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_capability::CreateCapabilityError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_capability::CreateCapabilityError> for Error {
+    fn from(err: crate::operation::create_capability::CreateCapabilityError) -> Self {
+        match err {
+            crate::operation::create_capability::CreateCapabilityError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_capability::CreateCapabilityError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_capability::CreateCapabilityError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_capability::CreateCapabilityError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::create_capability::CreateCapabilityError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::create_capability::CreateCapabilityError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::create_capability::CreateCapabilityError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_capability::CreateCapabilityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster::CreateClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -523,6 +553,32 @@ impl From<crate::operation::delete_addon::DeleteAddonError> for Error {
             crate::operation::delete_addon::DeleteAddonError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_addon::DeleteAddonError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_addon::DeleteAddonError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_capability::DeleteCapabilityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_capability::DeleteCapabilityError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_capability::DeleteCapabilityError> for Error {
+    fn from(err: crate::operation::delete_capability::DeleteCapabilityError) -> Self {
+        match err {
+            crate::operation::delete_capability::DeleteCapabilityError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_capability::DeleteCapabilityError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_capability::DeleteCapabilityError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_capability::DeleteCapabilityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_capability::DeleteCapabilityError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_capability::DeleteCapabilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -831,6 +887,35 @@ impl From<crate::operation::describe_addon_versions::DescribeAddonVersionsError>
             }
             crate::operation::describe_addon_versions::DescribeAddonVersionsError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::describe_addon_versions::DescribeAddonVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_capability::DescribeCapabilityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_capability::DescribeCapabilityError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_capability::DescribeCapabilityError> for Error {
+    fn from(err: crate::operation::describe_capability::DescribeCapabilityError) -> Self {
+        match err {
+            crate::operation::describe_capability::DescribeCapabilityError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_capability::DescribeCapabilityError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_capability::DescribeCapabilityError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_capability::DescribeCapabilityError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_capability::DescribeCapabilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1368,6 +1453,29 @@ impl From<crate::operation::list_associated_access_policies::ListAssociatedAcces
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_capabilities::ListCapabilitiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_capabilities::ListCapabilitiesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_capabilities::ListCapabilitiesError> for Error {
+    fn from(err: crate::operation::list_capabilities::ListCapabilitiesError) -> Self {
+        match err {
+            crate::operation::list_capabilities::ListCapabilitiesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_capabilities::ListCapabilitiesError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_capabilities::ListCapabilitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_clusters::ListClustersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1807,6 +1915,32 @@ impl From<crate::operation::update_addon::UpdateAddonError> for Error {
             crate::operation::update_addon::UpdateAddonError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_addon::UpdateAddonError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::update_addon::UpdateAddonError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_capability::UpdateCapabilityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_capability::UpdateCapabilityError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_capability::UpdateCapabilityError> for Error {
+    fn from(err: crate::operation::update_capability::UpdateCapabilityError) -> Self {
+        match err {
+            crate::operation::update_capability::UpdateCapabilityError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_capability::UpdateCapabilityError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_capability::UpdateCapabilityError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::update_capability::UpdateCapabilityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_capability::UpdateCapabilityError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_capability::UpdateCapabilityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

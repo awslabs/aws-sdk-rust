@@ -214,6 +214,20 @@ impl CreateEvaluationFormFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>A boolean flag indicating whether to create evaluation form in draft state.</p>
+    pub fn as_draft(mut self, input: bool) -> Self {
+        self.inner = self.inner.as_draft(input);
+        self
+    }
+    /// <p>A boolean flag indicating whether to create evaluation form in draft state.</p>
+    pub fn set_as_draft(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_as_draft(input);
+        self
+    }
+    /// <p>A boolean flag indicating whether to create evaluation form in draft state.</p>
+    pub fn get_as_draft(&self) -> &::std::option::Option<bool> {
+        self.inner.get_as_draft()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///
@@ -232,5 +246,33 @@ impl CreateEvaluationFormFluentBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn target_configuration(mut self, input: crate::types::EvaluationFormTargetConfiguration) -> Self {
+        self.inner = self.inner.target_configuration(input);
+        self
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn set_target_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>) -> Self {
+        self.inner = self.inner.set_target_configuration(input);
+        self
+    }
+    /// <p>Configuration that specifies the target for the evaluation form.</p>
+    pub fn get_target_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormTargetConfiguration> {
+        self.inner.get_target_configuration()
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn language_configuration(mut self, input: crate::types::EvaluationFormLanguageConfiguration) -> Self {
+        self.inner = self.inner.language_configuration(input);
+        self
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn set_language_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>) -> Self {
+        self.inner = self.inner.set_language_configuration(input);
+        self
+    }
+    /// <p>Configuration for language settings of the evaluation form.</p>
+    pub fn get_language_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormLanguageConfiguration> {
+        self.inner.get_language_configuration()
     }
 }

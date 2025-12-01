@@ -241,17 +241,17 @@ impl CreateSecurityProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
     ///
-    /// <p>A list of third-party applications that the security profile will give access to.</p>
+    /// <p>A list of third-party applications or MCP Servers that the security profile will give access to.</p>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         self.inner = self.inner.applications(input);
         self
     }
-    /// <p>A list of third-party applications that the security profile will give access to.</p>
+    /// <p>A list of third-party applications or MCP Servers that the security profile will give access to.</p>
     pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
         self.inner = self.inner.set_applications(input);
         self
     }
-    /// <p>A list of third-party applications that the security profile will give access to.</p>
+    /// <p>A list of third-party applications or MCP Servers that the security profile will give access to.</p>
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         self.inner.get_applications()
     }
@@ -287,5 +287,41 @@ impl CreateSecurityProfileFluentBuilder {
     /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub fn get_allowed_access_control_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_allowed_access_control_hierarchy_group_id()
+    }
+    ///
+    /// Appends an item to `AllowedFlowModules`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_flow_modules`](Self::set_allowed_flow_modules).
+    ///
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool.</p>
+    pub fn allowed_flow_modules(mut self, input: crate::types::FlowModule) -> Self {
+        self.inner = self.inner.allowed_flow_modules(input);
+        self
+    }
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool.</p>
+    pub fn set_allowed_flow_modules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FlowModule>>) -> Self {
+        self.inner = self.inner.set_allowed_flow_modules(input);
+        self
+    }
+    /// <p>A list of Flow Modules an AI Agent can invoke as a tool.</p>
+    pub fn get_allowed_flow_modules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowModule>> {
+        self.inner.get_allowed_flow_modules()
+    }
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub fn granular_access_control_configuration(mut self, input: crate::types::GranularAccessControlConfiguration) -> Self {
+        self.inner = self.inner.granular_access_control_configuration(input);
+        self
+    }
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub fn set_granular_access_control_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_granular_access_control_configuration(input);
+        self
+    }
+    /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
+    pub fn get_granular_access_control_configuration(&self) -> &::std::option::Option<crate::types::GranularAccessControlConfiguration> {
+        self.inner.get_granular_access_control_configuration()
     }
 }

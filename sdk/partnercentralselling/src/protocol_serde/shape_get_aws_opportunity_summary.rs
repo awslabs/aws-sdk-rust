@@ -147,13 +147,6 @@ pub(crate) fn de_get_aws_opportunity_summary(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "Catalog" => {
-                    builder = builder.set_catalog(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
                 "RelatedOpportunityId" => {
                     builder = builder.set_related_opportunity_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -216,6 +209,13 @@ pub(crate) fn de_get_aws_opportunity_summary(
                 }
                 "Project" => {
                     builder = builder.set_project(crate::protocol_serde::shape_aws_opportunity_project::de_aws_opportunity_project(tokens)?);
+                }
+                "Catalog" => {
+                    builder = builder.set_catalog(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

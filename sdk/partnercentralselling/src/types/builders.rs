@@ -33,6 +33,10 @@ pub use crate::types::_address::AddressBuilder;
 
 pub use crate::types::_life_cycle_for_view::LifeCycleForViewBuilder;
 
+pub use crate::types::_list_opportunity_from_engagement_task_summary::ListOpportunityFromEngagementTaskSummaryBuilder;
+
+pub use crate::types::_list_tasks_sort_base::ListTasksSortBaseBuilder;
+
 pub use crate::types::_aws_opportunity_project::AwsOpportunityProjectBuilder;
 
 pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomerBuilder;
@@ -79,6 +83,12 @@ pub use crate::types::_opportunity_sort::OpportunitySortBuilder;
 
 pub use crate::types::_engagement_member_summary::EngagementMemberSummaryBuilder;
 
+pub use crate::types::_lead_invitation_payload::LeadInvitationPayloadBuilder;
+
+pub use crate::types::_lead_invitation_interaction::LeadInvitationInteractionBuilder;
+
+pub use crate::types::_lead_invitation_customer::LeadInvitationCustomerBuilder;
+
 pub use crate::types::_opportunity_invitation_payload::OpportunityInvitationPayloadBuilder;
 
 pub use crate::types::_project_details::ProjectDetailsBuilder;
@@ -99,13 +109,19 @@ pub use crate::types::_aws_submission::AwsSubmissionBuilder;
 
 pub use crate::types::_list_engagement_from_opportunity_task_summary::ListEngagementFromOpportunityTaskSummaryBuilder;
 
-pub use crate::types::_list_tasks_sort_base::ListTasksSortBaseBuilder;
-
 pub use crate::types::_list_engagement_by_accepting_invitation_task_summary::ListEngagementByAcceptingInvitationTaskSummaryBuilder;
 
 pub use crate::types::_engagement_member::EngagementMemberBuilder;
 
 pub use crate::types::_engagement_context_details::EngagementContextDetailsBuilder;
+
+pub use crate::types::_lead_context::LeadContextBuilder;
+
+pub use crate::types::_lead_interaction::LeadInteractionBuilder;
+
+pub use crate::types::_lead_contact::LeadContactBuilder;
+
+pub use crate::types::_lead_customer::LeadCustomerBuilder;
 
 pub use crate::types::_customer_projects_context::CustomerProjectsContextBuilder;
 
@@ -114,3 +130,5 @@ pub use crate::types::_engagement_customer_project_details::EngagementCustomerPr
 pub use crate::types::_engagement_summary::EngagementSummaryBuilder;
 
 pub use crate::types::_engagement_sort::EngagementSortBuilder;
+
+pub use crate::types::_update_lead_context::UpdateLeadContextBuilder;

@@ -13,6 +13,10 @@
 /// # let state = unimplemented!();
 /// match state {
 ///     State::Active => { /* ... */ },
+///     State::ActiveNonInvocable => { /* ... */ },
+///     State::Deactivated => { /* ... */ },
+///     State::Deactivating => { /* ... */ },
+///     State::Deleting => { /* ... */ },
 ///     State::Failed => { /* ... */ },
 ///     State::Inactive => { /* ... */ },
 ///     State::Pending => { /* ... */ },
@@ -47,6 +51,14 @@ pub enum State {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    ActiveNonInvocable,
+    #[allow(missing_docs)] // documentation missing in model
+    Deactivated,
+    #[allow(missing_docs)] // documentation missing in model
+    Deactivating,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
@@ -60,6 +72,10 @@ impl ::std::convert::From<&str> for State {
     fn from(s: &str) -> Self {
         match s {
             "Active" => State::Active,
+            "ActiveNonInvocable" => State::ActiveNonInvocable,
+            "Deactivated" => State::Deactivated,
+            "Deactivating" => State::Deactivating,
+            "Deleting" => State::Deleting,
             "Failed" => State::Failed,
             "Inactive" => State::Inactive,
             "Pending" => State::Pending,
@@ -79,6 +95,10 @@ impl State {
     pub fn as_str(&self) -> &str {
         match self {
             State::Active => "Active",
+            State::ActiveNonInvocable => "ActiveNonInvocable",
+            State::Deactivated => "Deactivated",
+            State::Deactivating => "Deactivating",
+            State::Deleting => "Deleting",
             State::Failed => "Failed",
             State::Inactive => "Inactive",
             State::Pending => "Pending",
@@ -87,7 +107,16 @@ impl State {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Active", "Failed", "Inactive", "Pending"]
+        &[
+            "Active",
+            "ActiveNonInvocable",
+            "Deactivated",
+            "Deactivating",
+            "Deleting",
+            "Failed",
+            "Inactive",
+            "Pending",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for State {
@@ -111,6 +140,10 @@ impl ::std::fmt::Display for State {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             State::Active => write!(f, "Active"),
+            State::ActiveNonInvocable => write!(f, "ActiveNonInvocable"),
+            State::Deactivated => write!(f, "Deactivated"),
+            State::Deactivating => write!(f, "Deactivating"),
+            State::Deleting => write!(f, "Deleting"),
             State::Failed => write!(f, "Failed"),
             State::Inactive => write!(f, "Inactive"),
             State::Pending => write!(f, "Pending"),

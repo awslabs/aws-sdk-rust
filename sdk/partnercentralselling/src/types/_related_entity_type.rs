@@ -12,6 +12,7 @@
 /// ```text
 /// # let relatedentitytype = unimplemented!();
 /// match relatedentitytype {
+///     RelatedEntityType::AwsMarketplaceOfferSets => { /* ... */ },
 ///     RelatedEntityType::AwsMarketplaceOffers => { /* ... */ },
 ///     RelatedEntityType::AwsProducts => { /* ... */ },
 ///     RelatedEntityType::Solutions => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum RelatedEntityType {
     #[allow(missing_docs)] // documentation missing in model
+    AwsMarketplaceOfferSets,
+    #[allow(missing_docs)] // documentation missing in model
     AwsMarketplaceOffers,
     #[allow(missing_docs)] // documentation missing in model
     AwsProducts,
@@ -56,6 +59,7 @@ pub enum RelatedEntityType {
 impl ::std::convert::From<&str> for RelatedEntityType {
     fn from(s: &str) -> Self {
         match s {
+            "AwsMarketplaceOfferSets" => RelatedEntityType::AwsMarketplaceOfferSets,
             "AwsMarketplaceOffers" => RelatedEntityType::AwsMarketplaceOffers,
             "AwsProducts" => RelatedEntityType::AwsProducts,
             "Solutions" => RelatedEntityType::Solutions,
@@ -74,6 +78,7 @@ impl RelatedEntityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RelatedEntityType::AwsMarketplaceOfferSets => "AwsMarketplaceOfferSets",
             RelatedEntityType::AwsMarketplaceOffers => "AwsMarketplaceOffers",
             RelatedEntityType::AwsProducts => "AwsProducts",
             RelatedEntityType::Solutions => "Solutions",
@@ -82,7 +87,7 @@ impl RelatedEntityType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AwsMarketplaceOffers", "AwsProducts", "Solutions"]
+        &["AwsMarketplaceOfferSets", "AwsMarketplaceOffers", "AwsProducts", "Solutions"]
     }
 }
 impl ::std::convert::AsRef<str> for RelatedEntityType {
@@ -105,6 +110,7 @@ impl RelatedEntityType {
 impl ::std::fmt::Display for RelatedEntityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RelatedEntityType::AwsMarketplaceOfferSets => write!(f, "AwsMarketplaceOfferSets"),
             RelatedEntityType::AwsMarketplaceOffers => write!(f, "AwsMarketplaceOffers"),
             RelatedEntityType::AwsProducts => write!(f, "AwsProducts"),
             RelatedEntityType::Solutions => write!(f, "Solutions"),

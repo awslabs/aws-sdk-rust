@@ -244,4 +244,18 @@ impl CreateAnalysisTemplateFluentBuilder {
     pub fn get_error_message_configuration(&self) -> &::std::option::Option<crate::types::ErrorMessageConfiguration> {
         self.inner.get_error_message_configuration()
     }
+    /// <p>The parameters for generating synthetic data when running the analysis template.</p>
+    pub fn synthetic_data_parameters(mut self, input: crate::types::SyntheticDataParameters) -> Self {
+        self.inner = self.inner.synthetic_data_parameters(input);
+        self
+    }
+    /// <p>The parameters for generating synthetic data when running the analysis template.</p>
+    pub fn set_synthetic_data_parameters(mut self, input: ::std::option::Option<crate::types::SyntheticDataParameters>) -> Self {
+        self.inner = self.inner.set_synthetic_data_parameters(input);
+        self
+    }
+    /// <p>The parameters for generating synthetic data when running the analysis template.</p>
+    pub fn get_synthetic_data_parameters(&self) -> &::std::option::Option<crate::types::SyntheticDataParameters> {
+        self.inner.get_synthetic_data_parameters()
+    }
 }

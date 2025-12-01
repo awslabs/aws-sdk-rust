@@ -69,6 +69,10 @@ pub use crate::types::_update_iceberg_table_input::UpdateIcebergTableInput;
 
 pub use crate::types::_iceberg_table_update::IcebergTableUpdate;
 
+pub use crate::types::_iceberg_encrypted_key::IcebergEncryptedKey;
+
+pub use crate::types::_iceberg_update_action::IcebergUpdateAction;
+
 pub use crate::types::_iceberg_sort_order::IcebergSortOrder;
 
 pub use crate::types::_iceberg_sort_field::IcebergSortField;
@@ -92,6 +96,8 @@ pub use crate::types::_view_update_action::ViewUpdateAction;
 pub use crate::types::_table_input::TableInput;
 
 pub use crate::types::_view_definition_input::ViewDefinitionInput;
+
+pub use crate::types::_last_refresh_type::LastRefreshType;
 
 pub use crate::types::_view_representation_input::ViewRepresentationInput;
 
@@ -1535,6 +1541,8 @@ mod _iceberg_compaction_configuration;
 
 mod _iceberg_compaction_metrics;
 
+mod _iceberg_encrypted_key;
+
 mod _iceberg_input;
 
 mod _iceberg_null_order;
@@ -1572,6 +1580,8 @@ mod _iceberg_table_update;
 mod _iceberg_target;
 
 mod _iceberg_target_compression_type;
+
+mod _iceberg_update_action;
 
 mod _import_labels_task_run_properties;
 
@@ -1654,6 +1664,8 @@ mod _last_active_definition;
 mod _last_crawl_info;
 
 mod _last_crawl_status;
+
+mod _last_refresh_type;
 
 mod _lineage_configuration;
 

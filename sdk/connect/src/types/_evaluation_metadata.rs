@@ -18,6 +18,10 @@ pub struct EvaluationMetadata {
     pub auto_evaluation: ::std::option::Option<crate::types::AutoEvaluationDetails>,
     /// <p>Information related to evaluation acknowledgement.</p>
     pub acknowledgement: ::std::option::Option<crate::types::EvaluationAcknowledgement>,
+    /// <p>Information about a contact participant in this evaluation.</p>
+    pub contact_participant: ::std::option::Option<crate::types::EvaluationContactParticipant>,
+    /// <p>Identifier of the sampling job.</p>
+    pub sampling_job_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationMetadata {
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
@@ -50,6 +54,14 @@ impl EvaluationMetadata {
     pub fn acknowledgement(&self) -> ::std::option::Option<&crate::types::EvaluationAcknowledgement> {
         self.acknowledgement.as_ref()
     }
+    /// <p>Information about a contact participant in this evaluation.</p>
+    pub fn contact_participant(&self) -> ::std::option::Option<&crate::types::EvaluationContactParticipant> {
+        self.contact_participant.as_ref()
+    }
+    /// <p>Identifier of the sampling job.</p>
+    pub fn sampling_job_id(&self) -> ::std::option::Option<&str> {
+        self.sampling_job_id.as_deref()
+    }
 }
 impl EvaluationMetadata {
     /// Creates a new builder-style object to manufacture [`EvaluationMetadata`](crate::types::EvaluationMetadata).
@@ -69,6 +81,8 @@ pub struct EvaluationMetadataBuilder {
     pub(crate) score: ::std::option::Option<crate::types::EvaluationScore>,
     pub(crate) auto_evaluation: ::std::option::Option<crate::types::AutoEvaluationDetails>,
     pub(crate) acknowledgement: ::std::option::Option<crate::types::EvaluationAcknowledgement>,
+    pub(crate) contact_participant: ::std::option::Option<crate::types::EvaluationContactParticipant>,
+    pub(crate) sampling_job_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationMetadataBuilder {
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
@@ -171,6 +185,34 @@ impl EvaluationMetadataBuilder {
     pub fn get_acknowledgement(&self) -> &::std::option::Option<crate::types::EvaluationAcknowledgement> {
         &self.acknowledgement
     }
+    /// <p>Information about a contact participant in this evaluation.</p>
+    pub fn contact_participant(mut self, input: crate::types::EvaluationContactParticipant) -> Self {
+        self.contact_participant = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about a contact participant in this evaluation.</p>
+    pub fn set_contact_participant(mut self, input: ::std::option::Option<crate::types::EvaluationContactParticipant>) -> Self {
+        self.contact_participant = input;
+        self
+    }
+    /// <p>Information about a contact participant in this evaluation.</p>
+    pub fn get_contact_participant(&self) -> &::std::option::Option<crate::types::EvaluationContactParticipant> {
+        &self.contact_participant
+    }
+    /// <p>Identifier of the sampling job.</p>
+    pub fn sampling_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sampling_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifier of the sampling job.</p>
+    pub fn set_sampling_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sampling_job_id = input;
+        self
+    }
+    /// <p>Identifier of the sampling job.</p>
+    pub fn get_sampling_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sampling_job_id
+    }
     /// Consumes the builder and constructs a [`EvaluationMetadata`](crate::types::EvaluationMetadata).
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_id`](crate::types::builders::EvaluationMetadataBuilder::contact_id)
@@ -194,6 +236,8 @@ impl EvaluationMetadataBuilder {
             score: self.score,
             auto_evaluation: self.auto_evaluation,
             acknowledgement: self.acknowledgement,
+            contact_participant: self.contact_participant,
+            sampling_job_id: self.sampling_job_id,
         })
     }
 }

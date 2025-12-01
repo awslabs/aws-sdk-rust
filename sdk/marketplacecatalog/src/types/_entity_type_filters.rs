@@ -14,6 +14,8 @@ pub enum EntityTypeFilters {
     MachineLearningProductFilters(crate::types::MachineLearningProductFilters),
     /// <p>A filter for offers.</p>
     OfferFilters(crate::types::OfferFilters),
+    /// <p>A filter for offer sets.</p>
+    OfferSetFilters(crate::types::OfferSetFilters),
     /// <p>A filter for Resale Authorizations.</p>
     ResaleAuthorizationFilters(crate::types::ResaleAuthorizationFilters),
     /// <p>A filter for SaaS products.</p>
@@ -93,6 +95,19 @@ impl EntityTypeFilters {
     /// Returns true if this is a [`OfferFilters`](crate::types::EntityTypeFilters::OfferFilters).
     pub fn is_offer_filters(&self) -> bool {
         self.as_offer_filters().is_ok()
+    }
+    /// Tries to convert the enum instance into [`OfferSetFilters`](crate::types::EntityTypeFilters::OfferSetFilters), extracting the inner [`OfferSetFilters`](crate::types::OfferSetFilters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_offer_set_filters(&self) -> ::std::result::Result<&crate::types::OfferSetFilters, &Self> {
+        if let EntityTypeFilters::OfferSetFilters(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`OfferSetFilters`](crate::types::EntityTypeFilters::OfferSetFilters).
+    pub fn is_offer_set_filters(&self) -> bool {
+        self.as_offer_set_filters().is_ok()
     }
     /// Tries to convert the enum instance into [`ResaleAuthorizationFilters`](crate::types::EntityTypeFilters::ResaleAuthorizationFilters), extracting the inner [`ResaleAuthorizationFilters`](crate::types::ResaleAuthorizationFilters).
     /// Returns `Err(&Self)` if it can't be converted.

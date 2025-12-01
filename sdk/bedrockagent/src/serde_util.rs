@@ -2880,6 +2880,18 @@ pub(crate) fn vector_search_reranking_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn audio_configuration_correct_errors(
+    mut builder: crate::types::builders::AudioConfigurationBuilder,
+) -> crate::types::builders::AudioConfigurationBuilder {
+    if builder.segmentation_configuration.is_none() {
+        builder.segmentation_configuration = {
+            let builder = crate::types::builders::AudioSegmentationConfigurationBuilder::default();
+            crate::serde_util::audio_segmentation_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn prompt_flow_node_inline_configuration_correct_errors(
     mut builder: crate::types::builders::PromptFlowNodeInlineConfigurationBuilder,
 ) -> crate::types::builders::PromptFlowNodeInlineConfigurationBuilder {
@@ -2990,6 +3002,27 @@ pub(crate) fn vector_search_bedrock_reranking_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn video_configuration_correct_errors(
+    mut builder: crate::types::builders::VideoConfigurationBuilder,
+) -> crate::types::builders::VideoConfigurationBuilder {
+    if builder.segmentation_configuration.is_none() {
+        builder.segmentation_configuration = {
+            let builder = crate::types::builders::VideoSegmentationConfigurationBuilder::default();
+            crate::serde_util::video_segmentation_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn audio_segmentation_configuration_correct_errors(
+    mut builder: crate::types::builders::AudioSegmentationConfigurationBuilder,
+) -> crate::types::builders::AudioSegmentationConfigurationBuilder {
+    if builder.fixed_length_duration.is_none() {
+        builder.fixed_length_duration = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn curated_query_correct_errors(mut builder: crate::types::builders::CuratedQueryBuilder) -> crate::types::builders::CuratedQueryBuilder {
     if builder.natural_language.is_none() {
         builder.natural_language = Some(Default::default())
@@ -3044,6 +3077,15 @@ pub(crate) fn vector_search_bedrock_reranking_model_configuration_correct_errors
 ) -> crate::types::builders::VectorSearchBedrockRerankingModelConfigurationBuilder {
     if builder.model_arn.is_none() {
         builder.model_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn video_segmentation_configuration_correct_errors(
+    mut builder: crate::types::builders::VideoSegmentationConfigurationBuilder,
+) -> crate::types::builders::VideoSegmentationConfigurationBuilder {
+    if builder.fixed_length_duration.is_none() {
+        builder.fixed_length_duration = Some(Default::default())
     }
     builder
 }

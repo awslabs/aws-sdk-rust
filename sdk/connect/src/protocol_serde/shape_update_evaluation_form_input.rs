@@ -3,50 +3,65 @@ pub fn ser_update_evaluation_form_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_evaluation_form::UpdateEvaluationFormInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.auto_evaluation_configuration {
+    if let Some(var_1) = &input.as_draft {
+        object.key("AsDraft").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.auto_evaluation_configuration {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("AutoEvaluationConfiguration").start_object();
+        let mut object_3 = object.key("AutoEvaluationConfiguration").start_object();
         crate::protocol_serde::shape_evaluation_form_auto_evaluation_configuration::ser_evaluation_form_auto_evaluation_configuration(
-            &mut object_2,
-            var_1,
+            &mut object_3,
+            var_2,
         )?;
-        object_2.finish();
+        object_3.finish();
     }
-    if let Some(var_3) = &input.client_token {
-        object.key("ClientToken").string(var_3.as_str());
+    if let Some(var_4) = &input.client_token {
+        object.key("ClientToken").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.create_new_version {
-        object.key("CreateNewVersion").boolean(*var_4);
+    if let Some(var_5) = &input.create_new_version {
+        object.key("CreateNewVersion").boolean(*var_5);
     }
-    if let Some(var_5) = &input.description {
-        object.key("Description").string(var_5.as_str());
+    if let Some(var_6) = &input.description {
+        object.key("Description").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.evaluation_form_version {
+    if let Some(var_7) = &input.evaluation_form_version {
         object.key("EvaluationFormVersion").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.items {
-        let mut array_8 = object.key("Items").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.items {
+        let mut array_9 = object.key("Items").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_evaluation_form_item::ser_evaluation_form_item(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_evaluation_form_item::ser_evaluation_form_item(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_11) = &input.scoring_strategy {
+    if let Some(var_12) = &input.language_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("ScoringStrategy").start_object();
-        crate::protocol_serde::shape_evaluation_form_scoring_strategy::ser_evaluation_form_scoring_strategy(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("LanguageConfiguration").start_object();
+        crate::protocol_serde::shape_evaluation_form_language_configuration::ser_evaluation_form_language_configuration(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.title {
-        object.key("Title").string(var_13.as_str());
+    if let Some(var_14) = &input.scoring_strategy {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("ScoringStrategy").start_object();
+        crate::protocol_serde::shape_evaluation_form_scoring_strategy::ser_evaluation_form_scoring_strategy(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.target_configuration {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("TargetConfiguration").start_object();
+        crate::protocol_serde::shape_evaluation_form_target_configuration::ser_evaluation_form_target_configuration(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.title {
+        object.key("Title").string(var_18.as_str());
     }
     Ok(())
 }

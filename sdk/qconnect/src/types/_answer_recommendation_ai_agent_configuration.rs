@@ -18,6 +18,8 @@ pub struct AnswerRecommendationAiAgentConfiguration {
     /// <p>For more information on supported locales, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/supported-languages.html#qic-notes-languages">Language support for Amazon Q in Connect</a>.</p>
     /// </note>
     pub locale: ::std::option::Option<::std::string::String>,
+    /// <p>The suggested messages configuration for the Answer Recommendation AI Agent.</p>
+    pub suggested_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AnswerRecommendationAiAgentConfiguration {
     /// <p>The AI Prompt identifier for the Intent Labeling prompt used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
@@ -48,6 +50,12 @@ impl AnswerRecommendationAiAgentConfiguration {
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
     }
+    /// <p>The suggested messages configuration for the Answer Recommendation AI Agent.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggested_messages.is_none()`.
+    pub fn suggested_messages(&self) -> &[::std::string::String] {
+        self.suggested_messages.as_deref().unwrap_or_default()
+    }
 }
 impl AnswerRecommendationAiAgentConfiguration {
     /// Creates a new builder-style object to manufacture [`AnswerRecommendationAiAgentConfiguration`](crate::types::AnswerRecommendationAiAgentConfiguration).
@@ -66,6 +74,7 @@ pub struct AnswerRecommendationAiAgentConfigurationBuilder {
     pub(crate) answer_generation_ai_guardrail_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,
+    pub(crate) suggested_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AnswerRecommendationAiAgentConfigurationBuilder {
     /// <p>The AI Prompt identifier for the Intent Labeling prompt used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
@@ -164,6 +173,26 @@ impl AnswerRecommendationAiAgentConfigurationBuilder {
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
     }
+    /// Appends an item to `suggested_messages`.
+    ///
+    /// To override the contents of this collection use [`set_suggested_messages`](Self::set_suggested_messages).
+    ///
+    /// <p>The suggested messages configuration for the Answer Recommendation AI Agent.</p>
+    pub fn suggested_messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.suggested_messages.unwrap_or_default();
+        v.push(input.into());
+        self.suggested_messages = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The suggested messages configuration for the Answer Recommendation AI Agent.</p>
+    pub fn set_suggested_messages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.suggested_messages = input;
+        self
+    }
+    /// <p>The suggested messages configuration for the Answer Recommendation AI Agent.</p>
+    pub fn get_suggested_messages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.suggested_messages
+    }
     /// Consumes the builder and constructs a [`AnswerRecommendationAiAgentConfiguration`](crate::types::AnswerRecommendationAiAgentConfiguration).
     pub fn build(self) -> crate::types::AnswerRecommendationAiAgentConfiguration {
         crate::types::AnswerRecommendationAiAgentConfiguration {
@@ -173,6 +202,7 @@ impl AnswerRecommendationAiAgentConfigurationBuilder {
             answer_generation_ai_guardrail_id: self.answer_generation_ai_guardrail_id,
             association_configurations: self.association_configurations,
             locale: self.locale,
+            suggested_messages: self.suggested_messages,
         }
     }
 }

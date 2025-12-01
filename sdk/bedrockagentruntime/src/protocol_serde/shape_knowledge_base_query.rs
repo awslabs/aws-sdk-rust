@@ -4,7 +4,16 @@ pub fn ser_knowledge_base_query(
     input: &crate::types::KnowledgeBaseQuery,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
+        object.key("type").string(input.r#type.as_str());
+    }
+    {
         object.key("text").string(input.text.as_str());
+    }
+    if let Some(var_1) = &input.image {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("image").start_object();
+        crate::protocol_serde::shape_input_image::ser_input_image(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

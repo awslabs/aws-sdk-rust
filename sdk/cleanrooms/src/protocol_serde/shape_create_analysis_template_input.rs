@@ -42,15 +42,21 @@ pub fn ser_create_analysis_template_input_input(
         crate::protocol_serde::shape_analysis_source::ser_analysis_source(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.tags {
+    if let Some(var_14) = &input.synthetic_data_parameters {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("tags").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_15 = object.key("syntheticDataParameters").start_object();
+        crate::protocol_serde::shape_synthetic_data_parameters::ser_synthetic_data_parameters(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_15.finish();
+        object_17.finish();
     }
     Ok(())
 }

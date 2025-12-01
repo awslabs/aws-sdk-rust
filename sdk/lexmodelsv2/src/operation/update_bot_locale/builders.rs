@@ -192,6 +192,34 @@ impl UpdateBotLocaleFluentBuilder {
     pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
         self.inner.get_voice_settings()
     }
+    /// <p>Updated unified speech settings to apply to the bot locale.</p>
+    pub fn unified_speech_settings(mut self, input: crate::types::UnifiedSpeechSettings) -> Self {
+        self.inner = self.inner.unified_speech_settings(input);
+        self
+    }
+    /// <p>Updated unified speech settings to apply to the bot locale.</p>
+    pub fn set_unified_speech_settings(mut self, input: ::std::option::Option<crate::types::UnifiedSpeechSettings>) -> Self {
+        self.inner = self.inner.set_unified_speech_settings(input);
+        self
+    }
+    /// <p>Updated unified speech settings to apply to the bot locale.</p>
+    pub fn get_unified_speech_settings(&self) -> &::std::option::Option<crate::types::UnifiedSpeechSettings> {
+        self.inner.get_unified_speech_settings()
+    }
+    /// <p>Updated speech-to-text settings to apply to the bot locale.</p>
+    pub fn speech_recognition_settings(mut self, input: crate::types::SpeechRecognitionSettings) -> Self {
+        self.inner = self.inner.speech_recognition_settings(input);
+        self
+    }
+    /// <p>Updated speech-to-text settings to apply to the bot locale.</p>
+    pub fn set_speech_recognition_settings(mut self, input: ::std::option::Option<crate::types::SpeechRecognitionSettings>) -> Self {
+        self.inner = self.inner.set_speech_recognition_settings(input);
+        self
+    }
+    /// <p>Updated speech-to-text settings to apply to the bot locale.</p>
+    pub fn get_speech_recognition_settings(&self) -> &::std::option::Option<crate::types::SpeechRecognitionSettings> {
+        self.inner.get_speech_recognition_settings()
+    }
     /// <p>Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see LINK.</p>
     pub fn generative_ai_settings(mut self, input: crate::types::GenerativeAiSettings) -> Self {
         self.inner = self.inner.generative_ai_settings(input);

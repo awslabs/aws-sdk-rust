@@ -6,6 +6,8 @@
 pub enum EngagementContextPayload {
     /// <p>Contains detailed information about a customer project when the context type is "CustomerProject". This field is present only when the Type in EngagementContextDetails is set to "CustomerProject".</p>
     CustomerProject(crate::types::CustomerProjectsContext),
+    /// <p>Contains detailed information about a lead when the context type is "Lead". This field is present only when the Type in EngagementContextDetails is set to "Lead".</p>
+    Lead(crate::types::LeadContext),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum EngagementContextPayload {
     Unknown,
 }
 impl EngagementContextPayload {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`CustomerProject`](crate::types::EngagementContextPayload::CustomerProject), extracting the inner [`CustomerProjectsContext`](crate::types::CustomerProjectsContext).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_customer_project(&self) -> ::std::result::Result<&crate::types::CustomerProjectsContext, &Self> {
@@ -30,6 +31,19 @@ impl EngagementContextPayload {
     /// Returns true if this is a [`CustomerProject`](crate::types::EngagementContextPayload::CustomerProject).
     pub fn is_customer_project(&self) -> bool {
         self.as_customer_project().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Lead`](crate::types::EngagementContextPayload::Lead), extracting the inner [`LeadContext`](crate::types::LeadContext).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_lead(&self) -> ::std::result::Result<&crate::types::LeadContext, &Self> {
+        if let EngagementContextPayload::Lead(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Lead`](crate::types::EngagementContextPayload::Lead).
+    pub fn is_lead(&self) -> bool {
+        self.as_lead().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

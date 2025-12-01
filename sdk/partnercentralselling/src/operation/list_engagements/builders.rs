@@ -166,6 +166,44 @@ impl ListEngagementsFluentBuilder {
     pub fn get_exclude_created_by(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_exclude_created_by()
     }
+    ///
+    /// Appends an item to `ContextTypes`.
+    ///
+    /// To override the contents of this collection use [`set_context_types`](Self::set_context_types).
+    ///
+    /// <p>Filters engagements to include only those containing the specified context types, such as "CustomerProject" or "Lead". Use this to find engagements that have specific types of contextual information associated with them.</p>
+    pub fn context_types(mut self, input: crate::types::EngagementContextType) -> Self {
+        self.inner = self.inner.context_types(input);
+        self
+    }
+    /// <p>Filters engagements to include only those containing the specified context types, such as "CustomerProject" or "Lead". Use this to find engagements that have specific types of contextual information associated with them.</p>
+    pub fn set_context_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngagementContextType>>) -> Self {
+        self.inner = self.inner.set_context_types(input);
+        self
+    }
+    /// <p>Filters engagements to include only those containing the specified context types, such as "CustomerProject" or "Lead". Use this to find engagements that have specific types of contextual information associated with them.</p>
+    pub fn get_context_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngagementContextType>> {
+        self.inner.get_context_types()
+    }
+    ///
+    /// Appends an item to `ExcludeContextTypes`.
+    ///
+    /// To override the contents of this collection use [`set_exclude_context_types`](Self::set_exclude_context_types).
+    ///
+    /// <p>Filters engagements to exclude those containing the specified context types. Use this to find engagements that do not have certain types of contextual information, helping to narrow results based on context exclusion criteria.</p>
+    pub fn exclude_context_types(mut self, input: crate::types::EngagementContextType) -> Self {
+        self.inner = self.inner.exclude_context_types(input);
+        self
+    }
+    /// <p>Filters engagements to exclude those containing the specified context types. Use this to find engagements that do not have certain types of contextual information, helping to narrow results based on context exclusion criteria.</p>
+    pub fn set_exclude_context_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngagementContextType>>) -> Self {
+        self.inner = self.inner.set_exclude_context_types(input);
+        self
+    }
+    /// <p>Filters engagements to exclude those containing the specified context types. Use this to find engagements that do not have certain types of contextual information, helping to narrow results based on context exclusion criteria.</p>
+    pub fn get_exclude_context_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngagementContextType>> {
+        self.inner.get_exclude_context_types()
+    }
     /// <p>Specifies the sorting parameters for listing Engagements.</p>
     pub fn sort(mut self, input: crate::types::EngagementSort) -> Self {
         self.inner = self.inner.sort(input);

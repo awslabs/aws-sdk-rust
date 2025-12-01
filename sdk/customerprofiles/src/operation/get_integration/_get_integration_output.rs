@@ -25,6 +25,8 @@ pub struct GetIntegrationOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of unique names for active event triggers associated with the integration. This list would be empty if no Event Trigger is associated with the integration.</p>
     pub event_trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.</p>
+    pub scope: ::std::option::Option<crate::types::Scope>,
     _request_id: Option<String>,
 }
 impl GetIntegrationOutput {
@@ -76,6 +78,10 @@ impl GetIntegrationOutput {
     pub fn event_trigger_names(&self) -> &[::std::string::String] {
         self.event_trigger_names.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.</p>
+    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+        self.scope.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetIntegrationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -104,6 +110,7 @@ pub struct GetIntegrationOutputBuilder {
     pub(crate) is_unstructured: ::std::option::Option<bool>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scope: ::std::option::Option<crate::types::Scope>,
     _request_id: Option<String>,
 }
 impl GetIntegrationOutputBuilder {
@@ -290,6 +297,20 @@ impl GetIntegrationOutputBuilder {
     pub fn get_event_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_trigger_names
     }
+    /// <p>Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.</p>
+    pub fn scope(mut self, input: crate::types::Scope) -> Self {
+        self.scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
+        self.scope = input;
+        self
+    }
+    /// <p>Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -340,6 +361,7 @@ impl GetIntegrationOutputBuilder {
             is_unstructured: self.is_unstructured,
             role_arn: self.role_arn,
             event_trigger_names: self.event_trigger_names,
+            scope: self.scope,
             _request_id: self._request_id,
         })
     }

@@ -39,6 +39,21 @@ pub fn de_list_resource_snapshot_jobs_http_error(
             }
             tmp
         }),
+        "InternalServerException" => crate::operation::list_resource_snapshot_jobs::ListResourceSnapshotJobsError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_resource_snapshot_jobs::ListResourceSnapshotJobsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::list_resource_snapshot_jobs::ListResourceSnapshotJobsError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

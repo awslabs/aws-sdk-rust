@@ -5,12 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedJobParameters {
     /// <p>The ARN of the analysis template.</p>
-    pub analysis_template_arn: ::std::option::Option<::std::string::String>,
+    pub analysis_template_arn: ::std::string::String,
 }
 impl ProtectedJobParameters {
     /// <p>The ARN of the analysis template.</p>
-    pub fn analysis_template_arn(&self) -> ::std::option::Option<&str> {
-        self.analysis_template_arn.as_deref()
+    pub fn analysis_template_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.analysis_template_arn.deref()
     }
 }
 impl ProtectedJobParameters {
@@ -28,6 +29,7 @@ pub struct ProtectedJobParametersBuilder {
 }
 impl ProtectedJobParametersBuilder {
     /// <p>The ARN of the analysis template.</p>
+    /// This field is required.
     pub fn analysis_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_template_arn = ::std::option::Option::Some(input.into());
         self
@@ -42,9 +44,16 @@ impl ProtectedJobParametersBuilder {
         &self.analysis_template_arn
     }
     /// Consumes the builder and constructs a [`ProtectedJobParameters`](crate::types::ProtectedJobParameters).
-    pub fn build(self) -> crate::types::ProtectedJobParameters {
-        crate::types::ProtectedJobParameters {
-            analysis_template_arn: self.analysis_template_arn,
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`analysis_template_arn`](crate::types::builders::ProtectedJobParametersBuilder::analysis_template_arn)
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedJobParameters, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::ProtectedJobParameters {
+            analysis_template_arn: self.analysis_template_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "analysis_template_arn",
+                    "analysis_template_arn was not specified but it is required when building ProtectedJobParameters",
+                )
+            })?,
+        })
     }
 }

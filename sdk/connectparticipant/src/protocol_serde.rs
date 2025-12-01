@@ -89,6 +89,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_connection_credentials;
 
+pub(crate) mod shape_message_processing_metadata;
+
 pub(crate) mod shape_start_position;
 
 pub(crate) mod shape_transcript;

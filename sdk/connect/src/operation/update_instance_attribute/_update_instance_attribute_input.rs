@@ -7,6 +7,8 @@ pub struct UpdateInstanceAttributeInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of attribute.</p><note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
+    /// </note> <note>
+    /// <p>If you set the attribute type as <code>MESSAGE_STREAMING</code>, you need to update the Lex bot alias resource based policy to include the <code>lex:RecognizeMessageAsync</code> action for the connect instance ARN resource.</p>
     /// </note>
     pub attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,
     /// <p>The value for the attribute. Maximum character limit is 100.</p>
@@ -21,6 +23,8 @@ impl UpdateInstanceAttributeInput {
     }
     /// <p>The type of attribute.</p><note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
+    /// </note> <note>
+    /// <p>If you set the attribute type as <code>MESSAGE_STREAMING</code>, you need to update the Lex bot alias resource based policy to include the <code>lex:RecognizeMessageAsync</code> action for the connect instance ARN resource.</p>
     /// </note>
     pub fn attribute_type(&self) -> ::std::option::Option<&crate::types::InstanceAttributeType> {
         self.attribute_type.as_ref()
@@ -68,6 +72,8 @@ impl UpdateInstanceAttributeInputBuilder {
     }
     /// <p>The type of attribute.</p><note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
+    /// </note> <note>
+    /// <p>If you set the attribute type as <code>MESSAGE_STREAMING</code>, you need to update the Lex bot alias resource based policy to include the <code>lex:RecognizeMessageAsync</code> action for the connect instance ARN resource.</p>
     /// </note>
     /// This field is required.
     pub fn attribute_type(mut self, input: crate::types::InstanceAttributeType) -> Self {
@@ -76,6 +82,8 @@ impl UpdateInstanceAttributeInputBuilder {
     }
     /// <p>The type of attribute.</p><note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
+    /// </note> <note>
+    /// <p>If you set the attribute type as <code>MESSAGE_STREAMING</code>, you need to update the Lex bot alias resource based policy to include the <code>lex:RecognizeMessageAsync</code> action for the connect instance ARN resource.</p>
     /// </note>
     pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::InstanceAttributeType>) -> Self {
         self.attribute_type = input;
@@ -83,6 +91,8 @@ impl UpdateInstanceAttributeInputBuilder {
     }
     /// <p>The type of attribute.</p><note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
+    /// </note> <note>
+    /// <p>If you set the attribute type as <code>MESSAGE_STREAMING</code>, you need to update the Lex bot alias resource based policy to include the <code>lex:RecognizeMessageAsync</code> action for the connect instance ARN resource.</p>
     /// </note>
     pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::InstanceAttributeType> {
         &self.attribute_type

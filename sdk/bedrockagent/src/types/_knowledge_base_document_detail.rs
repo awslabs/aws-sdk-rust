@@ -11,7 +11,7 @@ pub struct KnowledgeBaseDocumentDetail {
     /// <p>The ingestion status of the document. The following statuses are possible:</p>
     /// <ul>
     /// <li>
-    /// <p>STARTED – You submitted the ingestion job containing the document.</p></li>
+    /// <p>STARTING – You submitted the ingestion job containing the document.</p></li>
     /// <li>
     /// <p>PENDING – The document is waiting to be ingested.</p></li>
     /// <li>
@@ -57,7 +57,7 @@ impl KnowledgeBaseDocumentDetail {
     /// <p>The ingestion status of the document. The following statuses are possible:</p>
     /// <ul>
     /// <li>
-    /// <p>STARTED – You submitted the ingestion job containing the document.</p></li>
+    /// <p>STARTING – You submitted the ingestion job containing the document.</p></li>
     /// <li>
     /// <p>PENDING – The document is waiting to be ingested.</p></li>
     /// <li>
@@ -149,7 +149,7 @@ impl KnowledgeBaseDocumentDetailBuilder {
     /// <p>The ingestion status of the document. The following statuses are possible:</p>
     /// <ul>
     /// <li>
-    /// <p>STARTED – You submitted the ingestion job containing the document.</p></li>
+    /// <p>STARTING – You submitted the ingestion job containing the document.</p></li>
     /// <li>
     /// <p>PENDING – The document is waiting to be ingested.</p></li>
     /// <li>
@@ -181,7 +181,7 @@ impl KnowledgeBaseDocumentDetailBuilder {
     /// <p>The ingestion status of the document. The following statuses are possible:</p>
     /// <ul>
     /// <li>
-    /// <p>STARTED – You submitted the ingestion job containing the document.</p></li>
+    /// <p>STARTING – You submitted the ingestion job containing the document.</p></li>
     /// <li>
     /// <p>PENDING – The document is waiting to be ingested.</p></li>
     /// <li>
@@ -212,7 +212,7 @@ impl KnowledgeBaseDocumentDetailBuilder {
     /// <p>The ingestion status of the document. The following statuses are possible:</p>
     /// <ul>
     /// <li>
-    /// <p>STARTED – You submitted the ingestion job containing the document.</p></li>
+    /// <p>STARTING – You submitted the ingestion job containing the document.</p></li>
     /// <li>
     /// <p>PENDING – The document is waiting to be ingested.</p></li>
     /// <li>

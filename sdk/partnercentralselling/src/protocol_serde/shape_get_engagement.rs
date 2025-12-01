@@ -32,6 +32,21 @@ pub fn de_get_engagement_http_error(
             }
             tmp
         }),
+        "InternalServerException" => crate::operation::get_engagement::GetEngagementError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_engagement::GetEngagementError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::get_engagement::GetEngagementError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -165,6 +180,19 @@ pub(crate) fn de_get_engagement(
                     builder = builder.set_member_count(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "ModifiedAt" => {
+                    builder = builder.set_modified_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "ModifiedBy" => {
+                    builder = builder.set_modified_by(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

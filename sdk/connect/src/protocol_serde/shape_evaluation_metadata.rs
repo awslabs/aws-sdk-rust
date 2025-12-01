@@ -54,6 +54,18 @@ where
                                 crate::protocol_serde::shape_evaluation_acknowledgement::de_evaluation_acknowledgement(tokens)?,
                             );
                         }
+                        "ContactParticipant" => {
+                            builder = builder.set_contact_participant(
+                                crate::protocol_serde::shape_evaluation_contact_participant::de_evaluation_contact_participant(tokens)?,
+                            );
+                        }
+                        "SamplingJobId" => {
+                            builder = builder.set_sampling_job_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

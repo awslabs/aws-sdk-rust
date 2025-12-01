@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RerankResult {
-    /// <p>The ranking of the document. The lower a number, the higher the document is ranked.</p>
+    /// <p>The original index of the document from the input sources array.</p>
     pub index: i32,
     /// <p>The relevance score of the document.</p>
     pub relevance_score: f32,
@@ -12,7 +12,7 @@ pub struct RerankResult {
     pub document: ::std::option::Option<crate::types::RerankDocument>,
 }
 impl RerankResult {
-    /// <p>The ranking of the document. The lower a number, the higher the document is ranked.</p>
+    /// <p>The original index of the document from the input sources array.</p>
     pub fn index(&self) -> i32 {
         self.index
     }
@@ -50,18 +50,18 @@ pub struct RerankResultBuilder {
     pub(crate) document: ::std::option::Option<crate::types::RerankDocument>,
 }
 impl RerankResultBuilder {
-    /// <p>The ranking of the document. The lower a number, the higher the document is ranked.</p>
+    /// <p>The original index of the document from the input sources array.</p>
     /// This field is required.
     pub fn index(mut self, input: i32) -> Self {
         self.index = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ranking of the document. The lower a number, the higher the document is ranked.</p>
+    /// <p>The original index of the document from the input sources array.</p>
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.index = input;
         self
     }
-    /// <p>The ranking of the document. The lower a number, the higher the document is ranked.</p>
+    /// <p>The original index of the document from the input sources array.</p>
     pub fn get_index(&self) -> &::std::option::Option<i32> {
         &self.index
     }

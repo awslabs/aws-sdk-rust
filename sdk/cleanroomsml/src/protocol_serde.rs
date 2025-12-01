@@ -275,6 +275,8 @@ pub(crate) mod shape_status_details;
 
 pub(crate) mod shape_stopping_condition;
 
+pub(crate) mod shape_synthetic_data_configuration;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_trained_model_export_output_configuration;
@@ -337,6 +339,8 @@ pub(crate) mod shape_metric_definition_list;
 
 pub(crate) mod shape_ml_input_channel_summary;
 
+pub(crate) mod shape_ml_synthetic_data_parameters;
+
 pub(crate) mod shape_privacy_configuration_policies;
 
 pub(crate) mod shape_protected_query_sql_parameters;
@@ -344,6 +348,8 @@ pub(crate) mod shape_protected_query_sql_parameters;
 pub(crate) mod shape_relevance_metrics;
 
 pub(crate) mod shape_s3_config_map;
+
+pub(crate) mod shape_synthetic_data_evaluation_scores;
 
 pub(crate) mod shape_trained_model_export_receiver_member;
 
@@ -355,7 +361,11 @@ pub(crate) mod shape_training_dataset_summary;
 
 pub(crate) mod shape_access_budget;
 
+pub(crate) mod shape_column_classification_details;
+
 pub(crate) mod shape_column_schema;
+
+pub(crate) mod shape_data_privacy_scores;
 
 pub(crate) mod shape_data_source;
 
@@ -375,6 +385,8 @@ pub(crate) mod shape_worker_compute_configuration;
 
 pub(crate) mod shape_access_budget_details_list;
 
+pub(crate) mod shape_column_mapping_list;
+
 pub(crate) mod shape_dataset_schema_list;
 
 pub(crate) mod shape_glue_data_source;
@@ -382,6 +394,8 @@ pub(crate) mod shape_glue_data_source;
 pub(crate) mod shape_logs_configuration_policy;
 
 pub(crate) mod shape_logs_configuration_policy_list;
+
+pub(crate) mod shape_membership_inference_attack_score_list;
 
 pub(crate) mod shape_metrics_configuration_policy;
 
@@ -398,6 +412,10 @@ pub(crate) mod shape_trained_model_inference_max_output_size;
 pub(crate) mod shape_access_budget_details;
 
 pub(crate) mod shape_log_redaction_configuration;
+
+pub(crate) mod shape_membership_inference_attack_score;
+
+pub(crate) mod shape_synthetic_data_column_properties;
 
 pub(crate) mod shape_account_id_list;
 

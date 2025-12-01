@@ -145,6 +145,10 @@ pub(crate) mod shape_machine_learning_product_sort;
 
 pub(crate) mod shape_offer_filters;
 
+pub(crate) mod shape_offer_set_filters;
+
+pub(crate) mod shape_offer_set_sort;
+
 pub(crate) mod shape_offer_sort;
 
 pub(crate) mod shape_resale_authorization_filters;
@@ -213,6 +217,24 @@ pub(crate) mod shape_offer_release_date_filter;
 
 pub(crate) mod shape_offer_resale_authorization_id_filter;
 
+pub(crate) mod shape_offer_set_associated_offer_ids_filter;
+
+pub(crate) mod shape_offer_set_entity_id_filter;
+
+pub(crate) mod shape_offer_set_id_filter;
+
+pub(crate) mod shape_offer_set_last_modified_date_filter;
+
+pub(crate) mod shape_offer_set_name_filter;
+
+pub(crate) mod shape_offer_set_release_date_filter;
+
+pub(crate) mod shape_offer_set_solution_id_filter;
+
+pub(crate) mod shape_offer_set_state_filter;
+
+pub(crate) mod shape_offer_set_summary;
+
 pub(crate) mod shape_offer_state_filter;
 
 pub(crate) mod shape_offer_summary;
@@ -276,6 +298,12 @@ pub(crate) mod shape_offer_buyer_accounts_list;
 pub(crate) mod shape_offer_last_modified_date_filter_date_range;
 
 pub(crate) mod shape_offer_release_date_filter_date_range;
+
+pub(crate) mod shape_offer_set_associated_offer_ids_list;
+
+pub(crate) mod shape_offer_set_last_modified_date_filter_date_range;
+
+pub(crate) mod shape_offer_set_release_date_filter_date_range;
 
 pub(crate) mod shape_offer_targeting_list;
 

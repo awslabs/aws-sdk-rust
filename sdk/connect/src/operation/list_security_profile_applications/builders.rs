@@ -22,7 +22,7 @@ impl crate::operation::list_security_profile_applications::builders::ListSecurit
 }
 /// Fluent builder constructing a request to `ListSecurityProfileApplications`.
 ///
-/// <p>Returns a list of third-party applications in a specific security profile.</p>
+/// <p>Returns a list of third-party applications or MCP Servers in a specific security profile.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSecurityProfileApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

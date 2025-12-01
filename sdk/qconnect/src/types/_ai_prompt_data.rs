@@ -60,6 +60,8 @@ pub struct AiPromptData {
     pub api_format: crate::types::AiPromptApiFormat,
     /// <p>The configuration of the prompt template for this AI Prompt.</p>
     pub template_configuration: ::std::option::Option<crate::types::AiPromptTemplateConfiguration>,
+    /// <p>The configuration for inference parameters when using the AI Prompt.</p>
+    pub inference_configuration: ::std::option::Option<crate::types::AiPromptInferenceConfiguration>,
     /// <p>The time the AI Prompt was last modified.</p>
     pub modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the AI Prompt.</p>
@@ -156,6 +158,10 @@ impl AiPromptData {
     pub fn template_configuration(&self) -> ::std::option::Option<&crate::types::AiPromptTemplateConfiguration> {
         self.template_configuration.as_ref()
     }
+    /// <p>The configuration for inference parameters when using the AI Prompt.</p>
+    pub fn inference_configuration(&self) -> ::std::option::Option<&crate::types::AiPromptInferenceConfiguration> {
+        self.inference_configuration.as_ref()
+    }
     /// <p>The time the AI Prompt was last modified.</p>
     pub fn modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_time.as_ref()
@@ -202,6 +208,7 @@ pub struct AiPromptDataBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_format: ::std::option::Option<crate::types::AiPromptApiFormat>,
     pub(crate) template_configuration: ::std::option::Option<crate::types::AiPromptTemplateConfiguration>,
+    pub(crate) inference_configuration: ::std::option::Option<crate::types::AiPromptInferenceConfiguration>,
     pub(crate) modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) visibility_status: ::std::option::Option<crate::types::VisibilityStatus>,
@@ -468,6 +475,20 @@ impl AiPromptDataBuilder {
     pub fn get_template_configuration(&self) -> &::std::option::Option<crate::types::AiPromptTemplateConfiguration> {
         &self.template_configuration
     }
+    /// <p>The configuration for inference parameters when using the AI Prompt.</p>
+    pub fn inference_configuration(mut self, input: crate::types::AiPromptInferenceConfiguration) -> Self {
+        self.inference_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for inference parameters when using the AI Prompt.</p>
+    pub fn set_inference_configuration(mut self, input: ::std::option::Option<crate::types::AiPromptInferenceConfiguration>) -> Self {
+        self.inference_configuration = input;
+        self
+    }
+    /// <p>The configuration for inference parameters when using the AI Prompt.</p>
+    pub fn get_inference_configuration(&self) -> &::std::option::Option<crate::types::AiPromptInferenceConfiguration> {
+        &self.inference_configuration
+    }
     /// <p>The time the AI Prompt was last modified.</p>
     pub fn modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_time = ::std::option::Option::Some(input);
@@ -628,6 +649,7 @@ impl AiPromptDataBuilder {
                 )
             })?,
             template_configuration: self.template_configuration,
+            inference_configuration: self.inference_configuration,
             modified_time: self.modified_time,
             description: self.description,
             visibility_status: self.visibility_status.ok_or_else(|| {

@@ -170,4 +170,18 @@ impl ListMessagesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The filter criteria for listing messages.</p>
+    pub fn filter(mut self, input: crate::types::MessageFilterType) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>The filter criteria for listing messages.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::MessageFilterType>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>The filter criteria for listing messages.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::MessageFilterType> {
+        self.inner.get_filter()
+    }
 }

@@ -46,6 +46,27 @@ pub fn ser_ai_agent_configuration(
             )?;
             object_6.finish();
         }
+        crate::types::AiAgentConfiguration::OrchestrationAiAgentConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_7 = object_3.key("orchestrationAIAgentConfiguration").start_object();
+            crate::protocol_serde::shape_orchestration_ai_agent_configuration::ser_orchestration_ai_agent_configuration(&mut object_7, inner)?;
+            object_7.finish();
+        }
+        crate::types::AiAgentConfiguration::NoteTakingAiAgentConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_8 = object_3.key("noteTakingAIAgentConfiguration").start_object();
+            crate::protocol_serde::shape_note_taking_ai_agent_configuration::ser_note_taking_ai_agent_configuration(&mut object_8, inner)?;
+            object_8.finish();
+        }
+        crate::types::AiAgentConfiguration::CaseSummarizationAiAgentConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_9 = object_3.key("caseSummarizationAIAgentConfiguration").start_object();
+            crate::protocol_serde::shape_case_summarization_ai_agent_configuration::ser_case_summarization_ai_agent_configuration(
+                &mut object_9,
+                inner,
+            )?;
+            object_9.finish();
+        }
         crate::types::AiAgentConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AiAgentConfiguration",
@@ -119,6 +140,24 @@ where
                                 Some(crate::types::AiAgentConfiguration::EmailGenerativeAnswerAiAgentConfiguration(
                                     crate::protocol_serde::shape_email_generative_answer_ai_agent_configuration::de_email_generative_answer_ai_agent_configuration(tokens)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'emailGenerativeAnswerAIAgentConfiguration' cannot be null"))?
+                                ))
+                            }
+                            "orchestrationAIAgentConfiguration" => {
+                                Some(crate::types::AiAgentConfiguration::OrchestrationAiAgentConfiguration(
+                                    crate::protocol_serde::shape_orchestration_ai_agent_configuration::de_orchestration_ai_agent_configuration(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'orchestrationAIAgentConfiguration' cannot be null"))?
+                                ))
+                            }
+                            "noteTakingAIAgentConfiguration" => {
+                                Some(crate::types::AiAgentConfiguration::NoteTakingAiAgentConfiguration(
+                                    crate::protocol_serde::shape_note_taking_ai_agent_configuration::de_note_taking_ai_agent_configuration(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noteTakingAIAgentConfiguration' cannot be null"))?
+                                ))
+                            }
+                            "caseSummarizationAIAgentConfiguration" => {
+                                Some(crate::types::AiAgentConfiguration::CaseSummarizationAiAgentConfiguration(
+                                    crate::protocol_serde::shape_case_summarization_ai_agent_configuration::de_case_summarization_ai_agent_configuration(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'caseSummarizationAIAgentConfiguration' cannot be null"))?
                                 ))
                             }
                             _ => {

@@ -171,6 +171,20 @@ pub(crate) fn de_get_segment_definition(
                 "SegmentGroups" => {
                     builder = builder.set_segment_groups(crate::protocol_serde::shape_segment_group::de_segment_group(tokens)?);
                 }
+                "SegmentSqlQuery" => {
+                    builder = builder.set_segment_sql_query(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "SegmentType" => {
+                    builder = builder.set_segment_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SegmentType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "Tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                 }

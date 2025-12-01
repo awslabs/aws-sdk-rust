@@ -103,6 +103,18 @@ where
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }
+                        "TargetConfiguration" => {
+                            builder = builder.set_target_configuration(
+                                crate::protocol_serde::shape_evaluation_form_target_configuration::de_evaluation_form_target_configuration(tokens)?,
+                            );
+                        }
+                        "LanguageConfiguration" => {
+                            builder = builder.set_language_configuration(
+                                crate::protocol_serde::shape_evaluation_form_language_configuration::de_evaluation_form_language_configuration(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

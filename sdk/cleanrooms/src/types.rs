@@ -189,6 +189,8 @@ pub use crate::types::_membership_job_compute_payment_config::MembershipJobCompu
 
 pub use crate::types::_membership_ml_payment_config::MembershipMlPaymentConfig;
 
+pub use crate::types::_membership_synthetic_data_generation_payment_config::MembershipSyntheticDataGenerationPaymentConfig;
+
 pub use crate::types::_membership_model_inference_payment_config::MembershipModelInferencePaymentConfig;
 
 pub use crate::types::_membership_model_training_payment_config::MembershipModelTrainingPaymentConfig;
@@ -337,6 +339,8 @@ pub use crate::types::_job_compute_payment_config::JobComputePaymentConfig;
 
 pub use crate::types::_ml_payment_config::MlPaymentConfig;
 
+pub use crate::types::_synthetic_data_generation_payment_config::SyntheticDataGenerationPaymentConfig;
+
 pub use crate::types::_model_inference_payment_config::ModelInferencePaymentConfig;
 
 pub use crate::types::_model_training_payment_config::ModelTrainingPaymentConfig;
@@ -418,6 +422,16 @@ pub use crate::types::_collaboration_configured_audience_model_association::Coll
 pub use crate::types::_collaboration_change_request::CollaborationChangeRequest;
 
 pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplate;
+
+pub use crate::types::_synthetic_data_parameters::SyntheticDataParameters;
+
+pub use crate::types::_ml_synthetic_data_parameters::MlSyntheticDataParameters;
+
+pub use crate::types::_column_classification_details::ColumnClassificationDetails;
+
+pub use crate::types::_synthetic_data_column_properties::SyntheticDataColumnProperties;
+
+pub use crate::types::_synthetic_data_column_type::SyntheticDataColumnType;
 
 pub use crate::types::_error_message_configuration::ErrorMessageConfiguration;
 
@@ -623,6 +637,8 @@ mod _collaboration_summary;
 
 mod _column;
 
+mod _column_classification_details;
+
 mod _commercial_region;
 
 mod _compute_configuration;
@@ -791,9 +807,13 @@ mod _membership_status;
 
 mod _membership_summary;
 
+mod _membership_synthetic_data_generation_payment_config;
+
 mod _ml_member_abilities;
 
 mod _ml_payment_config;
+
+mod _ml_synthetic_data_parameters;
 
 mod _model_inference_payment_config;
 
@@ -958,6 +978,14 @@ mod _snowflake_table_schema;
 mod _snowflake_table_schema_v1;
 
 mod _supported_s3_region;
+
+mod _synthetic_data_column_properties;
+
+mod _synthetic_data_column_type;
+
+mod _synthetic_data_generation_payment_config;
+
+mod _synthetic_data_parameters;
 
 mod _table_reference;
 

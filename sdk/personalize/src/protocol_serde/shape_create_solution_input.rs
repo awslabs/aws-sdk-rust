@@ -15,32 +15,35 @@ pub fn ser_create_solution_input_input(
     if let Some(var_4) = &input.perform_auto_training {
         object.key("performAutoTraining").boolean(*var_4);
     }
-    if let Some(var_5) = &input.recipe_arn {
-        object.key("recipeArn").string(var_5.as_str());
+    if let Some(var_5) = &input.perform_incremental_update {
+        object.key("performIncrementalUpdate").boolean(*var_5);
     }
-    if let Some(var_6) = &input.dataset_group_arn {
-        object.key("datasetGroupArn").string(var_6.as_str());
+    if let Some(var_6) = &input.recipe_arn {
+        object.key("recipeArn").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.event_type {
-        object.key("eventType").string(var_7.as_str());
+    if let Some(var_7) = &input.dataset_group_arn {
+        object.key("datasetGroupArn").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.solution_config {
+    if let Some(var_8) = &input.event_type {
+        object.key("eventType").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.solution_config {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("solutionConfig").start_object();
-        crate::protocol_serde::shape_solution_config::ser_solution_config(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("solutionConfig").start_object();
+        crate::protocol_serde::shape_solution_config::ser_solution_config(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
     Ok(())
 }

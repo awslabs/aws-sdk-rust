@@ -320,6 +320,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Relational Database Service | [aws-sdk-rds](https://crates.io/crates/aws-sdk-rds) ([docs](https://docs.rs/aws-sdk-rds)) |
 | Amazon Route 53 | [aws-sdk-route53](https://crates.io/crates/aws-sdk-route53) ([docs](https://docs.rs/aws-sdk-route53)) |
 | Amazon Route 53 Domains | [aws-sdk-route53domains](https://crates.io/crates/aws-sdk-route53domains) ([docs](https://docs.rs/aws-sdk-route53domains)) |
+| Amazon Route 53 Global Resolver | [aws-sdk-route53globalresolver](https://crates.io/crates/aws-sdk-route53globalresolver) ([docs](https://docs.rs/aws-sdk-route53globalresolver)) |
 | Amazon Route 53 Resolver | [aws-sdk-route53resolver](https://crates.io/crates/aws-sdk-route53resolver) ([docs](https://docs.rs/aws-sdk-route53resolver)) |
 | Amazon S3 Tables | [aws-sdk-s3tables](https://crates.io/crates/aws-sdk-s3tables) ([docs](https://docs.rs/aws-sdk-s3tables)) |
 | Amazon S3 Vectors | [aws-sdk-s3vectors](https://crates.io/crates/aws-sdk-s3vectors) ([docs](https://docs.rs/aws-sdk-s3vectors)) |
@@ -393,6 +394,8 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Migration Hub Strategy Recommendations | [aws-sdk-migrationhubstrategy](https://crates.io/crates/aws-sdk-migrationhubstrategy) ([docs](https://docs.rs/aws-sdk-migrationhubstrategy)) |
 | Network Flow Monitor | [aws-sdk-networkflowmonitor](https://crates.io/crates/aws-sdk-networkflowmonitor) ([docs](https://docs.rs/aws-sdk-networkflowmonitor)) |
 | OpenSearch Service Serverless | [aws-sdk-opensearchserverless](https://crates.io/crates/aws-sdk-opensearchserverless) ([docs](https://docs.rs/aws-sdk-opensearchserverless)) |
+| Partner Central Account API | [aws-sdk-partnercentralaccount](https://crates.io/crates/aws-sdk-partnercentralaccount) ([docs](https://docs.rs/aws-sdk-partnercentralaccount)) |
+| Partner Central Benefits API | [aws-sdk-partnercentralbenefits](https://crates.io/crates/aws-sdk-partnercentralbenefits) ([docs](https://docs.rs/aws-sdk-partnercentralbenefits)) |
 | Partner Central Channel API | [aws-sdk-partnercentralchannel](https://crates.io/crates/aws-sdk-partnercentralchannel) ([docs](https://docs.rs/aws-sdk-partnercentralchannel)) |
 | Partner Central Selling API | [aws-sdk-partnercentralselling](https://crates.io/crates/aws-sdk-partnercentralselling) ([docs](https://docs.rs/aws-sdk-partnercentralselling)) |
 | Payment Cryptography Control Plane | [aws-sdk-paymentcryptography](https://crates.io/crates/aws-sdk-paymentcryptography) ([docs](https://docs.rs/aws-sdk-paymentcryptography)) |

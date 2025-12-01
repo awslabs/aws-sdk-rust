@@ -24,6 +24,8 @@ pub struct AnalysisTemplateSummary {
     pub collaboration_id: ::std::string::String,
     /// <p>The description of the analysis template.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates if this analysis template summary generated synthetic data.</p>
+    pub is_synthetic_data: ::std::option::Option<bool>,
 }
 impl AnalysisTemplateSummary {
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
@@ -73,6 +75,10 @@ impl AnalysisTemplateSummary {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Indicates if this analysis template summary generated synthetic data.</p>
+    pub fn is_synthetic_data(&self) -> ::std::option::Option<bool> {
+        self.is_synthetic_data
+    }
 }
 impl AnalysisTemplateSummary {
     /// Creates a new builder-style object to manufacture [`AnalysisTemplateSummary`](crate::types::AnalysisTemplateSummary).
@@ -95,6 +101,7 @@ pub struct AnalysisTemplateSummaryBuilder {
     pub(crate) collaboration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) is_synthetic_data: ::std::option::Option<bool>,
 }
 impl AnalysisTemplateSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
@@ -246,6 +253,20 @@ impl AnalysisTemplateSummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Indicates if this analysis template summary generated synthetic data.</p>
+    pub fn is_synthetic_data(mut self, input: bool) -> Self {
+        self.is_synthetic_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if this analysis template summary generated synthetic data.</p>
+    pub fn set_is_synthetic_data(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_synthetic_data = input;
+        self
+    }
+    /// <p>Indicates if this analysis template summary generated synthetic data.</p>
+    pub fn get_is_synthetic_data(&self) -> &::std::option::Option<bool> {
+        &self.is_synthetic_data
+    }
     /// Consumes the builder and constructs a [`AnalysisTemplateSummary`](crate::types::AnalysisTemplateSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::AnalysisTemplateSummaryBuilder::arn)
@@ -314,6 +335,7 @@ impl AnalysisTemplateSummaryBuilder {
                 )
             })?,
             description: self.description,
+            is_synthetic_data: self.is_synthetic_data,
         })
     }
 }

@@ -9,6 +9,8 @@ pub struct UpdateSolutionInput {
     /// <p>If you turn on automatic training, the first automatic training starts within one hour after the solution update completes. If you manually create a solution version within the hour, the solution skips the first automatic training. For more information about automatic training, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html">Configuring automatic training</a>.</p>
     /// <p>After training starts, you can get the solution version's Amazon Resource Name (ARN) with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a> API operation. To get its status, use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.</p>
     pub perform_auto_training: ::std::option::Option<bool>,
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub perform_incremental_update: ::std::option::Option<bool>,
     /// <p>The new configuration details of the solution.</p>
     pub solution_update_config: ::std::option::Option<crate::types::SolutionUpdateConfig>,
 }
@@ -22,6 +24,10 @@ impl UpdateSolutionInput {
     /// <p>After training starts, you can get the solution version's Amazon Resource Name (ARN) with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a> API operation. To get its status, use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.</p>
     pub fn perform_auto_training(&self) -> ::std::option::Option<bool> {
         self.perform_auto_training
+    }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn perform_incremental_update(&self) -> ::std::option::Option<bool> {
+        self.perform_incremental_update
     }
     /// <p>The new configuration details of the solution.</p>
     pub fn solution_update_config(&self) -> ::std::option::Option<&crate::types::SolutionUpdateConfig> {
@@ -41,6 +47,7 @@ impl UpdateSolutionInput {
 pub struct UpdateSolutionInputBuilder {
     pub(crate) solution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) perform_auto_training: ::std::option::Option<bool>,
+    pub(crate) perform_incremental_update: ::std::option::Option<bool>,
     pub(crate) solution_update_config: ::std::option::Option<crate::types::SolutionUpdateConfig>,
 }
 impl UpdateSolutionInputBuilder {
@@ -79,6 +86,20 @@ impl UpdateSolutionInputBuilder {
     pub fn get_perform_auto_training(&self) -> &::std::option::Option<bool> {
         &self.perform_auto_training
     }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn perform_incremental_update(mut self, input: bool) -> Self {
+        self.perform_incremental_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn set_perform_incremental_update(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.perform_incremental_update = input;
+        self
+    }
+    /// <p>Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.</p>
+    pub fn get_perform_incremental_update(&self) -> &::std::option::Option<bool> {
+        &self.perform_incremental_update
+    }
     /// <p>The new configuration details of the solution.</p>
     pub fn solution_update_config(mut self, input: crate::types::SolutionUpdateConfig) -> Self {
         self.solution_update_config = ::std::option::Option::Some(input);
@@ -100,6 +121,7 @@ impl UpdateSolutionInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_solution::UpdateSolutionInput {
             solution_arn: self.solution_arn,
             perform_auto_training: self.perform_auto_training,
+            perform_incremental_update: self.perform_incremental_update,
             solution_update_config: self.solution_update_config,
         })
     }

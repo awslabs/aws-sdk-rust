@@ -12,135 +12,144 @@ pub fn ser_create_function_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.code {
+    if let Some(var_4) = &input.capacity_provider_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Code").start_object();
-        crate::protocol_serde::shape_function_code::ser_function_code(&mut object_5, var_4)?;
+        let mut object_5 = object.key("CapacityProviderConfig").start_object();
+        crate::protocol_serde::shape_capacity_provider_config::ser_capacity_provider_config(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.code_signing_config_arn {
-        object.key("CodeSigningConfigArn").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.dead_letter_config {
+    if let Some(var_6) = &input.code {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("DeadLetterConfig").start_object();
-        crate::protocol_serde::shape_dead_letter_config::ser_dead_letter_config(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("Code").start_object();
+        crate::protocol_serde::shape_function_code::ser_function_code(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.description {
-        object.key("Description").string(var_9.as_str());
+    if let Some(var_8) = &input.code_signing_config_arn {
+        object.key("CodeSigningConfigArn").string(var_8.as_str());
     }
-    if let Some(var_10) = &input.environment {
+    if let Some(var_9) = &input.dead_letter_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("Environment").start_object();
-        crate::protocol_serde::shape_environment::ser_environment(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("DeadLetterConfig").start_object();
+        crate::protocol_serde::shape_dead_letter_config::ser_dead_letter_config(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.ephemeral_storage {
+    if let Some(var_11) = &input.description {
+        object.key("Description").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.environment {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("EphemeralStorage").start_object();
-        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(&mut object_13, var_12)?;
+        let mut object_13 = object.key("Environment").start_object();
+        crate::protocol_serde::shape_environment::ser_environment(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.file_system_configs {
-        let mut array_15 = object.key("FileSystemConfigs").start_array();
-        for item_16 in var_14 {
+    if let Some(var_14) = &input.ephemeral_storage {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("EphemeralStorage").start_object();
+        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.file_system_configs {
+        let mut array_17 = object.key("FileSystemConfigs").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_file_system_config::ser_file_system_config(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_file_system_config::ser_file_system_config(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_15.finish();
+        array_17.finish();
     }
-    if let Some(var_18) = &input.function_name {
-        object.key("FunctionName").string(var_18.as_str());
+    if let Some(var_20) = &input.function_name {
+        object.key("FunctionName").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.handler {
-        object.key("Handler").string(var_19.as_str());
+    if let Some(var_21) = &input.handler {
+        object.key("Handler").string(var_21.as_str());
     }
-    if let Some(var_20) = &input.image_config {
+    if let Some(var_22) = &input.image_config {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("ImageConfig").start_object();
-        crate::protocol_serde::shape_image_config::ser_image_config(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_23 = object.key("ImageConfig").start_object();
+        crate::protocol_serde::shape_image_config::ser_image_config(&mut object_23, var_22)?;
+        object_23.finish();
     }
-    if let Some(var_22) = &input.kms_key_arn {
-        object.key("KMSKeyArn").string(var_22.as_str());
+    if let Some(var_24) = &input.kms_key_arn {
+        object.key("KMSKeyArn").string(var_24.as_str());
     }
-    if let Some(var_23) = &input.layers {
-        let mut array_24 = object.key("Layers").start_array();
-        for item_25 in var_23 {
+    if let Some(var_25) = &input.layers {
+        let mut array_26 = object.key("Layers").start_array();
+        for item_27 in var_25 {
             {
-                array_24.value().string(item_25.as_str());
+                array_26.value().string(item_27.as_str());
             }
         }
-        array_24.finish();
+        array_26.finish();
     }
-    if let Some(var_26) = &input.logging_config {
+    if let Some(var_28) = &input.logging_config {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("LoggingConfig").start_object();
-        crate::protocol_serde::shape_logging_config::ser_logging_config(&mut object_27, var_26)?;
-        object_27.finish();
+        let mut object_29 = object.key("LoggingConfig").start_object();
+        crate::protocol_serde::shape_logging_config::ser_logging_config(&mut object_29, var_28)?;
+        object_29.finish();
     }
-    if let Some(var_28) = &input.memory_size {
+    if let Some(var_30) = &input.memory_size {
         object.key("MemorySize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_28).into()),
+            ::aws_smithy_types::Number::NegInt((*var_30).into()),
         );
     }
-    if let Some(var_29) = &input.package_type {
-        object.key("PackageType").string(var_29.as_str());
+    if let Some(var_31) = &input.package_type {
+        object.key("PackageType").string(var_31.as_str());
     }
-    if let Some(var_30) = &input.publish {
-        object.key("Publish").boolean(*var_30);
+    if let Some(var_32) = &input.publish {
+        object.key("Publish").boolean(*var_32);
     }
-    if let Some(var_31) = &input.role {
-        object.key("Role").string(var_31.as_str());
+    if let Some(var_33) = &input.publish_to {
+        object.key("PublishTo").string(var_33.as_str());
     }
-    if let Some(var_32) = &input.runtime {
-        object.key("Runtime").string(var_32.as_str());
+    if let Some(var_34) = &input.role {
+        object.key("Role").string(var_34.as_str());
     }
-    if let Some(var_33) = &input.snap_start {
+    if let Some(var_35) = &input.runtime {
+        object.key("Runtime").string(var_35.as_str());
+    }
+    if let Some(var_36) = &input.snap_start {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("SnapStart").start_object();
-        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_34, var_33)?;
-        object_34.finish();
+        let mut object_37 = object.key("SnapStart").start_object();
+        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_37, var_36)?;
+        object_37.finish();
     }
-    if let Some(var_35) = &input.tags {
+    if let Some(var_38) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("Tags").start_object();
-        for (key_37, value_38) in var_35 {
+        let mut object_39 = object.key("Tags").start_object();
+        for (key_40, value_41) in var_38 {
             {
-                object_36.key(key_37.as_str()).string(value_38.as_str());
+                object_39.key(key_40.as_str()).string(value_41.as_str());
             }
         }
-        object_36.finish();
+        object_39.finish();
     }
-    if let Some(var_39) = &input.tenancy_config {
+    if let Some(var_42) = &input.tenancy_config {
         #[allow(unused_mut)]
-        let mut object_40 = object.key("TenancyConfig").start_object();
-        crate::protocol_serde::shape_tenancy_config::ser_tenancy_config(&mut object_40, var_39)?;
-        object_40.finish();
-    }
-    if let Some(var_41) = &input.timeout {
-        object.key("Timeout").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_41).into()),
-        );
-    }
-    if let Some(var_42) = &input.tracing_config {
-        #[allow(unused_mut)]
-        let mut object_43 = object.key("TracingConfig").start_object();
-        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_43, var_42)?;
+        let mut object_43 = object.key("TenancyConfig").start_object();
+        crate::protocol_serde::shape_tenancy_config::ser_tenancy_config(&mut object_43, var_42)?;
         object_43.finish();
     }
-    if let Some(var_44) = &input.vpc_config {
+    if let Some(var_44) = &input.timeout {
+        object.key("Timeout").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_44).into()),
+        );
+    }
+    if let Some(var_45) = &input.tracing_config {
         #[allow(unused_mut)]
-        let mut object_45 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_45, var_44)?;
-        object_45.finish();
+        let mut object_46 = object.key("TracingConfig").start_object();
+        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_46, var_45)?;
+        object_46.finish();
+    }
+    if let Some(var_47) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_48 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_48, var_47)?;
+        object_48.finish();
     }
     Ok(())
 }

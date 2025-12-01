@@ -18,6 +18,9 @@
 /// <p><i>TOO_MANY_VALUES:</i> There are too many values in a field that expects fewer entries.</p>
 /// <p>Fix: Reduce the number of values to match the expected limit.</p></li>
 /// <li>
+/// <p><i>NOT_ENOUGH_VALUES:</i> There are not enough values in a field that expects more entries.</p>
+/// <p>Fix: Increase the number of values to match the expected threshold.</p></li>
+/// <li>
 /// <p><i>ACTION_NOT_PERMITTED:</i> The action isn't permitted due to current state or permissions.</p>
 /// <p>Fix: Verify that the action is appropriate for the current state, and that you have the necessary permissions to perform it.</p></li>
 /// <li>

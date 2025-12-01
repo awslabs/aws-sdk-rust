@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`segment_definition_name(Option<String>)`](crate::operation::get_segment_membership::GetSegmentMembershipOutput::segment_definition_name): <p>The unique name of the segment definition.</p>
     ///   - [`profiles(Option<Vec::<ProfileQueryResult>>)`](crate::operation::get_segment_membership::GetSegmentMembershipOutput::profiles): <p>An array of maps where each contains a response per profile requested.</p>
     ///   - [`failures(Option<Vec::<ProfileQueryFailures>>)`](crate::operation::get_segment_membership::GetSegmentMembershipOutput::failures): <p>An array of maps where each contains a response per profile failed for the request.</p>
+    ///   - [`last_computed_at(Option<DateTime>)`](crate::operation::get_segment_membership::GetSegmentMembershipOutput::last_computed_at): <p>The timestamp indicating when the segment membership was last computed or updated.</p>
     /// - On failure, responds with [`SdkError<GetSegmentMembershipError>`](crate::operation::get_segment_membership::GetSegmentMembershipError)
     pub fn get_segment_membership(&self) -> crate::operation::get_segment_membership::builders::GetSegmentMembershipFluentBuilder {
         crate::operation::get_segment_membership::builders::GetSegmentMembershipFluentBuilder::new(self.handle.clone())

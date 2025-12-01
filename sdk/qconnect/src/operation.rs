@@ -193,6 +193,9 @@ pub mod list_messages;
 /// Types for the `ListQuickResponses` operation.
 pub mod list_quick_responses;
 
+/// Types for the `ListSpans` operation.
+pub mod list_spans;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -213,6 +216,9 @@ pub mod remove_knowledge_base_template_uri;
 
 /// Types for the `RenderMessageTemplate` operation.
 pub mod render_message_template;
+
+/// Types for the `Retrieve` operation.
+pub mod retrieve;
 
 /// Types for the `SearchContent` operation.
 pub mod search_content;

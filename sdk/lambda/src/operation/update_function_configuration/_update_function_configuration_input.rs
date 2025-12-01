@@ -64,6 +64,8 @@ pub struct UpdateFunctionConfigurationInput {
     pub snap_start: ::std::option::Option<crate::types::SnapStart>,
     /// <p>The function's Amazon CloudWatch Logs configuration settings.</p>
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
 }
 impl UpdateFunctionConfigurationInput {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -169,6 +171,10 @@ impl UpdateFunctionConfigurationInput {
     pub fn logging_config(&self) -> ::std::option::Option<&crate::types::LoggingConfig> {
         self.logging_config.as_ref()
     }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn capacity_provider_config(&self) -> ::std::option::Option<&crate::types::CapacityProviderConfig> {
+        self.capacity_provider_config.as_ref()
+    }
 }
 impl UpdateFunctionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionConfigurationInput`](crate::operation::update_function_configuration::UpdateFunctionConfigurationInput).
@@ -200,6 +206,7 @@ pub struct UpdateFunctionConfigurationInputBuilder {
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) snap_start: ::std::option::Option<crate::types::SnapStart>,
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
+    pub(crate) capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
 }
 impl UpdateFunctionConfigurationInputBuilder {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -550,6 +557,20 @@ impl UpdateFunctionConfigurationInputBuilder {
     pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::LoggingConfig> {
         &self.logging_config
     }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn capacity_provider_config(mut self, input: crate::types::CapacityProviderConfig) -> Self {
+        self.capacity_provider_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn set_capacity_provider_config(mut self, input: ::std::option::Option<crate::types::CapacityProviderConfig>) -> Self {
+        self.capacity_provider_config = input;
+        self
+    }
+    /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
+    pub fn get_capacity_provider_config(&self) -> &::std::option::Option<crate::types::CapacityProviderConfig> {
+        &self.capacity_provider_config
+    }
     /// Consumes the builder and constructs a [`UpdateFunctionConfigurationInput`](crate::operation::update_function_configuration::UpdateFunctionConfigurationInput).
     pub fn build(
         self,
@@ -577,6 +598,7 @@ impl UpdateFunctionConfigurationInputBuilder {
             ephemeral_storage: self.ephemeral_storage,
             snap_start: self.snap_start,
             logging_config: self.logging_config,
+            capacity_provider_config: self.capacity_provider_config,
         })
     }
 }

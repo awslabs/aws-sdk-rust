@@ -133,6 +133,8 @@ pub use crate::types::_content_association_summary::ContentAssociationSummaryBui
 
 pub use crate::types::_assistant_data::AssistantDataBuilder;
 
+pub use crate::types::_orchestrator_configuration_entry::OrchestratorConfigurationEntryBuilder;
+
 pub use crate::types::_ai_agent_configuration_data::AiAgentConfigurationDataBuilder;
 
 pub use crate::types::_assistant_capability_configuration::AssistantCapabilityConfigurationBuilder;
@@ -141,9 +143,23 @@ pub use crate::types::_assistant_integration_configuration::AssistantIntegration
 
 pub use crate::types::_session_summary::SessionSummaryBuilder;
 
+pub use crate::types::_retrieve_result::RetrieveResultBuilder;
+
+pub use crate::types::_retrieval_configuration::RetrievalConfigurationBuilder;
+
+pub use crate::types::_filter_attribute::FilterAttributeBuilder;
+
 pub use crate::types::_result_data::ResultDataBuilder;
 
 pub use crate::types::_data_summary::DataSummaryBuilder;
+
+pub use crate::types::_notes_chunk_data_details::NotesChunkDataDetailsBuilder;
+
+pub use crate::types::_notes_data_details::NotesDataDetailsBuilder;
+
+pub use crate::types::_suggested_message_data_details::SuggestedMessageDataDetailsBuilder;
+
+pub use crate::types::_case_summarization_chunk_data_details::CaseSummarizationChunkDataDetailsBuilder;
 
 pub use crate::types::_email_generative_answer_chunk_data_details::EmailGenerativeAnswerChunkDataDetailsBuilder;
 
@@ -171,11 +187,15 @@ pub use crate::types::_generative_data_details::GenerativeDataDetailsBuilder;
 
 pub use crate::types::_content_data_details::ContentDataDetailsBuilder;
 
+pub use crate::types::_suggested_message_reference::SuggestedMessageReferenceBuilder;
+
 pub use crate::types::_generative_reference::GenerativeReferenceBuilder;
 
 pub use crate::types::_content_reference::ContentReferenceBuilder;
 
 pub use crate::types::_document::DocumentBuilder;
+
+pub use crate::types::_case_summarization_input_data::CaseSummarizationInputDataBuilder;
 
 pub use crate::types::_intent_input_data::IntentInputDataBuilder;
 
@@ -205,7 +225,27 @@ pub use crate::types::_self_service_conversation_history::SelfServiceConversatio
 
 pub use crate::types::_message_input::MessageInputBuilder;
 
+pub use crate::types::_tool_use_result_data::ToolUseResultDataBuilder;
+
 pub use crate::types::_text_message::TextMessageBuilder;
+
+pub use crate::types::_ai_guardrail_assessment::AiGuardrailAssessmentBuilder;
+
+pub use crate::types::_citation::CitationBuilder;
+
+pub use crate::types::_span::SpanBuilder;
+
+pub use crate::types::_span_attributes::SpanAttributesBuilder;
+
+pub use crate::types::_span_tool_result_value::SpanToolResultValueBuilder;
+
+pub use crate::types::_span_tool_use_value::SpanToolUseValueBuilder;
+
+pub use crate::types::_span_text_value::SpanTextValueBuilder;
+
+pub use crate::types::_span_citation::SpanCitationBuilder;
+
+pub use crate::types::_span_message::SpanMessageBuilder;
 
 pub use crate::types::_message_output::MessageOutputBuilder;
 
@@ -219,6 +259,8 @@ pub use crate::types::_session_integration_configuration::SessionIntegrationConf
 
 pub use crate::types::_assistant_association_data::AssistantAssociationDataBuilder;
 
+pub use crate::types::_external_bedrock_knowledge_base_config::ExternalBedrockKnowledgeBaseConfigBuilder;
+
 pub use crate::types::_knowledge_base_association_data::KnowledgeBaseAssociationDataBuilder;
 
 pub use crate::types::_assistant_association_summary::AssistantAssociationSummaryBuilder;
@@ -228,6 +270,8 @@ pub use crate::types::_ai_prompt_version_summary::AiPromptVersionSummaryBuilder;
 pub use crate::types::_ai_prompt_summary::AiPromptSummaryBuilder;
 
 pub use crate::types::_ai_prompt_data::AiPromptDataBuilder;
+
+pub use crate::types::_text_ai_prompt_inference_configuration::TextAiPromptInferenceConfigurationBuilder;
 
 pub use crate::types::_text_full_ai_prompt_edit_template_configuration::TextFullAiPromptEditTemplateConfigurationBuilder;
 
@@ -264,6 +308,28 @@ pub use crate::types::_guardrail_topic_config::GuardrailTopicConfigBuilder;
 pub use crate::types::_ai_agent_version_summary::AiAgentVersionSummaryBuilder;
 
 pub use crate::types::_ai_agent_summary::AiAgentSummaryBuilder;
+
+pub use crate::types::_case_summarization_ai_agent_configuration::CaseSummarizationAiAgentConfigurationBuilder;
+
+pub use crate::types::_note_taking_ai_agent_configuration::NoteTakingAiAgentConfigurationBuilder;
+
+pub use crate::types::_orchestration_ai_agent_configuration::OrchestrationAiAgentConfigurationBuilder;
+
+pub use crate::types::_tool_configuration::ToolConfigurationBuilder;
+
+pub use crate::types::_user_interaction_configuration::UserInteractionConfigurationBuilder;
+
+pub use crate::types::_annotation::AnnotationBuilder;
+
+pub use crate::types::_tool_output_filter::ToolOutputFilterBuilder;
+
+pub use crate::types::_tool_output_configuration::ToolOutputConfigurationBuilder;
+
+pub use crate::types::_tool_override_input_value::ToolOverrideInputValueBuilder;
+
+pub use crate::types::_tool_override_constant_input_value::ToolOverrideConstantInputValueBuilder;
+
+pub use crate::types::_tool_instruction::ToolInstructionBuilder;
 
 pub use crate::types::_email_generative_answer_ai_agent_configuration::EmailGenerativeAnswerAiAgentConfigurationBuilder;
 

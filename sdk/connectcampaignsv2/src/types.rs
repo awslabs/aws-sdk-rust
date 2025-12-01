@@ -37,13 +37,19 @@ pub use crate::types::_communication_limit_time_unit::CommunicationLimitTimeUnit
 
 pub use crate::types::_channel_subtype_config::ChannelSubtypeConfig;
 
+pub use crate::types::_whats_app_channel_subtype_config::WhatsAppChannelSubtypeConfig;
+
+pub use crate::types::_whats_app_outbound_config::WhatsAppOutboundConfig;
+
+pub use crate::types::_whats_app_outbound_mode::WhatsAppOutboundMode;
+
+pub use crate::types::_agentless_config::AgentlessConfig;
+
 pub use crate::types::_email_channel_subtype_config::EmailChannelSubtypeConfig;
 
 pub use crate::types::_email_outbound_config::EmailOutboundConfig;
 
 pub use crate::types::_email_outbound_mode::EmailOutboundMode;
-
-pub use crate::types::_agentless_config::AgentlessConfig;
 
 pub use crate::types::_sms_channel_subtype_config::SmsChannelSubtypeConfig;
 
@@ -97,6 +103,8 @@ pub use crate::types::_outbound_request::OutboundRequest;
 
 pub use crate::types::_channel_subtype_parameters::ChannelSubtypeParameters;
 
+pub use crate::types::_whats_app_channel_subtype_parameters::WhatsAppChannelSubtypeParameters;
+
 pub use crate::types::_email_channel_subtype_parameters::EmailChannelSubtypeParameters;
 
 pub use crate::types::_sms_channel_subtype_parameters::SmsChannelSubtypeParameters;
@@ -107,6 +115,8 @@ pub use crate::types::_instance_communication_limits_config::InstanceCommunicati
 
 pub use crate::types::_integration_config::IntegrationConfig;
 
+pub use crate::types::_lambda_integration_config::LambdaIntegrationConfig;
+
 pub use crate::types::_q_connect_integration_config::QConnectIntegrationConfig;
 
 pub use crate::types::_customer_profiles_integration_config::CustomerProfilesIntegrationConfig;
@@ -115,11 +125,15 @@ pub use crate::types::_event_type::EventType;
 
 pub use crate::types::_integration_summary::IntegrationSummary;
 
+pub use crate::types::_lambda_integration_summary::LambdaIntegrationSummary;
+
 pub use crate::types::_q_connect_integration_summary::QConnectIntegrationSummary;
 
 pub use crate::types::_customer_profiles_integration_summary::CustomerProfilesIntegrationSummary;
 
 pub use crate::types::_campaign_summary::CampaignSummary;
+
+pub use crate::types::_external_campaign_type::ExternalCampaignType;
 
 pub use crate::types::_channel_subtype::ChannelSubtype;
 
@@ -140,6 +154,8 @@ pub use crate::types::_successful_campaign_state_response::SuccessfulCampaignSta
 pub use crate::types::_campaign::Campaign;
 
 pub use crate::types::_integration_identifier::IntegrationIdentifier;
+
+pub use crate::types::_lambda_integration_identifier::LambdaIntegrationIdentifier;
 
 pub use crate::types::_q_connect_integration_identifier::QConnectIntegrationIdentifier;
 
@@ -211,6 +227,8 @@ mod _event_trigger;
 
 mod _event_type;
 
+mod _external_campaign_type;
+
 mod _failed_campaign_state_response;
 
 mod _failed_profile_outbound_request;
@@ -242,6 +260,12 @@ mod _integration_config;
 mod _integration_identifier;
 
 mod _integration_summary;
+
+mod _lambda_integration_config;
+
+mod _lambda_integration_identifier;
+
+mod _lambda_integration_summary;
 
 mod _local_time_zone_config;
 
@@ -302,6 +326,14 @@ mod _time_range;
 mod _time_window;
 
 mod _timeout_config;
+
+mod _whats_app_channel_subtype_config;
+
+mod _whats_app_channel_subtype_parameters;
+
+mod _whats_app_outbound_config;
+
+mod _whats_app_outbound_mode;
 
 /// Builders
 pub mod builders;

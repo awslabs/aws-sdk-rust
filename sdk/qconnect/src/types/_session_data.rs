@@ -22,6 +22,8 @@ pub struct SessionData {
     pub ai_agent_configuration: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
     /// <p>The origin of the Session to be listed. <code>SYSTEM</code> for a default Session created by Amazon Q in Connect or <code>CUSTOMER</code> for a Session created by calling <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_CreateSession.html">CreateSession</a> API.</p>
     pub origin: ::std::option::Option<crate::types::Origin>,
+    /// <p>The list of orchestrator configurations for the session.</p>
+    pub orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
 }
 impl SessionData {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
@@ -65,6 +67,12 @@ impl SessionData {
     pub fn origin(&self) -> ::std::option::Option<&crate::types::Origin> {
         self.origin.as_ref()
     }
+    /// <p>The list of orchestrator configurations for the session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.orchestrator_configuration_list.is_none()`.
+    pub fn orchestrator_configuration_list(&self) -> &[crate::types::OrchestratorConfigurationEntry] {
+        self.orchestrator_configuration_list.as_deref().unwrap_or_default()
+    }
 }
 impl SessionData {
     /// Creates a new builder-style object to manufacture [`SessionData`](crate::types::SessionData).
@@ -87,6 +95,7 @@ pub struct SessionDataBuilder {
     pub(crate) ai_agent_configuration:
         ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
     pub(crate) origin: ::std::option::Option<crate::types::Origin>,
+    pub(crate) orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
 }
 impl SessionDataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
@@ -235,6 +244,29 @@ impl SessionDataBuilder {
     pub fn get_origin(&self) -> &::std::option::Option<crate::types::Origin> {
         &self.origin
     }
+    /// Appends an item to `orchestrator_configuration_list`.
+    ///
+    /// To override the contents of this collection use [`set_orchestrator_configuration_list`](Self::set_orchestrator_configuration_list).
+    ///
+    /// <p>The list of orchestrator configurations for the session.</p>
+    pub fn orchestrator_configuration_list(mut self, input: crate::types::OrchestratorConfigurationEntry) -> Self {
+        let mut v = self.orchestrator_configuration_list.unwrap_or_default();
+        v.push(input);
+        self.orchestrator_configuration_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of orchestrator configurations for the session.</p>
+    pub fn set_orchestrator_configuration_list(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    ) -> Self {
+        self.orchestrator_configuration_list = input;
+        self
+    }
+    /// <p>The list of orchestrator configurations for the session.</p>
+    pub fn get_orchestrator_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>> {
+        &self.orchestrator_configuration_list
+    }
     /// Consumes the builder and constructs a [`SessionData`](crate::types::SessionData).
     /// This method will fail if any of the following fields are not set:
     /// - [`session_arn`](crate::types::builders::SessionDataBuilder::session_arn)
@@ -266,6 +298,7 @@ impl SessionDataBuilder {
             tag_filter: self.tag_filter,
             ai_agent_configuration: self.ai_agent_configuration,
             origin: self.origin,
+            orchestrator_configuration_list: self.orchestrator_configuration_list,
         })
     }
 }

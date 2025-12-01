@@ -225,6 +225,10 @@ pub(crate) mod shape_instance_id_filter;
 
 pub(crate) mod shape_integration_summary;
 
+pub(crate) mod shape_lambda_integration_config;
+
+pub(crate) mod shape_lambda_integration_identifier;
+
 pub(crate) mod shape_local_time_zone_config;
 
 pub(crate) mod shape_q_connect_integration_config;
@@ -243,6 +247,8 @@ pub(crate) mod shape_telephony_channel_subtype_config;
 
 pub(crate) mod shape_time_window;
 
+pub(crate) mod shape_whats_app_channel_subtype_config;
+
 pub(crate) mod shape_channel_subtype_list;
 
 pub(crate) mod shape_communication_limit;
@@ -256,6 +262,8 @@ pub(crate) mod shape_email_channel_subtype_parameters;
 pub(crate) mod shape_email_outbound_config;
 
 pub(crate) mod shape_email_outbound_mode;
+
+pub(crate) mod shape_lambda_integration_summary;
 
 pub(crate) mod shape_open_hours;
 
@@ -274,6 +282,12 @@ pub(crate) mod shape_telephony_channel_subtype_parameters;
 pub(crate) mod shape_telephony_outbound_config;
 
 pub(crate) mod shape_telephony_outbound_mode;
+
+pub(crate) mod shape_whats_app_channel_subtype_parameters;
+
+pub(crate) mod shape_whats_app_outbound_config;
+
+pub(crate) mod shape_whats_app_outbound_mode;
 
 pub(crate) mod shape_agentless_config;
 

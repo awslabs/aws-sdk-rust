@@ -107,6 +107,11 @@ where
                                 crate::protocol_serde::shape_error_message_configuration::de_error_message_configuration(tokens)?,
                             );
                         }
+                        "syntheticDataParameters" => {
+                            builder = builder.set_synthetic_data_parameters(
+                                crate::protocol_serde::shape_synthetic_data_parameters::de_synthetic_data_parameters(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

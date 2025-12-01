@@ -15,6 +15,7 @@
 ///     ChannelSubtype::Email => { /* ... */ },
 ///     ChannelSubtype::Sms => { /* ... */ },
 ///     ChannelSubtype::Telephony => { /* ... */ },
+///     ChannelSubtype::Whatsapp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum ChannelSubtype {
     Sms,
     #[allow(missing_docs)] // documentation missing in model
     Telephony,
+    #[allow(missing_docs)] // documentation missing in model
+    Whatsapp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for ChannelSubtype {
             "EMAIL" => ChannelSubtype::Email,
             "SMS" => ChannelSubtype::Sms,
             "TELEPHONY" => ChannelSubtype::Telephony,
+            "WHATSAPP" => ChannelSubtype::Whatsapp,
             other => ChannelSubtype::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl ChannelSubtype {
             ChannelSubtype::Email => "EMAIL",
             ChannelSubtype::Sms => "SMS",
             ChannelSubtype::Telephony => "TELEPHONY",
+            ChannelSubtype::Whatsapp => "WHATSAPP",
             ChannelSubtype::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EMAIL", "SMS", "TELEPHONY"]
+        &["EMAIL", "SMS", "TELEPHONY", "WHATSAPP"]
     }
 }
 impl ::std::convert::AsRef<str> for ChannelSubtype {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for ChannelSubtype {
             ChannelSubtype::Email => write!(f, "EMAIL"),
             ChannelSubtype::Sms => write!(f, "SMS"),
             ChannelSubtype::Telephony => write!(f, "TELEPHONY"),
+            ChannelSubtype::Whatsapp => write!(f, "WHATSAPP"),
             ChannelSubtype::Unknown(value) => write!(f, "{value}"),
         }
     }

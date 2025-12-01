@@ -3,14 +3,17 @@ pub fn ser_engagement_context_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EngagementContextDetails,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.id {
+        object.key("Id").string(var_1.as_str());
+    }
     {
         object.key("Type").string(input.r#type.as_str());
     }
-    if let Some(var_1) = &input.payload {
+    if let Some(var_2) = &input.payload {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Payload").start_object();
-        crate::protocol_serde::shape_engagement_context_payload::ser_engagement_context_payload(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("Payload").start_object();
+        crate::protocol_serde::shape_engagement_context_payload::ser_engagement_context_payload(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -30,6 +33,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Id" => {
+                            builder = builder.set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Type" => {
                             builder = builder.set_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

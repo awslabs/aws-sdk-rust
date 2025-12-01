@@ -12,6 +12,8 @@ pub struct CampaignConfig {
     /// <p>Whether the campaign automatically updates to use the latest solution version (trained model) of a solution. If you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is <code>False</code> and you must manually update the campaign to deploy the latest solution version.</p>
     /// <p>For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling automatic campaign updates</a>.</p>
     pub sync_with_latest_solution_version: ::std::option::Option<bool>,
+    /// <p>A map of ranking influence values for POPULARITY and FRESHNESS. For each key, specify a numerical value between 0.0 and 1.0 that determines how much influence that ranking factor has on the final recommendations. A value closer to 1.0 gives more weight to the factor, while a value closer to 0.0 reduces its influence.</p>
+    pub ranking_influence: ::std::option::Option<::std::collections::HashMap<crate::types::RankingInfluenceType, f64>>,
 }
 impl CampaignConfig {
     /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe.</p>
@@ -28,6 +30,10 @@ impl CampaignConfig {
     pub fn sync_with_latest_solution_version(&self) -> ::std::option::Option<bool> {
         self.sync_with_latest_solution_version
     }
+    /// <p>A map of ranking influence values for POPULARITY and FRESHNESS. For each key, specify a numerical value between 0.0 and 1.0 that determines how much influence that ranking factor has on the final recommendations. A value closer to 1.0 gives more weight to the factor, while a value closer to 0.0 reduces its influence.</p>
+    pub fn ranking_influence(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::RankingInfluenceType, f64>> {
+        self.ranking_influence.as_ref()
+    }
 }
 impl CampaignConfig {
     /// Creates a new builder-style object to manufacture [`CampaignConfig`](crate::types::CampaignConfig).
@@ -43,6 +49,7 @@ pub struct CampaignConfigBuilder {
     pub(crate) item_exploration_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) enable_metadata_with_recommendations: ::std::option::Option<bool>,
     pub(crate) sync_with_latest_solution_version: ::std::option::Option<bool>,
+    pub(crate) ranking_influence: ::std::option::Option<::std::collections::HashMap<crate::types::RankingInfluenceType, f64>>,
 }
 impl CampaignConfigBuilder {
     /// Adds a key-value pair to `item_exploration_config`.
@@ -106,12 +113,36 @@ impl CampaignConfigBuilder {
     pub fn get_sync_with_latest_solution_version(&self) -> &::std::option::Option<bool> {
         &self.sync_with_latest_solution_version
     }
+    /// Adds a key-value pair to `ranking_influence`.
+    ///
+    /// To override the contents of this collection use [`set_ranking_influence`](Self::set_ranking_influence).
+    ///
+    /// <p>A map of ranking influence values for POPULARITY and FRESHNESS. For each key, specify a numerical value between 0.0 and 1.0 that determines how much influence that ranking factor has on the final recommendations. A value closer to 1.0 gives more weight to the factor, while a value closer to 0.0 reduces its influence.</p>
+    pub fn ranking_influence(mut self, k: crate::types::RankingInfluenceType, v: f64) -> Self {
+        let mut hash_map = self.ranking_influence.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.ranking_influence = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of ranking influence values for POPULARITY and FRESHNESS. For each key, specify a numerical value between 0.0 and 1.0 that determines how much influence that ranking factor has on the final recommendations. A value closer to 1.0 gives more weight to the factor, while a value closer to 0.0 reduces its influence.</p>
+    pub fn set_ranking_influence(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::RankingInfluenceType, f64>>,
+    ) -> Self {
+        self.ranking_influence = input;
+        self
+    }
+    /// <p>A map of ranking influence values for POPULARITY and FRESHNESS. For each key, specify a numerical value between 0.0 and 1.0 that determines how much influence that ranking factor has on the final recommendations. A value closer to 1.0 gives more weight to the factor, while a value closer to 0.0 reduces its influence.</p>
+    pub fn get_ranking_influence(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::RankingInfluenceType, f64>> {
+        &self.ranking_influence
+    }
     /// Consumes the builder and constructs a [`CampaignConfig`](crate::types::CampaignConfig).
     pub fn build(self) -> crate::types::CampaignConfig {
         crate::types::CampaignConfig {
             item_exploration_config: self.item_exploration_config,
             enable_metadata_with_recommendations: self.enable_metadata_with_recommendations,
             sync_with_latest_solution_version: self.sync_with_latest_solution_version,
+            ranking_influence: self.ranking_influence,
         }
     }
 }

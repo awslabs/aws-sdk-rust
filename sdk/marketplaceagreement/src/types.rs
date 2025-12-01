@@ -25,6 +25,12 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_accepted_term::AcceptedTerm;
 
+pub use crate::types::_variable_payment_term::VariablePaymentTerm;
+
+pub use crate::types::_variable_payment_term_configuration::VariablePaymentTermConfiguration;
+
+pub use crate::types::_payment_request_approval_strategy::PaymentRequestApprovalStrategy;
+
 pub use crate::types::_fixed_upfront_pricing_term::FixedUpfrontPricingTerm;
 
 pub use crate::types::_grant_item::GrantItem;
@@ -105,6 +111,8 @@ mod _grant_item;
 
 mod _legal_term;
 
+mod _payment_request_approval_strategy;
+
 mod _payment_schedule_term;
 
 mod _proposal_summary;
@@ -142,6 +150,10 @@ mod _validation_exception_field;
 mod _validation_exception_reason;
 
 mod _validity_term;
+
+mod _variable_payment_term;
+
+mod _variable_payment_term_configuration;
 
 /// Builders
 pub mod builders;

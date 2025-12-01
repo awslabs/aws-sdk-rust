@@ -385,6 +385,32 @@ impl From<crate::operation::create_profile::CreateProfileError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_recommender::CreateRecommenderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_recommender::CreateRecommenderError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_recommender::CreateRecommenderError> for Error {
+    fn from(err: crate::operation::create_recommender::CreateRecommenderError) -> Self {
+        match err {
+            crate::operation::create_recommender::CreateRecommenderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_recommender::CreateRecommenderError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_recommender::CreateRecommenderError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_recommender::CreateRecommenderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_recommender::CreateRecommenderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_recommender::CreateRecommenderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_segment_definition::CreateSegmentDefinitionError, R>>
     for Error
 where
@@ -621,6 +647,41 @@ impl From<crate::operation::delete_domain_layout::DeleteDomainLayoutError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_domain_object_type::DeleteDomainObjectTypeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_domain_object_type::DeleteDomainObjectTypeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_domain_object_type::DeleteDomainObjectTypeError> for Error {
+    fn from(err: crate::operation::delete_domain_object_type::DeleteDomainObjectTypeError) -> Self {
+        match err {
+            crate::operation::delete_domain_object_type::DeleteDomainObjectTypeError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_domain_object_type::DeleteDomainObjectTypeError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_domain_object_type::DeleteDomainObjectTypeError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_domain_object_type::DeleteDomainObjectTypeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_domain_object_type::DeleteDomainObjectTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_domain_object_type::DeleteDomainObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_event_stream::DeleteEventStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -821,6 +882,32 @@ impl From<crate::operation::delete_profile_object_type::DeleteProfileObjectTypeE
                 Error::ThrottlingException(inner)
             }
             crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_recommender::DeleteRecommenderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_recommender::DeleteRecommenderError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_recommender::DeleteRecommenderError> for Error {
+    fn from(err: crate::operation::delete_recommender::DeleteRecommenderError) -> Self {
+        match err {
+            crate::operation::delete_recommender::DeleteRecommenderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_recommender::DeleteRecommenderError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_recommender::DeleteRecommenderError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_recommender::DeleteRecommenderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_recommender::DeleteRecommenderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_recommender::DeleteRecommenderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1110,6 +1197,36 @@ impl From<crate::operation::get_domain_layout::GetDomainLayoutError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_domain_object_type::GetDomainObjectTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_domain_object_type::GetDomainObjectTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_domain_object_type::GetDomainObjectTypeError> for Error {
+    fn from(err: crate::operation::get_domain_object_type::GetDomainObjectTypeError) -> Self {
+        match err {
+            crate::operation::get_domain_object_type::GetDomainObjectTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_domain_object_type::GetDomainObjectTypeError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_domain_object_type::GetDomainObjectTypeError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_domain_object_type::GetDomainObjectTypeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_domain_object_type::GetDomainObjectTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_domain_object_type::GetDomainObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_stream::GetEventStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1253,6 +1370,55 @@ impl From<crate::operation::get_matches::GetMatchesError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_object_type_attribute_statistics::GetObjectTypeAttributeStatisticsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_object_type_attribute_statistics::GetObjectTypeAttributeStatisticsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_object_type_attribute_statistics::GetObjectTypeAttributeStatisticsError> for Error {
+    fn from(err: crate::operation::get_object_type_attribute_statistics::GetObjectTypeAttributeStatisticsError) -> Self {
+        match err {
+            crate::operation::get_object_type_attribute_statistics::GetObjectTypeAttributeStatisticsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_object_type_attribute_statistics::GetObjectTypeAttributeStatisticsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_object_type_attribute_statistics::GetObjectTypeAttributeStatisticsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_object_type_attribute_statistics::GetObjectTypeAttributeStatisticsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_object_type_attribute_statistics::GetObjectTypeAttributeStatisticsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_object_type_attribute_statistics::GetObjectTypeAttributeStatisticsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_profile_history_record::GetProfileHistoryRecordError, R>>
     for Error
 where
@@ -1364,6 +1530,71 @@ impl From<crate::operation::get_profile_object_type_template::GetProfileObjectTy
                 Error::ThrottlingException(inner)
             }
             crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_profile_recommendations::GetProfileRecommendationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_profile_recommendations::GetProfileRecommendationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_profile_recommendations::GetProfileRecommendationsError> for Error {
+    fn from(err: crate::operation::get_profile_recommendations::GetProfileRecommendationsError) -> Self {
+        match err {
+            crate::operation::get_profile_recommendations::GetProfileRecommendationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_profile_recommendations::GetProfileRecommendationsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_profile_recommendations::GetProfileRecommendationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_profile_recommendations::GetProfileRecommendationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_profile_recommendations::GetProfileRecommendationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_profile_recommendations::GetProfileRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recommender::GetRecommenderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recommender::GetRecommenderError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_recommender::GetRecommenderError> for Error {
+    fn from(err: crate::operation::get_recommender::GetRecommenderError) -> Self {
+        match err {
+            crate::operation::get_recommender::GetRecommenderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_recommender::GetRecommenderError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_recommender::GetRecommenderError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_recommender::GetRecommenderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_recommender::GetRecommenderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_recommender::GetRecommenderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1780,6 +2011,40 @@ impl From<crate::operation::list_domain_layouts::ListDomainLayoutsError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_domain_object_types::ListDomainObjectTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_domain_object_types::ListDomainObjectTypesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_domain_object_types::ListDomainObjectTypesError> for Error {
+    fn from(err: crate::operation::list_domain_object_types::ListDomainObjectTypesError) -> Self {
+        match err {
+            crate::operation::list_domain_object_types::ListDomainObjectTypesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_domain_object_types::ListDomainObjectTypesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_domain_object_types::ListDomainObjectTypesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_domain_object_types::ListDomainObjectTypesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_domain_object_types::ListDomainObjectTypesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_domain_object_types::ListDomainObjectTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_domains::ListDomainsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1961,6 +2226,53 @@ impl From<crate::operation::list_object_type_attributes::ListObjectTypeAttribute
                 Error::ThrottlingException(inner)
             }
             crate::operation::list_object_type_attributes::ListObjectTypeAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_object_type_attribute_values::ListObjectTypeAttributeValuesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_object_type_attribute_values::ListObjectTypeAttributeValuesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_object_type_attribute_values::ListObjectTypeAttributeValuesError> for Error {
+    fn from(err: crate::operation::list_object_type_attribute_values::ListObjectTypeAttributeValuesError) -> Self {
+        match err {
+            crate::operation::list_object_type_attribute_values::ListObjectTypeAttributeValuesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_object_type_attribute_values::ListObjectTypeAttributeValuesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_object_type_attribute_values::ListObjectTypeAttributeValuesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_object_type_attribute_values::ListObjectTypeAttributeValuesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_object_type_attribute_values::ListObjectTypeAttributeValuesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_object_type_attribute_values::ListObjectTypeAttributeValuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2152,6 +2464,63 @@ impl From<crate::operation::list_profile_object_type_templates::ListProfileObjec
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommender_recipes::ListRecommenderRecipesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommender_recipes::ListRecommenderRecipesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_recommender_recipes::ListRecommenderRecipesError> for Error {
+    fn from(err: crate::operation::list_recommender_recipes::ListRecommenderRecipesError) -> Self {
+        match err {
+            crate::operation::list_recommender_recipes::ListRecommenderRecipesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_recommender_recipes::ListRecommenderRecipesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_recommender_recipes::ListRecommenderRecipesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_recommender_recipes::ListRecommenderRecipesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_recommender_recipes::ListRecommenderRecipesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommenders::ListRecommendersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommenders::ListRecommendersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_recommenders::ListRecommendersError> for Error {
+    fn from(err: crate::operation::list_recommenders::ListRecommendersError) -> Self {
+        match err {
+            crate::operation::list_recommenders::ListRecommendersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_recommenders::ListRecommendersError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_recommenders::ListRecommendersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_recommenders::ListRecommendersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_recommenders::ListRecommendersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_recommenders::ListRecommendersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rule_based_matches::ListRuleBasedMatchesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2323,6 +2692,36 @@ impl From<crate::operation::merge_profiles::MergeProfilesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_domain_object_type::PutDomainObjectTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_domain_object_type::PutDomainObjectTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_domain_object_type::PutDomainObjectTypeError> for Error {
+    fn from(err: crate::operation::put_domain_object_type::PutDomainObjectTypeError) -> Self {
+        match err {
+            crate::operation::put_domain_object_type::PutDomainObjectTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_domain_object_type::PutDomainObjectTypeError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_domain_object_type::PutDomainObjectTypeError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_domain_object_type::PutDomainObjectTypeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_domain_object_type::PutDomainObjectTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_domain_object_type::PutDomainObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_integration::PutIntegrationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2433,6 +2832,32 @@ impl From<crate::operation::search_profiles::SearchProfilesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_recommender::StartRecommenderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_recommender::StartRecommenderError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_recommender::StartRecommenderError> for Error {
+    fn from(err: crate::operation::start_recommender::StartRecommenderError) -> Self {
+        match err {
+            crate::operation::start_recommender::StartRecommenderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_recommender::StartRecommenderError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_recommender::StartRecommenderError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_recommender::StartRecommenderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_recommender::StartRecommenderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_recommender::StartRecommenderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_upload_job::StartUploadJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2456,6 +2881,32 @@ impl From<crate::operation::start_upload_job::StartUploadJobError> for Error {
             crate::operation::start_upload_job::StartUploadJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::start_upload_job::StartUploadJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_upload_job::StartUploadJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_recommender::StopRecommenderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_recommender::StopRecommenderError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_recommender::StopRecommenderError> for Error {
+    fn from(err: crate::operation::stop_recommender::StopRecommenderError) -> Self {
+        match err {
+            crate::operation::stop_recommender::StopRecommenderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_recommender::StopRecommenderError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::stop_recommender::StopRecommenderError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_recommender::StopRecommenderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_recommender::StopRecommenderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_recommender::StopRecommenderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2687,6 +3138,32 @@ impl From<crate::operation::update_profile::UpdateProfileError> for Error {
             crate::operation::update_profile::UpdateProfileError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_profile::UpdateProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_profile::UpdateProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_recommender::UpdateRecommenderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_recommender::UpdateRecommenderError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_recommender::UpdateRecommenderError> for Error {
+    fn from(err: crate::operation::update_recommender::UpdateRecommenderError) -> Self {
+        match err {
+            crate::operation::update_recommender::UpdateRecommenderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_recommender::UpdateRecommenderError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_recommender::UpdateRecommenderError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_recommender::UpdateRecommenderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_recommender::UpdateRecommenderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_recommender::UpdateRecommenderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AssistantAssociationOutputData {
+    /// <p>The configuration for an external Bedrock knowledge base association in the output data.</p>
+    ExternalBedrockKnowledgeBaseConfig(crate::types::ExternalBedrockKnowledgeBaseConfig),
     /// <p>The knowledge base where output data is sent.</p>
     KnowledgeBaseAssociation(crate::types::KnowledgeBaseAssociationData),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum AssistantAssociationOutputData {
     Unknown,
 }
 impl AssistantAssociationOutputData {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`ExternalBedrockKnowledgeBaseConfig`](crate::types::AssistantAssociationOutputData::ExternalBedrockKnowledgeBaseConfig), extracting the inner [`ExternalBedrockKnowledgeBaseConfig`](crate::types::ExternalBedrockKnowledgeBaseConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_external_bedrock_knowledge_base_config(&self) -> ::std::result::Result<&crate::types::ExternalBedrockKnowledgeBaseConfig, &Self> {
+        if let AssistantAssociationOutputData::ExternalBedrockKnowledgeBaseConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ExternalBedrockKnowledgeBaseConfig`](crate::types::AssistantAssociationOutputData::ExternalBedrockKnowledgeBaseConfig).
+    pub fn is_external_bedrock_knowledge_base_config(&self) -> bool {
+        self.as_external_bedrock_knowledge_base_config().is_ok()
+    }
     /// Tries to convert the enum instance into [`KnowledgeBaseAssociation`](crate::types::AssistantAssociationOutputData::KnowledgeBaseAssociation), extracting the inner [`KnowledgeBaseAssociationData`](crate::types::KnowledgeBaseAssociationData).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_knowledge_base_association(&self) -> ::std::result::Result<&crate::types::KnowledgeBaseAssociationData, &Self> {

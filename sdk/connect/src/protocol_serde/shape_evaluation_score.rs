@@ -25,6 +25,11 @@ where
                         "AutomaticFail" => {
                             builder = builder.set_automatic_fail(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "AppliedWeight" => {
+                            builder = builder.set_applied_weight(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

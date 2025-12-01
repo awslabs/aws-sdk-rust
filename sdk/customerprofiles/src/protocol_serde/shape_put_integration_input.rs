@@ -34,18 +34,21 @@ pub fn ser_put_integration_input_input(
     if let Some(var_11) = &input.role_arn {
         object.key("RoleArn").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_12) = &input.scope {
+        object.key("Scope").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("Tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
-    if let Some(var_16) = &input.uri {
-        object.key("Uri").string(var_16.as_str());
+    if let Some(var_17) = &input.uri {
+        object.key("Uri").string(var_17.as_str());
     }
     Ok(())
 }

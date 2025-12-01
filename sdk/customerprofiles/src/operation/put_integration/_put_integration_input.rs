@@ -9,16 +9,18 @@ pub struct PutIntegrationInput {
     pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The name of the profile object type.</p>
     pub object_type_name: ::std::option::Option<::std::string::String>,
+    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    pub object_type_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
-    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub object_type_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of unique names for active event triggers associated with the integration.</p>
     pub event_trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.</p>
+    pub scope: ::std::option::Option<crate::types::Scope>,
 }
 impl PutIntegrationInput {
     /// <p>The unique name of the domain.</p>
@@ -33,6 +35,10 @@ impl PutIntegrationInput {
     pub fn object_type_name(&self) -> ::std::option::Option<&str> {
         self.object_type_name.as_deref()
     }
+    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    pub fn object_type_names(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.object_type_names.as_ref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -40,10 +46,6 @@ impl PutIntegrationInput {
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn flow_definition(&self) -> ::std::option::Option<&crate::types::FlowDefinition> {
         self.flow_definition.as_ref()
-    }
-    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub fn object_type_names(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.object_type_names.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -55,6 +57,10 @@ impl PutIntegrationInput {
     pub fn event_trigger_names(&self) -> &[::std::string::String] {
         self.event_trigger_names.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.</p>
+    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+        self.scope.as_ref()
+    }
 }
 impl ::std::fmt::Debug for PutIntegrationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -62,11 +68,12 @@ impl ::std::fmt::Debug for PutIntegrationInput {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("uri", &self.uri);
         formatter.field("object_type_name", &self.object_type_name);
+        formatter.field("object_type_names", &self.object_type_names);
         formatter.field("tags", &self.tags);
         formatter.field("flow_definition", &"*** Sensitive Data Redacted ***");
-        formatter.field("object_type_names", &self.object_type_names);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("event_trigger_names", &self.event_trigger_names);
+        formatter.field("scope", &self.scope);
         formatter.finish()
     }
 }
@@ -84,11 +91,12 @@ pub struct PutIntegrationInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) object_type_name: ::std::option::Option<::std::string::String>,
+    pub(crate) object_type_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) flow_definition: ::std::option::Option<crate::types::FlowDefinition>,
-    pub(crate) object_type_names: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_trigger_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scope: ::std::option::Option<crate::types::Scope>,
 }
 impl PutIntegrationInputBuilder {
     /// <p>The unique name of the domain.</p>
@@ -134,6 +142,33 @@ impl PutIntegrationInputBuilder {
     pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.object_type_name
     }
+    /// Adds a key-value pair to `object_type_names`.
+    ///
+    /// To override the contents of this collection use [`set_object_type_names`](Self::set_object_type_names).
+    ///
+    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    pub fn object_type_names(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.object_type_names.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.object_type_names = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    pub fn set_object_type_names(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.object_type_names = input;
+        self
+    }
+    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
+    pub fn get_object_type_names(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.object_type_names
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -167,33 +202,6 @@ impl PutIntegrationInputBuilder {
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn get_flow_definition(&self) -> &::std::option::Option<crate::types::FlowDefinition> {
         &self.flow_definition
-    }
-    /// Adds a key-value pair to `object_type_names`.
-    ///
-    /// To override the contents of this collection use [`set_object_type_names`](Self::set_object_type_names).
-    ///
-    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub fn object_type_names(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        let mut hash_map = self.object_type_names.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.object_type_names = ::std::option::Option::Some(hash_map);
-        self
-    }
-    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub fn set_object_type_names(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.object_type_names = input;
-        self
-    }
-    /// <p>A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>, <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>, <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.</p>
-    pub fn get_object_type_names(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        &self.object_type_names
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -229,6 +237,20 @@ impl PutIntegrationInputBuilder {
     pub fn get_event_trigger_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_trigger_names
     }
+    /// <p>Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.</p>
+    pub fn scope(mut self, input: crate::types::Scope) -> Self {
+        self.scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
+        self.scope = input;
+        self
+    }
+    /// <p>Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
+    }
     /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::operation::put_integration::PutIntegrationInput).
     pub fn build(
         self,
@@ -237,11 +259,12 @@ impl PutIntegrationInputBuilder {
             domain_name: self.domain_name,
             uri: self.uri,
             object_type_name: self.object_type_name,
+            object_type_names: self.object_type_names,
             tags: self.tags,
             flow_definition: self.flow_definition,
-            object_type_names: self.object_type_names,
             role_arn: self.role_arn,
             event_trigger_names: self.event_trigger_names,
+            scope: self.scope,
         })
     }
 }
@@ -251,11 +274,12 @@ impl ::std::fmt::Debug for PutIntegrationInputBuilder {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("uri", &self.uri);
         formatter.field("object_type_name", &self.object_type_name);
+        formatter.field("object_type_names", &self.object_type_names);
         formatter.field("tags", &self.tags);
         formatter.field("flow_definition", &"*** Sensitive Data Redacted ***");
-        formatter.field("object_type_names", &self.object_type_names);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("event_trigger_names", &self.event_trigger_names);
+        formatter.field("scope", &self.scope);
         formatter.finish()
     }
 }

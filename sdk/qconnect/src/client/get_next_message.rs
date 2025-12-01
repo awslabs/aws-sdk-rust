@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`conversation_state(Option<ConversationState>)`](crate::operation::get_next_message::GetNextMessageOutput::conversation_state): <p>The state of current conversation.</p>
     ///   - [`next_message_token(Option<String>)`](crate::operation::get_next_message::GetNextMessageOutput::next_message_token): <p>The token for the next message.</p>
     ///   - [`conversation_session_data(Option<Vec::<RuntimeSessionData>>)`](crate::operation::get_next_message::GetNextMessageOutput::conversation_session_data): <p>The conversation data stored on an Amazon Q in Connect Session.</p>
+    ///   - [`chunked_response_terminated(Option<bool>)`](crate::operation::get_next_message::GetNextMessageOutput::chunked_response_terminated): <p>Indicates whether the chunked response has been terminated.</p>
     /// - On failure, responds with [`SdkError<GetNextMessageError>`](crate::operation::get_next_message::GetNextMessageError)
     pub fn get_next_message(&self) -> crate::operation::get_next_message::builders::GetNextMessageFluentBuilder {
         crate::operation::get_next_message::builders::GetNextMessageFluentBuilder::new(self.handle.clone())

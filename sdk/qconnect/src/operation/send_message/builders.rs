@@ -164,6 +164,20 @@ impl SendMessageFluentBuilder {
     pub fn get_message(&self) -> &::std::option::Option<crate::types::MessageInput> {
         self.inner.get_message()
     }
+    /// <p>The identifier of the AI Agent to use for processing the message.</p>
+    pub fn ai_agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ai_agent_id(input.into());
+        self
+    }
+    /// <p>The identifier of the AI Agent to use for processing the message.</p>
+    pub fn set_ai_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ai_agent_id(input);
+        self
+    }
+    /// <p>The identifier of the AI Agent to use for processing the message.</p>
+    pub fn get_ai_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ai_agent_id()
+    }
     /// <p>The conversation context before the Amazon Q in Connect session.</p>
     pub fn conversation_context(mut self, input: crate::types::ConversationContext) -> Self {
         self.inner = self.inner.conversation_context(input);
@@ -205,5 +219,38 @@ impl SendMessageFluentBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field.For more information about idempotency, see Making retries safe with idempotent APIs.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>The orchestrator use case for message processing.</p>
+    pub fn orchestrator_use_case(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.orchestrator_use_case(input.into());
+        self
+    }
+    /// <p>The orchestrator use case for message processing.</p>
+    pub fn set_orchestrator_use_case(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_orchestrator_use_case(input);
+        self
+    }
+    /// <p>The orchestrator use case for message processing.</p>
+    pub fn get_orchestrator_use_case(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_orchestrator_use_case()
+    }
+    ///
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>Additional metadata for the message.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.metadata(k.into(), v.into());
+        self
+    }
+    /// <p>Additional metadata for the message.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_metadata(input);
+        self
+    }
+    /// <p>Additional metadata for the message.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_metadata()
     }
 }

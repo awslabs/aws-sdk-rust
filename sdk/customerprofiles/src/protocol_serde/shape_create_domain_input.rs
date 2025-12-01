@@ -3,39 +3,45 @@ pub fn ser_create_domain_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_domain::CreateDomainInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.dead_letter_queue_url {
-        object.key("DeadLetterQueueUrl").string(var_1.as_str());
+    if let Some(var_1) = &input.data_store {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("DataStore").start_object();
+        crate::protocol_serde::shape_data_store_request::ser_data_store_request(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_2) = &input.default_encryption_key {
-        object.key("DefaultEncryptionKey").string(var_2.as_str());
+    if let Some(var_3) = &input.dead_letter_queue_url {
+        object.key("DeadLetterQueueUrl").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.default_expiration_days {
+    if let Some(var_4) = &input.default_encryption_key {
+        object.key("DefaultEncryptionKey").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.default_expiration_days {
         object.key("DefaultExpirationDays").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.matching {
+    if let Some(var_6) = &input.matching {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Matching").start_object();
-        crate::protocol_serde::shape_matching_request::ser_matching_request(&mut object_5, var_4)?;
-        object_5.finish();
-    }
-    if let Some(var_6) = &input.rule_based_matching {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("RuleBasedMatching").start_object();
-        crate::protocol_serde::shape_rule_based_matching_request::ser_rule_based_matching_request(&mut object_7, var_6)?;
+        let mut object_7 = object.key("Matching").start_object();
+        crate::protocol_serde::shape_matching_request::ser_matching_request(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_8) = &input.rule_based_matching {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("Tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_9 = object.key("RuleBasedMatching").start_object();
+        crate::protocol_serde::shape_rule_based_matching_request::ser_rule_based_matching_request(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("Tags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_9.finish();
+        object_11.finish();
     }
     Ok(())
 }

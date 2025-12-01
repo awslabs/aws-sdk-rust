@@ -10,6 +10,9 @@ pub mod add_permission;
 /// Types for the `CreateAlias` operation.
 pub mod create_alias;
 
+/// Types for the `CreateCapacityProvider` operation.
+pub mod create_capacity_provider;
+
 /// Types for the `CreateCodeSigningConfig` operation.
 pub mod create_code_signing_config;
 
@@ -24,6 +27,9 @@ pub mod create_function_url_config;
 
 /// Types for the `DeleteAlias` operation.
 pub mod delete_alias;
+
+/// Types for the `DeleteCapacityProvider` operation.
+pub mod delete_capacity_provider;
 
 /// Types for the `DeleteCodeSigningConfig` operation.
 pub mod delete_code_signing_config;
@@ -58,6 +64,9 @@ pub mod get_account_settings;
 /// Types for the `GetAlias` operation.
 pub mod get_alias;
 
+/// Types for the `GetCapacityProvider` operation.
+pub mod get_capacity_provider;
+
 /// Types for the `GetCodeSigningConfig` operation.
 pub mod get_code_signing_config;
 
@@ -81,6 +90,9 @@ pub mod get_function_event_invoke_config;
 
 /// Types for the `GetFunctionRecursionConfig` operation.
 pub mod get_function_recursion_config;
+
+/// Types for the `GetFunctionScalingConfig` operation.
+pub mod get_function_scaling_config;
 
 /// Types for the `GetFunctionUrlConfig` operation.
 pub mod get_function_url_config;
@@ -115,6 +127,9 @@ pub mod invoke_with_response_stream;
 /// Types for the `ListAliases` operation.
 pub mod list_aliases;
 
+/// Types for the `ListCapacityProviders` operation.
+pub mod list_capacity_providers;
+
 /// Types for the `ListCodeSigningConfigs` operation.
 pub mod list_code_signing_configs;
 
@@ -126,6 +141,9 @@ pub mod list_function_event_invoke_configs;
 
 /// Types for the `ListFunctionUrlConfigs` operation.
 pub mod list_function_url_configs;
+
+/// Types for the `ListFunctionVersionsByCapacityProvider` operation.
+pub mod list_function_versions_by_capacity_provider;
 
 /// Types for the `ListFunctions` operation.
 pub mod list_functions;
@@ -166,6 +184,9 @@ pub mod put_function_event_invoke_config;
 /// Types for the `PutFunctionRecursionConfig` operation.
 pub mod put_function_recursion_config;
 
+/// Types for the `PutFunctionScalingConfig` operation.
+pub mod put_function_scaling_config;
+
 /// Types for the `PutProvisionedConcurrencyConfig` operation.
 pub mod put_provisioned_concurrency_config;
 
@@ -186,6 +207,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAlias` operation.
 pub mod update_alias;
+
+/// Types for the `UpdateCapacityProvider` operation.
+pub mod update_capacity_provider;
 
 /// Types for the `UpdateCodeSigningConfig` operation.
 pub mod update_code_signing_config;

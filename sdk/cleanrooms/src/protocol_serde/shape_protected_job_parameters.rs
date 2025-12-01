@@ -3,8 +3,8 @@ pub fn ser_protected_job_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProtectedJobParameters,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.analysis_template_arn {
-        object.key("analysisTemplateArn").string(var_1.as_str());
+    {
+        object.key("analysisTemplateArn").string(input.analysis_template_arn.as_str());
     }
     Ok(())
 }
@@ -40,7 +40,11 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(
+                crate::serde_util::protected_job_parameters_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
+            ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

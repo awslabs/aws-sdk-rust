@@ -87,6 +87,24 @@ pub use crate::types::_log_type::LogType;
 
 pub use crate::types::_vpc_config_request::VpcConfigRequest;
 
+pub use crate::types::_capability_delete_propagation_policy::CapabilityDeletePropagationPolicy;
+
+pub use crate::types::_update_capability_configuration::UpdateCapabilityConfiguration;
+
+pub use crate::types::_update_argo_cd_config::UpdateArgoCdConfig;
+
+pub use crate::types::_argo_cd_network_access_config_request::ArgoCdNetworkAccessConfigRequest;
+
+pub use crate::types::_update_role_mappings::UpdateRoleMappings;
+
+pub use crate::types::_argo_cd_role_mapping::ArgoCdRoleMapping;
+
+pub use crate::types::_sso_identity::SsoIdentity;
+
+pub use crate::types::_sso_identity_type::SsoIdentityType;
+
+pub use crate::types::_argo_cd_role::ArgoCdRole;
+
 pub use crate::types::_addon_pod_identity_associations::AddonPodIdentityAssociations;
 
 pub use crate::types::_resolve_conflicts::ResolveConflicts;
@@ -157,6 +175,12 @@ pub use crate::types::_identity_provider_config::IdentityProviderConfig;
 
 pub use crate::types::_eks_anywhere_subscription_status::EksAnywhereSubscriptionStatus;
 
+pub use crate::types::_capability_summary::CapabilitySummary;
+
+pub use crate::types::_capability_status::CapabilityStatus;
+
+pub use crate::types::_capability_type::CapabilityType;
+
 pub use crate::types::_associated_access_policy::AssociatedAccessPolicy;
 
 pub use crate::types::_access_scope::AccessScope;
@@ -221,6 +245,22 @@ pub use crate::types::_version_status::VersionStatus;
 
 pub use crate::types::_cluster_version_status::ClusterVersionStatus;
 
+pub use crate::types::_capability::Capability;
+
+pub use crate::types::_capability_health::CapabilityHealth;
+
+pub use crate::types::_capability_issue::CapabilityIssue;
+
+pub use crate::types::_capability_issue_code::CapabilityIssueCode;
+
+pub use crate::types::_capability_configuration_response::CapabilityConfigurationResponse;
+
+pub use crate::types::_argo_cd_config_response::ArgoCdConfigResponse;
+
+pub use crate::types::_argo_cd_network_access_config_response::ArgoCdNetworkAccessConfigResponse;
+
+pub use crate::types::_argo_cd_aws_idc_config_response::ArgoCdAwsIdcConfigResponse;
+
 pub use crate::types::_addon_info::AddonInfo;
 
 pub use crate::types::_marketplace_information::MarketplaceInformation;
@@ -248,6 +288,12 @@ pub use crate::types::_create_access_config_request::CreateAccessConfigRequest;
 pub use crate::types::_outpost_config_request::OutpostConfigRequest;
 
 pub use crate::types::_control_plane_placement_request::ControlPlanePlacementRequest;
+
+pub use crate::types::_capability_configuration_request::CapabilityConfigurationRequest;
+
+pub use crate::types::_argo_cd_config_request::ArgoCdConfigRequest;
+
+pub use crate::types::_argo_cd_aws_idc_config_request::ArgoCdAwsIdcConfigRequest;
 
 pub use crate::types::_addon_namespace_config_request::AddonNamespaceConfigRequest;
 
@@ -289,6 +335,22 @@ mod _addon_version_info;
 
 mod _ami_types;
 
+mod _argo_cd_aws_idc_config_request;
+
+mod _argo_cd_aws_idc_config_response;
+
+mod _argo_cd_config_request;
+
+mod _argo_cd_config_response;
+
+mod _argo_cd_network_access_config_request;
+
+mod _argo_cd_network_access_config_response;
+
+mod _argo_cd_role;
+
+mod _argo_cd_role_mapping;
+
 mod _associated_access_policy;
 
 mod _authentication_mode;
@@ -296,6 +358,26 @@ mod _authentication_mode;
 mod _auto_scaling_group;
 
 mod _block_storage;
+
+mod _capability;
+
+mod _capability_configuration_request;
+
+mod _capability_configuration_response;
+
+mod _capability_delete_propagation_policy;
+
+mod _capability_health;
+
+mod _capability_issue;
+
+mod _capability_issue_code;
+
+mod _capability_status;
+
+mod _capability_summary;
+
+mod _capability_type;
 
 mod _capacity_types;
 
@@ -467,6 +549,10 @@ mod _repair_action;
 
 mod _resolve_conflicts;
 
+mod _sso_identity;
+
+mod _sso_identity_type;
+
 mod _storage_config_request;
 
 mod _storage_config_response;
@@ -481,11 +567,17 @@ mod _update;
 
 mod _update_access_config_request;
 
+mod _update_argo_cd_config;
+
+mod _update_capability_configuration;
+
 mod _update_labels_payload;
 
 mod _update_param;
 
 mod _update_param_type;
+
+mod _update_role_mappings;
 
 mod _update_status;
 

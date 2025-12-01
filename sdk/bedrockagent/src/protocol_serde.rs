@@ -723,6 +723,8 @@ pub(crate) mod shape_url_configuration;
 
 pub(crate) mod shape_web_crawler_limits;
 
+pub(crate) mod shape_audio_configuration;
+
 pub(crate) mod shape_byte_content_doc;
 
 pub(crate) mod shape_content_block;
@@ -783,7 +785,13 @@ pub(crate) mod shape_transformation_lambda_configuration;
 
 pub(crate) mod shape_vector_search_reranking_configuration;
 
+pub(crate) mod shape_video_configuration;
+
 pub(crate) mod shape_any_tool_choice;
+
+pub(crate) mod shape_audio_configurations;
+
+pub(crate) mod shape_audio_segmentation_configuration;
 
 pub(crate) mod shape_auto_tool_choice;
 
@@ -818,6 +826,10 @@ pub(crate) mod shape_tool_specification;
 pub(crate) mod shape_tools;
 
 pub(crate) mod shape_vector_search_bedrock_reranking_configuration;
+
+pub(crate) mod shape_video_configurations;
+
+pub(crate) mod shape_video_segmentation_configuration;
 
 pub(crate) mod shape_additional_model_request_fields;
 

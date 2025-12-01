@@ -17,6 +17,10 @@ where
                         "generateFillerMessage" => {
                             builder = builder.set_generate_filler_message(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "generateChunkedMessage" => {
+                            builder =
+                                builder.set_generate_chunked_message(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -40,6 +44,9 @@ pub fn ser_message_configuration(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.generate_filler_message {
         object.key("generateFillerMessage").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.generate_chunked_message {
+        object.key("generateChunkedMessage").boolean(*var_2);
     }
     Ok(())
 }

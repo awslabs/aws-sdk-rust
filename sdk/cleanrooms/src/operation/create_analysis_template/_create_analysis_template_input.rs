@@ -21,6 +21,8 @@ pub struct CreateAnalysisTemplateInput {
     pub schema: ::std::option::Option<crate::types::AnalysisSchema>,
     /// <p>The configuration that specifies the level of detail in error messages returned by analyses using this template. When set to <code>DETAILED</code>, error messages include more information to help troubleshoot issues with PySpark jobs. Detailed error messages may expose underlying data, including sensitive information. Recommended for faster troubleshooting in development and testing environments.</p>
     pub error_message_configuration: ::std::option::Option<crate::types::ErrorMessageConfiguration>,
+    /// <p>The parameters for generating synthetic data when running the analysis template.</p>
+    pub synthetic_data_parameters: ::std::option::Option<crate::types::SyntheticDataParameters>,
 }
 impl CreateAnalysisTemplateInput {
     /// <p>The description of the analysis template.</p>
@@ -61,6 +63,10 @@ impl CreateAnalysisTemplateInput {
     pub fn error_message_configuration(&self) -> ::std::option::Option<&crate::types::ErrorMessageConfiguration> {
         self.error_message_configuration.as_ref()
     }
+    /// <p>The parameters for generating synthetic data when running the analysis template.</p>
+    pub fn synthetic_data_parameters(&self) -> ::std::option::Option<&crate::types::SyntheticDataParameters> {
+        self.synthetic_data_parameters.as_ref()
+    }
 }
 impl CreateAnalysisTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateAnalysisTemplateInput`](crate::operation::create_analysis_template::CreateAnalysisTemplateInput).
@@ -82,6 +88,7 @@ pub struct CreateAnalysisTemplateInputBuilder {
     pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
     pub(crate) schema: ::std::option::Option<crate::types::AnalysisSchema>,
     pub(crate) error_message_configuration: ::std::option::Option<crate::types::ErrorMessageConfiguration>,
+    pub(crate) synthetic_data_parameters: ::std::option::Option<crate::types::SyntheticDataParameters>,
 }
 impl CreateAnalysisTemplateInputBuilder {
     /// <p>The description of the analysis template.</p>
@@ -226,6 +233,20 @@ impl CreateAnalysisTemplateInputBuilder {
     pub fn get_error_message_configuration(&self) -> &::std::option::Option<crate::types::ErrorMessageConfiguration> {
         &self.error_message_configuration
     }
+    /// <p>The parameters for generating synthetic data when running the analysis template.</p>
+    pub fn synthetic_data_parameters(mut self, input: crate::types::SyntheticDataParameters) -> Self {
+        self.synthetic_data_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The parameters for generating synthetic data when running the analysis template.</p>
+    pub fn set_synthetic_data_parameters(mut self, input: ::std::option::Option<crate::types::SyntheticDataParameters>) -> Self {
+        self.synthetic_data_parameters = input;
+        self
+    }
+    /// <p>The parameters for generating synthetic data when running the analysis template.</p>
+    pub fn get_synthetic_data_parameters(&self) -> &::std::option::Option<crate::types::SyntheticDataParameters> {
+        &self.synthetic_data_parameters
+    }
     /// Consumes the builder and constructs a [`CreateAnalysisTemplateInput`](crate::operation::create_analysis_template::CreateAnalysisTemplateInput).
     pub fn build(
         self,
@@ -243,6 +264,7 @@ impl CreateAnalysisTemplateInputBuilder {
             analysis_parameters: self.analysis_parameters,
             schema: self.schema,
             error_message_configuration: self.error_message_configuration,
+            synthetic_data_parameters: self.synthetic_data_parameters,
         })
     }
 }

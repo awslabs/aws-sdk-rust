@@ -12,6 +12,8 @@ pub struct EvaluationSearchSummary {
     pub evaluation_form_id: ::std::option::Option<::std::string::String>,
     /// <p>A version of the evaluation form.</p>
     pub evaluation_form_version: i32,
+    /// <p>Title of the evaluation form.</p>
+    pub evaluation_form_title: ::std::option::Option<::std::string::String>,
     /// <p>Summary information about the evaluation search.</p>
     pub metadata: ::std::option::Option<crate::types::EvaluationSearchMetadata>,
     /// <p>The status of the evaluation.</p>
@@ -43,6 +45,10 @@ impl EvaluationSearchSummary {
     /// <p>A version of the evaluation form.</p>
     pub fn evaluation_form_version(&self) -> i32 {
         self.evaluation_form_version
+    }
+    /// <p>Title of the evaluation form.</p>
+    pub fn evaluation_form_title(&self) -> ::std::option::Option<&str> {
+        self.evaluation_form_title.as_deref()
     }
     /// <p>Summary information about the evaluation search.</p>
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::EvaluationSearchMetadata> {
@@ -84,6 +90,7 @@ pub struct EvaluationSearchSummaryBuilder {
     pub(crate) evaluation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_form_version: ::std::option::Option<i32>,
+    pub(crate) evaluation_form_title: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<crate::types::EvaluationSearchMetadata>,
     pub(crate) status: ::std::option::Option<crate::types::EvaluationStatus>,
     pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
@@ -150,6 +157,20 @@ impl EvaluationSearchSummaryBuilder {
     /// <p>A version of the evaluation form.</p>
     pub fn get_evaluation_form_version(&self) -> &::std::option::Option<i32> {
         &self.evaluation_form_version
+    }
+    /// <p>Title of the evaluation form.</p>
+    pub fn evaluation_form_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.evaluation_form_title = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Title of the evaluation form.</p>
+    pub fn set_evaluation_form_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_form_title = input;
+        self
+    }
+    /// <p>Title of the evaluation form.</p>
+    pub fn get_evaluation_form_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_title
     }
     /// <p>Summary information about the evaluation search.</p>
     /// This field is required.
@@ -274,6 +295,7 @@ impl EvaluationSearchSummaryBuilder {
                     "evaluation_form_version was not specified but it is required when building EvaluationSearchSummary",
                 )
             })?,
+            evaluation_form_title: self.evaluation_form_title,
             metadata: self.metadata,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

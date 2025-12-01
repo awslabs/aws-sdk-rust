@@ -238,6 +238,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRecommend
                         query.push_kv("nextChunkToken", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
+                if let ::std::option::Option::Some(inner_6) = &_input.recommendation_type {
+                    {
+                        query.push_kv("recommendationType", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

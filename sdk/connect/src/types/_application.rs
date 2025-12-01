@@ -7,19 +7,25 @@
 pub struct Application {
     /// <p>Namespace of the application that you want to give access to.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The permissions that the agent is granted on the application. Only the <code>ACCESS</code> permission is supported.</p>
+    /// <p>The permissions that the agent is granted on the application. For third-party applications, only the <code>ACCESS</code> permission is supported. For MCP Servers, the permissions are tool Identifiers accepted by MCP Server.</p>
     pub application_permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Type of Application.</p>
+    pub r#type: ::std::option::Option<crate::types::ApplicationType>,
 }
 impl Application {
     /// <p>Namespace of the application that you want to give access to.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The permissions that the agent is granted on the application. Only the <code>ACCESS</code> permission is supported.</p>
+    /// <p>The permissions that the agent is granted on the application. For third-party applications, only the <code>ACCESS</code> permission is supported. For MCP Servers, the permissions are tool Identifiers accepted by MCP Server.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_permissions.is_none()`.
     pub fn application_permissions(&self) -> &[::std::string::String] {
         self.application_permissions.as_deref().unwrap_or_default()
+    }
+    /// <p>Type of Application.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
+        self.r#type.as_ref()
     }
 }
 impl Application {
@@ -35,6 +41,7 @@ impl Application {
 pub struct ApplicationBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) application_permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ApplicationType>,
 }
 impl ApplicationBuilder {
     /// <p>Namespace of the application that you want to give access to.</p>
@@ -55,27 +62,42 @@ impl ApplicationBuilder {
     ///
     /// To override the contents of this collection use [`set_application_permissions`](Self::set_application_permissions).
     ///
-    /// <p>The permissions that the agent is granted on the application. Only the <code>ACCESS</code> permission is supported.</p>
+    /// <p>The permissions that the agent is granted on the application. For third-party applications, only the <code>ACCESS</code> permission is supported. For MCP Servers, the permissions are tool Identifiers accepted by MCP Server.</p>
     pub fn application_permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_permissions.unwrap_or_default();
         v.push(input.into());
         self.application_permissions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The permissions that the agent is granted on the application. Only the <code>ACCESS</code> permission is supported.</p>
+    /// <p>The permissions that the agent is granted on the application. For third-party applications, only the <code>ACCESS</code> permission is supported. For MCP Servers, the permissions are tool Identifiers accepted by MCP Server.</p>
     pub fn set_application_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.application_permissions = input;
         self
     }
-    /// <p>The permissions that the agent is granted on the application. Only the <code>ACCESS</code> permission is supported.</p>
+    /// <p>The permissions that the agent is granted on the application. For third-party applications, only the <code>ACCESS</code> permission is supported. For MCP Servers, the permissions are tool Identifiers accepted by MCP Server.</p>
     pub fn get_application_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.application_permissions
+    }
+    /// <p>Type of Application.</p>
+    pub fn r#type(mut self, input: crate::types::ApplicationType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Type of Application.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>Type of Application.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     pub fn build(self) -> crate::types::Application {
         crate::types::Application {
             namespace: self.namespace,
             application_permissions: self.application_permissions,
+            r#type: self.r#type,
         }
     }
 }

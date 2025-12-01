@@ -43,6 +43,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EmailMessage' cannot be null")
                             })?,
                         )),
+                        "EmailMessagePlainText" => Some(crate::types::ReferenceSummary::EmailMessagePlainText(
+                            crate::protocol_serde::shape_email_message_reference::de_email_message_reference(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EmailMessagePlainText' cannot be null")
+                            })?,
+                        )),
                         "String" => Some(crate::types::ReferenceSummary::String(
                             crate::protocol_serde::shape_string_reference::de_string_reference(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'String' cannot be null")

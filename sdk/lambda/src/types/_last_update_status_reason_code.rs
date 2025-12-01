@@ -12,15 +12,26 @@
 /// ```text
 /// # let lastupdatestatusreasoncode = unimplemented!();
 /// match lastupdatestatusreasoncode {
+///     LastUpdateStatusReasonCode::CapacityProviderScalingLimitExceeded => { /* ... */ },
 ///     LastUpdateStatusReasonCode::DisabledKmsKey => { /* ... */ },
+///     LastUpdateStatusReasonCode::Ec2RequestLimitExceeded => { /* ... */ },
 ///     LastUpdateStatusReasonCode::EfsioError => { /* ... */ },
 ///     LastUpdateStatusReasonCode::EfsMountConnectivityError => { /* ... */ },
 ///     LastUpdateStatusReasonCode::EfsMountFailure => { /* ... */ },
 ///     LastUpdateStatusReasonCode::EfsMountTimeout => { /* ... */ },
 ///     LastUpdateStatusReasonCode::EniLimitExceeded => { /* ... */ },
 ///     LastUpdateStatusReasonCode::FunctionError => { /* ... */ },
+///     LastUpdateStatusReasonCode::FunctionErrorExtensionInitError => { /* ... */ },
+///     LastUpdateStatusReasonCode::FunctionErrorInitResourceExhausted => { /* ... */ },
+///     LastUpdateStatusReasonCode::FunctionErrorInitTimeout => { /* ... */ },
+///     LastUpdateStatusReasonCode::FunctionErrorInvalidEntryPoint => { /* ... */ },
+///     LastUpdateStatusReasonCode::FunctionErrorInvalidWorkingDirectory => { /* ... */ },
+///     LastUpdateStatusReasonCode::FunctionErrorPermissionDenied => { /* ... */ },
+///     LastUpdateStatusReasonCode::FunctionErrorRuntimeInitError => { /* ... */ },
+///     LastUpdateStatusReasonCode::FunctionErrorTooManyExtensions => { /* ... */ },
 ///     LastUpdateStatusReasonCode::ImageAccessDenied => { /* ... */ },
 ///     LastUpdateStatusReasonCode::ImageDeleted => { /* ... */ },
+///     LastUpdateStatusReasonCode::InsufficientCapacity => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InsufficientRolePermissions => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InternalError => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InvalidConfiguration => { /* ... */ },
@@ -33,6 +44,7 @@
 ///     LastUpdateStatusReasonCode::KmsKeyAccessDenied => { /* ... */ },
 ///     LastUpdateStatusReasonCode::KmsKeyNotFound => { /* ... */ },
 ///     LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => { /* ... */ },
+///     LastUpdateStatusReasonCode::VcpuLimitExceeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -62,7 +74,11 @@
 )]
 pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityProviderScalingLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     DisabledKmsKey,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2RequestLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     EfsioError,
     #[allow(missing_docs)] // documentation missing in model
@@ -76,9 +92,27 @@ pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     FunctionError,
     #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorExtensionInitError,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorInitResourceExhausted,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorInitTimeout,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorInvalidEntryPoint,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorInvalidWorkingDirectory,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorPermissionDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorRuntimeInitError,
+    #[allow(missing_docs)] // documentation missing in model
+    FunctionErrorTooManyExtensions,
+    #[allow(missing_docs)] // documentation missing in model
     ImageAccessDenied,
     #[allow(missing_docs)] // documentation missing in model
     ImageDeleted,
+    #[allow(missing_docs)] // documentation missing in model
+    InsufficientCapacity,
     #[allow(missing_docs)] // documentation missing in model
     InsufficientRolePermissions,
     #[allow(missing_docs)] // documentation missing in model
@@ -103,6 +137,8 @@ pub enum LastUpdateStatusReasonCode {
     KmsKeyNotFound,
     #[allow(missing_docs)] // documentation missing in model
     SubnetOutOfIpAddresses,
+    #[allow(missing_docs)] // documentation missing in model
+    VcpuLimitExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -110,15 +146,26 @@ pub enum LastUpdateStatusReasonCode {
 impl ::std::convert::From<&str> for LastUpdateStatusReasonCode {
     fn from(s: &str) -> Self {
         match s {
+            "CapacityProviderScalingLimitExceeded" => LastUpdateStatusReasonCode::CapacityProviderScalingLimitExceeded,
             "DisabledKMSKey" => LastUpdateStatusReasonCode::DisabledKmsKey,
+            "EC2RequestLimitExceeded" => LastUpdateStatusReasonCode::Ec2RequestLimitExceeded,
             "EFSIOError" => LastUpdateStatusReasonCode::EfsioError,
             "EFSMountConnectivityError" => LastUpdateStatusReasonCode::EfsMountConnectivityError,
             "EFSMountFailure" => LastUpdateStatusReasonCode::EfsMountFailure,
             "EFSMountTimeout" => LastUpdateStatusReasonCode::EfsMountTimeout,
             "EniLimitExceeded" => LastUpdateStatusReasonCode::EniLimitExceeded,
             "FunctionError" => LastUpdateStatusReasonCode::FunctionError,
+            "FunctionError.ExtensionInitError" => LastUpdateStatusReasonCode::FunctionErrorExtensionInitError,
+            "FunctionError.InitResourceExhausted" => LastUpdateStatusReasonCode::FunctionErrorInitResourceExhausted,
+            "FunctionError.InitTimeout" => LastUpdateStatusReasonCode::FunctionErrorInitTimeout,
+            "FunctionError.InvalidEntryPoint" => LastUpdateStatusReasonCode::FunctionErrorInvalidEntryPoint,
+            "FunctionError.InvalidWorkingDirectory" => LastUpdateStatusReasonCode::FunctionErrorInvalidWorkingDirectory,
+            "FunctionError.PermissionDenied" => LastUpdateStatusReasonCode::FunctionErrorPermissionDenied,
+            "FunctionError.RuntimeInitError" => LastUpdateStatusReasonCode::FunctionErrorRuntimeInitError,
+            "FunctionError.TooManyExtensions" => LastUpdateStatusReasonCode::FunctionErrorTooManyExtensions,
             "ImageAccessDenied" => LastUpdateStatusReasonCode::ImageAccessDenied,
             "ImageDeleted" => LastUpdateStatusReasonCode::ImageDeleted,
+            "InsufficientCapacity" => LastUpdateStatusReasonCode::InsufficientCapacity,
             "InsufficientRolePermissions" => LastUpdateStatusReasonCode::InsufficientRolePermissions,
             "InternalError" => LastUpdateStatusReasonCode::InternalError,
             "InvalidConfiguration" => LastUpdateStatusReasonCode::InvalidConfiguration,
@@ -131,6 +178,7 @@ impl ::std::convert::From<&str> for LastUpdateStatusReasonCode {
             "KMSKeyAccessDenied" => LastUpdateStatusReasonCode::KmsKeyAccessDenied,
             "KMSKeyNotFound" => LastUpdateStatusReasonCode::KmsKeyNotFound,
             "SubnetOutOfIPAddresses" => LastUpdateStatusReasonCode::SubnetOutOfIpAddresses,
+            "VcpuLimitExceeded" => LastUpdateStatusReasonCode::VcpuLimitExceeded,
             other => LastUpdateStatusReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -146,15 +194,26 @@ impl LastUpdateStatusReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LastUpdateStatusReasonCode::CapacityProviderScalingLimitExceeded => "CapacityProviderScalingLimitExceeded",
             LastUpdateStatusReasonCode::DisabledKmsKey => "DisabledKMSKey",
+            LastUpdateStatusReasonCode::Ec2RequestLimitExceeded => "EC2RequestLimitExceeded",
             LastUpdateStatusReasonCode::EfsioError => "EFSIOError",
             LastUpdateStatusReasonCode::EfsMountConnectivityError => "EFSMountConnectivityError",
             LastUpdateStatusReasonCode::EfsMountFailure => "EFSMountFailure",
             LastUpdateStatusReasonCode::EfsMountTimeout => "EFSMountTimeout",
             LastUpdateStatusReasonCode::EniLimitExceeded => "EniLimitExceeded",
             LastUpdateStatusReasonCode::FunctionError => "FunctionError",
+            LastUpdateStatusReasonCode::FunctionErrorExtensionInitError => "FunctionError.ExtensionInitError",
+            LastUpdateStatusReasonCode::FunctionErrorInitResourceExhausted => "FunctionError.InitResourceExhausted",
+            LastUpdateStatusReasonCode::FunctionErrorInitTimeout => "FunctionError.InitTimeout",
+            LastUpdateStatusReasonCode::FunctionErrorInvalidEntryPoint => "FunctionError.InvalidEntryPoint",
+            LastUpdateStatusReasonCode::FunctionErrorInvalidWorkingDirectory => "FunctionError.InvalidWorkingDirectory",
+            LastUpdateStatusReasonCode::FunctionErrorPermissionDenied => "FunctionError.PermissionDenied",
+            LastUpdateStatusReasonCode::FunctionErrorRuntimeInitError => "FunctionError.RuntimeInitError",
+            LastUpdateStatusReasonCode::FunctionErrorTooManyExtensions => "FunctionError.TooManyExtensions",
             LastUpdateStatusReasonCode::ImageAccessDenied => "ImageAccessDenied",
             LastUpdateStatusReasonCode::ImageDeleted => "ImageDeleted",
+            LastUpdateStatusReasonCode::InsufficientCapacity => "InsufficientCapacity",
             LastUpdateStatusReasonCode::InsufficientRolePermissions => "InsufficientRolePermissions",
             LastUpdateStatusReasonCode::InternalError => "InternalError",
             LastUpdateStatusReasonCode::InvalidConfiguration => "InvalidConfiguration",
@@ -167,21 +226,33 @@ impl LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::KmsKeyAccessDenied => "KMSKeyAccessDenied",
             LastUpdateStatusReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
             LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
+            LastUpdateStatusReasonCode::VcpuLimitExceeded => "VcpuLimitExceeded",
             LastUpdateStatusReasonCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CapacityProviderScalingLimitExceeded",
             "DisabledKMSKey",
+            "EC2RequestLimitExceeded",
             "EFSIOError",
             "EFSMountConnectivityError",
             "EFSMountFailure",
             "EFSMountTimeout",
             "EniLimitExceeded",
             "FunctionError",
+            "FunctionError.ExtensionInitError",
+            "FunctionError.InitResourceExhausted",
+            "FunctionError.InitTimeout",
+            "FunctionError.InvalidEntryPoint",
+            "FunctionError.InvalidWorkingDirectory",
+            "FunctionError.PermissionDenied",
+            "FunctionError.RuntimeInitError",
+            "FunctionError.TooManyExtensions",
             "ImageAccessDenied",
             "ImageDeleted",
+            "InsufficientCapacity",
             "InsufficientRolePermissions",
             "InternalError",
             "InvalidConfiguration",
@@ -194,6 +265,7 @@ impl LastUpdateStatusReasonCode {
             "KMSKeyAccessDenied",
             "KMSKeyNotFound",
             "SubnetOutOfIPAddresses",
+            "VcpuLimitExceeded",
         ]
     }
 }
@@ -217,15 +289,26 @@ impl LastUpdateStatusReasonCode {
 impl ::std::fmt::Display for LastUpdateStatusReasonCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            LastUpdateStatusReasonCode::CapacityProviderScalingLimitExceeded => write!(f, "CapacityProviderScalingLimitExceeded"),
             LastUpdateStatusReasonCode::DisabledKmsKey => write!(f, "DisabledKMSKey"),
+            LastUpdateStatusReasonCode::Ec2RequestLimitExceeded => write!(f, "EC2RequestLimitExceeded"),
             LastUpdateStatusReasonCode::EfsioError => write!(f, "EFSIOError"),
             LastUpdateStatusReasonCode::EfsMountConnectivityError => write!(f, "EFSMountConnectivityError"),
             LastUpdateStatusReasonCode::EfsMountFailure => write!(f, "EFSMountFailure"),
             LastUpdateStatusReasonCode::EfsMountTimeout => write!(f, "EFSMountTimeout"),
             LastUpdateStatusReasonCode::EniLimitExceeded => write!(f, "EniLimitExceeded"),
             LastUpdateStatusReasonCode::FunctionError => write!(f, "FunctionError"),
+            LastUpdateStatusReasonCode::FunctionErrorExtensionInitError => write!(f, "FunctionError.ExtensionInitError"),
+            LastUpdateStatusReasonCode::FunctionErrorInitResourceExhausted => write!(f, "FunctionError.InitResourceExhausted"),
+            LastUpdateStatusReasonCode::FunctionErrorInitTimeout => write!(f, "FunctionError.InitTimeout"),
+            LastUpdateStatusReasonCode::FunctionErrorInvalidEntryPoint => write!(f, "FunctionError.InvalidEntryPoint"),
+            LastUpdateStatusReasonCode::FunctionErrorInvalidWorkingDirectory => write!(f, "FunctionError.InvalidWorkingDirectory"),
+            LastUpdateStatusReasonCode::FunctionErrorPermissionDenied => write!(f, "FunctionError.PermissionDenied"),
+            LastUpdateStatusReasonCode::FunctionErrorRuntimeInitError => write!(f, "FunctionError.RuntimeInitError"),
+            LastUpdateStatusReasonCode::FunctionErrorTooManyExtensions => write!(f, "FunctionError.TooManyExtensions"),
             LastUpdateStatusReasonCode::ImageAccessDenied => write!(f, "ImageAccessDenied"),
             LastUpdateStatusReasonCode::ImageDeleted => write!(f, "ImageDeleted"),
+            LastUpdateStatusReasonCode::InsufficientCapacity => write!(f, "InsufficientCapacity"),
             LastUpdateStatusReasonCode::InsufficientRolePermissions => write!(f, "InsufficientRolePermissions"),
             LastUpdateStatusReasonCode::InternalError => write!(f, "InternalError"),
             LastUpdateStatusReasonCode::InvalidConfiguration => write!(f, "InvalidConfiguration"),
@@ -238,6 +321,7 @@ impl ::std::fmt::Display for LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::KmsKeyAccessDenied => write!(f, "KMSKeyAccessDenied"),
             LastUpdateStatusReasonCode::KmsKeyNotFound => write!(f, "KMSKeyNotFound"),
             LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => write!(f, "SubnetOutOfIPAddresses"),
+            LastUpdateStatusReasonCode::VcpuLimitExceeded => write!(f, "VcpuLimitExceeded"),
             LastUpdateStatusReasonCode::Unknown(value) => write!(f, "{value}"),
         }
     }

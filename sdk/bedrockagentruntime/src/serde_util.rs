@@ -624,6 +624,20 @@ pub(crate) fn retrieve_and_generate_output_event_correct_errors(
     builder
 }
 
+pub(crate) fn audio_segment_correct_errors(mut builder: crate::types::builders::AudioSegmentBuilder) -> crate::types::builders::AudioSegmentBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn video_segment_correct_errors(mut builder: crate::types::builders::VideoSegmentBuilder) -> crate::types::builders::VideoSegmentBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn flow_input_field_correct_errors(
     mut builder: crate::types::builders::FlowInputFieldBuilder,
 ) -> crate::types::builders::FlowInputFieldBuilder {

@@ -16,6 +16,8 @@
 ///     NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::ContactDuration => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::CustomerHoldTime => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithoutAgent => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithAgent => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::LongestHoldDuration => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::NonTalkTime => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => { /* ... */ },
@@ -60,6 +62,10 @@ pub enum NumericQuestionPropertyAutomationLabel {
     #[allow(missing_docs)] // documentation missing in model
     CustomerHoldTime,
     #[allow(missing_docs)] // documentation missing in model
+    CustomerSentimentScoreWithoutAgent,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomerSentimentScoreWithAgent,
+    #[allow(missing_docs)] // documentation missing in model
     LongestHoldDuration,
     #[allow(missing_docs)] // documentation missing in model
     NonTalkTime,
@@ -84,6 +90,8 @@ impl ::std::convert::From<&str> for NumericQuestionPropertyAutomationLabel {
             "AGENT_INTERACTION_DURATION" => NumericQuestionPropertyAutomationLabel::AgentInteractionDuration,
             "CONTACT_DURATION" => NumericQuestionPropertyAutomationLabel::ContactDuration,
             "CUSTOMER_HOLD_TIME" => NumericQuestionPropertyAutomationLabel::CustomerHoldTime,
+            "CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT" => NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithoutAgent,
+            "CUSTOMER_SENTIMENT_SCORE_WITH_AGENT" => NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithAgent,
             "LONGEST_HOLD_DURATION" => NumericQuestionPropertyAutomationLabel::LongestHoldDuration,
             "NON_TALK_TIME" => NumericQuestionPropertyAutomationLabel::NonTalkTime,
             "NON_TALK_TIME_PERCENTAGE" => NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage,
@@ -110,6 +118,8 @@ impl NumericQuestionPropertyAutomationLabel {
             NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => "AGENT_INTERACTION_DURATION",
             NumericQuestionPropertyAutomationLabel::ContactDuration => "CONTACT_DURATION",
             NumericQuestionPropertyAutomationLabel::CustomerHoldTime => "CUSTOMER_HOLD_TIME",
+            NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithoutAgent => "CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT",
+            NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithAgent => "CUSTOMER_SENTIMENT_SCORE_WITH_AGENT",
             NumericQuestionPropertyAutomationLabel::LongestHoldDuration => "LONGEST_HOLD_DURATION",
             NumericQuestionPropertyAutomationLabel::NonTalkTime => "NON_TALK_TIME",
             NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => "NON_TALK_TIME_PERCENTAGE",
@@ -127,6 +137,8 @@ impl NumericQuestionPropertyAutomationLabel {
             "AGENT_INTERACTION_DURATION",
             "CONTACT_DURATION",
             "CUSTOMER_HOLD_TIME",
+            "CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT",
+            "CUSTOMER_SENTIMENT_SCORE_WITH_AGENT",
             "LONGEST_HOLD_DURATION",
             "NON_TALK_TIME",
             "NON_TALK_TIME_PERCENTAGE",
@@ -161,6 +173,8 @@ impl ::std::fmt::Display for NumericQuestionPropertyAutomationLabel {
             NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => write!(f, "AGENT_INTERACTION_DURATION"),
             NumericQuestionPropertyAutomationLabel::ContactDuration => write!(f, "CONTACT_DURATION"),
             NumericQuestionPropertyAutomationLabel::CustomerHoldTime => write!(f, "CUSTOMER_HOLD_TIME"),
+            NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithoutAgent => write!(f, "CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT"),
+            NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithAgent => write!(f, "CUSTOMER_SENTIMENT_SCORE_WITH_AGENT"),
             NumericQuestionPropertyAutomationLabel::LongestHoldDuration => write!(f, "LONGEST_HOLD_DURATION"),
             NumericQuestionPropertyAutomationLabel::NonTalkTime => write!(f, "NON_TALK_TIME"),
             NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => write!(f, "NON_TALK_TIME_PERCENTAGE"),

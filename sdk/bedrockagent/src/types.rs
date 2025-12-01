@@ -179,6 +179,14 @@ pub use crate::types::_embedding_model_configuration::EmbeddingModelConfiguratio
 
 pub use crate::types::_bedrock_embedding_model_configuration::BedrockEmbeddingModelConfiguration;
 
+pub use crate::types::_video_configuration::VideoConfiguration;
+
+pub use crate::types::_video_segmentation_configuration::VideoSegmentationConfiguration;
+
+pub use crate::types::_audio_configuration::AudioConfiguration;
+
+pub use crate::types::_audio_segmentation_configuration::AudioSegmentationConfiguration;
+
 pub use crate::types::_embedding_data_type::EmbeddingDataType;
 
 pub use crate::types::_knowledge_base_type::KnowledgeBaseType;
@@ -660,6 +668,10 @@ mod _alias_invocation_state;
 mod _any_tool_choice;
 
 mod _api_schema;
+
+mod _audio_configuration;
+
+mod _audio_segmentation_configuration;
 
 mod _auto_tool_choice;
 
@@ -1212,6 +1224,10 @@ mod _vector_search_bedrock_reranking_model_configuration;
 mod _vector_search_reranking_configuration;
 
 mod _vector_search_reranking_configuration_type;
+
+mod _video_configuration;
+
+mod _video_segmentation_configuration;
 
 mod _web_crawler_configuration;
 

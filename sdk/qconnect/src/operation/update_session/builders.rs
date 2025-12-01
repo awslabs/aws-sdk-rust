@@ -188,4 +188,40 @@ impl UpdateSessionFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
         self.inner.get_ai_agent_configuration()
     }
+    ///
+    /// Appends an item to `orchestratorConfigurationList`.
+    ///
+    /// To override the contents of this collection use [`set_orchestrator_configuration_list`](Self::set_orchestrator_configuration_list).
+    ///
+    /// <p>The updated list of orchestrator configurations for the session.</p>
+    pub fn orchestrator_configuration_list(mut self, input: crate::types::OrchestratorConfigurationEntry) -> Self {
+        self.inner = self.inner.orchestrator_configuration_list(input);
+        self
+    }
+    /// <p>The updated list of orchestrator configurations for the session.</p>
+    pub fn set_orchestrator_configuration_list(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    ) -> Self {
+        self.inner = self.inner.set_orchestrator_configuration_list(input);
+        self
+    }
+    /// <p>The updated list of orchestrator configurations for the session.</p>
+    pub fn get_orchestrator_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>> {
+        self.inner.get_orchestrator_configuration_list()
+    }
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub fn remove_orchestrator_configuration_list(mut self, input: bool) -> Self {
+        self.inner = self.inner.remove_orchestrator_configuration_list(input);
+        self
+    }
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub fn set_remove_orchestrator_configuration_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_remove_orchestrator_configuration_list(input);
+        self
+    }
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub fn get_remove_orchestrator_configuration_list(&self) -> &::std::option::Option<bool> {
+        self.inner.get_remove_orchestrator_configuration_list()
+    }
 }

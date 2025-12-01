@@ -14,6 +14,8 @@ pub struct Campaign {
     pub connect_instance_id: ::std::string::String,
     /// Campaign Channel Subtype config
     pub channel_subtype_config: ::std::option::Option<crate::types::ChannelSubtypeConfig>,
+    /// The type of campaign externally exposed in APIs.
+    pub r#type: ::std::option::Option<crate::types::ExternalCampaignType>,
     /// Source of the campaign
     pub source: ::std::option::Option<crate::types::Source>,
     /// Amazon Resource Names(ARN)
@@ -51,6 +53,10 @@ impl Campaign {
     /// Campaign Channel Subtype config
     pub fn channel_subtype_config(&self) -> ::std::option::Option<&crate::types::ChannelSubtypeConfig> {
         self.channel_subtype_config.as_ref()
+    }
+    /// The type of campaign externally exposed in APIs.
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ExternalCampaignType> {
+        self.r#type.as_ref()
     }
     /// Source of the campaign
     pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
@@ -93,6 +99,7 @@ pub struct CampaignBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) channel_subtype_config: ::std::option::Option<crate::types::ChannelSubtypeConfig>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ExternalCampaignType>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) connect_campaign_flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
@@ -162,7 +169,6 @@ impl CampaignBuilder {
         &self.connect_instance_id
     }
     /// Campaign Channel Subtype config
-    /// This field is required.
     pub fn channel_subtype_config(mut self, input: crate::types::ChannelSubtypeConfig) -> Self {
         self.channel_subtype_config = ::std::option::Option::Some(input);
         self
@@ -175,6 +181,20 @@ impl CampaignBuilder {
     /// Campaign Channel Subtype config
     pub fn get_channel_subtype_config(&self) -> &::std::option::Option<crate::types::ChannelSubtypeConfig> {
         &self.channel_subtype_config
+    }
+    /// The type of campaign externally exposed in APIs.
+    pub fn r#type(mut self, input: crate::types::ExternalCampaignType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// The type of campaign externally exposed in APIs.
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ExternalCampaignType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// The type of campaign externally exposed in APIs.
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ExternalCampaignType> {
+        &self.r#type
     }
     /// Source of the campaign
     pub fn source(mut self, input: crate::types::Source) -> Self {
@@ -299,6 +319,7 @@ impl CampaignBuilder {
                 )
             })?,
             channel_subtype_config: self.channel_subtype_config,
+            r#type: self.r#type,
             source: self.source,
             connect_campaign_flow_arn: self.connect_campaign_flow_arn,
             schedule: self.schedule,

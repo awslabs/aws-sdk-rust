@@ -14,6 +14,8 @@ pub struct SolutionVersion {
     pub perform_hpo: bool,
     /// <p>When true, Amazon Personalize searches for the most optimal recipe according to the solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.</p>
     pub perform_auto_ml: bool,
+    /// <p>Whether the solution version should perform an incremental update. When set to true, the training will process only the data that has changed since the latest training, similar to when trainingMode is set to UPDATE. This can only be used with solution versions that use the User-Personalization recipe.</p>
+    pub perform_incremental_update: ::std::option::Option<bool>,
     /// <p>The ARN of the recipe used in the solution.</p>
     pub recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event type (for example, 'click' or 'like') that is used for training the model.</p>
@@ -74,6 +76,10 @@ impl SolutionVersion {
     /// <p>When true, Amazon Personalize searches for the most optimal recipe according to the solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.</p>
     pub fn perform_auto_ml(&self) -> bool {
         self.perform_auto_ml
+    }
+    /// <p>Whether the solution version should perform an incremental update. When set to true, the training will process only the data that has changed since the latest training, similar to when trainingMode is set to UPDATE. This can only be used with solution versions that use the User-Personalization recipe.</p>
+    pub fn perform_incremental_update(&self) -> ::std::option::Option<bool> {
+        self.perform_incremental_update
     }
     /// <p>The ARN of the recipe used in the solution.</p>
     pub fn recipe_arn(&self) -> ::std::option::Option<&str> {
@@ -155,6 +161,7 @@ pub struct SolutionVersionBuilder {
     pub(crate) solution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) perform_hpo: ::std::option::Option<bool>,
     pub(crate) perform_auto_ml: ::std::option::Option<bool>,
+    pub(crate) perform_incremental_update: ::std::option::Option<bool>,
     pub(crate) recipe_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_type: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
@@ -238,6 +245,20 @@ impl SolutionVersionBuilder {
     /// <p>When true, Amazon Personalize searches for the most optimal recipe according to the solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.</p>
     pub fn get_perform_auto_ml(&self) -> &::std::option::Option<bool> {
         &self.perform_auto_ml
+    }
+    /// <p>Whether the solution version should perform an incremental update. When set to true, the training will process only the data that has changed since the latest training, similar to when trainingMode is set to UPDATE. This can only be used with solution versions that use the User-Personalization recipe.</p>
+    pub fn perform_incremental_update(mut self, input: bool) -> Self {
+        self.perform_incremental_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether the solution version should perform an incremental update. When set to true, the training will process only the data that has changed since the latest training, similar to when trainingMode is set to UPDATE. This can only be used with solution versions that use the User-Personalization recipe.</p>
+    pub fn set_perform_incremental_update(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.perform_incremental_update = input;
+        self
+    }
+    /// <p>Whether the solution version should perform an incremental update. When set to true, the training will process only the data that has changed since the latest training, similar to when trainingMode is set to UPDATE. This can only be used with solution versions that use the User-Personalization recipe.</p>
+    pub fn get_perform_incremental_update(&self) -> &::std::option::Option<bool> {
+        &self.perform_incremental_update
     }
     /// <p>The ARN of the recipe used in the solution.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -460,6 +481,7 @@ impl SolutionVersionBuilder {
             solution_arn: self.solution_arn,
             perform_hpo: self.perform_hpo.unwrap_or_default(),
             perform_auto_ml: self.perform_auto_ml.unwrap_or_default(),
+            perform_incremental_update: self.perform_incremental_update,
             recipe_arn: self.recipe_arn,
             event_type: self.event_type,
             dataset_group_arn: self.dataset_group_arn,

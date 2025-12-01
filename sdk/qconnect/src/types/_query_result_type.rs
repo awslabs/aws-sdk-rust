@@ -12,8 +12,11 @@
 /// ```text
 /// # let queryresulttype = unimplemented!();
 /// match queryresulttype {
+///     QueryResultType::BlockedCaseSummarizationChunk => { /* ... */ },
 ///     QueryResultType::BlockedGenerativeAnswerChunk => { /* ... */ },
 ///     QueryResultType::BlockedIntentAnswerChunk => { /* ... */ },
+///     QueryResultType::BlockedNotesChunk => { /* ... */ },
+///     QueryResultType::CaseSummarizationChunk => { /* ... */ },
 ///     QueryResultType::EmailGenerativeAnswerChunk => { /* ... */ },
 ///     QueryResultType::EmailOverviewChunk => { /* ... */ },
 ///     QueryResultType::EmailResponseChunk => { /* ... */ },
@@ -22,6 +25,8 @@
 ///     QueryResultType::IntentAnswer => { /* ... */ },
 ///     QueryResultType::IntentAnswerChunk => { /* ... */ },
 ///     QueryResultType::KnowledgeContent => { /* ... */ },
+///     QueryResultType::Notes => { /* ... */ },
+///     QueryResultType::NotesChunk => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,9 +56,15 @@
 )]
 pub enum QueryResultType {
     #[allow(missing_docs)] // documentation missing in model
+    BlockedCaseSummarizationChunk,
+    #[allow(missing_docs)] // documentation missing in model
     BlockedGenerativeAnswerChunk,
     #[allow(missing_docs)] // documentation missing in model
     BlockedIntentAnswerChunk,
+    #[allow(missing_docs)] // documentation missing in model
+    BlockedNotesChunk,
+    #[allow(missing_docs)] // documentation missing in model
+    CaseSummarizationChunk,
     #[allow(missing_docs)] // documentation missing in model
     EmailGenerativeAnswerChunk,
     #[allow(missing_docs)] // documentation missing in model
@@ -70,6 +81,10 @@ pub enum QueryResultType {
     IntentAnswerChunk,
     #[allow(missing_docs)] // documentation missing in model
     KnowledgeContent,
+    #[allow(missing_docs)] // documentation missing in model
+    Notes,
+    #[allow(missing_docs)] // documentation missing in model
+    NotesChunk,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -77,8 +92,11 @@ pub enum QueryResultType {
 impl ::std::convert::From<&str> for QueryResultType {
     fn from(s: &str) -> Self {
         match s {
+            "BLOCKED_CASE_SUMMARIZATION_CHUNK" => QueryResultType::BlockedCaseSummarizationChunk,
             "BLOCKED_GENERATIVE_ANSWER_CHUNK" => QueryResultType::BlockedGenerativeAnswerChunk,
             "BLOCKED_INTENT_ANSWER_CHUNK" => QueryResultType::BlockedIntentAnswerChunk,
+            "BLOCKED_NOTES_CHUNK" => QueryResultType::BlockedNotesChunk,
+            "CASE_SUMMARIZATION_CHUNK" => QueryResultType::CaseSummarizationChunk,
             "EMAIL_GENERATIVE_ANSWER_CHUNK" => QueryResultType::EmailGenerativeAnswerChunk,
             "EMAIL_OVERVIEW_CHUNK" => QueryResultType::EmailOverviewChunk,
             "EMAIL_RESPONSE_CHUNK" => QueryResultType::EmailResponseChunk,
@@ -87,6 +105,8 @@ impl ::std::convert::From<&str> for QueryResultType {
             "INTENT_ANSWER" => QueryResultType::IntentAnswer,
             "INTENT_ANSWER_CHUNK" => QueryResultType::IntentAnswerChunk,
             "KNOWLEDGE_CONTENT" => QueryResultType::KnowledgeContent,
+            "NOTES" => QueryResultType::Notes,
+            "NOTES_CHUNK" => QueryResultType::NotesChunk,
             other => QueryResultType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -102,8 +122,11 @@ impl QueryResultType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            QueryResultType::BlockedCaseSummarizationChunk => "BLOCKED_CASE_SUMMARIZATION_CHUNK",
             QueryResultType::BlockedGenerativeAnswerChunk => "BLOCKED_GENERATIVE_ANSWER_CHUNK",
             QueryResultType::BlockedIntentAnswerChunk => "BLOCKED_INTENT_ANSWER_CHUNK",
+            QueryResultType::BlockedNotesChunk => "BLOCKED_NOTES_CHUNK",
+            QueryResultType::CaseSummarizationChunk => "CASE_SUMMARIZATION_CHUNK",
             QueryResultType::EmailGenerativeAnswerChunk => "EMAIL_GENERATIVE_ANSWER_CHUNK",
             QueryResultType::EmailOverviewChunk => "EMAIL_OVERVIEW_CHUNK",
             QueryResultType::EmailResponseChunk => "EMAIL_RESPONSE_CHUNK",
@@ -112,14 +135,19 @@ impl QueryResultType {
             QueryResultType::IntentAnswer => "INTENT_ANSWER",
             QueryResultType::IntentAnswerChunk => "INTENT_ANSWER_CHUNK",
             QueryResultType::KnowledgeContent => "KNOWLEDGE_CONTENT",
+            QueryResultType::Notes => "NOTES",
+            QueryResultType::NotesChunk => "NOTES_CHUNK",
             QueryResultType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "BLOCKED_CASE_SUMMARIZATION_CHUNK",
             "BLOCKED_GENERATIVE_ANSWER_CHUNK",
             "BLOCKED_INTENT_ANSWER_CHUNK",
+            "BLOCKED_NOTES_CHUNK",
+            "CASE_SUMMARIZATION_CHUNK",
             "EMAIL_GENERATIVE_ANSWER_CHUNK",
             "EMAIL_OVERVIEW_CHUNK",
             "EMAIL_RESPONSE_CHUNK",
@@ -128,6 +156,8 @@ impl QueryResultType {
             "INTENT_ANSWER",
             "INTENT_ANSWER_CHUNK",
             "KNOWLEDGE_CONTENT",
+            "NOTES",
+            "NOTES_CHUNK",
         ]
     }
 }
@@ -151,8 +181,11 @@ impl QueryResultType {
 impl ::std::fmt::Display for QueryResultType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            QueryResultType::BlockedCaseSummarizationChunk => write!(f, "BLOCKED_CASE_SUMMARIZATION_CHUNK"),
             QueryResultType::BlockedGenerativeAnswerChunk => write!(f, "BLOCKED_GENERATIVE_ANSWER_CHUNK"),
             QueryResultType::BlockedIntentAnswerChunk => write!(f, "BLOCKED_INTENT_ANSWER_CHUNK"),
+            QueryResultType::BlockedNotesChunk => write!(f, "BLOCKED_NOTES_CHUNK"),
+            QueryResultType::CaseSummarizationChunk => write!(f, "CASE_SUMMARIZATION_CHUNK"),
             QueryResultType::EmailGenerativeAnswerChunk => write!(f, "EMAIL_GENERATIVE_ANSWER_CHUNK"),
             QueryResultType::EmailOverviewChunk => write!(f, "EMAIL_OVERVIEW_CHUNK"),
             QueryResultType::EmailResponseChunk => write!(f, "EMAIL_RESPONSE_CHUNK"),
@@ -161,6 +194,8 @@ impl ::std::fmt::Display for QueryResultType {
             QueryResultType::IntentAnswer => write!(f, "INTENT_ANSWER"),
             QueryResultType::IntentAnswerChunk => write!(f, "INTENT_ANSWER_CHUNK"),
             QueryResultType::KnowledgeContent => write!(f, "KNOWLEDGE_CONTENT"),
+            QueryResultType::Notes => write!(f, "NOTES"),
+            QueryResultType::NotesChunk => write!(f, "NOTES_CHUNK"),
             QueryResultType::Unknown(value) => write!(f, "{value}"),
         }
     }

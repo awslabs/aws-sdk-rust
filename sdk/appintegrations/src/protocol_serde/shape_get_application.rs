@@ -134,6 +134,13 @@ pub(crate) fn de_get_application(
                         crate::protocol_serde::shape_application_source_config::de_application_source_config(tokens)?,
                     );
                 }
+                "ApplicationType" => {
+                    builder = builder.set_application_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ApplicationType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "Arn" => {
                     builder = builder.set_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

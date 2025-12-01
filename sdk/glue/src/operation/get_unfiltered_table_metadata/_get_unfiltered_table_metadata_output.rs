@@ -15,6 +15,8 @@ pub struct GetUnfilteredTableMetadataOutput {
     pub query_authorization_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be read by those engines.</p>
     pub is_multi_dialect_view: bool,
+    /// <p>Indicates if a table is a materialized view.</p>
+    pub is_materialized_view: bool,
     /// <p>The resource ARN of the parent resource extracted from the request.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A flag that instructs the engine not to push user-provided operations into the logical plan of the view during query planning. However, if set this flag does not guarantee that the engine will comply. Refer to the engine's documentation to understand the guarantees provided, if any.</p>
@@ -53,6 +55,10 @@ impl GetUnfilteredTableMetadataOutput {
     /// <p>Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be read by those engines.</p>
     pub fn is_multi_dialect_view(&self) -> bool {
         self.is_multi_dialect_view
+    }
+    /// <p>Indicates if a table is a materialized view.</p>
+    pub fn is_materialized_view(&self) -> bool {
+        self.is_materialized_view
     }
     /// <p>The resource ARN of the parent resource extracted from the request.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
@@ -95,6 +101,7 @@ pub struct GetUnfilteredTableMetadataOutputBuilder {
     pub(crate) cell_filters: ::std::option::Option<::std::vec::Vec<crate::types::ColumnRowFilter>>,
     pub(crate) query_authorization_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_multi_dialect_view: ::std::option::Option<bool>,
+    pub(crate) is_materialized_view: ::std::option::Option<bool>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) is_protected: ::std::option::Option<bool>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
@@ -198,6 +205,20 @@ impl GetUnfilteredTableMetadataOutputBuilder {
     pub fn get_is_multi_dialect_view(&self) -> &::std::option::Option<bool> {
         &self.is_multi_dialect_view
     }
+    /// <p>Indicates if a table is a materialized view.</p>
+    pub fn is_materialized_view(mut self, input: bool) -> Self {
+        self.is_materialized_view = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if a table is a materialized view.</p>
+    pub fn set_is_materialized_view(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_materialized_view = input;
+        self
+    }
+    /// <p>Indicates if a table is a materialized view.</p>
+    pub fn get_is_materialized_view(&self) -> &::std::option::Option<bool> {
+        &self.is_materialized_view
+    }
     /// <p>The resource ARN of the parent resource extracted from the request.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -278,6 +299,7 @@ impl GetUnfilteredTableMetadataOutputBuilder {
             cell_filters: self.cell_filters,
             query_authorization_id: self.query_authorization_id,
             is_multi_dialect_view: self.is_multi_dialect_view.unwrap_or_default(),
+            is_materialized_view: self.is_materialized_view.unwrap_or_default(),
             resource_arn: self.resource_arn,
             is_protected: self.is_protected.unwrap_or_default(),
             permissions: self.permissions,

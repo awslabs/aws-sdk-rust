@@ -96,6 +96,8 @@ pub struct Contact {
     pub outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
     /// <p>The attributes of the contact.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>List of next contact entries for the contact.</p>
+    pub next_contacts: ::std::option::Option<::std::vec::Vec<crate::types::NextContactEntry>>,
 }
 impl Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -286,6 +288,12 @@ impl Contact {
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
+    /// <p>List of next contact entries for the contact.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next_contacts.is_none()`.
+    pub fn next_contacts(&self) -> &[crate::types::NextContactEntry] {
+        self.next_contacts.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for Contact {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -336,6 +344,7 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("contact_details", &self.contact_details);
         formatter.field("outbound_strategy", &self.outbound_strategy);
         formatter.field("attributes", &self.attributes);
+        formatter.field("next_contacts", &self.next_contacts);
         formatter.finish()
     }
 }
@@ -396,6 +405,7 @@ pub struct ContactBuilder {
     pub(crate) contact_details: ::std::option::Option<crate::types::ContactDetails>,
     pub(crate) outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) next_contacts: ::std::option::Option<::std::vec::Vec<crate::types::NextContactEntry>>,
 }
 impl ContactBuilder {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -1082,6 +1092,26 @@ impl ContactBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
+    /// Appends an item to `next_contacts`.
+    ///
+    /// To override the contents of this collection use [`set_next_contacts`](Self::set_next_contacts).
+    ///
+    /// <p>List of next contact entries for the contact.</p>
+    pub fn next_contacts(mut self, input: crate::types::NextContactEntry) -> Self {
+        let mut v = self.next_contacts.unwrap_or_default();
+        v.push(input);
+        self.next_contacts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of next contact entries for the contact.</p>
+    pub fn set_next_contacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NextContactEntry>>) -> Self {
+        self.next_contacts = input;
+        self
+    }
+    /// <p>List of next contact entries for the contact.</p>
+    pub fn get_next_contacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NextContactEntry>> {
+        &self.next_contacts
+    }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {
@@ -1131,6 +1161,7 @@ impl ContactBuilder {
             contact_details: self.contact_details,
             outbound_strategy: self.outbound_strategy,
             attributes: self.attributes,
+            next_contacts: self.next_contacts,
         }
     }
 }
@@ -1183,6 +1214,7 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("contact_details", &self.contact_details);
         formatter.field("outbound_strategy", &self.outbound_strategy);
         formatter.field("attributes", &self.attributes);
+        formatter.field("next_contacts", &self.next_contacts);
         formatter.finish()
     }
 }

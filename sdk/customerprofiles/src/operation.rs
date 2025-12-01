@@ -31,6 +31,9 @@ pub mod create_integration_workflow;
 /// Types for the `CreateProfile` operation.
 pub mod create_profile;
 
+/// Types for the `CreateRecommender` operation.
+pub mod create_recommender;
+
 /// Types for the `CreateSegmentDefinition` operation.
 pub mod create_segment_definition;
 
@@ -52,6 +55,9 @@ pub mod delete_domain;
 /// Types for the `DeleteDomainLayout` operation.
 pub mod delete_domain_layout;
 
+/// Types for the `DeleteDomainObjectType` operation.
+pub mod delete_domain_object_type;
+
 /// Types for the `DeleteEventStream` operation.
 pub mod delete_event_stream;
 
@@ -72,6 +78,9 @@ pub mod delete_profile_object;
 
 /// Types for the `DeleteProfileObjectType` operation.
 pub mod delete_profile_object_type;
+
+/// Types for the `DeleteRecommender` operation.
+pub mod delete_recommender;
 
 /// Types for the `DeleteSegmentDefinition` operation.
 pub mod delete_segment_definition;
@@ -97,6 +106,9 @@ pub mod get_domain;
 /// Types for the `GetDomainLayout` operation.
 pub mod get_domain_layout;
 
+/// Types for the `GetDomainObjectType` operation.
+pub mod get_domain_object_type;
+
 /// Types for the `GetEventStream` operation.
 pub mod get_event_stream;
 
@@ -112,6 +124,9 @@ pub mod get_integration;
 /// Types for the `GetMatches` operation.
 pub mod get_matches;
 
+/// Types for the `GetObjectTypeAttributeStatistics` operation.
+pub mod get_object_type_attribute_statistics;
+
 /// Types for the `GetProfileHistoryRecord` operation.
 pub mod get_profile_history_record;
 
@@ -120,6 +135,12 @@ pub mod get_profile_object_type;
 
 /// Types for the `GetProfileObjectTypeTemplate` operation.
 pub mod get_profile_object_type_template;
+
+/// Types for the `GetProfileRecommendations` operation.
+pub mod get_profile_recommendations;
+
+/// Types for the `GetRecommender` operation.
+pub mod get_recommender;
 
 /// Types for the `GetSegmentDefinition` operation.
 pub mod get_segment_definition;
@@ -160,6 +181,9 @@ pub mod list_calculated_attributes_for_profile;
 /// Types for the `ListDomainLayouts` operation.
 pub mod list_domain_layouts;
 
+/// Types for the `ListDomainObjectTypes` operation.
+pub mod list_domain_object_types;
+
 /// Types for the `ListDomains` operation.
 pub mod list_domains;
 
@@ -174,6 +198,9 @@ pub mod list_identity_resolution_jobs;
 
 /// Types for the `ListIntegrations` operation.
 pub mod list_integrations;
+
+/// Types for the `ListObjectTypeAttributeValues` operation.
+pub mod list_object_type_attribute_values;
 
 /// Types for the `ListObjectTypeAttributes` operation.
 pub mod list_object_type_attributes;
@@ -193,6 +220,12 @@ pub mod list_profile_object_types;
 /// Types for the `ListProfileObjects` operation.
 pub mod list_profile_objects;
 
+/// Types for the `ListRecommenderRecipes` operation.
+pub mod list_recommender_recipes;
+
+/// Types for the `ListRecommenders` operation.
+pub mod list_recommenders;
+
 /// Types for the `ListRuleBasedMatches` operation.
 pub mod list_rule_based_matches;
 
@@ -211,6 +244,9 @@ pub mod list_workflows;
 /// Types for the `MergeProfiles` operation.
 pub mod merge_profiles;
 
+/// Types for the `PutDomainObjectType` operation.
+pub mod put_domain_object_type;
+
 /// Types for the `PutIntegration` operation.
 pub mod put_integration;
 
@@ -223,8 +259,14 @@ pub mod put_profile_object_type;
 /// Types for the `SearchProfiles` operation.
 pub mod search_profiles;
 
+/// Types for the `StartRecommender` operation.
+pub mod start_recommender;
+
 /// Types for the `StartUploadJob` operation.
 pub mod start_upload_job;
+
+/// Types for the `StopRecommender` operation.
+pub mod stop_recommender;
 
 /// Types for the `StopUploadJob` operation.
 pub mod stop_upload_job;
@@ -249,3 +291,6 @@ pub mod update_event_trigger;
 
 /// Types for the `UpdateProfile` operation.
 pub mod update_profile;
+
+/// Types for the `UpdateRecommender` operation.
+pub mod update_recommender;

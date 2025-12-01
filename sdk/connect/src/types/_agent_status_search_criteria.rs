@@ -7,11 +7,11 @@ pub struct AgentStatusSearchCriteria {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
     pub or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSearchCriteria>>,
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>,   <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>,  and <code>resourceID</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSearchCriteria>>,
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>,   <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>,  and <code>resourceID</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub string_condition: ::std::option::Option<crate::types::StringCondition>,
 }
@@ -23,7 +23,7 @@ impl AgentStatusSearchCriteria {
         self.or_conditions.as_deref().unwrap_or_default()
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>,   <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>,  and <code>resourceID</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.and_conditions.is_none()`.
@@ -31,7 +31,7 @@ impl AgentStatusSearchCriteria {
         self.and_conditions.as_deref().unwrap_or_default()
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>,   <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>,  and <code>resourceID</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub fn string_condition(&self) -> ::std::option::Option<&crate::types::StringCondition> {
         self.string_condition.as_ref()
@@ -78,7 +78,7 @@ impl AgentStatusSearchCriteriaBuilder {
     /// To override the contents of this collection use [`set_and_conditions`](Self::set_and_conditions).
     ///
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>,   <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>,  and <code>resourceID</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub fn and_conditions(mut self, input: crate::types::AgentStatusSearchCriteria) -> Self {
         let mut v = self.and_conditions.unwrap_or_default();
@@ -87,34 +87,34 @@ impl AgentStatusSearchCriteriaBuilder {
         self
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>,   <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>,  and <code>resourceID</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub fn set_and_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSearchCriteria>>) -> Self {
         self.and_conditions = input;
         self
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>,   <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>,  and <code>resourceID</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub fn get_and_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentStatusSearchCriteria>> {
         &self.and_conditions
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>,   <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>,  and <code>resourceID</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub fn string_condition(mut self, input: crate::types::StringCondition) -> Self {
         self.string_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>,   <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>,  and <code>resourceID</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub fn set_string_condition(mut self, input: ::std::option::Option<crate::types::StringCondition>) -> Self {
         self.string_condition = input;
         self
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p><note>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>,   <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>,  and <code>resourceID</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, <code>state</code>, <code>type</code>, <code>displayOrder</code>, and <code>resourceID</code>.</p>
     /// </note>
     pub fn get_string_condition(&self) -> &::std::option::Option<crate::types::StringCondition> {
         &self.string_condition

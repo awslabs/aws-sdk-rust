@@ -28,6 +28,14 @@ pub struct EvaluationSearchMetadata {
     pub acknowledged_by: ::std::option::Option<::std::string::String>,
     /// <p>The comment from the agent when they acknowledged the evaluation.</p>
     pub acknowledger_comment: ::std::option::Option<::std::string::String>,
+    /// <p>Identifier of the sampling job.</p>
+    pub sampling_job_id: ::std::option::Option<::std::string::String>,
+    /// <p>Identifier for the review.</p>
+    pub review_id: ::std::option::Option<::std::string::String>,
+    /// <p>Role of a contact participant in the evaluation.</p>
+    pub contact_participant_role: ::std::option::Option<crate::types::ContactParticipantRole>,
+    /// <p>Identifier for a contact participant in the evaluation.</p>
+    pub contact_participant_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationSearchMetadata {
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
@@ -80,6 +88,22 @@ impl EvaluationSearchMetadata {
     pub fn acknowledger_comment(&self) -> ::std::option::Option<&str> {
         self.acknowledger_comment.as_deref()
     }
+    /// <p>Identifier of the sampling job.</p>
+    pub fn sampling_job_id(&self) -> ::std::option::Option<&str> {
+        self.sampling_job_id.as_deref()
+    }
+    /// <p>Identifier for the review.</p>
+    pub fn review_id(&self) -> ::std::option::Option<&str> {
+        self.review_id.as_deref()
+    }
+    /// <p>Role of a contact participant in the evaluation.</p>
+    pub fn contact_participant_role(&self) -> ::std::option::Option<&crate::types::ContactParticipantRole> {
+        self.contact_participant_role.as_ref()
+    }
+    /// <p>Identifier for a contact participant in the evaluation.</p>
+    pub fn contact_participant_id(&self) -> ::std::option::Option<&str> {
+        self.contact_participant_id.as_deref()
+    }
 }
 impl EvaluationSearchMetadata {
     /// Creates a new builder-style object to manufacture [`EvaluationSearchMetadata`](crate::types::EvaluationSearchMetadata).
@@ -104,6 +128,10 @@ pub struct EvaluationSearchMetadataBuilder {
     pub(crate) acknowledged_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) acknowledged_by: ::std::option::Option<::std::string::String>,
     pub(crate) acknowledger_comment: ::std::option::Option<::std::string::String>,
+    pub(crate) sampling_job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) review_id: ::std::option::Option<::std::string::String>,
+    pub(crate) contact_participant_role: ::std::option::Option<crate::types::ContactParticipantRole>,
+    pub(crate) contact_participant_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationSearchMetadataBuilder {
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
@@ -276,6 +304,62 @@ impl EvaluationSearchMetadataBuilder {
     pub fn get_acknowledger_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.acknowledger_comment
     }
+    /// <p>Identifier of the sampling job.</p>
+    pub fn sampling_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sampling_job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifier of the sampling job.</p>
+    pub fn set_sampling_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sampling_job_id = input;
+        self
+    }
+    /// <p>Identifier of the sampling job.</p>
+    pub fn get_sampling_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sampling_job_id
+    }
+    /// <p>Identifier for the review.</p>
+    pub fn review_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.review_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifier for the review.</p>
+    pub fn set_review_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.review_id = input;
+        self
+    }
+    /// <p>Identifier for the review.</p>
+    pub fn get_review_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.review_id
+    }
+    /// <p>Role of a contact participant in the evaluation.</p>
+    pub fn contact_participant_role(mut self, input: crate::types::ContactParticipantRole) -> Self {
+        self.contact_participant_role = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Role of a contact participant in the evaluation.</p>
+    pub fn set_contact_participant_role(mut self, input: ::std::option::Option<crate::types::ContactParticipantRole>) -> Self {
+        self.contact_participant_role = input;
+        self
+    }
+    /// <p>Role of a contact participant in the evaluation.</p>
+    pub fn get_contact_participant_role(&self) -> &::std::option::Option<crate::types::ContactParticipantRole> {
+        &self.contact_participant_role
+    }
+    /// <p>Identifier for a contact participant in the evaluation.</p>
+    pub fn contact_participant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.contact_participant_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifier for a contact participant in the evaluation.</p>
+    pub fn set_contact_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.contact_participant_id = input;
+        self
+    }
+    /// <p>Identifier for a contact participant in the evaluation.</p>
+    pub fn get_contact_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_participant_id
+    }
     /// Consumes the builder and constructs a [`EvaluationSearchMetadata`](crate::types::EvaluationSearchMetadata).
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_id`](crate::types::builders::EvaluationSearchMetadataBuilder::contact_id)
@@ -304,6 +388,10 @@ impl EvaluationSearchMetadataBuilder {
             acknowledged_time: self.acknowledged_time,
             acknowledged_by: self.acknowledged_by,
             acknowledger_comment: self.acknowledger_comment,
+            sampling_job_id: self.sampling_job_id,
+            review_id: self.review_id,
+            contact_participant_role: self.contact_participant_role,
+            contact_participant_id: self.contact_participant_id,
         })
     }
 }

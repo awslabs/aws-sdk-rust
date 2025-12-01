@@ -9,5 +9,8 @@ pub fn ser_create_segment_estimate_input_input(
         crate::protocol_serde::shape_segment_group_structure::ser_segment_group_structure(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.segment_sql_query {
+        object.key("SegmentSqlQuery").string(var_3.as_str());
+    }
     Ok(())
 }

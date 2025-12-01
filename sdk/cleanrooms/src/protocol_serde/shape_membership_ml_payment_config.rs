@@ -15,6 +15,15 @@ pub fn ser_membership_ml_payment_config(
         crate::protocol_serde::shape_membership_model_inference_payment_config::ser_membership_model_inference_payment_config(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.synthetic_data_generation {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("syntheticDataGeneration").start_object();
+        crate::protocol_serde::shape_membership_synthetic_data_generation_payment_config::ser_membership_synthetic_data_generation_payment_config(
+            &mut object_6,
+            var_5,
+        )?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -42,6 +51,11 @@ where
                             "modelInference" => {
                                 builder = builder.set_model_inference(
                                     crate::protocol_serde::shape_membership_model_inference_payment_config::de_membership_model_inference_payment_config(tokens)?
+                                );
+                            }
+                            "syntheticDataGeneration" => {
+                                builder = builder.set_synthetic_data_generation(
+                                    crate::protocol_serde::shape_membership_synthetic_data_generation_payment_config::de_membership_synthetic_data_generation_payment_config(tokens)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

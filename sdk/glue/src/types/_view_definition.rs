@@ -8,8 +8,18 @@ pub struct ViewDefinition {
     pub is_protected: ::std::option::Option<bool>,
     /// <p>The definer of a view in SQL.</p>
     pub definer: ::std::option::Option<::std::string::String>,
+    /// <p>The ID value that identifies this view's version. For materialized views, the version ID is the Apache Iceberg table's snapshot ID.</p>
+    pub view_version_id: i64,
+    /// <p>The version ID of the Apache Iceberg table.</p>
+    pub view_version_token: ::std::option::Option<::std::string::String>,
+    /// <p>Auto refresh interval in seconds for the materialized view. If not specified, the view will not automatically refresh.</p>
+    pub refresh_seconds: ::std::option::Option<i64>,
+    /// <p>Sets the method used for the most recent refresh.</p>
+    pub last_refresh_type: ::std::option::Option<crate::types::LastRefreshType>,
     /// <p>A list of table Amazon Resource Names (ARNs).</p>
     pub sub_objects: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>List of the Apache Iceberg table versions referenced by the materialized view.</p>
+    pub sub_object_version_ids: ::std::option::Option<::std::vec::Vec<i64>>,
     /// <p>A list of representations.</p>
     pub representations: ::std::option::Option<::std::vec::Vec<crate::types::ViewRepresentation>>,
 }
@@ -22,11 +32,33 @@ impl ViewDefinition {
     pub fn definer(&self) -> ::std::option::Option<&str> {
         self.definer.as_deref()
     }
+    /// <p>The ID value that identifies this view's version. For materialized views, the version ID is the Apache Iceberg table's snapshot ID.</p>
+    pub fn view_version_id(&self) -> i64 {
+        self.view_version_id
+    }
+    /// <p>The version ID of the Apache Iceberg table.</p>
+    pub fn view_version_token(&self) -> ::std::option::Option<&str> {
+        self.view_version_token.as_deref()
+    }
+    /// <p>Auto refresh interval in seconds for the materialized view. If not specified, the view will not automatically refresh.</p>
+    pub fn refresh_seconds(&self) -> ::std::option::Option<i64> {
+        self.refresh_seconds
+    }
+    /// <p>Sets the method used for the most recent refresh.</p>
+    pub fn last_refresh_type(&self) -> ::std::option::Option<&crate::types::LastRefreshType> {
+        self.last_refresh_type.as_ref()
+    }
     /// <p>A list of table Amazon Resource Names (ARNs).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_objects.is_none()`.
     pub fn sub_objects(&self) -> &[::std::string::String] {
         self.sub_objects.as_deref().unwrap_or_default()
+    }
+    /// <p>List of the Apache Iceberg table versions referenced by the materialized view.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_object_version_ids.is_none()`.
+    pub fn sub_object_version_ids(&self) -> &[i64] {
+        self.sub_object_version_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of representations.</p>
     ///
@@ -48,7 +80,12 @@ impl ViewDefinition {
 pub struct ViewDefinitionBuilder {
     pub(crate) is_protected: ::std::option::Option<bool>,
     pub(crate) definer: ::std::option::Option<::std::string::String>,
+    pub(crate) view_version_id: ::std::option::Option<i64>,
+    pub(crate) view_version_token: ::std::option::Option<::std::string::String>,
+    pub(crate) refresh_seconds: ::std::option::Option<i64>,
+    pub(crate) last_refresh_type: ::std::option::Option<crate::types::LastRefreshType>,
     pub(crate) sub_objects: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sub_object_version_ids: ::std::option::Option<::std::vec::Vec<i64>>,
     pub(crate) representations: ::std::option::Option<::std::vec::Vec<crate::types::ViewRepresentation>>,
 }
 impl ViewDefinitionBuilder {
@@ -80,6 +117,62 @@ impl ViewDefinitionBuilder {
     pub fn get_definer(&self) -> &::std::option::Option<::std::string::String> {
         &self.definer
     }
+    /// <p>The ID value that identifies this view's version. For materialized views, the version ID is the Apache Iceberg table's snapshot ID.</p>
+    pub fn view_version_id(mut self, input: i64) -> Self {
+        self.view_version_id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ID value that identifies this view's version. For materialized views, the version ID is the Apache Iceberg table's snapshot ID.</p>
+    pub fn set_view_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.view_version_id = input;
+        self
+    }
+    /// <p>The ID value that identifies this view's version. For materialized views, the version ID is the Apache Iceberg table's snapshot ID.</p>
+    pub fn get_view_version_id(&self) -> &::std::option::Option<i64> {
+        &self.view_version_id
+    }
+    /// <p>The version ID of the Apache Iceberg table.</p>
+    pub fn view_version_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.view_version_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version ID of the Apache Iceberg table.</p>
+    pub fn set_view_version_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.view_version_token = input;
+        self
+    }
+    /// <p>The version ID of the Apache Iceberg table.</p>
+    pub fn get_view_version_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_version_token
+    }
+    /// <p>Auto refresh interval in seconds for the materialized view. If not specified, the view will not automatically refresh.</p>
+    pub fn refresh_seconds(mut self, input: i64) -> Self {
+        self.refresh_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Auto refresh interval in seconds for the materialized view. If not specified, the view will not automatically refresh.</p>
+    pub fn set_refresh_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.refresh_seconds = input;
+        self
+    }
+    /// <p>Auto refresh interval in seconds for the materialized view. If not specified, the view will not automatically refresh.</p>
+    pub fn get_refresh_seconds(&self) -> &::std::option::Option<i64> {
+        &self.refresh_seconds
+    }
+    /// <p>Sets the method used for the most recent refresh.</p>
+    pub fn last_refresh_type(mut self, input: crate::types::LastRefreshType) -> Self {
+        self.last_refresh_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the method used for the most recent refresh.</p>
+    pub fn set_last_refresh_type(mut self, input: ::std::option::Option<crate::types::LastRefreshType>) -> Self {
+        self.last_refresh_type = input;
+        self
+    }
+    /// <p>Sets the method used for the most recent refresh.</p>
+    pub fn get_last_refresh_type(&self) -> &::std::option::Option<crate::types::LastRefreshType> {
+        &self.last_refresh_type
+    }
     /// Appends an item to `sub_objects`.
     ///
     /// To override the contents of this collection use [`set_sub_objects`](Self::set_sub_objects).
@@ -99,6 +192,26 @@ impl ViewDefinitionBuilder {
     /// <p>A list of table Amazon Resource Names (ARNs).</p>
     pub fn get_sub_objects(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sub_objects
+    }
+    /// Appends an item to `sub_object_version_ids`.
+    ///
+    /// To override the contents of this collection use [`set_sub_object_version_ids`](Self::set_sub_object_version_ids).
+    ///
+    /// <p>List of the Apache Iceberg table versions referenced by the materialized view.</p>
+    pub fn sub_object_version_ids(mut self, input: i64) -> Self {
+        let mut v = self.sub_object_version_ids.unwrap_or_default();
+        v.push(input);
+        self.sub_object_version_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of the Apache Iceberg table versions referenced by the materialized view.</p>
+    pub fn set_sub_object_version_ids(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
+        self.sub_object_version_ids = input;
+        self
+    }
+    /// <p>List of the Apache Iceberg table versions referenced by the materialized view.</p>
+    pub fn get_sub_object_version_ids(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+        &self.sub_object_version_ids
     }
     /// Appends an item to `representations`.
     ///
@@ -125,7 +238,12 @@ impl ViewDefinitionBuilder {
         crate::types::ViewDefinition {
             is_protected: self.is_protected,
             definer: self.definer,
+            view_version_id: self.view_version_id.unwrap_or_default(),
+            view_version_token: self.view_version_token,
+            refresh_seconds: self.refresh_seconds,
+            last_refresh_type: self.last_refresh_type,
             sub_objects: self.sub_objects,
+            sub_object_version_ids: self.sub_object_version_ids,
             representations: self.representations,
         }
     }

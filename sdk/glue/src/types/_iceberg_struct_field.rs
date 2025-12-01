@@ -14,6 +14,10 @@ pub struct IcebergStructField {
     pub required: bool,
     /// <p>Optional documentation or description text that provides additional context about the purpose and usage of this field.</p>
     pub doc: ::std::option::Option<::std::string::String>,
+    /// <p>Default value used to populate the field's value for all records that were written before the field was added to the schema. This enables backward compatibility when adding new fields to existing Iceberg tables.</p>
+    pub initial_default: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>Default value used to populate the field's value for any records written after the field was added to the schema, if the writer does not supply the field's value. This can be changed through schema evolution.</p>
+    pub write_default: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl IcebergStructField {
     /// <p>The unique identifier assigned to this field within the Iceberg table schema, used for schema evolution and field tracking.</p>
@@ -37,6 +41,14 @@ impl IcebergStructField {
     pub fn doc(&self) -> ::std::option::Option<&str> {
         self.doc.as_deref()
     }
+    /// <p>Default value used to populate the field's value for all records that were written before the field was added to the schema. This enables backward compatibility when adding new fields to existing Iceberg tables.</p>
+    pub fn initial_default(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.initial_default.as_ref()
+    }
+    /// <p>Default value used to populate the field's value for any records written after the field was added to the schema, if the writer does not supply the field's value. This can be changed through schema evolution.</p>
+    pub fn write_default(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.write_default.as_ref()
+    }
 }
 impl IcebergStructField {
     /// Creates a new builder-style object to manufacture [`IcebergStructField`](crate::types::IcebergStructField).
@@ -54,6 +66,8 @@ pub struct IcebergStructFieldBuilder {
     pub(crate) r#type: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) required: ::std::option::Option<bool>,
     pub(crate) doc: ::std::option::Option<::std::string::String>,
+    pub(crate) initial_default: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) write_default: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl IcebergStructFieldBuilder {
     /// <p>The unique identifier assigned to this field within the Iceberg table schema, used for schema evolution and field tracking.</p>
@@ -130,6 +144,34 @@ impl IcebergStructFieldBuilder {
     pub fn get_doc(&self) -> &::std::option::Option<::std::string::String> {
         &self.doc
     }
+    /// <p>Default value used to populate the field's value for all records that were written before the field was added to the schema. This enables backward compatibility when adding new fields to existing Iceberg tables.</p>
+    pub fn initial_default(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.initial_default = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Default value used to populate the field's value for all records that were written before the field was added to the schema. This enables backward compatibility when adding new fields to existing Iceberg tables.</p>
+    pub fn set_initial_default(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.initial_default = input;
+        self
+    }
+    /// <p>Default value used to populate the field's value for all records that were written before the field was added to the schema. This enables backward compatibility when adding new fields to existing Iceberg tables.</p>
+    pub fn get_initial_default(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.initial_default
+    }
+    /// <p>Default value used to populate the field's value for any records written after the field was added to the schema, if the writer does not supply the field's value. This can be changed through schema evolution.</p>
+    pub fn write_default(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.write_default = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Default value used to populate the field's value for any records written after the field was added to the schema, if the writer does not supply the field's value. This can be changed through schema evolution.</p>
+    pub fn set_write_default(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.write_default = input;
+        self
+    }
+    /// <p>Default value used to populate the field's value for any records written after the field was added to the schema, if the writer does not supply the field's value. This can be changed through schema evolution.</p>
+    pub fn get_write_default(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.write_default
+    }
     /// Consumes the builder and constructs a [`IcebergStructField`](crate::types::IcebergStructField).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::IcebergStructFieldBuilder::name)
@@ -151,6 +193,8 @@ impl IcebergStructFieldBuilder {
             })?,
             required: self.required.unwrap_or_default(),
             doc: self.doc,
+            initial_default: self.initial_default,
+            write_default: self.write_default,
         })
     }
 }

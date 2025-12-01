@@ -203,6 +203,8 @@ pub use crate::types::_content_association_summary::ContentAssociationSummary;
 
 pub use crate::types::_assistant_data::AssistantData;
 
+pub use crate::types::_orchestrator_configuration_entry::OrchestratorConfigurationEntry;
+
 pub use crate::types::_ai_agent_configuration_data::AiAgentConfigurationData;
 
 pub use crate::types::_ai_agent_type::AiAgentType;
@@ -219,6 +221,20 @@ pub use crate::types::_assistant_type::AssistantType;
 
 pub use crate::types::_session_summary::SessionSummary;
 
+pub use crate::types::_retrieve_result::RetrieveResult;
+
+pub use crate::types::_reference_type::ReferenceType;
+
+pub use crate::types::_retrieval_configuration::RetrievalConfiguration;
+
+pub use crate::types::_knowledge_base_search_type::KnowledgeBaseSearchType;
+
+pub use crate::types::_retrieval_filter_configuration::RetrievalFilterConfiguration;
+
+pub use crate::types::_filter_attribute::FilterAttribute;
+
+pub use crate::types::_knowledge_source::KnowledgeSource;
+
 pub use crate::types::_result_data::ResultData;
 
 pub use crate::types::_query_result_type::QueryResultType;
@@ -226,6 +242,14 @@ pub use crate::types::_query_result_type::QueryResultType;
 pub use crate::types::_data_summary::DataSummary;
 
 pub use crate::types::_data_details::DataDetails;
+
+pub use crate::types::_notes_chunk_data_details::NotesChunkDataDetails;
+
+pub use crate::types::_notes_data_details::NotesDataDetails;
+
+pub use crate::types::_suggested_message_data_details::SuggestedMessageDataDetails;
+
+pub use crate::types::_case_summarization_chunk_data_details::CaseSummarizationChunkDataDetails;
 
 pub use crate::types::_email_generative_answer_chunk_data_details::EmailGenerativeAnswerChunkDataDetails;
 
@@ -259,17 +283,17 @@ pub use crate::types::_content_data_details::ContentDataDetails;
 
 pub use crate::types::_data_reference::DataReference;
 
+pub use crate::types::_suggested_message_reference::SuggestedMessageReference;
+
 pub use crate::types::_generative_reference::GenerativeReference;
 
 pub use crate::types::_content_reference::ContentReference;
 
-pub use crate::types::_reference_type::ReferenceType;
-
 pub use crate::types::_document::Document;
 
-pub use crate::types::_knowledge_base_search_type::KnowledgeBaseSearchType;
-
 pub use crate::types::_query_input_data::QueryInputData;
+
+pub use crate::types::_case_summarization_input_data::CaseSummarizationInputData;
 
 pub use crate::types::_intent_input_data::IntentInputData;
 
@@ -325,13 +349,43 @@ pub use crate::types::_message_input::MessageInput;
 
 pub use crate::types::_message_data::MessageData;
 
+pub use crate::types::_tool_use_result_data::ToolUseResultData;
+
 pub use crate::types::_text_message::TextMessage;
+
+pub use crate::types::_ai_guardrail_assessment::AiGuardrailAssessment;
+
+pub use crate::types::_citation::Citation;
 
 pub use crate::types::_message_type::MessageType;
 
-pub use crate::types::_message_output::MessageOutput;
+pub use crate::types::_span::Span;
+
+pub use crate::types::_span_attributes::SpanAttributes;
+
+pub use crate::types::_ai_prompt_type::AiPromptType;
+
+pub use crate::types::_span_message_value::SpanMessageValue;
+
+pub use crate::types::_span_tool_result_value::SpanToolResultValue;
+
+pub use crate::types::_span_tool_use_value::SpanToolUseValue;
+
+pub use crate::types::_span_text_value::SpanTextValue;
+
+pub use crate::types::_span_citation::SpanCitation;
+
+pub use crate::types::_span_message::SpanMessage;
 
 pub use crate::types::_participant::Participant;
+
+pub use crate::types::_span_status::SpanStatus;
+
+pub use crate::types::_span_type::SpanType;
+
+pub use crate::types::_message_output::MessageOutput;
+
+pub use crate::types::_message_filter_type::MessageFilterType;
 
 pub use crate::types::_conversation_state::ConversationState;
 
@@ -355,6 +409,8 @@ pub use crate::types::_assistant_association_data::AssistantAssociationData;
 
 pub use crate::types::_assistant_association_output_data::AssistantAssociationOutputData;
 
+pub use crate::types::_external_bedrock_knowledge_base_config::ExternalBedrockKnowledgeBaseConfig;
+
 pub use crate::types::_knowledge_base_association_data::KnowledgeBaseAssociationData;
 
 pub use crate::types::_association_type::AssociationType;
@@ -375,9 +431,11 @@ pub use crate::types::_ai_prompt_api_format::AiPromptApiFormat;
 
 pub use crate::types::_ai_prompt_template_type::AiPromptTemplateType;
 
-pub use crate::types::_ai_prompt_type::AiPromptType;
-
 pub use crate::types::_ai_prompt_data::AiPromptData;
+
+pub use crate::types::_ai_prompt_inference_configuration::AiPromptInferenceConfiguration;
+
+pub use crate::types::_text_ai_prompt_inference_configuration::TextAiPromptInferenceConfiguration;
 
 pub use crate::types::_ai_prompt_template_configuration::AiPromptTemplateConfiguration;
 
@@ -433,6 +491,34 @@ pub use crate::types::_ai_agent_summary::AiAgentSummary;
 
 pub use crate::types::_ai_agent_configuration::AiAgentConfiguration;
 
+pub use crate::types::_case_summarization_ai_agent_configuration::CaseSummarizationAiAgentConfiguration;
+
+pub use crate::types::_note_taking_ai_agent_configuration::NoteTakingAiAgentConfiguration;
+
+pub use crate::types::_orchestration_ai_agent_configuration::OrchestrationAiAgentConfiguration;
+
+pub use crate::types::_tool_configuration::ToolConfiguration;
+
+pub use crate::types::_user_interaction_configuration::UserInteractionConfiguration;
+
+pub use crate::types::_annotation::Annotation;
+
+pub use crate::types::_tool_output_filter::ToolOutputFilter;
+
+pub use crate::types::_tool_output_configuration::ToolOutputConfiguration;
+
+pub use crate::types::_tool_override_input_value::ToolOverrideInputValue;
+
+pub use crate::types::_tool_override_input_value_configuration::ToolOverrideInputValueConfiguration;
+
+pub use crate::types::_tool_override_constant_input_value::ToolOverrideConstantInputValue;
+
+pub use crate::types::_tool_override_input_value_type::ToolOverrideInputValueType;
+
+pub use crate::types::_tool_instruction::ToolInstruction;
+
+pub use crate::types::_tool_type::ToolType;
+
 pub use crate::types::_email_generative_answer_ai_agent_configuration::EmailGenerativeAnswerAiAgentConfiguration;
 
 pub use crate::types::_association_configuration::AssociationConfiguration;
@@ -471,6 +557,8 @@ mod _ai_agent_type;
 
 mod _ai_agent_version_summary;
 
+mod _ai_guardrail_assessment;
+
 mod _ai_guardrail_content_policy_config;
 
 mod _ai_guardrail_contextual_grounding_policy_config;
@@ -491,6 +579,8 @@ mod _ai_prompt_api_format;
 
 mod _ai_prompt_data;
 
+mod _ai_prompt_inference_configuration;
+
 mod _ai_prompt_summary;
 
 mod _ai_prompt_template_configuration;
@@ -502,6 +592,8 @@ mod _ai_prompt_type;
 mod _ai_prompt_version_summary;
 
 mod _amazon_connect_guide_association_data;
+
+mod _annotation;
 
 mod _answer_recommendation_ai_agent_configuration;
 
@@ -537,11 +629,19 @@ mod _association_type;
 
 mod _bedrock_foundation_model_configuration_for_parsing;
 
+mod _case_summarization_ai_agent_configuration;
+
+mod _case_summarization_chunk_data_details;
+
+mod _case_summarization_input_data;
+
 mod _channel_subtype;
 
 mod _chunking_configuration;
 
 mod _chunking_strategy;
+
+mod _citation;
 
 mod _citation_span;
 
@@ -611,11 +711,15 @@ mod _email_response_chunk_data_details;
 
 mod _extended_message_template_data;
 
+mod _external_bedrock_knowledge_base_config;
+
 mod _external_source;
 
 mod _external_source_configuration;
 
 mod _filter;
+
+mod _filter_attribute;
 
 mod _filter_field;
 
@@ -693,6 +797,8 @@ mod _knowledge_base_summary;
 
 mod _knowledge_base_type;
 
+mod _knowledge_source;
+
 mod _managed_source_configuration;
 
 mod _manual_search_ai_agent_configuration;
@@ -700,6 +806,8 @@ mod _manual_search_ai_agent_configuration;
 mod _message_configuration;
 
 mod _message_data;
+
+mod _message_filter_type;
 
 mod _message_input;
 
@@ -741,9 +849,19 @@ mod _message_template_version_summary;
 
 mod _message_type;
 
+mod _note_taking_ai_agent_configuration;
+
+mod _notes_chunk_data_details;
+
+mod _notes_data_details;
+
 mod _notify_recommendations_received_error;
 
 mod _or_condition;
+
+mod _orchestration_ai_agent_configuration;
+
+mod _orchestrator_configuration_entry;
 
 mod _order;
 
@@ -837,6 +955,12 @@ mod _rendering_configuration;
 
 mod _result_data;
 
+mod _retrieval_configuration;
+
+mod _retrieval_filter_configuration;
+
+mod _retrieve_result;
+
 mod _runtime_session_data;
 
 mod _runtime_session_data_value;
@@ -871,7 +995,31 @@ mod _source_content_data_details;
 
 mod _source_content_type;
 
+mod _span;
+
+mod _span_attributes;
+
+mod _span_citation;
+
+mod _span_message;
+
+mod _span_message_value;
+
+mod _span_status;
+
+mod _span_text_value;
+
+mod _span_tool_result_value;
+
+mod _span_tool_use_value;
+
+mod _span_type;
+
 mod _status;
+
+mod _suggested_message_data_details;
+
+mod _suggested_message_reference;
 
 mod _sync_status;
 
@@ -885,13 +1033,37 @@ mod _tag_filter;
 
 mod _target_type;
 
+mod _text_ai_prompt_inference_configuration;
+
 mod _text_data;
 
 mod _text_full_ai_prompt_edit_template_configuration;
 
 mod _text_message;
 
+mod _tool_configuration;
+
+mod _tool_instruction;
+
+mod _tool_output_configuration;
+
+mod _tool_output_filter;
+
+mod _tool_override_constant_input_value;
+
+mod _tool_override_input_value;
+
+mod _tool_override_input_value_configuration;
+
+mod _tool_override_input_value_type;
+
+mod _tool_type;
+
+mod _tool_use_result_data;
+
 mod _url_configuration;
+
+mod _user_interaction_configuration;
 
 mod _vector_ingestion_configuration;
 

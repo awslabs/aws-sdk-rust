@@ -15,6 +15,8 @@ pub struct GetNextMessageOutput {
     pub next_message_token: ::std::option::Option<::std::string::String>,
     /// <p>The conversation data stored on an Amazon Q in Connect Session.</p>
     pub conversation_session_data: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeSessionData>>,
+    /// <p>Indicates whether the chunked response has been terminated.</p>
+    pub chunked_response_terminated: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetNextMessageOutput {
@@ -45,6 +47,10 @@ impl GetNextMessageOutput {
     pub fn conversation_session_data(&self) -> &[crate::types::RuntimeSessionData] {
         self.conversation_session_data.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether the chunked response has been terminated.</p>
+    pub fn chunked_response_terminated(&self) -> ::std::option::Option<bool> {
+        self.chunked_response_terminated
+    }
 }
 impl ::aws_types::request_id::RequestId for GetNextMessageOutput {
     fn request_id(&self) -> Option<&str> {
@@ -68,6 +74,7 @@ pub struct GetNextMessageOutputBuilder {
     pub(crate) conversation_state: ::std::option::Option<crate::types::ConversationState>,
     pub(crate) next_message_token: ::std::option::Option<::std::string::String>,
     pub(crate) conversation_session_data: ::std::option::Option<::std::vec::Vec<crate::types::RuntimeSessionData>>,
+    pub(crate) chunked_response_terminated: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetNextMessageOutputBuilder {
@@ -165,6 +172,20 @@ impl GetNextMessageOutputBuilder {
     pub fn get_conversation_session_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuntimeSessionData>> {
         &self.conversation_session_data
     }
+    /// <p>Indicates whether the chunked response has been terminated.</p>
+    pub fn chunked_response_terminated(mut self, input: bool) -> Self {
+        self.chunked_response_terminated = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the chunked response has been terminated.</p>
+    pub fn set_chunked_response_terminated(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.chunked_response_terminated = input;
+        self
+    }
+    /// <p>Indicates whether the chunked response has been terminated.</p>
+    pub fn get_chunked_response_terminated(&self) -> &::std::option::Option<bool> {
+        &self.chunked_response_terminated
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -198,6 +219,7 @@ impl GetNextMessageOutputBuilder {
             conversation_state: self.conversation_state,
             next_message_token: self.next_message_token,
             conversation_session_data: self.conversation_session_data,
+            chunked_response_terminated: self.chunked_response_terminated,
             _request_id: self._request_id,
         })
     }

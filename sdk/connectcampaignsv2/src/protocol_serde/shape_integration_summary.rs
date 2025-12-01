@@ -40,6 +40,11 @@ where
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'qConnect' cannot be null"),
                             )?,
                         )),
+                        "lambda" => Some(crate::types::IntegrationSummary::Lambda(
+                            crate::protocol_serde::shape_lambda_integration_summary::de_lambda_integration_summary(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lambda' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::IntegrationSummary::Unknown)

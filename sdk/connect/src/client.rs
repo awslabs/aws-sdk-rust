@@ -166,11 +166,21 @@ mod associate_routing_profile_queues;
 
 mod associate_security_key;
 
+mod associate_security_profiles;
+
 mod associate_traffic_distribution_group_user;
 
 mod associate_user_proficiencies;
 
+mod associate_workspace;
+
 mod batch_associate_analytics_data_set;
+
+mod batch_create_data_table_value;
+
+mod batch_delete_data_table_value;
+
+mod batch_describe_data_table_value;
 
 mod batch_disassociate_analytics_data_set;
 
@@ -179,6 +189,8 @@ mod batch_get_attached_file_metadata;
 mod batch_get_flow_association;
 
 mod batch_put_contact;
+
+mod batch_update_data_table_value;
 
 mod claim_phone_number;
 
@@ -197,6 +209,10 @@ mod create_contact_flow_module_alias;
 mod create_contact_flow_module_version;
 
 mod create_contact_flow_version;
+
+mod create_data_table;
+
+mod create_data_table_attribute;
 
 mod create_email_address;
 
@@ -246,6 +262,10 @@ mod create_view_version;
 
 mod create_vocabulary;
 
+mod create_workspace;
+
+mod create_workspace_page;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -288,6 +308,10 @@ mod delete_contact_flow_module_alias;
 mod delete_contact_flow_module_version;
 
 mod delete_contact_flow_version;
+
+mod delete_data_table;
+
+mod delete_data_table_attribute;
 
 mod delete_email_address;
 
@@ -333,6 +357,12 @@ mod delete_view_version;
 
 mod delete_vocabulary;
 
+mod delete_workspace;
+
+mod delete_workspace_media;
+
+mod delete_workspace_page;
+
 mod describe_agent_status;
 
 mod describe_authentication_profile;
@@ -346,6 +376,10 @@ mod describe_contact_flow;
 mod describe_contact_flow_module;
 
 mod describe_contact_flow_module_alias;
+
+mod describe_data_table;
+
+mod describe_data_table_attribute;
 
 mod describe_email_address;
 
@@ -389,6 +423,8 @@ mod describe_view;
 
 mod describe_vocabulary;
 
+mod describe_workspace;
+
 mod disassociate_analytics_data_set;
 
 mod disassociate_approved_origin;
@@ -413,11 +449,17 @@ mod disassociate_routing_profile_queues;
 
 mod disassociate_security_key;
 
+mod disassociate_security_profiles;
+
 mod disassociate_traffic_distribution_group_user;
 
 mod disassociate_user_proficiencies;
 
+mod disassociate_workspace;
+
 mod dismiss_user_contact;
+
+mod evaluate_data_table_values;
 
 mod get_attached_file;
 
@@ -447,6 +489,8 @@ mod get_traffic_distribution;
 
 mod import_phone_number;
 
+mod import_workspace_media;
+
 mod list_agent_statuses;
 
 mod list_analytics_data_associations;
@@ -475,7 +519,17 @@ mod list_contact_flows;
 
 mod list_contact_references;
 
+mod list_data_table_attributes;
+
+mod list_data_table_primary_values;
+
+mod list_data_table_values;
+
+mod list_data_tables;
+
 mod list_default_vocabularies;
+
+mod list_entity_security_profiles;
 
 mod list_evaluation_form_versions;
 
@@ -527,6 +581,8 @@ mod list_security_keys;
 
 mod list_security_profile_applications;
 
+mod list_security_profile_flow_modules;
+
 mod list_security_profile_permissions;
 
 mod list_security_profiles;
@@ -550,6 +606,12 @@ mod list_users;
 mod list_view_versions;
 
 mod list_views;
+
+mod list_workspace_media;
+
+mod list_workspace_pages;
+
+mod list_workspaces;
 
 mod monitor_contact;
 
@@ -577,6 +639,8 @@ mod search_contact_flows;
 
 mod search_contacts;
 
+mod search_data_tables;
+
 mod search_email_addresses;
 
 mod search_evaluation_forms;
@@ -603,7 +667,13 @@ mod search_user_hierarchy_groups;
 
 mod search_users;
 
+mod search_views;
+
 mod search_vocabularies;
+
+mod search_workspace_associations;
+
+mod search_workspaces;
 
 mod send_chat_integration_event;
 
@@ -614,6 +684,8 @@ mod start_attached_file_upload;
 mod start_chat_contact;
 
 mod start_contact_evaluation;
+
+mod start_contact_media_processing;
 
 mod start_contact_recording;
 
@@ -634,6 +706,8 @@ mod start_task_contact;
 mod start_web_rtc_contact;
 
 mod stop_contact;
+
+mod stop_contact_media_processing;
 
 mod stop_contact_recording;
 
@@ -678,6 +752,12 @@ mod update_contact_flow_name;
 mod update_contact_routing_data;
 
 mod update_contact_schedule;
+
+mod update_data_table_attribute;
+
+mod update_data_table_metadata;
+
+mod update_data_table_primary_values;
 
 mod update_email_address_metadata;
 
@@ -756,3 +836,11 @@ mod update_user_security_profiles;
 mod update_view_content;
 
 mod update_view_metadata;
+
+mod update_workspace_metadata;
+
+mod update_workspace_page;
+
+mod update_workspace_theme;
+
+mod update_workspace_visibility;

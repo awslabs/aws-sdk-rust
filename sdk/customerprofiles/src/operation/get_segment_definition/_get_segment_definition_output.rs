@@ -17,6 +17,12 @@ pub struct GetSegmentDefinitionOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The segment SQL query.</p>
+    pub segment_sql_query: ::std::option::Option<::std::string::String>,
+    /// <p>The segment type.</p>
+    /// <p>Classic : Segments created using traditional SegmentGroup structure</p>
+    /// <p>Enhanced : Segments created using SQL queries</p>
+    pub segment_type: ::std::option::Option<crate::types::SegmentType>,
     _request_id: Option<String>,
 }
 impl GetSegmentDefinitionOutput {
@@ -49,6 +55,16 @@ impl GetSegmentDefinitionOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The segment SQL query.</p>
+    pub fn segment_sql_query(&self) -> ::std::option::Option<&str> {
+        self.segment_sql_query.as_deref()
+    }
+    /// <p>The segment type.</p>
+    /// <p>Classic : Segments created using traditional SegmentGroup structure</p>
+    /// <p>Enhanced : Segments created using SQL queries</p>
+    pub fn segment_type(&self) -> ::std::option::Option<&crate::types::SegmentType> {
+        self.segment_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetSegmentDefinitionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -60,6 +76,8 @@ impl ::std::fmt::Debug for GetSegmentDefinitionOutput {
         formatter.field("segment_definition_arn", &self.segment_definition_arn);
         formatter.field("created_at", &self.created_at);
         formatter.field("tags", &self.tags);
+        formatter.field("segment_sql_query", &"*** Sensitive Data Redacted ***");
+        formatter.field("segment_type", &self.segment_type);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -87,6 +105,8 @@ pub struct GetSegmentDefinitionOutputBuilder {
     pub(crate) segment_definition_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) segment_sql_query: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_type: ::std::option::Option<crate::types::SegmentType>,
     _request_id: Option<String>,
 }
 impl GetSegmentDefinitionOutputBuilder {
@@ -195,6 +215,40 @@ impl GetSegmentDefinitionOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The segment SQL query.</p>
+    pub fn segment_sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment_sql_query = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The segment SQL query.</p>
+    pub fn set_segment_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.segment_sql_query = input;
+        self
+    }
+    /// <p>The segment SQL query.</p>
+    pub fn get_segment_sql_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_sql_query
+    }
+    /// <p>The segment type.</p>
+    /// <p>Classic : Segments created using traditional SegmentGroup structure</p>
+    /// <p>Enhanced : Segments created using SQL queries</p>
+    pub fn segment_type(mut self, input: crate::types::SegmentType) -> Self {
+        self.segment_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The segment type.</p>
+    /// <p>Classic : Segments created using traditional SegmentGroup structure</p>
+    /// <p>Enhanced : Segments created using SQL queries</p>
+    pub fn set_segment_type(mut self, input: ::std::option::Option<crate::types::SegmentType>) -> Self {
+        self.segment_type = input;
+        self
+    }
+    /// <p>The segment type.</p>
+    /// <p>Classic : Segments created using traditional SegmentGroup structure</p>
+    /// <p>Enhanced : Segments created using SQL queries</p>
+    pub fn get_segment_type(&self) -> &::std::option::Option<crate::types::SegmentType> {
+        &self.segment_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -224,6 +278,8 @@ impl GetSegmentDefinitionOutputBuilder {
             })?,
             created_at: self.created_at,
             tags: self.tags,
+            segment_sql_query: self.segment_sql_query,
+            segment_type: self.segment_type,
             _request_id: self._request_id,
         })
     }
@@ -238,6 +294,8 @@ impl ::std::fmt::Debug for GetSegmentDefinitionOutputBuilder {
         formatter.field("segment_definition_arn", &self.segment_definition_arn);
         formatter.field("created_at", &self.created_at);
         formatter.field("tags", &self.tags);
+        formatter.field("segment_sql_query", &"*** Sensitive Data Redacted ***");
+        formatter.field("segment_type", &self.segment_type);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

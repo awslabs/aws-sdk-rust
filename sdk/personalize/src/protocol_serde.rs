@@ -521,6 +521,8 @@ pub(crate) mod shape_hpo_resource_config;
 
 pub(crate) mod shape_hyper_parameter_ranges;
 
+pub(crate) mod shape_ranking_influence;
+
 pub(crate) mod shape_arn_list;
 
 pub(crate) mod shape_categorical_hyper_parameter_range;
@@ -536,6 +538,8 @@ pub(crate) mod shape_default_integer_hyper_parameter_range;
 pub(crate) mod shape_event_parameters_list;
 
 pub(crate) mod shape_excluded_dataset_columns;
+
+pub(crate) mod shape_included_dataset_columns;
 
 pub(crate) mod shape_integer_hyper_parameter_range;
 

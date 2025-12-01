@@ -38,6 +38,18 @@ where
                                 },
                             )?,
                         )),
+                        "externalBedrockKnowledgeBaseConfig" => {
+                            Some(crate::types::AssistantAssociationOutputData::ExternalBedrockKnowledgeBaseConfig(
+                                crate::protocol_serde::shape_external_bedrock_knowledge_base_config::de_external_bedrock_knowledge_base_config(
+                                    tokens,
+                                )?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'externalBedrockKnowledgeBaseConfig' cannot be null",
+                                    )
+                                })?,
+                            ))
+                        }
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::AssistantAssociationOutputData::Unknown)

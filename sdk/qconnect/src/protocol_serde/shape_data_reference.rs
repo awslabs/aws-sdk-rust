@@ -39,6 +39,13 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'generativeReference' cannot be null")
                             })?,
                         )),
+                        "suggestedMessageReference" => Some(crate::types::DataReference::SuggestedMessageReference(
+                            crate::protocol_serde::shape_suggested_message_reference::de_suggested_message_reference(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'suggestedMessageReference' cannot be null",
+                                )
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::DataReference::Unknown)

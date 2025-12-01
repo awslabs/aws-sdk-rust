@@ -39,10 +39,6 @@ pub struct DescribeAgreementOutput {
     /// <li>
     /// <p><code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p></li>
     /// <li>
-    /// <p><code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p></li>
-    /// <li>
-    /// <p><code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p></li>
-    /// <li>
     /// <p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::AgreementStatus>,
@@ -102,10 +98,6 @@ impl DescribeAgreementOutput {
     /// <p><code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p></li>
     /// <li>
     /// <p><code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p></li>
-    /// <li>
-    /// <p><code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p></li>
-    /// <li>
-    /// <p><code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p></li>
     /// <li>
     /// <p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
@@ -290,10 +282,6 @@ impl DescribeAgreementOutputBuilder {
     /// <li>
     /// <p><code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p></li>
     /// <li>
-    /// <p><code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p></li>
-    /// <li>
-    /// <p><code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p></li>
-    /// <li>
     /// <p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::AgreementStatus) -> Self {
@@ -316,10 +304,6 @@ impl DescribeAgreementOutputBuilder {
     /// <li>
     /// <p><code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p></li>
     /// <li>
-    /// <p><code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p></li>
-    /// <li>
-    /// <p><code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p></li>
-    /// <li>
     /// <p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatus>) -> Self {
@@ -341,10 +325,6 @@ impl DescribeAgreementOutputBuilder {
     /// <p><code>RENEWED</code> – The agreement was renewed into a new agreement (for example, an auto-renewal).</p></li>
     /// <li>
     /// <p><code>REPLACED</code> – The agreement was replaced using an agreement replacement offer.</p></li>
-    /// <li>
-    /// <p><code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The agreement revision has been rolled back because of an error. An earlier revision is now active.</p></li>
-    /// <li>
-    /// <p><code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement revision is no longer active and another agreement revision is now active.</p></li>
     /// <li>
     /// <p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>

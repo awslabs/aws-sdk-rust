@@ -115,6 +115,8 @@ pub use crate::types::_membership_job_compute_payment_config::MembershipJobCompu
 
 pub use crate::types::_membership_ml_payment_config::MembershipMlPaymentConfigBuilder;
 
+pub use crate::types::_membership_synthetic_data_generation_payment_config::MembershipSyntheticDataGenerationPaymentConfigBuilder;
+
 pub use crate::types::_membership_model_inference_payment_config::MembershipModelInferencePaymentConfigBuilder;
 
 pub use crate::types::_membership_model_training_payment_config::MembershipModelTrainingPaymentConfigBuilder;
@@ -207,6 +209,8 @@ pub use crate::types::_job_compute_payment_config::JobComputePaymentConfigBuilde
 
 pub use crate::types::_ml_payment_config::MlPaymentConfigBuilder;
 
+pub use crate::types::_synthetic_data_generation_payment_config::SyntheticDataGenerationPaymentConfigBuilder;
+
 pub use crate::types::_model_inference_payment_config::ModelInferencePaymentConfigBuilder;
 
 pub use crate::types::_model_training_payment_config::ModelTrainingPaymentConfigBuilder;
@@ -260,6 +264,12 @@ pub use crate::types::_collaboration_configured_audience_model_association::Coll
 pub use crate::types::_collaboration_change_request::CollaborationChangeRequestBuilder;
 
 pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplateBuilder;
+
+pub use crate::types::_ml_synthetic_data_parameters::MlSyntheticDataParametersBuilder;
+
+pub use crate::types::_column_classification_details::ColumnClassificationDetailsBuilder;
+
+pub use crate::types::_synthetic_data_column_properties::SyntheticDataColumnPropertiesBuilder;
 
 pub use crate::types::_error_message_configuration::ErrorMessageConfigurationBuilder;
 

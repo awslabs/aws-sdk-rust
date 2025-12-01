@@ -11,12 +11,18 @@ pub struct SendMessageInput {
     pub r#type: ::std::option::Option<crate::types::MessageType>,
     /// <p>The message data to submit to the Amazon Q in Connect session.</p>
     pub message: ::std::option::Option<crate::types::MessageInput>,
+    /// <p>The identifier of the AI Agent to use for processing the message.</p>
+    pub ai_agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The conversation context before the Amazon Q in Connect session.</p>
     pub conversation_context: ::std::option::Option<crate::types::ConversationContext>,
     /// <p>The configuration of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_SendMessage.html">SendMessage</a> request.</p>
     pub configuration: ::std::option::Option<crate::types::MessageConfiguration>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field.For more information about idempotency, see Making retries safe with idempotent APIs.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The orchestrator use case for message processing.</p>
+    pub orchestrator_use_case: ::std::option::Option<::std::string::String>,
+    /// <p>Additional metadata for the message.</p>
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SendMessageInput {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -35,6 +41,10 @@ impl SendMessageInput {
     pub fn message(&self) -> ::std::option::Option<&crate::types::MessageInput> {
         self.message.as_ref()
     }
+    /// <p>The identifier of the AI Agent to use for processing the message.</p>
+    pub fn ai_agent_id(&self) -> ::std::option::Option<&str> {
+        self.ai_agent_id.as_deref()
+    }
     /// <p>The conversation context before the Amazon Q in Connect session.</p>
     pub fn conversation_context(&self) -> ::std::option::Option<&crate::types::ConversationContext> {
         self.conversation_context.as_ref()
@@ -46,6 +56,14 @@ impl SendMessageInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field.For more information about idempotency, see Making retries safe with idempotent APIs.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The orchestrator use case for message processing.</p>
+    pub fn orchestrator_use_case(&self) -> ::std::option::Option<&str> {
+        self.orchestrator_use_case.as_deref()
+    }
+    /// <p>Additional metadata for the message.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.metadata.as_ref()
     }
 }
 impl SendMessageInput {
@@ -63,9 +81,12 @@ pub struct SendMessageInputBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::MessageType>,
     pub(crate) message: ::std::option::Option<crate::types::MessageInput>,
+    pub(crate) ai_agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) conversation_context: ::std::option::Option<crate::types::ConversationContext>,
     pub(crate) configuration: ::std::option::Option<crate::types::MessageConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) orchestrator_use_case: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SendMessageInputBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -128,6 +149,20 @@ impl SendMessageInputBuilder {
     pub fn get_message(&self) -> &::std::option::Option<crate::types::MessageInput> {
         &self.message
     }
+    /// <p>The identifier of the AI Agent to use for processing the message.</p>
+    pub fn ai_agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ai_agent_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the AI Agent to use for processing the message.</p>
+    pub fn set_ai_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ai_agent_id = input;
+        self
+    }
+    /// <p>The identifier of the AI Agent to use for processing the message.</p>
+    pub fn get_ai_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ai_agent_id
+    }
     /// <p>The conversation context before the Amazon Q in Connect session.</p>
     pub fn conversation_context(mut self, input: crate::types::ConversationContext) -> Self {
         self.conversation_context = ::std::option::Option::Some(input);
@@ -170,6 +205,40 @@ impl SendMessageInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The orchestrator use case for message processing.</p>
+    pub fn orchestrator_use_case(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.orchestrator_use_case = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The orchestrator use case for message processing.</p>
+    pub fn set_orchestrator_use_case(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.orchestrator_use_case = input;
+        self
+    }
+    /// <p>The orchestrator use case for message processing.</p>
+    pub fn get_orchestrator_use_case(&self) -> &::std::option::Option<::std::string::String> {
+        &self.orchestrator_use_case
+    }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>Additional metadata for the message.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Additional metadata for the message.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Additional metadata for the message.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`SendMessageInput`](crate::operation::send_message::SendMessageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::send_message::SendMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_message::SendMessageInput {
@@ -177,9 +246,12 @@ impl SendMessageInputBuilder {
             session_id: self.session_id,
             r#type: self.r#type,
             message: self.message,
+            ai_agent_id: self.ai_agent_id,
             conversation_context: self.conversation_context,
             configuration: self.configuration,
             client_token: self.client_token,
+            orchestrator_use_case: self.orchestrator_use_case,
+            metadata: self.metadata,
         })
     }
 }

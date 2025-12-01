@@ -19,6 +19,10 @@ pub struct CreateSessionInput {
     pub ai_agent_configuration: ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
     /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
     pub contact_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The list of orchestrator configurations for the session being created.</p>
+    pub orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub remove_orchestrator_configuration_list: ::std::option::Option<bool>,
 }
 impl CreateSessionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -55,6 +59,16 @@ impl CreateSessionInput {
     pub fn contact_arn(&self) -> ::std::option::Option<&str> {
         self.contact_arn.as_deref()
     }
+    /// <p>The list of orchestrator configurations for the session being created.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.orchestrator_configuration_list.is_none()`.
+    pub fn orchestrator_configuration_list(&self) -> &[crate::types::OrchestratorConfigurationEntry] {
+        self.orchestrator_configuration_list.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub fn remove_orchestrator_configuration_list(&self) -> ::std::option::Option<bool> {
+        self.remove_orchestrator_configuration_list
+    }
 }
 impl CreateSessionInput {
     /// Creates a new builder-style object to manufacture [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
@@ -76,6 +90,8 @@ pub struct CreateSessionInputBuilder {
     pub(crate) ai_agent_configuration:
         ::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>>,
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    pub(crate) remove_orchestrator_configuration_list: ::std::option::Option<bool>,
 }
 impl CreateSessionInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -209,6 +225,43 @@ impl CreateSessionInputBuilder {
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_arn
     }
+    /// Appends an item to `orchestrator_configuration_list`.
+    ///
+    /// To override the contents of this collection use [`set_orchestrator_configuration_list`](Self::set_orchestrator_configuration_list).
+    ///
+    /// <p>The list of orchestrator configurations for the session being created.</p>
+    pub fn orchestrator_configuration_list(mut self, input: crate::types::OrchestratorConfigurationEntry) -> Self {
+        let mut v = self.orchestrator_configuration_list.unwrap_or_default();
+        v.push(input);
+        self.orchestrator_configuration_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of orchestrator configurations for the session being created.</p>
+    pub fn set_orchestrator_configuration_list(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    ) -> Self {
+        self.orchestrator_configuration_list = input;
+        self
+    }
+    /// <p>The list of orchestrator configurations for the session being created.</p>
+    pub fn get_orchestrator_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>> {
+        &self.orchestrator_configuration_list
+    }
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub fn remove_orchestrator_configuration_list(mut self, input: bool) -> Self {
+        self.remove_orchestrator_configuration_list = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub fn set_remove_orchestrator_configuration_list(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.remove_orchestrator_configuration_list = input;
+        self
+    }
+    /// <p>The list of orchestrator configurations to remove from the session.</p>
+    pub fn get_remove_orchestrator_configuration_list(&self) -> &::std::option::Option<bool> {
+        &self.remove_orchestrator_configuration_list
+    }
     /// Consumes the builder and constructs a [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
     pub fn build(
         self,
@@ -222,6 +275,8 @@ impl CreateSessionInputBuilder {
             tag_filter: self.tag_filter,
             ai_agent_configuration: self.ai_agent_configuration,
             contact_arn: self.contact_arn,
+            orchestrator_configuration_list: self.orchestrator_configuration_list,
+            remove_orchestrator_configuration_list: self.remove_orchestrator_configuration_list,
         })
     }
 }

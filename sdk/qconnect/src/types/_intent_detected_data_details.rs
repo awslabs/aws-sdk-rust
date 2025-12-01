@@ -8,6 +8,8 @@ pub struct IntentDetectedDataDetails {
     pub intent: ::std::string::String,
     /// <p>The identifier of the detected intent.</p>
     pub intent_id: ::std::string::String,
+    /// <p>The relevance level of the detected intent.</p>
+    pub relevance_level: ::std::option::Option<crate::types::RelevanceLevel>,
 }
 impl IntentDetectedDataDetails {
     /// <p>The detected intent.</p>
@@ -20,12 +22,17 @@ impl IntentDetectedDataDetails {
         use std::ops::Deref;
         self.intent_id.deref()
     }
+    /// <p>The relevance level of the detected intent.</p>
+    pub fn relevance_level(&self) -> ::std::option::Option<&crate::types::RelevanceLevel> {
+        self.relevance_level.as_ref()
+    }
 }
 impl ::std::fmt::Debug for IntentDetectedDataDetails {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IntentDetectedDataDetails");
         formatter.field("intent", &"*** Sensitive Data Redacted ***");
         formatter.field("intent_id", &self.intent_id);
+        formatter.field("relevance_level", &self.relevance_level);
         formatter.finish()
     }
 }
@@ -42,6 +49,7 @@ impl IntentDetectedDataDetails {
 pub struct IntentDetectedDataDetailsBuilder {
     pub(crate) intent: ::std::option::Option<::std::string::String>,
     pub(crate) intent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) relevance_level: ::std::option::Option<crate::types::RelevanceLevel>,
 }
 impl IntentDetectedDataDetailsBuilder {
     /// <p>The detected intent.</p>
@@ -74,6 +82,20 @@ impl IntentDetectedDataDetailsBuilder {
     pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.intent_id
     }
+    /// <p>The relevance level of the detected intent.</p>
+    pub fn relevance_level(mut self, input: crate::types::RelevanceLevel) -> Self {
+        self.relevance_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The relevance level of the detected intent.</p>
+    pub fn set_relevance_level(mut self, input: ::std::option::Option<crate::types::RelevanceLevel>) -> Self {
+        self.relevance_level = input;
+        self
+    }
+    /// <p>The relevance level of the detected intent.</p>
+    pub fn get_relevance_level(&self) -> &::std::option::Option<crate::types::RelevanceLevel> {
+        &self.relevance_level
+    }
     /// Consumes the builder and constructs a [`IntentDetectedDataDetails`](crate::types::IntentDetectedDataDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`intent`](crate::types::builders::IntentDetectedDataDetailsBuilder::intent)
@@ -92,6 +114,7 @@ impl IntentDetectedDataDetailsBuilder {
                     "intent_id was not specified but it is required when building IntentDetectedDataDetails",
                 )
             })?,
+            relevance_level: self.relevance_level,
         })
     }
 }
@@ -100,6 +123,7 @@ impl ::std::fmt::Debug for IntentDetectedDataDetailsBuilder {
         let mut formatter = f.debug_struct("IntentDetectedDataDetailsBuilder");
         formatter.field("intent", &"*** Sensitive Data Redacted ***");
         formatter.field("intent_id", &self.intent_id);
+        formatter.field("relevance_level", &self.relevance_level);
         formatter.finish()
     }
 }

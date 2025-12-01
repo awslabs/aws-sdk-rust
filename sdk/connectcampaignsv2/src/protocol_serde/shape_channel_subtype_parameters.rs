@@ -22,6 +22,12 @@ pub fn ser_channel_subtype_parameters(
             crate::protocol_serde::shape_email_channel_subtype_parameters::ser_email_channel_subtype_parameters(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::ChannelSubtypeParameters::WhatsApp(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_2.key("whatsApp").start_object();
+            crate::protocol_serde::shape_whats_app_channel_subtype_parameters::ser_whats_app_channel_subtype_parameters(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::ChannelSubtypeParameters::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ChannelSubtypeParameters",

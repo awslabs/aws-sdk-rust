@@ -3,8 +3,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAwsOpportunitySummaryOutput {
-    /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
-    pub catalog: ::std::string::String,
     /// <p>Provides the unique identifier of the related partner opportunity, allowing partners to link the AWS Opportunity to their corresponding opportunity in their CRM system.</p>
     pub related_opportunity_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the AWS Opportunity originated from AWS or the partner. This helps distinguish between opportunities that were sourced by AWS and those referred by the partner.</p>
@@ -27,14 +25,11 @@ pub struct GetAwsOpportunitySummaryOutput {
     pub customer: ::std::option::Option<crate::types::AwsOpportunityCustomer>,
     /// <p>Provides details about the project associated with the AWS Opportunity, including the customer’s business problem, expected outcomes, and project scope. This information is crucial for understanding the broader context of the opportunity.</p>
     pub project: ::std::option::Option<crate::types::AwsOpportunityProject>,
+    /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
+    pub catalog: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetAwsOpportunitySummaryOutput {
-    /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
-    pub fn catalog(&self) -> &str {
-        use std::ops::Deref;
-        self.catalog.deref()
-    }
     /// <p>Provides the unique identifier of the related partner opportunity, allowing partners to link the AWS Opportunity to their corresponding opportunity in their CRM system.</p>
     pub fn related_opportunity_id(&self) -> ::std::option::Option<&str> {
         self.related_opportunity_id.as_deref()
@@ -81,6 +76,11 @@ impl GetAwsOpportunitySummaryOutput {
     pub fn project(&self) -> ::std::option::Option<&crate::types::AwsOpportunityProject> {
         self.project.as_ref()
     }
+    /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
+    pub fn catalog(&self) -> &str {
+        use std::ops::Deref;
+        self.catalog.deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetAwsOpportunitySummaryOutput {
     fn request_id(&self) -> Option<&str> {
@@ -98,7 +98,6 @@ impl GetAwsOpportunitySummaryOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetAwsOpportunitySummaryOutputBuilder {
-    pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) related_opportunity_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin: ::std::option::Option<crate::types::OpportunityOrigin>,
     pub(crate) involvement_type: ::std::option::Option<crate::types::SalesInvolvementType>,
@@ -110,24 +109,10 @@ pub struct GetAwsOpportunitySummaryOutputBuilder {
     pub(crate) related_entity_ids: ::std::option::Option<crate::types::AwsOpportunityRelatedEntities>,
     pub(crate) customer: ::std::option::Option<crate::types::AwsOpportunityCustomer>,
     pub(crate) project: ::std::option::Option<crate::types::AwsOpportunityProject>,
+    pub(crate) catalog: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAwsOpportunitySummaryOutputBuilder {
-    /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
-    /// This field is required.
-    pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.catalog = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
-    pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
-    }
-    /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
-    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
-        &self.catalog
-    }
     /// <p>Provides the unique identifier of the related partner opportunity, allowing partners to link the AWS Opportunity to their corresponding opportunity in their CRM system.</p>
     pub fn related_opportunity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_opportunity_id = ::std::option::Option::Some(input.into());
@@ -288,6 +273,21 @@ impl GetAwsOpportunitySummaryOutputBuilder {
     pub fn get_project(&self) -> &::std::option::Option<crate::types::AwsOpportunityProject> {
         &self.project
     }
+    /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
+    /// This field is required.
+    pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
+    pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog = input;
+        self
+    }
+    /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -307,12 +307,6 @@ impl GetAwsOpportunitySummaryOutputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_aws_opportunity_summary::GetAwsOpportunitySummaryOutput {
-            catalog: self.catalog.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "catalog",
-                    "catalog was not specified but it is required when building GetAwsOpportunitySummaryOutput",
-                )
-            })?,
             related_opportunity_id: self.related_opportunity_id,
             origin: self.origin,
             involvement_type: self.involvement_type,
@@ -324,6 +318,12 @@ impl GetAwsOpportunitySummaryOutputBuilder {
             related_entity_ids: self.related_entity_ids,
             customer: self.customer,
             project: self.project,
+            catalog: self.catalog.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "catalog",
+                    "catalog was not specified but it is required when building GetAwsOpportunitySummaryOutput",
+                )
+            })?,
             _request_id: self._request_id,
         })
     }

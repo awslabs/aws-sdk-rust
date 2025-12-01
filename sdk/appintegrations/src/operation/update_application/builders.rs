@@ -228,16 +228,19 @@ impl UpdateApplicationFluentBuilder {
         self.inner.get_permissions()
     }
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn is_service(mut self, input: bool) -> Self {
         self.inner = self.inner.is_service(input);
         self
     }
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn set_is_service(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_service(input);
         self
     }
     /// <p>Indicates whether the application is a service.</p>
+    #[deprecated(note = "IsService has been deprecated in favor of ApplicationType", since = "2025-12-01")]
     pub fn get_is_service(&self) -> &::std::option::Option<bool> {
         self.inner.get_is_service()
     }
@@ -282,5 +285,19 @@ impl UpdateApplicationFluentBuilder {
     /// <p>The iframe configuration for the application.</p>
     pub fn get_iframe_config(&self) -> &::std::option::Option<crate::types::IframeConfig> {
         self.inner.get_iframe_config()
+    }
+    /// <p>The type of application.</p>
+    pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
+        self.inner = self.inner.application_type(input);
+        self
+    }
+    /// <p>The type of application.</p>
+    pub fn set_application_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
+        self.inner = self.inner.set_application_type(input);
+        self
+    }
+    /// <p>The type of application.</p>
+    pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        self.inner.get_application_type()
     }
 }

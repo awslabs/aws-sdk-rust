@@ -10,6 +10,8 @@ pub struct SelfServiceConversationHistory {
     pub input_transcript: ::std::option::Option<::std::string::String>,
     /// <p>The bot response of the conversation history data.</p>
     pub bot_response: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp of the conversation history entry.</p>
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SelfServiceConversationHistory {
     /// <p>The number of turn of the conversation history data.</p>
@@ -24,6 +26,10 @@ impl SelfServiceConversationHistory {
     pub fn bot_response(&self) -> ::std::option::Option<&str> {
         self.bot_response.as_deref()
     }
+    /// <p>The timestamp of the conversation history entry.</p>
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.timestamp.as_ref()
+    }
 }
 impl ::std::fmt::Debug for SelfServiceConversationHistory {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -31,6 +37,7 @@ impl ::std::fmt::Debug for SelfServiceConversationHistory {
         formatter.field("turn_number", &self.turn_number);
         formatter.field("input_transcript", &"*** Sensitive Data Redacted ***");
         formatter.field("bot_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("timestamp", &self.timestamp);
         formatter.finish()
     }
 }
@@ -48,10 +55,10 @@ pub struct SelfServiceConversationHistoryBuilder {
     pub(crate) turn_number: ::std::option::Option<i32>,
     pub(crate) input_transcript: ::std::option::Option<::std::string::String>,
     pub(crate) bot_response: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SelfServiceConversationHistoryBuilder {
     /// <p>The number of turn of the conversation history data.</p>
-    /// This field is required.
     pub fn turn_number(mut self, input: i32) -> Self {
         self.turn_number = ::std::option::Option::Some(input);
         self
@@ -93,20 +100,28 @@ impl SelfServiceConversationHistoryBuilder {
     pub fn get_bot_response(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_response
     }
+    /// <p>The timestamp of the conversation history entry.</p>
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp of the conversation history entry.</p>
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.timestamp = input;
+        self
+    }
+    /// <p>The timestamp of the conversation history entry.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// Consumes the builder and constructs a [`SelfServiceConversationHistory`](crate::types::SelfServiceConversationHistory).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`turn_number`](crate::types::builders::SelfServiceConversationHistoryBuilder::turn_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::SelfServiceConversationHistory, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SelfServiceConversationHistory {
-            turn_number: self.turn_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "turn_number",
-                    "turn_number was not specified but it is required when building SelfServiceConversationHistory",
-                )
-            })?,
+    pub fn build(self) -> crate::types::SelfServiceConversationHistory {
+        crate::types::SelfServiceConversationHistory {
+            turn_number: self.turn_number.unwrap_or_default(),
             input_transcript: self.input_transcript,
             bot_response: self.bot_response,
-        })
+            timestamp: self.timestamp,
+        }
     }
 }
 impl ::std::fmt::Debug for SelfServiceConversationHistoryBuilder {
@@ -115,6 +130,7 @@ impl ::std::fmt::Debug for SelfServiceConversationHistoryBuilder {
         formatter.field("turn_number", &self.turn_number);
         formatter.field("input_transcript", &"*** Sensitive Data Redacted ***");
         formatter.field("bot_response", &"*** Sensitive Data Redacted ***");
+        formatter.field("timestamp", &self.timestamp);
         formatter.finish()
     }
 }
