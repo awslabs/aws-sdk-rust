@@ -12,6 +12,8 @@
 /// ```text
 /// # let hubcontenttype = unimplemented!();
 /// match hubcontenttype {
+///     HubContentType::DataSet => { /* ... */ },
+///     HubContentType::JsonDoc => { /* ... */ },
 ///     HubContentType::Model => { /* ... */ },
 ///     HubContentType::ModelReference => { /* ... */ },
 ///     HubContentType::Notebook => { /* ... */ },
@@ -44,6 +46,10 @@
 )]
 pub enum HubContentType {
     #[allow(missing_docs)] // documentation missing in model
+    DataSet,
+    #[allow(missing_docs)] // documentation missing in model
+    JsonDoc,
+    #[allow(missing_docs)] // documentation missing in model
     Model,
     #[allow(missing_docs)] // documentation missing in model
     ModelReference,
@@ -56,6 +62,8 @@ pub enum HubContentType {
 impl ::std::convert::From<&str> for HubContentType {
     fn from(s: &str) -> Self {
         match s {
+            "DataSet" => HubContentType::DataSet,
+            "JsonDoc" => HubContentType::JsonDoc,
             "Model" => HubContentType::Model,
             "ModelReference" => HubContentType::ModelReference,
             "Notebook" => HubContentType::Notebook,
@@ -74,6 +82,8 @@ impl HubContentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            HubContentType::DataSet => "DataSet",
+            HubContentType::JsonDoc => "JsonDoc",
             HubContentType::Model => "Model",
             HubContentType::ModelReference => "ModelReference",
             HubContentType::Notebook => "Notebook",
@@ -82,7 +92,7 @@ impl HubContentType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Model", "ModelReference", "Notebook"]
+        &["DataSet", "JsonDoc", "Model", "ModelReference", "Notebook"]
     }
 }
 impl ::std::convert::AsRef<str> for HubContentType {
@@ -105,6 +115,8 @@ impl HubContentType {
 impl ::std::fmt::Display for HubContentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            HubContentType::DataSet => write!(f, "DataSet"),
+            HubContentType::JsonDoc => write!(f, "JsonDoc"),
             HubContentType::Model => write!(f, "Model"),
             HubContentType::ModelReference => write!(f, "ModelReference"),
             HubContentType::Notebook => write!(f, "Notebook"),

@@ -22,9 +22,6 @@ impl crate::operation::list_vectors::builders::ListVectorsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListVectors`.
 ///
-/// <note>
-/// <p>Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.</p>
-/// </note>
 /// <p>List vectors in the specified vector index. To specify the vector index, you can either use both the vector bucket name and the vector index name, or use the vector index Amazon Resource Name (ARN).</p>
 /// <p><code>ListVectors</code> operations proceed sequentially; however, for faster performance on a large number of vectors in a vector index, applications can request a parallel <code>ListVectors</code> operation by providing the <code>segmentCount</code> and <code>segmentIndex</code> parameters.</p>
 /// <dl>

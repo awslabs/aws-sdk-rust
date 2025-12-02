@@ -27,6 +27,8 @@ pub(crate) mod shape_add_layer_version_permission;
 
 pub(crate) mod shape_add_permission;
 
+pub(crate) mod shape_checkpoint_durable_execution;
+
 pub(crate) mod shape_create_alias;
 
 pub(crate) mod shape_create_capacity_provider;
@@ -68,6 +70,12 @@ pub(crate) mod shape_get_alias;
 pub(crate) mod shape_get_capacity_provider;
 
 pub(crate) mod shape_get_code_signing_config;
+
+pub(crate) mod shape_get_durable_execution;
+
+pub(crate) mod shape_get_durable_execution_history;
+
+pub(crate) mod shape_get_durable_execution_state;
 
 pub(crate) mod shape_get_event_source_mapping;
 
@@ -117,6 +125,8 @@ pub(crate) mod shape_list_capacity_providers;
 
 pub(crate) mod shape_list_code_signing_configs;
 
+pub(crate) mod shape_list_durable_executions_by_function;
+
 pub(crate) mod shape_list_event_source_mappings;
 
 pub(crate) mod shape_list_function_event_invoke_configs;
@@ -161,6 +171,24 @@ pub(crate) mod shape_remove_layer_version_permission;
 
 pub(crate) mod shape_remove_permission;
 
+pub(crate) mod shape_send_durable_execution_callback_failure;
+
+pub fn rest_json_unset_struct_payload() -> ::std::vec::Vec<u8> {
+    b"{}"[..].into()
+}
+
+pub(crate) mod shape_send_durable_execution_callback_failure_input;
+
+pub(crate) mod shape_send_durable_execution_callback_heartbeat;
+
+pub(crate) mod shape_send_durable_execution_callback_success;
+
+pub(crate) mod shape_send_durable_execution_callback_success_input;
+
+pub(crate) mod shape_stop_durable_execution;
+
+pub(crate) mod shape_stop_durable_execution_input;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -193,7 +221,11 @@ pub(crate) mod shape_add_layer_version_permission_input;
 
 pub(crate) mod shape_add_permission_input;
 
+pub(crate) mod shape_callback_timeout_exception;
+
 pub(crate) mod shape_capacity_provider_limit_exceeded_exception;
+
+pub(crate) mod shape_checkpoint_durable_execution_input;
 
 pub(crate) mod shape_code_signing_config_not_found_exception;
 
@@ -212,6 +244,8 @@ pub(crate) mod shape_create_event_source_mapping_input;
 pub(crate) mod shape_create_function_input;
 
 pub(crate) mod shape_create_function_url_config_input;
+
+pub(crate) mod shape_durable_execution_already_started_exception;
 
 pub(crate) mod shape_ec2_access_denied_exception;
 
@@ -361,6 +395,8 @@ pub(crate) mod shape_capacity_provider_vpc_config;
 
 pub(crate) mod shape_capacity_providers_list;
 
+pub(crate) mod shape_checkpoint_updated_execution_state;
+
 pub(crate) mod shape_code_signing_config;
 
 pub(crate) mod shape_code_signing_config_list;
@@ -381,15 +417,23 @@ pub(crate) mod shape_destination_config;
 
 pub(crate) mod shape_document_db_event_source_config;
 
+pub(crate) mod shape_durable_config;
+
+pub(crate) mod shape_durable_executions;
+
 pub(crate) mod shape_environment;
 
 pub(crate) mod shape_environment_response;
 
 pub(crate) mod shape_ephemeral_storage;
 
+pub(crate) mod shape_error_object;
+
 pub(crate) mod shape_event_source_mapping_metrics_config;
 
 pub(crate) mod shape_event_source_mappings_list;
+
+pub(crate) mod shape_events;
 
 pub(crate) mod shape_file_system_config;
 
@@ -437,6 +481,10 @@ pub(crate) mod shape_layers_reference_list;
 
 pub(crate) mod shape_logging_config;
 
+pub(crate) mod shape_operation_update;
+
+pub(crate) mod shape_operations;
+
 pub(crate) mod shape_provisioned_concurrency_config_list;
 
 pub(crate) mod shape_provisioned_poller_config;
@@ -467,6 +515,8 @@ pub(crate) mod shape_tenancy_config;
 
 pub(crate) mod shape_topics;
 
+pub(crate) mod shape_trace_header;
+
 pub(crate) mod shape_tracing_config;
 
 pub(crate) mod shape_tracing_config_response;
@@ -483,15 +533,25 @@ pub(crate) mod shape_allow_methods_list;
 
 pub(crate) mod shape_allow_origins_list;
 
+pub(crate) mod shape_callback_options;
+
+pub(crate) mod shape_chained_invoke_options;
+
+pub(crate) mod shape_context_options;
+
 pub(crate) mod shape_endpoints;
 
 pub(crate) mod shape_environment_error;
 
 pub(crate) mod shape_environment_variables;
 
+pub(crate) mod shape_event;
+
 pub(crate) mod shape_event_source_mapping_configuration;
 
 pub(crate) mod shape_event_source_mapping_metric_list;
+
+pub(crate) mod shape_execution;
 
 pub(crate) mod shape_filter;
 
@@ -523,15 +583,33 @@ pub(crate) mod shape_on_failure;
 
 pub(crate) mod shape_on_success;
 
+pub(crate) mod shape_operation;
+
 pub(crate) mod shape_provisioned_concurrency_config_list_item;
 
 pub(crate) mod shape_runtime_version_error;
 
 pub(crate) mod shape_security_group_ids;
 
+pub(crate) mod shape_stack_trace_entries;
+
+pub(crate) mod shape_step_options;
+
 pub(crate) mod shape_subnet_ids;
 
 pub(crate) mod shape_target_tracking_scaling_policy;
+
+pub(crate) mod shape_wait_options;
+
+pub(crate) mod shape_callback_details;
+
+pub(crate) mod shape_callback_failed_details;
+
+pub(crate) mod shape_callback_started_details;
+
+pub(crate) mod shape_callback_succeeded_details;
+
+pub(crate) mod shape_callback_timed_out_details;
 
 pub(crate) mod shape_capacity_provider_scaling_policies_list;
 
@@ -539,9 +617,43 @@ pub(crate) mod shape_capacity_provider_security_group_ids;
 
 pub(crate) mod shape_capacity_provider_subnet_ids;
 
+pub(crate) mod shape_chained_invoke_details;
+
+pub(crate) mod shape_chained_invoke_failed_details;
+
+pub(crate) mod shape_chained_invoke_started_details;
+
+pub(crate) mod shape_chained_invoke_stopped_details;
+
+pub(crate) mod shape_chained_invoke_succeeded_details;
+
+pub(crate) mod shape_chained_invoke_timed_out_details;
+
+pub(crate) mod shape_context_details;
+
+pub(crate) mod shape_context_failed_details;
+
+pub(crate) mod shape_context_started_details;
+
+pub(crate) mod shape_context_succeeded_details;
+
 pub(crate) mod shape_endpoint_lists;
 
+pub(crate) mod shape_execution_details;
+
+pub(crate) mod shape_execution_failed_details;
+
+pub(crate) mod shape_execution_started_details;
+
+pub(crate) mod shape_execution_stopped_details;
+
+pub(crate) mod shape_execution_succeeded_details;
+
+pub(crate) mod shape_execution_timed_out_details;
+
 pub(crate) mod shape_instance_type_set;
+
+pub(crate) mod shape_invocation_completed_details;
 
 pub(crate) mod shape_kafka_schema_registry_access_config;
 
@@ -553,4 +665,28 @@ pub(crate) mod shape_kafka_schema_validation_config_list;
 
 pub(crate) mod shape_signing_profile_version_arns;
 
+pub(crate) mod shape_step_details;
+
+pub(crate) mod shape_step_failed_details;
+
+pub(crate) mod shape_step_started_details;
+
+pub(crate) mod shape_step_succeeded_details;
+
 pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_wait_cancelled_details;
+
+pub(crate) mod shape_wait_details;
+
+pub(crate) mod shape_wait_started_details;
+
+pub(crate) mod shape_wait_succeeded_details;
+
+pub(crate) mod shape_event_error;
+
+pub(crate) mod shape_event_input;
+
+pub(crate) mod shape_event_result;
+
+pub(crate) mod shape_retry_details;

@@ -27,9 +27,11 @@ pub use crate::types::_rule_target_type::RuleTargetType;
 
 pub use crate::types::_rule_summary::RuleSummary;
 
-pub use crate::types::_metadata_generation_run_type::MetadataGenerationRunType;
+pub use crate::types::_metadata_generation_run_type_stat::MetadataGenerationRunTypeStat;
 
 pub use crate::types::_metadata_generation_run_status::MetadataGenerationRunStatus;
+
+pub use crate::types::_metadata_generation_run_type::MetadataGenerationRunType;
 
 pub use crate::types::_metadata_generation_run_target::MetadataGenerationRunTarget;
 
@@ -555,6 +557,8 @@ pub use crate::types::_reject_rule::RejectRule;
 
 pub use crate::types::_reject_rule_behavior::RejectRuleBehavior;
 
+pub use crate::types::_encryption_configuration::EncryptionConfiguration;
+
 pub use crate::types::_time_series_data_point_form_output::TimeSeriesDataPointFormOutput;
 
 pub use crate::types::_time_series_entity_type::TimeSeriesEntityType;
@@ -698,6 +702,8 @@ pub use crate::types::_job_run_details::JobRunDetails;
 pub use crate::types::_lineage_run_details::LineageRunDetails;
 
 pub use crate::types::_lineage_sql_query_run_details::LineageSqlQueryRunDetails;
+
+pub use crate::types::_configuration_status::ConfigurationStatus;
 
 pub use crate::types::_connection_credentials::ConnectionCredentials;
 
@@ -891,6 +897,8 @@ mod _configurable_action_type_authorization;
 
 mod _configurable_environment_action;
 
+mod _configuration_status;
+
 mod _connection_credentials;
 
 mod _connection_properties_input;
@@ -1008,6 +1016,8 @@ mod _domain_version;
 mod _edge_direction;
 
 mod _enable_setting;
+
+mod _encryption_configuration;
 
 mod _entity_type;
 
@@ -1228,6 +1238,8 @@ mod _metadata_generation_run_status;
 mod _metadata_generation_run_target;
 
 mod _metadata_generation_run_type;
+
+mod _metadata_generation_run_type_stat;
 
 mod _metadata_generation_target_type;
 

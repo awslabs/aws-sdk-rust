@@ -185,6 +185,8 @@ mod get_vectors;
 
 mod list_indexes;
 
+mod list_tags_for_resource;
+
 mod list_vector_buckets;
 
 mod list_vectors;
@@ -194,3 +196,7 @@ mod put_vector_bucket_policy;
 mod put_vectors;
 
 mod query_vectors;
+
+mod tag_resource;
+
+mod untag_resource;

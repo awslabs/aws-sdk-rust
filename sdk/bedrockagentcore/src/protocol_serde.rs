@@ -37,6 +37,8 @@ pub(crate) mod shape_delete_event;
 
 pub(crate) mod shape_delete_memory_record;
 
+pub(crate) mod shape_evaluate;
+
 pub(crate) mod shape_get_agent_card;
 
 pub(crate) mod shape_get_browser_session;
@@ -114,6 +116,10 @@ pub(crate) mod shape_complete_resource_token_auth_input;
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_event_input;
+
+pub(crate) mod shape_duplicate_id_exception;
+
+pub(crate) mod shape_evaluate_input;
 
 pub(crate) mod shape_get_agent_card_output;
 
@@ -203,6 +209,12 @@ pub(crate) mod shape_browser_session_summaries;
 
 pub(crate) mod shape_code_interpreter_session_summaries;
 
+pub(crate) mod shape_evaluation_input;
+
+pub(crate) mod shape_evaluation_results;
+
+pub(crate) mod shape_evaluation_target;
+
 pub(crate) mod shape_event;
 
 pub(crate) mod shape_event_list;
@@ -261,6 +273,8 @@ pub(crate) mod shape_code_interpreter_session_summary;
 
 pub(crate) mod shape_conversational;
 
+pub(crate) mod shape_evaluation_result_content;
+
 pub(crate) mod shape_event_metadata_filter_expression;
 
 pub(crate) mod shape_extraction_job_metadata;
@@ -270,6 +284,8 @@ pub(crate) mod shape_input_content_block;
 pub(crate) mod shape_live_view_stream;
 
 pub(crate) mod shape_memory_content;
+
+pub(crate) mod shape_memory_metadata_filter_expression;
 
 pub(crate) mod shape_memory_record_output;
 
@@ -287,15 +303,21 @@ pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_content;
 
+pub(crate) mod shape_context;
+
 pub(crate) mod shape_extraction_job_messages;
 
 pub(crate) mod shape_left_expression;
 
 pub(crate) mod shape_right_expression;
 
+pub(crate) mod shape_token_usage;
+
 pub(crate) mod shape_content_block_list;
 
 pub(crate) mod shape_messages_list;
+
+pub(crate) mod shape_span_context;
 
 pub(crate) mod shape_tool_result_structured_content;
 

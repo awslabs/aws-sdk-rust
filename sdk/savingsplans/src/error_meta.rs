@@ -141,6 +141,9 @@ where
 impl From<crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesError> for Error {
     fn from(err: crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesError) -> Self {
         match err {
+            crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }

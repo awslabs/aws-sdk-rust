@@ -20,6 +20,22 @@ pub struct ResourceData {
     pub kubernetes_workload: ::std::option::Option<crate::types::KubernetesWorkload>,
     /// <p>Contains detailed information about the container associated with the activity that prompted GuardDuty to generate a finding.</p>
     pub container: ::std::option::Option<crate::types::ContainerFindingResource>,
+    /// <p>Contains detailed information about the Amazon ECS cluster associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub ecs_cluster: ::std::option::Option<crate::types::EcsCluster>,
+    /// <p>Contains detailed information about the Amazon ECS task associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub ecs_task: ::std::option::Option<crate::types::EcsTask>,
+    /// <p>Contains detailed information about the IAM instance profile associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileV2>,
+    /// <p>Contains detailed information about the Auto Scaling Group associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub autoscaling_auto_scaling_group: ::std::option::Option<crate::types::AutoscalingAutoScalingGroup>,
+    /// <p>Contains detailed information about the EC2 launch template associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub ec2_launch_template: ::std::option::Option<crate::types::Ec2LaunchTemplate>,
+    /// <p>Contains detailed information about the EC2 VPC associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub ec2_vpc: ::std::option::Option<crate::types::Ec2Vpc>,
+    /// <p>Contains detailed information about the EC2 Image associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub ec2_image: ::std::option::Option<crate::types::Ec2Image>,
+    /// <p>Contains detailed information about the CloudFormation stack associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub cloudformation_stack: ::std::option::Option<crate::types::CloudformationStack>,
 }
 impl ResourceData {
     /// <p>Contains information about the Amazon S3 bucket.</p>
@@ -54,6 +70,38 @@ impl ResourceData {
     pub fn container(&self) -> ::std::option::Option<&crate::types::ContainerFindingResource> {
         self.container.as_ref()
     }
+    /// <p>Contains detailed information about the Amazon ECS cluster associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn ecs_cluster(&self) -> ::std::option::Option<&crate::types::EcsCluster> {
+        self.ecs_cluster.as_ref()
+    }
+    /// <p>Contains detailed information about the Amazon ECS task associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn ecs_task(&self) -> ::std::option::Option<&crate::types::EcsTask> {
+        self.ecs_task.as_ref()
+    }
+    /// <p>Contains detailed information about the IAM instance profile associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn iam_instance_profile(&self) -> ::std::option::Option<&crate::types::IamInstanceProfileV2> {
+        self.iam_instance_profile.as_ref()
+    }
+    /// <p>Contains detailed information about the Auto Scaling Group associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn autoscaling_auto_scaling_group(&self) -> ::std::option::Option<&crate::types::AutoscalingAutoScalingGroup> {
+        self.autoscaling_auto_scaling_group.as_ref()
+    }
+    /// <p>Contains detailed information about the EC2 launch template associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn ec2_launch_template(&self) -> ::std::option::Option<&crate::types::Ec2LaunchTemplate> {
+        self.ec2_launch_template.as_ref()
+    }
+    /// <p>Contains detailed information about the EC2 VPC associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn ec2_vpc(&self) -> ::std::option::Option<&crate::types::Ec2Vpc> {
+        self.ec2_vpc.as_ref()
+    }
+    /// <p>Contains detailed information about the EC2 Image associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn ec2_image(&self) -> ::std::option::Option<&crate::types::Ec2Image> {
+        self.ec2_image.as_ref()
+    }
+    /// <p>Contains detailed information about the CloudFormation stack associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn cloudformation_stack(&self) -> ::std::option::Option<&crate::types::CloudformationStack> {
+        self.cloudformation_stack.as_ref()
+    }
 }
 impl ResourceData {
     /// Creates a new builder-style object to manufacture [`ResourceData`](crate::types::ResourceData).
@@ -74,6 +122,14 @@ pub struct ResourceDataBuilder {
     pub(crate) eks_cluster: ::std::option::Option<crate::types::EksCluster>,
     pub(crate) kubernetes_workload: ::std::option::Option<crate::types::KubernetesWorkload>,
     pub(crate) container: ::std::option::Option<crate::types::ContainerFindingResource>,
+    pub(crate) ecs_cluster: ::std::option::Option<crate::types::EcsCluster>,
+    pub(crate) ecs_task: ::std::option::Option<crate::types::EcsTask>,
+    pub(crate) iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfileV2>,
+    pub(crate) autoscaling_auto_scaling_group: ::std::option::Option<crate::types::AutoscalingAutoScalingGroup>,
+    pub(crate) ec2_launch_template: ::std::option::Option<crate::types::Ec2LaunchTemplate>,
+    pub(crate) ec2_vpc: ::std::option::Option<crate::types::Ec2Vpc>,
+    pub(crate) ec2_image: ::std::option::Option<crate::types::Ec2Image>,
+    pub(crate) cloudformation_stack: ::std::option::Option<crate::types::CloudformationStack>,
 }
 impl ResourceDataBuilder {
     /// <p>Contains information about the Amazon S3 bucket.</p>
@@ -188,6 +244,118 @@ impl ResourceDataBuilder {
     pub fn get_container(&self) -> &::std::option::Option<crate::types::ContainerFindingResource> {
         &self.container
     }
+    /// <p>Contains detailed information about the Amazon ECS cluster associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn ecs_cluster(mut self, input: crate::types::EcsCluster) -> Self {
+        self.ecs_cluster = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the Amazon ECS cluster associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_ecs_cluster(mut self, input: ::std::option::Option<crate::types::EcsCluster>) -> Self {
+        self.ecs_cluster = input;
+        self
+    }
+    /// <p>Contains detailed information about the Amazon ECS cluster associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_ecs_cluster(&self) -> &::std::option::Option<crate::types::EcsCluster> {
+        &self.ecs_cluster
+    }
+    /// <p>Contains detailed information about the Amazon ECS task associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn ecs_task(mut self, input: crate::types::EcsTask) -> Self {
+        self.ecs_task = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the Amazon ECS task associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_ecs_task(mut self, input: ::std::option::Option<crate::types::EcsTask>) -> Self {
+        self.ecs_task = input;
+        self
+    }
+    /// <p>Contains detailed information about the Amazon ECS task associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_ecs_task(&self) -> &::std::option::Option<crate::types::EcsTask> {
+        &self.ecs_task
+    }
+    /// <p>Contains detailed information about the IAM instance profile associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileV2) -> Self {
+        self.iam_instance_profile = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the IAM instance profile associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfileV2>) -> Self {
+        self.iam_instance_profile = input;
+        self
+    }
+    /// <p>Contains detailed information about the IAM instance profile associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfileV2> {
+        &self.iam_instance_profile
+    }
+    /// <p>Contains detailed information about the Auto Scaling Group associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn autoscaling_auto_scaling_group(mut self, input: crate::types::AutoscalingAutoScalingGroup) -> Self {
+        self.autoscaling_auto_scaling_group = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the Auto Scaling Group associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_autoscaling_auto_scaling_group(mut self, input: ::std::option::Option<crate::types::AutoscalingAutoScalingGroup>) -> Self {
+        self.autoscaling_auto_scaling_group = input;
+        self
+    }
+    /// <p>Contains detailed information about the Auto Scaling Group associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_autoscaling_auto_scaling_group(&self) -> &::std::option::Option<crate::types::AutoscalingAutoScalingGroup> {
+        &self.autoscaling_auto_scaling_group
+    }
+    /// <p>Contains detailed information about the EC2 launch template associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn ec2_launch_template(mut self, input: crate::types::Ec2LaunchTemplate) -> Self {
+        self.ec2_launch_template = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the EC2 launch template associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_ec2_launch_template(mut self, input: ::std::option::Option<crate::types::Ec2LaunchTemplate>) -> Self {
+        self.ec2_launch_template = input;
+        self
+    }
+    /// <p>Contains detailed information about the EC2 launch template associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_ec2_launch_template(&self) -> &::std::option::Option<crate::types::Ec2LaunchTemplate> {
+        &self.ec2_launch_template
+    }
+    /// <p>Contains detailed information about the EC2 VPC associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn ec2_vpc(mut self, input: crate::types::Ec2Vpc) -> Self {
+        self.ec2_vpc = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the EC2 VPC associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_ec2_vpc(mut self, input: ::std::option::Option<crate::types::Ec2Vpc>) -> Self {
+        self.ec2_vpc = input;
+        self
+    }
+    /// <p>Contains detailed information about the EC2 VPC associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_ec2_vpc(&self) -> &::std::option::Option<crate::types::Ec2Vpc> {
+        &self.ec2_vpc
+    }
+    /// <p>Contains detailed information about the EC2 Image associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn ec2_image(mut self, input: crate::types::Ec2Image) -> Self {
+        self.ec2_image = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the EC2 Image associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_ec2_image(mut self, input: ::std::option::Option<crate::types::Ec2Image>) -> Self {
+        self.ec2_image = input;
+        self
+    }
+    /// <p>Contains detailed information about the EC2 Image associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_ec2_image(&self) -> &::std::option::Option<crate::types::Ec2Image> {
+        &self.ec2_image
+    }
+    /// <p>Contains detailed information about the CloudFormation stack associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn cloudformation_stack(mut self, input: crate::types::CloudformationStack) -> Self {
+        self.cloudformation_stack = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the CloudFormation stack associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_cloudformation_stack(mut self, input: ::std::option::Option<crate::types::CloudformationStack>) -> Self {
+        self.cloudformation_stack = input;
+        self
+    }
+    /// <p>Contains detailed information about the CloudFormation stack associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_cloudformation_stack(&self) -> &::std::option::Option<crate::types::CloudformationStack> {
+        &self.cloudformation_stack
+    }
     /// Consumes the builder and constructs a [`ResourceData`](crate::types::ResourceData).
     pub fn build(self) -> crate::types::ResourceData {
         crate::types::ResourceData {
@@ -199,6 +367,14 @@ impl ResourceDataBuilder {
             eks_cluster: self.eks_cluster,
             kubernetes_workload: self.kubernetes_workload,
             container: self.container,
+            ecs_cluster: self.ecs_cluster,
+            ecs_task: self.ecs_task,
+            iam_instance_profile: self.iam_instance_profile,
+            autoscaling_auto_scaling_group: self.autoscaling_auto_scaling_group,
+            ec2_launch_template: self.ec2_launch_template,
+            ec2_vpc: self.ec2_vpc,
+            ec2_image: self.ec2_image,
+            cloudformation_stack: self.cloudformation_stack,
         }
     }
 }

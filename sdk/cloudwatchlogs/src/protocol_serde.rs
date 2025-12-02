@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_kms_key;
 
+pub(crate) mod shape_associate_source_to_s3_table_integration;
+
 pub(crate) mod shape_cancel_export_task;
 
 pub(crate) mod shape_create_delivery;
@@ -111,6 +113,8 @@ pub(crate) mod shape_describe_subscription_filters;
 
 pub(crate) mod shape_disassociate_kms_key;
 
+pub(crate) mod shape_disassociate_source_from_s3_table_integration;
+
 pub(crate) mod shape_filter_log_events;
 
 pub(crate) mod shape_get_data_protection_policy;
@@ -129,6 +133,8 @@ pub(crate) mod shape_get_log_anomaly_detector;
 
 pub(crate) mod shape_get_log_events;
 
+pub(crate) mod shape_get_log_fields;
+
 pub(crate) mod shape_get_log_group_fields;
 
 pub(crate) mod shape_get_log_object;
@@ -143,6 +149,8 @@ pub(crate) mod shape_get_scheduled_query_history;
 
 pub(crate) mod shape_get_transformer;
 
+pub(crate) mod shape_list_aggregate_log_group_summaries;
+
 pub(crate) mod shape_list_anomalies;
 
 pub(crate) mod shape_list_integrations;
@@ -154,6 +162,8 @@ pub(crate) mod shape_list_log_groups;
 pub(crate) mod shape_list_log_groups_for_query;
 
 pub(crate) mod shape_list_scheduled_queries;
+
+pub(crate) mod shape_list_sources_for_s3_table_integration;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -230,6 +240,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_associate_kms_key_input;
+
+pub(crate) mod shape_associate_source_to_s3_table_integration_input;
 
 pub(crate) mod shape_cancel_export_task_input;
 
@@ -321,6 +333,8 @@ pub(crate) mod shape_describe_subscription_filters_input;
 
 pub(crate) mod shape_disassociate_kms_key_input;
 
+pub(crate) mod shape_disassociate_source_from_s3_table_integration_input;
+
 pub(crate) mod shape_filter_log_events_input;
 
 pub(crate) mod shape_get_data_protection_policy_input;
@@ -338,6 +352,8 @@ pub(crate) mod shape_get_integration_input;
 pub(crate) mod shape_get_log_anomaly_detector_input;
 
 pub(crate) mod shape_get_log_events_input;
+
+pub(crate) mod shape_get_log_fields_input;
 
 pub(crate) mod shape_get_log_group_fields_input;
 
@@ -367,6 +383,8 @@ pub(crate) mod shape_invalid_sequence_token_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
+pub(crate) mod shape_list_aggregate_log_group_summaries_input;
+
 pub(crate) mod shape_list_anomalies_input;
 
 pub(crate) mod shape_list_integrations_input;
@@ -378,6 +396,8 @@ pub(crate) mod shape_list_log_groups_for_query_input;
 pub(crate) mod shape_list_log_groups_input;
 
 pub(crate) mod shape_list_scheduled_queries_input;
+
+pub(crate) mod shape_list_sources_for_s3_table_integration_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
@@ -479,11 +499,17 @@ pub(crate) mod shape_account_policies;
 
 pub(crate) mod shape_account_policy;
 
+pub(crate) mod shape_aggregate_log_group_summaries;
+
 pub(crate) mod shape_anomalies;
 
 pub(crate) mod shape_anomaly_detectors;
 
 pub(crate) mod shape_configuration_templates;
+
+pub(crate) mod shape_data_source;
+
+pub(crate) mod shape_data_source_filter;
 
 pub(crate) mod shape_deliveries;
 
@@ -522,6 +548,8 @@ pub(crate) mod shape_input_log_event;
 pub(crate) mod shape_integration_details;
 
 pub(crate) mod shape_integration_summaries;
+
+pub(crate) mod shape_log_fields_list;
 
 pub(crate) mod shape_log_group_arn_list;
 
@@ -573,6 +601,8 @@ pub(crate) mod shape_resource_policy;
 
 pub(crate) mod shape_s3_delivery_configuration;
 
+pub(crate) mod shape_s3_table_integration_sources;
+
 pub(crate) mod shape_scheduled_query_log_group_identifiers;
 
 pub(crate) mod shape_scheduled_query_summary_list;
@@ -590,6 +620,8 @@ pub(crate) mod shape_transformed_logs;
 pub(crate) mod shape_trigger_history_record_list;
 
 pub(crate) mod shape_add_keys;
+
+pub(crate) mod shape_aggregate_log_group_summary;
 
 pub(crate) mod shape_anomaly;
 
@@ -622,6 +654,8 @@ pub(crate) mod shape_list_to_map;
 pub(crate) mod shape_live_tail_session_start;
 
 pub(crate) mod shape_live_tail_session_update;
+
+pub(crate) mod shape_log_fields_list_item;
 
 pub(crate) mod shape_log_group;
 
@@ -677,6 +711,8 @@ pub(crate) mod shape_result_rows;
 
 pub(crate) mod shape_s3_configuration;
 
+pub(crate) mod shape_s3_table_integration_source;
+
 pub(crate) mod shape_scheduled_query_summary;
 
 pub(crate) mod shape_searched_log_stream;
@@ -715,9 +751,13 @@ pub(crate) mod shape_export_task_status;
 
 pub(crate) mod shape_extracted_values;
 
+pub(crate) mod shape_grouping_identifiers;
+
 pub(crate) mod shape_histogram;
 
 pub(crate) mod shape_inherited_properties;
+
+pub(crate) mod shape_log_field_type;
 
 pub(crate) mod shape_log_group_names;
 
@@ -766,6 +806,8 @@ pub(crate) mod shape_columns;
 pub(crate) mod shape_copy_value_entries;
 
 pub(crate) mod shape_delete_with_keys;
+
+pub(crate) mod shape_grouping_identifier;
 
 pub(crate) mod shape_input_log_stream_names;
 

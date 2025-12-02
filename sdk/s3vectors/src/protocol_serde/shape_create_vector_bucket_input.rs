@@ -9,8 +9,18 @@ pub fn ser_create_vector_bucket_input_input(
         crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.vector_bucket_name {
-        object.key("vectorBucketName").string(var_3.as_str());
+    if let Some(var_3) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("tags").start_object();
+        for (key_5, value_6) in var_3 {
+            {
+                object_4.key(key_5.as_str()).string(value_6.as_str());
+            }
+        }
+        object_4.finish();
+    }
+    if let Some(var_7) = &input.vector_bucket_name {
+        object.key("vectorBucketName").string(var_7.as_str());
     }
     Ok(())
 }

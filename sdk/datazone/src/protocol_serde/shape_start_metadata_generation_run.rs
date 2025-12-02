@@ -234,6 +234,10 @@ pub(crate) fn de_start_metadata_generation_run(
                             .transpose()?,
                     );
                 }
+                "types" => {
+                    builder =
+                        builder.set_types(crate::protocol_serde::shape_metadata_generation_run_types::de_metadata_generation_run_types(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -2253,4 +2253,26 @@ impl ModifyDBInstanceFluentBuilder {
     pub fn get_master_user_authentication_type(&self) -> &::std::option::Option<crate::types::MasterUserAuthenticationType> {
         self.inner.get_master_user_authentication_type()
     }
+    ///
+    /// Appends an item to `AdditionalStorageVolumes`.
+    ///
+    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
+    ///
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can create up to 3 additional storage volumes. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn additional_storage_volumes(mut self, input: crate::types::ModifyAdditionalStorageVolume) -> Self {
+        self.inner = self.inner.additional_storage_volumes(input);
+        self
+    }
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can create up to 3 additional storage volumes. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn set_additional_storage_volumes(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ModifyAdditionalStorageVolume>>,
+    ) -> Self {
+        self.inner = self.inner.set_additional_storage_volumes(input);
+        self
+    }
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can create up to 3 additional storage volumes. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModifyAdditionalStorageVolume>> {
+        self.inner.get_additional_storage_volumes()
+    }
 }

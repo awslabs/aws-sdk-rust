@@ -13,6 +13,7 @@
 /// # let savingsplantype = unimplemented!();
 /// match savingsplantype {
 ///     SavingsPlanType::Compute => { /* ... */ },
+///     SavingsPlanType::Database => { /* ... */ },
 ///     SavingsPlanType::Ec2Instance => { /* ... */ },
 ///     SavingsPlanType::Sagemaker => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum SavingsPlanType {
     #[allow(missing_docs)] // documentation missing in model
     Compute,
     #[allow(missing_docs)] // documentation missing in model
+    Database,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2Instance,
     #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for SavingsPlanType {
     fn from(s: &str) -> Self {
         match s {
             "Compute" => SavingsPlanType::Compute,
+            "Database" => SavingsPlanType::Database,
             "EC2Instance" => SavingsPlanType::Ec2Instance,
             "SageMaker" => SavingsPlanType::Sagemaker,
             other => SavingsPlanType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl SavingsPlanType {
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanType::Compute => "Compute",
+            SavingsPlanType::Database => "Database",
             SavingsPlanType::Ec2Instance => "EC2Instance",
             SavingsPlanType::Sagemaker => "SageMaker",
             SavingsPlanType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl SavingsPlanType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Compute", "EC2Instance", "SageMaker"]
+        &["Compute", "Database", "EC2Instance", "SageMaker"]
     }
 }
 impl ::std::convert::AsRef<str> for SavingsPlanType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for SavingsPlanType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SavingsPlanType::Compute => write!(f, "Compute"),
+            SavingsPlanType::Database => write!(f, "Database"),
             SavingsPlanType::Ec2Instance => write!(f, "EC2Instance"),
             SavingsPlanType::Sagemaker => write!(f, "SageMaker"),
             SavingsPlanType::Unknown(value) => write!(f, "{value}"),

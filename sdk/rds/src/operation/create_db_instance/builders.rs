@@ -981,6 +981,8 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p><code>postgres</code></p></li>
     /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
+    /// <li>
     /// <p><code>sqlserver-ee</code></p></li>
     /// <li>
     /// <p><code>sqlserver-se</code></p></li>
@@ -1036,6 +1038,8 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p><code>postgres</code></p></li>
     /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
+    /// <li>
     /// <p><code>sqlserver-ee</code></p></li>
     /// <li>
     /// <p><code>sqlserver-se</code></p></li>
@@ -1090,6 +1094,8 @@ impl CreateDBInstanceFluentBuilder {
     /// <p><code>oracle-se2-cdb</code></p></li>
     /// <li>
     /// <p><code>postgres</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-dev-ee</code></p></li>
     /// <li>
     /// <p><code>sqlserver-ee</code></p></li>
     /// <li>
@@ -3174,5 +3180,24 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
     pub fn get_master_user_authentication_type(&self) -> &::std::option::Option<crate::types::MasterUserAuthenticationType> {
         self.inner.get_master_user_authentication_type()
+    }
+    ///
+    /// Appends an item to `AdditionalStorageVolumes`.
+    ///
+    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
+    ///
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn additional_storage_volumes(mut self, input: crate::types::AdditionalStorageVolume) -> Self {
+        self.inner = self.inner.additional_storage_volumes(input);
+        self
+    }
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn set_additional_storage_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>) -> Self {
+        self.inner = self.inner.set_additional_storage_volumes(input);
+        self
+    }
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>> {
+        self.inner.get_additional_storage_volumes()
     }
 }

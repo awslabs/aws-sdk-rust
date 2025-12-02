@@ -14,6 +14,10 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "distance" => {
+                            builder = builder
+                                .set_distance(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()));
+                        }
                         "key" => {
                             builder = builder.set_key(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -21,15 +25,8 @@ where
                                     .transpose()?,
                             );
                         }
-                        "data" => {
-                            builder = builder.set_data(crate::protocol_serde::shape_vector_data::de_vector_data(tokens)?);
-                        }
                         "metadata" => {
                             builder = builder.set_metadata(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
-                        }
-                        "distance" => {
-                            builder = builder
-                                .set_distance(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()));
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

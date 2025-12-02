@@ -393,6 +393,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Managed integrations for AWS IoT Device Management | [aws-sdk-iotmanagedintegrations](https://crates.io/crates/aws-sdk-iotmanagedintegrations) ([docs](https://docs.rs/aws-sdk-iotmanagedintegrations)) |
 | Migration Hub Strategy Recommendations | [aws-sdk-migrationhubstrategy](https://crates.io/crates/aws-sdk-migrationhubstrategy) ([docs](https://docs.rs/aws-sdk-migrationhubstrategy)) |
 | Network Flow Monitor | [aws-sdk-networkflowmonitor](https://crates.io/crates/aws-sdk-networkflowmonitor) ([docs](https://docs.rs/aws-sdk-networkflowmonitor)) |
+| Nova Act Service | [aws-sdk-novaact](https://crates.io/crates/aws-sdk-novaact) ([docs](https://docs.rs/aws-sdk-novaact)) |
 | OpenSearch Service Serverless | [aws-sdk-opensearchserverless](https://crates.io/crates/aws-sdk-opensearchserverless) ([docs](https://docs.rs/aws-sdk-opensearchserverless)) |
 | Partner Central Account API | [aws-sdk-partnercentralaccount](https://crates.io/crates/aws-sdk-partnercentralaccount) ([docs](https://docs.rs/aws-sdk-partnercentralaccount)) |
 | Partner Central Benefits API | [aws-sdk-partnercentralbenefits](https://crates.io/crates/aws-sdk-partnercentralbenefits) ([docs](https://docs.rs/aws-sdk-partnercentralbenefits)) |

@@ -65,6 +65,8 @@ pub use crate::types::_option_state::OptionState;
 
 pub use crate::types::_aiml_options_output::AimlOptionsOutput;
 
+pub use crate::types::_serverless_vector_acceleration::ServerlessVectorAcceleration;
+
 pub use crate::types::_s3_vectors_engine::S3VectorsEngine;
 
 pub use crate::types::_natural_language_query_generation_options_output::NaturalLanguageQueryGenerationOptionsOutput;
@@ -714,6 +716,8 @@ mod _scheduled_auto_tune_severity_type;
 mod _scheduled_by;
 
 mod _security_lake_direct_query_data_source;
+
+mod _serverless_vector_acceleration;
 
 mod _service_software_options;
 

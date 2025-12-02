@@ -9,17 +9,26 @@ pub fn ser_telemetry_rule(
     {
         object.key("TelemetryType").string(input.telemetry_type.as_str());
     }
-    if let Some(var_2) = &input.destination_configuration {
+    if let Some(var_2) = &input.telemetry_source_types {
+        let mut array_3 = object.key("TelemetrySourceTypes").start_array();
+        for item_4 in var_2 {
+            {
+                array_3.value().string(item_4.as_str());
+            }
+        }
+        array_3.finish();
+    }
+    if let Some(var_5) = &input.destination_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("DestinationConfiguration").start_object();
-        crate::protocol_serde::shape_telemetry_destination_configuration::ser_telemetry_destination_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_6 = object.key("DestinationConfiguration").start_object();
+        crate::protocol_serde::shape_telemetry_destination_configuration::ser_telemetry_destination_configuration(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_4) = &input.scope {
-        object.key("Scope").string(var_4.as_str());
+    if let Some(var_7) = &input.scope {
+        object.key("Scope").string(var_7.as_str());
     }
-    if let Some(var_5) = &input.selection_criteria {
-        object.key("SelectionCriteria").string(var_5.as_str());
+    if let Some(var_8) = &input.selection_criteria {
+        object.key("SelectionCriteria").string(var_8.as_str());
     }
     Ok(())
 }
@@ -52,6 +61,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::TelemetryType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "TelemetrySourceTypes" => {
+                            builder = builder
+                                .set_telemetry_source_types(crate::protocol_serde::shape_telemetry_source_types::de_telemetry_source_types(tokens)?);
                         }
                         "DestinationConfiguration" => {
                             builder = builder.set_destination_configuration(

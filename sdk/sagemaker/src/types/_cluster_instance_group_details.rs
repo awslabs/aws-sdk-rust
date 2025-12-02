@@ -59,9 +59,24 @@ pub struct ClusterInstanceGroupDetails {
     pub kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfigDetails>,
     /// <p>The instance capacity requirements for the instance group.</p>
     pub capacity_requirements: ::std::option::Option<crate::types::ClusterCapacityRequirements>,
-    /// <p>The number of nodes running a specific image ID since the last software update request.</p>
+    /// <p>Represents the number of running nodes using the desired Image ID.</p>
+    /// <ol>
+    /// <li>
+    /// <p><b>During software update operations:</b> This count shows the number of nodes running on the desired Image ID. If a rollback occurs, the current image ID and desired image ID (both included in the describe cluster response) swap values. The TargetStateCount then shows the number of nodes running on the newly designated desired image ID (which was previously the current image ID).</p></li>
+    /// <li>
+    /// <p><b>During simultaneous scaling and software update operations:</b> This count shows the number of instances running on the desired image ID, including any new instances created as part of the scaling request. New nodes are always created using the desired image ID, so TargetStateCount reflects the total count of nodes running on the desired image ID, even during rollback scenarios.</p></li>
+    /// </ol>
     pub target_state_count: ::std::option::Option<i32>,
     /// <p>Status of the last software udpate request.</p>
+    /// <p>Status transitions follow these possible sequences:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; Succeeded</p></li>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; RollbackComplete</p></li>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; Failed</p></li>
+    /// </ul>
     pub software_update_status: ::std::option::Option<crate::types::SoftwareUpdateStatus>,
     /// <p>The configuration to use when updating the AMI versions.</p>
     pub active_software_update_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
@@ -166,11 +181,26 @@ impl ClusterInstanceGroupDetails {
     pub fn capacity_requirements(&self) -> ::std::option::Option<&crate::types::ClusterCapacityRequirements> {
         self.capacity_requirements.as_ref()
     }
-    /// <p>The number of nodes running a specific image ID since the last software update request.</p>
+    /// <p>Represents the number of running nodes using the desired Image ID.</p>
+    /// <ol>
+    /// <li>
+    /// <p><b>During software update operations:</b> This count shows the number of nodes running on the desired Image ID. If a rollback occurs, the current image ID and desired image ID (both included in the describe cluster response) swap values. The TargetStateCount then shows the number of nodes running on the newly designated desired image ID (which was previously the current image ID).</p></li>
+    /// <li>
+    /// <p><b>During simultaneous scaling and software update operations:</b> This count shows the number of instances running on the desired image ID, including any new instances created as part of the scaling request. New nodes are always created using the desired image ID, so TargetStateCount reflects the total count of nodes running on the desired image ID, even during rollback scenarios.</p></li>
+    /// </ol>
     pub fn target_state_count(&self) -> ::std::option::Option<i32> {
         self.target_state_count
     }
     /// <p>Status of the last software udpate request.</p>
+    /// <p>Status transitions follow these possible sequences:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; Succeeded</p></li>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; RollbackComplete</p></li>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; Failed</p></li>
+    /// </ul>
     pub fn software_update_status(&self) -> ::std::option::Option<&crate::types::SoftwareUpdateStatus> {
         self.software_update_status.as_ref()
     }
@@ -561,31 +591,76 @@ impl ClusterInstanceGroupDetailsBuilder {
     pub fn get_capacity_requirements(&self) -> &::std::option::Option<crate::types::ClusterCapacityRequirements> {
         &self.capacity_requirements
     }
-    /// <p>The number of nodes running a specific image ID since the last software update request.</p>
+    /// <p>Represents the number of running nodes using the desired Image ID.</p>
+    /// <ol>
+    /// <li>
+    /// <p><b>During software update operations:</b> This count shows the number of nodes running on the desired Image ID. If a rollback occurs, the current image ID and desired image ID (both included in the describe cluster response) swap values. The TargetStateCount then shows the number of nodes running on the newly designated desired image ID (which was previously the current image ID).</p></li>
+    /// <li>
+    /// <p><b>During simultaneous scaling and software update operations:</b> This count shows the number of instances running on the desired image ID, including any new instances created as part of the scaling request. New nodes are always created using the desired image ID, so TargetStateCount reflects the total count of nodes running on the desired image ID, even during rollback scenarios.</p></li>
+    /// </ol>
     pub fn target_state_count(mut self, input: i32) -> Self {
         self.target_state_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of nodes running a specific image ID since the last software update request.</p>
+    /// <p>Represents the number of running nodes using the desired Image ID.</p>
+    /// <ol>
+    /// <li>
+    /// <p><b>During software update operations:</b> This count shows the number of nodes running on the desired Image ID. If a rollback occurs, the current image ID and desired image ID (both included in the describe cluster response) swap values. The TargetStateCount then shows the number of nodes running on the newly designated desired image ID (which was previously the current image ID).</p></li>
+    /// <li>
+    /// <p><b>During simultaneous scaling and software update operations:</b> This count shows the number of instances running on the desired image ID, including any new instances created as part of the scaling request. New nodes are always created using the desired image ID, so TargetStateCount reflects the total count of nodes running on the desired image ID, even during rollback scenarios.</p></li>
+    /// </ol>
     pub fn set_target_state_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_state_count = input;
         self
     }
-    /// <p>The number of nodes running a specific image ID since the last software update request.</p>
+    /// <p>Represents the number of running nodes using the desired Image ID.</p>
+    /// <ol>
+    /// <li>
+    /// <p><b>During software update operations:</b> This count shows the number of nodes running on the desired Image ID. If a rollback occurs, the current image ID and desired image ID (both included in the describe cluster response) swap values. The TargetStateCount then shows the number of nodes running on the newly designated desired image ID (which was previously the current image ID).</p></li>
+    /// <li>
+    /// <p><b>During simultaneous scaling and software update operations:</b> This count shows the number of instances running on the desired image ID, including any new instances created as part of the scaling request. New nodes are always created using the desired image ID, so TargetStateCount reflects the total count of nodes running on the desired image ID, even during rollback scenarios.</p></li>
+    /// </ol>
     pub fn get_target_state_count(&self) -> &::std::option::Option<i32> {
         &self.target_state_count
     }
     /// <p>Status of the last software udpate request.</p>
+    /// <p>Status transitions follow these possible sequences:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; Succeeded</p></li>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; RollbackComplete</p></li>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; Failed</p></li>
+    /// </ul>
     pub fn software_update_status(mut self, input: crate::types::SoftwareUpdateStatus) -> Self {
         self.software_update_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Status of the last software udpate request.</p>
+    /// <p>Status transitions follow these possible sequences:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; Succeeded</p></li>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; RollbackComplete</p></li>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; Failed</p></li>
+    /// </ul>
     pub fn set_software_update_status(mut self, input: ::std::option::Option<crate::types::SoftwareUpdateStatus>) -> Self {
         self.software_update_status = input;
         self
     }
     /// <p>Status of the last software udpate request.</p>
+    /// <p>Status transitions follow these possible sequences:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; Succeeded</p></li>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; RollbackComplete</p></li>
+    /// <li>
+    /// <p>Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; Failed</p></li>
+    /// </ul>
     pub fn get_software_update_status(&self) -> &::std::option::Option<crate::types::SoftwareUpdateStatus> {
         &self.software_update_status
     }

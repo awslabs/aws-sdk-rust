@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_code_interpreters_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_evaluators_output_output_next_token(
+    input: &crate::operation::list_evaluators::ListEvaluatorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_gateway_targets_output_output_next_token(
     input: &crate::operation::list_gateway_targets::ListGatewayTargetsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -91,6 +101,56 @@ pub(crate) fn reflens_list_memories_output_output_next_token(
 
 pub(crate) fn reflens_list_oauth2_credential_providers_output_output_next_token(
     input: &crate::operation::list_oauth2_credential_providers::ListOauth2CredentialProvidersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_online_evaluation_configs_output_output_next_token(
+    input: &crate::operation::list_online_evaluation_configs::ListOnlineEvaluationConfigsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_policies_output_output_next_token(
+    input: &crate::operation::list_policies::ListPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_policy_engines_output_output_next_token(
+    input: &crate::operation::list_policy_engines::ListPolicyEnginesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_policy_generation_assets_output_output_next_token(
+    input: &crate::operation::list_policy_generation_assets::ListPolicyGenerationAssetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_policy_generations_output_output_next_token(
+    input: &crate::operation::list_policy_generations::ListPolicyGenerationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -151,6 +211,13 @@ pub(crate) fn lens_list_code_interpreters_output_output_code_interpreter_summari
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_evaluators_output_output_evaluators(
+    input: crate::operation::list_evaluators::ListEvaluatorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluatorSummary>> {
+    let input = input.evaluators;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_gateway_targets_output_output_items(
     input: crate::operation::list_gateway_targets::ListGatewayTargetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>> {
@@ -176,6 +243,41 @@ pub(crate) fn lens_list_oauth2_credential_providers_output_output_credential_pro
     input: crate::operation::list_oauth2_credential_providers::ListOauth2CredentialProvidersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Oauth2CredentialProviderItem>> {
     let input = input.credential_providers;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_online_evaluation_configs_output_output_online_evaluation_configs(
+    input: crate::operation::list_online_evaluation_configs::ListOnlineEvaluationConfigsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::OnlineEvaluationConfigSummary>> {
+    let input = input.online_evaluation_configs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_policies_output_output_policies(
+    input: crate::operation::list_policies::ListPoliciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Policy>> {
+    let input = input.policies;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_policy_engines_output_output_policy_engines(
+    input: crate::operation::list_policy_engines::ListPolicyEnginesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyEngine>> {
+    let input = input.policy_engines;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_policy_generation_assets_output_output_policy_generation_assets(
+    input: crate::operation::list_policy_generation_assets::ListPolicyGenerationAssetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyGenerationAsset>> {
+    let input = input.policy_generation_assets?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_policy_generations_output_output_policy_generations(
+    input: crate::operation::list_policy_generations::ListPolicyGenerationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>> {
+    let input = input.policy_generations;
     ::std::option::Option::Some(input)
 }
 

@@ -6,7 +6,21 @@
 pub struct ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the resource which could not be found.</p>
+    pub resource_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the resource which could not be found.</p>
+    pub resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl ResourceNotFoundException {
+    /// <p>The identifier of the resource which could not be found.</p>
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource which could not be found.</p>
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
@@ -49,6 +63,8 @@ impl ResourceNotFoundException {
 #[non_exhaustive]
 pub struct ResourceNotFoundExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ResourceNotFoundExceptionBuilder {
@@ -66,6 +82,34 @@ impl ResourceNotFoundExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>The identifier of the resource which could not be found.</p>
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the resource which could not be found.</p>
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_id = input;
+        self
+    }
+    /// <p>The identifier of the resource which could not be found.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
+    /// <p>The type of the resource which could not be found.</p>
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of the resource which could not be found.</p>
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_type = input;
+        self
+    }
+    /// <p>The type of the resource which could not be found.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -81,6 +125,8 @@ impl ResourceNotFoundExceptionBuilder {
     pub fn build(self) -> crate::types::error::ResourceNotFoundException {
         crate::types::error::ResourceNotFoundException {
             message: self.message,
+            resource_id: self.resource_id,
+            resource_type: self.resource_type,
             meta: self.meta.unwrap_or_default(),
         }
     }

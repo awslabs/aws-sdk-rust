@@ -59,6 +59,13 @@ pub fn de_delete_telemetry_rule_for_organization_http_error(
                             )
                         })?,
                     );
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                            crate::operation::delete_telemetry_rule_for_organization::DeleteTelemetryRuleForOrganizationError::unhandled(
+                                "Failed to parse retryAfterSeconds from header `Retry-After",
+                            )
+                        })?,
+                    );
                     let output = output.meta(generic);
                     output.build()
                 };

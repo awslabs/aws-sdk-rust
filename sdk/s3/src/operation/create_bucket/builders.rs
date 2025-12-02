@@ -22,10 +22,7 @@ impl crate::operation::create_bucket::builders::CreateBucketInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBucket`.
 ///
-/// <important>
-/// <p>End of support notice: As of October 1, 2025, Amazon S3 has discontinued support for Email Grantee Access Control Lists (ACLs). If you attempt to use an Email Grantee ACL in a request after October 1, 2025, the request will receive an <code>HTTP 405</code> (Method Not Allowed) error.</p>
-/// <p>This change affects the following Amazon Web Services Regions: US East (N. Virginia), US West (N. California), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), Europe (Ireland), and South America (São Paulo).</p>
-/// </important> <note>
+/// <note>
 /// <p>This action creates an Amazon S3 bucket. To create an Amazon S3 on Outposts bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html"> <code>CreateBucket</code> </a>.</p>
 /// </note>
 /// <p>Creates a new S3 bucket. To create a bucket, you must set up Amazon S3 and have a valid Amazon Web Services Access Key ID to authenticate requests. Anonymous requests are never allowed to create buckets. By creating the bucket, you become the bucket owner.</p>

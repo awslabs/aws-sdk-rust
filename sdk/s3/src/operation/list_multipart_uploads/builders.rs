@@ -22,10 +22,6 @@ impl crate::operation::list_multipart_uploads::builders::ListMultipartUploadsInp
 }
 /// Fluent builder constructing a request to `ListMultipartUploads`.
 ///
-/// <important>
-/// <p>End of support notice: Beginning November 21, 2025, Amazon S3 will stop returning <code>DisplayName</code>. Update your applications to use canonical IDs (unique identifier for Amazon Web Services accounts), Amazon Web Services account ID (12 digit identifier) or IAM ARNs (full resource naming) as a direct replacement of <code>DisplayName</code>.</p>
-/// <p>This change affects the following Amazon Web Services Regions: US East (N. Virginia) Region, US West (N. California) Region, US West (Oregon) Region, Asia Pacific (Singapore) Region, Asia Pacific (Sydney) Region, Asia Pacific (Tokyo) Region, Europe (Ireland) Region, and South America (São Paulo) Region.</p>
-/// </important>
 /// <p>This operation lists in-progress multipart uploads in a bucket. An in-progress multipart upload is a multipart upload that has been initiated by the <code>CreateMultipartUpload</code> request, but has not yet been completed or aborted.</p><note>
 /// <p><b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress, you can't delete the bucket until all the in-progress multipart uploads are aborted or completed. To delete these in-progress multipart uploads, use the <code>ListMultipartUploads</code> operation to list the in-progress multipart uploads in the bucket and use the <code>AbortMultipartUpload</code> operation to abort all the in-progress multipart uploads.</p>
 /// </note>

@@ -679,11 +679,15 @@ pub(crate) mod shape_malware_scan_details;
 
 pub(crate) mod shape_map_equals;
 
+pub(crate) mod shape_matches;
+
 pub(crate) mod shape_member_features_configuration_result;
 
 pub(crate) mod shape_neq;
 
 pub(crate) mod shape_not_equals;
+
+pub(crate) mod shape_not_matches;
 
 pub(crate) mod shape_organization_additional_configuration_result;
 
@@ -971,19 +975,35 @@ pub(crate) mod shape_account;
 
 pub(crate) mod shape_anomaly_object;
 
+pub(crate) mod shape_autoscaling_auto_scaling_group;
+
 pub(crate) mod shape_block_public_access;
 
 pub(crate) mod shape_bucket_policy;
 
+pub(crate) mod shape_cloudformation_stack;
+
 pub(crate) mod shape_container_finding_resource;
+
+pub(crate) mod shape_ec2_image;
 
 pub(crate) mod shape_ec2_instance;
 
+pub(crate) mod shape_ec2_launch_template;
+
 pub(crate) mod shape_ec2_network_interface;
+
+pub(crate) mod shape_ec2_vpc;
+
+pub(crate) mod shape_ecs_cluster;
+
+pub(crate) mod shape_ecs_task;
 
 pub(crate) mod shape_eks_cluster;
 
 pub(crate) mod shape_file_paths;
+
+pub(crate) mod shape_iam_instance_profile_v2;
 
 pub(crate) mod shape_kubernetes_workload;
 

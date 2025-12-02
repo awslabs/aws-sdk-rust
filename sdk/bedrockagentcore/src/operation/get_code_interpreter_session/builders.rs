@@ -27,11 +27,11 @@ impl crate::operation::get_code_interpreter_session::builders::GetCodeInterprete
 /// <p>The following operations are related to <code>GetCodeInterpreterSession</code>:</p>
 /// <ul>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/API_ListCodeInterpreterSessions.html">ListCodeInterpreterSessions</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_ListCodeInterpreterSessions.html">ListCodeInterpreterSessions</a></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopCodeInterpreterSession.html">StopCodeInterpreterSession</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCodeInterpreterSessionFluentBuilder {

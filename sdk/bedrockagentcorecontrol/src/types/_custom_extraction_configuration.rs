@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CustomExtractionConfiguration {
+    /// <p>The configurations to override the default extraction step for the episodic memory strategy.</p>
+    EpisodicExtractionOverride(crate::types::EpisodicExtractionOverride),
     /// <p>The semantic extraction override configuration.</p>
     SemanticExtractionOverride(crate::types::SemanticExtractionOverride),
     /// <p>The user preference extraction override configuration.</p>
@@ -19,6 +21,19 @@ pub enum CustomExtractionConfiguration {
     Unknown,
 }
 impl CustomExtractionConfiguration {
+    /// Tries to convert the enum instance into [`EpisodicExtractionOverride`](crate::types::CustomExtractionConfiguration::EpisodicExtractionOverride), extracting the inner [`EpisodicExtractionOverride`](crate::types::EpisodicExtractionOverride).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_episodic_extraction_override(&self) -> ::std::result::Result<&crate::types::EpisodicExtractionOverride, &Self> {
+        if let CustomExtractionConfiguration::EpisodicExtractionOverride(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EpisodicExtractionOverride`](crate::types::CustomExtractionConfiguration::EpisodicExtractionOverride).
+    pub fn is_episodic_extraction_override(&self) -> bool {
+        self.as_episodic_extraction_override().is_ok()
+    }
     /// Tries to convert the enum instance into [`SemanticExtractionOverride`](crate::types::CustomExtractionConfiguration::SemanticExtractionOverride), extracting the inner [`SemanticExtractionOverride`](crate::types::SemanticExtractionOverride).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_semantic_extraction_override(&self) -> ::std::result::Result<&crate::types::SemanticExtractionOverride, &Self> {

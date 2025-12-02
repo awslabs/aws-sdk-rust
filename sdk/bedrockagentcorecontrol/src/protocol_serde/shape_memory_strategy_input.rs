@@ -28,6 +28,12 @@ pub fn ser_memory_strategy_input(
             crate::protocol_serde::shape_custom_memory_strategy_input::ser_custom_memory_strategy_input(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::MemoryStrategyInput::EpisodicMemoryStrategy(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_9.key("episodicMemoryStrategy").start_object();
+            crate::protocol_serde::shape_episodic_memory_strategy_input::ser_episodic_memory_strategy_input(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::MemoryStrategyInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "MemoryStrategyInput",

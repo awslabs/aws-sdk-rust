@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The exception that occurs when the request conflicts with the current state of the resource. This can happen when trying to modify a resource that is currently being modified by another request, or when trying to create a resource that already exists.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>An exception thrown when attempting to create a resource with an identifier that already exists.</p>
+    DuplicateIdException(crate::types::error::DuplicateIdException),
     /// <p>The exception that occurs when the service encounters an unexpected internal error. This is a temporary condition that will resolve itself with retries. We recommend implementing exponential backoff retry logic in your application.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The input fails to satisfy the constraints specified by AgentCore. Check your input values and try again.</p>
@@ -41,6 +43,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::DuplicateIdException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidInputException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -74,6 +77,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::DuplicateIdException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::InvalidInputException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -335,6 +339,36 @@ impl From<crate::operation::delete_memory_record::DeleteMemoryRecordError> for E
             crate::operation::delete_memory_record::DeleteMemoryRecordError::ThrottledException(inner) => Error::ThrottledException(inner),
             crate::operation::delete_memory_record::DeleteMemoryRecordError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_memory_record::DeleteMemoryRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::evaluate::EvaluateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::evaluate::EvaluateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::evaluate::EvaluateError> for Error {
+    fn from(err: crate::operation::evaluate::EvaluateError) -> Self {
+        match err {
+            crate::operation::evaluate::EvaluateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::evaluate::EvaluateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::evaluate::EvaluateError::DuplicateIdException(inner) => Error::DuplicateIdException(inner),
+            crate::operation::evaluate::EvaluateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::evaluate::EvaluateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::evaluate::EvaluateError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::evaluate::EvaluateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::evaluate::EvaluateError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::evaluate::EvaluateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::evaluate::EvaluateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1335,6 +1369,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::DuplicateIdException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::InvalidInputException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -1354,6 +1389,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::DuplicateIdException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::InvalidInputException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

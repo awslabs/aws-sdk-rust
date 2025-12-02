@@ -145,4 +145,18 @@ impl GetMetadataGenerationRunFluentBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }
+    /// <p>The type of the metadata generation run.</p>
+    pub fn r#type(mut self, input: crate::types::MetadataGenerationRunType) -> Self {
+        self.inner = self.inner.r#type(input);
+        self
+    }
+    /// <p>The type of the metadata generation run.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::MetadataGenerationRunType>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// <p>The type of the metadata generation run.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::MetadataGenerationRunType> {
+        self.inner.get_type()
+    }
 }

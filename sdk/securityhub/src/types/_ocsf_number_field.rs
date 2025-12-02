@@ -24,6 +24,8 @@
 ///     OcsfNumberField::ResourcesImageInUseCount => { /* ... */ },
 ///     OcsfNumberField::SeverityId => { /* ... */ },
 ///     OcsfNumberField::StatusId => { /* ... */ },
+///     OcsfNumberField::VendorAttributesSeverityId => { /* ... */ },
+///     OcsfNumberField::VulnerabilitiesCveCvssBaseScore => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -76,6 +78,10 @@ pub enum OcsfNumberField {
     SeverityId,
     #[allow(missing_docs)] // documentation missing in model
     StatusId,
+    #[allow(missing_docs)] // documentation missing in model
+    VendorAttributesSeverityId,
+    #[allow(missing_docs)] // documentation missing in model
+    VulnerabilitiesCveCvssBaseScore,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -95,6 +101,8 @@ impl ::std::convert::From<&str> for OcsfNumberField {
             "resources.image.in_use_count" => OcsfNumberField::ResourcesImageInUseCount,
             "severity_id" => OcsfNumberField::SeverityId,
             "status_id" => OcsfNumberField::StatusId,
+            "vendor_attributes.severity_id" => OcsfNumberField::VendorAttributesSeverityId,
+            "vulnerabilities.cve.cvss.base_score" => OcsfNumberField::VulnerabilitiesCveCvssBaseScore,
             other => OcsfNumberField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -122,6 +130,8 @@ impl OcsfNumberField {
             OcsfNumberField::ResourcesImageInUseCount => "resources.image.in_use_count",
             OcsfNumberField::SeverityId => "severity_id",
             OcsfNumberField::StatusId => "status_id",
+            OcsfNumberField::VendorAttributesSeverityId => "vendor_attributes.severity_id",
+            OcsfNumberField::VulnerabilitiesCveCvssBaseScore => "vulnerabilities.cve.cvss.base_score",
             OcsfNumberField::Unknown(value) => value.as_str(),
         }
     }
@@ -140,6 +150,8 @@ impl OcsfNumberField {
             "resources.image.in_use_count",
             "severity_id",
             "status_id",
+            "vendor_attributes.severity_id",
+            "vulnerabilities.cve.cvss.base_score",
         ]
     }
 }
@@ -175,6 +187,8 @@ impl ::std::fmt::Display for OcsfNumberField {
             OcsfNumberField::ResourcesImageInUseCount => write!(f, "resources.image.in_use_count"),
             OcsfNumberField::SeverityId => write!(f, "severity_id"),
             OcsfNumberField::StatusId => write!(f, "status_id"),
+            OcsfNumberField::VendorAttributesSeverityId => write!(f, "vendor_attributes.severity_id"),
+            OcsfNumberField::VulnerabilitiesCveCvssBaseScore => write!(f, "vulnerabilities.cve.cvss.base_score"),
             OcsfNumberField::Unknown(value) => write!(f, "{value}"),
         }
     }

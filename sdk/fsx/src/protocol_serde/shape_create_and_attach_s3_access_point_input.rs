@@ -18,14 +18,20 @@ pub fn ser_create_and_attach_s3_access_point_input_input(
         crate::protocol_serde::shape_create_and_attach_s3_access_point_open_zfs_configuration::ser_create_and_attach_s3_access_point_open_zfs_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.s3_access_point {
+    if let Some(var_6) = &input.ontap_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("S3AccessPoint").start_object();
-        crate::protocol_serde::shape_create_and_attach_s3_access_point_s3_configuration::ser_create_and_attach_s3_access_point_s3_configuration(
-            &mut object_7,
-            var_6,
-        )?;
+        let mut object_7 = object.key("OntapConfiguration").start_object();
+        crate::protocol_serde::shape_create_and_attach_s3_access_point_ontap_configuration::ser_create_and_attach_s3_access_point_ontap_configuration(&mut object_7, var_6)?;
         object_7.finish();
+    }
+    if let Some(var_8) = &input.s3_access_point {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("S3AccessPoint").start_object();
+        crate::protocol_serde::shape_create_and_attach_s3_access_point_s3_configuration::ser_create_and_attach_s3_access_point_s3_configuration(
+            &mut object_9,
+            var_8,
+        )?;
+        object_9.finish();
     }
     Ok(())
 }

@@ -82,6 +82,8 @@ pub struct DbSnapshot {
     pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
     pub snapshot_availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The additional storage volumes associated with the DB snapshot. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+    pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
 }
 impl DbSnapshot {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -239,6 +241,12 @@ impl DbSnapshot {
     pub fn snapshot_availability_zone(&self) -> ::std::option::Option<&str> {
         self.snapshot_availability_zone.as_deref()
     }
+    /// <p>The additional storage volumes associated with the DB snapshot. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_storage_volumes.is_none()`.
+    pub fn additional_storage_volumes(&self) -> &[crate::types::AdditionalStorageVolume] {
+        self.additional_storage_volumes.as_deref().unwrap_or_default()
+    }
 }
 impl DbSnapshot {
     /// Creates a new builder-style object to manufacture [`DbSnapshot`](crate::types::DbSnapshot).
@@ -288,6 +296,7 @@ pub struct DbSnapshotBuilder {
     pub(crate) multi_tenant: ::std::option::Option<bool>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) snapshot_availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
 }
 impl DbSnapshotBuilder {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -829,6 +838,26 @@ impl DbSnapshotBuilder {
     pub fn get_snapshot_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_availability_zone
     }
+    /// Appends an item to `additional_storage_volumes`.
+    ///
+    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
+    ///
+    /// <p>The additional storage volumes associated with the DB snapshot. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+    pub fn additional_storage_volumes(mut self, input: crate::types::AdditionalStorageVolume) -> Self {
+        let mut v = self.additional_storage_volumes.unwrap_or_default();
+        v.push(input);
+        self.additional_storage_volumes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The additional storage volumes associated with the DB snapshot. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+    pub fn set_additional_storage_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>) -> Self {
+        self.additional_storage_volumes = input;
+        self
+    }
+    /// <p>The additional storage volumes associated with the DB snapshot. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>> {
+        &self.additional_storage_volumes
+    }
     /// Consumes the builder and constructs a [`DbSnapshot`](crate::types::DbSnapshot).
     pub fn build(self) -> crate::types::DbSnapshot {
         crate::types::DbSnapshot {
@@ -869,6 +898,7 @@ impl DbSnapshotBuilder {
             multi_tenant: self.multi_tenant,
             dedicated_log_volume: self.dedicated_log_volume,
             snapshot_availability_zone: self.snapshot_availability_zone,
+            additional_storage_volumes: self.additional_storage_volumes,
         }
     }
 }

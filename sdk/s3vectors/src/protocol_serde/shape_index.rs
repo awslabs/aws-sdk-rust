@@ -66,6 +66,11 @@ where
                             builder = builder
                                 .set_metadata_configuration(crate::protocol_serde::shape_metadata_configuration::de_metadata_configuration(tokens)?);
                         }
+                        "encryptionConfiguration" => {
+                            builder = builder.set_encryption_configuration(
+                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

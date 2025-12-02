@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListScheduledQueriesInput {
-    /// <p>The maximum number of scheduled queries to return in a single call.</p>
+    /// <p>The maximum number of scheduled queries to return. Valid range is 1 to 1000.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Filter results by the state of scheduled queries (ENABLED or DISABLED).</p>
+    /// <p>Filter scheduled queries by state. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. If not specified, all scheduled queries are returned.</p>
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
 }
 impl ListScheduledQueriesInput {
-    /// <p>The maximum number of scheduled queries to return in a single call.</p>
+    /// <p>The maximum number of scheduled queries to return. Valid range is 1 to 1000.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -19,7 +19,7 @@ impl ListScheduledQueriesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Filter results by the state of scheduled queries (ENABLED or DISABLED).</p>
+    /// <p>Filter scheduled queries by state. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. If not specified, all scheduled queries are returned.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
         self.state.as_ref()
     }
@@ -40,17 +40,17 @@ pub struct ListScheduledQueriesInputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ScheduledQueryState>,
 }
 impl ListScheduledQueriesInputBuilder {
-    /// <p>The maximum number of scheduled queries to return in a single call.</p>
+    /// <p>The maximum number of scheduled queries to return. Valid range is 1 to 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of scheduled queries to return in a single call.</p>
+    /// <p>The maximum number of scheduled queries to return. Valid range is 1 to 1000.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of scheduled queries to return in a single call.</p>
+    /// <p>The maximum number of scheduled queries to return. Valid range is 1 to 1000.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
@@ -68,17 +68,17 @@ impl ListScheduledQueriesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Filter results by the state of scheduled queries (ENABLED or DISABLED).</p>
+    /// <p>Filter scheduled queries by state. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. If not specified, all scheduled queries are returned.</p>
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filter results by the state of scheduled queries (ENABLED or DISABLED).</p>
+    /// <p>Filter scheduled queries by state. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. If not specified, all scheduled queries are returned.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>Filter results by the state of scheduled queries (ENABLED or DISABLED).</p>
+    /// <p>Filter scheduled queries by state. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. If not specified, all scheduled queries are returned.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
     }

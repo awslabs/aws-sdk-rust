@@ -314,6 +314,16 @@ pub(crate) fn converse_stream_metrics_correct_errors(
     builder
 }
 
+pub(crate) fn audio_block_correct_errors(mut builder: crate::types::builders::AudioBlockBuilder) -> crate::types::builders::AudioBlockBuilder {
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::AudioFormat>().ok()
+    }
+    if builder.source.is_none() {
+        builder.source = Some(crate::types::AudioSource::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn cache_point_block_correct_errors(
     mut builder: crate::types::builders::CachePointBlockBuilder,
 ) -> crate::types::builders::CachePointBlockBuilder {
@@ -440,6 +450,15 @@ pub(crate) fn image_block_correct_errors(mut builder: crate::types::builders::Im
     }
     if builder.source.is_none() {
         builder.source = Some(crate::types::ImageSource::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn image_block_start_correct_errors(
+    mut builder: crate::types::builders::ImageBlockStartBuilder,
+) -> crate::types::builders::ImageBlockStartBuilder {
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::ImageFormat>().ok()
     }
     builder
 }

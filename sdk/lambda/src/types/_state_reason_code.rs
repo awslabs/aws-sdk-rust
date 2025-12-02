@@ -15,6 +15,7 @@
 ///     StateReasonCode::CapacityProviderScalingLimitExceeded => { /* ... */ },
 ///     StateReasonCode::Creating => { /* ... */ },
 ///     StateReasonCode::DisabledKmsKey => { /* ... */ },
+///     StateReasonCode::DrainingDurableExecutions => { /* ... */ },
 ///     StateReasonCode::Ec2RequestLimitExceeded => { /* ... */ },
 ///     StateReasonCode::EfsioError => { /* ... */ },
 ///     StateReasonCode::EfsMountConnectivityError => { /* ... */ },
@@ -82,6 +83,8 @@ pub enum StateReasonCode {
     Creating,
     #[allow(missing_docs)] // documentation missing in model
     DisabledKmsKey,
+    #[allow(missing_docs)] // documentation missing in model
+    DrainingDurableExecutions,
     #[allow(missing_docs)] // documentation missing in model
     Ec2RequestLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
@@ -158,6 +161,7 @@ impl ::std::convert::From<&str> for StateReasonCode {
             "CapacityProviderScalingLimitExceeded" => StateReasonCode::CapacityProviderScalingLimitExceeded,
             "Creating" => StateReasonCode::Creating,
             "DisabledKMSKey" => StateReasonCode::DisabledKmsKey,
+            "DrainingDurableExecutions" => StateReasonCode::DrainingDurableExecutions,
             "EC2RequestLimitExceeded" => StateReasonCode::Ec2RequestLimitExceeded,
             "EFSIOError" => StateReasonCode::EfsioError,
             "EFSMountConnectivityError" => StateReasonCode::EfsMountConnectivityError,
@@ -209,6 +213,7 @@ impl StateReasonCode {
             StateReasonCode::CapacityProviderScalingLimitExceeded => "CapacityProviderScalingLimitExceeded",
             StateReasonCode::Creating => "Creating",
             StateReasonCode::DisabledKmsKey => "DisabledKMSKey",
+            StateReasonCode::DrainingDurableExecutions => "DrainingDurableExecutions",
             StateReasonCode::Ec2RequestLimitExceeded => "EC2RequestLimitExceeded",
             StateReasonCode::EfsioError => "EFSIOError",
             StateReasonCode::EfsMountConnectivityError => "EFSMountConnectivityError",
@@ -251,6 +256,7 @@ impl StateReasonCode {
             "CapacityProviderScalingLimitExceeded",
             "Creating",
             "DisabledKMSKey",
+            "DrainingDurableExecutions",
             "EC2RequestLimitExceeded",
             "EFSIOError",
             "EFSMountConnectivityError",
@@ -310,6 +316,7 @@ impl ::std::fmt::Display for StateReasonCode {
             StateReasonCode::CapacityProviderScalingLimitExceeded => write!(f, "CapacityProviderScalingLimitExceeded"),
             StateReasonCode::Creating => write!(f, "Creating"),
             StateReasonCode::DisabledKmsKey => write!(f, "DisabledKMSKey"),
+            StateReasonCode::DrainingDurableExecutions => write!(f, "DrainingDurableExecutions"),
             StateReasonCode::Ec2RequestLimitExceeded => write!(f, "EC2RequestLimitExceeded"),
             StateReasonCode::EfsioError => write!(f, "EFSIOError"),
             StateReasonCode::EfsMountConnectivityError => write!(f, "EFSMountConnectivityError"),

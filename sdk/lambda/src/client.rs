@@ -194,6 +194,8 @@ mod add_layer_version_permission;
 
 mod add_permission;
 
+mod checkpoint_durable_execution;
+
 mod create_alias;
 
 mod create_capacity_provider;
@@ -263,6 +265,12 @@ mod get_capacity_provider;
 
 mod get_code_signing_config;
 
+mod get_durable_execution;
+
+mod get_durable_execution_history;
+
+mod get_durable_execution_state;
+
 mod get_event_source_mapping;
 
 mod get_function;
@@ -304,6 +312,8 @@ mod list_aliases;
 mod list_capacity_providers;
 
 mod list_code_signing_configs;
+
+mod list_durable_executions_by_function;
 
 mod list_event_source_mappings;
 
@@ -348,6 +358,14 @@ mod put_runtime_management_config;
 mod remove_layer_version_permission;
 
 mod remove_permission;
+
+mod send_durable_execution_callback_failure;
+
+mod send_durable_execution_callback_heartbeat;
+
+mod send_durable_execution_callback_success;
+
+mod stop_durable_execution;
 
 mod tag_resource;
 

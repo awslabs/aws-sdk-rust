@@ -22,7 +22,7 @@ impl crate::operation::get_finding_statistics_v2::builders::GetFindingStatistics
 }
 /// Fluent builder constructing a request to `GetFindingStatisticsV2`.
 ///
-/// <p>Returns aggregated statistical data about findings. <code>GetFindingStatisticsV2</code> use <code>securityhub:GetAdhocInsightResults</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>s</code> action. This API is in public preview and subject to change.</p>
+/// <p>Returns aggregated statistical data about findings. <code>GetFindingStatisticsV2</code> use <code>securityhub:GetAdhocInsightResults</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>s</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingStatisticsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

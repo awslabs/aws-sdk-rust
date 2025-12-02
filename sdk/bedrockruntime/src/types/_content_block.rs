@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum ContentBlock {
+    /// <p>An audio content block containing audio data in the conversation.</p>
+    Audio(crate::types::AudioBlock),
     /// <p>CachePoint to include in the message.</p>
     CachePoint(crate::types::CachePointBlock),
     /// <p>A content block that contains both generated text and associated citation information, providing traceability between the response and source documents.</p>
@@ -40,6 +42,19 @@ pub enum ContentBlock {
     Unknown,
 }
 impl ContentBlock {
+    /// Tries to convert the enum instance into [`Audio`](crate::types::ContentBlock::Audio), extracting the inner [`AudioBlock`](crate::types::AudioBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_audio(&self) -> ::std::result::Result<&crate::types::AudioBlock, &Self> {
+        if let ContentBlock::Audio(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Audio`](crate::types::ContentBlock::Audio).
+    pub fn is_audio(&self) -> bool {
+        self.as_audio().is_ok()
+    }
     /// Tries to convert the enum instance into [`CachePoint`](crate::types::ContentBlock::CachePoint), extracting the inner [`CachePointBlock`](crate::types::CachePointBlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cache_point(&self) -> ::std::result::Result<&crate::types::CachePointBlock, &Self> {
@@ -191,6 +206,7 @@ impl ContentBlock {
 impl ::std::fmt::Debug for ContentBlock {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            ContentBlock::Audio(val) => f.debug_tuple("Audio").field(&val).finish(),
             ContentBlock::CachePoint(val) => f.debug_tuple("CachePoint").field(&val).finish(),
             ContentBlock::CitationsContent(val) => f.debug_tuple("CitationsContent").field(&val).finish(),
             ContentBlock::Document(val) => f.debug_tuple("Document").field(&val).finish(),

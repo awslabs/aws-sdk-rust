@@ -4,21 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsekmsFilter {
-    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, we recommend using the <code>KMSKeyArn</code> filter in conjunction with other object metadata filters, like <code>MatchAnyPrefix</code>, <code>CreatedAfter</code>, or <code>MatchAnyStorageClass</code>.</p><note>
-    /// <p>You must provide the full KMS Key ARN. You can't use an alias name or alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    /// </note>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, use keys in the same Region as the S3 Batch Operations job.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services Key Management Service (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects by S3 Bucket Key status. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">Reducing the cost of SSE-KMS with Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services Key Management Service (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects by S3 Bucket Key status.</p>
     pub bucket_key_enabled: ::std::option::Option<bool>,
 }
 impl SsekmsFilter {
-    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, we recommend using the <code>KMSKeyArn</code> filter in conjunction with other object metadata filters, like <code>MatchAnyPrefix</code>, <code>CreatedAfter</code>, or <code>MatchAnyStorageClass</code>.</p><note>
-    /// <p>You must provide the full KMS Key ARN. You can't use an alias name or alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    /// </note>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, use keys in the same Region as the S3 Batch Operations job.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services Key Management Service (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects by S3 Bucket Key status. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">Reducing the cost of SSE-KMS with Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services Key Management Service (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects by S3 Bucket Key status.</p>
     pub fn bucket_key_enabled(&self) -> ::std::option::Option<bool> {
         self.bucket_key_enabled
     }
@@ -38,37 +34,31 @@ pub struct SsekmsFilterBuilder {
     pub(crate) bucket_key_enabled: ::std::option::Option<bool>,
 }
 impl SsekmsFilterBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, we recommend using the <code>KMSKeyArn</code> filter in conjunction with other object metadata filters, like <code>MatchAnyPrefix</code>, <code>CreatedAfter</code>, or <code>MatchAnyStorageClass</code>.</p><note>
-    /// <p>You must provide the full KMS Key ARN. You can't use an alias name or alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    /// </note>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, use keys in the same Region as the S3 Batch Operations job.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, we recommend using the <code>KMSKeyArn</code> filter in conjunction with other object metadata filters, like <code>MatchAnyPrefix</code>, <code>CreatedAfter</code>, or <code>MatchAnyStorageClass</code>.</p><note>
-    /// <p>You must provide the full KMS Key ARN. You can't use an alias name or alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    /// </note>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, use keys in the same Region as the S3 Batch Operations job.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, we recommend using the <code>KMSKeyArn</code> filter in conjunction with other object metadata filters, like <code>MatchAnyPrefix</code>, <code>CreatedAfter</code>, or <code>MatchAnyStorageClass</code>.</p><note>
-    /// <p>You must provide the full KMS Key ARN. You can't use an alias name or alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN"> KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    /// </note>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter to return objects that are encrypted by the specified key. For best performance, use keys in the same Region as the S3 Batch Operations job.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
-    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services Key Management Service (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects by S3 Bucket Key status. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">Reducing the cost of SSE-KMS with Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services Key Management Service (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects by S3 Bucket Key status.</p>
     pub fn bucket_key_enabled(mut self, input: bool) -> Self {
         self.bucket_key_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services Key Management Service (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects by S3 Bucket Key status. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">Reducing the cost of SSE-KMS with Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services Key Management Service (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects by S3 Bucket Key status.</p>
     pub fn set_bucket_key_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bucket_key_enabled = input;
         self
     }
-    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services Key Management Service (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects by S3 Bucket Key status. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">Reducing the cost of SSE-KMS with Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services Key Management Service (Amazon Web Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects by S3 Bucket Key status.</p>
     pub fn get_bucket_key_enabled(&self) -> &::std::option::Option<bool> {
         &self.bucket_key_enabled
     }

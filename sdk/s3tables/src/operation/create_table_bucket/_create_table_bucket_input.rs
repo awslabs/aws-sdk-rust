@@ -7,6 +7,8 @@ pub struct CreateTableBucketInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// <p>The default storage class configuration for the table bucket. This configuration will be applied to all new tables created in this bucket unless overridden at the table level. If not specified, the service default storage class will be used.</p>
+    pub storage_class_configuration: ::std::option::Option<crate::types::StorageClassConfiguration>,
     /// <p>A map of user-defined tags that you would like to apply to the table bucket that you are creating. A tag is a key-value pair that you apply to your resources. Tags can help you organize and control access to resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Tagging for cost allocation or attribute-based access control (ABAC)</a>.</p><note>
     /// <p>You must have the <code>s3tables:TagResource</code> permission in addition to <code>s3tables:CreateTableBucket</code> permisson to create a table bucket with tags.</p>
     /// </note>
@@ -20,6 +22,10 @@ impl CreateTableBucketInput {
     /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
+    }
+    /// <p>The default storage class configuration for the table bucket. This configuration will be applied to all new tables created in this bucket unless overridden at the table level. If not specified, the service default storage class will be used.</p>
+    pub fn storage_class_configuration(&self) -> ::std::option::Option<&crate::types::StorageClassConfiguration> {
+        self.storage_class_configuration.as_ref()
     }
     /// <p>A map of user-defined tags that you would like to apply to the table bucket that you are creating. A tag is a key-value pair that you apply to your resources. Tags can help you organize and control access to resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Tagging for cost allocation or attribute-based access control (ABAC)</a>.</p><note>
     /// <p>You must have the <code>s3tables:TagResource</code> permission in addition to <code>s3tables:CreateTableBucket</code> permisson to create a table bucket with tags.</p>
@@ -41,6 +47,7 @@ impl CreateTableBucketInput {
 pub struct CreateTableBucketInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) storage_class_configuration: ::std::option::Option<crate::types::StorageClassConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateTableBucketInputBuilder {
@@ -72,6 +79,20 @@ impl CreateTableBucketInputBuilder {
     /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
+    }
+    /// <p>The default storage class configuration for the table bucket. This configuration will be applied to all new tables created in this bucket unless overridden at the table level. If not specified, the service default storage class will be used.</p>
+    pub fn storage_class_configuration(mut self, input: crate::types::StorageClassConfiguration) -> Self {
+        self.storage_class_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default storage class configuration for the table bucket. This configuration will be applied to all new tables created in this bucket unless overridden at the table level. If not specified, the service default storage class will be used.</p>
+    pub fn set_storage_class_configuration(mut self, input: ::std::option::Option<crate::types::StorageClassConfiguration>) -> Self {
+        self.storage_class_configuration = input;
+        self
+    }
+    /// <p>The default storage class configuration for the table bucket. This configuration will be applied to all new tables created in this bucket unless overridden at the table level. If not specified, the service default storage class will be used.</p>
+    pub fn get_storage_class_configuration(&self) -> &::std::option::Option<crate::types::StorageClassConfiguration> {
+        &self.storage_class_configuration
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -106,6 +127,7 @@ impl CreateTableBucketInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_table_bucket::CreateTableBucketInput {
             name: self.name,
             encryption_configuration: self.encryption_configuration,
+            storage_class_configuration: self.storage_class_configuration,
             tags: self.tags,
         })
     }

@@ -319,6 +319,17 @@ pub fn ser_restore_db_instance_from_s3_input_input_input(
     if let Some(var_119) = &input.engine_lifecycle_support {
         scope_118.string(var_119);
     }
+    #[allow(unused_mut)]
+    let mut scope_120 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_121) = &input.additional_storage_volumes {
+        let mut list_123 = scope_120.start_list(false, None);
+        for item_122 in var_121 {
+            #[allow(unused_mut)]
+            let mut entry_124 = list_123.entry();
+            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_124, item_122)?;
+        }
+        list_123.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

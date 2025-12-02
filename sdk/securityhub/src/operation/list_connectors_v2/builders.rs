@@ -22,7 +22,7 @@ impl crate::operation::list_connectors_v2::builders::ListConnectorsV2InputBuilde
 }
 /// Fluent builder constructing a request to `ListConnectorsV2`.
 ///
-/// <p>Grants permission to retrieve a list of connectorsV2 and their metadata for the calling account. This API is in public preview and subject to change.</p>
+/// <p>Grants permission to retrieve a list of connectorsV2 and their metadata for the calling account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConnectorsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

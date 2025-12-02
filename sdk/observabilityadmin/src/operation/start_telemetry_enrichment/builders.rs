@@ -22,7 +22,7 @@ impl crate::operation::start_telemetry_enrichment::builders::StartTelemetryEnric
 }
 /// Fluent builder constructing a request to `StartTelemetryEnrichment`.
 ///
-/// <p>Enables the resource tags for telemetry feature for your account, which enhances telemetry data with additional resource metadata from Amazon Web Services Resource Explorer to provide richer context for monitoring and observability.</p>
+/// <p>Enables the resource tags for telemetry feature for your account, which enhances telemetry data with additional resource metadata from Resource Explorer to provide richer context for monitoring and observability.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartTelemetryEnrichmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

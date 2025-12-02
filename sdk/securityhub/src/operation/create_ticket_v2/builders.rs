@@ -22,7 +22,7 @@ impl crate::operation::create_ticket_v2::builders::CreateTicketV2InputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTicketV2`.
 ///
-/// <p>Grants permission to create a ticket in the chosen ITSM based on finding information for the provided finding metadata UID. This API is in public preview and subject to change.</p>
+/// <p>Grants permission to create a ticket in the chosen ITSM based on finding information for the provided finding metadata UID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTicketV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,5 +149,19 @@ impl CreateTicketV2FluentBuilder {
     /// <p>The client idempotency token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>The mode for ticket creation. When set to DRYRUN, the ticket is created using a Security Hub owned template test finding to verify the integration is working correctly.</p>
+    pub fn mode(mut self, input: crate::types::TicketCreationMode) -> Self {
+        self.inner = self.inner.mode(input);
+        self
+    }
+    /// <p>The mode for ticket creation. When set to DRYRUN, the ticket is created using a Security Hub owned template test finding to verify the integration is working correctly.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::TicketCreationMode>) -> Self {
+        self.inner = self.inner.set_mode(input);
+        self
+    }
+    /// <p>The mode for ticket creation. When set to DRYRUN, the ticket is created using a Security Hub owned template test finding to verify the integration is working correctly.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::TicketCreationMode> {
+        self.inner.get_mode()
     }
 }

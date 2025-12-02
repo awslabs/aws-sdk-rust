@@ -18,6 +18,34 @@ pub(crate) fn de_service_quota_exceeded_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "ResourceId" => {
+                    builder = builder.set_resource_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ResourceType" => {
+                    builder = builder.set_resource_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ServiceCode" => {
+                    builder = builder.set_service_code(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "QuotaCode" => {
+                    builder = builder.set_quota_code(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "amznErrorType" => {
                     builder = builder.set_amzn_error_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

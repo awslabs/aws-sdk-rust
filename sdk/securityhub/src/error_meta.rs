@@ -23,6 +23,8 @@ pub enum Error {
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request was rejected because it would exceed the service quota limit.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request has failed validation because it's missing required fields or has invalid inputs.</p>
@@ -49,6 +51,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceConflictException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -82,6 +85,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceConflictException(inner) => inner.meta(),
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -590,46 +594,6 @@ impl From<crate::operation::batch_update_standards_control_associations::BatchUp
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::connector_registrations_v2::ConnectorRegistrationsV2Error, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::connector_registrations_v2::ConnectorRegistrationsV2Error, R>,
-    ) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::connector_registrations_v2::ConnectorRegistrationsV2Error> for Error {
-    fn from(err: crate::operation::connector_registrations_v2::ConnectorRegistrationsV2Error) -> Self {
-        match err {
-            crate::operation::connector_registrations_v2::ConnectorRegistrationsV2Error::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::connector_registrations_v2::ConnectorRegistrationsV2Error::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::connector_registrations_v2::ConnectorRegistrationsV2Error::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::connector_registrations_v2::ConnectorRegistrationsV2Error::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::connector_registrations_v2::ConnectorRegistrationsV2Error::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::connector_registrations_v2::ConnectorRegistrationsV2Error::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::connector_registrations_v2::ConnectorRegistrationsV2Error::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_action_target::CreateActionTargetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -680,6 +644,9 @@ impl From<crate::operation::create_aggregator_v2::CreateAggregatorV2Error> for E
             crate::operation::create_aggregator_v2::CreateAggregatorV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_aggregator_v2::CreateAggregatorV2Error::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_aggregator_v2::CreateAggregatorV2Error::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::create_aggregator_v2::CreateAggregatorV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_aggregator_v2::CreateAggregatorV2Error::ValidationException(inner) => Error::ValidationException(inner),
@@ -743,6 +710,9 @@ impl From<crate::operation::create_automation_rule_v2::CreateAutomationRuleV2Err
             crate::operation::create_automation_rule_v2::CreateAutomationRuleV2Error::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_automation_rule_v2::CreateAutomationRuleV2Error::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
+            }
+            crate::operation::create_automation_rule_v2::CreateAutomationRuleV2Error::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::create_automation_rule_v2::CreateAutomationRuleV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_automation_rule_v2::CreateAutomationRuleV2Error::ValidationException(inner) => Error::ValidationException(inner),
@@ -814,6 +784,9 @@ impl From<crate::operation::create_connector_v2::CreateConnectorV2Error> for Err
             crate::operation::create_connector_v2::CreateConnectorV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_connector_v2::CreateConnectorV2Error::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_connector_v2::CreateConnectorV2Error::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::create_connector_v2::CreateConnectorV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_connector_v2::CreateConnectorV2Error::ValidationException(inner) => Error::ValidationException(inner),
@@ -3101,6 +3074,37 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_connector_v2::RegisterConnectorV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_connector_v2::RegisterConnectorV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_connector_v2::RegisterConnectorV2Error> for Error {
+    fn from(err: crate::operation::register_connector_v2::RegisterConnectorV2Error) -> Self {
+        match err {
+            crate::operation::register_connector_v2::RegisterConnectorV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::register_connector_v2::RegisterConnectorV2Error::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::register_connector_v2::RegisterConnectorV2Error::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::register_connector_v2::RegisterConnectorV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::register_connector_v2::RegisterConnectorV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::register_connector_v2::RegisterConnectorV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::register_connector_v2::RegisterConnectorV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -3705,6 +3709,7 @@ impl ::std::error::Error for Error {
             Error::ResourceConflictException(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -3724,6 +3729,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceConflictException(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

@@ -504,6 +504,16 @@ pub fn de_db_snapshot(
                 builder = builder.set_snapshot_availability_zone(var_37);
             }
             ,
+            s if s.matches("AdditionalStorageVolumes") /* AdditionalStorageVolumes com.amazonaws.rds#DBSnapshot$AdditionalStorageVolumes */ =>  {
+                let var_38 =
+                    Some(
+                        crate::protocol_serde::shape_additional_storage_volumes_list::de_additional_storage_volumes_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_additional_storage_volumes(var_38);
+            }
+            ,
             _ => {}
         }
     }

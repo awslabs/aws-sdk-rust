@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchObjectSize {
-    /// <p>Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 5 TB.</p>
+    /// <p>Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 50 TB.</p>
     pub bytes_greater_than: i64,
-    /// <p>Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 5 TB.</p>
+    /// <p>Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 50 TB.</p>
     pub bytes_less_than: i64,
 }
 impl MatchObjectSize {
-    /// <p>Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 5 TB.</p>
+    /// <p>Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 50 TB.</p>
     pub fn bytes_greater_than(&self) -> i64 {
         self.bytes_greater_than
     }
-    /// <p>Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 5 TB.</p>
+    /// <p>Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 50 TB.</p>
     pub fn bytes_less_than(&self) -> i64 {
         self.bytes_less_than
     }
@@ -34,31 +34,31 @@ pub struct MatchObjectSizeBuilder {
     pub(crate) bytes_less_than: ::std::option::Option<i64>,
 }
 impl MatchObjectSizeBuilder {
-    /// <p>Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 5 TB.</p>
+    /// <p>Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 50 TB.</p>
     pub fn bytes_greater_than(mut self, input: i64) -> Self {
         self.bytes_greater_than = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 5 TB.</p>
+    /// <p>Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 50 TB.</p>
     pub fn set_bytes_greater_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_greater_than = input;
         self
     }
-    /// <p>Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 5 TB.</p>
+    /// <p>Specifies the minimum object size in Bytes. The value must be a positive number, greater than 0 and less than 50 TB.</p>
     pub fn get_bytes_greater_than(&self) -> &::std::option::Option<i64> {
         &self.bytes_greater_than
     }
-    /// <p>Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 5 TB.</p>
+    /// <p>Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 50 TB.</p>
     pub fn bytes_less_than(mut self, input: i64) -> Self {
         self.bytes_less_than = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 5 TB.</p>
+    /// <p>Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 50 TB.</p>
     pub fn set_bytes_less_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_less_than = input;
         self
     }
-    /// <p>Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 5 TB.</p>
+    /// <p>Specifies the maximum object size in Bytes. The value must be a positive number, greater than the minimum object size and less than 50 TB.</p>
     pub fn get_bytes_less_than(&self) -> &::std::option::Option<i64> {
         &self.bytes_less_than
     }

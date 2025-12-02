@@ -4,10 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelemetryRule {
-    /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC").</p>
+    /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC", "AWS::EKS::Cluster", "AWS::WAFv2::WebACL").</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The type of telemetry to collect (Logs, Metrics, or Traces).</p>
     pub telemetry_type: crate::types::TelemetryType,
+    /// <p>The specific telemetry source types to configure for the resource, such as VPC_FLOW_LOGS or EKS_AUDIT_LOGS. TelemetrySourceTypes must be correlated with the specific resource type.</p>
+    pub telemetry_source_types: ::std::option::Option<::std::vec::Vec<crate::types::TelemetrySourceType>>,
     /// <p>Configuration specifying where and how the telemetry data should be delivered.</p>
     pub destination_configuration: ::std::option::Option<crate::types::TelemetryDestinationConfiguration>,
     /// <p>The organizational scope to which the rule applies, specified using accounts or organizational units.</p>
@@ -16,13 +18,19 @@ pub struct TelemetryRule {
     pub selection_criteria: ::std::option::Option<::std::string::String>,
 }
 impl TelemetryRule {
-    /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC").</p>
+    /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC", "AWS::EKS::Cluster", "AWS::WAFv2::WebACL").</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The type of telemetry to collect (Logs, Metrics, or Traces).</p>
     pub fn telemetry_type(&self) -> &crate::types::TelemetryType {
         &self.telemetry_type
+    }
+    /// <p>The specific telemetry source types to configure for the resource, such as VPC_FLOW_LOGS or EKS_AUDIT_LOGS. TelemetrySourceTypes must be correlated with the specific resource type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.telemetry_source_types.is_none()`.
+    pub fn telemetry_source_types(&self) -> &[crate::types::TelemetrySourceType] {
+        self.telemetry_source_types.as_deref().unwrap_or_default()
     }
     /// <p>Configuration specifying where and how the telemetry data should be delivered.</p>
     pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::TelemetryDestinationConfiguration> {
@@ -50,22 +58,23 @@ impl TelemetryRule {
 pub struct TelemetryRuleBuilder {
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) telemetry_type: ::std::option::Option<crate::types::TelemetryType>,
+    pub(crate) telemetry_source_types: ::std::option::Option<::std::vec::Vec<crate::types::TelemetrySourceType>>,
     pub(crate) destination_configuration: ::std::option::Option<crate::types::TelemetryDestinationConfiguration>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
     pub(crate) selection_criteria: ::std::option::Option<::std::string::String>,
 }
 impl TelemetryRuleBuilder {
-    /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC").</p>
+    /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC", "AWS::EKS::Cluster", "AWS::WAFv2::WebACL").</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC").</p>
+    /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC", "AWS::EKS::Cluster", "AWS::WAFv2::WebACL").</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC").</p>
+    /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC", "AWS::EKS::Cluster", "AWS::WAFv2::WebACL").</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
@@ -83,6 +92,26 @@ impl TelemetryRuleBuilder {
     /// <p>The type of telemetry to collect (Logs, Metrics, or Traces).</p>
     pub fn get_telemetry_type(&self) -> &::std::option::Option<crate::types::TelemetryType> {
         &self.telemetry_type
+    }
+    /// Appends an item to `telemetry_source_types`.
+    ///
+    /// To override the contents of this collection use [`set_telemetry_source_types`](Self::set_telemetry_source_types).
+    ///
+    /// <p>The specific telemetry source types to configure for the resource, such as VPC_FLOW_LOGS or EKS_AUDIT_LOGS. TelemetrySourceTypes must be correlated with the specific resource type.</p>
+    pub fn telemetry_source_types(mut self, input: crate::types::TelemetrySourceType) -> Self {
+        let mut v = self.telemetry_source_types.unwrap_or_default();
+        v.push(input);
+        self.telemetry_source_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The specific telemetry source types to configure for the resource, such as VPC_FLOW_LOGS or EKS_AUDIT_LOGS. TelemetrySourceTypes must be correlated with the specific resource type.</p>
+    pub fn set_telemetry_source_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetrySourceType>>) -> Self {
+        self.telemetry_source_types = input;
+        self
+    }
+    /// <p>The specific telemetry source types to configure for the resource, such as VPC_FLOW_LOGS or EKS_AUDIT_LOGS. TelemetrySourceTypes must be correlated with the specific resource type.</p>
+    pub fn get_telemetry_source_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetrySourceType>> {
+        &self.telemetry_source_types
     }
     /// <p>Configuration specifying where and how the telemetry data should be delivered.</p>
     pub fn destination_configuration(mut self, input: crate::types::TelemetryDestinationConfiguration) -> Self {
@@ -138,6 +167,7 @@ impl TelemetryRuleBuilder {
                     "telemetry_type was not specified but it is required when building TelemetryRule",
                 )
             })?,
+            telemetry_source_types: self.telemetry_source_types,
             destination_configuration: self.destination_configuration,
             scope: self.scope,
             selection_criteria: self.selection_criteria,

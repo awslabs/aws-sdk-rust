@@ -33,9 +33,7 @@ impl crate::operation::get_multi_region_access_point_policy::builders::GetMultiR
 /// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a></p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a></p></li>
-/// </ul><important>
-/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
-/// </important>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

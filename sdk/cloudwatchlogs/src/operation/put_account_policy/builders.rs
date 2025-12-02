@@ -23,6 +23,7 @@ impl crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilde
 /// Fluent builder constructing a request to `PutAccountPolicy`.
 ///
 /// <p>Creates an account-level data protection policy, subscription filter policy, field index policy, transformer policy, or metric extraction policy that applies to all log groups or a subset of log groups in the account.</p>
+/// <p>For field index policies, you can configure indexed fields as <i>facets</i> to enable interactive exploration of your logs. Facets provide value distributions and counts for indexed fields in the CloudWatch Logs Insights console without requiring query execution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html">Use facets to group and explore logs</a>.</p>
 /// <p>To use this operation, you must be signed on with the correct permissions depending on the type of policy that you are creating.</p>
 /// <ul>
 /// <li>
@@ -33,6 +34,8 @@ impl crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilde
 /// <p>To create a transformer policy, you must have the <code>logs:PutTransformer</code> and <code>logs:PutAccountPolicy</code> permissions.</p></li>
 /// <li>
 /// <p>To create a field index policy, you must have the <code>logs:PutIndexPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.</p></li>
+/// <li>
+/// <p>To configure facets for field index policies, you must have the <code>logs:PutIndexPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.</p></li>
 /// <li>
 /// <p>To create a metric extraction policy, you must have the <code>logs:PutMetricExtractionPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.</p></li>
 /// </ul>
@@ -86,7 +89,7 @@ impl crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilde
 /// <p>To find the fields that are in your log group events, use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html">GetLogGroupFields</a> operation.</p>
 /// <p>For example, suppose you have created a field index for <code>requestId</code>. Then, any CloudWatch Logs Insights query on that log group that includes <code>requestId = <i>value</i> </code> or <code>requestId in \[value, value, ...\]</code> will attempt to process only the log events where the indexed field matches the specified value.</p>
 /// <p>Matches of log events to the names of indexed fields are case-sensitive. For example, an indexed field of <code>RequestId</code> won't match a log event containing <code>requestId</code>.</p>
-/// <p>You can have one account-level field index policy that applies to all log groups in the account. Or you can create as many as 20 account-level field index policies that are each scoped to a subset of log groups with the <code>selectionCriteria</code> parameter. If you have multiple account-level index policies with selection criteria, no two of them can use the same or overlapping log group name prefixes. For example, if you have one policy filtered to log groups that start with <code>my-log</code>, you can't have another field index policy filtered to <code>my-logpprod</code> or <code>my-logging</code>.</p>
+/// <p>You can have one account-level field index policy that applies to all log groups in the account. Or you can create as many as 40 account-level field index policies (20 for log group prefix selection, 20 for data source selection) that are each scoped to a subset of log groups or data sources with the <code>selectionCriteria</code> parameter. Field index policies can now be created for specific data source name and type combinations using DataSourceName and DataSourceType selection criteria. If you have multiple account-level index policies with selection criteria, no two of them can use the same or overlapping log group name prefixes. For example, if you have one policy filtered to log groups that start with <code>my-log</code>, you can't have another field index policy filtered to <code>my-logpprod</code> or <code>my-logging</code>.</p>
 /// <p>If you create an account-level field index policy in a monitoring account in cross-account observability, the policy is applied only to the monitoring account and not to any source accounts.</p>
 /// <p>If you want to create a field index policy for a single log group, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a> instead of <code>PutAccountPolicy</code>. If you do so, that log group will use only that log-group level policy, and will ignore the account-level policy that you create with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.</p>
 /// <p><b>Metric extraction policy</b></p>

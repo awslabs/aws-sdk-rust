@@ -262,7 +262,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetScheduledQ
 pub enum GetScheduledQueryError {
     /// <p>You don't have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>An internal server error occurred while processing the request. This is typically a temporary issue and the request can be retried.</p>
+    /// <p>An internal server error occurred while processing the request. This exception is returned when the service encounters an unexpected condition that prevents it from fulfilling the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

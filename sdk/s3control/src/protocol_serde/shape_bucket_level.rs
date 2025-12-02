@@ -25,6 +25,10 @@ pub fn ser_bucket_level(
         let inner_writer = scope.start_el("DetailedStatusCodesMetrics");
         crate::protocol_serde::shape_detailed_status_codes_metrics::ser_detailed_status_codes_metrics(var_5, inner_writer)?
     }
+    if let Some(var_6) = &input.advanced_performance_metrics {
+        let inner_writer = scope.start_el("AdvancedPerformanceMetrics");
+        crate::protocol_serde::shape_advanced_performance_metrics::ser_advanced_performance_metrics(var_6, inner_writer)?
+    }
     scope.finish();
     Ok(())
 }
@@ -38,53 +42,63 @@ pub fn de_bucket_level(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ActivityMetrics") /* ActivityMetrics com.amazonaws.s3control#BucketLevel$ActivityMetrics */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_activity_metrics::de_activity_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_activity_metrics(var_6);
+                builder = builder.set_activity_metrics(var_7);
             }
             ,
             s if s.matches("PrefixLevel") /* PrefixLevel com.amazonaws.s3control#BucketLevel$PrefixLevel */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_prefix_level::de_prefix_level(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_prefix_level(var_7);
+                builder = builder.set_prefix_level(var_8);
             }
             ,
             s if s.matches("AdvancedCostOptimizationMetrics") /* AdvancedCostOptimizationMetrics com.amazonaws.s3control#BucketLevel$AdvancedCostOptimizationMetrics */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_advanced_cost_optimization_metrics::de_advanced_cost_optimization_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_advanced_cost_optimization_metrics(var_8);
+                builder = builder.set_advanced_cost_optimization_metrics(var_9);
             }
             ,
             s if s.matches("AdvancedDataProtectionMetrics") /* AdvancedDataProtectionMetrics com.amazonaws.s3control#BucketLevel$AdvancedDataProtectionMetrics */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_advanced_data_protection_metrics::de_advanced_data_protection_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_advanced_data_protection_metrics(var_9);
+                builder = builder.set_advanced_data_protection_metrics(var_10);
             }
             ,
             s if s.matches("DetailedStatusCodesMetrics") /* DetailedStatusCodesMetrics com.amazonaws.s3control#BucketLevel$DetailedStatusCodesMetrics */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         crate::protocol_serde::shape_detailed_status_codes_metrics::de_detailed_status_codes_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_detailed_status_codes_metrics(var_10);
+                builder = builder.set_detailed_status_codes_metrics(var_11);
+            }
+            ,
+            s if s.matches("AdvancedPerformanceMetrics") /* AdvancedPerformanceMetrics com.amazonaws.s3control#BucketLevel$AdvancedPerformanceMetrics */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_advanced_performance_metrics::de_advanced_performance_metrics(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_advanced_performance_metrics(var_12);
             }
             ,
             _ => {}

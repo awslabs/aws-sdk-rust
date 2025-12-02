@@ -351,6 +351,26 @@ pub use crate::types::_resource_v2::ResourceV2;
 
 pub use crate::types::_resource_data::ResourceData;
 
+pub use crate::types::_cloudformation_stack::CloudformationStack;
+
+pub use crate::types::_ec2_image::Ec2Image;
+
+pub use crate::types::_ec2_vpc::Ec2Vpc;
+
+pub use crate::types::_ec2_launch_template::Ec2LaunchTemplate;
+
+pub use crate::types::_autoscaling_auto_scaling_group::AutoscalingAutoScalingGroup;
+
+pub use crate::types::_iam_instance_profile_v2::IamInstanceProfileV2;
+
+pub use crate::types::_ecs_task::EcsTask;
+
+pub use crate::types::_ecs_launch_type::EcsLaunchType;
+
+pub use crate::types::_ecs_cluster::EcsCluster;
+
+pub use crate::types::_ecs_cluster_status::EcsClusterStatus;
+
 pub use crate::types::_container_finding_resource::ContainerFindingResource;
 
 pub use crate::types::_kubernetes_workload::KubernetesWorkload;
@@ -659,6 +679,8 @@ mod _auto_enable_members;
 
 mod _autonomous_system;
 
+mod _autoscaling_auto_scaling_group;
+
 mod _aws_api_call_action;
 
 mod _block_public_access;
@@ -670,6 +692,8 @@ mod _bucket_policy;
 mod _city;
 
 mod _cloud_trail_configuration_result;
+
+mod _cloudformation_stack;
 
 mod _cluster_status;
 
@@ -775,13 +799,27 @@ mod _ebs_volume_scan_details;
 
 mod _ebs_volumes_result;
 
+mod _ec2_image;
+
 mod _ec2_image_details;
 
 mod _ec2_instance;
 
+mod _ec2_launch_template;
+
 mod _ec2_network_interface;
 
+mod _ec2_vpc;
+
+mod _ecs_cluster;
+
 mod _ecs_cluster_details;
+
+mod _ecs_cluster_status;
+
+mod _ecs_launch_type;
+
+mod _ecs_task;
 
 mod _ecs_task_details;
 
@@ -838,6 +876,8 @@ mod _highest_severity_threat_details;
 mod _host_path;
 
 mod _iam_instance_profile;
+
+mod _iam_instance_profile_v2;
 
 mod _impersonated_user;
 

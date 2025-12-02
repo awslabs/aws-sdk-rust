@@ -1149,6 +1149,29 @@ pub fn de_db_instance(
                 builder = builder.set_engine_lifecycle_support(var_88);
             }
             ,
+            s if s.matches("AdditionalStorageVolumes") /* AdditionalStorageVolumes com.amazonaws.rds#DBInstance$AdditionalStorageVolumes */ =>  {
+                let var_89 =
+                    Some(
+                        crate::protocol_serde::shape_additional_storage_volumes_output_list::de_additional_storage_volumes_output_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_additional_storage_volumes(var_89);
+            }
+            ,
+            s if s.matches("StorageVolumeStatus") /* StorageVolumeStatus com.amazonaws.rds#DBInstance$StorageVolumeStatus */ =>  {
+                let var_90 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_volume_status(var_90);
+            }
+            ,
             _ => {}
         }
     }

@@ -2694,6 +2694,18 @@ pub(crate) fn metadata_generation_run_item_correct_errors(
     builder
 }
 
+pub(crate) fn metadata_generation_run_type_stat_correct_errors(
+    mut builder: crate::types::builders::MetadataGenerationRunTypeStatBuilder,
+) -> crate::types::builders::MetadataGenerationRunTypeStatBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::MetadataGenerationRunType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::MetadataGenerationRunStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn notification_output_correct_errors(
     mut builder: crate::types::builders::NotificationOutputBuilder,
 ) -> crate::types::builders::NotificationOutputBuilder {

@@ -12,6 +12,14 @@ pub struct TelemetryDestinationConfiguration {
     pub retention_in_days: ::std::option::Option<i32>,
     /// <p>Configuration parameters specific to VPC Flow Logs when VPC is the resource type.</p>
     pub vpc_flow_log_parameters: ::std::option::Option<crate::types::VpcFlowLogParameters>,
+    /// <p>Configuration parameters specific to Amazon Web Services CloudTrail when CloudTrail is the source type.</p>
+    pub cloudtrail_parameters: ::std::option::Option<crate::types::CloudtrailParameters>,
+    /// <p>Configuration parameters specific to ELB load balancer logging when ELB is the resource type.</p>
+    pub elb_load_balancer_logging_parameters: ::std::option::Option<crate::types::ElbLoadBalancerLoggingParameters>,
+    /// <p>Configuration parameters specific to WAF logging when WAF is the resource type.</p>
+    pub waf_logging_parameters: ::std::option::Option<crate::types::WafLoggingParameters>,
+    /// <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>
+    pub log_delivery_parameters: ::std::option::Option<crate::types::LogDeliveryParameters>,
 }
 impl TelemetryDestinationConfiguration {
     /// <p>The type of destination for the telemetry data (e.g., "Amazon CloudWatch Logs", "S3").</p>
@@ -30,6 +38,22 @@ impl TelemetryDestinationConfiguration {
     pub fn vpc_flow_log_parameters(&self) -> ::std::option::Option<&crate::types::VpcFlowLogParameters> {
         self.vpc_flow_log_parameters.as_ref()
     }
+    /// <p>Configuration parameters specific to Amazon Web Services CloudTrail when CloudTrail is the source type.</p>
+    pub fn cloudtrail_parameters(&self) -> ::std::option::Option<&crate::types::CloudtrailParameters> {
+        self.cloudtrail_parameters.as_ref()
+    }
+    /// <p>Configuration parameters specific to ELB load balancer logging when ELB is the resource type.</p>
+    pub fn elb_load_balancer_logging_parameters(&self) -> ::std::option::Option<&crate::types::ElbLoadBalancerLoggingParameters> {
+        self.elb_load_balancer_logging_parameters.as_ref()
+    }
+    /// <p>Configuration parameters specific to WAF logging when WAF is the resource type.</p>
+    pub fn waf_logging_parameters(&self) -> ::std::option::Option<&crate::types::WafLoggingParameters> {
+        self.waf_logging_parameters.as_ref()
+    }
+    /// <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>
+    pub fn log_delivery_parameters(&self) -> ::std::option::Option<&crate::types::LogDeliveryParameters> {
+        self.log_delivery_parameters.as_ref()
+    }
 }
 impl TelemetryDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`TelemetryDestinationConfiguration`](crate::types::TelemetryDestinationConfiguration).
@@ -46,6 +70,10 @@ pub struct TelemetryDestinationConfigurationBuilder {
     pub(crate) destination_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) retention_in_days: ::std::option::Option<i32>,
     pub(crate) vpc_flow_log_parameters: ::std::option::Option<crate::types::VpcFlowLogParameters>,
+    pub(crate) cloudtrail_parameters: ::std::option::Option<crate::types::CloudtrailParameters>,
+    pub(crate) elb_load_balancer_logging_parameters: ::std::option::Option<crate::types::ElbLoadBalancerLoggingParameters>,
+    pub(crate) waf_logging_parameters: ::std::option::Option<crate::types::WafLoggingParameters>,
+    pub(crate) log_delivery_parameters: ::std::option::Option<crate::types::LogDeliveryParameters>,
 }
 impl TelemetryDestinationConfigurationBuilder {
     /// <p>The type of destination for the telemetry data (e.g., "Amazon CloudWatch Logs", "S3").</p>
@@ -104,6 +132,62 @@ impl TelemetryDestinationConfigurationBuilder {
     pub fn get_vpc_flow_log_parameters(&self) -> &::std::option::Option<crate::types::VpcFlowLogParameters> {
         &self.vpc_flow_log_parameters
     }
+    /// <p>Configuration parameters specific to Amazon Web Services CloudTrail when CloudTrail is the source type.</p>
+    pub fn cloudtrail_parameters(mut self, input: crate::types::CloudtrailParameters) -> Self {
+        self.cloudtrail_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration parameters specific to Amazon Web Services CloudTrail when CloudTrail is the source type.</p>
+    pub fn set_cloudtrail_parameters(mut self, input: ::std::option::Option<crate::types::CloudtrailParameters>) -> Self {
+        self.cloudtrail_parameters = input;
+        self
+    }
+    /// <p>Configuration parameters specific to Amazon Web Services CloudTrail when CloudTrail is the source type.</p>
+    pub fn get_cloudtrail_parameters(&self) -> &::std::option::Option<crate::types::CloudtrailParameters> {
+        &self.cloudtrail_parameters
+    }
+    /// <p>Configuration parameters specific to ELB load balancer logging when ELB is the resource type.</p>
+    pub fn elb_load_balancer_logging_parameters(mut self, input: crate::types::ElbLoadBalancerLoggingParameters) -> Self {
+        self.elb_load_balancer_logging_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration parameters specific to ELB load balancer logging when ELB is the resource type.</p>
+    pub fn set_elb_load_balancer_logging_parameters(mut self, input: ::std::option::Option<crate::types::ElbLoadBalancerLoggingParameters>) -> Self {
+        self.elb_load_balancer_logging_parameters = input;
+        self
+    }
+    /// <p>Configuration parameters specific to ELB load balancer logging when ELB is the resource type.</p>
+    pub fn get_elb_load_balancer_logging_parameters(&self) -> &::std::option::Option<crate::types::ElbLoadBalancerLoggingParameters> {
+        &self.elb_load_balancer_logging_parameters
+    }
+    /// <p>Configuration parameters specific to WAF logging when WAF is the resource type.</p>
+    pub fn waf_logging_parameters(mut self, input: crate::types::WafLoggingParameters) -> Self {
+        self.waf_logging_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration parameters specific to WAF logging when WAF is the resource type.</p>
+    pub fn set_waf_logging_parameters(mut self, input: ::std::option::Option<crate::types::WafLoggingParameters>) -> Self {
+        self.waf_logging_parameters = input;
+        self
+    }
+    /// <p>Configuration parameters specific to WAF logging when WAF is the resource type.</p>
+    pub fn get_waf_logging_parameters(&self) -> &::std::option::Option<crate::types::WafLoggingParameters> {
+        &self.waf_logging_parameters
+    }
+    /// <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>
+    pub fn log_delivery_parameters(mut self, input: crate::types::LogDeliveryParameters) -> Self {
+        self.log_delivery_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>
+    pub fn set_log_delivery_parameters(mut self, input: ::std::option::Option<crate::types::LogDeliveryParameters>) -> Self {
+        self.log_delivery_parameters = input;
+        self
+    }
+    /// <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>
+    pub fn get_log_delivery_parameters(&self) -> &::std::option::Option<crate::types::LogDeliveryParameters> {
+        &self.log_delivery_parameters
+    }
     /// Consumes the builder and constructs a [`TelemetryDestinationConfiguration`](crate::types::TelemetryDestinationConfiguration).
     pub fn build(self) -> crate::types::TelemetryDestinationConfiguration {
         crate::types::TelemetryDestinationConfiguration {
@@ -111,6 +195,10 @@ impl TelemetryDestinationConfigurationBuilder {
             destination_pattern: self.destination_pattern,
             retention_in_days: self.retention_in_days,
             vpc_flow_log_parameters: self.vpc_flow_log_parameters,
+            cloudtrail_parameters: self.cloudtrail_parameters,
+            elb_load_balancer_logging_parameters: self.elb_load_balancer_logging_parameters,
+            waf_logging_parameters: self.waf_logging_parameters,
+            log_delivery_parameters: self.log_delivery_parameters,
         }
     }
 }

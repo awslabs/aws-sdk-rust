@@ -78,6 +78,24 @@ pub fn de_create_connector_v2_http_error(
             }
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::create_connector_v2::CreateConnectorV2Error::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_connector_v2::CreateConnectorV2Error::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::create_connector_v2::CreateConnectorV2Error::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -171,6 +189,13 @@ pub(crate) fn de_create_connector_v2(
                     builder = builder.set_connector_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ConnectorStatus" => {
+                    builder = builder.set_connector_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ConnectorStatus::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

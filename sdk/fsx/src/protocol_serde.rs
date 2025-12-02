@@ -311,6 +311,8 @@ pub(crate) mod shape_backups;
 
 pub(crate) mod shape_completion_report;
 
+pub(crate) mod shape_create_and_attach_s3_access_point_ontap_configuration;
+
 pub(crate) mod shape_create_and_attach_s3_access_point_open_zfs_configuration;
 
 pub(crate) mod shape_create_and_attach_s3_access_point_s3_configuration;
@@ -481,6 +483,8 @@ pub(crate) mod shape_nfs_data_repository_configuration;
 
 pub(crate) mod shape_ontap_file_system_configuration;
 
+pub(crate) mod shape_ontap_file_system_identity;
+
 pub(crate) mod shape_ontap_volume_configuration;
 
 pub(crate) mod shape_open_zfs_create_root_volume_configuration;
@@ -498,6 +502,8 @@ pub(crate) mod shape_open_zfs_user_or_group_quota;
 pub(crate) mod shape_open_zfs_volume_configuration;
 
 pub(crate) mod shape_s3_access_point;
+
+pub(crate) mod shape_s3_access_point_ontap_configuration;
 
 pub(crate) mod shape_s3_access_point_open_zfs_configuration;
 
@@ -542,6 +548,10 @@ pub(crate) mod shape_file_system_lustre_metadata_configuration;
 pub(crate) mod shape_file_system_maintenance_operations;
 
 pub(crate) mod shape_lustre_log_configuration;
+
+pub(crate) mod shape_ontap_unix_file_system_user;
+
+pub(crate) mod shape_ontap_windows_file_system_user;
 
 pub(crate) mod shape_open_zfs_client_configuration;
 

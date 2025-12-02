@@ -13,6 +13,7 @@
 /// # let supportedsavingsplanstype = unimplemented!();
 /// match supportedsavingsplanstype {
 ///     SupportedSavingsPlansType::ComputeSp => { /* ... */ },
+///     SupportedSavingsPlansType::DatabaseSp => { /* ... */ },
 ///     SupportedSavingsPlansType::Ec2InstanceSp => { /* ... */ },
 ///     SupportedSavingsPlansType::SagemakerSp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum SupportedSavingsPlansType {
     #[allow(missing_docs)] // documentation missing in model
     ComputeSp,
     #[allow(missing_docs)] // documentation missing in model
+    DatabaseSp,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2InstanceSp,
     #[allow(missing_docs)] // documentation missing in model
     SagemakerSp,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for SupportedSavingsPlansType {
     fn from(s: &str) -> Self {
         match s {
             "COMPUTE_SP" => SupportedSavingsPlansType::ComputeSp,
+            "DATABASE_SP" => SupportedSavingsPlansType::DatabaseSp,
             "EC2_INSTANCE_SP" => SupportedSavingsPlansType::Ec2InstanceSp,
             "SAGEMAKER_SP" => SupportedSavingsPlansType::SagemakerSp,
             other => SupportedSavingsPlansType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl SupportedSavingsPlansType {
     pub fn as_str(&self) -> &str {
         match self {
             SupportedSavingsPlansType::ComputeSp => "COMPUTE_SP",
+            SupportedSavingsPlansType::DatabaseSp => "DATABASE_SP",
             SupportedSavingsPlansType::Ec2InstanceSp => "EC2_INSTANCE_SP",
             SupportedSavingsPlansType::SagemakerSp => "SAGEMAKER_SP",
             SupportedSavingsPlansType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl SupportedSavingsPlansType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPUTE_SP", "EC2_INSTANCE_SP", "SAGEMAKER_SP"]
+        &["COMPUTE_SP", "DATABASE_SP", "EC2_INSTANCE_SP", "SAGEMAKER_SP"]
     }
 }
 impl ::std::convert::AsRef<str> for SupportedSavingsPlansType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for SupportedSavingsPlansType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SupportedSavingsPlansType::ComputeSp => write!(f, "COMPUTE_SP"),
+            SupportedSavingsPlansType::DatabaseSp => write!(f, "DATABASE_SP"),
             SupportedSavingsPlansType::Ec2InstanceSp => write!(f, "EC2_INSTANCE_SP"),
             SupportedSavingsPlansType::SagemakerSp => write!(f, "SAGEMAKER_SP"),
             SupportedSavingsPlansType::Unknown(value) => write!(f, "{value}"),

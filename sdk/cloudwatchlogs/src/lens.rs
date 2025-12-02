@@ -159,6 +159,16 @@ pub(crate) fn reflens_list_scheduled_queries_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_sources_for_s3_table_integration_output_output_next_token(
+    input: &crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_configuration_templates_output_output_configuration_templates(
     input: crate::operation::describe_configuration_templates::DescribeConfigurationTemplatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationTemplate>> {
@@ -261,5 +271,12 @@ pub(crate) fn lens_list_scheduled_queries_output_output_scheduled_queries(
     input: crate::operation::list_scheduled_queries::ListScheduledQueriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuerySummary>> {
     let input = input.scheduled_queries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_sources_for_s3_table_integration_output_output_sources(
+    input: crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::S3TableIntegrationSource>> {
+    let input = input.sources?;
     ::std::option::Option::Some(input)
 }

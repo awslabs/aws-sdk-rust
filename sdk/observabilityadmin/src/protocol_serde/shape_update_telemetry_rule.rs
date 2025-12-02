@@ -42,6 +42,21 @@ pub fn de_update_telemetry_rule_http_error(
             }
             tmp
         }),
+        "ConflictException" => crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServerException" => crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -53,6 +68,13 @@ pub fn de_update_telemetry_rule_http_error(
                     crate::protocol_serde::shape_internal_server_exception::de_amzn_error_type_header(_response_headers).map_err(|_| {
                         crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::unhandled(
                             "Failed to parse amznErrorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::update_telemetry_rule::UpdateTelemetryRuleError::unhandled(
+                            "Failed to parse retryAfterSeconds from header `Retry-After",
                         )
                     })?,
                 );

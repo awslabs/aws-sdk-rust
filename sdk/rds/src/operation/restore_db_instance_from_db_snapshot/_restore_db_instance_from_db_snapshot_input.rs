@@ -305,6 +305,8 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
 }
 impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>The name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -706,6 +708,12 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn master_user_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_user_secret_kms_key_id.as_deref()
     }
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_storage_volumes.is_none()`.
+    pub fn additional_storage_volumes(&self) -> &[crate::types::AdditionalStorageVolume] {
+        self.additional_storage_volumes.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -754,6 +762,7 @@ impl ::std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
         formatter.field("manage_master_user_password", &self.manage_master_user_password);
         formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.finish()
     }
 }
@@ -812,6 +821,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
 }
 impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>The name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -2100,6 +2110,26 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_secret_kms_key_id
     }
+    /// Appends an item to `additional_storage_volumes`.
+    ///
+    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
+    ///
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn additional_storage_volumes(mut self, input: crate::types::AdditionalStorageVolume) -> Self {
+        let mut v = self.additional_storage_volumes.unwrap_or_default();
+        v.push(input);
+        self.additional_storage_volumes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn set_additional_storage_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>) -> Self {
+        self.additional_storage_volumes = input;
+        self
+    }
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>> {
+        &self.additional_storage_volumes
+    }
     /// Consumes the builder and constructs a [`RestoreDbInstanceFromDbSnapshotInput`](crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotInput).
     pub fn build(
         self,
@@ -2153,6 +2183,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
                 engine_lifecycle_support: self.engine_lifecycle_support,
                 manage_master_user_password: self.manage_master_user_password,
                 master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
+                additional_storage_volumes: self.additional_storage_volumes,
             },
         )
     }
@@ -2204,6 +2235,7 @@ impl ::std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInputBuilder {
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
         formatter.field("manage_master_user_password", &self.manage_master_user_password);
         formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.finish()
     }
 }

@@ -23,6 +23,7 @@
 ///     GroupByField::ComplianceStandards => { /* ... */ },
 ///     GroupByField::ComplianceStatus => { /* ... */ },
 ///     GroupByField::FindingInfoAnalyticName => { /* ... */ },
+///     GroupByField::FindingInfoRelatedEventsTraitsCategory => { /* ... */ },
 ///     GroupByField::FindingInfoTitle => { /* ... */ },
 ///     GroupByField::FindingInfoTypes => { /* ... */ },
 ///     GroupByField::MetadataProductName => { /* ... */ },
@@ -31,6 +32,7 @@
 ///     GroupByField::ResourcesUid => { /* ... */ },
 ///     GroupByField::Severity => { /* ... */ },
 ///     GroupByField::Status => { /* ... */ },
+///     GroupByField::VendorAttributesSeverity => { /* ... */ },
 ///     GroupByField::VulnerabilitiesAffectedPackagesName => { /* ... */ },
 ///     GroupByField::VulnerabilitiesFixCoverage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -84,6 +86,8 @@ pub enum GroupByField {
     #[allow(missing_docs)] // documentation missing in model
     FindingInfoAnalyticName,
     #[allow(missing_docs)] // documentation missing in model
+    FindingInfoRelatedEventsTraitsCategory,
+    #[allow(missing_docs)] // documentation missing in model
     FindingInfoTitle,
     #[allow(missing_docs)] // documentation missing in model
     FindingInfoTypes,
@@ -99,6 +103,8 @@ pub enum GroupByField {
     Severity,
     #[allow(missing_docs)] // documentation missing in model
     Status,
+    #[allow(missing_docs)] // documentation missing in model
+    VendorAttributesSeverity,
     #[allow(missing_docs)] // documentation missing in model
     VulnerabilitiesAffectedPackagesName,
     #[allow(missing_docs)] // documentation missing in model
@@ -121,6 +127,7 @@ impl ::std::convert::From<&str> for GroupByField {
             "compliance.standards" => GroupByField::ComplianceStandards,
             "compliance.status" => GroupByField::ComplianceStatus,
             "finding_info.analytic.name" => GroupByField::FindingInfoAnalyticName,
+            "finding_info.related_events.traits.category" => GroupByField::FindingInfoRelatedEventsTraitsCategory,
             "finding_info.title" => GroupByField::FindingInfoTitle,
             "finding_info.types" => GroupByField::FindingInfoTypes,
             "metadata.product.name" => GroupByField::MetadataProductName,
@@ -129,6 +136,7 @@ impl ::std::convert::From<&str> for GroupByField {
             "resources.uid" => GroupByField::ResourcesUid,
             "severity" => GroupByField::Severity,
             "status" => GroupByField::Status,
+            "vendor_attributes.severity" => GroupByField::VendorAttributesSeverity,
             "vulnerabilities.affected_packages.name" => GroupByField::VulnerabilitiesAffectedPackagesName,
             "vulnerabilities.fix_coverage" => GroupByField::VulnerabilitiesFixCoverage,
             other => GroupByField::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -157,6 +165,7 @@ impl GroupByField {
             GroupByField::ComplianceStandards => "compliance.standards",
             GroupByField::ComplianceStatus => "compliance.status",
             GroupByField::FindingInfoAnalyticName => "finding_info.analytic.name",
+            GroupByField::FindingInfoRelatedEventsTraitsCategory => "finding_info.related_events.traits.category",
             GroupByField::FindingInfoTitle => "finding_info.title",
             GroupByField::FindingInfoTypes => "finding_info.types",
             GroupByField::MetadataProductName => "metadata.product.name",
@@ -165,6 +174,7 @@ impl GroupByField {
             GroupByField::ResourcesUid => "resources.uid",
             GroupByField::Severity => "severity",
             GroupByField::Status => "status",
+            GroupByField::VendorAttributesSeverity => "vendor_attributes.severity",
             GroupByField::VulnerabilitiesAffectedPackagesName => "vulnerabilities.affected_packages.name",
             GroupByField::VulnerabilitiesFixCoverage => "vulnerabilities.fix_coverage",
             GroupByField::Unknown(value) => value.as_str(),
@@ -184,6 +194,7 @@ impl GroupByField {
             "compliance.standards",
             "compliance.status",
             "finding_info.analytic.name",
+            "finding_info.related_events.traits.category",
             "finding_info.title",
             "finding_info.types",
             "metadata.product.name",
@@ -192,6 +203,7 @@ impl GroupByField {
             "resources.uid",
             "severity",
             "status",
+            "vendor_attributes.severity",
             "vulnerabilities.affected_packages.name",
             "vulnerabilities.fix_coverage",
         ]
@@ -228,6 +240,7 @@ impl ::std::fmt::Display for GroupByField {
             GroupByField::ComplianceStandards => write!(f, "compliance.standards"),
             GroupByField::ComplianceStatus => write!(f, "compliance.status"),
             GroupByField::FindingInfoAnalyticName => write!(f, "finding_info.analytic.name"),
+            GroupByField::FindingInfoRelatedEventsTraitsCategory => write!(f, "finding_info.related_events.traits.category"),
             GroupByField::FindingInfoTitle => write!(f, "finding_info.title"),
             GroupByField::FindingInfoTypes => write!(f, "finding_info.types"),
             GroupByField::MetadataProductName => write!(f, "metadata.product.name"),
@@ -236,6 +249,7 @@ impl ::std::fmt::Display for GroupByField {
             GroupByField::ResourcesUid => write!(f, "resources.uid"),
             GroupByField::Severity => write!(f, "severity"),
             GroupByField::Status => write!(f, "status"),
+            GroupByField::VendorAttributesSeverity => write!(f, "vendor_attributes.severity"),
             GroupByField::VulnerabilitiesAffectedPackagesName => write!(f, "vulnerabilities.affected_packages.name"),
             GroupByField::VulnerabilitiesFixCoverage => write!(f, "vulnerabilities.fix_coverage"),
             GroupByField::Unknown(value) => write!(f, "{value}"),

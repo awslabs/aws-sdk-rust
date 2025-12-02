@@ -6,11 +6,8 @@ pub fn ser_service_now_provider_configuration(
     if let Some(var_1) = &input.instance_name {
         object.key("InstanceName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.client_id {
-        object.key("ClientId").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.client_secret {
-        object.key("ClientSecret").string(var_3.as_str());
+    if let Some(var_2) = &input.secret_arn {
+        object.key("SecretArn").string(var_2.as_str());
     }
     Ok(())
 }

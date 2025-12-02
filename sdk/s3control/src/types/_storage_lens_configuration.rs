@@ -14,12 +14,25 @@ pub struct StorageLensConfiguration {
     pub exclude: ::std::option::Option<crate::types::Exclude>,
     /// <p>A container to specify the properties of your S3 Storage Lens metrics export including, the destination, schema and format.</p>
     pub data_export: ::std::option::Option<crate::types::StorageLensDataExport>,
+    /// <p>A container that configures your S3 Storage Lens expanded prefixes metrics report.</p>
+    pub expanded_prefixes_data_export: ::std::option::Option<crate::types::StorageLensExpandedPrefixesDataExport>,
     /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
     pub is_enabled: bool,
     /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
     pub aws_org: ::std::option::Option<crate::types::StorageLensAwsOrg>,
     /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code></p>
     pub storage_lens_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A container for all prefix delimiters that are used for object keys in this S3 Storage Lens configuration. The prefix delimiters determine how S3 Storage Lens counts prefix depth, by separating the hierarchical levels in object keys.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>If either a prefix delimiter or existing delimiter is undefined, Amazon S3 uses the delimiter that’s defined.</p></li>
+    /// <li>
+    /// <p>If both the prefix delimiter and existing delimiter are undefined, S3 uses <code>/</code> as the default delimiter.</p></li>
+    /// <li>
+    /// <p>When custom delimiters are used, both the prefix delimiter and existing delimiter must specify the same special character. Otherwise, your request results in an error.</p></li>
+    /// </ul>
+    /// </note>
+    pub prefix_delimiter: ::std::option::Option<::std::string::String>,
 }
 impl StorageLensConfiguration {
     /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
@@ -43,6 +56,10 @@ impl StorageLensConfiguration {
     pub fn data_export(&self) -> ::std::option::Option<&crate::types::StorageLensDataExport> {
         self.data_export.as_ref()
     }
+    /// <p>A container that configures your S3 Storage Lens expanded prefixes metrics report.</p>
+    pub fn expanded_prefixes_data_export(&self) -> ::std::option::Option<&crate::types::StorageLensExpandedPrefixesDataExport> {
+        self.expanded_prefixes_data_export.as_ref()
+    }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
     pub fn is_enabled(&self) -> bool {
         self.is_enabled
@@ -54,6 +71,19 @@ impl StorageLensConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is read-only and follows the following format: <code> arn:aws:s3:<i>us-east-1</i>:<i>example-account-id</i>:storage-lens/<i>your-dashboard-name</i> </code></p>
     pub fn storage_lens_arn(&self) -> ::std::option::Option<&str> {
         self.storage_lens_arn.as_deref()
+    }
+    /// <p>A container for all prefix delimiters that are used for object keys in this S3 Storage Lens configuration. The prefix delimiters determine how S3 Storage Lens counts prefix depth, by separating the hierarchical levels in object keys.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>If either a prefix delimiter or existing delimiter is undefined, Amazon S3 uses the delimiter that’s defined.</p></li>
+    /// <li>
+    /// <p>If both the prefix delimiter and existing delimiter are undefined, S3 uses <code>/</code> as the default delimiter.</p></li>
+    /// <li>
+    /// <p>When custom delimiters are used, both the prefix delimiter and existing delimiter must specify the same special character. Otherwise, your request results in an error.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn prefix_delimiter(&self) -> ::std::option::Option<&str> {
+        self.prefix_delimiter.as_deref()
     }
 }
 impl StorageLensConfiguration {
@@ -72,9 +102,11 @@ pub struct StorageLensConfigurationBuilder {
     pub(crate) include: ::std::option::Option<crate::types::Include>,
     pub(crate) exclude: ::std::option::Option<crate::types::Exclude>,
     pub(crate) data_export: ::std::option::Option<crate::types::StorageLensDataExport>,
+    pub(crate) expanded_prefixes_data_export: ::std::option::Option<crate::types::StorageLensExpandedPrefixesDataExport>,
     pub(crate) is_enabled: ::std::option::Option<bool>,
     pub(crate) aws_org: ::std::option::Option<crate::types::StorageLensAwsOrg>,
     pub(crate) storage_lens_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) prefix_delimiter: ::std::option::Option<::std::string::String>,
 }
 impl StorageLensConfigurationBuilder {
     /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
@@ -149,6 +181,20 @@ impl StorageLensConfigurationBuilder {
     pub fn get_data_export(&self) -> &::std::option::Option<crate::types::StorageLensDataExport> {
         &self.data_export
     }
+    /// <p>A container that configures your S3 Storage Lens expanded prefixes metrics report.</p>
+    pub fn expanded_prefixes_data_export(mut self, input: crate::types::StorageLensExpandedPrefixesDataExport) -> Self {
+        self.expanded_prefixes_data_export = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A container that configures your S3 Storage Lens expanded prefixes metrics report.</p>
+    pub fn set_expanded_prefixes_data_export(mut self, input: ::std::option::Option<crate::types::StorageLensExpandedPrefixesDataExport>) -> Self {
+        self.expanded_prefixes_data_export = input;
+        self
+    }
+    /// <p>A container that configures your S3 Storage Lens expanded prefixes metrics report.</p>
+    pub fn get_expanded_prefixes_data_export(&self) -> &::std::option::Option<crate::types::StorageLensExpandedPrefixesDataExport> {
+        &self.expanded_prefixes_data_export
+    }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
     /// This field is required.
     pub fn is_enabled(mut self, input: bool) -> Self {
@@ -192,6 +238,47 @@ impl StorageLensConfigurationBuilder {
     pub fn get_storage_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_lens_arn
     }
+    /// <p>A container for all prefix delimiters that are used for object keys in this S3 Storage Lens configuration. The prefix delimiters determine how S3 Storage Lens counts prefix depth, by separating the hierarchical levels in object keys.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>If either a prefix delimiter or existing delimiter is undefined, Amazon S3 uses the delimiter that’s defined.</p></li>
+    /// <li>
+    /// <p>If both the prefix delimiter and existing delimiter are undefined, S3 uses <code>/</code> as the default delimiter.</p></li>
+    /// <li>
+    /// <p>When custom delimiters are used, both the prefix delimiter and existing delimiter must specify the same special character. Otherwise, your request results in an error.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn prefix_delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix_delimiter = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A container for all prefix delimiters that are used for object keys in this S3 Storage Lens configuration. The prefix delimiters determine how S3 Storage Lens counts prefix depth, by separating the hierarchical levels in object keys.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>If either a prefix delimiter or existing delimiter is undefined, Amazon S3 uses the delimiter that’s defined.</p></li>
+    /// <li>
+    /// <p>If both the prefix delimiter and existing delimiter are undefined, S3 uses <code>/</code> as the default delimiter.</p></li>
+    /// <li>
+    /// <p>When custom delimiters are used, both the prefix delimiter and existing delimiter must specify the same special character. Otherwise, your request results in an error.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn set_prefix_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.prefix_delimiter = input;
+        self
+    }
+    /// <p>A container for all prefix delimiters that are used for object keys in this S3 Storage Lens configuration. The prefix delimiters determine how S3 Storage Lens counts prefix depth, by separating the hierarchical levels in object keys.</p><note>
+    /// <ul>
+    /// <li>
+    /// <p>If either a prefix delimiter or existing delimiter is undefined, Amazon S3 uses the delimiter that’s defined.</p></li>
+    /// <li>
+    /// <p>If both the prefix delimiter and existing delimiter are undefined, S3 uses <code>/</code> as the default delimiter.</p></li>
+    /// <li>
+    /// <p>When custom delimiters are used, both the prefix delimiter and existing delimiter must specify the same special character. Otherwise, your request results in an error.</p></li>
+    /// </ul>
+    /// </note>
+    pub fn get_prefix_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_delimiter
+    }
     /// Consumes the builder and constructs a [`StorageLensConfiguration`](crate::types::StorageLensConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::StorageLensConfigurationBuilder::id)
@@ -207,9 +294,11 @@ impl StorageLensConfigurationBuilder {
             include: self.include,
             exclude: self.exclude,
             data_export: self.data_export,
+            expanded_prefixes_data_export: self.expanded_prefixes_data_export,
             is_enabled: self.is_enabled.unwrap_or_default(),
             aws_org: self.aws_org,
             storage_lens_arn: self.storage_lens_arn,
+            prefix_delimiter: self.prefix_delimiter,
         })
     }
 }

@@ -3,6 +3,21 @@
 /// Supporting types for the `memory_created` waiter.
 pub mod memory_created;
 
+/// Supporting types for the `policy_active` waiter.
+pub mod policy_active;
+
+/// Supporting types for the `policy_deleted` waiter.
+pub mod policy_deleted;
+
+/// Supporting types for the `policy_engine_active` waiter.
+pub mod policy_engine_active;
+
+/// Supporting types for the `policy_engine_deleted` waiter.
+pub mod policy_engine_deleted;
+
+/// Supporting types for the `policy_generation_completed` waiter.
+pub mod policy_generation_completed;
+
 #[allow(clippy::needless_lifetimes)]
 #[allow(clippy::let_and_return)]
 pub(crate) mod matchers;

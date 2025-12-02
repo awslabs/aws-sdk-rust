@@ -65,6 +65,13 @@ pub fn de_list_centralization_rules_for_organization_http_error(
                             )
                         })?,
                     );
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                            crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError::unhandled(
+                                "Failed to parse retryAfterSeconds from header `Retry-After",
+                            )
+                        })?,
+                    );
                     let output = output.meta(generic);
                     output.build()
                 };

@@ -22,7 +22,7 @@ impl crate::operation::get_scheduled_query::builders::GetScheduledQueryInputBuil
 }
 /// Fluent builder constructing a request to `GetScheduledQuery`.
 ///
-/// <p>Returns detailed information about a specified scheduled query, including its configuration, current state, and execution history.</p>
+/// <p>Retrieves details about a specific scheduled query, including its configuration, execution status, and metadata.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetScheduledQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetScheduledQueryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name or ARN of the scheduled query to retrieve.</p>
+    /// <p>The ARN or name of the scheduled query to retrieve.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The name or ARN of the scheduled query to retrieve.</p>
+    /// <p>The ARN or name of the scheduled query to retrieve.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The name or ARN of the scheduled query to retrieve.</p>
+    /// <p>The ARN or name of the scheduled query to retrieve.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

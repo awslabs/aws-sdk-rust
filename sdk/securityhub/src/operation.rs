@@ -43,9 +43,6 @@ pub mod batch_update_findings_v2;
 /// Types for the `BatchUpdateStandardsControlAssociations` operation.
 pub mod batch_update_standards_control_associations;
 
-/// Types for the `ConnectorRegistrationsV2` operation.
-pub mod connector_registrations_v2;
-
 /// Types for the `CreateActionTarget` operation.
 pub mod create_action_target;
 
@@ -273,6 +270,9 @@ pub mod list_standards_control_associations;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `RegisterConnectorV2` operation.
+pub mod register_connector_v2;
 
 /// Types for the `StartConfigurationPolicyAssociation` operation.
 pub mod start_configuration_policy_association;

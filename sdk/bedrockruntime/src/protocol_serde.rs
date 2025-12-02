@@ -203,6 +203,8 @@ pub(crate) mod shape_any_tool_choice;
 
 pub(crate) mod shape_applied_guardrail_details;
 
+pub(crate) mod shape_audio_block;
+
 pub(crate) mod shape_auto_tool_choice;
 
 pub(crate) mod shape_citations_content_block;
@@ -255,6 +257,8 @@ pub(crate) mod shape_tool_use_block;
 
 pub(crate) mod shape_video_block;
 
+pub(crate) mod shape_audio_source;
+
 pub(crate) mod shape_citation;
 
 pub(crate) mod shape_citation_generated_content;
@@ -270,6 +274,8 @@ pub(crate) mod shape_converse_stream_metrics;
 pub(crate) mod shape_converse_stream_trace;
 
 pub(crate) mod shape_document_source;
+
+pub(crate) mod shape_error_block;
 
 pub(crate) mod shape_guardrail_automated_reasoning_finding_list;
 
@@ -326,6 +332,10 @@ pub(crate) mod shape_guardrail_pii_entity_filter;
 pub(crate) mod shape_guardrail_regex_filter;
 
 pub(crate) mod shape_guardrail_topic;
+
+pub(crate) mod shape_image_block_delta;
+
+pub(crate) mod shape_image_block_start;
 
 pub(crate) mod shape_reasoning_content_block_delta;
 

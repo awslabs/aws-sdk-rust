@@ -36,17 +36,23 @@ pub fn ser_update_gateway_input_input(
     if let Some(var_11) = &input.name {
         object.key("name").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.protocol_configuration {
+    if let Some(var_12) = &input.policy_engine_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("protocolConfiguration").start_object();
-        crate::protocol_serde::shape_gateway_protocol_configuration::ser_gateway_protocol_configuration(&mut object_13, var_12)?;
+        let mut object_13 = object.key("policyEngineConfiguration").start_object();
+        crate::protocol_serde::shape_gateway_policy_engine_configuration::ser_gateway_policy_engine_configuration(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.protocol_type {
-        object.key("protocolType").string(var_14.as_str());
+    if let Some(var_14) = &input.protocol_configuration {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("protocolConfiguration").start_object();
+        crate::protocol_serde::shape_gateway_protocol_configuration::ser_gateway_protocol_configuration(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_15) = &input.role_arn {
-        object.key("roleArn").string(var_15.as_str());
+    if let Some(var_16) = &input.protocol_type {
+        object.key("protocolType").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.role_arn {
+        object.key("roleArn").string(var_17.as_str());
     }
     Ok(())
 }

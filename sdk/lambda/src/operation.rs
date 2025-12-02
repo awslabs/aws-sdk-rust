@@ -7,6 +7,9 @@ pub mod add_layer_version_permission;
 /// Types for the `AddPermission` operation.
 pub mod add_permission;
 
+/// Types for the `CheckpointDurableExecution` operation.
+pub mod checkpoint_durable_execution;
+
 /// Types for the `CreateAlias` operation.
 pub mod create_alias;
 
@@ -70,6 +73,15 @@ pub mod get_capacity_provider;
 /// Types for the `GetCodeSigningConfig` operation.
 pub mod get_code_signing_config;
 
+/// Types for the `GetDurableExecution` operation.
+pub mod get_durable_execution;
+
+/// Types for the `GetDurableExecutionHistory` operation.
+pub mod get_durable_execution_history;
+
+/// Types for the `GetDurableExecutionState` operation.
+pub mod get_durable_execution_state;
+
 /// Types for the `GetEventSourceMapping` operation.
 pub mod get_event_source_mapping;
 
@@ -132,6 +144,9 @@ pub mod list_capacity_providers;
 
 /// Types for the `ListCodeSigningConfigs` operation.
 pub mod list_code_signing_configs;
+
+/// Types for the `ListDurableExecutionsByFunction` operation.
+pub mod list_durable_executions_by_function;
 
 /// Types for the `ListEventSourceMappings` operation.
 pub mod list_event_source_mappings;
@@ -198,6 +213,18 @@ pub mod remove_layer_version_permission;
 
 /// Types for the `RemovePermission` operation.
 pub mod remove_permission;
+
+/// Types for the `SendDurableExecutionCallbackFailure` operation.
+pub mod send_durable_execution_callback_failure;
+
+/// Types for the `SendDurableExecutionCallbackHeartbeat` operation.
+pub mod send_durable_execution_callback_heartbeat;
+
+/// Types for the `SendDurableExecutionCallbackSuccess` operation.
+pub mod send_durable_execution_callback_success;
+
+/// Types for the `StopDurableExecution` operation.
+pub mod stop_durable_execution;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

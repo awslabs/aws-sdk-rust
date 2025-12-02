@@ -13,6 +13,8 @@
 /// # let metadatagenerationruntype = unimplemented!();
 /// match metadatagenerationruntype {
 ///     MetadataGenerationRunType::BusinessDescriptions => { /* ... */ },
+///     MetadataGenerationRunType::BusinessGlossaryAssociations => { /* ... */ },
+///     MetadataGenerationRunType::BusinessNames => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +45,10 @@
 pub enum MetadataGenerationRunType {
     #[allow(missing_docs)] // documentation missing in model
     BusinessDescriptions,
+    #[allow(missing_docs)] // documentation missing in model
+    BusinessGlossaryAssociations,
+    #[allow(missing_docs)] // documentation missing in model
+    BusinessNames,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +57,8 @@ impl ::std::convert::From<&str> for MetadataGenerationRunType {
     fn from(s: &str) -> Self {
         match s {
             "BUSINESS_DESCRIPTIONS" => MetadataGenerationRunType::BusinessDescriptions,
+            "BUSINESS_GLOSSARY_ASSOCIATIONS" => MetadataGenerationRunType::BusinessGlossaryAssociations,
+            "BUSINESS_NAMES" => MetadataGenerationRunType::BusinessNames,
             other => MetadataGenerationRunType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +75,14 @@ impl MetadataGenerationRunType {
     pub fn as_str(&self) -> &str {
         match self {
             MetadataGenerationRunType::BusinessDescriptions => "BUSINESS_DESCRIPTIONS",
+            MetadataGenerationRunType::BusinessGlossaryAssociations => "BUSINESS_GLOSSARY_ASSOCIATIONS",
+            MetadataGenerationRunType::BusinessNames => "BUSINESS_NAMES",
             MetadataGenerationRunType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BUSINESS_DESCRIPTIONS"]
+        &["BUSINESS_DESCRIPTIONS", "BUSINESS_GLOSSARY_ASSOCIATIONS", "BUSINESS_NAMES"]
     }
 }
 impl ::std::convert::AsRef<str> for MetadataGenerationRunType {
@@ -96,6 +106,8 @@ impl ::std::fmt::Display for MetadataGenerationRunType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MetadataGenerationRunType::BusinessDescriptions => write!(f, "BUSINESS_DESCRIPTIONS"),
+            MetadataGenerationRunType::BusinessGlossaryAssociations => write!(f, "BUSINESS_GLOSSARY_ASSOCIATIONS"),
+            MetadataGenerationRunType::BusinessNames => write!(f, "BUSINESS_NAMES"),
             MetadataGenerationRunType::Unknown(value) => write!(f, "{value}"),
         }
     }

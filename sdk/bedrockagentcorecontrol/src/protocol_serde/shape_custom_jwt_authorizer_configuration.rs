@@ -24,6 +24,27 @@ pub fn ser_custom_jwt_authorizer_configuration(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.allowed_scopes {
+        let mut array_8 = object.key("allowedScopes").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
+    if let Some(var_10) = &input.custom_claims {
+        let mut array_11 = object.key("customClaims").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_custom_claim_validation_type::ser_custom_claim_validation_type(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }
 
@@ -56,6 +77,14 @@ where
                         "allowedClients" => {
                             builder =
                                 builder.set_allowed_clients(crate::protocol_serde::shape_allowed_clients_list::de_allowed_clients_list(tokens)?);
+                        }
+                        "allowedScopes" => {
+                            builder = builder.set_allowed_scopes(crate::protocol_serde::shape_allowed_scopes_type::de_allowed_scopes_type(tokens)?);
+                        }
+                        "customClaims" => {
+                            builder = builder.set_custom_claims(
+                                crate::protocol_serde::shape_custom_claim_validations_type::de_custom_claim_validations_type(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -275,6 +275,8 @@ pub(crate) mod shape_update_iam_identity_center_config_options;
 
 pub(crate) mod shape_update_vpc_endpoint_detail;
 
+pub(crate) mod shape_vector_options;
+
 pub(crate) mod shape_vpc_endpoint_details;
 
 pub(crate) mod shape_vpc_endpoint_error_details;

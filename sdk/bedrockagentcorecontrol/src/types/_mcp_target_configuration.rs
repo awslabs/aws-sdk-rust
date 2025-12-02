@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum McpTargetConfiguration {
+    /// <p>The configuration for an Amazon API Gateway target.</p>
+    ApiGateway(crate::types::ApiGatewayTargetConfiguration),
     /// <p>The Lambda configuration for the Model Context Protocol target. This configuration defines how the gateway uses a Lambda function to communicate with the target.</p>
     Lambda(crate::types::McpLambdaTargetConfiguration),
     /// <p>The MCP server specified as the gateway target.</p>
@@ -23,6 +25,19 @@ pub enum McpTargetConfiguration {
     Unknown,
 }
 impl McpTargetConfiguration {
+    /// Tries to convert the enum instance into [`ApiGateway`](crate::types::McpTargetConfiguration::ApiGateway), extracting the inner [`ApiGatewayTargetConfiguration`](crate::types::ApiGatewayTargetConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_api_gateway(&self) -> ::std::result::Result<&crate::types::ApiGatewayTargetConfiguration, &Self> {
+        if let McpTargetConfiguration::ApiGateway(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ApiGateway`](crate::types::McpTargetConfiguration::ApiGateway).
+    pub fn is_api_gateway(&self) -> bool {
+        self.as_api_gateway().is_ok()
+    }
     /// Tries to convert the enum instance into [`Lambda`](crate::types::McpTargetConfiguration::Lambda), extracting the inner [`McpLambdaTargetConfiguration`](crate::types::McpLambdaTargetConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_lambda(&self) -> ::std::result::Result<&crate::types::McpLambdaTargetConfiguration, &Self> {

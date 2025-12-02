@@ -15,9 +15,11 @@
 ///     MlTools::AutoMl => { /* ... */ },
 ///     MlTools::Comet => { /* ... */ },
 ///     MlTools::DataWrangler => { /* ... */ },
+///     MlTools::Datasets => { /* ... */ },
 ///     MlTools::DeepchecksLlmEvaluation => { /* ... */ },
 ///     MlTools::EmrClusters => { /* ... */ },
 ///     MlTools::Endpoints => { /* ... */ },
+///     MlTools::Evaluators => { /* ... */ },
 ///     MlTools::Experiments => { /* ... */ },
 ///     MlTools::FeatureStore => { /* ... */ },
 ///     MlTools::Fiddler => { /* ... */ },
@@ -31,6 +33,7 @@
 ///     MlTools::PerformanceEvaluation => { /* ... */ },
 ///     MlTools::Pipelines => { /* ... */ },
 ///     MlTools::Projects => { /* ... */ },
+///     MlTools::RunningInstances => { /* ... */ },
 ///     MlTools::Training => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -67,11 +70,15 @@ pub enum MlTools {
     #[allow(missing_docs)] // documentation missing in model
     DataWrangler,
     #[allow(missing_docs)] // documentation missing in model
+    Datasets,
+    #[allow(missing_docs)] // documentation missing in model
     DeepchecksLlmEvaluation,
     #[allow(missing_docs)] // documentation missing in model
     EmrClusters,
     #[allow(missing_docs)] // documentation missing in model
     Endpoints,
+    #[allow(missing_docs)] // documentation missing in model
+    Evaluators,
     #[allow(missing_docs)] // documentation missing in model
     Experiments,
     #[allow(missing_docs)] // documentation missing in model
@@ -99,6 +106,8 @@ pub enum MlTools {
     #[allow(missing_docs)] // documentation missing in model
     Projects,
     #[allow(missing_docs)] // documentation missing in model
+    RunningInstances,
+    #[allow(missing_docs)] // documentation missing in model
     Training,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -110,9 +119,11 @@ impl ::std::convert::From<&str> for MlTools {
             "AutoMl" => MlTools::AutoMl,
             "Comet" => MlTools::Comet,
             "DataWrangler" => MlTools::DataWrangler,
+            "Datasets" => MlTools::Datasets,
             "DeepchecksLLMEvaluation" => MlTools::DeepchecksLlmEvaluation,
             "EmrClusters" => MlTools::EmrClusters,
             "Endpoints" => MlTools::Endpoints,
+            "Evaluators" => MlTools::Evaluators,
             "Experiments" => MlTools::Experiments,
             "FeatureStore" => MlTools::FeatureStore,
             "Fiddler" => MlTools::Fiddler,
@@ -126,6 +137,7 @@ impl ::std::convert::From<&str> for MlTools {
             "PerformanceEvaluation" => MlTools::PerformanceEvaluation,
             "Pipelines" => MlTools::Pipelines,
             "Projects" => MlTools::Projects,
+            "RunningInstances" => MlTools::RunningInstances,
             "Training" => MlTools::Training,
             other => MlTools::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -145,9 +157,11 @@ impl MlTools {
             MlTools::AutoMl => "AutoMl",
             MlTools::Comet => "Comet",
             MlTools::DataWrangler => "DataWrangler",
+            MlTools::Datasets => "Datasets",
             MlTools::DeepchecksLlmEvaluation => "DeepchecksLLMEvaluation",
             MlTools::EmrClusters => "EmrClusters",
             MlTools::Endpoints => "Endpoints",
+            MlTools::Evaluators => "Evaluators",
             MlTools::Experiments => "Experiments",
             MlTools::FeatureStore => "FeatureStore",
             MlTools::Fiddler => "Fiddler",
@@ -161,6 +175,7 @@ impl MlTools {
             MlTools::PerformanceEvaluation => "PerformanceEvaluation",
             MlTools::Pipelines => "Pipelines",
             MlTools::Projects => "Projects",
+            MlTools::RunningInstances => "RunningInstances",
             MlTools::Training => "Training",
             MlTools::Unknown(value) => value.as_str(),
         }
@@ -171,9 +186,11 @@ impl MlTools {
             "AutoMl",
             "Comet",
             "DataWrangler",
+            "Datasets",
             "DeepchecksLLMEvaluation",
             "EmrClusters",
             "Endpoints",
+            "Evaluators",
             "Experiments",
             "FeatureStore",
             "Fiddler",
@@ -187,6 +204,7 @@ impl MlTools {
             "PerformanceEvaluation",
             "Pipelines",
             "Projects",
+            "RunningInstances",
             "Training",
         ]
     }
@@ -214,9 +232,11 @@ impl ::std::fmt::Display for MlTools {
             MlTools::AutoMl => write!(f, "AutoMl"),
             MlTools::Comet => write!(f, "Comet"),
             MlTools::DataWrangler => write!(f, "DataWrangler"),
+            MlTools::Datasets => write!(f, "Datasets"),
             MlTools::DeepchecksLlmEvaluation => write!(f, "DeepchecksLLMEvaluation"),
             MlTools::EmrClusters => write!(f, "EmrClusters"),
             MlTools::Endpoints => write!(f, "Endpoints"),
+            MlTools::Evaluators => write!(f, "Evaluators"),
             MlTools::Experiments => write!(f, "Experiments"),
             MlTools::FeatureStore => write!(f, "FeatureStore"),
             MlTools::Fiddler => write!(f, "Fiddler"),
@@ -230,6 +250,7 @@ impl ::std::fmt::Display for MlTools {
             MlTools::PerformanceEvaluation => write!(f, "PerformanceEvaluation"),
             MlTools::Pipelines => write!(f, "Pipelines"),
             MlTools::Projects => write!(f, "Projects"),
+            MlTools::RunningInstances => write!(f, "RunningInstances"),
             MlTools::Training => write!(f, "Training"),
             MlTools::Unknown(value) => write!(f, "{value}"),
         }

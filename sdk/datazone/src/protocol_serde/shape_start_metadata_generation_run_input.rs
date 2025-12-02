@@ -18,5 +18,14 @@ pub fn ser_start_metadata_generation_run_input_input(
     if let Some(var_5) = &input.r#type {
         object.key("type").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.types {
+        let mut array_7 = object.key("types").start_array();
+        for item_8 in var_6 {
+            {
+                array_7.value().string(item_8.as_str());
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }

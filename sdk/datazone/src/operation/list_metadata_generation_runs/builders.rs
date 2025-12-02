@@ -192,4 +192,18 @@ impl ListMetadataGenerationRunsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The target ID for which you want to list metadata generation runs.</p>
+    pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.target_identifier(input.into());
+        self
+    }
+    /// <p>The target ID for which you want to list metadata generation runs.</p>
+    pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_target_identifier(input);
+        self
+    }
+    /// <p>The target ID for which you want to list metadata generation runs.</p>
+    pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_identifier()
+    }
 }

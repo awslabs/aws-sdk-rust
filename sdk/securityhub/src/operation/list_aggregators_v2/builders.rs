@@ -22,7 +22,7 @@ impl crate::operation::list_aggregators_v2::builders::ListAggregatorsV2InputBuil
 }
 /// Fluent builder constructing a request to `ListAggregatorsV2`.
 ///
-/// <p>Retrieves a list of V2 aggregators. This API is in public preview and subject to change.</p>
+/// <p>Retrieves a list of V2 aggregators.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAggregatorsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

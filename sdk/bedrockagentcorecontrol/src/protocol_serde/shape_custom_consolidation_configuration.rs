@@ -28,42 +28,50 @@ where
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.as_ref() {
-                        "semanticConsolidationOverride" => Some(crate::types::CustomConsolidationConfiguration::SemanticConsolidationOverride(
-                            crate::protocol_serde::shape_semantic_consolidation_override::de_semantic_consolidation_override(tokens)?.ok_or_else(
-                                || {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'semanticConsolidationOverride' cannot be null",
-                                    )
-                                },
-                            )?,
-                        )),
-                        "summaryConsolidationOverride" => Some(crate::types::CustomConsolidationConfiguration::SummaryConsolidationOverride(
-                            crate::protocol_serde::shape_summary_consolidation_override::de_summary_consolidation_override(tokens)?.ok_or_else(
-                                || {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'summaryConsolidationOverride' cannot be null",
-                                    )
-                                },
-                            )?,
-                        )),
-                        "userPreferenceConsolidationOverride" => {
-                            Some(crate::types::CustomConsolidationConfiguration::UserPreferenceConsolidationOverride(
-                                crate::protocol_serde::shape_user_preference_consolidation_override::de_user_preference_consolidation_override(
-                                    tokens,
-                                )?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'userPreferenceConsolidationOverride' cannot be null",
-                                    )
-                                })?,
-                            ))
-                        }
-                        _ => {
-                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::types::CustomConsolidationConfiguration::Unknown)
-                        }
-                    };
+                    variant =
+                        match key.as_ref() {
+                            "semanticConsolidationOverride" => Some(crate::types::CustomConsolidationConfiguration::SemanticConsolidationOverride(
+                                crate::protocol_serde::shape_semantic_consolidation_override::de_semantic_consolidation_override(tokens)?
+                                    .ok_or_else(|| {
+                                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                            "value for 'semanticConsolidationOverride' cannot be null",
+                                        )
+                                    })?,
+                            )),
+                            "summaryConsolidationOverride" => Some(crate::types::CustomConsolidationConfiguration::SummaryConsolidationOverride(
+                                crate::protocol_serde::shape_summary_consolidation_override::de_summary_consolidation_override(tokens)?.ok_or_else(
+                                    || {
+                                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                            "value for 'summaryConsolidationOverride' cannot be null",
+                                        )
+                                    },
+                                )?,
+                            )),
+                            "userPreferenceConsolidationOverride" => {
+                                Some(crate::types::CustomConsolidationConfiguration::UserPreferenceConsolidationOverride(
+                                    crate::protocol_serde::shape_user_preference_consolidation_override::de_user_preference_consolidation_override(
+                                        tokens,
+                                    )?
+                                    .ok_or_else(|| {
+                                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                            "value for 'userPreferenceConsolidationOverride' cannot be null",
+                                        )
+                                    })?,
+                                ))
+                            }
+                            "episodicConsolidationOverride" => Some(crate::types::CustomConsolidationConfiguration::EpisodicConsolidationOverride(
+                                crate::protocol_serde::shape_episodic_consolidation_override::de_episodic_consolidation_override(tokens)?
+                                    .ok_or_else(|| {
+                                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                            "value for 'episodicConsolidationOverride' cannot be null",
+                                        )
+                                    })?,
+                            )),
+                            _ => {
+                                ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                                Some(crate::types::CustomConsolidationConfiguration::Unknown)
+                            }
+                        };
                 }
                 other => {
                     return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(

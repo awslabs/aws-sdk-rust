@@ -34,6 +34,9 @@ pub mod get_vectors;
 /// Types for the `ListIndexes` operation.
 pub mod list_indexes;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `ListVectorBuckets` operation.
 pub mod list_vector_buckets;
 
@@ -48,3 +51,9 @@ pub mod put_vectors;
 
 /// Types for the `QueryVectors` operation.
 pub mod query_vectors;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;

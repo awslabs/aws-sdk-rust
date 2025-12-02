@@ -30,5 +30,26 @@ pub fn ser_list_log_groups_input_input(
             ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
+    if let Some(var_9) = &input.data_sources {
+        let mut array_10 = object.key("dataSources").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_data_source_filter::ser_data_source_filter(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
+    if let Some(var_13) = &input.field_index_names {
+        let mut array_14 = object.key("fieldIndexNames").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().string(item_15.as_str());
+            }
+        }
+        array_14.finish();
+    }
     Ok(())
 }

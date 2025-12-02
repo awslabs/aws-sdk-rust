@@ -26,9 +26,7 @@ impl crate::operation::put_access_point_scope::builders::PutAccessPointScopeInpu
 /// <p>You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 256 bytes in size.</p>
 /// </note>
 /// <p>To use this operation, you must have the permission to perform the <code>s3express:PutAccessPointScope</code> action.</p>
-/// <p>For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST error responses</a>.</p><important>
-/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
-/// </important>
+/// <p>For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST error responses</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAccessPointScopeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -13,6 +13,7 @@
 /// # let memorystrategytype = unimplemented!();
 /// match memorystrategytype {
 ///     MemoryStrategyType::Custom => { /* ... */ },
+///     MemoryStrategyType::Episodic => { /* ... */ },
 ///     MemoryStrategyType::Semantic => { /* ... */ },
 ///     MemoryStrategyType::Summarization => { /* ... */ },
 ///     MemoryStrategyType::UserPreference => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum MemoryStrategyType {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
+    Episodic,
+    #[allow(missing_docs)] // documentation missing in model
     Semantic,
     #[allow(missing_docs)] // documentation missing in model
     Summarization,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for MemoryStrategyType {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOM" => MemoryStrategyType::Custom,
+            "EPISODIC" => MemoryStrategyType::Episodic,
             "SEMANTIC" => MemoryStrategyType::Semantic,
             "SUMMARIZATION" => MemoryStrategyType::Summarization,
             "USER_PREFERENCE" => MemoryStrategyType::UserPreference,
@@ -79,6 +83,7 @@ impl MemoryStrategyType {
     pub fn as_str(&self) -> &str {
         match self {
             MemoryStrategyType::Custom => "CUSTOM",
+            MemoryStrategyType::Episodic => "EPISODIC",
             MemoryStrategyType::Semantic => "SEMANTIC",
             MemoryStrategyType::Summarization => "SUMMARIZATION",
             MemoryStrategyType::UserPreference => "USER_PREFERENCE",
@@ -87,7 +92,7 @@ impl MemoryStrategyType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM", "SEMANTIC", "SUMMARIZATION", "USER_PREFERENCE"]
+        &["CUSTOM", "EPISODIC", "SEMANTIC", "SUMMARIZATION", "USER_PREFERENCE"]
     }
 }
 impl ::std::convert::AsRef<str> for MemoryStrategyType {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for MemoryStrategyType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MemoryStrategyType::Custom => write!(f, "CUSTOM"),
+            MemoryStrategyType::Episodic => write!(f, "EPISODIC"),
             MemoryStrategyType::Semantic => write!(f, "SEMANTIC"),
             MemoryStrategyType::Summarization => write!(f, "SUMMARIZATION"),
             MemoryStrategyType::UserPreference => write!(f, "USER_PREFERENCE"),

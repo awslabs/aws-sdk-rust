@@ -22,7 +22,7 @@ impl crate::operation::delete_connector_v2::builders::DeleteConnectorV2InputBuil
 }
 /// Fluent builder constructing a request to `DeleteConnectorV2`.
 ///
-/// <p>Grants permission to delete a connectorV2. This API is in public preview and subject to change.</p>
+/// <p>Grants permission to delete a connectorV2.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConnectorV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -8,6 +8,8 @@ pub struct ModifyStrategyConfiguration {
     pub extraction: ::std::option::Option<crate::types::ModifyExtractionConfiguration>,
     /// <p>The updated consolidation configuration.</p>
     pub consolidation: ::std::option::Option<crate::types::ModifyConsolidationConfiguration>,
+    /// <p>The updated reflection configuration.</p>
+    pub reflection: ::std::option::Option<crate::types::ModifyReflectionConfiguration>,
     /// <p>The updated self-managed configuration.</p>
     pub self_managed_configuration: ::std::option::Option<crate::types::ModifySelfManagedConfiguration>,
 }
@@ -19,6 +21,10 @@ impl ModifyStrategyConfiguration {
     /// <p>The updated consolidation configuration.</p>
     pub fn consolidation(&self) -> ::std::option::Option<&crate::types::ModifyConsolidationConfiguration> {
         self.consolidation.as_ref()
+    }
+    /// <p>The updated reflection configuration.</p>
+    pub fn reflection(&self) -> ::std::option::Option<&crate::types::ModifyReflectionConfiguration> {
+        self.reflection.as_ref()
     }
     /// <p>The updated self-managed configuration.</p>
     pub fn self_managed_configuration(&self) -> ::std::option::Option<&crate::types::ModifySelfManagedConfiguration> {
@@ -38,6 +44,7 @@ impl ModifyStrategyConfiguration {
 pub struct ModifyStrategyConfigurationBuilder {
     pub(crate) extraction: ::std::option::Option<crate::types::ModifyExtractionConfiguration>,
     pub(crate) consolidation: ::std::option::Option<crate::types::ModifyConsolidationConfiguration>,
+    pub(crate) reflection: ::std::option::Option<crate::types::ModifyReflectionConfiguration>,
     pub(crate) self_managed_configuration: ::std::option::Option<crate::types::ModifySelfManagedConfiguration>,
 }
 impl ModifyStrategyConfigurationBuilder {
@@ -69,6 +76,20 @@ impl ModifyStrategyConfigurationBuilder {
     pub fn get_consolidation(&self) -> &::std::option::Option<crate::types::ModifyConsolidationConfiguration> {
         &self.consolidation
     }
+    /// <p>The updated reflection configuration.</p>
+    pub fn reflection(mut self, input: crate::types::ModifyReflectionConfiguration) -> Self {
+        self.reflection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated reflection configuration.</p>
+    pub fn set_reflection(mut self, input: ::std::option::Option<crate::types::ModifyReflectionConfiguration>) -> Self {
+        self.reflection = input;
+        self
+    }
+    /// <p>The updated reflection configuration.</p>
+    pub fn get_reflection(&self) -> &::std::option::Option<crate::types::ModifyReflectionConfiguration> {
+        &self.reflection
+    }
     /// <p>The updated self-managed configuration.</p>
     pub fn self_managed_configuration(mut self, input: crate::types::ModifySelfManagedConfiguration) -> Self {
         self.self_managed_configuration = ::std::option::Option::Some(input);
@@ -88,6 +109,7 @@ impl ModifyStrategyConfigurationBuilder {
         crate::types::ModifyStrategyConfiguration {
             extraction: self.extraction,
             consolidation: self.consolidation,
+            reflection: self.reflection,
             self_managed_configuration: self.self_managed_configuration,
         }
     }

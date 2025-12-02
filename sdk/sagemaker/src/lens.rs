@@ -399,6 +399,16 @@ pub(crate) fn reflens_list_lineage_groups_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_mlflow_apps_output_output_next_token(
+    input: &crate::operation::list_mlflow_apps::ListMlflowAppsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_mlflow_tracking_servers_output_output_next_token(
     input: &crate::operation::list_mlflow_tracking_servers::ListMlflowTrackingServersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1116,6 +1126,13 @@ pub(crate) fn lens_list_lineage_groups_output_output_lineage_group_summaries(
     input: crate::operation::list_lineage_groups::ListLineageGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LineageGroupSummary>> {
     let input = input.lineage_group_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_mlflow_apps_output_output_summaries(
+    input: crate::operation::list_mlflow_apps::ListMlflowAppsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MlflowAppSummary>> {
+    let input = input.summaries?;
     ::std::option::Option::Some(input)
 }
 

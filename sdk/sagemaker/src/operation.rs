@@ -133,6 +133,9 @@ pub mod create_inference_recommendations_job;
 /// Types for the `CreateLabelingJob` operation.
 pub mod create_labeling_job;
 
+/// Types for the `CreateMlflowApp` operation.
+pub mod create_mlflow_app;
+
 /// Types for the `CreateMlflowTrackingServer` operation.
 pub mod create_mlflow_tracking_server;
 
@@ -183,6 +186,9 @@ pub mod create_pipeline;
 
 /// Types for the `CreatePresignedDomainUrl` operation.
 pub mod create_presigned_domain_url;
+
+/// Types for the `CreatePresignedMlflowAppUrl` operation.
+pub mod create_presigned_mlflow_app_url;
 
 /// Types for the `CreatePresignedMlflowTrackingServerUrl` operation.
 pub mod create_presigned_mlflow_tracking_server_url;
@@ -318,6 +324,9 @@ pub mod delete_inference_component;
 
 /// Types for the `DeleteInferenceExperiment` operation.
 pub mod delete_inference_experiment;
+
+/// Types for the `DeleteMlflowApp` operation.
+pub mod delete_mlflow_app;
 
 /// Types for the `DeleteMlflowTrackingServer` operation.
 pub mod delete_mlflow_tracking_server;
@@ -513,6 +522,9 @@ pub mod describe_labeling_job;
 
 /// Types for the `DescribeLineageGroup` operation.
 pub mod describe_lineage_group;
+
+/// Types for the `DescribeMlflowApp` operation.
+pub mod describe_mlflow_app;
 
 /// Types for the `DescribeMlflowTrackingServer` operation.
 pub mod describe_mlflow_tracking_server;
@@ -765,6 +777,9 @@ pub mod list_labeling_jobs_for_workteam;
 
 /// Types for the `ListLineageGroups` operation.
 pub mod list_lineage_groups;
+
+/// Types for the `ListMlflowApps` operation.
+pub mod list_mlflow_apps;
 
 /// Types for the `ListMlflowTrackingServers` operation.
 pub mod list_mlflow_tracking_servers;
@@ -1062,6 +1077,9 @@ pub mod update_inference_component_runtime_config;
 
 /// Types for the `UpdateInferenceExperiment` operation.
 pub mod update_inference_experiment;
+
+/// Types for the `UpdateMlflowApp` operation.
+pub mod update_mlflow_app;
 
 /// Types for the `UpdateMlflowTrackingServer` operation.
 pub mod update_mlflow_tracking_server;

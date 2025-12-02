@@ -104,6 +104,15 @@ pub(crate) fn delete_memory_record_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn evaluate_output_output_correct_errors(
+    mut builder: crate::operation::evaluate::builders::EvaluateOutputBuilder,
+) -> crate::operation::evaluate::builders::EvaluateOutputBuilder {
+    if builder.evaluation_results.is_none() {
+        builder.evaluation_results = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_agent_card_output_output_correct_errors(
     mut builder: crate::operation::get_agent_card::builders::GetAgentCardOutputBuilder,
 ) -> crate::operation::get_agent_card::builders::GetAgentCardOutputBuilder {
@@ -499,6 +508,24 @@ pub(crate) fn code_interpreter_session_summary_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_result_content_correct_errors(
+    mut builder: crate::types::builders::EvaluationResultContentBuilder,
+) -> crate::types::builders::EvaluationResultContentBuilder {
+    if builder.evaluator_arn.is_none() {
+        builder.evaluator_arn = Some(Default::default())
+    }
+    if builder.evaluator_id.is_none() {
+        builder.evaluator_id = Some(Default::default())
+    }
+    if builder.evaluator_name.is_none() {
+        builder.evaluator_name = Some(Default::default())
+    }
+    if builder.context.is_none() {
+        builder.context = Some(crate::types::Context::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn extraction_job_metadata_correct_errors(
     mut builder: crate::types::builders::ExtractionJobMetadataBuilder,
 ) -> crate::types::builders::ExtractionJobMetadataBuilder {
@@ -588,6 +615,13 @@ pub(crate) fn conversational_correct_errors(
     }
     if builder.role.is_none() {
         builder.role = "no value was set".parse::<crate::types::Role>().ok()
+    }
+    builder
+}
+
+pub(crate) fn span_context_correct_errors(mut builder: crate::types::builders::SpanContextBuilder) -> crate::types::builders::SpanContextBuilder {
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
     }
     builder
 }

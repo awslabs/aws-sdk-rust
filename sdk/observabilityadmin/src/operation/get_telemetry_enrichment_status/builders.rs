@@ -22,7 +22,7 @@ impl crate::operation::get_telemetry_enrichment_status::builders::GetTelemetryEn
 }
 /// Fluent builder constructing a request to `GetTelemetryEnrichmentStatus`.
 ///
-/// <p>Returns the current status of the resource tags for telemetry feature, which enhances telemetry data with additional resource metadata from Amazon Web Services Resource Explorer.</p>
+/// <p>Returns the current status of the resource tags for telemetry feature, which enhances telemetry data with additional resource metadata from Resource Explorer.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTelemetryEnrichmentStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

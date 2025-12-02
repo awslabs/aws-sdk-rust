@@ -16,6 +16,9 @@ pub mod create_browser;
 /// Types for the `CreateCodeInterpreter` operation.
 pub mod create_code_interpreter;
 
+/// Types for the `CreateEvaluator` operation.
+pub mod create_evaluator;
+
 /// Types for the `CreateGateway` operation.
 pub mod create_gateway;
 
@@ -27,6 +30,15 @@ pub mod create_memory;
 
 /// Types for the `CreateOauth2CredentialProvider` operation.
 pub mod create_oauth2_credential_provider;
+
+/// Types for the `CreateOnlineEvaluationConfig` operation.
+pub mod create_online_evaluation_config;
+
+/// Types for the `CreatePolicy` operation.
+pub mod create_policy;
+
+/// Types for the `CreatePolicyEngine` operation.
+pub mod create_policy_engine;
 
 /// Types for the `CreateWorkloadIdentity` operation.
 pub mod create_workload_identity;
@@ -46,6 +58,9 @@ pub mod delete_browser;
 /// Types for the `DeleteCodeInterpreter` operation.
 pub mod delete_code_interpreter;
 
+/// Types for the `DeleteEvaluator` operation.
+pub mod delete_evaluator;
+
 /// Types for the `DeleteGateway` operation.
 pub mod delete_gateway;
 
@@ -57,6 +72,18 @@ pub mod delete_memory;
 
 /// Types for the `DeleteOauth2CredentialProvider` operation.
 pub mod delete_oauth2_credential_provider;
+
+/// Types for the `DeleteOnlineEvaluationConfig` operation.
+pub mod delete_online_evaluation_config;
+
+/// Types for the `DeletePolicy` operation.
+pub mod delete_policy;
+
+/// Types for the `DeletePolicyEngine` operation.
+pub mod delete_policy_engine;
+
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
 
 /// Types for the `DeleteWorkloadIdentity` operation.
 pub mod delete_workload_identity;
@@ -76,6 +103,9 @@ pub mod get_browser;
 /// Types for the `GetCodeInterpreter` operation.
 pub mod get_code_interpreter;
 
+/// Types for the `GetEvaluator` operation.
+pub mod get_evaluator;
+
 /// Types for the `GetGateway` operation.
 pub mod get_gateway;
 
@@ -87,6 +117,21 @@ pub mod get_memory;
 
 /// Types for the `GetOauth2CredentialProvider` operation.
 pub mod get_oauth2_credential_provider;
+
+/// Types for the `GetOnlineEvaluationConfig` operation.
+pub mod get_online_evaluation_config;
+
+/// Types for the `GetPolicy` operation.
+pub mod get_policy;
+
+/// Types for the `GetPolicyEngine` operation.
+pub mod get_policy_engine;
+
+/// Types for the `GetPolicyGeneration` operation.
+pub mod get_policy_generation;
+
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
 
 /// Types for the `GetTokenVault` operation.
 pub mod get_token_vault;
@@ -112,6 +157,9 @@ pub mod list_browsers;
 /// Types for the `ListCodeInterpreters` operation.
 pub mod list_code_interpreters;
 
+/// Types for the `ListEvaluators` operation.
+pub mod list_evaluators;
+
 /// Types for the `ListGatewayTargets` operation.
 pub mod list_gateway_targets;
 
@@ -124,14 +172,35 @@ pub mod list_memories;
 /// Types for the `ListOauth2CredentialProviders` operation.
 pub mod list_oauth2_credential_providers;
 
+/// Types for the `ListOnlineEvaluationConfigs` operation.
+pub mod list_online_evaluation_configs;
+
+/// Types for the `ListPolicies` operation.
+pub mod list_policies;
+
+/// Types for the `ListPolicyEngines` operation.
+pub mod list_policy_engines;
+
+/// Types for the `ListPolicyGenerationAssets` operation.
+pub mod list_policy_generation_assets;
+
+/// Types for the `ListPolicyGenerations` operation.
+pub mod list_policy_generations;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
 /// Types for the `ListWorkloadIdentities` operation.
 pub mod list_workload_identities;
 
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
+
 /// Types for the `SetTokenVaultCMK` operation.
 pub mod set_token_vault_cmk;
+
+/// Types for the `StartPolicyGeneration` operation.
+pub mod start_policy_generation;
 
 /// Types for the `SynchronizeGatewayTargets` operation.
 pub mod synchronize_gateway_targets;
@@ -151,6 +220,9 @@ pub mod update_agent_runtime_endpoint;
 /// Types for the `UpdateApiKeyCredentialProvider` operation.
 pub mod update_api_key_credential_provider;
 
+/// Types for the `UpdateEvaluator` operation.
+pub mod update_evaluator;
+
 /// Types for the `UpdateGateway` operation.
 pub mod update_gateway;
 
@@ -162,6 +234,15 @@ pub mod update_memory;
 
 /// Types for the `UpdateOauth2CredentialProvider` operation.
 pub mod update_oauth2_credential_provider;
+
+/// Types for the `UpdateOnlineEvaluationConfig` operation.
+pub mod update_online_evaluation_config;
+
+/// Types for the `UpdatePolicy` operation.
+pub mod update_policy;
+
+/// Types for the `UpdatePolicyEngine` operation.
+pub mod update_policy_engine;
 
 /// Types for the `UpdateWorkloadIdentity` operation.
 pub mod update_workload_identity;

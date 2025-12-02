@@ -25,47 +25,53 @@ pub fn ser_content_block(
             crate::protocol_serde::shape_video_block::ser_video_block(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::ContentBlock::Audio(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_3.key("audio").start_object();
+            crate::protocol_serde::shape_audio_block::ser_audio_block(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::ContentBlock::ToolUse(inner) => {
             #[allow(unused_mut)]
-            let mut object_4 = object_3.key("toolUse").start_object();
-            crate::protocol_serde::shape_tool_use_block::ser_tool_use_block(&mut object_4, inner)?;
-            object_4.finish();
+            let mut object_5 = object_3.key("toolUse").start_object();
+            crate::protocol_serde::shape_tool_use_block::ser_tool_use_block(&mut object_5, inner)?;
+            object_5.finish();
         }
         crate::types::ContentBlock::ToolResult(inner) => {
             #[allow(unused_mut)]
-            let mut object_5 = object_3.key("toolResult").start_object();
-            crate::protocol_serde::shape_tool_result_block::ser_tool_result_block(&mut object_5, inner)?;
-            object_5.finish();
+            let mut object_6 = object_3.key("toolResult").start_object();
+            crate::protocol_serde::shape_tool_result_block::ser_tool_result_block(&mut object_6, inner)?;
+            object_6.finish();
         }
         crate::types::ContentBlock::GuardContent(inner) => {
             #[allow(unused_mut)]
-            let mut object_6 = object_3.key("guardContent").start_object();
-            crate::protocol_serde::shape_guardrail_converse_content_block::ser_guardrail_converse_content_block(&mut object_6, inner)?;
-            object_6.finish();
+            let mut object_7 = object_3.key("guardContent").start_object();
+            crate::protocol_serde::shape_guardrail_converse_content_block::ser_guardrail_converse_content_block(&mut object_7, inner)?;
+            object_7.finish();
         }
         crate::types::ContentBlock::CachePoint(inner) => {
             #[allow(unused_mut)]
-            let mut object_7 = object_3.key("cachePoint").start_object();
-            crate::protocol_serde::shape_cache_point_block::ser_cache_point_block(&mut object_7, inner)?;
-            object_7.finish();
+            let mut object_8 = object_3.key("cachePoint").start_object();
+            crate::protocol_serde::shape_cache_point_block::ser_cache_point_block(&mut object_8, inner)?;
+            object_8.finish();
         }
         crate::types::ContentBlock::ReasoningContent(inner) => {
             #[allow(unused_mut)]
-            let mut object_8 = object_3.key("reasoningContent").start_object();
-            crate::protocol_serde::shape_reasoning_content_block::ser_reasoning_content_block(&mut object_8, inner)?;
-            object_8.finish();
+            let mut object_9 = object_3.key("reasoningContent").start_object();
+            crate::protocol_serde::shape_reasoning_content_block::ser_reasoning_content_block(&mut object_9, inner)?;
+            object_9.finish();
         }
         crate::types::ContentBlock::CitationsContent(inner) => {
             #[allow(unused_mut)]
-            let mut object_9 = object_3.key("citationsContent").start_object();
-            crate::protocol_serde::shape_citations_content_block::ser_citations_content_block(&mut object_9, inner)?;
-            object_9.finish();
+            let mut object_10 = object_3.key("citationsContent").start_object();
+            crate::protocol_serde::shape_citations_content_block::ser_citations_content_block(&mut object_10, inner)?;
+            object_10.finish();
         }
         crate::types::ContentBlock::SearchResult(inner) => {
             #[allow(unused_mut)]
-            let mut object_10 = object_3.key("searchResult").start_object();
-            crate::protocol_serde::shape_search_result_block::ser_search_result_block(&mut object_10, inner)?;
-            object_10.finish();
+            let mut object_11 = object_3.key("searchResult").start_object();
+            crate::protocol_serde::shape_search_result_block::ser_search_result_block(&mut object_11, inner)?;
+            object_11.finish();
         }
         crate::types::ContentBlock::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ContentBlock")),
     }
@@ -120,6 +126,10 @@ where
                         "video" => Some(crate::types::ContentBlock::Video(
                             crate::protocol_serde::shape_video_block::de_video_block(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'video' cannot be null"))?,
+                        )),
+                        "audio" => Some(crate::types::ContentBlock::Audio(
+                            crate::protocol_serde::shape_audio_block::de_audio_block(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'audio' cannot be null"))?,
                         )),
                         "toolUse" => Some(crate::types::ContentBlock::ToolUse(
                             crate::protocol_serde::shape_tool_use_block::de_tool_use_block(tokens)?.ok_or_else(|| {

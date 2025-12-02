@@ -7,6 +7,8 @@ pub struct GetMetadataGenerationRunInput {
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the metadata generation run.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the metadata generation run.</p>
+    pub r#type: ::std::option::Option<crate::types::MetadataGenerationRunType>,
 }
 impl GetMetadataGenerationRunInput {
     /// <p>The ID of the Amazon DataZone domain the metadata generation run of which you want to get.</p>
@@ -16,6 +18,10 @@ impl GetMetadataGenerationRunInput {
     /// <p>The identifier of the metadata generation run.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
+    }
+    /// <p>The type of the metadata generation run.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MetadataGenerationRunType> {
+        self.r#type.as_ref()
     }
 }
 impl GetMetadataGenerationRunInput {
@@ -31,6 +37,7 @@ impl GetMetadataGenerationRunInput {
 pub struct GetMetadataGenerationRunInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::MetadataGenerationRunType>,
 }
 impl GetMetadataGenerationRunInputBuilder {
     /// <p>The ID of the Amazon DataZone domain the metadata generation run of which you want to get.</p>
@@ -63,6 +70,20 @@ impl GetMetadataGenerationRunInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
+    /// <p>The type of the metadata generation run.</p>
+    pub fn r#type(mut self, input: crate::types::MetadataGenerationRunType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the metadata generation run.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::MetadataGenerationRunType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the metadata generation run.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::MetadataGenerationRunType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`GetMetadataGenerationRunInput`](crate::operation::get_metadata_generation_run::GetMetadataGenerationRunInput).
     pub fn build(
         self,
@@ -73,6 +94,7 @@ impl GetMetadataGenerationRunInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_metadata_generation_run::GetMetadataGenerationRunInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,
+            r#type: self.r#type,
         })
     }
 }

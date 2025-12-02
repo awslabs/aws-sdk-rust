@@ -23,6 +23,7 @@ impl crate::operation::describe_queries::builders::DescribeQueriesInputBuilder {
 /// Fluent builder constructing a request to `DescribeQueries`.
 ///
 /// <p>Returns a list of CloudWatch Logs Insights queries that are scheduled, running, or have been run recently in this account. You can request all queries or limit it to queries of a specific log group or queries with a certain status.</p>
+/// <p>This operation includes both interactive queries started directly by users and automated queries executed by scheduled query configurations. Scheduled query executions appear in the results alongside manually initiated queries, providing visibility into all query activity in your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeQueriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

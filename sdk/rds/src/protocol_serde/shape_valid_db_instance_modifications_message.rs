@@ -42,6 +42,16 @@ pub fn de_valid_db_instance_modifications_message(
                 builder = builder.set_supports_dedicated_log_volume(var_3);
             }
             ,
+            s if s.matches("AdditionalStorage") /* AdditionalStorage com.amazonaws.rds#ValidDBInstanceModificationsMessage$AdditionalStorage */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_valid_additional_storage_options::de_valid_additional_storage_options(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_additional_storage(var_4);
+            }
+            ,
             _ => {}
         }
     }

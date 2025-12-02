@@ -2,36 +2,21 @@
 
 /// <p>The initial configuration settings required to establish an integration between Security Hub and ServiceNow ITSM.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNowProviderConfiguration {
     /// <p>The instance name of ServiceNow ITSM.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
-    /// <p>The client ID of ServiceNow ITSM.</p>
-    pub client_id: ::std::option::Option<::std::string::String>,
-    /// <p>The client secret of ServiceNow ITSM.</p>
-    pub client_secret: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the ServiceNow credentials.</p>
+    pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServiceNowProviderConfiguration {
     /// <p>The instance name of ServiceNow ITSM.</p>
     pub fn instance_name(&self) -> ::std::option::Option<&str> {
         self.instance_name.as_deref()
     }
-    /// <p>The client ID of ServiceNow ITSM.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
-        self.client_id.as_deref()
-    }
-    /// <p>The client secret of ServiceNow ITSM.</p>
-    pub fn client_secret(&self) -> ::std::option::Option<&str> {
-        self.client_secret.as_deref()
-    }
-}
-impl ::std::fmt::Debug for ServiceNowProviderConfiguration {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNowProviderConfiguration");
-        formatter.field("instance_name", &self.instance_name);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the ServiceNow credentials.</p>
+    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+        self.secret_arn.as_deref()
     }
 }
 impl ServiceNowProviderConfiguration {
@@ -42,12 +27,11 @@ impl ServiceNowProviderConfiguration {
 }
 
 /// A builder for [`ServiceNowProviderConfiguration`](crate::types::ServiceNowProviderConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ServiceNowProviderConfigurationBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
-    pub(crate) client_id: ::std::option::Option<::std::string::String>,
-    pub(crate) client_secret: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServiceNowProviderConfigurationBuilder {
     /// <p>The instance name of ServiceNow ITSM.</p>
@@ -65,51 +49,26 @@ impl ServiceNowProviderConfigurationBuilder {
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_name
     }
-    /// <p>The client ID of ServiceNow ITSM.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the ServiceNow credentials.</p>
     /// This field is required.
-    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_id = ::std::option::Option::Some(input.into());
+    pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The client ID of ServiceNow ITSM.</p>
-    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the ServiceNow credentials.</p>
+    pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.secret_arn = input;
         self
     }
-    /// <p>The client ID of ServiceNow ITSM.</p>
-    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_id
-    }
-    /// <p>The client secret of ServiceNow ITSM.</p>
-    /// This field is required.
-    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_secret = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The client secret of ServiceNow ITSM.</p>
-    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_secret = input;
-        self
-    }
-    /// <p>The client secret of ServiceNow ITSM.</p>
-    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_secret
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the ServiceNow credentials.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// Consumes the builder and constructs a [`ServiceNowProviderConfiguration`](crate::types::ServiceNowProviderConfiguration).
     pub fn build(self) -> crate::types::ServiceNowProviderConfiguration {
         crate::types::ServiceNowProviderConfiguration {
             instance_name: self.instance_name,
-            client_id: self.client_id,
-            client_secret: self.client_secret,
+            secret_arn: self.secret_arn,
         }
-    }
-}
-impl ::std::fmt::Debug for ServiceNowProviderConfigurationBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNowProviderConfigurationBuilder");
-        formatter.field("instance_name", &self.instance_name);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
     }
 }

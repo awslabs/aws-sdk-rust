@@ -27,9 +27,9 @@ impl crate::operation::stop_code_interpreter_session::builders::StopCodeInterpre
 /// <p>The following operations are related to <code>StopCodeInterpreterSession</code>:</p>
 /// <ul>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartCodeInterpreterSession.html">StartCodeInterpreterSession</a></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetCodeInterpreterSession.html">GetCodeInterpreterSession</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopCodeInterpreterSessionFluentBuilder {

@@ -159,11 +159,19 @@ pub use crate::types::_scope::Scope;
 
 pub use crate::types::_policy_type::PolicyType;
 
+pub use crate::types::_s3_table_integration_source::S3TableIntegrationSource;
+
+pub use crate::types::_s3_table_integration_source_status::S3TableIntegrationSourceStatus;
+
+pub use crate::types::_data_source::DataSource;
+
 pub use crate::types::_scheduled_query_summary::ScheduledQuerySummary;
 
 pub use crate::types::_log_group_summary::LogGroupSummary;
 
 pub use crate::types::_log_group_class::LogGroupClass;
+
+pub use crate::types::_data_source_filter::DataSourceFilter;
 
 pub use crate::types::_anomaly_detector::AnomalyDetector;
 
@@ -180,6 +188,12 @@ pub use crate::types::_log_event::LogEvent;
 pub use crate::types::_state::State;
 
 pub use crate::types::_suppression_state::SuppressionState;
+
+pub use crate::types::_aggregate_log_group_summary::AggregateLogGroupSummary;
+
+pub use crate::types::_grouping_identifier::GroupingIdentifier;
+
+pub use crate::types::_list_aggregate_log_group_summaries_group_by::ListAggregateLogGroupSummariesGroupBy;
 
 pub use crate::types::_trigger_history_record::TriggerHistoryRecord;
 
@@ -200,6 +214,10 @@ pub use crate::types::_get_log_object_response_stream::GetLogObjectResponseStrea
 pub use crate::types::_fields_data::FieldsData;
 
 pub use crate::types::_log_group_field::LogGroupField;
+
+pub use crate::types::_log_fields_list_item::LogFieldsListItem;
+
+pub use crate::types::_log_field_type::LogFieldType;
 
 pub use crate::types::_output_log_event::OutputLogEvent;
 
@@ -253,6 +271,8 @@ pub use crate::types::_data_protection_status::DataProtectionStatus;
 
 pub use crate::types::_field_index::FieldIndex;
 
+pub use crate::types::_index_type::IndexType;
+
 pub use crate::types::_export_task::ExportTask;
 
 pub use crate::types::_export_task_execution_info::ExportTaskExecutionInfo;
@@ -275,6 +295,8 @@ mod _add_key_entry;
 
 mod _add_keys;
 
+mod _aggregate_log_group_summary;
+
 mod _anomaly;
 
 mod _anomaly_detector;
@@ -292,6 +314,10 @@ mod _copy_value_entry;
 mod _csv;
 
 mod _data_protection_status;
+
+mod _data_source;
+
+mod _data_source_filter;
 
 mod _date_time_converter;
 
@@ -343,9 +369,13 @@ mod _get_log_object_response_stream;
 
 mod _grok;
 
+mod _grouping_identifier;
+
 mod _index_policy;
 
 mod _index_source;
+
+mod _index_type;
 
 mod _inherited_property;
 
@@ -359,6 +389,8 @@ mod _integration_summary;
 
 mod _integration_type;
 
+mod _list_aggregate_log_group_summaries_group_by;
+
 mod _list_to_map;
 
 mod _live_tail_session_log_event;
@@ -370,6 +402,10 @@ mod _live_tail_session_start;
 mod _live_tail_session_update;
 
 mod _log_event;
+
+mod _log_field_type;
+
+mod _log_fields_list_item;
 
 mod _log_group;
 
@@ -484,6 +520,10 @@ mod _result_field;
 mod _s3_configuration;
 
 mod _s3_delivery_configuration;
+
+mod _s3_table_integration_source;
+
+mod _s3_table_integration_source_status;
 
 mod _scheduled_query_destination;
 

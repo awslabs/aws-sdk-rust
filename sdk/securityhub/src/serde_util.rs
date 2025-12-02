@@ -53,15 +53,6 @@ pub(crate) fn batch_update_findings_v2_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn connector_registrations_v2_output_output_correct_errors(
-    mut builder: crate::operation::connector_registrations_v2::builders::ConnectorRegistrationsV2OutputBuilder,
-) -> crate::operation::connector_registrations_v2::builders::ConnectorRegistrationsV2OutputBuilder {
-    if builder.connector_id.is_none() {
-        builder.connector_id = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn create_action_target_output_output_correct_errors(
     mut builder: crate::operation::create_action_target::builders::CreateActionTargetOutputBuilder,
 ) -> crate::operation::create_action_target::builders::CreateActionTargetOutputBuilder {
@@ -74,6 +65,9 @@ pub(crate) fn create_action_target_output_output_correct_errors(
 pub(crate) fn create_connector_v2_output_output_correct_errors(
     mut builder: crate::operation::create_connector_v2::builders::CreateConnectorV2OutputBuilder,
 ) -> crate::operation::create_connector_v2::builders::CreateConnectorV2OutputBuilder {
+    if builder.connector_arn.is_none() {
+        builder.connector_arn = Some(Default::default())
+    }
     if builder.connector_id.is_none() {
         builder.connector_id = Some(Default::default())
     }
@@ -277,6 +271,15 @@ pub(crate) fn list_standards_control_associations_output_output_correct_errors(
 ) -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsOutputBuilder {
     if builder.standards_control_association_summaries.is_none() {
         builder.standards_control_association_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn register_connector_v2_output_output_correct_errors(
+    mut builder: crate::operation::register_connector_v2::builders::RegisterConnectorV2OutputBuilder,
+) -> crate::operation::register_connector_v2::builders::RegisterConnectorV2OutputBuilder {
+    if builder.connector_id.is_none() {
+        builder.connector_id = Some(Default::default())
     }
     builder
 }
@@ -546,6 +549,9 @@ pub(crate) fn security_control_correct_errors(
 pub(crate) fn service_now_detail_correct_errors(
     mut builder: crate::types::builders::ServiceNowDetailBuilder,
 ) -> crate::types::builders::ServiceNowDetailBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
+    }
     if builder.auth_status.is_none() {
         builder.auth_status = "no value was set".parse::<crate::types::ConnectorAuthStatus>().ok()
     }

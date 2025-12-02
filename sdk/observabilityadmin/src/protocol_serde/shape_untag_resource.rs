@@ -49,6 +49,11 @@ pub fn de_untag_resource_http_error(
                         crate::operation::untag_resource::UntagResourceError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType")
                     })?,
                 );
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::untag_resource::UntagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };

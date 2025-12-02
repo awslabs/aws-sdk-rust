@@ -849,6 +849,8 @@ pub use crate::types::_model_card_export_job_summary::ModelCardExportJobSummaryB
 
 pub use crate::types::_tracking_server_summary::TrackingServerSummaryBuilder;
 
+pub use crate::types::_mlflow_app_summary::MlflowAppSummaryBuilder;
+
 pub use crate::types::_lineage_group_summary::LineageGroupSummaryBuilder;
 
 pub use crate::types::_labeling_job_for_workteam_summary::LabelingJobForWorkteamSummaryBuilder;

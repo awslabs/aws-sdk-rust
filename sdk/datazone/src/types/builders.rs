@@ -15,6 +15,8 @@ pub use crate::types::_domain_unit_target::DomainUnitTargetBuilder;
 
 pub use crate::types::_rule_summary::RuleSummaryBuilder;
 
+pub use crate::types::_metadata_generation_run_type_stat::MetadataGenerationRunTypeStatBuilder;
+
 pub use crate::types::_metadata_generation_run_target::MetadataGenerationRunTargetBuilder;
 
 pub use crate::types::_metadata_generation_run_item::MetadataGenerationRunItemBuilder;
@@ -344,6 +346,8 @@ pub use crate::types::_owner_user_properties::OwnerUserPropertiesBuilder;
 pub use crate::types::_reject_choice::RejectChoiceBuilder;
 
 pub use crate::types::_reject_rule::RejectRuleBuilder;
+
+pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
 
 pub use crate::types::_time_series_data_point_form_output::TimeSeriesDataPointFormOutputBuilder;
 

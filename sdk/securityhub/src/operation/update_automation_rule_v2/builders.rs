@@ -22,7 +22,7 @@ impl crate::operation::update_automation_rule_v2::builders::UpdateAutomationRule
 }
 /// Fluent builder constructing a request to `UpdateAutomationRuleV2`.
 ///
-/// <p>Updates a V2 automation rule. This API is in public preview and subject to change.</p>
+/// <p>Updates a V2 automation rule.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAutomationRuleV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

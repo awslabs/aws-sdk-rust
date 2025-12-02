@@ -86,6 +86,10 @@ pub struct ModifyCustomDbEngineVersionOutput {
     pub supports_integrations: ::std::option::Option<bool>,
     /// <p>Specifies any Aurora Serverless v2 properties or limits that differ between Aurora engine versions. You can test the values of this attribute when deciding which Aurora version to use in a new or upgraded DB cluster. You can also retrieve the version of an existing DB cluster and check whether that version supports certain Aurora Serverless v2 features before you attempt to use those features.</p>
     pub serverless_v2_features_support: ::std::option::Option<crate::types::ServerlessV2FeaturesSupport>,
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    pub database_installation_files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ModifyCustomDbEngineVersionOutput {
@@ -259,6 +263,16 @@ impl ModifyCustomDbEngineVersionOutput {
     pub fn serverless_v2_features_support(&self) -> ::std::option::Option<&crate::types::ServerlessV2FeaturesSupport> {
         self.serverless_v2_features_support.as_ref()
     }
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_installation_files.is_none()`.
+    pub fn database_installation_files(&self) -> &[::std::string::String] {
+        self.database_installation_files.as_deref().unwrap_or_default()
+    }
+    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for ModifyCustomDbEngineVersionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -311,6 +325,8 @@ pub struct ModifyCustomDbEngineVersionOutputBuilder {
     pub(crate) supports_local_write_forwarding: ::std::option::Option<bool>,
     pub(crate) supports_integrations: ::std::option::Option<bool>,
     pub(crate) serverless_v2_features_support: ::std::option::Option<crate::types::ServerlessV2FeaturesSupport>,
+    pub(crate) database_installation_files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ModifyCustomDbEngineVersionOutputBuilder {
@@ -894,6 +910,40 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
     pub fn get_serverless_v2_features_support(&self) -> &::std::option::Option<crate::types::ServerlessV2FeaturesSupport> {
         &self.serverless_v2_features_support
     }
+    /// Appends an item to `database_installation_files`.
+    ///
+    /// To override the contents of this collection use [`set_database_installation_files`](Self::set_database_installation_files).
+    ///
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    pub fn database_installation_files(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.database_installation_files.unwrap_or_default();
+        v.push(input.into());
+        self.database_installation_files = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    pub fn set_database_installation_files(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.database_installation_files = input;
+        self
+    }
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    pub fn get_database_installation_files(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.database_installation_files
+    }
+    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input;
+        self
+    }
+    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -941,6 +991,8 @@ impl ModifyCustomDbEngineVersionOutputBuilder {
             supports_local_write_forwarding: self.supports_local_write_forwarding,
             supports_integrations: self.supports_integrations,
             serverless_v2_features_support: self.serverless_v2_features_support,
+            database_installation_files: self.database_installation_files,
+            failure_reason: self.failure_reason,
             _request_id: self._request_id,
         }
     }

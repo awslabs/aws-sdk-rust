@@ -28,9 +28,9 @@ impl crate::operation::list_browser_sessions::builders::ListBrowserSessionsInput
 /// <p>The following operations are related to <code>ListBrowserSessions</code>:</p>
 /// <ul>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/API_StartBrowserSession.html">StartBrowserSession</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/API_GetBrowserSession.html">GetBrowserSession</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBrowserSessionsFluentBuilder {

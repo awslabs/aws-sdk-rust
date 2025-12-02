@@ -6,11 +6,17 @@
 pub struct IcebergMetadata {
     /// <p>The schema for an Iceberg table.</p>
     pub schema: ::std::option::Option<crate::types::IcebergSchema>,
+    /// <p>Contains configuration properties for an Iceberg table.</p>
+    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IcebergMetadata {
     /// <p>The schema for an Iceberg table.</p>
     pub fn schema(&self) -> ::std::option::Option<&crate::types::IcebergSchema> {
         self.schema.as_ref()
+    }
+    /// <p>Contains configuration properties for an Iceberg table.</p>
+    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.properties.as_ref()
     }
 }
 impl IcebergMetadata {
@@ -25,6 +31,7 @@ impl IcebergMetadata {
 #[non_exhaustive]
 pub struct IcebergMetadataBuilder {
     pub(crate) schema: ::std::option::Option<crate::types::IcebergSchema>,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IcebergMetadataBuilder {
     /// <p>The schema for an Iceberg table.</p>
@@ -42,8 +49,31 @@ impl IcebergMetadataBuilder {
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::IcebergSchema> {
         &self.schema
     }
+    /// Adds a key-value pair to `properties`.
+    ///
+    /// To override the contents of this collection use [`set_properties`](Self::set_properties).
+    ///
+    /// <p>Contains configuration properties for an Iceberg table.</p>
+    pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.properties.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.properties = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Contains configuration properties for an Iceberg table.</p>
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.properties = input;
+        self
+    }
+    /// <p>Contains configuration properties for an Iceberg table.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.properties
+    }
     /// Consumes the builder and constructs a [`IcebergMetadata`](crate::types::IcebergMetadata).
     pub fn build(self) -> crate::types::IcebergMetadata {
-        crate::types::IcebergMetadata { schema: self.schema }
+        crate::types::IcebergMetadata {
+            schema: self.schema,
+            properties: self.properties,
+        }
     }
 }

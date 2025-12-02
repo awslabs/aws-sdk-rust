@@ -24,6 +24,20 @@ pub fn de_describe_savings_plan_rates_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InternalServerException" => crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesError::unhandled)?
+            };
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -23,6 +23,8 @@ pub use crate::types::_ip_filter::IpFilterBuilder;
 
 pub use crate::types::_note_update::NoteUpdateBuilder;
 
+pub use crate::types::_service_now_update_configuration::ServiceNowUpdateConfigurationBuilder;
+
 pub use crate::types::_jira_cloud_update_configuration::JiraCloudUpdateConfigurationBuilder;
 
 pub use crate::types::_security_hub_policy::SecurityHubPolicyBuilder;

@@ -11,6 +11,8 @@ pub use crate::types::_function_configuration::FunctionConfigurationBuilder;
 
 pub use crate::types::_tenancy_config::TenancyConfigBuilder;
 
+pub use crate::types::_durable_config::DurableConfigBuilder;
+
 pub use crate::types::_capacity_provider_config::CapacityProviderConfigBuilder;
 
 pub use crate::types::_lambda_managed_instances_capacity_provider_config::LambdaManagedInstancesCapacityProviderConfigBuilder;
@@ -133,8 +135,100 @@ pub use crate::types::_capacity_provider_permissions_config::CapacityProviderPer
 
 pub use crate::types::_capacity_provider_vpc_config::CapacityProviderVpcConfigBuilder;
 
+pub use crate::types::_error_object::ErrorObjectBuilder;
+
 pub use crate::types::_function_event_invoke_config::FunctionEventInvokeConfigBuilder;
+
+pub use crate::types::_execution::ExecutionBuilder;
+
+pub use crate::types::_operation::OperationBuilder;
+
+pub use crate::types::_chained_invoke_details::ChainedInvokeDetailsBuilder;
+
+pub use crate::types::_callback_details::CallbackDetailsBuilder;
+
+pub use crate::types::_wait_details::WaitDetailsBuilder;
+
+pub use crate::types::_step_details::StepDetailsBuilder;
+
+pub use crate::types::_context_details::ContextDetailsBuilder;
+
+pub use crate::types::_execution_details::ExecutionDetailsBuilder;
+
+pub use crate::types::_event::EventBuilder;
+
+pub use crate::types::_invocation_completed_details::InvocationCompletedDetailsBuilder;
+
+pub use crate::types::_event_error::EventErrorBuilder;
+
+pub use crate::types::_callback_timed_out_details::CallbackTimedOutDetailsBuilder;
+
+pub use crate::types::_callback_failed_details::CallbackFailedDetailsBuilder;
+
+pub use crate::types::_callback_succeeded_details::CallbackSucceededDetailsBuilder;
+
+pub use crate::types::_event_result::EventResultBuilder;
+
+pub use crate::types::_callback_started_details::CallbackStartedDetailsBuilder;
+
+pub use crate::types::_chained_invoke_stopped_details::ChainedInvokeStoppedDetailsBuilder;
+
+pub use crate::types::_chained_invoke_timed_out_details::ChainedInvokeTimedOutDetailsBuilder;
+
+pub use crate::types::_chained_invoke_failed_details::ChainedInvokeFailedDetailsBuilder;
+
+pub use crate::types::_chained_invoke_succeeded_details::ChainedInvokeSucceededDetailsBuilder;
+
+pub use crate::types::_chained_invoke_started_details::ChainedInvokeStartedDetailsBuilder;
+
+pub use crate::types::_event_input::EventInputBuilder;
+
+pub use crate::types::_step_failed_details::StepFailedDetailsBuilder;
+
+pub use crate::types::_retry_details::RetryDetailsBuilder;
+
+pub use crate::types::_step_succeeded_details::StepSucceededDetailsBuilder;
+
+pub use crate::types::_step_started_details::StepStartedDetailsBuilder;
+
+pub use crate::types::_wait_cancelled_details::WaitCancelledDetailsBuilder;
+
+pub use crate::types::_wait_succeeded_details::WaitSucceededDetailsBuilder;
+
+pub use crate::types::_wait_started_details::WaitStartedDetailsBuilder;
+
+pub use crate::types::_context_failed_details::ContextFailedDetailsBuilder;
+
+pub use crate::types::_context_succeeded_details::ContextSucceededDetailsBuilder;
+
+pub use crate::types::_context_started_details::ContextStartedDetailsBuilder;
+
+pub use crate::types::_execution_stopped_details::ExecutionStoppedDetailsBuilder;
+
+pub use crate::types::_execution_timed_out_details::ExecutionTimedOutDetailsBuilder;
+
+pub use crate::types::_execution_failed_details::ExecutionFailedDetailsBuilder;
+
+pub use crate::types::_execution_succeeded_details::ExecutionSucceededDetailsBuilder;
+
+pub use crate::types::_execution_started_details::ExecutionStartedDetailsBuilder;
+
+pub use crate::types::_trace_header::TraceHeaderBuilder;
 
 pub use crate::types::_account_usage::AccountUsageBuilder;
 
 pub use crate::types::_account_limit::AccountLimitBuilder;
+
+pub use crate::types::_checkpoint_updated_execution_state::CheckpointUpdatedExecutionStateBuilder;
+
+pub use crate::types::_operation_update::OperationUpdateBuilder;
+
+pub use crate::types::_chained_invoke_options::ChainedInvokeOptionsBuilder;
+
+pub use crate::types::_callback_options::CallbackOptionsBuilder;
+
+pub use crate::types::_wait_options::WaitOptionsBuilder;
+
+pub use crate::types::_step_options::StepOptionsBuilder;
+
+pub use crate::types::_context_options::ContextOptionsBuilder;

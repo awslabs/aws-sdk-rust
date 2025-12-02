@@ -2547,6 +2547,48 @@ impl From<crate::operation::get_connection::GetConnectionError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_export_configuration::GetDataExportConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_export_configuration::GetDataExportConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_export_configuration::GetDataExportConfigurationError> for Error {
+    fn from(err: crate::operation::get_data_export_configuration::GetDataExportConfigurationError) -> Self {
+        match err {
+            crate::operation::get_data_export_configuration::GetDataExportConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_data_export_configuration::GetDataExportConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_data_export_configuration::GetDataExportConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_data_export_configuration::GetDataExportConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_data_export_configuration::GetDataExportConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_data_export_configuration::GetDataExportConfigurationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::get_data_export_configuration::GetDataExportConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_product::GetDataProductError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4708,6 +4750,54 @@ impl From<crate::operation::post_time_series_data_points::PostTimeSeriesDataPoin
                 Error::UnauthorizedException(inner)
             }
             crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_data_export_configuration::PutDataExportConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_data_export_configuration::PutDataExportConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_data_export_configuration::PutDataExportConfigurationError> for Error {
+    fn from(err: crate::operation::put_data_export_configuration::PutDataExportConfigurationError) -> Self {
+        match err {
+            crate::operation::put_data_export_configuration::PutDataExportConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_data_export_configuration::PutDataExportConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_data_export_configuration::PutDataExportConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_data_export_configuration::PutDataExportConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_data_export_configuration::PutDataExportConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::put_data_export_configuration::PutDataExportConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_data_export_configuration::PutDataExportConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_data_export_configuration::PutDataExportConfigurationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::put_data_export_configuration::PutDataExportConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -152,6 +152,35 @@ pub(crate) fn get_table_bucket_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_table_bucket_replication_output_output_correct_errors(
+    mut builder: crate::operation::get_table_bucket_replication::builders::GetTableBucketReplicationOutputBuilder,
+) -> crate::operation::get_table_bucket_replication::builders::GetTableBucketReplicationOutputBuilder {
+    if builder.version_token.is_none() {
+        builder.version_token = Some(Default::default())
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = {
+            let builder = crate::types::builders::TableBucketReplicationConfigurationBuilder::default();
+            crate::serde_util::table_bucket_replication_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_table_bucket_storage_class_output_output_correct_errors(
+    mut builder: crate::operation::get_table_bucket_storage_class::builders::GetTableBucketStorageClassOutputBuilder,
+) -> crate::operation::get_table_bucket_storage_class::builders::GetTableBucketStorageClassOutputBuilder {
+    if builder.storage_class_configuration.is_none() {
+        builder.storage_class_configuration = {
+            let builder = crate::types::builders::StorageClassConfigurationBuilder::default();
+            crate::serde_util::storage_class_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_table_encryption_output_output_correct_errors(
     mut builder: crate::operation::get_table_encryption::builders::GetTableEncryptionOutputBuilder,
 ) -> crate::operation::get_table_encryption::builders::GetTableEncryptionOutputBuilder {
@@ -209,6 +238,66 @@ pub(crate) fn get_table_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_table_record_expiration_configuration_output_output_correct_errors(
+    mut builder: crate::operation::get_table_record_expiration_configuration::builders::GetTableRecordExpirationConfigurationOutputBuilder,
+) -> crate::operation::get_table_record_expiration_configuration::builders::GetTableRecordExpirationConfigurationOutputBuilder {
+    if builder.configuration.is_none() {
+        builder.configuration = {
+            let builder = crate::types::builders::TableRecordExpirationConfigurationValueBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_table_record_expiration_job_status_output_output_correct_errors(
+    mut builder: crate::operation::get_table_record_expiration_job_status::builders::GetTableRecordExpirationJobStatusOutputBuilder,
+) -> crate::operation::get_table_record_expiration_job_status::builders::GetTableRecordExpirationJobStatusOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TableRecordExpirationJobStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_table_replication_output_output_correct_errors(
+    mut builder: crate::operation::get_table_replication::builders::GetTableReplicationOutputBuilder,
+) -> crate::operation::get_table_replication::builders::GetTableReplicationOutputBuilder {
+    if builder.version_token.is_none() {
+        builder.version_token = Some(Default::default())
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = {
+            let builder = crate::types::builders::TableReplicationConfigurationBuilder::default();
+            crate::serde_util::table_replication_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_table_replication_status_output_output_correct_errors(
+    mut builder: crate::operation::get_table_replication_status::builders::GetTableReplicationStatusOutputBuilder,
+) -> crate::operation::get_table_replication_status::builders::GetTableReplicationStatusOutputBuilder {
+    if builder.source_table_arn.is_none() {
+        builder.source_table_arn = Some(Default::default())
+    }
+    if builder.destinations.is_none() {
+        builder.destinations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_table_storage_class_output_output_correct_errors(
+    mut builder: crate::operation::get_table_storage_class::builders::GetTableStorageClassOutputBuilder,
+) -> crate::operation::get_table_storage_class::builders::GetTableStorageClassOutputBuilder {
+    if builder.storage_class_configuration.is_none() {
+        builder.storage_class_configuration = {
+            let builder = crate::types::builders::StorageClassConfigurationBuilder::default();
+            crate::serde_util::storage_class_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn list_namespaces_output_output_correct_errors(
     mut builder: crate::operation::list_namespaces::builders::ListNamespacesOutputBuilder,
 ) -> crate::operation::list_namespaces::builders::ListNamespacesOutputBuilder {
@@ -232,6 +321,30 @@ pub(crate) fn list_tables_output_output_correct_errors(
 ) -> crate::operation::list_tables::builders::ListTablesOutputBuilder {
     if builder.tables.is_none() {
         builder.tables = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_table_bucket_replication_output_output_correct_errors(
+    mut builder: crate::operation::put_table_bucket_replication::builders::PutTableBucketReplicationOutputBuilder,
+) -> crate::operation::put_table_bucket_replication::builders::PutTableBucketReplicationOutputBuilder {
+    if builder.version_token.is_none() {
+        builder.version_token = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_table_replication_output_output_correct_errors(
+    mut builder: crate::operation::put_table_replication::builders::PutTableReplicationOutputBuilder,
+) -> crate::operation::put_table_replication::builders::PutTableReplicationOutputBuilder {
+    if builder.version_token.is_none() {
+        builder.version_token = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
     }
     builder
 }
@@ -266,6 +379,39 @@ pub(crate) fn encryption_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn table_bucket_replication_configuration_correct_errors(
+    mut builder: crate::types::builders::TableBucketReplicationConfigurationBuilder,
+) -> crate::types::builders::TableBucketReplicationConfigurationBuilder {
+    if builder.role.is_none() {
+        builder.role = Some(Default::default())
+    }
+    if builder.rules.is_none() {
+        builder.rules = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn storage_class_configuration_correct_errors(
+    mut builder: crate::types::builders::StorageClassConfigurationBuilder,
+) -> crate::types::builders::StorageClassConfigurationBuilder {
+    if builder.storage_class.is_none() {
+        builder.storage_class = "no value was set".parse::<crate::types::StorageClass>().ok()
+    }
+    builder
+}
+
+pub(crate) fn table_replication_configuration_correct_errors(
+    mut builder: crate::types::builders::TableReplicationConfigurationBuilder,
+) -> crate::types::builders::TableReplicationConfigurationBuilder {
+    if builder.role.is_none() {
+        builder.role = Some(Default::default())
+    }
+    if builder.rules.is_none() {
+        builder.rules = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn namespace_summary_correct_errors(
     mut builder: crate::types::builders::NamespaceSummaryBuilder,
 ) -> crate::types::builders::NamespaceSummaryBuilder {
@@ -280,6 +426,27 @@ pub(crate) fn namespace_summary_correct_errors(
     }
     if builder.owner_account_id.is_none() {
         builder.owner_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn replication_destination_status_model_correct_errors(
+    mut builder: crate::types::builders::ReplicationDestinationStatusModelBuilder,
+) -> crate::types::builders::ReplicationDestinationStatusModelBuilder {
+    if builder.replication_status.is_none() {
+        builder.replication_status = "no value was set".parse::<crate::types::ReplicationStatus>().ok()
+    }
+    if builder.destination_table_bucket_arn.is_none() {
+        builder.destination_table_bucket_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn replication_information_correct_errors(
+    mut builder: crate::types::builders::ReplicationInformationBuilder,
+) -> crate::types::builders::ReplicationInformationBuilder {
+    if builder.source_table_arn.is_none() {
+        builder.source_table_arn = Some(Default::default())
     }
     builder
 }
@@ -329,6 +496,45 @@ pub(crate) fn table_summary_correct_errors(mut builder: crate::types::builders::
     }
     if builder.modified_at.is_none() {
         builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn last_successful_replicated_update_correct_errors(
+    mut builder: crate::types::builders::LastSuccessfulReplicatedUpdateBuilder,
+) -> crate::types::builders::LastSuccessfulReplicatedUpdateBuilder {
+    if builder.metadata_location.is_none() {
+        builder.metadata_location = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn table_bucket_replication_rule_correct_errors(
+    mut builder: crate::types::builders::TableBucketReplicationRuleBuilder,
+) -> crate::types::builders::TableBucketReplicationRuleBuilder {
+    if builder.destinations.is_none() {
+        builder.destinations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn table_replication_rule_correct_errors(
+    mut builder: crate::types::builders::TableReplicationRuleBuilder,
+) -> crate::types::builders::TableReplicationRuleBuilder {
+    if builder.destinations.is_none() {
+        builder.destinations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn replication_destination_correct_errors(
+    mut builder: crate::types::builders::ReplicationDestinationBuilder,
+) -> crate::types::builders::ReplicationDestinationBuilder {
+    if builder.destination_table_bucket_arn.is_none() {
+        builder.destination_table_bucket_arn = Some(Default::default())
     }
     builder
 }

@@ -22,9 +22,6 @@ impl crate::operation::query_vectors::builders::QueryVectorsInputBuilder {
 }
 /// Fluent builder constructing a request to `QueryVectors`.
 ///
-/// <note>
-/// <p>Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.</p>
-/// </note>
 /// <p>Performs an approximate nearest neighbor search query in a vector index using a query vector. By default, it returns the keys of approximate nearest neighbors. You can optionally include the computed distance (between the query vector and each vector in the response), the vector data, and metadata of each vector in the response.</p>
 /// <p>To specify the vector index, you can either use both the vector bucket name and the vector index name, or use the vector index Amazon Resource Name (ARN).</p>
 /// <dl>

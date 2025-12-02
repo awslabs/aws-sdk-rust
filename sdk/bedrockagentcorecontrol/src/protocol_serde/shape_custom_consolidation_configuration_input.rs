@@ -25,6 +25,12 @@ pub fn ser_custom_consolidation_configuration_input(
             crate::protocol_serde::shape_user_preference_override_consolidation_configuration_input::ser_user_preference_override_consolidation_configuration_input(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::CustomConsolidationConfigurationInput::EpisodicConsolidationOverride(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_1.key("episodicConsolidationOverride").start_object();
+            crate::protocol_serde::shape_episodic_override_consolidation_configuration_input::ser_episodic_override_consolidation_configuration_input(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::CustomConsolidationConfigurationInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "CustomConsolidationConfigurationInput",

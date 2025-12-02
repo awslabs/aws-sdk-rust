@@ -93,6 +93,8 @@ pub struct PublishVersionOutput {
     pub capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     /// <p>The SHA256 hash of the function configuration.</p>
     pub config_sha256: ::std::option::Option<::std::string::String>,
+    /// <p>The function's durable execution configuration settings, if the function is configured for durability.</p>
+    pub durable_config: ::std::option::Option<crate::types::DurableConfig>,
     /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
     pub tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
     _request_id: Option<String>,
@@ -269,6 +271,10 @@ impl PublishVersionOutput {
     pub fn config_sha256(&self) -> ::std::option::Option<&str> {
         self.config_sha256.as_deref()
     }
+    /// <p>The function's durable execution configuration settings, if the function is configured for durability.</p>
+    pub fn durable_config(&self) -> ::std::option::Option<&crate::types::DurableConfig> {
+        self.durable_config.as_ref()
+    }
     /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
     pub fn tenancy_config(&self) -> ::std::option::Option<&crate::types::TenancyConfig> {
         self.tenancy_config.as_ref()
@@ -328,6 +334,7 @@ pub struct PublishVersionOutputBuilder {
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     pub(crate) capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     pub(crate) config_sha256: ::std::option::Option<::std::string::String>,
+    pub(crate) durable_config: ::std::option::Option<crate::types::DurableConfig>,
     pub(crate) tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
     _request_id: Option<String>,
 }
@@ -921,6 +928,20 @@ impl PublishVersionOutputBuilder {
     pub fn get_config_sha256(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_sha256
     }
+    /// <p>The function's durable execution configuration settings, if the function is configured for durability.</p>
+    pub fn durable_config(mut self, input: crate::types::DurableConfig) -> Self {
+        self.durable_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The function's durable execution configuration settings, if the function is configured for durability.</p>
+    pub fn set_durable_config(mut self, input: ::std::option::Option<crate::types::DurableConfig>) -> Self {
+        self.durable_config = input;
+        self
+    }
+    /// <p>The function's durable execution configuration settings, if the function is configured for durability.</p>
+    pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
+        &self.durable_config
+    }
     /// <p>The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.</p>
     pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
         self.tenancy_config = ::std::option::Option::Some(input);
@@ -985,6 +1006,7 @@ impl PublishVersionOutputBuilder {
             logging_config: self.logging_config,
             capacity_provider_config: self.capacity_provider_config,
             config_sha256: self.config_sha256,
+            durable_config: self.durable_config,
             tenancy_config: self.tenancy_config,
             _request_id: self._request_id,
         }

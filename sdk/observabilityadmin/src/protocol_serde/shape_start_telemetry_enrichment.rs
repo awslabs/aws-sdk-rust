@@ -75,6 +75,13 @@ pub fn de_start_telemetry_enrichment_http_error(
                         )
                     })?,
                 );
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError::unhandled(
+                            "Failed to parse retryAfterSeconds from header `Retry-After",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };

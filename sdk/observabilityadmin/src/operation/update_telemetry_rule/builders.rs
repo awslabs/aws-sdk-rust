@@ -22,7 +22,7 @@ impl crate::operation::update_telemetry_rule::builders::UpdateTelemetryRuleInput
 }
 /// Fluent builder constructing a request to `UpdateTelemetryRule`.
 ///
-/// <p>Updates an existing telemetry rule in your account.</p>
+/// <p>Updates an existing telemetry rule in your account. If multiple users attempt to modify the same telemetry rule simultaneously, a ConflictException is returned to provide specific error information for concurrent modification scenarios.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTelemetryRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

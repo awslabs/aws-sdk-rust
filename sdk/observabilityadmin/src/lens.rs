@@ -29,6 +29,26 @@ pub(crate) fn reflens_list_resource_telemetry_for_organization_output_output_nex
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_s3_table_integrations_output_output_next_token(
+    input: &crate::operation::list_s3_table_integrations::ListS3TableIntegrationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_telemetry_pipelines_output_output_next_token(
+    input: &crate::operation::list_telemetry_pipelines::ListTelemetryPipelinesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_telemetry_rules_output_output_next_token(
     input: &crate::operation::list_telemetry_rules::ListTelemetryRulesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -67,6 +87,20 @@ pub(crate) fn lens_list_resource_telemetry_for_organization_output_output_teleme
     input: crate::operation::list_resource_telemetry_for_organization::ListResourceTelemetryForOrganizationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TelemetryConfiguration>> {
     let input = input.telemetry_configurations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_s3_table_integrations_output_output_integration_summaries(
+    input: crate::operation::list_s3_table_integrations::ListS3TableIntegrationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IntegrationSummary>> {
+    let input = input.integration_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_telemetry_pipelines_output_output_pipeline_summaries(
+    input: crate::operation::list_telemetry_pipelines::ListTelemetryPipelinesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TelemetryPipelineSummary>> {
+    let input = input.pipeline_summaries?;
     ::std::option::Option::Some(input)
 }
 

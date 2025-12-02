@@ -13,13 +13,15 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_invalid_input_exception::InvalidInputException;
 
+pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
+
 pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_internal_server_exception::InternalServerException;
 
-pub use crate::types::error::_conflict_exception::ConflictException;
+pub use crate::types::error::_duplicate_id_exception::DuplicateIdException;
 
-pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
+pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_runtime_client_error::RuntimeClientError;
 
@@ -189,6 +191,8 @@ impl ::aws_types::request_id::RequestId for crate::types::error::CodeInterpreter
 mod _access_denied_exception;
 
 mod _conflict_exception;
+
+mod _duplicate_id_exception;
 
 mod _internal_server_exception;
 

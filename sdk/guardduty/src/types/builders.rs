@@ -251,6 +251,22 @@ pub use crate::types::_resource_v2::ResourceV2Builder;
 
 pub use crate::types::_resource_data::ResourceDataBuilder;
 
+pub use crate::types::_cloudformation_stack::CloudformationStackBuilder;
+
+pub use crate::types::_ec2_image::Ec2ImageBuilder;
+
+pub use crate::types::_ec2_vpc::Ec2VpcBuilder;
+
+pub use crate::types::_ec2_launch_template::Ec2LaunchTemplateBuilder;
+
+pub use crate::types::_autoscaling_auto_scaling_group::AutoscalingAutoScalingGroupBuilder;
+
+pub use crate::types::_iam_instance_profile_v2::IamInstanceProfileV2Builder;
+
+pub use crate::types::_ecs_task::EcsTaskBuilder;
+
+pub use crate::types::_ecs_cluster::EcsClusterBuilder;
+
 pub use crate::types::_container_finding_resource::ContainerFindingResourceBuilder;
 
 pub use crate::types::_kubernetes_workload::KubernetesWorkloadBuilder;

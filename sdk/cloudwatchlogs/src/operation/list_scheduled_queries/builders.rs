@@ -22,7 +22,7 @@ impl crate::operation::list_scheduled_queries::builders::ListScheduledQueriesInp
 }
 /// Fluent builder constructing a request to `ListScheduledQueries`.
 ///
-/// <p>Lists all scheduled queries in the current AWS account and region with optional filtering by state.</p>
+/// <p>Lists all scheduled queries in your account and region. You can filter results by state to show only enabled or disabled queries.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListScheduledQueriesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListScheduledQueriesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_scheduled_queries::paginator::ListScheduledQueriesPaginator {
         crate::operation::list_scheduled_queries::paginator::ListScheduledQueriesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The maximum number of scheduled queries to return in a single call.</p>
+    /// <p>The maximum number of scheduled queries to return. Valid range is 1 to 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of scheduled queries to return in a single call.</p>
+    /// <p>The maximum number of scheduled queries to return. Valid range is 1 to 1000.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of scheduled queries to return in a single call.</p>
+    /// <p>The maximum number of scheduled queries to return. Valid range is 1 to 1000.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
@@ -142,17 +142,17 @@ impl ListScheduledQueriesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Filter results by the state of scheduled queries (ENABLED or DISABLED).</p>
+    /// <p>Filter scheduled queries by state. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. If not specified, all scheduled queries are returned.</p>
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.inner = self.inner.state(input);
         self
     }
-    /// <p>Filter results by the state of scheduled queries (ENABLED or DISABLED).</p>
+    /// <p>Filter scheduled queries by state. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. If not specified, all scheduled queries are returned.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }
-    /// <p>Filter results by the state of scheduled queries (ENABLED or DISABLED).</p>
+    /// <p>Filter scheduled queries by state. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. If not specified, all scheduled queries are returned.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         self.inner.get_state()
     }

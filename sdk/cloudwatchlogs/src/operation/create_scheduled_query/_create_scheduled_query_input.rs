@@ -3,93 +3,91 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScheduledQueryInput {
-    /// <p>A unique name for the scheduled query within the region for an AWS account. The name can contain letters, numbers, underscores, hyphens, forward slashes, periods, and hash symbols.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>An optional description for the scheduled query to help identify its purpose.</p>
+    /// <p>An optional description for the scheduled query to help identify its purpose and functionality.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The query language to use for the scheduled query. Valid values are LogsQL (CloudWatch Logs Insights query language), PPL (OpenSearch Service Piped Processing Language), and SQL (OpenSearch Service Structured Query Language).</p>
+    /// <p>The query language to use for the scheduled query. Valid values are <code>LogsQL</code>, <code>PPL</code>, and <code>SQL</code>.</p>
     pub query_language: ::std::option::Option<crate::types::QueryLanguage>,
-    /// <p>The CloudWatch Logs Insights query string to execute. This is the actual query that will be run against your log data on the specified schedule.</p>
+    /// <p>The query string to execute. This is the same query syntax used in CloudWatch Logs Insights. Maximum length is 10,000 characters.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
-    /// <p>The log group identifiers to query. You can specify log group names or log group ARNs. If querying log groups in a source account from a monitoring account, you must specify the ARN of the log group.</p>
+    /// <p>An array of log group names or ARNs to query. You can specify between 1 and 50 log groups. Log groups can be identified by name or full ARN.</p>
     pub log_group_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A cron expression that defines when the scheduled query runs. The format is cron(fields) where fields consist of six space-separated values: minutes, hours, day_of_month, month, day_of_week, year.</p>
+    /// <p>A cron expression that defines when the scheduled query runs. The expression uses standard cron syntax and supports minute-level precision. Maximum length is 256 characters.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
-    /// <p>The timezone in which the schedule expression is evaluated. If not provided, defaults to UTC.</p>
+    /// <p>The timezone for evaluating the schedule expression. This determines when the scheduled query executes relative to the specified timezone.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
-    /// <p>Time offset in seconds from the execution time for the start of the query time range. This defines the lookback period for the query (for example, 3600 for the last hour).</p>
+    /// <p>The time offset in seconds that defines the lookback period for the query. This determines how far back in time the query searches from the execution time.</p>
     pub start_time_offset: ::std::option::Option<i64>,
-    /// <p>Configuration for destinations where the query results will be delivered after successful execution. You can configure delivery to S3 buckets or EventBridge event buses.</p>
+    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
-    /// <p>The start time for the query schedule in Unix epoch time (seconds since January 1, 1970, 00:00:00 UTC). If not specified, the schedule starts immediately.</p>
+    /// <p>The start time for the scheduled query in Unix epoch format. The query will not execute before this time.</p>
     pub schedule_start_time: ::std::option::Option<i64>,
-    /// <p>The end time for the query schedule in Unix epoch time (seconds since January 1, 1970, 00:00:00 UTC). If not specified, the schedule runs indefinitely.</p>
+    /// <p>The end time for the scheduled query in Unix epoch format. The query will stop executing after this time.</p>
     pub schedule_end_time: ::std::option::Option<i64>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that CloudWatch Logs will assume to execute the scheduled query and deliver results to the specified destinations.</p>
+    /// <p>The ARN of the IAM role that grants permissions to execute the query and deliver results to the specified destination. The role must have permissions to read from the specified log groups and write to the destination.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The initial state of the scheduled query. Valid values are ENABLED (the query will run according to its schedule) and DISABLED (the query is paused and will not run). If not provided, defaults to ENABLED.</p>
+    /// <p>The initial state of the scheduled query. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. Default is <code>ENABLED</code>.</p>
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
-    /// <p>An optional list of key-value pairs to associate with the resource.</p>
-    /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
+    /// <p>Key-value pairs to associate with the scheduled query for resource management and cost allocation.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateScheduledQueryInput {
-    /// <p>A unique name for the scheduled query within the region for an AWS account. The name can contain letters, numbers, underscores, hyphens, forward slashes, periods, and hash symbols.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An optional description for the scheduled query to help identify its purpose.</p>
+    /// <p>An optional description for the scheduled query to help identify its purpose and functionality.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The query language to use for the scheduled query. Valid values are LogsQL (CloudWatch Logs Insights query language), PPL (OpenSearch Service Piped Processing Language), and SQL (OpenSearch Service Structured Query Language).</p>
+    /// <p>The query language to use for the scheduled query. Valid values are <code>LogsQL</code>, <code>PPL</code>, and <code>SQL</code>.</p>
     pub fn query_language(&self) -> ::std::option::Option<&crate::types::QueryLanguage> {
         self.query_language.as_ref()
     }
-    /// <p>The CloudWatch Logs Insights query string to execute. This is the actual query that will be run against your log data on the specified schedule.</p>
+    /// <p>The query string to execute. This is the same query syntax used in CloudWatch Logs Insights. Maximum length is 10,000 characters.</p>
     pub fn query_string(&self) -> ::std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>The log group identifiers to query. You can specify log group names or log group ARNs. If querying log groups in a source account from a monitoring account, you must specify the ARN of the log group.</p>
+    /// <p>An array of log group names or ARNs to query. You can specify between 1 and 50 log groups. Log groups can be identified by name or full ARN.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_identifiers.is_none()`.
     pub fn log_group_identifiers(&self) -> &[::std::string::String] {
         self.log_group_identifiers.as_deref().unwrap_or_default()
     }
-    /// <p>A cron expression that defines when the scheduled query runs. The format is cron(fields) where fields consist of six space-separated values: minutes, hours, day_of_month, month, day_of_week, year.</p>
+    /// <p>A cron expression that defines when the scheduled query runs. The expression uses standard cron syntax and supports minute-level precision. Maximum length is 256 characters.</p>
     pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
-    /// <p>The timezone in which the schedule expression is evaluated. If not provided, defaults to UTC.</p>
+    /// <p>The timezone for evaluating the schedule expression. This determines when the scheduled query executes relative to the specified timezone.</p>
     pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
-    /// <p>Time offset in seconds from the execution time for the start of the query time range. This defines the lookback period for the query (for example, 3600 for the last hour).</p>
+    /// <p>The time offset in seconds that defines the lookback period for the query. This determines how far back in time the query searches from the execution time.</p>
     pub fn start_time_offset(&self) -> ::std::option::Option<i64> {
         self.start_time_offset
     }
-    /// <p>Configuration for destinations where the query results will be delivered after successful execution. You can configure delivery to S3 buckets or EventBridge event buses.</p>
+    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
     pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
-    /// <p>The start time for the query schedule in Unix epoch time (seconds since January 1, 1970, 00:00:00 UTC). If not specified, the schedule starts immediately.</p>
+    /// <p>The start time for the scheduled query in Unix epoch format. The query will not execute before this time.</p>
     pub fn schedule_start_time(&self) -> ::std::option::Option<i64> {
         self.schedule_start_time
     }
-    /// <p>The end time for the query schedule in Unix epoch time (seconds since January 1, 1970, 00:00:00 UTC). If not specified, the schedule runs indefinitely.</p>
+    /// <p>The end time for the scheduled query in Unix epoch format. The query will stop executing after this time.</p>
     pub fn schedule_end_time(&self) -> ::std::option::Option<i64> {
         self.schedule_end_time
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that CloudWatch Logs will assume to execute the scheduled query and deliver results to the specified destinations.</p>
+    /// <p>The ARN of the IAM role that grants permissions to execute the query and deliver results to the specified destination. The role must have permissions to read from the specified log groups and write to the destination.</p>
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>The initial state of the scheduled query. Valid values are ENABLED (the query will run according to its schedule) and DISABLED (the query is paused and will not run). If not provided, defaults to ENABLED.</p>
+    /// <p>The initial state of the scheduled query. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. Default is <code>ENABLED</code>.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
         self.state.as_ref()
     }
-    /// <p>An optional list of key-value pairs to associate with the resource.</p>
-    /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
+    /// <p>Key-value pairs to associate with the scheduled query for resource management and cost allocation.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -121,62 +119,62 @@ pub struct CreateScheduledQueryInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateScheduledQueryInputBuilder {
-    /// <p>A unique name for the scheduled query within the region for an AWS account. The name can contain letters, numbers, underscores, hyphens, forward slashes, periods, and hash symbols.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique name for the scheduled query within the region for an AWS account. The name can contain letters, numbers, underscores, hyphens, forward slashes, periods, and hash symbols.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A unique name for the scheduled query within the region for an AWS account. The name can contain letters, numbers, underscores, hyphens, forward slashes, periods, and hash symbols.</p>
+    /// <p>The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>An optional description for the scheduled query to help identify its purpose.</p>
+    /// <p>An optional description for the scheduled query to help identify its purpose and functionality.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An optional description for the scheduled query to help identify its purpose.</p>
+    /// <p>An optional description for the scheduled query to help identify its purpose and functionality.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>An optional description for the scheduled query to help identify its purpose.</p>
+    /// <p>An optional description for the scheduled query to help identify its purpose and functionality.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The query language to use for the scheduled query. Valid values are LogsQL (CloudWatch Logs Insights query language), PPL (OpenSearch Service Piped Processing Language), and SQL (OpenSearch Service Structured Query Language).</p>
+    /// <p>The query language to use for the scheduled query. Valid values are <code>LogsQL</code>, <code>PPL</code>, and <code>SQL</code>.</p>
     /// This field is required.
     pub fn query_language(mut self, input: crate::types::QueryLanguage) -> Self {
         self.query_language = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The query language to use for the scheduled query. Valid values are LogsQL (CloudWatch Logs Insights query language), PPL (OpenSearch Service Piped Processing Language), and SQL (OpenSearch Service Structured Query Language).</p>
+    /// <p>The query language to use for the scheduled query. Valid values are <code>LogsQL</code>, <code>PPL</code>, and <code>SQL</code>.</p>
     pub fn set_query_language(mut self, input: ::std::option::Option<crate::types::QueryLanguage>) -> Self {
         self.query_language = input;
         self
     }
-    /// <p>The query language to use for the scheduled query. Valid values are LogsQL (CloudWatch Logs Insights query language), PPL (OpenSearch Service Piped Processing Language), and SQL (OpenSearch Service Structured Query Language).</p>
+    /// <p>The query language to use for the scheduled query. Valid values are <code>LogsQL</code>, <code>PPL</code>, and <code>SQL</code>.</p>
     pub fn get_query_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
         &self.query_language
     }
-    /// <p>The CloudWatch Logs Insights query string to execute. This is the actual query that will be run against your log data on the specified schedule.</p>
+    /// <p>The query string to execute. This is the same query syntax used in CloudWatch Logs Insights. Maximum length is 10,000 characters.</p>
     /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The CloudWatch Logs Insights query string to execute. This is the actual query that will be run against your log data on the specified schedule.</p>
+    /// <p>The query string to execute. This is the same query syntax used in CloudWatch Logs Insights. Maximum length is 10,000 characters.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
     }
-    /// <p>The CloudWatch Logs Insights query string to execute. This is the actual query that will be run against your log data on the specified schedule.</p>
+    /// <p>The query string to execute. This is the same query syntax used in CloudWatch Logs Insights. Maximum length is 10,000 characters.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_string
     }
@@ -184,133 +182,133 @@ impl CreateScheduledQueryInputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_group_identifiers`](Self::set_log_group_identifiers).
     ///
-    /// <p>The log group identifiers to query. You can specify log group names or log group ARNs. If querying log groups in a source account from a monitoring account, you must specify the ARN of the log group.</p>
+    /// <p>An array of log group names or ARNs to query. You can specify between 1 and 50 log groups. Log groups can be identified by name or full ARN.</p>
     pub fn log_group_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_group_identifiers.unwrap_or_default();
         v.push(input.into());
         self.log_group_identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The log group identifiers to query. You can specify log group names or log group ARNs. If querying log groups in a source account from a monitoring account, you must specify the ARN of the log group.</p>
+    /// <p>An array of log group names or ARNs to query. You can specify between 1 and 50 log groups. Log groups can be identified by name or full ARN.</p>
     pub fn set_log_group_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_group_identifiers = input;
         self
     }
-    /// <p>The log group identifiers to query. You can specify log group names or log group ARNs. If querying log groups in a source account from a monitoring account, you must specify the ARN of the log group.</p>
+    /// <p>An array of log group names or ARNs to query. You can specify between 1 and 50 log groups. Log groups can be identified by name or full ARN.</p>
     pub fn get_log_group_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_group_identifiers
     }
-    /// <p>A cron expression that defines when the scheduled query runs. The format is cron(fields) where fields consist of six space-separated values: minutes, hours, day_of_month, month, day_of_week, year.</p>
+    /// <p>A cron expression that defines when the scheduled query runs. The expression uses standard cron syntax and supports minute-level precision. Maximum length is 256 characters.</p>
     /// This field is required.
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A cron expression that defines when the scheduled query runs. The format is cron(fields) where fields consist of six space-separated values: minutes, hours, day_of_month, month, day_of_week, year.</p>
+    /// <p>A cron expression that defines when the scheduled query runs. The expression uses standard cron syntax and supports minute-level precision. Maximum length is 256 characters.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
-    /// <p>A cron expression that defines when the scheduled query runs. The format is cron(fields) where fields consist of six space-separated values: minutes, hours, day_of_month, month, day_of_week, year.</p>
+    /// <p>A cron expression that defines when the scheduled query runs. The expression uses standard cron syntax and supports minute-level precision. Maximum length is 256 characters.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression
     }
-    /// <p>The timezone in which the schedule expression is evaluated. If not provided, defaults to UTC.</p>
+    /// <p>The timezone for evaluating the schedule expression. This determines when the scheduled query executes relative to the specified timezone.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timezone in which the schedule expression is evaluated. If not provided, defaults to UTC.</p>
+    /// <p>The timezone for evaluating the schedule expression. This determines when the scheduled query executes relative to the specified timezone.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
     }
-    /// <p>The timezone in which the schedule expression is evaluated. If not provided, defaults to UTC.</p>
+    /// <p>The timezone for evaluating the schedule expression. This determines when the scheduled query executes relative to the specified timezone.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.timezone
     }
-    /// <p>Time offset in seconds from the execution time for the start of the query time range. This defines the lookback period for the query (for example, 3600 for the last hour).</p>
+    /// <p>The time offset in seconds that defines the lookback period for the query. This determines how far back in time the query searches from the execution time.</p>
     pub fn start_time_offset(mut self, input: i64) -> Self {
         self.start_time_offset = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Time offset in seconds from the execution time for the start of the query time range. This defines the lookback period for the query (for example, 3600 for the last hour).</p>
+    /// <p>The time offset in seconds that defines the lookback period for the query. This determines how far back in time the query searches from the execution time.</p>
     pub fn set_start_time_offset(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_time_offset = input;
         self
     }
-    /// <p>Time offset in seconds from the execution time for the start of the query time range. This defines the lookback period for the query (for example, 3600 for the last hour).</p>
+    /// <p>The time offset in seconds that defines the lookback period for the query. This determines how far back in time the query searches from the execution time.</p>
     pub fn get_start_time_offset(&self) -> &::std::option::Option<i64> {
         &self.start_time_offset
     }
-    /// <p>Configuration for destinations where the query results will be delivered after successful execution. You can configure delivery to S3 buckets or EventBridge event buses.</p>
+    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration for destinations where the query results will be delivered after successful execution. You can configure delivery to S3 buckets or EventBridge event buses.</p>
+    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
     pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.destination_configuration = input;
         self
     }
-    /// <p>Configuration for destinations where the query results will be delivered after successful execution. You can configure delivery to S3 buckets or EventBridge event buses.</p>
+    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
     pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         &self.destination_configuration
     }
-    /// <p>The start time for the query schedule in Unix epoch time (seconds since January 1, 1970, 00:00:00 UTC). If not specified, the schedule starts immediately.</p>
+    /// <p>The start time for the scheduled query in Unix epoch format. The query will not execute before this time.</p>
     pub fn schedule_start_time(mut self, input: i64) -> Self {
         self.schedule_start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time for the query schedule in Unix epoch time (seconds since January 1, 1970, 00:00:00 UTC). If not specified, the schedule starts immediately.</p>
+    /// <p>The start time for the scheduled query in Unix epoch format. The query will not execute before this time.</p>
     pub fn set_schedule_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.schedule_start_time = input;
         self
     }
-    /// <p>The start time for the query schedule in Unix epoch time (seconds since January 1, 1970, 00:00:00 UTC). If not specified, the schedule starts immediately.</p>
+    /// <p>The start time for the scheduled query in Unix epoch format. The query will not execute before this time.</p>
     pub fn get_schedule_start_time(&self) -> &::std::option::Option<i64> {
         &self.schedule_start_time
     }
-    /// <p>The end time for the query schedule in Unix epoch time (seconds since January 1, 1970, 00:00:00 UTC). If not specified, the schedule runs indefinitely.</p>
+    /// <p>The end time for the scheduled query in Unix epoch format. The query will stop executing after this time.</p>
     pub fn schedule_end_time(mut self, input: i64) -> Self {
         self.schedule_end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time for the query schedule in Unix epoch time (seconds since January 1, 1970, 00:00:00 UTC). If not specified, the schedule runs indefinitely.</p>
+    /// <p>The end time for the scheduled query in Unix epoch format. The query will stop executing after this time.</p>
     pub fn set_schedule_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.schedule_end_time = input;
         self
     }
-    /// <p>The end time for the query schedule in Unix epoch time (seconds since January 1, 1970, 00:00:00 UTC). If not specified, the schedule runs indefinitely.</p>
+    /// <p>The end time for the scheduled query in Unix epoch format. The query will stop executing after this time.</p>
     pub fn get_schedule_end_time(&self) -> &::std::option::Option<i64> {
         &self.schedule_end_time
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that CloudWatch Logs will assume to execute the scheduled query and deliver results to the specified destinations.</p>
+    /// <p>The ARN of the IAM role that grants permissions to execute the query and deliver results to the specified destination. The role must have permissions to read from the specified log groups and write to the destination.</p>
     /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that CloudWatch Logs will assume to execute the scheduled query and deliver results to the specified destinations.</p>
+    /// <p>The ARN of the IAM role that grants permissions to execute the query and deliver results to the specified destination. The role must have permissions to read from the specified log groups and write to the destination.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that CloudWatch Logs will assume to execute the scheduled query and deliver results to the specified destinations.</p>
+    /// <p>The ARN of the IAM role that grants permissions to execute the query and deliver results to the specified destination. The role must have permissions to read from the specified log groups and write to the destination.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
-    /// <p>The initial state of the scheduled query. Valid values are ENABLED (the query will run according to its schedule) and DISABLED (the query is paused and will not run). If not provided, defaults to ENABLED.</p>
+    /// <p>The initial state of the scheduled query. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. Default is <code>ENABLED</code>.</p>
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The initial state of the scheduled query. Valid values are ENABLED (the query will run according to its schedule) and DISABLED (the query is paused and will not run). If not provided, defaults to ENABLED.</p>
+    /// <p>The initial state of the scheduled query. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. Default is <code>ENABLED</code>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The initial state of the scheduled query. Valid values are ENABLED (the query will run according to its schedule) and DISABLED (the query is paused and will not run). If not provided, defaults to ENABLED.</p>
+    /// <p>The initial state of the scheduled query. Valid values are <code>ENABLED</code> and <code>DISABLED</code>. Default is <code>ENABLED</code>.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
     }
@@ -318,22 +316,19 @@ impl CreateScheduledQueryInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>An optional list of key-value pairs to associate with the resource.</p>
-    /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
+    /// <p>Key-value pairs to associate with the scheduled query for resource management and cost allocation.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>An optional list of key-value pairs to associate with the resource.</p>
-    /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
+    /// <p>Key-value pairs to associate with the scheduled query for resource management and cost allocation.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>An optional list of key-value pairs to associate with the resource.</p>
-    /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
+    /// <p>Key-value pairs to associate with the scheduled query for resource management and cost allocation.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

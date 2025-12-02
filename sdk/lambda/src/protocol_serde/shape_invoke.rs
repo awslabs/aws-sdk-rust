@@ -17,6 +17,20 @@ pub fn de_invoke_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DurableExecutionAlreadyStartedException" => crate::operation::invoke::InvokeError::DurableExecutionAlreadyStartedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DurableExecutionAlreadyStartedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_durable_execution_already_started_exception::de_durable_execution_already_started_exception_json_err(_response_body, output).map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "EC2AccessDeniedException" => crate::operation::invoke::InvokeError::Ec2AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -533,6 +547,11 @@ pub fn de_invoke_http_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::invoke::builders::InvokeOutputBuilder::default();
+        output = output.set_durable_execution_arn(
+            crate::protocol_serde::shape_invoke_output::de_durable_execution_arn_header(_response_headers).map_err(|_| {
+                crate::operation::invoke::InvokeError::unhandled("Failed to parse DurableExecutionArn from header `X-Amz-Durable-Execution-Arn")
+            })?,
+        );
         output = output.set_executed_version(
             crate::protocol_serde::shape_invoke_output::de_executed_version_header(_response_headers).map_err(|_| {
                 crate::operation::invoke::InvokeError::unhandled("Failed to parse ExecutedVersion from header `X-Amz-Executed-Version")
@@ -590,9 +609,20 @@ pub fn ser_invoke_headers(
         })?;
         builder = builder.header("X-Amz-Client-Context", header_value);
     }
-    if let ::std::option::Option::Some(inner_7) = &input.tenant_id {
+    if let ::std::option::Option::Some(inner_7) = &input.durable_execution_name {
         let formatted_8 = inner_7.as_str();
         let header_value = formatted_8;
+        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "durable_execution_name",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("X-Amz-Durable-Execution-Name", header_value);
+    }
+    if let ::std::option::Option::Some(inner_9) = &input.tenant_id {
+        let formatted_10 = inner_9.as_str();
+        let header_value = formatted_10;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "tenant_id",

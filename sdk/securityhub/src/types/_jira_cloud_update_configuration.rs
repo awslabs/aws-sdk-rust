@@ -28,7 +28,6 @@ pub struct JiraCloudUpdateConfigurationBuilder {
 }
 impl JiraCloudUpdateConfigurationBuilder {
     /// <p>The project key for a JiraCloud instance.</p>
-    /// This field is required.
     pub fn project_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_key = ::std::option::Option::Some(input.into());
         self

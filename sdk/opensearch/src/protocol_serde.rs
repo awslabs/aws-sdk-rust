@@ -581,6 +581,8 @@ pub(crate) mod shape_saml_options_input;
 
 pub(crate) mod shape_security_lake_direct_query_data_source;
 
+pub(crate) mod shape_serverless_vector_acceleration;
+
 pub(crate) mod shape_snapshot_options_status;
 
 pub(crate) mod shape_software_update_options_status;

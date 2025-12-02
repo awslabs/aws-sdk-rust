@@ -15,6 +15,8 @@ pub struct BucketLevel {
     pub advanced_data_protection_metrics: ::std::option::Option<crate::types::AdvancedDataProtectionMetrics>,
     /// <p>A container for bucket-level detailed status code metrics for S3 Storage Lens.</p>
     pub detailed_status_codes_metrics: ::std::option::Option<crate::types::DetailedStatusCodesMetrics>,
+    /// <p>A container for bucket-level advanced performance metrics for S3 Storage Lens.</p>
+    pub advanced_performance_metrics: ::std::option::Option<crate::types::AdvancedPerformanceMetrics>,
 }
 impl BucketLevel {
     /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
@@ -37,6 +39,10 @@ impl BucketLevel {
     pub fn detailed_status_codes_metrics(&self) -> ::std::option::Option<&crate::types::DetailedStatusCodesMetrics> {
         self.detailed_status_codes_metrics.as_ref()
     }
+    /// <p>A container for bucket-level advanced performance metrics for S3 Storage Lens.</p>
+    pub fn advanced_performance_metrics(&self) -> ::std::option::Option<&crate::types::AdvancedPerformanceMetrics> {
+        self.advanced_performance_metrics.as_ref()
+    }
 }
 impl BucketLevel {
     /// Creates a new builder-style object to manufacture [`BucketLevel`](crate::types::BucketLevel).
@@ -54,6 +60,7 @@ pub struct BucketLevelBuilder {
     pub(crate) advanced_cost_optimization_metrics: ::std::option::Option<crate::types::AdvancedCostOptimizationMetrics>,
     pub(crate) advanced_data_protection_metrics: ::std::option::Option<crate::types::AdvancedDataProtectionMetrics>,
     pub(crate) detailed_status_codes_metrics: ::std::option::Option<crate::types::DetailedStatusCodesMetrics>,
+    pub(crate) advanced_performance_metrics: ::std::option::Option<crate::types::AdvancedPerformanceMetrics>,
 }
 impl BucketLevelBuilder {
     /// <p>A container for the bucket-level activity metrics for S3 Storage Lens.</p>
@@ -126,6 +133,20 @@ impl BucketLevelBuilder {
     pub fn get_detailed_status_codes_metrics(&self) -> &::std::option::Option<crate::types::DetailedStatusCodesMetrics> {
         &self.detailed_status_codes_metrics
     }
+    /// <p>A container for bucket-level advanced performance metrics for S3 Storage Lens.</p>
+    pub fn advanced_performance_metrics(mut self, input: crate::types::AdvancedPerformanceMetrics) -> Self {
+        self.advanced_performance_metrics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A container for bucket-level advanced performance metrics for S3 Storage Lens.</p>
+    pub fn set_advanced_performance_metrics(mut self, input: ::std::option::Option<crate::types::AdvancedPerformanceMetrics>) -> Self {
+        self.advanced_performance_metrics = input;
+        self
+    }
+    /// <p>A container for bucket-level advanced performance metrics for S3 Storage Lens.</p>
+    pub fn get_advanced_performance_metrics(&self) -> &::std::option::Option<crate::types::AdvancedPerformanceMetrics> {
+        &self.advanced_performance_metrics
+    }
     /// Consumes the builder and constructs a [`BucketLevel`](crate::types::BucketLevel).
     pub fn build(self) -> crate::types::BucketLevel {
         crate::types::BucketLevel {
@@ -134,6 +155,7 @@ impl BucketLevelBuilder {
             advanced_cost_optimization_metrics: self.advanced_cost_optimization_metrics,
             advanced_data_protection_metrics: self.advanced_data_protection_metrics,
             detailed_status_codes_metrics: self.detailed_status_codes_metrics,
+            advanced_performance_metrics: self.advanced_performance_metrics,
         }
     }
 }

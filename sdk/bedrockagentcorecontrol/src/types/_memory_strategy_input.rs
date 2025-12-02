@@ -6,6 +6,8 @@
 pub enum MemoryStrategyInput {
     /// <p>Input for creating a custom memory strategy.</p>
     CustomMemoryStrategy(crate::types::CustomMemoryStrategyInput),
+    /// <p>Input for creating an episodic memory strategy</p>
+    EpisodicMemoryStrategy(crate::types::EpisodicMemoryStrategyInput),
     /// <p>Input for creating a semantic memory strategy.</p>
     SemanticMemoryStrategy(crate::types::SemanticMemoryStrategyInput),
     /// <p>Input for creating a summary memory strategy.</p>
@@ -35,6 +37,19 @@ impl MemoryStrategyInput {
     /// Returns true if this is a [`CustomMemoryStrategy`](crate::types::MemoryStrategyInput::CustomMemoryStrategy).
     pub fn is_custom_memory_strategy(&self) -> bool {
         self.as_custom_memory_strategy().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EpisodicMemoryStrategy`](crate::types::MemoryStrategyInput::EpisodicMemoryStrategy), extracting the inner [`EpisodicMemoryStrategyInput`](crate::types::EpisodicMemoryStrategyInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_episodic_memory_strategy(&self) -> ::std::result::Result<&crate::types::EpisodicMemoryStrategyInput, &Self> {
+        if let MemoryStrategyInput::EpisodicMemoryStrategy(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EpisodicMemoryStrategy`](crate::types::MemoryStrategyInput::EpisodicMemoryStrategy).
+    pub fn is_episodic_memory_strategy(&self) -> bool {
+        self.as_episodic_memory_strategy().is_ok()
     }
     /// Tries to convert the enum instance into [`SemanticMemoryStrategy`](crate::types::MemoryStrategyInput::SemanticMemoryStrategy), extracting the inner [`SemanticMemoryStrategyInput`](crate::types::SemanticMemoryStrategyInput).
     /// Returns `Err(&Self)` if it can't be converted.

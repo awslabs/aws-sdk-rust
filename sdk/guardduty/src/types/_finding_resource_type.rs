@@ -13,10 +13,18 @@
 /// # let findingresourcetype = unimplemented!();
 /// match findingresourcetype {
 ///     FindingResourceType::AccessKey => { /* ... */ },
+///     FindingResourceType::AutoscalingAutoScalingGroup => { /* ... */ },
+///     FindingResourceType::CloudformationStack => { /* ... */ },
 ///     FindingResourceType::Container => { /* ... */ },
+///     FindingResourceType::Ec2Image => { /* ... */ },
 ///     FindingResourceType::Ec2Instance => { /* ... */ },
+///     FindingResourceType::Ec2LaunchTemplate => { /* ... */ },
 ///     FindingResourceType::Ec2NetworkInterface => { /* ... */ },
+///     FindingResourceType::Ec2Vpc => { /* ... */ },
+///     FindingResourceType::EcsCluster => { /* ... */ },
+///     FindingResourceType::EcsTask => { /* ... */ },
 ///     FindingResourceType::EksCluster => { /* ... */ },
+///     FindingResourceType::IamInstanceProfile => { /* ... */ },
 ///     FindingResourceType::KubernetesWorkload => { /* ... */ },
 ///     FindingResourceType::S3Bucket => { /* ... */ },
 ///     FindingResourceType::S3Object => { /* ... */ },
@@ -51,13 +59,29 @@ pub enum FindingResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AccessKey,
     #[allow(missing_docs)] // documentation missing in model
+    AutoscalingAutoScalingGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    CloudformationStack,
+    #[allow(missing_docs)] // documentation missing in model
     Container,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2Image,
     #[allow(missing_docs)] // documentation missing in model
     Ec2Instance,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2LaunchTemplate,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2NetworkInterface,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2Vpc,
+    #[allow(missing_docs)] // documentation missing in model
+    EcsCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    EcsTask,
+    #[allow(missing_docs)] // documentation missing in model
     EksCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    IamInstanceProfile,
     #[allow(missing_docs)] // documentation missing in model
     KubernetesWorkload,
     #[allow(missing_docs)] // documentation missing in model
@@ -72,10 +96,18 @@ impl ::std::convert::From<&str> for FindingResourceType {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_KEY" => FindingResourceType::AccessKey,
+            "AUTOSCALING_AUTO_SCALING_GROUP" => FindingResourceType::AutoscalingAutoScalingGroup,
+            "CLOUDFORMATION_STACK" => FindingResourceType::CloudformationStack,
             "CONTAINER" => FindingResourceType::Container,
+            "EC2_IMAGE" => FindingResourceType::Ec2Image,
             "EC2_INSTANCE" => FindingResourceType::Ec2Instance,
+            "EC2_LAUNCH_TEMPLATE" => FindingResourceType::Ec2LaunchTemplate,
             "EC2_NETWORK_INTERFACE" => FindingResourceType::Ec2NetworkInterface,
+            "EC2_VPC" => FindingResourceType::Ec2Vpc,
+            "ECS_CLUSTER" => FindingResourceType::EcsCluster,
+            "ECS_TASK" => FindingResourceType::EcsTask,
             "EKS_CLUSTER" => FindingResourceType::EksCluster,
+            "IAM_INSTANCE_PROFILE" => FindingResourceType::IamInstanceProfile,
             "KUBERNETES_WORKLOAD" => FindingResourceType::KubernetesWorkload,
             "S3_BUCKET" => FindingResourceType::S3Bucket,
             "S3_OBJECT" => FindingResourceType::S3Object,
@@ -95,10 +127,18 @@ impl FindingResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             FindingResourceType::AccessKey => "ACCESS_KEY",
+            FindingResourceType::AutoscalingAutoScalingGroup => "AUTOSCALING_AUTO_SCALING_GROUP",
+            FindingResourceType::CloudformationStack => "CLOUDFORMATION_STACK",
             FindingResourceType::Container => "CONTAINER",
+            FindingResourceType::Ec2Image => "EC2_IMAGE",
             FindingResourceType::Ec2Instance => "EC2_INSTANCE",
+            FindingResourceType::Ec2LaunchTemplate => "EC2_LAUNCH_TEMPLATE",
             FindingResourceType::Ec2NetworkInterface => "EC2_NETWORK_INTERFACE",
+            FindingResourceType::Ec2Vpc => "EC2_VPC",
+            FindingResourceType::EcsCluster => "ECS_CLUSTER",
+            FindingResourceType::EcsTask => "ECS_TASK",
             FindingResourceType::EksCluster => "EKS_CLUSTER",
+            FindingResourceType::IamInstanceProfile => "IAM_INSTANCE_PROFILE",
             FindingResourceType::KubernetesWorkload => "KUBERNETES_WORKLOAD",
             FindingResourceType::S3Bucket => "S3_BUCKET",
             FindingResourceType::S3Object => "S3_OBJECT",
@@ -109,10 +149,18 @@ impl FindingResourceType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_KEY",
+            "AUTOSCALING_AUTO_SCALING_GROUP",
+            "CLOUDFORMATION_STACK",
             "CONTAINER",
+            "EC2_IMAGE",
             "EC2_INSTANCE",
+            "EC2_LAUNCH_TEMPLATE",
             "EC2_NETWORK_INTERFACE",
+            "EC2_VPC",
+            "ECS_CLUSTER",
+            "ECS_TASK",
             "EKS_CLUSTER",
+            "IAM_INSTANCE_PROFILE",
             "KUBERNETES_WORKLOAD",
             "S3_BUCKET",
             "S3_OBJECT",
@@ -140,10 +188,18 @@ impl ::std::fmt::Display for FindingResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FindingResourceType::AccessKey => write!(f, "ACCESS_KEY"),
+            FindingResourceType::AutoscalingAutoScalingGroup => write!(f, "AUTOSCALING_AUTO_SCALING_GROUP"),
+            FindingResourceType::CloudformationStack => write!(f, "CLOUDFORMATION_STACK"),
             FindingResourceType::Container => write!(f, "CONTAINER"),
+            FindingResourceType::Ec2Image => write!(f, "EC2_IMAGE"),
             FindingResourceType::Ec2Instance => write!(f, "EC2_INSTANCE"),
+            FindingResourceType::Ec2LaunchTemplate => write!(f, "EC2_LAUNCH_TEMPLATE"),
             FindingResourceType::Ec2NetworkInterface => write!(f, "EC2_NETWORK_INTERFACE"),
+            FindingResourceType::Ec2Vpc => write!(f, "EC2_VPC"),
+            FindingResourceType::EcsCluster => write!(f, "ECS_CLUSTER"),
+            FindingResourceType::EcsTask => write!(f, "ECS_TASK"),
             FindingResourceType::EksCluster => write!(f, "EKS_CLUSTER"),
+            FindingResourceType::IamInstanceProfile => write!(f, "IAM_INSTANCE_PROFILE"),
             FindingResourceType::KubernetesWorkload => write!(f, "KUBERNETES_WORKLOAD"),
             FindingResourceType::S3Bucket => write!(f, "S3_BUCKET"),
             FindingResourceType::S3Object => write!(f, "S3_OBJECT"),

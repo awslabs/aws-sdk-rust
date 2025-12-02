@@ -6,6 +6,8 @@
 pub enum ProviderUpdateConfiguration {
     /// <p>The parameters required to update the configuration for a Jira Cloud integration.</p>
     JiraCloud(crate::types::JiraCloudUpdateConfiguration),
+    /// <p>The parameters required to update the configuration for a ServiceNow integration.</p>
+    ServiceNow(crate::types::ServiceNowUpdateConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum ProviderUpdateConfiguration {
     Unknown,
 }
 impl ProviderUpdateConfiguration {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`JiraCloud`](crate::types::ProviderUpdateConfiguration::JiraCloud), extracting the inner [`JiraCloudUpdateConfiguration`](crate::types::JiraCloudUpdateConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_jira_cloud(&self) -> ::std::result::Result<&crate::types::JiraCloudUpdateConfiguration, &Self> {
@@ -30,6 +31,19 @@ impl ProviderUpdateConfiguration {
     /// Returns true if this is a [`JiraCloud`](crate::types::ProviderUpdateConfiguration::JiraCloud).
     pub fn is_jira_cloud(&self) -> bool {
         self.as_jira_cloud().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ServiceNow`](crate::types::ProviderUpdateConfiguration::ServiceNow), extracting the inner [`ServiceNowUpdateConfiguration`](crate::types::ServiceNowUpdateConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_service_now(&self) -> ::std::result::Result<&crate::types::ServiceNowUpdateConfiguration, &Self> {
+        if let ProviderUpdateConfiguration::ServiceNow(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ServiceNow`](crate::types::ProviderUpdateConfiguration::ServiceNow).
+    pub fn is_service_now(&self) -> bool {
+        self.as_service_now().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

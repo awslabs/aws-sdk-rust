@@ -525,6 +525,31 @@ pub fn de_orderable_db_instance_option(
                 builder = builder.set_supports_http_endpoint(var_37);
             }
             ,
+            s if s.matches("SupportsAdditionalStorageVolumes") /* SupportsAdditionalStorageVolumes com.amazonaws.rds#OrderableDBInstanceOption$SupportsAdditionalStorageVolumes */ =>  {
+                let var_38 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_additional_storage_volumes(var_38);
+            }
+            ,
+            s if s.matches("AvailableAdditionalStorageVolumesOptions") /* AvailableAdditionalStorageVolumesOptions com.amazonaws.rds#OrderableDBInstanceOption$AvailableAdditionalStorageVolumesOptions */ =>  {
+                let var_39 =
+                    Some(
+                        crate::protocol_serde::shape_available_additional_storage_volumes_option_list::de_available_additional_storage_volumes_option_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_available_additional_storage_volumes_options(var_39);
+            }
+            ,
             _ => {}
         }
     }

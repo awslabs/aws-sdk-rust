@@ -51,6 +51,10 @@ pub use crate::types::_collection_type::CollectionType;
 
 pub use crate::types::_create_collection_detail::CreateCollectionDetail;
 
+pub use crate::types::_vector_options::VectorOptions;
+
+pub use crate::types::_serverless_vector_acceleration_status::ServerlessVectorAccelerationStatus;
+
 pub use crate::types::_standby_replicas::StandbyReplicas;
 
 pub use crate::types::_tag::Tag;
@@ -183,6 +187,8 @@ mod _security_policy_summary;
 
 mod _security_policy_type;
 
+mod _serverless_vector_acceleration_status;
+
 mod _standby_replicas;
 
 mod _tag;
@@ -192,6 +198,8 @@ mod _update_collection_detail;
 mod _update_iam_identity_center_config_options;
 
 mod _update_vpc_endpoint_detail;
+
+mod _vector_options;
 
 mod _vpc_endpoint_detail;
 

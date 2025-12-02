@@ -26,6 +26,13 @@ pub(crate) fn centralization_rule_correct_errors(
     builder
 }
 
+pub(crate) fn encryption_correct_errors(mut builder: crate::types::builders::EncryptionBuilder) -> crate::types::builders::EncryptionBuilder {
+    if builder.sse_algorithm.is_none() {
+        builder.sse_algorithm = "no value was set".parse::<crate::types::SseAlgorithm>().ok()
+    }
+    builder
+}
+
 pub(crate) fn telemetry_rule_correct_errors(
     mut builder: crate::types::builders::TelemetryRuleBuilder,
 ) -> crate::types::builders::TelemetryRuleBuilder {
@@ -49,6 +56,24 @@ pub(crate) fn centralization_rule_source_correct_errors(
 ) -> crate::types::builders::CentralizationRuleSourceBuilder {
     if builder.regions.is_none() {
         builder.regions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn telemetry_pipeline_configuration_correct_errors(
+    mut builder: crate::types::builders::TelemetryPipelineConfigurationBuilder,
+) -> crate::types::builders::TelemetryPipelineConfigurationBuilder {
+    if builder.body.is_none() {
+        builder.body = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cloudtrail_parameters_correct_errors(
+    mut builder: crate::types::builders::CloudtrailParametersBuilder,
+) -> crate::types::builders::CloudtrailParametersBuilder {
+    if builder.advanced_event_selectors.is_none() {
+        builder.advanced_event_selectors = Some(Default::default())
     }
     builder
 }
@@ -79,6 +104,24 @@ pub(crate) fn logs_encryption_configuration_correct_errors(
 ) -> crate::types::builders::LogsEncryptionConfigurationBuilder {
     if builder.encryption_strategy.is_none() {
         builder.encryption_strategy = "no value was set".parse::<crate::types::EncryptionStrategy>().ok()
+    }
+    builder
+}
+
+pub(crate) fn advanced_event_selector_correct_errors(
+    mut builder: crate::types::builders::AdvancedEventSelectorBuilder,
+) -> crate::types::builders::AdvancedEventSelectorBuilder {
+    if builder.field_selectors.is_none() {
+        builder.field_selectors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn advanced_field_selector_correct_errors(
+    mut builder: crate::types::builders::AdvancedFieldSelectorBuilder,
+) -> crate::types::builders::AdvancedFieldSelectorBuilder {
+    if builder.field.is_none() {
+        builder.field = Some(Default::default())
     }
     builder
 }

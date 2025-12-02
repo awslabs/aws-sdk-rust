@@ -22,7 +22,7 @@ impl crate::operation::get_connector_v2::builders::GetConnectorV2InputBuilder {
 }
 /// Fluent builder constructing a request to `GetConnectorV2`.
 ///
-/// <p>Grants permission to retrieve details for a connectorV2 based on connector id. This API is in public preview and subject to change.</p>
+/// <p>Grants permission to retrieve details for a connectorV2 based on connector id.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConnectorV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

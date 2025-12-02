@@ -15,6 +15,7 @@
 ///     MetadataGenerationRunStatus::Canceled => { /* ... */ },
 ///     MetadataGenerationRunStatus::Failed => { /* ... */ },
 ///     MetadataGenerationRunStatus::InProgress => { /* ... */ },
+///     MetadataGenerationRunStatus::PartiallySucceeded => { /* ... */ },
 ///     MetadataGenerationRunStatus::Submitted => { /* ... */ },
 ///     MetadataGenerationRunStatus::Succeeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -52,6 +53,9 @@ pub enum MetadataGenerationRunStatus {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
+    PartiallySucceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    #[deprecated]
     Submitted,
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
@@ -65,6 +69,7 @@ impl ::std::convert::From<&str> for MetadataGenerationRunStatus {
             "CANCELED" => MetadataGenerationRunStatus::Canceled,
             "FAILED" => MetadataGenerationRunStatus::Failed,
             "IN_PROGRESS" => MetadataGenerationRunStatus::InProgress,
+            "PARTIALLY_SUCCEEDED" => MetadataGenerationRunStatus::PartiallySucceeded,
             "SUBMITTED" => MetadataGenerationRunStatus::Submitted,
             "SUCCEEDED" => MetadataGenerationRunStatus::Succeeded,
             other => MetadataGenerationRunStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +90,7 @@ impl MetadataGenerationRunStatus {
             MetadataGenerationRunStatus::Canceled => "CANCELED",
             MetadataGenerationRunStatus::Failed => "FAILED",
             MetadataGenerationRunStatus::InProgress => "IN_PROGRESS",
+            MetadataGenerationRunStatus::PartiallySucceeded => "PARTIALLY_SUCCEEDED",
             MetadataGenerationRunStatus::Submitted => "SUBMITTED",
             MetadataGenerationRunStatus::Succeeded => "SUCCEEDED",
             MetadataGenerationRunStatus::Unknown(value) => value.as_str(),
@@ -92,7 +98,7 @@ impl MetadataGenerationRunStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCELED", "FAILED", "IN_PROGRESS", "SUBMITTED", "SUCCEEDED"]
+        &["CANCELED", "FAILED", "IN_PROGRESS", "PARTIALLY_SUCCEEDED", "SUBMITTED", "SUCCEEDED"]
     }
 }
 impl ::std::convert::AsRef<str> for MetadataGenerationRunStatus {
@@ -118,6 +124,7 @@ impl ::std::fmt::Display for MetadataGenerationRunStatus {
             MetadataGenerationRunStatus::Canceled => write!(f, "CANCELED"),
             MetadataGenerationRunStatus::Failed => write!(f, "FAILED"),
             MetadataGenerationRunStatus::InProgress => write!(f, "IN_PROGRESS"),
+            MetadataGenerationRunStatus::PartiallySucceeded => write!(f, "PARTIALLY_SUCCEEDED"),
             MetadataGenerationRunStatus::Submitted => write!(f, "SUBMITTED"),
             MetadataGenerationRunStatus::Succeeded => write!(f, "SUCCEEDED"),
             MetadataGenerationRunStatus::Unknown(value) => write!(f, "{value}"),

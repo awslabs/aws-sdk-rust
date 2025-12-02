@@ -66,6 +66,17 @@ pub fn ser_create_custom_db_engine_version_input_input_input(
         }
         list_24.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("DatabaseInstallationFiles");
+    if let Some(var_27) = &input.database_installation_files {
+        let mut list_29 = scope_26.start_list(false, None);
+        for item_28 in var_27 {
+            #[allow(unused_mut)]
+            let mut entry_30 = list_29.entry();
+            entry_30.string(item_28);
+        }
+        list_29.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

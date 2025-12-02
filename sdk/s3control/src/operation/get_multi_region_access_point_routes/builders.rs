@@ -38,9 +38,7 @@ impl crate::operation::get_multi_region_access_point_routes::builders::GetMultiR
 /// <p><code>ap-northeast-1</code></p></li>
 /// <li>
 /// <p><code>eu-west-1</code></p></li>
-/// </ul><important>
-/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
-/// </important>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMultiRegionAccessPointRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

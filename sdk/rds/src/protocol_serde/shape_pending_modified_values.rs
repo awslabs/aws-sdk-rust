@@ -307,6 +307,16 @@ pub fn de_pending_modified_values(
                 builder = builder.set_engine(var_22);
             }
             ,
+            s if s.matches("AdditionalStorageVolumes") /* AdditionalStorageVolumes com.amazonaws.rds#PendingModifiedValues$AdditionalStorageVolumes */ =>  {
+                let var_23 =
+                    Some(
+                        crate::protocol_serde::shape_additional_storage_volumes_list::de_additional_storage_volumes_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_additional_storage_volumes(var_23);
+            }
+            ,
             _ => {}
         }
     }

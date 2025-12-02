@@ -3,39 +3,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetScheduledQueryHistoryInput {
-    /// <p>The name or ARN of the scheduled query to retrieve history for.</p>
+    /// <p>The ARN or name of the scheduled query to retrieve history for.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The start time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The start time for the history query in Unix epoch format.</p>
     pub start_time: ::std::option::Option<i64>,
-    /// <p>The end time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The end time for the history query in Unix epoch format.</p>
     pub end_time: ::std::option::Option<i64>,
-    /// <p>Filter results by execution status (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>An array of execution statuses to filter the history results. Only executions with the specified statuses are returned.</p>
     pub execution_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>,
-    /// <p>The maximum number of history records to return in a single call.</p>
+    /// <p>The maximum number of history records to return. Valid range is 1 to 1000.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetScheduledQueryHistoryInput {
-    /// <p>The name or ARN of the scheduled query to retrieve history for.</p>
+    /// <p>The ARN or name of the scheduled query to retrieve history for.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>The start time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The start time for the history query in Unix epoch format.</p>
     pub fn start_time(&self) -> ::std::option::Option<i64> {
         self.start_time
     }
-    /// <p>The end time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The end time for the history query in Unix epoch format.</p>
     pub fn end_time(&self) -> ::std::option::Option<i64> {
         self.end_time
     }
-    /// <p>Filter results by execution status (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>An array of execution statuses to filter the history results. Only executions with the specified statuses are returned.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_statuses.is_none()`.
     pub fn execution_statuses(&self) -> &[crate::types::ExecutionStatus] {
         self.execution_statuses.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of history records to return in a single call.</p>
+    /// <p>The maximum number of history records to return. Valid range is 1 to 1000.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -63,48 +63,48 @@ pub struct GetScheduledQueryHistoryInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetScheduledQueryHistoryInputBuilder {
-    /// <p>The name or ARN of the scheduled query to retrieve history for.</p>
+    /// <p>The ARN or name of the scheduled query to retrieve history for.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or ARN of the scheduled query to retrieve history for.</p>
+    /// <p>The ARN or name of the scheduled query to retrieve history for.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p>The name or ARN of the scheduled query to retrieve history for.</p>
+    /// <p>The ARN or name of the scheduled query to retrieve history for.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
-    /// <p>The start time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The start time for the history query in Unix epoch format.</p>
     /// This field is required.
     pub fn start_time(mut self, input: i64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The start time for the history query in Unix epoch format.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The start time for the history query in Unix epoch format.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<i64> {
         &self.start_time
     }
-    /// <p>The end time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The end time for the history query in Unix epoch format.</p>
     /// This field is required.
     pub fn end_time(mut self, input: i64) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The end time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The end time for the history query in Unix epoch format.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The end time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The end time for the history query in Unix epoch format.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<i64> {
         &self.end_time
     }
@@ -112,33 +112,33 @@ impl GetScheduledQueryHistoryInputBuilder {
     ///
     /// To override the contents of this collection use [`set_execution_statuses`](Self::set_execution_statuses).
     ///
-    /// <p>Filter results by execution status (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>An array of execution statuses to filter the history results. Only executions with the specified statuses are returned.</p>
     pub fn execution_statuses(mut self, input: crate::types::ExecutionStatus) -> Self {
         let mut v = self.execution_statuses.unwrap_or_default();
         v.push(input);
         self.execution_statuses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filter results by execution status (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>An array of execution statuses to filter the history results. Only executions with the specified statuses are returned.</p>
     pub fn set_execution_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>) -> Self {
         self.execution_statuses = input;
         self
     }
-    /// <p>Filter results by execution status (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>An array of execution statuses to filter the history results. Only executions with the specified statuses are returned.</p>
     pub fn get_execution_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>> {
         &self.execution_statuses
     }
-    /// <p>The maximum number of history records to return in a single call.</p>
+    /// <p>The maximum number of history records to return. Valid range is 1 to 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of history records to return in a single call.</p>
+    /// <p>The maximum number of history records to return. Valid range is 1 to 1000.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of history records to return in a single call.</p>
+    /// <p>The maximum number of history records to return. Valid range is 1 to 1000.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

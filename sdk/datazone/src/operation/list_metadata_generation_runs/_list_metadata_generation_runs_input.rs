@@ -13,6 +13,8 @@ pub struct ListMetadataGenerationRunsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of metadata generation runs to return in a single call to ListMetadataGenerationRuns. When the number of metadata generation runs to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListMetadataGenerationRuns to list the next set of revisions.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The target ID for which you want to list metadata generation runs.</p>
+    pub target_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListMetadataGenerationRunsInput {
     /// <p>The ID of the Amazon DataZone domain where you want to list metadata generation runs.</p>
@@ -35,6 +37,10 @@ impl ListMetadataGenerationRunsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>The target ID for which you want to list metadata generation runs.</p>
+    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
+        self.target_identifier.as_deref()
+    }
 }
 impl ListMetadataGenerationRunsInput {
     /// Creates a new builder-style object to manufacture [`ListMetadataGenerationRunsInput`](crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsInput).
@@ -52,6 +58,7 @@ pub struct ListMetadataGenerationRunsInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::MetadataGenerationRunType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListMetadataGenerationRunsInputBuilder {
     /// <p>The ID of the Amazon DataZone domain where you want to list metadata generation runs.</p>
@@ -125,6 +132,20 @@ impl ListMetadataGenerationRunsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The target ID for which you want to list metadata generation runs.</p>
+    pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The target ID for which you want to list metadata generation runs.</p>
+    pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_identifier = input;
+        self
+    }
+    /// <p>The target ID for which you want to list metadata generation runs.</p>
+    pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_identifier
+    }
     /// Consumes the builder and constructs a [`ListMetadataGenerationRunsInput`](crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsInput).
     pub fn build(
         self,
@@ -138,6 +159,7 @@ impl ListMetadataGenerationRunsInputBuilder {
             r#type: self.r#type,
             next_token: self.next_token,
             max_results: self.max_results,
+            target_identifier: self.target_identifier,
         })
     }
 }

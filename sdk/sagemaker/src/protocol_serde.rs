@@ -111,6 +111,8 @@ pub(crate) mod shape_create_inference_recommendations_job;
 
 pub(crate) mod shape_create_labeling_job;
 
+pub(crate) mod shape_create_mlflow_app;
+
 pub(crate) mod shape_create_mlflow_tracking_server;
 
 pub(crate) mod shape_create_model;
@@ -144,6 +146,8 @@ pub(crate) mod shape_create_partner_app_presigned_url;
 pub(crate) mod shape_create_pipeline;
 
 pub(crate) mod shape_create_presigned_domain_url;
+
+pub(crate) mod shape_create_presigned_mlflow_app_url;
 
 pub(crate) mod shape_create_presigned_mlflow_tracking_server_url;
 
@@ -234,6 +238,8 @@ pub(crate) mod shape_delete_image_version;
 pub(crate) mod shape_delete_inference_component;
 
 pub(crate) mod shape_delete_inference_experiment;
+
+pub(crate) mod shape_delete_mlflow_app;
 
 pub(crate) mod shape_delete_mlflow_tracking_server;
 
@@ -364,6 +370,8 @@ pub(crate) mod shape_describe_inference_recommendations_job;
 pub(crate) mod shape_describe_labeling_job;
 
 pub(crate) mod shape_describe_lineage_group;
+
+pub(crate) mod shape_describe_mlflow_app;
 
 pub(crate) mod shape_describe_mlflow_tracking_server;
 
@@ -532,6 +540,8 @@ pub(crate) mod shape_list_labeling_jobs;
 pub(crate) mod shape_list_labeling_jobs_for_workteam;
 
 pub(crate) mod shape_list_lineage_groups;
+
+pub(crate) mod shape_list_mlflow_apps;
 
 pub(crate) mod shape_list_mlflow_tracking_servers;
 
@@ -731,6 +741,8 @@ pub(crate) mod shape_update_inference_component_runtime_config;
 
 pub(crate) mod shape_update_inference_experiment;
 
+pub(crate) mod shape_update_mlflow_app;
+
 pub(crate) mod shape_update_mlflow_tracking_server;
 
 pub(crate) mod shape_update_model_card;
@@ -867,6 +879,8 @@ pub(crate) mod shape_create_inference_recommendations_job_input;
 
 pub(crate) mod shape_create_labeling_job_input;
 
+pub(crate) mod shape_create_mlflow_app_input;
+
 pub(crate) mod shape_create_mlflow_tracking_server_input;
 
 pub(crate) mod shape_create_model_bias_job_definition_input;
@@ -900,6 +914,8 @@ pub(crate) mod shape_create_partner_app_presigned_url_input;
 pub(crate) mod shape_create_pipeline_input;
 
 pub(crate) mod shape_create_presigned_domain_url_input;
+
+pub(crate) mod shape_create_presigned_mlflow_app_url_input;
 
 pub(crate) mod shape_create_presigned_mlflow_tracking_server_url_input;
 
@@ -990,6 +1006,8 @@ pub(crate) mod shape_delete_image_version_input;
 pub(crate) mod shape_delete_inference_component_input;
 
 pub(crate) mod shape_delete_inference_experiment_input;
+
+pub(crate) mod shape_delete_mlflow_app_input;
 
 pub(crate) mod shape_delete_mlflow_tracking_server_input;
 
@@ -1120,6 +1138,8 @@ pub(crate) mod shape_describe_inference_recommendations_job_input;
 pub(crate) mod shape_describe_labeling_job_input;
 
 pub(crate) mod shape_describe_lineage_group_input;
+
+pub(crate) mod shape_describe_mlflow_app_input;
 
 pub(crate) mod shape_describe_mlflow_tracking_server_input;
 
@@ -1282,6 +1302,8 @@ pub(crate) mod shape_list_labeling_jobs_for_workteam_input;
 pub(crate) mod shape_list_labeling_jobs_input;
 
 pub(crate) mod shape_list_lineage_groups_input;
+
+pub(crate) mod shape_list_mlflow_apps_input;
 
 pub(crate) mod shape_list_mlflow_tracking_servers_input;
 
@@ -1486,6 +1508,8 @@ pub(crate) mod shape_update_inference_component_input;
 pub(crate) mod shape_update_inference_component_runtime_config_input;
 
 pub(crate) mod shape_update_inference_experiment_input;
+
+pub(crate) mod shape_update_mlflow_app_input;
 
 pub(crate) mod shape_update_mlflow_tracking_server_input;
 
@@ -1701,6 +1725,8 @@ pub(crate) mod shape_debug_rule_configurations;
 
 pub(crate) mod shape_debug_rule_evaluation_statuses;
 
+pub(crate) mod shape_default_domain_id_list;
+
 pub(crate) mod shape_default_space_settings;
 
 pub(crate) mod shape_deployment_config;
@@ -1906,6 +1932,8 @@ pub(crate) mod shape_member_definition;
 pub(crate) mod shape_metadata_properties;
 
 pub(crate) mod shape_metrics_config;
+
+pub(crate) mod shape_mlflow_app_summaries;
 
 pub(crate) mod shape_model_artifacts;
 
@@ -2666,6 +2694,8 @@ pub(crate) mod shape_metric_data;
 pub(crate) mod shape_metric_definition;
 
 pub(crate) mod shape_metric_definition_list;
+
+pub(crate) mod shape_mlflow_app_summary;
 
 pub(crate) mod shape_model_card_export_job_summary;
 

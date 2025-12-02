@@ -235,6 +235,10 @@ pub struct DbInstance {
     /// <p>The lifecycle type for the DB instance.</p>
     /// <p>For more information, see CreateDBInstance.</p>
     pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    /// <p>The additional storage volumes associated with the DB instance. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+    pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolumeOutput>>,
+    /// <p>The detailed status information for storage volumes associated with the DB instance. This information helps identify which specific volume is causing the instance to be in a storage-full state.</p>
+    pub storage_volume_status: ::std::option::Option<::std::string::String>,
 }
 impl DbInstance {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -669,6 +673,16 @@ impl DbInstance {
     pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
         self.engine_lifecycle_support.as_deref()
     }
+    /// <p>The additional storage volumes associated with the DB instance. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_storage_volumes.is_none()`.
+    pub fn additional_storage_volumes(&self) -> &[crate::types::AdditionalStorageVolumeOutput] {
+        self.additional_storage_volumes.as_deref().unwrap_or_default()
+    }
+    /// <p>The detailed status information for storage volumes associated with the DB instance. This information helps identify which specific volume is causing the instance to be in a storage-full state.</p>
+    pub fn storage_volume_status(&self) -> ::std::option::Option<&str> {
+        self.storage_volume_status.as_deref()
+    }
 }
 impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::types::DbInstance).
@@ -770,6 +784,8 @@ pub struct DbInstanceBuilder {
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) is_storage_config_upgrade_available: ::std::option::Option<bool>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolumeOutput>>,
+    pub(crate) storage_volume_status: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceBuilder {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -2249,6 +2265,43 @@ impl DbInstanceBuilder {
     pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_lifecycle_support
     }
+    /// Appends an item to `additional_storage_volumes`.
+    ///
+    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
+    ///
+    /// <p>The additional storage volumes associated with the DB instance. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+    pub fn additional_storage_volumes(mut self, input: crate::types::AdditionalStorageVolumeOutput) -> Self {
+        let mut v = self.additional_storage_volumes.unwrap_or_default();
+        v.push(input);
+        self.additional_storage_volumes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The additional storage volumes associated with the DB instance. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+    pub fn set_additional_storage_volumes(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolumeOutput>>,
+    ) -> Self {
+        self.additional_storage_volumes = input;
+        self
+    }
+    /// <p>The additional storage volumes associated with the DB instance. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.</p>
+    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolumeOutput>> {
+        &self.additional_storage_volumes
+    }
+    /// <p>The detailed status information for storage volumes associated with the DB instance. This information helps identify which specific volume is causing the instance to be in a storage-full state.</p>
+    pub fn storage_volume_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_volume_status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The detailed status information for storage volumes associated with the DB instance. This information helps identify which specific volume is causing the instance to be in a storage-full state.</p>
+    pub fn set_storage_volume_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_volume_status = input;
+        self
+    }
+    /// <p>The detailed status information for storage volumes associated with the DB instance. This information helps identify which specific volume is causing the instance to be in a storage-full state.</p>
+    pub fn get_storage_volume_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_volume_status
+    }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
@@ -2340,6 +2393,8 @@ impl DbInstanceBuilder {
             dedicated_log_volume: self.dedicated_log_volume,
             is_storage_config_upgrade_available: self.is_storage_config_upgrade_available,
             engine_lifecycle_support: self.engine_lifecycle_support,
+            additional_storage_volumes: self.additional_storage_volumes,
+            storage_volume_status: self.storage_volume_status,
         }
     }
 }

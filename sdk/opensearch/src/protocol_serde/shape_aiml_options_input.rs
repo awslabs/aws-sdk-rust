@@ -18,5 +18,11 @@ pub fn ser_aiml_options_input(
         crate::protocol_serde::shape_s3_vectors_engine::ser_s3_vectors_engine(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.serverless_vector_acceleration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("ServerlessVectorAcceleration").start_object();
+        crate::protocol_serde::shape_serverless_vector_acceleration::ser_serverless_vector_acceleration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

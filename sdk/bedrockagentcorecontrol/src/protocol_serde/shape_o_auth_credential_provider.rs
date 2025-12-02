@@ -25,6 +25,12 @@ pub fn ser_o_auth_credential_provider(
         }
         object_4.finish();
     }
+    {
+        object.key("grantType").string(input.grant_type.as_str());
+    }
+    if let Some(var_7) = &input.default_return_url {
+        object.key("defaultReturnUrl").string(var_7.as_str());
+    }
     Ok(())
 }
 
@@ -56,6 +62,20 @@ where
                         "customParameters" => {
                             builder = builder.set_custom_parameters(
                                 crate::protocol_serde::shape_o_auth_custom_parameters::de_o_auth_custom_parameters(tokens)?,
+                            );
+                        }
+                        "grantType" => {
+                            builder = builder.set_grant_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::OAuthGrantType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "defaultReturnUrl" => {
+                            builder = builder.set_default_return_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

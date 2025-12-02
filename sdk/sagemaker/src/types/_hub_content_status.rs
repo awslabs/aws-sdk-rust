@@ -17,6 +17,8 @@
 ///     HubContentStatus::Deleting => { /* ... */ },
 ///     HubContentStatus::ImportFailed => { /* ... */ },
 ///     HubContentStatus::Importing => { /* ... */ },
+///     HubContentStatus::PendingDelete => { /* ... */ },
+///     HubContentStatus::PendingImport => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +57,10 @@ pub enum HubContentStatus {
     ImportFailed,
     #[allow(missing_docs)] // documentation missing in model
     Importing,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingDelete,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingImport,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +73,8 @@ impl ::std::convert::From<&str> for HubContentStatus {
             "Deleting" => HubContentStatus::Deleting,
             "ImportFailed" => HubContentStatus::ImportFailed,
             "Importing" => HubContentStatus::Importing,
+            "PendingDelete" => HubContentStatus::PendingDelete,
+            "PendingImport" => HubContentStatus::PendingImport,
             other => HubContentStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,12 +95,22 @@ impl HubContentStatus {
             HubContentStatus::Deleting => "Deleting",
             HubContentStatus::ImportFailed => "ImportFailed",
             HubContentStatus::Importing => "Importing",
+            HubContentStatus::PendingDelete => "PendingDelete",
+            HubContentStatus::PendingImport => "PendingImport",
             HubContentStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Available", "DeleteFailed", "Deleting", "ImportFailed", "Importing"]
+        &[
+            "Available",
+            "DeleteFailed",
+            "Deleting",
+            "ImportFailed",
+            "Importing",
+            "PendingDelete",
+            "PendingImport",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for HubContentStatus {
@@ -120,6 +138,8 @@ impl ::std::fmt::Display for HubContentStatus {
             HubContentStatus::Deleting => write!(f, "Deleting"),
             HubContentStatus::ImportFailed => write!(f, "ImportFailed"),
             HubContentStatus::Importing => write!(f, "Importing"),
+            HubContentStatus::PendingDelete => write!(f, "PendingDelete"),
+            HubContentStatus::PendingImport => write!(f, "PendingImport"),
             HubContentStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -37,6 +37,8 @@ pub use crate::types::_option_status::OptionStatusBuilder;
 
 pub use crate::types::_aiml_options_output::AimlOptionsOutputBuilder;
 
+pub use crate::types::_serverless_vector_acceleration::ServerlessVectorAccelerationBuilder;
+
 pub use crate::types::_s3_vectors_engine::S3VectorsEngineBuilder;
 
 pub use crate::types::_natural_language_query_generation_options_output::NaturalLanguageQueryGenerationOptionsOutputBuilder;

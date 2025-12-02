@@ -23,6 +23,7 @@ impl crate::operation::stop_query::builders::StopQueryInputBuilder {
 /// Fluent builder constructing a request to `StopQuery`.
 ///
 /// <p>Stops a CloudWatch Logs Insights query that is in progress. If the query has already ended, the operation returns an error indicating that the specified query is not running.</p>
+/// <p>This operation can be used to cancel both interactive queries and individual scheduled query executions. When used with scheduled queries, <code>StopQuery</code> cancels only the specific execution identified by the query ID, not the scheduled query configuration itself.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

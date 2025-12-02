@@ -28,8 +28,14 @@ pub mod delete_table_bucket_metrics_configuration;
 /// Types for the `DeleteTableBucketPolicy` operation.
 pub mod delete_table_bucket_policy;
 
+/// Types for the `DeleteTableBucketReplication` operation.
+pub mod delete_table_bucket_replication;
+
 /// Types for the `DeleteTablePolicy` operation.
 pub mod delete_table_policy;
+
+/// Types for the `DeleteTableReplication` operation.
+pub mod delete_table_replication;
 
 /// Types for the `GetNamespace` operation.
 pub mod get_namespace;
@@ -52,6 +58,12 @@ pub mod get_table_bucket_metrics_configuration;
 /// Types for the `GetTableBucketPolicy` operation.
 pub mod get_table_bucket_policy;
 
+/// Types for the `GetTableBucketReplication` operation.
+pub mod get_table_bucket_replication;
+
+/// Types for the `GetTableBucketStorageClass` operation.
+pub mod get_table_bucket_storage_class;
+
 /// Types for the `GetTableEncryption` operation.
 pub mod get_table_encryption;
 
@@ -66,6 +78,21 @@ pub mod get_table_metadata_location;
 
 /// Types for the `GetTablePolicy` operation.
 pub mod get_table_policy;
+
+/// Types for the `GetTableRecordExpirationConfiguration` operation.
+pub mod get_table_record_expiration_configuration;
+
+/// Types for the `GetTableRecordExpirationJobStatus` operation.
+pub mod get_table_record_expiration_job_status;
+
+/// Types for the `GetTableReplication` operation.
+pub mod get_table_replication;
+
+/// Types for the `GetTableReplicationStatus` operation.
+pub mod get_table_replication_status;
+
+/// Types for the `GetTableStorageClass` operation.
+pub mod get_table_storage_class;
 
 /// Types for the `ListNamespaces` operation.
 pub mod list_namespaces;
@@ -91,11 +118,23 @@ pub mod put_table_bucket_metrics_configuration;
 /// Types for the `PutTableBucketPolicy` operation.
 pub mod put_table_bucket_policy;
 
+/// Types for the `PutTableBucketReplication` operation.
+pub mod put_table_bucket_replication;
+
+/// Types for the `PutTableBucketStorageClass` operation.
+pub mod put_table_bucket_storage_class;
+
 /// Types for the `PutTableMaintenanceConfiguration` operation.
 pub mod put_table_maintenance_configuration;
 
 /// Types for the `PutTablePolicy` operation.
 pub mod put_table_policy;
+
+/// Types for the `PutTableRecordExpirationConfiguration` operation.
+pub mod put_table_record_expiration_configuration;
+
+/// Types for the `PutTableReplication` operation.
+pub mod put_table_replication;
 
 /// Types for the `RenameTable` operation.
 pub mod rename_table;

@@ -24,6 +24,7 @@ impl super::Client {
     ///   - [`owner_account_id(String)`](crate::operation::get_table::GetTableOutput::owner_account_id): <p>The ID of the account that owns the table.</p>
     ///   - [`format(OpenTableFormat)`](crate::operation::get_table::GetTableOutput::format): <p>The format of the table.</p>
     ///   - [`table_bucket_id(Option<String>)`](crate::operation::get_table::GetTableOutput::table_bucket_id): <p>The unique identifier of the table bucket containing this table.</p>
+    ///   - [`managed_table_information(Option<ManagedTableInformation>)`](crate::operation::get_table::GetTableOutput::managed_table_information): <p>If this table is managed by S3 Tables, contains additional information such as replication details.</p>
     /// - On failure, responds with [`SdkError<GetTableError>`](crate::operation::get_table::GetTableError)
     pub fn get_table(&self) -> crate::operation::get_table::builders::GetTableFluentBuilder {
         crate::operation::get_table::builders::GetTableFluentBuilder::new(self.handle.clone())

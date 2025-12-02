@@ -22,9 +22,6 @@ impl crate::operation::delete_vector_bucket::builders::DeleteVectorBucketInputBu
 }
 /// Fluent builder constructing a request to `DeleteVectorBucket`.
 ///
-/// <note>
-/// <p>Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.</p>
-/// </note>
 /// <p>Deletes a vector bucket. All vector indexes in the vector bucket must be deleted before the vector bucket can be deleted. To perform this operation, you must use either the vector bucket name or the vector bucket Amazon Resource Name (ARN).</p>
 /// <dl>
 /// <dt>

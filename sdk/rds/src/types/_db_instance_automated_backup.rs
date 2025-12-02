@@ -14,7 +14,7 @@ pub struct DbInstanceAutomatedBackup {
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The earliest and latest time a DB instance can be restored to.</p>
     pub restore_window: ::std::option::Option<crate::types::RestoreWindow>,
-    /// <p>The allocated storage size for the the automated backup in gibibytes (GiB).</p>
+    /// <p>The allocated storage size for the automated backup in gibibytes (GiB).</p>
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
@@ -77,6 +77,9 @@ pub struct DbInstanceAutomatedBackup {
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
+    /// <p>The additional storage volumes associated with the automated backup.</p>
+    /// <p>Valid Values: <code>GP3 | IO2</code></p>
+    pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
 }
 impl DbInstanceAutomatedBackup {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -99,7 +102,7 @@ impl DbInstanceAutomatedBackup {
     pub fn restore_window(&self) -> ::std::option::Option<&crate::types::RestoreWindow> {
         self.restore_window.as_ref()
     }
-    /// <p>The allocated storage size for the the automated backup in gibibytes (GiB).</p>
+    /// <p>The allocated storage size for the automated backup in gibibytes (GiB).</p>
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
@@ -216,6 +219,13 @@ impl DbInstanceAutomatedBackup {
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
     }
+    /// <p>The additional storage volumes associated with the automated backup.</p>
+    /// <p>Valid Values: <code>GP3 | IO2</code></p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_storage_volumes.is_none()`.
+    pub fn additional_storage_volumes(&self) -> &[crate::types::AdditionalStorageVolume] {
+        self.additional_storage_volumes.as_deref().unwrap_or_default()
+    }
 }
 impl DbInstanceAutomatedBackup {
     /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackup`](crate::types::DbInstanceAutomatedBackup).
@@ -260,6 +270,7 @@ pub struct DbInstanceAutomatedBackupBuilder {
     pub(crate) multi_tenant: ::std::option::Option<bool>,
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
+    pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
 }
 impl DbInstanceAutomatedBackupBuilder {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
@@ -332,17 +343,17 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_restore_window(&self) -> &::std::option::Option<crate::types::RestoreWindow> {
         &self.restore_window
     }
-    /// <p>The allocated storage size for the the automated backup in gibibytes (GiB).</p>
+    /// <p>The allocated storage size for the automated backup in gibibytes (GiB).</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The allocated storage size for the the automated backup in gibibytes (GiB).</p>
+    /// <p>The allocated storage size for the automated backup in gibibytes (GiB).</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
     }
-    /// <p>The allocated storage size for the the automated backup in gibibytes (GiB).</p>
+    /// <p>The allocated storage size for the automated backup in gibibytes (GiB).</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.allocated_storage
     }
@@ -740,6 +751,29 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.dedicated_log_volume
     }
+    /// Appends an item to `additional_storage_volumes`.
+    ///
+    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
+    ///
+    /// <p>The additional storage volumes associated with the automated backup.</p>
+    /// <p>Valid Values: <code>GP3 | IO2</code></p>
+    pub fn additional_storage_volumes(mut self, input: crate::types::AdditionalStorageVolume) -> Self {
+        let mut v = self.additional_storage_volumes.unwrap_or_default();
+        v.push(input);
+        self.additional_storage_volumes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The additional storage volumes associated with the automated backup.</p>
+    /// <p>Valid Values: <code>GP3 | IO2</code></p>
+    pub fn set_additional_storage_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>) -> Self {
+        self.additional_storage_volumes = input;
+        self
+    }
+    /// <p>The additional storage volumes associated with the automated backup.</p>
+    /// <p>Valid Values: <code>GP3 | IO2</code></p>
+    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>> {
+        &self.additional_storage_volumes
+    }
     /// Consumes the builder and constructs a [`DbInstanceAutomatedBackup`](crate::types::DbInstanceAutomatedBackup).
     pub fn build(self) -> crate::types::DbInstanceAutomatedBackup {
         crate::types::DbInstanceAutomatedBackup {
@@ -774,6 +808,7 @@ impl DbInstanceAutomatedBackupBuilder {
             multi_tenant: self.multi_tenant,
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
             dedicated_log_volume: self.dedicated_log_volume,
+            additional_storage_volumes: self.additional_storage_volumes,
         }
     }
 }

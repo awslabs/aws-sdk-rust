@@ -4,6 +4,12 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateCentralizationRuleForOrganization` operation.
 pub mod create_centralization_rule_for_organization;
 
+/// Types for the `CreateS3TableIntegration` operation.
+pub mod create_s3_table_integration;
+
+/// Types for the `CreateTelemetryPipeline` operation.
+pub mod create_telemetry_pipeline;
+
 /// Types for the `CreateTelemetryRule` operation.
 pub mod create_telemetry_rule;
 
@@ -12,6 +18,12 @@ pub mod create_telemetry_rule_for_organization;
 
 /// Types for the `DeleteCentralizationRuleForOrganization` operation.
 pub mod delete_centralization_rule_for_organization;
+
+/// Types for the `DeleteS3TableIntegration` operation.
+pub mod delete_s3_table_integration;
+
+/// Types for the `DeleteTelemetryPipeline` operation.
+pub mod delete_telemetry_pipeline;
 
 /// Types for the `DeleteTelemetryRule` operation.
 pub mod delete_telemetry_rule;
@@ -22,6 +34,9 @@ pub mod delete_telemetry_rule_for_organization;
 /// Types for the `GetCentralizationRuleForOrganization` operation.
 pub mod get_centralization_rule_for_organization;
 
+/// Types for the `GetS3TableIntegration` operation.
+pub mod get_s3_table_integration;
+
 /// Types for the `GetTelemetryEnrichmentStatus` operation.
 pub mod get_telemetry_enrichment_status;
 
@@ -30,6 +45,9 @@ pub mod get_telemetry_evaluation_status;
 
 /// Types for the `GetTelemetryEvaluationStatusForOrganization` operation.
 pub mod get_telemetry_evaluation_status_for_organization;
+
+/// Types for the `GetTelemetryPipeline` operation.
+pub mod get_telemetry_pipeline;
 
 /// Types for the `GetTelemetryRule` operation.
 pub mod get_telemetry_rule;
@@ -46,8 +64,14 @@ pub mod list_resource_telemetry;
 /// Types for the `ListResourceTelemetryForOrganization` operation.
 pub mod list_resource_telemetry_for_organization;
 
+/// Types for the `ListS3TableIntegrations` operation.
+pub mod list_s3_table_integrations;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListTelemetryPipelines` operation.
+pub mod list_telemetry_pipelines;
 
 /// Types for the `ListTelemetryRules` operation.
 pub mod list_telemetry_rules;
@@ -76,14 +100,23 @@ pub mod stop_telemetry_evaluation_for_organization;
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
+/// Types for the `TestTelemetryPipeline` operation.
+pub mod test_telemetry_pipeline;
+
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
 /// Types for the `UpdateCentralizationRuleForOrganization` operation.
 pub mod update_centralization_rule_for_organization;
 
+/// Types for the `UpdateTelemetryPipeline` operation.
+pub mod update_telemetry_pipeline;
+
 /// Types for the `UpdateTelemetryRule` operation.
 pub mod update_telemetry_rule;
 
 /// Types for the `UpdateTelemetryRuleForOrganization` operation.
 pub mod update_telemetry_rule_for_organization;
+
+/// Types for the `ValidateTelemetryPipelineConfiguration` operation.
+pub mod validate_telemetry_pipeline_configuration;

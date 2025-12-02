@@ -139,6 +139,14 @@ pub use crate::types::_s3_access_point::S3AccessPointBuilder;
 
 pub use crate::types::_s3_access_point_vpc_configuration::S3AccessPointVpcConfigurationBuilder;
 
+pub use crate::types::_s3_access_point_ontap_configuration::S3AccessPointOntapConfigurationBuilder;
+
+pub use crate::types::_ontap_file_system_identity::OntapFileSystemIdentityBuilder;
+
+pub use crate::types::_ontap_windows_file_system_user::OntapWindowsFileSystemUserBuilder;
+
+pub use crate::types::_ontap_unix_file_system_user::OntapUnixFileSystemUserBuilder;
+
 pub use crate::types::_s3_access_point_open_zfs_configuration::S3AccessPointOpenZfsConfigurationBuilder;
 
 pub use crate::types::_open_zfs_file_system_identity::OpenZfsFileSystemIdentityBuilder;
@@ -222,5 +230,7 @@ pub use crate::types::_file_cache_nfs_configuration::FileCacheNfsConfigurationBu
 pub use crate::types::_create_file_cache_lustre_configuration::CreateFileCacheLustreConfigurationBuilder;
 
 pub use crate::types::_create_and_attach_s3_access_point_s3_configuration::CreateAndAttachS3AccessPointS3ConfigurationBuilder;
+
+pub use crate::types::_create_and_attach_s3_access_point_ontap_configuration::CreateAndAttachS3AccessPointOntapConfigurationBuilder;
 
 pub use crate::types::_create_and_attach_s3_access_point_open_zfs_configuration::CreateAndAttachS3AccessPointOpenZfsConfigurationBuilder;

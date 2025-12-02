@@ -44,6 +44,7 @@
 ///     OcsfStringField::FindingInfoDesc => { /* ... */ },
 ///     OcsfStringField::FindingInfoRelatedEventsProductUid => { /* ... */ },
 ///     OcsfStringField::FindingInfoRelatedEventsTitle => { /* ... */ },
+///     OcsfStringField::FindingInfoRelatedEventsTraitsCategory => { /* ... */ },
 ///     OcsfStringField::FindingInfoRelatedEventsUid => { /* ... */ },
 ///     OcsfStringField::FindingInfoSrcUrl => { /* ... */ },
 ///     OcsfStringField::FindingInfoTitle => { /* ... */ },
@@ -75,6 +76,7 @@
 ///     OcsfStringField::ResourcesVpcUid => { /* ... */ },
 ///     OcsfStringField::Severity => { /* ... */ },
 ///     OcsfStringField::Status => { /* ... */ },
+///     OcsfStringField::VendorAttributesSeverity => { /* ... */ },
 ///     OcsfStringField::VulnerabilitiesAffectedCodeFilePath => { /* ... */ },
 ///     OcsfStringField::VulnerabilitiesAffectedPackagesName => { /* ... */ },
 ///     OcsfStringField::VulnerabilitiesCveEpssScore => { /* ... */ },
@@ -174,6 +176,8 @@ pub enum OcsfStringField {
     #[allow(missing_docs)] // documentation missing in model
     FindingInfoRelatedEventsTitle,
     #[allow(missing_docs)] // documentation missing in model
+    FindingInfoRelatedEventsTraitsCategory,
+    #[allow(missing_docs)] // documentation missing in model
     FindingInfoRelatedEventsUid,
     #[allow(missing_docs)] // documentation missing in model
     FindingInfoSrcUrl,
@@ -236,6 +240,8 @@ pub enum OcsfStringField {
     #[allow(missing_docs)] // documentation missing in model
     Status,
     #[allow(missing_docs)] // documentation missing in model
+    VendorAttributesSeverity,
+    #[allow(missing_docs)] // documentation missing in model
     VulnerabilitiesAffectedCodeFilePath,
     #[allow(missing_docs)] // documentation missing in model
     VulnerabilitiesAffectedPackagesName,
@@ -286,6 +292,7 @@ impl ::std::convert::From<&str> for OcsfStringField {
             "finding_info.desc" => OcsfStringField::FindingInfoDesc,
             "finding_info.related_events.product.uid" => OcsfStringField::FindingInfoRelatedEventsProductUid,
             "finding_info.related_events.title" => OcsfStringField::FindingInfoRelatedEventsTitle,
+            "finding_info.related_events.traits.category" => OcsfStringField::FindingInfoRelatedEventsTraitsCategory,
             "finding_info.related_events.uid" => OcsfStringField::FindingInfoRelatedEventsUid,
             "finding_info.src_url" => OcsfStringField::FindingInfoSrcUrl,
             "finding_info.title" => OcsfStringField::FindingInfoTitle,
@@ -317,6 +324,7 @@ impl ::std::convert::From<&str> for OcsfStringField {
             "resources.vpc_uid" => OcsfStringField::ResourcesVpcUid,
             "severity" => OcsfStringField::Severity,
             "status" => OcsfStringField::Status,
+            "vendor_attributes.severity" => OcsfStringField::VendorAttributesSeverity,
             "vulnerabilities.affected_code.file.path" => OcsfStringField::VulnerabilitiesAffectedCodeFilePath,
             "vulnerabilities.affected_packages.name" => OcsfStringField::VulnerabilitiesAffectedPackagesName,
             "vulnerabilities.cve.epss.score" => OcsfStringField::VulnerabilitiesCveEpssScore,
@@ -370,6 +378,7 @@ impl OcsfStringField {
             OcsfStringField::FindingInfoDesc => "finding_info.desc",
             OcsfStringField::FindingInfoRelatedEventsProductUid => "finding_info.related_events.product.uid",
             OcsfStringField::FindingInfoRelatedEventsTitle => "finding_info.related_events.title",
+            OcsfStringField::FindingInfoRelatedEventsTraitsCategory => "finding_info.related_events.traits.category",
             OcsfStringField::FindingInfoRelatedEventsUid => "finding_info.related_events.uid",
             OcsfStringField::FindingInfoSrcUrl => "finding_info.src_url",
             OcsfStringField::FindingInfoTitle => "finding_info.title",
@@ -401,6 +410,7 @@ impl OcsfStringField {
             OcsfStringField::ResourcesVpcUid => "resources.vpc_uid",
             OcsfStringField::Severity => "severity",
             OcsfStringField::Status => "status",
+            OcsfStringField::VendorAttributesSeverity => "vendor_attributes.severity",
             OcsfStringField::VulnerabilitiesAffectedCodeFilePath => "vulnerabilities.affected_code.file.path",
             OcsfStringField::VulnerabilitiesAffectedPackagesName => "vulnerabilities.affected_packages.name",
             OcsfStringField::VulnerabilitiesCveEpssScore => "vulnerabilities.cve.epss.score",
@@ -445,6 +455,7 @@ impl OcsfStringField {
             "finding_info.desc",
             "finding_info.related_events.product.uid",
             "finding_info.related_events.title",
+            "finding_info.related_events.traits.category",
             "finding_info.related_events.uid",
             "finding_info.src_url",
             "finding_info.title",
@@ -476,6 +487,7 @@ impl OcsfStringField {
             "resources.vpc_uid",
             "severity",
             "status",
+            "vendor_attributes.severity",
             "vulnerabilities.affected_code.file.path",
             "vulnerabilities.affected_packages.name",
             "vulnerabilities.cve.epss.score",
@@ -539,6 +551,7 @@ impl ::std::fmt::Display for OcsfStringField {
             OcsfStringField::FindingInfoDesc => write!(f, "finding_info.desc"),
             OcsfStringField::FindingInfoRelatedEventsProductUid => write!(f, "finding_info.related_events.product.uid"),
             OcsfStringField::FindingInfoRelatedEventsTitle => write!(f, "finding_info.related_events.title"),
+            OcsfStringField::FindingInfoRelatedEventsTraitsCategory => write!(f, "finding_info.related_events.traits.category"),
             OcsfStringField::FindingInfoRelatedEventsUid => write!(f, "finding_info.related_events.uid"),
             OcsfStringField::FindingInfoSrcUrl => write!(f, "finding_info.src_url"),
             OcsfStringField::FindingInfoTitle => write!(f, "finding_info.title"),
@@ -570,6 +583,7 @@ impl ::std::fmt::Display for OcsfStringField {
             OcsfStringField::ResourcesVpcUid => write!(f, "resources.vpc_uid"),
             OcsfStringField::Severity => write!(f, "severity"),
             OcsfStringField::Status => write!(f, "status"),
+            OcsfStringField::VendorAttributesSeverity => write!(f, "vendor_attributes.severity"),
             OcsfStringField::VulnerabilitiesAffectedCodeFilePath => write!(f, "vulnerabilities.affected_code.file.path"),
             OcsfStringField::VulnerabilitiesAffectedPackagesName => write!(f, "vulnerabilities.affected_packages.name"),
             OcsfStringField::VulnerabilitiesCveEpssScore => write!(f, "vulnerabilities.cve.epss.score"),

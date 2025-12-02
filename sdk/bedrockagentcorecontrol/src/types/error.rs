@@ -11,13 +11,13 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
 pub use crate::types::error::_encryption_failure::EncryptionFailure;
 
 pub use crate::types::error::_decryption_failure::DecryptionFailure;
-
-pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_resource_limit_exceeded_exception::ResourceLimitExceededException;
 

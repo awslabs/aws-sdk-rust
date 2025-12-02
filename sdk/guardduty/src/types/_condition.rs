@@ -34,6 +34,14 @@ pub struct Condition {
     pub less_than: ::std::option::Option<i64>,
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     pub less_than_or_equal: ::std::option::Option<i64>,
+    /// <p>Represents the <i>match</i> condition to be applied to a single field when querying for findings.</p><note>
+    /// <p>The <i>matches</i> condition is available only for create-filter and update-filter APIs.</p>
+    /// </note>
+    pub matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Represents the <i>not match</i> condition to be applied to a single field when querying for findings.</p><note>
+    /// <p>The <i>not-matches</i> condition is available only for create-filter and update-filter APIs.</p>
+    /// </note>
+    pub not_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Condition {
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
@@ -98,6 +106,22 @@ impl Condition {
     pub fn less_than_or_equal(&self) -> ::std::option::Option<i64> {
         self.less_than_or_equal
     }
+    /// <p>Represents the <i>match</i> condition to be applied to a single field when querying for findings.</p><note>
+    /// <p>The <i>matches</i> condition is available only for create-filter and update-filter APIs.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matches.is_none()`.
+    pub fn matches(&self) -> &[::std::string::String] {
+        self.matches.as_deref().unwrap_or_default()
+    }
+    /// <p>Represents the <i>not match</i> condition to be applied to a single field when querying for findings.</p><note>
+    /// <p>The <i>not-matches</i> condition is available only for create-filter and update-filter APIs.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.not_matches.is_none()`.
+    pub fn not_matches(&self) -> &[::std::string::String] {
+        self.not_matches.as_deref().unwrap_or_default()
+    }
 }
 impl Condition {
     /// Creates a new builder-style object to manufacture [`Condition`](crate::types::Condition).
@@ -122,6 +146,8 @@ pub struct ConditionBuilder {
     pub(crate) greater_than_or_equal: ::std::option::Option<i64>,
     pub(crate) less_than: ::std::option::Option<i64>,
     pub(crate) less_than_or_equal: ::std::option::Option<i64>,
+    pub(crate) matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) not_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConditionBuilder {
     /// Appends an item to `eq`.
@@ -334,6 +360,58 @@ impl ConditionBuilder {
     pub fn get_less_than_or_equal(&self) -> &::std::option::Option<i64> {
         &self.less_than_or_equal
     }
+    /// Appends an item to `matches`.
+    ///
+    /// To override the contents of this collection use [`set_matches`](Self::set_matches).
+    ///
+    /// <p>Represents the <i>match</i> condition to be applied to a single field when querying for findings.</p><note>
+    /// <p>The <i>matches</i> condition is available only for create-filter and update-filter APIs.</p>
+    /// </note>
+    pub fn matches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.matches.unwrap_or_default();
+        v.push(input.into());
+        self.matches = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Represents the <i>match</i> condition to be applied to a single field when querying for findings.</p><note>
+    /// <p>The <i>matches</i> condition is available only for create-filter and update-filter APIs.</p>
+    /// </note>
+    pub fn set_matches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.matches = input;
+        self
+    }
+    /// <p>Represents the <i>match</i> condition to be applied to a single field when querying for findings.</p><note>
+    /// <p>The <i>matches</i> condition is available only for create-filter and update-filter APIs.</p>
+    /// </note>
+    pub fn get_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.matches
+    }
+    /// Appends an item to `not_matches`.
+    ///
+    /// To override the contents of this collection use [`set_not_matches`](Self::set_not_matches).
+    ///
+    /// <p>Represents the <i>not match</i> condition to be applied to a single field when querying for findings.</p><note>
+    /// <p>The <i>not-matches</i> condition is available only for create-filter and update-filter APIs.</p>
+    /// </note>
+    pub fn not_matches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.not_matches.unwrap_or_default();
+        v.push(input.into());
+        self.not_matches = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Represents the <i>not match</i> condition to be applied to a single field when querying for findings.</p><note>
+    /// <p>The <i>not-matches</i> condition is available only for create-filter and update-filter APIs.</p>
+    /// </note>
+    pub fn set_not_matches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.not_matches = input;
+        self
+    }
+    /// <p>Represents the <i>not match</i> condition to be applied to a single field when querying for findings.</p><note>
+    /// <p>The <i>not-matches</i> condition is available only for create-filter and update-filter APIs.</p>
+    /// </note>
+    pub fn get_not_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_matches
+    }
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
     pub fn build(self) -> crate::types::Condition {
         crate::types::Condition {
@@ -349,6 +427,8 @@ impl ConditionBuilder {
             greater_than_or_equal: self.greater_than_or_equal,
             less_than: self.less_than,
             less_than_or_equal: self.less_than_or_equal,
+            matches: self.matches,
+            not_matches: self.not_matches,
         }
     }
 }

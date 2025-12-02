@@ -172,6 +172,9 @@ pub(crate) fn de_get_function_configuration(
                             .transpose()?,
                     );
                 }
+                "DurableConfig" => {
+                    builder = builder.set_durable_config(crate::protocol_serde::shape_durable_config::de_durable_config(tokens)?);
+                }
                 "Environment" => {
                     builder = builder.set_environment(crate::protocol_serde::shape_environment_response::de_environment_response(tokens)?);
                 }

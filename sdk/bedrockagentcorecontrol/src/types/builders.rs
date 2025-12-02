@@ -3,6 +3,34 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_workload_identity_type::WorkloadIdentityTypeBuilder;
 
+pub use crate::types::_cedar_policy::CedarPolicyBuilder;
+
+pub use crate::types::_policy::PolicyBuilder;
+
+pub use crate::types::_policy_generation_asset::PolicyGenerationAssetBuilder;
+
+pub use crate::types::_finding::FindingBuilder;
+
+pub use crate::types::_policy_generation::PolicyGenerationBuilder;
+
+pub use crate::types::_policy_engine::PolicyEngineBuilder;
+
+pub use crate::types::_cloud_watch_logs_input_config::CloudWatchLogsInputConfigBuilder;
+
+pub use crate::types::_rule::RuleBuilder;
+
+pub use crate::types::_session_config::SessionConfigBuilder;
+
+pub use crate::types::_filter::FilterBuilder;
+
+pub use crate::types::_sampling_config::SamplingConfigBuilder;
+
+pub use crate::types::_output_config::OutputConfigBuilder;
+
+pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfigBuilder;
+
+pub use crate::types::_online_evaluation_config_summary::OnlineEvaluationConfigSummaryBuilder;
+
 pub use crate::types::_oauth2_credential_provider_item::Oauth2CredentialProviderItemBuilder;
 
 pub use crate::types::_included_oauth2_provider_config_output::IncludedOauth2ProviderConfigOutputBuilder;
@@ -61,11 +89,19 @@ pub use crate::types::_token_based_trigger::TokenBasedTriggerBuilder;
 
 pub use crate::types::_message_based_trigger::MessageBasedTriggerBuilder;
 
+pub use crate::types::_episodic_reflection_configuration::EpisodicReflectionConfigurationBuilder;
+
+pub use crate::types::_episodic_reflection_override::EpisodicReflectionOverrideBuilder;
+
+pub use crate::types::_episodic_consolidation_override::EpisodicConsolidationOverrideBuilder;
+
 pub use crate::types::_user_preference_consolidation_override::UserPreferenceConsolidationOverrideBuilder;
 
 pub use crate::types::_summary_consolidation_override::SummaryConsolidationOverrideBuilder;
 
 pub use crate::types::_semantic_consolidation_override::SemanticConsolidationOverrideBuilder;
+
+pub use crate::types::_episodic_extraction_override::EpisodicExtractionOverrideBuilder;
 
 pub use crate::types::_user_preference_extraction_override::UserPreferenceExtractionOverrideBuilder;
 
@@ -89,21 +125,33 @@ pub use crate::types::_token_based_trigger_input::TokenBasedTriggerInputBuilder;
 
 pub use crate::types::_message_based_trigger_input::MessageBasedTriggerInputBuilder;
 
+pub use crate::types::_episodic_override_reflection_configuration_input::EpisodicOverrideReflectionConfigurationInputBuilder;
+
+pub use crate::types::_episodic_reflection_configuration_input::EpisodicReflectionConfigurationInputBuilder;
+
+pub use crate::types::_episodic_override_consolidation_configuration_input::EpisodicOverrideConsolidationConfigurationInputBuilder;
+
 pub use crate::types::_user_preference_override_consolidation_configuration_input::UserPreferenceOverrideConsolidationConfigurationInputBuilder;
 
 pub use crate::types::_summary_override_consolidation_configuration_input::SummaryOverrideConsolidationConfigurationInputBuilder;
 
 pub use crate::types::_semantic_override_consolidation_configuration_input::SemanticOverrideConsolidationConfigurationInputBuilder;
 
+pub use crate::types::_episodic_override_extraction_configuration_input::EpisodicOverrideExtractionConfigurationInputBuilder;
+
 pub use crate::types::_user_preference_override_extraction_configuration_input::UserPreferenceOverrideExtractionConfigurationInputBuilder;
 
 pub use crate::types::_semantic_override_extraction_configuration_input::SemanticOverrideExtractionConfigurationInputBuilder;
+
+pub use crate::types::_episodic_memory_strategy_input::EpisodicMemoryStrategyInputBuilder;
 
 pub use crate::types::_custom_memory_strategy_input::CustomMemoryStrategyInputBuilder;
 
 pub use crate::types::_self_managed_configuration_input::SelfManagedConfigurationInputBuilder;
 
 pub use crate::types::_invocation_configuration_input::InvocationConfigurationInputBuilder;
+
+pub use crate::types::_episodic_override_configuration_input::EpisodicOverrideConfigurationInputBuilder;
 
 pub use crate::types::_user_preference_override_configuration_input::UserPreferenceOverrideConfigurationInputBuilder;
 
@@ -125,6 +173,14 @@ pub use crate::types::_gateway_api_key_credential_provider::GatewayApiKeyCredent
 
 pub use crate::types::_o_auth_credential_provider::OAuthCredentialProviderBuilder;
 
+pub use crate::types::_api_gateway_target_configuration::ApiGatewayTargetConfigurationBuilder;
+
+pub use crate::types::_api_gateway_tool_configuration::ApiGatewayToolConfigurationBuilder;
+
+pub use crate::types::_api_gateway_tool_filter::ApiGatewayToolFilterBuilder;
+
+pub use crate::types::_api_gateway_tool_override::ApiGatewayToolOverrideBuilder;
+
 pub use crate::types::_mcp_server_target_configuration::McpServerTargetConfigurationBuilder;
 
 pub use crate::types::_mcp_lambda_target_configuration::McpLambdaTargetConfigurationBuilder;
@@ -141,6 +197,8 @@ pub use crate::types::_target_summary::TargetSummaryBuilder;
 
 pub use crate::types::_workload_identity_details::WorkloadIdentityDetailsBuilder;
 
+pub use crate::types::_gateway_policy_engine_configuration::GatewayPolicyEngineConfigurationBuilder;
+
 pub use crate::types::_gateway_interceptor_configuration::GatewayInterceptorConfigurationBuilder;
 
 pub use crate::types::_interceptor_input_configuration::InterceptorInputConfigurationBuilder;
@@ -149,9 +207,25 @@ pub use crate::types::_lambda_interceptor_configuration::LambdaInterceptorConfig
 
 pub use crate::types::_custom_jwt_authorizer_configuration::CustomJwtAuthorizerConfigurationBuilder;
 
+pub use crate::types::_custom_claim_validation_type::CustomClaimValidationTypeBuilder;
+
+pub use crate::types::_authorizing_claim_match_value_type::AuthorizingClaimMatchValueTypeBuilder;
+
 pub use crate::types::_mcp_gateway_configuration::McpGatewayConfigurationBuilder;
 
 pub use crate::types::_gateway_summary::GatewaySummaryBuilder;
+
+pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfigBuilder;
+
+pub use crate::types::_bedrock_evaluator_model_config::BedrockEvaluatorModelConfigBuilder;
+
+pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
+
+pub use crate::types::_categorical_scale_definition::CategoricalScaleDefinitionBuilder;
+
+pub use crate::types::_numerical_scale_definition::NumericalScaleDefinitionBuilder;
+
+pub use crate::types::_evaluator_summary::EvaluatorSummaryBuilder;
 
 pub use crate::types::_code_interpreter_network_configuration::CodeInterpreterNetworkConfigurationBuilder;
 

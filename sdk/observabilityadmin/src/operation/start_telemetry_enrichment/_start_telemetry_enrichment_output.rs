@@ -5,7 +5,7 @@
 pub struct StartTelemetryEnrichmentOutput {
     /// <p>The status of the resource tags for telemetry feature after the start operation (<code>Running</code>, <code>Stopped</code>, or <code>Impaired</code>).</p>
     pub status: ::std::option::Option<crate::types::TelemetryEnrichmentStatus>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Resource Explorer managed view created for resource tags for telemetry.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resource Explorer managed view created for resource tags for telemetry.</p>
     pub aws_resource_explorer_managed_view_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl StartTelemetryEnrichmentOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::TelemetryEnrichmentStatus> {
         self.status.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Resource Explorer managed view created for resource tags for telemetry.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resource Explorer managed view created for resource tags for telemetry.</p>
     pub fn aws_resource_explorer_managed_view_arn(&self) -> ::std::option::Option<&str> {
         self.aws_resource_explorer_managed_view_arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl StartTelemetryEnrichmentOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TelemetryEnrichmentStatus> {
         &self.status
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Resource Explorer managed view created for resource tags for telemetry.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resource Explorer managed view created for resource tags for telemetry.</p>
     pub fn aws_resource_explorer_managed_view_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_resource_explorer_managed_view_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Resource Explorer managed view created for resource tags for telemetry.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resource Explorer managed view created for resource tags for telemetry.</p>
     pub fn set_aws_resource_explorer_managed_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_resource_explorer_managed_view_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Resource Explorer managed view created for resource tags for telemetry.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Resource Explorer managed view created for resource tags for telemetry.</p>
     pub fn get_aws_resource_explorer_managed_view_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_resource_explorer_managed_view_arn
     }

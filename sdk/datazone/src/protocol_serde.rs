@@ -165,6 +165,8 @@ pub(crate) mod shape_get_asset_type;
 
 pub(crate) mod shape_get_connection;
 
+pub(crate) mod shape_get_data_export_configuration;
+
 pub(crate) mod shape_get_data_product;
 
 pub(crate) mod shape_get_data_source;
@@ -296,6 +298,8 @@ pub(crate) mod shape_post_lineage_event;
 pub(crate) mod shape_post_lineage_event_input;
 
 pub(crate) mod shape_post_time_series_data_points;
+
+pub(crate) mod shape_put_data_export_configuration;
 
 pub(crate) mod shape_put_environment_blueprint_configuration;
 
@@ -458,6 +462,8 @@ pub(crate) mod shape_get_lineage_event_output;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_post_time_series_data_points_input;
+
+pub(crate) mod shape_put_data_export_configuration_input;
 
 pub(crate) mod shape_put_environment_blueprint_configuration_input;
 
@@ -633,6 +639,8 @@ pub(crate) mod shape_domain_unit_summaries;
 
 pub(crate) mod shape_enabled_region_list;
 
+pub(crate) mod shape_encryption_configuration;
+
 pub(crate) mod shape_entity_owners;
 
 pub(crate) mod shape_environment_action_list;
@@ -706,6 +714,10 @@ pub(crate) mod shape_member;
 pub(crate) mod shape_metadata_forms;
 
 pub(crate) mod shape_metadata_generation_run_target;
+
+pub(crate) mod shape_metadata_generation_run_type_stats;
+
+pub(crate) mod shape_metadata_generation_run_types;
 
 pub(crate) mod shape_metadata_generation_runs;
 
@@ -982,6 +994,8 @@ pub(crate) mod shape_listing_revision_input;
 pub(crate) mod shape_metadata_form_enforcement_detail;
 
 pub(crate) mod shape_metadata_generation_run_item;
+
+pub(crate) mod shape_metadata_generation_run_type_stat;
 
 pub(crate) mod shape_mlflow_properties_input;
 

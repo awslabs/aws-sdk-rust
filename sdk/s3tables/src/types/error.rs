@@ -11,6 +11,8 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_bad_request_exception::BadRequestException;
 
+pub use crate::types::error::_method_not_allowed_exception::MethodNotAllowedException;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 mod _access_denied_exception;
@@ -22,6 +24,8 @@ mod _conflict_exception;
 mod _forbidden_exception;
 
 mod _internal_server_error_exception;
+
+mod _method_not_allowed_exception;
 
 mod _not_found_exception;
 

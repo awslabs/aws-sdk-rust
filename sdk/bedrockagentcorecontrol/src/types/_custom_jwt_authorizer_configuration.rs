@@ -10,6 +10,10 @@ pub struct CustomJwtAuthorizerConfiguration {
     pub allowed_audience: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents individual client IDs that are validated in the incoming JWT token validation process.</p>
     pub allowed_clients: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>An array of scopes that are allowed to access the token.</p>
+    pub allowed_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>An array of objects that define a custom claim validation name, value, and operation</p>
+    pub custom_claims: ::std::option::Option<::std::vec::Vec<crate::types::CustomClaimValidationType>>,
 }
 impl CustomJwtAuthorizerConfiguration {
     /// <p>This URL is used to fetch OpenID Connect configuration or authorization server metadata for validating incoming tokens.</p>
@@ -29,6 +33,18 @@ impl CustomJwtAuthorizerConfiguration {
     pub fn allowed_clients(&self) -> &[::std::string::String] {
         self.allowed_clients.as_deref().unwrap_or_default()
     }
+    /// <p>An array of scopes that are allowed to access the token.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_scopes.is_none()`.
+    pub fn allowed_scopes(&self) -> &[::std::string::String] {
+        self.allowed_scopes.as_deref().unwrap_or_default()
+    }
+    /// <p>An array of objects that define a custom claim validation name, value, and operation</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_claims.is_none()`.
+    pub fn custom_claims(&self) -> &[crate::types::CustomClaimValidationType] {
+        self.custom_claims.as_deref().unwrap_or_default()
+    }
 }
 impl CustomJwtAuthorizerConfiguration {
     /// Creates a new builder-style object to manufacture [`CustomJwtAuthorizerConfiguration`](crate::types::CustomJwtAuthorizerConfiguration).
@@ -44,6 +60,8 @@ pub struct CustomJwtAuthorizerConfigurationBuilder {
     pub(crate) discovery_url: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_audience: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_clients: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) custom_claims: ::std::option::Option<::std::vec::Vec<crate::types::CustomClaimValidationType>>,
 }
 impl CustomJwtAuthorizerConfigurationBuilder {
     /// <p>This URL is used to fetch OpenID Connect configuration or authorization server metadata for validating incoming tokens.</p>
@@ -101,6 +119,46 @@ impl CustomJwtAuthorizerConfigurationBuilder {
     pub fn get_allowed_clients(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_clients
     }
+    /// Appends an item to `allowed_scopes`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_scopes`](Self::set_allowed_scopes).
+    ///
+    /// <p>An array of scopes that are allowed to access the token.</p>
+    pub fn allowed_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.allowed_scopes.unwrap_or_default();
+        v.push(input.into());
+        self.allowed_scopes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of scopes that are allowed to access the token.</p>
+    pub fn set_allowed_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allowed_scopes = input;
+        self
+    }
+    /// <p>An array of scopes that are allowed to access the token.</p>
+    pub fn get_allowed_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_scopes
+    }
+    /// Appends an item to `custom_claims`.
+    ///
+    /// To override the contents of this collection use [`set_custom_claims`](Self::set_custom_claims).
+    ///
+    /// <p>An array of objects that define a custom claim validation name, value, and operation</p>
+    pub fn custom_claims(mut self, input: crate::types::CustomClaimValidationType) -> Self {
+        let mut v = self.custom_claims.unwrap_or_default();
+        v.push(input);
+        self.custom_claims = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of objects that define a custom claim validation name, value, and operation</p>
+    pub fn set_custom_claims(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomClaimValidationType>>) -> Self {
+        self.custom_claims = input;
+        self
+    }
+    /// <p>An array of objects that define a custom claim validation name, value, and operation</p>
+    pub fn get_custom_claims(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomClaimValidationType>> {
+        &self.custom_claims
+    }
     /// Consumes the builder and constructs a [`CustomJwtAuthorizerConfiguration`](crate::types::CustomJwtAuthorizerConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`discovery_url`](crate::types::builders::CustomJwtAuthorizerConfigurationBuilder::discovery_url)
@@ -114,6 +172,8 @@ impl CustomJwtAuthorizerConfigurationBuilder {
             })?,
             allowed_audience: self.allowed_audience,
             allowed_clients: self.allowed_clients,
+            allowed_scopes: self.allowed_scopes,
+            custom_claims: self.custom_claims,
         })
     }
 }

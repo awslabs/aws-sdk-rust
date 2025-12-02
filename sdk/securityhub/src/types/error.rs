@@ -23,6 +23,8 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
@@ -42,6 +44,8 @@ mod _resource_conflict_exception;
 mod _resource_in_use_exception;
 
 mod _resource_not_found_exception;
+
+mod _service_quota_exceeded_exception;
 
 mod _throttling_exception;
 

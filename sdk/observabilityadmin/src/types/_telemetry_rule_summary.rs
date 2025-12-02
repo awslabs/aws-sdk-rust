@@ -16,6 +16,8 @@ pub struct TelemetryRuleSummary {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The type of telemetry (Logs, Metrics, or Traces) the rule configures.</p>
     pub telemetry_type: ::std::option::Option<crate::types::TelemetryType>,
+    /// <p>The types of telemetry sources configured for this rule, such as VPC Flow Logs or EKS audit logs. TelemetrySourceTypes must be correlated with the specific resource type.</p>
+    pub telemetry_source_types: ::std::option::Option<::std::vec::Vec<crate::types::TelemetrySourceType>>,
 }
 impl TelemetryRuleSummary {
     /// <p>The name of the telemetry rule.</p>
@@ -42,6 +44,12 @@ impl TelemetryRuleSummary {
     pub fn telemetry_type(&self) -> ::std::option::Option<&crate::types::TelemetryType> {
         self.telemetry_type.as_ref()
     }
+    /// <p>The types of telemetry sources configured for this rule, such as VPC Flow Logs or EKS audit logs. TelemetrySourceTypes must be correlated with the specific resource type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.telemetry_source_types.is_none()`.
+    pub fn telemetry_source_types(&self) -> &[crate::types::TelemetrySourceType] {
+        self.telemetry_source_types.as_deref().unwrap_or_default()
+    }
 }
 impl TelemetryRuleSummary {
     /// Creates a new builder-style object to manufacture [`TelemetryRuleSummary`](crate::types::TelemetryRuleSummary).
@@ -60,6 +68,7 @@ pub struct TelemetryRuleSummaryBuilder {
     pub(crate) last_update_time_stamp: ::std::option::Option<i64>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) telemetry_type: ::std::option::Option<crate::types::TelemetryType>,
+    pub(crate) telemetry_source_types: ::std::option::Option<::std::vec::Vec<crate::types::TelemetrySourceType>>,
 }
 impl TelemetryRuleSummaryBuilder {
     /// <p>The name of the telemetry rule.</p>
@@ -146,6 +155,26 @@ impl TelemetryRuleSummaryBuilder {
     pub fn get_telemetry_type(&self) -> &::std::option::Option<crate::types::TelemetryType> {
         &self.telemetry_type
     }
+    /// Appends an item to `telemetry_source_types`.
+    ///
+    /// To override the contents of this collection use [`set_telemetry_source_types`](Self::set_telemetry_source_types).
+    ///
+    /// <p>The types of telemetry sources configured for this rule, such as VPC Flow Logs or EKS audit logs. TelemetrySourceTypes must be correlated with the specific resource type.</p>
+    pub fn telemetry_source_types(mut self, input: crate::types::TelemetrySourceType) -> Self {
+        let mut v = self.telemetry_source_types.unwrap_or_default();
+        v.push(input);
+        self.telemetry_source_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The types of telemetry sources configured for this rule, such as VPC Flow Logs or EKS audit logs. TelemetrySourceTypes must be correlated with the specific resource type.</p>
+    pub fn set_telemetry_source_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetrySourceType>>) -> Self {
+        self.telemetry_source_types = input;
+        self
+    }
+    /// <p>The types of telemetry sources configured for this rule, such as VPC Flow Logs or EKS audit logs. TelemetrySourceTypes must be correlated with the specific resource type.</p>
+    pub fn get_telemetry_source_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetrySourceType>> {
+        &self.telemetry_source_types
+    }
     /// Consumes the builder and constructs a [`TelemetryRuleSummary`](crate::types::TelemetryRuleSummary).
     pub fn build(self) -> crate::types::TelemetryRuleSummary {
         crate::types::TelemetryRuleSummary {
@@ -155,6 +184,7 @@ impl TelemetryRuleSummaryBuilder {
             last_update_time_stamp: self.last_update_time_stamp,
             resource_type: self.resource_type,
             telemetry_type: self.telemetry_type,
+            telemetry_source_types: self.telemetry_source_types,
         }
     }
 }

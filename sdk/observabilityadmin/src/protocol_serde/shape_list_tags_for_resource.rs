@@ -56,6 +56,13 @@ pub fn de_list_tags_for_resource_http_error(
                         )
                     })?,
                 );
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled(
+                            "Failed to parse retryAfterSeconds from header `Retry-After",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };

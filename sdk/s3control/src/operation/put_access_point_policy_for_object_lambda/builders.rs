@@ -32,9 +32,7 @@ impl crate::operation::put_access_point_policy_for_object_lambda::builders::PutA
 /// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">DeleteAccessPointPolicyForObjectLambda</a></p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">GetAccessPointPolicyForObjectLambda</a></p></li>
-/// </ul><important>
-/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
-/// </important>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAccessPointPolicyForObjectLambdaFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>The callback ID token has either expired or the callback associated with the token has already been closed.</p>
+    CallbackTimeoutException(crate::types::error::CallbackTimeoutException),
     /// <p>The maximum number of capacity providers for your account has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a></p>
     CapacityProviderLimitExceededException(crate::types::error::CapacityProviderLimitExceededException),
     /// <p>The specified code signing configuration does not exist.</p>
@@ -11,6 +13,8 @@ pub enum Error {
     CodeStorageExceededException(crate::types::error::CodeStorageExceededException),
     /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.</p>
     CodeVerificationFailedException(crate::types::error::CodeVerificationFailedException),
+    /// <p>The durable execution with the specified name has already been started. Each durable execution name must be unique within the function. Use a different name or check the status of the existing execution.</p>
+    DurableExecutionAlreadyStartedException(crate::types::error::DurableExecutionAlreadyStartedException),
     /// <p>Need additional permissions to configure VPC settings.</p>
     Ec2AccessDeniedException(crate::types::error::Ec2AccessDeniedException),
     /// <p>Amazon EC2 throttled Lambda during Lambda function initialization using the execution role provided for the function.</p>
@@ -105,10 +109,12 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::CallbackTimeoutException(inner) => inner.fmt(f),
             Error::CapacityProviderLimitExceededException(inner) => inner.fmt(f),
             Error::CodeSigningConfigNotFoundException(inner) => inner.fmt(f),
             Error::CodeStorageExceededException(inner) => inner.fmt(f),
             Error::CodeVerificationFailedException(inner) => inner.fmt(f),
+            Error::DurableExecutionAlreadyStartedException(inner) => inner.fmt(f),
             Error::Ec2AccessDeniedException(inner) => inner.fmt(f),
             Error::Ec2ThrottledException(inner) => inner.fmt(f),
             Error::Ec2UnexpectedException(inner) => inner.fmt(f),
@@ -168,10 +174,12 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::CallbackTimeoutException(inner) => inner.meta(),
             Self::CapacityProviderLimitExceededException(inner) => inner.meta(),
             Self::CodeSigningConfigNotFoundException(inner) => inner.meta(),
             Self::CodeStorageExceededException(inner) => inner.meta(),
             Self::CodeVerificationFailedException(inner) => inner.meta(),
+            Self::DurableExecutionAlreadyStartedException(inner) => inner.meta(),
             Self::Ec2AccessDeniedException(inner) => inner.meta(),
             Self::Ec2ThrottledException(inner) => inner.meta(),
             Self::Ec2UnexpectedException(inner) => inner.meta(),
@@ -284,6 +292,39 @@ impl From<crate::operation::add_permission::AddPermissionError> for Error {
             crate::operation::add_permission::AddPermissionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::add_permission::AddPermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::add_permission::AddPermissionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError> for Error {
+    fn from(err: crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError) -> Self {
+        match err {
+            crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1008,6 +1049,104 @@ impl From<crate::operation::get_code_signing_config::GetCodeSigningConfigError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_durable_execution::GetDurableExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_durable_execution::GetDurableExecutionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_durable_execution::GetDurableExecutionError> for Error {
+    fn from(err: crate::operation::get_durable_execution::GetDurableExecutionError) -> Self {
+        match err {
+            crate::operation::get_durable_execution::GetDurableExecutionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_durable_execution::GetDurableExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_durable_execution::GetDurableExecutionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_durable_execution::GetDurableExecutionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_durable_execution::GetDurableExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError> for Error {
+    fn from(err: crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError) -> Self {
+        match err {
+            crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_durable_execution_history::GetDurableExecutionHistoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_durable_execution_state::GetDurableExecutionStateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_durable_execution_state::GetDurableExecutionStateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_durable_execution_state::GetDurableExecutionStateError> for Error {
+    fn from(err: crate::operation::get_durable_execution_state::GetDurableExecutionStateError) -> Self {
+        match err {
+            crate::operation::get_durable_execution_state::GetDurableExecutionStateError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_durable_execution_state::GetDurableExecutionStateError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_durable_execution_state::GetDurableExecutionStateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_durable_execution_state::GetDurableExecutionStateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_source_mapping::GetEventSourceMappingError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1524,6 +1663,9 @@ where
 impl From<crate::operation::invoke::InvokeError> for Error {
     fn from(err: crate::operation::invoke::InvokeError) -> Self {
         match err {
+            crate::operation::invoke::InvokeError::DurableExecutionAlreadyStartedException(inner) => {
+                Error::DurableExecutionAlreadyStartedException(inner)
+            }
             crate::operation::invoke::InvokeError::Ec2AccessDeniedException(inner) => Error::Ec2AccessDeniedException(inner),
             crate::operation::invoke::InvokeError::Ec2ThrottledException(inner) => Error::Ec2ThrottledException(inner),
             crate::operation::invoke::InvokeError::Ec2UnexpectedException(inner) => Error::Ec2UnexpectedException(inner),
@@ -1784,6 +1926,50 @@ impl From<crate::operation::list_code_signing_configs::ListCodeSigningConfigsErr
             }
             crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_durable_executions_by_function::ListDurableExecutionsByFunctionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_durable_executions_by_function::ListDurableExecutionsByFunctionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_durable_executions_by_function::ListDurableExecutionsByFunctionError> for Error {
+    fn from(err: crate::operation::list_durable_executions_by_function::ListDurableExecutionsByFunctionError) -> Self {
+        match err {
+            crate::operation::list_durable_executions_by_function::ListDurableExecutionsByFunctionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_durable_executions_by_function::ListDurableExecutionsByFunctionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_durable_executions_by_function::ListDurableExecutionsByFunctionError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::list_durable_executions_by_function::ListDurableExecutionsByFunctionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_durable_executions_by_function::ListDurableExecutionsByFunctionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2589,6 +2775,165 @@ impl From<crate::operation::remove_permission::RemovePermissionError> for Error 
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError> for Error {
+    fn from(err: crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError) -> Self {
+        match err {
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::CallbackTimeoutException(inner) => {
+                Error::CallbackTimeoutException(inner)
+            }
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::send_durable_execution_callback_failure::SendDurableExecutionCallbackFailureError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError> for Error {
+    fn from(err: crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError) -> Self {
+        match err {
+            crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError::CallbackTimeoutException(inner) => Error::CallbackTimeoutException(inner),
+            crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::send_durable_execution_callback_heartbeat::SendDurableExecutionCallbackHeartbeatError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError> for Error {
+    fn from(err: crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError) -> Self {
+        match err {
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::CallbackTimeoutException(inner) => {
+                Error::CallbackTimeoutException(inner)
+            }
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::send_durable_execution_callback_success::SendDurableExecutionCallbackSuccessError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_durable_execution::StopDurableExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_durable_execution::StopDurableExecutionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_durable_execution::StopDurableExecutionError> for Error {
+    fn from(err: crate::operation::stop_durable_execution::StopDurableExecutionError) -> Self {
+        match err {
+            crate::operation::stop_durable_execution::StopDurableExecutionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::stop_durable_execution::StopDurableExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_durable_execution::StopDurableExecutionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::stop_durable_execution::StopDurableExecutionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::stop_durable_execution::StopDurableExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2997,10 +3342,12 @@ impl From<crate::types::error::InvokeWithResponseStreamResponseEventError> for E
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::CallbackTimeoutException(inner) => inner.source(),
             Error::CapacityProviderLimitExceededException(inner) => inner.source(),
             Error::CodeSigningConfigNotFoundException(inner) => inner.source(),
             Error::CodeStorageExceededException(inner) => inner.source(),
             Error::CodeVerificationFailedException(inner) => inner.source(),
+            Error::DurableExecutionAlreadyStartedException(inner) => inner.source(),
             Error::Ec2AccessDeniedException(inner) => inner.source(),
             Error::Ec2ThrottledException(inner) => inner.source(),
             Error::Ec2UnexpectedException(inner) => inner.source(),
@@ -3046,10 +3393,12 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::CallbackTimeoutException(e) => e.request_id(),
             Self::CapacityProviderLimitExceededException(e) => e.request_id(),
             Self::CodeSigningConfigNotFoundException(e) => e.request_id(),
             Self::CodeStorageExceededException(e) => e.request_id(),
             Self::CodeVerificationFailedException(e) => e.request_id(),
+            Self::DurableExecutionAlreadyStartedException(e) => e.request_id(),
             Self::Ec2AccessDeniedException(e) => e.request_id(),
             Self::Ec2ThrottledException(e) => e.request_id(),
             Self::Ec2UnexpectedException(e) => e.request_id(),

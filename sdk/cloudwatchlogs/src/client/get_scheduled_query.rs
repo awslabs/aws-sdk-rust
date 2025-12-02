@@ -3,26 +3,26 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetScheduledQuery`](crate::operation::get_scheduled_query::builders::GetScheduledQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_scheduled_query::builders::GetScheduledQueryFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_scheduled_query::builders::GetScheduledQueryFluentBuilder::set_identifier):<br>required: **true**<br><p>The name or ARN of the scheduled query to retrieve.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_scheduled_query::builders::GetScheduledQueryFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_scheduled_query::builders::GetScheduledQueryFluentBuilder::set_identifier):<br>required: **true**<br><p>The ARN or name of the scheduled query to retrieve.</p><br>
     /// - On success, responds with [`GetScheduledQueryOutput`](crate::operation::get_scheduled_query::GetScheduledQueryOutput) with field(s):
-    ///   - [`scheduled_query_arn(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::scheduled_query_arn): <p>The Amazon Resource Name (ARN) of the scheduled query.</p>
+    ///   - [`scheduled_query_arn(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::scheduled_query_arn): <p>The ARN of the scheduled query.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::name): <p>The name of the scheduled query.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::description): <p>The description of the scheduled query.</p>
-    ///   - [`query_language(Option<QueryLanguage>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::query_language): <p>The query language used by the scheduled query (LogsQL, PPL, or SQL).</p>
-    ///   - [`query_string(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::query_string): <p>The CloudWatch Logs Insights query string being executed.</p>
-    ///   - [`log_group_identifiers(Option<Vec::<String>>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::log_group_identifiers): <p>The log group identifiers being queried by the scheduled query.</p>
+    ///   - [`query_language(Option<QueryLanguage>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::query_language): <p>The query language used by the scheduled query.</p>
+    ///   - [`query_string(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::query_string): <p>The query string executed by the scheduled query.</p>
+    ///   - [`log_group_identifiers(Option<Vec::<String>>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::log_group_identifiers): <p>The log groups queried by the scheduled query.</p>
     ///   - [`schedule_expression(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::schedule_expression): <p>The cron expression that defines when the scheduled query runs.</p>
-    ///   - [`timezone(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::timezone): <p>The timezone in which the schedule expression is evaluated.</p>
-    ///   - [`start_time_offset(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::start_time_offset): <p>Time offset in seconds from the execution time for the start of the query time range.</p>
-    ///   - [`destination_configuration(Option<DestinationConfiguration>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::destination_configuration): <p>Configuration for destinations where the query results are delivered.</p>
-    ///   - [`state(Option<ScheduledQueryState>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::state): <p>The current state of the scheduled query (ENABLED or DISABLED).</p>
-    ///   - [`last_triggered_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::last_triggered_time): <p>The time when the scheduled query was last executed, in Unix epoch time.</p>
-    ///   - [`last_execution_status(Option<ExecutionStatus>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::last_execution_status): <p>The status of the last executed query (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
-    ///   - [`schedule_start_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::schedule_start_time): <p>The start time for the query schedule in Unix epoch time.</p>
-    ///   - [`schedule_end_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::schedule_end_time): <p>The end time for the query schedule in Unix epoch time.</p>
-    ///   - [`execution_role_arn(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::execution_role_arn): <p>The ARN of the IAM role used to execute the scheduled query.</p>
-    ///   - [`creation_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::creation_time): <p>The time when the scheduled query was created, in Unix epoch time.</p>
-    ///   - [`last_updated_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::last_updated_time): <p>The time when the scheduled query was last updated, in Unix epoch time.</p>
+    ///   - [`timezone(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::timezone): <p>The timezone used for evaluating the schedule expression.</p>
+    ///   - [`start_time_offset(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::start_time_offset): <p>The time offset in seconds that defines the lookback period for the query.</p>
+    ///   - [`destination_configuration(Option<DestinationConfiguration>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::destination_configuration): <p>Configuration for where query results are delivered.</p>
+    ///   - [`state(Option<ScheduledQueryState>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::state): <p>The current state of the scheduled query.</p>
+    ///   - [`last_triggered_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::last_triggered_time): <p>The timestamp when the scheduled query was last executed.</p>
+    ///   - [`last_execution_status(Option<ExecutionStatus>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::last_execution_status): <p>The status of the most recent execution of the scheduled query.</p>
+    ///   - [`schedule_start_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::schedule_start_time): <p>The start time for the scheduled query in Unix epoch format.</p>
+    ///   - [`schedule_end_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::schedule_end_time): <p>The end time for the scheduled query in Unix epoch format.</p>
+    ///   - [`execution_role_arn(Option<String>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::execution_role_arn): <p>The ARN of the IAM role used to execute the query and deliver results.</p>
+    ///   - [`creation_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::creation_time): <p>The timestamp when the scheduled query was created.</p>
+    ///   - [`last_updated_time(Option<i64>)`](crate::operation::get_scheduled_query::GetScheduledQueryOutput::last_updated_time): <p>The timestamp when the scheduled query was last updated.</p>
     /// - On failure, responds with [`SdkError<GetScheduledQueryError>`](crate::operation::get_scheduled_query::GetScheduledQueryError)
     pub fn get_scheduled_query(&self) -> crate::operation::get_scheduled_query::builders::GetScheduledQueryFluentBuilder {
         crate::operation::get_scheduled_query::builders::GetScheduledQueryFluentBuilder::new(self.handle.clone())

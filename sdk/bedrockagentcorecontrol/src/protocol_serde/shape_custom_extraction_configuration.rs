@@ -44,6 +44,13 @@ where
                                     )
                                 })?,
                         )),
+                        "episodicExtractionOverride" => Some(crate::types::CustomExtractionConfiguration::EpisodicExtractionOverride(
+                            crate::protocol_serde::shape_episodic_extraction_override::de_episodic_extraction_override(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'episodicExtractionOverride' cannot be null",
+                                )
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::CustomExtractionConfiguration::Unknown)

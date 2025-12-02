@@ -53,6 +53,11 @@ where
                                 )?,
                             );
                         }
+                        "OntapConfiguration" => {
+                            builder = builder.set_ontap_configuration(
+                                crate::protocol_serde::shape_s3_access_point_ontap_configuration::de_s3_access_point_ontap_configuration(tokens)?,
+                            );
+                        }
                         "S3AccessPoint" => {
                             builder = builder.set_s3_access_point(crate::protocol_serde::shape_s3_access_point::de_s3_access_point(tokens)?);
                         }

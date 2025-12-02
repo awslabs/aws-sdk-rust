@@ -236,6 +236,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetadata
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }
+                if let ::std::option::Option::Some(inner_6) = &_input.target_identifier {
+                    {
+                        query.push_kv("targetIdentifier", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

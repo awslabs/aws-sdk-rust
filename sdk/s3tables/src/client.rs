@@ -181,7 +181,11 @@ mod delete_table_bucket_metrics_configuration;
 
 mod delete_table_bucket_policy;
 
+mod delete_table_bucket_replication;
+
 mod delete_table_policy;
+
+mod delete_table_replication;
 
 mod get_namespace;
 
@@ -197,6 +201,10 @@ mod get_table_bucket_metrics_configuration;
 
 mod get_table_bucket_policy;
 
+mod get_table_bucket_replication;
+
+mod get_table_bucket_storage_class;
+
 mod get_table_encryption;
 
 mod get_table_maintenance_configuration;
@@ -206,6 +214,16 @@ mod get_table_maintenance_job_status;
 mod get_table_metadata_location;
 
 mod get_table_policy;
+
+mod get_table_record_expiration_configuration;
+
+mod get_table_record_expiration_job_status;
+
+mod get_table_replication;
+
+mod get_table_replication_status;
+
+mod get_table_storage_class;
 
 mod list_namespaces;
 
@@ -223,9 +241,17 @@ mod put_table_bucket_metrics_configuration;
 
 mod put_table_bucket_policy;
 
+mod put_table_bucket_replication;
+
+mod put_table_bucket_storage_class;
+
 mod put_table_maintenance_configuration;
 
 mod put_table_policy;
+
+mod put_table_record_expiration_configuration;
+
+mod put_table_replication;
 
 mod rename_table;
 

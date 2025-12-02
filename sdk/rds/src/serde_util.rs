@@ -8,6 +8,15 @@ pub(crate) fn integration_error_correct_errors(
     builder
 }
 
+pub(crate) fn additional_storage_volume_correct_errors(
+    mut builder: crate::types::builders::AdditionalStorageVolumeBuilder,
+) -> crate::types::builders::AdditionalStorageVolumeBuilder {
+    if builder.volume_name.is_none() {
+        builder.volume_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn supported_engine_lifecycle_correct_errors(
     mut builder: crate::types::builders::SupportedEngineLifecycleBuilder,
 ) -> crate::types::builders::SupportedEngineLifecycleBuilder {

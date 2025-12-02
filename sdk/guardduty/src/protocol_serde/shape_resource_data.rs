@@ -42,6 +42,35 @@ where
                                 tokens,
                             )?);
                         }
+                        "ecsCluster" => {
+                            builder = builder.set_ecs_cluster(crate::protocol_serde::shape_ecs_cluster::de_ecs_cluster(tokens)?);
+                        }
+                        "ecsTask" => {
+                            builder = builder.set_ecs_task(crate::protocol_serde::shape_ecs_task::de_ecs_task(tokens)?);
+                        }
+                        "iamInstanceProfile" => {
+                            builder = builder
+                                .set_iam_instance_profile(crate::protocol_serde::shape_iam_instance_profile_v2::de_iam_instance_profile_v2(tokens)?);
+                        }
+                        "autoscalingAutoScalingGroup" => {
+                            builder = builder.set_autoscaling_auto_scaling_group(
+                                crate::protocol_serde::shape_autoscaling_auto_scaling_group::de_autoscaling_auto_scaling_group(tokens)?,
+                            );
+                        }
+                        "ec2LaunchTemplate" => {
+                            builder =
+                                builder.set_ec2_launch_template(crate::protocol_serde::shape_ec2_launch_template::de_ec2_launch_template(tokens)?);
+                        }
+                        "ec2Vpc" => {
+                            builder = builder.set_ec2_vpc(crate::protocol_serde::shape_ec2_vpc::de_ec2_vpc(tokens)?);
+                        }
+                        "ec2Image" => {
+                            builder = builder.set_ec2_image(crate::protocol_serde::shape_ec2_image::de_ec2_image(tokens)?);
+                        }
+                        "cloudformationStack" => {
+                            builder =
+                                builder.set_cloudformation_stack(crate::protocol_serde::shape_cloudformation_stack::de_cloudformation_stack(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -13,6 +13,7 @@
 /// # let currencycode = unimplemented!();
 /// match currencycode {
 ///     CurrencyCode::Cny => { /* ... */ },
+///     CurrencyCode::Eur => { /* ... */ },
 ///     CurrencyCode::Usd => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum CurrencyCode {
     #[allow(missing_docs)] // documentation missing in model
     Cny,
     #[allow(missing_docs)] // documentation missing in model
+    Eur,
+    #[allow(missing_docs)] // documentation missing in model
     Usd,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for CurrencyCode {
     fn from(s: &str) -> Self {
         match s {
             "CNY" => CurrencyCode::Cny,
+            "EUR" => CurrencyCode::Eur,
             "USD" => CurrencyCode::Usd,
             other => CurrencyCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl CurrencyCode {
     pub fn as_str(&self) -> &str {
         match self {
             CurrencyCode::Cny => "CNY",
+            CurrencyCode::Eur => "EUR",
             CurrencyCode::Usd => "USD",
             CurrencyCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CNY", "USD"]
+        &["CNY", "EUR", "USD"]
     }
 }
 impl ::std::convert::AsRef<str> for CurrencyCode {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for CurrencyCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CurrencyCode::Cny => write!(f, "CNY"),
+            CurrencyCode::Eur => write!(f, "EUR"),
             CurrencyCode::Usd => write!(f, "USD"),
             CurrencyCode::Unknown(value) => write!(f, "{value}"),
         }

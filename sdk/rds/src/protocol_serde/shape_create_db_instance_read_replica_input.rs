@@ -291,6 +291,17 @@ pub fn ser_create_db_instance_read_replica_input_input_input(
     if let Some(var_109) = &input.ca_certificate_identifier {
         scope_108.string(var_109);
     }
+    #[allow(unused_mut)]
+    let mut scope_110 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_111) = &input.additional_storage_volumes {
+        let mut list_113 = scope_110.start_list(false, None);
+        for item_112 in var_111 {
+            #[allow(unused_mut)]
+            let mut entry_114 = list_113.entry();
+            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_114, item_112)?;
+        }
+        list_113.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -8,6 +8,8 @@ pub struct AimlOptionsInput {
     pub natural_language_query_generation_options: ::std::option::Option<crate::types::NaturalLanguageQueryGenerationOptionsInput>,
     /// <p>Container for parameters required to enable S3 vectors engine features on the specified domain.</p>
     pub s3_vectors_engine: ::std::option::Option<crate::types::S3VectorsEngine>,
+    /// <p>Specifies whether to enable serverless vector acceleration for the domain. When enabled, provides <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/gpu-acceleration-vector-index.html">GPU-accelerated</a> vector search capabilities for improved performance on vector workloads.</p>
+    pub serverless_vector_acceleration: ::std::option::Option<crate::types::ServerlessVectorAcceleration>,
 }
 impl AimlOptionsInput {
     /// <p>Container for parameters required for natural language query generation on the specified domain.</p>
@@ -17,6 +19,10 @@ impl AimlOptionsInput {
     /// <p>Container for parameters required to enable S3 vectors engine features on the specified domain.</p>
     pub fn s3_vectors_engine(&self) -> ::std::option::Option<&crate::types::S3VectorsEngine> {
         self.s3_vectors_engine.as_ref()
+    }
+    /// <p>Specifies whether to enable serverless vector acceleration for the domain. When enabled, provides <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/gpu-acceleration-vector-index.html">GPU-accelerated</a> vector search capabilities for improved performance on vector workloads.</p>
+    pub fn serverless_vector_acceleration(&self) -> ::std::option::Option<&crate::types::ServerlessVectorAcceleration> {
+        self.serverless_vector_acceleration.as_ref()
     }
 }
 impl AimlOptionsInput {
@@ -32,6 +38,7 @@ impl AimlOptionsInput {
 pub struct AimlOptionsInputBuilder {
     pub(crate) natural_language_query_generation_options: ::std::option::Option<crate::types::NaturalLanguageQueryGenerationOptionsInput>,
     pub(crate) s3_vectors_engine: ::std::option::Option<crate::types::S3VectorsEngine>,
+    pub(crate) serverless_vector_acceleration: ::std::option::Option<crate::types::ServerlessVectorAcceleration>,
 }
 impl AimlOptionsInputBuilder {
     /// <p>Container for parameters required for natural language query generation on the specified domain.</p>
@@ -65,11 +72,26 @@ impl AimlOptionsInputBuilder {
     pub fn get_s3_vectors_engine(&self) -> &::std::option::Option<crate::types::S3VectorsEngine> {
         &self.s3_vectors_engine
     }
+    /// <p>Specifies whether to enable serverless vector acceleration for the domain. When enabled, provides <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/gpu-acceleration-vector-index.html">GPU-accelerated</a> vector search capabilities for improved performance on vector workloads.</p>
+    pub fn serverless_vector_acceleration(mut self, input: crate::types::ServerlessVectorAcceleration) -> Self {
+        self.serverless_vector_acceleration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable serverless vector acceleration for the domain. When enabled, provides <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/gpu-acceleration-vector-index.html">GPU-accelerated</a> vector search capabilities for improved performance on vector workloads.</p>
+    pub fn set_serverless_vector_acceleration(mut self, input: ::std::option::Option<crate::types::ServerlessVectorAcceleration>) -> Self {
+        self.serverless_vector_acceleration = input;
+        self
+    }
+    /// <p>Specifies whether to enable serverless vector acceleration for the domain. When enabled, provides <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/gpu-acceleration-vector-index.html">GPU-accelerated</a> vector search capabilities for improved performance on vector workloads.</p>
+    pub fn get_serverless_vector_acceleration(&self) -> &::std::option::Option<crate::types::ServerlessVectorAcceleration> {
+        &self.serverless_vector_acceleration
+    }
     /// Consumes the builder and constructs a [`AimlOptionsInput`](crate::types::AimlOptionsInput).
     pub fn build(self) -> crate::types::AimlOptionsInput {
         crate::types::AimlOptionsInput {
             natural_language_query_generation_options: self.natural_language_query_generation_options,
             s3_vectors_engine: self.s3_vectors_engine,
+            serverless_vector_acceleration: self.serverless_vector_acceleration,
         }
     }
 }

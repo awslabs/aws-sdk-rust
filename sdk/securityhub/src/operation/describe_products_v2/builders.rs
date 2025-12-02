@@ -22,7 +22,7 @@ impl crate::operation::describe_products_v2::builders::DescribeProductsV2InputBu
 }
 /// Fluent builder constructing a request to `DescribeProductsV2`.
 ///
-/// <p>Gets information about the product integration. This API is in public preview and subject to change.</p>
+/// <p>Gets information about the product integration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeProductsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

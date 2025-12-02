@@ -22,6 +22,9 @@ pub mod delete_event;
 /// Types for the `DeleteMemoryRecord` operation.
 pub mod delete_memory_record;
 
+/// Types for the `Evaluate` operation.
+pub mod evaluate;
+
 /// Types for the `GetAgentCard` operation.
 pub mod get_agent_card;
 

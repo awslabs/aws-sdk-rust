@@ -23,6 +23,8 @@ pub struct UpdateGatewayInput {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated interceptor configurations for the gateway.</p>
     pub interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
+    /// <p>The updated policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.</p>
+    pub policy_engine_configuration: ::std::option::Option<crate::types::GatewayPolicyEngineConfiguration>,
     /// <p>The level of detail in error messages returned when invoking the gateway.</p>
     /// <ul>
     /// <li>
@@ -75,6 +77,10 @@ impl UpdateGatewayInput {
     pub fn interceptor_configurations(&self) -> &[crate::types::GatewayInterceptorConfiguration] {
         self.interceptor_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The updated policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.</p>
+    pub fn policy_engine_configuration(&self) -> ::std::option::Option<&crate::types::GatewayPolicyEngineConfiguration> {
+        self.policy_engine_configuration.as_ref()
+    }
     /// <p>The level of detail in error messages returned when invoking the gateway.</p>
     /// <ul>
     /// <li>
@@ -99,6 +105,7 @@ impl ::std::fmt::Debug for UpdateGatewayInput {
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("interceptor_configurations", &self.interceptor_configurations);
+        formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("exception_level", &self.exception_level);
         formatter.finish()
     }
@@ -124,6 +131,7 @@ pub struct UpdateGatewayInputBuilder {
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
+    pub(crate) policy_engine_configuration: ::std::option::Option<crate::types::GatewayPolicyEngineConfiguration>,
     pub(crate) exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
 }
 impl UpdateGatewayInputBuilder {
@@ -281,6 +289,20 @@ impl UpdateGatewayInputBuilder {
     pub fn get_interceptor_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>> {
         &self.interceptor_configurations
     }
+    /// <p>The updated policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.</p>
+    pub fn policy_engine_configuration(mut self, input: crate::types::GatewayPolicyEngineConfiguration) -> Self {
+        self.policy_engine_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.</p>
+    pub fn set_policy_engine_configuration(mut self, input: ::std::option::Option<crate::types::GatewayPolicyEngineConfiguration>) -> Self {
+        self.policy_engine_configuration = input;
+        self
+    }
+    /// <p>The updated policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.</p>
+    pub fn get_policy_engine_configuration(&self) -> &::std::option::Option<crate::types::GatewayPolicyEngineConfiguration> {
+        &self.policy_engine_configuration
+    }
     /// <p>The level of detail in error messages returned when invoking the gateway.</p>
     /// <ul>
     /// <li>
@@ -328,6 +350,7 @@ impl UpdateGatewayInputBuilder {
             authorizer_configuration: self.authorizer_configuration,
             kms_key_arn: self.kms_key_arn,
             interceptor_configurations: self.interceptor_configurations,
+            policy_engine_configuration: self.policy_engine_configuration,
             exception_level: self.exception_level,
         })
     }
@@ -345,6 +368,7 @@ impl ::std::fmt::Debug for UpdateGatewayInputBuilder {
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("interceptor_configurations", &self.interceptor_configurations);
+        formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("exception_level", &self.exception_level);
         formatter.finish()
     }

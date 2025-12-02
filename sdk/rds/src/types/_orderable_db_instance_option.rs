@@ -83,6 +83,10 @@ pub struct OrderableDbInstanceOption {
     pub supports_dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
     pub supports_http_endpoint: ::std::option::Option<bool>,
+    /// <p>Indicates whether the DB instance class supports additional storage volumes.</p>
+    pub supports_additional_storage_volumes: ::std::option::Option<bool>,
+    /// <p>The available options for additional storage volumes for the DB instance class.</p>
+    pub available_additional_storage_volumes_options: ::std::option::Option<::std::vec::Vec<crate::types::AvailableAdditionalStorageVolumesOption>>,
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of a DB instance.</p>
@@ -247,6 +251,16 @@ impl OrderableDbInstanceOption {
     pub fn supports_http_endpoint(&self) -> ::std::option::Option<bool> {
         self.supports_http_endpoint
     }
+    /// <p>Indicates whether the DB instance class supports additional storage volumes.</p>
+    pub fn supports_additional_storage_volumes(&self) -> ::std::option::Option<bool> {
+        self.supports_additional_storage_volumes
+    }
+    /// <p>The available options for additional storage volumes for the DB instance class.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_additional_storage_volumes_options.is_none()`.
+    pub fn available_additional_storage_volumes_options(&self) -> &[crate::types::AvailableAdditionalStorageVolumesOption] {
+        self.available_additional_storage_volumes_options.as_deref().unwrap_or_default()
+    }
 }
 impl OrderableDbInstanceOption {
     /// Creates a new builder-style object to manufacture [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
@@ -296,6 +310,9 @@ pub struct OrderableDbInstanceOptionBuilder {
     pub(crate) supports_clusters: ::std::option::Option<bool>,
     pub(crate) supports_dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) supports_http_endpoint: ::std::option::Option<bool>,
+    pub(crate) supports_additional_storage_volumes: ::std::option::Option<bool>,
+    pub(crate) available_additional_storage_volumes_options:
+        ::std::option::Option<::std::vec::Vec<crate::types::AvailableAdditionalStorageVolumesOption>>,
 }
 impl OrderableDbInstanceOptionBuilder {
     /// <p>The engine type of a DB instance.</p>
@@ -861,6 +878,45 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supports_http_endpoint(&self) -> &::std::option::Option<bool> {
         &self.supports_http_endpoint
     }
+    /// <p>Indicates whether the DB instance class supports additional storage volumes.</p>
+    pub fn supports_additional_storage_volumes(mut self, input: bool) -> Self {
+        self.supports_additional_storage_volumes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance class supports additional storage volumes.</p>
+    pub fn set_supports_additional_storage_volumes(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_additional_storage_volumes = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance class supports additional storage volumes.</p>
+    pub fn get_supports_additional_storage_volumes(&self) -> &::std::option::Option<bool> {
+        &self.supports_additional_storage_volumes
+    }
+    /// Appends an item to `available_additional_storage_volumes_options`.
+    ///
+    /// To override the contents of this collection use [`set_available_additional_storage_volumes_options`](Self::set_available_additional_storage_volumes_options).
+    ///
+    /// <p>The available options for additional storage volumes for the DB instance class.</p>
+    pub fn available_additional_storage_volumes_options(mut self, input: crate::types::AvailableAdditionalStorageVolumesOption) -> Self {
+        let mut v = self.available_additional_storage_volumes_options.unwrap_or_default();
+        v.push(input);
+        self.available_additional_storage_volumes_options = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The available options for additional storage volumes for the DB instance class.</p>
+    pub fn set_available_additional_storage_volumes_options(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailableAdditionalStorageVolumesOption>>,
+    ) -> Self {
+        self.available_additional_storage_volumes_options = input;
+        self
+    }
+    /// <p>The available options for additional storage volumes for the DB instance class.</p>
+    pub fn get_available_additional_storage_volumes_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailableAdditionalStorageVolumesOption>> {
+        &self.available_additional_storage_volumes_options
+    }
     /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
     pub fn build(self) -> crate::types::OrderableDbInstanceOption {
         crate::types::OrderableDbInstanceOption {
@@ -901,6 +957,8 @@ impl OrderableDbInstanceOptionBuilder {
             supports_clusters: self.supports_clusters,
             supports_dedicated_log_volume: self.supports_dedicated_log_volume,
             supports_http_endpoint: self.supports_http_endpoint,
+            supports_additional_storage_volumes: self.supports_additional_storage_volumes,
+            available_additional_storage_volumes_options: self.available_additional_storage_volumes_options,
         }
     }
 }

@@ -87,6 +87,24 @@ pub fn ser_condition(
             ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
+    if let Some(var_21) = &input.matches {
+        let mut array_22 = object.key("matches").start_array();
+        for item_23 in var_21 {
+            {
+                array_22.value().string(item_23.as_str());
+            }
+        }
+        array_22.finish();
+    }
+    if let Some(var_24) = &input.not_matches {
+        let mut array_25 = object.key("notMatches").start_array();
+        for item_26 in var_24 {
+            {
+                array_25.value().string(item_26.as_str());
+            }
+        }
+        array_25.finish();
+    }
     Ok(())
 }
 
@@ -172,6 +190,12 @@ where
                                     .map(i64::try_from)
                                     .transpose()?,
                             );
+                        }
+                        "matches" => {
+                            builder = builder.set_matches(crate::protocol_serde::shape_matches::de_matches(tokens)?);
+                        }
+                        "notMatches" => {
+                            builder = builder.set_not_matches(crate::protocol_serde::shape_not_matches::de_not_matches(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

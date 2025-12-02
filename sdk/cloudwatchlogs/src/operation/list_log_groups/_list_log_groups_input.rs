@@ -26,6 +26,10 @@ pub struct ListLogGroupsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of log groups to return. If you omit this parameter, the default is up to 50 log groups.</p>
     pub limit: ::std::option::Option<i32>,
+    /// <p>An array of data source filters to filter log groups by their associated data sources. You can filter by data source name, type, or both. Multiple filters within the same dimension are combined with OR logic, while filters across different dimensions are combined with AND logic.</p>
+    pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceFilter>>,
+    /// <p>An array of field index names to filter log groups that have specific field indexes. Only log groups containing all specified field indexes are returned. You can specify 1 to 20 field index names, each with 1 to 512 characters.</p>
+    pub field_index_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListLogGroupsInput {
     /// <p>Use this parameter to limit the returned log groups to only those with names that match the pattern that you specify. This parameter is a regular expression that can match prefixes and substrings, and supports wildcard matching and matching multiple patterns, as in the following examples.</p>
@@ -65,6 +69,18 @@ impl ListLogGroupsInput {
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
+    /// <p>An array of data source filters to filter log groups by their associated data sources. You can filter by data source name, type, or both. Multiple filters within the same dimension are combined with OR logic, while filters across different dimensions are combined with AND logic.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
+    pub fn data_sources(&self) -> &[crate::types::DataSourceFilter] {
+        self.data_sources.as_deref().unwrap_or_default()
+    }
+    /// <p>An array of field index names to filter log groups that have specific field indexes. Only log groups containing all specified field indexes are returned. You can specify 1 to 20 field index names, each with 1 to 512 characters.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_index_names.is_none()`.
+    pub fn field_index_names(&self) -> &[::std::string::String] {
+        self.field_index_names.as_deref().unwrap_or_default()
+    }
 }
 impl ListLogGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListLogGroupsInput`](crate::operation::list_log_groups::ListLogGroupsInput).
@@ -83,6 +99,8 @@ pub struct ListLogGroupsInputBuilder {
     pub(crate) account_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceFilter>>,
+    pub(crate) field_index_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListLogGroupsInputBuilder {
     /// <p>Use this parameter to limit the returned log groups to only those with names that match the pattern that you specify. This parameter is a regular expression that can match prefixes and substrings, and supports wildcard matching and matching multiple patterns, as in the following examples.</p>
@@ -208,6 +226,46 @@ impl ListLogGroupsInputBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
+    /// Appends an item to `data_sources`.
+    ///
+    /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
+    ///
+    /// <p>An array of data source filters to filter log groups by their associated data sources. You can filter by data source name, type, or both. Multiple filters within the same dimension are combined with OR logic, while filters across different dimensions are combined with AND logic.</p>
+    pub fn data_sources(mut self, input: crate::types::DataSourceFilter) -> Self {
+        let mut v = self.data_sources.unwrap_or_default();
+        v.push(input);
+        self.data_sources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of data source filters to filter log groups by their associated data sources. You can filter by data source name, type, or both. Multiple filters within the same dimension are combined with OR logic, while filters across different dimensions are combined with AND logic.</p>
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceFilter>>) -> Self {
+        self.data_sources = input;
+        self
+    }
+    /// <p>An array of data source filters to filter log groups by their associated data sources. You can filter by data source name, type, or both. Multiple filters within the same dimension are combined with OR logic, while filters across different dimensions are combined with AND logic.</p>
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceFilter>> {
+        &self.data_sources
+    }
+    /// Appends an item to `field_index_names`.
+    ///
+    /// To override the contents of this collection use [`set_field_index_names`](Self::set_field_index_names).
+    ///
+    /// <p>An array of field index names to filter log groups that have specific field indexes. Only log groups containing all specified field indexes are returned. You can specify 1 to 20 field index names, each with 1 to 512 characters.</p>
+    pub fn field_index_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.field_index_names.unwrap_or_default();
+        v.push(input.into());
+        self.field_index_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of field index names to filter log groups that have specific field indexes. Only log groups containing all specified field indexes are returned. You can specify 1 to 20 field index names, each with 1 to 512 characters.</p>
+    pub fn set_field_index_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.field_index_names = input;
+        self
+    }
+    /// <p>An array of field index names to filter log groups that have specific field indexes. Only log groups containing all specified field indexes are returned. You can specify 1 to 20 field index names, each with 1 to 512 characters.</p>
+    pub fn get_field_index_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.field_index_names
+    }
     /// Consumes the builder and constructs a [`ListLogGroupsInput`](crate::operation::list_log_groups::ListLogGroupsInput).
     pub fn build(
         self,
@@ -219,6 +277,8 @@ impl ListLogGroupsInputBuilder {
             account_identifiers: self.account_identifiers,
             next_token: self.next_token,
             limit: self.limit,
+            data_sources: self.data_sources,
+            field_index_names: self.field_index_names,
         })
     }
 }

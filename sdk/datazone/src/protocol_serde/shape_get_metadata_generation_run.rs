@@ -199,6 +199,15 @@ pub(crate) fn de_get_metadata_generation_run(
                             .transpose()?,
                     );
                 }
+                "typeStats" => {
+                    builder = builder.set_type_stats(
+                        crate::protocol_serde::shape_metadata_generation_run_type_stats::de_metadata_generation_run_type_stats(tokens)?,
+                    );
+                }
+                "types" => {
+                    builder =
+                        builder.set_types(crate::protocol_serde::shape_metadata_generation_run_types::de_metadata_generation_run_types(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

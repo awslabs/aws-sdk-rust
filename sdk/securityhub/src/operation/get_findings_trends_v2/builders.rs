@@ -22,7 +22,7 @@ impl crate::operation::get_findings_trends_v2::builders::GetFindingsTrendsV2Inpu
 }
 /// Fluent builder constructing a request to `GetFindingsTrendsV2`.
 ///
-/// <p>Returns findings trend data based on the specified criteria. This operation helps you analyze patterns and changes in findings over time. This API is in public preview and subject to change.</p>
+/// <p>Returns findings trend data based on the specified criteria. This operation helps you analyze patterns and changes in findings over time.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingsTrendsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -40,7 +40,7 @@ pub struct SavingsPlan {
     pub term_duration_in_seconds: i64,
     /// <p>One or more tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plan start time.</p>
+    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plans start time.</p>
     pub returnable_until: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlan {
@@ -118,7 +118,7 @@ impl SavingsPlan {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plan start time.</p>
+    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plans start time.</p>
     pub fn returnable_until(&self) -> ::std::option::Option<&str> {
         self.returnable_until.as_deref()
     }
@@ -419,17 +419,17 @@ impl SavingsPlanBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plan start time.</p>
+    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plans start time.</p>
     pub fn returnable_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.returnable_until = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plan start time.</p>
+    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plans start time.</p>
     pub fn set_returnable_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.returnable_until = input;
         self
     }
-    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plan start time.</p>
+    /// <p>The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the field reflects the Savings Plans start time.</p>
     pub fn get_returnable_until(&self) -> &::std::option::Option<::std::string::String> {
         &self.returnable_until
     }

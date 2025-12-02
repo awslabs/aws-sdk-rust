@@ -22,7 +22,7 @@ impl crate::operation::describe_security_hub_v2::builders::DescribeSecurityHubV2
 }
 /// Fluent builder constructing a request to `DescribeSecurityHubV2`.
 ///
-/// <p>Returns details about the service resource in your account. This API is in public preview and subject to change.</p>
+/// <p>Returns details about the service resource in your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSecurityHubV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

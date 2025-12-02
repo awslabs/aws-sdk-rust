@@ -11,6 +11,8 @@ pub struct CreateAndAttachS3AccessPointInput {
     pub r#type: ::std::option::Option<crate::types::S3AccessPointAttachmentType>,
     /// <p>Specifies the configuration to use when creating and attaching an S3 access point to an FSx for OpenZFS volume.</p>
     pub open_zfs_configuration: ::std::option::Option<crate::types::CreateAndAttachS3AccessPointOpenZfsConfiguration>,
+    /// <p>Specifies the FSx for ONTAP volume that the S3 access point will be attached to, and the file system user identity.</p>
+    pub ontap_configuration: ::std::option::Option<crate::types::CreateAndAttachS3AccessPointOntapConfiguration>,
     /// <p>Specifies the virtual private cloud (VPC) configuration if you're creating an access point that is restricted to a VPC. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-vpc.html">Creating access points restricted to a virtual private cloud</a>.</p>
     pub s3_access_point: ::std::option::Option<crate::types::CreateAndAttachS3AccessPointS3Configuration>,
 }
@@ -30,6 +32,10 @@ impl CreateAndAttachS3AccessPointInput {
     /// <p>Specifies the configuration to use when creating and attaching an S3 access point to an FSx for OpenZFS volume.</p>
     pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::CreateAndAttachS3AccessPointOpenZfsConfiguration> {
         self.open_zfs_configuration.as_ref()
+    }
+    /// <p>Specifies the FSx for ONTAP volume that the S3 access point will be attached to, and the file system user identity.</p>
+    pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::CreateAndAttachS3AccessPointOntapConfiguration> {
+        self.ontap_configuration.as_ref()
     }
     /// <p>Specifies the virtual private cloud (VPC) configuration if you're creating an access point that is restricted to a VPC. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-vpc.html">Creating access points restricted to a virtual private cloud</a>.</p>
     pub fn s3_access_point(&self) -> ::std::option::Option<&crate::types::CreateAndAttachS3AccessPointS3Configuration> {
@@ -51,6 +57,7 @@ pub struct CreateAndAttachS3AccessPointInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::S3AccessPointAttachmentType>,
     pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::CreateAndAttachS3AccessPointOpenZfsConfiguration>,
+    pub(crate) ontap_configuration: ::std::option::Option<crate::types::CreateAndAttachS3AccessPointOntapConfiguration>,
     pub(crate) s3_access_point: ::std::option::Option<crate::types::CreateAndAttachS3AccessPointS3Configuration>,
 }
 impl CreateAndAttachS3AccessPointInputBuilder {
@@ -115,6 +122,20 @@ impl CreateAndAttachS3AccessPointInputBuilder {
     pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::CreateAndAttachS3AccessPointOpenZfsConfiguration> {
         &self.open_zfs_configuration
     }
+    /// <p>Specifies the FSx for ONTAP volume that the S3 access point will be attached to, and the file system user identity.</p>
+    pub fn ontap_configuration(mut self, input: crate::types::CreateAndAttachS3AccessPointOntapConfiguration) -> Self {
+        self.ontap_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the FSx for ONTAP volume that the S3 access point will be attached to, and the file system user identity.</p>
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::CreateAndAttachS3AccessPointOntapConfiguration>) -> Self {
+        self.ontap_configuration = input;
+        self
+    }
+    /// <p>Specifies the FSx for ONTAP volume that the S3 access point will be attached to, and the file system user identity.</p>
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::CreateAndAttachS3AccessPointOntapConfiguration> {
+        &self.ontap_configuration
+    }
     /// <p>Specifies the virtual private cloud (VPC) configuration if you're creating an access point that is restricted to a VPC. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-vpc.html">Creating access points restricted to a virtual private cloud</a>.</p>
     pub fn s3_access_point(mut self, input: crate::types::CreateAndAttachS3AccessPointS3Configuration) -> Self {
         self.s3_access_point = ::std::option::Option::Some(input);
@@ -141,6 +162,7 @@ impl CreateAndAttachS3AccessPointInputBuilder {
             name: self.name,
             r#type: self.r#type,
             open_zfs_configuration: self.open_zfs_configuration,
+            ontap_configuration: self.ontap_configuration,
             s3_access_point: self.s3_access_point,
         })
     }

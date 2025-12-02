@@ -27,11 +27,9 @@ pub use crate::types::_storage_lens_configuration::StorageLensConfiguration;
 
 pub use crate::types::_storage_lens_aws_org::StorageLensAwsOrg;
 
-pub use crate::types::_storage_lens_data_export::StorageLensDataExport;
+pub use crate::types::_storage_lens_expanded_prefixes_data_export::StorageLensExpandedPrefixesDataExport;
 
-pub use crate::types::_cloud_watch_metrics::CloudWatchMetrics;
-
-pub use crate::types::_s3_bucket_destination::S3BucketDestination;
+pub use crate::types::_storage_lens_table_destination::StorageLensTableDestination;
 
 pub use crate::types::_storage_lens_data_export_encryption::StorageLensDataExportEncryption;
 
@@ -39,9 +37,15 @@ pub use crate::types::_ssekms::Ssekms;
 
 pub use crate::types::_sses3::Sses3;
 
+pub use crate::types::_s3_bucket_destination::S3BucketDestination;
+
 pub use crate::types::_output_schema_version::OutputSchemaVersion;
 
 pub use crate::types::_format::Format;
+
+pub use crate::types::_storage_lens_data_export::StorageLensDataExport;
+
+pub use crate::types::_cloud_watch_metrics::CloudWatchMetrics;
 
 pub use crate::types::_exclude::Exclude;
 
@@ -52,6 +56,8 @@ pub use crate::types::_account_level::AccountLevel;
 pub use crate::types::_storage_lens_group_level::StorageLensGroupLevel;
 
 pub use crate::types::_storage_lens_group_level_selection_criteria::StorageLensGroupLevelSelectionCriteria;
+
+pub use crate::types::_advanced_performance_metrics::AdvancedPerformanceMetrics;
 
 pub use crate::types::_detailed_status_codes_metrics::DetailedStatusCodesMetrics;
 
@@ -391,6 +397,8 @@ mod _advanced_cost_optimization_metrics;
 
 mod _advanced_data_protection_metrics;
 
+mod _advanced_performance_metrics;
+
 mod _async_error_details;
 
 mod _async_operation;
@@ -725,6 +733,8 @@ mod _storage_lens_data_export;
 
 mod _storage_lens_data_export_encryption;
 
+mod _storage_lens_expanded_prefixes_data_export;
+
 mod _storage_lens_group;
 
 mod _storage_lens_group_and_operator;
@@ -736,6 +746,8 @@ mod _storage_lens_group_level;
 mod _storage_lens_group_level_selection_criteria;
 
 mod _storage_lens_group_or_operator;
+
+mod _storage_lens_table_destination;
 
 mod _storage_lens_tag;
 

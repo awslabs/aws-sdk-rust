@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteScheduledQueryInput {
-    /// <p>The name or ARN of the scheduled query to delete.</p>
+    /// <p>The ARN or name of the scheduled query to delete.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteScheduledQueryInput {
-    /// <p>The name or ARN of the scheduled query to delete.</p>
+    /// <p>The ARN or name of the scheduled query to delete.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteScheduledQueryInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteScheduledQueryInputBuilder {
-    /// <p>The name or ARN of the scheduled query to delete.</p>
+    /// <p>The ARN or name of the scheduled query to delete.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or ARN of the scheduled query to delete.</p>
+    /// <p>The ARN or name of the scheduled query to delete.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p>The name or ARN of the scheduled query to delete.</p>
+    /// <p>The ARN or name of the scheduled query to delete.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }

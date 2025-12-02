@@ -10,6 +10,8 @@ pub struct StorageLensDataExport {
     pub s3_bucket_destination: ::std::option::Option<crate::types::S3BucketDestination>,
     /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
     pub cloud_watch_metrics: ::std::option::Option<crate::types::CloudWatchMetrics>,
+    /// <p>A container for configuring S3 Storage Lens data exports to read-only S3 table buckets.</p>
+    pub storage_lens_table_destination: ::std::option::Option<crate::types::StorageLensTableDestination>,
 }
 impl StorageLensDataExport {
     /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p><note>
@@ -21,6 +23,10 @@ impl StorageLensDataExport {
     /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p>
     pub fn cloud_watch_metrics(&self) -> ::std::option::Option<&crate::types::CloudWatchMetrics> {
         self.cloud_watch_metrics.as_ref()
+    }
+    /// <p>A container for configuring S3 Storage Lens data exports to read-only S3 table buckets.</p>
+    pub fn storage_lens_table_destination(&self) -> ::std::option::Option<&crate::types::StorageLensTableDestination> {
+        self.storage_lens_table_destination.as_ref()
     }
 }
 impl StorageLensDataExport {
@@ -36,6 +42,7 @@ impl StorageLensDataExport {
 pub struct StorageLensDataExportBuilder {
     pub(crate) s3_bucket_destination: ::std::option::Option<crate::types::S3BucketDestination>,
     pub(crate) cloud_watch_metrics: ::std::option::Option<crate::types::CloudWatchMetrics>,
+    pub(crate) storage_lens_table_destination: ::std::option::Option<crate::types::StorageLensTableDestination>,
 }
 impl StorageLensDataExportBuilder {
     /// <p>A container for the bucket where the S3 Storage Lens metrics export will be located.</p><note>
@@ -72,11 +79,26 @@ impl StorageLensDataExportBuilder {
     pub fn get_cloud_watch_metrics(&self) -> &::std::option::Option<crate::types::CloudWatchMetrics> {
         &self.cloud_watch_metrics
     }
+    /// <p>A container for configuring S3 Storage Lens data exports to read-only S3 table buckets.</p>
+    pub fn storage_lens_table_destination(mut self, input: crate::types::StorageLensTableDestination) -> Self {
+        self.storage_lens_table_destination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A container for configuring S3 Storage Lens data exports to read-only S3 table buckets.</p>
+    pub fn set_storage_lens_table_destination(mut self, input: ::std::option::Option<crate::types::StorageLensTableDestination>) -> Self {
+        self.storage_lens_table_destination = input;
+        self
+    }
+    /// <p>A container for configuring S3 Storage Lens data exports to read-only S3 table buckets.</p>
+    pub fn get_storage_lens_table_destination(&self) -> &::std::option::Option<crate::types::StorageLensTableDestination> {
+        &self.storage_lens_table_destination
+    }
     /// Consumes the builder and constructs a [`StorageLensDataExport`](crate::types::StorageLensDataExport).
     pub fn build(self) -> crate::types::StorageLensDataExport {
         crate::types::StorageLensDataExport {
             s3_bucket_destination: self.s3_bucket_destination,
             cloud_watch_metrics: self.cloud_watch_metrics,
+            storage_lens_table_destination: self.storage_lens_table_destination,
         }
     }
 }

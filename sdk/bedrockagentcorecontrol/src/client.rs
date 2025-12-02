@@ -142,10 +142,35 @@ impl Client {
 pub trait Waiters {
     /// Wait for `memory_created`
     fn wait_until_memory_created(&self) -> crate::waiters::memory_created::MemoryCreatedFluentBuilder;
+    /// Wait until a Policy is active
+    fn wait_until_policy_active(&self) -> crate::waiters::policy_active::PolicyActiveFluentBuilder;
+    /// Wait until a Policy is deleted
+    fn wait_until_policy_deleted(&self) -> crate::waiters::policy_deleted::PolicyDeletedFluentBuilder;
+    /// Wait until a PolicyEngine is active
+    fn wait_until_policy_engine_active(&self) -> crate::waiters::policy_engine_active::PolicyEngineActiveFluentBuilder;
+    /// Wait until a PolicyEngine is deleted
+    fn wait_until_policy_engine_deleted(&self) -> crate::waiters::policy_engine_deleted::PolicyEngineDeletedFluentBuilder;
+    /// Wait until policy generation is completed
+    fn wait_until_policy_generation_completed(&self) -> crate::waiters::policy_generation_completed::PolicyGenerationCompletedFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_memory_created(&self) -> crate::waiters::memory_created::MemoryCreatedFluentBuilder {
         crate::waiters::memory_created::MemoryCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_policy_active(&self) -> crate::waiters::policy_active::PolicyActiveFluentBuilder {
+        crate::waiters::policy_active::PolicyActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_policy_deleted(&self) -> crate::waiters::policy_deleted::PolicyDeletedFluentBuilder {
+        crate::waiters::policy_deleted::PolicyDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_policy_engine_active(&self) -> crate::waiters::policy_engine_active::PolicyEngineActiveFluentBuilder {
+        crate::waiters::policy_engine_active::PolicyEngineActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_policy_engine_deleted(&self) -> crate::waiters::policy_engine_deleted::PolicyEngineDeletedFluentBuilder {
+        crate::waiters::policy_engine_deleted::PolicyEngineDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_policy_generation_completed(&self) -> crate::waiters::policy_generation_completed::PolicyGenerationCompletedFluentBuilder {
+        crate::waiters::policy_generation_completed::PolicyGenerationCompletedFluentBuilder::new(self.handle.clone())
     }
 }
 
@@ -175,6 +200,8 @@ mod create_browser;
 
 mod create_code_interpreter;
 
+mod create_evaluator;
+
 mod create_gateway;
 
 mod create_gateway_target;
@@ -182,6 +209,12 @@ mod create_gateway_target;
 mod create_memory;
 
 mod create_oauth2_credential_provider;
+
+mod create_online_evaluation_config;
+
+mod create_policy;
+
+mod create_policy_engine;
 
 mod create_workload_identity;
 
@@ -222,6 +255,8 @@ mod delete_browser;
 
 mod delete_code_interpreter;
 
+mod delete_evaluator;
+
 mod delete_gateway;
 
 mod delete_gateway_target;
@@ -229,6 +264,14 @@ mod delete_gateway_target;
 mod delete_memory;
 
 mod delete_oauth2_credential_provider;
+
+mod delete_online_evaluation_config;
+
+mod delete_policy;
+
+mod delete_policy_engine;
+
+mod delete_resource_policy;
 
 mod delete_workload_identity;
 
@@ -242,6 +285,8 @@ mod get_browser;
 
 mod get_code_interpreter;
 
+mod get_evaluator;
+
 mod get_gateway;
 
 mod get_gateway_target;
@@ -249,6 +294,16 @@ mod get_gateway_target;
 mod get_memory;
 
 mod get_oauth2_credential_provider;
+
+mod get_online_evaluation_config;
+
+mod get_policy;
+
+mod get_policy_engine;
+
+mod get_policy_generation;
+
+mod get_resource_policy;
 
 mod get_token_vault;
 
@@ -266,6 +321,8 @@ mod list_browsers;
 
 mod list_code_interpreters;
 
+mod list_evaluators;
+
 mod list_gateway_targets;
 
 mod list_gateways;
@@ -274,11 +331,25 @@ mod list_memories;
 
 mod list_oauth2_credential_providers;
 
+mod list_online_evaluation_configs;
+
+mod list_policies;
+
+mod list_policy_engines;
+
+mod list_policy_generation_assets;
+
+mod list_policy_generations;
+
 mod list_tags_for_resource;
 
 mod list_workload_identities;
 
+mod put_resource_policy;
+
 mod set_token_vault_cmk;
+
+mod start_policy_generation;
 
 mod synchronize_gateway_targets;
 
@@ -292,6 +363,8 @@ mod update_agent_runtime_endpoint;
 
 mod update_api_key_credential_provider;
 
+mod update_evaluator;
+
 mod update_gateway;
 
 mod update_gateway_target;
@@ -299,5 +372,11 @@ mod update_gateway_target;
 mod update_memory;
 
 mod update_oauth2_credential_provider;
+
+mod update_online_evaluation_config;
+
+mod update_policy;
+
+mod update_policy_engine;
 
 mod update_workload_identity;

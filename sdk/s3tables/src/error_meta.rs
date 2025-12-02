@@ -13,6 +13,8 @@ pub enum Error {
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>The request failed due to an internal server error.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
+    /// <p>The requested operation is not allowed on this resource. This may occur when attempting to modify a resource that is managed by a service or has restrictions that prevent the operation.</p>
+    MethodNotAllowedException(crate::types::error::MethodNotAllowedException),
     /// <p>The request was rejected because the specified resource could not be found.</p>
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
@@ -34,6 +36,7 @@ impl ::std::fmt::Display for Error {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::InternalServerErrorException(inner) => inner.fmt(f),
+            Error::MethodNotAllowedException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -62,6 +65,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ConflictException(inner) => inner.meta(),
             Self::ForbiddenException(inner) => inner.meta(),
             Self::InternalServerErrorException(inner) => inner.meta(),
+            Self::MethodNotAllowedException(inner) => inner.meta(),
             Self::NotFoundException(inner) => inner.meta(),
             Self::TooManyRequestsException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -372,6 +376,55 @@ impl From<crate::operation::delete_table_bucket_policy::DeleteTableBucketPolicyE
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError> for Error {
+    fn from(err: crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError) -> Self {
+        match err {
+            crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_table_bucket_replication::DeleteTableBucketReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_table_policy::DeleteTablePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -398,6 +451,42 @@ impl From<crate::operation::delete_table_policy::DeleteTablePolicyError> for Err
             crate::operation::delete_table_policy::DeleteTablePolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_table_policy::DeleteTablePolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_table_policy::DeleteTablePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_table_replication::DeleteTableReplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_table_replication::DeleteTableReplicationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_table_replication::DeleteTableReplicationError> for Error {
+    fn from(err: crate::operation::delete_table_replication::DeleteTableReplicationError) -> Self {
+        match err {
+            crate::operation::delete_table_replication::DeleteTableReplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_table_replication::DeleteTableReplicationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_table_replication::DeleteTableReplicationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_table_replication::DeleteTableReplicationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_table_replication::DeleteTableReplicationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_table_replication::DeleteTableReplicationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_table_replication::DeleteTableReplicationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_table_replication::DeleteTableReplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -650,6 +739,93 @@ impl From<crate::operation::get_table_bucket_policy::GetTableBucketPolicyError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_bucket_replication::GetTableBucketReplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_bucket_replication::GetTableBucketReplicationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_bucket_replication::GetTableBucketReplicationError> for Error {
+    fn from(err: crate::operation::get_table_bucket_replication::GetTableBucketReplicationError) -> Self {
+        match err {
+            crate::operation::get_table_bucket_replication::GetTableBucketReplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_table_bucket_replication::GetTableBucketReplicationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_table_bucket_replication::GetTableBucketReplicationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::get_table_bucket_replication::GetTableBucketReplicationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_table_bucket_replication::GetTableBucketReplicationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_table_bucket_replication::GetTableBucketReplicationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_table_bucket_replication::GetTableBucketReplicationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_table_bucket_replication::GetTableBucketReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_bucket_storage_class::GetTableBucketStorageClassError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_bucket_storage_class::GetTableBucketStorageClassError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_bucket_storage_class::GetTableBucketStorageClassError> for Error {
+    fn from(err: crate::operation::get_table_bucket_storage_class::GetTableBucketStorageClassError) -> Self {
+        match err {
+            crate::operation::get_table_bucket_storage_class::GetTableBucketStorageClassError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_table_bucket_storage_class::GetTableBucketStorageClassError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_table_bucket_storage_class::GetTableBucketStorageClassError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_table_bucket_storage_class::GetTableBucketStorageClassError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_table_bucket_storage_class::GetTableBucketStorageClassError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_table_bucket_storage_class::GetTableBucketStorageClassError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_table_bucket_storage_class::GetTableBucketStorageClassError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_encryption::GetTableEncryptionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -841,6 +1017,217 @@ impl From<crate::operation::get_table_policy::GetTablePolicyError> for Error {
             crate::operation::get_table_policy::GetTablePolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::get_table_policy::GetTablePolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_table_policy::GetTablePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_table_record_expiration_configuration::GetTableRecordExpirationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_table_record_expiration_configuration::GetTableRecordExpirationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_record_expiration_configuration::GetTableRecordExpirationConfigurationError> for Error {
+    fn from(err: crate::operation::get_table_record_expiration_configuration::GetTableRecordExpirationConfigurationError) -> Self {
+        match err {
+            crate::operation::get_table_record_expiration_configuration::GetTableRecordExpirationConfigurationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_table_record_expiration_configuration::GetTableRecordExpirationConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_table_record_expiration_configuration::GetTableRecordExpirationConfigurationError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::get_table_record_expiration_configuration::GetTableRecordExpirationConfigurationError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::get_table_record_expiration_configuration::GetTableRecordExpirationConfigurationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_table_record_expiration_configuration::GetTableRecordExpirationConfigurationError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::get_table_record_expiration_configuration::GetTableRecordExpirationConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError> for Error {
+    fn from(err: crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError) -> Self {
+        match err {
+            crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError::MethodNotAllowedException(inner) => {
+                Error::MethodNotAllowedException(inner)
+            }
+            crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_replication::GetTableReplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_replication::GetTableReplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_replication::GetTableReplicationError> for Error {
+    fn from(err: crate::operation::get_table_replication::GetTableReplicationError) -> Self {
+        match err {
+            crate::operation::get_table_replication::GetTableReplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_table_replication::GetTableReplicationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_table_replication::GetTableReplicationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_table_replication::GetTableReplicationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_table_replication::GetTableReplicationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_table_replication::GetTableReplicationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_table_replication::GetTableReplicationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_table_replication::GetTableReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_replication_status::GetTableReplicationStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_replication_status::GetTableReplicationStatusError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_replication_status::GetTableReplicationStatusError> for Error {
+    fn from(err: crate::operation::get_table_replication_status::GetTableReplicationStatusError) -> Self {
+        match err {
+            crate::operation::get_table_replication_status::GetTableReplicationStatusError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_table_replication_status::GetTableReplicationStatusError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::get_table_replication_status::GetTableReplicationStatusError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::get_table_replication_status::GetTableReplicationStatusError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_table_replication_status::GetTableReplicationStatusError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_table_replication_status::GetTableReplicationStatusError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_table_replication_status::GetTableReplicationStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_storage_class::GetTableStorageClassError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_storage_class::GetTableStorageClassError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_storage_class::GetTableStorageClassError> for Error {
+    fn from(err: crate::operation::get_table_storage_class::GetTableStorageClassError) -> Self {
+        match err {
+            crate::operation::get_table_storage_class::GetTableStorageClassError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_table_storage_class::GetTableStorageClassError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_table_storage_class::GetTableStorageClassError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_table_storage_class::GetTableStorageClassError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_table_storage_class::GetTableStorageClassError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_table_storage_class::GetTableStorageClassError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_table_storage_class::GetTableStorageClassError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1121,6 +1508,93 @@ impl From<crate::operation::put_table_bucket_policy::PutTableBucketPolicyError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_table_bucket_replication::PutTableBucketReplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_table_bucket_replication::PutTableBucketReplicationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_table_bucket_replication::PutTableBucketReplicationError> for Error {
+    fn from(err: crate::operation::put_table_bucket_replication::PutTableBucketReplicationError) -> Self {
+        match err {
+            crate::operation::put_table_bucket_replication::PutTableBucketReplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_table_bucket_replication::PutTableBucketReplicationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_table_bucket_replication::PutTableBucketReplicationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_table_bucket_replication::PutTableBucketReplicationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::put_table_bucket_replication::PutTableBucketReplicationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::put_table_bucket_replication::PutTableBucketReplicationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::put_table_bucket_replication::PutTableBucketReplicationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_table_bucket_replication::PutTableBucketReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_table_bucket_storage_class::PutTableBucketStorageClassError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_table_bucket_storage_class::PutTableBucketStorageClassError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_table_bucket_storage_class::PutTableBucketStorageClassError> for Error {
+    fn from(err: crate::operation::put_table_bucket_storage_class::PutTableBucketStorageClassError) -> Self {
+        match err {
+            crate::operation::put_table_bucket_storage_class::PutTableBucketStorageClassError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_table_bucket_storage_class::PutTableBucketStorageClassError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_table_bucket_storage_class::PutTableBucketStorageClassError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::put_table_bucket_storage_class::PutTableBucketStorageClassError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::put_table_bucket_storage_class::PutTableBucketStorageClassError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::put_table_bucket_storage_class::PutTableBucketStorageClassError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_table_bucket_storage_class::PutTableBucketStorageClassError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1197,6 +1671,90 @@ impl From<crate::operation::put_table_policy::PutTablePolicyError> for Error {
             crate::operation::put_table_policy::PutTablePolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::put_table_policy::PutTablePolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::put_table_policy::PutTablePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_table_record_expiration_configuration::PutTableRecordExpirationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_table_record_expiration_configuration::PutTableRecordExpirationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_table_record_expiration_configuration::PutTableRecordExpirationConfigurationError> for Error {
+    fn from(err: crate::operation::put_table_record_expiration_configuration::PutTableRecordExpirationConfigurationError) -> Self {
+        match err {
+            crate::operation::put_table_record_expiration_configuration::PutTableRecordExpirationConfigurationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_table_record_expiration_configuration::PutTableRecordExpirationConfigurationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::put_table_record_expiration_configuration::PutTableRecordExpirationConfigurationError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::put_table_record_expiration_configuration::PutTableRecordExpirationConfigurationError::MethodNotAllowedException(
+                inner,
+            ) => Error::MethodNotAllowedException(inner),
+            crate::operation::put_table_record_expiration_configuration::PutTableRecordExpirationConfigurationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::put_table_record_expiration_configuration::PutTableRecordExpirationConfigurationError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::put_table_record_expiration_configuration::PutTableRecordExpirationConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_table_replication::PutTableReplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_table_replication::PutTableReplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_table_replication::PutTableReplicationError> for Error {
+    fn from(err: crate::operation::put_table_replication::PutTableReplicationError) -> Self {
+        match err {
+            crate::operation::put_table_replication::PutTableReplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_table_replication::PutTableReplicationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_table_replication::PutTableReplicationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_table_replication::PutTableReplicationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::put_table_replication::PutTableReplicationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::put_table_replication::PutTableReplicationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_table_replication::PutTableReplicationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_table_replication::PutTableReplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1335,6 +1893,7 @@ impl ::std::error::Error for Error {
             Error::ConflictException(inner) => inner.source(),
             Error::ForbiddenException(inner) => inner.source(),
             Error::InternalServerErrorException(inner) => inner.source(),
+            Error::MethodNotAllowedException(inner) => inner.source(),
             Error::NotFoundException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -1349,6 +1908,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ConflictException(e) => e.request_id(),
             Self::ForbiddenException(e) => e.request_id(),
             Self::InternalServerErrorException(e) => e.request_id(),
+            Self::MethodNotAllowedException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
             Self::TooManyRequestsException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

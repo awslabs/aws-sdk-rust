@@ -27,8 +27,14 @@ pub fn ser_create_collection_input_input(
     if let Some(var_8) = &input.standby_replicas {
         object.key("standbyReplicas").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.client_token {
-        object.key("clientToken").string(var_9.as_str());
+    if let Some(var_9) = &input.vector_options {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("vectorOptions").start_object();
+        crate::protocol_serde::shape_vector_options::ser_vector_options(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.client_token {
+        object.key("clientToken").string(var_11.as_str());
     }
     Ok(())
 }

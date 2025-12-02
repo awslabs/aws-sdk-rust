@@ -251,6 +251,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteIndexEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteIndexError {
+    /// <p>The request was rejected because the specified resource can't be found.</p>
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p>The service is unavailable. Wait briefly and retry your request. If it continues to fail, increase your waiting time between retries.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>Access denied.</p>
@@ -296,6 +298,7 @@ impl DeleteIndexError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -304,6 +307,10 @@ impl DeleteIndexError {
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DeleteIndexError::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(self, Self::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteIndexError::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
@@ -333,6 +340,7 @@ impl DeleteIndexError {
 impl ::std::error::Error for DeleteIndexError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
@@ -346,6 +354,7 @@ impl ::std::error::Error for DeleteIndexError {
 impl ::std::fmt::Display for DeleteIndexError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::NotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
@@ -379,6 +388,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteIndexError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteIndexError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

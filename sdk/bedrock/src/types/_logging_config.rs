@@ -16,6 +16,8 @@ pub struct LoggingConfig {
     pub embedding_data_delivery_enabled: ::std::option::Option<bool>,
     /// <p>Set to include video data in the log delivery.</p>
     pub video_data_delivery_enabled: ::std::option::Option<bool>,
+    /// <p>Set to include audio data in the log delivery.</p>
+    pub audio_data_delivery_enabled: ::std::option::Option<bool>,
 }
 impl LoggingConfig {
     /// <p>CloudWatch logging configuration.</p>
@@ -42,6 +44,10 @@ impl LoggingConfig {
     pub fn video_data_delivery_enabled(&self) -> ::std::option::Option<bool> {
         self.video_data_delivery_enabled
     }
+    /// <p>Set to include audio data in the log delivery.</p>
+    pub fn audio_data_delivery_enabled(&self) -> ::std::option::Option<bool> {
+        self.audio_data_delivery_enabled
+    }
 }
 impl LoggingConfig {
     /// Creates a new builder-style object to manufacture [`LoggingConfig`](crate::types::LoggingConfig).
@@ -60,6 +66,7 @@ pub struct LoggingConfigBuilder {
     pub(crate) image_data_delivery_enabled: ::std::option::Option<bool>,
     pub(crate) embedding_data_delivery_enabled: ::std::option::Option<bool>,
     pub(crate) video_data_delivery_enabled: ::std::option::Option<bool>,
+    pub(crate) audio_data_delivery_enabled: ::std::option::Option<bool>,
 }
 impl LoggingConfigBuilder {
     /// <p>CloudWatch logging configuration.</p>
@@ -146,6 +153,20 @@ impl LoggingConfigBuilder {
     pub fn get_video_data_delivery_enabled(&self) -> &::std::option::Option<bool> {
         &self.video_data_delivery_enabled
     }
+    /// <p>Set to include audio data in the log delivery.</p>
+    pub fn audio_data_delivery_enabled(mut self, input: bool) -> Self {
+        self.audio_data_delivery_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to include audio data in the log delivery.</p>
+    pub fn set_audio_data_delivery_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.audio_data_delivery_enabled = input;
+        self
+    }
+    /// <p>Set to include audio data in the log delivery.</p>
+    pub fn get_audio_data_delivery_enabled(&self) -> &::std::option::Option<bool> {
+        &self.audio_data_delivery_enabled
+    }
     /// Consumes the builder and constructs a [`LoggingConfig`](crate::types::LoggingConfig).
     pub fn build(self) -> crate::types::LoggingConfig {
         crate::types::LoggingConfig {
@@ -155,6 +176,7 @@ impl LoggingConfigBuilder {
             image_data_delivery_enabled: self.image_data_delivery_enabled,
             embedding_data_delivery_enabled: self.embedding_data_delivery_enabled,
             video_data_delivery_enabled: self.video_data_delivery_enabled,
+            audio_data_delivery_enabled: self.audio_data_delivery_enabled,
         }
     }
 }

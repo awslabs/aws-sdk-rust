@@ -25,17 +25,25 @@ pub fn ser_storage_lens_configuration(
         let inner_writer = scope.start_el("DataExport");
         crate::protocol_serde::shape_storage_lens_data_export::ser_storage_lens_data_export(var_4, inner_writer)?
     }
+    if let Some(var_5) = &input.expanded_prefixes_data_export {
+        let inner_writer = scope.start_el("ExpandedPrefixesDataExport");
+        crate::protocol_serde::shape_storage_lens_expanded_prefixes_data_export::ser_storage_lens_expanded_prefixes_data_export(var_5, inner_writer)?
+    }
     {
         let mut inner_writer = scope.start_el("IsEnabled").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.is_enabled).encode());
     }
-    if let Some(var_5) = &input.aws_org {
+    if let Some(var_6) = &input.aws_org {
         let inner_writer = scope.start_el("AwsOrg");
-        crate::protocol_serde::shape_storage_lens_aws_org::ser_storage_lens_aws_org(var_5, inner_writer)?
+        crate::protocol_serde::shape_storage_lens_aws_org::ser_storage_lens_aws_org(var_6, inner_writer)?
     }
-    if let Some(var_6) = &input.storage_lens_arn {
+    if let Some(var_7) = &input.storage_lens_arn {
         let mut inner_writer = scope.start_el("StorageLensArn").finish();
-        inner_writer.data(var_6.as_str());
+        inner_writer.data(var_7.as_str());
+    }
+    if let Some(var_8) = &input.prefix_delimiter {
+        let mut inner_writer = scope.start_el("PrefixDelimiter").finish();
+        inner_writer.data(var_8.as_str());
     }
     scope.finish();
     Ok(())
@@ -50,7 +58,7 @@ pub fn de_storage_lens_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.s3control#StorageLensConfiguration$Id */ =>  {
-                let var_7 =
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -59,51 +67,61 @@ pub fn de_storage_lens_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_id(var_7);
+                builder = builder.set_id(var_9);
             }
             ,
             s if s.matches("AccountLevel") /* AccountLevel com.amazonaws.s3control#StorageLensConfiguration$AccountLevel */ =>  {
-                let var_8 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_account_level::de_account_level(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_account_level(var_8);
+                builder = builder.set_account_level(var_10);
             }
             ,
             s if s.matches("Include") /* Include com.amazonaws.s3control#StorageLensConfiguration$Include */ =>  {
-                let var_9 =
+                let var_11 =
                     Some(
                         crate::protocol_serde::shape_include::de_include(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_include(var_9);
+                builder = builder.set_include(var_11);
             }
             ,
             s if s.matches("Exclude") /* Exclude com.amazonaws.s3control#StorageLensConfiguration$Exclude */ =>  {
-                let var_10 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_exclude::de_exclude(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_exclude(var_10);
+                builder = builder.set_exclude(var_12);
             }
             ,
             s if s.matches("DataExport") /* DataExport com.amazonaws.s3control#StorageLensConfiguration$DataExport */ =>  {
-                let var_11 =
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_storage_lens_data_export::de_storage_lens_data_export(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_data_export(var_11);
+                builder = builder.set_data_export(var_13);
+            }
+            ,
+            s if s.matches("ExpandedPrefixesDataExport") /* ExpandedPrefixesDataExport com.amazonaws.s3control#StorageLensConfiguration$ExpandedPrefixesDataExport */ =>  {
+                let var_14 =
+                    Some(
+                        crate::protocol_serde::shape_storage_lens_expanded_prefixes_data_export::de_storage_lens_expanded_prefixes_data_export(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_expanded_prefixes_data_export(var_14);
             }
             ,
             s if s.matches("IsEnabled") /* IsEnabled com.amazonaws.s3control#StorageLensConfiguration$IsEnabled */ =>  {
-                let var_12 =
+                let var_15 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -114,21 +132,21 @@ pub fn de_storage_lens_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_is_enabled(var_12);
+                builder = builder.set_is_enabled(var_15);
             }
             ,
             s if s.matches("AwsOrg") /* AwsOrg com.amazonaws.s3control#StorageLensConfiguration$AwsOrg */ =>  {
-                let var_13 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_storage_lens_aws_org::de_storage_lens_aws_org(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_aws_org(var_13);
+                builder = builder.set_aws_org(var_16);
             }
             ,
             s if s.matches("StorageLensArn") /* StorageLensArn com.amazonaws.s3control#StorageLensConfiguration$StorageLensArn */ =>  {
-                let var_14 =
+                let var_17 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -137,7 +155,20 @@ pub fn de_storage_lens_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_storage_lens_arn(var_14);
+                builder = builder.set_storage_lens_arn(var_17);
+            }
+            ,
+            s if s.matches("PrefixDelimiter") /* PrefixDelimiter com.amazonaws.s3control#StorageLensConfiguration$PrefixDelimiter */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_prefix_delimiter(var_18);
             }
             ,
             _ => {}

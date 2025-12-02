@@ -148,6 +148,15 @@ pub(crate) fn lustre_log_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn ontap_file_system_identity_correct_errors(
+    mut builder: crate::types::builders::OntapFileSystemIdentityBuilder,
+) -> crate::types::builders::OntapFileSystemIdentityBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::OntapFileSystemUserType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn open_zfs_file_system_identity_correct_errors(
     mut builder: crate::types::builders::OpenZfsFileSystemIdentityBuilder,
 ) -> crate::types::builders::OpenZfsFileSystemIdentityBuilder {
@@ -183,6 +192,24 @@ pub(crate) fn autocommit_period_correct_errors(
 ) -> crate::types::builders::AutocommitPeriodBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::AutocommitPeriodType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ontap_unix_file_system_user_correct_errors(
+    mut builder: crate::types::builders::OntapUnixFileSystemUserBuilder,
+) -> crate::types::builders::OntapUnixFileSystemUserBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ontap_windows_file_system_user_correct_errors(
+    mut builder: crate::types::builders::OntapWindowsFileSystemUserBuilder,
+) -> crate::types::builders::OntapWindowsFileSystemUserBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }

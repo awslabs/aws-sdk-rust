@@ -75,6 +75,8 @@ pub use crate::types::error::_ec2_throttled_exception::Ec2ThrottledExceptionBuil
 
 pub use crate::types::error::_ec2_access_denied_exception::Ec2AccessDeniedExceptionBuilder;
 
+pub use crate::types::error::_durable_execution_already_started_exception::DurableExecutionAlreadyStartedExceptionBuilder;
+
 pub use crate::types::error::_invalid_code_signature_exception::InvalidCodeSignatureExceptionBuilder;
 
 pub use crate::types::error::_code_verification_failed_exception::CodeVerificationFailedExceptionBuilder;
@@ -82,3 +84,5 @@ pub use crate::types::error::_code_verification_failed_exception::CodeVerificati
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
 
 pub use crate::types::error::_capacity_provider_limit_exceeded_exception::CapacityProviderLimitExceededExceptionBuilder;
+
+pub use crate::types::error::_callback_timeout_exception::CallbackTimeoutExceptionBuilder;

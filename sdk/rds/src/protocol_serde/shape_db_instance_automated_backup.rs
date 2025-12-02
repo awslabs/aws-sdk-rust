@@ -423,6 +423,16 @@ pub fn de_db_instance_automated_backup(
                 builder = builder.set_dedicated_log_volume(var_31);
             }
             ,
+            s if s.matches("AdditionalStorageVolumes") /* AdditionalStorageVolumes com.amazonaws.rds#DBInstanceAutomatedBackup$AdditionalStorageVolumes */ =>  {
+                let var_32 =
+                    Some(
+                        crate::protocol_serde::shape_additional_storage_volumes_list::de_additional_storage_volumes_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_additional_storage_volumes(var_32);
+            }
+            ,
             _ => {}
         }
     }

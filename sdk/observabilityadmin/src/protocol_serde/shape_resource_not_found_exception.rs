@@ -17,6 +17,20 @@ pub(crate) fn de_resource_not_found_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "ResourceId" => {
+                    builder = builder.set_resource_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ResourceType" => {
+                    builder = builder.set_resource_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

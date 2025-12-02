@@ -7,6 +7,8 @@ pub use crate::types::_memory_record_summary::MemoryRecordSummaryBuilder;
 
 pub use crate::types::_search_criteria::SearchCriteriaBuilder;
 
+pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpressionBuilder;
+
 pub use crate::types::_session_summary::SessionSummaryBuilder;
 
 pub use crate::types::_extraction_job_metadata::ExtractionJobMetadataBuilder;
@@ -38,6 +40,12 @@ pub use crate::types::_memory_record_update_input::MemoryRecordUpdateInputBuilde
 pub use crate::types::_memory_record_delete_input::MemoryRecordDeleteInputBuilder;
 
 pub use crate::types::_memory_record_create_input::MemoryRecordCreateInputBuilder;
+
+pub use crate::types::_evaluation_result_content::EvaluationResultContentBuilder;
+
+pub use crate::types::_token_usage::TokenUsageBuilder;
+
+pub use crate::types::_span_context::SpanContextBuilder;
 
 pub use crate::types::_code_interpreter_session_summary::CodeInterpreterSessionSummaryBuilder;
 

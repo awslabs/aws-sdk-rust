@@ -35,6 +35,8 @@ pub use crate::types::_update_collection_detail::UpdateCollectionDetailBuilder;
 
 pub use crate::types::_create_collection_detail::CreateCollectionDetailBuilder;
 
+pub use crate::types::_vector_options::VectorOptionsBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_collection_summary::CollectionSummaryBuilder;

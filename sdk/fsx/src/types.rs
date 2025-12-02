@@ -241,6 +241,16 @@ pub use crate::types::_s3_access_point::S3AccessPoint;
 
 pub use crate::types::_s3_access_point_vpc_configuration::S3AccessPointVpcConfiguration;
 
+pub use crate::types::_s3_access_point_ontap_configuration::S3AccessPointOntapConfiguration;
+
+pub use crate::types::_ontap_file_system_identity::OntapFileSystemIdentity;
+
+pub use crate::types::_ontap_windows_file_system_user::OntapWindowsFileSystemUser;
+
+pub use crate::types::_ontap_unix_file_system_user::OntapUnixFileSystemUser;
+
+pub use crate::types::_ontap_file_system_user_type::OntapFileSystemUserType;
+
 pub use crate::types::_s3_access_point_open_zfs_configuration::S3AccessPointOpenZfsConfiguration;
 
 pub use crate::types::_open_zfs_file_system_identity::OpenZfsFileSystemIdentity;
@@ -359,6 +369,8 @@ pub use crate::types::_create_file_cache_lustre_configuration::CreateFileCacheLu
 
 pub use crate::types::_create_and_attach_s3_access_point_s3_configuration::CreateAndAttachS3AccessPointS3Configuration;
 
+pub use crate::types::_create_and_attach_s3_access_point_ontap_configuration::CreateAndAttachS3AccessPointOntapConfiguration;
+
 pub use crate::types::_create_and_attach_s3_access_point_open_zfs_configuration::CreateAndAttachS3AccessPointOpenZfsConfiguration;
 
 pub use crate::types::_update_open_zfs_volume_option::UpdateOpenZfsVolumeOption;
@@ -400,6 +412,8 @@ mod _backup_type;
 mod _completion_report;
 
 mod _create_aggregate_configuration;
+
+mod _create_and_attach_s3_access_point_ontap_configuration;
 
 mod _create_and_attach_s3_access_point_open_zfs_configuration;
 
@@ -557,9 +571,17 @@ mod _ontap_deployment_type;
 
 mod _ontap_file_system_configuration;
 
+mod _ontap_file_system_identity;
+
+mod _ontap_file_system_user_type;
+
+mod _ontap_unix_file_system_user;
+
 mod _ontap_volume_configuration;
 
 mod _ontap_volume_type;
+
+mod _ontap_windows_file_system_user;
 
 mod _open_zfs_client_configuration;
 
@@ -620,6 +642,8 @@ mod _s3_access_point_attachment_type;
 mod _s3_access_point_attachments_filter;
 
 mod _s3_access_point_attachments_filter_name;
+
+mod _s3_access_point_ontap_configuration;
 
 mod _s3_access_point_open_zfs_configuration;
 

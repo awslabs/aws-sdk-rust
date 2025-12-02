@@ -70,6 +70,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "vectorOptions" => {
+                            builder = builder.set_vector_options(crate::protocol_serde::shape_vector_options::de_vector_options(tokens)?);
+                        }
                         "createdDate" => {
                             builder = builder.set_created_date(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

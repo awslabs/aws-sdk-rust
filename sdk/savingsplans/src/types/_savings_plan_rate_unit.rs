@@ -12,9 +12,21 @@
 /// ```text
 /// # let savingsplanrateunit = unimplemented!();
 /// match savingsplanrateunit {
+///     SavingsPlanRateUnit::AcuHr => { /* ... */ },
+///     SavingsPlanRateUnit::DcuHr => { /* ... */ },
+///     SavingsPlanRateUnit::Dpu => { /* ... */ },
+///     SavingsPlanRateUnit::ElastiCacheProcessingUnit => { /* ... */ },
+///     SavingsPlanRateUnit::GbHours => { /* ... */ },
 ///     SavingsPlanRateUnit::Hours => { /* ... */ },
 ///     SavingsPlanRateUnit::LambdaGbSecond => { /* ... */ },
+///     SavingsPlanRateUnit::NcuHr => { /* ... */ },
+///     SavingsPlanRateUnit::ReadCapacityUnitHrs => { /* ... */ },
+///     SavingsPlanRateUnit::ReadRequestUnits => { /* ... */ },
+///     SavingsPlanRateUnit::ReplicatedWriteCapacityUnitHrs => { /* ... */ },
+///     SavingsPlanRateUnit::ReplicatedWriteRequestUnits => { /* ... */ },
 ///     SavingsPlanRateUnit::Request => { /* ... */ },
+///     SavingsPlanRateUnit::WriteCapacityUnitHrs => { /* ... */ },
+///     SavingsPlanRateUnit::WriteRequestUnits => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -44,11 +56,35 @@
 )]
 pub enum SavingsPlanRateUnit {
     #[allow(missing_docs)] // documentation missing in model
+    AcuHr,
+    #[allow(missing_docs)] // documentation missing in model
+    DcuHr,
+    #[allow(missing_docs)] // documentation missing in model
+    Dpu,
+    #[allow(missing_docs)] // documentation missing in model
+    ElastiCacheProcessingUnit,
+    #[allow(missing_docs)] // documentation missing in model
+    GbHours,
+    #[allow(missing_docs)] // documentation missing in model
     Hours,
     #[allow(missing_docs)] // documentation missing in model
     LambdaGbSecond,
     #[allow(missing_docs)] // documentation missing in model
+    NcuHr,
+    #[allow(missing_docs)] // documentation missing in model
+    ReadCapacityUnitHrs,
+    #[allow(missing_docs)] // documentation missing in model
+    ReadRequestUnits,
+    #[allow(missing_docs)] // documentation missing in model
+    ReplicatedWriteCapacityUnitHrs,
+    #[allow(missing_docs)] // documentation missing in model
+    ReplicatedWriteRequestUnits,
+    #[allow(missing_docs)] // documentation missing in model
     Request,
+    #[allow(missing_docs)] // documentation missing in model
+    WriteCapacityUnitHrs,
+    #[allow(missing_docs)] // documentation missing in model
+    WriteRequestUnits,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -56,9 +92,21 @@ pub enum SavingsPlanRateUnit {
 impl ::std::convert::From<&str> for SavingsPlanRateUnit {
     fn from(s: &str) -> Self {
         match s {
+            "ACU-Hr" => SavingsPlanRateUnit::AcuHr,
+            "DCU-Hr" => SavingsPlanRateUnit::DcuHr,
+            "DPU" => SavingsPlanRateUnit::Dpu,
+            "ElastiCacheProcessingUnit" => SavingsPlanRateUnit::ElastiCacheProcessingUnit,
+            "GB-Hours" => SavingsPlanRateUnit::GbHours,
             "Hrs" => SavingsPlanRateUnit::Hours,
             "Lambda-GB-Second" => SavingsPlanRateUnit::LambdaGbSecond,
+            "NCU-hr" => SavingsPlanRateUnit::NcuHr,
+            "ReadCapacityUnit-Hrs" => SavingsPlanRateUnit::ReadCapacityUnitHrs,
+            "ReadRequestUnits" => SavingsPlanRateUnit::ReadRequestUnits,
+            "ReplicatedWriteCapacityUnit-Hrs" => SavingsPlanRateUnit::ReplicatedWriteCapacityUnitHrs,
+            "ReplicatedWriteRequestUnits" => SavingsPlanRateUnit::ReplicatedWriteRequestUnits,
             "Request" => SavingsPlanRateUnit::Request,
+            "WriteCapacityUnit-Hrs" => SavingsPlanRateUnit::WriteCapacityUnitHrs,
+            "WriteRequestUnits" => SavingsPlanRateUnit::WriteRequestUnits,
             other => SavingsPlanRateUnit::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -74,15 +122,43 @@ impl SavingsPlanRateUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SavingsPlanRateUnit::AcuHr => "ACU-Hr",
+            SavingsPlanRateUnit::DcuHr => "DCU-Hr",
+            SavingsPlanRateUnit::Dpu => "DPU",
+            SavingsPlanRateUnit::ElastiCacheProcessingUnit => "ElastiCacheProcessingUnit",
+            SavingsPlanRateUnit::GbHours => "GB-Hours",
             SavingsPlanRateUnit::Hours => "Hrs",
             SavingsPlanRateUnit::LambdaGbSecond => "Lambda-GB-Second",
+            SavingsPlanRateUnit::NcuHr => "NCU-hr",
+            SavingsPlanRateUnit::ReadCapacityUnitHrs => "ReadCapacityUnit-Hrs",
+            SavingsPlanRateUnit::ReadRequestUnits => "ReadRequestUnits",
+            SavingsPlanRateUnit::ReplicatedWriteCapacityUnitHrs => "ReplicatedWriteCapacityUnit-Hrs",
+            SavingsPlanRateUnit::ReplicatedWriteRequestUnits => "ReplicatedWriteRequestUnits",
             SavingsPlanRateUnit::Request => "Request",
+            SavingsPlanRateUnit::WriteCapacityUnitHrs => "WriteCapacityUnit-Hrs",
+            SavingsPlanRateUnit::WriteRequestUnits => "WriteRequestUnits",
             SavingsPlanRateUnit::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Hrs", "Lambda-GB-Second", "Request"]
+        &[
+            "ACU-Hr",
+            "DCU-Hr",
+            "DPU",
+            "ElastiCacheProcessingUnit",
+            "GB-Hours",
+            "Hrs",
+            "Lambda-GB-Second",
+            "NCU-hr",
+            "ReadCapacityUnit-Hrs",
+            "ReadRequestUnits",
+            "ReplicatedWriteCapacityUnit-Hrs",
+            "ReplicatedWriteRequestUnits",
+            "Request",
+            "WriteCapacityUnit-Hrs",
+            "WriteRequestUnits",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SavingsPlanRateUnit {
@@ -105,9 +181,21 @@ impl SavingsPlanRateUnit {
 impl ::std::fmt::Display for SavingsPlanRateUnit {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SavingsPlanRateUnit::AcuHr => write!(f, "ACU-Hr"),
+            SavingsPlanRateUnit::DcuHr => write!(f, "DCU-Hr"),
+            SavingsPlanRateUnit::Dpu => write!(f, "DPU"),
+            SavingsPlanRateUnit::ElastiCacheProcessingUnit => write!(f, "ElastiCacheProcessingUnit"),
+            SavingsPlanRateUnit::GbHours => write!(f, "GB-Hours"),
             SavingsPlanRateUnit::Hours => write!(f, "Hrs"),
             SavingsPlanRateUnit::LambdaGbSecond => write!(f, "Lambda-GB-Second"),
+            SavingsPlanRateUnit::NcuHr => write!(f, "NCU-hr"),
+            SavingsPlanRateUnit::ReadCapacityUnitHrs => write!(f, "ReadCapacityUnit-Hrs"),
+            SavingsPlanRateUnit::ReadRequestUnits => write!(f, "ReadRequestUnits"),
+            SavingsPlanRateUnit::ReplicatedWriteCapacityUnitHrs => write!(f, "ReplicatedWriteCapacityUnit-Hrs"),
+            SavingsPlanRateUnit::ReplicatedWriteRequestUnits => write!(f, "ReplicatedWriteRequestUnits"),
             SavingsPlanRateUnit::Request => write!(f, "Request"),
+            SavingsPlanRateUnit::WriteCapacityUnitHrs => write!(f, "WriteCapacityUnit-Hrs"),
+            SavingsPlanRateUnit::WriteRequestUnits => write!(f, "WriteRequestUnits"),
             SavingsPlanRateUnit::Unknown(value) => write!(f, "{value}"),
         }
     }

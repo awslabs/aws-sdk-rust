@@ -22,9 +22,6 @@ impl crate::operation::delete_vector_bucket_policy::builders::DeleteVectorBucket
 }
 /// Fluent builder constructing a request to `DeleteVectorBucketPolicy`.
 ///
-/// <note>
-/// <p>Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.</p>
-/// </note>
 /// <p>Deletes a vector bucket policy. To specify the bucket, you must use either the vector bucket name or the vector bucket Amazon Resource Name (ARN).</p>
 /// <dl>
 /// <dt>

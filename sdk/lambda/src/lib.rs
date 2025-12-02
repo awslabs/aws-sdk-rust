@@ -58,7 +58,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-lambda = "1.108.0"
+//! aws-sdk-lambda = "1.109.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -226,7 +226,11 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+pub(crate) mod client_idempotency_token;
+
 mod event_receiver;
+
+mod idempotency_token;
 
 pub(crate) mod protocol_serde;
 

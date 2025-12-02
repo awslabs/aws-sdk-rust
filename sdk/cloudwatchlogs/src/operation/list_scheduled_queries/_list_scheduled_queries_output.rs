@@ -5,7 +5,7 @@
 pub struct ListScheduledQueriesOutput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The list of scheduled queries with summary information.</p>
+    /// <p>An array of scheduled query summary information.</p>
     pub scheduled_queries: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuerySummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListScheduledQueriesOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The list of scheduled queries with summary information.</p>
+    /// <p>An array of scheduled query summary information.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_queries.is_none()`.
     pub fn scheduled_queries(&self) -> &[crate::types::ScheduledQuerySummary] {
@@ -60,19 +60,19 @@ impl ListScheduledQueriesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_scheduled_queries`](Self::set_scheduled_queries).
     ///
-    /// <p>The list of scheduled queries with summary information.</p>
+    /// <p>An array of scheduled query summary information.</p>
     pub fn scheduled_queries(mut self, input: crate::types::ScheduledQuerySummary) -> Self {
         let mut v = self.scheduled_queries.unwrap_or_default();
         v.push(input);
         self.scheduled_queries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of scheduled queries with summary information.</p>
+    /// <p>An array of scheduled query summary information.</p>
     pub fn set_scheduled_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuerySummary>>) -> Self {
         self.scheduled_queries = input;
         self
     }
-    /// <p>The list of scheduled queries with summary information.</p>
+    /// <p>An array of scheduled query summary information.</p>
     pub fn get_scheduled_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledQuerySummary>> {
         &self.scheduled_queries
     }

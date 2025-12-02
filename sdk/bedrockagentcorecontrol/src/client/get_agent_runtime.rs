@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`network_configuration(Option<NetworkConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::network_configuration): <p>The network configuration for the AgentCore Runtime.</p>
     ///   - [`status(AgentRuntimeStatus)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::status): <p>The current status of the AgentCore Runtime.</p>
     ///   - [`lifecycle_configuration(Option<LifecycleConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::lifecycle_configuration): <p>The life cycle configuration for the AgentCore Runtime.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::failure_reason): <p>The reason for failure if the AgentCore Runtime is in a failed state.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::description): <p>The description of the AgentCore Runtime.</p>
     ///   - [`workload_identity_details(Option<WorkloadIdentityDetails>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::workload_identity_details): <p>The workload identity details for the AgentCore Runtime.</p>
     ///   - [`agent_runtime_artifact(Option<AgentRuntimeArtifact>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::agent_runtime_artifact): <p>The artifact of the AgentCore Runtime.</p>

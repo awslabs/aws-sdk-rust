@@ -675,6 +675,8 @@ pub(crate) mod shape_switchover_read_replica;
 
 pub(crate) mod shape_switchover_read_replica_input;
 
+pub(crate) mod shape_additional_storage_volume;
+
 pub(crate) mod shape_authorization_already_exists_fault;
 
 pub(crate) mod shape_authorization_not_found_fault;
@@ -910,6 +912,8 @@ pub(crate) mod shape_invalid_vpc_network_state_fault;
 pub(crate) mod shape_kms_key_not_accessible_fault;
 
 pub(crate) mod shape_max_db_shard_group_limit_reached;
+
+pub(crate) mod shape_modify_additional_storage_volume;
 
 pub(crate) mod shape_network_type_not_supported;
 
@@ -1155,6 +1159,10 @@ pub(crate) mod shape_valid_upgrade_target_list;
 
 pub(crate) mod shape_account_quota;
 
+pub(crate) mod shape_additional_storage_volumes_list;
+
+pub(crate) mod shape_additional_storage_volumes_output_list;
+
 pub(crate) mod shape_availability_zones;
 
 pub(crate) mod shape_available_processor_feature_list;
@@ -1285,13 +1293,19 @@ pub(crate) mod shape_upgrade_target;
 
 pub(crate) mod shape_user_auth_config_info_list;
 
+pub(crate) mod shape_valid_additional_storage_options;
+
 pub(crate) mod shape_valid_storage_options_list;
 
 pub(crate) mod shape_vpc_security_group_membership_list;
 
 pub(crate) mod shape_activity_stream_mode_list;
 
+pub(crate) mod shape_additional_storage_volume_output;
+
 pub(crate) mod shape_availability_zone_list;
+
+pub(crate) mod shape_available_additional_storage_volumes_option_list;
 
 pub(crate) mod shape_available_processor_feature;
 
@@ -1363,11 +1377,15 @@ pub(crate) mod shape_user_auth_config_info;
 
 pub(crate) mod shape_valid_storage_options;
 
+pub(crate) mod shape_valid_volume_options_list;
+
 pub(crate) mod shape_vpc_security_group_membership;
 
 pub(crate) mod shape_attribute_value_list;
 
 pub(crate) mod shape_availability_zone;
+
+pub(crate) mod shape_available_additional_storage_volumes_option;
 
 pub(crate) mod shape_context_attribute_list;
 
@@ -1390,6 +1408,8 @@ pub(crate) mod shape_readers_arn_list;
 pub(crate) mod shape_recommended_action_parameter_list;
 
 pub(crate) mod shape_supported_engine_lifecycle;
+
+pub(crate) mod shape_valid_volume_options;
 
 pub(crate) mod shape_context_attribute;
 

@@ -2,12 +2,14 @@
 
 /// <p>Image content for a message.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImageBlock {
     /// <p>The format of the image.</p>
     pub format: crate::types::ImageFormat,
     /// <p>The source for the image.</p>
     pub source: ::std::option::Option<crate::types::ImageSource>,
+    /// <p>Error information if the image block could not be processed or contains invalid data.</p>
+    pub error: ::std::option::Option<crate::types::ErrorBlock>,
 }
 impl ImageBlock {
     /// <p>The format of the image.</p>
@@ -18,6 +20,19 @@ impl ImageBlock {
     pub fn source(&self) -> ::std::option::Option<&crate::types::ImageSource> {
         self.source.as_ref()
     }
+    /// <p>Error information if the image block could not be processed or contains invalid data.</p>
+    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorBlock> {
+        self.error.as_ref()
+    }
+}
+impl ::std::fmt::Debug for ImageBlock {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ImageBlock");
+        formatter.field("format", &self.format);
+        formatter.field("source", &"*** Sensitive Data Redacted ***");
+        formatter.field("error", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl ImageBlock {
     /// Creates a new builder-style object to manufacture [`ImageBlock`](crate::types::ImageBlock).
@@ -27,11 +42,12 @@ impl ImageBlock {
 }
 
 /// A builder for [`ImageBlock`](crate::types::ImageBlock).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ImageBlockBuilder {
     pub(crate) format: ::std::option::Option<crate::types::ImageFormat>,
     pub(crate) source: ::std::option::Option<crate::types::ImageSource>,
+    pub(crate) error: ::std::option::Option<crate::types::ErrorBlock>,
 }
 impl ImageBlockBuilder {
     /// <p>The format of the image.</p>
@@ -64,6 +80,20 @@ impl ImageBlockBuilder {
     pub fn get_source(&self) -> &::std::option::Option<crate::types::ImageSource> {
         &self.source
     }
+    /// <p>Error information if the image block could not be processed or contains invalid data.</p>
+    pub fn error(mut self, input: crate::types::ErrorBlock) -> Self {
+        self.error = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Error information if the image block could not be processed or contains invalid data.</p>
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorBlock>) -> Self {
+        self.error = input;
+        self
+    }
+    /// <p>Error information if the image block could not be processed or contains invalid data.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorBlock> {
+        &self.error
+    }
     /// Consumes the builder and constructs a [`ImageBlock`](crate::types::ImageBlock).
     /// This method will fail if any of the following fields are not set:
     /// - [`format`](crate::types::builders::ImageBlockBuilder::format)
@@ -76,6 +106,16 @@ impl ImageBlockBuilder {
                 )
             })?,
             source: self.source,
+            error: self.error,
         })
+    }
+}
+impl ::std::fmt::Debug for ImageBlockBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ImageBlockBuilder");
+        formatter.field("format", &self.format);
+        formatter.field("source", &"*** Sensitive Data Redacted ***");
+        formatter.field("error", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

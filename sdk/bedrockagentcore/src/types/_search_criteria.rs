@@ -10,6 +10,8 @@ pub struct SearchCriteria {
     pub memory_strategy_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of top-scoring memory records to return. This value is used for semantic search ranking.</p>
     pub top_k: i32,
+    /// <p>Filters to apply to metadata associated with a memory.</p>
+    pub metadata_filters: ::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>>,
 }
 impl SearchCriteria {
     /// <p>The search query to use for finding relevant memory records.</p>
@@ -25,6 +27,12 @@ impl SearchCriteria {
     pub fn top_k(&self) -> i32 {
         self.top_k
     }
+    /// <p>Filters to apply to metadata associated with a memory.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metadata_filters.is_none()`.
+    pub fn metadata_filters(&self) -> &[crate::types::MemoryMetadataFilterExpression] {
+        self.metadata_filters.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for SearchCriteria {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -32,6 +40,7 @@ impl ::std::fmt::Debug for SearchCriteria {
         formatter.field("search_query", &"*** Sensitive Data Redacted ***");
         formatter.field("memory_strategy_id", &self.memory_strategy_id);
         formatter.field("top_k", &self.top_k);
+        formatter.field("metadata_filters", &self.metadata_filters);
         formatter.finish()
     }
 }
@@ -49,6 +58,7 @@ pub struct SearchCriteriaBuilder {
     pub(crate) search_query: ::std::option::Option<::std::string::String>,
     pub(crate) memory_strategy_id: ::std::option::Option<::std::string::String>,
     pub(crate) top_k: ::std::option::Option<i32>,
+    pub(crate) metadata_filters: ::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>>,
 }
 impl SearchCriteriaBuilder {
     /// <p>The search query to use for finding relevant memory records.</p>
@@ -94,6 +104,26 @@ impl SearchCriteriaBuilder {
     pub fn get_top_k(&self) -> &::std::option::Option<i32> {
         &self.top_k
     }
+    /// Appends an item to `metadata_filters`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_filters`](Self::set_metadata_filters).
+    ///
+    /// <p>Filters to apply to metadata associated with a memory.</p>
+    pub fn metadata_filters(mut self, input: crate::types::MemoryMetadataFilterExpression) -> Self {
+        let mut v = self.metadata_filters.unwrap_or_default();
+        v.push(input);
+        self.metadata_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filters to apply to metadata associated with a memory.</p>
+    pub fn set_metadata_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>>) -> Self {
+        self.metadata_filters = input;
+        self
+    }
+    /// <p>Filters to apply to metadata associated with a memory.</p>
+    pub fn get_metadata_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryMetadataFilterExpression>> {
+        &self.metadata_filters
+    }
     /// Consumes the builder and constructs a [`SearchCriteria`](crate::types::SearchCriteria).
     /// This method will fail if any of the following fields are not set:
     /// - [`search_query`](crate::types::builders::SearchCriteriaBuilder::search_query)
@@ -107,6 +137,7 @@ impl SearchCriteriaBuilder {
             })?,
             memory_strategy_id: self.memory_strategy_id,
             top_k: self.top_k.unwrap_or(10),
+            metadata_filters: self.metadata_filters,
         })
     }
 }
@@ -116,6 +147,7 @@ impl ::std::fmt::Debug for SearchCriteriaBuilder {
         formatter.field("search_query", &"*** Sensitive Data Redacted ***");
         formatter.field("memory_strategy_id", &self.memory_strategy_id);
         formatter.field("top_k", &self.top_k);
+        formatter.field("metadata_filters", &self.metadata_filters);
         formatter.finish()
     }
 }

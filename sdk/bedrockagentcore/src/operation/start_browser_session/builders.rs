@@ -27,11 +27,11 @@ impl crate::operation::start_browser_session::builders::StartBrowserSessionInput
 /// <p>The following operations are related to <code>StartBrowserSession</code>:</p>
 /// <ul>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/API_GetBrowserSession.html">GetBrowserSession</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/API_UpdateBrowserStream.html">UpdateBrowserStream</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateBrowserStream.html">UpdateBrowserStream</a></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/API_StopBrowserSession.html">StopBrowserSession</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartBrowserSessionFluentBuilder {

@@ -6,9 +6,9 @@
 pub struct ServiceNowDetail {
     /// <p>The instanceName of ServiceNow ITSM.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
-    /// <p>The clientId of ServiceNow ITSM.</p>
-    pub client_id: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the authorization between Jira Cloud and the service.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the ServiceNow credentials.</p>
+    pub secret_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the authorization between ServiceNow and the service.</p>
     pub auth_status: ::std::option::Option<crate::types::ConnectorAuthStatus>,
 }
 impl ServiceNowDetail {
@@ -16,11 +16,11 @@ impl ServiceNowDetail {
     pub fn instance_name(&self) -> ::std::option::Option<&str> {
         self.instance_name.as_deref()
     }
-    /// <p>The clientId of ServiceNow ITSM.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
-        self.client_id.as_deref()
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the ServiceNow credentials.</p>
+    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+        self.secret_arn.as_deref()
     }
-    /// <p>The status of the authorization between Jira Cloud and the service.</p>
+    /// <p>The status of the authorization between ServiceNow and the service.</p>
     pub fn auth_status(&self) -> ::std::option::Option<&crate::types::ConnectorAuthStatus> {
         self.auth_status.as_ref()
     }
@@ -37,7 +37,7 @@ impl ServiceNowDetail {
 #[non_exhaustive]
 pub struct ServiceNowDetailBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
-    pub(crate) client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) auth_status: ::std::option::Option<crate::types::ConnectorAuthStatus>,
 }
 impl ServiceNowDetailBuilder {
@@ -55,32 +55,33 @@ impl ServiceNowDetailBuilder {
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_name
     }
-    /// <p>The clientId of ServiceNow ITSM.</p>
-    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_id = ::std::option::Option::Some(input.into());
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the ServiceNow credentials.</p>
+    /// This field is required.
+    pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The clientId of ServiceNow ITSM.</p>
-    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the ServiceNow credentials.</p>
+    pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.secret_arn = input;
         self
     }
-    /// <p>The clientId of ServiceNow ITSM.</p>
-    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_id
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the ServiceNow credentials.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
-    /// <p>The status of the authorization between Jira Cloud and the service.</p>
+    /// <p>The status of the authorization between ServiceNow and the service.</p>
     /// This field is required.
     pub fn auth_status(mut self, input: crate::types::ConnectorAuthStatus) -> Self {
         self.auth_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the authorization between Jira Cloud and the service.</p>
+    /// <p>The status of the authorization between ServiceNow and the service.</p>
     pub fn set_auth_status(mut self, input: ::std::option::Option<crate::types::ConnectorAuthStatus>) -> Self {
         self.auth_status = input;
         self
     }
-    /// <p>The status of the authorization between Jira Cloud and the service.</p>
+    /// <p>The status of the authorization between ServiceNow and the service.</p>
     pub fn get_auth_status(&self) -> &::std::option::Option<crate::types::ConnectorAuthStatus> {
         &self.auth_status
     }
@@ -88,7 +89,7 @@ impl ServiceNowDetailBuilder {
     pub fn build(self) -> crate::types::ServiceNowDetail {
         crate::types::ServiceNowDetail {
             instance_name: self.instance_name,
-            client_id: self.client_id,
+            secret_arn: self.secret_arn,
             auth_status: self.auth_status,
         }
     }

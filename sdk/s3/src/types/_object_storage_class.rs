@@ -14,6 +14,7 @@
 /// match objectstorageclass {
 ///     ObjectStorageClass::DeepArchive => { /* ... */ },
 ///     ObjectStorageClass::ExpressOnezone => { /* ... */ },
+///     ObjectStorageClass::FsxOntap => { /* ... */ },
 ///     ObjectStorageClass::FsxOpenzfs => { /* ... */ },
 ///     ObjectStorageClass::Glacier => { /* ... */ },
 ///     ObjectStorageClass::GlacierIr => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum ObjectStorageClass {
     #[allow(missing_docs)] // documentation missing in model
     ExpressOnezone,
     #[allow(missing_docs)] // documentation missing in model
+    FsxOntap,
+    #[allow(missing_docs)] // documentation missing in model
     FsxOpenzfs,
     #[allow(missing_docs)] // documentation missing in model
     Glacier,
@@ -85,6 +88,7 @@ impl ::std::convert::From<&str> for ObjectStorageClass {
         match s {
             "DEEP_ARCHIVE" => ObjectStorageClass::DeepArchive,
             "EXPRESS_ONEZONE" => ObjectStorageClass::ExpressOnezone,
+            "FSX_ONTAP" => ObjectStorageClass::FsxOntap,
             "FSX_OPENZFS" => ObjectStorageClass::FsxOpenzfs,
             "GLACIER" => ObjectStorageClass::Glacier,
             "GLACIER_IR" => ObjectStorageClass::GlacierIr,
@@ -112,6 +116,7 @@ impl ObjectStorageClass {
         match self {
             ObjectStorageClass::DeepArchive => "DEEP_ARCHIVE",
             ObjectStorageClass::ExpressOnezone => "EXPRESS_ONEZONE",
+            ObjectStorageClass::FsxOntap => "FSX_ONTAP",
             ObjectStorageClass::FsxOpenzfs => "FSX_OPENZFS",
             ObjectStorageClass::Glacier => "GLACIER",
             ObjectStorageClass::GlacierIr => "GLACIER_IR",
@@ -130,6 +135,7 @@ impl ObjectStorageClass {
         &[
             "DEEP_ARCHIVE",
             "EXPRESS_ONEZONE",
+            "FSX_ONTAP",
             "FSX_OPENZFS",
             "GLACIER",
             "GLACIER_IR",
@@ -165,6 +171,7 @@ impl ::std::fmt::Display for ObjectStorageClass {
         match self {
             ObjectStorageClass::DeepArchive => write!(f, "DEEP_ARCHIVE"),
             ObjectStorageClass::ExpressOnezone => write!(f, "EXPRESS_ONEZONE"),
+            ObjectStorageClass::FsxOntap => write!(f, "FSX_ONTAP"),
             ObjectStorageClass::FsxOpenzfs => write!(f, "FSX_OPENZFS"),
             ObjectStorageClass::Glacier => write!(f, "GLACIER"),
             ObjectStorageClass::GlacierIr => write!(f, "GLACIER_IR"),

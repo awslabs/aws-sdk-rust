@@ -108,7 +108,8 @@ impl CreateCustomDBEngineVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+    /// <p>The database engine.</p>
+    /// <p>RDS Custom for Oracle supports the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
@@ -119,11 +120,24 @@ impl CreateCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// </ul>
+    /// <p>RDS Custom for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>custom-sqlserver-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-se</code></p></li>
+    /// <li>
+    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-dev</code></p></li>
+    /// </ul>
+    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+    /// <p>The database engine.</p>
+    /// <p>RDS Custom for Oracle supports the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
@@ -134,11 +148,24 @@ impl CreateCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// </ul>
+    /// <p>RDS Custom for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>custom-sqlserver-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-se</code></p></li>
+    /// <li>
+    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-dev</code></p></li>
+    /// </ul>
+    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+    /// <p>The database engine.</p>
+    /// <p>RDS Custom for Oracle supports the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
@@ -149,20 +176,41 @@ impl CreateCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// </ul>
+    /// <p>RDS Custom for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>custom-sqlserver-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-se</code></p></li>
+    /// <li>
+    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-dev</code></p></li>
+    /// </ul>
+    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
-    /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+    /// <p>The name of your custom engine version (CEV).</p>
+    /// <p>For RDS Custom for Oracle, the name format is <code>19.*customized_string*</code>. For example, a valid CEV name is <code>19.my_cev1</code>.</p>
+    /// <p>For RDS for SQL Server and RDS Custom for SQL Server, the name format is <code>major engine_version*.*minor_engine_version*.*customized_string*</code>. For example, a valid CEV name is <code>16.00.4215.2.my_cev1</code>.</p>
+    /// <p>The CEV name is unique per customer per Amazon Web Services Regions.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+    /// <p>The name of your custom engine version (CEV).</p>
+    /// <p>For RDS Custom for Oracle, the name format is <code>19.*customized_string*</code>. For example, a valid CEV name is <code>19.my_cev1</code>.</p>
+    /// <p>For RDS for SQL Server and RDS Custom for SQL Server, the name format is <code>major engine_version*.*minor_engine_version*.*customized_string*</code>. For example, a valid CEV name is <code>16.00.4215.2.my_cev1</code>.</p>
+    /// <p>The CEV name is unique per customer per Amazon Web Services Regions.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
+    /// <p>The name of your custom engine version (CEV).</p>
+    /// <p>For RDS Custom for Oracle, the name format is <code>19.*customized_string*</code>. For example, a valid CEV name is <code>19.my_cev1</code>.</p>
+    /// <p>For RDS for SQL Server and RDS Custom for SQL Server, the name format is <code>major engine_version*.*minor_engine_version*.*customized_string*</code>. For example, a valid CEV name is <code>16.00.4215.2.my_cev1</code>.</p>
+    /// <p>The CEV name is unique per customer per Amazon Web Services Regions.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_version()
     }
@@ -407,5 +455,24 @@ impl CreateCustomDBEngineVersionFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    ///
+    /// Appends an item to `DatabaseInstallationFiles`.
+    ///
+    /// To override the contents of this collection use [`set_database_installation_files`](Self::set_database_installation_files).
+    ///
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
+    pub fn database_installation_files(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.database_installation_files(input.into());
+        self
+    }
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
+    pub fn set_database_installation_files(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_database_installation_files(input);
+        self
+    }
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
+    pub fn get_database_installation_files(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_database_installation_files()
     }
 }

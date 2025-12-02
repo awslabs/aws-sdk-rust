@@ -41,7 +41,11 @@ pub(crate) mod shape_delete_table_bucket_metrics_configuration;
 
 pub(crate) mod shape_delete_table_bucket_policy;
 
+pub(crate) mod shape_delete_table_bucket_replication;
+
 pub(crate) mod shape_delete_table_policy;
+
+pub(crate) mod shape_delete_table_replication;
 
 pub(crate) mod shape_get_namespace;
 
@@ -57,6 +61,10 @@ pub(crate) mod shape_get_table_bucket_metrics_configuration;
 
 pub(crate) mod shape_get_table_bucket_policy;
 
+pub(crate) mod shape_get_table_bucket_replication;
+
+pub(crate) mod shape_get_table_bucket_storage_class;
+
 pub(crate) mod shape_get_table_encryption;
 
 pub(crate) mod shape_get_table_maintenance_configuration;
@@ -66,6 +74,16 @@ pub(crate) mod shape_get_table_maintenance_job_status;
 pub(crate) mod shape_get_table_metadata_location;
 
 pub(crate) mod shape_get_table_policy;
+
+pub(crate) mod shape_get_table_record_expiration_configuration;
+
+pub(crate) mod shape_get_table_record_expiration_job_status;
+
+pub(crate) mod shape_get_table_replication;
+
+pub(crate) mod shape_get_table_replication_status;
+
+pub(crate) mod shape_get_table_storage_class;
 
 pub(crate) mod shape_list_namespaces;
 
@@ -83,9 +101,17 @@ pub(crate) mod shape_put_table_bucket_metrics_configuration;
 
 pub(crate) mod shape_put_table_bucket_policy;
 
+pub(crate) mod shape_put_table_bucket_replication;
+
+pub(crate) mod shape_put_table_bucket_storage_class;
+
 pub(crate) mod shape_put_table_maintenance_configuration;
 
 pub(crate) mod shape_put_table_policy;
+
+pub(crate) mod shape_put_table_record_expiration_configuration;
+
+pub(crate) mod shape_put_table_replication;
 
 pub(crate) mod shape_rename_table;
 
@@ -119,6 +145,8 @@ pub(crate) mod shape_forbidden_exception;
 
 pub(crate) mod shape_internal_server_error_exception;
 
+pub(crate) mod shape_method_not_allowed_exception;
+
 pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_put_table_bucket_encryption_input;
@@ -127,9 +155,17 @@ pub(crate) mod shape_put_table_bucket_maintenance_configuration_input;
 
 pub(crate) mod shape_put_table_bucket_policy_input;
 
+pub(crate) mod shape_put_table_bucket_replication_input;
+
+pub(crate) mod shape_put_table_bucket_storage_class_input;
+
 pub(crate) mod shape_put_table_maintenance_configuration_input;
 
 pub(crate) mod shape_put_table_policy_input;
+
+pub(crate) mod shape_put_table_record_expiration_configuration_input;
+
+pub(crate) mod shape_put_table_replication_input;
 
 pub(crate) mod shape_rename_table_input;
 
@@ -141,13 +177,21 @@ pub(crate) mod shape_update_table_metadata_location_input;
 
 pub(crate) mod shape_encryption_configuration;
 
+pub(crate) mod shape_managed_table_information;
+
 pub(crate) mod shape_namespace_list;
 
 pub(crate) mod shape_namespace_summary_list;
 
+pub(crate) mod shape_replication_destination_statuses;
+
+pub(crate) mod shape_storage_class_configuration;
+
 pub(crate) mod shape_table_bucket_maintenance_configuration;
 
 pub(crate) mod shape_table_bucket_maintenance_configuration_value;
+
+pub(crate) mod shape_table_bucket_replication_configuration;
 
 pub(crate) mod shape_table_bucket_summary_list;
 
@@ -159,6 +203,12 @@ pub(crate) mod shape_table_maintenance_job_status;
 
 pub(crate) mod shape_table_metadata;
 
+pub(crate) mod shape_table_record_expiration_configuration_value;
+
+pub(crate) mod shape_table_record_expiration_job_metrics;
+
+pub(crate) mod shape_table_replication_configuration;
+
 pub(crate) mod shape_table_summary_list;
 
 pub(crate) mod shape_tags;
@@ -167,13 +217,27 @@ pub(crate) mod shape_iceberg_metadata;
 
 pub(crate) mod shape_namespace_summary;
 
+pub(crate) mod shape_replication_destination_status_model;
+
+pub(crate) mod shape_replication_information;
+
 pub(crate) mod shape_table_bucket_maintenance_settings;
+
+pub(crate) mod shape_table_bucket_replication_rule;
+
+pub(crate) mod shape_table_bucket_replication_rules;
 
 pub(crate) mod shape_table_bucket_summary;
 
 pub(crate) mod shape_table_maintenance_job_status_value;
 
 pub(crate) mod shape_table_maintenance_settings;
+
+pub(crate) mod shape_table_record_expiration_settings;
+
+pub(crate) mod shape_table_replication_rule;
+
+pub(crate) mod shape_table_replication_rules;
 
 pub(crate) mod shape_table_summary;
 
@@ -184,5 +248,11 @@ pub(crate) mod shape_iceberg_schema;
 pub(crate) mod shape_iceberg_snapshot_management_settings;
 
 pub(crate) mod shape_iceberg_unreferenced_file_removal_settings;
+
+pub(crate) mod shape_last_successful_replicated_update;
+
+pub(crate) mod shape_replication_destination;
+
+pub(crate) mod shape_replication_destinations;
 
 pub(crate) mod shape_schema_field;

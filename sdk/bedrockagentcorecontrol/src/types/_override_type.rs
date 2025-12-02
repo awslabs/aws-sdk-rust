@@ -12,6 +12,7 @@
 /// ```text
 /// # let overridetype = unimplemented!();
 /// match overridetype {
+///     OverrideType::EpisodicOverride => { /* ... */ },
 ///     OverrideType::SelfManaged => { /* ... */ },
 ///     OverrideType::SemanticOverride => { /* ... */ },
 ///     OverrideType::SummaryOverride => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum OverrideType {
     #[allow(missing_docs)] // documentation missing in model
+    EpisodicOverride,
+    #[allow(missing_docs)] // documentation missing in model
     SelfManaged,
     #[allow(missing_docs)] // documentation missing in model
     SemanticOverride,
@@ -59,6 +62,7 @@ pub enum OverrideType {
 impl ::std::convert::From<&str> for OverrideType {
     fn from(s: &str) -> Self {
         match s {
+            "EPISODIC_OVERRIDE" => OverrideType::EpisodicOverride,
             "SELF_MANAGED" => OverrideType::SelfManaged,
             "SEMANTIC_OVERRIDE" => OverrideType::SemanticOverride,
             "SUMMARY_OVERRIDE" => OverrideType::SummaryOverride,
@@ -78,6 +82,7 @@ impl OverrideType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OverrideType::EpisodicOverride => "EPISODIC_OVERRIDE",
             OverrideType::SelfManaged => "SELF_MANAGED",
             OverrideType::SemanticOverride => "SEMANTIC_OVERRIDE",
             OverrideType::SummaryOverride => "SUMMARY_OVERRIDE",
@@ -87,7 +92,13 @@ impl OverrideType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SELF_MANAGED", "SEMANTIC_OVERRIDE", "SUMMARY_OVERRIDE", "USER_PREFERENCE_OVERRIDE"]
+        &[
+            "EPISODIC_OVERRIDE",
+            "SELF_MANAGED",
+            "SEMANTIC_OVERRIDE",
+            "SUMMARY_OVERRIDE",
+            "USER_PREFERENCE_OVERRIDE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for OverrideType {
@@ -110,6 +121,7 @@ impl OverrideType {
 impl ::std::fmt::Display for OverrideType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            OverrideType::EpisodicOverride => write!(f, "EPISODIC_OVERRIDE"),
             OverrideType::SelfManaged => write!(f, "SELF_MANAGED"),
             OverrideType::SemanticOverride => write!(f, "SEMANTIC_OVERRIDE"),
             OverrideType::SummaryOverride => write!(f, "SUMMARY_OVERRIDE"),

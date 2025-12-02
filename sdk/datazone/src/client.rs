@@ -305,6 +305,8 @@ mod get_asset_type;
 
 mod get_connection;
 
+mod get_data_export_configuration;
+
 mod get_data_product;
 
 mod get_data_source;
@@ -434,6 +436,8 @@ mod list_time_series_data_points;
 mod post_lineage_event;
 
 mod post_time_series_data_points;
+
+mod put_data_export_configuration;
 
 mod put_environment_blueprint_configuration;
 

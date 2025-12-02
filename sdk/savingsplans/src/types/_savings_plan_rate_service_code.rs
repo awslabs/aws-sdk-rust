@@ -12,11 +12,20 @@
 /// ```text
 /// # let savingsplanrateservicecode = unimplemented!();
 /// match savingsplanrateservicecode {
+///     SavingsPlanRateServiceCode::Dms => { /* ... */ },
 ///     SavingsPlanRateServiceCode::Lambda => { /* ... */ },
+///     SavingsPlanRateServiceCode::Docdb => { /* ... */ },
+///     SavingsPlanRateServiceCode::Dynamodb => { /* ... */ },
 ///     SavingsPlanRateServiceCode::Ec2 => { /* ... */ },
 ///     SavingsPlanRateServiceCode::Fargate => { /* ... */ },
 ///     SavingsPlanRateServiceCode::FargateEks => { /* ... */ },
+///     SavingsPlanRateServiceCode::Elasticache => { /* ... */ },
+///     SavingsPlanRateServiceCode::Mcs => { /* ... */ },
+///     SavingsPlanRateServiceCode::Neptune => { /* ... */ },
+///     SavingsPlanRateServiceCode::Rds => { /* ... */ },
 ///     SavingsPlanRateServiceCode::Sagemaker => { /* ... */ },
+///     SavingsPlanRateServiceCode::Timestream => { /* ... */ },
+///     SavingsPlanRateServiceCode::Aurora => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,7 +55,13 @@
 )]
 pub enum SavingsPlanRateServiceCode {
     #[allow(missing_docs)] // documentation missing in model
+    Dms,
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
+    #[allow(missing_docs)] // documentation missing in model
+    Docdb,
+    #[allow(missing_docs)] // documentation missing in model
+    Dynamodb,
     #[allow(missing_docs)] // documentation missing in model
     Ec2,
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +69,19 @@ pub enum SavingsPlanRateServiceCode {
     #[allow(missing_docs)] // documentation missing in model
     FargateEks,
     #[allow(missing_docs)] // documentation missing in model
+    Elasticache,
+    #[allow(missing_docs)] // documentation missing in model
+    Mcs,
+    #[allow(missing_docs)] // documentation missing in model
+    Neptune,
+    #[allow(missing_docs)] // documentation missing in model
+    Rds,
+    #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
+    #[allow(missing_docs)] // documentation missing in model
+    Timestream,
+    #[allow(missing_docs)] // documentation missing in model
+    Aurora,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,11 +89,20 @@ pub enum SavingsPlanRateServiceCode {
 impl ::std::convert::From<&str> for SavingsPlanRateServiceCode {
     fn from(s: &str) -> Self {
         match s {
+            "AWSDatabaseMigrationSvc" => SavingsPlanRateServiceCode::Dms,
             "AWSLambda" => SavingsPlanRateServiceCode::Lambda,
+            "AmazonDocDB" => SavingsPlanRateServiceCode::Docdb,
+            "AmazonDynamoDB" => SavingsPlanRateServiceCode::Dynamodb,
             "AmazonEC2" => SavingsPlanRateServiceCode::Ec2,
             "AmazonECS" => SavingsPlanRateServiceCode::Fargate,
             "AmazonEKS" => SavingsPlanRateServiceCode::FargateEks,
+            "AmazonElastiCache" => SavingsPlanRateServiceCode::Elasticache,
+            "AmazonMCS" => SavingsPlanRateServiceCode::Mcs,
+            "AmazonNeptune" => SavingsPlanRateServiceCode::Neptune,
+            "AmazonRDS" => SavingsPlanRateServiceCode::Rds,
             "AmazonSageMaker" => SavingsPlanRateServiceCode::Sagemaker,
+            "AmazonTimestream" => SavingsPlanRateServiceCode::Timestream,
+            "AuroraDSQL" => SavingsPlanRateServiceCode::Aurora,
             other => SavingsPlanRateServiceCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,17 +118,41 @@ impl SavingsPlanRateServiceCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SavingsPlanRateServiceCode::Dms => "AWSDatabaseMigrationSvc",
             SavingsPlanRateServiceCode::Lambda => "AWSLambda",
+            SavingsPlanRateServiceCode::Docdb => "AmazonDocDB",
+            SavingsPlanRateServiceCode::Dynamodb => "AmazonDynamoDB",
             SavingsPlanRateServiceCode::Ec2 => "AmazonEC2",
             SavingsPlanRateServiceCode::Fargate => "AmazonECS",
             SavingsPlanRateServiceCode::FargateEks => "AmazonEKS",
+            SavingsPlanRateServiceCode::Elasticache => "AmazonElastiCache",
+            SavingsPlanRateServiceCode::Mcs => "AmazonMCS",
+            SavingsPlanRateServiceCode::Neptune => "AmazonNeptune",
+            SavingsPlanRateServiceCode::Rds => "AmazonRDS",
             SavingsPlanRateServiceCode::Sagemaker => "AmazonSageMaker",
+            SavingsPlanRateServiceCode::Timestream => "AmazonTimestream",
+            SavingsPlanRateServiceCode::Aurora => "AuroraDSQL",
             SavingsPlanRateServiceCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWSLambda", "AmazonEC2", "AmazonECS", "AmazonEKS", "AmazonSageMaker"]
+        &[
+            "AWSDatabaseMigrationSvc",
+            "AWSLambda",
+            "AmazonDocDB",
+            "AmazonDynamoDB",
+            "AmazonEC2",
+            "AmazonECS",
+            "AmazonEKS",
+            "AmazonElastiCache",
+            "AmazonMCS",
+            "AmazonNeptune",
+            "AmazonRDS",
+            "AmazonSageMaker",
+            "AmazonTimestream",
+            "AuroraDSQL",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SavingsPlanRateServiceCode {
@@ -115,11 +175,20 @@ impl SavingsPlanRateServiceCode {
 impl ::std::fmt::Display for SavingsPlanRateServiceCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SavingsPlanRateServiceCode::Dms => write!(f, "AWSDatabaseMigrationSvc"),
             SavingsPlanRateServiceCode::Lambda => write!(f, "AWSLambda"),
+            SavingsPlanRateServiceCode::Docdb => write!(f, "AmazonDocDB"),
+            SavingsPlanRateServiceCode::Dynamodb => write!(f, "AmazonDynamoDB"),
             SavingsPlanRateServiceCode::Ec2 => write!(f, "AmazonEC2"),
             SavingsPlanRateServiceCode::Fargate => write!(f, "AmazonECS"),
             SavingsPlanRateServiceCode::FargateEks => write!(f, "AmazonEKS"),
+            SavingsPlanRateServiceCode::Elasticache => write!(f, "AmazonElastiCache"),
+            SavingsPlanRateServiceCode::Mcs => write!(f, "AmazonMCS"),
+            SavingsPlanRateServiceCode::Neptune => write!(f, "AmazonNeptune"),
+            SavingsPlanRateServiceCode::Rds => write!(f, "AmazonRDS"),
             SavingsPlanRateServiceCode::Sagemaker => write!(f, "AmazonSageMaker"),
+            SavingsPlanRateServiceCode::Timestream => write!(f, "AmazonTimestream"),
+            SavingsPlanRateServiceCode::Aurora => write!(f, "AuroraDSQL"),
             SavingsPlanRateServiceCode::Unknown(value) => write!(f, "{value}"),
         }
     }

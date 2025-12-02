@@ -15,20 +15,36 @@ pub fn ser_create_index_input_input(
     if let Some(var_3) = &input.distance_metric {
         object.key("distanceMetric").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.index_name {
-        object.key("indexName").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.metadata_configuration {
+    if let Some(var_4) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("metadataConfiguration").start_object();
-        crate::protocol_serde::shape_metadata_configuration::ser_metadata_configuration(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("encryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.vector_bucket_arn {
-        object.key("vectorBucketArn").string(var_7.as_str());
+    if let Some(var_6) = &input.index_name {
+        object.key("indexName").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.vector_bucket_name {
-        object.key("vectorBucketName").string(var_8.as_str());
+    if let Some(var_7) = &input.metadata_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("metadataConfiguration").start_object();
+        crate::protocol_serde::shape_metadata_configuration::ser_metadata_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
+            {
+                object_10.key(key_11.as_str()).string(value_12.as_str());
+            }
+        }
+        object_10.finish();
+    }
+    if let Some(var_13) = &input.vector_bucket_arn {
+        object.key("vectorBucketArn").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.vector_bucket_name {
+        object.key("vectorBucketName").string(var_14.as_str());
     }
     Ok(())
 }

@@ -51,8 +51,6 @@ pub(crate) mod shape_batch_update_findings_v2;
 
 pub(crate) mod shape_batch_update_standards_control_associations;
 
-pub(crate) mod shape_connector_registrations_v2;
-
 pub(crate) mod shape_create_action_target;
 
 pub(crate) mod shape_create_aggregator_v2;
@@ -205,6 +203,8 @@ pub(crate) mod shape_list_standards_control_associations;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_register_connector_v2;
+
 pub(crate) mod shape_start_configuration_policy_association;
 
 pub(crate) mod shape_start_configuration_policy_disassociation;
@@ -276,8 +276,6 @@ pub(crate) mod shape_batch_update_findings_v2_input;
 pub(crate) mod shape_batch_update_standards_control_associations_input;
 
 pub(crate) mod shape_conflict_exception;
-
-pub(crate) mod shape_connector_registrations_v2_input;
 
 pub(crate) mod shape_create_action_target_input;
 
@@ -357,11 +355,15 @@ pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_list_configuration_policy_associations_input;
 
+pub(crate) mod shape_register_connector_v2_input;
+
 pub(crate) mod shape_resource_conflict_exception;
 
 pub(crate) mod shape_resource_in_use_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_configuration_policy_association_input;
 
@@ -682,6 +684,8 @@ pub(crate) mod shape_security_hub_policy;
 pub(crate) mod shape_service_now_detail;
 
 pub(crate) mod shape_service_now_provider_configuration;
+
+pub(crate) mod shape_service_now_update_configuration;
 
 pub(crate) mod shape_severity;
 

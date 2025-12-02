@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CustomConsolidationConfigurationInput {
+    /// <p>Configurations to override the consolidation step of the episodic strategy.</p>
+    EpisodicConsolidationOverride(crate::types::EpisodicOverrideConsolidationConfigurationInput),
     /// <p>The semantic consolidation override configuration input.</p>
     SemanticConsolidationOverride(crate::types::SemanticOverrideConsolidationConfigurationInput),
     /// <p>The summary consolidation override configuration input.</p>
@@ -21,6 +23,19 @@ pub enum CustomConsolidationConfigurationInput {
     Unknown,
 }
 impl CustomConsolidationConfigurationInput {
+    /// Tries to convert the enum instance into [`EpisodicConsolidationOverride`](crate::types::CustomConsolidationConfigurationInput::EpisodicConsolidationOverride), extracting the inner [`EpisodicOverrideConsolidationConfigurationInput`](crate::types::EpisodicOverrideConsolidationConfigurationInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_episodic_consolidation_override(&self) -> ::std::result::Result<&crate::types::EpisodicOverrideConsolidationConfigurationInput, &Self> {
+        if let CustomConsolidationConfigurationInput::EpisodicConsolidationOverride(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EpisodicConsolidationOverride`](crate::types::CustomConsolidationConfigurationInput::EpisodicConsolidationOverride).
+    pub fn is_episodic_consolidation_override(&self) -> bool {
+        self.as_episodic_consolidation_override().is_ok()
+    }
     /// Tries to convert the enum instance into [`SemanticConsolidationOverride`](crate::types::CustomConsolidationConfigurationInput::SemanticConsolidationOverride), extracting the inner [`SemanticOverrideConsolidationConfigurationInput`](crate::types::SemanticOverrideConsolidationConfigurationInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_semantic_consolidation_override(&self) -> ::std::result::Result<&crate::types::SemanticOverrideConsolidationConfigurationInput, &Self> {

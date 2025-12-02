@@ -19,6 +19,15 @@ pub fn ser_custom_extraction_configuration_input(
             crate::protocol_serde::shape_user_preference_override_extraction_configuration_input::ser_user_preference_override_extraction_configuration_input(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::CustomExtractionConfigurationInput::EpisodicExtractionOverride(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_1.key("episodicExtractionOverride").start_object();
+            crate::protocol_serde::shape_episodic_override_extraction_configuration_input::ser_episodic_override_extraction_configuration_input(
+                &mut object_3,
+                inner,
+            )?;
+            object_3.finish();
+        }
         crate::types::CustomExtractionConfigurationInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "CustomExtractionConfigurationInput",

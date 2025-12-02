@@ -20,7 +20,7 @@ pub struct JobManifestGeneratorFilter {
     pub object_size_less_than_bytes: ::std::option::Option<i64>,
     /// <p>If provided, the generated manifest includes only source bucket objects that are stored with the specified storage class.</p>
     pub match_any_storage_class: ::std::option::Option<::std::vec::Vec<crate::types::S3StorageClass>>,
-    /// <p>If provided, the generated object list includes only source bucket objects with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE). If you select SSE-KMS or DSSE-KMS, you can optionally further filter your results by specifying a specific KMS Key ARN. If you select SSE-KMS, you can also optionally further filter your results by Bucket Key enabled status.</p>
+    /// <p>If provided, the generated object list includes only source bucket objects with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE).</p>
     pub match_any_object_encryption: ::std::option::Option<::std::vec::Vec<crate::types::ObjectEncryptionFilter>>,
 }
 impl JobManifestGeneratorFilter {
@@ -60,7 +60,7 @@ impl JobManifestGeneratorFilter {
     pub fn match_any_storage_class(&self) -> &[crate::types::S3StorageClass] {
         self.match_any_storage_class.as_deref().unwrap_or_default()
     }
-    /// <p>If provided, the generated object list includes only source bucket objects with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE). If you select SSE-KMS or DSSE-KMS, you can optionally further filter your results by specifying a specific KMS Key ARN. If you select SSE-KMS, you can also optionally further filter your results by Bucket Key enabled status.</p>
+    /// <p>If provided, the generated object list includes only source bucket objects with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_any_object_encryption.is_none()`.
     pub fn match_any_object_encryption(&self) -> &[crate::types::ObjectEncryptionFilter] {
@@ -217,19 +217,19 @@ impl JobManifestGeneratorFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_match_any_object_encryption`](Self::set_match_any_object_encryption).
     ///
-    /// <p>If provided, the generated object list includes only source bucket objects with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE). If you select SSE-KMS or DSSE-KMS, you can optionally further filter your results by specifying a specific KMS Key ARN. If you select SSE-KMS, you can also optionally further filter your results by Bucket Key enabled status.</p>
+    /// <p>If provided, the generated object list includes only source bucket objects with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE).</p>
     pub fn match_any_object_encryption(mut self, input: crate::types::ObjectEncryptionFilter) -> Self {
         let mut v = self.match_any_object_encryption.unwrap_or_default();
         v.push(input);
         self.match_any_object_encryption = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If provided, the generated object list includes only source bucket objects with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE). If you select SSE-KMS or DSSE-KMS, you can optionally further filter your results by specifying a specific KMS Key ARN. If you select SSE-KMS, you can also optionally further filter your results by Bucket Key enabled status.</p>
+    /// <p>If provided, the generated object list includes only source bucket objects with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE).</p>
     pub fn set_match_any_object_encryption(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectEncryptionFilter>>) -> Self {
         self.match_any_object_encryption = input;
         self
     }
-    /// <p>If provided, the generated object list includes only source bucket objects with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE). If you select SSE-KMS or DSSE-KMS, you can optionally further filter your results by specifying a specific KMS Key ARN. If you select SSE-KMS, you can also optionally further filter your results by Bucket Key enabled status.</p>
+    /// <p>If provided, the generated object list includes only source bucket objects with the indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE).</p>
     pub fn get_match_any_object_encryption(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectEncryptionFilter>> {
         &self.match_any_object_encryption
     }

@@ -16,6 +16,8 @@ pub struct TableSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the table was last modified at.</p>
     pub modified_at: ::aws_smithy_types::DateTime,
+    /// <p>The Amazon Web Services service managing this table, if applicable. For example, a replicated table is managed by the S3 Tables replication service.</p>
+    pub managed_by_service: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the namespace that contains this table.</p>
     pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the table bucket that contains this table.</p>
@@ -49,6 +51,10 @@ impl TableSummary {
     pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
         &self.modified_at
     }
+    /// <p>The Amazon Web Services service managing this table, if applicable. For example, a replicated table is managed by the S3 Tables replication service.</p>
+    pub fn managed_by_service(&self) -> ::std::option::Option<&str> {
+        self.managed_by_service.as_deref()
+    }
     /// <p>The unique identifier for the namespace that contains this table.</p>
     pub fn namespace_id(&self) -> ::std::option::Option<&str> {
         self.namespace_id.as_deref()
@@ -75,6 +81,7 @@ pub struct TableSummaryBuilder {
     pub(crate) table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) managed_by_service: ::std::option::Option<::std::string::String>,
     pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
     pub(crate) table_bucket_id: ::std::option::Option<::std::string::String>,
 }
@@ -174,6 +181,20 @@ impl TableSummaryBuilder {
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
     }
+    /// <p>The Amazon Web Services service managing this table, if applicable. For example, a replicated table is managed by the S3 Tables replication service.</p>
+    pub fn managed_by_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.managed_by_service = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services service managing this table, if applicable. For example, a replicated table is managed by the S3 Tables replication service.</p>
+    pub fn set_managed_by_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.managed_by_service = input;
+        self
+    }
+    /// <p>The Amazon Web Services service managing this table, if applicable. For example, a replicated table is managed by the S3 Tables replication service.</p>
+    pub fn get_managed_by_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_by_service
+    }
     /// <p>The unique identifier for the namespace that contains this table.</p>
     pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_id = ::std::option::Option::Some(input.into());
@@ -248,6 +269,7 @@ impl TableSummaryBuilder {
                     "modified_at was not specified but it is required when building TableSummary",
                 )
             })?,
+            managed_by_service: self.managed_by_service,
             namespace_id: self.namespace_id,
             table_bucket_id: self.table_bucket_id,
         })

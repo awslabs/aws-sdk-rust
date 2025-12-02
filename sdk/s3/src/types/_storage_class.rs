@@ -14,6 +14,7 @@
 /// match storageclass {
 ///     StorageClass::DeepArchive => { /* ... */ },
 ///     StorageClass::ExpressOnezone => { /* ... */ },
+///     StorageClass::FsxOntap => { /* ... */ },
 ///     StorageClass::FsxOpenzfs => { /* ... */ },
 ///     StorageClass::Glacier => { /* ... */ },
 ///     StorageClass::GlacierIr => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     ExpressOnezone,
     #[allow(missing_docs)] // documentation missing in model
+    FsxOntap,
+    #[allow(missing_docs)] // documentation missing in model
     FsxOpenzfs,
     #[allow(missing_docs)] // documentation missing in model
     Glacier,
@@ -85,6 +88,7 @@ impl ::std::convert::From<&str> for StorageClass {
         match s {
             "DEEP_ARCHIVE" => StorageClass::DeepArchive,
             "EXPRESS_ONEZONE" => StorageClass::ExpressOnezone,
+            "FSX_ONTAP" => StorageClass::FsxOntap,
             "FSX_OPENZFS" => StorageClass::FsxOpenzfs,
             "GLACIER" => StorageClass::Glacier,
             "GLACIER_IR" => StorageClass::GlacierIr,
@@ -112,6 +116,7 @@ impl StorageClass {
         match self {
             StorageClass::DeepArchive => "DEEP_ARCHIVE",
             StorageClass::ExpressOnezone => "EXPRESS_ONEZONE",
+            StorageClass::FsxOntap => "FSX_ONTAP",
             StorageClass::FsxOpenzfs => "FSX_OPENZFS",
             StorageClass::Glacier => "GLACIER",
             StorageClass::GlacierIr => "GLACIER_IR",
@@ -130,6 +135,7 @@ impl StorageClass {
         &[
             "DEEP_ARCHIVE",
             "EXPRESS_ONEZONE",
+            "FSX_ONTAP",
             "FSX_OPENZFS",
             "GLACIER",
             "GLACIER_IR",
@@ -165,6 +171,7 @@ impl ::std::fmt::Display for StorageClass {
         match self {
             StorageClass::DeepArchive => write!(f, "DEEP_ARCHIVE"),
             StorageClass::ExpressOnezone => write!(f, "EXPRESS_ONEZONE"),
+            StorageClass::FsxOntap => write!(f, "FSX_ONTAP"),
             StorageClass::FsxOpenzfs => write!(f, "FSX_OPENZFS"),
             StorageClass::Glacier => write!(f, "GLACIER"),
             StorageClass::GlacierIr => write!(f, "GLACIER_IR"),

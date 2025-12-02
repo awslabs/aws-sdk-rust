@@ -168,6 +168,8 @@ impl ::aws_types::request_id::RequestId for crate::types::error::InvokeWithRespo
     }
 }
 
+pub use crate::types::error::_durable_execution_already_started_exception::DurableExecutionAlreadyStartedException;
+
 pub use crate::types::error::_invalid_code_signature_exception::InvalidCodeSignatureException;
 
 pub use crate::types::error::_code_verification_failed_exception::CodeVerificationFailedException;
@@ -176,6 +178,10 @@ pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
 pub use crate::types::error::_capacity_provider_limit_exceeded_exception::CapacityProviderLimitExceededException;
 
+pub use crate::types::error::_callback_timeout_exception::CallbackTimeoutException;
+
+mod _callback_timeout_exception;
+
 mod _capacity_provider_limit_exceeded_exception;
 
 mod _code_signing_config_not_found_exception;
@@ -183,6 +189,8 @@ mod _code_signing_config_not_found_exception;
 mod _code_storage_exceeded_exception;
 
 mod _code_verification_failed_exception;
+
+mod _durable_execution_already_started_exception;
 
 mod _ec2_access_denied_exception;
 

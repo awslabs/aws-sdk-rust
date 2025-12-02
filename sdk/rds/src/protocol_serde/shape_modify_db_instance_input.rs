@@ -369,6 +369,17 @@ pub fn ser_modify_db_instance_input_input_input(
     if let Some(var_136) = &input.master_user_authentication_type {
         scope_135.string(var_136.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_137 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_138) = &input.additional_storage_volumes {
+        let mut list_140 = scope_137.start_list(false, None);
+        for item_139 in var_138 {
+            #[allow(unused_mut)]
+            let mut entry_141 = list_140.entry();
+            crate::protocol_serde::shape_modify_additional_storage_volume::ser_modify_additional_storage_volume(entry_141, item_139)?;
+        }
+        list_140.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

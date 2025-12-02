@@ -13,6 +13,8 @@ pub struct InvokeOutput {
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
     pub executed_version: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the durable execution that was started. This is returned when invoking a durable function and provides a unique identifier for tracking the execution.</p>
+    pub durable_execution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InvokeOutput {
@@ -36,6 +38,10 @@ impl InvokeOutput {
     pub fn executed_version(&self) -> ::std::option::Option<&str> {
         self.executed_version.as_deref()
     }
+    /// <p>The ARN of the durable execution that was started. This is returned when invoking a durable function and provides a unique identifier for tracking the execution.</p>
+    pub fn durable_execution_arn(&self) -> ::std::option::Option<&str> {
+        self.durable_execution_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -45,6 +51,7 @@ impl ::std::fmt::Debug for InvokeOutput {
         formatter.field("log_result", &self.log_result);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
         formatter.field("executed_version", &self.executed_version);
+        formatter.field("durable_execution_arn", &self.durable_execution_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -70,6 +77,7 @@ pub struct InvokeOutputBuilder {
     pub(crate) log_result: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) executed_version: ::std::option::Option<::std::string::String>,
+    pub(crate) durable_execution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InvokeOutputBuilder {
@@ -143,6 +151,20 @@ impl InvokeOutputBuilder {
     pub fn get_executed_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.executed_version
     }
+    /// <p>The ARN of the durable execution that was started. This is returned when invoking a durable function and provides a unique identifier for tracking the execution.</p>
+    pub fn durable_execution_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.durable_execution_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the durable execution that was started. This is returned when invoking a durable function and provides a unique identifier for tracking the execution.</p>
+    pub fn set_durable_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.durable_execution_arn = input;
+        self
+    }
+    /// <p>The ARN of the durable execution that was started. This is returned when invoking a durable function and provides a unique identifier for tracking the execution.</p>
+    pub fn get_durable_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.durable_execution_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -160,6 +182,7 @@ impl InvokeOutputBuilder {
             log_result: self.log_result,
             payload: self.payload,
             executed_version: self.executed_version,
+            durable_execution_arn: self.durable_execution_arn,
             _request_id: self._request_id,
         }
     }
@@ -172,6 +195,7 @@ impl ::std::fmt::Debug for InvokeOutputBuilder {
         formatter.field("log_result", &self.log_result);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
         formatter.field("executed_version", &self.executed_version);
+        formatter.field("durable_execution_arn", &self.durable_execution_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

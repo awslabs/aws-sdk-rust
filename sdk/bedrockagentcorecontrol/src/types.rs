@@ -5,6 +5,62 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_workload_identity_type::WorkloadIdentityType;
 
+pub use crate::types::_policy_status::PolicyStatus;
+
+pub use crate::types::_policy_definition::PolicyDefinition;
+
+pub use crate::types::_cedar_policy::CedarPolicy;
+
+pub use crate::types::_policy_validation_mode::PolicyValidationMode;
+
+pub use crate::types::_policy::Policy;
+
+pub use crate::types::_policy_generation_asset::PolicyGenerationAsset;
+
+pub use crate::types::_finding::Finding;
+
+pub use crate::types::_finding_type::FindingType;
+
+pub use crate::types::_policy_generation_status::PolicyGenerationStatus;
+
+pub use crate::types::_resource::Resource;
+
+pub use crate::types::_content::Content;
+
+pub use crate::types::_policy_generation::PolicyGeneration;
+
+pub use crate::types::_policy_engine_status::PolicyEngineStatus;
+
+pub use crate::types::_policy_engine::PolicyEngine;
+
+pub use crate::types::_online_evaluation_config_status::OnlineEvaluationConfigStatus;
+
+pub use crate::types::_online_evaluation_execution_status::OnlineEvaluationExecutionStatus;
+
+pub use crate::types::_evaluator_reference::EvaluatorReference;
+
+pub use crate::types::_data_source_config::DataSourceConfig;
+
+pub use crate::types::_cloud_watch_logs_input_config::CloudWatchLogsInputConfig;
+
+pub use crate::types::_rule::Rule;
+
+pub use crate::types::_session_config::SessionConfig;
+
+pub use crate::types::_filter::Filter;
+
+pub use crate::types::_filter_value::FilterValue;
+
+pub use crate::types::_filter_operator::FilterOperator;
+
+pub use crate::types::_sampling_config::SamplingConfig;
+
+pub use crate::types::_output_config::OutputConfig;
+
+pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfig;
+
+pub use crate::types::_online_evaluation_config_summary::OnlineEvaluationConfigSummary;
+
 pub use crate::types::_oauth2_credential_provider_item::Oauth2CredentialProviderItem;
 
 pub use crate::types::_credential_provider_vendor_type::CredentialProviderVendorType;
@@ -79,9 +135,19 @@ pub use crate::types::_token_based_trigger::TokenBasedTrigger;
 
 pub use crate::types::_message_based_trigger::MessageBasedTrigger;
 
+pub use crate::types::_reflection_configuration::ReflectionConfiguration;
+
+pub use crate::types::_episodic_reflection_configuration::EpisodicReflectionConfiguration;
+
+pub use crate::types::_custom_reflection_configuration::CustomReflectionConfiguration;
+
+pub use crate::types::_episodic_reflection_override::EpisodicReflectionOverride;
+
 pub use crate::types::_consolidation_configuration::ConsolidationConfiguration;
 
 pub use crate::types::_custom_consolidation_configuration::CustomConsolidationConfiguration;
+
+pub use crate::types::_episodic_consolidation_override::EpisodicConsolidationOverride;
 
 pub use crate::types::_user_preference_consolidation_override::UserPreferenceConsolidationOverride;
 
@@ -92,6 +158,8 @@ pub use crate::types::_semantic_consolidation_override::SemanticConsolidationOve
 pub use crate::types::_extraction_configuration::ExtractionConfiguration;
 
 pub use crate::types::_custom_extraction_configuration::CustomExtractionConfiguration;
+
+pub use crate::types::_episodic_extraction_override::EpisodicExtractionOverride;
 
 pub use crate::types::_user_preference_extraction_override::UserPreferenceExtractionOverride;
 
@@ -119,9 +187,19 @@ pub use crate::types::_token_based_trigger_input::TokenBasedTriggerInput;
 
 pub use crate::types::_message_based_trigger_input::MessageBasedTriggerInput;
 
+pub use crate::types::_modify_reflection_configuration::ModifyReflectionConfiguration;
+
+pub use crate::types::_custom_reflection_configuration_input::CustomReflectionConfigurationInput;
+
+pub use crate::types::_episodic_override_reflection_configuration_input::EpisodicOverrideReflectionConfigurationInput;
+
+pub use crate::types::_episodic_reflection_configuration_input::EpisodicReflectionConfigurationInput;
+
 pub use crate::types::_modify_consolidation_configuration::ModifyConsolidationConfiguration;
 
 pub use crate::types::_custom_consolidation_configuration_input::CustomConsolidationConfigurationInput;
+
+pub use crate::types::_episodic_override_consolidation_configuration_input::EpisodicOverrideConsolidationConfigurationInput;
 
 pub use crate::types::_user_preference_override_consolidation_configuration_input::UserPreferenceOverrideConsolidationConfigurationInput;
 
@@ -133,11 +211,15 @@ pub use crate::types::_modify_extraction_configuration::ModifyExtractionConfigur
 
 pub use crate::types::_custom_extraction_configuration_input::CustomExtractionConfigurationInput;
 
+pub use crate::types::_episodic_override_extraction_configuration_input::EpisodicOverrideExtractionConfigurationInput;
+
 pub use crate::types::_user_preference_override_extraction_configuration_input::UserPreferenceOverrideExtractionConfigurationInput;
 
 pub use crate::types::_semantic_override_extraction_configuration_input::SemanticOverrideExtractionConfigurationInput;
 
 pub use crate::types::_memory_strategy_input::MemoryStrategyInput;
+
+pub use crate::types::_episodic_memory_strategy_input::EpisodicMemoryStrategyInput;
 
 pub use crate::types::_custom_memory_strategy_input::CustomMemoryStrategyInput;
 
@@ -146,6 +228,8 @@ pub use crate::types::_custom_configuration_input::CustomConfigurationInput;
 pub use crate::types::_self_managed_configuration_input::SelfManagedConfigurationInput;
 
 pub use crate::types::_invocation_configuration_input::InvocationConfigurationInput;
+
+pub use crate::types::_episodic_override_configuration_input::EpisodicOverrideConfigurationInput;
 
 pub use crate::types::_user_preference_override_configuration_input::UserPreferenceOverrideConfigurationInput;
 
@@ -171,11 +255,23 @@ pub use crate::types::_api_key_credential_location::ApiKeyCredentialLocation;
 
 pub use crate::types::_o_auth_credential_provider::OAuthCredentialProvider;
 
+pub use crate::types::_o_auth_grant_type::OAuthGrantType;
+
 pub use crate::types::_credential_provider_type::CredentialProviderType;
 
 pub use crate::types::_target_configuration::TargetConfiguration;
 
 pub use crate::types::_mcp_target_configuration::McpTargetConfiguration;
+
+pub use crate::types::_api_gateway_target_configuration::ApiGatewayTargetConfiguration;
+
+pub use crate::types::_api_gateway_tool_configuration::ApiGatewayToolConfiguration;
+
+pub use crate::types::_api_gateway_tool_filter::ApiGatewayToolFilter;
+
+pub use crate::types::_rest_api_method::RestApiMethod;
+
+pub use crate::types::_api_gateway_tool_override::ApiGatewayToolOverride;
 
 pub use crate::types::_mcp_server_target_configuration::McpServerTargetConfiguration;
 
@@ -203,6 +299,10 @@ pub use crate::types::_exception_level::ExceptionLevel;
 
 pub use crate::types::_workload_identity_details::WorkloadIdentityDetails;
 
+pub use crate::types::_gateway_policy_engine_configuration::GatewayPolicyEngineConfiguration;
+
+pub use crate::types::_gateway_policy_engine_mode::GatewayPolicyEngineMode;
+
 pub use crate::types::_gateway_interceptor_configuration::GatewayInterceptorConfiguration;
 
 pub use crate::types::_interceptor_input_configuration::InterceptorInputConfiguration;
@@ -217,6 +317,16 @@ pub use crate::types::_authorizer_configuration::AuthorizerConfiguration;
 
 pub use crate::types::_custom_jwt_authorizer_configuration::CustomJwtAuthorizerConfiguration;
 
+pub use crate::types::_custom_claim_validation_type::CustomClaimValidationType;
+
+pub use crate::types::_authorizing_claim_match_value_type::AuthorizingClaimMatchValueType;
+
+pub use crate::types::_claim_match_operator_type::ClaimMatchOperatorType;
+
+pub use crate::types::_claim_match_value_type::ClaimMatchValueType;
+
+pub use crate::types::_inbound_token_claim_value_type::InboundTokenClaimValueType;
+
 pub use crate::types::_authorizer_type::AuthorizerType;
 
 pub use crate::types::_gateway_protocol_configuration::GatewayProtocolConfiguration;
@@ -230,6 +340,30 @@ pub use crate::types::_gateway_protocol_type::GatewayProtocolType;
 pub use crate::types::_gateway_status::GatewayStatus;
 
 pub use crate::types::_gateway_summary::GatewaySummary;
+
+pub use crate::types::_evaluator_status::EvaluatorStatus;
+
+pub use crate::types::_evaluator_level::EvaluatorLevel;
+
+pub use crate::types::_evaluator_config::EvaluatorConfig;
+
+pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfig;
+
+pub use crate::types::_evaluator_model_config::EvaluatorModelConfig;
+
+pub use crate::types::_bedrock_evaluator_model_config::BedrockEvaluatorModelConfig;
+
+pub use crate::types::_inference_configuration::InferenceConfiguration;
+
+pub use crate::types::_rating_scale::RatingScale;
+
+pub use crate::types::_categorical_scale_definition::CategoricalScaleDefinition;
+
+pub use crate::types::_numerical_scale_definition::NumericalScaleDefinition;
+
+pub use crate::types::_evaluator_summary::EvaluatorSummary;
+
+pub use crate::types::_evaluator_type::EvaluatorType;
 
 pub use crate::types::_code_interpreter_status::CodeInterpreterStatus;
 
@@ -307,6 +441,14 @@ mod _agent_runtime_endpoint_status;
 
 mod _agent_runtime_status;
 
+mod _api_gateway_target_configuration;
+
+mod _api_gateway_tool_configuration;
+
+mod _api_gateway_tool_filter;
+
+mod _api_gateway_tool_override;
+
 mod _api_key_credential_location;
 
 mod _api_key_credential_provider_item;
@@ -321,6 +463,10 @@ mod _authorizer_configuration;
 
 mod _authorizer_type;
 
+mod _authorizing_claim_match_value_type;
+
+mod _bedrock_evaluator_model_config;
+
 mod _browser_network_configuration;
 
 mod _browser_network_mode;
@@ -332,6 +478,18 @@ mod _browser_signing_config_output;
 mod _browser_status;
 
 mod _browser_summary;
+
+mod _categorical_scale_definition;
+
+mod _cedar_policy;
+
+mod _claim_match_operator_type;
+
+mod _claim_match_value_type;
+
+mod _cloud_watch_logs_input_config;
+
+mod _cloud_watch_output_config;
 
 mod _code;
 
@@ -349,6 +507,8 @@ mod _consolidation_configuration;
 
 mod _container_configuration;
 
+mod _content;
+
 mod _credential_provider;
 
 mod _credential_provider_configuration;
@@ -356,6 +516,8 @@ mod _credential_provider_configuration;
 mod _credential_provider_type;
 
 mod _credential_provider_vendor_type;
+
+mod _custom_claim_validation_type;
 
 mod _custom_configuration_input;
 
@@ -375,17 +537,71 @@ mod _custom_oauth2_provider_config_input;
 
 mod _custom_oauth2_provider_config_output;
 
+mod _custom_reflection_configuration;
+
+mod _custom_reflection_configuration_input;
+
+mod _data_source_config;
+
 mod _delete_memory_strategy_input;
+
+mod _episodic_consolidation_override;
+
+mod _episodic_extraction_override;
+
+mod _episodic_memory_strategy_input;
+
+mod _episodic_override_configuration_input;
+
+mod _episodic_override_consolidation_configuration_input;
+
+mod _episodic_override_extraction_configuration_input;
+
+mod _episodic_override_reflection_configuration_input;
+
+mod _episodic_reflection_configuration;
+
+mod _episodic_reflection_configuration_input;
+
+mod _episodic_reflection_override;
+
+mod _evaluator_config;
+
+mod _evaluator_level;
+
+mod _evaluator_model_config;
+
+mod _evaluator_reference;
+
+mod _evaluator_status;
+
+mod _evaluator_summary;
+
+mod _evaluator_type;
 
 mod _exception_level;
 
 mod _extraction_configuration;
+
+mod _filter;
+
+mod _filter_operator;
+
+mod _filter_value;
+
+mod _finding;
+
+mod _finding_type;
 
 mod _gateway_api_key_credential_provider;
 
 mod _gateway_interception_point;
 
 mod _gateway_interceptor_configuration;
+
+mod _gateway_policy_engine_configuration;
+
+mod _gateway_policy_engine_mode;
 
 mod _gateway_protocol_configuration;
 
@@ -405,9 +621,13 @@ mod _google_oauth2_provider_config_input;
 
 mod _google_oauth2_provider_config_output;
 
+mod _inbound_token_claim_value_type;
+
 mod _included_oauth2_provider_config_input;
 
 mod _included_oauth2_provider_config_output;
+
+mod _inference_configuration;
 
 mod _interceptor_configuration;
 
@@ -428,6 +648,8 @@ mod _lifecycle_configuration;
 mod _linkedin_oauth2_provider_config_input;
 
 mod _linkedin_oauth2_provider_config_output;
+
+mod _llm_as_a_judge_evaluator_config;
 
 mod _mcp_gateway_configuration;
 
@@ -469,6 +691,8 @@ mod _modify_memory_strategies;
 
 mod _modify_memory_strategy_input;
 
+mod _modify_reflection_configuration;
+
 mod _modify_self_managed_configuration;
 
 mod _modify_strategy_configuration;
@@ -477,7 +701,11 @@ mod _network_configuration;
 
 mod _network_mode;
 
+mod _numerical_scale_definition;
+
 mod _o_auth_credential_provider;
+
+mod _o_auth_grant_type;
 
 mod _oauth2_authorization_server_metadata;
 
@@ -489,15 +717,51 @@ mod _oauth2_provider_config_input;
 
 mod _oauth2_provider_config_output;
 
+mod _online_evaluation_config_status;
+
+mod _online_evaluation_config_summary;
+
+mod _online_evaluation_execution_status;
+
+mod _output_config;
+
 mod _override_type;
+
+mod _policy;
+
+mod _policy_definition;
+
+mod _policy_engine;
+
+mod _policy_engine_status;
+
+mod _policy_generation;
+
+mod _policy_generation_asset;
+
+mod _policy_generation_status;
+
+mod _policy_status;
+
+mod _policy_validation_mode;
 
 mod _protocol_configuration;
 
+mod _rating_scale;
+
 mod _recording_config;
+
+mod _reflection_configuration;
 
 mod _request_header_configuration;
 
+mod _resource;
+
 mod _resource_type;
+
+mod _rest_api_method;
+
+mod _rule;
 
 mod _s3_configuration;
 
@@ -506,6 +770,8 @@ mod _s3_location;
 mod _salesforce_oauth2_provider_config_input;
 
 mod _salesforce_oauth2_provider_config_output;
+
+mod _sampling_config;
 
 mod _schema_definition;
 
@@ -532,6 +798,8 @@ mod _semantic_override_consolidation_configuration_input;
 mod _semantic_override_extraction_configuration_input;
 
 mod _server_protocol;
+
+mod _session_config;
 
 mod _slack_oauth2_provider_config_input;
 

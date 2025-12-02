@@ -11,7 +11,7 @@ pub struct AwsEcsServiceLoadBalancersDetails {
     /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>Only specified when using a Classic Load Balancer. For an Application Load Balancer or a Network Load Balancer, the load balancer name is omitted.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
+    /// <p>The ARN of the ELB target group or groups associated with a service or task set.</p>
     /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
     pub target_group_arn: ::std::option::Option<::std::string::String>,
 }
@@ -29,7 +29,7 @@ impl AwsEcsServiceLoadBalancersDetails {
     pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
-    /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
+    /// <p>The ARN of the ELB target group or groups associated with a service or task set.</p>
     /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
     pub fn target_group_arn(&self) -> ::std::option::Option<&str> {
         self.target_group_arn.as_deref()
@@ -97,19 +97,19 @@ impl AwsEcsServiceLoadBalancersDetailsBuilder {
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.load_balancer_name
     }
-    /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
+    /// <p>The ARN of the ELB target group or groups associated with a service or task set.</p>
     /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
     pub fn target_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
+    /// <p>The ARN of the ELB target group or groups associated with a service or task set.</p>
     /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
     pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_group_arn = input;
         self
     }
-    /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
+    /// <p>The ARN of the ELB target group or groups associated with a service or task set.</p>
     /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
     pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_group_arn

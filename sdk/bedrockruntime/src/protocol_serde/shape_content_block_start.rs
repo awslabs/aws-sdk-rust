@@ -39,6 +39,10 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolResult' cannot be null")
                             })?,
                         )),
+                        "image" => Some(crate::types::ContentBlockStart::Image(
+                            crate::protocol_serde::shape_image_block_start::de_image_block_start(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'image' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ContentBlockStart::Unknown)

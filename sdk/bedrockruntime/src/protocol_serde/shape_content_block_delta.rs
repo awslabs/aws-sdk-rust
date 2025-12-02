@@ -55,6 +55,10 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'citation' cannot be null")
                             })?,
                         )),
+                        "image" => Some(crate::types::ContentBlockDelta::Image(
+                            crate::protocol_serde::shape_image_block_delta::de_image_block_delta(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'image' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ContentBlockDelta::Unknown)

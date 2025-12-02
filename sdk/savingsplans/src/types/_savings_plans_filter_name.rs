@@ -15,6 +15,7 @@
 ///     SavingsPlansFilterName::Commitment => { /* ... */ },
 ///     SavingsPlansFilterName::Ec2InstanceFamily => { /* ... */ },
 ///     SavingsPlansFilterName::End => { /* ... */ },
+///     SavingsPlansFilterName::InstanceFamily => { /* ... */ },
 ///     SavingsPlansFilterName::PaymentOption => { /* ... */ },
 ///     SavingsPlansFilterName::Region => { /* ... */ },
 ///     SavingsPlansFilterName::SavingsPlanType => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum SavingsPlansFilterName {
     #[allow(missing_docs)] // documentation missing in model
     End,
     #[allow(missing_docs)] // documentation missing in model
+    InstanceFamily,
+    #[allow(missing_docs)] // documentation missing in model
     PaymentOption,
     #[allow(missing_docs)] // documentation missing in model
     Region,
@@ -77,6 +80,7 @@ impl ::std::convert::From<&str> for SavingsPlansFilterName {
             "commitment" => SavingsPlansFilterName::Commitment,
             "ec2-instance-family" => SavingsPlansFilterName::Ec2InstanceFamily,
             "end" => SavingsPlansFilterName::End,
+            "instance-family" => SavingsPlansFilterName::InstanceFamily,
             "payment-option" => SavingsPlansFilterName::PaymentOption,
             "region" => SavingsPlansFilterName::Region,
             "savings-plan-type" => SavingsPlansFilterName::SavingsPlanType,
@@ -101,6 +105,7 @@ impl SavingsPlansFilterName {
             SavingsPlansFilterName::Commitment => "commitment",
             SavingsPlansFilterName::Ec2InstanceFamily => "ec2-instance-family",
             SavingsPlansFilterName::End => "end",
+            SavingsPlansFilterName::InstanceFamily => "instance-family",
             SavingsPlansFilterName::PaymentOption => "payment-option",
             SavingsPlansFilterName::Region => "region",
             SavingsPlansFilterName::SavingsPlanType => "savings-plan-type",
@@ -116,6 +121,7 @@ impl SavingsPlansFilterName {
             "commitment",
             "ec2-instance-family",
             "end",
+            "instance-family",
             "payment-option",
             "region",
             "savings-plan-type",
@@ -148,6 +154,7 @@ impl ::std::fmt::Display for SavingsPlansFilterName {
             SavingsPlansFilterName::Commitment => write!(f, "commitment"),
             SavingsPlansFilterName::Ec2InstanceFamily => write!(f, "ec2-instance-family"),
             SavingsPlansFilterName::End => write!(f, "end"),
+            SavingsPlansFilterName::InstanceFamily => write!(f, "instance-family"),
             SavingsPlansFilterName::PaymentOption => write!(f, "payment-option"),
             SavingsPlansFilterName::Region => write!(f, "region"),
             SavingsPlansFilterName::SavingsPlanType => write!(f, "savings-plan-type"),

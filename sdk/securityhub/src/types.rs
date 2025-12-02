@@ -47,6 +47,8 @@ pub use crate::types::_note_update::NoteUpdate;
 
 pub use crate::types::_provider_update_configuration::ProviderUpdateConfiguration;
 
+pub use crate::types::_service_now_update_configuration::ServiceNowUpdateConfiguration;
+
 pub use crate::types::_jira_cloud_update_configuration::JiraCloudUpdateConfiguration;
 
 pub use crate::types::_policy::Policy;
@@ -1558,6 +1560,8 @@ pub use crate::types::_product::Product;
 pub use crate::types::_integration_type::IntegrationType;
 
 pub use crate::types::_action_target::ActionTarget;
+
+pub use crate::types::_ticket_creation_mode::TicketCreationMode;
 
 pub use crate::types::_account_details::AccountDetails;
 
@@ -3115,6 +3119,8 @@ mod _service_now_detail;
 
 mod _service_now_provider_configuration;
 
+mod _service_now_update_configuration;
+
 mod _severity;
 
 mod _severity_label;
@@ -3186,6 +3192,8 @@ mod _threat_intel_indicator;
 mod _threat_intel_indicator_category;
 
 mod _threat_intel_indicator_type;
+
+mod _ticket_creation_mode;
 
 mod _trends_metrics_result;
 

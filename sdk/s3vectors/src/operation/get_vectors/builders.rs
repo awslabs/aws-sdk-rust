@@ -22,9 +22,6 @@ impl crate::operation::get_vectors::builders::GetVectorsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetVectors`.
 ///
-/// <note>
-/// <p>Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.</p>
-/// </note>
 /// <p>Returns vector attributes. To specify the vector index, you can either use both the vector bucket name and the vector index name, or use the vector index Amazon Resource Name (ARN).</p>
 /// <dl>
 /// <dt>

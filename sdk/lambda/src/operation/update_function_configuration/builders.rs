@@ -470,4 +470,18 @@ impl UpdateFunctionConfigurationFluentBuilder {
     pub fn get_capacity_provider_config(&self) -> &::std::option::Option<crate::types::CapacityProviderConfig> {
         self.inner.get_capacity_provider_config()
     }
+    /// <p>Configuration settings for durable functions. Allows updating execution timeout and retention period for functions with durability enabled.</p>
+    pub fn durable_config(mut self, input: crate::types::DurableConfig) -> Self {
+        self.inner = self.inner.durable_config(input);
+        self
+    }
+    /// <p>Configuration settings for durable functions. Allows updating execution timeout and retention period for functions with durability enabled.</p>
+    pub fn set_durable_config(mut self, input: ::std::option::Option<crate::types::DurableConfig>) -> Self {
+        self.inner = self.inner.set_durable_config(input);
+        self
+    }
+    /// <p>Configuration settings for durable functions. Allows updating execution timeout and retention period for functions with durability enabled.</p>
+    pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
+        self.inner.get_durable_config()
+    }
 }

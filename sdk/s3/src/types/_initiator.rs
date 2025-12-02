@@ -8,7 +8,7 @@ pub struct Initiator {
     /// <p><b>Directory buckets</b> - If the principal is an Amazon Web Services account, it provides the Amazon Web Services account ID. If the principal is an IAM User, it provides a user ARN value.</p>
     /// </note>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the Principal.</p><note>
+    /// <p></p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub display_name: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ impl Initiator {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Name of the Principal.</p><note>
+    /// <p></p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -62,21 +62,21 @@ impl InitiatorBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>Name of the Principal.</p><note>
+    /// <p></p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the Principal.</p><note>
+    /// <p></p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>Name of the Principal.</p><note>
+    /// <p></p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {

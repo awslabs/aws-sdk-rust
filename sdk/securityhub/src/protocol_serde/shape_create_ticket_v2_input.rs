@@ -12,5 +12,8 @@ pub fn ser_create_ticket_v2_input_input(
     if let Some(var_3) = &input.finding_metadata_uid {
         object.key("FindingMetadataUid").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.mode {
+        object.key("Mode").string(var_4.as_str());
+    }
     Ok(())
 }

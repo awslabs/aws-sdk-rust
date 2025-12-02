@@ -445,6 +445,29 @@ pub fn de_db_engine_version(
                 builder = builder.set_serverless_v2_features_support(var_35);
             }
             ,
+            s if s.matches("DatabaseInstallationFiles") /* DatabaseInstallationFiles com.amazonaws.rds#DBEngineVersion$DatabaseInstallationFiles */ =>  {
+                let var_36 =
+                    Some(
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_database_installation_files(var_36);
+            }
+            ,
+            s if s.matches("FailureReason") /* FailureReason com.amazonaws.rds#DBEngineVersion$FailureReason */ =>  {
+                let var_37 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_failure_reason(var_37);
+            }
+            ,
             _ => {}
         }
     }

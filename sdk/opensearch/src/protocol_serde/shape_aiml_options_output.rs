@@ -22,6 +22,11 @@ where
                         "S3VectorsEngine" => {
                             builder = builder.set_s3_vectors_engine(crate::protocol_serde::shape_s3_vectors_engine::de_s3_vectors_engine(tokens)?);
                         }
+                        "ServerlessVectorAcceleration" => {
+                            builder = builder.set_serverless_vector_acceleration(
+                                crate::protocol_serde::shape_serverless_vector_acceleration::de_serverless_vector_acceleration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

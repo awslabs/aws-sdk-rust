@@ -8,12 +8,18 @@ pub struct InternalServerException {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The name of the exception.</p>
     pub amzn_error_type: ::std::option::Option<::std::string::String>,
+    /// <p>The number of seconds to wait before retrying the request.</p>
+    pub retry_after_seconds: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServerException {
     /// <p>The name of the exception.</p>
     pub fn amzn_error_type(&self) -> ::std::option::Option<&str> {
         self.amzn_error_type.as_deref()
+    }
+    /// <p>The number of seconds to wait before retrying the request.</p>
+    pub fn retry_after_seconds(&self) -> ::std::option::Option<i32> {
+        self.retry_after_seconds
     }
 }
 impl InternalServerException {
@@ -58,6 +64,7 @@ impl InternalServerException {
 pub struct InternalServerExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) amzn_error_type: ::std::option::Option<::std::string::String>,
+    pub(crate) retry_after_seconds: ::std::option::Option<i32>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InternalServerExceptionBuilder {
@@ -89,6 +96,20 @@ impl InternalServerExceptionBuilder {
     pub fn get_amzn_error_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.amzn_error_type
     }
+    /// <p>The number of seconds to wait before retrying the request.</p>
+    pub fn retry_after_seconds(mut self, input: i32) -> Self {
+        self.retry_after_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of seconds to wait before retrying the request.</p>
+    pub fn set_retry_after_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.retry_after_seconds = input;
+        self
+    }
+    /// <p>The number of seconds to wait before retrying the request.</p>
+    pub fn get_retry_after_seconds(&self) -> &::std::option::Option<i32> {
+        &self.retry_after_seconds
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -105,6 +126,7 @@ impl InternalServerExceptionBuilder {
         crate::types::error::InternalServerException {
             message: self.message,
             amzn_error_type: self.amzn_error_type,
+            retry_after_seconds: self.retry_after_seconds,
             meta: self.meta.unwrap_or_default(),
         }
     }

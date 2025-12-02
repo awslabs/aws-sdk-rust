@@ -12,10 +12,19 @@
 /// ```text
 /// # let savingsplanproducttype = unimplemented!();
 /// match savingsplanproducttype {
+///     SavingsPlanProductType::Dms => { /* ... */ },
+///     SavingsPlanProductType::Dsql => { /* ... */ },
+///     SavingsPlanProductType::Docdb => { /* ... */ },
+///     SavingsPlanProductType::Dynamodb => { /* ... */ },
 ///     SavingsPlanProductType::Ec2 => { /* ... */ },
+///     SavingsPlanProductType::Elasticache => { /* ... */ },
 ///     SavingsPlanProductType::Fargate => { /* ... */ },
+///     SavingsPlanProductType::Keyspaces => { /* ... */ },
 ///     SavingsPlanProductType::Lambda => { /* ... */ },
+///     SavingsPlanProductType::Neptune => { /* ... */ },
+///     SavingsPlanProductType::Rds => { /* ... */ },
 ///     SavingsPlanProductType::Sagemaker => { /* ... */ },
+///     SavingsPlanProductType::Timestream => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,13 +54,31 @@
 )]
 pub enum SavingsPlanProductType {
     #[allow(missing_docs)] // documentation missing in model
+    Dms,
+    #[allow(missing_docs)] // documentation missing in model
+    Dsql,
+    #[allow(missing_docs)] // documentation missing in model
+    Docdb,
+    #[allow(missing_docs)] // documentation missing in model
+    Dynamodb,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
+    Elasticache,
     #[allow(missing_docs)] // documentation missing in model
     Fargate,
     #[allow(missing_docs)] // documentation missing in model
+    Keyspaces,
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
     #[allow(missing_docs)] // documentation missing in model
+    Neptune,
+    #[allow(missing_docs)] // documentation missing in model
+    Rds,
+    #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
+    #[allow(missing_docs)] // documentation missing in model
+    Timestream,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,10 +86,19 @@ pub enum SavingsPlanProductType {
 impl ::std::convert::From<&str> for SavingsPlanProductType {
     fn from(s: &str) -> Self {
         match s {
+            "DMS" => SavingsPlanProductType::Dms,
+            "DSQL" => SavingsPlanProductType::Dsql,
+            "DocDB" => SavingsPlanProductType::Docdb,
+            "DynamoDB" => SavingsPlanProductType::Dynamodb,
             "EC2" => SavingsPlanProductType::Ec2,
+            "ElastiCache" => SavingsPlanProductType::Elasticache,
             "Fargate" => SavingsPlanProductType::Fargate,
+            "Keyspaces" => SavingsPlanProductType::Keyspaces,
             "Lambda" => SavingsPlanProductType::Lambda,
+            "Neptune" => SavingsPlanProductType::Neptune,
+            "RDS" => SavingsPlanProductType::Rds,
             "SageMaker" => SavingsPlanProductType::Sagemaker,
+            "Timestream" => SavingsPlanProductType::Timestream,
             other => SavingsPlanProductType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -78,16 +114,39 @@ impl SavingsPlanProductType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SavingsPlanProductType::Dms => "DMS",
+            SavingsPlanProductType::Dsql => "DSQL",
+            SavingsPlanProductType::Docdb => "DocDB",
+            SavingsPlanProductType::Dynamodb => "DynamoDB",
             SavingsPlanProductType::Ec2 => "EC2",
+            SavingsPlanProductType::Elasticache => "ElastiCache",
             SavingsPlanProductType::Fargate => "Fargate",
+            SavingsPlanProductType::Keyspaces => "Keyspaces",
             SavingsPlanProductType::Lambda => "Lambda",
+            SavingsPlanProductType::Neptune => "Neptune",
+            SavingsPlanProductType::Rds => "RDS",
             SavingsPlanProductType::Sagemaker => "SageMaker",
+            SavingsPlanProductType::Timestream => "Timestream",
             SavingsPlanProductType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "Fargate", "Lambda", "SageMaker"]
+        &[
+            "DMS",
+            "DSQL",
+            "DocDB",
+            "DynamoDB",
+            "EC2",
+            "ElastiCache",
+            "Fargate",
+            "Keyspaces",
+            "Lambda",
+            "Neptune",
+            "RDS",
+            "SageMaker",
+            "Timestream",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SavingsPlanProductType {
@@ -110,10 +169,19 @@ impl SavingsPlanProductType {
 impl ::std::fmt::Display for SavingsPlanProductType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SavingsPlanProductType::Dms => write!(f, "DMS"),
+            SavingsPlanProductType::Dsql => write!(f, "DSQL"),
+            SavingsPlanProductType::Docdb => write!(f, "DocDB"),
+            SavingsPlanProductType::Dynamodb => write!(f, "DynamoDB"),
             SavingsPlanProductType::Ec2 => write!(f, "EC2"),
+            SavingsPlanProductType::Elasticache => write!(f, "ElastiCache"),
             SavingsPlanProductType::Fargate => write!(f, "Fargate"),
+            SavingsPlanProductType::Keyspaces => write!(f, "Keyspaces"),
             SavingsPlanProductType::Lambda => write!(f, "Lambda"),
+            SavingsPlanProductType::Neptune => write!(f, "Neptune"),
+            SavingsPlanProductType::Rds => write!(f, "RDS"),
             SavingsPlanProductType::Sagemaker => write!(f, "SageMaker"),
+            SavingsPlanProductType::Timestream => write!(f, "Timestream"),
             SavingsPlanProductType::Unknown(value) => write!(f, "{value}"),
         }
     }

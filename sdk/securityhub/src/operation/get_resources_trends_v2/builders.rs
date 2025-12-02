@@ -22,7 +22,7 @@ impl crate::operation::get_resources_trends_v2::builders::GetResourcesTrendsV2In
 }
 /// Fluent builder constructing a request to `GetResourcesTrendsV2`.
 ///
-/// <p>Returns resource trend data based on the specified criteria. This operation helps you analyze patterns and changes in resource compliance over time. This API is in public preview and subject to change.</p>
+/// <p>Returns resource trend data based on the specified criteria. This operation helps you analyze patterns and changes in resource compliance over time.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcesTrendsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

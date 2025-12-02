@@ -57,6 +57,10 @@ pub fn de_get_telemetry_evaluation_status_for_organization_http_error(
                         crate::protocol_serde::shape_internal_server_exception::de_amzn_error_type_header(_response_headers)
                                                     .map_err(|_|crate::operation::get_telemetry_evaluation_status_for_organization::GetTelemetryEvaluationStatusForOrganizationError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers)
+                                                    .map_err(|_|crate::operation::get_telemetry_evaluation_status_for_organization::GetTelemetryEvaluationStatusForOrganizationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 }

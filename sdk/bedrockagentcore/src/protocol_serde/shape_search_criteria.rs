@@ -15,5 +15,17 @@ pub fn ser_search_criteria(
             ::aws_smithy_types::Number::NegInt((input.top_k).into()),
         );
     }
+    if let Some(var_2) = &input.metadata_filters {
+        let mut array_3 = object.key("metadataFilters").start_array();
+        for item_4 in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_memory_metadata_filter_expression::ser_memory_metadata_filter_expression(&mut object_5, item_4)?;
+                object_5.finish();
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }

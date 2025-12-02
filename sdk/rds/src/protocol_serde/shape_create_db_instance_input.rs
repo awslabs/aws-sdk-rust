@@ -393,6 +393,17 @@ pub fn ser_create_db_instance_input_input_input(
     if let Some(var_148) = &input.master_user_authentication_type {
         scope_147.string(var_148.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_149 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_150) = &input.additional_storage_volumes {
+        let mut list_152 = scope_149.start_list(false, None);
+        for item_151 in var_150 {
+            #[allow(unused_mut)]
+            let mut entry_153 = list_152.entry();
+            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_153, item_151)?;
+        }
+        list_152.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

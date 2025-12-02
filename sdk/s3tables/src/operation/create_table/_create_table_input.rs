@@ -17,6 +17,8 @@ pub struct CreateTableInput {
     /// <p>If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions requirements for S3 Tables SSE-KMS encryption</a>.</p>
     /// </note>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// <p>The storage class configuration for the table. If not specified, the table inherits the storage class configuration from its table bucket. Specify this parameter to override the bucket's default storage class for this table.</p>
+    pub storage_class_configuration: ::std::option::Option<crate::types::StorageClassConfiguration>,
     /// <p>A map of user-defined tags that you would like to apply to the table that you are creating. A tag is a key-value pair that you apply to your resources. Tags can help you organize, track costs for, and control access to resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Tagging for cost allocation or attribute-based access control (ABAC)</a>.</p><note>
     /// <p>You must have the <code>s3tables:TagResource</code> permission in addition to <code>s3tables:CreateTable</code> permission to create a table with tags.</p>
     /// </note>
@@ -49,6 +51,10 @@ impl CreateTableInput {
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
+    /// <p>The storage class configuration for the table. If not specified, the table inherits the storage class configuration from its table bucket. Specify this parameter to override the bucket's default storage class for this table.</p>
+    pub fn storage_class_configuration(&self) -> ::std::option::Option<&crate::types::StorageClassConfiguration> {
+        self.storage_class_configuration.as_ref()
+    }
     /// <p>A map of user-defined tags that you would like to apply to the table that you are creating. A tag is a key-value pair that you apply to your resources. Tags can help you organize, track costs for, and control access to resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Tagging for cost allocation or attribute-based access control (ABAC)</a>.</p><note>
     /// <p>You must have the <code>s3tables:TagResource</code> permission in addition to <code>s3tables:CreateTable</code> permission to create a table with tags.</p>
     /// </note>
@@ -73,6 +79,7 @@ pub struct CreateTableInputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::OpenTableFormat>,
     pub(crate) metadata: ::std::option::Option<crate::types::TableMetadata>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) storage_class_configuration: ::std::option::Option<crate::types::StorageClassConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateTableInputBuilder {
@@ -170,6 +177,20 @@ impl CreateTableInputBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
+    /// <p>The storage class configuration for the table. If not specified, the table inherits the storage class configuration from its table bucket. Specify this parameter to override the bucket's default storage class for this table.</p>
+    pub fn storage_class_configuration(mut self, input: crate::types::StorageClassConfiguration) -> Self {
+        self.storage_class_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage class configuration for the table. If not specified, the table inherits the storage class configuration from its table bucket. Specify this parameter to override the bucket's default storage class for this table.</p>
+    pub fn set_storage_class_configuration(mut self, input: ::std::option::Option<crate::types::StorageClassConfiguration>) -> Self {
+        self.storage_class_configuration = input;
+        self
+    }
+    /// <p>The storage class configuration for the table. If not specified, the table inherits the storage class configuration from its table bucket. Specify this parameter to override the bucket's default storage class for this table.</p>
+    pub fn get_storage_class_configuration(&self) -> &::std::option::Option<crate::types::StorageClassConfiguration> {
+        &self.storage_class_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -205,6 +226,7 @@ impl CreateTableInputBuilder {
             format: self.format,
             metadata: self.metadata,
             encryption_configuration: self.encryption_configuration,
+            storage_class_configuration: self.storage_class_configuration,
             tags: self.tags,
         })
     }

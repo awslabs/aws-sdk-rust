@@ -308,6 +308,7 @@ members = [
     "sdk/networkmonitor",
     "sdk/notifications",
     "sdk/notificationscontacts",
+    "sdk/novaact",
     "sdk/oam",
     "sdk/observabilityadmin",
     "sdk/odb",

@@ -35,6 +35,10 @@ where
                                 .transpose()?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
                         )),
+                        "json" => Some(crate::types::ToolResultBlockDelta::Json(
+                            Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?)
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'json' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ToolResultBlockDelta::Unknown)

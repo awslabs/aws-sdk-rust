@@ -10,6 +10,8 @@ pub struct StrategyConfiguration {
     pub extraction: ::std::option::Option<crate::types::ExtractionConfiguration>,
     /// <p>The consolidation configuration for the memory strategy.</p>
     pub consolidation: ::std::option::Option<crate::types::ConsolidationConfiguration>,
+    /// <p>The reflection configuration for the memory strategy.</p>
+    pub reflection: ::std::option::Option<crate::types::ReflectionConfiguration>,
     /// <p>Self-managed configuration settings.</p>
     pub self_managed_configuration: ::std::option::Option<crate::types::SelfManagedConfiguration>,
 }
@@ -25,6 +27,10 @@ impl StrategyConfiguration {
     /// <p>The consolidation configuration for the memory strategy.</p>
     pub fn consolidation(&self) -> ::std::option::Option<&crate::types::ConsolidationConfiguration> {
         self.consolidation.as_ref()
+    }
+    /// <p>The reflection configuration for the memory strategy.</p>
+    pub fn reflection(&self) -> ::std::option::Option<&crate::types::ReflectionConfiguration> {
+        self.reflection.as_ref()
     }
     /// <p>Self-managed configuration settings.</p>
     pub fn self_managed_configuration(&self) -> ::std::option::Option<&crate::types::SelfManagedConfiguration> {
@@ -45,6 +51,7 @@ pub struct StrategyConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OverrideType>,
     pub(crate) extraction: ::std::option::Option<crate::types::ExtractionConfiguration>,
     pub(crate) consolidation: ::std::option::Option<crate::types::ConsolidationConfiguration>,
+    pub(crate) reflection: ::std::option::Option<crate::types::ReflectionConfiguration>,
     pub(crate) self_managed_configuration: ::std::option::Option<crate::types::SelfManagedConfiguration>,
 }
 impl StrategyConfigurationBuilder {
@@ -90,6 +97,20 @@ impl StrategyConfigurationBuilder {
     pub fn get_consolidation(&self) -> &::std::option::Option<crate::types::ConsolidationConfiguration> {
         &self.consolidation
     }
+    /// <p>The reflection configuration for the memory strategy.</p>
+    pub fn reflection(mut self, input: crate::types::ReflectionConfiguration) -> Self {
+        self.reflection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reflection configuration for the memory strategy.</p>
+    pub fn set_reflection(mut self, input: ::std::option::Option<crate::types::ReflectionConfiguration>) -> Self {
+        self.reflection = input;
+        self
+    }
+    /// <p>The reflection configuration for the memory strategy.</p>
+    pub fn get_reflection(&self) -> &::std::option::Option<crate::types::ReflectionConfiguration> {
+        &self.reflection
+    }
     /// <p>Self-managed configuration settings.</p>
     pub fn self_managed_configuration(mut self, input: crate::types::SelfManagedConfiguration) -> Self {
         self.self_managed_configuration = ::std::option::Option::Some(input);
@@ -110,6 +131,7 @@ impl StrategyConfigurationBuilder {
             r#type: self.r#type,
             extraction: self.extraction,
             consolidation: self.consolidation,
+            reflection: self.reflection,
             self_managed_configuration: self.self_managed_configuration,
         }
     }

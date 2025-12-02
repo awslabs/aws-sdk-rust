@@ -9,6 +9,8 @@ pub struct CreateTicketV2Input {
     pub finding_metadata_uid: ::std::option::Option<::std::string::String>,
     /// <p>The client idempotency token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The mode for ticket creation. When set to DRYRUN, the ticket is created using a Security Hub owned template test finding to verify the integration is working correctly.</p>
+    pub mode: ::std::option::Option<crate::types::TicketCreationMode>,
 }
 impl CreateTicketV2Input {
     /// <p>The UUID of the connectorV2 to identify connectorV2 resource.</p>
@@ -22,6 +24,10 @@ impl CreateTicketV2Input {
     /// <p>The client idempotency token.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The mode for ticket creation. When set to DRYRUN, the ticket is created using a Security Hub owned template test finding to verify the integration is working correctly.</p>
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::TicketCreationMode> {
+        self.mode.as_ref()
     }
 }
 impl CreateTicketV2Input {
@@ -38,6 +44,7 @@ pub struct CreateTicketV2InputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) finding_metadata_uid: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) mode: ::std::option::Option<crate::types::TicketCreationMode>,
 }
 impl CreateTicketV2InputBuilder {
     /// <p>The UUID of the connectorV2 to identify connectorV2 resource.</p>
@@ -84,6 +91,20 @@ impl CreateTicketV2InputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The mode for ticket creation. When set to DRYRUN, the ticket is created using a Security Hub owned template test finding to verify the integration is working correctly.</p>
+    pub fn mode(mut self, input: crate::types::TicketCreationMode) -> Self {
+        self.mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode for ticket creation. When set to DRYRUN, the ticket is created using a Security Hub owned template test finding to verify the integration is working correctly.</p>
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::TicketCreationMode>) -> Self {
+        self.mode = input;
+        self
+    }
+    /// <p>The mode for ticket creation. When set to DRYRUN, the ticket is created using a Security Hub owned template test finding to verify the integration is working correctly.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::TicketCreationMode> {
+        &self.mode
+    }
     /// Consumes the builder and constructs a [`CreateTicketV2Input`](crate::operation::create_ticket_v2::CreateTicketV2Input).
     pub fn build(
         self,
@@ -92,6 +113,7 @@ impl CreateTicketV2InputBuilder {
             connector_id: self.connector_id,
             finding_metadata_uid: self.finding_metadata_uid,
             client_token: self.client_token,
+            mode: self.mode,
         })
     }
 }

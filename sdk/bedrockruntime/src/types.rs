@@ -97,6 +97,8 @@ pub use crate::types::_document_format::DocumentFormat;
 
 pub use crate::types::_image_block::ImageBlock;
 
+pub use crate::types::_error_block::ErrorBlock;
+
 pub use crate::types::_image_source::ImageSource;
 
 pub use crate::types::_image_format::ImageFormat;
@@ -104,6 +106,12 @@ pub use crate::types::_image_format::ImageFormat;
 pub use crate::types::_tool_use_block::ToolUseBlock;
 
 pub use crate::types::_tool_use_type::ToolUseType;
+
+pub use crate::types::_audio_block::AudioBlock;
+
+pub use crate::types::_audio_source::AudioSource;
+
+pub use crate::types::_audio_format::AudioFormat;
 
 pub use crate::types::_conversation_role::ConversationRole;
 
@@ -255,6 +263,8 @@ pub use crate::types::_content_block_delta_event::ContentBlockDeltaEvent;
 
 pub use crate::types::_content_block_delta::ContentBlockDelta;
 
+pub use crate::types::_image_block_delta::ImageBlockDelta;
+
 pub use crate::types::_citations_delta::CitationsDelta;
 
 pub use crate::types::_citation_source_content_delta::CitationSourceContentDelta;
@@ -268,6 +278,8 @@ pub use crate::types::_tool_use_block_delta::ToolUseBlockDelta;
 pub use crate::types::_content_block_start_event::ContentBlockStartEvent;
 
 pub use crate::types::_content_block_start::ContentBlockStart;
+
+pub use crate::types::_image_block_start::ImageBlockStart;
 
 pub use crate::types::_tool_result_block_start::ToolResultBlockStart;
 
@@ -338,6 +350,12 @@ mod _async_invoke_s3_output_data_config;
 mod _async_invoke_status;
 
 mod _async_invoke_summary;
+
+mod _audio_block;
+
+mod _audio_format;
+
+mod _audio_source;
 
 mod _auto_tool_choice;
 
@@ -410,6 +428,8 @@ mod _document_format;
 mod _document_page_location;
 
 mod _document_source;
+
+mod _error_block;
 
 mod _guardrail_action;
 
@@ -552,6 +572,10 @@ mod _guardrail_word_policy_action;
 mod _guardrail_word_policy_assessment;
 
 mod _image_block;
+
+mod _image_block_delta;
+
+mod _image_block_start;
 
 mod _image_format;
 

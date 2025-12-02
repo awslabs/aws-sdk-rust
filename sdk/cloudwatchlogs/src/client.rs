@@ -138,6 +138,8 @@ impl Client {
 
 mod associate_kms_key;
 
+mod associate_source_to_s3_table_integration;
+
 mod cancel_export_task;
 
 mod create_delivery;
@@ -251,6 +253,8 @@ mod describe_subscription_filters;
 
 mod disassociate_kms_key;
 
+mod disassociate_source_from_s3_table_integration;
+
 mod filter_log_events;
 
 mod get_data_protection_policy;
@@ -269,6 +273,8 @@ mod get_log_anomaly_detector;
 
 mod get_log_events;
 
+mod get_log_fields;
+
 mod get_log_group_fields;
 
 mod get_log_object;
@@ -283,6 +289,8 @@ mod get_scheduled_query_history;
 
 mod get_transformer;
 
+mod list_aggregate_log_group_summaries;
+
 mod list_anomalies;
 
 mod list_integrations;
@@ -294,6 +302,8 @@ mod list_log_groups;
 mod list_log_groups_for_query;
 
 mod list_scheduled_queries;
+
+mod list_sources_for_s3_table_integration;
 
 mod list_tags_for_resource;
 

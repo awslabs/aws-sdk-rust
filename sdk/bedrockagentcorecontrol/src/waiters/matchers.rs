@@ -65,3 +65,369 @@ pub(crate) fn match_get_memory_596919fa94039a67c(
         })
         .unwrap_or_default()
 }
+
+/// Matcher union: {"output":{"path":"status","expected":"ACTIVE","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_a0b9c099115634691(
+    _result: ::std::result::Result<&crate::operation::get_policy::GetPolicyOutput, &crate::operation::get_policy::GetPolicyError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_policy::GetPolicyOutput) -> ::std::option::Option<&'a crate::types::PolicyStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ACTIVE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_00d7b810548bbcb91(
+    _result: ::std::result::Result<&crate::operation::get_policy::GetPolicyOutput, &crate::operation::get_policy::GetPolicyError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_policy::GetPolicyOutput) -> ::std::option::Option<&'a crate::types::PolicyStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"UPDATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_24f097a036b033c45(
+    _result: ::std::result::Result<&crate::operation::get_policy::GetPolicyOutput, &crate::operation::get_policy::GetPolicyError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_policy::GetPolicyOutput) -> ::std::option::Option<&'a crate::types::PolicyStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "UPDATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_184758db81b6271a8(
+    _result: ::std::result::Result<&crate::operation::get_policy::GetPolicyOutput, &crate::operation::get_policy::GetPolicyError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_policy::GetPolicyOutput) -> ::std::option::Option<&'a crate::types::PolicyStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"ResourceNotFoundException"}
+pub(crate) fn match_get_policy_1cce2c05524fb92d4(
+    _result: ::std::result::Result<&crate::operation::get_policy::GetPolicyOutput, &crate::operation::get_policy::GetPolicyError>,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "ResourceNotFoundException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"DELETING","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_ac9cf40eec4f10ab5(
+    _result: ::std::result::Result<&crate::operation::get_policy::GetPolicyOutput, &crate::operation::get_policy::GetPolicyError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_policy::GetPolicyOutput) -> ::std::option::Option<&'a crate::types::PolicyStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"ACTIVE","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_engine_a0b9c099115634691(
+    _result: ::std::result::Result<
+        &crate::operation::get_policy_engine::GetPolicyEngineOutput,
+        &crate::operation::get_policy_engine::GetPolicyEngineError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_policy_engine::GetPolicyEngineOutput,
+    ) -> ::std::option::Option<&'a crate::types::PolicyEngineStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ACTIVE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_engine_00d7b810548bbcb91(
+    _result: ::std::result::Result<
+        &crate::operation::get_policy_engine::GetPolicyEngineOutput,
+        &crate::operation::get_policy_engine::GetPolicyEngineError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_policy_engine::GetPolicyEngineOutput,
+    ) -> ::std::option::Option<&'a crate::types::PolicyEngineStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"UPDATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_engine_24f097a036b033c45(
+    _result: ::std::result::Result<
+        &crate::operation::get_policy_engine::GetPolicyEngineOutput,
+        &crate::operation::get_policy_engine::GetPolicyEngineError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_policy_engine::GetPolicyEngineOutput,
+    ) -> ::std::option::Option<&'a crate::types::PolicyEngineStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "UPDATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_engine_184758db81b6271a8(
+    _result: ::std::result::Result<
+        &crate::operation::get_policy_engine::GetPolicyEngineOutput,
+        &crate::operation::get_policy_engine::GetPolicyEngineError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_policy_engine::GetPolicyEngineOutput,
+    ) -> ::std::option::Option<&'a crate::types::PolicyEngineStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"ResourceNotFoundException"}
+pub(crate) fn match_get_policy_engine_1cce2c05524fb92d4(
+    _result: ::std::result::Result<
+        &crate::operation::get_policy_engine::GetPolicyEngineOutput,
+        &crate::operation::get_policy_engine::GetPolicyEngineError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "ResourceNotFoundException";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"DELETING","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_engine_ac9cf40eec4f10ab5(
+    _result: ::std::result::Result<
+        &crate::operation::get_policy_engine::GetPolicyEngineOutput,
+        &crate::operation::get_policy_engine::GetPolicyEngineError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_policy_engine::GetPolicyEngineOutput,
+    ) -> ::std::option::Option<&'a crate::types::PolicyEngineStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"GENERATED","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_generation_ba0115330a635f760(
+    _result: ::std::result::Result<
+        &crate::operation::get_policy_generation::GetPolicyGenerationOutput,
+        &crate::operation::get_policy_generation::GetPolicyGenerationError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_policy_generation::GetPolicyGenerationOutput,
+    ) -> ::std::option::Option<&'a crate::types::PolicyGenerationStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "GENERATED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"GENERATING","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_generation_ec5499a5e809693f8(
+    _result: ::std::result::Result<
+        &crate::operation::get_policy_generation::GetPolicyGenerationOutput,
+        &crate::operation::get_policy_generation::GetPolicyGenerationError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_policy_generation::GetPolicyGenerationOutput,
+    ) -> ::std::option::Option<&'a crate::types::PolicyGenerationStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "GENERATING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"GENERATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_generation_24b46858db5dce2c4(
+    _result: ::std::result::Result<
+        &crate::operation::get_policy_generation::GetPolicyGenerationOutput,
+        &crate::operation::get_policy_generation::GetPolicyGenerationError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_policy_generation::GetPolicyGenerationOutput,
+    ) -> ::std::option::Option<&'a crate::types::PolicyGenerationStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "GENERATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_policy_generation_184758db81b6271a8(
+    _result: ::std::result::Result<
+        &crate::operation::get_policy_generation::GetPolicyGenerationOutput,
+        &crate::operation::get_policy_generation::GetPolicyGenerationError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_policy_generation::GetPolicyGenerationOutput,
+    ) -> ::std::option::Option<&'a crate::types::PolicyGenerationStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}

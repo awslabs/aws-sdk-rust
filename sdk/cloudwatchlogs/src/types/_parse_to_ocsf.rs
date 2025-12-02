@@ -11,7 +11,7 @@ pub struct ParseToOcsf {
     pub event_source: crate::types::EventSource,
     /// <p>Specify which version of the OCSF schema to use for the transformed log events.</p>
     pub ocsf_version: crate::types::OcsfVersion,
-    /// <p>Identifies the specific release of the Open Cybersecurity Schema Framework (OCSF) transformer being used to parse OCSF data. Defaults to the latest version if not specified. Does not automatically update.</p>
+    /// <p>The version of the OCSF mapping to use for parsing log data.</p>
     pub mapping_version: ::std::option::Option<::std::string::String>,
 }
 impl ParseToOcsf {
@@ -27,7 +27,7 @@ impl ParseToOcsf {
     pub fn ocsf_version(&self) -> &crate::types::OcsfVersion {
         &self.ocsf_version
     }
-    /// <p>Identifies the specific release of the Open Cybersecurity Schema Framework (OCSF) transformer being used to parse OCSF data. Defaults to the latest version if not specified. Does not automatically update.</p>
+    /// <p>The version of the OCSF mapping to use for parsing log data.</p>
     pub fn mapping_version(&self) -> ::std::option::Option<&str> {
         self.mapping_version.as_deref()
     }
@@ -93,17 +93,17 @@ impl ParseToOcsfBuilder {
     pub fn get_ocsf_version(&self) -> &::std::option::Option<crate::types::OcsfVersion> {
         &self.ocsf_version
     }
-    /// <p>Identifies the specific release of the Open Cybersecurity Schema Framework (OCSF) transformer being used to parse OCSF data. Defaults to the latest version if not specified. Does not automatically update.</p>
+    /// <p>The version of the OCSF mapping to use for parsing log data.</p>
     pub fn mapping_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mapping_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifies the specific release of the Open Cybersecurity Schema Framework (OCSF) transformer being used to parse OCSF data. Defaults to the latest version if not specified. Does not automatically update.</p>
+    /// <p>The version of the OCSF mapping to use for parsing log data.</p>
     pub fn set_mapping_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mapping_version = input;
         self
     }
-    /// <p>Identifies the specific release of the Open Cybersecurity Schema Framework (OCSF) transformer being used to parse OCSF data. Defaults to the latest version if not specified. Does not automatically update.</p>
+    /// <p>The version of the OCSF mapping to use for parsing log data.</p>
     pub fn get_mapping_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.mapping_version
     }

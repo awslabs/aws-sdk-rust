@@ -164,8 +164,6 @@ mod batch_update_findings_v2;
 
 mod batch_update_standards_control_associations;
 
-mod connector_registrations_v2;
-
 mod create_action_target;
 
 mod create_aggregator_v2;
@@ -344,6 +342,8 @@ mod list_security_control_definitions;
 mod list_standards_control_associations;
 
 mod list_tags_for_resource;
+
+mod register_connector_v2;
 
 mod start_configuration_policy_association;
 

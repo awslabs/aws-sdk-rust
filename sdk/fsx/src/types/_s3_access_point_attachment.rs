@@ -28,6 +28,8 @@ pub struct S3AccessPointAttachment {
     pub r#type: ::std::option::Option<crate::types::S3AccessPointAttachmentType>,
     /// <p>The OpenZFSConfiguration of the S3 access point attachment.</p>
     pub open_zfs_configuration: ::std::option::Option<crate::types::S3AccessPointOpenZfsConfiguration>,
+    /// <p>The ONTAP configuration of the S3 access point attachment.</p>
+    pub ontap_configuration: ::std::option::Option<crate::types::S3AccessPointOntapConfiguration>,
     /// <p>The S3 access point configuration of the S3 access point attachment.</p>
     pub s3_access_point: ::std::option::Option<crate::types::S3AccessPoint>,
 }
@@ -68,6 +70,10 @@ impl S3AccessPointAttachment {
     pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::S3AccessPointOpenZfsConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
+    /// <p>The ONTAP configuration of the S3 access point attachment.</p>
+    pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::S3AccessPointOntapConfiguration> {
+        self.ontap_configuration.as_ref()
+    }
     /// <p>The S3 access point configuration of the S3 access point attachment.</p>
     pub fn s3_access_point(&self) -> ::std::option::Option<&crate::types::S3AccessPoint> {
         self.s3_access_point.as_ref()
@@ -90,6 +96,7 @@ pub struct S3AccessPointAttachmentBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::S3AccessPointAttachmentType>,
     pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::S3AccessPointOpenZfsConfiguration>,
+    pub(crate) ontap_configuration: ::std::option::Option<crate::types::S3AccessPointOntapConfiguration>,
     pub(crate) s3_access_point: ::std::option::Option<crate::types::S3AccessPoint>,
 }
 impl S3AccessPointAttachmentBuilder {
@@ -213,6 +220,20 @@ impl S3AccessPointAttachmentBuilder {
     pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::S3AccessPointOpenZfsConfiguration> {
         &self.open_zfs_configuration
     }
+    /// <p>The ONTAP configuration of the S3 access point attachment.</p>
+    pub fn ontap_configuration(mut self, input: crate::types::S3AccessPointOntapConfiguration) -> Self {
+        self.ontap_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ONTAP configuration of the S3 access point attachment.</p>
+    pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::S3AccessPointOntapConfiguration>) -> Self {
+        self.ontap_configuration = input;
+        self
+    }
+    /// <p>The ONTAP configuration of the S3 access point attachment.</p>
+    pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::S3AccessPointOntapConfiguration> {
+        &self.ontap_configuration
+    }
     /// <p>The S3 access point configuration of the S3 access point attachment.</p>
     pub fn s3_access_point(mut self, input: crate::types::S3AccessPoint) -> Self {
         self.s3_access_point = ::std::option::Option::Some(input);
@@ -236,6 +257,7 @@ impl S3AccessPointAttachmentBuilder {
             name: self.name,
             r#type: self.r#type,
             open_zfs_configuration: self.open_zfs_configuration,
+            ontap_configuration: self.ontap_configuration,
             s3_access_point: self.s3_access_point,
         }
     }

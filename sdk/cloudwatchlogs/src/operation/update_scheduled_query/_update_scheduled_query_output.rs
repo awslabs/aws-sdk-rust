@@ -9,35 +9,35 @@ pub struct UpdateScheduledQueryOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the updated scheduled query.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The query language used by the updated scheduled query.</p>
+    /// <p>The query language of the updated scheduled query.</p>
     pub query_language: ::std::option::Option<crate::types::QueryLanguage>,
     /// <p>The query string of the updated scheduled query.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
-    /// <p>The log group identifiers of the updated scheduled query.</p>
+    /// <p>The log groups queried by the updated scheduled query.</p>
     pub log_group_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The schedule expression of the updated scheduled query.</p>
+    /// <p>The cron expression of the updated scheduled query.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>The timezone of the updated scheduled query.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
-    /// <p>The start time offset of the updated scheduled query.</p>
+    /// <p>The time offset of the updated scheduled query.</p>
     pub start_time_offset: ::std::option::Option<i64>,
     /// <p>The destination configuration of the updated scheduled query.</p>
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     /// <p>The state of the updated scheduled query.</p>
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
-    /// <p>The time when the updated scheduled query was last executed.</p>
+    /// <p>The timestamp when the updated scheduled query was last executed.</p>
     pub last_triggered_time: ::std::option::Option<i64>,
-    /// <p>The status of the last execution of the updated scheduled query (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>The status of the most recent execution of the updated scheduled query.</p>
     pub last_execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
-    /// <p>The schedule start time of the updated scheduled query.</p>
+    /// <p>The start time of the updated scheduled query.</p>
     pub schedule_start_time: ::std::option::Option<i64>,
-    /// <p>The schedule end time of the updated scheduled query.</p>
+    /// <p>The end time of the updated scheduled query.</p>
     pub schedule_end_time: ::std::option::Option<i64>,
     /// <p>The execution role ARN of the updated scheduled query.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The creation time of the updated scheduled query.</p>
+    /// <p>The timestamp when the scheduled query was originally created.</p>
     pub creation_time: ::std::option::Option<i64>,
-    /// <p>The last updated time of the scheduled query.</p>
+    /// <p>The timestamp when the scheduled query was last updated.</p>
     pub last_updated_time: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
@@ -54,7 +54,7 @@ impl UpdateScheduledQueryOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The query language used by the updated scheduled query.</p>
+    /// <p>The query language of the updated scheduled query.</p>
     pub fn query_language(&self) -> ::std::option::Option<&crate::types::QueryLanguage> {
         self.query_language.as_ref()
     }
@@ -62,13 +62,13 @@ impl UpdateScheduledQueryOutput {
     pub fn query_string(&self) -> ::std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>The log group identifiers of the updated scheduled query.</p>
+    /// <p>The log groups queried by the updated scheduled query.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_identifiers.is_none()`.
     pub fn log_group_identifiers(&self) -> &[::std::string::String] {
         self.log_group_identifiers.as_deref().unwrap_or_default()
     }
-    /// <p>The schedule expression of the updated scheduled query.</p>
+    /// <p>The cron expression of the updated scheduled query.</p>
     pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
@@ -76,7 +76,7 @@ impl UpdateScheduledQueryOutput {
     pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
-    /// <p>The start time offset of the updated scheduled query.</p>
+    /// <p>The time offset of the updated scheduled query.</p>
     pub fn start_time_offset(&self) -> ::std::option::Option<i64> {
         self.start_time_offset
     }
@@ -88,19 +88,19 @@ impl UpdateScheduledQueryOutput {
     pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
         self.state.as_ref()
     }
-    /// <p>The time when the updated scheduled query was last executed.</p>
+    /// <p>The timestamp when the updated scheduled query was last executed.</p>
     pub fn last_triggered_time(&self) -> ::std::option::Option<i64> {
         self.last_triggered_time
     }
-    /// <p>The status of the last execution of the updated scheduled query (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>The status of the most recent execution of the updated scheduled query.</p>
     pub fn last_execution_status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
         self.last_execution_status.as_ref()
     }
-    /// <p>The schedule start time of the updated scheduled query.</p>
+    /// <p>The start time of the updated scheduled query.</p>
     pub fn schedule_start_time(&self) -> ::std::option::Option<i64> {
         self.schedule_start_time
     }
-    /// <p>The schedule end time of the updated scheduled query.</p>
+    /// <p>The end time of the updated scheduled query.</p>
     pub fn schedule_end_time(&self) -> ::std::option::Option<i64> {
         self.schedule_end_time
     }
@@ -108,11 +108,11 @@ impl UpdateScheduledQueryOutput {
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>The creation time of the updated scheduled query.</p>
+    /// <p>The timestamp when the scheduled query was originally created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<i64> {
         self.creation_time
     }
-    /// <p>The last updated time of the scheduled query.</p>
+    /// <p>The timestamp when the scheduled query was last updated.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<i64> {
         self.last_updated_time
     }
@@ -196,17 +196,17 @@ impl UpdateScheduledQueryOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The query language used by the updated scheduled query.</p>
+    /// <p>The query language of the updated scheduled query.</p>
     pub fn query_language(mut self, input: crate::types::QueryLanguage) -> Self {
         self.query_language = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The query language used by the updated scheduled query.</p>
+    /// <p>The query language of the updated scheduled query.</p>
     pub fn set_query_language(mut self, input: ::std::option::Option<crate::types::QueryLanguage>) -> Self {
         self.query_language = input;
         self
     }
-    /// <p>The query language used by the updated scheduled query.</p>
+    /// <p>The query language of the updated scheduled query.</p>
     pub fn get_query_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
         &self.query_language
     }
@@ -228,33 +228,33 @@ impl UpdateScheduledQueryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_group_identifiers`](Self::set_log_group_identifiers).
     ///
-    /// <p>The log group identifiers of the updated scheduled query.</p>
+    /// <p>The log groups queried by the updated scheduled query.</p>
     pub fn log_group_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_group_identifiers.unwrap_or_default();
         v.push(input.into());
         self.log_group_identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The log group identifiers of the updated scheduled query.</p>
+    /// <p>The log groups queried by the updated scheduled query.</p>
     pub fn set_log_group_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_group_identifiers = input;
         self
     }
-    /// <p>The log group identifiers of the updated scheduled query.</p>
+    /// <p>The log groups queried by the updated scheduled query.</p>
     pub fn get_log_group_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_group_identifiers
     }
-    /// <p>The schedule expression of the updated scheduled query.</p>
+    /// <p>The cron expression of the updated scheduled query.</p>
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The schedule expression of the updated scheduled query.</p>
+    /// <p>The cron expression of the updated scheduled query.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
-    /// <p>The schedule expression of the updated scheduled query.</p>
+    /// <p>The cron expression of the updated scheduled query.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression
     }
@@ -272,17 +272,17 @@ impl UpdateScheduledQueryOutputBuilder {
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.timezone
     }
-    /// <p>The start time offset of the updated scheduled query.</p>
+    /// <p>The time offset of the updated scheduled query.</p>
     pub fn start_time_offset(mut self, input: i64) -> Self {
         self.start_time_offset = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start time offset of the updated scheduled query.</p>
+    /// <p>The time offset of the updated scheduled query.</p>
     pub fn set_start_time_offset(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_time_offset = input;
         self
     }
-    /// <p>The start time offset of the updated scheduled query.</p>
+    /// <p>The time offset of the updated scheduled query.</p>
     pub fn get_start_time_offset(&self) -> &::std::option::Option<i64> {
         &self.start_time_offset
     }
@@ -314,59 +314,59 @@ impl UpdateScheduledQueryOutputBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
     }
-    /// <p>The time when the updated scheduled query was last executed.</p>
+    /// <p>The timestamp when the updated scheduled query was last executed.</p>
     pub fn last_triggered_time(mut self, input: i64) -> Self {
         self.last_triggered_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the updated scheduled query was last executed.</p>
+    /// <p>The timestamp when the updated scheduled query was last executed.</p>
     pub fn set_last_triggered_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_triggered_time = input;
         self
     }
-    /// <p>The time when the updated scheduled query was last executed.</p>
+    /// <p>The timestamp when the updated scheduled query was last executed.</p>
     pub fn get_last_triggered_time(&self) -> &::std::option::Option<i64> {
         &self.last_triggered_time
     }
-    /// <p>The status of the last execution of the updated scheduled query (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>The status of the most recent execution of the updated scheduled query.</p>
     pub fn last_execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.last_execution_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the last execution of the updated scheduled query (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>The status of the most recent execution of the updated scheduled query.</p>
     pub fn set_last_execution_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.last_execution_status = input;
         self
     }
-    /// <p>The status of the last execution of the updated scheduled query (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>The status of the most recent execution of the updated scheduled query.</p>
     pub fn get_last_execution_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
         &self.last_execution_status
     }
-    /// <p>The schedule start time of the updated scheduled query.</p>
+    /// <p>The start time of the updated scheduled query.</p>
     pub fn schedule_start_time(mut self, input: i64) -> Self {
         self.schedule_start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The schedule start time of the updated scheduled query.</p>
+    /// <p>The start time of the updated scheduled query.</p>
     pub fn set_schedule_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.schedule_start_time = input;
         self
     }
-    /// <p>The schedule start time of the updated scheduled query.</p>
+    /// <p>The start time of the updated scheduled query.</p>
     pub fn get_schedule_start_time(&self) -> &::std::option::Option<i64> {
         &self.schedule_start_time
     }
-    /// <p>The schedule end time of the updated scheduled query.</p>
+    /// <p>The end time of the updated scheduled query.</p>
     pub fn schedule_end_time(mut self, input: i64) -> Self {
         self.schedule_end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The schedule end time of the updated scheduled query.</p>
+    /// <p>The end time of the updated scheduled query.</p>
     pub fn set_schedule_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.schedule_end_time = input;
         self
     }
-    /// <p>The schedule end time of the updated scheduled query.</p>
+    /// <p>The end time of the updated scheduled query.</p>
     pub fn get_schedule_end_time(&self) -> &::std::option::Option<i64> {
         &self.schedule_end_time
     }
@@ -384,31 +384,31 @@ impl UpdateScheduledQueryOutputBuilder {
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
-    /// <p>The creation time of the updated scheduled query.</p>
+    /// <p>The timestamp when the scheduled query was originally created.</p>
     pub fn creation_time(mut self, input: i64) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The creation time of the updated scheduled query.</p>
+    /// <p>The timestamp when the scheduled query was originally created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.creation_time = input;
         self
     }
-    /// <p>The creation time of the updated scheduled query.</p>
+    /// <p>The timestamp when the scheduled query was originally created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
         &self.creation_time
     }
-    /// <p>The last updated time of the scheduled query.</p>
+    /// <p>The timestamp when the scheduled query was last updated.</p>
     pub fn last_updated_time(mut self, input: i64) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last updated time of the scheduled query.</p>
+    /// <p>The timestamp when the scheduled query was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>The last updated time of the scheduled query.</p>
+    /// <p>The timestamp when the scheduled query was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<i64> {
         &self.last_updated_time
     }

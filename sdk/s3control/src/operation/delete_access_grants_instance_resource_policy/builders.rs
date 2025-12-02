@@ -30,9 +30,7 @@ impl crate::operation::delete_access_grants_instance_resource_policy::builders::
 /// <dd>
 /// <p>You must have the <code>s3:DeleteAccessGrantsInstanceResourcePolicy</code> permission to use this operation.</p>
 /// </dd>
-/// </dl><important>
-/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
-/// </important>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccessGrantsInstanceResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

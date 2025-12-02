@@ -56,6 +56,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TelemetrySourceTypes" => {
+                            builder = builder
+                                .set_telemetry_source_types(crate::protocol_serde::shape_telemetry_source_types::de_telemetry_source_types(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

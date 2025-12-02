@@ -22,9 +22,6 @@ impl crate::operation::list_indexes::builders::ListIndexesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListIndexes`.
 ///
-/// <note>
-/// <p>Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.</p>
-/// </note>
 /// <p>Returns a list of all the vector indexes within the specified vector bucket. To specify the bucket, you must use either the vector bucket name or the vector bucket Amazon Resource Name (ARN).</p>
 /// <dl>
 /// <dt>

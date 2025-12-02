@@ -34,6 +34,20 @@ pub fn de_delete_vector_bucket_http_error(
             };
             tmp
         }),
+        "NotFoundException" => crate::operation::delete_vector_bucket::DeleteVectorBucketError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_vector_bucket::DeleteVectorBucketError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_vector_bucket::DeleteVectorBucketError::unhandled)?
+            };
+            tmp
+        }),
         "ServiceUnavailableException" => crate::operation::delete_vector_bucket::DeleteVectorBucketError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp = {

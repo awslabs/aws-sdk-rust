@@ -242,6 +242,11 @@ pub(crate) fn de_update_gateway(
                             .transpose()?,
                     );
                 }
+                "policyEngineConfiguration" => {
+                    builder = builder.set_policy_engine_configuration(
+                        crate::protocol_serde::shape_gateway_policy_engine_configuration::de_gateway_policy_engine_configuration(tokens)?,
+                    );
+                }
                 "protocolConfiguration" => {
                     builder = builder.set_protocol_configuration(
                         crate::protocol_serde::shape_gateway_protocol_configuration::de_gateway_protocol_configuration(tokens)?,

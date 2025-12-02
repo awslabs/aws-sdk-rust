@@ -22,7 +22,7 @@ impl crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryInp
 }
 /// Fluent builder constructing a request to `DeleteScheduledQuery`.
 ///
-/// <p>Deletes an existing scheduled query and all its associated configurations. This operation permanently removes the scheduled query and cannot be undone.</p>
+/// <p>Deletes a scheduled query and stops all future executions. This operation also removes any configured actions and associated resources.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteScheduledQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteScheduledQueryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name or ARN of the scheduled query to delete.</p>
+    /// <p>The ARN or name of the scheduled query to delete.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The name or ARN of the scheduled query to delete.</p>
+    /// <p>The ARN or name of the scheduled query to delete.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The name or ARN of the scheduled query to delete.</p>
+    /// <p>The ARN or name of the scheduled query to delete.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

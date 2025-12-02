@@ -48,9 +48,7 @@ impl crate::operation::create_access_grants_location::builders::CreateAccessGran
 /// <dd>
 /// <p>You must also have the following permission for the specified IAM role: <code>iam:PassRole</code></p>
 /// </dd>
-/// </dl><important>
-/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
-/// </important>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAccessGrantsLocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -34,7 +34,9 @@ impl crate::operation::create_table_bucket::builders::CreateTableBucketInputBuil
 /// <li>
 /// <p>If you use this operation with the optional <code>encryptionConfiguration</code> parameter you must have the <code>s3tables:PutTableBucketEncryption</code> permission.</p></li>
 /// <li>
-/// <p>You must have the <code>s3tables:TagResource</code> permission in addition to <code>s3tables:CreateTableBucket</code> permission to create a table bucket with tags.</p></li>
+/// <p>If you use this operation with the <code>storageClassConfiguration</code> request parameter, you must have the <code>s3tables:PutTableBucketStorageClass</code> permission.</p></li>
+/// <li>
+/// <p>To create a table bucket with tags, you must have the <code>s3tables:TagResource</code> permission in addition to <code>s3tables:CreateTableBucket</code> permission.</p></li>
 /// </ul>
 /// </dd>
 /// </dl>
@@ -150,6 +152,20 @@ impl CreateTableBucketFluentBuilder {
     /// <p>The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
+    }
+    /// <p>The default storage class configuration for the table bucket. This configuration will be applied to all new tables created in this bucket unless overridden at the table level. If not specified, the service default storage class will be used.</p>
+    pub fn storage_class_configuration(mut self, input: crate::types::StorageClassConfiguration) -> Self {
+        self.inner = self.inner.storage_class_configuration(input);
+        self
+    }
+    /// <p>The default storage class configuration for the table bucket. This configuration will be applied to all new tables created in this bucket unless overridden at the table level. If not specified, the service default storage class will be used.</p>
+    pub fn set_storage_class_configuration(mut self, input: ::std::option::Option<crate::types::StorageClassConfiguration>) -> Self {
+        self.inner = self.inner.set_storage_class_configuration(input);
+        self
+    }
+    /// <p>The default storage class configuration for the table bucket. This configuration will be applied to all new tables created in this bucket unless overridden at the table level. If not specified, the service default storage class will be used.</p>
+    pub fn get_storage_class_configuration(&self) -> &::std::option::Option<crate::types::StorageClassConfiguration> {
+        self.inner.get_storage_class_configuration()
     }
     ///
     /// Adds a key-value pair to `tags`.

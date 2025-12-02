@@ -12,6 +12,12 @@ pub fn ser_image_block(
         crate::protocol_serde::shape_image_source::ser_image_source(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.error {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("error").start_object();
+        crate::protocol_serde::shape_error_block::ser_error_block(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -39,6 +45,9 @@ where
                         }
                         "source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_image_source::de_image_source(tokens)?);
+                        }
+                        "error" => {
+                            builder = builder.set_error(crate::protocol_serde::shape_error_block::de_error_block(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

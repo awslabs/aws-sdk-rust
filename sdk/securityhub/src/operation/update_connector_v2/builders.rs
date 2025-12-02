@@ -22,7 +22,7 @@ impl crate::operation::update_connector_v2::builders::UpdateConnectorV2InputBuil
 }
 /// Fluent builder constructing a request to `UpdateConnectorV2`.
 ///
-/// <p>Grants permission to update a connectorV2 based on its id and input parameters. This API is in public preview and subject to change.</p>
+/// <p>Grants permission to update a connectorV2 based on its id and input parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectorV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,20 +121,6 @@ impl UpdateConnectorV2FluentBuilder {
     /// <p>The UUID of the connectorV2 to identify connectorV2 resource.</p>
     pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_connector_id()
-    }
-    /// <p>The clientSecret of ServiceNow.</p>
-    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.client_secret(input.into());
-        self
-    }
-    /// <p>The clientSecret of ServiceNow.</p>
-    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_client_secret(input);
-        self
-    }
-    /// <p>The clientSecret of ServiceNow.</p>
-    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_client_secret()
     }
     /// <p>The description of the connectorV2.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

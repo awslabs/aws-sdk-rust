@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CustomConfigurationInput {
+    /// <p>The episodic memory strategy override configuration for a custom memory strategy.</p>
+    EpisodicOverride(crate::types::EpisodicOverrideConfigurationInput),
     /// <p>The self managed configuration for a custom memory strategy.</p>
     SelfManagedConfiguration(crate::types::SelfManagedConfigurationInput),
     /// <p>The semantic override configuration for a custom memory strategy.</p>
@@ -23,6 +25,19 @@ pub enum CustomConfigurationInput {
     Unknown,
 }
 impl CustomConfigurationInput {
+    /// Tries to convert the enum instance into [`EpisodicOverride`](crate::types::CustomConfigurationInput::EpisodicOverride), extracting the inner [`EpisodicOverrideConfigurationInput`](crate::types::EpisodicOverrideConfigurationInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_episodic_override(&self) -> ::std::result::Result<&crate::types::EpisodicOverrideConfigurationInput, &Self> {
+        if let CustomConfigurationInput::EpisodicOverride(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EpisodicOverride`](crate::types::CustomConfigurationInput::EpisodicOverride).
+    pub fn is_episodic_override(&self) -> bool {
+        self.as_episodic_override().is_ok()
+    }
     /// Tries to convert the enum instance into [`SelfManagedConfiguration`](crate::types::CustomConfigurationInput::SelfManagedConfiguration), extracting the inner [`SelfManagedConfigurationInput`](crate::types::SelfManagedConfigurationInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_self_managed_configuration(&self) -> ::std::result::Result<&crate::types::SelfManagedConfigurationInput, &Self> {

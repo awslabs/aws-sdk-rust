@@ -7,9 +7,19 @@ pub use crate::types::_extraction_job::ExtractionJob;
 
 pub use crate::types::_memory_record_summary::MemoryRecordSummary;
 
+pub use crate::types::_metadata_value::MetadataValue;
+
 pub use crate::types::_memory_content::MemoryContent;
 
 pub use crate::types::_search_criteria::SearchCriteria;
+
+pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpression;
+
+pub use crate::types::_right_expression::RightExpression;
+
+pub use crate::types::_operator_type::OperatorType;
+
+pub use crate::types::_left_expression::LeftExpression;
 
 pub use crate::types::_session_summary::SessionSummary;
 
@@ -25,8 +35,6 @@ pub use crate::types::_extraction_job_filter_input::ExtractionJobFilterInput;
 
 pub use crate::types::_event::Event;
 
-pub use crate::types::_metadata_value::MetadataValue;
-
 pub use crate::types::_branch::Branch;
 
 pub use crate::types::_payload_type::PayloadType;
@@ -40,12 +48,6 @@ pub use crate::types::_content::Content;
 pub use crate::types::_filter_input::FilterInput;
 
 pub use crate::types::_event_metadata_filter_expression::EventMetadataFilterExpression;
-
-pub use crate::types::_right_expression::RightExpression;
-
-pub use crate::types::_operator_type::OperatorType;
-
-pub use crate::types::_left_expression::LeftExpression;
 
 pub use crate::types::_branch_filter::BranchFilter;
 
@@ -62,6 +64,18 @@ pub use crate::types::_memory_record_update_input::MemoryRecordUpdateInput;
 pub use crate::types::_memory_record_delete_input::MemoryRecordDeleteInput;
 
 pub use crate::types::_memory_record_create_input::MemoryRecordCreateInput;
+
+pub use crate::types::_evaluation_result_content::EvaluationResultContent;
+
+pub use crate::types::_token_usage::TokenUsage;
+
+pub use crate::types::_context::Context;
+
+pub use crate::types::_span_context::SpanContext;
+
+pub use crate::types::_evaluation_target::EvaluationTarget;
+
+pub use crate::types::_evaluation_input::EvaluationInput;
 
 pub use crate::types::_code_interpreter_session_summary::CodeInterpreterSessionSummary;
 
@@ -147,7 +161,15 @@ mod _content_block;
 
 mod _content_block_type;
 
+mod _context;
+
 mod _conversational;
+
+mod _evaluation_input;
+
+mod _evaluation_result_content;
+
+mod _evaluation_target;
 
 mod _event;
 
@@ -172,6 +194,8 @@ mod _left_expression;
 mod _live_view_stream;
 
 mod _memory_content;
+
+mod _memory_metadata_filter_expression;
 
 mod _memory_record;
 
@@ -213,9 +237,13 @@ mod _session_status;
 
 mod _session_summary;
 
+mod _span_context;
+
 mod _stream_update;
 
 mod _task_status;
+
+mod _token_usage;
 
 mod _tool_arguments;
 

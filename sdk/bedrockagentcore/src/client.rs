@@ -177,6 +177,8 @@ mod delete_event;
 
 mod delete_memory_record;
 
+mod evaluate;
+
 mod get_agent_card;
 
 mod get_browser_session;

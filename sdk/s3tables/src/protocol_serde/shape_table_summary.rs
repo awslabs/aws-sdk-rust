@@ -50,6 +50,13 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "managedByService" => {
+                            builder = builder.set_managed_by_service(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "namespaceId" => {
                             builder = builder.set_namespace_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

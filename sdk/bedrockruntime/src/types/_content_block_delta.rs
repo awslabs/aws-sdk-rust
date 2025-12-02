@@ -6,6 +6,8 @@
 pub enum ContentBlockDelta {
     /// <p>Incremental citation information that is streamed as part of the response generation process.</p>
     Citation(crate::types::CitationsDelta),
+    /// <p>A streaming delta event containing incremental image data.</p>
+    Image(crate::types::ImageBlockDelta),
     /// <p>Contains content regarding the reasoning that is carried out by the model. Reasoning refers to a Chain of Thought (CoT) that the model generates to enhance the accuracy of its final response.</p>
     ReasoningContent(crate::types::ReasoningContentBlockDelta),
     /// <p>The content text.</p>
@@ -37,6 +39,19 @@ impl ContentBlockDelta {
     /// Returns true if this is a [`Citation`](crate::types::ContentBlockDelta::Citation).
     pub fn is_citation(&self) -> bool {
         self.as_citation().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Image`](crate::types::ContentBlockDelta::Image), extracting the inner [`ImageBlockDelta`](crate::types::ImageBlockDelta).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_image(&self) -> ::std::result::Result<&crate::types::ImageBlockDelta, &Self> {
+        if let ContentBlockDelta::Image(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Image`](crate::types::ContentBlockDelta::Image).
+    pub fn is_image(&self) -> bool {
+        self.as_image().is_ok()
     }
     /// Tries to convert the enum instance into [`ReasoningContent`](crate::types::ContentBlockDelta::ReasoningContent), extracting the inner [`ReasoningContentBlockDelta`](crate::types::ReasoningContentBlockDelta).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -99,6 +114,7 @@ impl ::std::fmt::Debug for ContentBlockDelta {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             ContentBlockDelta::Citation(val) => f.debug_tuple("Citation").field(&val).finish(),
+            ContentBlockDelta::Image(val) => f.debug_tuple("Image").field(&val).finish(),
             ContentBlockDelta::ReasoningContent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             ContentBlockDelta::Text(val) => f.debug_tuple("Text").field(&val).finish(),
             ContentBlockDelta::ToolResult(val) => f.debug_tuple("ToolResult").field(&val).finish(),

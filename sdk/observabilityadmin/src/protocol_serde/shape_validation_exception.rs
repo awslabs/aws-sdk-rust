@@ -17,6 +17,9 @@ pub(crate) fn de_validation_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "Errors" => {
+                    builder = builder.set_errors(crate::protocol_serde::shape_validation_errors::de_validation_errors(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

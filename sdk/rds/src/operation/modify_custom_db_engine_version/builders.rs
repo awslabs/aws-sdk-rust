@@ -111,7 +111,8 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+    /// <p>The database engine.</p>
+    /// <p>RDS Custom for Oracle supports the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
@@ -122,11 +123,24 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// </ul>
+    /// <p>RDS Custom for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>custom-sqlserver-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-se</code></p></li>
+    /// <li>
+    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-dev</code></p></li>
+    /// </ul>
+    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+    /// <p>The database engine.</p>
+    /// <p>RDS Custom for Oracle supports the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
@@ -137,11 +151,24 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// </ul>
+    /// <p>RDS Custom for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>custom-sqlserver-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-se</code></p></li>
+    /// <li>
+    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-dev</code></p></li>
+    /// </ul>
+    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The database engine. RDS Custom for Oracle supports the following values:</p>
+    /// <p>The database engine.</p>
+    /// <p>RDS Custom for Oracle supports the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>custom-oracle-ee</code></p></li>
@@ -152,6 +179,18 @@ impl ModifyCustomDBEngineVersionFluentBuilder {
     /// <li>
     /// <p><code>custom-oracle-se2-cdb</code></p></li>
     /// </ul>
+    /// <p>RDS Custom for SQL Server supports the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>custom-sqlserver-ee</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-se</code></p></li>
+    /// <li>
+    /// <p><code>ccustom-sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>custom-sqlserver-dev</code></p></li>
+    /// </ul>
+    /// <p>RDS for SQL Server supports only <code>sqlserver-dev-ee</code>.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }

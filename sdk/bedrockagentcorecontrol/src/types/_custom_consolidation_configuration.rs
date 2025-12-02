@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CustomConsolidationConfiguration {
+    /// <p>The configurations to override the default consolidation step for the episodic memory strategy.</p>
+    EpisodicConsolidationOverride(crate::types::EpisodicConsolidationOverride),
     /// <p>The semantic consolidation override configuration.</p>
     SemanticConsolidationOverride(crate::types::SemanticConsolidationOverride),
     /// <p>The summary consolidation override configuration.</p>
@@ -21,6 +23,19 @@ pub enum CustomConsolidationConfiguration {
     Unknown,
 }
 impl CustomConsolidationConfiguration {
+    /// Tries to convert the enum instance into [`EpisodicConsolidationOverride`](crate::types::CustomConsolidationConfiguration::EpisodicConsolidationOverride), extracting the inner [`EpisodicConsolidationOverride`](crate::types::EpisodicConsolidationOverride).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_episodic_consolidation_override(&self) -> ::std::result::Result<&crate::types::EpisodicConsolidationOverride, &Self> {
+        if let CustomConsolidationConfiguration::EpisodicConsolidationOverride(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EpisodicConsolidationOverride`](crate::types::CustomConsolidationConfiguration::EpisodicConsolidationOverride).
+    pub fn is_episodic_consolidation_override(&self) -> bool {
+        self.as_episodic_consolidation_override().is_ok()
+    }
     /// Tries to convert the enum instance into [`SemanticConsolidationOverride`](crate::types::CustomConsolidationConfiguration::SemanticConsolidationOverride), extracting the inner [`SemanticConsolidationOverride`](crate::types::SemanticConsolidationOverride).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_semantic_consolidation_override(&self) -> ::std::result::Result<&crate::types::SemanticConsolidationOverride, &Self> {

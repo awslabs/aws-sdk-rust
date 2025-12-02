@@ -22,9 +22,6 @@ impl crate::operation::list_vector_buckets::builders::ListVectorBucketsInputBuil
 }
 /// Fluent builder constructing a request to `ListVectorBuckets`.
 ///
-/// <note>
-/// <p>Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.</p>
-/// </note>
 /// <p>Returns a list of all the vector buckets that are owned by the authenticated sender of the request.</p>
 /// <dl>
 /// <dt>

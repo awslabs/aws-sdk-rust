@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ToolResultBlockDelta {
+    /// <p>The JSON schema for the tool result content block. see <a href="https://json-schema.org/understanding-json-schema/reference">JSON Schema Reference</a>.</p>
+    Json(::aws_smithy_types::Document),
     /// <p>The reasoning the model used to return the output.</p>
     Text(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum ToolResultBlockDelta {
     Unknown,
 }
 impl ToolResultBlockDelta {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Json`](crate::types::ToolResultBlockDelta::Json), extracting the inner [`Document`](::aws_smithy_types::Document).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_json(&self) -> ::std::result::Result<&::aws_smithy_types::Document, &Self> {
+        if let ToolResultBlockDelta::Json(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Json`](crate::types::ToolResultBlockDelta::Json).
+    pub fn is_json(&self) -> bool {
+        self.as_json().is_ok()
+    }
     /// Tries to convert the enum instance into [`Text`](crate::types::ToolResultBlockDelta::Text), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text(&self) -> ::std::result::Result<&::std::string::String, &Self> {

@@ -6,7 +6,17 @@
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The errors in the input which caused the exception.</p>
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl ValidationException {
+    /// <p>The errors in the input which caused the exception.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::ValidationError] {
+        self.errors.as_deref().unwrap_or_default()
+    }
 }
 impl ValidationException {
     /// Returns the error message.
@@ -49,6 +59,7 @@ impl ValidationException {
 #[non_exhaustive]
 pub struct ValidationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ValidationExceptionBuilder {
@@ -66,6 +77,26 @@ impl ValidationExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// Appends an item to `errors`.
+    ///
+    /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+    ///
+    /// <p>The errors in the input which caused the exception.</p>
+    pub fn errors(mut self, input: crate::types::ValidationError) -> Self {
+        let mut v = self.errors.unwrap_or_default();
+        v.push(input);
+        self.errors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The errors in the input which caused the exception.</p>
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>) -> Self {
+        self.errors = input;
+        self
+    }
+    /// <p>The errors in the input which caused the exception.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
+        &self.errors
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -81,6 +112,7 @@ impl ValidationExceptionBuilder {
     pub fn build(self) -> crate::types::error::ValidationException {
         crate::types::error::ValidationException {
             message: self.message,
+            errors: self.errors,
             meta: self.meta.unwrap_or_default(),
         }
     }

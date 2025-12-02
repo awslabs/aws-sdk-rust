@@ -23,6 +23,8 @@ pub struct GetAgentRuntimeOutput {
     pub status: crate::types::AgentRuntimeStatus,
     /// <p>The life cycle configuration for the AgentCore Runtime.</p>
     pub lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    /// <p>The reason for failure if the AgentCore Runtime is in a failed state.</p>
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The description of the AgentCore Runtime.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The workload identity details for the AgentCore Runtime.</p>
@@ -85,6 +87,10 @@ impl GetAgentRuntimeOutput {
     pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::LifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
+    /// <p>The reason for failure if the AgentCore Runtime is in a failed state.</p>
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
     /// <p>The description of the AgentCore Runtime.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
@@ -127,6 +133,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutput {
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("status", &self.status);
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("failure_reason", &self.failure_reason);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("workload_identity_details", &self.workload_identity_details);
         formatter.field("agent_runtime_artifact", &self.agent_runtime_artifact);
@@ -164,6 +171,7 @@ pub struct GetAgentRuntimeOutputBuilder {
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::AgentRuntimeStatus>,
     pub(crate) lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
     pub(crate) agent_runtime_artifact: ::std::option::Option<crate::types::AgentRuntimeArtifact>,
@@ -323,6 +331,20 @@ impl GetAgentRuntimeOutputBuilder {
     /// <p>The life cycle configuration for the AgentCore Runtime.</p>
     pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
         &self.lifecycle_configuration
+    }
+    /// <p>The reason for failure if the AgentCore Runtime is in a failed state.</p>
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason for failure if the AgentCore Runtime is in a failed state.</p>
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input;
+        self
+    }
+    /// <p>The reason for failure if the AgentCore Runtime is in a failed state.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>The description of the AgentCore Runtime.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -508,6 +530,7 @@ impl GetAgentRuntimeOutputBuilder {
                 )
             })?,
             lifecycle_configuration: self.lifecycle_configuration,
+            failure_reason: self.failure_reason,
             description: self.description,
             workload_identity_details: self.workload_identity_details,
             agent_runtime_artifact: self.agent_runtime_artifact,
@@ -532,6 +555,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutputBuilder {
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("status", &self.status);
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("failure_reason", &self.failure_reason);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("workload_identity_details", &self.workload_identity_details);
         formatter.field("agent_runtime_artifact", &self.agent_runtime_artifact);

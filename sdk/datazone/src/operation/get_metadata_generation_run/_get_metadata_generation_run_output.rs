@@ -12,13 +12,21 @@ pub struct GetMetadataGenerationRunOutput {
     /// <p>The status of the metadata generation run.</p>
     pub status: ::std::option::Option<crate::types::MetadataGenerationRunStatus>,
     /// <p>The type of metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub r#type: ::std::option::Option<crate::types::MetadataGenerationRunType>,
+    /// <p>The types of the metadata generation run.</p>
+    pub types: ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunType>>,
     /// <p>The timestamp of when the metadata generation run was start.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon DataZone user who started the metadata generation run.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the project that owns the assets for which you're running metadata generation.</p>
     pub owning_project_id: ::std::string::String,
+    /// <p>The type stats included in the metadata generation run output details.</p>
+    pub type_stats: ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunTypeStat>>,
     _request_id: Option<String>,
 }
 impl GetMetadataGenerationRunOutput {
@@ -41,8 +49,18 @@ impl GetMetadataGenerationRunOutput {
         self.status.as_ref()
     }
     /// <p>The type of metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::MetadataGenerationRunType> {
         self.r#type.as_ref()
+    }
+    /// <p>The types of the metadata generation run.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[crate::types::MetadataGenerationRunType] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp of when the metadata generation run was start.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -56,6 +74,12 @@ impl GetMetadataGenerationRunOutput {
     pub fn owning_project_id(&self) -> &str {
         use std::ops::Deref;
         self.owning_project_id.deref()
+    }
+    /// <p>The type stats included in the metadata generation run output details.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.type_stats.is_none()`.
+    pub fn type_stats(&self) -> &[crate::types::MetadataGenerationRunTypeStat] {
+        self.type_stats.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMetadataGenerationRunOutput {
@@ -79,9 +103,11 @@ pub struct GetMetadataGenerationRunOutputBuilder {
     pub(crate) target: ::std::option::Option<crate::types::MetadataGenerationRunTarget>,
     pub(crate) status: ::std::option::Option<crate::types::MetadataGenerationRunStatus>,
     pub(crate) r#type: ::std::option::Option<crate::types::MetadataGenerationRunType>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunType>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
+    pub(crate) type_stats: ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunTypeStat>>,
     _request_id: Option<String>,
 }
 impl GetMetadataGenerationRunOutputBuilder {
@@ -144,18 +170,50 @@ impl GetMetadataGenerationRunOutputBuilder {
         &self.status
     }
     /// <p>The type of metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub fn r#type(mut self, input: crate::types::MetadataGenerationRunType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MetadataGenerationRunType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MetadataGenerationRunType> {
         &self.r#type
+    }
+    /// Appends an item to `types`.
+    ///
+    /// To override the contents of this collection use [`set_types`](Self::set_types).
+    ///
+    /// <p>The types of the metadata generation run.</p>
+    pub fn types(mut self, input: crate::types::MetadataGenerationRunType) -> Self {
+        let mut v = self.types.unwrap_or_default();
+        v.push(input);
+        self.types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The types of the metadata generation run.</p>
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunType>>) -> Self {
+        self.types = input;
+        self
+    }
+    /// <p>The types of the metadata generation run.</p>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunType>> {
+        &self.types
     }
     /// <p>The timestamp of when the metadata generation run was start.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -200,6 +258,26 @@ impl GetMetadataGenerationRunOutputBuilder {
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owning_project_id
     }
+    /// Appends an item to `type_stats`.
+    ///
+    /// To override the contents of this collection use [`set_type_stats`](Self::set_type_stats).
+    ///
+    /// <p>The type stats included in the metadata generation run output details.</p>
+    pub fn type_stats(mut self, input: crate::types::MetadataGenerationRunTypeStat) -> Self {
+        let mut v = self.type_stats.unwrap_or_default();
+        v.push(input);
+        self.type_stats = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The type stats included in the metadata generation run output details.</p>
+    pub fn set_type_stats(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunTypeStat>>) -> Self {
+        self.type_stats = input;
+        self
+    }
+    /// <p>The type stats included in the metadata generation run output details.</p>
+    pub fn get_type_stats(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunTypeStat>> {
+        &self.type_stats
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -236,6 +314,7 @@ impl GetMetadataGenerationRunOutputBuilder {
             target: self.target,
             status: self.status,
             r#type: self.r#type,
+            types: self.types,
             created_at: self.created_at,
             created_by: self.created_by,
             owning_project_id: self.owning_project_id.ok_or_else(|| {
@@ -244,6 +323,7 @@ impl GetMetadataGenerationRunOutputBuilder {
                     "owning_project_id was not specified but it is required when building GetMetadataGenerationRunOutput",
                 )
             })?,
+            type_stats: self.type_stats,
             _request_id: self._request_id,
         })
     }

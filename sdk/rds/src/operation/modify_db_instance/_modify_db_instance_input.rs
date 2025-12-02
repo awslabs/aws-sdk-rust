@@ -547,6 +547,8 @@ pub struct ModifyDbInstanceInput {
     /// </ul>
     /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
     pub master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can create up to 3 additional storage volumes. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::ModifyAdditionalStorageVolume>>,
 }
 impl ModifyDbInstanceInput {
     /// <p>The identifier of DB instance to modify. This value is stored as a lowercase string.</p>
@@ -1224,6 +1226,12 @@ impl ModifyDbInstanceInput {
     pub fn master_user_authentication_type(&self) -> ::std::option::Option<&crate::types::MasterUserAuthenticationType> {
         self.master_user_authentication_type.as_ref()
     }
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can create up to 3 additional storage volumes. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_storage_volumes.is_none()`.
+    pub fn additional_storage_volumes(&self) -> &[crate::types::ModifyAdditionalStorageVolume] {
+        self.additional_storage_volumes.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for ModifyDbInstanceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -1290,6 +1298,7 @@ impl ::std::fmt::Debug for ModifyDbInstanceInput {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine", &self.engine);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
+        formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.finish()
     }
 }
@@ -1366,6 +1375,7 @@ pub struct ModifyDbInstanceInputBuilder {
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
+    pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::ModifyAdditionalStorageVolume>>,
 }
 impl ModifyDbInstanceInputBuilder {
     /// <p>The identifier of DB instance to modify. This value is stored as a lowercase string.</p>
@@ -3518,6 +3528,29 @@ impl ModifyDbInstanceInputBuilder {
     pub fn get_master_user_authentication_type(&self) -> &::std::option::Option<crate::types::MasterUserAuthenticationType> {
         &self.master_user_authentication_type
     }
+    /// Appends an item to `additional_storage_volumes`.
+    ///
+    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
+    ///
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can create up to 3 additional storage volumes. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn additional_storage_volumes(mut self, input: crate::types::ModifyAdditionalStorageVolume) -> Self {
+        let mut v = self.additional_storage_volumes.unwrap_or_default();
+        v.push(input);
+        self.additional_storage_volumes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can create up to 3 additional storage volumes. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn set_additional_storage_volumes(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ModifyAdditionalStorageVolume>>,
+    ) -> Self {
+        self.additional_storage_volumes = input;
+        self
+    }
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can create up to 3 additional storage volumes. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModifyAdditionalStorageVolume>> {
+        &self.additional_storage_volumes
+    }
     /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
     pub fn build(
         self,
@@ -3585,6 +3618,7 @@ impl ModifyDbInstanceInputBuilder {
             dedicated_log_volume: self.dedicated_log_volume,
             engine: self.engine,
             master_user_authentication_type: self.master_user_authentication_type,
+            additional_storage_volumes: self.additional_storage_volumes,
         })
     }
 }
@@ -3653,6 +3687,7 @@ impl ::std::fmt::Debug for ModifyDbInstanceInputBuilder {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine", &self.engine);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
+        formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.finish()
     }
 }

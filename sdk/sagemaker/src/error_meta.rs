@@ -1168,6 +1168,28 @@ impl From<crate::operation::create_labeling_job::CreateLabelingJobError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_mlflow_app::CreateMlflowAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_mlflow_app::CreateMlflowAppError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_mlflow_app::CreateMlflowAppError> for Error {
+    fn from(err: crate::operation::create_mlflow_app::CreateMlflowAppError) -> Self {
+        match err {
+            crate::operation::create_mlflow_app::CreateMlflowAppError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
+            crate::operation::create_mlflow_app::CreateMlflowAppError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_mlflow_tracking_server::CreateMlflowTrackingServerError, R>>
     for Error
 where
@@ -1651,6 +1673,37 @@ impl From<crate::operation::create_presigned_domain_url::CreatePresignedDomainUr
         match err {
             crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_presigned_mlflow_app_url::CreatePresignedMlflowAppUrlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_presigned_mlflow_app_url::CreatePresignedMlflowAppUrlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_presigned_mlflow_app_url::CreatePresignedMlflowAppUrlError> for Error {
+    fn from(err: crate::operation::create_presigned_mlflow_app_url::CreatePresignedMlflowAppUrlError) -> Self {
+        match err {
+            crate::operation::create_presigned_mlflow_app_url::CreatePresignedMlflowAppUrlError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::create_presigned_mlflow_app_url::CreatePresignedMlflowAppUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2742,6 +2795,28 @@ impl From<crate::operation::delete_inference_experiment::DeleteInferenceExperime
             }
             crate::operation::delete_inference_experiment::DeleteInferenceExperimentError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::delete_inference_experiment::DeleteInferenceExperimentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mlflow_app::DeleteMlflowAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_mlflow_app::DeleteMlflowAppError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_mlflow_app::DeleteMlflowAppError> for Error {
+    fn from(err: crate::operation::delete_mlflow_app::DeleteMlflowAppError) -> Self {
+        match err {
+            crate::operation::delete_mlflow_app::DeleteMlflowAppError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_mlflow_app::DeleteMlflowAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4339,6 +4414,28 @@ impl From<crate::operation::describe_lineage_group::DescribeLineageGroupError> f
         match err {
             crate::operation::describe_lineage_group::DescribeLineageGroupError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::describe_lineage_group::DescribeLineageGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_mlflow_app::DescribeMlflowAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_mlflow_app::DescribeMlflowAppError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_mlflow_app::DescribeMlflowAppError> for Error {
+    fn from(err: crate::operation::describe_mlflow_app::DescribeMlflowAppError) -> Self {
+        match err {
+            crate::operation::describe_mlflow_app::DescribeMlflowAppError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_mlflow_app::DescribeMlflowAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6420,6 +6517,27 @@ impl From<crate::operation::list_lineage_groups::ListLineageGroupsError> for Err
     fn from(err: crate::operation::list_lineage_groups::ListLineageGroupsError) -> Self {
         match err {
             crate::operation::list_lineage_groups::ListLineageGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mlflow_apps::ListMlflowAppsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_mlflow_apps::ListMlflowAppsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_mlflow_apps::ListMlflowAppsError> for Error {
+    fn from(err: crate::operation::list_mlflow_apps::ListMlflowAppsError) -> Self {
+        match err {
+            crate::operation::list_mlflow_apps::ListMlflowAppsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8894,6 +9012,29 @@ impl From<crate::operation::update_inference_experiment::UpdateInferenceExperime
             }
             crate::operation::update_inference_experiment::UpdateInferenceExperimentError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::update_inference_experiment::UpdateInferenceExperimentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_mlflow_app::UpdateMlflowAppError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_mlflow_app::UpdateMlflowAppError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_mlflow_app::UpdateMlflowAppError> for Error {
+    fn from(err: crate::operation::update_mlflow_app::UpdateMlflowAppError) -> Self {
+        match err {
+            crate::operation::update_mlflow_app::UpdateMlflowAppError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_mlflow_app::UpdateMlflowAppError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::update_mlflow_app::UpdateMlflowAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

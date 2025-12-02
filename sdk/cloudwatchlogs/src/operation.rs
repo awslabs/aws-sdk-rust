@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateKmsKey` operation.
 pub mod associate_kms_key;
 
+/// Types for the `AssociateSourceToS3TableIntegration` operation.
+pub mod associate_source_to_s3_table_integration;
+
 /// Types for the `CancelExportTask` operation.
 pub mod cancel_export_task;
 
@@ -133,6 +136,9 @@ pub mod describe_subscription_filters;
 /// Types for the `DisassociateKmsKey` operation.
 pub mod disassociate_kms_key;
 
+/// Types for the `DisassociateSourceFromS3TableIntegration` operation.
+pub mod disassociate_source_from_s3_table_integration;
+
 /// Types for the `FilterLogEvents` operation.
 pub mod filter_log_events;
 
@@ -160,6 +166,9 @@ pub mod get_log_anomaly_detector;
 /// Types for the `GetLogEvents` operation.
 pub mod get_log_events;
 
+/// Types for the `GetLogFields` operation.
+pub mod get_log_fields;
+
 /// Types for the `GetLogGroupFields` operation.
 pub mod get_log_group_fields;
 
@@ -181,6 +190,9 @@ pub mod get_scheduled_query_history;
 /// Types for the `GetTransformer` operation.
 pub mod get_transformer;
 
+/// Types for the `ListAggregateLogGroupSummaries` operation.
+pub mod list_aggregate_log_group_summaries;
+
 /// Types for the `ListAnomalies` operation.
 pub mod list_anomalies;
 
@@ -198,6 +210,9 @@ pub mod list_log_groups_for_query;
 
 /// Types for the `ListScheduledQueries` operation.
 pub mod list_scheduled_queries;
+
+/// Types for the `ListSourcesForS3TableIntegration` operation.
+pub mod list_sources_for_s3_table_integration;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

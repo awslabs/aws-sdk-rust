@@ -290,6 +290,17 @@ pub fn ser_restore_db_instance_to_point_in_time_input_input_input(
     if let Some(var_111) = &input.master_user_secret_kms_key_id {
         scope_110.string(var_111);
     }
+    #[allow(unused_mut)]
+    let mut scope_112 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_113) = &input.additional_storage_volumes {
+        let mut list_115 = scope_112.start_list(false, None);
+        for item_114 in var_113 {
+            #[allow(unused_mut)]
+            let mut entry_116 = list_115.entry();
+            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_116, item_114)?;
+        }
+        list_115.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

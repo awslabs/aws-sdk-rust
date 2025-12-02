@@ -14,6 +14,8 @@ pub struct MemoryRecord {
     pub namespaces: ::std::vec::Vec<::std::string::String>,
     /// <p>The timestamp when the memory record was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
+    /// <p>A map of metadata key-value pairs associated with a memory record.</p>
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
 }
 impl MemoryRecord {
     /// <p>The unique identifier of the memory record.</p>
@@ -39,6 +41,10 @@ impl MemoryRecord {
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
+    /// <p>A map of metadata key-value pairs associated with a memory record.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
+        self.metadata.as_ref()
+    }
 }
 impl MemoryRecord {
     /// Creates a new builder-style object to manufacture [`MemoryRecord`](crate::types::MemoryRecord).
@@ -56,6 +62,7 @@ pub struct MemoryRecordBuilder {
     pub(crate) memory_strategy_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
 }
 impl MemoryRecordBuilder {
     /// <p>The unique identifier of the memory record.</p>
@@ -138,6 +145,29 @@ impl MemoryRecordBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>A map of metadata key-value pairs associated with a memory record.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::MetadataValue) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of metadata key-value pairs associated with a memory record.</p>
+    pub fn set_metadata(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
+    ) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>A map of metadata key-value pairs associated with a memory record.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`MemoryRecord`](crate::types::MemoryRecord).
     /// This method will fail if any of the following fields are not set:
     /// - [`memory_record_id`](crate::types::builders::MemoryRecordBuilder::memory_record_id)
@@ -171,6 +201,7 @@ impl MemoryRecordBuilder {
                     "created_at was not specified but it is required when building MemoryRecord",
                 )
             })?,
+            metadata: self.metadata,
         })
     }
 }

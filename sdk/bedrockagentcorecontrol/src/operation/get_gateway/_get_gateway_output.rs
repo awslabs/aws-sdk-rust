@@ -35,6 +35,8 @@ pub struct GetGatewayOutput {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The interceptors configured on the gateway.</p>
     pub interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
+    /// <p>The policy engine configuration for the gateway.</p>
+    pub policy_engine_configuration: ::std::option::Option<crate::types::GatewayPolicyEngineConfiguration>,
     /// <p>The workload identity details for the gateway.</p>
     pub workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
     /// <p>The level of detail in error messages returned when invoking the gateway.</p>
@@ -119,6 +121,10 @@ impl GetGatewayOutput {
     pub fn interceptor_configurations(&self) -> &[crate::types::GatewayInterceptorConfiguration] {
         self.interceptor_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The policy engine configuration for the gateway.</p>
+    pub fn policy_engine_configuration(&self) -> ::std::option::Option<&crate::types::GatewayPolicyEngineConfiguration> {
+        self.policy_engine_configuration.as_ref()
+    }
     /// <p>The workload identity details for the gateway.</p>
     pub fn workload_identity_details(&self) -> ::std::option::Option<&crate::types::WorkloadIdentityDetails> {
         self.workload_identity_details.as_ref()
@@ -153,6 +159,7 @@ impl ::std::fmt::Debug for GetGatewayOutput {
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("interceptor_configurations", &self.interceptor_configurations);
+        formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("workload_identity_details", &self.workload_identity_details);
         formatter.field("exception_level", &self.exception_level);
         formatter.field("_request_id", &self._request_id);
@@ -191,6 +198,7 @@ pub struct GetGatewayOutputBuilder {
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) interceptor_configurations: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>>,
+    pub(crate) policy_engine_configuration: ::std::option::Option<crate::types::GatewayPolicyEngineConfiguration>,
     pub(crate) workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
     pub(crate) exception_level: ::std::option::Option<crate::types::ExceptionLevel>,
     _request_id: Option<String>,
@@ -443,6 +451,20 @@ impl GetGatewayOutputBuilder {
     pub fn get_interceptor_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>> {
         &self.interceptor_configurations
     }
+    /// <p>The policy engine configuration for the gateway.</p>
+    pub fn policy_engine_configuration(mut self, input: crate::types::GatewayPolicyEngineConfiguration) -> Self {
+        self.policy_engine_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The policy engine configuration for the gateway.</p>
+    pub fn set_policy_engine_configuration(mut self, input: ::std::option::Option<crate::types::GatewayPolicyEngineConfiguration>) -> Self {
+        self.policy_engine_configuration = input;
+        self
+    }
+    /// <p>The policy engine configuration for the gateway.</p>
+    pub fn get_policy_engine_configuration(&self) -> &::std::option::Option<crate::types::GatewayPolicyEngineConfiguration> {
+        &self.policy_engine_configuration
+    }
     /// <p>The workload identity details for the gateway.</p>
     pub fn workload_identity_details(mut self, input: crate::types::WorkloadIdentityDetails) -> Self {
         self.workload_identity_details = ::std::option::Option::Some(input);
@@ -566,6 +588,7 @@ impl GetGatewayOutputBuilder {
             authorizer_configuration: self.authorizer_configuration,
             kms_key_arn: self.kms_key_arn,
             interceptor_configurations: self.interceptor_configurations,
+            policy_engine_configuration: self.policy_engine_configuration,
             workload_identity_details: self.workload_identity_details,
             exception_level: self.exception_level,
             _request_id: self._request_id,
@@ -591,6 +614,7 @@ impl ::std::fmt::Debug for GetGatewayOutputBuilder {
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("interceptor_configurations", &self.interceptor_configurations);
+        formatter.field("policy_engine_configuration", &self.policy_engine_configuration);
         formatter.field("workload_identity_details", &self.workload_identity_details);
         formatter.field("exception_level", &self.exception_level);
         formatter.field("_request_id", &self._request_id);

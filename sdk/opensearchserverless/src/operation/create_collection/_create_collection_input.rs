@@ -13,6 +13,8 @@ pub struct CreateCollectionInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether standby replicas should be used for a collection.</p>
     pub standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub vector_options: ::std::option::Option<crate::types::VectorOptions>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -39,6 +41,10 @@ impl CreateCollectionInput {
     pub fn standby_replicas(&self) -> ::std::option::Option<&crate::types::StandbyReplicas> {
         self.standby_replicas.as_ref()
     }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn vector_options(&self) -> ::std::option::Option<&crate::types::VectorOptions> {
+        self.vector_options.as_ref()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -60,6 +66,7 @@ pub struct CreateCollectionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
+    pub(crate) vector_options: ::std::option::Option<crate::types::VectorOptions>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateCollectionInputBuilder {
@@ -140,6 +147,20 @@ impl CreateCollectionInputBuilder {
     pub fn get_standby_replicas(&self) -> &::std::option::Option<crate::types::StandbyReplicas> {
         &self.standby_replicas
     }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn vector_options(mut self, input: crate::types::VectorOptions) -> Self {
+        self.vector_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn set_vector_options(mut self, input: ::std::option::Option<crate::types::VectorOptions>) -> Self {
+        self.vector_options = input;
+        self
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn get_vector_options(&self) -> &::std::option::Option<crate::types::VectorOptions> {
+        &self.vector_options
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -164,6 +185,7 @@ impl CreateCollectionInputBuilder {
             description: self.description,
             tags: self.tags,
             standby_replicas: self.standby_replicas,
+            vector_options: self.vector_options,
             client_token: self.client_token,
         })
     }

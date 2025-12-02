@@ -212,6 +212,20 @@ impl InvokeFluentBuilder {
     pub fn get_client_context(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_context()
     }
+    /// <p>Optional unique name for the durable execution. When you start your special function, you can give it a unique name to identify this specific execution. It's like giving a nickname to a task.</p>
+    pub fn durable_execution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.durable_execution_name(input.into());
+        self
+    }
+    /// <p>Optional unique name for the durable execution. When you start your special function, you can give it a unique name to identify this specific execution. It's like giving a nickname to a task.</p>
+    pub fn set_durable_execution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_durable_execution_name(input);
+        self
+    }
+    /// <p>Optional unique name for the durable execution. When you start your special function, you can give it a unique name to identify this specific execution. It's like giving a nickname to a task.</p>
+    pub fn get_durable_execution_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_durable_execution_name()
+    }
     /// <p>The JSON that you want to provide to your Lambda function as input. The maximum payload size is 6 MB for synchronous invocations and 1 MB for asynchronous invocations.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {

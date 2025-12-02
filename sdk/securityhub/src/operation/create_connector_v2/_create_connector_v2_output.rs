@@ -9,6 +9,8 @@ pub struct CreateConnectorV2Output {
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The Url provide to customers for OAuth auth code flow.</p>
     pub auth_url: ::std::option::Option<::std::string::String>,
+    /// <p>The current status of the connectorV2.</p>
+    pub connector_status: ::std::option::Option<crate::types::ConnectorStatus>,
     _request_id: Option<String>,
 }
 impl CreateConnectorV2Output {
@@ -23,6 +25,10 @@ impl CreateConnectorV2Output {
     /// <p>The Url provide to customers for OAuth auth code flow.</p>
     pub fn auth_url(&self) -> ::std::option::Option<&str> {
         self.auth_url.as_deref()
+    }
+    /// <p>The current status of the connectorV2.</p>
+    pub fn connector_status(&self) -> ::std::option::Option<&crate::types::ConnectorStatus> {
+        self.connector_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateConnectorV2Output {
@@ -44,10 +50,12 @@ pub struct CreateConnectorV2OutputBuilder {
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) auth_url: ::std::option::Option<::std::string::String>,
+    pub(crate) connector_status: ::std::option::Option<crate::types::ConnectorStatus>,
     _request_id: Option<String>,
 }
 impl CreateConnectorV2OutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the connectorV2.</p>
+    /// This field is required.
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connector_arn = ::std::option::Option::Some(input.into());
         self
@@ -90,6 +98,20 @@ impl CreateConnectorV2OutputBuilder {
     pub fn get_auth_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.auth_url
     }
+    /// <p>The current status of the connectorV2.</p>
+    pub fn connector_status(mut self, input: crate::types::ConnectorStatus) -> Self {
+        self.connector_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the connectorV2.</p>
+    pub fn set_connector_status(mut self, input: ::std::option::Option<crate::types::ConnectorStatus>) -> Self {
+        self.connector_status = input;
+        self
+    }
+    /// <p>The current status of the connectorV2.</p>
+    pub fn get_connector_status(&self) -> &::std::option::Option<crate::types::ConnectorStatus> {
+        &self.connector_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -105,6 +127,7 @@ impl CreateConnectorV2OutputBuilder {
             connector_arn: self.connector_arn,
             connector_id: self.connector_id,
             auth_url: self.auth_url,
+            connector_status: self.connector_status,
             _request_id: self._request_id,
         }
     }

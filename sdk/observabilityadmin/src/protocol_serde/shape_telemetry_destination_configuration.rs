@@ -21,6 +21,30 @@ pub fn ser_telemetry_destination_configuration(
         crate::protocol_serde::shape_vpc_flow_log_parameters::ser_vpc_flow_log_parameters(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.cloudtrail_parameters {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("CloudtrailParameters").start_object();
+        crate::protocol_serde::shape_cloudtrail_parameters::ser_cloudtrail_parameters(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.elb_load_balancer_logging_parameters {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("ELBLoadBalancerLoggingParameters").start_object();
+        crate::protocol_serde::shape_elb_load_balancer_logging_parameters::ser_elb_load_balancer_logging_parameters(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.waf_logging_parameters {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("WAFLoggingParameters").start_object();
+        crate::protocol_serde::shape_waf_logging_parameters::ser_waf_logging_parameters(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.log_delivery_parameters {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("LogDeliveryParameters").start_object();
+        crate::protocol_serde::shape_log_delivery_parameters::ser_log_delivery_parameters(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +87,24 @@ where
                         "VPCFlowLogParameters" => {
                             builder = builder.set_vpc_flow_log_parameters(
                                 crate::protocol_serde::shape_vpc_flow_log_parameters::de_vpc_flow_log_parameters(tokens)?,
+                            );
+                        }
+                        "CloudtrailParameters" => {
+                            builder = builder
+                                .set_cloudtrail_parameters(crate::protocol_serde::shape_cloudtrail_parameters::de_cloudtrail_parameters(tokens)?);
+                        }
+                        "ELBLoadBalancerLoggingParameters" => {
+                            builder = builder.set_elb_load_balancer_logging_parameters(
+                                crate::protocol_serde::shape_elb_load_balancer_logging_parameters::de_elb_load_balancer_logging_parameters(tokens)?,
+                            );
+                        }
+                        "WAFLoggingParameters" => {
+                            builder = builder
+                                .set_waf_logging_parameters(crate::protocol_serde::shape_waf_logging_parameters::de_waf_logging_parameters(tokens)?);
+                        }
+                        "LogDeliveryParameters" => {
+                            builder = builder.set_log_delivery_parameters(
+                                crate::protocol_serde::shape_log_delivery_parameters::de_log_delivery_parameters(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

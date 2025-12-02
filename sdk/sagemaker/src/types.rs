@@ -291,6 +291,10 @@ pub use crate::types::_model_approval_status::ModelApprovalStatus;
 
 pub use crate::types::_tracking_server_size::TrackingServerSize;
 
+pub use crate::types::_account_default_status::AccountDefaultStatus;
+
+pub use crate::types::_model_registration_mode::ModelRegistrationMode;
+
 pub use crate::types::_shadow_mode_config::ShadowModeConfig;
 
 pub use crate::types::_shadow_model_variant_config::ShadowModelVariantConfig;
@@ -1263,6 +1267,12 @@ pub use crate::types::_tracking_server_status::TrackingServerStatus;
 
 pub use crate::types::_sort_tracking_server_by::SortTrackingServerBy;
 
+pub use crate::types::_mlflow_app_summary::MlflowAppSummary;
+
+pub use crate::types::_mlflow_app_status::MlflowAppStatus;
+
+pub use crate::types::_sort_mlflow_app_by::SortMlflowAppBy;
+
 pub use crate::types::_lineage_group_summary::LineageGroupSummary;
 
 pub use crate::types::_sort_lineage_groups_by::SortLineageGroupsBy;
@@ -1662,6 +1672,8 @@ pub use crate::types::_model_bias_app_specification::ModelBiasAppSpecification;
 pub use crate::types::_model_bias_baseline_config::ModelBiasBaselineConfig;
 
 pub use crate::types::_tracking_server_maintenance_status::TrackingServerMaintenanceStatus;
+
+pub use crate::types::_maintenance_status::MaintenanceStatus;
 
 pub use crate::types::_human_task_config::HumanTaskConfig;
 
@@ -2070,6 +2082,8 @@ pub use crate::types::_node_addition_result::NodeAdditionResult;
 pub use crate::types::_add_cluster_node_specification::AddClusterNodeSpecification;
 
 mod _accelerator_partition_config;
+
+mod _account_default_status;
 
 mod _action_source;
 
@@ -3095,6 +3109,8 @@ mod _list_workforces_sort_by_options;
 
 mod _list_workteams_sort_by_options;
 
+mod _maintenance_status;
+
 mod _managed_instance_scaling_status;
 
 mod _member_definition;
@@ -3118,6 +3134,10 @@ mod _metrics_source;
 mod _mig_profile_type;
 
 mod _ml_tools;
+
+mod _mlflow_app_status;
+
+mod _mlflow_app_summary;
 
 mod _model;
 
@@ -3262,6 +3282,8 @@ mod _model_quality_job_input;
 mod _model_quantization_config;
 
 mod _model_register_settings;
+
+mod _model_registration_mode;
 
 mod _model_sharding_config;
 
@@ -3828,6 +3850,8 @@ mod _sort_experiments_by;
 mod _sort_inference_experiments_by;
 
 mod _sort_lineage_groups_by;
+
+mod _sort_mlflow_app_by;
 
 mod _sort_order;
 

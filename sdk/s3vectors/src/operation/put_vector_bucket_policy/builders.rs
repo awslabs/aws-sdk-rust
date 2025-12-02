@@ -22,9 +22,6 @@ impl crate::operation::put_vector_bucket_policy::builders::PutVectorBucketPolicy
 }
 /// Fluent builder constructing a request to `PutVectorBucketPolicy`.
 ///
-/// <note>
-/// <p>Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.</p>
-/// </note>
 /// <p>Creates a bucket policy for a vector bucket. To specify the bucket, you must use either the vector bucket name or the vector bucket Amazon Resource Name (ARN).</p>
 /// <dl>
 /// <dt>

@@ -22,9 +22,6 @@ impl crate::operation::delete_index::builders::DeleteIndexInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteIndex`.
 ///
-/// <note>
-/// <p>Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.</p>
-/// </note>
 /// <p>Deletes a vector index. To specify the vector index, you can either use both the vector bucket name and vector index name, or use the vector index Amazon Resource Name (ARN).</p>
 /// <dl>
 /// <dt>

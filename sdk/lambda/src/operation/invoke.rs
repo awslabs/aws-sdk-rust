@@ -265,6 +265,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeEndpoin
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InvokeError {
+    /// <p>The durable execution with the specified name has already been started. Each durable execution name must be unique within the function. Use a different name or check the status of the existing execution.</p>
+    DurableExecutionAlreadyStartedException(crate::types::error::DurableExecutionAlreadyStartedException),
     /// <p>Need additional permissions to configure VPC settings.</p>
     Ec2AccessDeniedException(crate::types::error::Ec2AccessDeniedException),
     /// <p>Amazon EC2 throttled Lambda during Lambda function initialization using the execution role provided for the function.</p>
@@ -362,6 +364,7 @@ impl InvokeError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::DurableExecutionAlreadyStartedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Ec2AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Ec2ThrottledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Ec2UnexpectedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -396,6 +399,10 @@ impl InvokeError {
             Self::UnsupportedMediaTypeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `InvokeError::DurableExecutionAlreadyStartedException`.
+    pub fn is_durable_execution_already_started_exception(&self) -> bool {
+        matches!(self, Self::DurableExecutionAlreadyStartedException(_))
     }
     /// Returns `true` if the error kind is `InvokeError::Ec2AccessDeniedException`.
     pub fn is_ec2_access_denied_exception(&self) -> bool {
@@ -529,6 +536,7 @@ impl InvokeError {
 impl ::std::error::Error for InvokeError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::DurableExecutionAlreadyStartedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Ec2AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Ec2ThrottledException(_inner) => ::std::option::Option::Some(_inner),
             Self::Ec2UnexpectedException(_inner) => ::std::option::Option::Some(_inner),
@@ -568,6 +576,7 @@ impl ::std::error::Error for InvokeError {
 impl ::std::fmt::Display for InvokeError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::DurableExecutionAlreadyStartedException(_inner) => _inner.fmt(f),
             Self::Ec2AccessDeniedException(_inner) => _inner.fmt(f),
             Self::Ec2ThrottledException(_inner) => _inner.fmt(f),
             Self::Ec2UnexpectedException(_inner) => _inner.fmt(f),
@@ -621,6 +630,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for InvokeError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::DurableExecutionAlreadyStartedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Ec2AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Ec2ThrottledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Ec2UnexpectedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

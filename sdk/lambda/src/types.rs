@@ -23,6 +23,8 @@ pub use crate::types::_tenancy_config::TenancyConfig;
 
 pub use crate::types::_tenant_isolation_mode::TenantIsolationMode;
 
+pub use crate::types::_durable_config::DurableConfig;
+
 pub use crate::types::_capacity_provider_config::CapacityProviderConfig;
 
 pub use crate::types::_lambda_managed_instances_capacity_provider_config::LambdaManagedInstancesCapacityProviderConfig;
@@ -211,11 +213,113 @@ pub use crate::types::_capacity_provider_vpc_config::CapacityProviderVpcConfig;
 
 pub use crate::types::_capacity_provider_state::CapacityProviderState;
 
+pub use crate::types::_error_object::ErrorObject;
+
 pub use crate::types::_function_event_invoke_config::FunctionEventInvokeConfig;
+
+pub use crate::types::_execution::Execution;
+
+pub use crate::types::_execution_status::ExecutionStatus;
+
+pub use crate::types::_operation::Operation;
+
+pub use crate::types::_chained_invoke_details::ChainedInvokeDetails;
+
+pub use crate::types::_callback_details::CallbackDetails;
+
+pub use crate::types::_wait_details::WaitDetails;
+
+pub use crate::types::_step_details::StepDetails;
+
+pub use crate::types::_context_details::ContextDetails;
+
+pub use crate::types::_execution_details::ExecutionDetails;
+
+pub use crate::types::_operation_status::OperationStatus;
+
+pub use crate::types::_operation_type::OperationType;
+
+pub use crate::types::_event::Event;
+
+pub use crate::types::_invocation_completed_details::InvocationCompletedDetails;
+
+pub use crate::types::_event_error::EventError;
+
+pub use crate::types::_callback_timed_out_details::CallbackTimedOutDetails;
+
+pub use crate::types::_callback_failed_details::CallbackFailedDetails;
+
+pub use crate::types::_callback_succeeded_details::CallbackSucceededDetails;
+
+pub use crate::types::_event_result::EventResult;
+
+pub use crate::types::_callback_started_details::CallbackStartedDetails;
+
+pub use crate::types::_chained_invoke_stopped_details::ChainedInvokeStoppedDetails;
+
+pub use crate::types::_chained_invoke_timed_out_details::ChainedInvokeTimedOutDetails;
+
+pub use crate::types::_chained_invoke_failed_details::ChainedInvokeFailedDetails;
+
+pub use crate::types::_chained_invoke_succeeded_details::ChainedInvokeSucceededDetails;
+
+pub use crate::types::_chained_invoke_started_details::ChainedInvokeStartedDetails;
+
+pub use crate::types::_event_input::EventInput;
+
+pub use crate::types::_step_failed_details::StepFailedDetails;
+
+pub use crate::types::_retry_details::RetryDetails;
+
+pub use crate::types::_step_succeeded_details::StepSucceededDetails;
+
+pub use crate::types::_step_started_details::StepStartedDetails;
+
+pub use crate::types::_wait_cancelled_details::WaitCancelledDetails;
+
+pub use crate::types::_wait_succeeded_details::WaitSucceededDetails;
+
+pub use crate::types::_wait_started_details::WaitStartedDetails;
+
+pub use crate::types::_context_failed_details::ContextFailedDetails;
+
+pub use crate::types::_context_succeeded_details::ContextSucceededDetails;
+
+pub use crate::types::_context_started_details::ContextStartedDetails;
+
+pub use crate::types::_execution_stopped_details::ExecutionStoppedDetails;
+
+pub use crate::types::_execution_timed_out_details::ExecutionTimedOutDetails;
+
+pub use crate::types::_execution_failed_details::ExecutionFailedDetails;
+
+pub use crate::types::_execution_succeeded_details::ExecutionSucceededDetails;
+
+pub use crate::types::_execution_started_details::ExecutionStartedDetails;
+
+pub use crate::types::_event_type::EventType;
+
+pub use crate::types::_trace_header::TraceHeader;
 
 pub use crate::types::_account_usage::AccountUsage;
 
 pub use crate::types::_account_limit::AccountLimit;
+
+pub use crate::types::_checkpoint_updated_execution_state::CheckpointUpdatedExecutionState;
+
+pub use crate::types::_operation_update::OperationUpdate;
+
+pub use crate::types::_chained_invoke_options::ChainedInvokeOptions;
+
+pub use crate::types::_callback_options::CallbackOptions;
+
+pub use crate::types::_wait_options::WaitOptions;
+
+pub use crate::types::_step_options::StepOptions;
+
+pub use crate::types::_context_options::ContextOptions;
+
+pub use crate::types::_operation_action::OperationAction;
 
 mod _account_limit;
 
@@ -233,6 +337,18 @@ mod _application_log_level;
 
 mod _architecture;
 
+mod _callback_details;
+
+mod _callback_failed_details;
+
+mod _callback_options;
+
+mod _callback_started_details;
+
+mod _callback_succeeded_details;
+
+mod _callback_timed_out_details;
+
 mod _capacity_provider;
 
 mod _capacity_provider_config;
@@ -249,6 +365,22 @@ mod _capacity_provider_state;
 
 mod _capacity_provider_vpc_config;
 
+mod _chained_invoke_details;
+
+mod _chained_invoke_failed_details;
+
+mod _chained_invoke_options;
+
+mod _chained_invoke_started_details;
+
+mod _chained_invoke_stopped_details;
+
+mod _chained_invoke_succeeded_details;
+
+mod _chained_invoke_timed_out_details;
+
+mod _checkpoint_updated_execution_state;
+
 mod _code_signing_config;
 
 mod _code_signing_policies;
@@ -257,6 +389,16 @@ mod _code_signing_policy;
 
 mod _concurrency;
 
+mod _context_details;
+
+mod _context_failed_details;
+
+mod _context_options;
+
+mod _context_started_details;
+
+mod _context_succeeded_details;
+
 mod _cors;
 
 mod _dead_letter_config;
@@ -264,6 +406,8 @@ mod _dead_letter_config;
 mod _destination_config;
 
 mod _document_db_event_source_config;
+
+mod _durable_config;
 
 mod _end_point_type;
 
@@ -275,6 +419,16 @@ mod _environment_response;
 
 mod _ephemeral_storage;
 
+mod _error_object;
+
+mod _event;
+
+mod _event_error;
+
+mod _event_input;
+
+mod _event_result;
+
 mod _event_source_mapping_configuration;
 
 mod _event_source_mapping_metric;
@@ -282,6 +436,24 @@ mod _event_source_mapping_metric;
 mod _event_source_mapping_metrics_config;
 
 mod _event_source_position;
+
+mod _event_type;
+
+mod _execution;
+
+mod _execution_details;
+
+mod _execution_failed_details;
+
+mod _execution_started_details;
+
+mod _execution_status;
+
+mod _execution_stopped_details;
+
+mod _execution_succeeded_details;
+
+mod _execution_timed_out_details;
 
 mod _file_system_config;
 
@@ -322,6 +494,8 @@ mod _image_config_error;
 mod _image_config_response;
 
 mod _instance_requirements;
+
+mod _invocation_completed_details;
 
 mod _invocation_type;
 
@@ -369,6 +543,16 @@ mod _on_failure;
 
 mod _on_success;
 
+mod _operation;
+
+mod _operation_action;
+
+mod _operation_status;
+
+mod _operation_type;
+
+mod _operation_update;
+
 mod _package_type;
 
 mod _provisioned_concurrency_config_list_item;
@@ -380,6 +564,8 @@ mod _provisioned_poller_config;
 mod _recursive_loop;
 
 mod _response_streaming_invocation_type;
+
+mod _retry_details;
 
 mod _runtime;
 
@@ -411,6 +597,16 @@ mod _state;
 
 mod _state_reason_code;
 
+mod _step_details;
+
+mod _step_failed_details;
+
+mod _step_options;
+
+mod _step_started_details;
+
+mod _step_succeeded_details;
+
 mod _system_log_level;
 
 mod _tags_error;
@@ -423,6 +619,8 @@ mod _tenant_isolation_mode;
 
 mod _throttle_reason;
 
+mod _trace_header;
+
 mod _tracing_config;
 
 mod _tracing_config_response;
@@ -434,6 +632,16 @@ mod _update_runtime_on;
 mod _vpc_config;
 
 mod _vpc_config_response;
+
+mod _wait_cancelled_details;
+
+mod _wait_details;
+
+mod _wait_options;
+
+mod _wait_started_details;
+
+mod _wait_succeeded_details;
 
 /// Builders
 pub mod builders;

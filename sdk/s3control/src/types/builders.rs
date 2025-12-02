@@ -23,17 +23,21 @@ pub use crate::types::_storage_lens_configuration::StorageLensConfigurationBuild
 
 pub use crate::types::_storage_lens_aws_org::StorageLensAwsOrgBuilder;
 
-pub use crate::types::_storage_lens_data_export::StorageLensDataExportBuilder;
+pub use crate::types::_storage_lens_expanded_prefixes_data_export::StorageLensExpandedPrefixesDataExportBuilder;
 
-pub use crate::types::_cloud_watch_metrics::CloudWatchMetricsBuilder;
-
-pub use crate::types::_s3_bucket_destination::S3BucketDestinationBuilder;
+pub use crate::types::_storage_lens_table_destination::StorageLensTableDestinationBuilder;
 
 pub use crate::types::_storage_lens_data_export_encryption::StorageLensDataExportEncryptionBuilder;
 
 pub use crate::types::_ssekms::SsekmsBuilder;
 
 pub use crate::types::_sses3::Sses3Builder;
+
+pub use crate::types::_s3_bucket_destination::S3BucketDestinationBuilder;
+
+pub use crate::types::_storage_lens_data_export::StorageLensDataExportBuilder;
+
+pub use crate::types::_cloud_watch_metrics::CloudWatchMetricsBuilder;
 
 pub use crate::types::_exclude::ExcludeBuilder;
 
@@ -44,6 +48,8 @@ pub use crate::types::_account_level::AccountLevelBuilder;
 pub use crate::types::_storage_lens_group_level::StorageLensGroupLevelBuilder;
 
 pub use crate::types::_storage_lens_group_level_selection_criteria::StorageLensGroupLevelSelectionCriteriaBuilder;
+
+pub use crate::types::_advanced_performance_metrics::AdvancedPerformanceMetricsBuilder;
 
 pub use crate::types::_detailed_status_codes_metrics::DetailedStatusCodesMetricsBuilder;
 

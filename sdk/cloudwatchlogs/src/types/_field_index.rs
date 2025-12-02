@@ -14,6 +14,8 @@ pub struct FieldIndex {
     pub first_event_time: ::std::option::Option<i64>,
     /// <p>The time and date of the most recent log event that matches this field index.</p>
     pub last_event_time: ::std::option::Option<i64>,
+    /// <p>The type of index. Specify <code>FACET</code> for facet-based indexing or <code>FIELD_INDEX</code> for field-based indexing. This determines how the field is indexed and can be queried.</p>
+    pub r#type: ::std::option::Option<crate::types::IndexType>,
 }
 impl FieldIndex {
     /// <p>If this field index appears in an index policy that applies only to a single log group, the ARN of that log group is displayed here.</p>
@@ -36,6 +38,10 @@ impl FieldIndex {
     pub fn last_event_time(&self) -> ::std::option::Option<i64> {
         self.last_event_time
     }
+    /// <p>The type of index. Specify <code>FACET</code> for facet-based indexing or <code>FIELD_INDEX</code> for field-based indexing. This determines how the field is indexed and can be queried.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
+        self.r#type.as_ref()
+    }
 }
 impl FieldIndex {
     /// Creates a new builder-style object to manufacture [`FieldIndex`](crate::types::FieldIndex).
@@ -53,6 +59,7 @@ pub struct FieldIndexBuilder {
     pub(crate) last_scan_time: ::std::option::Option<i64>,
     pub(crate) first_event_time: ::std::option::Option<i64>,
     pub(crate) last_event_time: ::std::option::Option<i64>,
+    pub(crate) r#type: ::std::option::Option<crate::types::IndexType>,
 }
 impl FieldIndexBuilder {
     /// <p>If this field index appears in an index policy that applies only to a single log group, the ARN of that log group is displayed here.</p>
@@ -125,6 +132,20 @@ impl FieldIndexBuilder {
     pub fn get_last_event_time(&self) -> &::std::option::Option<i64> {
         &self.last_event_time
     }
+    /// <p>The type of index. Specify <code>FACET</code> for facet-based indexing or <code>FIELD_INDEX</code> for field-based indexing. This determines how the field is indexed and can be queried.</p>
+    pub fn r#type(mut self, input: crate::types::IndexType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of index. Specify <code>FACET</code> for facet-based indexing or <code>FIELD_INDEX</code> for field-based indexing. This determines how the field is indexed and can be queried.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of index. Specify <code>FACET</code> for facet-based indexing or <code>FIELD_INDEX</code> for field-based indexing. This determines how the field is indexed and can be queried.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`FieldIndex`](crate::types::FieldIndex).
     pub fn build(self) -> crate::types::FieldIndex {
         crate::types::FieldIndex {
@@ -133,6 +154,7 @@ impl FieldIndexBuilder {
             last_scan_time: self.last_scan_time,
             first_event_time: self.first_event_time,
             last_event_time: self.last_event_time,
+            r#type: self.r#type,
         }
     }
 }

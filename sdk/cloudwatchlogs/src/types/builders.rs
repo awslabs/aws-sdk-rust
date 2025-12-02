@@ -113,9 +113,15 @@ pub use crate::types::_delivery_destination_configuration::DeliveryDestinationCo
 
 pub use crate::types::_account_policy::AccountPolicyBuilder;
 
+pub use crate::types::_s3_table_integration_source::S3TableIntegrationSourceBuilder;
+
+pub use crate::types::_data_source::DataSourceBuilder;
+
 pub use crate::types::_scheduled_query_summary::ScheduledQuerySummaryBuilder;
 
 pub use crate::types::_log_group_summary::LogGroupSummaryBuilder;
+
+pub use crate::types::_data_source_filter::DataSourceFilterBuilder;
 
 pub use crate::types::_anomaly_detector::AnomalyDetectorBuilder;
 
@@ -126,6 +132,10 @@ pub use crate::types::_anomaly::AnomalyBuilder;
 pub use crate::types::_pattern_token::PatternTokenBuilder;
 
 pub use crate::types::_log_event::LogEventBuilder;
+
+pub use crate::types::_aggregate_log_group_summary::AggregateLogGroupSummaryBuilder;
+
+pub use crate::types::_grouping_identifier::GroupingIdentifierBuilder;
 
 pub use crate::types::_trigger_history_record::TriggerHistoryRecordBuilder;
 
@@ -138,6 +148,10 @@ pub use crate::types::_result_field::ResultFieldBuilder;
 pub use crate::types::_fields_data::FieldsDataBuilder;
 
 pub use crate::types::_log_group_field::LogGroupFieldBuilder;
+
+pub use crate::types::_log_fields_list_item::LogFieldsListItemBuilder;
+
+pub use crate::types::_log_field_type::LogFieldTypeBuilder;
 
 pub use crate::types::_output_log_event::OutputLogEventBuilder;
 

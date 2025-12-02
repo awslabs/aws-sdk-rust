@@ -22,7 +22,7 @@ impl crate::operation::delete_aggregator_v2::builders::DeleteAggregatorV2InputBu
 }
 /// Fluent builder constructing a request to `DeleteAggregatorV2`.
 ///
-/// <p>Deletes the Aggregator V2. This API is in public preview and subject to change.</p>
+/// <p>Deletes the Aggregator V2.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAggregatorV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

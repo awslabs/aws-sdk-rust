@@ -28,9 +28,9 @@ pub struct ListPartsOutput {
     pub is_truncated: ::std::option::Option<bool>,
     /// <p>Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::Part>>,
-    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
+    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN.</p>
     pub initiator: ::std::option::Option<crate::types::Initiator>,
-    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p><note>
+    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID.</p><note>
     /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub owner: ::std::option::Option<crate::types::Owner>,
@@ -97,11 +97,11 @@ impl ListPartsOutput {
     pub fn parts(&self) -> &[crate::types::Part] {
         self.parts.as_deref().unwrap_or_default()
     }
-    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
+    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN.</p>
     pub fn initiator(&self) -> ::std::option::Option<&crate::types::Initiator> {
         self.initiator.as_ref()
     }
-    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p><note>
+    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID.</p><note>
     /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
@@ -330,35 +330,35 @@ impl ListPartsOutputBuilder {
     pub fn get_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Part>> {
         &self.parts
     }
-    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
+    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN.</p>
     pub fn initiator(mut self, input: crate::types::Initiator) -> Self {
         self.initiator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
+    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN.</p>
     pub fn set_initiator(mut self, input: ::std::option::Option<crate::types::Initiator>) -> Self {
         self.initiator = input;
         self
     }
-    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
+    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN.</p>
     pub fn get_initiator(&self) -> &::std::option::Option<crate::types::Initiator> {
         &self.initiator
     }
-    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p><note>
+    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID.</p><note>
     /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p><note>
+    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID.</p><note>
     /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
     }
-    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p><note>
+    /// <p>Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID.</p><note>
     /// <p><b>Directory buckets</b> - The bucket owner is returned as the object owner for all the parts.</p>
     /// </note>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {

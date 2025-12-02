@@ -234,6 +234,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DurableConfig" => {
+                            builder = builder.set_durable_config(crate::protocol_serde::shape_durable_config::de_durable_config(tokens)?);
+                        }
                         "TenancyConfig" => {
                             builder = builder.set_tenancy_config(crate::protocol_serde::shape_tenancy_config::de_tenancy_config(tokens)?);
                         }

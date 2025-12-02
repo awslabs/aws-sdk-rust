@@ -13,6 +13,10 @@ pub fn ser_storage_lens_data_export(
         let inner_writer = scope.start_el("CloudWatchMetrics");
         crate::protocol_serde::shape_cloud_watch_metrics::ser_cloud_watch_metrics(var_2, inner_writer)?
     }
+    if let Some(var_3) = &input.storage_lens_table_destination {
+        let inner_writer = scope.start_el("StorageLensTableDestination");
+        crate::protocol_serde::shape_storage_lens_table_destination::ser_storage_lens_table_destination(var_3, inner_writer)?
+    }
     scope.finish();
     Ok(())
 }
@@ -26,23 +30,33 @@ pub fn de_storage_lens_data_export(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("S3BucketDestination") /* S3BucketDestination com.amazonaws.s3control#StorageLensDataExport$S3BucketDestination */ =>  {
-                let var_3 =
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_s3_bucket_destination::de_s3_bucket_destination(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_bucket_destination(var_3);
+                builder = builder.set_s3_bucket_destination(var_4);
             }
             ,
             s if s.matches("CloudWatchMetrics") /* CloudWatchMetrics com.amazonaws.s3control#StorageLensDataExport$CloudWatchMetrics */ =>  {
-                let var_4 =
+                let var_5 =
                     Some(
                         crate::protocol_serde::shape_cloud_watch_metrics::de_cloud_watch_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cloud_watch_metrics(var_4);
+                builder = builder.set_cloud_watch_metrics(var_5);
+            }
+            ,
+            s if s.matches("StorageLensTableDestination") /* StorageLensTableDestination com.amazonaws.s3control#StorageLensDataExport$StorageLensTableDestination */ =>  {
+                let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_storage_lens_table_destination::de_storage_lens_table_destination(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_lens_table_destination(var_6);
             }
             ,
             _ => {}

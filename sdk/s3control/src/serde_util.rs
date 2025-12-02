@@ -438,6 +438,15 @@ pub(crate) fn s3_object_lock_legal_hold_correct_errors(
     builder
 }
 
+pub(crate) fn storage_lens_table_destination_correct_errors(
+    mut builder: crate::types::builders::StorageLensTableDestinationBuilder,
+) -> crate::types::builders::StorageLensTableDestinationBuilder {
+    if builder.is_enabled.is_none() {
+        builder.is_enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn access_control_translation_correct_errors(
     mut builder: crate::types::builders::AccessControlTranslationBuilder,
 ) -> crate::types::builders::AccessControlTranslationBuilder {

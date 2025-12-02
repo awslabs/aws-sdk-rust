@@ -15,11 +15,17 @@ pub fn ser_modify_strategy_configuration(
         crate::protocol_serde::shape_modify_consolidation_configuration::ser_modify_consolidation_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.self_managed_configuration {
+    if let Some(var_5) = &input.reflection {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("selfManagedConfiguration").start_object();
-        crate::protocol_serde::shape_modify_self_managed_configuration::ser_modify_self_managed_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("reflection").start_object();
+        crate::protocol_serde::shape_modify_reflection_configuration::ser_modify_reflection_configuration(&mut object_6, var_5)?;
         object_6.finish();
+    }
+    if let Some(var_7) = &input.self_managed_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("selfManagedConfiguration").start_object();
+        crate::protocol_serde::shape_modify_self_managed_configuration::ser_modify_self_managed_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

@@ -569,6 +569,20 @@ impl CreateFunctionFluentBuilder {
     pub fn get_publish_to(&self) -> &::std::option::Option<crate::types::FunctionVersionLatestPublished> {
         self.inner.get_publish_to()
     }
+    /// <p>Configuration settings for durable functions. Enables creating functions with durability that can remember their state and continue execution even after interruptions.</p>
+    pub fn durable_config(mut self, input: crate::types::DurableConfig) -> Self {
+        self.inner = self.inner.durable_config(input);
+        self
+    }
+    /// <p>Configuration settings for durable functions. Enables creating functions with durability that can remember their state and continue execution even after interruptions.</p>
+    pub fn set_durable_config(mut self, input: ::std::option::Option<crate::types::DurableConfig>) -> Self {
+        self.inner = self.inner.set_durable_config(input);
+        self
+    }
+    /// <p>Configuration settings for durable functions. Enables creating functions with durability that can remember their state and continue execution even after interruptions.</p>
+    pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
+        self.inner.get_durable_config()
+    }
     /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
     pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
         self.inner = self.inner.tenancy_config(input);

@@ -53,7 +53,11 @@ pub use crate::types::_document_block::DocumentBlockBuilder;
 
 pub use crate::types::_image_block::ImageBlockBuilder;
 
+pub use crate::types::_error_block::ErrorBlockBuilder;
+
 pub use crate::types::_tool_use_block::ToolUseBlockBuilder;
+
+pub use crate::types::_audio_block::AudioBlockBuilder;
 
 pub use crate::types::_invoke_model_tokens_request::InvokeModelTokensRequestBuilder;
 
@@ -153,6 +157,8 @@ pub use crate::types::_content_block_stop_event::ContentBlockStopEventBuilder;
 
 pub use crate::types::_content_block_delta_event::ContentBlockDeltaEventBuilder;
 
+pub use crate::types::_image_block_delta::ImageBlockDeltaBuilder;
+
 pub use crate::types::_citations_delta::CitationsDeltaBuilder;
 
 pub use crate::types::_citation_source_content_delta::CitationSourceContentDeltaBuilder;
@@ -160,6 +166,8 @@ pub use crate::types::_citation_source_content_delta::CitationSourceContentDelta
 pub use crate::types::_tool_use_block_delta::ToolUseBlockDeltaBuilder;
 
 pub use crate::types::_content_block_start_event::ContentBlockStartEventBuilder;
+
+pub use crate::types::_image_block_start::ImageBlockStartBuilder;
 
 pub use crate::types::_tool_result_block_start::ToolResultBlockStartBuilder;
 

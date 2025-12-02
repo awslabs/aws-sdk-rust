@@ -176,6 +176,15 @@ pub(crate) fn list_indexes_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_tags_for_resource_output_output_correct_errors(
+    mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
+) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_vector_buckets_output_output_correct_errors(
     mut builder: crate::operation::list_vector_buckets::builders::ListVectorBucketsOutputBuilder,
 ) -> crate::operation::list_vector_buckets::builders::ListVectorBucketsOutputBuilder {

@@ -98,6 +98,13 @@ pub(crate) fn copy_value_correct_errors(mut builder: crate::types::builders::Cop
     builder
 }
 
+pub(crate) fn data_source_correct_errors(mut builder: crate::types::builders::DataSourceBuilder) -> crate::types::builders::DataSourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn date_time_converter_correct_errors(
     mut builder: crate::types::builders::DateTimeConverterBuilder,
 ) -> crate::types::builders::DateTimeConverterBuilder {

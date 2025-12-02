@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScheduledQueryOutput {
-    /// <p>The Amazon Resource Name (ARN) of the created scheduled query.</p>
+    /// <p>The ARN of the created scheduled query.</p>
     pub scheduled_query_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The current state of the scheduled query (ENABLED or DISABLED).</p>
+    /// <p>The current state of the scheduled query.</p>
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
     _request_id: Option<String>,
 }
 impl CreateScheduledQueryOutput {
-    /// <p>The Amazon Resource Name (ARN) of the created scheduled query.</p>
+    /// <p>The ARN of the created scheduled query.</p>
     pub fn scheduled_query_arn(&self) -> ::std::option::Option<&str> {
         self.scheduled_query_arn.as_deref()
     }
-    /// <p>The current state of the scheduled query (ENABLED or DISABLED).</p>
+    /// <p>The current state of the scheduled query.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
         self.state.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct CreateScheduledQueryOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateScheduledQueryOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the created scheduled query.</p>
+    /// <p>The ARN of the created scheduled query.</p>
     pub fn scheduled_query_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scheduled_query_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the created scheduled query.</p>
+    /// <p>The ARN of the created scheduled query.</p>
     pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheduled_query_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the created scheduled query.</p>
+    /// <p>The ARN of the created scheduled query.</p>
     pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_query_arn
     }
-    /// <p>The current state of the scheduled query (ENABLED or DISABLED).</p>
+    /// <p>The current state of the scheduled query.</p>
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current state of the scheduled query (ENABLED or DISABLED).</p>
+    /// <p>The current state of the scheduled query.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The current state of the scheduled query (ENABLED or DISABLED).</p>
+    /// <p>The current state of the scheduled query.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
     }

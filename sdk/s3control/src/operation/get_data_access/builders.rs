@@ -36,9 +36,7 @@ impl crate::operation::get_data_access::builders::GetDataAccessInputBuilder {
 /// <dd>
 /// <p>The IAM role that S3 Access Grants assumes must have the following permissions specified in the trust policy when registering the location: <code>sts:AssumeRole</code>, for directory users or groups <code>sts:SetContext</code>, and for IAM users or roles <code>sts:SetSourceIdentity</code>.</p>
 /// </dd>
-/// </dl><important>
-/// <p>You must URL encode any signed header values that contain spaces. For example, if your header value is <code>my file.txt</code>, containing two spaces after <code>my</code>, you must URL encode this value to <code>my%20%20file.txt</code>.</p>
-/// </important>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataAccessFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

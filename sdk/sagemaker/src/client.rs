@@ -325,6 +325,8 @@ mod create_inference_recommendations_job;
 
 mod create_labeling_job;
 
+mod create_mlflow_app;
+
 mod create_mlflow_tracking_server;
 
 mod create_model;
@@ -358,6 +360,8 @@ mod create_partner_app_presigned_url;
 mod create_pipeline;
 
 mod create_presigned_domain_url;
+
+mod create_presigned_mlflow_app_url;
 
 mod create_presigned_mlflow_tracking_server_url;
 
@@ -475,6 +479,8 @@ mod delete_image_version;
 mod delete_inference_component;
 
 mod delete_inference_experiment;
+
+mod delete_mlflow_app;
 
 mod delete_mlflow_tracking_server;
 
@@ -605,6 +611,8 @@ mod describe_inference_recommendations_job;
 mod describe_labeling_job;
 
 mod describe_lineage_group;
+
+mod describe_mlflow_app;
 
 mod describe_mlflow_tracking_server;
 
@@ -773,6 +781,8 @@ mod list_labeling_jobs;
 mod list_labeling_jobs_for_workteam;
 
 mod list_lineage_groups;
+
+mod list_mlflow_apps;
 
 mod list_mlflow_tracking_servers;
 
@@ -971,6 +981,8 @@ mod update_inference_component;
 mod update_inference_component_runtime_config;
 
 mod update_inference_experiment;
+
+mod update_mlflow_app;
 
 mod update_mlflow_tracking_server;
 

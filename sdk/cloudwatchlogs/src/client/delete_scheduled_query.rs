@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteScheduledQuery`](crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder::set_identifier):<br>required: **true**<br><p>The name or ARN of the scheduled query to delete.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder::set_identifier):<br>required: **true**<br><p>The ARN or name of the scheduled query to delete.</p><br>
     /// - On success, responds with [`DeleteScheduledQueryOutput`](crate::operation::delete_scheduled_query::DeleteScheduledQueryOutput)
     /// - On failure, responds with [`SdkError<DeleteScheduledQueryError>`](crate::operation::delete_scheduled_query::DeleteScheduledQueryError)
     pub fn delete_scheduled_query(&self) -> crate::operation::delete_scheduled_query::builders::DeleteScheduledQueryFluentBuilder {

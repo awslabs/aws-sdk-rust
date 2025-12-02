@@ -50,6 +50,8 @@ pub struct PendingModifiedValues {
     pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>The database engine of the DB instance.</p>
     pub engine: ::std::option::Option<::std::string::String>,
+    /// <p>The additional storage volume modifications that are pending for the DB instance.</p>
+    pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
 }
 impl PendingModifiedValues {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -144,6 +146,12 @@ impl PendingModifiedValues {
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
+    /// <p>The additional storage volume modifications that are pending for the DB instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_storage_volumes.is_none()`.
+    pub fn additional_storage_volumes(&self) -> &[crate::types::AdditionalStorageVolume] {
+        self.additional_storage_volumes.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for PendingModifiedValues {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -170,6 +178,7 @@ impl ::std::fmt::Debug for PendingModifiedValues {
         formatter.field("iam_database_authentication_enabled", &self.iam_database_authentication_enabled);
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine", &self.engine);
+        formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.finish()
     }
 }
@@ -206,6 +215,7 @@ pub struct PendingModifiedValuesBuilder {
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
 }
 impl PendingModifiedValuesBuilder {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -528,6 +538,26 @@ impl PendingModifiedValuesBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
+    /// Appends an item to `additional_storage_volumes`.
+    ///
+    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
+    ///
+    /// <p>The additional storage volume modifications that are pending for the DB instance.</p>
+    pub fn additional_storage_volumes(mut self, input: crate::types::AdditionalStorageVolume) -> Self {
+        let mut v = self.additional_storage_volumes.unwrap_or_default();
+        v.push(input);
+        self.additional_storage_volumes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The additional storage volume modifications that are pending for the DB instance.</p>
+    pub fn set_additional_storage_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>) -> Self {
+        self.additional_storage_volumes = input;
+        self
+    }
+    /// <p>The additional storage volume modifications that are pending for the DB instance.</p>
+    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>> {
+        &self.additional_storage_volumes
+    }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn build(self) -> crate::types::PendingModifiedValues {
         crate::types::PendingModifiedValues {
@@ -553,6 +583,7 @@ impl PendingModifiedValuesBuilder {
             iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             dedicated_log_volume: self.dedicated_log_volume,
             engine: self.engine,
+            additional_storage_volumes: self.additional_storage_volumes,
         }
     }
 }
@@ -581,6 +612,7 @@ impl ::std::fmt::Debug for PendingModifiedValuesBuilder {
         formatter.field("iam_database_authentication_enabled", &self.iam_database_authentication_enabled);
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine", &self.engine);
+        formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.finish()
     }
 }

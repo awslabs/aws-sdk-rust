@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ContentBlockStart {
+    /// <p>The initial event indicating the start of a streaming image block.</p>
+    Image(crate::types::ImageBlockStart),
     /// <p>The</p>
     ToolResult(crate::types::ToolResultBlockStart),
     /// <p>Information about a tool that the model is requesting to use.</p>
@@ -19,6 +21,19 @@ pub enum ContentBlockStart {
     Unknown,
 }
 impl ContentBlockStart {
+    /// Tries to convert the enum instance into [`Image`](crate::types::ContentBlockStart::Image), extracting the inner [`ImageBlockStart`](crate::types::ImageBlockStart).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_image(&self) -> ::std::result::Result<&crate::types::ImageBlockStart, &Self> {
+        if let ContentBlockStart::Image(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Image`](crate::types::ContentBlockStart::Image).
+    pub fn is_image(&self) -> bool {
+        self.as_image().is_ok()
+    }
     /// Tries to convert the enum instance into [`ToolResult`](crate::types::ContentBlockStart::ToolResult), extracting the inner [`ToolResultBlockStart`](crate::types::ToolResultBlockStart).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tool_result(&self) -> ::std::result::Result<&crate::types::ToolResultBlockStart, &Self> {

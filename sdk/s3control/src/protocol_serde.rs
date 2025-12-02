@@ -485,6 +485,8 @@ pub(crate) mod shape_storage_lens_aws_org;
 
 pub(crate) mod shape_storage_lens_data_export;
 
+pub(crate) mod shape_storage_lens_expanded_prefixes_data_export;
+
 pub(crate) mod shape_storage_lens_group_filter;
 
 pub(crate) mod shape_abort_incomplete_multipart_upload;
@@ -494,6 +496,8 @@ pub(crate) mod shape_activity_metrics;
 pub(crate) mod shape_advanced_cost_optimization_metrics;
 
 pub(crate) mod shape_advanced_data_protection_metrics;
+
+pub(crate) mod shape_advanced_performance_metrics;
 
 pub(crate) mod shape_async_error_details;
 
@@ -562,6 +566,8 @@ pub(crate) mod shape_storage_lens_group_and_operator;
 pub(crate) mod shape_storage_lens_group_level;
 
 pub(crate) mod shape_storage_lens_group_or_operator;
+
+pub(crate) mod shape_storage_lens_table_destination;
 
 pub(crate) mod shape_transition;
 

@@ -29,6 +29,8 @@ pub struct InvokeInput {
     pub log_type: ::std::option::Option<crate::types::LogType>,
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.</p>
     pub client_context: ::std::option::Option<::std::string::String>,
+    /// <p>Optional unique name for the durable execution. When you start your special function, you can give it a unique name to identify this specific execution. It's like giving a nickname to a task.</p>
+    pub durable_execution_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON that you want to provide to your Lambda function as input. The maximum payload size is 6 MB for synchronous invocations and 1 MB for asynchronous invocations.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
@@ -72,6 +74,10 @@ impl InvokeInput {
     pub fn client_context(&self) -> ::std::option::Option<&str> {
         self.client_context.as_deref()
     }
+    /// <p>Optional unique name for the durable execution. When you start your special function, you can give it a unique name to identify this specific execution. It's like giving a nickname to a task.</p>
+    pub fn durable_execution_name(&self) -> ::std::option::Option<&str> {
+        self.durable_execution_name.as_deref()
+    }
     /// <p>The JSON that you want to provide to your Lambda function as input. The maximum payload size is 6 MB for synchronous invocations and 1 MB for asynchronous invocations.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
@@ -93,6 +99,7 @@ impl ::std::fmt::Debug for InvokeInput {
         formatter.field("invocation_type", &self.invocation_type);
         formatter.field("log_type", &self.log_type);
         formatter.field("client_context", &self.client_context);
+        formatter.field("durable_execution_name", &self.durable_execution_name);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
         formatter.field("qualifier", &self.qualifier);
         formatter.field("tenant_id", &self.tenant_id);
@@ -114,6 +121,7 @@ pub struct InvokeInputBuilder {
     pub(crate) invocation_type: ::std::option::Option<crate::types::InvocationType>,
     pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
     pub(crate) client_context: ::std::option::Option<::std::string::String>,
+    pub(crate) durable_execution_name: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
@@ -230,6 +238,20 @@ impl InvokeInputBuilder {
     pub fn get_client_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_context
     }
+    /// <p>Optional unique name for the durable execution. When you start your special function, you can give it a unique name to identify this specific execution. It's like giving a nickname to a task.</p>
+    pub fn durable_execution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.durable_execution_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Optional unique name for the durable execution. When you start your special function, you can give it a unique name to identify this specific execution. It's like giving a nickname to a task.</p>
+    pub fn set_durable_execution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.durable_execution_name = input;
+        self
+    }
+    /// <p>Optional unique name for the durable execution. When you start your special function, you can give it a unique name to identify this specific execution. It's like giving a nickname to a task.</p>
+    pub fn get_durable_execution_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.durable_execution_name
+    }
     /// <p>The JSON that you want to provide to your Lambda function as input. The maximum payload size is 6 MB for synchronous invocations and 1 MB for asynchronous invocations.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -282,6 +304,7 @@ impl InvokeInputBuilder {
             invocation_type: self.invocation_type,
             log_type: self.log_type,
             client_context: self.client_context,
+            durable_execution_name: self.durable_execution_name,
             payload: self.payload,
             qualifier: self.qualifier,
             tenant_id: self.tenant_id,
@@ -295,6 +318,7 @@ impl ::std::fmt::Debug for InvokeInputBuilder {
         formatter.field("invocation_type", &self.invocation_type);
         formatter.field("log_type", &self.log_type);
         formatter.field("client_context", &self.client_context);
+        formatter.field("durable_execution_name", &self.durable_execution_name);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
         formatter.field("qualifier", &self.qualifier);
         formatter.field("tenant_id", &self.tenant_id);

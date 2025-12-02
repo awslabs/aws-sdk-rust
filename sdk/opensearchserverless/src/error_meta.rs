@@ -989,6 +989,9 @@ impl From<crate::operation::update_account_settings::UpdateAccountSettingsError>
             crate::operation::update_account_settings::UpdateAccountSettingsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::update_account_settings::UpdateAccountSettingsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_account_settings::UpdateAccountSettingsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_account_settings::UpdateAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }

@@ -17,6 +17,20 @@ pub fn de_delete_index_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "NotFoundException" => crate::operation::delete_index::DeleteIndexError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_index::DeleteIndexError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_index::DeleteIndexError::unhandled)?
+            };
+            tmp
+        }),
         "ServiceUnavailableException" => crate::operation::delete_index::DeleteIndexError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp = {

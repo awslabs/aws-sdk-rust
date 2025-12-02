@@ -20,6 +20,8 @@ pub struct CollectionDetail {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Details about an OpenSearch Serverless collection.</p>
     pub standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub vector_options: ::std::option::Option<crate::types::VectorOptions>,
     /// <p>The Epoch time when the collection was created.</p>
     pub created_date: ::std::option::Option<i64>,
     /// <p>The date and time when the collection was last modified.</p>
@@ -67,6 +69,10 @@ impl CollectionDetail {
     /// <p>Details about an OpenSearch Serverless collection.</p>
     pub fn standby_replicas(&self) -> ::std::option::Option<&crate::types::StandbyReplicas> {
         self.standby_replicas.as_ref()
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn vector_options(&self) -> ::std::option::Option<&crate::types::VectorOptions> {
+        self.vector_options.as_ref()
     }
     /// <p>The Epoch time when the collection was created.</p>
     pub fn created_date(&self) -> ::std::option::Option<i64> {
@@ -116,6 +122,7 @@ pub struct CollectionDetailBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
+    pub(crate) vector_options: ::std::option::Option<crate::types::VectorOptions>,
     pub(crate) created_date: ::std::option::Option<i64>,
     pub(crate) last_modified_date: ::std::option::Option<i64>,
     pub(crate) collection_endpoint: ::std::option::Option<::std::string::String>,
@@ -237,6 +244,20 @@ impl CollectionDetailBuilder {
     pub fn get_standby_replicas(&self) -> &::std::option::Option<crate::types::StandbyReplicas> {
         &self.standby_replicas
     }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn vector_options(mut self, input: crate::types::VectorOptions) -> Self {
+        self.vector_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn set_vector_options(mut self, input: ::std::option::Option<crate::types::VectorOptions>) -> Self {
+        self.vector_options = input;
+        self
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn get_vector_options(&self) -> &::std::option::Option<crate::types::VectorOptions> {
+        &self.vector_options
+    }
     /// <p>The Epoch time when the collection was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -346,6 +367,7 @@ impl CollectionDetailBuilder {
             arn: self.arn,
             kms_key_arn: self.kms_key_arn,
             standby_replicas: self.standby_replicas,
+            vector_options: self.vector_options,
             created_date: self.created_date,
             last_modified_date: self.last_modified_date,
             collection_endpoint: self.collection_endpoint,

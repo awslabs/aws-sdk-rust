@@ -6,7 +6,7 @@
 pub struct LogsEncryptionConfiguration {
     /// <p>Configuration that determines the encryption strategy of the destination log groups. CUSTOMER_MANAGED uses the configured KmsKeyArn to encrypt newly created destination log groups.</p>
     pub encryption_strategy: crate::types::EncryptionStrategy,
-    /// <p>KMS Key arn belonging to the primary destination account and region, to encrypt newly created central log groups in the primary destination.</p>
+    /// <p>KMS Key ARN belonging to the primary destination account and region, to encrypt newly created central log groups in the primary destination.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Conflict resolution strategy for centralization if the encryption strategy is set to CUSTOMER_MANAGED and the destination log group is encrypted with an AWS_OWNED KMS Key. ALLOW lets centralization go through while SKIP prevents centralization into the destination log group.</p>
     pub encryption_conflict_resolution_strategy: ::std::option::Option<crate::types::EncryptionConflictResolutionStrategy>,
@@ -16,7 +16,7 @@ impl LogsEncryptionConfiguration {
     pub fn encryption_strategy(&self) -> &crate::types::EncryptionStrategy {
         &self.encryption_strategy
     }
-    /// <p>KMS Key arn belonging to the primary destination account and region, to encrypt newly created central log groups in the primary destination.</p>
+    /// <p>KMS Key ARN belonging to the primary destination account and region, to encrypt newly created central log groups in the primary destination.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -56,17 +56,17 @@ impl LogsEncryptionConfigurationBuilder {
     pub fn get_encryption_strategy(&self) -> &::std::option::Option<crate::types::EncryptionStrategy> {
         &self.encryption_strategy
     }
-    /// <p>KMS Key arn belonging to the primary destination account and region, to encrypt newly created central log groups in the primary destination.</p>
+    /// <p>KMS Key ARN belonging to the primary destination account and region, to encrypt newly created central log groups in the primary destination.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>KMS Key arn belonging to the primary destination account and region, to encrypt newly created central log groups in the primary destination.</p>
+    /// <p>KMS Key ARN belonging to the primary destination account and region, to encrypt newly created central log groups in the primary destination.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
-    /// <p>KMS Key arn belonging to the primary destination account and region, to encrypt newly created central log groups in the primary destination.</p>
+    /// <p>KMS Key ARN belonging to the primary destination account and region, to encrypt newly created central log groups in the primary destination.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }

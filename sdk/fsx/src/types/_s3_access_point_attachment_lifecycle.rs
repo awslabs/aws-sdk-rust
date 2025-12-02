@@ -16,6 +16,7 @@
 ///     S3AccessPointAttachmentLifecycle::Creating => { /* ... */ },
 ///     S3AccessPointAttachmentLifecycle::Deleting => { /* ... */ },
 ///     S3AccessPointAttachmentLifecycle::Failed => { /* ... */ },
+///     S3AccessPointAttachmentLifecycle::Misconfigured => { /* ... */ },
 ///     S3AccessPointAttachmentLifecycle::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum S3AccessPointAttachmentLifecycle {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    Misconfigured,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for S3AccessPointAttachmentLifecycle {
             "CREATING" => S3AccessPointAttachmentLifecycle::Creating,
             "DELETING" => S3AccessPointAttachmentLifecycle::Deleting,
             "FAILED" => S3AccessPointAttachmentLifecycle::Failed,
+            "MISCONFIGURED" => S3AccessPointAttachmentLifecycle::Misconfigured,
             "UPDATING" => S3AccessPointAttachmentLifecycle::Updating,
             other => S3AccessPointAttachmentLifecycle::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -86,13 +90,14 @@ impl S3AccessPointAttachmentLifecycle {
             S3AccessPointAttachmentLifecycle::Creating => "CREATING",
             S3AccessPointAttachmentLifecycle::Deleting => "DELETING",
             S3AccessPointAttachmentLifecycle::Failed => "FAILED",
+            S3AccessPointAttachmentLifecycle::Misconfigured => "MISCONFIGURED",
             S3AccessPointAttachmentLifecycle::Updating => "UPDATING",
             S3AccessPointAttachmentLifecycle::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+        &["AVAILABLE", "CREATING", "DELETING", "FAILED", "MISCONFIGURED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for S3AccessPointAttachmentLifecycle {
@@ -119,6 +124,7 @@ impl ::std::fmt::Display for S3AccessPointAttachmentLifecycle {
             S3AccessPointAttachmentLifecycle::Creating => write!(f, "CREATING"),
             S3AccessPointAttachmentLifecycle::Deleting => write!(f, "DELETING"),
             S3AccessPointAttachmentLifecycle::Failed => write!(f, "FAILED"),
+            S3AccessPointAttachmentLifecycle::Misconfigured => write!(f, "MISCONFIGURED"),
             S3AccessPointAttachmentLifecycle::Updating => write!(f, "UPDATING"),
             S3AccessPointAttachmentLifecycle::Unknown(value) => write!(f, "{value}"),
         }

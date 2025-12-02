@@ -8,6 +8,8 @@ pub struct AimlOptionsOutput {
     pub natural_language_query_generation_options: ::std::option::Option<crate::types::NaturalLanguageQueryGenerationOptionsOutput>,
     /// <p>Container for parameters representing the state of S3 vectors engine features on the specified domain.</p>
     pub s3_vectors_engine: ::std::option::Option<crate::types::S3VectorsEngine>,
+    /// <p>The current serverless vector acceleration configuration for the domain.</p>
+    pub serverless_vector_acceleration: ::std::option::Option<crate::types::ServerlessVectorAcceleration>,
 }
 impl AimlOptionsOutput {
     /// <p>Container for parameters required for natural language query generation on the specified domain.</p>
@@ -17,6 +19,10 @@ impl AimlOptionsOutput {
     /// <p>Container for parameters representing the state of S3 vectors engine features on the specified domain.</p>
     pub fn s3_vectors_engine(&self) -> ::std::option::Option<&crate::types::S3VectorsEngine> {
         self.s3_vectors_engine.as_ref()
+    }
+    /// <p>The current serverless vector acceleration configuration for the domain.</p>
+    pub fn serverless_vector_acceleration(&self) -> ::std::option::Option<&crate::types::ServerlessVectorAcceleration> {
+        self.serverless_vector_acceleration.as_ref()
     }
 }
 impl AimlOptionsOutput {
@@ -32,6 +38,7 @@ impl AimlOptionsOutput {
 pub struct AimlOptionsOutputBuilder {
     pub(crate) natural_language_query_generation_options: ::std::option::Option<crate::types::NaturalLanguageQueryGenerationOptionsOutput>,
     pub(crate) s3_vectors_engine: ::std::option::Option<crate::types::S3VectorsEngine>,
+    pub(crate) serverless_vector_acceleration: ::std::option::Option<crate::types::ServerlessVectorAcceleration>,
 }
 impl AimlOptionsOutputBuilder {
     /// <p>Container for parameters required for natural language query generation on the specified domain.</p>
@@ -65,11 +72,26 @@ impl AimlOptionsOutputBuilder {
     pub fn get_s3_vectors_engine(&self) -> &::std::option::Option<crate::types::S3VectorsEngine> {
         &self.s3_vectors_engine
     }
+    /// <p>The current serverless vector acceleration configuration for the domain.</p>
+    pub fn serverless_vector_acceleration(mut self, input: crate::types::ServerlessVectorAcceleration) -> Self {
+        self.serverless_vector_acceleration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current serverless vector acceleration configuration for the domain.</p>
+    pub fn set_serverless_vector_acceleration(mut self, input: ::std::option::Option<crate::types::ServerlessVectorAcceleration>) -> Self {
+        self.serverless_vector_acceleration = input;
+        self
+    }
+    /// <p>The current serverless vector acceleration configuration for the domain.</p>
+    pub fn get_serverless_vector_acceleration(&self) -> &::std::option::Option<crate::types::ServerlessVectorAcceleration> {
+        &self.serverless_vector_acceleration
+    }
     /// Consumes the builder and constructs a [`AimlOptionsOutput`](crate::types::AimlOptionsOutput).
     pub fn build(self) -> crate::types::AimlOptionsOutput {
         crate::types::AimlOptionsOutput {
             natural_language_query_generation_options: self.natural_language_query_generation_options,
             s3_vectors_engine: self.s3_vectors_engine,
+            serverless_vector_acceleration: self.serverless_vector_acceleration,
         }
     }
 }

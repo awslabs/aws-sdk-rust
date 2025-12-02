@@ -66,6 +66,8 @@ pub struct UpdateFunctionConfigurationInput {
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     /// <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
     pub capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
+    /// <p>Configuration settings for durable functions. Allows updating execution timeout and retention period for functions with durability enabled.</p>
+    pub durable_config: ::std::option::Option<crate::types::DurableConfig>,
 }
 impl UpdateFunctionConfigurationInput {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -175,6 +177,10 @@ impl UpdateFunctionConfigurationInput {
     pub fn capacity_provider_config(&self) -> ::std::option::Option<&crate::types::CapacityProviderConfig> {
         self.capacity_provider_config.as_ref()
     }
+    /// <p>Configuration settings for durable functions. Allows updating execution timeout and retention period for functions with durability enabled.</p>
+    pub fn durable_config(&self) -> ::std::option::Option<&crate::types::DurableConfig> {
+        self.durable_config.as_ref()
+    }
 }
 impl UpdateFunctionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionConfigurationInput`](crate::operation::update_function_configuration::UpdateFunctionConfigurationInput).
@@ -207,6 +213,7 @@ pub struct UpdateFunctionConfigurationInputBuilder {
     pub(crate) snap_start: ::std::option::Option<crate::types::SnapStart>,
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     pub(crate) capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
+    pub(crate) durable_config: ::std::option::Option<crate::types::DurableConfig>,
 }
 impl UpdateFunctionConfigurationInputBuilder {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -571,6 +578,20 @@ impl UpdateFunctionConfigurationInputBuilder {
     pub fn get_capacity_provider_config(&self) -> &::std::option::Option<crate::types::CapacityProviderConfig> {
         &self.capacity_provider_config
     }
+    /// <p>Configuration settings for durable functions. Allows updating execution timeout and retention period for functions with durability enabled.</p>
+    pub fn durable_config(mut self, input: crate::types::DurableConfig) -> Self {
+        self.durable_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for durable functions. Allows updating execution timeout and retention period for functions with durability enabled.</p>
+    pub fn set_durable_config(mut self, input: ::std::option::Option<crate::types::DurableConfig>) -> Self {
+        self.durable_config = input;
+        self
+    }
+    /// <p>Configuration settings for durable functions. Allows updating execution timeout and retention period for functions with durability enabled.</p>
+    pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
+        &self.durable_config
+    }
     /// Consumes the builder and constructs a [`UpdateFunctionConfigurationInput`](crate::operation::update_function_configuration::UpdateFunctionConfigurationInput).
     pub fn build(
         self,
@@ -599,6 +620,7 @@ impl UpdateFunctionConfigurationInputBuilder {
             snap_start: self.snap_start,
             logging_config: self.logging_config,
             capacity_provider_config: self.capacity_provider_config,
+            durable_config: self.durable_config,
         })
     }
 }

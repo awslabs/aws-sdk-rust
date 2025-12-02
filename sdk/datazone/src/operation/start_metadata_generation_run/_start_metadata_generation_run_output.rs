@@ -10,7 +10,13 @@ pub struct StartMetadataGenerationRunOutput {
     /// <p>The status of the metadata generation run.</p>
     pub status: ::std::option::Option<crate::types::MetadataGenerationRunStatus>,
     /// <p>The type of the metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub r#type: ::std::option::Option<crate::types::MetadataGenerationRunType>,
+    /// <p>The types of the metadata generation run.</p>
+    pub types: ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunType>>,
     /// <p>The timestamp at which the metadata generation run was started.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the user who started the metadata generation run.</p>
@@ -35,8 +41,18 @@ impl StartMetadataGenerationRunOutput {
         self.status.as_ref()
     }
     /// <p>The type of the metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::MetadataGenerationRunType> {
         self.r#type.as_ref()
+    }
+    /// <p>The types of the metadata generation run.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
+    pub fn types(&self) -> &[crate::types::MetadataGenerationRunType] {
+        self.types.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp at which the metadata generation run was started.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -71,6 +87,7 @@ pub struct StartMetadataGenerationRunOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::MetadataGenerationRunStatus>,
     pub(crate) r#type: ::std::option::Option<crate::types::MetadataGenerationRunType>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunType>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
@@ -122,18 +139,50 @@ impl StartMetadataGenerationRunOutputBuilder {
         &self.status
     }
     /// <p>The type of the metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub fn r#type(mut self, input: crate::types::MetadataGenerationRunType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MetadataGenerationRunType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of the metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MetadataGenerationRunType> {
         &self.r#type
+    }
+    /// Appends an item to `types`.
+    ///
+    /// To override the contents of this collection use [`set_types`](Self::set_types).
+    ///
+    /// <p>The types of the metadata generation run.</p>
+    pub fn types(mut self, input: crate::types::MetadataGenerationRunType) -> Self {
+        let mut v = self.types.unwrap_or_default();
+        v.push(input);
+        self.types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The types of the metadata generation run.</p>
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunType>>) -> Self {
+        self.types = input;
+        self
+    }
+    /// <p>The types of the metadata generation run.</p>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunType>> {
+        &self.types
     }
     /// <p>The timestamp at which the metadata generation run was started.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -211,6 +260,7 @@ impl StartMetadataGenerationRunOutputBuilder {
             })?,
             status: self.status,
             r#type: self.r#type,
+            types: self.types,
             created_at: self.created_at,
             created_by: self.created_by,
             owning_project_id: self.owning_project_id,

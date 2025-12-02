@@ -3,85 +3,85 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateScheduledQueryInput {
-    /// <p>The name or ARN of the scheduled query to update.</p>
+    /// <p>The ARN or name of the scheduled query to update.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Updated description for the scheduled query.</p>
+    /// <p>An updated description for the scheduled query.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Updated query language to use (LogsQL, PPL, or SQL).</p>
+    /// <p>The updated query language for the scheduled query.</p>
     pub query_language: ::std::option::Option<crate::types::QueryLanguage>,
-    /// <p>Updated CloudWatch Logs Insights query string to execute.</p>
+    /// <p>The updated query string to execute.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
-    /// <p>Updated log group identifiers to query.</p>
+    /// <p>The updated array of log group names or ARNs to query.</p>
     pub log_group_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Updated cron expression that defines when the scheduled query runs.</p>
+    /// <p>The updated cron expression that defines when the scheduled query runs.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
-    /// <p>Updated timezone in which the schedule expression is evaluated.</p>
+    /// <p>The updated timezone for evaluating the schedule expression.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
-    /// <p>Updated time offset in seconds from the execution time for the start of the query time range.</p>
+    /// <p>The updated time offset in seconds that defines the lookback period for the query.</p>
     pub start_time_offset: ::std::option::Option<i64>,
-    /// <p>Updated configuration for destinations where the query results will be delivered.</p>
+    /// <p>The updated configuration for where to deliver query results.</p>
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
-    /// <p>Updated start time for the query schedule in Unix epoch time.</p>
+    /// <p>The updated start time for the scheduled query in Unix epoch format.</p>
     pub schedule_start_time: ::std::option::Option<i64>,
-    /// <p>Updated end time for the query schedule in Unix epoch time.</p>
+    /// <p>The updated end time for the scheduled query in Unix epoch format.</p>
     pub schedule_end_time: ::std::option::Option<i64>,
-    /// <p>Updated ARN of the IAM role that CloudWatch Logs will assume to execute the scheduled query.</p>
+    /// <p>The updated ARN of the IAM role that grants permissions to execute the query and deliver results.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Updated state of the scheduled query (ENABLED or DISABLED).</p>
+    /// <p>The updated state of the scheduled query.</p>
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
 }
 impl UpdateScheduledQueryInput {
-    /// <p>The name or ARN of the scheduled query to update.</p>
+    /// <p>The ARN or name of the scheduled query to update.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>Updated description for the scheduled query.</p>
+    /// <p>An updated description for the scheduled query.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Updated query language to use (LogsQL, PPL, or SQL).</p>
+    /// <p>The updated query language for the scheduled query.</p>
     pub fn query_language(&self) -> ::std::option::Option<&crate::types::QueryLanguage> {
         self.query_language.as_ref()
     }
-    /// <p>Updated CloudWatch Logs Insights query string to execute.</p>
+    /// <p>The updated query string to execute.</p>
     pub fn query_string(&self) -> ::std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>Updated log group identifiers to query.</p>
+    /// <p>The updated array of log group names or ARNs to query.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_identifiers.is_none()`.
     pub fn log_group_identifiers(&self) -> &[::std::string::String] {
         self.log_group_identifiers.as_deref().unwrap_or_default()
     }
-    /// <p>Updated cron expression that defines when the scheduled query runs.</p>
+    /// <p>The updated cron expression that defines when the scheduled query runs.</p>
     pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
-    /// <p>Updated timezone in which the schedule expression is evaluated.</p>
+    /// <p>The updated timezone for evaluating the schedule expression.</p>
     pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
-    /// <p>Updated time offset in seconds from the execution time for the start of the query time range.</p>
+    /// <p>The updated time offset in seconds that defines the lookback period for the query.</p>
     pub fn start_time_offset(&self) -> ::std::option::Option<i64> {
         self.start_time_offset
     }
-    /// <p>Updated configuration for destinations where the query results will be delivered.</p>
+    /// <p>The updated configuration for where to deliver query results.</p>
     pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
-    /// <p>Updated start time for the query schedule in Unix epoch time.</p>
+    /// <p>The updated start time for the scheduled query in Unix epoch format.</p>
     pub fn schedule_start_time(&self) -> ::std::option::Option<i64> {
         self.schedule_start_time
     }
-    /// <p>Updated end time for the query schedule in Unix epoch time.</p>
+    /// <p>The updated end time for the scheduled query in Unix epoch format.</p>
     pub fn schedule_end_time(&self) -> ::std::option::Option<i64> {
         self.schedule_end_time
     }
-    /// <p>Updated ARN of the IAM role that CloudWatch Logs will assume to execute the scheduled query.</p>
+    /// <p>The updated ARN of the IAM role that grants permissions to execute the query and deliver results.</p>
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>Updated state of the scheduled query (ENABLED or DISABLED).</p>
+    /// <p>The updated state of the scheduled query.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
         self.state.as_ref()
     }
@@ -112,62 +112,62 @@ pub struct UpdateScheduledQueryInputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ScheduledQueryState>,
 }
 impl UpdateScheduledQueryInputBuilder {
-    /// <p>The name or ARN of the scheduled query to update.</p>
+    /// <p>The ARN or name of the scheduled query to update.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or ARN of the scheduled query to update.</p>
+    /// <p>The ARN or name of the scheduled query to update.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p>The name or ARN of the scheduled query to update.</p>
+    /// <p>The ARN or name of the scheduled query to update.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
-    /// <p>Updated description for the scheduled query.</p>
+    /// <p>An updated description for the scheduled query.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Updated description for the scheduled query.</p>
+    /// <p>An updated description for the scheduled query.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>Updated description for the scheduled query.</p>
+    /// <p>An updated description for the scheduled query.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Updated query language to use (LogsQL, PPL, or SQL).</p>
+    /// <p>The updated query language for the scheduled query.</p>
     /// This field is required.
     pub fn query_language(mut self, input: crate::types::QueryLanguage) -> Self {
         self.query_language = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updated query language to use (LogsQL, PPL, or SQL).</p>
+    /// <p>The updated query language for the scheduled query.</p>
     pub fn set_query_language(mut self, input: ::std::option::Option<crate::types::QueryLanguage>) -> Self {
         self.query_language = input;
         self
     }
-    /// <p>Updated query language to use (LogsQL, PPL, or SQL).</p>
+    /// <p>The updated query language for the scheduled query.</p>
     pub fn get_query_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
         &self.query_language
     }
-    /// <p>Updated CloudWatch Logs Insights query string to execute.</p>
+    /// <p>The updated query string to execute.</p>
     /// This field is required.
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Updated CloudWatch Logs Insights query string to execute.</p>
+    /// <p>The updated query string to execute.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
     }
-    /// <p>Updated CloudWatch Logs Insights query string to execute.</p>
+    /// <p>The updated query string to execute.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_string
     }
@@ -175,133 +175,133 @@ impl UpdateScheduledQueryInputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_group_identifiers`](Self::set_log_group_identifiers).
     ///
-    /// <p>Updated log group identifiers to query.</p>
+    /// <p>The updated array of log group names or ARNs to query.</p>
     pub fn log_group_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_group_identifiers.unwrap_or_default();
         v.push(input.into());
         self.log_group_identifiers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Updated log group identifiers to query.</p>
+    /// <p>The updated array of log group names or ARNs to query.</p>
     pub fn set_log_group_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_group_identifiers = input;
         self
     }
-    /// <p>Updated log group identifiers to query.</p>
+    /// <p>The updated array of log group names or ARNs to query.</p>
     pub fn get_log_group_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_group_identifiers
     }
-    /// <p>Updated cron expression that defines when the scheduled query runs.</p>
+    /// <p>The updated cron expression that defines when the scheduled query runs.</p>
     /// This field is required.
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Updated cron expression that defines when the scheduled query runs.</p>
+    /// <p>The updated cron expression that defines when the scheduled query runs.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
-    /// <p>Updated cron expression that defines when the scheduled query runs.</p>
+    /// <p>The updated cron expression that defines when the scheduled query runs.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression
     }
-    /// <p>Updated timezone in which the schedule expression is evaluated.</p>
+    /// <p>The updated timezone for evaluating the schedule expression.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Updated timezone in which the schedule expression is evaluated.</p>
+    /// <p>The updated timezone for evaluating the schedule expression.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
     }
-    /// <p>Updated timezone in which the schedule expression is evaluated.</p>
+    /// <p>The updated timezone for evaluating the schedule expression.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.timezone
     }
-    /// <p>Updated time offset in seconds from the execution time for the start of the query time range.</p>
+    /// <p>The updated time offset in seconds that defines the lookback period for the query.</p>
     pub fn start_time_offset(mut self, input: i64) -> Self {
         self.start_time_offset = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updated time offset in seconds from the execution time for the start of the query time range.</p>
+    /// <p>The updated time offset in seconds that defines the lookback period for the query.</p>
     pub fn set_start_time_offset(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_time_offset = input;
         self
     }
-    /// <p>Updated time offset in seconds from the execution time for the start of the query time range.</p>
+    /// <p>The updated time offset in seconds that defines the lookback period for the query.</p>
     pub fn get_start_time_offset(&self) -> &::std::option::Option<i64> {
         &self.start_time_offset
     }
-    /// <p>Updated configuration for destinations where the query results will be delivered.</p>
+    /// <p>The updated configuration for where to deliver query results.</p>
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updated configuration for destinations where the query results will be delivered.</p>
+    /// <p>The updated configuration for where to deliver query results.</p>
     pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.destination_configuration = input;
         self
     }
-    /// <p>Updated configuration for destinations where the query results will be delivered.</p>
+    /// <p>The updated configuration for where to deliver query results.</p>
     pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         &self.destination_configuration
     }
-    /// <p>Updated start time for the query schedule in Unix epoch time.</p>
+    /// <p>The updated start time for the scheduled query in Unix epoch format.</p>
     pub fn schedule_start_time(mut self, input: i64) -> Self {
         self.schedule_start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updated start time for the query schedule in Unix epoch time.</p>
+    /// <p>The updated start time for the scheduled query in Unix epoch format.</p>
     pub fn set_schedule_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.schedule_start_time = input;
         self
     }
-    /// <p>Updated start time for the query schedule in Unix epoch time.</p>
+    /// <p>The updated start time for the scheduled query in Unix epoch format.</p>
     pub fn get_schedule_start_time(&self) -> &::std::option::Option<i64> {
         &self.schedule_start_time
     }
-    /// <p>Updated end time for the query schedule in Unix epoch time.</p>
+    /// <p>The updated end time for the scheduled query in Unix epoch format.</p>
     pub fn schedule_end_time(mut self, input: i64) -> Self {
         self.schedule_end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updated end time for the query schedule in Unix epoch time.</p>
+    /// <p>The updated end time for the scheduled query in Unix epoch format.</p>
     pub fn set_schedule_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.schedule_end_time = input;
         self
     }
-    /// <p>Updated end time for the query schedule in Unix epoch time.</p>
+    /// <p>The updated end time for the scheduled query in Unix epoch format.</p>
     pub fn get_schedule_end_time(&self) -> &::std::option::Option<i64> {
         &self.schedule_end_time
     }
-    /// <p>Updated ARN of the IAM role that CloudWatch Logs will assume to execute the scheduled query.</p>
+    /// <p>The updated ARN of the IAM role that grants permissions to execute the query and deliver results.</p>
     /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Updated ARN of the IAM role that CloudWatch Logs will assume to execute the scheduled query.</p>
+    /// <p>The updated ARN of the IAM role that grants permissions to execute the query and deliver results.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
-    /// <p>Updated ARN of the IAM role that CloudWatch Logs will assume to execute the scheduled query.</p>
+    /// <p>The updated ARN of the IAM role that grants permissions to execute the query and deliver results.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
-    /// <p>Updated state of the scheduled query (ENABLED or DISABLED).</p>
+    /// <p>The updated state of the scheduled query.</p>
     pub fn state(mut self, input: crate::types::ScheduledQueryState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updated state of the scheduled query (ENABLED or DISABLED).</p>
+    /// <p>The updated state of the scheduled query.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>Updated state of the scheduled query (ENABLED or DISABLED).</p>
+    /// <p>The updated state of the scheduled query.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
     }

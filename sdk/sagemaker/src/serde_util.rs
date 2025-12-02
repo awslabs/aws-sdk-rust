@@ -2906,18 +2906,6 @@ pub(crate) fn cluster_event_detail_correct_errors(
     builder
 }
 
-pub(crate) fn cluster_orchestrator_correct_errors(
-    mut builder: crate::types::builders::ClusterOrchestratorBuilder,
-) -> crate::types::builders::ClusterOrchestratorBuilder {
-    if builder.eks.is_none() {
-        builder.eks = {
-            let builder = crate::types::builders::ClusterOrchestratorEksConfigBuilder::default();
-            Some(crate::serde_util::cluster_orchestrator_eks_config_correct_errors(builder).build())
-        }
-    }
-    builder
-}
-
 pub(crate) fn cluster_tiered_storage_config_correct_errors(
     mut builder: crate::types::builders::ClusterTieredStorageConfigBuilder,
 ) -> crate::types::builders::ClusterTieredStorageConfigBuilder {

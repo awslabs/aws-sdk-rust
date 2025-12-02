@@ -78,6 +78,8 @@ pub struct CreateFunctionInput {
     pub capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     /// <p>Specifies where to publish the function version or configuration.</p>
     pub publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
+    /// <p>Configuration settings for durable functions. Enables creating functions with durability that can remember their state and continue execution even after interruptions.</p>
+    pub durable_config: ::std::option::Option<crate::types::DurableConfig>,
     /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
     pub tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
 }
@@ -215,6 +217,10 @@ impl CreateFunctionInput {
     pub fn publish_to(&self) -> ::std::option::Option<&crate::types::FunctionVersionLatestPublished> {
         self.publish_to.as_ref()
     }
+    /// <p>Configuration settings for durable functions. Enables creating functions with durability that can remember their state and continue execution even after interruptions.</p>
+    pub fn durable_config(&self) -> ::std::option::Option<&crate::types::DurableConfig> {
+        self.durable_config.as_ref()
+    }
     /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
     pub fn tenancy_config(&self) -> ::std::option::Option<&crate::types::TenancyConfig> {
         self.tenancy_config.as_ref()
@@ -257,6 +263,7 @@ pub struct CreateFunctionInputBuilder {
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     pub(crate) capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     pub(crate) publish_to: ::std::option::Option<crate::types::FunctionVersionLatestPublished>,
+    pub(crate) durable_config: ::std::option::Option<crate::types::DurableConfig>,
     pub(crate) tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
 }
 impl CreateFunctionInputBuilder {
@@ -720,6 +727,20 @@ impl CreateFunctionInputBuilder {
     pub fn get_publish_to(&self) -> &::std::option::Option<crate::types::FunctionVersionLatestPublished> {
         &self.publish_to
     }
+    /// <p>Configuration settings for durable functions. Enables creating functions with durability that can remember their state and continue execution even after interruptions.</p>
+    pub fn durable_config(mut self, input: crate::types::DurableConfig) -> Self {
+        self.durable_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for durable functions. Enables creating functions with durability that can remember their state and continue execution even after interruptions.</p>
+    pub fn set_durable_config(mut self, input: ::std::option::Option<crate::types::DurableConfig>) -> Self {
+        self.durable_config = input;
+        self
+    }
+    /// <p>Configuration settings for durable functions. Enables creating functions with durability that can remember their state and continue execution even after interruptions.</p>
+    pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
+        &self.durable_config
+    }
     /// <p>Configuration for multi-tenant applications that use Lambda functions. Defines tenant isolation settings and resource allocations. Required for functions supporting multiple tenants.</p>
     pub fn tenancy_config(mut self, input: crate::types::TenancyConfig) -> Self {
         self.tenancy_config = ::std::option::Option::Some(input);
@@ -765,6 +786,7 @@ impl CreateFunctionInputBuilder {
             logging_config: self.logging_config,
             capacity_provider_config: self.capacity_provider_config,
             publish_to: self.publish_to,
+            durable_config: self.durable_config,
             tenancy_config: self.tenancy_config,
         })
     }

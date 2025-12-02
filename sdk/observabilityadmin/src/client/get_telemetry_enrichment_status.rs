@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_telemetry_enrichment_status::builders::GetTelemetryEnrichmentStatusFluentBuilder::send) it.
     /// - On success, responds with [`GetTelemetryEnrichmentStatusOutput`](crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusOutput) with field(s):
     ///   - [`status(Option<TelemetryEnrichmentStatus>)`](crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusOutput::status): <p>The current status of the resource tags for telemetry feature (<code>Running</code>, <code>Stopped</code>, or <code>Impaired</code>).</p>
-    ///   - [`aws_resource_explorer_managed_view_arn(Option<String>)`](crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusOutput::aws_resource_explorer_managed_view_arn): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Resource Explorer managed view used for resource tags for telemetry, if the feature is enabled.</p>
+    ///   - [`aws_resource_explorer_managed_view_arn(Option<String>)`](crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusOutput::aws_resource_explorer_managed_view_arn): <p>The Amazon Resource Name (ARN) of the Resource Explorer managed view used for resource tags for telemetry, if the feature is enabled.</p>
     /// - On failure, responds with [`SdkError<GetTelemetryEnrichmentStatusError>`](crate::operation::get_telemetry_enrichment_status::GetTelemetryEnrichmentStatusError)
     pub fn get_telemetry_enrichment_status(
         &self,

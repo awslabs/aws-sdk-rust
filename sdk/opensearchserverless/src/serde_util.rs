@@ -38,3 +38,12 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     }
     builder
 }
+
+pub(crate) fn vector_options_correct_errors(
+    mut builder: crate::types::builders::VectorOptionsBuilder,
+) -> crate::types::builders::VectorOptionsBuilder {
+    if builder.serverless_vector_acceleration.is_none() {
+        builder.serverless_vector_acceleration = "no value was set".parse::<crate::types::ServerlessVectorAccelerationStatus>().ok()
+    }
+    builder
+}

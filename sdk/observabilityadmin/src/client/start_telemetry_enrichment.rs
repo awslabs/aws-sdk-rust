@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::start_telemetry_enrichment::builders::StartTelemetryEnrichmentFluentBuilder::send) it.
     /// - On success, responds with [`StartTelemetryEnrichmentOutput`](crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentOutput) with field(s):
     ///   - [`status(Option<TelemetryEnrichmentStatus>)`](crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentOutput::status): <p>The status of the resource tags for telemetry feature after the start operation (<code>Running</code>, <code>Stopped</code>, or <code>Impaired</code>).</p>
-    ///   - [`aws_resource_explorer_managed_view_arn(Option<String>)`](crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentOutput::aws_resource_explorer_managed_view_arn): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Resource Explorer managed view created for resource tags for telemetry.</p>
+    ///   - [`aws_resource_explorer_managed_view_arn(Option<String>)`](crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentOutput::aws_resource_explorer_managed_view_arn): <p>The Amazon Resource Name (ARN) of the Resource Explorer managed view created for resource tags for telemetry.</p>
     /// - On failure, responds with [`SdkError<StartTelemetryEnrichmentError>`](crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError)
     pub fn start_telemetry_enrichment(&self) -> crate::operation::start_telemetry_enrichment::builders::StartTelemetryEnrichmentFluentBuilder {
         crate::operation::start_telemetry_enrichment::builders::StartTelemetryEnrichmentFluentBuilder::new(self.handle.clone())

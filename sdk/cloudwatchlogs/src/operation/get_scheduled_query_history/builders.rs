@@ -22,7 +22,7 @@ impl crate::operation::get_scheduled_query_history::builders::GetScheduledQueryH
 }
 /// Fluent builder constructing a request to `GetScheduledQueryHistory`.
 ///
-/// <p>Retrieves the execution history of a scheduled query within a specified time range, including execution status and destination processing metadata.</p>
+/// <p>Retrieves the execution history of a scheduled query within a specified time range, including query results and destination processing status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetScheduledQueryHistoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,45 +114,45 @@ impl GetScheduledQueryHistoryFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_scheduled_query_history::paginator::GetScheduledQueryHistoryPaginator {
         crate::operation::get_scheduled_query_history::paginator::GetScheduledQueryHistoryPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name or ARN of the scheduled query to retrieve history for.</p>
+    /// <p>The ARN or name of the scheduled query to retrieve history for.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The name or ARN of the scheduled query to retrieve history for.</p>
+    /// <p>The ARN or name of the scheduled query to retrieve history for.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The name or ARN of the scheduled query to retrieve history for.</p>
+    /// <p>The ARN or name of the scheduled query to retrieve history for.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }
-    /// <p>The start time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The start time for the history query in Unix epoch format.</p>
     pub fn start_time(mut self, input: i64) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The start time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The start time for the history query in Unix epoch format.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The start time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The start time for the history query in Unix epoch format.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<i64> {
         self.inner.get_start_time()
     }
-    /// <p>The end time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The end time for the history query in Unix epoch format.</p>
     pub fn end_time(mut self, input: i64) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
-    /// <p>The end time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The end time for the history query in Unix epoch format.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
-    /// <p>The end time for the history retrieval window in Unix epoch time.</p>
+    /// <p>The end time for the history query in Unix epoch format.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<i64> {
         self.inner.get_end_time()
     }
@@ -161,31 +161,31 @@ impl GetScheduledQueryHistoryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_execution_statuses`](Self::set_execution_statuses).
     ///
-    /// <p>Filter results by execution status (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>An array of execution statuses to filter the history results. Only executions with the specified statuses are returned.</p>
     pub fn execution_statuses(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.inner = self.inner.execution_statuses(input);
         self
     }
-    /// <p>Filter results by execution status (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>An array of execution statuses to filter the history results. Only executions with the specified statuses are returned.</p>
     pub fn set_execution_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>) -> Self {
         self.inner = self.inner.set_execution_statuses(input);
         self
     }
-    /// <p>Filter results by execution status (Running, Complete, Failed, Timeout, or InvalidQuery).</p>
+    /// <p>An array of execution statuses to filter the history results. Only executions with the specified statuses are returned.</p>
     pub fn get_execution_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>> {
         self.inner.get_execution_statuses()
     }
-    /// <p>The maximum number of history records to return in a single call.</p>
+    /// <p>The maximum number of history records to return. Valid range is 1 to 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of history records to return in a single call.</p>
+    /// <p>The maximum number of history records to return. Valid range is 1 to 1000.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of history records to return in a single call.</p>
+    /// <p>The maximum number of history records to return. Valid range is 1 to 1000.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

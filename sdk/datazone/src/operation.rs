@@ -214,6 +214,9 @@ pub mod get_asset_type;
 /// Types for the `GetConnection` operation.
 pub mod get_connection;
 
+/// Types for the `GetDataExportConfiguration` operation.
+pub mod get_data_export_configuration;
+
 /// Types for the `GetDataProduct` operation.
 pub mod get_data_product;
 
@@ -408,6 +411,9 @@ pub mod post_lineage_event;
 
 /// Types for the `PostTimeSeriesDataPoints` operation.
 pub mod post_time_series_data_points;
+
+/// Types for the `PutDataExportConfiguration` operation.
+pub mod put_data_export_configuration;
 
 /// Types for the `PutEnvironmentBlueprintConfiguration` operation.
 pub mod put_environment_blueprint_configuration;

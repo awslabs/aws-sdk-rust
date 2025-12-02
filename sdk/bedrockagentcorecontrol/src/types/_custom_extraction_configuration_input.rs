@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CustomExtractionConfigurationInput {
+    /// <p>Configurations to override the extraction step of the episodic strategy.</p>
+    EpisodicExtractionOverride(crate::types::EpisodicOverrideExtractionConfigurationInput),
     /// <p>The semantic extraction override configuration input.</p>
     SemanticExtractionOverride(crate::types::SemanticOverrideExtractionConfigurationInput),
     /// <p>The user preference extraction override configuration input.</p>
@@ -19,6 +21,19 @@ pub enum CustomExtractionConfigurationInput {
     Unknown,
 }
 impl CustomExtractionConfigurationInput {
+    /// Tries to convert the enum instance into [`EpisodicExtractionOverride`](crate::types::CustomExtractionConfigurationInput::EpisodicExtractionOverride), extracting the inner [`EpisodicOverrideExtractionConfigurationInput`](crate::types::EpisodicOverrideExtractionConfigurationInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_episodic_extraction_override(&self) -> ::std::result::Result<&crate::types::EpisodicOverrideExtractionConfigurationInput, &Self> {
+        if let CustomExtractionConfigurationInput::EpisodicExtractionOverride(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EpisodicExtractionOverride`](crate::types::CustomExtractionConfigurationInput::EpisodicExtractionOverride).
+    pub fn is_episodic_extraction_override(&self) -> bool {
+        self.as_episodic_extraction_override().is_ok()
+    }
     /// Tries to convert the enum instance into [`SemanticExtractionOverride`](crate::types::CustomExtractionConfigurationInput::SemanticExtractionOverride), extracting the inner [`SemanticOverrideExtractionConfigurationInput`](crate::types::SemanticOverrideExtractionConfigurationInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_semantic_extraction_override(&self) -> ::std::result::Result<&crate::types::SemanticOverrideExtractionConfigurationInput, &Self> {

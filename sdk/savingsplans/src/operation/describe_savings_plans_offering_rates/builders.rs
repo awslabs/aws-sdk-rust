@@ -22,7 +22,7 @@ impl crate::operation::describe_savings_plans_offering_rates::builders::Describe
 }
 /// Fluent builder constructing a request to `DescribeSavingsPlansOfferingRates`.
 ///
-/// <p>Describes the offering rates for the specified Savings Plans.</p>
+/// <p>Describes the offering rates for Savings Plans you might want to purchase.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingRatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

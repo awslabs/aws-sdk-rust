@@ -10,6 +10,16 @@ pub struct OAuthCredentialProvider {
     pub scopes: ::std::vec::Vec<::std::string::String>,
     /// <p>The custom parameters for the OAuth credential provider. These parameters provide additional configuration for the OAuth authentication process.</p>
     pub custom_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Specifies the kind of credentials to use for authorization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p></li>
+    /// <li>
+    /// <p><code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p></li>
+    /// </ul>
+    pub grant_type: crate::types::OAuthGrantType,
+    /// <p>The URL where the end user's browser is redirected after obtaining the authorization code. Generally points to the customer's application.</p>
+    pub default_return_url: ::std::option::Option<::std::string::String>,
 }
 impl OAuthCredentialProvider {
     /// <p>The Amazon Resource Name (ARN) of the OAuth credential provider. This ARN identifies the provider in Amazon Web Services.</p>
@@ -26,6 +36,20 @@ impl OAuthCredentialProvider {
     pub fn custom_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.custom_parameters.as_ref()
     }
+    /// <p>Specifies the kind of credentials to use for authorization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p></li>
+    /// <li>
+    /// <p><code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p></li>
+    /// </ul>
+    pub fn grant_type(&self) -> &crate::types::OAuthGrantType {
+        &self.grant_type
+    }
+    /// <p>The URL where the end user's browser is redirected after obtaining the authorization code. Generally points to the customer's application.</p>
+    pub fn default_return_url(&self) -> ::std::option::Option<&str> {
+        self.default_return_url.as_deref()
+    }
 }
 impl OAuthCredentialProvider {
     /// Creates a new builder-style object to manufacture [`OAuthCredentialProvider`](crate::types::OAuthCredentialProvider).
@@ -41,6 +65,8 @@ pub struct OAuthCredentialProviderBuilder {
     pub(crate) provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) custom_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) grant_type: ::std::option::Option<crate::types::OAuthGrantType>,
+    pub(crate) default_return_url: ::std::option::Option<::std::string::String>,
 }
 impl OAuthCredentialProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the OAuth credential provider. This ARN identifies the provider in Amazon Web Services.</p>
@@ -105,6 +131,52 @@ impl OAuthCredentialProviderBuilder {
     pub fn get_custom_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.custom_parameters
     }
+    /// <p>Specifies the kind of credentials to use for authorization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p></li>
+    /// <li>
+    /// <p><code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p></li>
+    /// </ul>
+    pub fn grant_type(mut self, input: crate::types::OAuthGrantType) -> Self {
+        self.grant_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the kind of credentials to use for authorization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p></li>
+    /// <li>
+    /// <p><code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p></li>
+    /// </ul>
+    pub fn set_grant_type(mut self, input: ::std::option::Option<crate::types::OAuthGrantType>) -> Self {
+        self.grant_type = input;
+        self
+    }
+    /// <p>Specifies the kind of credentials to use for authorization:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p></li>
+    /// <li>
+    /// <p><code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p></li>
+    /// </ul>
+    pub fn get_grant_type(&self) -> &::std::option::Option<crate::types::OAuthGrantType> {
+        &self.grant_type
+    }
+    /// <p>The URL where the end user's browser is redirected after obtaining the authorization code. Generally points to the customer's application.</p>
+    pub fn default_return_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.default_return_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL where the end user's browser is redirected after obtaining the authorization code. Generally points to the customer's application.</p>
+    pub fn set_default_return_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.default_return_url = input;
+        self
+    }
+    /// <p>The URL where the end user's browser is redirected after obtaining the authorization code. Generally points to the customer's application.</p>
+    pub fn get_default_return_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_return_url
+    }
     /// Consumes the builder and constructs a [`OAuthCredentialProvider`](crate::types::OAuthCredentialProvider).
     /// This method will fail if any of the following fields are not set:
     /// - [`provider_arn`](crate::types::builders::OAuthCredentialProviderBuilder::provider_arn)
@@ -124,6 +196,12 @@ impl OAuthCredentialProviderBuilder {
                 )
             })?,
             custom_parameters: self.custom_parameters,
+            grant_type: self.grant_type.unwrap_or(
+                "CLIENT_CREDENTIALS"
+                    .parse::<crate::types::OAuthGrantType>()
+                    .expect("static value validated to member"),
+            ),
+            default_return_url: self.default_return_url,
         })
     }
 }

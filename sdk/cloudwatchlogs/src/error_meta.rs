@@ -11,7 +11,7 @@ pub enum Error {
     /// <p><code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code> regardless of whether a given batch of log events has already been accepted.</p>
     /// </important>
     DataAlreadyAcceptedException(crate::types::error::DataAlreadyAcceptedException),
-    /// <p>An internal server error occurred while processing the request. This is typically a temporary issue and the request can be retried.</p>
+    /// <p>An internal server error occurred while processing the request. This exception is returned when the service encounters an unexpected condition that prevents it from fulfilling the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>An internal error occurred during the streaming of log data. This exception is thrown when there's an issue with the internal streaming mechanism used by the GetLogObject operation.</p>
     InternalStreamingException(crate::types::error::InternalStreamingException),
@@ -153,6 +153,55 @@ impl From<crate::operation::associate_kms_key::AssociateKmsKeyError> for Error {
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::associate_kms_key::AssociateKmsKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError> for Error {
+    fn from(err: crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError) -> Self {
+        match err {
+            crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1548,6 +1597,43 @@ impl From<crate::operation::disassociate_kms_key::DisassociateKmsKeyError> for E
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_source_from_s3_table_integration::DisassociateSourceFromS3TableIntegrationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_source_from_s3_table_integration::DisassociateSourceFromS3TableIntegrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_source_from_s3_table_integration::DisassociateSourceFromS3TableIntegrationError> for Error {
+    fn from(err: crate::operation::disassociate_source_from_s3_table_integration::DisassociateSourceFromS3TableIntegrationError) -> Self {
+        match err {
+            crate::operation::disassociate_source_from_s3_table_integration::DisassociateSourceFromS3TableIntegrationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_source_from_s3_table_integration::DisassociateSourceFromS3TableIntegrationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disassociate_source_from_s3_table_integration::DisassociateSourceFromS3TableIntegrationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_source_from_s3_table_integration::DisassociateSourceFromS3TableIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_source_from_s3_table_integration::DisassociateSourceFromS3TableIntegrationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_source_from_s3_table_integration::DisassociateSourceFromS3TableIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::filter_log_events::FilterLogEventsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1822,6 +1908,31 @@ impl From<crate::operation::get_log_events::GetLogEventsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_log_fields::GetLogFieldsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_log_fields::GetLogFieldsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_log_fields::GetLogFieldsError> for Error {
+    fn from(err: crate::operation::get_log_fields::GetLogFieldsError) -> Self {
+        match err {
+            crate::operation::get_log_fields::GetLogFieldsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_log_fields::GetLogFieldsError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
+            crate::operation::get_log_fields::GetLogFieldsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_log_fields::GetLogFieldsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_log_fields::GetLogFieldsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_log_group_fields::GetLogGroupFieldsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2023,6 +2134,47 @@ impl From<crate::operation::get_transformer::GetTransformerError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_aggregate_log_group_summaries::ListAggregateLogGroupSummariesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_aggregate_log_group_summaries::ListAggregateLogGroupSummariesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_aggregate_log_group_summaries::ListAggregateLogGroupSummariesError> for Error {
+    fn from(err: crate::operation::list_aggregate_log_group_summaries::ListAggregateLogGroupSummariesError) -> Self {
+        match err {
+            crate::operation::list_aggregate_log_group_summaries::ListAggregateLogGroupSummariesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_aggregate_log_group_summaries::ListAggregateLogGroupSummariesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_aggregate_log_group_summaries::ListAggregateLogGroupSummariesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_aggregate_log_group_summaries::ListAggregateLogGroupSummariesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_anomalies::ListAnomaliesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2191,6 +2343,55 @@ impl From<crate::operation::list_scheduled_queries::ListScheduledQueriesError> f
             crate::operation::list_scheduled_queries::ListScheduledQueriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_scheduled_queries::ListScheduledQueriesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_scheduled_queries::ListScheduledQueriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationError> for Error {
+    fn from(err: crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationError) -> Self {
+        match err {
+            crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_sources_for_s3_table_integration::ListSourcesForS3TableIntegrationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

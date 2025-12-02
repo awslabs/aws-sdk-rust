@@ -35,7 +35,7 @@ pub struct AwsAutoScalingLaunchConfigurationDetails {
     pub placement_tenancy: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the RAM disk associated with the AMI.</p>
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
-    /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
+    /// <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling group.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum hourly price to be paid for any Spot Instance that is launched to fulfill the request.</p>
     pub spot_price: ::std::option::Option<::std::string::String>,
@@ -110,7 +110,7 @@ impl AwsAutoScalingLaunchConfigurationDetails {
     pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
         self.ramdisk_id.as_deref()
     }
-    /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
+    /// <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
     pub fn security_groups(&self) -> &[::std::string::String] {
@@ -399,19 +399,19 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
+    /// <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling group.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
+    /// <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling group.</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
-    /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
+    /// <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling group.</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }

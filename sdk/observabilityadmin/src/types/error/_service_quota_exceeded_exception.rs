@@ -6,11 +6,35 @@
 pub struct ServiceQuotaExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the resource which exceeds the service quota.</p>
+    pub resource_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the resource which exceeds the service quota.</p>
+    pub resource_type: ::std::option::Option<::std::string::String>,
+    /// <p>The code for the service of the exceeded quota.</p>
+    pub service_code: ::std::option::Option<::std::string::String>,
+    /// <p>The code for the exceeded service quota.</p>
+    pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>The name of the exception.</p>
     pub amzn_error_type: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceQuotaExceededException {
+    /// <p>The identifier of the resource which exceeds the service quota.</p>
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The type of the resource which exceeds the service quota.</p>
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
+    /// <p>The code for the service of the exceeded quota.</p>
+    pub fn service_code(&self) -> ::std::option::Option<&str> {
+        self.service_code.as_deref()
+    }
+    /// <p>The code for the exceeded service quota.</p>
+    pub fn quota_code(&self) -> ::std::option::Option<&str> {
+        self.quota_code.as_deref()
+    }
     /// <p>The name of the exception.</p>
     pub fn amzn_error_type(&self) -> ::std::option::Option<&str> {
         self.amzn_error_type.as_deref()
@@ -57,6 +81,10 @@ impl ServiceQuotaExceededException {
 #[non_exhaustive]
 pub struct ServiceQuotaExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) service_code: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_code: ::std::option::Option<::std::string::String>,
     pub(crate) amzn_error_type: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
@@ -74,6 +102,62 @@ impl ServiceQuotaExceededExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
+    }
+    /// <p>The identifier of the resource which exceeds the service quota.</p>
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the resource which exceeds the service quota.</p>
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_id = input;
+        self
+    }
+    /// <p>The identifier of the resource which exceeds the service quota.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
+    /// <p>The type of the resource which exceeds the service quota.</p>
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of the resource which exceeds the service quota.</p>
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_type = input;
+        self
+    }
+    /// <p>The type of the resource which exceeds the service quota.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
+    /// <p>The code for the service of the exceeded quota.</p>
+    pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The code for the service of the exceeded quota.</p>
+    pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_code = input;
+        self
+    }
+    /// <p>The code for the service of the exceeded quota.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
+    }
+    /// <p>The code for the exceeded service quota.</p>
+    pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quota_code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The code for the exceeded service quota.</p>
+    pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quota_code = input;
+        self
+    }
+    /// <p>The code for the exceeded service quota.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_code
     }
     /// <p>The name of the exception.</p>
     pub fn amzn_error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,6 +188,10 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn build(self) -> crate::types::error::ServiceQuotaExceededException {
         crate::types::error::ServiceQuotaExceededException {
             message: self.message,
+            resource_id: self.resource_id,
+            resource_type: self.resource_type,
+            service_code: self.service_code,
+            quota_code: self.quota_code,
             amzn_error_type: self.amzn_error_type,
             meta: self.meta.unwrap_or_default(),
         }

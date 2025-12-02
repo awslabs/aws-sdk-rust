@@ -35,6 +35,8 @@ pub struct GetTableOutput {
     pub format: crate::types::OpenTableFormat,
     /// <p>The unique identifier of the table bucket containing this table.</p>
     pub table_bucket_id: ::std::option::Option<::std::string::String>,
+    /// <p>If this table is managed by S3 Tables, contains additional information such as replication details.</p>
+    pub managed_table_information: ::std::option::Option<crate::types::ManagedTableInformation>,
     _request_id: Option<String>,
 }
 impl GetTableOutput {
@@ -110,6 +112,10 @@ impl GetTableOutput {
     pub fn table_bucket_id(&self) -> ::std::option::Option<&str> {
         self.table_bucket_id.as_deref()
     }
+    /// <p>If this table is managed by S3 Tables, contains additional information such as replication details.</p>
+    pub fn managed_table_information(&self) -> ::std::option::Option<&crate::types::ManagedTableInformation> {
+        self.managed_table_information.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTableOutput {
     fn request_id(&self) -> Option<&str> {
@@ -143,6 +149,7 @@ pub struct GetTableOutputBuilder {
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::OpenTableFormat>,
     pub(crate) table_bucket_id: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_table_information: ::std::option::Option<crate::types::ManagedTableInformation>,
     _request_id: Option<String>,
 }
 impl GetTableOutputBuilder {
@@ -387,6 +394,20 @@ impl GetTableOutputBuilder {
     pub fn get_table_bucket_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_bucket_id
     }
+    /// <p>If this table is managed by S3 Tables, contains additional information such as replication details.</p>
+    pub fn managed_table_information(mut self, input: crate::types::ManagedTableInformation) -> Self {
+        self.managed_table_information = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If this table is managed by S3 Tables, contains additional information such as replication details.</p>
+    pub fn set_managed_table_information(mut self, input: ::std::option::Option<crate::types::ManagedTableInformation>) -> Self {
+        self.managed_table_information = input;
+        self
+    }
+    /// <p>If this table is managed by S3 Tables, contains additional information such as replication details.</p>
+    pub fn get_managed_table_information(&self) -> &::std::option::Option<crate::types::ManagedTableInformation> {
+        &self.managed_table_information
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -488,6 +509,7 @@ impl GetTableOutputBuilder {
                 )
             })?,
             table_bucket_id: self.table_bucket_id,
+            managed_table_information: self.managed_table_information,
             _request_id: self._request_id,
         })
     }

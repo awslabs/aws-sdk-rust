@@ -281,6 +281,20 @@ impl CreateGatewayFluentBuilder {
     pub fn get_interceptor_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptorConfiguration>> {
         self.inner.get_interceptor_configurations()
     }
+    /// <p>The policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.</p>
+    pub fn policy_engine_configuration(mut self, input: crate::types::GatewayPolicyEngineConfiguration) -> Self {
+        self.inner = self.inner.policy_engine_configuration(input);
+        self
+    }
+    /// <p>The policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.</p>
+    pub fn set_policy_engine_configuration(mut self, input: ::std::option::Option<crate::types::GatewayPolicyEngineConfiguration>) -> Self {
+        self.inner = self.inner.set_policy_engine_configuration(input);
+        self
+    }
+    /// <p>The policy engine configuration for the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.</p>
+    pub fn get_policy_engine_configuration(&self) -> &::std::option::Option<crate::types::GatewayPolicyEngineConfiguration> {
+        self.inner.get_policy_engine_configuration()
+    }
     /// <p>The level of detail in error messages returned when invoking the gateway.</p>
     /// <ul>
     /// <li>

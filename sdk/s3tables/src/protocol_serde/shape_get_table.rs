@@ -183,6 +183,11 @@ pub(crate) fn de_get_table(
                             .transpose()?,
                     );
                 }
+                "managedTableInformation" => {
+                    builder = builder.set_managed_table_information(
+                        crate::protocol_serde::shape_managed_table_information::de_managed_table_information(tokens)?,
+                    );
+                }
                 "metadataLocation" => {
                     builder = builder.set_metadata_location(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

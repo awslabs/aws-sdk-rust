@@ -7,7 +7,7 @@ pub struct GetScheduledQueryHistoryOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the scheduled query.</p>
     pub scheduled_query_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The list of execution history records for the scheduled query.</p>
+    /// <p>An array of execution history records for the scheduled query.</p>
     pub trigger_history: ::std::option::Option<::std::vec::Vec<crate::types::TriggerHistoryRecord>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl GetScheduledQueryHistoryOutput {
     pub fn scheduled_query_arn(&self) -> ::std::option::Option<&str> {
         self.scheduled_query_arn.as_deref()
     }
-    /// <p>The list of execution history records for the scheduled query.</p>
+    /// <p>An array of execution history records for the scheduled query.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trigger_history.is_none()`.
     pub fn trigger_history(&self) -> &[crate::types::TriggerHistoryRecord] {
@@ -88,19 +88,19 @@ impl GetScheduledQueryHistoryOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_trigger_history`](Self::set_trigger_history).
     ///
-    /// <p>The list of execution history records for the scheduled query.</p>
+    /// <p>An array of execution history records for the scheduled query.</p>
     pub fn trigger_history(mut self, input: crate::types::TriggerHistoryRecord) -> Self {
         let mut v = self.trigger_history.unwrap_or_default();
         v.push(input);
         self.trigger_history = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of execution history records for the scheduled query.</p>
+    /// <p>An array of execution history records for the scheduled query.</p>
     pub fn set_trigger_history(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TriggerHistoryRecord>>) -> Self {
         self.trigger_history = input;
         self
     }
-    /// <p>The list of execution history records for the scheduled query.</p>
+    /// <p>An array of execution history records for the scheduled query.</p>
     pub fn get_trigger_history(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TriggerHistoryRecord>> {
         &self.trigger_history
     }

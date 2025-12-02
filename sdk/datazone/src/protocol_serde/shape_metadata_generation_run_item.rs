@@ -46,6 +46,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "types" => {
+                            builder = builder
+                                .set_types(crate::protocol_serde::shape_metadata_generation_run_types::de_metadata_generation_run_types(tokens)?);
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

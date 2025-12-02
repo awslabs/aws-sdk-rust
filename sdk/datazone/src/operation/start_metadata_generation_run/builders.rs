@@ -32,7 +32,7 @@ impl crate::operation::start_metadata_generation_run::builders::StartMetadataGen
 /// <li>
 /// <p>Asset must have a structured schema with valid rows and columns.</p></li>
 /// <li>
-/// <p>Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES.</p></li>
+/// <p>Valid values for --type: BUSINESS_DESCRIPTIONS, BUSINESS_NAMES, BUSINESS_GLOSSARY_ASSOCIATIONS.</p></li>
 /// <li>
 /// <p>The user must have permission to run metadata generation in the domain/project.</p></li>
 /// </ul>
@@ -136,18 +136,49 @@ impl StartMetadataGenerationRunFluentBuilder {
         self.inner.get_domain_identifier()
     }
     /// <p>The type of the metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub fn r#type(mut self, input: crate::types::MetadataGenerationRunType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
     /// <p>The type of the metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MetadataGenerationRunType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>The type of the metadata generation run.</p>
+    #[deprecated(
+        note = "This field is going to be deprecated, please use the 'types' field to provide the MetadataGenerationRun types",
+        since = "2025-11-21"
+    )]
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MetadataGenerationRunType> {
         self.inner.get_type()
+    }
+    ///
+    /// Appends an item to `types`.
+    ///
+    /// To override the contents of this collection use [`set_types`](Self::set_types).
+    ///
+    /// <p>The types of the metadata generation run.</p>
+    pub fn types(mut self, input: crate::types::MetadataGenerationRunType) -> Self {
+        self.inner = self.inner.types(input);
+        self
+    }
+    /// <p>The types of the metadata generation run.</p>
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunType>>) -> Self {
+        self.inner = self.inner.set_types(input);
+        self
+    }
+    /// <p>The types of the metadata generation run.</p>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataGenerationRunType>> {
+        self.inner.get_types()
     }
     /// <p>The asset for which you want to start a metadata generation run.</p>
     pub fn target(mut self, input: crate::types::MetadataGenerationRunTarget) -> Self {

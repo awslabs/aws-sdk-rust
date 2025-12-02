@@ -15,6 +15,8 @@
 ///     StopReason::ContentFiltered => { /* ... */ },
 ///     StopReason::EndTurn => { /* ... */ },
 ///     StopReason::GuardrailIntervened => { /* ... */ },
+///     StopReason::MalformedModelOutput => { /* ... */ },
+///     StopReason::MalformedToolUse => { /* ... */ },
 ///     StopReason::MaxTokens => { /* ... */ },
 ///     StopReason::ModelContextWindowExceeded => { /* ... */ },
 ///     StopReason::StopSequence => { /* ... */ },
@@ -54,6 +56,10 @@ pub enum StopReason {
     #[allow(missing_docs)] // documentation missing in model
     GuardrailIntervened,
     #[allow(missing_docs)] // documentation missing in model
+    MalformedModelOutput,
+    #[allow(missing_docs)] // documentation missing in model
+    MalformedToolUse,
+    #[allow(missing_docs)] // documentation missing in model
     MaxTokens,
     #[allow(missing_docs)] // documentation missing in model
     ModelContextWindowExceeded,
@@ -71,6 +77,8 @@ impl ::std::convert::From<&str> for StopReason {
             "content_filtered" => StopReason::ContentFiltered,
             "end_turn" => StopReason::EndTurn,
             "guardrail_intervened" => StopReason::GuardrailIntervened,
+            "malformed_model_output" => StopReason::MalformedModelOutput,
+            "malformed_tool_use" => StopReason::MalformedToolUse,
             "max_tokens" => StopReason::MaxTokens,
             "model_context_window_exceeded" => StopReason::ModelContextWindowExceeded,
             "stop_sequence" => StopReason::StopSequence,
@@ -93,6 +101,8 @@ impl StopReason {
             StopReason::ContentFiltered => "content_filtered",
             StopReason::EndTurn => "end_turn",
             StopReason::GuardrailIntervened => "guardrail_intervened",
+            StopReason::MalformedModelOutput => "malformed_model_output",
+            StopReason::MalformedToolUse => "malformed_tool_use",
             StopReason::MaxTokens => "max_tokens",
             StopReason::ModelContextWindowExceeded => "model_context_window_exceeded",
             StopReason::StopSequence => "stop_sequence",
@@ -106,6 +116,8 @@ impl StopReason {
             "content_filtered",
             "end_turn",
             "guardrail_intervened",
+            "malformed_model_output",
+            "malformed_tool_use",
             "max_tokens",
             "model_context_window_exceeded",
             "stop_sequence",
@@ -136,6 +148,8 @@ impl ::std::fmt::Display for StopReason {
             StopReason::ContentFiltered => write!(f, "content_filtered"),
             StopReason::EndTurn => write!(f, "end_turn"),
             StopReason::GuardrailIntervened => write!(f, "guardrail_intervened"),
+            StopReason::MalformedModelOutput => write!(f, "malformed_model_output"),
+            StopReason::MalformedToolUse => write!(f, "malformed_tool_use"),
             StopReason::MaxTokens => write!(f, "max_tokens"),
             StopReason::ModelContextWindowExceeded => write!(f, "model_context_window_exceeded"),
             StopReason::StopSequence => write!(f, "stop_sequence"),
