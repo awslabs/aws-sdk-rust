@@ -203,6 +203,8 @@ pub use crate::types::_inference_specification::InferenceSpecificationBuilder;
 
 pub use crate::types::_model_package_container_definition::ModelPackageContainerDefinitionBuilder;
 
+pub use crate::types::_base_model::BaseModelBuilder;
+
 pub use crate::types::_additional_s3_data_source::AdditionalS3DataSourceBuilder;
 
 pub use crate::types::_model_input::ModelInputBuilder;
@@ -491,6 +493,8 @@ pub use crate::types::_shuffle_config::ShuffleConfigBuilder;
 
 pub use crate::types::_data_source::DataSourceBuilder;
 
+pub use crate::types::_dataset_source::DatasetSourceBuilder;
+
 pub use crate::types::_file_system_data_source::FileSystemDataSourceBuilder;
 
 pub use crate::types::_s3_data_source::S3DataSourceBuilder;
@@ -673,6 +677,8 @@ pub use crate::types::_training_job::TrainingJobBuilder;
 
 pub use crate::types::_profiler_config::ProfilerConfigBuilder;
 
+pub use crate::types::_model_package_config::ModelPackageConfigBuilder;
+
 pub use crate::types::_debug_rule_evaluation_status::DebugRuleEvaluationStatusBuilder;
 
 pub use crate::types::_tensor_board_output_config::TensorBoardOutputConfigBuilder;
@@ -778,6 +784,20 @@ pub use crate::types::_pipeline_execution_step::PipelineExecutionStepBuilder;
 pub use crate::types::_selective_execution_result::SelectiveExecutionResultBuilder;
 
 pub use crate::types::_pipeline_execution_step_metadata::PipelineExecutionStepMetadataBuilder;
+
+pub use crate::types::_lineage_metadata::LineageMetadataBuilder;
+
+pub use crate::types::_association_info::AssociationInfoBuilder;
+
+pub use crate::types::_inference_component_metadata::InferenceComponentMetadataBuilder;
+
+pub use crate::types::_bedrock_model_import_metadata::BedrockModelImportMetadataBuilder;
+
+pub use crate::types::_bedrock_provisioned_model_throughput_metadata::BedrockProvisionedModelThroughputMetadataBuilder;
+
+pub use crate::types::_bedrock_custom_model_deployment_metadata::BedrockCustomModelDeploymentMetadataBuilder;
+
+pub use crate::types::_bedrock_custom_model_metadata::BedrockCustomModelMetadataBuilder;
 
 pub use crate::types::_endpoint_config_step_metadata::EndpointConfigStepMetadataBuilder;
 
@@ -1011,6 +1031,14 @@ pub use crate::types::_agent_version::AgentVersionBuilder;
 
 pub use crate::types::_device_stats::DeviceStatsBuilder;
 
+pub use crate::types::_training_progress_info::TrainingProgressInfoBuilder;
+
+pub use crate::types::_mlflow_details::MlflowDetailsBuilder;
+
+pub use crate::types::_mlflow_config::MlflowConfigBuilder;
+
+pub use crate::types::_serverless_job_config::ServerlessJobConfigBuilder;
+
 pub use crate::types::_infra_check_config::InfraCheckConfigBuilder;
 
 pub use crate::types::_remote_debug_config::RemoteDebugConfigBuilder;
@@ -1022,6 +1050,8 @@ pub use crate::types::_space_sharing_settings::SpaceSharingSettingsBuilder;
 pub use crate::types::_ownership_settings::OwnershipSettingsBuilder;
 
 pub use crate::types::_ultra_server_summary::UltraServerSummaryBuilder;
+
+pub use crate::types::_m_lflow_configuration::MLflowConfigurationBuilder;
 
 pub use crate::types::_available_upgrade::AvailableUpgradeBuilder;
 

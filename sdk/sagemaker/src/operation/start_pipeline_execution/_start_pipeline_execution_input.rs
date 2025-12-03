@@ -19,6 +19,8 @@ pub struct StartPipelineExecutionInput {
     pub selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
     /// <p>The ID of the pipeline version to start execution from.</p>
     pub pipeline_version_id: ::std::option::Option<i64>,
+    /// <p>The MLflow experiment name of the start execution.</p>
+    pub mlflow_experiment_name: ::std::option::Option<::std::string::String>,
 }
 impl StartPipelineExecutionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
@@ -55,6 +57,10 @@ impl StartPipelineExecutionInput {
     pub fn pipeline_version_id(&self) -> ::std::option::Option<i64> {
         self.pipeline_version_id
     }
+    /// <p>The MLflow experiment name of the start execution.</p>
+    pub fn mlflow_experiment_name(&self) -> ::std::option::Option<&str> {
+        self.mlflow_experiment_name.as_deref()
+    }
 }
 impl StartPipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
@@ -75,6 +81,7 @@ pub struct StartPipelineExecutionInputBuilder {
     pub(crate) parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
     pub(crate) selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
     pub(crate) pipeline_version_id: ::std::option::Option<i64>,
+    pub(crate) mlflow_experiment_name: ::std::option::Option<::std::string::String>,
 }
 impl StartPipelineExecutionInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
@@ -197,6 +204,20 @@ impl StartPipelineExecutionInputBuilder {
     pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
         &self.pipeline_version_id
     }
+    /// <p>The MLflow experiment name of the start execution.</p>
+    pub fn mlflow_experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mlflow_experiment_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The MLflow experiment name of the start execution.</p>
+    pub fn set_mlflow_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.mlflow_experiment_name = input;
+        self
+    }
+    /// <p>The MLflow experiment name of the start execution.</p>
+    pub fn get_mlflow_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mlflow_experiment_name
+    }
     /// Consumes the builder and constructs a [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
     pub fn build(
         self,
@@ -213,6 +234,7 @@ impl StartPipelineExecutionInputBuilder {
             parallelism_configuration: self.parallelism_configuration,
             selective_execution_config: self.selective_execution_config,
             pipeline_version_id: self.pipeline_version_id,
+            mlflow_experiment_name: self.mlflow_experiment_name,
         })
     }
 }

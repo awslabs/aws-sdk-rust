@@ -165,6 +165,20 @@ impl CreateModelPackageFluentBuilder {
     pub fn get_model_package_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_package_description()
     }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn model_package_registration_type(mut self, input: crate::types::ModelPackageRegistrationType) -> Self {
+        self.inner = self.inner.model_package_registration_type(input);
+        self
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn set_model_package_registration_type(mut self, input: ::std::option::Option<crate::types::ModelPackageRegistrationType>) -> Self {
+        self.inner = self.inner.set_model_package_registration_type(input);
+        self
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn get_model_package_registration_type(&self) -> &::std::option::Option<crate::types::ModelPackageRegistrationType> {
+        self.inner.get_model_package_registration_type()
+    }
     /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
     /// <li>

@@ -11,6 +11,8 @@ pub struct CreateModelPackageInput {
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the model package.</p>
     pub model_package_description: ::std::option::Option<::std::string::String>,
+    /// <p>The package registration type of the model package input.</p>
+    pub model_package_registration_type: ::std::option::Option<crate::types::ModelPackageRegistrationType>,
     /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
     /// <li>
@@ -79,6 +81,10 @@ impl CreateModelPackageInput {
     /// <p>A description of the model package.</p>
     pub fn model_package_description(&self) -> ::std::option::Option<&str> {
         self.model_package_description.as_deref()
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn model_package_registration_type(&self) -> ::std::option::Option<&crate::types::ModelPackageRegistrationType> {
+        self.model_package_registration_type.as_ref()
     }
     /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
@@ -192,6 +198,7 @@ pub struct CreateModelPackageInputBuilder {
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_description: ::std::option::Option<::std::string::String>,
+    pub(crate) model_package_registration_type: ::std::option::Option<crate::types::ModelPackageRegistrationType>,
     pub(crate) inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     pub(crate) validation_specification: ::std::option::Option<crate::types::ModelPackageValidationSpecification>,
     pub(crate) source_algorithm_specification: ::std::option::Option<crate::types::SourceAlgorithmSpecification>,
@@ -261,6 +268,20 @@ impl CreateModelPackageInputBuilder {
     /// <p>A description of the model package.</p>
     pub fn get_model_package_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_description
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn model_package_registration_type(mut self, input: crate::types::ModelPackageRegistrationType) -> Self {
+        self.model_package_registration_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn set_model_package_registration_type(mut self, input: ::std::option::Option<crate::types::ModelPackageRegistrationType>) -> Self {
+        self.model_package_registration_type = input;
+        self
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn get_model_package_registration_type(&self) -> &::std::option::Option<crate::types::ModelPackageRegistrationType> {
+        &self.model_package_registration_type
     }
     /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
@@ -622,6 +643,7 @@ impl CreateModelPackageInputBuilder {
             model_package_name: self.model_package_name,
             model_package_group_name: self.model_package_group_name,
             model_package_description: self.model_package_description,
+            model_package_registration_type: self.model_package_registration_type,
             inference_specification: self.inference_specification,
             validation_specification: self.validation_specification,
             source_algorithm_specification: self.source_algorithm_specification,

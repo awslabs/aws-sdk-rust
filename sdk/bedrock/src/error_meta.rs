@@ -3715,6 +3715,49 @@ impl From<crate::operation::update_automated_reasoning_policy_test_case::UpdateA
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_custom_model_deployment::UpdateCustomModelDeploymentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_custom_model_deployment::UpdateCustomModelDeploymentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_custom_model_deployment::UpdateCustomModelDeploymentError> for Error {
+    fn from(err: crate::operation::update_custom_model_deployment::UpdateCustomModelDeploymentError) -> Self {
+        match err {
+            crate::operation::update_custom_model_deployment::UpdateCustomModelDeploymentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_custom_model_deployment::UpdateCustomModelDeploymentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_custom_model_deployment::UpdateCustomModelDeploymentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_custom_model_deployment::UpdateCustomModelDeploymentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_custom_model_deployment::UpdateCustomModelDeploymentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_custom_model_deployment::UpdateCustomModelDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_guardrail::UpdateGuardrailError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

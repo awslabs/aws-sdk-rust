@@ -192,6 +192,11 @@ pub(crate) fn de_get_custom_model_deployment(
                             .transpose()?,
                     );
                 }
+                "updateDetails" => {
+                    builder = builder.set_update_details(
+                        crate::protocol_serde::shape_custom_model_deployment_update_details::de_custom_model_deployment_update_details(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

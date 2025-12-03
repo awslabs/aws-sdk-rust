@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`parallelism_configuration(Option<ParallelismConfiguration>)`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput::parallelism_configuration): <p>The parallelism configuration applied to the pipeline.</p>
     ///   - [`selective_execution_config(Option<SelectiveExecutionConfig>)`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput::selective_execution_config): <p>The selective execution configuration applied to the pipeline run.</p>
     ///   - [`pipeline_version_id(Option<i64>)`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput::pipeline_version_id): <p>The ID of the pipeline version.</p>
+    ///   - [`m_lflow_config(Option<MLflowConfiguration>)`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput::m_lflow_config): <p>The MLflow configuration of the pipeline execution.</p>
     /// - On failure, responds with [`SdkError<DescribePipelineExecutionError>`](crate::operation::describe_pipeline_execution::DescribePipelineExecutionError)
     pub fn describe_pipeline_execution(&self) -> crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionFluentBuilder {
         crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionFluentBuilder::new(self.handle.clone())

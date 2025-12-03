@@ -217,6 +217,8 @@ pub(crate) mod shape_update_automated_reasoning_policy_annotations;
 
 pub(crate) mod shape_update_automated_reasoning_policy_test_case;
 
+pub(crate) mod shape_update_custom_model_deployment;
+
 pub(crate) mod shape_update_guardrail;
 
 pub(crate) mod shape_update_marketplace_model_endpoint;
@@ -311,6 +313,8 @@ pub(crate) mod shape_update_automated_reasoning_policy_input;
 
 pub(crate) mod shape_update_automated_reasoning_policy_test_case_input;
 
+pub(crate) mod shape_update_custom_model_deployment_input;
+
 pub(crate) mod shape_update_guardrail_input;
 
 pub(crate) mod shape_update_marketplace_model_endpoint_input;
@@ -354,6 +358,8 @@ pub(crate) mod shape_batch_delete_evaluation_job_errors;
 pub(crate) mod shape_batch_delete_evaluation_job_items;
 
 pub(crate) mod shape_custom_model_deployment_summary_list;
+
+pub(crate) mod shape_custom_model_deployment_update_details;
 
 pub(crate) mod shape_custom_model_summary_list;
 
@@ -627,6 +633,8 @@ pub(crate) mod shape_rag_config;
 
 pub(crate) mod shape_rag_configs;
 
+pub(crate) mod shape_rft_config;
+
 pub(crate) mod shape_s3_config;
 
 pub(crate) mod shape_s3_data_source;
@@ -701,6 +709,8 @@ pub(crate) mod shape_evaluator_model_config;
 
 pub(crate) mod shape_evaluator_model_identifiers;
 
+pub(crate) mod shape_grader_config;
+
 pub(crate) mod shape_guardrail_content_filter;
 
 pub(crate) mod shape_guardrail_contextual_grounding_filter;
@@ -726,6 +736,8 @@ pub(crate) mod shape_invocation_log_source;
 pub(crate) mod shape_knowledge_base_config;
 
 pub(crate) mod shape_request_metadata_filters;
+
+pub(crate) mod shape_rft_hyper_parameters;
 
 pub(crate) mod shape_teacher_model_config;
 
@@ -786,6 +798,8 @@ pub(crate) mod shape_evaluation_rag_config_summary;
 pub(crate) mod shape_guardrail_modalities;
 
 pub(crate) mod shape_guardrail_topic_examples;
+
+pub(crate) mod shape_lambda_grader_config;
 
 pub(crate) mod shape_legal_term;
 

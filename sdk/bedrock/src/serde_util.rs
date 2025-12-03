@@ -801,6 +801,15 @@ pub(crate) fn update_automated_reasoning_policy_test_case_output_output_correct_
     builder
 }
 
+pub(crate) fn update_custom_model_deployment_output_output_correct_errors(
+    mut builder: crate::operation::update_custom_model_deployment::builders::UpdateCustomModelDeploymentOutputBuilder,
+) -> crate::operation::update_custom_model_deployment::builders::UpdateCustomModelDeploymentOutputBuilder {
+    if builder.custom_model_deployment_arn.is_none() {
+        builder.custom_model_deployment_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_guardrail_output_output_correct_errors(
     mut builder: crate::operation::update_guardrail::builders::UpdateGuardrailOutputBuilder,
 ) -> crate::operation::update_guardrail::builders::UpdateGuardrailOutputBuilder {
@@ -964,6 +973,18 @@ pub(crate) fn automated_reasoning_policy_scenario_correct_errors(
     }
     if builder.expected_result.is_none() {
         builder.expected_result = "no value was set".parse::<crate::types::AutomatedReasoningCheckResult>().ok()
+    }
+    builder
+}
+
+pub(crate) fn custom_model_deployment_update_details_correct_errors(
+    mut builder: crate::types::builders::CustomModelDeploymentUpdateDetailsBuilder,
+) -> crate::types::builders::CustomModelDeploymentUpdateDetailsBuilder {
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    if builder.update_status.is_none() {
+        builder.update_status = "no value was set".parse::<crate::types::CustomModelDeploymentUpdateStatus>().ok()
     }
     builder
 }
@@ -2037,6 +2058,15 @@ pub(crate) fn human_evaluation_custom_metric_correct_errors(
     }
     if builder.rating_method.is_none() {
         builder.rating_method = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn lambda_grader_config_correct_errors(
+    mut builder: crate::types::builders::LambdaGraderConfigBuilder,
+) -> crate::types::builders::LambdaGraderConfigBuilder {
+    if builder.lambda_arn.is_none() {
+        builder.lambda_arn = Some(Default::default())
     }
     builder
 }

@@ -351,6 +351,8 @@ mod update_automated_reasoning_policy_annotations;
 
 mod update_automated_reasoning_policy_test_case;
 
+mod update_custom_model_deployment;
+
 mod update_guardrail;
 
 mod update_marketplace_model_endpoint;

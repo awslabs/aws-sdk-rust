@@ -233,6 +233,13 @@ pub(crate) fn de_describe_training_job(
                             .transpose()?,
                     );
                 }
+                "BillableTokenCount" => {
+                    builder = builder.set_billable_token_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
                 "DebugHookConfig" => {
                     builder = builder.set_debug_hook_config(crate::protocol_serde::shape_debug_hook_config::de_debug_hook_config(tokens)?);
                 }
@@ -287,6 +294,29 @@ pub(crate) fn de_describe_training_job(
                 }
                 "InfraCheckConfig" => {
                     builder = builder.set_infra_check_config(crate::protocol_serde::shape_infra_check_config::de_infra_check_config(tokens)?);
+                }
+                "ServerlessJobConfig" => {
+                    builder =
+                        builder.set_serverless_job_config(crate::protocol_serde::shape_serverless_job_config::de_serverless_job_config(tokens)?);
+                }
+                "MlflowConfig" => {
+                    builder = builder.set_mlflow_config(crate::protocol_serde::shape_mlflow_config::de_mlflow_config(tokens)?);
+                }
+                "ModelPackageConfig" => {
+                    builder = builder.set_model_package_config(crate::protocol_serde::shape_model_package_config::de_model_package_config(tokens)?);
+                }
+                "MlflowDetails" => {
+                    builder = builder.set_mlflow_details(crate::protocol_serde::shape_mlflow_details::de_mlflow_details(tokens)?);
+                }
+                "ProgressInfo" => {
+                    builder = builder.set_progress_info(crate::protocol_serde::shape_training_progress_info::de_training_progress_info(tokens)?);
+                }
+                "OutputModelPackageArn" => {
+                    builder = builder.set_output_model_package_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

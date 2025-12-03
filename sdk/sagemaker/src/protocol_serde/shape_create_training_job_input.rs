@@ -170,5 +170,23 @@ pub fn ser_create_training_job_input_input(
         crate::protocol_serde::shape_session_chaining_config::ser_session_chaining_config(&mut object_57, var_56)?;
         object_57.finish();
     }
+    if let Some(var_58) = &input.serverless_job_config {
+        #[allow(unused_mut)]
+        let mut object_59 = object.key("ServerlessJobConfig").start_object();
+        crate::protocol_serde::shape_serverless_job_config::ser_serverless_job_config(&mut object_59, var_58)?;
+        object_59.finish();
+    }
+    if let Some(var_60) = &input.mlflow_config {
+        #[allow(unused_mut)]
+        let mut object_61 = object.key("MlflowConfig").start_object();
+        crate::protocol_serde::shape_mlflow_config::ser_mlflow_config(&mut object_61, var_60)?;
+        object_61.finish();
+    }
+    if let Some(var_62) = &input.model_package_config {
+        #[allow(unused_mut)]
+        let mut object_63 = object.key("ModelPackageConfig").start_object();
+        crate::protocol_serde::shape_model_package_config::ser_model_package_config(&mut object_63, var_62)?;
+        object_63.finish();
+    }
     Ok(())
 }

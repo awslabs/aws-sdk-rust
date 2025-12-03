@@ -1927,6 +1927,8 @@ pub(crate) mod shape_lineage_entity_parameters;
 
 pub(crate) mod shape_lineage_group_summaries;
 
+pub(crate) mod shape_m_lflow_configuration;
+
 pub(crate) mod shape_member_definition;
 
 pub(crate) mod shape_metadata_properties;
@@ -1934,6 +1936,10 @@ pub(crate) mod shape_metadata_properties;
 pub(crate) mod shape_metrics_config;
 
 pub(crate) mod shape_mlflow_app_summaries;
+
+pub(crate) mod shape_mlflow_config;
+
+pub(crate) mod shape_mlflow_details;
 
 pub(crate) mod shape_model_artifacts;
 
@@ -1976,6 +1982,8 @@ pub(crate) mod shape_model_metadata_search_expression;
 pub(crate) mod shape_model_metadata_summaries;
 
 pub(crate) mod shape_model_metrics;
+
+pub(crate) mod shape_model_package_config;
 
 pub(crate) mod shape_model_package_group_summary_list;
 
@@ -2193,6 +2201,8 @@ pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_selective_execution_config;
 
+pub(crate) mod shape_serverless_job_config;
+
 pub(crate) mod shape_service_catalog_provisioned_product_details;
 
 pub(crate) mod shape_service_catalog_provisioning_details;
@@ -2254,6 +2264,8 @@ pub(crate) mod shape_training_plan_filter;
 pub(crate) mod shape_training_plan_offerings;
 
 pub(crate) mod shape_training_plan_summaries;
+
+pub(crate) mod shape_training_progress_info;
 
 pub(crate) mod shape_training_specification;
 
@@ -3053,6 +3065,8 @@ pub(crate) mod shape_auto_parameter;
 
 pub(crate) mod shape_auto_parameters;
 
+pub(crate) mod shape_base_model;
+
 pub(crate) mod shape_best_objective_not_improving;
 
 pub(crate) mod shape_cache_hit_result;
@@ -3118,6 +3132,8 @@ pub(crate) mod shape_custom_image_container_entrypoint;
 pub(crate) mod shape_custom_image_container_environment_variables;
 
 pub(crate) mod shape_custom_images;
+
+pub(crate) mod shape_dataset_source;
 
 pub(crate) mod shape_default_ebs_storage_settings;
 
@@ -3393,6 +3409,14 @@ pub(crate) mod shape_auto_ml_job_step_metadata;
 
 pub(crate) mod shape_auto_rollback_alarms;
 
+pub(crate) mod shape_bedrock_custom_model_deployment_metadata;
+
+pub(crate) mod shape_bedrock_custom_model_metadata;
+
+pub(crate) mod shape_bedrock_model_import_metadata;
+
+pub(crate) mod shape_bedrock_provisioned_model_throughput_metadata;
+
 pub(crate) mod shape_callback_step_metadata;
 
 pub(crate) mod shape_categorical_parameter;
@@ -3453,6 +3477,8 @@ pub(crate) mod shape_hub_access_config;
 
 pub(crate) mod shape_idle_settings;
 
+pub(crate) mod shape_inference_component_metadata;
+
 pub(crate) mod shape_inference_hub_access_config;
 
 pub(crate) mod shape_input_modes;
@@ -3466,6 +3492,8 @@ pub(crate) mod shape_instance_metadata;
 pub(crate) mod shape_integer_parameter_range_specification;
 
 pub(crate) mod shape_lambda_step_metadata;
+
+pub(crate) mod shape_lineage_metadata;
 
 pub(crate) mod shape_metric_datum;
 
@@ -3521,6 +3549,8 @@ pub(crate) mod shape_tuning_job_step_meta_data;
 
 pub(crate) mod shape_additional_enis;
 
+pub(crate) mod shape_association_info_list;
+
 pub(crate) mod shape_attribute_names;
 
 pub(crate) mod shape_auto_ml_algorithms;
@@ -3543,6 +3573,8 @@ pub(crate) mod shape_groups;
 
 pub(crate) mod shape_instance_group_names;
 
+pub(crate) mod shape_map_string2048;
+
 pub(crate) mod shape_metric_specification;
 
 pub(crate) mod shape_model_dashboard_endpoint;
@@ -3562,6 +3594,8 @@ pub(crate) mod shape_processing_job;
 pub(crate) mod shape_trial_component_simple_summary;
 
 pub(crate) mod shape_version_aliases_list;
+
+pub(crate) mod shape_association_info;
 
 pub(crate) mod shape_customized_metric_specification;
 

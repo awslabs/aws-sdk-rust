@@ -283,6 +283,9 @@ pub mod update_automated_reasoning_policy_annotations;
 /// Types for the `UpdateAutomatedReasoningPolicyTestCase` operation.
 pub mod update_automated_reasoning_policy_test_case;
 
+/// Types for the `UpdateCustomModelDeployment` operation.
+pub mod update_custom_model_deployment;
+
 /// Types for the `UpdateGuardrail` operation.
 pub mod update_guardrail;
 

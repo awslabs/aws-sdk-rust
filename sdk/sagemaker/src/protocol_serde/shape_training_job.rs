@@ -187,6 +187,17 @@ where
                                 crate::protocol_serde::shape_debug_rule_evaluation_statuses::de_debug_rule_evaluation_statuses(tokens)?,
                             );
                         }
+                        "OutputModelPackageArn" => {
+                            builder = builder.set_output_model_package_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ModelPackageConfig" => {
+                            builder =
+                                builder.set_model_package_config(crate::protocol_serde::shape_model_package_config::de_model_package_config(tokens)?);
+                        }
                         "ProfilerConfig" => {
                             builder = builder.set_profiler_config(crate::protocol_serde::shape_profiler_config::de_profiler_config(tokens)?);
                         }

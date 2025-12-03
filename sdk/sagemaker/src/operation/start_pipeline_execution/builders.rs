@@ -225,4 +225,18 @@ impl StartPipelineExecutionFluentBuilder {
     pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
         self.inner.get_pipeline_version_id()
     }
+    /// <p>The MLflow experiment name of the start execution.</p>
+    pub fn mlflow_experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.mlflow_experiment_name(input.into());
+        self
+    }
+    /// <p>The MLflow experiment name of the start execution.</p>
+    pub fn set_mlflow_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_mlflow_experiment_name(input);
+        self
+    }
+    /// <p>The MLflow experiment name of the start execution.</p>
+    pub fn get_mlflow_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mlflow_experiment_name()
+    }
 }

@@ -23,6 +23,8 @@ pub struct ModelPackage {
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of a versioned model.</p>
     pub model_package_version: ::std::option::Option<i32>,
+    /// <p>The package registration type of the model package.</p>
+    pub model_package_registration_type: ::std::option::Option<crate::types::ModelPackageRegistrationType>,
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub model_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the model package.</p>
@@ -118,6 +120,10 @@ impl ModelPackage {
     /// <p>The version number of a versioned model.</p>
     pub fn model_package_version(&self) -> ::std::option::Option<i32> {
         self.model_package_version
+    }
+    /// <p>The package registration type of the model package.</p>
+    pub fn model_package_registration_type(&self) -> ::std::option::Option<&crate::types::ModelPackageRegistrationType> {
+        self.model_package_registration_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub fn model_package_arn(&self) -> ::std::option::Option<&str> {
@@ -270,6 +276,7 @@ pub struct ModelPackageBuilder {
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_version: ::std::option::Option<i32>,
+    pub(crate) model_package_registration_type: ::std::option::Option<crate::types::ModelPackageRegistrationType>,
     pub(crate) model_package_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_package_description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -359,6 +366,20 @@ impl ModelPackageBuilder {
     /// <p>The version number of a versioned model.</p>
     pub fn get_model_package_version(&self) -> &::std::option::Option<i32> {
         &self.model_package_version
+    }
+    /// <p>The package registration type of the model package.</p>
+    pub fn model_package_registration_type(mut self, input: crate::types::ModelPackageRegistrationType) -> Self {
+        self.model_package_registration_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The package registration type of the model package.</p>
+    pub fn set_model_package_registration_type(mut self, input: ::std::option::Option<crate::types::ModelPackageRegistrationType>) -> Self {
+        self.model_package_registration_type = input;
+        self
+    }
+    /// <p>The package registration type of the model package.</p>
+    pub fn get_model_package_registration_type(&self) -> &::std::option::Option<crate::types::ModelPackageRegistrationType> {
+        &self.model_package_registration_type
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub fn model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -850,6 +871,7 @@ impl ModelPackageBuilder {
             model_package_name: self.model_package_name,
             model_package_group_name: self.model_package_group_name,
             model_package_version: self.model_package_version,
+            model_package_registration_type: self.model_package_registration_type,
             model_package_arn: self.model_package_arn,
             model_package_description: self.model_package_description,
             creation_time: self.creation_time,

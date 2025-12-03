@@ -23,6 +23,16 @@ pub use crate::types::_fine_tuning_job_status::FineTuningJobStatus;
 
 pub use crate::types::_customization_config::CustomizationConfig;
 
+pub use crate::types::_rft_config::RftConfig;
+
+pub use crate::types::_rft_hyper_parameters::RftHyperParameters;
+
+pub use crate::types::_reasoning_effort::ReasoningEffort;
+
+pub use crate::types::_grader_config::GraderConfig;
+
+pub use crate::types::_lambda_grader_config::LambdaGraderConfig;
+
 pub use crate::types::_distillation_config::DistillationConfig;
 
 pub use crate::types::_teacher_model_config::TeacherModelConfig;
@@ -415,6 +425,10 @@ pub use crate::types::_custom_model_deployment_summary::CustomModelDeploymentSum
 
 pub use crate::types::_custom_model_deployment_status::CustomModelDeploymentStatus;
 
+pub use crate::types::_custom_model_deployment_update_details::CustomModelDeploymentUpdateDetails;
+
+pub use crate::types::_custom_model_deployment_update_status::CustomModelDeploymentUpdateStatus;
+
 pub use crate::types::_marketplace_model_endpoint::MarketplaceModelEndpoint;
 
 pub use crate::types::_endpoint_config::EndpointConfig;
@@ -789,6 +803,10 @@ mod _custom_model_deployment_status;
 
 mod _custom_model_deployment_summary;
 
+mod _custom_model_deployment_update_details;
+
+mod _custom_model_deployment_update_status;
+
 mod _custom_model_summary;
 
 mod _custom_model_units;
@@ -870,6 +888,8 @@ mod _foundation_model_lifecycle_status;
 mod _foundation_model_summary;
 
 mod _generation_configuration;
+
+mod _grader_config;
 
 mod _guardrail_automated_reasoning_policy;
 
@@ -1009,6 +1029,8 @@ mod _knowledge_base_retrieve_and_generate_configuration;
 
 mod _knowledge_base_vector_search_configuration;
 
+mod _lambda_grader_config;
+
 mod _legal_term;
 
 mod _logging_config;
@@ -1091,6 +1113,8 @@ mod _rating_scale_item;
 
 mod _rating_scale_item_value;
 
+mod _reasoning_effort;
+
 mod _region_availability;
 
 mod _request_metadata_base_filters;
@@ -1108,6 +1132,10 @@ mod _retrieve_and_generate_configuration;
 mod _retrieve_and_generate_type;
 
 mod _retrieve_config;
+
+mod _rft_config;
+
+mod _rft_hyper_parameters;
 
 mod _routing_criteria;
 

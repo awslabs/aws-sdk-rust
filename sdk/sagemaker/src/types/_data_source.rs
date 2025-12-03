@@ -8,6 +8,8 @@ pub struct DataSource {
     pub s3_data_source: ::std::option::Option<crate::types::S3DataSource>,
     /// <p>The file system that is associated with a channel.</p>
     pub file_system_data_source: ::std::option::Option<crate::types::FileSystemDataSource>,
+    /// <p>The dataset resource that's associated with a channel.</p>
+    pub dataset_source: ::std::option::Option<crate::types::DatasetSource>,
 }
 impl DataSource {
     /// <p>The S3 location of the data source that is associated with a channel.</p>
@@ -17,6 +19,10 @@ impl DataSource {
     /// <p>The file system that is associated with a channel.</p>
     pub fn file_system_data_source(&self) -> ::std::option::Option<&crate::types::FileSystemDataSource> {
         self.file_system_data_source.as_ref()
+    }
+    /// <p>The dataset resource that's associated with a channel.</p>
+    pub fn dataset_source(&self) -> ::std::option::Option<&crate::types::DatasetSource> {
+        self.dataset_source.as_ref()
     }
 }
 impl DataSource {
@@ -32,6 +38,7 @@ impl DataSource {
 pub struct DataSourceBuilder {
     pub(crate) s3_data_source: ::std::option::Option<crate::types::S3DataSource>,
     pub(crate) file_system_data_source: ::std::option::Option<crate::types::FileSystemDataSource>,
+    pub(crate) dataset_source: ::std::option::Option<crate::types::DatasetSource>,
 }
 impl DataSourceBuilder {
     /// <p>The S3 location of the data source that is associated with a channel.</p>
@@ -62,11 +69,26 @@ impl DataSourceBuilder {
     pub fn get_file_system_data_source(&self) -> &::std::option::Option<crate::types::FileSystemDataSource> {
         &self.file_system_data_source
     }
+    /// <p>The dataset resource that's associated with a channel.</p>
+    pub fn dataset_source(mut self, input: crate::types::DatasetSource) -> Self {
+        self.dataset_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The dataset resource that's associated with a channel.</p>
+    pub fn set_dataset_source(mut self, input: ::std::option::Option<crate::types::DatasetSource>) -> Self {
+        self.dataset_source = input;
+        self
+    }
+    /// <p>The dataset resource that's associated with a channel.</p>
+    pub fn get_dataset_source(&self) -> &::std::option::Option<crate::types::DatasetSource> {
+        &self.dataset_source
+    }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {
             s3_data_source: self.s3_data_source,
             file_system_data_source: self.file_system_data_source,
+            dataset_source: self.dataset_source,
         }
     }
 }

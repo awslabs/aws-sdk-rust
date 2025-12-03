@@ -77,6 +77,12 @@ pub struct CreateTrainingJobInput {
     pub infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
     /// <p>Contains information about attribute-based access control (ABAC) for the training job.</p>
     pub session_chaining_config: ::std::option::Option<crate::types::SessionChainingConfig>,
+    /// <p>The configuration for serverless training jobs.</p>
+    pub serverless_job_config: ::std::option::Option<crate::types::ServerlessJobConfig>,
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub mlflow_config: ::std::option::Option<crate::types::MlflowConfig>,
+    /// <p>The configuration for the model package.</p>
+    pub model_package_config: ::std::option::Option<crate::types::ModelPackageConfig>,
 }
 impl CreateTrainingJobInput {
     /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
@@ -211,6 +217,18 @@ impl CreateTrainingJobInput {
     pub fn session_chaining_config(&self) -> ::std::option::Option<&crate::types::SessionChainingConfig> {
         self.session_chaining_config.as_ref()
     }
+    /// <p>The configuration for serverless training jobs.</p>
+    pub fn serverless_job_config(&self) -> ::std::option::Option<&crate::types::ServerlessJobConfig> {
+        self.serverless_job_config.as_ref()
+    }
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub fn mlflow_config(&self) -> ::std::option::Option<&crate::types::MlflowConfig> {
+        self.mlflow_config.as_ref()
+    }
+    /// <p>The configuration for the model package.</p>
+    pub fn model_package_config(&self) -> ::std::option::Option<&crate::types::ModelPackageConfig> {
+        self.model_package_config.as_ref()
+    }
 }
 impl CreateTrainingJobInput {
     /// Creates a new builder-style object to manufacture [`CreateTrainingJobInput`](crate::operation::create_training_job::CreateTrainingJobInput).
@@ -248,6 +266,9 @@ pub struct CreateTrainingJobInputBuilder {
     pub(crate) remote_debug_config: ::std::option::Option<crate::types::RemoteDebugConfig>,
     pub(crate) infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
     pub(crate) session_chaining_config: ::std::option::Option<crate::types::SessionChainingConfig>,
+    pub(crate) serverless_job_config: ::std::option::Option<crate::types::ServerlessJobConfig>,
+    pub(crate) mlflow_config: ::std::option::Option<crate::types::MlflowConfig>,
+    pub(crate) model_package_config: ::std::option::Option<crate::types::ModelPackageConfig>,
 }
 impl CreateTrainingJobInputBuilder {
     /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
@@ -724,6 +745,48 @@ impl CreateTrainingJobInputBuilder {
     pub fn get_session_chaining_config(&self) -> &::std::option::Option<crate::types::SessionChainingConfig> {
         &self.session_chaining_config
     }
+    /// <p>The configuration for serverless training jobs.</p>
+    pub fn serverless_job_config(mut self, input: crate::types::ServerlessJobConfig) -> Self {
+        self.serverless_job_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for serverless training jobs.</p>
+    pub fn set_serverless_job_config(mut self, input: ::std::option::Option<crate::types::ServerlessJobConfig>) -> Self {
+        self.serverless_job_config = input;
+        self
+    }
+    /// <p>The configuration for serverless training jobs.</p>
+    pub fn get_serverless_job_config(&self) -> &::std::option::Option<crate::types::ServerlessJobConfig> {
+        &self.serverless_job_config
+    }
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub fn mlflow_config(mut self, input: crate::types::MlflowConfig) -> Self {
+        self.mlflow_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub fn set_mlflow_config(mut self, input: ::std::option::Option<crate::types::MlflowConfig>) -> Self {
+        self.mlflow_config = input;
+        self
+    }
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub fn get_mlflow_config(&self) -> &::std::option::Option<crate::types::MlflowConfig> {
+        &self.mlflow_config
+    }
+    /// <p>The configuration for the model package.</p>
+    pub fn model_package_config(mut self, input: crate::types::ModelPackageConfig) -> Self {
+        self.model_package_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the model package.</p>
+    pub fn set_model_package_config(mut self, input: ::std::option::Option<crate::types::ModelPackageConfig>) -> Self {
+        self.model_package_config = input;
+        self
+    }
+    /// <p>The configuration for the model package.</p>
+    pub fn get_model_package_config(&self) -> &::std::option::Option<crate::types::ModelPackageConfig> {
+        &self.model_package_config
+    }
     /// Consumes the builder and constructs a [`CreateTrainingJobInput`](crate::operation::create_training_job::CreateTrainingJobInput).
     pub fn build(
         self,
@@ -754,6 +817,9 @@ impl CreateTrainingJobInputBuilder {
             remote_debug_config: self.remote_debug_config,
             infra_check_config: self.infra_check_config,
             session_chaining_config: self.session_chaining_config,
+            serverless_job_config: self.serverless_job_config,
+            mlflow_config: self.mlflow_config,
+            model_package_config: self.model_package_config,
         })
     }
 }

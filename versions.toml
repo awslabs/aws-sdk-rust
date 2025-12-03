@@ -276,9 +276,9 @@ model_hash = '866eaa3be1cb472024641ac8817e61c8bb180455e10a4e3da506fb906916477a'
 
 [crates.aws-sdk-bedrock]
 category = 'AwsSdk'
-version = '1.124.0'
-source_hash = 'cbb56cd59db831c884087b99b532af76f8f620dc14936dadb1b776c1d418c346'
-model_hash = 'f2e87652e61324fd26d9449669821e74e2ef72f5cb08c335727c83e4b65ebb7b'
+version = '1.125.0'
+source_hash = '92acec60eb7ccc98dd046dd9d5e534e5bdaa10170b50f8f5a0c087a68ce5d504'
+model_hash = 'ec8e0e984f163d9f07181b312686f02788648f4f1e86e32cf2f22f4cfc41758d'
 
 [crates.aws-sdk-bedrockagent]
 category = 'AwsSdk'
@@ -2064,9 +2064,9 @@ model_hash = 'b9c7a10439c4cb6f1cc5db1a4298a344d89a53dbfefbd98f25f41e607d6635c9'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.173.0'
-source_hash = 'e20d1ad565e22357d8bd6cd84e744cac0c4e5041d5fecd40e600b27baa3afbd5'
-model_hash = '25065ec31ed338f61f5293de30b655f437a5165651384e5fcd3369765d35b9cc'
+version = '1.174.0'
+source_hash = 'ea889bd0647248972276d3811832aed6d344c8159e6b13491da3604c48b97e74'
+model_hash = '7a592a158b660dc4f12bee765e6861064810f62e5225c24e9731ae2e394cafad'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2651,30 +2651,6 @@ source_hash = '8e56d7772057a546723f36aff594683f21519a393b3d0bd63069a7818d3f9f79'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'fa8112d0390ec9009a3079619ea062a2b5260374fd3ec4b981674caa113c46a5'
-
-[release]
-tag = 'release-2025-12-02'
-
 [release.crates]
-aws-sdk-bedrock = '1.124.0'
-aws-sdk-bedrockagentcore = '1.20.0'
-aws-sdk-bedrockagentcorecontrol = '1.24.0'
-aws-sdk-bedrockruntime = '1.119.0'
-aws-sdk-cloudwatchlogs = '1.112.0'
-aws-sdk-costexplorer = '1.104.0'
-aws-sdk-datazone = '1.117.0'
-aws-sdk-fsx = '1.103.0'
-aws-sdk-guardduty = '1.108.0'
-aws-sdk-lambda = '1.109.0'
-aws-sdk-novaact = '1.0.0'
-aws-sdk-observabilityadmin = '1.44.0'
-aws-sdk-opensearch = '1.107.0'
-aws-sdk-opensearchserverless = '1.98.0'
-aws-sdk-rds = '1.119.0'
-aws-sdk-s3 = '1.116.0'
-aws-sdk-s3control = '1.105.0'
-aws-sdk-s3tables = '1.46.0'
-aws-sdk-s3vectors = '1.16.0'
-aws-sdk-sagemaker = '1.173.0'
-aws-sdk-savingsplans = '1.92.0'
-aws-sdk-securityhub = '1.100.0'
+aws-sdk-bedrock = '1.125.0'
+aws-sdk-sagemaker = '1.174.0'

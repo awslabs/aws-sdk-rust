@@ -28,6 +28,7 @@ pub struct ClusterOrchestratorBuilder {
 }
 impl ClusterOrchestratorBuilder {
     /// <p>The Amazon EKS cluster used as the orchestrator for the SageMaker HyperPod cluster.</p>
+    /// This field is required.
     pub fn eks(mut self, input: crate::types::ClusterOrchestratorEksConfig) -> Self {
         self.eks = ::std::option::Option::Some(input);
         self

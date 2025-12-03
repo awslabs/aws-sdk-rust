@@ -168,6 +168,9 @@ pub(crate) fn de_describe_pipeline_execution(
                             .transpose()?,
                     );
                 }
+                "MLflowConfig" => {
+                    builder = builder.set_m_lflow_config(crate::protocol_serde::shape_m_lflow_configuration::de_m_lflow_configuration(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

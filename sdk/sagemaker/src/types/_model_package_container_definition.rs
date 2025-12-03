@@ -33,6 +33,10 @@ pub struct ModelPackageContainerDefinition {
     pub additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
     /// <p>The ETag associated with Model Data URL.</p>
     pub model_data_e_tag: ::std::option::Option<::std::string::String>,
+    /// <p>The checkpoint of the model package.</p>
+    pub is_checkpoint: ::std::option::Option<bool>,
+    /// <p>The base model of the package.</p>
+    pub base_model: ::std::option::Option<crate::types::BaseModel>,
 }
 impl ModelPackageContainerDefinition {
     /// <p>The DNS host name for the Docker container.</p>
@@ -90,6 +94,14 @@ impl ModelPackageContainerDefinition {
     pub fn model_data_e_tag(&self) -> ::std::option::Option<&str> {
         self.model_data_e_tag.as_deref()
     }
+    /// <p>The checkpoint of the model package.</p>
+    pub fn is_checkpoint(&self) -> ::std::option::Option<bool> {
+        self.is_checkpoint
+    }
+    /// <p>The base model of the package.</p>
+    pub fn base_model(&self) -> ::std::option::Option<&crate::types::BaseModel> {
+        self.base_model.as_ref()
+    }
 }
 impl ModelPackageContainerDefinition {
     /// Creates a new builder-style object to manufacture [`ModelPackageContainerDefinition`](crate::types::ModelPackageContainerDefinition).
@@ -115,6 +127,8 @@ pub struct ModelPackageContainerDefinitionBuilder {
     pub(crate) nearest_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
     pub(crate) model_data_e_tag: ::std::option::Option<::std::string::String>,
+    pub(crate) is_checkpoint: ::std::option::Option<bool>,
+    pub(crate) base_model: ::std::option::Option<crate::types::BaseModel>,
 }
 impl ModelPackageContainerDefinitionBuilder {
     /// <p>The DNS host name for the Docker container.</p>
@@ -317,6 +331,34 @@ impl ModelPackageContainerDefinitionBuilder {
     pub fn get_model_data_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_data_e_tag
     }
+    /// <p>The checkpoint of the model package.</p>
+    pub fn is_checkpoint(mut self, input: bool) -> Self {
+        self.is_checkpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The checkpoint of the model package.</p>
+    pub fn set_is_checkpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_checkpoint = input;
+        self
+    }
+    /// <p>The checkpoint of the model package.</p>
+    pub fn get_is_checkpoint(&self) -> &::std::option::Option<bool> {
+        &self.is_checkpoint
+    }
+    /// <p>The base model of the package.</p>
+    pub fn base_model(mut self, input: crate::types::BaseModel) -> Self {
+        self.base_model = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The base model of the package.</p>
+    pub fn set_base_model(mut self, input: ::std::option::Option<crate::types::BaseModel>) -> Self {
+        self.base_model = input;
+        self
+    }
+    /// <p>The base model of the package.</p>
+    pub fn get_base_model(&self) -> &::std::option::Option<crate::types::BaseModel> {
+        &self.base_model
+    }
     /// Consumes the builder and constructs a [`ModelPackageContainerDefinition`](crate::types::ModelPackageContainerDefinition).
     pub fn build(self) -> crate::types::ModelPackageContainerDefinition {
         crate::types::ModelPackageContainerDefinition {
@@ -333,6 +375,8 @@ impl ModelPackageContainerDefinitionBuilder {
             nearest_model_name: self.nearest_model_name,
             additional_s3_data_source: self.additional_s3_data_source,
             model_data_e_tag: self.model_data_e_tag,
+            is_checkpoint: self.is_checkpoint,
+            base_model: self.base_model,
         }
     }
 }

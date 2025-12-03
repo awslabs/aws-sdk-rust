@@ -72,6 +72,18 @@ pub struct PipelineExecutionStepMetadata {
     pub endpoint: ::std::option::Option<crate::types::EndpointStepMetadata>,
     /// <p>The endpoint configuration used to create an endpoint during this step execution.</p>
     pub endpoint_config: ::std::option::Option<crate::types::EndpointConfigStepMetadata>,
+    /// <p>The metadata of the Amazon Bedrock custom model used in the pipeline execution step.</p>
+    pub bedrock_custom_model: ::std::option::Option<crate::types::BedrockCustomModelMetadata>,
+    /// <p>The metadata of the Amazon Bedrock custom model deployment used in pipeline execution step.</p>
+    pub bedrock_custom_model_deployment: ::std::option::Option<crate::types::BedrockCustomModelDeploymentMetadata>,
+    /// <p>The metadata of the Amazon Bedrock provisioned model throughput used in the pipeline execution step.</p>
+    pub bedrock_provisioned_model_throughput: ::std::option::Option<crate::types::BedrockProvisionedModelThroughputMetadata>,
+    /// <p>The metadata of Amazon Bedrock model import used in pipeline execution step.</p>
+    pub bedrock_model_import: ::std::option::Option<crate::types::BedrockModelImportMetadata>,
+    /// <p>The metadata of the inference component used in pipeline execution step.</p>
+    pub inference_component: ::std::option::Option<crate::types::InferenceComponentMetadata>,
+    /// <p>The metadata of the lineage used in pipeline execution step.</p>
+    pub lineage: ::std::option::Option<crate::types::LineageMetadata>,
 }
 impl PipelineExecutionStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -174,6 +186,30 @@ impl PipelineExecutionStepMetadata {
     pub fn endpoint_config(&self) -> ::std::option::Option<&crate::types::EndpointConfigStepMetadata> {
         self.endpoint_config.as_ref()
     }
+    /// <p>The metadata of the Amazon Bedrock custom model used in the pipeline execution step.</p>
+    pub fn bedrock_custom_model(&self) -> ::std::option::Option<&crate::types::BedrockCustomModelMetadata> {
+        self.bedrock_custom_model.as_ref()
+    }
+    /// <p>The metadata of the Amazon Bedrock custom model deployment used in pipeline execution step.</p>
+    pub fn bedrock_custom_model_deployment(&self) -> ::std::option::Option<&crate::types::BedrockCustomModelDeploymentMetadata> {
+        self.bedrock_custom_model_deployment.as_ref()
+    }
+    /// <p>The metadata of the Amazon Bedrock provisioned model throughput used in the pipeline execution step.</p>
+    pub fn bedrock_provisioned_model_throughput(&self) -> ::std::option::Option<&crate::types::BedrockProvisionedModelThroughputMetadata> {
+        self.bedrock_provisioned_model_throughput.as_ref()
+    }
+    /// <p>The metadata of Amazon Bedrock model import used in pipeline execution step.</p>
+    pub fn bedrock_model_import(&self) -> ::std::option::Option<&crate::types::BedrockModelImportMetadata> {
+        self.bedrock_model_import.as_ref()
+    }
+    /// <p>The metadata of the inference component used in pipeline execution step.</p>
+    pub fn inference_component(&self) -> ::std::option::Option<&crate::types::InferenceComponentMetadata> {
+        self.inference_component.as_ref()
+    }
+    /// <p>The metadata of the lineage used in pipeline execution step.</p>
+    pub fn lineage(&self) -> ::std::option::Option<&crate::types::LineageMetadata> {
+        self.lineage.as_ref()
+    }
 }
 impl PipelineExecutionStepMetadata {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionStepMetadata`](crate::types::PipelineExecutionStepMetadata).
@@ -202,6 +238,12 @@ pub struct PipelineExecutionStepMetadataBuilder {
     pub(crate) auto_ml_job: ::std::option::Option<crate::types::AutoMlJobStepMetadata>,
     pub(crate) endpoint: ::std::option::Option<crate::types::EndpointStepMetadata>,
     pub(crate) endpoint_config: ::std::option::Option<crate::types::EndpointConfigStepMetadata>,
+    pub(crate) bedrock_custom_model: ::std::option::Option<crate::types::BedrockCustomModelMetadata>,
+    pub(crate) bedrock_custom_model_deployment: ::std::option::Option<crate::types::BedrockCustomModelDeploymentMetadata>,
+    pub(crate) bedrock_provisioned_model_throughput: ::std::option::Option<crate::types::BedrockProvisionedModelThroughputMetadata>,
+    pub(crate) bedrock_model_import: ::std::option::Option<crate::types::BedrockModelImportMetadata>,
+    pub(crate) inference_component: ::std::option::Option<crate::types::InferenceComponentMetadata>,
+    pub(crate) lineage: ::std::option::Option<crate::types::LineageMetadata>,
 }
 impl PipelineExecutionStepMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -536,6 +578,93 @@ impl PipelineExecutionStepMetadataBuilder {
     pub fn get_endpoint_config(&self) -> &::std::option::Option<crate::types::EndpointConfigStepMetadata> {
         &self.endpoint_config
     }
+    /// <p>The metadata of the Amazon Bedrock custom model used in the pipeline execution step.</p>
+    pub fn bedrock_custom_model(mut self, input: crate::types::BedrockCustomModelMetadata) -> Self {
+        self.bedrock_custom_model = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata of the Amazon Bedrock custom model used in the pipeline execution step.</p>
+    pub fn set_bedrock_custom_model(mut self, input: ::std::option::Option<crate::types::BedrockCustomModelMetadata>) -> Self {
+        self.bedrock_custom_model = input;
+        self
+    }
+    /// <p>The metadata of the Amazon Bedrock custom model used in the pipeline execution step.</p>
+    pub fn get_bedrock_custom_model(&self) -> &::std::option::Option<crate::types::BedrockCustomModelMetadata> {
+        &self.bedrock_custom_model
+    }
+    /// <p>The metadata of the Amazon Bedrock custom model deployment used in pipeline execution step.</p>
+    pub fn bedrock_custom_model_deployment(mut self, input: crate::types::BedrockCustomModelDeploymentMetadata) -> Self {
+        self.bedrock_custom_model_deployment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata of the Amazon Bedrock custom model deployment used in pipeline execution step.</p>
+    pub fn set_bedrock_custom_model_deployment(mut self, input: ::std::option::Option<crate::types::BedrockCustomModelDeploymentMetadata>) -> Self {
+        self.bedrock_custom_model_deployment = input;
+        self
+    }
+    /// <p>The metadata of the Amazon Bedrock custom model deployment used in pipeline execution step.</p>
+    pub fn get_bedrock_custom_model_deployment(&self) -> &::std::option::Option<crate::types::BedrockCustomModelDeploymentMetadata> {
+        &self.bedrock_custom_model_deployment
+    }
+    /// <p>The metadata of the Amazon Bedrock provisioned model throughput used in the pipeline execution step.</p>
+    pub fn bedrock_provisioned_model_throughput(mut self, input: crate::types::BedrockProvisionedModelThroughputMetadata) -> Self {
+        self.bedrock_provisioned_model_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata of the Amazon Bedrock provisioned model throughput used in the pipeline execution step.</p>
+    pub fn set_bedrock_provisioned_model_throughput(
+        mut self,
+        input: ::std::option::Option<crate::types::BedrockProvisionedModelThroughputMetadata>,
+    ) -> Self {
+        self.bedrock_provisioned_model_throughput = input;
+        self
+    }
+    /// <p>The metadata of the Amazon Bedrock provisioned model throughput used in the pipeline execution step.</p>
+    pub fn get_bedrock_provisioned_model_throughput(&self) -> &::std::option::Option<crate::types::BedrockProvisionedModelThroughputMetadata> {
+        &self.bedrock_provisioned_model_throughput
+    }
+    /// <p>The metadata of Amazon Bedrock model import used in pipeline execution step.</p>
+    pub fn bedrock_model_import(mut self, input: crate::types::BedrockModelImportMetadata) -> Self {
+        self.bedrock_model_import = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata of Amazon Bedrock model import used in pipeline execution step.</p>
+    pub fn set_bedrock_model_import(mut self, input: ::std::option::Option<crate::types::BedrockModelImportMetadata>) -> Self {
+        self.bedrock_model_import = input;
+        self
+    }
+    /// <p>The metadata of Amazon Bedrock model import used in pipeline execution step.</p>
+    pub fn get_bedrock_model_import(&self) -> &::std::option::Option<crate::types::BedrockModelImportMetadata> {
+        &self.bedrock_model_import
+    }
+    /// <p>The metadata of the inference component used in pipeline execution step.</p>
+    pub fn inference_component(mut self, input: crate::types::InferenceComponentMetadata) -> Self {
+        self.inference_component = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata of the inference component used in pipeline execution step.</p>
+    pub fn set_inference_component(mut self, input: ::std::option::Option<crate::types::InferenceComponentMetadata>) -> Self {
+        self.inference_component = input;
+        self
+    }
+    /// <p>The metadata of the inference component used in pipeline execution step.</p>
+    pub fn get_inference_component(&self) -> &::std::option::Option<crate::types::InferenceComponentMetadata> {
+        &self.inference_component
+    }
+    /// <p>The metadata of the lineage used in pipeline execution step.</p>
+    pub fn lineage(mut self, input: crate::types::LineageMetadata) -> Self {
+        self.lineage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata of the lineage used in pipeline execution step.</p>
+    pub fn set_lineage(mut self, input: ::std::option::Option<crate::types::LineageMetadata>) -> Self {
+        self.lineage = input;
+        self
+    }
+    /// <p>The metadata of the lineage used in pipeline execution step.</p>
+    pub fn get_lineage(&self) -> &::std::option::Option<crate::types::LineageMetadata> {
+        &self.lineage
+    }
     /// Consumes the builder and constructs a [`PipelineExecutionStepMetadata`](crate::types::PipelineExecutionStepMetadata).
     pub fn build(self) -> crate::types::PipelineExecutionStepMetadata {
         crate::types::PipelineExecutionStepMetadata {
@@ -555,6 +684,12 @@ impl PipelineExecutionStepMetadataBuilder {
             auto_ml_job: self.auto_ml_job,
             endpoint: self.endpoint,
             endpoint_config: self.endpoint_config,
+            bedrock_custom_model: self.bedrock_custom_model,
+            bedrock_custom_model_deployment: self.bedrock_custom_model_deployment,
+            bedrock_provisioned_model_throughput: self.bedrock_provisioned_model_throughput,
+            bedrock_model_import: self.bedrock_model_import,
+            inference_component: self.inference_component,
+            lineage: self.lineage,
         }
     }
 }

@@ -31,6 +31,8 @@ pub struct DescribePipelineExecutionOutput {
     pub selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
     /// <p>The ID of the pipeline version.</p>
     pub pipeline_version_id: ::std::option::Option<i64>,
+    /// <p>The MLflow configuration of the pipeline execution.</p>
+    pub m_lflow_config: ::std::option::Option<crate::types::MLflowConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribePipelineExecutionOutput {
@@ -90,6 +92,10 @@ impl DescribePipelineExecutionOutput {
     pub fn pipeline_version_id(&self) -> ::std::option::Option<i64> {
         self.pipeline_version_id
     }
+    /// <p>The MLflow configuration of the pipeline execution.</p>
+    pub fn m_lflow_config(&self) -> ::std::option::Option<&crate::types::MLflowConfiguration> {
+        self.m_lflow_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribePipelineExecutionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -121,6 +127,7 @@ pub struct DescribePipelineExecutionOutputBuilder {
     pub(crate) parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
     pub(crate) selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
     pub(crate) pipeline_version_id: ::std::option::Option<i64>,
+    pub(crate) m_lflow_config: ::std::option::Option<crate::types::MLflowConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribePipelineExecutionOutputBuilder {
@@ -320,6 +327,20 @@ impl DescribePipelineExecutionOutputBuilder {
     pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
         &self.pipeline_version_id
     }
+    /// <p>The MLflow configuration of the pipeline execution.</p>
+    pub fn m_lflow_config(mut self, input: crate::types::MLflowConfiguration) -> Self {
+        self.m_lflow_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The MLflow configuration of the pipeline execution.</p>
+    pub fn set_m_lflow_config(mut self, input: ::std::option::Option<crate::types::MLflowConfiguration>) -> Self {
+        self.m_lflow_config = input;
+        self
+    }
+    /// <p>The MLflow configuration of the pipeline execution.</p>
+    pub fn get_m_lflow_config(&self) -> &::std::option::Option<crate::types::MLflowConfiguration> {
+        &self.m_lflow_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -346,6 +367,7 @@ impl DescribePipelineExecutionOutputBuilder {
             parallelism_configuration: self.parallelism_configuration,
             selective_execution_config: self.selective_execution_config,
             pipeline_version_id: self.pipeline_version_id,
+            m_lflow_config: self.m_lflow_config,
             _request_id: self._request_id,
         }
     }

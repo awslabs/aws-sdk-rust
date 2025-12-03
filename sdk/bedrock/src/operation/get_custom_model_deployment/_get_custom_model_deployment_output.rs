@@ -23,6 +23,8 @@ pub struct GetCustomModelDeploymentOutput {
     pub status: crate::types::CustomModelDeploymentStatus,
     /// <p>The description of the custom model deployment.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Details about any pending or completed updates to the custom model deployment, including the new model ARN and update status.</p>
+    pub update_details: ::std::option::Option<crate::types::CustomModelDeploymentUpdateDetails>,
     /// <p>If the deployment status is <code>FAILED</code>, this field contains a message describing the failure reason.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the custom model deployment was last updated.</p>
@@ -65,6 +67,10 @@ impl GetCustomModelDeploymentOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Details about any pending or completed updates to the custom model deployment, including the new model ARN and update status.</p>
+    pub fn update_details(&self) -> ::std::option::Option<&crate::types::CustomModelDeploymentUpdateDetails> {
+        self.update_details.as_ref()
+    }
     /// <p>If the deployment status is <code>FAILED</code>, this field contains a message describing the failure reason.</p>
     pub fn failure_message(&self) -> ::std::option::Option<&str> {
         self.failure_message.as_deref()
@@ -96,6 +102,7 @@ pub struct GetCustomModelDeploymentOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::CustomModelDeploymentStatus>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) update_details: ::std::option::Option<crate::types::CustomModelDeploymentUpdateDetails>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -214,6 +221,20 @@ impl GetCustomModelDeploymentOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Details about any pending or completed updates to the custom model deployment, including the new model ARN and update status.</p>
+    pub fn update_details(mut self, input: crate::types::CustomModelDeploymentUpdateDetails) -> Self {
+        self.update_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about any pending or completed updates to the custom model deployment, including the new model ARN and update status.</p>
+    pub fn set_update_details(mut self, input: ::std::option::Option<crate::types::CustomModelDeploymentUpdateDetails>) -> Self {
+        self.update_details = input;
+        self
+    }
+    /// <p>Details about any pending or completed updates to the custom model deployment, including the new model ARN and update status.</p>
+    pub fn get_update_details(&self) -> &::std::option::Option<crate::types::CustomModelDeploymentUpdateDetails> {
+        &self.update_details
+    }
     /// <p>If the deployment status is <code>FAILED</code>, this field contains a message describing the failure reason.</p>
     pub fn failure_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_message = ::std::option::Option::Some(input.into());
@@ -296,6 +317,7 @@ impl GetCustomModelDeploymentOutputBuilder {
                 )
             })?,
             description: self.description,
+            update_details: self.update_details,
             failure_message: self.failure_message,
             last_updated_at: self.last_updated_at,
             _request_id: self._request_id,

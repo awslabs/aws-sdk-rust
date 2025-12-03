@@ -45,5 +45,8 @@ pub fn ser_start_pipeline_execution_input_input(
             ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
+    if let Some(var_14) = &input.mlflow_experiment_name {
+        object.key("MlflowExperimentName").string(var_14.as_str());
+    }
     Ok(())
 }

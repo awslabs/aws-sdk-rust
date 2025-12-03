@@ -81,6 +81,36 @@ where
                                 crate::protocol_serde::shape_endpoint_config_step_metadata::de_endpoint_config_step_metadata(tokens)?,
                             );
                         }
+                        "BedrockCustomModel" => {
+                            builder = builder.set_bedrock_custom_model(
+                                crate::protocol_serde::shape_bedrock_custom_model_metadata::de_bedrock_custom_model_metadata(tokens)?,
+                            );
+                        }
+                        "BedrockCustomModelDeployment" => {
+                            builder = builder.set_bedrock_custom_model_deployment(
+                                crate::protocol_serde::shape_bedrock_custom_model_deployment_metadata::de_bedrock_custom_model_deployment_metadata(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "BedrockProvisionedModelThroughput" => {
+                            builder = builder.set_bedrock_provisioned_model_throughput(
+                                    crate::protocol_serde::shape_bedrock_provisioned_model_throughput_metadata::de_bedrock_provisioned_model_throughput_metadata(tokens)?
+                                );
+                        }
+                        "BedrockModelImport" => {
+                            builder = builder.set_bedrock_model_import(
+                                crate::protocol_serde::shape_bedrock_model_import_metadata::de_bedrock_model_import_metadata(tokens)?,
+                            );
+                        }
+                        "InferenceComponent" => {
+                            builder = builder.set_inference_component(
+                                crate::protocol_serde::shape_inference_component_metadata::de_inference_component_metadata(tokens)?,
+                            );
+                        }
+                        "Lineage" => {
+                            builder = builder.set_lineage(crate::protocol_serde::shape_lineage_metadata::de_lineage_metadata(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

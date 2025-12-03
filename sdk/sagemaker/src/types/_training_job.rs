@@ -163,6 +163,10 @@ pub struct TrainingJob {
     pub tensor_board_output_config: ::std::option::Option<crate::types::TensorBoardOutputConfig>,
     /// <p>Information about the evaluation status of the rules for the training job.</p>
     pub debug_rule_evaluation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
+    /// <p>The output model package Amazon Resource Name (ARN) that contains model weights or checkpoint.</p>
+    pub output_model_package_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The model package configuration.</p>
+    pub model_package_config: ::std::option::Option<crate::types::ModelPackageConfig>,
     /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     pub profiler_config: ::std::option::Option<crate::types::ProfilerConfig>,
     /// <p>The environment variables to set in the Docker container.</p>
@@ -410,6 +414,14 @@ impl TrainingJob {
     pub fn debug_rule_evaluation_statuses(&self) -> &[crate::types::DebugRuleEvaluationStatus] {
         self.debug_rule_evaluation_statuses.as_deref().unwrap_or_default()
     }
+    /// <p>The output model package Amazon Resource Name (ARN) that contains model weights or checkpoint.</p>
+    pub fn output_model_package_arn(&self) -> ::std::option::Option<&str> {
+        self.output_model_package_arn.as_deref()
+    }
+    /// <p>The model package configuration.</p>
+    pub fn model_package_config(&self) -> ::std::option::Option<&crate::types::ModelPackageConfig> {
+        self.model_package_config.as_ref()
+    }
     /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     pub fn profiler_config(&self) -> ::std::option::Option<&crate::types::ProfilerConfig> {
         self.profiler_config.as_ref()
@@ -474,6 +486,8 @@ pub struct TrainingJobBuilder {
     pub(crate) debug_rule_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleConfiguration>>,
     pub(crate) tensor_board_output_config: ::std::option::Option<crate::types::TensorBoardOutputConfig>,
     pub(crate) debug_rule_evaluation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
+    pub(crate) output_model_package_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) model_package_config: ::std::option::Option<crate::types::ModelPackageConfig>,
     pub(crate) profiler_config: ::std::option::Option<crate::types::ProfilerConfig>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
@@ -1278,6 +1292,34 @@ impl TrainingJobBuilder {
     pub fn get_debug_rule_evaluation_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DebugRuleEvaluationStatus>> {
         &self.debug_rule_evaluation_statuses
     }
+    /// <p>The output model package Amazon Resource Name (ARN) that contains model weights or checkpoint.</p>
+    pub fn output_model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output_model_package_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The output model package Amazon Resource Name (ARN) that contains model weights or checkpoint.</p>
+    pub fn set_output_model_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.output_model_package_arn = input;
+        self
+    }
+    /// <p>The output model package Amazon Resource Name (ARN) that contains model weights or checkpoint.</p>
+    pub fn get_output_model_package_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_model_package_arn
+    }
+    /// <p>The model package configuration.</p>
+    pub fn model_package_config(mut self, input: crate::types::ModelPackageConfig) -> Self {
+        self.model_package_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The model package configuration.</p>
+    pub fn set_model_package_config(mut self, input: ::std::option::Option<crate::types::ModelPackageConfig>) -> Self {
+        self.model_package_config = input;
+        self
+    }
+    /// <p>The model package configuration.</p>
+    pub fn get_model_package_config(&self) -> &::std::option::Option<crate::types::ModelPackageConfig> {
+        &self.model_package_config
+    }
     /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     pub fn profiler_config(mut self, input: crate::types::ProfilerConfig) -> Self {
         self.profiler_config = ::std::option::Option::Some(input);
@@ -1386,6 +1428,8 @@ impl TrainingJobBuilder {
             debug_rule_configurations: self.debug_rule_configurations,
             tensor_board_output_config: self.tensor_board_output_config,
             debug_rule_evaluation_statuses: self.debug_rule_evaluation_statuses,
+            output_model_package_arn: self.output_model_package_arn,
+            model_package_config: self.model_package_config,
             profiler_config: self.profiler_config,
             environment: self.environment,
             retry_strategy: self.retry_strategy,

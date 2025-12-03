@@ -42,6 +42,8 @@ pub struct DescribeTrainingJobOutput {
     /// <li>
     /// <p><code>Starting</code> - Starting the training job.</p></li>
     /// <li>
+    /// <p><code>Pending</code> - The training job is waiting for compute capacity or compute resource provision.</p></li>
+    /// <li>
     /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
     /// <li>
     /// <p><code>Training</code> - Training is in progress.</p></li>
@@ -151,6 +153,8 @@ pub struct DescribeTrainingJobOutput {
     /// <p>Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your training cluster to get the total compute time SageMaker bills you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
     /// <p>You can calculate the savings from using managed spot training using the formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
     pub billable_time_in_seconds: ::std::option::Option<i32>,
+    /// <p>The billable token count for eligible serverless training jobs.</p>
+    pub billable_token_count: ::std::option::Option<i64>,
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     pub debug_hook_config: ::std::option::Option<crate::types::DebugHookConfig>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
@@ -187,6 +191,18 @@ pub struct DescribeTrainingJobOutput {
     pub remote_debug_config: ::std::option::Option<crate::types::RemoteDebugConfig>,
     /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
     pub infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
+    /// <p>The configuration for serverless training jobs.</p>
+    pub serverless_job_config: ::std::option::Option<crate::types::ServerlessJobConfig>,
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub mlflow_config: ::std::option::Option<crate::types::MlflowConfig>,
+    /// <p>The configuration for the model package.</p>
+    pub model_package_config: ::std::option::Option<crate::types::ModelPackageConfig>,
+    /// <p>The MLflow details of this job.</p>
+    pub mlflow_details: ::std::option::Option<crate::types::MlflowDetails>,
+    /// <p>The Serverless training job progress information.</p>
+    pub progress_info: ::std::option::Option<crate::types::TrainingProgressInfo>,
+    /// <p>The Amazon Resource Name (ARN) of the output model package containing model weights or checkpoints.</p>
+    pub output_model_package_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTrainingJobOutput {
@@ -242,6 +258,8 @@ impl DescribeTrainingJobOutput {
     /// <ul>
     /// <li>
     /// <p><code>Starting</code> - Starting the training job.</p></li>
+    /// <li>
+    /// <p><code>Pending</code> - The training job is waiting for compute capacity or compute resource provision.</p></li>
     /// <li>
     /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
     /// <li>
@@ -404,6 +422,10 @@ impl DescribeTrainingJobOutput {
     pub fn billable_time_in_seconds(&self) -> ::std::option::Option<i32> {
         self.billable_time_in_seconds
     }
+    /// <p>The billable token count for eligible serverless training jobs.</p>
+    pub fn billable_token_count(&self) -> ::std::option::Option<i64> {
+        self.billable_token_count
+    }
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     pub fn debug_hook_config(&self) -> ::std::option::Option<&crate::types::DebugHookConfig> {
         self.debug_hook_config.as_ref()
@@ -474,6 +496,30 @@ impl DescribeTrainingJobOutput {
     pub fn infra_check_config(&self) -> ::std::option::Option<&crate::types::InfraCheckConfig> {
         self.infra_check_config.as_ref()
     }
+    /// <p>The configuration for serverless training jobs.</p>
+    pub fn serverless_job_config(&self) -> ::std::option::Option<&crate::types::ServerlessJobConfig> {
+        self.serverless_job_config.as_ref()
+    }
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub fn mlflow_config(&self) -> ::std::option::Option<&crate::types::MlflowConfig> {
+        self.mlflow_config.as_ref()
+    }
+    /// <p>The configuration for the model package.</p>
+    pub fn model_package_config(&self) -> ::std::option::Option<&crate::types::ModelPackageConfig> {
+        self.model_package_config.as_ref()
+    }
+    /// <p>The MLflow details of this job.</p>
+    pub fn mlflow_details(&self) -> ::std::option::Option<&crate::types::MlflowDetails> {
+        self.mlflow_details.as_ref()
+    }
+    /// <p>The Serverless training job progress information.</p>
+    pub fn progress_info(&self) -> ::std::option::Option<&crate::types::TrainingProgressInfo> {
+        self.progress_info.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the output model package containing model weights or checkpoints.</p>
+    pub fn output_model_package_arn(&self) -> ::std::option::Option<&str> {
+        self.output_model_package_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeTrainingJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -521,6 +567,7 @@ pub struct DescribeTrainingJobOutputBuilder {
     pub(crate) checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
     pub(crate) training_time_in_seconds: ::std::option::Option<i32>,
     pub(crate) billable_time_in_seconds: ::std::option::Option<i32>,
+    pub(crate) billable_token_count: ::std::option::Option<i64>,
     pub(crate) debug_hook_config: ::std::option::Option<crate::types::DebugHookConfig>,
     pub(crate) experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     pub(crate) debug_rule_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleConfiguration>>,
@@ -534,6 +581,12 @@ pub struct DescribeTrainingJobOutputBuilder {
     pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     pub(crate) remote_debug_config: ::std::option::Option<crate::types::RemoteDebugConfig>,
     pub(crate) infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
+    pub(crate) serverless_job_config: ::std::option::Option<crate::types::ServerlessJobConfig>,
+    pub(crate) mlflow_config: ::std::option::Option<crate::types::MlflowConfig>,
+    pub(crate) model_package_config: ::std::option::Option<crate::types::ModelPackageConfig>,
+    pub(crate) mlflow_details: ::std::option::Option<crate::types::MlflowDetails>,
+    pub(crate) progress_info: ::std::option::Option<crate::types::TrainingProgressInfo>,
+    pub(crate) output_model_package_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTrainingJobOutputBuilder {
@@ -692,6 +745,8 @@ impl DescribeTrainingJobOutputBuilder {
     /// <li>
     /// <p><code>Starting</code> - Starting the training job.</p></li>
     /// <li>
+    /// <p><code>Pending</code> - The training job is waiting for compute capacity or compute resource provision.</p></li>
+    /// <li>
     /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
     /// <li>
     /// <p><code>Training</code> - Training is in progress.</p></li>
@@ -769,6 +824,8 @@ impl DescribeTrainingJobOutputBuilder {
     /// <li>
     /// <p><code>Starting</code> - Starting the training job.</p></li>
     /// <li>
+    /// <p><code>Pending</code> - The training job is waiting for compute capacity or compute resource provision.</p></li>
+    /// <li>
     /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
     /// <li>
     /// <p><code>Training</code> - Training is in progress.</p></li>
@@ -844,6 +901,8 @@ impl DescribeTrainingJobOutputBuilder {
     /// <ul>
     /// <li>
     /// <p><code>Starting</code> - Starting the training job.</p></li>
+    /// <li>
+    /// <p><code>Pending</code> - The training job is waiting for compute capacity or compute resource provision.</p></li>
     /// <li>
     /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
     /// <li>
@@ -1262,6 +1321,20 @@ impl DescribeTrainingJobOutputBuilder {
     pub fn get_billable_time_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.billable_time_in_seconds
     }
+    /// <p>The billable token count for eligible serverless training jobs.</p>
+    pub fn billable_token_count(mut self, input: i64) -> Self {
+        self.billable_token_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The billable token count for eligible serverless training jobs.</p>
+    pub fn set_billable_token_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.billable_token_count = input;
+        self
+    }
+    /// <p>The billable token count for eligible serverless training jobs.</p>
+    pub fn get_billable_token_count(&self) -> &::std::option::Option<i64> {
+        &self.billable_token_count
+    }
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     pub fn debug_hook_config(mut self, input: crate::types::DebugHookConfig) -> Self {
         self.debug_hook_config = ::std::option::Option::Some(input);
@@ -1516,6 +1589,90 @@ impl DescribeTrainingJobOutputBuilder {
     pub fn get_infra_check_config(&self) -> &::std::option::Option<crate::types::InfraCheckConfig> {
         &self.infra_check_config
     }
+    /// <p>The configuration for serverless training jobs.</p>
+    pub fn serverless_job_config(mut self, input: crate::types::ServerlessJobConfig) -> Self {
+        self.serverless_job_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for serverless training jobs.</p>
+    pub fn set_serverless_job_config(mut self, input: ::std::option::Option<crate::types::ServerlessJobConfig>) -> Self {
+        self.serverless_job_config = input;
+        self
+    }
+    /// <p>The configuration for serverless training jobs.</p>
+    pub fn get_serverless_job_config(&self) -> &::std::option::Option<crate::types::ServerlessJobConfig> {
+        &self.serverless_job_config
+    }
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub fn mlflow_config(mut self, input: crate::types::MlflowConfig) -> Self {
+        self.mlflow_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub fn set_mlflow_config(mut self, input: ::std::option::Option<crate::types::MlflowConfig>) -> Self {
+        self.mlflow_config = input;
+        self
+    }
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub fn get_mlflow_config(&self) -> &::std::option::Option<crate::types::MlflowConfig> {
+        &self.mlflow_config
+    }
+    /// <p>The configuration for the model package.</p>
+    pub fn model_package_config(mut self, input: crate::types::ModelPackageConfig) -> Self {
+        self.model_package_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the model package.</p>
+    pub fn set_model_package_config(mut self, input: ::std::option::Option<crate::types::ModelPackageConfig>) -> Self {
+        self.model_package_config = input;
+        self
+    }
+    /// <p>The configuration for the model package.</p>
+    pub fn get_model_package_config(&self) -> &::std::option::Option<crate::types::ModelPackageConfig> {
+        &self.model_package_config
+    }
+    /// <p>The MLflow details of this job.</p>
+    pub fn mlflow_details(mut self, input: crate::types::MlflowDetails) -> Self {
+        self.mlflow_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The MLflow details of this job.</p>
+    pub fn set_mlflow_details(mut self, input: ::std::option::Option<crate::types::MlflowDetails>) -> Self {
+        self.mlflow_details = input;
+        self
+    }
+    /// <p>The MLflow details of this job.</p>
+    pub fn get_mlflow_details(&self) -> &::std::option::Option<crate::types::MlflowDetails> {
+        &self.mlflow_details
+    }
+    /// <p>The Serverless training job progress information.</p>
+    pub fn progress_info(mut self, input: crate::types::TrainingProgressInfo) -> Self {
+        self.progress_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Serverless training job progress information.</p>
+    pub fn set_progress_info(mut self, input: ::std::option::Option<crate::types::TrainingProgressInfo>) -> Self {
+        self.progress_info = input;
+        self
+    }
+    /// <p>The Serverless training job progress information.</p>
+    pub fn get_progress_info(&self) -> &::std::option::Option<crate::types::TrainingProgressInfo> {
+        &self.progress_info
+    }
+    /// <p>The Amazon Resource Name (ARN) of the output model package containing model weights or checkpoints.</p>
+    pub fn output_model_package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output_model_package_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the output model package containing model weights or checkpoints.</p>
+    pub fn set_output_model_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.output_model_package_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the output model package containing model weights or checkpoints.</p>
+    pub fn get_output_model_package_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_model_package_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -1558,6 +1715,7 @@ impl DescribeTrainingJobOutputBuilder {
             checkpoint_config: self.checkpoint_config,
             training_time_in_seconds: self.training_time_in_seconds,
             billable_time_in_seconds: self.billable_time_in_seconds,
+            billable_token_count: self.billable_token_count,
             debug_hook_config: self.debug_hook_config,
             experiment_config: self.experiment_config,
             debug_rule_configurations: self.debug_rule_configurations,
@@ -1571,6 +1729,12 @@ impl DescribeTrainingJobOutputBuilder {
             retry_strategy: self.retry_strategy,
             remote_debug_config: self.remote_debug_config,
             infra_check_config: self.infra_check_config,
+            serverless_job_config: self.serverless_job_config,
+            mlflow_config: self.mlflow_config,
+            model_package_config: self.model_package_config,
+            mlflow_details: self.mlflow_details,
+            progress_info: self.progress_info,
+            output_model_package_arn: self.output_model_package_arn,
             _request_id: self._request_id,
         }
     }

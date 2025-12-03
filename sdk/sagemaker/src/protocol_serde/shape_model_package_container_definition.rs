@@ -58,6 +58,15 @@ pub fn ser_model_package_container_definition(
     if let Some(var_19) = &input.model_data_e_tag {
         object.key("ModelDataETag").string(var_19.as_str());
     }
+    if let Some(var_20) = &input.is_checkpoint {
+        object.key("IsCheckpoint").boolean(*var_20);
+    }
+    if let Some(var_21) = &input.base_model {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("BaseModel").start_object();
+        crate::protocol_serde::shape_base_model::ser_base_model(&mut object_22, var_21)?;
+        object_22.finish();
+    }
     Ok(())
 }
 
@@ -152,6 +161,12 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "IsCheckpoint" => {
+                            builder = builder.set_is_checkpoint(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "BaseModel" => {
+                            builder = builder.set_base_model(crate::protocol_serde::shape_base_model::de_base_model(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

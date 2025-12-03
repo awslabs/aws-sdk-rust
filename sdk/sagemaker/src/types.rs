@@ -265,6 +265,8 @@ pub use crate::types::_transform_instance_type::TransformInstanceType;
 
 pub use crate::types::_model_package_container_definition::ModelPackageContainerDefinition;
 
+pub use crate::types::_base_model::BaseModel;
+
 pub use crate::types::_additional_s3_data_source::AdditionalS3DataSource;
 
 pub use crate::types::_compression_type::CompressionType;
@@ -286,6 +288,8 @@ pub use crate::types::_model_compression_type::ModelCompressionType;
 pub use crate::types::_s3_model_data_type::S3ModelDataType;
 
 pub use crate::types::_additional_inference_specification_definition::AdditionalInferenceSpecificationDefinition;
+
+pub use crate::types::_model_package_registration_type::ModelPackageRegistrationType;
 
 pub use crate::types::_model_approval_status::ModelApprovalStatus;
 
@@ -703,6 +707,8 @@ pub use crate::types::_record_wrapper::RecordWrapper;
 
 pub use crate::types::_data_source::DataSource;
 
+pub use crate::types::_dataset_source::DatasetSource;
+
 pub use crate::types::_file_system_data_source::FileSystemDataSource;
 
 pub use crate::types::_file_system_type::FileSystemType;
@@ -951,6 +957,8 @@ pub use crate::types::_training_job::TrainingJob;
 
 pub use crate::types::_profiler_config::ProfilerConfig;
 
+pub use crate::types::_model_package_config::ModelPackageConfig;
+
 pub use crate::types::_debug_rule_evaluation_status::DebugRuleEvaluationStatus;
 
 pub use crate::types::_rule_evaluation_status::RuleEvaluationStatus;
@@ -1132,6 +1140,20 @@ pub use crate::types::_pipeline_execution_step::PipelineExecutionStep;
 pub use crate::types::_selective_execution_result::SelectiveExecutionResult;
 
 pub use crate::types::_pipeline_execution_step_metadata::PipelineExecutionStepMetadata;
+
+pub use crate::types::_lineage_metadata::LineageMetadata;
+
+pub use crate::types::_association_info::AssociationInfo;
+
+pub use crate::types::_inference_component_metadata::InferenceComponentMetadata;
+
+pub use crate::types::_bedrock_model_import_metadata::BedrockModelImportMetadata;
+
+pub use crate::types::_bedrock_provisioned_model_throughput_metadata::BedrockProvisionedModelThroughputMetadata;
+
+pub use crate::types::_bedrock_custom_model_deployment_metadata::BedrockCustomModelDeploymentMetadata;
+
+pub use crate::types::_bedrock_custom_model_metadata::BedrockCustomModelMetadata;
 
 pub use crate::types::_endpoint_config_step_metadata::EndpointConfigStepMetadata;
 
@@ -1589,6 +1611,22 @@ pub use crate::types::_device_stats::DeviceStats;
 
 pub use crate::types::_volume_attachment_status::VolumeAttachmentStatus;
 
+pub use crate::types::_training_progress_info::TrainingProgressInfo;
+
+pub use crate::types::_mlflow_details::MlflowDetails;
+
+pub use crate::types::_mlflow_config::MlflowConfig;
+
+pub use crate::types::_serverless_job_config::ServerlessJobConfig;
+
+pub use crate::types::_evaluation_type::EvaluationType;
+
+pub use crate::types::_peft::Peft;
+
+pub use crate::types::_customization_technique::CustomizationTechnique;
+
+pub use crate::types::_serverless_job_type::ServerlessJobType;
+
 pub use crate::types::_infra_check_config::InfraCheckConfig;
 
 pub use crate::types::_remote_debug_config::RemoteDebugConfig;
@@ -1602,6 +1640,8 @@ pub use crate::types::_space_sharing_settings::SpaceSharingSettings;
 pub use crate::types::_ownership_settings::OwnershipSettings;
 
 pub use crate::types::_ultra_server_summary::UltraServerSummary;
+
+pub use crate::types::_m_lflow_configuration::MLflowConfiguration;
 
 pub use crate::types::_available_upgrade::AvailableUpgrade;
 
@@ -2169,6 +2209,8 @@ mod _assembly_type;
 
 mod _association_edge_type;
 
+mod _association_info;
+
 mod _association_summary;
 
 mod _async_inference_client_config;
@@ -2277,6 +2319,8 @@ mod _available_upgrade;
 
 mod _aws_managed_human_loop_request_source;
 
+mod _base_model;
+
 mod _batch_add_cluster_nodes_error;
 
 mod _batch_add_cluster_nodes_error_code;
@@ -2308,6 +2352,14 @@ mod _batch_replace_cluster_nodes_error_code;
 mod _batch_strategy;
 
 mod _batch_transform_input;
+
+mod _bedrock_custom_model_deployment_metadata;
+
+mod _bedrock_custom_model_metadata;
+
+mod _bedrock_model_import_metadata;
+
+mod _bedrock_provisioned_model_throughput_metadata;
 
 mod _best_objective_not_improving;
 
@@ -2553,6 +2605,8 @@ mod _custom_image;
 
 mod _custom_posix_user_config;
 
+mod _customization_technique;
+
 mod _customized_metric_specification;
 
 mod _data_capture_config;
@@ -2576,6 +2630,8 @@ mod _data_source;
 mod _data_source_name;
 
 mod _dataset_definition;
+
+mod _dataset_source;
 
 mod _debug_hook_config;
 
@@ -2738,6 +2794,8 @@ mod _environment_parameter;
 mod _environment_parameter_ranges;
 
 mod _error_info;
+
+mod _evaluation_type;
 
 mod _event_details;
 
@@ -2955,6 +3013,8 @@ mod _inference_component_data_cache_config_summary;
 
 mod _inference_component_deployment_config;
 
+mod _inference_component_metadata;
+
 mod _inference_component_rolling_update_policy;
 
 mod _inference_component_runtime_config;
@@ -3089,6 +3149,8 @@ mod _lifecycle_management;
 
 mod _lineage_group_summary;
 
+mod _lineage_metadata;
+
 mod _lineage_type;
 
 mod _list_compilation_jobs_sort_by;
@@ -3108,6 +3170,8 @@ mod _list_optimization_jobs_sort_by;
 mod _list_workforces_sort_by_options;
 
 mod _list_workteams_sort_by_options;
+
+mod _m_lflow_configuration;
 
 mod _maintenance_status;
 
@@ -3138,6 +3202,10 @@ mod _ml_tools;
 mod _mlflow_app_status;
 
 mod _mlflow_app_summary;
+
+mod _mlflow_config;
+
+mod _mlflow_details;
 
 mod _model;
 
@@ -3241,6 +3309,8 @@ mod _model_metrics;
 
 mod _model_package;
 
+mod _model_package_config;
+
 mod _model_package_container_definition;
 
 mod _model_package_group;
@@ -3252,6 +3322,8 @@ mod _model_package_group_status;
 mod _model_package_group_summary;
 
 mod _model_package_model_card;
+
+mod _model_package_registration_type;
 
 mod _model_package_security_config;
 
@@ -3494,6 +3566,8 @@ mod _partner_app_status;
 mod _partner_app_summary;
 
 mod _partner_app_type;
+
+mod _peft;
 
 mod _pending_deployment_summary;
 
@@ -3811,6 +3885,10 @@ mod _selective_execution_config;
 
 mod _selective_execution_result;
 
+mod _serverless_job_config;
+
+mod _serverless_job_type;
+
 mod _service_catalog_provisioned_product_details;
 
 mod _service_catalog_provisioning_details;
@@ -4028,6 +4106,8 @@ mod _training_plan_sort_order;
 mod _training_plan_status;
 
 mod _training_plan_summary;
+
+mod _training_progress_info;
 
 mod _training_repository_access_mode;
 

@@ -602,4 +602,46 @@ impl CreateTrainingJobFluentBuilder {
     pub fn get_session_chaining_config(&self) -> &::std::option::Option<crate::types::SessionChainingConfig> {
         self.inner.get_session_chaining_config()
     }
+    /// <p>The configuration for serverless training jobs.</p>
+    pub fn serverless_job_config(mut self, input: crate::types::ServerlessJobConfig) -> Self {
+        self.inner = self.inner.serverless_job_config(input);
+        self
+    }
+    /// <p>The configuration for serverless training jobs.</p>
+    pub fn set_serverless_job_config(mut self, input: ::std::option::Option<crate::types::ServerlessJobConfig>) -> Self {
+        self.inner = self.inner.set_serverless_job_config(input);
+        self
+    }
+    /// <p>The configuration for serverless training jobs.</p>
+    pub fn get_serverless_job_config(&self) -> &::std::option::Option<crate::types::ServerlessJobConfig> {
+        self.inner.get_serverless_job_config()
+    }
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub fn mlflow_config(mut self, input: crate::types::MlflowConfig) -> Self {
+        self.inner = self.inner.mlflow_config(input);
+        self
+    }
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub fn set_mlflow_config(mut self, input: ::std::option::Option<crate::types::MlflowConfig>) -> Self {
+        self.inner = self.inner.set_mlflow_config(input);
+        self
+    }
+    /// <p>The MLflow configuration using SageMaker managed MLflow.</p>
+    pub fn get_mlflow_config(&self) -> &::std::option::Option<crate::types::MlflowConfig> {
+        self.inner.get_mlflow_config()
+    }
+    /// <p>The configuration for the model package.</p>
+    pub fn model_package_config(mut self, input: crate::types::ModelPackageConfig) -> Self {
+        self.inner = self.inner.model_package_config(input);
+        self
+    }
+    /// <p>The configuration for the model package.</p>
+    pub fn set_model_package_config(mut self, input: ::std::option::Option<crate::types::ModelPackageConfig>) -> Self {
+        self.inner = self.inner.set_model_package_config(input);
+        self
+    }
+    /// <p>The configuration for the model package.</p>
+    pub fn get_model_package_config(&self) -> &::std::option::Option<crate::types::ModelPackageConfig> {
+        self.inner.get_model_package_config()
+    }
 }

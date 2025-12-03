@@ -20,6 +20,8 @@ pub struct BatchDescribeModelPackageSummary {
     pub model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
     /// <p>The approval status of the model.</p>
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
+    /// <p>The package registration type of the model package summary.</p>
+    pub model_package_registration_type: ::std::option::Option<crate::types::ModelPackageRegistrationType>,
 }
 impl BatchDescribeModelPackageSummary {
     /// <p>The group name for the model package</p>
@@ -54,6 +56,10 @@ impl BatchDescribeModelPackageSummary {
     pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
     }
+    /// <p>The package registration type of the model package summary.</p>
+    pub fn model_package_registration_type(&self) -> ::std::option::Option<&crate::types::ModelPackageRegistrationType> {
+        self.model_package_registration_type.as_ref()
+    }
 }
 impl BatchDescribeModelPackageSummary {
     /// Creates a new builder-style object to manufacture [`BatchDescribeModelPackageSummary`](crate::types::BatchDescribeModelPackageSummary).
@@ -74,6 +80,7 @@ pub struct BatchDescribeModelPackageSummaryBuilder {
     pub(crate) inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     pub(crate) model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
     pub(crate) model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
+    pub(crate) model_package_registration_type: ::std::option::Option<crate::types::ModelPackageRegistrationType>,
 }
 impl BatchDescribeModelPackageSummaryBuilder {
     /// <p>The group name for the model package</p>
@@ -193,6 +200,20 @@ impl BatchDescribeModelPackageSummaryBuilder {
     pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         &self.model_approval_status
     }
+    /// <p>The package registration type of the model package summary.</p>
+    pub fn model_package_registration_type(mut self, input: crate::types::ModelPackageRegistrationType) -> Self {
+        self.model_package_registration_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The package registration type of the model package summary.</p>
+    pub fn set_model_package_registration_type(mut self, input: ::std::option::Option<crate::types::ModelPackageRegistrationType>) -> Self {
+        self.model_package_registration_type = input;
+        self
+    }
+    /// <p>The package registration type of the model package summary.</p>
+    pub fn get_model_package_registration_type(&self) -> &::std::option::Option<crate::types::ModelPackageRegistrationType> {
+        &self.model_package_registration_type
+    }
     /// Consumes the builder and constructs a [`BatchDescribeModelPackageSummary`](crate::types::BatchDescribeModelPackageSummary).
     pub fn build(self) -> crate::types::BatchDescribeModelPackageSummary {
         crate::types::BatchDescribeModelPackageSummary {
@@ -204,6 +225,7 @@ impl BatchDescribeModelPackageSummaryBuilder {
             inference_specification: self.inference_specification,
             model_package_status: self.model_package_status,
             model_approval_status: self.model_approval_status,
+            model_package_registration_type: self.model_package_registration_type,
         }
     }
 }

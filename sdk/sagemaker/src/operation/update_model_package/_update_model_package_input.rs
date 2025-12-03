@@ -7,6 +7,8 @@ pub struct UpdateModelPackageInput {
     pub model_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The approval status of the model.</p>
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
+    /// <p>The package registration type of the model package input.</p>
+    pub model_package_registration_type: ::std::option::Option<crate::types::ModelPackageRegistrationType>,
     /// <p>A description for the approval status of the model.</p>
     pub approval_description: ::std::option::Option<::std::string::String>,
     /// <p>The metadata properties associated with the model package versions.</p>
@@ -42,6 +44,10 @@ impl UpdateModelPackageInput {
     /// <p>The approval status of the model.</p>
     pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn model_package_registration_type(&self) -> ::std::option::Option<&crate::types::ModelPackageRegistrationType> {
+        self.model_package_registration_type.as_ref()
     }
     /// <p>A description for the approval status of the model.</p>
     pub fn approval_description(&self) -> ::std::option::Option<&str> {
@@ -105,6 +111,7 @@ impl UpdateModelPackageInput {
 pub struct UpdateModelPackageInputBuilder {
     pub(crate) model_package_arn: ::std::option::Option<::std::string::String>,
     pub(crate) model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
+    pub(crate) model_package_registration_type: ::std::option::Option<crate::types::ModelPackageRegistrationType>,
     pub(crate) approval_description: ::std::option::Option<::std::string::String>,
     pub(crate) customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) customer_metadata_properties_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -145,6 +152,20 @@ impl UpdateModelPackageInputBuilder {
     /// <p>The approval status of the model.</p>
     pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         &self.model_approval_status
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn model_package_registration_type(mut self, input: crate::types::ModelPackageRegistrationType) -> Self {
+        self.model_package_registration_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn set_model_package_registration_type(mut self, input: ::std::option::Option<crate::types::ModelPackageRegistrationType>) -> Self {
+        self.model_package_registration_type = input;
+        self
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn get_model_package_registration_type(&self) -> &::std::option::Option<crate::types::ModelPackageRegistrationType> {
+        &self.model_package_registration_type
     }
     /// <p>A description for the approval status of the model.</p>
     pub fn approval_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -336,6 +357,7 @@ impl UpdateModelPackageInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_model_package::UpdateModelPackageInput {
             model_package_arn: self.model_package_arn,
             model_approval_status: self.model_approval_status,
+            model_package_registration_type: self.model_package_registration_type,
             approval_description: self.approval_description,
             customer_metadata_properties: self.customer_metadata_properties,
             customer_metadata_properties_to_remove: self.customer_metadata_properties_to_remove,

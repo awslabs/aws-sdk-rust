@@ -2906,6 +2906,18 @@ pub(crate) fn cluster_event_detail_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_orchestrator_correct_errors(
+    mut builder: crate::types::builders::ClusterOrchestratorBuilder,
+) -> crate::types::builders::ClusterOrchestratorBuilder {
+    if builder.eks.is_none() {
+        builder.eks = {
+            let builder = crate::types::builders::ClusterOrchestratorEksConfigBuilder::default();
+            Some(crate::serde_util::cluster_orchestrator_eks_config_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn cluster_tiered_storage_config_correct_errors(
     mut builder: crate::types::builders::ClusterTieredStorageConfigBuilder,
 ) -> crate::types::builders::ClusterTieredStorageConfigBuilder {
@@ -3199,6 +3211,13 @@ pub(crate) fn last_update_status_correct_errors(
     builder
 }
 
+pub(crate) fn mlflow_config_correct_errors(mut builder: crate::types::builders::MlflowConfigBuilder) -> crate::types::builders::MlflowConfigBuilder {
+    if builder.mlflow_resource_arn.is_none() {
+        builder.mlflow_resource_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn model_card_export_artifacts_correct_errors(
     mut builder: crate::types::builders::ModelCardExportArtifactsBuilder,
 ) -> crate::types::builders::ModelCardExportArtifactsBuilder {
@@ -3216,6 +3235,15 @@ pub(crate) fn model_life_cycle_correct_errors(
     }
     if builder.stage_status.is_none() {
         builder.stage_status = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn model_package_config_correct_errors(
+    mut builder: crate::types::builders::ModelPackageConfigBuilder,
+) -> crate::types::builders::ModelPackageConfigBuilder {
+    if builder.model_package_group_arn.is_none() {
+        builder.model_package_group_arn = Some(Default::default())
     }
     builder
 }
@@ -3382,6 +3410,18 @@ pub(crate) fn selective_execution_config_correct_errors(
 ) -> crate::types::builders::SelectiveExecutionConfigBuilder {
     if builder.selected_steps.is_none() {
         builder.selected_steps = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn serverless_job_config_correct_errors(
+    mut builder: crate::types::builders::ServerlessJobConfigBuilder,
+) -> crate::types::builders::ServerlessJobConfigBuilder {
+    if builder.base_model_arn.is_none() {
+        builder.base_model_arn = Some(Default::default())
+    }
+    if builder.job_type.is_none() {
+        builder.job_type = "no value was set".parse::<crate::types::ServerlessJobType>().ok()
     }
     builder
 }
@@ -6312,6 +6352,15 @@ pub(crate) fn custom_image_correct_errors(mut builder: crate::types::builders::C
     builder
 }
 
+pub(crate) fn dataset_source_correct_errors(
+    mut builder: crate::types::builders::DatasetSourceBuilder,
+) -> crate::types::builders::DatasetSourceBuilder {
+    if builder.dataset_arn.is_none() {
+        builder.dataset_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn edge_model_summary_correct_errors(
     mut builder: crate::types::builders::EdgeModelSummaryBuilder,
 ) -> crate::types::builders::EdgeModelSummaryBuilder {
@@ -6751,6 +6800,18 @@ pub(crate) fn model_dashboard_endpoint_correct_errors(
     }
     if builder.endpoint_status.is_none() {
         builder.endpoint_status = "no value was set".parse::<crate::types::EndpointStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn association_info_correct_errors(
+    mut builder: crate::types::builders::AssociationInfoBuilder,
+) -> crate::types::builders::AssociationInfoBuilder {
+    if builder.source_arn.is_none() {
+        builder.source_arn = Some(Default::default())
+    }
+    if builder.destination_arn.is_none() {
+        builder.destination_arn = Some(Default::default())
     }
     builder
 }

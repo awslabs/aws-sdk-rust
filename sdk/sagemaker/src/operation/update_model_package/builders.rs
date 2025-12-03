@@ -136,6 +136,20 @@ impl UpdateModelPackageFluentBuilder {
     pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         self.inner.get_model_approval_status()
     }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn model_package_registration_type(mut self, input: crate::types::ModelPackageRegistrationType) -> Self {
+        self.inner = self.inner.model_package_registration_type(input);
+        self
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn set_model_package_registration_type(mut self, input: ::std::option::Option<crate::types::ModelPackageRegistrationType>) -> Self {
+        self.inner = self.inner.set_model_package_registration_type(input);
+        self
+    }
+    /// <p>The package registration type of the model package input.</p>
+    pub fn get_model_package_registration_type(&self) -> &::std::option::Option<crate::types::ModelPackageRegistrationType> {
+        self.inner.get_model_package_registration_type()
+    }
     /// <p>A description for the approval status of the model.</p>
     pub fn approval_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.approval_description(input.into());

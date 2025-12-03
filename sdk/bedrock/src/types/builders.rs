@@ -9,6 +9,12 @@ pub use crate::types::_data_processing_details::DataProcessingDetailsBuilder;
 
 pub use crate::types::_validation_details::ValidationDetailsBuilder;
 
+pub use crate::types::_rft_config::RftConfigBuilder;
+
+pub use crate::types::_rft_hyper_parameters::RftHyperParametersBuilder;
+
+pub use crate::types::_lambda_grader_config::LambdaGraderConfigBuilder;
+
 pub use crate::types::_distillation_config::DistillationConfigBuilder;
 
 pub use crate::types::_teacher_model_config::TeacherModelConfigBuilder;
@@ -260,6 +266,8 @@ pub use crate::types::_account_enforced_guardrail_output_configuration::AccountE
 pub use crate::types::_custom_model_summary::CustomModelSummaryBuilder;
 
 pub use crate::types::_custom_model_deployment_summary::CustomModelDeploymentSummaryBuilder;
+
+pub use crate::types::_custom_model_deployment_update_details::CustomModelDeploymentUpdateDetailsBuilder;
 
 pub use crate::types::_marketplace_model_endpoint::MarketplaceModelEndpointBuilder;
 

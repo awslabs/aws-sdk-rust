@@ -9,66 +9,69 @@ pub fn ser_update_model_package_input_input(
     if let Some(var_2) = &input.model_approval_status {
         object.key("ModelApprovalStatus").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.approval_description {
-        object.key("ApprovalDescription").string(var_3.as_str());
+    if let Some(var_3) = &input.model_package_registration_type {
+        object.key("ModelPackageRegistrationType").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.customer_metadata_properties {
+    if let Some(var_4) = &input.approval_description {
+        object.key("ApprovalDescription").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.customer_metadata_properties {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("CustomerMetadataProperties").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_6 = object.key("CustomerMetadataProperties").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_5.finish();
+        object_6.finish();
     }
-    if let Some(var_8) = &input.customer_metadata_properties_to_remove {
-        let mut array_9 = object.key("CustomerMetadataPropertiesToRemove").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.customer_metadata_properties_to_remove {
+        let mut array_10 = object.key("CustomerMetadataPropertiesToRemove").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.additional_inference_specifications_to_add {
-        let mut array_12 = object.key("AdditionalInferenceSpecificationsToAdd").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.additional_inference_specifications_to_add {
+        let mut array_13 = object.key("AdditionalInferenceSpecificationsToAdd").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
+                let mut object_15 = array_13.value().start_object();
                 crate::protocol_serde::shape_additional_inference_specification_definition::ser_additional_inference_specification_definition(
-                    &mut object_14,
-                    item_13,
+                    &mut object_15,
+                    item_14,
                 )?;
-                object_14.finish();
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.inference_specification {
+    if let Some(var_16) = &input.inference_specification {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("InferenceSpecification").start_object();
-        crate::protocol_serde::shape_inference_specification::ser_inference_specification(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_17 = object.key("InferenceSpecification").start_object();
+        crate::protocol_serde::shape_inference_specification::ser_inference_specification(&mut object_17, var_16)?;
+        object_17.finish();
     }
-    if let Some(var_17) = &input.source_uri {
-        object.key("SourceUri").string(var_17.as_str());
+    if let Some(var_18) = &input.source_uri {
+        object.key("SourceUri").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.model_card {
+    if let Some(var_19) = &input.model_card {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("ModelCard").start_object();
-        crate::protocol_serde::shape_model_package_model_card::ser_model_package_model_card(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_20 = object.key("ModelCard").start_object();
+        crate::protocol_serde::shape_model_package_model_card::ser_model_package_model_card(&mut object_20, var_19)?;
+        object_20.finish();
     }
-    if let Some(var_20) = &input.model_life_cycle {
+    if let Some(var_21) = &input.model_life_cycle {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("ModelLifeCycle").start_object();
-        crate::protocol_serde::shape_model_life_cycle::ser_model_life_cycle(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_22 = object.key("ModelLifeCycle").start_object();
+        crate::protocol_serde::shape_model_life_cycle::ser_model_life_cycle(&mut object_22, var_21)?;
+        object_22.finish();
     }
-    if let Some(var_22) = &input.client_token {
-        object.key("ClientToken").string(var_22.as_str());
+    if let Some(var_23) = &input.client_token {
+        object.key("ClientToken").string(var_23.as_str());
     }
     Ok(())
 }

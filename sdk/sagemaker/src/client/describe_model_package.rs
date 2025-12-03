@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`model_package_name(Option<String>)`](crate::operation::describe_model_package::DescribeModelPackageOutput::model_package_name): <p>The name of the model package being described.</p>
     ///   - [`model_package_group_name(Option<String>)`](crate::operation::describe_model_package::DescribeModelPackageOutput::model_package_group_name): <p>If the model is a versioned model, the name of the model group that the versioned model belongs to.</p>
     ///   - [`model_package_version(Option<i32>)`](crate::operation::describe_model_package::DescribeModelPackageOutput::model_package_version): <p>The version of the model package.</p>
+    ///   - [`model_package_registration_type(Option<ModelPackageRegistrationType>)`](crate::operation::describe_model_package::DescribeModelPackageOutput::model_package_registration_type): <p>The package registration type of the model package output.</p>
     ///   - [`model_package_arn(Option<String>)`](crate::operation::describe_model_package::DescribeModelPackageOutput::model_package_arn): <p>The Amazon Resource Name (ARN) of the model package.</p>
     ///   - [`model_package_description(Option<String>)`](crate::operation::describe_model_package::DescribeModelPackageOutput::model_package_description): <p>A brief summary of the model package.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_model_package::DescribeModelPackageOutput::creation_time): <p>A timestamp specifying when the model package was created.</p>

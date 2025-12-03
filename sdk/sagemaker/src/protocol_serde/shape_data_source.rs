@@ -15,6 +15,12 @@ pub fn ser_data_source(
         crate::protocol_serde::shape_file_system_data_source::ser_file_system_data_source(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.dataset_source {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("DatasetSource").start_object();
+        crate::protocol_serde::shape_dataset_source::ser_dataset_source(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +46,9 @@ where
                             builder = builder.set_file_system_data_source(
                                 crate::protocol_serde::shape_file_system_data_source::de_file_system_data_source(tokens)?,
                             );
+                        }
+                        "DatasetSource" => {
+                            builder = builder.set_dataset_source(crate::protocol_serde::shape_dataset_source::de_dataset_source(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -80,6 +80,13 @@ pub(crate) fn de_describe_model_package(
                             .transpose()?,
                     );
                 }
+                "ModelPackageRegistrationType" => {
+                    builder = builder.set_model_package_registration_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ModelPackageRegistrationType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "ModelPackageArn" => {
                     builder = builder.set_model_package_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

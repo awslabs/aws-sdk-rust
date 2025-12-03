@@ -30,6 +30,8 @@ pub struct ModelPackageSummary {
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
     /// <p>A structure describing the current state of the model in its life cycle.</p>
     pub model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
+    /// <p>The package registration type of the model package summary.</p>
+    pub model_package_registration_type: ::std::option::Option<crate::types::ModelPackageRegistrationType>,
 }
 impl ModelPackageSummary {
     /// <p>The name of the model package.</p>
@@ -76,6 +78,10 @@ impl ModelPackageSummary {
     pub fn model_life_cycle(&self) -> ::std::option::Option<&crate::types::ModelLifeCycle> {
         self.model_life_cycle.as_ref()
     }
+    /// <p>The package registration type of the model package summary.</p>
+    pub fn model_package_registration_type(&self) -> ::std::option::Option<&crate::types::ModelPackageRegistrationType> {
+        self.model_package_registration_type.as_ref()
+    }
 }
 impl ModelPackageSummary {
     /// Creates a new builder-style object to manufacture [`ModelPackageSummary`](crate::types::ModelPackageSummary).
@@ -97,6 +103,7 @@ pub struct ModelPackageSummaryBuilder {
     pub(crate) model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
     pub(crate) model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
     pub(crate) model_life_cycle: ::std::option::Option<crate::types::ModelLifeCycle>,
+    pub(crate) model_package_registration_type: ::std::option::Option<crate::types::ModelPackageRegistrationType>,
 }
 impl ModelPackageSummaryBuilder {
     /// <p>The name of the model package.</p>
@@ -252,6 +259,20 @@ impl ModelPackageSummaryBuilder {
     pub fn get_model_life_cycle(&self) -> &::std::option::Option<crate::types::ModelLifeCycle> {
         &self.model_life_cycle
     }
+    /// <p>The package registration type of the model package summary.</p>
+    pub fn model_package_registration_type(mut self, input: crate::types::ModelPackageRegistrationType) -> Self {
+        self.model_package_registration_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The package registration type of the model package summary.</p>
+    pub fn set_model_package_registration_type(mut self, input: ::std::option::Option<crate::types::ModelPackageRegistrationType>) -> Self {
+        self.model_package_registration_type = input;
+        self
+    }
+    /// <p>The package registration type of the model package summary.</p>
+    pub fn get_model_package_registration_type(&self) -> &::std::option::Option<crate::types::ModelPackageRegistrationType> {
+        &self.model_package_registration_type
+    }
     /// Consumes the builder and constructs a [`ModelPackageSummary`](crate::types::ModelPackageSummary).
     pub fn build(self) -> crate::types::ModelPackageSummary {
         crate::types::ModelPackageSummary {
@@ -264,6 +285,7 @@ impl ModelPackageSummaryBuilder {
             model_package_status: self.model_package_status,
             model_approval_status: self.model_approval_status,
             model_life_cycle: self.model_life_cycle,
+            model_package_registration_type: self.model_package_registration_type,
         }
     }
 }

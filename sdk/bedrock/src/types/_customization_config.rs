@@ -6,6 +6,8 @@
 pub enum CustomizationConfig {
     /// <p>The Distillation configuration for the custom model.</p>
     DistillationConfig(crate::types::DistillationConfig),
+    /// <p>Configuration settings for reinforcement fine-tuning (RFT) model customization, including grader configuration and hyperparameters.</p>
+    RftConfig(crate::types::RftConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum CustomizationConfig {
     Unknown,
 }
 impl CustomizationConfig {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`DistillationConfig`](crate::types::CustomizationConfig::DistillationConfig), extracting the inner [`DistillationConfig`](crate::types::DistillationConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_distillation_config(&self) -> ::std::result::Result<&crate::types::DistillationConfig, &Self> {
@@ -30,6 +31,19 @@ impl CustomizationConfig {
     /// Returns true if this is a [`DistillationConfig`](crate::types::CustomizationConfig::DistillationConfig).
     pub fn is_distillation_config(&self) -> bool {
         self.as_distillation_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RftConfig`](crate::types::CustomizationConfig::RftConfig), extracting the inner [`RftConfig`](crate::types::RftConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rft_config(&self) -> ::std::result::Result<&crate::types::RftConfig, &Self> {
+        if let CustomizationConfig::RftConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RftConfig`](crate::types::CustomizationConfig::RftConfig).
+    pub fn is_rft_config(&self) -> bool {
+        self.as_rft_config().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
