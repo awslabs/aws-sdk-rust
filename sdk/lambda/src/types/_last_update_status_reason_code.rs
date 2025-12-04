@@ -14,6 +14,7 @@
 /// match lastupdatestatusreasoncode {
 ///     LastUpdateStatusReasonCode::CapacityProviderScalingLimitExceeded => { /* ... */ },
 ///     LastUpdateStatusReasonCode::DisabledKmsKey => { /* ... */ },
+///     LastUpdateStatusReasonCode::DisallowedByVpcEncryptionControl => { /* ... */ },
 ///     LastUpdateStatusReasonCode::Ec2RequestLimitExceeded => { /* ... */ },
 ///     LastUpdateStatusReasonCode::EfsioError => { /* ... */ },
 ///     LastUpdateStatusReasonCode::EfsMountConnectivityError => { /* ... */ },
@@ -77,6 +78,8 @@ pub enum LastUpdateStatusReasonCode {
     CapacityProviderScalingLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     DisabledKmsKey,
+    #[allow(missing_docs)] // documentation missing in model
+    DisallowedByVpcEncryptionControl,
     #[allow(missing_docs)] // documentation missing in model
     Ec2RequestLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
@@ -148,6 +151,7 @@ impl ::std::convert::From<&str> for LastUpdateStatusReasonCode {
         match s {
             "CapacityProviderScalingLimitExceeded" => LastUpdateStatusReasonCode::CapacityProviderScalingLimitExceeded,
             "DisabledKMSKey" => LastUpdateStatusReasonCode::DisabledKmsKey,
+            "DisallowedByVpcEncryptionControl" => LastUpdateStatusReasonCode::DisallowedByVpcEncryptionControl,
             "EC2RequestLimitExceeded" => LastUpdateStatusReasonCode::Ec2RequestLimitExceeded,
             "EFSIOError" => LastUpdateStatusReasonCode::EfsioError,
             "EFSMountConnectivityError" => LastUpdateStatusReasonCode::EfsMountConnectivityError,
@@ -196,6 +200,7 @@ impl LastUpdateStatusReasonCode {
         match self {
             LastUpdateStatusReasonCode::CapacityProviderScalingLimitExceeded => "CapacityProviderScalingLimitExceeded",
             LastUpdateStatusReasonCode::DisabledKmsKey => "DisabledKMSKey",
+            LastUpdateStatusReasonCode::DisallowedByVpcEncryptionControl => "DisallowedByVpcEncryptionControl",
             LastUpdateStatusReasonCode::Ec2RequestLimitExceeded => "EC2RequestLimitExceeded",
             LastUpdateStatusReasonCode::EfsioError => "EFSIOError",
             LastUpdateStatusReasonCode::EfsMountConnectivityError => "EFSMountConnectivityError",
@@ -235,6 +240,7 @@ impl LastUpdateStatusReasonCode {
         &[
             "CapacityProviderScalingLimitExceeded",
             "DisabledKMSKey",
+            "DisallowedByVpcEncryptionControl",
             "EC2RequestLimitExceeded",
             "EFSIOError",
             "EFSMountConnectivityError",
@@ -291,6 +297,7 @@ impl ::std::fmt::Display for LastUpdateStatusReasonCode {
         match self {
             LastUpdateStatusReasonCode::CapacityProviderScalingLimitExceeded => write!(f, "CapacityProviderScalingLimitExceeded"),
             LastUpdateStatusReasonCode::DisabledKmsKey => write!(f, "DisabledKMSKey"),
+            LastUpdateStatusReasonCode::DisallowedByVpcEncryptionControl => write!(f, "DisallowedByVpcEncryptionControl"),
             LastUpdateStatusReasonCode::Ec2RequestLimitExceeded => write!(f, "EC2RequestLimitExceeded"),
             LastUpdateStatusReasonCode::EfsioError => write!(f, "EFSIOError"),
             LastUpdateStatusReasonCode::EfsMountConnectivityError => write!(f, "EFSMountConnectivityError"),

@@ -1338,9 +1338,9 @@ model_hash = '0e89199b1fb5ee5dbc8af5164ec0197fe641cb26981528044ddfdb35b3f369dc'
 
 [crates.aws-sdk-lambda]
 category = 'AwsSdk'
-version = '1.109.0'
-source_hash = '76db11e3c82c309d0ff19257bd7ac7b94e51745a7ac7e5392fb6f20c3118279e'
-model_hash = 'ee4e4701088548fbe2581530f00d2d3a3f8d466834f3922ef26b8a50e35e6136'
+version = '1.110.0'
+source_hash = '01975c754189fd7226b0d000fe2803577008b5891ff35bebceb07dcc2e51a2eb'
+model_hash = 'e7a4ff4a95006b94c9edeb226c7c574b6d9b8b4ea1819c386a0fbc9708c3e6d9'
 
 [crates.aws-sdk-launchwizard]
 category = 'AwsSdk'
@@ -2651,10 +2651,5 @@ source_hash = '8e56d7772057a546723f36aff594683f21519a393b3d0bd63069a7818d3f9f79'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'fa8112d0390ec9009a3079619ea062a2b5260374fd3ec4b981674caa113c46a5'
-
-[release]
-tag = 'release-2025-12-03'
-
 [release.crates]
-aws-sdk-bedrock = '1.125.0'
-aws-sdk-sagemaker = '1.174.0'
+aws-sdk-lambda = '1.110.0'

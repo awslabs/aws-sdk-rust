@@ -15,6 +15,7 @@
 ///     StateReasonCode::CapacityProviderScalingLimitExceeded => { /* ... */ },
 ///     StateReasonCode::Creating => { /* ... */ },
 ///     StateReasonCode::DisabledKmsKey => { /* ... */ },
+///     StateReasonCode::DisallowedByVpcEncryptionControl => { /* ... */ },
 ///     StateReasonCode::DrainingDurableExecutions => { /* ... */ },
 ///     StateReasonCode::Ec2RequestLimitExceeded => { /* ... */ },
 ///     StateReasonCode::EfsioError => { /* ... */ },
@@ -83,6 +84,8 @@ pub enum StateReasonCode {
     Creating,
     #[allow(missing_docs)] // documentation missing in model
     DisabledKmsKey,
+    #[allow(missing_docs)] // documentation missing in model
+    DisallowedByVpcEncryptionControl,
     #[allow(missing_docs)] // documentation missing in model
     DrainingDurableExecutions,
     #[allow(missing_docs)] // documentation missing in model
@@ -161,6 +164,7 @@ impl ::std::convert::From<&str> for StateReasonCode {
             "CapacityProviderScalingLimitExceeded" => StateReasonCode::CapacityProviderScalingLimitExceeded,
             "Creating" => StateReasonCode::Creating,
             "DisabledKMSKey" => StateReasonCode::DisabledKmsKey,
+            "DisallowedByVpcEncryptionControl" => StateReasonCode::DisallowedByVpcEncryptionControl,
             "DrainingDurableExecutions" => StateReasonCode::DrainingDurableExecutions,
             "EC2RequestLimitExceeded" => StateReasonCode::Ec2RequestLimitExceeded,
             "EFSIOError" => StateReasonCode::EfsioError,
@@ -213,6 +217,7 @@ impl StateReasonCode {
             StateReasonCode::CapacityProviderScalingLimitExceeded => "CapacityProviderScalingLimitExceeded",
             StateReasonCode::Creating => "Creating",
             StateReasonCode::DisabledKmsKey => "DisabledKMSKey",
+            StateReasonCode::DisallowedByVpcEncryptionControl => "DisallowedByVpcEncryptionControl",
             StateReasonCode::DrainingDurableExecutions => "DrainingDurableExecutions",
             StateReasonCode::Ec2RequestLimitExceeded => "EC2RequestLimitExceeded",
             StateReasonCode::EfsioError => "EFSIOError",
@@ -256,6 +261,7 @@ impl StateReasonCode {
             "CapacityProviderScalingLimitExceeded",
             "Creating",
             "DisabledKMSKey",
+            "DisallowedByVpcEncryptionControl",
             "DrainingDurableExecutions",
             "EC2RequestLimitExceeded",
             "EFSIOError",
@@ -316,6 +322,7 @@ impl ::std::fmt::Display for StateReasonCode {
             StateReasonCode::CapacityProviderScalingLimitExceeded => write!(f, "CapacityProviderScalingLimitExceeded"),
             StateReasonCode::Creating => write!(f, "Creating"),
             StateReasonCode::DisabledKmsKey => write!(f, "DisabledKMSKey"),
+            StateReasonCode::DisallowedByVpcEncryptionControl => write!(f, "DisallowedByVpcEncryptionControl"),
             StateReasonCode::DrainingDurableExecutions => write!(f, "DrainingDurableExecutions"),
             StateReasonCode::Ec2RequestLimitExceeded => write!(f, "EC2RequestLimitExceeded"),
             StateReasonCode::EfsioError => write!(f, "EFSIOError"),
