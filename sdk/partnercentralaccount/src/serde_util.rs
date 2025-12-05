@@ -446,6 +446,24 @@ pub(crate) fn get_profile_visibility_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_verification_output_output_correct_errors(
+    mut builder: crate::operation::get_verification::builders::GetVerificationOutputBuilder,
+) -> crate::operation::get_verification::builders::GetVerificationOutputBuilder {
+    if builder.verification_type.is_none() {
+        builder.verification_type = "no value was set".parse::<crate::types::VerificationType>().ok()
+    }
+    if builder.verification_status.is_none() {
+        builder.verification_status = "no value was set".parse::<crate::types::VerificationStatus>().ok()
+    }
+    if builder.verification_response_details.is_none() {
+        builder.verification_response_details = Some(crate::types::VerificationResponseDetails::Unknown)
+    }
+    if builder.started_at.is_none() {
+        builder.started_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn list_connection_invitations_output_output_correct_errors(
     mut builder: crate::operation::list_connection_invitations::builders::ListConnectionInvitationsOutputBuilder,
 ) -> crate::operation::list_connection_invitations::builders::ListConnectionInvitationsOutputBuilder {
@@ -596,6 +614,24 @@ pub(crate) fn start_profile_update_task_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_verification_output_output_correct_errors(
+    mut builder: crate::operation::start_verification::builders::StartVerificationOutputBuilder,
+) -> crate::operation::start_verification::builders::StartVerificationOutputBuilder {
+    if builder.verification_type.is_none() {
+        builder.verification_type = "no value was set".parse::<crate::types::VerificationType>().ok()
+    }
+    if builder.verification_status.is_none() {
+        builder.verification_status = "no value was set".parse::<crate::types::VerificationStatus>().ok()
+    }
+    if builder.verification_response_details.is_none() {
+        builder.verification_response_details = Some(crate::types::VerificationResponseDetails::Unknown)
+    }
+    if builder.started_at.is_none() {
+        builder.started_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn update_connection_preferences_output_output_correct_errors(
     mut builder: crate::operation::update_connection_preferences::builders::UpdateConnectionPreferencesOutputBuilder,
 ) -> crate::operation::update_connection_preferences::builders::UpdateConnectionPreferencesOutputBuilder {
@@ -705,6 +741,18 @@ pub(crate) fn alliance_lead_contact_correct_errors(
     }
     if builder.business_title.is_none() {
         builder.business_title = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn business_verification_response_correct_errors(
+    mut builder: crate::types::builders::BusinessVerificationResponseBuilder,
+) -> crate::types::builders::BusinessVerificationResponseBuilder {
+    if builder.business_verification_details.is_none() {
+        builder.business_verification_details = {
+            let builder = crate::types::builders::BusinessVerificationDetailsBuilder::default();
+            crate::serde_util::business_verification_details_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -833,6 +881,18 @@ pub(crate) fn partner_summary_correct_errors(
     builder
 }
 
+pub(crate) fn registrant_verification_response_correct_errors(
+    mut builder: crate::types::builders::RegistrantVerificationResponseBuilder,
+) -> crate::types::builders::RegistrantVerificationResponseBuilder {
+    if builder.completion_url.is_none() {
+        builder.completion_url = Some(Default::default())
+    }
+    if builder.completion_url_expires_at.is_none() {
+        builder.completion_url_expires_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -851,6 +911,21 @@ pub(crate) fn business_validation_error_correct_errors(
     }
     if builder.code.is_none() {
         builder.code = "no value was set".parse::<crate::types::BusinessValidationCode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn business_verification_details_correct_errors(
+    mut builder: crate::types::builders::BusinessVerificationDetailsBuilder,
+) -> crate::types::builders::BusinessVerificationDetailsBuilder {
+    if builder.legal_name.is_none() {
+        builder.legal_name = Some(Default::default())
+    }
+    if builder.registration_id.is_none() {
+        builder.registration_id = Some(Default::default())
+    }
+    if builder.country_code.is_none() {
+        builder.country_code = Some(Default::default())
     }
     builder
 }

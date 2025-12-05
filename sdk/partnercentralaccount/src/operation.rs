@@ -46,6 +46,9 @@ pub mod get_profile_update_task;
 /// Types for the `GetProfileVisibility` operation.
 pub mod get_profile_visibility;
 
+/// Types for the `GetVerification` operation.
+pub mod get_verification;
+
 /// Types for the `ListConnectionInvitations` operation.
 pub mod list_connection_invitations;
 
@@ -72,6 +75,9 @@ pub mod send_email_verification_code;
 
 /// Types for the `StartProfileUpdateTask` operation.
 pub mod start_profile_update_task;
+
+/// Types for the `StartVerification` operation.
+pub mod start_verification;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

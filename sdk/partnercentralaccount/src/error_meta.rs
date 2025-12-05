@@ -588,6 +588,32 @@ impl From<crate::operation::get_profile_visibility::GetProfileVisibilityError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_verification::GetVerificationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_verification::GetVerificationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_verification::GetVerificationError> for Error {
+    fn from(err: crate::operation::get_verification::GetVerificationError) -> Self {
+        match err {
+            crate::operation::get_verification::GetVerificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_verification::GetVerificationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_verification::GetVerificationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_verification::GetVerificationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_verification::GetVerificationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_verification::GetVerificationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connection_invitations::ListConnectionInvitationsError, R>>
     for Error
 where
@@ -883,6 +909,35 @@ impl From<crate::operation::start_profile_update_task::StartProfileUpdateTaskErr
             crate::operation::start_profile_update_task::StartProfileUpdateTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_profile_update_task::StartProfileUpdateTaskError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_profile_update_task::StartProfileUpdateTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_verification::StartVerificationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_verification::StartVerificationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_verification::StartVerificationError> for Error {
+    fn from(err: crate::operation::start_verification::StartVerificationError) -> Self {
+        match err {
+            crate::operation::start_verification::StartVerificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_verification::StartVerificationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_verification::StartVerificationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_verification::StartVerificationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_verification::StartVerificationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_verification::StartVerificationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_verification::StartVerificationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -132,34 +132,8 @@ pub fn de_delegation_request(
                 builder = builder.set_state(var_10);
             }
             ,
-            s if s.matches("RequestorId") /* RequestorId com.amazonaws.iam#DelegationRequest$RequestorId */ =>  {
+            s if s.matches("ExpirationTime") /* ExpirationTime com.amazonaws.iam#DelegationRequest$ExpirationTime */ =>  {
                 let var_11 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_requestor_id(var_11);
-            }
-            ,
-            s if s.matches("RequestorName") /* RequestorName com.amazonaws.iam#DelegationRequest$RequestorName */ =>  {
-                let var_12 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_requestor_name(var_12);
-            }
-            ,
-            s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#DelegationRequest$CreateDate */ =>  {
-                let var_13 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -169,11 +143,51 @@ pub fn de_delegation_request(
                         ?
                     )
                 ;
-                builder = builder.set_create_date(var_13);
+                builder = builder.set_expiration_time(var_11);
+            }
+            ,
+            s if s.matches("RequestorId") /* RequestorId com.amazonaws.iam#DelegationRequest$RequestorId */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_requestor_id(var_12);
+            }
+            ,
+            s if s.matches("RequestorName") /* RequestorName com.amazonaws.iam#DelegationRequest$RequestorName */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_requestor_name(var_13);
+            }
+            ,
+            s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam#DelegationRequest$CreateDate */ =>  {
+                let var_14 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_create_date(var_14);
             }
             ,
             s if s.matches("SessionDuration") /* SessionDuration com.amazonaws.iam#DelegationRequest$SessionDuration */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -184,23 +198,10 @@ pub fn de_delegation_request(
                         ?
                     )
                 ;
-                builder = builder.set_session_duration(var_14);
+                builder = builder.set_session_duration(var_15);
             }
             ,
             s if s.matches("RedirectUrl") /* RedirectUrl com.amazonaws.iam#DelegationRequest$RedirectUrl */ =>  {
-                let var_15 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_redirect_url(var_15);
-            }
-            ,
-            s if s.matches("Notes") /* Notes com.amazonaws.iam#DelegationRequest$Notes */ =>  {
                 let var_16 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -210,10 +211,10 @@ pub fn de_delegation_request(
                         ?
                     )
                 ;
-                builder = builder.set_notes(var_16);
+                builder = builder.set_redirect_url(var_16);
             }
             ,
-            s if s.matches("RejectionReason") /* RejectionReason com.amazonaws.iam#DelegationRequest$RejectionReason */ =>  {
+            s if s.matches("Notes") /* Notes com.amazonaws.iam#DelegationRequest$Notes */ =>  {
                 let var_17 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -223,11 +224,24 @@ pub fn de_delegation_request(
                         ?
                     )
                 ;
-                builder = builder.set_rejection_reason(var_17);
+                builder = builder.set_notes(var_17);
+            }
+            ,
+            s if s.matches("RejectionReason") /* RejectionReason com.amazonaws.iam#DelegationRequest$RejectionReason */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_rejection_reason(var_18);
             }
             ,
             s if s.matches("OnlySendByOwner") /* OnlySendByOwner com.amazonaws.iam#DelegationRequest$OnlySendByOwner */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -238,11 +252,11 @@ pub fn de_delegation_request(
                         ?
                     )
                 ;
-                builder = builder.set_only_send_by_owner(var_18);
+                builder = builder.set_only_send_by_owner(var_19);
             }
             ,
             s if s.matches("UpdatedTime") /* UpdatedTime com.amazonaws.iam#DelegationRequest$UpdatedTime */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -252,7 +266,7 @@ pub fn de_delegation_request(
                         ?
                     )
                 ;
-                builder = builder.set_updated_time(var_19);
+                builder = builder.set_updated_time(var_20);
             }
             ,
             _ => {}

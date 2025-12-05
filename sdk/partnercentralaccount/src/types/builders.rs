@@ -34,3 +34,11 @@ pub use crate::types::_connection_type_summary::ConnectionTypeSummaryBuilder;
 pub use crate::types::_connection::ConnectionBuilder;
 
 pub use crate::types::_connection_invitation_summary::ConnectionInvitationSummaryBuilder;
+
+pub use crate::types::_registrant_verification_response::RegistrantVerificationResponseBuilder;
+
+pub use crate::types::_business_verification_response::BusinessVerificationResponseBuilder;
+
+pub use crate::types::_business_verification_details::BusinessVerificationDetailsBuilder;
+
+pub use crate::types::_registrant_verification_details::RegistrantVerificationDetailsBuilder;

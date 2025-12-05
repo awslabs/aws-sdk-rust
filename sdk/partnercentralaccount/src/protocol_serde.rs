@@ -53,6 +53,8 @@ pub(crate) mod shape_get_profile_update_task;
 
 pub(crate) mod shape_get_profile_visibility;
 
+pub(crate) mod shape_get_verification;
+
 pub(crate) mod shape_list_connection_invitations;
 
 pub(crate) mod shape_list_connections;
@@ -70,6 +72,8 @@ pub(crate) mod shape_reject_connection_invitation;
 pub(crate) mod shape_send_email_verification_code;
 
 pub(crate) mod shape_start_profile_update_task;
+
+pub(crate) mod shape_start_verification;
 
 pub(crate) mod shape_tag_resource;
 
@@ -119,6 +123,8 @@ pub(crate) mod shape_get_profile_update_task_input;
 
 pub(crate) mod shape_get_profile_visibility_input;
 
+pub(crate) mod shape_get_verification_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_connection_invitations_input;
@@ -142,6 +148,8 @@ pub(crate) mod shape_send_email_verification_code_input;
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_profile_update_task_input;
+
+pub(crate) mod shape_start_verification_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -181,6 +189,14 @@ pub(crate) mod shape_task_details;
 
 pub(crate) mod shape_validation_error_list;
 
+pub(crate) mod shape_verification_details;
+
+pub(crate) mod shape_verification_response_details;
+
+pub(crate) mod shape_business_verification_details;
+
+pub(crate) mod shape_business_verification_response;
+
 pub(crate) mod shape_connection_invitation_summary;
 
 pub(crate) mod shape_connection_summary;
@@ -198,6 +214,10 @@ pub(crate) mod shape_localized_content_list;
 pub(crate) mod shape_partner_domain;
 
 pub(crate) mod shape_partner_summary;
+
+pub(crate) mod shape_registrant_verification_details;
+
+pub(crate) mod shape_registrant_verification_response;
 
 pub(crate) mod shape_validation_error;
 

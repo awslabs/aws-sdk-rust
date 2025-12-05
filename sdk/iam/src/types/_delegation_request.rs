@@ -25,8 +25,11 @@ pub struct DelegationRequest {
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub approver_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of this delegation request.</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
+    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
     pub state: ::std::option::Option<crate::types::StateType>,
+    /// <p>The expiry time of this delegation request</p>
+    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
+    pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Identity of the requestor of this delegation request. This will be an Amazon Web Services account ID.</p>
     pub requestor_id: ::std::option::Option<::std::string::String>,
     /// <p>A friendly name of the requestor.</p>
@@ -88,9 +91,14 @@ impl DelegationRequest {
         self.approver_id.as_deref()
     }
     /// <p>The state of this delegation request.</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
+    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::StateType> {
         self.state.as_ref()
+    }
+    /// <p>The expiry time of this delegation request</p>
+    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
+    pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.expiration_time.as_ref()
     }
     /// <p>Identity of the requestor of this delegation request. This will be an Amazon Web Services account ID.</p>
     pub fn requestor_id(&self) -> ::std::option::Option<&str> {
@@ -150,6 +158,7 @@ pub struct DelegationRequestBuilder {
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) approver_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::StateType>,
+    pub(crate) expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) requestor_id: ::std::option::Option<::std::string::String>,
     pub(crate) requestor_name: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -300,21 +309,38 @@ impl DelegationRequestBuilder {
         &self.approver_id
     }
     /// <p>The state of this delegation request.</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
+    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
     pub fn state(mut self, input: crate::types::StateType) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of this delegation request.</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
+    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::StateType>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of this delegation request.</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
+    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::StateType> {
         &self.state
+    }
+    /// <p>The expiry time of this delegation request</p>
+    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
+    pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expiration_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The expiry time of this delegation request</p>
+    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
+    pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.expiration_time = input;
+        self
+    }
+    /// <p>The expiry time of this delegation request</p>
+    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_time
     }
     /// <p>Identity of the requestor of this delegation request. This will be an Amazon Web Services account ID.</p>
     pub fn requestor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -455,6 +481,7 @@ impl DelegationRequestBuilder {
             owner_id: self.owner_id,
             approver_id: self.approver_id,
             state: self.state,
+            expiration_time: self.expiration_time,
             requestor_id: self.requestor_id,
             requestor_name: self.requestor_name,
             create_date: self.create_date,

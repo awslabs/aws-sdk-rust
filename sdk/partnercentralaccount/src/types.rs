@@ -73,6 +73,22 @@ pub use crate::types::_connection::Connection;
 
 pub use crate::types::_connection_invitation_summary::ConnectionInvitationSummary;
 
+pub use crate::types::_verification_response_details::VerificationResponseDetails;
+
+pub use crate::types::_registrant_verification_response::RegistrantVerificationResponse;
+
+pub use crate::types::_business_verification_response::BusinessVerificationResponse;
+
+pub use crate::types::_business_verification_details::BusinessVerificationDetails;
+
+pub use crate::types::_verification_status::VerificationStatus;
+
+pub use crate::types::_verification_type::VerificationType;
+
+pub use crate::types::_verification_details::VerificationDetails;
+
+pub use crate::types::_registrant_verification_details::RegistrantVerificationDetails;
+
 mod _access_denied_exception_reason;
 
 mod _access_type;
@@ -84,6 +100,10 @@ mod _alliance_lead_contact;
 mod _business_validation_code;
 
 mod _business_validation_error;
+
+mod _business_verification_details;
+
+mod _business_verification_response;
 
 mod _conflict_exception_reason;
 
@@ -133,6 +153,10 @@ mod _profile_validation_error_reason;
 
 mod _profile_visibility;
 
+mod _registrant_verification_details;
+
+mod _registrant_verification_response;
+
 mod _resource_not_found_exception_reason;
 
 mod _seller_profile_summary;
@@ -146,6 +170,14 @@ mod _task_details;
 mod _validation_error;
 
 mod _validation_exception_reason;
+
+mod _verification_details;
+
+mod _verification_response_details;
+
+mod _verification_status;
+
+mod _verification_type;
 
 /// Builders
 pub mod builders;

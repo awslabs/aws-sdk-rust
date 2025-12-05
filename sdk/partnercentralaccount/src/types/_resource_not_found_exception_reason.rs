@@ -20,6 +20,7 @@
 ///     ResourceNotFoundExceptionReason::PartnerProfileTaskNotFound => { /* ... */ },
 ///     ResourceNotFoundExceptionReason::ReceiverProfileNotFound => { /* ... */ },
 ///     ResourceNotFoundExceptionReason::SenderProfileNotFound => { /* ... */ },
+///     ResourceNotFoundExceptionReason::VerificationNotFound => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -64,6 +65,8 @@ pub enum ResourceNotFoundExceptionReason {
     ReceiverProfileNotFound,
     #[allow(missing_docs)] // documentation missing in model
     SenderProfileNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    VerificationNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -79,6 +82,7 @@ impl ::std::convert::From<&str> for ResourceNotFoundExceptionReason {
             "PARTNER_PROFILE_TASK_NOT_FOUND" => ResourceNotFoundExceptionReason::PartnerProfileTaskNotFound,
             "RECEIVER_PROFILE_NOT_FOUND" => ResourceNotFoundExceptionReason::ReceiverProfileNotFound,
             "SENDER_PROFILE_NOT_FOUND" => ResourceNotFoundExceptionReason::SenderProfileNotFound,
+            "VERIFICATION_NOT_FOUND" => ResourceNotFoundExceptionReason::VerificationNotFound,
             other => ResourceNotFoundExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -102,6 +106,7 @@ impl ResourceNotFoundExceptionReason {
             ResourceNotFoundExceptionReason::PartnerProfileTaskNotFound => "PARTNER_PROFILE_TASK_NOT_FOUND",
             ResourceNotFoundExceptionReason::ReceiverProfileNotFound => "RECEIVER_PROFILE_NOT_FOUND",
             ResourceNotFoundExceptionReason::SenderProfileNotFound => "SENDER_PROFILE_NOT_FOUND",
+            ResourceNotFoundExceptionReason::VerificationNotFound => "VERIFICATION_NOT_FOUND",
             ResourceNotFoundExceptionReason::Unknown(value) => value.as_str(),
         }
     }
@@ -116,6 +121,7 @@ impl ResourceNotFoundExceptionReason {
             "PARTNER_PROFILE_TASK_NOT_FOUND",
             "RECEIVER_PROFILE_NOT_FOUND",
             "SENDER_PROFILE_NOT_FOUND",
+            "VERIFICATION_NOT_FOUND",
         ]
     }
 }
@@ -147,6 +153,7 @@ impl ::std::fmt::Display for ResourceNotFoundExceptionReason {
             ResourceNotFoundExceptionReason::PartnerProfileTaskNotFound => write!(f, "PARTNER_PROFILE_TASK_NOT_FOUND"),
             ResourceNotFoundExceptionReason::ReceiverProfileNotFound => write!(f, "RECEIVER_PROFILE_NOT_FOUND"),
             ResourceNotFoundExceptionReason::SenderProfileNotFound => write!(f, "SENDER_PROFILE_NOT_FOUND"),
+            ResourceNotFoundExceptionReason::VerificationNotFound => write!(f, "VERIFICATION_NOT_FOUND"),
             ResourceNotFoundExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }

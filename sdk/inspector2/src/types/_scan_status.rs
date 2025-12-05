@@ -31,6 +31,7 @@ pub struct ScanStatus {
     /// <p><code>STALE_INVENTORY</code> - Amazon Inspector wasn't able to collect an updated software application inventory in the last 7 days. Please confirm the required Amazon Inspector associations still exist and you can still see an updated inventory in the SSM console.</p>
     /// <p><code>SUCCESSFUL</code> - The scan was successful.</p>
     /// <p><code>UNMANAGED_EC2_INSTANCE</code> - The EC2 instance is not managed by SSM, please use the following SSM automation to remediate the issue: <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html">https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html</a>. Once the instance becomes managed by SSM, Inspector will automatically begin scanning this instance.</p>
+    /// <p><code>UNSUPPORTED_CODE_ARTIFACTS </code> - The function was not scanned because it has an unsupported code artifacts.</p>
     /// <p><code>UNSUPPORTED_CONFIG_FILE</code> - Reserved for future use.</p>
     /// <p><code>UNSUPPORTED_LANGUAGE</code> - The scan was unsuccessful because the repository contains files in an unsupported programming language.</p>
     /// <p><code>UNSUPPORTED_MEDIA_TYPE </code>- The ECR image has an unsupported media type.</p>
@@ -69,6 +70,7 @@ impl ScanStatus {
     /// <p><code>STALE_INVENTORY</code> - Amazon Inspector wasn't able to collect an updated software application inventory in the last 7 days. Please confirm the required Amazon Inspector associations still exist and you can still see an updated inventory in the SSM console.</p>
     /// <p><code>SUCCESSFUL</code> - The scan was successful.</p>
     /// <p><code>UNMANAGED_EC2_INSTANCE</code> - The EC2 instance is not managed by SSM, please use the following SSM automation to remediate the issue: <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html">https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html</a>. Once the instance becomes managed by SSM, Inspector will automatically begin scanning this instance.</p>
+    /// <p><code>UNSUPPORTED_CODE_ARTIFACTS </code> - The function was not scanned because it has an unsupported code artifacts.</p>
     /// <p><code>UNSUPPORTED_CONFIG_FILE</code> - Reserved for future use.</p>
     /// <p><code>UNSUPPORTED_LANGUAGE</code> - The scan was unsuccessful because the repository contains files in an unsupported programming language.</p>
     /// <p><code>UNSUPPORTED_MEDIA_TYPE </code>- The ECR image has an unsupported media type.</p>
@@ -134,6 +136,7 @@ impl ScanStatusBuilder {
     /// <p><code>STALE_INVENTORY</code> - Amazon Inspector wasn't able to collect an updated software application inventory in the last 7 days. Please confirm the required Amazon Inspector associations still exist and you can still see an updated inventory in the SSM console.</p>
     /// <p><code>SUCCESSFUL</code> - The scan was successful.</p>
     /// <p><code>UNMANAGED_EC2_INSTANCE</code> - The EC2 instance is not managed by SSM, please use the following SSM automation to remediate the issue: <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html">https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html</a>. Once the instance becomes managed by SSM, Inspector will automatically begin scanning this instance.</p>
+    /// <p><code>UNSUPPORTED_CODE_ARTIFACTS </code> - The function was not scanned because it has an unsupported code artifacts.</p>
     /// <p><code>UNSUPPORTED_CONFIG_FILE</code> - Reserved for future use.</p>
     /// <p><code>UNSUPPORTED_LANGUAGE</code> - The scan was unsuccessful because the repository contains files in an unsupported programming language.</p>
     /// <p><code>UNSUPPORTED_MEDIA_TYPE </code>- The ECR image has an unsupported media type.</p>
@@ -170,6 +173,7 @@ impl ScanStatusBuilder {
     /// <p><code>STALE_INVENTORY</code> - Amazon Inspector wasn't able to collect an updated software application inventory in the last 7 days. Please confirm the required Amazon Inspector associations still exist and you can still see an updated inventory in the SSM console.</p>
     /// <p><code>SUCCESSFUL</code> - The scan was successful.</p>
     /// <p><code>UNMANAGED_EC2_INSTANCE</code> - The EC2 instance is not managed by SSM, please use the following SSM automation to remediate the issue: <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html">https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html</a>. Once the instance becomes managed by SSM, Inspector will automatically begin scanning this instance.</p>
+    /// <p><code>UNSUPPORTED_CODE_ARTIFACTS </code> - The function was not scanned because it has an unsupported code artifacts.</p>
     /// <p><code>UNSUPPORTED_CONFIG_FILE</code> - Reserved for future use.</p>
     /// <p><code>UNSUPPORTED_LANGUAGE</code> - The scan was unsuccessful because the repository contains files in an unsupported programming language.</p>
     /// <p><code>UNSUPPORTED_MEDIA_TYPE </code>- The ECR image has an unsupported media type.</p>
@@ -205,6 +209,7 @@ impl ScanStatusBuilder {
     /// <p><code>STALE_INVENTORY</code> - Amazon Inspector wasn't able to collect an updated software application inventory in the last 7 days. Please confirm the required Amazon Inspector associations still exist and you can still see an updated inventory in the SSM console.</p>
     /// <p><code>SUCCESSFUL</code> - The scan was successful.</p>
     /// <p><code>UNMANAGED_EC2_INSTANCE</code> - The EC2 instance is not managed by SSM, please use the following SSM automation to remediate the issue: <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html">https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html</a>. Once the instance becomes managed by SSM, Inspector will automatically begin scanning this instance.</p>
+    /// <p><code>UNSUPPORTED_CODE_ARTIFACTS </code> - The function was not scanned because it has an unsupported code artifacts.</p>
     /// <p><code>UNSUPPORTED_CONFIG_FILE</code> - Reserved for future use.</p>
     /// <p><code>UNSUPPORTED_LANGUAGE</code> - The scan was unsuccessful because the repository contains files in an unsupported programming language.</p>
     /// <p><code>UNSUPPORTED_MEDIA_TYPE </code>- The ECR image has an unsupported media type.</p>

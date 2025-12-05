@@ -209,7 +209,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutEmailIden
                 }
                 ::std::write!(
                     output,
-                    "/v1/email/identities/{EmailIdentity}/dkim/signing",
+                    "/v2/email/identities/{EmailIdentity}/dkim/signing",
                     EmailIdentity = email_identity
                 )
                 .expect("formatting should succeed");

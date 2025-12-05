@@ -40,6 +40,7 @@
 ///     ScanStatusReason::StaleInventory => { /* ... */ },
 ///     ScanStatusReason::Successful => { /* ... */ },
 ///     ScanStatusReason::UnmanagedEc2Instance => { /* ... */ },
+///     ScanStatusReason::UnsupportedCodeArtifacts => { /* ... */ },
 ///     ScanStatusReason::UnsupportedConfigFile => { /* ... */ },
 ///     ScanStatusReason::UnsupportedLanguage => { /* ... */ },
 ///     ScanStatusReason::UnsupportedMediaType => { /* ... */ },
@@ -130,6 +131,8 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     UnmanagedEc2Instance,
     #[allow(missing_docs)] // documentation missing in model
+    UnsupportedCodeArtifacts,
+    #[allow(missing_docs)] // documentation missing in model
     UnsupportedConfigFile,
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedLanguage,
@@ -174,6 +177,7 @@ impl ::std::convert::From<&str> for ScanStatusReason {
             "STALE_INVENTORY" => ScanStatusReason::StaleInventory,
             "SUCCESSFUL" => ScanStatusReason::Successful,
             "UNMANAGED_EC2_INSTANCE" => ScanStatusReason::UnmanagedEc2Instance,
+            "UNSUPPORTED_CODE_ARTIFACTS" => ScanStatusReason::UnsupportedCodeArtifacts,
             "UNSUPPORTED_CONFIG_FILE" => ScanStatusReason::UnsupportedConfigFile,
             "UNSUPPORTED_LANGUAGE" => ScanStatusReason::UnsupportedLanguage,
             "UNSUPPORTED_MEDIA_TYPE" => ScanStatusReason::UnsupportedMediaType,
@@ -222,6 +226,7 @@ impl ScanStatusReason {
             ScanStatusReason::StaleInventory => "STALE_INVENTORY",
             ScanStatusReason::Successful => "SUCCESSFUL",
             ScanStatusReason::UnmanagedEc2Instance => "UNMANAGED_EC2_INSTANCE",
+            ScanStatusReason::UnsupportedCodeArtifacts => "UNSUPPORTED_CODE_ARTIFACTS",
             ScanStatusReason::UnsupportedConfigFile => "UNSUPPORTED_CONFIG_FILE",
             ScanStatusReason::UnsupportedLanguage => "UNSUPPORTED_LANGUAGE",
             ScanStatusReason::UnsupportedMediaType => "UNSUPPORTED_MEDIA_TYPE",
@@ -261,6 +266,7 @@ impl ScanStatusReason {
             "STALE_INVENTORY",
             "SUCCESSFUL",
             "UNMANAGED_EC2_INSTANCE",
+            "UNSUPPORTED_CODE_ARTIFACTS",
             "UNSUPPORTED_CONFIG_FILE",
             "UNSUPPORTED_LANGUAGE",
             "UNSUPPORTED_MEDIA_TYPE",
@@ -317,6 +323,7 @@ impl ::std::fmt::Display for ScanStatusReason {
             ScanStatusReason::StaleInventory => write!(f, "STALE_INVENTORY"),
             ScanStatusReason::Successful => write!(f, "SUCCESSFUL"),
             ScanStatusReason::UnmanagedEc2Instance => write!(f, "UNMANAGED_EC2_INSTANCE"),
+            ScanStatusReason::UnsupportedCodeArtifacts => write!(f, "UNSUPPORTED_CODE_ARTIFACTS"),
             ScanStatusReason::UnsupportedConfigFile => write!(f, "UNSUPPORTED_CONFIG_FILE"),
             ScanStatusReason::UnsupportedLanguage => write!(f, "UNSUPPORTED_LANGUAGE"),
             ScanStatusReason::UnsupportedMediaType => write!(f, "UNSUPPORTED_MEDIA_TYPE"),

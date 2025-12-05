@@ -12,6 +12,7 @@
 /// ```text
 /// # let conflictexceptionreason = unimplemented!();
 /// match conflictexceptionreason {
+///     ConflictExceptionReason::AccountAlreadyVerified => { /* ... */ },
 ///     ConflictExceptionReason::ConflictClientToken => { /* ... */ },
 ///     ConflictExceptionReason::DuplicateConnection => { /* ... */ },
 ///     ConflictExceptionReason::DuplicateConnectionInvitation => { /* ... */ },
@@ -22,6 +23,7 @@
 ///     ConflictExceptionReason::IncompatibleConnectionState => { /* ... */ },
 ///     ConflictExceptionReason::IncompatiblePartnerProfileTaskState => { /* ... */ },
 ///     ConflictExceptionReason::IncompatibleProfileState => { /* ... */ },
+///     ConflictExceptionReason::VerificationAlreadyInProgress => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +53,8 @@
 )]
 pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
+    AccountAlreadyVerified,
+    #[allow(missing_docs)] // documentation missing in model
     ConflictClientToken,
     #[allow(missing_docs)] // documentation missing in model
     DuplicateConnection,
@@ -70,6 +74,8 @@ pub enum ConflictExceptionReason {
     IncompatiblePartnerProfileTaskState,
     #[allow(missing_docs)] // documentation missing in model
     IncompatibleProfileState,
+    #[allow(missing_docs)] // documentation missing in model
+    VerificationAlreadyInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -77,6 +83,7 @@ pub enum ConflictExceptionReason {
 impl ::std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
+            "ACCOUNT_ALREADY_VERIFIED" => ConflictExceptionReason::AccountAlreadyVerified,
             "CONFLICT_CLIENT_TOKEN" => ConflictExceptionReason::ConflictClientToken,
             "DUPLICATE_CONNECTION" => ConflictExceptionReason::DuplicateConnection,
             "DUPLICATE_CONNECTION_INVITATION" => ConflictExceptionReason::DuplicateConnectionInvitation,
@@ -87,6 +94,7 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
             "INCOMPATIBLE_CONNECTION_STATE" => ConflictExceptionReason::IncompatibleConnectionState,
             "INCOMPATIBLE_PARTNER_PROFILE_TASK_STATE" => ConflictExceptionReason::IncompatiblePartnerProfileTaskState,
             "INCOMPATIBLE_PROFILE_STATE" => ConflictExceptionReason::IncompatibleProfileState,
+            "VERIFICATION_ALREADY_IN_PROGRESS" => ConflictExceptionReason::VerificationAlreadyInProgress,
             other => ConflictExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -102,6 +110,7 @@ impl ConflictExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConflictExceptionReason::AccountAlreadyVerified => "ACCOUNT_ALREADY_VERIFIED",
             ConflictExceptionReason::ConflictClientToken => "CONFLICT_CLIENT_TOKEN",
             ConflictExceptionReason::DuplicateConnection => "DUPLICATE_CONNECTION",
             ConflictExceptionReason::DuplicateConnectionInvitation => "DUPLICATE_CONNECTION_INVITATION",
@@ -112,12 +121,14 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::IncompatibleConnectionState => "INCOMPATIBLE_CONNECTION_STATE",
             ConflictExceptionReason::IncompatiblePartnerProfileTaskState => "INCOMPATIBLE_PARTNER_PROFILE_TASK_STATE",
             ConflictExceptionReason::IncompatibleProfileState => "INCOMPATIBLE_PROFILE_STATE",
+            ConflictExceptionReason::VerificationAlreadyInProgress => "VERIFICATION_ALREADY_IN_PROGRESS",
             ConflictExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ACCOUNT_ALREADY_VERIFIED",
             "CONFLICT_CLIENT_TOKEN",
             "DUPLICATE_CONNECTION",
             "DUPLICATE_CONNECTION_INVITATION",
@@ -128,6 +139,7 @@ impl ConflictExceptionReason {
             "INCOMPATIBLE_CONNECTION_STATE",
             "INCOMPATIBLE_PARTNER_PROFILE_TASK_STATE",
             "INCOMPATIBLE_PROFILE_STATE",
+            "VERIFICATION_ALREADY_IN_PROGRESS",
         ]
     }
 }
@@ -151,6 +163,7 @@ impl ConflictExceptionReason {
 impl ::std::fmt::Display for ConflictExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ConflictExceptionReason::AccountAlreadyVerified => write!(f, "ACCOUNT_ALREADY_VERIFIED"),
             ConflictExceptionReason::ConflictClientToken => write!(f, "CONFLICT_CLIENT_TOKEN"),
             ConflictExceptionReason::DuplicateConnection => write!(f, "DUPLICATE_CONNECTION"),
             ConflictExceptionReason::DuplicateConnectionInvitation => write!(f, "DUPLICATE_CONNECTION_INVITATION"),
@@ -161,6 +174,7 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::IncompatibleConnectionState => write!(f, "INCOMPATIBLE_CONNECTION_STATE"),
             ConflictExceptionReason::IncompatiblePartnerProfileTaskState => write!(f, "INCOMPATIBLE_PARTNER_PROFILE_TASK_STATE"),
             ConflictExceptionReason::IncompatibleProfileState => write!(f, "INCOMPATIBLE_PROFILE_STATE"),
+            ConflictExceptionReason::VerificationAlreadyInProgress => write!(f, "VERIFICATION_ALREADY_IN_PROGRESS"),
             ConflictExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }
