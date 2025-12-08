@@ -319,6 +319,8 @@ pub(crate) mod shape_aws_marketplace_offer_set_identifiers;
 
 pub(crate) mod shape_aws_product_identifiers;
 
+pub(crate) mod shape_aws_products_spend_insights_by_source;
+
 pub(crate) mod shape_aws_team_member;
 
 pub(crate) mod shape_channels;
@@ -385,6 +387,8 @@ pub(crate) mod shape_validation_exception_error;
 
 pub(crate) mod shape_address;
 
+pub(crate) mod shape_aws_product_insights;
+
 pub(crate) mod shape_customer_summary;
 
 pub(crate) mod shape_engagement_context_type_list;
@@ -421,8 +425,20 @@ pub(crate) mod shape_account_summary;
 
 pub(crate) mod shape_address_summary;
 
+pub(crate) mod shape_amount_map;
+
+pub(crate) mod shape_aws_products_list;
+
 pub(crate) mod shape_lead_contact;
 
 pub(crate) mod shape_sender_contact;
 
+pub(crate) mod shape_aws_product_details;
+
 pub(crate) mod shape_lead_interaction_list;
+
+pub(crate) mod shape_aws_product_optimizations_list;
+
+pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_aws_product_optimization;

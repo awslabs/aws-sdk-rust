@@ -113,6 +113,8 @@ pub use crate::types::_ip_range::IpRange;
 
 pub use crate::types::_ec2_security_group::Ec2SecurityGroup;
 
+pub use crate::types::_tag_specification::TagSpecification;
+
 pub use crate::types::_scaling_configuration::ScalingConfiguration;
 
 pub use crate::types::_serverless_v2_scaling_configuration::ServerlessV2ScalingConfiguration;
@@ -616,6 +618,8 @@ mod _supported_engine_lifecycle;
 mod _switchover_detail;
 
 mod _tag;
+
+mod _tag_specification;
 
 mod _target_connection_network_type;
 

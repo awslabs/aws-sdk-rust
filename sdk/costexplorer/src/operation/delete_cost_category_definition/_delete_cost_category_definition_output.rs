@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCostCategoryDefinitionOutput {
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category.</p>
+    /// <p>The effective end date of the cost category as a result of deleting it. No costs after this date is categorized by the deleted cost category.</p>
     pub effective_end: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteCostCategoryDefinitionOutput {
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn cost_category_arn(&self) -> ::std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category.</p>
+    /// <p>The effective end date of the cost category as a result of deleting it. No costs after this date is categorized by the deleted cost category.</p>
     pub fn effective_end(&self) -> ::std::option::Option<&str> {
         self.effective_end.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct DeleteCostCategoryDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteCostCategoryDefinitionOutputBuilder {
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost_category_arn = input;
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cost_category_arn
     }
-    /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category.</p>
+    /// <p>The effective end date of the cost category as a result of deleting it. No costs after this date is categorized by the deleted cost category.</p>
     pub fn effective_end(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_end = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category.</p>
+    /// <p>The effective end date of the cost category as a result of deleting it. No costs after this date is categorized by the deleted cost category.</p>
     pub fn set_effective_end(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_end = input;
         self
     }
-    /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category.</p>
+    /// <p>The effective end date of the cost category as a result of deleting it. No costs after this date is categorized by the deleted cost category.</p>
     pub fn get_effective_end(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_end
     }

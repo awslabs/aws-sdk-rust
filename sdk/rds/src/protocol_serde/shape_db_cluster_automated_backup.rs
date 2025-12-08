@@ -341,6 +341,16 @@ pub fn de_db_cluster_automated_backup(
                 builder = builder.set_aws_backup_recovery_point_arn(var_25);
             }
             ,
+            s if s.matches("TagList") /* TagList com.amazonaws.rds#DBClusterAutomatedBackup$TagList */ =>  {
+                let var_26 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_26);
+            }
+            ,
             _ => {}
         }
     }

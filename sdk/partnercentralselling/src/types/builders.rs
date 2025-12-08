@@ -45,6 +45,14 @@ pub use crate::types::_aws_opportunity_related_entities::AwsOpportunityRelatedEn
 
 pub use crate::types::_aws_opportunity_insights::AwsOpportunityInsightsBuilder;
 
+pub use crate::types::_aws_products_spend_insights_by_source::AwsProductsSpendInsightsBySourceBuilder;
+
+pub use crate::types::_aws_product_insights::AwsProductInsightsBuilder;
+
+pub use crate::types::_aws_product_details::AwsProductDetailsBuilder;
+
+pub use crate::types::_aws_product_optimization::AwsProductOptimizationBuilder;
+
 pub use crate::types::_aws_team_member::AwsTeamMemberBuilder;
 
 pub use crate::types::_aws_opportunity_life_cycle::AwsOpportunityLifeCycleBuilder;

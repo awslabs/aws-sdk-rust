@@ -408,8 +408,18 @@ pub fn de_db_instance_automated_backup(
                 builder = builder.set_aws_backup_recovery_point_arn(var_30);
             }
             ,
-            s if s.matches("DedicatedLogVolume") /* DedicatedLogVolume com.amazonaws.rds#DBInstanceAutomatedBackup$DedicatedLogVolume */ =>  {
+            s if s.matches("TagList") /* TagList com.amazonaws.rds#DBInstanceAutomatedBackup$TagList */ =>  {
                 let var_31 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_31);
+            }
+            ,
+            s if s.matches("DedicatedLogVolume") /* DedicatedLogVolume com.amazonaws.rds#DBInstanceAutomatedBackup$DedicatedLogVolume */ =>  {
+                let var_32 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -420,17 +430,17 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_dedicated_log_volume(var_31);
+                builder = builder.set_dedicated_log_volume(var_32);
             }
             ,
             s if s.matches("AdditionalStorageVolumes") /* AdditionalStorageVolumes com.amazonaws.rds#DBInstanceAutomatedBackup$AdditionalStorageVolumes */ =>  {
-                let var_32 =
+                let var_33 =
                     Some(
                         crate::protocol_serde::shape_additional_storage_volumes_list::de_additional_storage_volumes_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_additional_storage_volumes(var_32);
+                builder = builder.set_additional_storage_volumes(var_33);
             }
             ,
             _ => {}

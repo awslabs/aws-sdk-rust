@@ -23,6 +23,17 @@ pub fn ser_promote_read_replica_input_input_input(
     if let Some(var_6) = &input.preferred_backup_window {
         scope_5.string(var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("TagSpecifications");
+    if let Some(var_8) = &input.tag_specifications {
+        let mut list_10 = scope_7.start_list(false, Some("item"));
+        for item_9 in var_8 {
+            #[allow(unused_mut)]
+            let mut entry_11 = list_10.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_11, item_9)?;
+        }
+        list_10.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

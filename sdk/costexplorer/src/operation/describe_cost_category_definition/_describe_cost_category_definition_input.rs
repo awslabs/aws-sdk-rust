@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCostCategoryDefinitionInput {
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub effective_on: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCostCategoryDefinitionInput {
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn cost_category_arn(&self) -> ::std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn effective_on(&self) -> ::std::option::Option<&str> {
         self.effective_on.as_deref()
     }
@@ -33,32 +33,32 @@ pub struct DescribeCostCategoryDefinitionInputBuilder {
     pub(crate) effective_on: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCostCategoryDefinitionInputBuilder {
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     /// This field is required.
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost_category_arn = input;
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cost_category_arn
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn effective_on(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_on = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn set_effective_on(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_on = input;
         self
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn get_effective_on(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_on
     }

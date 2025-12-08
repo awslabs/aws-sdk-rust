@@ -37,6 +37,8 @@ pub struct CreateUserInput {
     pub website: ::std::option::Option<::std::string::String>,
     /// <p>The user's birthdate in YYYY-MM-DD format. This field supports standard date format for storing personal information.</p>
     pub birthdate: ::std::option::Option<::std::string::String>,
+    /// <p>A map with additional attribute extensions for the user. Each map key corresponds to an extension name, while map values represent extension data in <code>Document</code> type (not supported by Java V1, Go V1 and older versions of the CLI). <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
+    pub extensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl CreateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
@@ -115,6 +117,10 @@ impl CreateUserInput {
     pub fn birthdate(&self) -> ::std::option::Option<&str> {
         self.birthdate.as_deref()
     }
+    /// <p>A map with additional attribute extensions for the user. Each map key corresponds to an extension name, while map values represent extension data in <code>Document</code> type (not supported by Java V1, Go V1 and older versions of the CLI). <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
+    pub fn extensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        self.extensions.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -136,6 +142,7 @@ impl ::std::fmt::Debug for CreateUserInput {
         formatter.field("photos", &self.photos);
         formatter.field("website", &"*** Sensitive Data Redacted ***");
         formatter.field("birthdate", &"*** Sensitive Data Redacted ***");
+        formatter.field("extensions", &self.extensions);
         formatter.finish()
     }
 }
@@ -167,6 +174,7 @@ pub struct CreateUserInputBuilder {
     pub(crate) photos: ::std::option::Option<::std::vec::Vec<crate::types::Photo>>,
     pub(crate) website: ::std::option::Option<::std::string::String>,
     pub(crate) birthdate: ::std::option::Option<::std::string::String>,
+    pub(crate) extensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl CreateUserInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
@@ -432,6 +440,29 @@ impl CreateUserInputBuilder {
     pub fn get_birthdate(&self) -> &::std::option::Option<::std::string::String> {
         &self.birthdate
     }
+    /// Adds a key-value pair to `extensions`.
+    ///
+    /// To override the contents of this collection use [`set_extensions`](Self::set_extensions).
+    ///
+    /// <p>A map with additional attribute extensions for the user. Each map key corresponds to an extension name, while map values represent extension data in <code>Document</code> type (not supported by Java V1, Go V1 and older versions of the CLI). <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
+    pub fn extensions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::aws_smithy_types::Document) -> Self {
+        let mut hash_map = self.extensions.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.extensions = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map with additional attribute extensions for the user. Each map key corresponds to an extension name, while map values represent extension data in <code>Document</code> type (not supported by Java V1, Go V1 and older versions of the CLI). <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
+    pub fn set_extensions(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    ) -> Self {
+        self.extensions = input;
+        self
+    }
+    /// <p>A map with additional attribute extensions for the user. Each map key corresponds to an extension name, while map values represent extension data in <code>Document</code> type (not supported by Java V1, Go V1 and older versions of the CLI). <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
+    pub fn get_extensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        &self.extensions
+    }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
@@ -452,6 +483,7 @@ impl CreateUserInputBuilder {
             photos: self.photos,
             website: self.website,
             birthdate: self.birthdate,
+            extensions: self.extensions,
         })
     }
 }
@@ -475,6 +507,7 @@ impl ::std::fmt::Debug for CreateUserInputBuilder {
         formatter.field("photos", &self.photos);
         formatter.field("website", &"*** Sensitive Data Redacted ***");
         formatter.field("birthdate", &"*** Sensitive Data Redacted ***");
+        formatter.field("extensions", &self.extensions);
         formatter.finish()
     }
 }

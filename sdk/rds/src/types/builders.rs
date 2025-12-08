@@ -85,6 +85,8 @@ pub use crate::types::_ip_range::IpRangeBuilder;
 
 pub use crate::types::_ec2_security_group::Ec2SecurityGroupBuilder;
 
+pub use crate::types::_tag_specification::TagSpecificationBuilder;
+
 pub use crate::types::_scaling_configuration::ScalingConfigurationBuilder;
 
 pub use crate::types::_serverless_v2_scaling_configuration::ServerlessV2ScalingConfigurationBuilder;

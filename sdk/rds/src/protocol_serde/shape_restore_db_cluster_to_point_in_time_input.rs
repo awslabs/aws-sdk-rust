@@ -213,6 +213,17 @@ pub fn ser_restore_db_cluster_to_point_in_time_input_input_input(
     if let Some(var_79) = &input.engine_lifecycle_support {
         scope_78.string(var_79);
     }
+    #[allow(unused_mut)]
+    let mut scope_80 = writer.prefix("TagSpecifications");
+    if let Some(var_81) = &input.tag_specifications {
+        let mut list_83 = scope_80.start_list(false, Some("item"));
+        for item_82 in var_81 {
+            #[allow(unused_mut)]
+            let mut entry_84 = list_83.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_84, item_82)?;
+        }
+        list_83.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

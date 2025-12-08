@@ -53,6 +53,8 @@ pub struct User {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the user or system that last updated the user.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
+    /// <p>A map of explicitly requested attribute extensions associated with the user. Not populated if the user has no requested extensions.</p>
+    pub extensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl User {
     /// <p>The globally unique identifier for the identity store.</p>
@@ -164,6 +166,10 @@ impl User {
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
+    /// <p>A map of explicitly requested attribute extensions associated with the user. Not populated if the user has no requested extensions.</p>
+    pub fn extensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        self.extensions.as_ref()
+    }
 }
 impl ::std::fmt::Debug for User {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -192,6 +198,7 @@ impl ::std::fmt::Debug for User {
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field("extensions", &self.extensions);
         formatter.finish()
     }
 }
@@ -230,6 +237,7 @@ pub struct UserBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
+    pub(crate) extensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl UserBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
@@ -603,6 +611,29 @@ impl UserBuilder {
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
+    /// Adds a key-value pair to `extensions`.
+    ///
+    /// To override the contents of this collection use [`set_extensions`](Self::set_extensions).
+    ///
+    /// <p>A map of explicitly requested attribute extensions associated with the user. Not populated if the user has no requested extensions.</p>
+    pub fn extensions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::aws_smithy_types::Document) -> Self {
+        let mut hash_map = self.extensions.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.extensions = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of explicitly requested attribute extensions associated with the user. Not populated if the user has no requested extensions.</p>
+    pub fn set_extensions(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    ) -> Self {
+        self.extensions = input;
+        self
+    }
+    /// <p>A map of explicitly requested attribute extensions associated with the user. Not populated if the user has no requested extensions.</p>
+    pub fn get_extensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        &self.extensions
+    }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     /// This method will fail if any of the following fields are not set:
     /// - [`identity_store_id`](crate::types::builders::UserBuilder::identity_store_id)
@@ -643,6 +674,7 @@ impl UserBuilder {
             created_by: self.created_by,
             updated_at: self.updated_at,
             updated_by: self.updated_by,
+            extensions: self.extensions,
         })
     }
 }
@@ -673,6 +705,7 @@ impl ::std::fmt::Debug for UserBuilder {
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field("extensions", &self.extensions);
         formatter.finish()
     }
 }

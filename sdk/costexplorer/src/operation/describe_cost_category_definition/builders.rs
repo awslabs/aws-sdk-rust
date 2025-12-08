@@ -22,8 +22,8 @@ impl crate::operation::describe_cost_category_definition::builders::DescribeCost
 }
 /// Fluent builder constructing a request to `DescribeCostCategoryDefinition`.
 ///
-/// <p>Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates of a Cost Category that's defined in the account.</p>
-/// <p>You have the option to use <code>EffectiveOn</code> to return a Cost Category that's active on a specific date. If there's no <code>EffectiveOn</code> specified, you see a Cost Category that's effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response.</p>
+/// <p>Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates of a cost category that's defined in the account.</p>
+/// <p>You have the option to use <code>EffectiveOn</code> to return a cost category that's active on a specific date. If there's no <code>EffectiveOn</code> specified, you see a Cost Category that's effective on the current date. If cost category is still effective, <code>EffectiveEnd</code> is omitted in the response.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCostCategoryDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,31 +109,31 @@ impl DescribeCostCategoryDefinitionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cost_category_arn(input.into());
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cost_category_arn(input);
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cost_category_arn()
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn effective_on(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.effective_on(input.into());
         self
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn set_effective_on(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_effective_on(input);
         self
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn get_effective_on(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_effective_on()
     }

@@ -291,6 +291,13 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
     /// <p>Default: <code>open-source-rds-extended-support</code></p>
     pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager in the restored DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
@@ -690,6 +697,17 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
         self.engine_lifecycle_support.as_deref()
     }
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
+    }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager in the restored DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
@@ -760,6 +778,7 @@ impl ::std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("manage_master_user_password", &self.manage_master_user_password);
         formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
@@ -819,6 +838,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
@@ -2052,6 +2072,41 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_lifecycle_support
     }
+    /// Appends an item to `tag_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        let mut v = self.tag_specifications.unwrap_or_default();
+        v.push(input);
+        self.tag_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input;
+        self
+    }
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager in the restored DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
@@ -2181,6 +2236,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
                 dedicated_log_volume: self.dedicated_log_volume,
                 ca_certificate_identifier: self.ca_certificate_identifier,
                 engine_lifecycle_support: self.engine_lifecycle_support,
+                tag_specifications: self.tag_specifications,
                 manage_master_user_password: self.manage_master_user_password,
                 master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
                 additional_storage_volumes: self.additional_storage_volumes,
@@ -2233,6 +2289,7 @@ impl ::std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInputBuilder {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("manage_master_user_password", &self.manage_master_user_password);
         formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);

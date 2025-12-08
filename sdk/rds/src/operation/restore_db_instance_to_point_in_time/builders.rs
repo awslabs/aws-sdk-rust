@@ -1503,6 +1503,40 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine_lifecycle_support()
     }
+    ///
+    /// Appends an item to `TagSpecifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        self.inner = self.inner.tag_specifications(input);
+        self
+    }
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.inner = self.inner.set_tag_specifications(input);
+        self
+    }
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Specifies whether to manage the master user password with Amazon Web Services Secrets Manager in the restored DB instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>

@@ -73,6 +73,8 @@ pub use crate::types::_generation_summary::GenerationSummary;
 
 pub use crate::types::_generation_status::GenerationStatus;
 
+pub use crate::types::_cost_category_resource_association::CostCategoryResourceAssociation;
+
 pub use crate::types::_cost_category_reference::CostCategoryReference;
 
 pub use crate::types::_cost_category_processing_status::CostCategoryProcessingStatus;
@@ -332,6 +334,8 @@ mod _cost_category_inherited_value_dimension_name;
 mod _cost_category_processing_status;
 
 mod _cost_category_reference;
+
+mod _cost_category_resource_association;
 
 mod _cost_category_rule;
 

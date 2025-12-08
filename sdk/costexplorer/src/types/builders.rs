@@ -35,6 +35,8 @@ pub use crate::types::_savings_plans::SavingsPlansBuilder;
 
 pub use crate::types::_generation_summary::GenerationSummaryBuilder;
 
+pub use crate::types::_cost_category_resource_association::CostCategoryResourceAssociationBuilder;
+
 pub use crate::types::_cost_category_reference::CostCategoryReferenceBuilder;
 
 pub use crate::types::_cost_category_processing_status::CostCategoryProcessingStatusBuilder;

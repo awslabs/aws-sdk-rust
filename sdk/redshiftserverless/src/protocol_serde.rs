@@ -67,6 +67,8 @@ pub(crate) mod shape_get_custom_domain_association;
 
 pub(crate) mod shape_get_endpoint_access;
 
+pub(crate) mod shape_get_identity_center_auth_token;
+
 pub(crate) mod shape_get_namespace;
 
 pub(crate) mod shape_get_recovery_point;
@@ -208,6 +210,8 @@ pub(crate) mod shape_get_credentials_input;
 pub(crate) mod shape_get_custom_domain_association_input;
 
 pub(crate) mod shape_get_endpoint_access_input;
+
+pub(crate) mod shape_get_identity_center_auth_token_input;
 
 pub(crate) mod shape_get_namespace_input;
 

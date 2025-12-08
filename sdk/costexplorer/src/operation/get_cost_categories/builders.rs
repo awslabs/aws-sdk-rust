@@ -22,8 +22,8 @@ impl crate::operation::get_cost_categories::builders::GetCostCategoriesInputBuil
 }
 /// Fluent builder constructing a request to `GetCostCategories`.
 ///
-/// <p>Retrieves an array of Cost Category names and values incurred cost.</p><note>
-/// <p>If some Cost Category names and values are not associated with any cost, they will not be returned by this API.</p>
+/// <p>Retrieves an array of cost category names and values incurred cost.</p><note>
+/// <p>If some cost category names and values are not associated with any cost, they will not be returned by this API.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCostCategoriesFluentBuilder {
@@ -111,19 +111,19 @@ impl GetCostCategoriesFluentBuilder {
         self
     }
     /// <p>The value that you want to search the filter values for.</p>
-    /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
+    /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter cost category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter cost category values that match the <code>SearchString</code> pattern.</p>
     pub fn search_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.search_string(input.into());
         self
     }
     /// <p>The value that you want to search the filter values for.</p>
-    /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
+    /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter cost category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter cost category values that match the <code>SearchString</code> pattern.</p>
     pub fn set_search_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_search_string(input);
         self
     }
     /// <p>The value that you want to search the filter values for.</p>
-    /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
+    /// <p>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter cost category names that match the <code>SearchString</code> pattern. If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to filter cost category values that match the <code>SearchString</code> pattern.</p>
     pub fn get_search_string(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_search_string()
     }
@@ -141,17 +141,17 @@ impl GetCostCategoriesFluentBuilder {
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
         self.inner.get_time_period()
     }
-    /// <p>The unique name of the Cost Category.</p>
+    /// <p>The unique name of the cost category.</p>
     pub fn cost_category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cost_category_name(input.into());
         self
     }
-    /// <p>The unique name of the Cost Category.</p>
+    /// <p>The unique name of the cost category.</p>
     pub fn set_cost_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cost_category_name(input);
         self
     }
-    /// <p>The unique name of the Cost Category.</p>
+    /// <p>The unique name of the cost category.</p>
     pub fn get_cost_category_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cost_category_name()
     }

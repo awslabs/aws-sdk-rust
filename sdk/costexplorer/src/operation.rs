@@ -103,6 +103,9 @@ pub mod list_cost_allocation_tags;
 /// Types for the `ListCostCategoryDefinitions` operation.
 pub mod list_cost_category_definitions;
 
+/// Types for the `ListCostCategoryResourceAssociations` operation.
+pub mod list_cost_category_resource_associations;
+
 /// Types for the `ListSavingsPlansPurchaseRecommendationGeneration` operation.
 pub mod list_savings_plans_purchase_recommendation_generation;
 

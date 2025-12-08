@@ -110,6 +110,15 @@ pub(crate) fn delete_workgroup_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn dry_run_exception_correct_errors(
+    mut builder: crate::types::error::builders::DryRunExceptionBuilder,
+) -> crate::types::error::builders::DryRunExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_namespace_output_output_correct_errors(
     mut builder: crate::operation::get_namespace::builders::GetNamespaceOutputBuilder,
 ) -> crate::operation::get_namespace::builders::GetNamespaceOutputBuilder {
@@ -217,15 +226,6 @@ pub(crate) fn list_workgroups_output_output_correct_errors(
 ) -> crate::operation::list_workgroups::builders::ListWorkgroupsOutputBuilder {
     if builder.workgroups.is_none() {
         builder.workgroups = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn dry_run_exception_correct_errors(
-    mut builder: crate::types::error::builders::DryRunExceptionBuilder,
-) -> crate::types::error::builders::DryRunExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
     }
     builder
 }

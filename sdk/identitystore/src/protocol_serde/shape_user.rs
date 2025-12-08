@@ -156,6 +156,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Extensions" => {
+                            builder = builder.set_extensions(crate::protocol_serde::shape_extensions::de_extensions(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

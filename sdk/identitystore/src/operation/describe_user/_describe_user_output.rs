@@ -51,6 +51,8 @@ pub struct DescribeUserOutput {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the user or system that last updated the user.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
+    /// <p>A map of explicitly requested attribute extensions associated with the user. Not populated if the user has no requested extensions.</p>
+    pub extensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
     _request_id: Option<String>,
 }
 impl DescribeUserOutput {
@@ -162,6 +164,10 @@ impl DescribeUserOutput {
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
+    /// <p>A map of explicitly requested attribute extensions associated with the user. Not populated if the user has no requested extensions.</p>
+    pub fn extensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        self.extensions.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DescribeUserOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -190,6 +196,7 @@ impl ::std::fmt::Debug for DescribeUserOutput {
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field("extensions", &self.extensions);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -234,6 +241,7 @@ pub struct DescribeUserOutputBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
+    pub(crate) extensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
     _request_id: Option<String>,
 }
 impl DescribeUserOutputBuilder {
@@ -605,6 +613,29 @@ impl DescribeUserOutputBuilder {
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
+    /// Adds a key-value pair to `extensions`.
+    ///
+    /// To override the contents of this collection use [`set_extensions`](Self::set_extensions).
+    ///
+    /// <p>A map of explicitly requested attribute extensions associated with the user. Not populated if the user has no requested extensions.</p>
+    pub fn extensions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::aws_smithy_types::Document) -> Self {
+        let mut hash_map = self.extensions.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.extensions = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of explicitly requested attribute extensions associated with the user. Not populated if the user has no requested extensions.</p>
+    pub fn set_extensions(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    ) -> Self {
+        self.extensions = input;
+        self
+    }
+    /// <p>A map of explicitly requested attribute extensions associated with the user. Not populated if the user has no requested extensions.</p>
+    pub fn get_extensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        &self.extensions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -656,6 +687,7 @@ impl DescribeUserOutputBuilder {
             created_by: self.created_by,
             updated_at: self.updated_at,
             updated_by: self.updated_by,
+            extensions: self.extensions,
             _request_id: self._request_id,
         })
     }
@@ -687,6 +719,7 @@ impl ::std::fmt::Debug for DescribeUserOutputBuilder {
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field("extensions", &self.extensions);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

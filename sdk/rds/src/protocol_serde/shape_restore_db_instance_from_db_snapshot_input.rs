@@ -258,25 +258,36 @@ pub fn ser_restore_db_instance_from_db_snapshot_input_input_input(
         scope_98.string(var_99);
     }
     #[allow(unused_mut)]
-    let mut scope_100 = writer.prefix("ManageMasterUserPassword");
-    if let Some(var_101) = &input.manage_master_user_password {
-        scope_100.boolean(*var_101);
-    }
-    #[allow(unused_mut)]
-    let mut scope_102 = writer.prefix("MasterUserSecretKmsKeyId");
-    if let Some(var_103) = &input.master_user_secret_kms_key_id {
-        scope_102.string(var_103);
-    }
-    #[allow(unused_mut)]
-    let mut scope_104 = writer.prefix("AdditionalStorageVolumes");
-    if let Some(var_105) = &input.additional_storage_volumes {
-        let mut list_107 = scope_104.start_list(false, None);
-        for item_106 in var_105 {
+    let mut scope_100 = writer.prefix("TagSpecifications");
+    if let Some(var_101) = &input.tag_specifications {
+        let mut list_103 = scope_100.start_list(false, Some("item"));
+        for item_102 in var_101 {
             #[allow(unused_mut)]
-            let mut entry_108 = list_107.entry();
-            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_108, item_106)?;
+            let mut entry_104 = list_103.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_104, item_102)?;
         }
-        list_107.finish();
+        list_103.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_105 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_106) = &input.manage_master_user_password {
+        scope_105.boolean(*var_106);
+    }
+    #[allow(unused_mut)]
+    let mut scope_107 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_108) = &input.master_user_secret_kms_key_id {
+        scope_107.string(var_108);
+    }
+    #[allow(unused_mut)]
+    let mut scope_109 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_110) = &input.additional_storage_volumes {
+        let mut list_112 = scope_109.start_list(false, None);
+        for item_111 in var_110 {
+            #[allow(unused_mut)]
+            let mut entry_113 = list_112.entry();
+            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_113, item_111)?;
+        }
+        list_112.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

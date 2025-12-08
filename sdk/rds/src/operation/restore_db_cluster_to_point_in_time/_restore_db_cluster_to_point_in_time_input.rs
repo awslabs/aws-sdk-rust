@@ -241,6 +241,13 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
     /// <p>Default: <code>open-source-rds-extended-support</code></p>
     pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    /// <p>Tags to assign to resources associated with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>cluster-auto-backup</code> - The DB cluster's automated backup.</p></li>
+    /// </ul>
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -556,6 +563,17 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
         self.engine_lifecycle_support.as_deref()
     }
+    /// <p>Tags to assign to resources associated with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>cluster-auto-backup</code> - The DB cluster's automated backup.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
+    }
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
@@ -603,6 +621,7 @@ pub struct RestoreDbClusterToPointInTimeInputBuilder {
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -1615,6 +1634,41 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_lifecycle_support
     }
+    /// Appends an item to `tag_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>Tags to assign to resources associated with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>cluster-auto-backup</code> - The DB cluster's automated backup.</p></li>
+    /// </ul>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        let mut v = self.tag_specifications.unwrap_or_default();
+        v.push(input);
+        self.tag_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Tags to assign to resources associated with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>cluster-auto-backup</code> - The DB cluster's automated backup.</p></li>
+    /// </ul>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input;
+        self
+    }
+    /// <p>Tags to assign to resources associated with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>cluster-auto-backup</code> - The DB cluster's automated backup.</p></li>
+    /// </ul>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
     pub fn build(
         self,
@@ -1659,6 +1713,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
                 performance_insights_kms_key_id: self.performance_insights_kms_key_id,
                 performance_insights_retention_period: self.performance_insights_retention_period,
                 engine_lifecycle_support: self.engine_lifecycle_support,
+                tag_specifications: self.tag_specifications,
             },
         )
     }

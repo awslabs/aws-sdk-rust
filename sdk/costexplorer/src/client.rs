@@ -231,6 +231,8 @@ mod list_cost_allocation_tags;
 
 mod list_cost_category_definitions;
 
+mod list_cost_category_resource_associations;
+
 mod list_savings_plans_purchase_recommendation_generation;
 
 mod list_tags_for_resource;

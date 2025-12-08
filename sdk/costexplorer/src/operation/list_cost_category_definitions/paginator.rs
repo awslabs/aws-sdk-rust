@@ -27,6 +27,14 @@ impl ListCostCategoryDefinitionsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `cost_category_references`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginatorItems {
+        crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginatorItems(self)
+    }
+
     /// Stop paginating when the service returns the same pagination token twice in a row.
     ///
     /// Defaults to true.
@@ -109,5 +117,36 @@ impl ListCostCategoryDefinitionsPaginator {
                 })
             },
         ))
+    }
+}
+
+/// Flattened paginator for `ListCostCategoryDefinitionsPaginator`
+///
+/// This is created with [`.items()`](ListCostCategoryDefinitionsPaginator::items)
+pub struct ListCostCategoryDefinitionsPaginatorItems(ListCostCategoryDefinitionsPaginator);
+
+impl ListCostCategoryDefinitionsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note_: No requests will be dispatched until the stream is used
+    /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](aws_smithy_async::future::pagination_stream::PaginationStream::collect).
+    pub fn send(
+        self,
+    ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
+        ::std::result::Result<
+            crate::types::CostCategoryReference,
+            ::aws_smithy_runtime_api::client::result::SdkError<
+                crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
+        >,
+    > {
+        ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_cost_category_definitions_output_output_cost_category_references(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

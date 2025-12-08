@@ -207,6 +207,8 @@ mod get_custom_domain_association;
 
 mod get_endpoint_access;
 
+mod get_identity_center_auth_token;
+
 mod get_namespace;
 
 mod get_recovery_point;

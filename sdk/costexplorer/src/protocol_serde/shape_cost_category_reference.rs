@@ -66,6 +66,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SupportedResourceTypes" => {
+                            builder = builder.set_supported_resource_types(crate::protocol_serde::shape_resource_types::de_resource_types(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

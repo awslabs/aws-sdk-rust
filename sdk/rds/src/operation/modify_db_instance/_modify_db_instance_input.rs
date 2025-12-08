@@ -537,6 +537,13 @@ pub struct ModifyDbInstanceInput {
     /// <p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p></li>
     /// </ul>
     pub engine: ::std::option::Option<::std::string::String>,
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
     /// <p>You can specify one of the following values:</p>
     /// <ul>
@@ -1214,6 +1221,17 @@ impl ModifyDbInstanceInput {
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
+    }
     /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
     /// <p>You can specify one of the following values:</p>
     /// <ul>
@@ -1297,6 +1315,7 @@ impl ::std::fmt::Debug for ModifyDbInstanceInput {
         formatter.field("multi_tenant", &self.multi_tenant);
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine", &self.engine);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.finish()
@@ -1374,6 +1393,7 @@ pub struct ModifyDbInstanceInputBuilder {
     pub(crate) multi_tenant: ::std::option::Option<bool>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
     pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::ModifyAdditionalStorageVolume>>,
 }
@@ -3490,6 +3510,41 @@ impl ModifyDbInstanceInputBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
+    /// Appends an item to `tag_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        let mut v = self.tag_specifications.unwrap_or_default();
+        v.push(input);
+        self.tag_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input;
+        self
+    }
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can change the master DB user to use IAM database authentication.</p>
     /// <p>You can specify one of the following values:</p>
     /// <ul>
@@ -3617,6 +3672,7 @@ impl ModifyDbInstanceInputBuilder {
             multi_tenant: self.multi_tenant,
             dedicated_log_volume: self.dedicated_log_volume,
             engine: self.engine,
+            tag_specifications: self.tag_specifications,
             master_user_authentication_type: self.master_user_authentication_type,
             additional_storage_volumes: self.additional_storage_volumes,
         })
@@ -3686,6 +3742,7 @@ impl ::std::fmt::Debug for ModifyDbInstanceInputBuilder {
         formatter.field("multi_tenant", &self.multi_tenant);
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine", &self.engine);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.finish()

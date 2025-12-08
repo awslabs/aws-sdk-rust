@@ -93,5 +93,15 @@ pub fn ser_create_user_input_input(
     if let Some(var_30) = &input.birthdate {
         object.key("Birthdate").string(var_30.as_str());
     }
+    if let Some(var_31) = &input.extensions {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("Extensions").start_object();
+        for (key_33, value_34) in var_31 {
+            {
+                object_32.key(key_33.as_str()).document(value_34);
+            }
+        }
+        object_32.finish();
+    }
     Ok(())
 }

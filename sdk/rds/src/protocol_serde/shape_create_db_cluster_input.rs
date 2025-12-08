@@ -331,9 +331,20 @@ pub fn ser_create_db_cluster_input_input_input(
         scope_123.string(var_124);
     }
     #[allow(unused_mut)]
-    let mut scope_125 = writer.prefix("MasterUserAuthenticationType");
-    if let Some(var_126) = &input.master_user_authentication_type {
-        scope_125.string(var_126.as_str());
+    let mut scope_125 = writer.prefix("TagSpecifications");
+    if let Some(var_126) = &input.tag_specifications {
+        let mut list_128 = scope_125.start_list(false, Some("item"));
+        for item_127 in var_126 {
+            #[allow(unused_mut)]
+            let mut entry_129 = list_128.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_129, item_127)?;
+        }
+        list_128.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_130 = writer.prefix("MasterUserAuthenticationType");
+    if let Some(var_131) = &input.master_user_authentication_type {
+        scope_130.string(var_131.as_str());
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

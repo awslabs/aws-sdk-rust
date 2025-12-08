@@ -91,6 +91,8 @@ pub(crate) mod shape_list_cost_allocation_tags;
 
 pub(crate) mod shape_list_cost_category_definitions;
 
+pub(crate) mod shape_list_cost_category_resource_associations;
+
 pub(crate) mod shape_list_savings_plans_purchase_recommendation_generation;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -207,6 +209,8 @@ pub(crate) mod shape_list_cost_allocation_tags_input;
 
 pub(crate) mod shape_list_cost_category_definitions_input;
 
+pub(crate) mod shape_list_cost_category_resource_associations_input;
+
 pub(crate) mod shape_list_savings_plans_purchase_recommendation_generation_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
@@ -280,6 +284,8 @@ pub(crate) mod shape_cost_category;
 pub(crate) mod shape_cost_category_names_list;
 
 pub(crate) mod shape_cost_category_references_list;
+
+pub(crate) mod shape_cost_category_resource_associations;
 
 pub(crate) mod shape_cost_category_rule;
 
@@ -372,6 +378,8 @@ pub(crate) mod shape_cost_category_inherited_value_dimension;
 pub(crate) mod shape_cost_category_processing_status_list;
 
 pub(crate) mod shape_cost_category_reference;
+
+pub(crate) mod shape_cost_category_resource_association;
 
 pub(crate) mod shape_cost_category_rules_list;
 
@@ -466,6 +474,8 @@ pub(crate) mod shape_reservation_purchase_recommendation_details;
 pub(crate) mod shape_reservation_purchase_recommendation_summary;
 
 pub(crate) mod shape_reservation_utilization_groups;
+
+pub(crate) mod shape_resource_types;
 
 pub(crate) mod shape_root_causes;
 

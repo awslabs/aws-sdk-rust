@@ -22,7 +22,7 @@ impl crate::operation::update_cost_category_definition::builders::UpdateCostCate
 }
 /// Fluent builder constructing a request to `UpdateCostCategoryDefinition`.
 ///
-/// <p>Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current month’s expenses and future expenses. This won’t change categorization for the previous months.</p>
+/// <p>Updates an existing cost category. Changes made to the cost category rules will be used to categorize the current month’s expenses and future expenses. This won’t change categorization for the previous months.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCostCategoryDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cost_category_arn(input.into());
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cost_category_arn(input);
         self
     }
-    /// <p>The unique identifier for your Cost Category.</p>
+    /// <p>The unique identifier for your cost category.</p>
     pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cost_category_arn()
     }
-    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+    /// <p>The cost category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
     pub fn effective_start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.effective_start(input.into());
         self
     }
-    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+    /// <p>The cost category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
     pub fn set_effective_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_effective_start(input);
         self
     }
-    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
+    /// <p>The cost category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
     pub fn get_effective_start(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_effective_start()
     }
-    /// <p>The rule schema version in this particular Cost Category.</p>
+    /// <p>The rule schema version in this particular cost category.</p>
     pub fn rule_version(mut self, input: crate::types::CostCategoryRuleVersion) -> Self {
         self.inner = self.inner.rule_version(input);
         self
     }
-    /// <p>The rule schema version in this particular Cost Category.</p>
+    /// <p>The rule schema version in this particular cost category.</p>
     pub fn set_rule_version(mut self, input: ::std::option::Option<crate::types::CostCategoryRuleVersion>) -> Self {
         self.inner = self.inner.set_rule_version(input);
         self
     }
-    /// <p>The rule schema version in this particular Cost Category.</p>
+    /// <p>The rule schema version in this particular cost category.</p>
     pub fn get_rule_version(&self) -> &::std::option::Option<crate::types::CostCategoryRuleVersion> {
         self.inner.get_rule_version()
     }
@@ -188,17 +188,17 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).
     ///
-    /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
+    /// <p>The split charge rules used to allocate your charges between your cost category values.</p>
     pub fn split_charge_rules(mut self, input: crate::types::CostCategorySplitChargeRule) -> Self {
         self.inner = self.inner.split_charge_rules(input);
         self
     }
-    /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
+    /// <p>The split charge rules used to allocate your charges between your cost category values.</p>
     pub fn set_split_charge_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>) -> Self {
         self.inner = self.inner.set_split_charge_rules(input);
         self
     }
-    /// <p>The split charge rules used to allocate your charges between your Cost Category values.</p>
+    /// <p>The split charge rules used to allocate your charges between your cost category values.</p>
     pub fn get_split_charge_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>> {
         self.inner.get_split_charge_rules()
     }

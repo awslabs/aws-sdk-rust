@@ -320,15 +320,26 @@ pub fn ser_restore_db_instance_from_s3_input_input_input(
         scope_118.string(var_119);
     }
     #[allow(unused_mut)]
-    let mut scope_120 = writer.prefix("AdditionalStorageVolumes");
-    if let Some(var_121) = &input.additional_storage_volumes {
-        let mut list_123 = scope_120.start_list(false, None);
+    let mut scope_120 = writer.prefix("TagSpecifications");
+    if let Some(var_121) = &input.tag_specifications {
+        let mut list_123 = scope_120.start_list(false, Some("item"));
         for item_122 in var_121 {
             #[allow(unused_mut)]
             let mut entry_124 = list_123.entry();
-            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_124, item_122)?;
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_124, item_122)?;
         }
         list_123.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_125 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_126) = &input.additional_storage_volumes {
+        let mut list_128 = scope_125.start_list(false, None);
+        for item_127 in var_126 {
+            #[allow(unused_mut)]
+            let mut entry_129 = list_128.entry();
+            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_129, item_127)?;
+        }
+        list_128.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

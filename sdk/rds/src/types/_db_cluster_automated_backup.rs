@@ -64,6 +64,9 @@ pub struct DbClusterAutomatedBackup {
     pub storage_throughput: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A list of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DbClusterAutomatedBackup {
     /// <p>The name of the database engine for this automated backup.</p>
@@ -178,6 +181,13 @@ impl DbClusterAutomatedBackup {
     pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
         self.aws_backup_recovery_point_arn.as_deref()
     }
+    /// <p>A list of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
+    }
 }
 impl DbClusterAutomatedBackup {
     /// Creates a new builder-style object to manufacture [`DbClusterAutomatedBackup`](crate::types::DbClusterAutomatedBackup).
@@ -215,6 +225,7 @@ pub struct DbClusterAutomatedBackupBuilder {
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) storage_throughput: ::std::option::Option<i32>,
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DbClusterAutomatedBackupBuilder {
     /// <p>The name of the database engine for this automated backup.</p>
@@ -603,6 +614,29 @@ impl DbClusterAutomatedBackupBuilder {
     pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_backup_recovery_point_arn
     }
+    /// Appends an item to `tag_list`.
+    ///
+    /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+    ///
+    /// <p>A list of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tag_list.unwrap_or_default();
+        v.push(input);
+        self.tag_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tag_list = input;
+        self
+    }
+    /// <p>A list of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
+    }
     /// Consumes the builder and constructs a [`DbClusterAutomatedBackup`](crate::types::DbClusterAutomatedBackup).
     pub fn build(self) -> crate::types::DbClusterAutomatedBackup {
         crate::types::DbClusterAutomatedBackup {
@@ -631,6 +665,7 @@ impl DbClusterAutomatedBackupBuilder {
             iops: self.iops,
             storage_throughput: self.storage_throughput,
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
+            tag_list: self.tag_list,
         }
     }
 }

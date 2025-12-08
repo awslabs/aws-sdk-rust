@@ -22,7 +22,7 @@ impl crate::operation::list_cost_category_definitions::builders::ListCostCategor
 }
 /// Fluent builder constructing a request to `ListCostCategoryDefinitions`.
 ///
-/// <p>Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories that were active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination. The request can have a <code>MaxResults</code> range up to 100.</p>
+/// <p>Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective dates of all cost categories defined in the account. You have the option to use <code>EffectiveOn</code> and <code>SupportedResourceTypes</code> to return a list of cost categories that were active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see cost categories that are effective on the current date. If cost category is still effective, <code>EffectiveEnd</code> is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination. The request can have a <code>MaxResults</code> range up to 100.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCostCategoryDefinitionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListCostCategoryDefinitionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginator {
         crate::operation::list_cost_category_definitions::paginator::ListCostCategoryDefinitionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn effective_on(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.effective_on(input.into());
         self
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn set_effective_on(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_effective_on(input);
         self
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn get_effective_on(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_effective_on()
     }
@@ -155,5 +155,24 @@ impl ListCostCategoryDefinitionsFluentBuilder {
     /// <p>The number of entries a paginated response contains.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    ///
+    /// Appends an item to `SupportedResourceTypes`.
+    ///
+    /// To override the contents of this collection use [`set_supported_resource_types`](Self::set_supported_resource_types).
+    ///
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    pub fn supported_resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.supported_resource_types(input.into());
+        self
+    }
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    pub fn set_supported_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_supported_resource_types(input);
+        self
+    }
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    pub fn get_supported_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_supported_resource_types()
     }
 }

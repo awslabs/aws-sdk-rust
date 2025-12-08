@@ -46,6 +46,20 @@ pub fn de_get_track_http_error(
             };
             tmp
         }),
+        "DryRunException" => crate::operation::get_track::GetTrackError::DryRunException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DryRunExceptionBuilder::default();
+                output = crate::protocol_serde::shape_dry_run_exception::de_dry_run_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_track::GetTrackError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::dry_run_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_track::GetTrackError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::get_track::GetTrackError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {

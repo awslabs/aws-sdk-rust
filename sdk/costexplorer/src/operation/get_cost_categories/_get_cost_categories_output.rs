@@ -5,9 +5,9 @@
 pub struct GetCostCategoriesOutput {
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
-    /// <p>The names of the Cost Categories.</p>
+    /// <p>The names of the cost categories.</p>
     pub cost_category_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Cost Category values.</p>
+    /// <p>The cost category values.</p>
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned.</p>
     pub cost_category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of objects that are returned.</p>
@@ -21,13 +21,13 @@ impl GetCostCategoriesOutput {
     pub fn next_page_token(&self) -> ::std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
-    /// <p>The names of the Cost Categories.</p>
+    /// <p>The names of the cost categories.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_category_names.is_none()`.
     pub fn cost_category_names(&self) -> &[::std::string::String] {
         self.cost_category_names.as_deref().unwrap_or_default()
     }
-    /// <p>The Cost Category values.</p>
+    /// <p>The cost category values.</p>
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_category_values.is_none()`.
@@ -85,19 +85,19 @@ impl GetCostCategoriesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_cost_category_names`](Self::set_cost_category_names).
     ///
-    /// <p>The names of the Cost Categories.</p>
+    /// <p>The names of the cost categories.</p>
     pub fn cost_category_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cost_category_names.unwrap_or_default();
         v.push(input.into());
         self.cost_category_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names of the Cost Categories.</p>
+    /// <p>The names of the cost categories.</p>
     pub fn set_cost_category_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cost_category_names = input;
         self
     }
-    /// <p>The names of the Cost Categories.</p>
+    /// <p>The names of the cost categories.</p>
     pub fn get_cost_category_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cost_category_names
     }
@@ -105,7 +105,7 @@ impl GetCostCategoriesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_cost_category_values`](Self::set_cost_category_values).
     ///
-    /// <p>The Cost Category values.</p>
+    /// <p>The cost category values.</p>
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned.</p>
     pub fn cost_category_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cost_category_values.unwrap_or_default();
@@ -113,13 +113,13 @@ impl GetCostCategoriesOutputBuilder {
         self.cost_category_values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Cost Category values.</p>
+    /// <p>The cost category values.</p>
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned.</p>
     pub fn set_cost_category_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cost_category_values = input;
         self
     }
-    /// <p>The Cost Category values.</p>
+    /// <p>The cost category values.</p>
     /// <p>If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code> fields aren't returned.</p>
     pub fn get_cost_category_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cost_category_values

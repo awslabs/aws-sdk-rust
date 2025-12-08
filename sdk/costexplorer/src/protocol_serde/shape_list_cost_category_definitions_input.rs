@@ -15,5 +15,14 @@ pub fn ser_list_cost_category_definitions_input_input(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.supported_resource_types {
+        let mut array_5 = object.key("SupportedResourceTypes").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }

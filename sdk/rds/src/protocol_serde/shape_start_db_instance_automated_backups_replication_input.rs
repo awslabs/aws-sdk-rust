@@ -28,6 +28,17 @@ pub fn ser_start_db_instance_automated_backups_replication_input_input_input(
     if let Some(var_8) = &input.pre_signed_url {
         scope_7.string(var_8);
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("Tags");
+    if let Some(var_10) = &input.tags {
+        let mut list_12 = scope_9.start_list(false, Some("Tag"));
+        for item_11 in var_10 {
+            #[allow(unused_mut)]
+            let mut entry_13 = list_12.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_13, item_11)?;
+        }
+        list_12.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

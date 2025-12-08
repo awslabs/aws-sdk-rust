@@ -123,17 +123,17 @@ impl CreateProfileFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
+    /// <p>Unused, saved for future use. Will likely specify whether instance properties are required in temporary credential requests with this profile.</p>
     pub fn require_instance_properties(mut self, input: bool) -> Self {
         self.inner = self.inner.require_instance_properties(input);
         self
     }
-    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
+    /// <p>Unused, saved for future use. Will likely specify whether instance properties are required in temporary credential requests with this profile.</p>
     pub fn set_require_instance_properties(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_require_instance_properties(input);
         self
     }
-    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
+    /// <p>Unused, saved for future use. Will likely specify whether instance properties are required in temporary credential requests with this profile.</p>
     pub fn get_require_instance_properties(&self) -> &::std::option::Option<bool> {
         self.inner.get_require_instance_properties()
     }

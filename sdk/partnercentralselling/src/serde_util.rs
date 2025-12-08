@@ -365,6 +365,24 @@ pub(crate) fn validation_exception_error_correct_errors(
     builder
 }
 
+pub(crate) fn aws_product_insights_correct_errors(
+    mut builder: crate::types::builders::AwsProductInsightsBuilder,
+) -> crate::types::builders::AwsProductInsightsBuilder {
+    if builder.currency_code.is_none() {
+        builder.currency_code = "no value was set".parse::<crate::types::CurrencyCode>().ok()
+    }
+    if builder.frequency.is_none() {
+        builder.frequency = "no value was set".parse::<crate::types::PaymentFrequency>().ok()
+    }
+    if builder.total_amount_by_category.is_none() {
+        builder.total_amount_by_category = Some(Default::default())
+    }
+    if builder.aws_products.is_none() {
+        builder.aws_products = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn engagement_customer_correct_errors(
     mut builder: crate::types::builders::EngagementCustomerBuilder,
 ) -> crate::types::builders::EngagementCustomerBuilder {
@@ -386,9 +404,6 @@ pub(crate) fn engagement_customer_correct_errors(
 pub(crate) fn expected_customer_spend_correct_errors(
     mut builder: crate::types::builders::ExpectedCustomerSpendBuilder,
 ) -> crate::types::builders::ExpectedCustomerSpendBuilder {
-    if builder.amount.is_none() {
-        builder.amount = Some(Default::default())
-    }
     if builder.currency_code.is_none() {
         builder.currency_code = "no value was set".parse::<crate::types::CurrencyCode>().ok()
     }
@@ -504,6 +519,21 @@ pub(crate) fn sender_contact_correct_errors(
     builder
 }
 
+pub(crate) fn aws_product_details_correct_errors(
+    mut builder: crate::types::builders::AwsProductDetailsBuilder,
+) -> crate::types::builders::AwsProductDetailsBuilder {
+    if builder.product_code.is_none() {
+        builder.product_code = Some(Default::default())
+    }
+    if builder.categories.is_none() {
+        builder.categories = Some(Default::default())
+    }
+    if builder.optimizations.is_none() {
+        builder.optimizations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn engagement_customer_project_details_correct_errors(
     mut builder: crate::types::builders::EngagementCustomerProjectDetailsBuilder,
 ) -> crate::types::builders::EngagementCustomerProjectDetailsBuilder {
@@ -552,6 +582,18 @@ pub(crate) fn lead_interaction_correct_errors(
             let builder = crate::types::builders::LeadContactBuilder::default();
             crate::serde_util::lead_contact_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn aws_product_optimization_correct_errors(
+    mut builder: crate::types::builders::AwsProductOptimizationBuilder,
+) -> crate::types::builders::AwsProductOptimizationBuilder {
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.savings_amount.is_none() {
+        builder.savings_amount = Some(Default::default())
     }
     builder
 }

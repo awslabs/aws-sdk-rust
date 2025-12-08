@@ -28,6 +28,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AwsProductsSpendInsightsBySource" => {
+                            builder = builder.set_aws_products_spend_insights_by_source(
+                                crate::protocol_serde::shape_aws_products_spend_insights_by_source::de_aws_products_spend_insights_by_source(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

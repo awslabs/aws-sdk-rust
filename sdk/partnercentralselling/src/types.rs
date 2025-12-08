@@ -97,6 +97,14 @@ pub use crate::types::_involvement_type_change_reason::InvolvementTypeChangeReas
 
 pub use crate::types::_aws_opportunity_insights::AwsOpportunityInsights;
 
+pub use crate::types::_aws_products_spend_insights_by_source::AwsProductsSpendInsightsBySource;
+
+pub use crate::types::_aws_product_insights::AwsProductInsights;
+
+pub use crate::types::_aws_product_details::AwsProductDetails;
+
+pub use crate::types::_aws_product_optimization::AwsProductOptimization;
+
 pub use crate::types::_engagement_score::EngagementScore;
 
 pub use crate::types::_aws_team_member::AwsTeamMember;
@@ -268,6 +276,14 @@ mod _aws_opportunity_project;
 mod _aws_opportunity_related_entities;
 
 mod _aws_opportunity_stage;
+
+mod _aws_product_details;
+
+mod _aws_product_insights;
+
+mod _aws_product_optimization;
+
+mod _aws_products_spend_insights_by_source;
 
 mod _aws_submission;
 

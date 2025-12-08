@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCostCategoryDefinitionOutput {
-    /// <p>The unique identifier for your newly created Cost Category.</p>
+    /// <p>The unique identifier for your newly created cost category.</p>
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
+    /// <p>The cost category's effective start date. It can only be a billing start date (first day of the month).</p>
     pub effective_start: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateCostCategoryDefinitionOutput {
-    /// <p>The unique identifier for your newly created Cost Category.</p>
+    /// <p>The unique identifier for your newly created cost category.</p>
     pub fn cost_category_arn(&self) -> ::std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
+    /// <p>The cost category's effective start date. It can only be a billing start date (first day of the month).</p>
     pub fn effective_start(&self) -> ::std::option::Option<&str> {
         self.effective_start.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct CreateCostCategoryDefinitionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateCostCategoryDefinitionOutputBuilder {
-    /// <p>The unique identifier for your newly created Cost Category.</p>
+    /// <p>The unique identifier for your newly created cost category.</p>
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for your newly created Cost Category.</p>
+    /// <p>The unique identifier for your newly created cost category.</p>
     pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost_category_arn = input;
         self
     }
-    /// <p>The unique identifier for your newly created Cost Category.</p>
+    /// <p>The unique identifier for your newly created cost category.</p>
     pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cost_category_arn
     }
-    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
+    /// <p>The cost category's effective start date. It can only be a billing start date (first day of the month).</p>
     pub fn effective_start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_start = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
+    /// <p>The cost category's effective start date. It can only be a billing start date (first day of the month).</p>
     pub fn set_effective_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_start = input;
         self
     }
-    /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
+    /// <p>The cost category's effective start date. It can only be a billing start date (first day of the month).</p>
     pub fn get_effective_start(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_start
     }

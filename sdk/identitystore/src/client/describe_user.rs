@@ -5,6 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`identity_store_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_identity_store_id):<br>required: **true**<br><p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p><br>
     ///   - [`user_id(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_user_id):<br>required: **true**<br><p>The identifier for a user in the identity store.</p><br>
+    ///   - [`extensions(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::extensions) / [`set_extensions(Option<Vec::<String>>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_extensions):<br>required: **false**<br><p>A collection of extension names indicating what extensions the service should retrieve alongside other user attributes. <code>aws:identitystore:enterprise</code> is the only supported extension name.</p><br>
     /// - On success, responds with [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput) with field(s):
     ///   - [`identity_store_id(String)`](crate::operation::describe_user::DescribeUserOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
     ///   - [`user_id(String)`](crate::operation::describe_user::DescribeUserOutput::user_id): <p>The identifier for a user in the identity store.</p>
@@ -30,6 +31,7 @@ impl super::Client {
     ///   - [`created_by(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::created_by): <p>The identifier of the user or system that created the user.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::describe_user::DescribeUserOutput::updated_at): <p>The date and time the user was last updated.</p>
     ///   - [`updated_by(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::updated_by): <p>The identifier of the user or system that last updated the user.</p>
+    ///   - [`extensions(Option<HashMap::<String, Document>>)`](crate::operation::describe_user::DescribeUserOutput::extensions): <p>A map of explicitly requested attribute extensions associated with the user. Not populated if the user has no requested extensions.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)
     pub fn describe_user(&self) -> crate::operation::describe_user::builders::DescribeUserFluentBuilder {
         crate::operation::describe_user::builders::DescribeUserFluentBuilder::new(self.handle.clone())

@@ -15,6 +15,8 @@ pub struct StartDbInstanceAutomatedBackupsReplicationInput {
     /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
     pub pre_signed_url: ::std::option::Option<::std::string::String>,
+    /// <p>A list of tags to associate with the replicated automated backups.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartDbInstanceAutomatedBackupsReplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
@@ -37,6 +39,12 @@ impl StartDbInstanceAutomatedBackupsReplicationInput {
     pub fn pre_signed_url(&self) -> ::std::option::Option<&str> {
         self.pre_signed_url.as_deref()
     }
+    /// <p>A list of tags to associate with the replicated automated backups.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for StartDbInstanceAutomatedBackupsReplicationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -45,6 +53,7 @@ impl ::std::fmt::Debug for StartDbInstanceAutomatedBackupsReplicationInput {
         formatter.field("backup_retention_period", &self.backup_retention_period);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("pre_signed_url", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -64,6 +73,7 @@ pub struct StartDbInstanceAutomatedBackupsReplicationInputBuilder {
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) pre_signed_url: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StartDbInstanceAutomatedBackupsReplicationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
@@ -135,6 +145,26 @@ impl StartDbInstanceAutomatedBackupsReplicationInputBuilder {
     pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.pre_signed_url
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of tags to associate with the replicated automated backups.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of tags to associate with the replicated automated backups.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A list of tags to associate with the replicated automated backups.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`StartDbInstanceAutomatedBackupsReplicationInput`](crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationInput).
     pub fn build(
         self,
@@ -148,6 +178,7 @@ impl StartDbInstanceAutomatedBackupsReplicationInputBuilder {
                 backup_retention_period: self.backup_retention_period,
                 kms_key_id: self.kms_key_id,
                 pre_signed_url: self.pre_signed_url,
+                tags: self.tags,
             },
         )
     }
@@ -159,6 +190,7 @@ impl ::std::fmt::Debug for StartDbInstanceAutomatedBackupsReplicationInputBuilde
         formatter.field("backup_retention_period", &self.backup_retention_period);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("pre_signed_url", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

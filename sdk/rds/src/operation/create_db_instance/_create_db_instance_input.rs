@@ -834,6 +834,13 @@ pub struct CreateDbInstanceInput {
     /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
     /// <p>Default: <code>open-source-rds-extended-support</code></p>
     pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.</p>
     /// <p>You can specify one of the following values:</p>
     /// <ul>
@@ -1818,6 +1825,17 @@ impl CreateDbInstanceInput {
     pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
         self.engine_lifecycle_support.as_deref()
     }
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
+    }
     /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.</p>
     /// <p>You can specify one of the following values:</p>
     /// <ul>
@@ -1904,6 +1922,7 @@ impl ::std::fmt::Debug for CreateDbInstanceInput {
         formatter.field("multi_tenant", &self.multi_tenant);
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.finish()
@@ -1984,6 +2003,7 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) multi_tenant: ::std::option::Option<bool>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
     pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
 }
@@ -5029,6 +5049,41 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_lifecycle_support
     }
+    /// Appends an item to `tag_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        let mut v = self.tag_specifications.unwrap_or_default();
+        v.push(input);
+        self.tag_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input;
+        self
+    }
+    /// <p>Tags to assign to resources associated with the DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
+    /// </ul>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.</p>
     /// <p>You can specify one of the following values:</p>
     /// <ul>
@@ -5156,6 +5211,7 @@ impl CreateDbInstanceInputBuilder {
             multi_tenant: self.multi_tenant,
             dedicated_log_volume: self.dedicated_log_volume,
             engine_lifecycle_support: self.engine_lifecycle_support,
+            tag_specifications: self.tag_specifications,
             master_user_authentication_type: self.master_user_authentication_type,
             additional_storage_volumes: self.additional_storage_volumes,
         })
@@ -5228,6 +5284,7 @@ impl ::std::fmt::Debug for CreateDbInstanceInputBuilder {
         formatter.field("multi_tenant", &self.multi_tenant);
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.finish()

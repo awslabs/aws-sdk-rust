@@ -67,6 +67,9 @@ pub mod get_custom_domain_association;
 /// Types for the `GetEndpointAccess` operation.
 pub mod get_endpoint_access;
 
+/// Types for the `GetIdentityCenterAuthToken` operation.
+pub mod get_identity_center_auth_token;
+
 /// Types for the `GetNamespace` operation.
 pub mod get_namespace;
 

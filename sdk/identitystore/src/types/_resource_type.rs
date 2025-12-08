@@ -15,6 +15,7 @@
 ///     ResourceType::Group => { /* ... */ },
 ///     ResourceType::GroupMembership => { /* ... */ },
 ///     ResourceType::IdentityStore => { /* ... */ },
+///     ResourceType::ResourcePolicy => { /* ... */ },
 ///     ResourceType::User => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     IdentityStore,
     #[allow(missing_docs)] // documentation missing in model
+    ResourcePolicy,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "GROUP" => ResourceType::Group,
             "GROUP_MEMBERSHIP" => ResourceType::GroupMembership,
             "IDENTITY_STORE" => ResourceType::IdentityStore,
+            "RESOURCE_POLICY" => ResourceType::ResourcePolicy,
             "USER" => ResourceType::User,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -81,13 +85,14 @@ impl ResourceType {
             ResourceType::Group => "GROUP",
             ResourceType::GroupMembership => "GROUP_MEMBERSHIP",
             ResourceType::IdentityStore => "IDENTITY_STORE",
+            ResourceType::ResourcePolicy => "RESOURCE_POLICY",
             ResourceType::User => "USER",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GROUP", "GROUP_MEMBERSHIP", "IDENTITY_STORE", "USER"]
+        &["GROUP", "GROUP_MEMBERSHIP", "IDENTITY_STORE", "RESOURCE_POLICY", "USER"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {
@@ -113,6 +118,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Group => write!(f, "GROUP"),
             ResourceType::GroupMembership => write!(f, "GROUP_MEMBERSHIP"),
             ResourceType::IdentityStore => write!(f, "IDENTITY_STORE"),
+            ResourceType::ResourcePolicy => write!(f, "RESOURCE_POLICY"),
             ResourceType::User => write!(f, "USER"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }

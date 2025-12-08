@@ -223,6 +223,17 @@ pub fn ser_restore_db_cluster_from_s3_input_input_input(
     if let Some(var_86) = &input.engine_lifecycle_support {
         scope_85.string(var_86);
     }
+    #[allow(unused_mut)]
+    let mut scope_87 = writer.prefix("TagSpecifications");
+    if let Some(var_88) = &input.tag_specifications {
+        let mut list_90 = scope_87.start_list(false, Some("item"));
+        for item_89 in var_88 {
+            #[allow(unused_mut)]
+            let mut entry_91 = list_90.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_91, item_89)?;
+        }
+        list_90.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

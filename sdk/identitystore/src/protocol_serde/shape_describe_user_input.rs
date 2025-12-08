@@ -9,5 +9,14 @@ pub fn ser_describe_user_input_input(
     if let Some(var_2) = &input.user_id {
         object.key("UserId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.extensions {
+        let mut array_4 = object.key("Extensions").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }

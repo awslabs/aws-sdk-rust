@@ -3,15 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCostCategoryDefinitionsInput {
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub effective_on: ::std::option::Option<::std::string::String>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of entries a paginated response contains.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    pub supported_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListCostCategoryDefinitionsInput {
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn effective_on(&self) -> ::std::option::Option<&str> {
         self.effective_on.as_deref()
     }
@@ -22,6 +24,12 @@ impl ListCostCategoryDefinitionsInput {
     /// <p>The number of entries a paginated response contains.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_resource_types.is_none()`.
+    pub fn supported_resource_types(&self) -> &[::std::string::String] {
+        self.supported_resource_types.as_deref().unwrap_or_default()
     }
 }
 impl ListCostCategoryDefinitionsInput {
@@ -38,19 +46,20 @@ pub struct ListCostCategoryDefinitionsInputBuilder {
     pub(crate) effective_on: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) supported_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListCostCategoryDefinitionsInputBuilder {
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn effective_on(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_on = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn set_effective_on(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_on = input;
         self
     }
-    /// <p>The date when the Cost Category was effective.</p>
+    /// <p>The date when the cost category was effective.</p>
     pub fn get_effective_on(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_on
     }
@@ -82,6 +91,26 @@ impl ListCostCategoryDefinitionsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// Appends an item to `supported_resource_types`.
+    ///
+    /// To override the contents of this collection use [`set_supported_resource_types`](Self::set_supported_resource_types).
+    ///
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    pub fn supported_resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supported_resource_types.unwrap_or_default();
+        v.push(input.into());
+        self.supported_resource_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    pub fn set_supported_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supported_resource_types = input;
+        self
+    }
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    pub fn get_supported_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_resource_types
+    }
     /// Consumes the builder and constructs a [`ListCostCategoryDefinitionsInput`](crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput).
     pub fn build(
         self,
@@ -93,6 +122,7 @@ impl ListCostCategoryDefinitionsInputBuilder {
             effective_on: self.effective_on,
             next_token: self.next_token,
             max_results: self.max_results,
+            supported_resource_types: self.supported_resource_types,
         })
     }
 }

@@ -46,7 +46,7 @@ impl ::std::fmt::Debug for ExpectedCustomerSpend {
         formatter.field("currency_code", &"*** Sensitive Data Redacted ***");
         formatter.field("frequency", &self.frequency);
         formatter.field("target_company", &self.target_company);
-        formatter.field("estimation_url", &"*** Sensitive Data Redacted ***");
+        formatter.field("estimation_url", &self.estimation_url);
         formatter.finish()
     }
 }
@@ -69,7 +69,6 @@ pub struct ExpectedCustomerSpendBuilder {
 }
 impl ExpectedCustomerSpendBuilder {
     /// <p>Represents the estimated monthly revenue that the partner expects to earn from the opportunity. This helps in forecasting financial returns.</p>
-    /// This field is required.
     pub fn amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.amount = ::std::option::Option::Some(input.into());
         self
@@ -144,18 +143,12 @@ impl ExpectedCustomerSpendBuilder {
     }
     /// Consumes the builder and constructs a [`ExpectedCustomerSpend`](crate::types::ExpectedCustomerSpend).
     /// This method will fail if any of the following fields are not set:
-    /// - [`amount`](crate::types::builders::ExpectedCustomerSpendBuilder::amount)
     /// - [`currency_code`](crate::types::builders::ExpectedCustomerSpendBuilder::currency_code)
     /// - [`frequency`](crate::types::builders::ExpectedCustomerSpendBuilder::frequency)
     /// - [`target_company`](crate::types::builders::ExpectedCustomerSpendBuilder::target_company)
     pub fn build(self) -> ::std::result::Result<crate::types::ExpectedCustomerSpend, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExpectedCustomerSpend {
-            amount: self.amount.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "amount",
-                    "amount was not specified but it is required when building ExpectedCustomerSpend",
-                )
-            })?,
+            amount: self.amount.unwrap_or_default(),
             currency_code: self.currency_code.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "currency_code",
@@ -185,7 +178,7 @@ impl ::std::fmt::Debug for ExpectedCustomerSpendBuilder {
         formatter.field("currency_code", &"*** Sensitive Data Redacted ***");
         formatter.field("frequency", &self.frequency);
         formatter.field("target_company", &self.target_company);
-        formatter.field("estimation_url", &"*** Sensitive Data Redacted ***");
+        formatter.field("estimation_url", &self.estimation_url);
         formatter.finish()
     }
 }

@@ -133,6 +133,8 @@ pub(crate) mod shape_email;
 
 pub(crate) mod shape_emails;
 
+pub(crate) mod shape_extensions;
+
 pub(crate) mod shape_external_ids;
 
 pub(crate) mod shape_filter;

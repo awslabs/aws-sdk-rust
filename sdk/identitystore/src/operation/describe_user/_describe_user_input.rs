@@ -7,6 +7,8 @@ pub struct DescribeUserInput {
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a user in the identity store.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
+    /// <p>A collection of extension names indicating what extensions the service should retrieve alongside other user attributes. <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
+    pub extensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeUserInput {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
@@ -16,6 +18,12 @@ impl DescribeUserInput {
     /// <p>The identifier for a user in the identity store.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
+    }
+    /// <p>A collection of extension names indicating what extensions the service should retrieve alongside other user attributes. <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extensions.is_none()`.
+    pub fn extensions(&self) -> &[::std::string::String] {
+        self.extensions.as_deref().unwrap_or_default()
     }
 }
 impl DescribeUserInput {
@@ -31,6 +39,7 @@ impl DescribeUserInput {
 pub struct DescribeUserInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) extensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeUserInputBuilder {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
@@ -63,6 +72,26 @@ impl DescribeUserInputBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
+    /// Appends an item to `extensions`.
+    ///
+    /// To override the contents of this collection use [`set_extensions`](Self::set_extensions).
+    ///
+    /// <p>A collection of extension names indicating what extensions the service should retrieve alongside other user attributes. <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
+    pub fn extensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.extensions.unwrap_or_default();
+        v.push(input.into());
+        self.extensions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A collection of extension names indicating what extensions the service should retrieve alongside other user attributes. <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
+    pub fn set_extensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.extensions = input;
+        self
+    }
+    /// <p>A collection of extension names indicating what extensions the service should retrieve alongside other user attributes. <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
+    pub fn get_extensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.extensions
+    }
     /// Consumes the builder and constructs a [`DescribeUserInput`](crate::operation::describe_user::DescribeUserInput).
     pub fn build(
         self,
@@ -70,6 +99,7 @@ impl DescribeUserInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_user::DescribeUserInput {
             identity_store_id: self.identity_store_id,
             user_id: self.user_id,
+            extensions: self.extensions,
         })
     }
 }

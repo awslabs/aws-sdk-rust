@@ -8,6 +8,8 @@ pub struct AwsOpportunityInsights {
     pub next_best_actions: ::std::option::Option<::std::string::String>,
     /// <p>Represents a score assigned by AWS to indicate the level of engagement and potential success for the opportunity. This score helps partners prioritize their efforts.</p>
     pub engagement_score: ::std::option::Option<crate::types::EngagementScore>,
+    /// Source-separated spend insights that provide independent analysis for AWS predictions and partner estimates
+    pub aws_products_spend_insights_by_source: ::std::option::Option<crate::types::AwsProductsSpendInsightsBySource>,
 }
 impl AwsOpportunityInsights {
     /// <p>Provides recommendations from AWS on the next best actions to take in order to move the opportunity forward and increase the likelihood of success.</p>
@@ -17,6 +19,10 @@ impl AwsOpportunityInsights {
     /// <p>Represents a score assigned by AWS to indicate the level of engagement and potential success for the opportunity. This score helps partners prioritize their efforts.</p>
     pub fn engagement_score(&self) -> ::std::option::Option<&crate::types::EngagementScore> {
         self.engagement_score.as_ref()
+    }
+    /// Source-separated spend insights that provide independent analysis for AWS predictions and partner estimates
+    pub fn aws_products_spend_insights_by_source(&self) -> ::std::option::Option<&crate::types::AwsProductsSpendInsightsBySource> {
+        self.aws_products_spend_insights_by_source.as_ref()
     }
 }
 impl AwsOpportunityInsights {
@@ -32,6 +38,7 @@ impl AwsOpportunityInsights {
 pub struct AwsOpportunityInsightsBuilder {
     pub(crate) next_best_actions: ::std::option::Option<::std::string::String>,
     pub(crate) engagement_score: ::std::option::Option<crate::types::EngagementScore>,
+    pub(crate) aws_products_spend_insights_by_source: ::std::option::Option<crate::types::AwsProductsSpendInsightsBySource>,
 }
 impl AwsOpportunityInsightsBuilder {
     /// <p>Provides recommendations from AWS on the next best actions to take in order to move the opportunity forward and increase the likelihood of success.</p>
@@ -62,11 +69,26 @@ impl AwsOpportunityInsightsBuilder {
     pub fn get_engagement_score(&self) -> &::std::option::Option<crate::types::EngagementScore> {
         &self.engagement_score
     }
+    /// Source-separated spend insights that provide independent analysis for AWS predictions and partner estimates
+    pub fn aws_products_spend_insights_by_source(mut self, input: crate::types::AwsProductsSpendInsightsBySource) -> Self {
+        self.aws_products_spend_insights_by_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// Source-separated spend insights that provide independent analysis for AWS predictions and partner estimates
+    pub fn set_aws_products_spend_insights_by_source(mut self, input: ::std::option::Option<crate::types::AwsProductsSpendInsightsBySource>) -> Self {
+        self.aws_products_spend_insights_by_source = input;
+        self
+    }
+    /// Source-separated spend insights that provide independent analysis for AWS predictions and partner estimates
+    pub fn get_aws_products_spend_insights_by_source(&self) -> &::std::option::Option<crate::types::AwsProductsSpendInsightsBySource> {
+        &self.aws_products_spend_insights_by_source
+    }
     /// Consumes the builder and constructs a [`AwsOpportunityInsights`](crate::types::AwsOpportunityInsights).
     pub fn build(self) -> crate::types::AwsOpportunityInsights {
         crate::types::AwsOpportunityInsights {
             next_best_actions: self.next_best_actions,
             engagement_score: self.engagement_score,
+            aws_products_spend_insights_by_source: self.aws_products_spend_insights_by_source,
         }
     }
 }
