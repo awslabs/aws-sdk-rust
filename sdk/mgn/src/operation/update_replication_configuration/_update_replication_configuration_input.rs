@@ -37,6 +37,8 @@ pub struct UpdateReplicationConfigurationInput {
     pub use_fips_endpoint: ::std::option::Option<bool>,
     /// <p>Update replication configuration Account ID request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
+    /// <p>Update replication configuration internet protocol.</p>
+    pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration Source Server ID request.</p>
@@ -111,6 +113,10 @@ impl UpdateReplicationConfigurationInput {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
+    /// <p>Update replication configuration internet protocol.</p>
+    pub fn internet_protocol(&self) -> ::std::option::Option<&crate::types::InternetProtocol> {
+        self.internet_protocol.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -132,6 +138,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("account_id", &self.account_id);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.finish()
     }
 }
@@ -163,6 +170,7 @@ pub struct UpdateReplicationConfigurationInputBuilder {
     pub(crate) staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl UpdateReplicationConfigurationInputBuilder {
     /// <p>Update replication configuration Source Server ID request.</p>
@@ -435,6 +443,20 @@ impl UpdateReplicationConfigurationInputBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
+    /// <p>Update replication configuration internet protocol.</p>
+    pub fn internet_protocol(mut self, input: crate::types::InternetProtocol) -> Self {
+        self.internet_protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Update replication configuration internet protocol.</p>
+    pub fn set_internet_protocol(mut self, input: ::std::option::Option<crate::types::InternetProtocol>) -> Self {
+        self.internet_protocol = input;
+        self
+    }
+    /// <p>Update replication configuration internet protocol.</p>
+    pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
+        &self.internet_protocol
+    }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationInput`](crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput).
     pub fn build(
         self,
@@ -460,6 +482,7 @@ impl UpdateReplicationConfigurationInputBuilder {
             staging_area_tags: self.staging_area_tags,
             use_fips_endpoint: self.use_fips_endpoint,
             account_id: self.account_id,
+            internet_protocol: self.internet_protocol,
         })
     }
 }
@@ -483,6 +506,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInputBuilder {
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("account_id", &self.account_id);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.finish()
     }
 }

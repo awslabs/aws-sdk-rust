@@ -1320,6 +1320,7 @@ impl ServiceRuntimePlugin {
         runtime_components.push_interceptor(::aws_runtime::user_agent::UserAgentInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::invocation_id::InvocationIdInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new());
+        runtime_components.push_interceptor(crate::config::endpoint::EndpointOverrideFeatureTrackerInterceptor);
         Self { config, runtime_components }
     }
 }

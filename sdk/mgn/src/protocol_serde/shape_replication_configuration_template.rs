@@ -113,6 +113,13 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
                         }
+                        "internetProtocol" => {
+                            builder = builder.set_internet_protocol(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InternetProtocol::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

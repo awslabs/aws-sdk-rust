@@ -307,4 +307,32 @@ impl UpdateLaunchConfigurationTemplateFluentBuilder {
     pub fn get_large_volume_conf(&self) -> &::std::option::Option<crate::types::LaunchTemplateDiskConf> {
         self.inner.get_large_volume_conf()
     }
+    /// <p>Enable parameters encryption.</p>
+    pub fn enable_parameters_encryption(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_parameters_encryption(input);
+        self
+    }
+    /// <p>Enable parameters encryption.</p>
+    pub fn set_enable_parameters_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_parameters_encryption(input);
+        self
+    }
+    /// <p>Enable parameters encryption.</p>
+    pub fn get_enable_parameters_encryption(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_parameters_encryption()
+    }
+    /// <p>Parameters encryption key.</p>
+    pub fn parameters_encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.parameters_encryption_key(input.into());
+        self
+    }
+    /// <p>Parameters encryption key.</p>
+    pub fn set_parameters_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_parameters_encryption_key(input);
+        self
+    }
+    /// <p>Parameters encryption key.</p>
+    pub fn get_parameters_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameters_encryption_key()
+    }
 }

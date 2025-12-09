@@ -23,7 +23,7 @@ impl crate::operation::get_contact_information::builders::GetContactInformationI
 /// Fluent builder constructing a request to `GetContactInformation`.
 ///
 /// <p>Retrieves the primary contact information of an Amazon Web Services account.</p>
-/// <p>For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update the primary and alternate contact information</a>.</p>
+/// <p>For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update the primary contact for your Amazon Web Services account</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetContactInformationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

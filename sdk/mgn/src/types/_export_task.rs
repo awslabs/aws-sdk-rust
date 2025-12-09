@@ -2,10 +2,12 @@
 
 /// <p>Export task.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExportTask {
     /// <p>Export task id.</p>
     pub export_id: ::std::option::Option<::std::string::String>,
+    /// <p>ExportTask arn.</p>
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Export task s3 bucket.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>Export task s3 key.</p>
@@ -22,11 +24,17 @@ pub struct ExportTask {
     pub progress_percentage: ::std::option::Option<f32>,
     /// <p>Export task summary.</p>
     pub summary: ::std::option::Option<crate::types::ExportTaskSummary>,
+    /// <p>Export task tags.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ExportTask {
     /// <p>Export task id.</p>
     pub fn export_id(&self) -> ::std::option::Option<&str> {
         self.export_id.as_deref()
+    }
+    /// <p>ExportTask arn.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>Export task s3 bucket.</p>
     pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
@@ -60,6 +68,27 @@ impl ExportTask {
     pub fn summary(&self) -> ::std::option::Option<&crate::types::ExportTaskSummary> {
         self.summary.as_ref()
     }
+    /// <p>Export task tags.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
+}
+impl ::std::fmt::Debug for ExportTask {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ExportTask");
+        formatter.field("export_id", &self.export_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("s3_bucket", &self.s3_bucket);
+        formatter.field("s3_key", &self.s3_key);
+        formatter.field("s3_bucket_owner", &self.s3_bucket_owner);
+        formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("end_date_time", &self.end_date_time);
+        formatter.field("status", &self.status);
+        formatter.field("progress_percentage", &self.progress_percentage);
+        formatter.field("summary", &self.summary);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl ExportTask {
     /// Creates a new builder-style object to manufacture [`ExportTask`](crate::types::ExportTask).
@@ -69,10 +98,11 @@ impl ExportTask {
 }
 
 /// A builder for [`ExportTask`](crate::types::ExportTask).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ExportTaskBuilder {
     pub(crate) export_id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_owner: ::std::option::Option<::std::string::String>,
@@ -81,6 +111,7 @@ pub struct ExportTaskBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ExportStatus>,
     pub(crate) progress_percentage: ::std::option::Option<f32>,
     pub(crate) summary: ::std::option::Option<crate::types::ExportTaskSummary>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ExportTaskBuilder {
     /// <p>Export task id.</p>
@@ -96,6 +127,20 @@ impl ExportTaskBuilder {
     /// <p>Export task id.</p>
     pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_id
+    }
+    /// <p>ExportTask arn.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ExportTask arn.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p>ExportTask arn.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Export task s3 bucket.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -209,10 +254,31 @@ impl ExportTaskBuilder {
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::ExportTaskSummary> {
         &self.summary
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Export task tags.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Export task tags.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Export task tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`ExportTask`](crate::types::ExportTask).
     pub fn build(self) -> crate::types::ExportTask {
         crate::types::ExportTask {
             export_id: self.export_id,
+            arn: self.arn,
             s3_bucket: self.s3_bucket,
             s3_key: self.s3_key,
             s3_bucket_owner: self.s3_bucket_owner,
@@ -221,6 +287,24 @@ impl ExportTaskBuilder {
             status: self.status,
             progress_percentage: self.progress_percentage,
             summary: self.summary,
+            tags: self.tags,
         }
+    }
+}
+impl ::std::fmt::Debug for ExportTaskBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ExportTaskBuilder");
+        formatter.field("export_id", &self.export_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("s3_bucket", &self.s3_bucket);
+        formatter.field("s3_key", &self.s3_key);
+        formatter.field("s3_bucket_owner", &self.s3_bucket_owner);
+        formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("end_date_time", &self.end_date_time);
+        formatter.field("status", &self.status);
+        formatter.field("progress_percentage", &self.progress_percentage);
+        formatter.field("summary", &self.summary);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

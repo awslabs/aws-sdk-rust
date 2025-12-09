@@ -234,6 +234,7 @@ impl ProvideBusinessMetric for AwsSdkFeature {
             S3Transfer => Some(BusinessMetric::S3Transfer),
             SsoLoginDevice => Some(BusinessMetric::SsoLoginDevice),
             SsoLoginAuth => Some(BusinessMetric::SsoLoginAuth),
+            EndpointOverride => Some(BusinessMetric::EndpointOverride),
         }
     }
 }

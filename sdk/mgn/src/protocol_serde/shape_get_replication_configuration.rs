@@ -156,6 +156,13 @@ pub(crate) fn de_get_replication_configuration(
                             .transpose()?,
                     );
                 }
+                "internetProtocol" => {
+                    builder = builder.set_internet_protocol(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::InternetProtocol::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

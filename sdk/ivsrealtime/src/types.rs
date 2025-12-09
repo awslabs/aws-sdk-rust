@@ -87,6 +87,10 @@ pub use crate::types::_participant_replica::ParticipantReplica;
 
 pub use crate::types::_event::Event;
 
+pub use crate::types::_exchanged_participant_token::ExchangedParticipantToken;
+
+pub use crate::types::_participant_token_capability::ParticipantTokenCapability;
+
 pub use crate::types::_event_error_code::EventErrorCode;
 
 pub use crate::types::_event_name::EventName;
@@ -114,8 +118,6 @@ pub use crate::types::_encoder_configuration::EncoderConfiguration;
 pub use crate::types::_video::Video;
 
 pub use crate::types::_participant_token::ParticipantToken;
-
-pub use crate::types::_participant_token_capability::ParticipantTokenCapability;
 
 pub use crate::types::_participant_token_configuration::ParticipantTokenConfiguration;
 
@@ -152,6 +154,8 @@ mod _event;
 mod _event_error_code;
 
 mod _event_name;
+
+mod _exchanged_participant_token;
 
 mod _grid_configuration;
 

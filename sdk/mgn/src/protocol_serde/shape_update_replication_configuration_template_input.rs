@@ -30,39 +30,42 @@ pub fn ser_update_replication_configuration_template_input_input(
     if let Some(var_8) = &input.ebs_encryption_key_arn {
         object.key("ebsEncryptionKeyArn").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.replication_configuration_template_id {
-        object.key("replicationConfigurationTemplateID").string(var_9.as_str());
+    if let Some(var_9) = &input.internet_protocol {
+        object.key("internetProtocol").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.replication_server_instance_type {
-        object.key("replicationServerInstanceType").string(var_10.as_str());
+    if let Some(var_10) = &input.replication_configuration_template_id {
+        object.key("replicationConfigurationTemplateID").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.replication_servers_security_groups_ids {
-        let mut array_12 = object.key("replicationServersSecurityGroupsIDs").start_array();
-        for item_13 in var_11 {
+    if let Some(var_11) = &input.replication_server_instance_type {
+        object.key("replicationServerInstanceType").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.replication_servers_security_groups_ids {
+        let mut array_13 = object.key("replicationServersSecurityGroupsIDs").start_array();
+        for item_14 in var_12 {
             {
-                array_12.value().string(item_13.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_14) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_14.as_str());
+    if let Some(var_15) = &input.staging_area_subnet_id {
+        object.key("stagingAreaSubnetId").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.staging_area_tags {
+    if let Some(var_16) = &input.staging_area_tags {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("stagingAreaTags").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_17 = object.key("stagingAreaTags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_16.finish();
+        object_17.finish();
     }
-    if let Some(var_19) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_19);
+    if let Some(var_20) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_20);
     }
-    if let Some(var_20) = &input.use_fips_endpoint {
-        object.key("useFipsEndpoint").boolean(*var_20);
+    if let Some(var_21) = &input.use_fips_endpoint {
+        object.key("useFipsEndpoint").boolean(*var_21);
     }
     Ok(())
 }

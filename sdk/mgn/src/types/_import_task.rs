@@ -2,10 +2,12 @@
 
 /// <p>Import task.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportTask {
     /// <p>Import task id.</p>
     pub import_id: ::std::option::Option<::std::string::String>,
+    /// <p>ImportTask arn.</p>
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Import task s3 bucket source.</p>
     pub s3_bucket_source: ::std::option::Option<crate::types::S3BucketSource>,
     /// <p>Import task creation datetime.</p>
@@ -18,11 +20,17 @@ pub struct ImportTask {
     pub progress_percentage: ::std::option::Option<f32>,
     /// <p>Import task summary.</p>
     pub summary: ::std::option::Option<crate::types::ImportTaskSummary>,
+    /// <p>Import task tags.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImportTask {
     /// <p>Import task id.</p>
     pub fn import_id(&self) -> ::std::option::Option<&str> {
         self.import_id.as_deref()
+    }
+    /// <p>ImportTask arn.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>Import task s3 bucket source.</p>
     pub fn s3_bucket_source(&self) -> ::std::option::Option<&crate::types::S3BucketSource> {
@@ -48,6 +56,25 @@ impl ImportTask {
     pub fn summary(&self) -> ::std::option::Option<&crate::types::ImportTaskSummary> {
         self.summary.as_ref()
     }
+    /// <p>Import task tags.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
+}
+impl ::std::fmt::Debug for ImportTask {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportTask");
+        formatter.field("import_id", &self.import_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("s3_bucket_source", &self.s3_bucket_source);
+        formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("end_date_time", &self.end_date_time);
+        formatter.field("status", &self.status);
+        formatter.field("progress_percentage", &self.progress_percentage);
+        formatter.field("summary", &self.summary);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl ImportTask {
     /// Creates a new builder-style object to manufacture [`ImportTask`](crate::types::ImportTask).
@@ -57,16 +84,18 @@ impl ImportTask {
 }
 
 /// A builder for [`ImportTask`](crate::types::ImportTask).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ImportTaskBuilder {
     pub(crate) import_id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_source: ::std::option::Option<crate::types::S3BucketSource>,
     pub(crate) creation_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ImportStatus>,
     pub(crate) progress_percentage: ::std::option::Option<f32>,
     pub(crate) summary: ::std::option::Option<crate::types::ImportTaskSummary>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ImportTaskBuilder {
     /// <p>Import task id.</p>
@@ -82,6 +111,20 @@ impl ImportTaskBuilder {
     /// <p>Import task id.</p>
     pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_id
+    }
+    /// <p>ImportTask arn.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ImportTask arn.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p>ImportTask arn.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Import task s3 bucket source.</p>
     pub fn s3_bucket_source(mut self, input: crate::types::S3BucketSource) -> Self {
@@ -167,16 +210,53 @@ impl ImportTaskBuilder {
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::ImportTaskSummary> {
         &self.summary
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Import task tags.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Import task tags.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Import task tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`ImportTask`](crate::types::ImportTask).
     pub fn build(self) -> crate::types::ImportTask {
         crate::types::ImportTask {
             import_id: self.import_id,
+            arn: self.arn,
             s3_bucket_source: self.s3_bucket_source,
             creation_date_time: self.creation_date_time,
             end_date_time: self.end_date_time,
             status: self.status,
             progress_percentage: self.progress_percentage,
             summary: self.summary,
+            tags: self.tags,
         }
+    }
+}
+impl ::std::fmt::Debug for ImportTaskBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportTaskBuilder");
+        formatter.field("import_id", &self.import_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("s3_bucket_source", &self.s3_bucket_source);
+        formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("end_date_time", &self.end_date_time);
+        formatter.field("status", &self.status);
+        formatter.field("progress_percentage", &self.progress_percentage);
+        formatter.field("summary", &self.summary);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

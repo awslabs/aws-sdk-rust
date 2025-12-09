@@ -49,10 +49,43 @@ mod default_connector {
     > = LazyLock::new(default_tls);
 
     fn default_tls() -> hyper_rustls::HttpsConnector<hyper_0_14::client::HttpConnector> {
-        use hyper_rustls::ConfigBuilderExt;
+        use legacy_rustls::client::WantsTransparencyPolicyOrClientCert;
+        use legacy_rustls::{ClientConfig, ConfigBuilder, WantsVerifier};
+        use rustls_native_certs;
+        // polyfill with_native_roots from https://docs.rs/hyper-rustls/0.24.2/src/hyper_rustls/config.rs.html#22-70
+        // to use the new rustls_native_certs, since rustls_native_certs 0.6 depends on rustls-pemfile which is deprecated
+        fn with_native_roots(
+            this: ConfigBuilder<ClientConfig, WantsVerifier>,
+        ) -> ConfigBuilder<ClientConfig, WantsTransparencyPolicyOrClientCert> {
+            let mut roots = rustls::RootCertStore::empty();
+            let mut valid_count = 0;
+            let mut invalid_count = 0;
+
+            for cert in
+                rustls_native_certs::load_native_certs().expect("could not load platform certs")
+            {
+                let cert = rustls::Certificate(cert.to_vec());
+                match roots.add(&cert) {
+                    Ok(_) => valid_count += 1,
+                    Err(err) => {
+                        tracing::trace!("invalid cert der {:?}", cert.0);
+                        tracing::debug!("certificate parsing failed: {:?}", err);
+                        invalid_count += 1
+                    }
+                }
+            }
+            tracing::debug!(
+                "with_native_roots processed {} valid and {} invalid certs",
+                valid_count,
+                invalid_count
+            );
+            assert!(!roots.is_empty(), "no CA certificates found");
+
+            this.with_root_certificates(roots)
+        }
         hyper_rustls::HttpsConnectorBuilder::new()
                .with_tls_config(
-                rustls::ClientConfig::builder()
+                with_native_roots(rustls::ClientConfig::builder()
                     .with_cipher_suites(&[
                         // TLS1.3 suites
                         rustls::cipher_suite::TLS13_AES_256_GCM_SHA384,
@@ -66,8 +99,7 @@ mod default_connector {
                     ])
                     .with_safe_default_kx_groups()
                     .with_safe_default_protocol_versions()
-                    .expect("Error with the TLS configuration. Please file a bug report under https://github.com/smithy-lang/smithy-rs/issues.")
-                    .with_native_roots()
+                    .expect("Error with the TLS configuration. Please file a bug report under https://github.com/smithy-lang/smithy-rs/issues."))
                     .with_no_client_auth()
             )
             .https_or_http()

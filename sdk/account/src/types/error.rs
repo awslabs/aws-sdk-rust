@@ -11,6 +11,8 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
+pub use crate::types::error::_resource_unavailable_exception::ResourceUnavailableException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
@@ -18,6 +20,8 @@ mod _conflict_exception;
 mod _internal_server_exception;
 
 mod _resource_not_found_exception;
+
+mod _resource_unavailable_exception;
 
 mod _too_many_requests_exception;
 

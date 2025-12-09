@@ -6,7 +6,7 @@
 use aws_smithy_eventstream::frame::{
     DecodedFrame, MessageFrameDecoder, UnmarshallMessage, UnmarshalledMessage,
 };
-use aws_smithy_runtime_api::client::result::{ConnectorError, SdkError};
+use aws_smithy_runtime_api::client::result::{ConnectorError, ResponseError, SdkError};
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::event_stream::{Message, RawMessage};
 use bytes::Buf;
@@ -229,8 +229,31 @@ impl<T, E> Receiver<T, E> {
         &mut self,
         message_type: InitialMessageType,
     ) -> Result<Option<Message>, SdkError<E, RawMessage>> {
+        self.try_recv_initial_with_preprocessor(message_type, |msg| Ok((msg, ())))
+            .await
+            .map(|opt| opt.map(|(msg, _)| msg))
+    }
+
+    /// Tries to receive the initial response message with preprocessing support.
+    ///
+    /// The preprocessor function can transform the raw message (e.g., unwrap envelopes)
+    /// and return metadata alongside the transformed message. If the transformed message
+    /// matches the expected `message_type`, both the message and metadata are returned.
+    /// Otherwise, the transformed message is buffered and `Ok(None)` is returned.
+    #[doc(hidden)]
+    pub async fn try_recv_initial_with_preprocessor<F, M>(
+        &mut self,
+        message_type: InitialMessageType,
+        preprocessor: F,
+    ) -> Result<Option<(Message, M)>, SdkError<E, RawMessage>>
+    where
+        F: FnOnce(Message) -> Result<(Message, M), ResponseError<RawMessage>>,
+    {
         if let Some(message) = self.next_message().await? {
-            if let Some(event_type) = message
+            let (processed_message, metadata) =
+                preprocessor(message.clone()).map_err(|err| SdkError::ResponseError(err))?;
+
+            if let Some(event_type) = processed_message
                 .headers()
                 .iter()
                 .find(|h| h.name().as_str() == ":event-type")
@@ -241,10 +264,10 @@ impl<T, E> Receiver<T, E> {
                     .map(|s| s.as_str() == message_type.as_str())
                     .unwrap_or(false)
                 {
-                    return Ok(Some(message));
+                    return Ok(Some((processed_message, metadata)));
                 }
             }
-            // Buffer the message so that it can be returned by the next call to `recv()`
+            // Buffer the processed message so that it can be returned by the next call to `recv()`
             self.buffered_message = Some(message);
         }
         Ok(None)

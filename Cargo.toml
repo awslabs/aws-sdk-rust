@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/telemetry",
     "tests/webassembly",
+    "tests/telemetry",
     "tests/no-default-features"
 ]
 members = [
@@ -54,6 +54,7 @@ members = [
     "sdk/aws-smithy-http",
     "sdk/aws-smithy-http-client",
     "sdk/aws-smithy-json",
+    "sdk/aws-smithy-legacy-http",
     "sdk/aws-smithy-mocks",
     "sdk/aws-smithy-observability",
     "sdk/aws-smithy-observability-otel",

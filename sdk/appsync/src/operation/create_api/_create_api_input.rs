@@ -97,6 +97,7 @@ impl CreateApiInputBuilder {
         &self.tags
     }
     /// <p>The Event API configuration. This includes the default authorization configuration for connecting, publishing, and subscribing to an Event API.</p>
+    /// This field is required.
     pub fn event_config(mut self, input: crate::types::EventConfig) -> Self {
         self.event_config = ::std::option::Option::Some(input);
         self

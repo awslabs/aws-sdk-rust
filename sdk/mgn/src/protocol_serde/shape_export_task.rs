@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "s3Bucket" => {
                             builder = builder.set_s3_bucket(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -70,6 +77,9 @@ where
                         }
                         "summary" => {
                             builder = builder.set_summary(crate::protocol_serde::shape_export_task_summary::de_export_task_summary(tokens)?);
+                        }
+                        "tags" => {
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

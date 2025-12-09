@@ -3,6 +3,28 @@ pub use ::aws_smithy_runtime_api::client::endpoint::EndpointFuture;
 pub use ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver;
 pub use ::aws_smithy_types::endpoint::Endpoint;
 
+/// Interceptor that tracks endpoint override business metric.
+#[derive(Debug, Default)]
+pub(crate) struct EndpointOverrideFeatureTrackerInterceptor;
+
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EndpointOverrideFeatureTrackerInterceptor {
+    fn name(&self) -> &'static str {
+        "EndpointOverrideFeatureTrackerInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        _context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<'_>,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        if cfg.load::<::aws_types::endpoint_config::EndpointUrl>().is_some() {
+            cfg.interceptor_state()
+                .store_append(::aws_runtime::sdk_feature::AwsSdkFeature::EndpointOverride);
+        }
+        ::std::result::Result::Ok(())
+    }
+}
+
 #[cfg(test)]
 mod test {
 

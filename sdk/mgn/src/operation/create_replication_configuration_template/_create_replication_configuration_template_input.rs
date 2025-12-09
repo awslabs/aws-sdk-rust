@@ -31,6 +31,8 @@ pub struct CreateReplicationConfigurationTemplateInput {
     pub use_fips_endpoint: ::std::option::Option<bool>,
     /// <p>Request to configure tags during Replication Settings template creation.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Request to configure the internet protocol to IPv4 or IPv6.</p>
+    pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl CreateReplicationConfigurationTemplateInput {
     /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
@@ -91,6 +93,10 @@ impl CreateReplicationConfigurationTemplateInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Request to configure the internet protocol to IPv4 or IPv6.</p>
+    pub fn internet_protocol(&self) -> ::std::option::Option<&crate::types::InternetProtocol> {
+        self.internet_protocol.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -109,6 +115,7 @@ impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.finish()
     }
 }
@@ -137,6 +144,7 @@ pub struct CreateReplicationConfigurationTemplateInputBuilder {
     pub(crate) staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl CreateReplicationConfigurationTemplateInputBuilder {
     /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
@@ -372,6 +380,20 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Request to configure the internet protocol to IPv4 or IPv6.</p>
+    pub fn internet_protocol(mut self, input: crate::types::InternetProtocol) -> Self {
+        self.internet_protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Request to configure the internet protocol to IPv4 or IPv6.</p>
+    pub fn set_internet_protocol(mut self, input: ::std::option::Option<crate::types::InternetProtocol>) -> Self {
+        self.internet_protocol = input;
+        self
+    }
+    /// <p>Request to configure the internet protocol to IPv4 or IPv6.</p>
+    pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
+        &self.internet_protocol
+    }
     /// Consumes the builder and constructs a [`CreateReplicationConfigurationTemplateInput`](crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateInput).
     pub fn build(
         self,
@@ -395,6 +417,7 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
                 staging_area_tags: self.staging_area_tags,
                 use_fips_endpoint: self.use_fips_endpoint,
                 tags: self.tags,
+                internet_protocol: self.internet_protocol,
             },
         )
     }
@@ -416,6 +439,7 @@ impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateInputBuilder {
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.finish()
     }
 }

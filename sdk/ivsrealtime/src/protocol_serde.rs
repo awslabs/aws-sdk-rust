@@ -303,6 +303,8 @@ pub(crate) mod shape_destination;
 
 pub(crate) mod shape_destination_summary_list;
 
+pub(crate) mod shape_exchanged_participant_token;
+
 pub(crate) mod shape_participant_recording_media_type_list;
 
 pub(crate) mod shape_recording_configuration;

@@ -2,12 +2,14 @@
 
 /// <p>Start import request.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartImportInput {
     /// <p>Start import request client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Start import request s3 bucket source.</p>
     pub s3_bucket_source: ::std::option::Option<crate::types::S3BucketSource>,
+    /// <p>Start import request tags.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartImportInput {
     /// <p>Start import request client token.</p>
@@ -18,6 +20,19 @@ impl StartImportInput {
     pub fn s3_bucket_source(&self) -> ::std::option::Option<&crate::types::S3BucketSource> {
         self.s3_bucket_source.as_ref()
     }
+    /// <p>Start import request tags.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
+}
+impl ::std::fmt::Debug for StartImportInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StartImportInput");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("s3_bucket_source", &self.s3_bucket_source);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl StartImportInput {
     /// Creates a new builder-style object to manufacture [`StartImportInput`](crate::operation::start_import::StartImportInput).
@@ -27,11 +42,12 @@ impl StartImportInput {
 }
 
 /// A builder for [`StartImportInput`](crate::operation::start_import::StartImportInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct StartImportInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_source: ::std::option::Option<crate::types::S3BucketSource>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartImportInputBuilder {
     /// <p>Start import request client token.</p>
@@ -63,11 +79,41 @@ impl StartImportInputBuilder {
     pub fn get_s3_bucket_source(&self) -> &::std::option::Option<crate::types::S3BucketSource> {
         &self.s3_bucket_source
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Start import request tags.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Start import request tags.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Start import request tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_import::StartImportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_import::StartImportInput {
             client_token: self.client_token,
             s3_bucket_source: self.s3_bucket_source,
+            tags: self.tags,
         })
+    }
+}
+impl ::std::fmt::Debug for StartImportInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StartImportInputBuilder");
+        formatter.field("client_token", &self.client_token);
+        formatter.field("s3_bucket_source", &self.s3_bucket_source);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

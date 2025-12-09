@@ -3,6 +3,28 @@ pub use ::aws_smithy_runtime_api::client::endpoint::EndpointFuture;
 pub use ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver;
 pub use ::aws_smithy_types::endpoint::Endpoint;
 
+/// Interceptor that tracks endpoint override business metric.
+#[derive(Debug, Default)]
+pub(crate) struct EndpointOverrideFeatureTrackerInterceptor;
+
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EndpointOverrideFeatureTrackerInterceptor {
+    fn name(&self) -> &'static str {
+        "EndpointOverrideFeatureTrackerInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        _context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<'_>,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        if cfg.load::<::aws_types::endpoint_config::EndpointUrl>().is_some() {
+            cfg.interceptor_state()
+                .store_append(::aws_runtime::sdk_feature::AwsSdkFeature::EndpointOverride);
+        }
+        ::std::result::Result::Ok(())
+    }
+}
+
 #[cfg(test)]
 mod test {
 
@@ -296,369 +318,9 @@ mod test {
         );
     }
 
-    /// For region us-gov-west-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_12() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.us-gov-west-1.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account-fips.us-gov-west-1.api.aws")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_13() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.us-gov-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account-fips.us-gov-west-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_14() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-west-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account.us-gov-west-1.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account.us-gov-west-1.api.aws")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_15() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-west-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account.us-gov-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account.us-gov-west-1.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_16() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.us-iso-east-1.c2s.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account-fips.us-iso-east-1.c2s.ic.gov")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_17() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-iso-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account.us-iso-east-1.c2s.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account.us-iso-east-1.c2s.ic.gov")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_18() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.us-isob-east-1.sc2s.sgov.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account-fips.us-isob-east-1.sc2s.sgov.gov")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_19() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isob-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account.us-isob-east-1.sc2s.sgov.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account.us-isob-east-1.sc2s.sgov.gov")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region eu-isoe-west-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_20() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-isoe-west-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.eu-isoe-west-1.cloud.adc-e.uk");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account-fips.eu-isoe-west-1.cloud.adc-e.uk")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "eu-isoe-west-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region eu-isoe-west-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_21() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-isoe-west-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account.eu-isoe-west-1.cloud.adc-e.uk");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account.eu-isoe-west-1.cloud.adc-e.uk")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "eu-isoe-west-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region us-isof-south-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_22() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isof-south-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.us-isof-south-1.csp.hci.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account-fips.us-isof-south-1.csp.hci.ic.gov")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-isof-south-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
-    /// For region us-isof-south-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_23() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-isof-south-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://account.us-isof-south-1.csp.hci.ic.gov");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://account.us-isof-south-1.csp.hci.ic.gov")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-isof-south-1".to_string().into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
-    }
-
     /// For region eusc-de-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_24() {
+    fn test_12() {
         let params = crate::config::endpoint::Params::builder()
             .region("eusc-de-east-1".to_string())
             .use_fips(true)
@@ -688,7 +350,7 @@ mod test {
 
     /// For region eusc-de-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_25() {
+    fn test_13() {
         let params = crate::config::endpoint::Params::builder()
             .region("eusc-de-east-1".to_string())
             .use_fips(false)
@@ -708,6 +370,366 @@ mod test {
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "eusc-de-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_14() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account-fips.us-iso-east-1.c2s.ic.gov")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_15() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account.us-iso-east-1.c2s.ic.gov")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_16() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.us-isob-east-1.sc2s.sgov.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account-fips.us-isob-east-1.sc2s.sgov.gov")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_17() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account.us-isob-east-1.sc2s.sgov.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account.us-isob-east-1.sc2s.sgov.gov")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region eu-isoe-west-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_18() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eu-isoe-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.eu-isoe-west-1.cloud.adc-e.uk");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account-fips.eu-isoe-west-1.cloud.adc-e.uk")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "eu-isoe-west-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region eu-isoe-west-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_19() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eu-isoe-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account.eu-isoe-west-1.cloud.adc-e.uk");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account.eu-isoe-west-1.cloud.adc-e.uk")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "eu-isoe-west-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-isof-south-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_20() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isof-south-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.us-isof-south-1.csp.hci.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account-fips.us-isof-south-1.csp.hci.ic.gov")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-isof-south-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-isof-south-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_21() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isof-south-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account.us-isof-south-1.csp.hci.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account.us-isof-south-1.csp.hci.ic.gov")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-isof-south-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_22() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.us-gov-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account-fips.us-gov-west-1.api.aws")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_23() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account-fips.us-gov-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account-fips.us-gov-west-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_24() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account.us-gov-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account.us-gov-west-1.api.aws")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_25() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://account.us-gov-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://account.us-gov-west-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out
                     }
                     .into()]

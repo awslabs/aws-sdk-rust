@@ -103,6 +103,8 @@ pub use crate::types::_launched_instance::LaunchedInstance;
 
 pub use crate::types::_first_boot::FirstBoot;
 
+pub use crate::types::_internet_protocol::InternetProtocol;
+
 pub use crate::types::_replication_configuration_data_plane_routing::ReplicationConfigurationDataPlaneRouting;
 
 pub use crate::types::_replication_configuration_ebs_encryption::ReplicationConfigurationEbsEncryption;
@@ -292,6 +294,8 @@ mod _import_task_summary_servers;
 mod _import_task_summary_waves;
 
 mod _initiated_by;
+
+mod _internet_protocol;
 
 mod _job;
 

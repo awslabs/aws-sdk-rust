@@ -53,6 +53,27 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn resource_unavailable_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceUnavailableExceptionBuilder,
+) -> crate::types::error::builders::ResourceUnavailableExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_gov_cloud_account_information_output_output_correct_errors(
+    mut builder: crate::operation::get_gov_cloud_account_information::builders::GetGovCloudAccountInformationOutputBuilder,
+) -> crate::operation::get_gov_cloud_account_information::builders::GetGovCloudAccountInformationOutputBuilder {
+    if builder.gov_cloud_account_id.is_none() {
+        builder.gov_cloud_account_id = Some(Default::default())
+    }
+    if builder.account_state.is_none() {
+        builder.account_state = "no value was set".parse::<crate::types::AwsAccountState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn contact_information_correct_errors(
     mut builder: crate::types::builders::ContactInformationBuilder,
 ) -> crate::types::builders::ContactInformationBuilder {

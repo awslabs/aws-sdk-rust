@@ -150,4 +150,23 @@ impl StartExportFluentBuilder {
     pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_bucket_owner()
     }
+    ///
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Start import request tags.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.tags(k.into(), v.into());
+        self
+    }
+    /// <p>Start import request tags.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>Start import request tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_tags()
+    }
 }

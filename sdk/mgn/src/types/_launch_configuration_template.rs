@@ -37,6 +37,10 @@ pub struct LaunchConfigurationTemplate {
     pub small_volume_conf: ::std::option::Option<crate::types::LaunchTemplateDiskConf>,
     /// <p>Large volume config.</p>
     pub large_volume_conf: ::std::option::Option<crate::types::LaunchTemplateDiskConf>,
+    /// <p>Enable parameters encryption.</p>
+    pub enable_parameters_encryption: ::std::option::Option<bool>,
+    /// <p>Parameters encryption key.</p>
+    pub parameters_encryption_key: ::std::option::Option<::std::string::String>,
 }
 impl LaunchConfigurationTemplate {
     /// <p>ID of the Launch Configuration Template.</p>
@@ -108,6 +112,14 @@ impl LaunchConfigurationTemplate {
     pub fn large_volume_conf(&self) -> ::std::option::Option<&crate::types::LaunchTemplateDiskConf> {
         self.large_volume_conf.as_ref()
     }
+    /// <p>Enable parameters encryption.</p>
+    pub fn enable_parameters_encryption(&self) -> ::std::option::Option<bool> {
+        self.enable_parameters_encryption
+    }
+    /// <p>Parameters encryption key.</p>
+    pub fn parameters_encryption_key(&self) -> ::std::option::Option<&str> {
+        self.parameters_encryption_key.as_deref()
+    }
 }
 impl ::std::fmt::Debug for LaunchConfigurationTemplate {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -129,6 +141,8 @@ impl ::std::fmt::Debug for LaunchConfigurationTemplate {
         formatter.field("small_volume_max_size", &self.small_volume_max_size);
         formatter.field("small_volume_conf", &self.small_volume_conf);
         formatter.field("large_volume_conf", &self.large_volume_conf);
+        formatter.field("enable_parameters_encryption", &self.enable_parameters_encryption);
+        formatter.field("parameters_encryption_key", &self.parameters_encryption_key);
         formatter.finish()
     }
 }
@@ -160,6 +174,8 @@ pub struct LaunchConfigurationTemplateBuilder {
     pub(crate) small_volume_max_size: ::std::option::Option<i64>,
     pub(crate) small_volume_conf: ::std::option::Option<crate::types::LaunchTemplateDiskConf>,
     pub(crate) large_volume_conf: ::std::option::Option<crate::types::LaunchTemplateDiskConf>,
+    pub(crate) enable_parameters_encryption: ::std::option::Option<bool>,
+    pub(crate) parameters_encryption_key: ::std::option::Option<::std::string::String>,
 }
 impl LaunchConfigurationTemplateBuilder {
     /// <p>ID of the Launch Configuration Template.</p>
@@ -410,6 +426,34 @@ impl LaunchConfigurationTemplateBuilder {
     pub fn get_large_volume_conf(&self) -> &::std::option::Option<crate::types::LaunchTemplateDiskConf> {
         &self.large_volume_conf
     }
+    /// <p>Enable parameters encryption.</p>
+    pub fn enable_parameters_encryption(mut self, input: bool) -> Self {
+        self.enable_parameters_encryption = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enable parameters encryption.</p>
+    pub fn set_enable_parameters_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_parameters_encryption = input;
+        self
+    }
+    /// <p>Enable parameters encryption.</p>
+    pub fn get_enable_parameters_encryption(&self) -> &::std::option::Option<bool> {
+        &self.enable_parameters_encryption
+    }
+    /// <p>Parameters encryption key.</p>
+    pub fn parameters_encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parameters_encryption_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Parameters encryption key.</p>
+    pub fn set_parameters_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parameters_encryption_key = input;
+        self
+    }
+    /// <p>Parameters encryption key.</p>
+    pub fn get_parameters_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameters_encryption_key
+    }
     /// Consumes the builder and constructs a [`LaunchConfigurationTemplate`](crate::types::LaunchConfigurationTemplate).
     /// This method will fail if any of the following fields are not set:
     /// - [`launch_configuration_template_id`](crate::types::builders::LaunchConfigurationTemplateBuilder::launch_configuration_template_id)
@@ -437,6 +481,8 @@ impl LaunchConfigurationTemplateBuilder {
             small_volume_max_size: self.small_volume_max_size.unwrap_or_default(),
             small_volume_conf: self.small_volume_conf,
             large_volume_conf: self.large_volume_conf,
+            enable_parameters_encryption: self.enable_parameters_encryption,
+            parameters_encryption_key: self.parameters_encryption_key,
         })
     }
 }
@@ -460,6 +506,8 @@ impl ::std::fmt::Debug for LaunchConfigurationTemplateBuilder {
         formatter.field("small_volume_max_size", &self.small_volume_max_size);
         formatter.field("small_volume_conf", &self.small_volume_conf);
         formatter.field("large_volume_conf", &self.large_volume_conf);
+        formatter.field("enable_parameters_encryption", &self.enable_parameters_encryption);
+        formatter.field("parameters_encryption_key", &self.parameters_encryption_key);
         formatter.finish()
     }
 }

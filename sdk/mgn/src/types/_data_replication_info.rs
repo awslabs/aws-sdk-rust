@@ -18,6 +18,8 @@ pub struct DataReplicationInfo {
     pub data_replication_error: ::std::option::Option<crate::types::DataReplicationError>,
     /// <p>Request to query data replication last snapshot time.</p>
     pub last_snapshot_date_time: ::std::option::Option<::std::string::String>,
+    /// <p>Replication server instance ID.</p>
+    pub replicator_id: ::std::option::Option<::std::string::String>,
 }
 impl DataReplicationInfo {
     /// <p>Request to query data replication lag duration.</p>
@@ -50,6 +52,10 @@ impl DataReplicationInfo {
     pub fn last_snapshot_date_time(&self) -> ::std::option::Option<&str> {
         self.last_snapshot_date_time.as_deref()
     }
+    /// <p>Replication server instance ID.</p>
+    pub fn replicator_id(&self) -> ::std::option::Option<&str> {
+        self.replicator_id.as_deref()
+    }
 }
 impl DataReplicationInfo {
     /// Creates a new builder-style object to manufacture [`DataReplicationInfo`](crate::types::DataReplicationInfo).
@@ -69,6 +75,7 @@ pub struct DataReplicationInfoBuilder {
     pub(crate) data_replication_initiation: ::std::option::Option<crate::types::DataReplicationInitiation>,
     pub(crate) data_replication_error: ::std::option::Option<crate::types::DataReplicationError>,
     pub(crate) last_snapshot_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) replicator_id: ::std::option::Option<::std::string::String>,
 }
 impl DataReplicationInfoBuilder {
     /// <p>Request to query data replication lag duration.</p>
@@ -175,6 +182,20 @@ impl DataReplicationInfoBuilder {
     pub fn get_last_snapshot_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_snapshot_date_time
     }
+    /// <p>Replication server instance ID.</p>
+    pub fn replicator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.replicator_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Replication server instance ID.</p>
+    pub fn set_replicator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.replicator_id = input;
+        self
+    }
+    /// <p>Replication server instance ID.</p>
+    pub fn get_replicator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replicator_id
+    }
     /// Consumes the builder and constructs a [`DataReplicationInfo`](crate::types::DataReplicationInfo).
     pub fn build(self) -> crate::types::DataReplicationInfo {
         crate::types::DataReplicationInfo {
@@ -185,6 +206,7 @@ impl DataReplicationInfoBuilder {
             data_replication_initiation: self.data_replication_initiation,
             data_replication_error: self.data_replication_error,
             last_snapshot_date_time: self.last_snapshot_date_time,
+            replicator_id: self.replicator_id,
         }
     }
 }

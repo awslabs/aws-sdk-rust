@@ -374,4 +374,18 @@ impl UpdateReplicationConfigurationFluentBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
+    /// <p>Update replication configuration internet protocol.</p>
+    pub fn internet_protocol(mut self, input: crate::types::InternetProtocol) -> Self {
+        self.inner = self.inner.internet_protocol(input);
+        self
+    }
+    /// <p>Update replication configuration internet protocol.</p>
+    pub fn set_internet_protocol(mut self, input: ::std::option::Option<crate::types::InternetProtocol>) -> Self {
+        self.inner = self.inner.set_internet_protocol(input);
+        self
+    }
+    /// <p>Update replication configuration internet protocol.</p>
+    pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
+        self.inner.get_internet_protocol()
+    }
 }

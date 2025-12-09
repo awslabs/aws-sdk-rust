@@ -1322,6 +1322,7 @@ impl ServiceRuntimePlugin {
                 ::aws_runtime::auth::sigv4a::SigV4aAuthScheme::new(),
             ));
         }
+        runtime_components.push_interceptor(crate::config::endpoint::EndpointOverrideFeatureTrackerInterceptor);
         Self { config, runtime_components }
     }
 }

@@ -40,6 +40,7 @@
 ///     CloudWatchRegion::EuWest1 => { /* ... */ },
 ///     CloudWatchRegion::EuWest2 => { /* ... */ },
 ///     CloudWatchRegion::EuWest3 => { /* ... */ },
+///     CloudWatchRegion::EuscDeEast1 => { /* ... */ },
 ///     CloudWatchRegion::IlCentral1 => { /* ... */ },
 ///     CloudWatchRegion::MeCentral1 => { /* ... */ },
 ///     CloudWatchRegion::MeSouth1 => { /* ... */ },
@@ -142,6 +143,8 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     EuWest3,
     #[allow(missing_docs)] // documentation missing in model
+    EuscDeEast1,
+    #[allow(missing_docs)] // documentation missing in model
     IlCentral1,
     #[allow(missing_docs)] // documentation missing in model
     MeCentral1,
@@ -210,6 +213,7 @@ impl ::std::convert::From<&str> for CloudWatchRegion {
             "eu-west-1" => CloudWatchRegion::EuWest1,
             "eu-west-2" => CloudWatchRegion::EuWest2,
             "eu-west-3" => CloudWatchRegion::EuWest3,
+            "eusc-de-east-1" => CloudWatchRegion::EuscDeEast1,
             "il-central-1" => CloudWatchRegion::IlCentral1,
             "me-central-1" => CloudWatchRegion::MeCentral1,
             "me-south-1" => CloudWatchRegion::MeSouth1,
@@ -270,6 +274,7 @@ impl CloudWatchRegion {
             CloudWatchRegion::EuWest1 => "eu-west-1",
             CloudWatchRegion::EuWest2 => "eu-west-2",
             CloudWatchRegion::EuWest3 => "eu-west-3",
+            CloudWatchRegion::EuscDeEast1 => "eusc-de-east-1",
             CloudWatchRegion::IlCentral1 => "il-central-1",
             CloudWatchRegion::MeCentral1 => "me-central-1",
             CloudWatchRegion::MeSouth1 => "me-south-1",
@@ -321,6 +326,7 @@ impl CloudWatchRegion {
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",
+            "eusc-de-east-1",
             "il-central-1",
             "me-central-1",
             "me-south-1",
@@ -389,6 +395,7 @@ impl ::std::fmt::Display for CloudWatchRegion {
             CloudWatchRegion::EuWest1 => write!(f, "eu-west-1"),
             CloudWatchRegion::EuWest2 => write!(f, "eu-west-2"),
             CloudWatchRegion::EuWest3 => write!(f, "eu-west-3"),
+            CloudWatchRegion::EuscDeEast1 => write!(f, "eusc-de-east-1"),
             CloudWatchRegion::IlCentral1 => write!(f, "il-central-1"),
             CloudWatchRegion::MeCentral1 => write!(f, "me-central-1"),
             CloudWatchRegion::MeSouth1 => write!(f, "me-south-1"),

@@ -65,6 +65,16 @@ where
                         "replica" => {
                             builder = builder.set_replica(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "previousToken" => {
+                            builder = builder.set_previous_token(
+                                crate::protocol_serde::shape_exchanged_participant_token::de_exchanged_participant_token(tokens)?,
+                            );
+                        }
+                        "newToken" => {
+                            builder = builder.set_new_token(
+                                crate::protocol_serde::shape_exchanged_participant_token::de_exchanged_participant_token(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

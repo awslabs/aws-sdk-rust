@@ -177,6 +177,8 @@ mod get_alternate_contact;
 
 mod get_contact_information;
 
+mod get_gov_cloud_account_information;
+
 mod get_primary_email;
 
 mod get_region_opt_status;

@@ -11,6 +11,8 @@ pub use crate::types::_primary_email_update_status::PrimaryEmailUpdateStatus;
 
 pub use crate::types::_contact_information::ContactInformation;
 
+pub use crate::types::_aws_account_state::AwsAccountState;
+
 pub use crate::types::_alternate_contact_type::AlternateContactType;
 
 pub use crate::types::_alternate_contact::AlternateContact;
@@ -18,6 +20,8 @@ pub use crate::types::_alternate_contact::AlternateContact;
 mod _alternate_contact;
 
 mod _alternate_contact_type;
+
+mod _aws_account_state;
 
 mod _contact_information;
 

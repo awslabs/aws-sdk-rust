@@ -87,6 +87,16 @@ impl TokenBucket {
     pub(crate) fn available_permits(&self) -> usize {
         self.semaphore.available_permits()
     }
+
+    /// Returns true if the token bucket is full, false otherwise
+    pub fn is_full(&self) -> bool {
+        self.semaphore.available_permits() >= self.max_permits
+    }
+
+    /// Returns true if the token bucket is empty, false otherwise
+    pub fn is_empty(&self) -> bool {
+        self.semaphore.available_permits() == 0
+    }
 }
 
 /// Builder for constructing a `TokenBucket`.

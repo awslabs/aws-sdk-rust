@@ -159,6 +159,9 @@ pub(crate) fn de_create_launch_configuration_template(
                 "enableMapAutoTagging" => {
                     builder = builder.set_enable_map_auto_tagging(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "enableParametersEncryption" => {
+                    builder = builder.set_enable_parameters_encryption(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "largeVolumeConf" => {
                     builder = builder.set_large_volume_conf(crate::protocol_serde::shape_launch_template_disk_conf::de_launch_template_disk_conf(
                         tokens,
@@ -183,6 +186,13 @@ pub(crate) fn de_create_launch_configuration_template(
                 }
                 "mapAutoTaggingMpeID" => {
                     builder = builder.set_map_auto_tagging_mpe_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "parametersEncryptionKey" => {
+                    builder = builder.set_parameters_encryption_key(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

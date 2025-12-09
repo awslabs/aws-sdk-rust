@@ -50,6 +50,10 @@ pub struct Event {
     pub destination_session_id: ::std::option::Option<::std::string::String>,
     /// <p>If true, this indicates the <code>participantId</code> is a replicated participant. If this is a subscribe event, then this flag refers to <code>remoteParticipantId</code>. Default: <code>false</code>.</p>
     pub replica: bool,
+    /// <p>Source participant token for <code>TOKEN_EXCHANGED</code> event.</p>
+    pub previous_token: ::std::option::Option<crate::types::ExchangedParticipantToken>,
+    /// <p>Participant token created during <code>TOKEN_EXCHANGED</code> event.</p>
+    pub new_token: ::std::option::Option<crate::types::ExchangedParticipantToken>,
 }
 impl Event {
     /// <p>The name of the event.</p>
@@ -114,6 +118,14 @@ impl Event {
     pub fn replica(&self) -> bool {
         self.replica
     }
+    /// <p>Source participant token for <code>TOKEN_EXCHANGED</code> event.</p>
+    pub fn previous_token(&self) -> ::std::option::Option<&crate::types::ExchangedParticipantToken> {
+        self.previous_token.as_ref()
+    }
+    /// <p>Participant token created during <code>TOKEN_EXCHANGED</code> event.</p>
+    pub fn new_token(&self) -> ::std::option::Option<&crate::types::ExchangedParticipantToken> {
+        self.new_token.as_ref()
+    }
 }
 impl Event {
     /// Creates a new builder-style object to manufacture [`Event`](crate::types::Event).
@@ -134,6 +146,8 @@ pub struct EventBuilder {
     pub(crate) destination_stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) replica: ::std::option::Option<bool>,
+    pub(crate) previous_token: ::std::option::Option<crate::types::ExchangedParticipantToken>,
+    pub(crate) new_token: ::std::option::Option<crate::types::ExchangedParticipantToken>,
 }
 impl EventBuilder {
     /// <p>The name of the event.</p>
@@ -338,6 +352,34 @@ impl EventBuilder {
     pub fn get_replica(&self) -> &::std::option::Option<bool> {
         &self.replica
     }
+    /// <p>Source participant token for <code>TOKEN_EXCHANGED</code> event.</p>
+    pub fn previous_token(mut self, input: crate::types::ExchangedParticipantToken) -> Self {
+        self.previous_token = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Source participant token for <code>TOKEN_EXCHANGED</code> event.</p>
+    pub fn set_previous_token(mut self, input: ::std::option::Option<crate::types::ExchangedParticipantToken>) -> Self {
+        self.previous_token = input;
+        self
+    }
+    /// <p>Source participant token for <code>TOKEN_EXCHANGED</code> event.</p>
+    pub fn get_previous_token(&self) -> &::std::option::Option<crate::types::ExchangedParticipantToken> {
+        &self.previous_token
+    }
+    /// <p>Participant token created during <code>TOKEN_EXCHANGED</code> event.</p>
+    pub fn new_token(mut self, input: crate::types::ExchangedParticipantToken) -> Self {
+        self.new_token = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Participant token created during <code>TOKEN_EXCHANGED</code> event.</p>
+    pub fn set_new_token(mut self, input: ::std::option::Option<crate::types::ExchangedParticipantToken>) -> Self {
+        self.new_token = input;
+        self
+    }
+    /// <p>Participant token created during <code>TOKEN_EXCHANGED</code> event.</p>
+    pub fn get_new_token(&self) -> &::std::option::Option<crate::types::ExchangedParticipantToken> {
+        &self.new_token
+    }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
@@ -349,6 +391,8 @@ impl EventBuilder {
             destination_stage_arn: self.destination_stage_arn,
             destination_session_id: self.destination_session_id,
             replica: self.replica.unwrap_or_default(),
+            previous_token: self.previous_token,
+            new_token: self.new_token,
         }
     }
 }

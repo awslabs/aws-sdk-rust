@@ -22,6 +22,9 @@ pub mod get_alternate_contact;
 /// Types for the `GetContactInformation` operation.
 pub mod get_contact_information;
 
+/// Types for the `GetGovCloudAccountInformation` operation.
+pub mod get_gov_cloud_account_information;
+
 /// Types for the `GetPrimaryEmail` operation.
 pub mod get_primary_email;
 

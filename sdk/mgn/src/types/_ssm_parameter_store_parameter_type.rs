@@ -12,6 +12,7 @@
 /// ```text
 /// # let ssmparameterstoreparametertype = unimplemented!();
 /// match ssmparameterstoreparametertype {
+///     SsmParameterStoreParameterType::SecureString => { /* ... */ },
 ///     SsmParameterStoreParameterType::String => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum SsmParameterStoreParameterType {
     #[allow(missing_docs)] // documentation missing in model
+    SecureString,
+    #[allow(missing_docs)] // documentation missing in model
     String,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum SsmParameterStoreParameterType {
 impl ::std::convert::From<&str> for SsmParameterStoreParameterType {
     fn from(s: &str) -> Self {
         match s {
+            "SECURE_STRING" => SsmParameterStoreParameterType::SecureString,
             "STRING" => SsmParameterStoreParameterType::String,
             other => SsmParameterStoreParameterType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl SsmParameterStoreParameterType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SsmParameterStoreParameterType::SecureString => "SECURE_STRING",
             SsmParameterStoreParameterType::String => "STRING",
             SsmParameterStoreParameterType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STRING"]
+        &["SECURE_STRING", "STRING"]
     }
 }
 impl ::std::convert::AsRef<str> for SsmParameterStoreParameterType {
@@ -95,6 +100,7 @@ impl SsmParameterStoreParameterType {
 impl ::std::fmt::Display for SsmParameterStoreParameterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SsmParameterStoreParameterType::SecureString => write!(f, "SECURE_STRING"),
             SsmParameterStoreParameterType::String => write!(f, "STRING"),
             SsmParameterStoreParameterType::Unknown(value) => write!(f, "{value}"),
         }

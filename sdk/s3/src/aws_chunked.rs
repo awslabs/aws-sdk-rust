@@ -170,6 +170,7 @@ mod tests {
             file.as_file_mut().write_all(line.as_bytes()).unwrap();
         }
 
+        let stream_length = file.as_file().metadata().unwrap().len();
         let request = HttpRequest::new(ByteStream::read_from().path(&file).buffer_size(1024).build().await.unwrap().into_inner());
 
         // ensure original SdkBody is retryable
@@ -177,7 +178,8 @@ mod tests {
 
         let interceptor = AwsChunkedContentEncodingInterceptor;
         let mut cfg = ConfigBag::base();
-        cfg.interceptor_state().store_put(AwsChunkedBodyOptions::default());
+        cfg.interceptor_state()
+            .store_put(AwsChunkedBodyOptions::default().with_stream_length(stream_length));
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         ctx.enter_serialization_phase();
@@ -195,7 +197,9 @@ mod tests {
             body_data.extend_from_slice(&data.unwrap())
         }
         let body_str = std::str::from_utf8(&body_data).unwrap();
-        assert!(body_str.ends_with("0\r\n\r\n"));
+
+        let expected = "This is a large file created for testing purposes 9999\r\n0\r\n\r\n";
+        assert!(body_str.ends_with(expected), "expected '{body_str}' to end with '{expected}'");
     }
 
     #[tokio::test]

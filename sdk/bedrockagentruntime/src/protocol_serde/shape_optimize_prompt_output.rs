@@ -7,8 +7,6 @@ pub fn de_optimized_prompt_payload(
 > {
     let unmarshaller = crate::event_stream_serde::OptimizedPromptStreamUnmarshaller::new();
     let body = std::mem::replace(body, ::aws_smithy_types::body::SdkBody::taken());
-    Ok(crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(
-        unmarshaller,
-        body,
-    )))
+    let receiver = crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(unmarshaller, body));
+    Ok(receiver)
 }

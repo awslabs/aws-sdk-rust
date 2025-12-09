@@ -10,10 +10,8 @@ pub fn de_event_stream_payload(
 > {
     let unmarshaller = crate::event_stream_serde::InvokeWithResponseStreamResponseEventUnmarshaller::new();
     let body = std::mem::replace(body, ::aws_smithy_types::body::SdkBody::taken());
-    Ok(crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(
-        unmarshaller,
-        body,
-    )))
+    let receiver = crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(unmarshaller, body));
+    Ok(receiver)
 }
 
 pub(crate) fn de_executed_version_header(

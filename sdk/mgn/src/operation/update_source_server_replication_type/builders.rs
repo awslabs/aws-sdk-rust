@@ -23,6 +23,7 @@ impl crate::operation::update_source_server_replication_type::builders::UpdateSo
 /// Fluent builder constructing a request to `UpdateSourceServerReplicationType`.
 ///
 /// <p>Allows you to change between the AGENT_BASED replication type and the SNAPSHOT_SHIPPING replication type.</p>
+/// <p>SNAPSHOT_SHIPPING should be used for agentless replication.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSourceServerReplicationTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

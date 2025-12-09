@@ -7,10 +7,8 @@ pub fn de_completion_payload(
 > {
     let unmarshaller = crate::event_stream_serde::InlineAgentResponseStreamUnmarshaller::new();
     let body = std::mem::replace(body, ::aws_smithy_types::body::SdkBody::taken());
-    Ok(crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(
-        unmarshaller,
-        body,
-    )))
+    let receiver = crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(unmarshaller, body));
+    Ok(receiver)
 }
 
 pub(crate) fn de_content_type_header(

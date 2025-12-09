@@ -12,5 +12,15 @@ pub fn ser_start_import_input_input(
         crate::protocol_serde::shape_s3_bucket_source::ser_s3_bucket_source(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("tags").start_object();
+        for (key_6, value_7) in var_4 {
+            {
+                object_5.key(key_6.as_str()).string(value_7.as_str());
+            }
+        }
+        object_5.finish();
+    }
     Ok(())
 }

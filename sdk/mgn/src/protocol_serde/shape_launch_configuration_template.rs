@@ -106,6 +106,17 @@ where
                                 crate::protocol_serde::shape_launch_template_disk_conf::de_launch_template_disk_conf(tokens)?,
                             );
                         }
+                        "enableParametersEncryption" => {
+                            builder =
+                                builder.set_enable_parameters_encryption(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "parametersEncryptionKey" => {
+                            builder = builder.set_parameters_encryption_key(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

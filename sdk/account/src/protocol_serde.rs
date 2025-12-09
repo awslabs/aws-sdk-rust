@@ -37,6 +37,8 @@ pub(crate) mod shape_get_alternate_contact;
 
 pub(crate) mod shape_get_contact_information;
 
+pub(crate) mod shape_get_gov_cloud_account_information;
+
 pub(crate) mod shape_get_primary_email;
 
 pub(crate) mod shape_get_region_opt_status;
@@ -77,6 +79,8 @@ pub(crate) mod shape_get_alternate_contact_input;
 
 pub(crate) mod shape_get_contact_information_input;
 
+pub(crate) mod shape_get_gov_cloud_account_information_input;
+
 pub(crate) mod shape_get_primary_email_input;
 
 pub(crate) mod shape_get_region_opt_status_input;
@@ -92,6 +96,8 @@ pub(crate) mod shape_put_alternate_contact_input;
 pub(crate) mod shape_put_contact_information_input;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_resource_unavailable_exception;
 
 pub(crate) mod shape_start_primary_email_update_input;
 

@@ -113,10 +113,8 @@ pub fn de_transcript_result_stream_payload(
 > {
     let unmarshaller = crate::event_stream_serde::MedicalTranscriptResultStreamUnmarshaller::new();
     let body = std::mem::replace(body, ::aws_smithy_types::body::SdkBody::taken());
-    Ok(crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(
-        unmarshaller,
-        body,
-    )))
+    let receiver = crate::event_receiver::EventReceiver::new(::aws_smithy_http::event_stream::Receiver::new(unmarshaller, body));
+    Ok(receiver)
 }
 
 pub(crate) fn de_type_header(

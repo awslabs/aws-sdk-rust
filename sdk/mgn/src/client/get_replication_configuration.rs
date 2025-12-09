@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`create_public_ip(Option<bool>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::create_public_ip): <p>Replication Configuration create Public IP.</p>
     ///   - [`staging_area_tags(Option<HashMap::<String, String>>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::staging_area_tags): <p>Replication Configuration Staging Area tags.</p>
     ///   - [`use_fips_endpoint(Option<bool>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::use_fips_endpoint): <p>Replication Configuration use Fips Endpoint.</p>
+    ///   - [`internet_protocol(Option<InternetProtocol>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::internet_protocol): <p>Replication Configuration internet protocol.</p>
     /// - On failure, responds with [`SdkError<GetReplicationConfigurationError>`](crate::operation::get_replication_configuration::GetReplicationConfigurationError)
     pub fn get_replication_configuration(
         &self,

@@ -35,6 +35,8 @@ pub struct GetReplicationConfigurationOutput {
     pub staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Replication Configuration use Fips Endpoint.</p>
     pub use_fips_endpoint: ::std::option::Option<bool>,
+    /// <p>Replication Configuration internet protocol.</p>
+    pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     _request_id: Option<String>,
 }
 impl GetReplicationConfigurationOutput {
@@ -106,6 +108,10 @@ impl GetReplicationConfigurationOutput {
     pub fn use_fips_endpoint(&self) -> ::std::option::Option<bool> {
         self.use_fips_endpoint
     }
+    /// <p>Replication Configuration internet protocol.</p>
+    pub fn internet_protocol(&self) -> ::std::option::Option<&crate::types::InternetProtocol> {
+        self.internet_protocol.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetReplicationConfigurationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -126,6 +132,7 @@ impl ::std::fmt::Debug for GetReplicationConfigurationOutput {
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -162,6 +169,7 @@ pub struct GetReplicationConfigurationOutputBuilder {
     pub(crate) create_public_ip: ::std::option::Option<bool>,
     pub(crate) staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
+    pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     _request_id: Option<String>,
 }
 impl GetReplicationConfigurationOutputBuilder {
@@ -420,6 +428,20 @@ impl GetReplicationConfigurationOutputBuilder {
     pub fn get_use_fips_endpoint(&self) -> &::std::option::Option<bool> {
         &self.use_fips_endpoint
     }
+    /// <p>Replication Configuration internet protocol.</p>
+    pub fn internet_protocol(mut self, input: crate::types::InternetProtocol) -> Self {
+        self.internet_protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Replication Configuration internet protocol.</p>
+    pub fn set_internet_protocol(mut self, input: ::std::option::Option<crate::types::InternetProtocol>) -> Self {
+        self.internet_protocol = input;
+        self
+    }
+    /// <p>Replication Configuration internet protocol.</p>
+    pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
+        &self.internet_protocol
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -448,6 +470,7 @@ impl GetReplicationConfigurationOutputBuilder {
             create_public_ip: self.create_public_ip,
             staging_area_tags: self.staging_area_tags,
             use_fips_endpoint: self.use_fips_endpoint,
+            internet_protocol: self.internet_protocol,
             _request_id: self._request_id,
         }
     }
@@ -471,6 +494,7 @@ impl ::std::fmt::Debug for GetReplicationConfigurationOutputBuilder {
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

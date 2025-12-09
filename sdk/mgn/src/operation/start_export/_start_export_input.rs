@@ -2,7 +2,7 @@
 
 /// <p>Start export request.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartExportInput {
     /// <p>Start export request s3 bucket.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
@@ -10,6 +10,8 @@ pub struct StartExportInput {
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>Start export request s3 bucket owner.</p>
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
+    /// <p>Start import request tags.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartExportInput {
     /// <p>Start export request s3 bucket.</p>
@@ -24,6 +26,20 @@ impl StartExportInput {
     pub fn s3_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_owner.as_deref()
     }
+    /// <p>Start import request tags.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
+}
+impl ::std::fmt::Debug for StartExportInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StartExportInput");
+        formatter.field("s3_bucket", &self.s3_bucket);
+        formatter.field("s3_key", &self.s3_key);
+        formatter.field("s3_bucket_owner", &self.s3_bucket_owner);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl StartExportInput {
     /// Creates a new builder-style object to manufacture [`StartExportInput`](crate::operation::start_export::StartExportInput).
@@ -33,12 +49,13 @@ impl StartExportInput {
 }
 
 /// A builder for [`StartExportInput`](crate::operation::start_export::StartExportInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct StartExportInputBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key: ::std::option::Option<::std::string::String>,
     pub(crate) s3_bucket_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartExportInputBuilder {
     /// <p>Start export request s3 bucket.</p>
@@ -85,12 +102,43 @@ impl StartExportInputBuilder {
     pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_owner
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Start import request tags.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Start import request tags.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Start import request tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`StartExportInput`](crate::operation::start_export::StartExportInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_export::StartExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_export::StartExportInput {
             s3_bucket: self.s3_bucket,
             s3_key: self.s3_key,
             s3_bucket_owner: self.s3_bucket_owner,
+            tags: self.tags,
         })
+    }
+}
+impl ::std::fmt::Debug for StartExportInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StartExportInputBuilder");
+        formatter.field("s3_bucket", &self.s3_bucket);
+        formatter.field("s3_key", &self.s3_key);
+        formatter.field("s3_bucket_owner", &self.s3_bucket_owner);
+        formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

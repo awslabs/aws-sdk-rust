@@ -22,7 +22,7 @@ impl crate::operation::start_replication::builders::StartReplicationInputBuilder
 }
 /// Fluent builder constructing a request to `StartReplication`.
 ///
-/// <p>Starts replication for SNAPSHOT_SHIPPING agents.</p>
+/// <p>Start replication for source server irrespective of its replication type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartReplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

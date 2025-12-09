@@ -11,6 +11,8 @@ pub enum Error {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The operation failed because it specified a resource that can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The operation failed because it specified a resource that is not currently available.</p>
+    ResourceUnavailableException(crate::types::error::ResourceUnavailableException),
     /// <p>The operation failed because it was called too frequently and exceeded a throttle limit.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>The operation failed because one of the input parameters was invalid.</p>
@@ -31,6 +33,7 @@ impl ::std::fmt::Display for Error {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ResourceUnavailableException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -58,6 +61,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ResourceUnavailableException(inner) => inner.meta(),
             Self::TooManyRequestsException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -293,6 +297,56 @@ impl From<crate::operation::get_contact_information::GetContactInformationError>
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_gov_cloud_account_information::GetGovCloudAccountInformationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_gov_cloud_account_information::GetGovCloudAccountInformationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_gov_cloud_account_information::GetGovCloudAccountInformationError> for Error {
+    fn from(err: crate::operation::get_gov_cloud_account_information::GetGovCloudAccountInformationError) -> Self {
+        match err {
+            crate::operation::get_gov_cloud_account_information::GetGovCloudAccountInformationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_gov_cloud_account_information::GetGovCloudAccountInformationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_gov_cloud_account_information::GetGovCloudAccountInformationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_gov_cloud_account_information::GetGovCloudAccountInformationError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::get_gov_cloud_account_information::GetGovCloudAccountInformationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_gov_cloud_account_information::GetGovCloudAccountInformationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_gov_cloud_account_information::GetGovCloudAccountInformationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_primary_email::GetPrimaryEmailError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -505,6 +559,7 @@ impl ::std::error::Error for Error {
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ResourceUnavailableException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -518,6 +573,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ResourceUnavailableException(e) => e.request_id(),
             Self::TooManyRequestsException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

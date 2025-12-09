@@ -23,6 +23,7 @@
 ///     EventName::SubscribeError => { /* ... */ },
 ///     EventName::SubscribeStarted => { /* ... */ },
 ///     EventName::SubscribeStopped => { /* ... */ },
+///     EventName::TokenExchanged => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -73,6 +74,8 @@ pub enum EventName {
     SubscribeStarted,
     #[allow(missing_docs)] // documentation missing in model
     SubscribeStopped,
+    #[allow(missing_docs)] // documentation missing in model
+    TokenExchanged,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -91,6 +94,7 @@ impl ::std::convert::From<&str> for EventName {
             "SUBSCRIBE_ERROR" => EventName::SubscribeError,
             "SUBSCRIBE_STARTED" => EventName::SubscribeStarted,
             "SUBSCRIBE_STOPPED" => EventName::SubscribeStopped,
+            "TOKEN_EXCHANGED" => EventName::TokenExchanged,
             other => EventName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -117,6 +121,7 @@ impl EventName {
             EventName::SubscribeError => "SUBSCRIBE_ERROR",
             EventName::SubscribeStarted => "SUBSCRIBE_STARTED",
             EventName::SubscribeStopped => "SUBSCRIBE_STOPPED",
+            EventName::TokenExchanged => "TOKEN_EXCHANGED",
             EventName::Unknown(value) => value.as_str(),
         }
     }
@@ -134,6 +139,7 @@ impl EventName {
             "SUBSCRIBE_ERROR",
             "SUBSCRIBE_STARTED",
             "SUBSCRIBE_STOPPED",
+            "TOKEN_EXCHANGED",
         ]
     }
 }
@@ -168,6 +174,7 @@ impl ::std::fmt::Display for EventName {
             EventName::SubscribeError => write!(f, "SUBSCRIBE_ERROR"),
             EventName::SubscribeStarted => write!(f, "SUBSCRIBE_STARTED"),
             EventName::SubscribeStopped => write!(f, "SUBSCRIBE_STOPPED"),
+            EventName::TokenExchanged => write!(f, "TOKEN_EXCHANGED"),
             EventName::Unknown(value) => write!(f, "{value}"),
         }
     }

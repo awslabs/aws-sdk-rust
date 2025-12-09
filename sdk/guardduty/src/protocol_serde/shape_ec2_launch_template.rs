@@ -17,7 +17,7 @@ where
                         "ec2InstanceUids" => {
                             builder = builder.set_ec2_instance_uids(crate::protocol_serde::shape_ec2_instance_uids::de_ec2_instance_uids(tokens)?);
                         }
-                        "Version" => {
+                        "version" => {
                             builder = builder.set_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))

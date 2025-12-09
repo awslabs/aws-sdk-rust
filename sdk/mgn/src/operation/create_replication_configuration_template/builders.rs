@@ -333,4 +333,18 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>Request to configure the internet protocol to IPv4 or IPv6.</p>
+    pub fn internet_protocol(mut self, input: crate::types::InternetProtocol) -> Self {
+        self.inner = self.inner.internet_protocol(input);
+        self
+    }
+    /// <p>Request to configure the internet protocol to IPv4 or IPv6.</p>
+    pub fn set_internet_protocol(mut self, input: ::std::option::Option<crate::types::InternetProtocol>) -> Self {
+        self.inner = self.inner.set_internet_protocol(input);
+        self
+    }
+    /// <p>Request to configure the internet protocol to IPv4 or IPv6.</p>
+    pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
+        self.inner.get_internet_protocol()
+    }
 }

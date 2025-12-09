@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ec2instanceconnect = "1.90.0"
+//! aws-sdk-ec2instanceconnect = "1.91.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

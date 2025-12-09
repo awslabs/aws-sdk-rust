@@ -33,6 +33,8 @@ pub struct UpdateReplicationConfigurationTemplateInput {
     pub staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Update replication configuration template use Fips Endpoint request.</p>
     pub use_fips_endpoint: ::std::option::Option<bool>,
+    /// <p>Update replication configuration template internet protocol request.</p>
+    pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl UpdateReplicationConfigurationTemplateInput {
     /// <p>Update replication configuration template template ID request.</p>
@@ -97,6 +99,10 @@ impl UpdateReplicationConfigurationTemplateInput {
     pub fn use_fips_endpoint(&self) -> ::std::option::Option<bool> {
         self.use_fips_endpoint
     }
+    /// <p>Update replication configuration template internet protocol request.</p>
+    pub fn internet_protocol(&self) -> ::std::option::Option<&crate::types::InternetProtocol> {
+        self.internet_protocol.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -116,6 +122,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.finish()
     }
 }
@@ -145,6 +152,7 @@ pub struct UpdateReplicationConfigurationTemplateInputBuilder {
     pub(crate) create_public_ip: ::std::option::Option<bool>,
     pub(crate) staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
+    pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl UpdateReplicationConfigurationTemplateInputBuilder {
     /// <p>Update replication configuration template template ID request.</p>
@@ -380,6 +388,20 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
     pub fn get_use_fips_endpoint(&self) -> &::std::option::Option<bool> {
         &self.use_fips_endpoint
     }
+    /// <p>Update replication configuration template internet protocol request.</p>
+    pub fn internet_protocol(mut self, input: crate::types::InternetProtocol) -> Self {
+        self.internet_protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Update replication configuration template internet protocol request.</p>
+    pub fn set_internet_protocol(mut self, input: ::std::option::Option<crate::types::InternetProtocol>) -> Self {
+        self.internet_protocol = input;
+        self
+    }
+    /// <p>Update replication configuration template internet protocol request.</p>
+    pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
+        &self.internet_protocol
+    }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationTemplateInput`](crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateInput).
     pub fn build(
         self,
@@ -404,6 +426,7 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
                 create_public_ip: self.create_public_ip,
                 staging_area_tags: self.staging_area_tags,
                 use_fips_endpoint: self.use_fips_endpoint,
+                internet_protocol: self.internet_protocol,
             },
         )
     }
@@ -426,6 +449,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateInputBuilder {
         formatter.field("create_public_ip", &self.create_public_ip);
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.finish()
     }
 }

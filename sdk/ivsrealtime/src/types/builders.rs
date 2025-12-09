@@ -53,6 +53,8 @@ pub use crate::types::_participant_replica::ParticipantReplicaBuilder;
 
 pub use crate::types::_event::EventBuilder;
 
+pub use crate::types::_exchanged_participant_token::ExchangedParticipantTokenBuilder;
+
 pub use crate::types::_ingest_configuration_summary::IngestConfigurationSummaryBuilder;
 
 pub use crate::types::_encoder_configuration_summary::EncoderConfigurationSummaryBuilder;

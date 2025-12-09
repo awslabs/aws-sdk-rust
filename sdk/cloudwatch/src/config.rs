@@ -1356,6 +1356,7 @@ impl ServiceRuntimePlugin {
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
             ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
         ));
+        runtime_components.push_interceptor(crate::config::endpoint::EndpointOverrideFeatureTrackerInterceptor);
         Self { config, runtime_components }
     }
 }

@@ -12,6 +12,10 @@ pub struct JobLogEventData {
     pub target_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Job error.</p>
     pub raw_error: ::std::option::Option<::std::string::String>,
+    /// <p>Retries for this operation.</p>
+    pub attempt_count: ::std::option::Option<i32>,
+    /// <p>The maximum number of retries that will be attempted if this operation failed.</p>
+    pub max_attempts_count: ::std::option::Option<i32>,
 }
 impl JobLogEventData {
     /// <p>Job Event Source Server ID.</p>
@@ -30,6 +34,14 @@ impl JobLogEventData {
     pub fn raw_error(&self) -> ::std::option::Option<&str> {
         self.raw_error.as_deref()
     }
+    /// <p>Retries for this operation.</p>
+    pub fn attempt_count(&self) -> ::std::option::Option<i32> {
+        self.attempt_count
+    }
+    /// <p>The maximum number of retries that will be attempted if this operation failed.</p>
+    pub fn max_attempts_count(&self) -> ::std::option::Option<i32> {
+        self.max_attempts_count
+    }
 }
 impl JobLogEventData {
     /// Creates a new builder-style object to manufacture [`JobLogEventData`](crate::types::JobLogEventData).
@@ -46,6 +58,8 @@ pub struct JobLogEventDataBuilder {
     pub(crate) conversion_server_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) raw_error: ::std::option::Option<::std::string::String>,
+    pub(crate) attempt_count: ::std::option::Option<i32>,
+    pub(crate) max_attempts_count: ::std::option::Option<i32>,
 }
 impl JobLogEventDataBuilder {
     /// <p>Job Event Source Server ID.</p>
@@ -104,6 +118,34 @@ impl JobLogEventDataBuilder {
     pub fn get_raw_error(&self) -> &::std::option::Option<::std::string::String> {
         &self.raw_error
     }
+    /// <p>Retries for this operation.</p>
+    pub fn attempt_count(mut self, input: i32) -> Self {
+        self.attempt_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Retries for this operation.</p>
+    pub fn set_attempt_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.attempt_count = input;
+        self
+    }
+    /// <p>Retries for this operation.</p>
+    pub fn get_attempt_count(&self) -> &::std::option::Option<i32> {
+        &self.attempt_count
+    }
+    /// <p>The maximum number of retries that will be attempted if this operation failed.</p>
+    pub fn max_attempts_count(mut self, input: i32) -> Self {
+        self.max_attempts_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of retries that will be attempted if this operation failed.</p>
+    pub fn set_max_attempts_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_attempts_count = input;
+        self
+    }
+    /// <p>The maximum number of retries that will be attempted if this operation failed.</p>
+    pub fn get_max_attempts_count(&self) -> &::std::option::Option<i32> {
+        &self.max_attempts_count
+    }
     /// Consumes the builder and constructs a [`JobLogEventData`](crate::types::JobLogEventData).
     pub fn build(self) -> crate::types::JobLogEventData {
         crate::types::JobLogEventData {
@@ -111,6 +153,8 @@ impl JobLogEventDataBuilder {
             conversion_server_id: self.conversion_server_id,
             target_instance_id: self.target_instance_id,
             raw_error: self.raw_error,
+            attempt_count: self.attempt_count,
+            max_attempts_count: self.max_attempts_count,
         }
     }
 }

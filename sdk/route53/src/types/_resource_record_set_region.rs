@@ -39,6 +39,7 @@
 ///     ResourceRecordSetRegion::EuWest1 => { /* ... */ },
 ///     ResourceRecordSetRegion::EuWest2 => { /* ... */ },
 ///     ResourceRecordSetRegion::EuWest3 => { /* ... */ },
+///     ResourceRecordSetRegion::EuscDeEast1 => { /* ... */ },
 ///     ResourceRecordSetRegion::IlCentral1 => { /* ... */ },
 ///     ResourceRecordSetRegion::MeCentral1 => { /* ... */ },
 ///     ResourceRecordSetRegion::MeSouth1 => { /* ... */ },
@@ -133,6 +134,8 @@ pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     EuWest3,
     #[allow(missing_docs)] // documentation missing in model
+    EuscDeEast1,
+    #[allow(missing_docs)] // documentation missing in model
     IlCentral1,
     #[allow(missing_docs)] // documentation missing in model
     MeCentral1,
@@ -188,6 +191,7 @@ impl ::std::convert::From<&str> for ResourceRecordSetRegion {
             "eu-west-1" => ResourceRecordSetRegion::EuWest1,
             "eu-west-2" => ResourceRecordSetRegion::EuWest2,
             "eu-west-3" => ResourceRecordSetRegion::EuWest3,
+            "eusc-de-east-1" => ResourceRecordSetRegion::EuscDeEast1,
             "il-central-1" => ResourceRecordSetRegion::IlCentral1,
             "me-central-1" => ResourceRecordSetRegion::MeCentral1,
             "me-south-1" => ResourceRecordSetRegion::MeSouth1,
@@ -241,6 +245,7 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::EuWest1 => "eu-west-1",
             ResourceRecordSetRegion::EuWest2 => "eu-west-2",
             ResourceRecordSetRegion::EuWest3 => "eu-west-3",
+            ResourceRecordSetRegion::EuscDeEast1 => "eusc-de-east-1",
             ResourceRecordSetRegion::IlCentral1 => "il-central-1",
             ResourceRecordSetRegion::MeCentral1 => "me-central-1",
             ResourceRecordSetRegion::MeSouth1 => "me-south-1",
@@ -285,6 +290,7 @@ impl ResourceRecordSetRegion {
             "eu-west-1",
             "eu-west-2",
             "eu-west-3",
+            "eusc-de-east-1",
             "il-central-1",
             "me-central-1",
             "me-south-1",
@@ -346,6 +352,7 @@ impl ::std::fmt::Display for ResourceRecordSetRegion {
             ResourceRecordSetRegion::EuWest1 => write!(f, "eu-west-1"),
             ResourceRecordSetRegion::EuWest2 => write!(f, "eu-west-2"),
             ResourceRecordSetRegion::EuWest3 => write!(f, "eu-west-3"),
+            ResourceRecordSetRegion::EuscDeEast1 => write!(f, "eusc-de-east-1"),
             ResourceRecordSetRegion::IlCentral1 => write!(f, "il-central-1"),
             ResourceRecordSetRegion::MeCentral1 => write!(f, "me-central-1"),
             ResourceRecordSetRegion::MeSouth1 => write!(f, "me-south-1"),
