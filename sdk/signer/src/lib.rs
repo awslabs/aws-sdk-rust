@@ -29,7 +29,7 @@
 //!
 //! With Signer and the Notation CLI from the [Notary  Project](https://notaryproject.dev/), you can sign container images stored in a container registry such as Amazon Elastic Container Registry (ECR). The signatures are stored in the registry alongside the images, where they are available for verifying image authenticity and integrity.
 //!
-//! For more information about Signer, see the [AWS Signer Developer Guide](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html).
+//! For more information about Signer, see the [AWS Signer Developer Guide](http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html).
 //!
 //! ## Getting Started
 //!
@@ -43,7 +43,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-signer = "1.91.0"
+//! aws-sdk-signer = "1.92.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

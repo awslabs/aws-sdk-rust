@@ -12,6 +12,7 @@
 /// ```text
 /// # let matchoption = unimplemented!();
 /// match matchoption {
+///     MatchOption::Equal => { /* ... */ },
 ///     MatchOption::NotEqual => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum MatchOption {
     #[allow(missing_docs)] // documentation missing in model
+    Equal,
+    #[allow(missing_docs)] // documentation missing in model
     NotEqual,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum MatchOption {
 impl ::std::convert::From<&str> for MatchOption {
     fn from(s: &str) -> Self {
         match s {
+            "EQUAL" => MatchOption::Equal,
             "NOT_EQUAL" => MatchOption::NotEqual,
             other => MatchOption::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl MatchOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            MatchOption::Equal => "EQUAL",
             MatchOption::NotEqual => "NOT_EQUAL",
             MatchOption::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NOT_EQUAL"]
+        &["EQUAL", "NOT_EQUAL"]
     }
 }
 impl ::std::convert::AsRef<str> for MatchOption {
@@ -95,6 +100,7 @@ impl MatchOption {
 impl ::std::fmt::Display for MatchOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            MatchOption::Equal => write!(f, "EQUAL"),
             MatchOption::NotEqual => write!(f, "NOT_EQUAL"),
             MatchOption::Unknown(value) => write!(f, "{value}"),
         }

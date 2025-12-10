@@ -25,7 +25,7 @@ pub fn de_get_insight_rule_report_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -43,7 +43,7 @@ pub fn de_get_insight_rule_report_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
-                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(
+                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -61,7 +61,7 @@ pub fn de_get_insight_rule_report_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_insight_rule_report::GetInsightRuleReportError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -94,114 +94,89 @@ pub fn de_get_insight_rule_report_http_response(
     })
 }
 
-#[allow(unused_mut)]
-pub fn de_get_insight_rule_report(
-    inp: &[u8],
-    mut builder: crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder,
-) -> std::result::Result<
-    crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
-    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    #[allow(unused_variables)]
-    let start_el = decoder.start_el();
-    if !(start_el.matches("GetInsightRuleReportResponse")) {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetInsightRuleReportResponse got {start_el:?}"
-        )));
+pub fn ser_get_insight_rule_report_input(
+    input: &crate::operation::get_insight_rule_report::GetInsightRuleReportInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_get_insight_rule_report_input::ser_get_insight_rule_report_input_input(encoder, input)?;
     }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("GetInsightRuleReportResult")) {
-            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetInsightRuleReportResult got {start_el:?}"
-            )));
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+}
+
+pub(crate) fn de_get_insight_rule_report(
+    value: &[u8],
+    mut builder: crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder,
+) -> ::std::result::Result<
+    crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder,
+    ::aws_smithy_cbor::decode::DeserializeError,
+> {
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<
+        crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "KeyLabels" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_key_labels(Some(
+                    crate::protocol_serde::shape_insight_rule_contributor_key_labels::de_insight_rule_contributor_key_labels(decoder)?,
+                )))
+            })?,
+            "AggregationStatistic" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_aggregation_statistic(Some(decoder.string()?)))
+            })?,
+            "AggregateValue" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_aggregate_value(Some(decoder.double()?)))
+            })?,
+            "ApproximateUniqueCount" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_approximate_unique_count(Some(decoder.long()?)))
+            })?,
+            "Contributors" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_contributors(Some(
+                    crate::protocol_serde::shape_insight_rule_contributors::de_insight_rule_contributors(decoder)?,
+                )))
+            })?,
+            "MetricDatapoints" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_metric_datapoints(Some(
+                    crate::protocol_serde::shape_insight_rule_metric_datapoints::de_insight_rule_metric_datapoints(decoder)?,
+                )))
+            })?,
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
+                }
+                _ => {
+                    builder = pair(builder, decoder)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
+            }
         }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("KeyLabels") /* KeyLabels com.amazonaws.cloudwatch.synthetic#GetInsightRuleReportOutput$KeyLabels */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_insight_rule_contributor_key_labels::de_insight_rule_contributor_key_labels(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_key_labels(var_1);
-            }
-            ,
-            s if s.matches("AggregationStatistic") /* AggregationStatistic com.amazonaws.cloudwatch.synthetic#GetInsightRuleReportOutput$AggregationStatistic */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_aggregation_statistic(var_2);
-            }
-            ,
-            s if s.matches("AggregateValue") /* AggregateValue com.amazonaws.cloudwatch.synthetic#GetInsightRuleReportOutput$AggregateValue */ =>  {
-                let var_3 =
-                    Some(
-                         {
-                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_aggregate_value(var_3);
-            }
-            ,
-            s if s.matches("ApproximateUniqueCount") /* ApproximateUniqueCount com.amazonaws.cloudwatch.synthetic#GetInsightRuleReportOutput$ApproximateUniqueCount */ =>  {
-                let var_4 =
-                    Some(
-                         {
-                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.cloudwatch#InsightRuleUnboundLong`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_approximate_unique_count(var_4);
-            }
-            ,
-            s if s.matches("Contributors") /* Contributors com.amazonaws.cloudwatch.synthetic#GetInsightRuleReportOutput$Contributors */ =>  {
-                let var_5 =
-                    Some(
-                        crate::protocol_serde::shape_insight_rule_contributors::de_insight_rule_contributors(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_contributors(var_5);
-            }
-            ,
-            s if s.matches("MetricDatapoints") /* MetricDatapoints com.amazonaws.cloudwatch.synthetic#GetInsightRuleReportOutput$MetricDatapoints */ =>  {
-                let var_6 =
-                    Some(
-                        crate::protocol_serde::shape_insight_rule_metric_datapoints::de_insight_rule_metric_datapoints(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_metric_datapoints(var_6);
-            }
-            ,
-            _ => {}
-        }
-        }
-    } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected GetInsightRuleReportResult tag",
-        ));
     };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
+    }
+
     Ok(builder)
 }

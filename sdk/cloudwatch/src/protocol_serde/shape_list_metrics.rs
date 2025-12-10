@@ -22,7 +22,7 @@ pub fn de_list_metrics_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_cbor_err(_response_body, output)
                     .map_err(crate::operation::list_metrics::ListMetricsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -37,7 +37,7 @@ pub fn de_list_metrics_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -70,69 +70,68 @@ pub fn de_list_metrics_http_response(
     })
 }
 
-#[allow(unused_mut)]
-pub fn de_list_metrics(
-    inp: &[u8],
-    mut builder: crate::operation::list_metrics::builders::ListMetricsOutputBuilder,
-) -> std::result::Result<crate::operation::list_metrics::builders::ListMetricsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    #[allow(unused_variables)]
-    let start_el = decoder.start_el();
-    if !(start_el.matches("ListMetricsResponse")) {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ListMetricsResponse got {start_el:?}"
-        )));
+pub fn ser_list_metrics_input(
+    input: &crate::operation::list_metrics::ListMetricsInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_list_metrics_input::ser_list_metrics_input_input(encoder, input)?;
     }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("ListMetricsResult")) {
-            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ListMetricsResult got {start_el:?}"
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("Metrics") /* Metrics com.amazonaws.cloudwatch.synthetic#ListMetricsOutput$Metrics */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_metrics::de_metrics(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_metrics(var_1);
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+}
+
+pub(crate) fn de_list_metrics(
+    value: &[u8],
+    mut builder: crate::operation::list_metrics::builders::ListMetricsOutputBuilder,
+) -> ::std::result::Result<crate::operation::list_metrics::builders::ListMetricsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::list_metrics::builders::ListMetricsOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<crate::operation::list_metrics::builders::ListMetricsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+        builder = match decoder.str()?.as_ref() {
+            "Metrics" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_metrics(Some(crate::protocol_serde::shape_metrics::de_metrics(decoder)?)))
+            })?,
+            "NextToken" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
             }
-            ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudwatch.synthetic#ListMetricsOutput$NextToken */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_next_token(var_2);
+            "OwningAccounts" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_owning_accounts(Some(crate::protocol_serde::shape_owning_accounts::de_owning_accounts(decoder)?)))
+            })?,
+            _ => {
+                decoder.skip()?;
+                builder
             }
-            ,
-            s if s.matches("OwningAccounts") /* OwningAccounts com.amazonaws.cloudwatch.synthetic#ListMetricsOutput$OwningAccounts */ =>  {
-                let var_3 =
-                    Some(
-                        crate::protocol_serde::shape_owning_accounts::de_owning_accounts(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_owning_accounts(var_3);
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
+                }
+                _ => {
+                    builder = pair(builder, decoder)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
             }
-            ,
-            _ => {}
         }
-        }
-    } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected ListMetricsResult tag"));
     };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
+    }
+
     Ok(builder)
 }

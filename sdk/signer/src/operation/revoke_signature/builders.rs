@@ -22,7 +22,7 @@ impl crate::operation::revoke_signature::builders::RevokeSignatureInputBuilder {
 }
 /// Fluent builder constructing a request to `RevokeSignature`.
 ///
-/// <p>Changes the state of a signing job to REVOKED. This indicates that the signature is no longer valid.</p>
+/// <p>Changes the state of a signing job to <code>REVOKED</code>. This indicates that the signature is no longer valid.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeSignatureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

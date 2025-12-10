@@ -6,6 +6,8 @@
 pub struct AwsOpportunityProject {
     /// <p>Indicates the expected spending by the customer over the course of the project. This value helps partners and AWS estimate the financial impact of the opportunity. Use the <a href="https://calculator.aws/#/">AWS Pricing Calculator</a> to create an estimate of the customer’s total spend. If only annual recurring revenue (ARR) is available, distribute it across 12 months to provide an average monthly value.</p>
     pub expected_customer_spend: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>>,
+    /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc' for AWS European Sovereign Cloud, `null` for all other partitions
+    pub aws_partition: ::std::option::Option<crate::types::AwsPartition>,
 }
 impl AwsOpportunityProject {
     /// <p>Indicates the expected spending by the customer over the course of the project. This value helps partners and AWS estimate the financial impact of the opportunity. Use the <a href="https://calculator.aws/#/">AWS Pricing Calculator</a> to create an estimate of the customer’s total spend. If only annual recurring revenue (ARR) is available, distribute it across 12 months to provide an average monthly value.</p>
@@ -13,6 +15,10 @@ impl AwsOpportunityProject {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.expected_customer_spend.is_none()`.
     pub fn expected_customer_spend(&self) -> &[crate::types::ExpectedCustomerSpend] {
         self.expected_customer_spend.as_deref().unwrap_or_default()
+    }
+    /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc' for AWS European Sovereign Cloud, `null` for all other partitions
+    pub fn aws_partition(&self) -> ::std::option::Option<&crate::types::AwsPartition> {
+        self.aws_partition.as_ref()
     }
 }
 impl AwsOpportunityProject {
@@ -27,6 +33,7 @@ impl AwsOpportunityProject {
 #[non_exhaustive]
 pub struct AwsOpportunityProjectBuilder {
     pub(crate) expected_customer_spend: ::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>>,
+    pub(crate) aws_partition: ::std::option::Option<crate::types::AwsPartition>,
 }
 impl AwsOpportunityProjectBuilder {
     /// Appends an item to `expected_customer_spend`.
@@ -49,10 +56,25 @@ impl AwsOpportunityProjectBuilder {
     pub fn get_expected_customer_spend(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpectedCustomerSpend>> {
         &self.expected_customer_spend
     }
+    /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc' for AWS European Sovereign Cloud, `null` for all other partitions
+    pub fn aws_partition(mut self, input: crate::types::AwsPartition) -> Self {
+        self.aws_partition = ::std::option::Option::Some(input);
+        self
+    }
+    /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc' for AWS European Sovereign Cloud, `null` for all other partitions
+    pub fn set_aws_partition(mut self, input: ::std::option::Option<crate::types::AwsPartition>) -> Self {
+        self.aws_partition = input;
+        self
+    }
+    /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc' for AWS European Sovereign Cloud, `null` for all other partitions
+    pub fn get_aws_partition(&self) -> &::std::option::Option<crate::types::AwsPartition> {
+        &self.aws_partition
+    }
     /// Consumes the builder and constructs a [`AwsOpportunityProject`](crate::types::AwsOpportunityProject).
     pub fn build(self) -> crate::types::AwsOpportunityProject {
         crate::types::AwsOpportunityProject {
             expected_customer_spend: self.expected_customer_spend,
+            aws_partition: self.aws_partition,
         }
     }
 }

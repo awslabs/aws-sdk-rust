@@ -29,7 +29,7 @@ pub fn de_describe_anomaly_detectors_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_cbor_err(_response_body, output)
                     .map_err(crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -44,7 +44,7 @@ pub fn de_describe_anomaly_detectors_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
-                output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_cbor_err(_response_body, output)
                     .map_err(crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -61,7 +61,7 @@ pub fn de_describe_anomaly_detectors_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     output =
-                        crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(
+                        crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_cbor_err(
                             _response_body,
                             output,
                         )
@@ -80,7 +80,7 @@ pub fn de_describe_anomaly_detectors_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -116,64 +116,71 @@ pub fn de_describe_anomaly_detectors_http_response(
     })
 }
 
-#[allow(unused_mut)]
-pub fn de_describe_anomaly_detectors(
-    inp: &[u8],
-    mut builder: crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder,
-) -> std::result::Result<
-    crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
-    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    #[allow(unused_variables)]
-    let start_el = decoder.start_el();
-    if !(start_el.matches("DescribeAnomalyDetectorsResponse")) {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeAnomalyDetectorsResponse got {start_el:?}"
-        )));
+pub fn ser_describe_anomaly_detectors_input(
+    input: &crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_describe_anomaly_detectors_input::ser_describe_anomaly_detectors_input_input(encoder, input)?;
     }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("DescribeAnomalyDetectorsResult")) {
-            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeAnomalyDetectorsResult got {start_el:?}"
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("AnomalyDetectors") /* AnomalyDetectors com.amazonaws.cloudwatch.synthetic#DescribeAnomalyDetectorsOutput$AnomalyDetectors */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_anomaly_detectors::de_anomaly_detectors(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_anomaly_detectors(var_1);
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+}
+
+pub(crate) fn de_describe_anomaly_detectors(
+    value: &[u8],
+    mut builder: crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder,
+) -> ::std::result::Result<
+    crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder,
+    ::aws_smithy_cbor::decode::DeserializeError,
+> {
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<
+        crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "AnomalyDetectors" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_anomaly_detectors(Some(crate::protocol_serde::shape_anomaly_detectors::de_anomaly_detectors(decoder)?)))
+            })?,
+            "NextToken" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
             }
-            ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudwatch.synthetic#DescribeAnomalyDetectorsOutput$NextToken */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_next_token(var_2);
+            _ => {
+                decoder.skip()?;
+                builder
             }
-            ,
-            _ => {}
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
+                }
+                _ => {
+                    builder = pair(builder, decoder)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
+            }
         }
-        }
-    } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected DescribeAnomalyDetectorsResult tag",
-        ));
     };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
+    }
+
     Ok(builder)
 }

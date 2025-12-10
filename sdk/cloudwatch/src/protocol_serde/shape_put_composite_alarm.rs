@@ -23,7 +23,7 @@ pub fn de_put_composite_alarm_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
-                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_cbor_err(_response_body, output)
                     .map_err(crate::operation::put_composite_alarm::PutCompositeAlarmError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -50,4 +50,15 @@ pub fn de_put_composite_alarm_http_response(
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
+}
+
+pub fn ser_put_composite_alarm_input(
+    input: &crate::operation::put_composite_alarm::PutCompositeAlarmInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_put_composite_alarm_input::ser_put_composite_alarm_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

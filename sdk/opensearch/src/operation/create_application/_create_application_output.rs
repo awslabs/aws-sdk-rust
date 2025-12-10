@@ -19,6 +19,8 @@ pub struct CreateApplicationOutput {
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The timestamp indicating when the OpenSearch application was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutput {
@@ -60,6 +62,10 @@ impl CreateApplicationOutput {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateApplicationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -85,6 +91,7 @@ pub struct CreateApplicationOutputBuilder {
     pub(crate) app_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutputBuilder {
@@ -218,6 +225,20 @@ impl CreateApplicationOutputBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -238,6 +259,7 @@ impl CreateApplicationOutputBuilder {
             app_configs: self.app_configs,
             tag_list: self.tag_list,
             created_at: self.created_at,
+            kms_key_arn: self.kms_key_arn,
             _request_id: self._request_id,
         }
     }

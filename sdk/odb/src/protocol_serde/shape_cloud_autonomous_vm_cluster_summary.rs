@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "odbNetworkArn" => {
+                            builder = builder.set_odb_network_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "ociResourceAnchorName" => {
                             builder = builder.set_oci_resource_anchor_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -70,6 +77,13 @@ where
                         }
                         "cloudExadataInfrastructureId" => {
                             builder = builder.set_cloud_exadata_infrastructure_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "cloudExadataInfrastructureArn" => {
+                            builder = builder.set_cloud_exadata_infrastructure_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

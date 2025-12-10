@@ -16,6 +16,8 @@ pub struct CloudVmCluster {
     pub cloud_vm_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Exadata infrastructure that this VM cluster belongs to.</p>
     pub cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that this VM cluster belongs to.</p>
+    pub cloud_exadata_infrastructure_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Grid Infrastructure (GI) cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of CPU cores enabled on the VM cluster.</p>
@@ -80,6 +82,8 @@ pub struct CloudVmCluster {
     pub vip_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The unique identifier of the ODB network for the VM cluster.</p>
     pub odb_network_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the ODB network associated with this VM cluster.</p>
+    pub odb_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The amount of progress made on the current operation on the VM cluster, expressed as a percentage.</p>
     pub percent_progress: ::std::option::Option<f32>,
     /// <p>The OCI model compute model used when you create or clone an instance: ECPU or OCPU. An ECPU is an abstracted measure of compute resources. ECPUs are based on the number of cores elastically allocated from a pool of compute and storage servers. An OCPU is a legacy physical measure of compute resources. OCPUs are based on the physical core of a processor with hyper-threading enabled.</p>
@@ -112,6 +116,10 @@ impl CloudVmCluster {
     /// <p>The unique identifier of the Exadata infrastructure that this VM cluster belongs to.</p>
     pub fn cloud_exadata_infrastructure_id(&self) -> ::std::option::Option<&str> {
         self.cloud_exadata_infrastructure_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that this VM cluster belongs to.</p>
+    pub fn cloud_exadata_infrastructure_arn(&self) -> ::std::option::Option<&str> {
+        self.cloud_exadata_infrastructure_arn.as_deref()
     }
     /// <p>The name of the Grid Infrastructure (GI) cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
@@ -249,6 +257,10 @@ impl CloudVmCluster {
     pub fn odb_network_id(&self) -> ::std::option::Option<&str> {
         self.odb_network_id.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network associated with this VM cluster.</p>
+    pub fn odb_network_arn(&self) -> ::std::option::Option<&str> {
+        self.odb_network_arn.as_deref()
+    }
     /// <p>The amount of progress made on the current operation on the VM cluster, expressed as a percentage.</p>
     pub fn percent_progress(&self) -> ::std::option::Option<f32> {
         self.percent_progress
@@ -281,6 +293,7 @@ pub struct CloudVmClusterBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_vm_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_exadata_infrastructure_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) cpu_core_count: ::std::option::Option<i32>,
     pub(crate) data_collection_options: ::std::option::Option<crate::types::DataCollectionOptions>,
@@ -313,6 +326,7 @@ pub struct CloudVmClusterBuilder {
     pub(crate) time_zone: ::std::option::Option<::std::string::String>,
     pub(crate) vip_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) odb_network_id: ::std::option::Option<::std::string::String>,
+    pub(crate) odb_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) percent_progress: ::std::option::Option<f32>,
     pub(crate) compute_model: ::std::option::Option<crate::types::ComputeModel>,
     pub(crate) iam_roles: ::std::option::Option<::std::vec::Vec<crate::types::IamRole>>,
@@ -402,6 +416,20 @@ impl CloudVmClusterBuilder {
     /// <p>The unique identifier of the Exadata infrastructure that this VM cluster belongs to.</p>
     pub fn get_cloud_exadata_infrastructure_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_exadata_infrastructure_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that this VM cluster belongs to.</p>
+    pub fn cloud_exadata_infrastructure_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that this VM cluster belongs to.</p>
+    pub fn set_cloud_exadata_infrastructure_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that this VM cluster belongs to.</p>
+    pub fn get_cloud_exadata_infrastructure_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_exadata_infrastructure_arn
     }
     /// <p>The name of the Grid Infrastructure (GI) cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -875,6 +903,20 @@ impl CloudVmClusterBuilder {
     pub fn get_odb_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.odb_network_id
     }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network associated with this VM cluster.</p>
+    pub fn odb_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.odb_network_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network associated with this VM cluster.</p>
+    pub fn set_odb_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.odb_network_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network associated with this VM cluster.</p>
+    pub fn get_odb_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.odb_network_arn
+    }
     /// <p>The amount of progress made on the current operation on the VM cluster, expressed as a percentage.</p>
     pub fn percent_progress(mut self, input: f32) -> Self {
         self.percent_progress = ::std::option::Option::Some(input);
@@ -939,6 +981,7 @@ impl CloudVmClusterBuilder {
             status_reason: self.status_reason,
             cloud_vm_cluster_arn: self.cloud_vm_cluster_arn,
             cloud_exadata_infrastructure_id: self.cloud_exadata_infrastructure_id,
+            cloud_exadata_infrastructure_arn: self.cloud_exadata_infrastructure_arn,
             cluster_name: self.cluster_name,
             cpu_core_count: self.cpu_core_count,
             data_collection_options: self.data_collection_options,
@@ -971,6 +1014,7 @@ impl CloudVmClusterBuilder {
             time_zone: self.time_zone,
             vip_ids: self.vip_ids,
             odb_network_id: self.odb_network_id,
+            odb_network_arn: self.odb_network_arn,
             percent_progress: self.percent_progress,
             compute_model: self.compute_model,
             iam_roles: self.iam_roles,

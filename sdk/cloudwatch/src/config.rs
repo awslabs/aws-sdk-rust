@@ -1337,6 +1337,7 @@ impl ServiceRuntimePlugin {
             ::std::option::Option::Some(cfg.freeze())
         };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
+        runtime_components.push_interceptor(crate::sdk_feature_tracker::rpc_v2_cbor::RpcV2CborFeatureTrackerInterceptor::new());
         runtime_components.set_auth_scheme_option_resolver(::std::option::Option::Some({
             use crate::config::auth::ResolveAuthScheme;
             crate::config::auth::DefaultAuthSchemeResolver::default().into_shared_resolver()

@@ -89,6 +89,8 @@ pub use crate::types::_sales_involvement_type::SalesInvolvementType;
 
 pub use crate::types::_aws_opportunity_project::AwsOpportunityProject;
 
+pub use crate::types::_aws_partition::AwsPartition;
+
 pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomer;
 
 pub use crate::types::_aws_opportunity_related_entities::AwsOpportunityRelatedEntities;
@@ -276,6 +278,8 @@ mod _aws_opportunity_project;
 mod _aws_opportunity_related_entities;
 
 mod _aws_opportunity_stage;
+
+mod _aws_partition;
 
 mod _aws_product_details;
 

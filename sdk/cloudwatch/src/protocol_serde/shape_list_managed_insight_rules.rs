@@ -29,7 +29,7 @@ pub fn de_list_managed_insight_rules_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
-                output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_cbor_err(_response_body, output)
                     .map_err(crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -44,7 +44,7 @@ pub fn de_list_managed_insight_rules_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -62,7 +62,7 @@ pub fn de_list_managed_insight_rules_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
-                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(
+                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -98,64 +98,73 @@ pub fn de_list_managed_insight_rules_http_response(
     })
 }
 
-#[allow(unused_mut)]
-pub fn de_list_managed_insight_rules(
-    inp: &[u8],
-    mut builder: crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
-) -> std::result::Result<
-    crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
-    ::aws_smithy_xml::decode::XmlDecodeError,
-> {
-    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    #[allow(unused_variables)]
-    let start_el = decoder.start_el();
-    if !(start_el.matches("ListManagedInsightRulesResponse")) {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ListManagedInsightRulesResponse got {start_el:?}"
-        )));
+pub fn ser_list_managed_insight_rules_input(
+    input: &crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_list_managed_insight_rules_input::ser_list_managed_insight_rules_input_input(encoder, input)?;
     }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("ListManagedInsightRulesResult")) {
-            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected ListManagedInsightRulesResult got {start_el:?}"
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("ManagedRules") /* ManagedRules com.amazonaws.cloudwatch.synthetic#ListManagedInsightRulesOutput$ManagedRules */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_managed_rule_descriptions::de_managed_rule_descriptions(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_managed_rules(var_1);
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+}
+
+pub(crate) fn de_list_managed_insight_rules(
+    value: &[u8],
+    mut builder: crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
+) -> ::std::result::Result<
+    crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
+    ::aws_smithy_cbor::decode::DeserializeError,
+> {
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<
+        crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "ManagedRules" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_managed_rules(Some(
+                    crate::protocol_serde::shape_managed_rule_descriptions::de_managed_rule_descriptions(decoder)?,
+                )))
+            })?,
+            "NextToken" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
             }
-            ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudwatch.synthetic#ListManagedInsightRulesOutput$NextToken */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_next_token(var_2);
+            _ => {
+                decoder.skip()?;
+                builder
             }
-            ,
-            _ => {}
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
+                }
+                _ => {
+                    builder = pair(builder, decoder)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
+            }
         }
-        }
-    } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
-            "expected ListManagedInsightRulesResult tag",
-        ));
     };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
+    }
+
     Ok(builder)
 }

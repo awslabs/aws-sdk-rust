@@ -19,6 +19,13 @@ where
                                 crate::protocol_serde::shape_expected_customer_spend_list::de_expected_customer_spend_list(tokens)?,
                             );
                         }
+                        "AwsPartition" => {
+                            builder = builder.set_aws_partition(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AwsPartition::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

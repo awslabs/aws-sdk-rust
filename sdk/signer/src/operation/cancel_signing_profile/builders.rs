@@ -22,7 +22,7 @@ impl crate::operation::cancel_signing_profile::builders::CancelSigningProfileInp
 }
 /// Fluent builder constructing a request to `CancelSigningProfile`.
 ///
-/// <p>Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>. A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation, but it cannot perform new signing jobs, and is deleted two years after cancelation.</p>
+/// <p>Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>. A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation, but it cannot perform new signing jobs. See <a href="https://docs.aws.amazon.com/signer/latest/developerguide/retention.html">Data Retention</a> for more information on scheduled deletion of a canceled signing profile.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelSigningProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -36,20 +36,23 @@ pub fn ser_create_application_input_input(
         crate::protocol_serde::shape_iam_identity_center_options_input::ser_iam_identity_center_options_input(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.name {
-        object.key("name").string(var_12.as_str());
+    if let Some(var_12) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.tag_list {
-        let mut array_14 = object.key("tagList").start_array();
-        for item_15 in var_13 {
+    if let Some(var_13) = &input.name {
+        object.key("name").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tag_list {
+        let mut array_15 = object.key("tagList").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
     Ok(())
 }

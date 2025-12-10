@@ -22,7 +22,7 @@ pub fn de_untag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(
+                output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -40,7 +40,7 @@ pub fn de_untag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::untag_resource::UntagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -55,7 +55,7 @@ pub fn de_untag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_cbor_err(_response_body, output)
                     .map_err(crate::operation::untag_resource::UntagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -70,7 +70,7 @@ pub fn de_untag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -88,7 +88,7 @@ pub fn de_untag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::untag_resource::UntagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -114,4 +114,15 @@ pub fn de_untag_resource_http_response(
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
+}
+
+pub fn ser_untag_resource_input(
+    input: &crate::operation::untag_resource::UntagResourceInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_untag_resource_input::ser_untag_resource_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

@@ -10,6 +10,8 @@ pub struct CloudAutonomousVmClusterSummary {
     pub cloud_autonomous_vm_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the ODB network associated with this Autonomous VM cluster.</p>
     pub odb_network_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the ODB network associated with this Autonomous VM cluster.</p>
+    pub odb_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the OCI resource anchor associated with this Autonomous VM cluster.</p>
     pub oci_resource_anchor_name: ::std::option::Option<::std::string::String>,
     /// <p>The progress of the current operation on the Autonomous VM cluster, as a percentage.</p>
@@ -22,6 +24,8 @@ pub struct CloudAutonomousVmClusterSummary {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Exadata infrastructure containing this Autonomous VM cluster.</p>
     pub cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure containing this Autonomous VM cluster.</p>
+    pub cloud_exadata_infrastructure_arn: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of data storage currently in use for Autonomous Databases in the Autonomous VM cluster.</p>
     pub autonomous_data_storage_percentage: ::std::option::Option<f32>,
     /// <p>The total data storage allocated for Autonomous Databases in the Autonomous VM cluster, in TB.</p>
@@ -117,6 +121,10 @@ impl CloudAutonomousVmClusterSummary {
     pub fn odb_network_id(&self) -> ::std::option::Option<&str> {
         self.odb_network_id.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network associated with this Autonomous VM cluster.</p>
+    pub fn odb_network_arn(&self) -> ::std::option::Option<&str> {
+        self.odb_network_arn.as_deref()
+    }
     /// <p>The name of the OCI resource anchor associated with this Autonomous VM cluster.</p>
     pub fn oci_resource_anchor_name(&self) -> ::std::option::Option<&str> {
         self.oci_resource_anchor_name.as_deref()
@@ -140,6 +148,10 @@ impl CloudAutonomousVmClusterSummary {
     /// <p>The unique identifier of the Exadata infrastructure containing this Autonomous VM cluster.</p>
     pub fn cloud_exadata_infrastructure_id(&self) -> ::std::option::Option<&str> {
         self.cloud_exadata_infrastructure_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure containing this Autonomous VM cluster.</p>
+    pub fn cloud_exadata_infrastructure_arn(&self) -> ::std::option::Option<&str> {
+        self.cloud_exadata_infrastructure_arn.as_deref()
     }
     /// <p>The percentage of data storage currently in use for Autonomous Databases in the Autonomous VM cluster.</p>
     pub fn autonomous_data_storage_percentage(&self) -> ::std::option::Option<f32> {
@@ -318,12 +330,14 @@ pub struct CloudAutonomousVmClusterSummaryBuilder {
     pub(crate) cloud_autonomous_vm_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_autonomous_vm_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) odb_network_id: ::std::option::Option<::std::string::String>,
+    pub(crate) odb_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) oci_resource_anchor_name: ::std::option::Option<::std::string::String>,
     pub(crate) percent_progress: ::std::option::Option<f32>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_exadata_infrastructure_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_exadata_infrastructure_arn: ::std::option::Option<::std::string::String>,
     pub(crate) autonomous_data_storage_percentage: ::std::option::Option<f32>,
     pub(crate) autonomous_data_storage_size_in_tbs: ::std::option::Option<f64>,
     pub(crate) available_autonomous_data_storage_size_in_tbs: ::std::option::Option<f64>,
@@ -409,6 +423,20 @@ impl CloudAutonomousVmClusterSummaryBuilder {
     pub fn get_odb_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.odb_network_id
     }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network associated with this Autonomous VM cluster.</p>
+    pub fn odb_network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.odb_network_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network associated with this Autonomous VM cluster.</p>
+    pub fn set_odb_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.odb_network_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ODB network associated with this Autonomous VM cluster.</p>
+    pub fn get_odb_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.odb_network_arn
+    }
     /// <p>The name of the OCI resource anchor associated with this Autonomous VM cluster.</p>
     pub fn oci_resource_anchor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.oci_resource_anchor_name = ::std::option::Option::Some(input.into());
@@ -492,6 +520,20 @@ impl CloudAutonomousVmClusterSummaryBuilder {
     /// <p>The unique identifier of the Exadata infrastructure containing this Autonomous VM cluster.</p>
     pub fn get_cloud_exadata_infrastructure_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_exadata_infrastructure_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure containing this Autonomous VM cluster.</p>
+    pub fn cloud_exadata_infrastructure_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure containing this Autonomous VM cluster.</p>
+    pub fn set_cloud_exadata_infrastructure_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cloud_exadata_infrastructure_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Exadata infrastructure containing this Autonomous VM cluster.</p>
+    pub fn get_cloud_exadata_infrastructure_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_exadata_infrastructure_arn
     }
     /// <p>The percentage of data storage currently in use for Autonomous Databases in the Autonomous VM cluster.</p>
     pub fn autonomous_data_storage_percentage(mut self, input: f32) -> Self {
@@ -1072,12 +1114,14 @@ impl CloudAutonomousVmClusterSummaryBuilder {
             })?,
             cloud_autonomous_vm_cluster_arn: self.cloud_autonomous_vm_cluster_arn,
             odb_network_id: self.odb_network_id,
+            odb_network_arn: self.odb_network_arn,
             oci_resource_anchor_name: self.oci_resource_anchor_name,
             percent_progress: self.percent_progress,
             display_name: self.display_name,
             status: self.status,
             status_reason: self.status_reason,
             cloud_exadata_infrastructure_id: self.cloud_exadata_infrastructure_id,
+            cloud_exadata_infrastructure_arn: self.cloud_exadata_infrastructure_arn,
             autonomous_data_storage_percentage: self.autonomous_data_storage_percentage,
             autonomous_data_storage_size_in_tbs: self.autonomous_data_storage_size_in_tbs,
             available_autonomous_data_storage_size_in_tbs: self.available_autonomous_data_storage_size_in_tbs,

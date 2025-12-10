@@ -53,6 +53,12 @@ where
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'generatedTestCases' cannot be null"))?
                                 ))
                             }
+                            "policyScenarios" => {
+                                Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::PolicyScenarios(
+                                    crate::protocol_serde::shape_automated_reasoning_policy_scenarios::de_automated_reasoning_policy_scenarios(tokens)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'policyScenarios' cannot be null"))?
+                                ))
+                            }
                             _ => {
                                                                               ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                                                                               Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::Unknown)

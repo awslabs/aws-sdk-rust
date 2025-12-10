@@ -28,17 +28,17 @@ where
                                     .transpose()?,
                             );
                         }
-                        "ruleIds" => {
-                            builder = builder.set_rule_ids(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_rule_id_list::de_automated_reasoning_policy_definition_rule_id_list(tokens)?
-                                );
-                        }
                         "expectedResult" => {
                             builder = builder.set_expected_result(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AutomatedReasoningCheckResult::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "ruleIds" => {
+                            builder = builder.set_rule_ids(
+                                    crate::protocol_serde::shape_automated_reasoning_policy_definition_rule_id_list::de_automated_reasoning_policy_definition_rule_id_list(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

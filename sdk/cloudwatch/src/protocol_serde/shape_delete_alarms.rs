@@ -22,7 +22,7 @@ pub fn de_delete_alarms_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_cbor_err(_response_body, output)
                     .map_err(crate::operation::delete_alarms::DeleteAlarmsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -48,4 +48,15 @@ pub fn de_delete_alarms_http_response(
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
+}
+
+pub fn ser_delete_alarms_input(
+    input: &crate::operation::delete_alarms::DeleteAlarmsInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_delete_alarms_input::ser_delete_alarms_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

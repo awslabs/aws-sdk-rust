@@ -108,45 +108,45 @@ impl DisassociateIamRoleFromResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role to disassociate from the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) service role to disassociate from the resource.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role to disassociate from the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) service role to disassociate from the resource.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role to disassociate from the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) service role to disassociate from the resource.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_role_arn()
     }
-    /// <p>The Amazon Web Services integration configuration settings for the IAM service role disassociation.</p>
+    /// <p>The Amazon Web Services integration configuration settings for the Amazon Web Services Identity and Access Management (IAM) service role disassociation.</p>
     pub fn aws_integration(mut self, input: crate::types::SupportedAwsIntegration) -> Self {
         self.inner = self.inner.aws_integration(input);
         self
     }
-    /// <p>The Amazon Web Services integration configuration settings for the IAM service role disassociation.</p>
+    /// <p>The Amazon Web Services integration configuration settings for the Amazon Web Services Identity and Access Management (IAM) service role disassociation.</p>
     pub fn set_aws_integration(mut self, input: ::std::option::Option<crate::types::SupportedAwsIntegration>) -> Self {
         self.inner = self.inner.set_aws_integration(input);
         self
     }
-    /// <p>The Amazon Web Services integration configuration settings for the IAM service role disassociation.</p>
+    /// <p>The Amazon Web Services integration configuration settings for the Amazon Web Services Identity and Access Management (IAM) service role disassociation.</p>
     pub fn get_aws_integration(&self) -> &::std::option::Option<crate::types::SupportedAwsIntegration> {
         self.inner.get_aws_integration()
     }
-    /// <p>The Amazon Resource Name (ARN) of the target resource to disassociate from the IAM service role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target resource to disassociate from the Amazon Web Services Identity and Access Management (IAM) service role.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the target resource to disassociate from the IAM service role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target resource to disassociate from the Amazon Web Services Identity and Access Management (IAM) service role.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the target resource to disassociate from the IAM service role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target resource to disassociate from the Amazon Web Services Identity and Access Management (IAM) service role.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

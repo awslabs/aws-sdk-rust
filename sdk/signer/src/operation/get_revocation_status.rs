@@ -285,7 +285,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetRevocation
             .downcast_ref::<GetRevocationStatusInput>()
             .ok_or("failed to downcast to GetRevocationStatusInput")?;
 
-        let endpoint_prefix = ::aws_smithy_runtime_api::client::endpoint::EndpointPrefix::new("verification.").map_err(|err| {
+        let endpoint_prefix = ::aws_smithy_runtime_api::client::endpoint::EndpointPrefix::new("data-").map_err(|err| {
             ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint prefix could not be built", err)
         })?;
         cfg.interceptor_state().store_put(endpoint_prefix);

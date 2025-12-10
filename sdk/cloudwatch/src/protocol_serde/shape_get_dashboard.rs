@@ -22,7 +22,7 @@ pub fn de_get_dashboard_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DashboardNotFoundErrorBuilder::default();
-                output = crate::protocol_serde::shape_dashboard_not_found_error::de_dashboard_not_found_error_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_dashboard_not_found_error::de_dashboard_not_found_error_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_dashboard::GetDashboardError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -37,7 +37,7 @@ pub fn de_get_dashboard_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_dashboard::GetDashboardError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -52,7 +52,7 @@ pub fn de_get_dashboard_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -85,75 +85,70 @@ pub fn de_get_dashboard_http_response(
     })
 }
 
-#[allow(unused_mut)]
-pub fn de_get_dashboard(
-    inp: &[u8],
-    mut builder: crate::operation::get_dashboard::builders::GetDashboardOutputBuilder,
-) -> std::result::Result<crate::operation::get_dashboard::builders::GetDashboardOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    #[allow(unused_variables)]
-    let start_el = decoder.start_el();
-    if !(start_el.matches("GetDashboardResponse")) {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetDashboardResponse got {start_el:?}"
-        )));
+pub fn ser_get_dashboard_input(
+    input: &crate::operation::get_dashboard::GetDashboardInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_get_dashboard_input::ser_get_dashboard_input_input(encoder, input)?;
     }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("GetDashboardResult")) {
-            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetDashboardResult got {start_el:?}"
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("DashboardArn") /* DashboardArn com.amazonaws.cloudwatch.synthetic#GetDashboardOutput$DashboardArn */ =>  {
-                let var_1 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_dashboard_arn(var_1);
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+}
+
+pub(crate) fn de_get_dashboard(
+    value: &[u8],
+    mut builder: crate::operation::get_dashboard::builders::GetDashboardOutputBuilder,
+) -> ::std::result::Result<crate::operation::get_dashboard::builders::GetDashboardOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::get_dashboard::builders::GetDashboardOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<crate::operation::get_dashboard::builders::GetDashboardOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
+    {
+        builder =
+            match decoder.str()?.as_ref() {
+                "DashboardArn" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_dashboard_arn(Some(decoder.string()?)))
+                })?,
+                "DashboardBody" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_dashboard_body(Some(decoder.string()?)))
+                })?,
+                "DashboardName" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_dashboard_name(Some(decoder.string()?)))
+                })?,
+                _ => {
+                    decoder.skip()?;
+                    builder
+                }
+            };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
+                }
+                _ => {
+                    builder = pair(builder, decoder)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
             }
-            ,
-            s if s.matches("DashboardBody") /* DashboardBody com.amazonaws.cloudwatch.synthetic#GetDashboardOutput$DashboardBody */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_dashboard_body(var_2);
-            }
-            ,
-            s if s.matches("DashboardName") /* DashboardName com.amazonaws.cloudwatch.synthetic#GetDashboardOutput$DashboardName */ =>  {
-                let var_3 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_dashboard_name(var_3);
-            }
-            ,
-            _ => {}
         }
-        }
-    } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected GetDashboardResult tag"));
     };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
+    }
+
     Ok(builder)
 }

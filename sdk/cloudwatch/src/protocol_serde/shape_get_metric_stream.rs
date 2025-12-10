@@ -22,7 +22,7 @@ pub fn de_get_metric_stream_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_metric_stream::GetMetricStreamError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -37,7 +37,7 @@ pub fn de_get_metric_stream_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -55,7 +55,7 @@ pub fn de_get_metric_stream_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -73,7 +73,7 @@ pub fn de_get_metric_stream_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
-                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(
+                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -91,7 +91,7 @@ pub fn de_get_metric_stream_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_metric_stream::GetMetricStreamError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -121,188 +121,100 @@ pub fn de_get_metric_stream_http_response(
     })
 }
 
-#[allow(unused_mut)]
-pub fn de_get_metric_stream(
-    inp: &[u8],
-    mut builder: crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder,
-) -> std::result::Result<crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    #[allow(unused_variables)]
-    let start_el = decoder.start_el();
-    if !(start_el.matches("GetMetricStreamResponse")) {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected GetMetricStreamResponse got {start_el:?}"
-        )));
+pub fn ser_get_metric_stream_input(
+    input: &crate::operation::get_metric_stream::GetMetricStreamInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_get_metric_stream_input::ser_get_metric_stream_input_input(encoder, input)?;
     }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("GetMetricStreamResult")) {
-            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected GetMetricStreamResult got {start_el:?}"
-            )));
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+}
+
+pub(crate) fn de_get_metric_stream(
+    value: &[u8],
+    mut builder: crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder,
+) -> ::std::result::Result<crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
+    {
+        builder = match decoder.str()?.as_ref() {
+            "Arn" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_arn(Some(decoder.string()?))))?,
+            "Name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_name(Some(decoder.string()?))))?,
+            "IncludeFilters" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_include_filters(Some(crate::protocol_serde::shape_metric_stream_filters::de_metric_stream_filters(
+                        decoder,
+                    )?)),
+                )
+            })?,
+            "ExcludeFilters" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_exclude_filters(Some(crate::protocol_serde::shape_metric_stream_filters::de_metric_stream_filters(
+                        decoder,
+                    )?)),
+                )
+            })?,
+            "FirehoseArn" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_firehose_arn(Some(decoder.string()?))))?
+            }
+            "RoleArn" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_role_arn(Some(decoder.string()?))))?
+            }
+            "State" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_state(Some(decoder.string()?))))?,
+            "CreationDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_creation_date(Some(decoder.timestamp()?)))
+            })?,
+            "LastUpdateDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_last_update_date(Some(decoder.timestamp()?)))
+            })?,
+            "OutputFormat" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_output_format(Some(decoder.string().map(|s| crate::types::MetricStreamOutputFormat::from(s.as_ref()))?)))
+            })?,
+            "StatisticsConfigurations" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_statistics_configurations(Some(
+                    crate::protocol_serde::shape_metric_stream_statistics_configurations::de_metric_stream_statistics_configurations(decoder)?,
+                )))
+            })?,
+            "IncludeLinkedAccountsMetrics" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_include_linked_accounts_metrics(Some(decoder.boolean()?)))
+            })?,
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
+                }
+                _ => {
+                    builder = pair(builder, decoder)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
+            }
         }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("Arn") /* Arn com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$Arn */ =>  {
-                let var_1 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_arn(var_1);
-            }
-            ,
-            s if s.matches("Name") /* Name com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$Name */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_name(var_2);
-            }
-            ,
-            s if s.matches("IncludeFilters") /* IncludeFilters com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$IncludeFilters */ =>  {
-                let var_3 =
-                    Some(
-                        crate::protocol_serde::shape_metric_stream_filters::de_metric_stream_filters(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_include_filters(var_3);
-            }
-            ,
-            s if s.matches("ExcludeFilters") /* ExcludeFilters com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$ExcludeFilters */ =>  {
-                let var_4 =
-                    Some(
-                        crate::protocol_serde::shape_metric_stream_filters::de_metric_stream_filters(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_exclude_filters(var_4);
-            }
-            ,
-            s if s.matches("FirehoseArn") /* FirehoseArn com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$FirehoseArn */ =>  {
-                let var_5 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_firehose_arn(var_5);
-            }
-            ,
-            s if s.matches("RoleArn") /* RoleArn com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$RoleArn */ =>  {
-                let var_6 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_role_arn(var_6);
-            }
-            ,
-            s if s.matches("State") /* State com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$State */ =>  {
-                let var_7 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_state(var_7);
-            }
-            ,
-            s if s.matches("CreationDate") /* CreationDate com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$CreationDate */ =>  {
-                let var_8 =
-                    Some(
-                        ::aws_smithy_types::DateTime::from_str(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
-                        )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_creation_date(var_8);
-            }
-            ,
-            s if s.matches("LastUpdateDate") /* LastUpdateDate com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$LastUpdateDate */ =>  {
-                let var_9 =
-                    Some(
-                        ::aws_smithy_types::DateTime::from_str(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
-                        )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_last_update_date(var_9);
-            }
-            ,
-            s if s.matches("OutputFormat") /* OutputFormat com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$OutputFormat */ =>  {
-                let var_10 =
-                    Some(
-                        Result::<crate::types::MetricStreamOutputFormat, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::MetricStreamOutputFormat::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_output_format(var_10);
-            }
-            ,
-            s if s.matches("StatisticsConfigurations") /* StatisticsConfigurations com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$StatisticsConfigurations */ =>  {
-                let var_11 =
-                    Some(
-                        crate::protocol_serde::shape_metric_stream_statistics_configurations::de_metric_stream_statistics_configurations(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_statistics_configurations(var_11);
-            }
-            ,
-            s if s.matches("IncludeLinkedAccountsMetrics") /* IncludeLinkedAccountsMetrics com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$IncludeLinkedAccountsMetrics */ =>  {
-                let var_12 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudwatch#IncludeLinkedAccountsMetrics`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_include_linked_accounts_metrics(var_12);
-            }
-            ,
-            _ => {}
-        }
-        }
-    } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected GetMetricStreamResult tag"));
     };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
+    }
+
     Ok(builder)
 }

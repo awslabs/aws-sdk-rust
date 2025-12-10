@@ -22,7 +22,7 @@ pub fn de_describe_alarms_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
-                output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_cbor_err(_response_body, output)
                     .map_err(crate::operation::describe_alarms::DescribeAlarmsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -52,69 +52,69 @@ pub fn de_describe_alarms_http_response(
     })
 }
 
-#[allow(unused_mut)]
-pub fn de_describe_alarms(
-    inp: &[u8],
-    mut builder: crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder,
-) -> std::result::Result<crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    #[allow(unused_variables)]
-    let start_el = decoder.start_el();
-    if !(start_el.matches("DescribeAlarmsResponse")) {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected DescribeAlarmsResponse got {start_el:?}"
-        )));
+pub fn ser_describe_alarms_input(
+    input: &crate::operation::describe_alarms::DescribeAlarmsInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_describe_alarms_input::ser_describe_alarms_input_input(encoder, input)?;
     }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("DescribeAlarmsResult")) {
-            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected DescribeAlarmsResult got {start_el:?}"
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("CompositeAlarms") /* CompositeAlarms com.amazonaws.cloudwatch.synthetic#DescribeAlarmsOutput$CompositeAlarms */ =>  {
-                let var_1 =
-                    Some(
-                        crate::protocol_serde::shape_composite_alarms::de_composite_alarms(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_composite_alarms(var_1);
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+}
+
+pub(crate) fn de_describe_alarms(
+    value: &[u8],
+    mut builder: crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder,
+) -> ::std::result::Result<crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
+    {
+        builder = match decoder.str()?.as_ref() {
+            "CompositeAlarms" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_composite_alarms(Some(crate::protocol_serde::shape_composite_alarms::de_composite_alarms(decoder)?)))
+            })?,
+            "MetricAlarms" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_metric_alarms(Some(crate::protocol_serde::shape_metric_alarms::de_metric_alarms(decoder)?)))
+            })?,
+            "NextToken" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
             }
-            ,
-            s if s.matches("MetricAlarms") /* MetricAlarms com.amazonaws.cloudwatch.synthetic#DescribeAlarmsOutput$MetricAlarms */ =>  {
-                let var_2 =
-                    Some(
-                        crate::protocol_serde::shape_metric_alarms::de_metric_alarms(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_metric_alarms(var_2);
+            _ => {
+                decoder.skip()?;
+                builder
             }
-            ,
-            s if s.matches("NextToken") /* NextToken com.amazonaws.cloudwatch.synthetic#DescribeAlarmsOutput$NextToken */ =>  {
-                let var_3 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_next_token(var_3);
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
+                }
+                _ => {
+                    builder = pair(builder, decoder)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
             }
-            ,
-            _ => {}
         }
-        }
-    } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected DescribeAlarmsResult tag"));
     };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
+    }
+
     Ok(builder)
 }

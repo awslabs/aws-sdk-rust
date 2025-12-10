@@ -410,31 +410,31 @@ impl CreateOdbNetworkFluentBuilder {
     pub fn get_s3_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_policy_document()
     }
-    /// <p>The STS policy document that defines permissions for token service usage within the ODB network.</p>
+    /// <p>The Amazon Web Services Security Token Service (STS) policy document that defines permissions for token service usage within the ODB network.</p>
     pub fn sts_policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sts_policy_document(input.into());
         self
     }
-    /// <p>The STS policy document that defines permissions for token service usage within the ODB network.</p>
+    /// <p>The Amazon Web Services Security Token Service (STS) policy document that defines permissions for token service usage within the ODB network.</p>
     pub fn set_sts_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sts_policy_document(input);
         self
     }
-    /// <p>The STS policy document that defines permissions for token service usage within the ODB network.</p>
+    /// <p>The Amazon Web Services Security Token Service (STS) policy document that defines permissions for token service usage within the ODB network.</p>
     pub fn get_sts_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sts_policy_document()
     }
-    /// <p>The KMS policy document that defines permissions for key usage within the ODB network.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) policy document that defines permissions for key usage within the ODB network.</p>
     pub fn kms_policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_policy_document(input.into());
         self
     }
-    /// <p>The KMS policy document that defines permissions for key usage within the ODB network.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) policy document that defines permissions for key usage within the ODB network.</p>
     pub fn set_kms_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_policy_document(input);
         self
     }
-    /// <p>The KMS policy document that defines permissions for key usage within the ODB network.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) policy document that defines permissions for key usage within the ODB network.</p>
     pub fn get_kms_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_policy_document()
     }

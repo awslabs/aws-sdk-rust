@@ -8,10 +8,10 @@ pub struct AutomatedReasoningPolicyScenario {
     pub expression: ::std::string::String,
     /// <p>An alternative way to express the same test scenario, used for validation and comparison purposes.</p>
     pub alternate_expression: ::std::string::String,
-    /// <p>The list of rule identifiers that are expected to be triggered or evaluated by this test scenario.</p>
-    pub rule_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The expected outcome when this scenario is evaluated against the policy (e.g., PASS, FAIL, VIOLATION).</p>
     pub expected_result: crate::types::AutomatedReasoningCheckResult,
+    /// <p>The list of rule identifiers that are expected to be triggered or evaluated by this test scenario.</p>
+    pub rule_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl AutomatedReasoningPolicyScenario {
     /// <p>The logical expression or condition that defines this test scenario.</p>
@@ -24,14 +24,14 @@ impl AutomatedReasoningPolicyScenario {
         use std::ops::Deref;
         self.alternate_expression.deref()
     }
+    /// <p>The expected outcome when this scenario is evaluated against the policy (e.g., PASS, FAIL, VIOLATION).</p>
+    pub fn expected_result(&self) -> &crate::types::AutomatedReasoningCheckResult {
+        &self.expected_result
+    }
     /// <p>The list of rule identifiers that are expected to be triggered or evaluated by this test scenario.</p>
     pub fn rule_ids(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.rule_ids.deref()
-    }
-    /// <p>The expected outcome when this scenario is evaluated against the policy (e.g., PASS, FAIL, VIOLATION).</p>
-    pub fn expected_result(&self) -> &crate::types::AutomatedReasoningCheckResult {
-        &self.expected_result
     }
 }
 impl ::std::fmt::Debug for AutomatedReasoningPolicyScenario {
@@ -39,8 +39,8 @@ impl ::std::fmt::Debug for AutomatedReasoningPolicyScenario {
         let mut formatter = f.debug_struct("AutomatedReasoningPolicyScenario");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.field("alternate_expression", &"*** Sensitive Data Redacted ***");
-        formatter.field("rule_ids", &self.rule_ids);
         formatter.field("expected_result", &self.expected_result);
+        formatter.field("rule_ids", &self.rule_ids);
         formatter.finish()
     }
 }
@@ -57,8 +57,8 @@ impl AutomatedReasoningPolicyScenario {
 pub struct AutomatedReasoningPolicyScenarioBuilder {
     pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) alternate_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) expected_result: ::std::option::Option<crate::types::AutomatedReasoningCheckResult>,
+    pub(crate) rule_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AutomatedReasoningPolicyScenarioBuilder {
     /// <p>The logical expression or condition that defines this test scenario.</p>
@@ -91,6 +91,21 @@ impl AutomatedReasoningPolicyScenarioBuilder {
     pub fn get_alternate_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.alternate_expression
     }
+    /// <p>The expected outcome when this scenario is evaluated against the policy (e.g., PASS, FAIL, VIOLATION).</p>
+    /// This field is required.
+    pub fn expected_result(mut self, input: crate::types::AutomatedReasoningCheckResult) -> Self {
+        self.expected_result = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The expected outcome when this scenario is evaluated against the policy (e.g., PASS, FAIL, VIOLATION).</p>
+    pub fn set_expected_result(mut self, input: ::std::option::Option<crate::types::AutomatedReasoningCheckResult>) -> Self {
+        self.expected_result = input;
+        self
+    }
+    /// <p>The expected outcome when this scenario is evaluated against the policy (e.g., PASS, FAIL, VIOLATION).</p>
+    pub fn get_expected_result(&self) -> &::std::option::Option<crate::types::AutomatedReasoningCheckResult> {
+        &self.expected_result
+    }
     /// Appends an item to `rule_ids`.
     ///
     /// To override the contents of this collection use [`set_rule_ids`](Self::set_rule_ids).
@@ -111,27 +126,12 @@ impl AutomatedReasoningPolicyScenarioBuilder {
     pub fn get_rule_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.rule_ids
     }
-    /// <p>The expected outcome when this scenario is evaluated against the policy (e.g., PASS, FAIL, VIOLATION).</p>
-    /// This field is required.
-    pub fn expected_result(mut self, input: crate::types::AutomatedReasoningCheckResult) -> Self {
-        self.expected_result = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The expected outcome when this scenario is evaluated against the policy (e.g., PASS, FAIL, VIOLATION).</p>
-    pub fn set_expected_result(mut self, input: ::std::option::Option<crate::types::AutomatedReasoningCheckResult>) -> Self {
-        self.expected_result = input;
-        self
-    }
-    /// <p>The expected outcome when this scenario is evaluated against the policy (e.g., PASS, FAIL, VIOLATION).</p>
-    pub fn get_expected_result(&self) -> &::std::option::Option<crate::types::AutomatedReasoningCheckResult> {
-        &self.expected_result
-    }
     /// Consumes the builder and constructs a [`AutomatedReasoningPolicyScenario`](crate::types::AutomatedReasoningPolicyScenario).
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::AutomatedReasoningPolicyScenarioBuilder::expression)
     /// - [`alternate_expression`](crate::types::builders::AutomatedReasoningPolicyScenarioBuilder::alternate_expression)
-    /// - [`rule_ids`](crate::types::builders::AutomatedReasoningPolicyScenarioBuilder::rule_ids)
     /// - [`expected_result`](crate::types::builders::AutomatedReasoningPolicyScenarioBuilder::expected_result)
+    /// - [`rule_ids`](crate::types::builders::AutomatedReasoningPolicyScenarioBuilder::rule_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::AutomatedReasoningPolicyScenario, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AutomatedReasoningPolicyScenario {
             expression: self.expression.ok_or_else(|| {
@@ -146,16 +146,16 @@ impl AutomatedReasoningPolicyScenarioBuilder {
                     "alternate_expression was not specified but it is required when building AutomatedReasoningPolicyScenario",
                 )
             })?,
-            rule_ids: self.rule_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_ids",
-                    "rule_ids was not specified but it is required when building AutomatedReasoningPolicyScenario",
-                )
-            })?,
             expected_result: self.expected_result.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expected_result",
                     "expected_result was not specified but it is required when building AutomatedReasoningPolicyScenario",
+                )
+            })?,
+            rule_ids: self.rule_ids.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "rule_ids",
+                    "rule_ids was not specified but it is required when building AutomatedReasoningPolicyScenario",
                 )
             })?,
         })
@@ -166,8 +166,8 @@ impl ::std::fmt::Debug for AutomatedReasoningPolicyScenarioBuilder {
         let mut formatter = f.debug_struct("AutomatedReasoningPolicyScenarioBuilder");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.field("alternate_expression", &"*** Sensitive Data Redacted ***");
-        formatter.field("rule_ids", &self.rule_ids);
         formatter.field("expected_result", &self.expected_result);
+        formatter.field("rule_ids", &self.rule_ids);
         formatter.finish()
     }
 }

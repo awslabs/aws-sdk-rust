@@ -13,6 +13,7 @@
 /// # let lineitemfilterattributename = unimplemented!();
 /// match lineitemfilterattributename {
 ///     LineItemFilterAttributeName::LineItemType => { /* ... */ },
+///     LineItemFilterAttributeName::Service => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum LineItemFilterAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     LineItemType,
+    #[allow(missing_docs)] // documentation missing in model
+    Service,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for LineItemFilterAttributeName {
     fn from(s: &str) -> Self {
         match s {
             "LINE_ITEM_TYPE" => LineItemFilterAttributeName::LineItemType,
+            "SERVICE" => LineItemFilterAttributeName::Service,
             other => LineItemFilterAttributeName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl LineItemFilterAttributeName {
     pub fn as_str(&self) -> &str {
         match self {
             LineItemFilterAttributeName::LineItemType => "LINE_ITEM_TYPE",
+            LineItemFilterAttributeName::Service => "SERVICE",
             LineItemFilterAttributeName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LINE_ITEM_TYPE"]
+        &["LINE_ITEM_TYPE", "SERVICE"]
     }
 }
 impl ::std::convert::AsRef<str> for LineItemFilterAttributeName {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for LineItemFilterAttributeName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             LineItemFilterAttributeName::LineItemType => write!(f, "LINE_ITEM_TYPE"),
+            LineItemFilterAttributeName::Service => write!(f, "SERVICE"),
             LineItemFilterAttributeName::Unknown(value) => write!(f, "{value}"),
         }
     }

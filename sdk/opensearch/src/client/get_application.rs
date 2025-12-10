@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`app_configs(Option<Vec::<AppConfig>>)`](crate::operation::get_application::GetApplicationOutput::app_configs): <p>The configuration settings of the OpenSearch application.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::created_at): <p>The timestamp when the OpenSearch application was created.</p>
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::last_updated_at): <p>The timestamp of the last update to the OpenSearch application.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::kms_key_arn): <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

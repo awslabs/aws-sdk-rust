@@ -22,7 +22,7 @@ pub fn de_put_metric_stream_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(
+                output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -40,7 +40,7 @@ pub fn de_put_metric_stream_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_cbor_err(_response_body, output)
                     .map_err(crate::operation::put_metric_stream::PutMetricStreamError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -55,7 +55,7 @@ pub fn de_put_metric_stream_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -73,7 +73,7 @@ pub fn de_put_metric_stream_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -91,7 +91,7 @@ pub fn de_put_metric_stream_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
-                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(
+                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -124,49 +124,61 @@ pub fn de_put_metric_stream_http_response(
     })
 }
 
-#[allow(unused_mut)]
-pub fn de_put_metric_stream(
-    inp: &[u8],
-    mut builder: crate::operation::put_metric_stream::builders::PutMetricStreamOutputBuilder,
-) -> std::result::Result<crate::operation::put_metric_stream::builders::PutMetricStreamOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
-
-    #[allow(unused_mut)]
-    let mut decoder = doc.root_element()?;
-    #[allow(unused_variables)]
-    let start_el = decoder.start_el();
-    if !(start_el.matches("PutMetricStreamResponse")) {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected PutMetricStreamResponse got {start_el:?}"
-        )));
+pub fn ser_put_metric_stream_input(
+    input: &crate::operation::put_metric_stream::PutMetricStreamInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_put_metric_stream_input::ser_put_metric_stream_input_input(encoder, input)?;
     }
-    if let Some(mut result_tag) = decoder.next_tag() {
-        let start_el = result_tag.start_el();
-        if !(start_el.matches("PutMetricStreamResult")) {
-            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-                "invalid result, expected PutMetricStreamResult got {start_el:?}"
-            )));
-        }
-        while let Some(mut tag) = result_tag.next_tag() {
-            match tag.start_el() {
-            s if s.matches("Arn") /* Arn com.amazonaws.cloudwatch.synthetic#PutMetricStreamOutput$Arn */ =>  {
-                let var_1 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_arn(var_1);
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+}
+
+pub(crate) fn de_put_metric_stream(
+    value: &[u8],
+    mut builder: crate::operation::put_metric_stream::builders::PutMetricStreamOutputBuilder,
+) -> ::std::result::Result<crate::operation::put_metric_stream::builders::PutMetricStreamOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+    #[allow(clippy::match_single_binding)]
+    fn pair(
+        mut builder: crate::operation::put_metric_stream::builders::PutMetricStreamOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+    ) -> ::std::result::Result<crate::operation::put_metric_stream::builders::PutMetricStreamOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
+    {
+        builder = match decoder.str()?.as_ref() {
+            "Arn" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_arn(Some(decoder.string()?))))?,
+            _ => {
+                decoder.skip()?;
+                builder
             }
-            ,
-            _ => {}
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
+                }
+                _ => {
+                    builder = pair(builder, decoder)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder)?;
+            }
         }
-        }
-    } else {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("expected PutMetricStreamResult tag"));
     };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
+    }
+
     Ok(builder)
 }

@@ -64,6 +64,8 @@ pub struct Project {
     pub other_solution_description: ::std::option::Option<::std::string::String>,
     /// <p>Captures additional comments or information for the <code>Opportunity</code> that weren't captured in other fields.</p>
     pub additional_comments: ::std::option::Option<::std::string::String>,
+    /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc' for AWS European Sovereign Cloud, `null` for all other partitions
+    pub aws_partition: ::std::option::Option<crate::types::AwsPartition>,
 }
 impl Project {
     /// <p>Specifies the deployment or consumption model for your solution or service in the <code>Opportunity</code>'s context. You can select multiple options.</p>
@@ -158,6 +160,10 @@ impl Project {
     pub fn additional_comments(&self) -> ::std::option::Option<&str> {
         self.additional_comments.as_deref()
     }
+    /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc' for AWS European Sovereign Cloud, `null` for all other partitions
+    pub fn aws_partition(&self) -> ::std::option::Option<&crate::types::AwsPartition> {
+        self.aws_partition.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Project {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -174,6 +180,7 @@ impl ::std::fmt::Debug for Project {
         formatter.field("other_competitor_names", &self.other_competitor_names);
         formatter.field("other_solution_description", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_comments", &self.additional_comments);
+        formatter.field("aws_partition", &self.aws_partition);
         formatter.finish()
     }
 }
@@ -200,6 +207,7 @@ pub struct ProjectBuilder {
     pub(crate) other_competitor_names: ::std::option::Option<::std::string::String>,
     pub(crate) other_solution_description: ::std::option::Option<::std::string::String>,
     pub(crate) additional_comments: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_partition: ::std::option::Option<crate::types::AwsPartition>,
 }
 impl ProjectBuilder {
     /// Appends an item to `delivery_models`.
@@ -502,6 +510,20 @@ impl ProjectBuilder {
     pub fn get_additional_comments(&self) -> &::std::option::Option<::std::string::String> {
         &self.additional_comments
     }
+    /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc' for AWS European Sovereign Cloud, `null` for all other partitions
+    pub fn aws_partition(mut self, input: crate::types::AwsPartition) -> Self {
+        self.aws_partition = ::std::option::Option::Some(input);
+        self
+    }
+    /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc' for AWS European Sovereign Cloud, `null` for all other partitions
+    pub fn set_aws_partition(mut self, input: ::std::option::Option<crate::types::AwsPartition>) -> Self {
+        self.aws_partition = input;
+        self
+    }
+    /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc' for AWS European Sovereign Cloud, `null` for all other partitions
+    pub fn get_aws_partition(&self) -> &::std::option::Option<crate::types::AwsPartition> {
+        &self.aws_partition
+    }
     /// Consumes the builder and constructs a [`Project`](crate::types::Project).
     pub fn build(self) -> crate::types::Project {
         crate::types::Project {
@@ -517,6 +539,7 @@ impl ProjectBuilder {
             other_competitor_names: self.other_competitor_names,
             other_solution_description: self.other_solution_description,
             additional_comments: self.additional_comments,
+            aws_partition: self.aws_partition,
         }
     }
 }
@@ -535,6 +558,7 @@ impl ::std::fmt::Debug for ProjectBuilder {
         formatter.field("other_competitor_names", &self.other_competitor_names);
         formatter.field("other_solution_description", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_comments", &self.additional_comments);
+        formatter.field("aws_partition", &self.aws_partition);
         formatter.finish()
     }
 }

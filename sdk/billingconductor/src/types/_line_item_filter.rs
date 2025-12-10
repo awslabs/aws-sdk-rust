@@ -10,6 +10,8 @@ pub struct LineItemFilter {
     pub match_option: crate::types::MatchOption,
     /// <p>The values of the line item filter. This specifies the values to filter on. Currently, you can only exclude Savings Plans discounts.</p>
     pub values: ::std::vec::Vec<crate::types::LineItemFilterValue>,
+    /// <p>The values of the line item filter. This specifies the values to filter on.</p>
+    pub attribute_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LineItemFilter {
     /// <p>The attribute of the line item filter. This specifies what attribute that you can filter on.</p>
@@ -24,6 +26,12 @@ impl LineItemFilter {
     pub fn values(&self) -> &[crate::types::LineItemFilterValue] {
         use std::ops::Deref;
         self.values.deref()
+    }
+    /// <p>The values of the line item filter. This specifies the values to filter on.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_values.is_none()`.
+    pub fn attribute_values(&self) -> &[::std::string::String] {
+        self.attribute_values.as_deref().unwrap_or_default()
     }
 }
 impl LineItemFilter {
@@ -40,6 +48,7 @@ pub struct LineItemFilterBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::LineItemFilterAttributeName>,
     pub(crate) match_option: ::std::option::Option<crate::types::MatchOption>,
     pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::LineItemFilterValue>>,
+    pub(crate) attribute_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LineItemFilterBuilder {
     /// <p>The attribute of the line item filter. This specifies what attribute that you can filter on.</p>
@@ -92,11 +101,30 @@ impl LineItemFilterBuilder {
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemFilterValue>> {
         &self.values
     }
+    /// Appends an item to `attribute_values`.
+    ///
+    /// To override the contents of this collection use [`set_attribute_values`](Self::set_attribute_values).
+    ///
+    /// <p>The values of the line item filter. This specifies the values to filter on.</p>
+    pub fn attribute_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.attribute_values.unwrap_or_default();
+        v.push(input.into());
+        self.attribute_values = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The values of the line item filter. This specifies the values to filter on.</p>
+    pub fn set_attribute_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.attribute_values = input;
+        self
+    }
+    /// <p>The values of the line item filter. This specifies the values to filter on.</p>
+    pub fn get_attribute_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_values
+    }
     /// Consumes the builder and constructs a [`LineItemFilter`](crate::types::LineItemFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute`](crate::types::builders::LineItemFilterBuilder::attribute)
     /// - [`match_option`](crate::types::builders::LineItemFilterBuilder::match_option)
-    /// - [`values`](crate::types::builders::LineItemFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::LineItemFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LineItemFilter {
             attribute: self.attribute.ok_or_else(|| {
@@ -111,12 +139,8 @@ impl LineItemFilterBuilder {
                     "match_option was not specified but it is required when building LineItemFilter",
                 )
             })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building LineItemFilter",
-                )
-            })?,
+            values: self.values.unwrap_or_default(),
+            attribute_values: self.attribute_values,
         })
     }
 }

@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-cloudwatch = "1.99.0"
+//! aws-sdk-cloudwatch = "1.100.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -224,7 +224,9 @@ mod serde_util;
 /// Note: to use waiters, import the [`Waiters`](crate::client::Waiters) trait, which adds methods prefixed with `wait_until` to the client.
 pub mod waiters;
 
-mod rest_xml_wrapped_errors;
+mod aws_query_compatible_errors;
+
+mod cbor_errors;
 
 #[doc(inline)]
 pub use client::Client;

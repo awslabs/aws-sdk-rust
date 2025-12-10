@@ -17,169 +17,94 @@ where
 
 pub fn parse_http_error_metadata(
     _response_status: u16,
-    _response_headers: &::aws_smithy_runtime_api::http::Headers,
+    response_headers: &::aws_smithy_runtime_api::http::Headers,
     response_body: &[u8],
-) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_xml::decode::XmlDecodeError> {
-    crate::rest_xml_wrapped_errors::parse_error_metadata(response_body)
+) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_cbor::decode::DeserializeError> {
+    let mut builder = crate::cbor_errors::parse_error_metadata(_response_status, response_headers, response_body)?;
+    if let Some((error_code, error_type)) = crate::aws_query_compatible_errors::parse_aws_query_compatible_error(response_headers) {
+        builder = builder.code(error_code);
+        builder = builder.custom("type", error_type);
+    }
+    Ok(builder)
 }
 
 pub(crate) mod shape_delete_alarms;
 
-pub(crate) mod shape_delete_alarms_input;
-
 pub(crate) mod shape_delete_anomaly_detector;
-
-pub(crate) mod shape_delete_anomaly_detector_input;
 
 pub(crate) mod shape_delete_dashboards;
 
-pub(crate) mod shape_delete_dashboards_input;
-
 pub(crate) mod shape_delete_insight_rules;
-
-pub(crate) mod shape_delete_insight_rules_input;
 
 pub(crate) mod shape_delete_metric_stream;
 
-pub(crate) mod shape_delete_metric_stream_input;
-
 pub(crate) mod shape_describe_alarm_contributors;
 
-pub(crate) mod shape_describe_alarm_contributors_input;
-
 pub(crate) mod shape_describe_alarm_history;
-
-pub(crate) mod shape_describe_alarm_history_input;
 
 pub(crate) mod shape_describe_alarms;
 
 pub(crate) mod shape_describe_alarms_for_metric;
 
-pub(crate) mod shape_describe_alarms_for_metric_input;
-
-pub(crate) mod shape_describe_alarms_input;
-
 pub(crate) mod shape_describe_anomaly_detectors;
-
-pub(crate) mod shape_describe_anomaly_detectors_input;
 
 pub(crate) mod shape_describe_insight_rules;
 
-pub(crate) mod shape_describe_insight_rules_input;
-
 pub(crate) mod shape_disable_alarm_actions;
-
-pub(crate) mod shape_disable_alarm_actions_input;
 
 pub(crate) mod shape_disable_insight_rules;
 
-pub(crate) mod shape_disable_insight_rules_input;
-
 pub(crate) mod shape_enable_alarm_actions;
-
-pub(crate) mod shape_enable_alarm_actions_input;
 
 pub(crate) mod shape_enable_insight_rules;
 
-pub(crate) mod shape_enable_insight_rules_input;
-
 pub(crate) mod shape_get_dashboard;
-
-pub(crate) mod shape_get_dashboard_input;
 
 pub(crate) mod shape_get_insight_rule_report;
 
-pub(crate) mod shape_get_insight_rule_report_input;
-
 pub(crate) mod shape_get_metric_data;
-
-pub(crate) mod shape_get_metric_data_input;
 
 pub(crate) mod shape_get_metric_statistics;
 
-pub(crate) mod shape_get_metric_statistics_input;
-
 pub(crate) mod shape_get_metric_stream;
-
-pub(crate) mod shape_get_metric_stream_input;
 
 pub(crate) mod shape_get_metric_widget_image;
 
-pub(crate) mod shape_get_metric_widget_image_input;
-
 pub(crate) mod shape_list_dashboards;
-
-pub(crate) mod shape_list_dashboards_input;
 
 pub(crate) mod shape_list_managed_insight_rules;
 
-pub(crate) mod shape_list_managed_insight_rules_input;
-
 pub(crate) mod shape_list_metric_streams;
-
-pub(crate) mod shape_list_metric_streams_input;
 
 pub(crate) mod shape_list_metrics;
 
-pub(crate) mod shape_list_metrics_input;
-
 pub(crate) mod shape_list_tags_for_resource;
-
-pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_put_anomaly_detector;
 
-pub(crate) mod shape_put_anomaly_detector_input;
-
 pub(crate) mod shape_put_composite_alarm;
-
-pub(crate) mod shape_put_composite_alarm_input;
 
 pub(crate) mod shape_put_dashboard;
 
-pub(crate) mod shape_put_dashboard_input;
-
 pub(crate) mod shape_put_insight_rule;
-
-pub(crate) mod shape_put_insight_rule_input;
 
 pub(crate) mod shape_put_managed_insight_rules;
 
-pub(crate) mod shape_put_managed_insight_rules_input;
-
 pub(crate) mod shape_put_metric_alarm;
-
-pub(crate) mod shape_put_metric_alarm_input;
 
 pub(crate) mod shape_put_metric_data;
 
-pub(crate) mod shape_put_metric_data_input;
-
 pub(crate) mod shape_put_metric_stream;
-
-pub(crate) mod shape_put_metric_stream_input;
 
 pub(crate) mod shape_set_alarm_state;
 
-pub(crate) mod shape_set_alarm_state_input;
-
 pub(crate) mod shape_start_metric_streams;
-
-pub(crate) mod shape_start_metric_streams_input;
 
 pub(crate) mod shape_stop_metric_streams;
 
-pub(crate) mod shape_stop_metric_streams_input;
-
 pub(crate) mod shape_tag_resource;
 
-pub(crate) mod shape_tag_resource_input;
-
 pub(crate) mod shape_untag_resource;
-
-pub(crate) mod shape_untag_resource_input;
-
-pub(crate) mod shape_anomaly_detector_configuration;
 
 pub(crate) mod shape_concurrent_modification_exception;
 
@@ -189,11 +114,47 @@ pub(crate) mod shape_dashboard_invalid_input_error;
 
 pub(crate) mod shape_dashboard_not_found_error;
 
-pub(crate) mod shape_dimension;
+pub(crate) mod shape_delete_alarms_input;
 
-pub(crate) mod shape_dimension_filter;
+pub(crate) mod shape_delete_anomaly_detector_input;
 
-pub(crate) mod shape_entity_metric_data;
+pub(crate) mod shape_delete_dashboards_input;
+
+pub(crate) mod shape_delete_insight_rules_input;
+
+pub(crate) mod shape_delete_metric_stream_input;
+
+pub(crate) mod shape_describe_alarm_contributors_input;
+
+pub(crate) mod shape_describe_alarm_history_input;
+
+pub(crate) mod shape_describe_alarms_for_metric_input;
+
+pub(crate) mod shape_describe_alarms_input;
+
+pub(crate) mod shape_describe_anomaly_detectors_input;
+
+pub(crate) mod shape_describe_insight_rules_input;
+
+pub(crate) mod shape_disable_alarm_actions_input;
+
+pub(crate) mod shape_disable_insight_rules_input;
+
+pub(crate) mod shape_enable_alarm_actions_input;
+
+pub(crate) mod shape_enable_insight_rules_input;
+
+pub(crate) mod shape_get_dashboard_input;
+
+pub(crate) mod shape_get_insight_rule_report_input;
+
+pub(crate) mod shape_get_metric_data_input;
+
+pub(crate) mod shape_get_metric_statistics_input;
+
+pub(crate) mod shape_get_metric_stream_input;
+
+pub(crate) mod shape_get_metric_widget_image_input;
 
 pub(crate) mod shape_internal_service_fault;
 
@@ -205,39 +166,57 @@ pub(crate) mod shape_invalid_parameter_combination_exception;
 
 pub(crate) mod shape_invalid_parameter_value_exception;
 
-pub(crate) mod shape_label_options;
-
 pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_limit_exceeded_fault;
 
-pub(crate) mod shape_managed_rule;
+pub(crate) mod shape_list_dashboards_input;
 
-pub(crate) mod shape_metric_characteristics;
+pub(crate) mod shape_list_managed_insight_rules_input;
 
-pub(crate) mod shape_metric_data_query;
+pub(crate) mod shape_list_metric_streams_input;
 
-pub(crate) mod shape_metric_datum;
+pub(crate) mod shape_list_metrics_input;
 
-pub(crate) mod shape_metric_math_anomaly_detector;
-
-pub(crate) mod shape_metric_stream_filter;
-
-pub(crate) mod shape_metric_stream_statistics_configuration;
+pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_missing_required_parameter_exception;
+
+pub(crate) mod shape_put_anomaly_detector_input;
+
+pub(crate) mod shape_put_composite_alarm_input;
+
+pub(crate) mod shape_put_dashboard_input;
+
+pub(crate) mod shape_put_insight_rule_input;
+
+pub(crate) mod shape_put_managed_insight_rules_input;
+
+pub(crate) mod shape_put_metric_alarm_input;
+
+pub(crate) mod shape_put_metric_data_input;
+
+pub(crate) mod shape_put_metric_stream_input;
 
 pub(crate) mod shape_resource_not_found;
 
 pub(crate) mod shape_resource_not_found_exception;
 
-pub(crate) mod shape_single_metric_anomaly_detector;
+pub(crate) mod shape_set_alarm_state_input;
 
-pub(crate) mod shape_tag;
+pub(crate) mod shape_start_metric_streams_input;
+
+pub(crate) mod shape_stop_metric_streams_input;
+
+pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_alarm_contributors;
 
 pub(crate) mod shape_alarm_history_items;
+
+pub(crate) mod shape_anomaly_detector_configuration;
 
 pub(crate) mod shape_anomaly_detectors;
 
@@ -251,7 +230,11 @@ pub(crate) mod shape_dashboard_validation_messages;
 
 pub(crate) mod shape_datapoints;
 
-pub(crate) mod shape_entity;
+pub(crate) mod shape_dimension;
+
+pub(crate) mod shape_dimension_filter;
+
+pub(crate) mod shape_entity_metric_data;
 
 pub(crate) mod shape_insight_rule_contributor_key_labels;
 
@@ -261,31 +244,43 @@ pub(crate) mod shape_insight_rule_metric_datapoints;
 
 pub(crate) mod shape_insight_rules;
 
+pub(crate) mod shape_label_options;
+
+pub(crate) mod shape_managed_rule;
+
 pub(crate) mod shape_managed_rule_descriptions;
 
 pub(crate) mod shape_metric_alarms;
+
+pub(crate) mod shape_metric_characteristics;
+
+pub(crate) mod shape_metric_data_query;
 
 pub(crate) mod shape_metric_data_result_messages;
 
 pub(crate) mod shape_metric_data_results;
 
-pub(crate) mod shape_metric_stat;
+pub(crate) mod shape_metric_datum;
+
+pub(crate) mod shape_metric_math_anomaly_detector;
 
 pub(crate) mod shape_metric_stream_entries;
 
+pub(crate) mod shape_metric_stream_filter;
+
 pub(crate) mod shape_metric_stream_filters;
 
-pub(crate) mod shape_metric_stream_statistics_configurations;
+pub(crate) mod shape_metric_stream_statistics_configuration;
 
-pub(crate) mod shape_metric_stream_statistics_metric;
+pub(crate) mod shape_metric_stream_statistics_configurations;
 
 pub(crate) mod shape_metrics;
 
 pub(crate) mod shape_owning_accounts;
 
-pub(crate) mod shape_range;
+pub(crate) mod shape_single_metric_anomaly_detector;
 
-pub(crate) mod shape_statistic_set;
+pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
@@ -303,6 +298,8 @@ pub(crate) mod shape_dashboard_validation_message;
 
 pub(crate) mod shape_datapoint;
 
+pub(crate) mod shape_entity;
+
 pub(crate) mod shape_insight_rule;
 
 pub(crate) mod shape_insight_rule_contributor;
@@ -319,9 +316,17 @@ pub(crate) mod shape_metric_alarm;
 
 pub(crate) mod shape_metric_data_result;
 
+pub(crate) mod shape_metric_stat;
+
 pub(crate) mod shape_metric_stream_entry;
 
+pub(crate) mod shape_metric_stream_statistics_metric;
+
 pub(crate) mod shape_partial_failure;
+
+pub(crate) mod shape_range;
+
+pub(crate) mod shape_statistic_set;
 
 pub(crate) mod shape_contributor_attributes;
 

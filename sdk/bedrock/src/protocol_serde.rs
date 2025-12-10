@@ -517,6 +517,8 @@ pub(crate) mod shape_automated_reasoning_policy_generated_test_cases;
 
 pub(crate) mod shape_automated_reasoning_policy_ingest_content_annotation;
 
+pub(crate) mod shape_automated_reasoning_policy_scenarios;
+
 pub(crate) mod shape_automated_reasoning_policy_summary;
 
 pub(crate) mod shape_automated_reasoning_policy_update_from_rule_feedback_annotation;
@@ -684,6 +686,8 @@ pub(crate) mod shape_automated_reasoning_policy_definition_variable_name_list;
 pub(crate) mod shape_automated_reasoning_policy_disjoint_rule_set_list;
 
 pub(crate) mod shape_automated_reasoning_policy_generated_test_case_list;
+
+pub(crate) mod shape_automated_reasoning_policy_scenario_list;
 
 pub(crate) mod shape_automated_reasoning_policy_type_value_annotation;
 

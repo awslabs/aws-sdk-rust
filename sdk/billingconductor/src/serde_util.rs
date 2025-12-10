@@ -158,9 +158,6 @@ pub(crate) fn line_item_filter_correct_errors(
     if builder.match_option.is_none() {
         builder.match_option = "no value was set".parse::<crate::types::MatchOption>().ok()
     }
-    if builder.values.is_none() {
-        builder.values = Some(Default::default())
-    }
     builder
 }
 

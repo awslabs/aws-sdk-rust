@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateIamRoleToResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role to associate with the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) service role to associate with the resource.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services integration configuration settings for the IAM service role association.</p>
+    /// <p>The Amazon Web Services integration configuration settings for the Amazon Web Services Identity and Access Management (IAM) service role association.</p>
     pub aws_integration: ::std::option::Option<crate::types::SupportedAwsIntegration>,
-    /// <p>The Amazon Resource Name (ARN) of the target resource to associate with the IAM service role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target resource to associate with the Amazon Web Services Identity and Access Management (IAM) service role.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateIamRoleToResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role to associate with the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) service role to associate with the resource.</p>
     pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>The Amazon Web Services integration configuration settings for the IAM service role association.</p>
+    /// <p>The Amazon Web Services integration configuration settings for the Amazon Web Services Identity and Access Management (IAM) service role association.</p>
     pub fn aws_integration(&self) -> ::std::option::Option<&crate::types::SupportedAwsIntegration> {
         self.aws_integration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the target resource to associate with the IAM service role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target resource to associate with the Amazon Web Services Identity and Access Management (IAM) service role.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct AssociateIamRoleToResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateIamRoleToResourceInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role to associate with the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) service role to associate with the resource.</p>
     /// This field is required.
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role to associate with the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) service role to associate with the resource.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role to associate with the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) service role to associate with the resource.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_role_arn
     }
-    /// <p>The Amazon Web Services integration configuration settings for the IAM service role association.</p>
+    /// <p>The Amazon Web Services integration configuration settings for the Amazon Web Services Identity and Access Management (IAM) service role association.</p>
     /// This field is required.
     pub fn aws_integration(mut self, input: crate::types::SupportedAwsIntegration) -> Self {
         self.aws_integration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon Web Services integration configuration settings for the IAM service role association.</p>
+    /// <p>The Amazon Web Services integration configuration settings for the Amazon Web Services Identity and Access Management (IAM) service role association.</p>
     pub fn set_aws_integration(mut self, input: ::std::option::Option<crate::types::SupportedAwsIntegration>) -> Self {
         self.aws_integration = input;
         self
     }
-    /// <p>The Amazon Web Services integration configuration settings for the IAM service role association.</p>
+    /// <p>The Amazon Web Services integration configuration settings for the Amazon Web Services Identity and Access Management (IAM) service role association.</p>
     pub fn get_aws_integration(&self) -> &::std::option::Option<crate::types::SupportedAwsIntegration> {
         &self.aws_integration
     }
-    /// <p>The Amazon Resource Name (ARN) of the target resource to associate with the IAM service role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target resource to associate with the Amazon Web Services Identity and Access Management (IAM) service role.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the target resource to associate with the IAM service role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target resource to associate with the Amazon Web Services Identity and Access Management (IAM) service role.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the target resource to associate with the IAM service role.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target resource to associate with the Amazon Web Services Identity and Access Management (IAM) service role.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

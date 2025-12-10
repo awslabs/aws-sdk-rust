@@ -32,3 +32,14 @@ pub fn de_enable_alarm_actions_http_response(
         output.build()
     })
 }
+
+pub fn ser_enable_alarm_actions_input(
+    input: &crate::operation::enable_alarm_actions::EnableAlarmActionsInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_enable_alarm_actions_input::ser_enable_alarm_actions_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+}

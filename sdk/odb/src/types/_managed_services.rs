@@ -18,9 +18,9 @@ pub struct ManagedServices {
     pub zero_etl_access: ::std::option::Option<crate::types::ZeroEtlAccess>,
     /// <p>The Amazon S3 access configuration.</p>
     pub s3_access: ::std::option::Option<crate::types::S3Access>,
-    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for managed services.</p>
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration.</p>
     pub sts_access: ::std::option::Option<crate::types::StsAccess>,
-    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for managed services.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub kms_access: ::std::option::Option<crate::types::KmsAccess>,
     /// <p>The access configuration for the cross-Region Amazon S3 database restore source.</p>
     pub cross_region_s3_restore_sources_access: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionS3RestoreSourcesAccess>>,
@@ -56,11 +56,11 @@ impl ManagedServices {
     pub fn s3_access(&self) -> ::std::option::Option<&crate::types::S3Access> {
         self.s3_access.as_ref()
     }
-    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for managed services.</p>
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration.</p>
     pub fn sts_access(&self) -> ::std::option::Option<&crate::types::StsAccess> {
         self.sts_access.as_ref()
     }
-    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for managed services.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn kms_access(&self) -> ::std::option::Option<&crate::types::KmsAccess> {
         self.kms_access.as_ref()
     }
@@ -198,31 +198,31 @@ impl ManagedServicesBuilder {
     pub fn get_s3_access(&self) -> &::std::option::Option<crate::types::S3Access> {
         &self.s3_access
     }
-    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for managed services.</p>
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration.</p>
     pub fn sts_access(mut self, input: crate::types::StsAccess) -> Self {
         self.sts_access = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for managed services.</p>
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration.</p>
     pub fn set_sts_access(mut self, input: ::std::option::Option<crate::types::StsAccess>) -> Self {
         self.sts_access = input;
         self
     }
-    /// <p>The Amazon Web Services Security Token Service (STS) access configuration for managed services.</p>
+    /// <p>The Amazon Web Services Security Token Service (STS) access configuration.</p>
     pub fn get_sts_access(&self) -> &::std::option::Option<crate::types::StsAccess> {
         &self.sts_access
     }
-    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for managed services.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn kms_access(mut self, input: crate::types::KmsAccess) -> Self {
         self.kms_access = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for managed services.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn set_kms_access(mut self, input: ::std::option::Option<crate::types::KmsAccess>) -> Self {
         self.kms_access = input;
         self
     }
-    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration for managed services.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn get_kms_access(&self) -> &::std::option::Option<crate::types::KmsAccess> {
         &self.kms_access
     }

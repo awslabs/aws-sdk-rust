@@ -547,6 +547,8 @@ pub use crate::types::_automated_reasoning_policy_scenario::AutomatedReasoningPo
 
 pub use crate::types::_automated_reasoning_policy_build_result_assets::AutomatedReasoningPolicyBuildResultAssets;
 
+pub use crate::types::_automated_reasoning_policy_scenarios::AutomatedReasoningPolicyScenarios;
+
 pub use crate::types::_automated_reasoning_policy_generated_test_cases::AutomatedReasoningPolicyGeneratedTestCases;
 
 pub use crate::types::_automated_reasoning_policy_generated_test_case::AutomatedReasoningPolicyGeneratedTestCase;
@@ -746,6 +748,8 @@ mod _automated_reasoning_policy_mutation;
 mod _automated_reasoning_policy_planning;
 
 mod _automated_reasoning_policy_scenario;
+
+mod _automated_reasoning_policy_scenarios;
 
 mod _automated_reasoning_policy_summary;
 

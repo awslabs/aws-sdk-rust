@@ -25,7 +25,7 @@ pub fn de_delete_anomaly_detector_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_cbor_err(_response_body, output)
                     .map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -42,7 +42,7 @@ pub fn de_delete_anomaly_detector_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     output =
-                        crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(
+                        crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_cbor_err(
                             _response_body,
                             output,
                         )
@@ -61,7 +61,7 @@ pub fn de_delete_anomaly_detector_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -79,7 +79,7 @@ pub fn de_delete_anomaly_detector_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
-                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(
+                output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -97,7 +97,7 @@ pub fn de_delete_anomaly_detector_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -126,4 +126,15 @@ pub fn de_delete_anomaly_detector_http_response(
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
+}
+
+pub fn ser_delete_anomaly_detector_input(
+    input: &crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_delete_anomaly_detector_input::ser_delete_anomaly_detector_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

@@ -295,6 +295,8 @@ pub(crate) mod shape_tiering;
 
 pub(crate) mod shape_attribute;
 
+pub(crate) mod shape_attribute_value_list;
+
 pub(crate) mod shape_free_tier_config;
 
 pub(crate) mod shape_line_item_filter_values_list;

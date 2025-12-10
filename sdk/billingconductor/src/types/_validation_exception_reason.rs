@@ -24,6 +24,7 @@
 ///     ValidationExceptionReason::IllegalAccounts => { /* ... */ },
 ///     ValidationExceptionReason::IllegalAccountId => { /* ... */ },
 ///     ValidationExceptionReason::IllegalBillingEntity => { /* ... */ },
+///     ValidationExceptionReason::IllegalBillingGroupPricingPlan => { /* ... */ },
 ///     ValidationExceptionReason::IllegalBillingGroupType => { /* ... */ },
 ///     ValidationExceptionReason::IllegalBillingPeriod => { /* ... */ },
 ///     ValidationExceptionReason::IllegalBillingPeriodRange => { /* ... */ },
@@ -129,6 +130,8 @@ pub enum ValidationExceptionReason {
     IllegalAccountId,
     #[allow(missing_docs)] // documentation missing in model
     IllegalBillingEntity,
+    #[allow(missing_docs)] // documentation missing in model
+    IllegalBillingGroupPricingPlan,
     #[allow(missing_docs)] // documentation missing in model
     IllegalBillingGroupType,
     #[allow(missing_docs)] // documentation missing in model
@@ -254,6 +257,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "ILLEGAL_ACCOUNTS" => ValidationExceptionReason::IllegalAccounts,
             "ILLEGAL_ACCOUNT_ID" => ValidationExceptionReason::IllegalAccountId,
             "ILLEGAL_BILLING_ENTITY" => ValidationExceptionReason::IllegalBillingEntity,
+            "ILLEGAL_BILLING_GROUP_PRICING_PLAN" => ValidationExceptionReason::IllegalBillingGroupPricingPlan,
             "ILLEGAL_BILLING_GROUP_TYPE" => ValidationExceptionReason::IllegalBillingGroupType,
             "ILLEGAL_BILLING_PERIOD" => ValidationExceptionReason::IllegalBillingPeriod,
             "ILLEGAL_BILLING_PERIOD_RANGE" => ValidationExceptionReason::IllegalBillingPeriodRange,
@@ -334,6 +338,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::IllegalAccounts => "ILLEGAL_ACCOUNTS",
             ValidationExceptionReason::IllegalAccountId => "ILLEGAL_ACCOUNT_ID",
             ValidationExceptionReason::IllegalBillingEntity => "ILLEGAL_BILLING_ENTITY",
+            ValidationExceptionReason::IllegalBillingGroupPricingPlan => "ILLEGAL_BILLING_GROUP_PRICING_PLAN",
             ValidationExceptionReason::IllegalBillingGroupType => "ILLEGAL_BILLING_GROUP_TYPE",
             ValidationExceptionReason::IllegalBillingPeriod => "ILLEGAL_BILLING_PERIOD",
             ValidationExceptionReason::IllegalBillingPeriodRange => "ILLEGAL_BILLING_PERIOD_RANGE",
@@ -405,6 +410,7 @@ impl ValidationExceptionReason {
             "ILLEGAL_ACCOUNTS",
             "ILLEGAL_ACCOUNT_ID",
             "ILLEGAL_BILLING_ENTITY",
+            "ILLEGAL_BILLING_GROUP_PRICING_PLAN",
             "ILLEGAL_BILLING_GROUP_TYPE",
             "ILLEGAL_BILLING_PERIOD",
             "ILLEGAL_BILLING_PERIOD_RANGE",
@@ -495,6 +501,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::IllegalAccounts => write!(f, "ILLEGAL_ACCOUNTS"),
             ValidationExceptionReason::IllegalAccountId => write!(f, "ILLEGAL_ACCOUNT_ID"),
             ValidationExceptionReason::IllegalBillingEntity => write!(f, "ILLEGAL_BILLING_ENTITY"),
+            ValidationExceptionReason::IllegalBillingGroupPricingPlan => write!(f, "ILLEGAL_BILLING_GROUP_PRICING_PLAN"),
             ValidationExceptionReason::IllegalBillingGroupType => write!(f, "ILLEGAL_BILLING_GROUP_TYPE"),
             ValidationExceptionReason::IllegalBillingPeriod => write!(f, "ILLEGAL_BILLING_PERIOD"),
             ValidationExceptionReason::IllegalBillingPeriodRange => write!(f, "ILLEGAL_BILLING_PERIOD_RANGE"),

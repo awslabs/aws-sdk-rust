@@ -968,11 +968,11 @@ pub(crate) fn automated_reasoning_policy_scenario_correct_errors(
     if builder.alternate_expression.is_none() {
         builder.alternate_expression = Some(Default::default())
     }
-    if builder.rule_ids.is_none() {
-        builder.rule_ids = Some(Default::default())
-    }
     if builder.expected_result.is_none() {
         builder.expected_result = "no value was set".parse::<crate::types::AutomatedReasoningCheckResult>().ok()
+    }
+    if builder.rule_ids.is_none() {
+        builder.rule_ids = Some(Default::default())
     }
     builder
 }
@@ -1117,6 +1117,15 @@ pub(crate) fn automated_reasoning_policy_generated_test_cases_correct_errors(
 ) -> crate::types::builders::AutomatedReasoningPolicyGeneratedTestCasesBuilder {
     if builder.generated_test_cases.is_none() {
         builder.generated_test_cases = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn automated_reasoning_policy_scenarios_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyScenariosBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyScenariosBuilder {
+    if builder.policy_scenarios.is_none() {
+        builder.policy_scenarios = Some(Default::default())
     }
     builder
 }

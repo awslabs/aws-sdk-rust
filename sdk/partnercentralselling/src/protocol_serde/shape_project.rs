@@ -66,6 +66,9 @@ pub fn ser_project(
     if let Some(var_21) = &input.additional_comments {
         object.key("AdditionalComments").string(var_21.as_str());
     }
+    if let Some(var_22) = &input.aws_partition {
+        object.key("AwsPartition").string(var_22.as_str());
+    }
     Ok(())
 }
 
@@ -151,6 +154,13 @@ where
                             builder = builder.set_additional_comments(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "AwsPartition" => {
+                            builder = builder.set_aws_partition(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AwsPartition::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -18,6 +18,15 @@ pub fn ser_line_item_filter(
         }
         array_1.finish();
     }
+    if let Some(var_3) = &input.attribute_values {
+        let mut array_4 = object.key("AttributeValues").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }
 
@@ -53,6 +62,10 @@ where
                         "Values" => {
                             builder = builder
                                 .set_values(crate::protocol_serde::shape_line_item_filter_values_list::de_line_item_filter_values_list(tokens)?);
+                        }
+                        "AttributeValues" => {
+                            builder =
+                                builder.set_attribute_values(crate::protocol_serde::shape_attribute_value_list::de_attribute_value_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

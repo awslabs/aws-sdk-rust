@@ -4,31 +4,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KmsAccess {
-    /// <p>The current status of the KMS access configuration.</p>
+    /// <p>The current status of the Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub status: ::std::option::Option<crate::types::ManagedResourceStatus>,
-    /// <p>The IPv4 addresses allowed for KMS access.</p>
+    /// <p>The IPv4 addresses allowed for Amazon Web Services Key Management Service (KMS) access.</p>
     pub ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The domain name for KMS access configuration.</p>
+    /// <p>The domain name for Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The KMS policy document that defines permissions for key usage.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) policy document that defines permissions for key usage.</p>
     pub kms_policy_document: ::std::option::Option<::std::string::String>,
 }
 impl KmsAccess {
-    /// <p>The current status of the KMS access configuration.</p>
+    /// <p>The current status of the Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ManagedResourceStatus> {
         self.status.as_ref()
     }
-    /// <p>The IPv4 addresses allowed for KMS access.</p>
+    /// <p>The IPv4 addresses allowed for Amazon Web Services Key Management Service (KMS) access.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_addresses.is_none()`.
     pub fn ipv4_addresses(&self) -> &[::std::string::String] {
         self.ipv4_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>The domain name for KMS access configuration.</p>
+    /// <p>The domain name for Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The KMS policy document that defines permissions for key usage.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) policy document that defines permissions for key usage.</p>
     pub fn kms_policy_document(&self) -> ::std::option::Option<&str> {
         self.kms_policy_document.as_deref()
     }
@@ -50,17 +50,17 @@ pub struct KmsAccessBuilder {
     pub(crate) kms_policy_document: ::std::option::Option<::std::string::String>,
 }
 impl KmsAccessBuilder {
-    /// <p>The current status of the KMS access configuration.</p>
+    /// <p>The current status of the Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn status(mut self, input: crate::types::ManagedResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the KMS access configuration.</p>
+    /// <p>The current status of the Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManagedResourceStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the KMS access configuration.</p>
+    /// <p>The current status of the Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ManagedResourceStatus> {
         &self.status
     }
@@ -68,47 +68,47 @@ impl KmsAccessBuilder {
     ///
     /// To override the contents of this collection use [`set_ipv4_addresses`](Self::set_ipv4_addresses).
     ///
-    /// <p>The IPv4 addresses allowed for KMS access.</p>
+    /// <p>The IPv4 addresses allowed for Amazon Web Services Key Management Service (KMS) access.</p>
     pub fn ipv4_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipv4_addresses.unwrap_or_default();
         v.push(input.into());
         self.ipv4_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IPv4 addresses allowed for KMS access.</p>
+    /// <p>The IPv4 addresses allowed for Amazon Web Services Key Management Service (KMS) access.</p>
     pub fn set_ipv4_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ipv4_addresses = input;
         self
     }
-    /// <p>The IPv4 addresses allowed for KMS access.</p>
+    /// <p>The IPv4 addresses allowed for Amazon Web Services Key Management Service (KMS) access.</p>
     pub fn get_ipv4_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipv4_addresses
     }
-    /// <p>The domain name for KMS access configuration.</p>
+    /// <p>The domain name for Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The domain name for KMS access configuration.</p>
+    /// <p>The domain name for Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
-    /// <p>The domain name for KMS access configuration.</p>
+    /// <p>The domain name for Amazon Web Services Key Management Service (KMS) access configuration.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>The KMS policy document that defines permissions for key usage.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) policy document that defines permissions for key usage.</p>
     pub fn kms_policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_policy_document = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The KMS policy document that defines permissions for key usage.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) policy document that defines permissions for key usage.</p>
     pub fn set_kms_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_policy_document = input;
         self
     }
-    /// <p>The KMS policy document that defines permissions for key usage.</p>
+    /// <p>The Amazon Web Services Key Management Service (KMS) policy document that defines permissions for key usage.</p>
     pub fn get_kms_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_policy_document
     }

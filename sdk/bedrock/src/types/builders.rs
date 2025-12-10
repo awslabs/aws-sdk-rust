@@ -359,6 +359,8 @@ pub use crate::types::_automated_reasoning_policy_build_workflow_summary::Automa
 
 pub use crate::types::_automated_reasoning_policy_scenario::AutomatedReasoningPolicyScenarioBuilder;
 
+pub use crate::types::_automated_reasoning_policy_scenarios::AutomatedReasoningPolicyScenariosBuilder;
+
 pub use crate::types::_automated_reasoning_policy_generated_test_cases::AutomatedReasoningPolicyGeneratedTestCasesBuilder;
 
 pub use crate::types::_automated_reasoning_policy_generated_test_case::AutomatedReasoningPolicyGeneratedTestCaseBuilder;

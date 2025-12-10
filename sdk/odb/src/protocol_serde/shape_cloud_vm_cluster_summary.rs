@@ -56,6 +56,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "cloudExadataInfrastructureArn" => {
+                            builder = builder.set_cloud_exadata_infrastructure_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "clusterName" => {
                             builder = builder.set_cluster_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -245,6 +252,13 @@ where
                         }
                         "odbNetworkId" => {
                             builder = builder.set_odb_network_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "odbNetworkArn" => {
+                            builder = builder.set_odb_network_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

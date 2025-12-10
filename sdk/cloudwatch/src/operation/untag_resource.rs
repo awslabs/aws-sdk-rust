@@ -186,7 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UntagResourc
                 output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
-                ::std::write!(output, "/").expect("formatting should succeed");
+                ::std::write!(output, "/service/GraniteServiceVersion20100801/operation/UntagResource").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -199,12 +199,16 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UntagResourc
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/cbor");
+            builder =
+                _header_serialization_settings.set_default_header(builder, ::http::header::HeaderName::from_static("smithy-protocol"), "rpc-v2-cbor");
+            builder =
+                _header_serialization_settings.set_default_header(builder, ::http::header::HeaderName::from_static("accept"), "application/cbor");
+            builder =
+                _header_serialization_settings.set_default_header(builder, ::http::header::HeaderName::from_static("x-amzn-query-mode"), "true");
             builder
         };
-        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_untag_resource_input::ser_untag_resource_input_input_input(
-            &input,
-        )?);
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_untag_resource::ser_untag_resource_input(&input)?);
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);

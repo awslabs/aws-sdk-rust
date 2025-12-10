@@ -22,7 +22,7 @@ pub fn de_delete_dashboards_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::delete_dashboards::DeleteDashboardsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -37,7 +37,7 @@ pub fn de_delete_dashboards_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DashboardNotFoundErrorBuilder::default();
-                output = crate::protocol_serde::shape_dashboard_not_found_error::de_dashboard_not_found_error_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_dashboard_not_found_error::de_dashboard_not_found_error_cbor_err(_response_body, output)
                     .map_err(crate::operation::delete_dashboards::DeleteDashboardsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -52,7 +52,7 @@ pub fn de_delete_dashboards_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_cbor_err(_response_body, output)
                     .map_err(crate::operation::delete_dashboards::DeleteDashboardsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -67,7 +67,7 @@ pub fn de_delete_dashboards_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -96,4 +96,15 @@ pub fn de_delete_dashboards_http_response(
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
+}
+
+pub fn ser_delete_dashboards_input(
+    input: &crate::operation::delete_dashboards::DeleteDashboardsInput,
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_delete_dashboards_input::ser_delete_dashboards_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

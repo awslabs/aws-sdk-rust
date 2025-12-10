@@ -4,25 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrossRegionS3RestoreSourcesAccess {
-    /// <p>The Amazon Web Services Region for cross-Region S3 restore access.</p>
+    /// <p>The Amazon Web Services Region for cross-Region Amazon S3 restore access.</p>
     pub region: ::std::option::Option<::std::string::String>,
-    /// <p>The IPv4 addresses allowed for cross-Region S3 restore access.</p>
+    /// <p>The IPv4 addresses allowed for cross-Region Amazon S3 restore access.</p>
     pub ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The current status of the cross-Region S3 restore access configuration.</p>
+    /// <p>The current status of the cross-Region Amazon S3 restore access configuration.</p>
     pub status: ::std::option::Option<crate::types::ManagedResourceStatus>,
 }
 impl CrossRegionS3RestoreSourcesAccess {
-    /// <p>The Amazon Web Services Region for cross-Region S3 restore access.</p>
+    /// <p>The Amazon Web Services Region for cross-Region Amazon S3 restore access.</p>
     pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The IPv4 addresses allowed for cross-Region S3 restore access.</p>
+    /// <p>The IPv4 addresses allowed for cross-Region Amazon S3 restore access.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_addresses.is_none()`.
     pub fn ipv4_addresses(&self) -> &[::std::string::String] {
         self.ipv4_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>The current status of the cross-Region S3 restore access configuration.</p>
+    /// <p>The current status of the cross-Region Amazon S3 restore access configuration.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ManagedResourceStatus> {
         self.status.as_ref()
     }
@@ -43,17 +43,17 @@ pub struct CrossRegionS3RestoreSourcesAccessBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ManagedResourceStatus>,
 }
 impl CrossRegionS3RestoreSourcesAccessBuilder {
-    /// <p>The Amazon Web Services Region for cross-Region S3 restore access.</p>
+    /// <p>The Amazon Web Services Region for cross-Region Amazon S3 restore access.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Region for cross-Region S3 restore access.</p>
+    /// <p>The Amazon Web Services Region for cross-Region Amazon S3 restore access.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
-    /// <p>The Amazon Web Services Region for cross-Region S3 restore access.</p>
+    /// <p>The Amazon Web Services Region for cross-Region Amazon S3 restore access.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.region
     }
@@ -61,33 +61,33 @@ impl CrossRegionS3RestoreSourcesAccessBuilder {
     ///
     /// To override the contents of this collection use [`set_ipv4_addresses`](Self::set_ipv4_addresses).
     ///
-    /// <p>The IPv4 addresses allowed for cross-Region S3 restore access.</p>
+    /// <p>The IPv4 addresses allowed for cross-Region Amazon S3 restore access.</p>
     pub fn ipv4_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipv4_addresses.unwrap_or_default();
         v.push(input.into());
         self.ipv4_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IPv4 addresses allowed for cross-Region S3 restore access.</p>
+    /// <p>The IPv4 addresses allowed for cross-Region Amazon S3 restore access.</p>
     pub fn set_ipv4_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ipv4_addresses = input;
         self
     }
-    /// <p>The IPv4 addresses allowed for cross-Region S3 restore access.</p>
+    /// <p>The IPv4 addresses allowed for cross-Region Amazon S3 restore access.</p>
     pub fn get_ipv4_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipv4_addresses
     }
-    /// <p>The current status of the cross-Region S3 restore access configuration.</p>
+    /// <p>The current status of the cross-Region Amazon S3 restore access configuration.</p>
     pub fn status(mut self, input: crate::types::ManagedResourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the cross-Region S3 restore access configuration.</p>
+    /// <p>The current status of the cross-Region Amazon S3 restore access configuration.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManagedResourceStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the cross-Region S3 restore access configuration.</p>
+    /// <p>The current status of the cross-Region Amazon S3 restore access configuration.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ManagedResourceStatus> {
         &self.status
     }

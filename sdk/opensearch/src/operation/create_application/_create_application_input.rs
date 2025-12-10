@@ -15,6 +15,8 @@ pub struct CreateApplicationInput {
     pub app_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>,
     /// <p>A list of tags attached to a domain.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest. If provided, the application uses your customer-managed key for encryption. If omitted, the application uses an AWS-managed key. The KMS key must be in the same region as the application.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationInput {
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
@@ -47,6 +49,10 @@ impl CreateApplicationInput {
     pub fn tag_list(&self) -> &[crate::types::Tag] {
         self.tag_list.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest. If provided, the application uses your customer-managed key for encryption. If omitted, the application uses an AWS-managed key. The KMS key must be in the same region as the application.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
@@ -65,6 +71,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) iam_identity_center_options: ::std::option::Option<crate::types::IamIdentityCenterOptionsInput>,
     pub(crate) app_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
@@ -170,6 +177,20 @@ impl CreateApplicationInputBuilder {
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest. If provided, the application uses your customer-managed key for encryption. If omitted, the application uses an AWS-managed key. The KMS key must be in the same region as the application.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest. If provided, the application uses your customer-managed key for encryption. If omitted, the application uses an AWS-managed key. The KMS key must be in the same region as the application.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest. If provided, the application uses your customer-managed key for encryption. If omitted, the application uses an AWS-managed key. The KMS key must be in the same region as the application.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -181,6 +202,7 @@ impl CreateApplicationInputBuilder {
             iam_identity_center_options: self.iam_identity_center_options,
             app_configs: self.app_configs,
             tag_list: self.tag_list,
+            kms_key_arn: self.kms_key_arn,
         })
     }
 }

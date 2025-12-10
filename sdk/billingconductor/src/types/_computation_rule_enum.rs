@@ -13,6 +13,7 @@
 /// # let computationruleenum = unimplemented!();
 /// match computationruleenum {
 ///     ComputationRuleEnum::Consolidated => { /* ... */ },
+///     ComputationRuleEnum::Itemized => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum ComputationRuleEnum {
     #[allow(missing_docs)] // documentation missing in model
     Consolidated,
+    #[allow(missing_docs)] // documentation missing in model
+    Itemized,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for ComputationRuleEnum {
     fn from(s: &str) -> Self {
         match s {
             "CONSOLIDATED" => ComputationRuleEnum::Consolidated,
+            "ITEMIZED" => ComputationRuleEnum::Itemized,
             other => ComputationRuleEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl ComputationRuleEnum {
     pub fn as_str(&self) -> &str {
         match self {
             ComputationRuleEnum::Consolidated => "CONSOLIDATED",
+            ComputationRuleEnum::Itemized => "ITEMIZED",
             ComputationRuleEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONSOLIDATED"]
+        &["CONSOLIDATED", "ITEMIZED"]
     }
 }
 impl ::std::convert::AsRef<str> for ComputationRuleEnum {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for ComputationRuleEnum {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ComputationRuleEnum::Consolidated => write!(f, "CONSOLIDATED"),
+            ComputationRuleEnum::Itemized => write!(f, "ITEMIZED"),
             ComputationRuleEnum::Unknown(value) => write!(f, "{value}"),
         }
     }

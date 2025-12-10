@@ -22,7 +22,7 @@ impl crate::operation::start_signing_job::builders::StartSigningJobInputBuilder 
 }
 /// Fluent builder constructing a request to `StartSigningJob`.
 ///
-/// <p>Initiates a signing job to be performed on the code provided. Signing jobs are viewable by the <code>ListSigningJobs</code> operation for two years after they are performed. Note the following requirements:</p>
+/// <p>Initiates a signing job to be performed on the code provided. Signing jobs are viewable by the <code>ListSigningJobs</code> operation. Note the following requirements:</p>
 /// <ul>
 /// <li>
 /// <p>You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Creating a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>.</p></li>
