@@ -8,6 +8,8 @@ pub struct LineChartSeriesSettings {
     pub line_style_settings: ::std::option::Option<crate::types::LineChartLineStyleSettings>,
     /// <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
     pub marker_style_settings: ::std::option::Option<crate::types::LineChartMarkerStyleSettings>,
+    /// <p>Decal settings for a line series in <code>LineChartVisual</code>.</p>
+    pub decal_settings: ::std::option::Option<crate::types::DecalSettings>,
 }
 impl LineChartSeriesSettings {
     /// <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
@@ -17,6 +19,10 @@ impl LineChartSeriesSettings {
     /// <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
     pub fn marker_style_settings(&self) -> ::std::option::Option<&crate::types::LineChartMarkerStyleSettings> {
         self.marker_style_settings.as_ref()
+    }
+    /// <p>Decal settings for a line series in <code>LineChartVisual</code>.</p>
+    pub fn decal_settings(&self) -> ::std::option::Option<&crate::types::DecalSettings> {
+        self.decal_settings.as_ref()
     }
 }
 impl LineChartSeriesSettings {
@@ -32,6 +38,7 @@ impl LineChartSeriesSettings {
 pub struct LineChartSeriesSettingsBuilder {
     pub(crate) line_style_settings: ::std::option::Option<crate::types::LineChartLineStyleSettings>,
     pub(crate) marker_style_settings: ::std::option::Option<crate::types::LineChartMarkerStyleSettings>,
+    pub(crate) decal_settings: ::std::option::Option<crate::types::DecalSettings>,
 }
 impl LineChartSeriesSettingsBuilder {
     /// <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
@@ -62,11 +69,26 @@ impl LineChartSeriesSettingsBuilder {
     pub fn get_marker_style_settings(&self) -> &::std::option::Option<crate::types::LineChartMarkerStyleSettings> {
         &self.marker_style_settings
     }
+    /// <p>Decal settings for a line series in <code>LineChartVisual</code>.</p>
+    pub fn decal_settings(mut self, input: crate::types::DecalSettings) -> Self {
+        self.decal_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Decal settings for a line series in <code>LineChartVisual</code>.</p>
+    pub fn set_decal_settings(mut self, input: ::std::option::Option<crate::types::DecalSettings>) -> Self {
+        self.decal_settings = input;
+        self
+    }
+    /// <p>Decal settings for a line series in <code>LineChartVisual</code>.</p>
+    pub fn get_decal_settings(&self) -> &::std::option::Option<crate::types::DecalSettings> {
+        &self.decal_settings
+    }
     /// Consumes the builder and constructs a [`LineChartSeriesSettings`](crate::types::LineChartSeriesSettings).
     pub fn build(self) -> crate::types::LineChartSeriesSettings {
         crate::types::LineChartSeriesSettings {
             line_style_settings: self.line_style_settings,
             marker_style_settings: self.marker_style_settings,
+            decal_settings: self.decal_settings,
         }
     }
 }

@@ -12,6 +12,8 @@ pub struct ColumnConfiguration {
     pub role: ::std::option::Option<crate::types::ColumnRole>,
     /// <p>The color configurations of the column.</p>
     pub colors_configuration: ::std::option::Option<crate::types::ColorsConfiguration>,
+    /// <p>Decal configuration of the column.</p>
+    pub decal_settings_configuration: ::std::option::Option<crate::types::DecalSettingsConfiguration>,
 }
 impl ColumnConfiguration {
     /// <p>The column.</p>
@@ -30,6 +32,10 @@ impl ColumnConfiguration {
     pub fn colors_configuration(&self) -> ::std::option::Option<&crate::types::ColorsConfiguration> {
         self.colors_configuration.as_ref()
     }
+    /// <p>Decal configuration of the column.</p>
+    pub fn decal_settings_configuration(&self) -> ::std::option::Option<&crate::types::DecalSettingsConfiguration> {
+        self.decal_settings_configuration.as_ref()
+    }
 }
 impl ColumnConfiguration {
     /// Creates a new builder-style object to manufacture [`ColumnConfiguration`](crate::types::ColumnConfiguration).
@@ -46,6 +52,7 @@ pub struct ColumnConfigurationBuilder {
     pub(crate) format_configuration: ::std::option::Option<crate::types::FormatConfiguration>,
     pub(crate) role: ::std::option::Option<crate::types::ColumnRole>,
     pub(crate) colors_configuration: ::std::option::Option<crate::types::ColorsConfiguration>,
+    pub(crate) decal_settings_configuration: ::std::option::Option<crate::types::DecalSettingsConfiguration>,
 }
 impl ColumnConfigurationBuilder {
     /// <p>The column.</p>
@@ -105,6 +112,20 @@ impl ColumnConfigurationBuilder {
     pub fn get_colors_configuration(&self) -> &::std::option::Option<crate::types::ColorsConfiguration> {
         &self.colors_configuration
     }
+    /// <p>Decal configuration of the column.</p>
+    pub fn decal_settings_configuration(mut self, input: crate::types::DecalSettingsConfiguration) -> Self {
+        self.decal_settings_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Decal configuration of the column.</p>
+    pub fn set_decal_settings_configuration(mut self, input: ::std::option::Option<crate::types::DecalSettingsConfiguration>) -> Self {
+        self.decal_settings_configuration = input;
+        self
+    }
+    /// <p>Decal configuration of the column.</p>
+    pub fn get_decal_settings_configuration(&self) -> &::std::option::Option<crate::types::DecalSettingsConfiguration> {
+        &self.decal_settings_configuration
+    }
     /// Consumes the builder and constructs a [`ColumnConfiguration`](crate::types::ColumnConfiguration).
     pub fn build(self) -> crate::types::ColumnConfiguration {
         crate::types::ColumnConfiguration {
@@ -112,6 +133,7 @@ impl ColumnConfigurationBuilder {
             format_configuration: self.format_configuration,
             role: self.role,
             colors_configuration: self.colors_configuration,
+            decal_settings_configuration: self.decal_settings_configuration,
         }
     }
 }

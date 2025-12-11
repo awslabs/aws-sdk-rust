@@ -18,6 +18,7 @@
 ///     PolicyType::ChatbotPolicy => { /* ... */ },
 ///     PolicyType::DeclarativePolicyEc2 => { /* ... */ },
 ///     PolicyType::InspectorPolicy => { /* ... */ },
+///     PolicyType::NetworkSecurityDirectorPolicy => { /* ... */ },
 ///     PolicyType::ResourceControlPolicy => { /* ... */ },
 ///     PolicyType::S3Policy => { /* ... */ },
 ///     PolicyType::SecurityhubPolicy => { /* ... */ },
@@ -65,6 +66,8 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     InspectorPolicy,
     #[allow(missing_docs)] // documentation missing in model
+    NetworkSecurityDirectorPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceControlPolicy,
     #[allow(missing_docs)] // documentation missing in model
     S3Policy,
@@ -89,6 +92,7 @@ impl ::std::convert::From<&str> for PolicyType {
             "CHATBOT_POLICY" => PolicyType::ChatbotPolicy,
             "DECLARATIVE_POLICY_EC2" => PolicyType::DeclarativePolicyEc2,
             "INSPECTOR_POLICY" => PolicyType::InspectorPolicy,
+            "NETWORK_SECURITY_DIRECTOR_POLICY" => PolicyType::NetworkSecurityDirectorPolicy,
             "RESOURCE_CONTROL_POLICY" => PolicyType::ResourceControlPolicy,
             "S3_POLICY" => PolicyType::S3Policy,
             "SECURITYHUB_POLICY" => PolicyType::SecurityhubPolicy,
@@ -116,6 +120,7 @@ impl PolicyType {
             PolicyType::ChatbotPolicy => "CHATBOT_POLICY",
             PolicyType::DeclarativePolicyEc2 => "DECLARATIVE_POLICY_EC2",
             PolicyType::InspectorPolicy => "INSPECTOR_POLICY",
+            PolicyType::NetworkSecurityDirectorPolicy => "NETWORK_SECURITY_DIRECTOR_POLICY",
             PolicyType::ResourceControlPolicy => "RESOURCE_CONTROL_POLICY",
             PolicyType::S3Policy => "S3_POLICY",
             PolicyType::SecurityhubPolicy => "SECURITYHUB_POLICY",
@@ -134,6 +139,7 @@ impl PolicyType {
             "CHATBOT_POLICY",
             "DECLARATIVE_POLICY_EC2",
             "INSPECTOR_POLICY",
+            "NETWORK_SECURITY_DIRECTOR_POLICY",
             "RESOURCE_CONTROL_POLICY",
             "S3_POLICY",
             "SECURITYHUB_POLICY",
@@ -169,6 +175,7 @@ impl ::std::fmt::Display for PolicyType {
             PolicyType::ChatbotPolicy => write!(f, "CHATBOT_POLICY"),
             PolicyType::DeclarativePolicyEc2 => write!(f, "DECLARATIVE_POLICY_EC2"),
             PolicyType::InspectorPolicy => write!(f, "INSPECTOR_POLICY"),
+            PolicyType::NetworkSecurityDirectorPolicy => write!(f, "NETWORK_SECURITY_DIRECTOR_POLICY"),
             PolicyType::ResourceControlPolicy => write!(f, "RESOURCE_CONTROL_POLICY"),
             PolicyType::S3Policy => write!(f, "S3_POLICY"),
             PolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),

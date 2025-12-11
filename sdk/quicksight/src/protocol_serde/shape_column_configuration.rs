@@ -24,6 +24,12 @@ pub fn ser_column_configuration(
         crate::protocol_serde::shape_colors_configuration::ser_colors_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.decal_settings_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("DecalSettingsConfiguration").start_object();
+        crate::protocol_serde::shape_decal_settings_configuration::ser_decal_settings_configuration(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -59,6 +65,11 @@ where
                         "ColorsConfiguration" => {
                             builder =
                                 builder.set_colors_configuration(crate::protocol_serde::shape_colors_configuration::de_colors_configuration(tokens)?);
+                        }
+                        "DecalSettingsConfiguration" => {
+                            builder = builder.set_decal_settings_configuration(
+                                crate::protocol_serde::shape_decal_settings_configuration::de_decal_settings_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

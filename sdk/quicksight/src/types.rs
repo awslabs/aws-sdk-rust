@@ -241,6 +241,16 @@ pub use crate::types::_resize_option::ResizeOption;
 
 pub use crate::types::_column_configuration::ColumnConfiguration;
 
+pub use crate::types::_decal_settings_configuration::DecalSettingsConfiguration;
+
+pub use crate::types::_decal_settings::DecalSettings;
+
+pub use crate::types::_decal_style_type::DecalStyleType;
+
+pub use crate::types::_decal_pattern_type::DecalPatternType;
+
+pub use crate::types::_visibility::Visibility;
+
 pub use crate::types::_colors_configuration::ColorsConfiguration;
 
 pub use crate::types::_custom_color::CustomColor;
@@ -270,8 +280,6 @@ pub use crate::types::_numeric_separator_configuration::NumericSeparatorConfigur
 pub use crate::types::_thousand_separator_options::ThousandSeparatorOptions;
 
 pub use crate::types::_digit_grouping_style::DigitGroupingStyle;
-
-pub use crate::types::_visibility::Visibility;
 
 pub use crate::types::_numeric_separator_symbol::NumericSeparatorSymbol;
 
@@ -941,6 +949,28 @@ pub use crate::types::_combo_chart_visual::ComboChartVisual;
 
 pub use crate::types::_combo_chart_configuration::ComboChartConfiguration;
 
+pub use crate::types::_combo_series_item::ComboSeriesItem;
+
+pub use crate::types::_data_field_combo_series_item::DataFieldComboSeriesItem;
+
+pub use crate::types::_combo_chart_series_settings::ComboChartSeriesSettings;
+
+pub use crate::types::_border_settings::BorderSettings;
+
+pub use crate::types::_line_chart_marker_style_settings::LineChartMarkerStyleSettings;
+
+pub use crate::types::_line_chart_marker_shape::LineChartMarkerShape;
+
+pub use crate::types::_line_chart_line_style_settings::LineChartLineStyleSettings;
+
+pub use crate::types::_line_chart_line_style::LineChartLineStyle;
+
+pub use crate::types::_line_interpolation::LineInterpolation;
+
+pub use crate::types::_field_combo_series_item::FieldComboSeriesItem;
+
+pub use crate::types::_combo_chart_default_series_settings::ComboChartDefaultSeriesSettings;
+
 pub use crate::types::_single_axis_options::SingleAxisOptions;
 
 pub use crate::types::_y_axis_options::YAxisOptions;
@@ -1057,6 +1087,14 @@ pub use crate::types::_geospatial_layer_type::GeospatialLayerType;
 
 pub use crate::types::_filled_map_visual::FilledMapVisual;
 
+pub use crate::types::_geocode_preference::GeocodePreference;
+
+pub use crate::types::_geocode_preference_value::GeocodePreferenceValue;
+
+pub use crate::types::_coordinate::Coordinate;
+
+pub use crate::types::_geocoder_hierarchy::GeocoderHierarchy;
+
 pub use crate::types::_filled_map_conditional_formatting::FilledMapConditionalFormatting;
 
 pub use crate::types::_filled_map_conditional_formatting_option::FilledMapConditionalFormattingOption;
@@ -1150,16 +1188,6 @@ pub use crate::types::_series_item::SeriesItem;
 pub use crate::types::_data_field_series_item::DataFieldSeriesItem;
 
 pub use crate::types::_line_chart_series_settings::LineChartSeriesSettings;
-
-pub use crate::types::_line_chart_marker_style_settings::LineChartMarkerStyleSettings;
-
-pub use crate::types::_line_chart_marker_shape::LineChartMarkerShape;
-
-pub use crate::types::_line_chart_line_style_settings::LineChartLineStyleSettings;
-
-pub use crate::types::_line_chart_line_style::LineChartLineStyle;
-
-pub use crate::types::_line_interpolation::LineInterpolation;
 
 pub use crate::types::_field_series_item::FieldSeriesItem;
 
@@ -1313,6 +1341,16 @@ pub use crate::types::_bar_chart_visual::BarChartVisual;
 
 pub use crate::types::_bar_chart_configuration::BarChartConfiguration;
 
+pub use crate::types::_bar_series_item::BarSeriesItem;
+
+pub use crate::types::_data_field_bar_series_item::DataFieldBarSeriesItem;
+
+pub use crate::types::_bar_chart_series_settings::BarChartSeriesSettings;
+
+pub use crate::types::_field_bar_series_item::FieldBarSeriesItem;
+
+pub use crate::types::_bar_chart_default_series_settings::BarChartDefaultSeriesSettings;
+
 pub use crate::types::_bar_chart_orientation::BarChartOrientation;
 
 pub use crate::types::_bar_chart_sort_configuration::BarChartSortConfiguration;
@@ -1336,6 +1374,12 @@ pub use crate::types::_pivot_table_conditional_formatting_scope_role::PivotTable
 pub use crate::types::_text_conditional_format::TextConditionalFormat;
 
 pub use crate::types::_pivot_table_configuration::PivotTableConfiguration;
+
+pub use crate::types::_dashboard_customization_visual_options::DashboardCustomizationVisualOptions;
+
+pub use crate::types::_visual_customization_fields_configuration::VisualCustomizationFieldsConfiguration;
+
+pub use crate::types::_dashboard_customization_status::DashboardCustomizationStatus;
 
 pub use crate::types::_pivot_table_paginated_report_options::PivotTablePaginatedReportOptions;
 
@@ -1568,6 +1612,8 @@ pub use crate::types::_vpc_connection_properties::VpcConnectionProperties;
 pub use crate::types::_data_source_credentials::DataSourceCredentials;
 
 pub use crate::types::_web_proxy_credentials::WebProxyCredentials;
+
+pub use crate::types::_key_pair_credentials::KeyPairCredentials;
 
 pub use crate::types::_credential_pair::CredentialPair;
 
@@ -2381,6 +2427,8 @@ pub use crate::types::_asset_bundle_export_job_summary::AssetBundleExportJobSumm
 
 pub use crate::types::_asset_bundle_export_job_status::AssetBundleExportJobStatus;
 
+pub use crate::types::_user_identifier::UserIdentifier;
+
 pub use crate::types::_embedding_identity_type::EmbeddingIdentityType;
 
 pub use crate::types::_registered_user_embedding_experience_configuration::RegisteredUserEmbeddingExperienceConfiguration;
@@ -2485,13 +2533,15 @@ pub use crate::types::_snapshot_job_error_info::SnapshotJobErrorInfo;
 
 pub use crate::types::_snapshot_job_result::SnapshotJobResult;
 
-pub use crate::types::_anonymous_user_snapshot_job_result::AnonymousUserSnapshotJobResult;
+pub use crate::types::_registered_user_snapshot_job_result::RegisteredUserSnapshotJobResult;
 
 pub use crate::types::_snapshot_job_result_file_group::SnapshotJobResultFileGroup;
 
 pub use crate::types::_snapshot_job_s3_result::SnapshotJobS3Result;
 
 pub use crate::types::_snapshot_job_result_error_info::SnapshotJobResultErrorInfo;
+
+pub use crate::types::_anonymous_user_snapshot_job_result::AnonymousUserSnapshotJobResult;
 
 pub use crate::types::_snapshot_job_status::SnapshotJobStatus;
 
@@ -2869,13 +2919,19 @@ mod _bar_chart_aggregated_field_wells;
 
 mod _bar_chart_configuration;
 
+mod _bar_chart_default_series_settings;
+
 mod _bar_chart_field_wells;
 
 mod _bar_chart_orientation;
 
+mod _bar_chart_series_settings;
+
 mod _bar_chart_sort_configuration;
 
 mod _bar_chart_visual;
+
+mod _bar_series_item;
 
 mod _bars_arrangement;
 
@@ -2904,6 +2960,8 @@ mod _body_section_repeat_dimension_configuration;
 mod _body_section_repeat_page_break_configuration;
 
 mod _bookmarks_configurations;
+
+mod _border_settings;
 
 mod _border_style;
 
@@ -3045,11 +3103,17 @@ mod _combo_chart_aggregated_field_wells;
 
 mod _combo_chart_configuration;
 
+mod _combo_chart_default_series_settings;
+
 mod _combo_chart_field_wells;
+
+mod _combo_chart_series_settings;
 
 mod _combo_chart_sort_configuration;
 
 mod _combo_chart_visual;
+
+mod _combo_series_item;
 
 mod _commit_mode;
 
@@ -3105,6 +3169,8 @@ mod _contribution_analysis_sort_type;
 
 mod _contribution_analysis_time_ranges;
 
+mod _coordinate;
+
 mod _create_columns_operation;
 
 mod _create_topic_reviewed_answer;
@@ -3155,6 +3221,10 @@ mod _dashboard;
 
 mod _dashboard_behavior;
 
+mod _dashboard_customization_status;
+
+mod _dashboard_customization_visual_options;
+
 mod _dashboard_error;
 
 mod _dashboard_error_type;
@@ -3194,6 +3264,10 @@ mod _data_bars_options;
 mod _data_color;
 
 mod _data_color_palette;
+
+mod _data_field_bar_series_item;
+
+mod _data_field_combo_series_item;
 
 mod _data_field_series_item;
 
@@ -3357,6 +3431,14 @@ mod _day_of_the_week;
 
 mod _day_of_week;
 
+mod _decal_pattern_type;
+
+mod _decal_settings;
+
+mod _decal_settings_configuration;
+
+mod _decal_style_type;
+
 mod _decimal_dataset_parameter;
 
 mod _decimal_dataset_parameter_default_values;
@@ -3459,7 +3541,11 @@ mod _export_with_hidden_fields_option;
 
 mod _failed_key_registration_entry;
 
+mod _field_bar_series_item;
+
 mod _field_based_tooltip;
+
+mod _field_combo_series_item;
 
 mod _field_folder;
 
@@ -3636,6 +3722,12 @@ mod _geo_spatial_column_group;
 mod _geo_spatial_country_code;
 
 mod _geo_spatial_data_role;
+
+mod _geocode_preference;
+
+mod _geocode_preference_value;
+
+mod _geocoder_hierarchy;
 
 mod _geospatial_categorical_color;
 
@@ -3884,6 +3976,8 @@ mod _join_operation;
 mod _join_operation_type;
 
 mod _join_type;
+
+mod _key_pair_credentials;
 
 mod _kpi_actual_value_conditional_formatting;
 
@@ -4414,6 +4508,8 @@ mod _registered_user_q_search_bar_embedding_configuration;
 mod _registered_user_quick_chat_embedding_configuration;
 
 mod _registered_user_quick_sight_console_embedding_configuration;
+
+mod _registered_user_snapshot_job_result;
 
 mod _relational_table;
 
@@ -5031,6 +5127,8 @@ mod _url_target_configuration;
 
 mod _user;
 
+mod _user_identifier;
+
 mod _user_role;
 
 mod _validation_strategy;
@@ -5058,6 +5156,8 @@ mod _visual_custom_action_defaults;
 mod _visual_custom_action_operation;
 
 mod _visual_custom_action_trigger;
+
+mod _visual_customization_fields_configuration;
 
 mod _visual_highlight_operation;
 

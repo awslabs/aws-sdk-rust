@@ -19,6 +19,8 @@ pub struct GeospatialMapVisual {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     /// <p>The alt text for the visual.</p>
     pub visual_content_alt_text: ::std::option::Option<::std::string::String>,
+    /// <p>The geocoding prefences for geospatial map.</p>
+    pub geocoding_preferences: ::std::option::Option<::std::vec::Vec<crate::types::GeocodePreference>>,
 }
 impl GeospatialMapVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
@@ -54,6 +56,12 @@ impl GeospatialMapVisual {
     pub fn visual_content_alt_text(&self) -> ::std::option::Option<&str> {
         self.visual_content_alt_text.as_deref()
     }
+    /// <p>The geocoding prefences for geospatial map.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.geocoding_preferences.is_none()`.
+    pub fn geocoding_preferences(&self) -> &[crate::types::GeocodePreference] {
+        self.geocoding_preferences.as_deref().unwrap_or_default()
+    }
 }
 impl GeospatialMapVisual {
     /// Creates a new builder-style object to manufacture [`GeospatialMapVisual`](crate::types::GeospatialMapVisual).
@@ -73,6 +81,7 @@ pub struct GeospatialMapVisualBuilder {
     pub(crate) column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     pub(crate) visual_content_alt_text: ::std::option::Option<::std::string::String>,
+    pub(crate) geocoding_preferences: ::std::option::Option<::std::vec::Vec<crate::types::GeocodePreference>>,
 }
 impl GeospatialMapVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
@@ -186,6 +195,26 @@ impl GeospatialMapVisualBuilder {
     pub fn get_visual_content_alt_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.visual_content_alt_text
     }
+    /// Appends an item to `geocoding_preferences`.
+    ///
+    /// To override the contents of this collection use [`set_geocoding_preferences`](Self::set_geocoding_preferences).
+    ///
+    /// <p>The geocoding prefences for geospatial map.</p>
+    pub fn geocoding_preferences(mut self, input: crate::types::GeocodePreference) -> Self {
+        let mut v = self.geocoding_preferences.unwrap_or_default();
+        v.push(input);
+        self.geocoding_preferences = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The geocoding prefences for geospatial map.</p>
+    pub fn set_geocoding_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GeocodePreference>>) -> Self {
+        self.geocoding_preferences = input;
+        self
+    }
+    /// <p>The geocoding prefences for geospatial map.</p>
+    pub fn get_geocoding_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeocodePreference>> {
+        &self.geocoding_preferences
+    }
     /// Consumes the builder and constructs a [`GeospatialMapVisual`](crate::types::GeospatialMapVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::GeospatialMapVisualBuilder::visual_id)
@@ -203,6 +232,7 @@ impl GeospatialMapVisualBuilder {
             column_hierarchies: self.column_hierarchies,
             actions: self.actions,
             visual_content_alt_text: self.visual_content_alt_text,
+            geocoding_preferences: self.geocoding_preferences,
         })
     }
 }

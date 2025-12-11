@@ -57,6 +57,18 @@ pub fn ser_filled_map_visual(
     if let Some(var_17) = &input.visual_content_alt_text {
         object.key("VisualContentAltText").string(var_17.as_str());
     }
+    if let Some(var_18) = &input.geocoding_preferences {
+        let mut array_19 = object.key("GeocodingPreferences").start_array();
+        for item_20 in var_18 {
+            {
+                #[allow(unused_mut)]
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_geocode_preference::ser_geocode_preference(&mut object_21, item_20)?;
+                object_21.finish();
+            }
+        }
+        array_19.finish();
+    }
     Ok(())
 }
 
@@ -116,6 +128,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "GeocodingPreferences" => {
+                            builder = builder
+                                .set_geocoding_preferences(crate::protocol_serde::shape_geocode_preference_list::de_geocode_preference_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

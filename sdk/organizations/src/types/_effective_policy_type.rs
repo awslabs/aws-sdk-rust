@@ -18,6 +18,7 @@
 ///     EffectivePolicyType::ChatbotPolicy => { /* ... */ },
 ///     EffectivePolicyType::DeclarativePolicyEc2 => { /* ... */ },
 ///     EffectivePolicyType::InspectorPolicy => { /* ... */ },
+///     EffectivePolicyType::NetworkSecurityDirectorPolicy => { /* ... */ },
 ///     EffectivePolicyType::S3Policy => { /* ... */ },
 ///     EffectivePolicyType::SecurityhubPolicy => { /* ... */ },
 ///     EffectivePolicyType::TagPolicy => { /* ... */ },
@@ -63,6 +64,8 @@ pub enum EffectivePolicyType {
     #[allow(missing_docs)] // documentation missing in model
     InspectorPolicy,
     #[allow(missing_docs)] // documentation missing in model
+    NetworkSecurityDirectorPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     S3Policy,
     #[allow(missing_docs)] // documentation missing in model
     SecurityhubPolicy,
@@ -83,6 +86,7 @@ impl ::std::convert::From<&str> for EffectivePolicyType {
             "CHATBOT_POLICY" => EffectivePolicyType::ChatbotPolicy,
             "DECLARATIVE_POLICY_EC2" => EffectivePolicyType::DeclarativePolicyEc2,
             "INSPECTOR_POLICY" => EffectivePolicyType::InspectorPolicy,
+            "NETWORK_SECURITY_DIRECTOR_POLICY" => EffectivePolicyType::NetworkSecurityDirectorPolicy,
             "S3_POLICY" => EffectivePolicyType::S3Policy,
             "SECURITYHUB_POLICY" => EffectivePolicyType::SecurityhubPolicy,
             "TAG_POLICY" => EffectivePolicyType::TagPolicy,
@@ -108,6 +112,7 @@ impl EffectivePolicyType {
             EffectivePolicyType::ChatbotPolicy => "CHATBOT_POLICY",
             EffectivePolicyType::DeclarativePolicyEc2 => "DECLARATIVE_POLICY_EC2",
             EffectivePolicyType::InspectorPolicy => "INSPECTOR_POLICY",
+            EffectivePolicyType::NetworkSecurityDirectorPolicy => "NETWORK_SECURITY_DIRECTOR_POLICY",
             EffectivePolicyType::S3Policy => "S3_POLICY",
             EffectivePolicyType::SecurityhubPolicy => "SECURITYHUB_POLICY",
             EffectivePolicyType::TagPolicy => "TAG_POLICY",
@@ -124,6 +129,7 @@ impl EffectivePolicyType {
             "CHATBOT_POLICY",
             "DECLARATIVE_POLICY_EC2",
             "INSPECTOR_POLICY",
+            "NETWORK_SECURITY_DIRECTOR_POLICY",
             "S3_POLICY",
             "SECURITYHUB_POLICY",
             "TAG_POLICY",
@@ -157,6 +163,7 @@ impl ::std::fmt::Display for EffectivePolicyType {
             EffectivePolicyType::ChatbotPolicy => write!(f, "CHATBOT_POLICY"),
             EffectivePolicyType::DeclarativePolicyEc2 => write!(f, "DECLARATIVE_POLICY_EC2"),
             EffectivePolicyType::InspectorPolicy => write!(f, "INSPECTOR_POLICY"),
+            EffectivePolicyType::NetworkSecurityDirectorPolicy => write!(f, "NETWORK_SECURITY_DIRECTOR_POLICY"),
             EffectivePolicyType::S3Policy => write!(f, "S3_POLICY"),
             EffectivePolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             EffectivePolicyType::TagPolicy => write!(f, "TAG_POLICY"),

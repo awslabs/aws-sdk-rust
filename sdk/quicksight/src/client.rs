@@ -405,6 +405,8 @@ mod get_flow_metadata;
 
 mod get_flow_permissions;
 
+mod get_identity_context;
+
 mod get_session_embed_url;
 
 mod list_action_connectors;

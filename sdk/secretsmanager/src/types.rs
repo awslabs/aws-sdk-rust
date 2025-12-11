@@ -17,6 +17,8 @@ pub use crate::types::_secret_versions_list_entry::SecretVersionsListEntry;
 
 pub use crate::types::_secret_list_entry::SecretListEntry;
 
+pub use crate::types::_sort_by_type::SortByType;
+
 pub use crate::types::_sort_order_type::SortOrderType;
 
 pub use crate::types::_filter::Filter;
@@ -46,6 +48,8 @@ mod _secret_list_entry;
 mod _secret_value_entry;
 
 mod _secret_versions_list_entry;
+
+mod _sort_by_type;
 
 mod _sort_order_type;
 

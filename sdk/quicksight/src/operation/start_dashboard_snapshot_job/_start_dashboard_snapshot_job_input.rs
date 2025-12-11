@@ -9,7 +9,9 @@ pub struct StartDashboardSnapshotJobInput {
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code> while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.</p>
     pub snapshot_job_id: ::std::option::Option<::std::string::String>,
-    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon Quick Sight.</p>
+    /// <p>A structure that contains information about the users that the dashboard snapshot is generated for. The users can be either anonymous users or registered users. Anonymous users cannot be used together with registered users.</p><important>
+    /// <p>When using identity-enhanced session credentials, set the UserConfiguration request attribute to null. Otherwise, the request will be invalid.</p>
+    /// </important>
     pub user_configuration: ::std::option::Option<crate::types::SnapshotUserConfiguration>,
     /// <p>A structure that describes the configuration of the dashboard snapshot.</p>
     pub snapshot_configuration: ::std::option::Option<crate::types::SnapshotConfiguration>,
@@ -27,7 +29,9 @@ impl StartDashboardSnapshotJobInput {
     pub fn snapshot_job_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_job_id.as_deref()
     }
-    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon Quick Sight.</p>
+    /// <p>A structure that contains information about the users that the dashboard snapshot is generated for. The users can be either anonymous users or registered users. Anonymous users cannot be used together with registered users.</p><important>
+    /// <p>When using identity-enhanced session credentials, set the UserConfiguration request attribute to null. Otherwise, the request will be invalid.</p>
+    /// </important>
     pub fn user_configuration(&self) -> ::std::option::Option<&crate::types::SnapshotUserConfiguration> {
         self.user_configuration.as_ref()
     }
@@ -99,18 +103,23 @@ impl StartDashboardSnapshotJobInputBuilder {
     pub fn get_snapshot_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_job_id
     }
-    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon Quick Sight.</p>
-    /// This field is required.
+    /// <p>A structure that contains information about the users that the dashboard snapshot is generated for. The users can be either anonymous users or registered users. Anonymous users cannot be used together with registered users.</p><important>
+    /// <p>When using identity-enhanced session credentials, set the UserConfiguration request attribute to null. Otherwise, the request will be invalid.</p>
+    /// </important>
     pub fn user_configuration(mut self, input: crate::types::SnapshotUserConfiguration) -> Self {
         self.user_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon Quick Sight.</p>
+    /// <p>A structure that contains information about the users that the dashboard snapshot is generated for. The users can be either anonymous users or registered users. Anonymous users cannot be used together with registered users.</p><important>
+    /// <p>When using identity-enhanced session credentials, set the UserConfiguration request attribute to null. Otherwise, the request will be invalid.</p>
+    /// </important>
     pub fn set_user_configuration(mut self, input: ::std::option::Option<crate::types::SnapshotUserConfiguration>) -> Self {
         self.user_configuration = input;
         self
     }
-    /// <p>A structure that contains information about the anonymous users that the generated snapshot is for. This API will not return information about registered Amazon Quick Sight.</p>
+    /// <p>A structure that contains information about the users that the dashboard snapshot is generated for. The users can be either anonymous users or registered users. Anonymous users cannot be used together with registered users.</p><important>
+    /// <p>When using identity-enhanced session credentials, set the UserConfiguration request attribute to null. Otherwise, the request will be invalid.</p>
+    /// </important>
     pub fn get_user_configuration(&self) -> &::std::option::Option<crate::types::SnapshotUserConfiguration> {
         &self.user_configuration
     }

@@ -6,6 +6,8 @@
 pub struct SnapshotJobResult {
     /// <p>A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
     pub anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>>,
+    /// <p>A list of <code>RegisteredUserSnapshotJobResult</code> objects that contain information about files that are requested for registered user during a <code>StartDashboardSnapshotJob</code> API call.</p>
+    pub registered_users: ::std::option::Option<::std::vec::Vec<crate::types::RegisteredUserSnapshotJobResult>>,
 }
 impl SnapshotJobResult {
     /// <p>A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
@@ -13,6 +15,12 @@ impl SnapshotJobResult {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anonymous_users.is_none()`.
     pub fn anonymous_users(&self) -> &[crate::types::AnonymousUserSnapshotJobResult] {
         self.anonymous_users.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of <code>RegisteredUserSnapshotJobResult</code> objects that contain information about files that are requested for registered user during a <code>StartDashboardSnapshotJob</code> API call.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registered_users.is_none()`.
+    pub fn registered_users(&self) -> &[crate::types::RegisteredUserSnapshotJobResult] {
+        self.registered_users.as_deref().unwrap_or_default()
     }
 }
 impl SnapshotJobResult {
@@ -27,6 +35,7 @@ impl SnapshotJobResult {
 #[non_exhaustive]
 pub struct SnapshotJobResultBuilder {
     pub(crate) anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>>,
+    pub(crate) registered_users: ::std::option::Option<::std::vec::Vec<crate::types::RegisteredUserSnapshotJobResult>>,
 }
 impl SnapshotJobResultBuilder {
     /// Appends an item to `anonymous_users`.
@@ -49,10 +58,31 @@ impl SnapshotJobResultBuilder {
     pub fn get_anonymous_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>> {
         &self.anonymous_users
     }
+    /// Appends an item to `registered_users`.
+    ///
+    /// To override the contents of this collection use [`set_registered_users`](Self::set_registered_users).
+    ///
+    /// <p>A list of <code>RegisteredUserSnapshotJobResult</code> objects that contain information about files that are requested for registered user during a <code>StartDashboardSnapshotJob</code> API call.</p>
+    pub fn registered_users(mut self, input: crate::types::RegisteredUserSnapshotJobResult) -> Self {
+        let mut v = self.registered_users.unwrap_or_default();
+        v.push(input);
+        self.registered_users = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>RegisteredUserSnapshotJobResult</code> objects that contain information about files that are requested for registered user during a <code>StartDashboardSnapshotJob</code> API call.</p>
+    pub fn set_registered_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegisteredUserSnapshotJobResult>>) -> Self {
+        self.registered_users = input;
+        self
+    }
+    /// <p>A list of <code>RegisteredUserSnapshotJobResult</code> objects that contain information about files that are requested for registered user during a <code>StartDashboardSnapshotJob</code> API call.</p>
+    pub fn get_registered_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegisteredUserSnapshotJobResult>> {
+        &self.registered_users
+    }
     /// Consumes the builder and constructs a [`SnapshotJobResult`](crate::types::SnapshotJobResult).
     pub fn build(self) -> crate::types::SnapshotJobResult {
         crate::types::SnapshotJobResult {
             anonymous_users: self.anonymous_users,
+            registered_users: self.registered_users,
         }
     }
 }

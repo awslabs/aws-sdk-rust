@@ -265,6 +265,8 @@ pub(crate) mod shape_get_flow_metadata;
 
 pub(crate) mod shape_get_flow_permissions;
 
+pub(crate) mod shape_get_identity_context;
+
 pub(crate) mod shape_get_session_embed_url;
 
 pub(crate) mod shape_list_action_connectors;
@@ -544,6 +546,8 @@ pub(crate) mod shape_generate_embed_url_for_anonymous_user_input;
 pub(crate) mod shape_generate_embed_url_for_registered_user_input;
 
 pub(crate) mod shape_generate_embed_url_for_registered_user_with_identity_input;
+
+pub(crate) mod shape_get_identity_context_input;
 
 pub(crate) mod shape_identity_type_not_supported_exception;
 
@@ -991,6 +995,8 @@ pub(crate) mod shape_update_resource_permission_list;
 
 pub(crate) mod shape_user;
 
+pub(crate) mod shape_user_identifier;
+
 pub(crate) mod shape_user_list;
 
 pub(crate) mod shape_validation_strategy;
@@ -1313,6 +1319,8 @@ pub(crate) mod shape_invalid_topic_reviewed_answer;
 
 pub(crate) mod shape_jira_parameters;
 
+pub(crate) mod shape_key_pair_credentials;
+
 pub(crate) mod shape_logical_table_map;
 
 pub(crate) mod shape_logical_table_source;
@@ -1378,6 +1386,8 @@ pub(crate) mod shape_registered_user_q_search_bar_embedding_configuration;
 pub(crate) mod shape_registered_user_quick_chat_embedding_configuration;
 
 pub(crate) mod shape_registered_user_quick_sight_console_embedding_configuration;
+
+pub(crate) mod shape_registered_user_snapshot_job_result_list;
 
 pub(crate) mod shape_relational_table;
 
@@ -1563,6 +1573,8 @@ pub(crate) mod shape_date_time_parameter_declaration;
 
 pub(crate) mod shape_date_time_parameter_list;
 
+pub(crate) mod shape_decal_settings_configuration;
+
 pub(crate) mod shape_decimal_dataset_parameter_default_values;
 
 pub(crate) mod shape_decimal_parameter_declaration;
@@ -1652,6 +1664,8 @@ pub(crate) mod shape_refresh_failure_email_alert;
 pub(crate) mod shape_registered_user_console_feature_configurations;
 
 pub(crate) mod shape_registered_user_dashboard_feature_configurations;
+
+pub(crate) mod shape_registered_user_snapshot_job_result;
 
 pub(crate) mod shape_rename_column_operation;
 
@@ -1836,6 +1850,8 @@ pub(crate) mod shape_date_time_default_values;
 pub(crate) mod shape_date_time_format_configuration;
 
 pub(crate) mod shape_date_time_value_when_unset_configuration;
+
+pub(crate) mod shape_decal_settings;
 
 pub(crate) mod shape_decimal_default_values;
 
@@ -2175,6 +2191,8 @@ pub(crate) mod shape_database_group_list;
 
 pub(crate) mod shape_date_time_picker_control_display_options;
 
+pub(crate) mod shape_decal_settings_list;
+
 pub(crate) mod shape_default_filter_control_configuration;
 
 pub(crate) mod shape_default_free_form_layout_configuration;
@@ -2208,6 +2226,8 @@ pub(crate) mod shape_gauge_chart_conditional_formatting;
 pub(crate) mod shape_gauge_chart_configuration;
 
 pub(crate) mod shape_generative_authoring_configurations;
+
+pub(crate) mod shape_geocode_preference;
 
 pub(crate) mod shape_geospatial_layer_map_configuration;
 
@@ -2351,9 +2371,13 @@ pub(crate) mod shape_author_specified_aggregations;
 
 pub(crate) mod shape_axis_display_options;
 
+pub(crate) mod shape_bar_chart_default_series_settings;
+
 pub(crate) mod shape_bar_chart_field_wells;
 
 pub(crate) mod shape_bar_chart_sort_configuration;
+
+pub(crate) mod shape_bar_series_item;
 
 pub(crate) mod shape_body_section_configuration;
 
@@ -2385,9 +2409,13 @@ pub(crate) mod shape_column_group_column_schema_list;
 
 pub(crate) mod shape_column_to_unpivot_list;
 
+pub(crate) mod shape_combo_chart_default_series_settings;
+
 pub(crate) mod shape_combo_chart_field_wells;
 
 pub(crate) mod shape_combo_chart_sort_configuration;
+
+pub(crate) mod shape_combo_series_item;
 
 pub(crate) mod shape_computation;
 
@@ -2406,6 +2434,8 @@ pub(crate) mod shape_custom_filter_configuration;
 pub(crate) mod shape_custom_filter_list_configuration;
 
 pub(crate) mod shape_custom_narrative_options;
+
+pub(crate) mod shape_dashboard_customization_visual_options;
 
 pub(crate) mod shape_data_label_options;
 
@@ -2466,6 +2496,10 @@ pub(crate) mod shape_gauge_chart_conditional_formatting_option;
 pub(crate) mod shape_gauge_chart_field_wells;
 
 pub(crate) mod shape_gauge_chart_options;
+
+pub(crate) mod shape_geocode_preference_value;
+
+pub(crate) mod shape_geocoder_hierarchy;
 
 pub(crate) mod shape_geospatial_layer_item;
 
@@ -2691,6 +2725,8 @@ pub(crate) mod shape_body_section_content;
 
 pub(crate) mod shape_body_section_repeat_configuration;
 
+pub(crate) mod shape_border_settings;
+
 pub(crate) mod shape_box_plot_aggregated_field_wells;
 
 pub(crate) mod shape_box_plot_style_options;
@@ -2709,11 +2745,17 @@ pub(crate) mod shape_comparison_configuration;
 
 pub(crate) mod shape_context_menu_option;
 
+pub(crate) mod shape_coordinate;
+
 pub(crate) mod shape_custom_action_filter_operation;
 
 pub(crate) mod shape_data_bars_options;
 
 pub(crate) mod shape_data_color;
+
+pub(crate) mod shape_data_field_bar_series_item;
+
+pub(crate) mod shape_data_field_combo_series_item;
 
 pub(crate) mod shape_data_field_series_item;
 
@@ -2745,7 +2787,11 @@ pub(crate) mod shape_donut_center_options;
 
 pub(crate) mod shape_drill_down_filter;
 
+pub(crate) mod shape_field_bar_series_item;
+
 pub(crate) mod shape_field_based_tooltip;
+
+pub(crate) mod shape_field_combo_series_item;
 
 pub(crate) mod shape_field_series_item;
 
@@ -2772,6 +2818,8 @@ pub(crate) mod shape_funnel_chart_aggregated_field_wells;
 pub(crate) mod shape_gauge_chart_arc_conditional_formatting;
 
 pub(crate) mod shape_gauge_chart_primary_value_conditional_formatting;
+
+pub(crate) mod shape_geocode_preference_list;
 
 pub(crate) mod shape_geospatial_coordinate_bounds;
 
@@ -2951,6 +2999,8 @@ pub(crate) mod shape_unique_values_computation;
 
 pub(crate) mod shape_visual_custom_action_list;
 
+pub(crate) mod shape_visual_customization_fields_configuration;
+
 pub(crate) mod shape_waterfall_chart_aggregated_field_wells;
 
 pub(crate) mod shape_waterfall_chart_group_color_configuration;
@@ -2962,6 +3012,10 @@ pub(crate) mod shape_y_axis_options;
 pub(crate) mod shape_arc_axis_display_range;
 
 pub(crate) mod shape_axis_label_reference_options;
+
+pub(crate) mod shape_bar_chart_series_settings;
+
+pub(crate) mod shape_bar_series_item_list;
 
 pub(crate) mod shape_body_section_configuration_list;
 
@@ -2984,6 +3038,10 @@ pub(crate) mod shape_cluster_marker;
 pub(crate) mod shape_collective_constant_entry_list;
 
 pub(crate) mod shape_column_sort;
+
+pub(crate) mod shape_combo_chart_series_settings;
+
+pub(crate) mod shape_combo_series_item_list;
 
 pub(crate) mod shape_comparison_format_configuration;
 
@@ -3316,6 +3374,8 @@ pub(crate) mod shape_tree_map_dimension_field_list;
 pub(crate) mod shape_tree_map_measure_field_list;
 
 pub(crate) mod shape_unaggregated_field_list;
+
+pub(crate) mod shape_visual_customization_additional_fields_list;
 
 pub(crate) mod shape_word_cloud_dimension_field_list;
 

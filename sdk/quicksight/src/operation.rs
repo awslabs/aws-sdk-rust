@@ -364,6 +364,9 @@ pub mod get_flow_metadata;
 /// Types for the `GetFlowPermissions` operation.
 pub mod get_flow_permissions;
 
+/// Types for the `GetIdentityContext` operation.
+pub mod get_identity_context;
+
 /// Types for the `GetSessionEmbedUrl` operation.
 pub mod get_session_embed_url;
 

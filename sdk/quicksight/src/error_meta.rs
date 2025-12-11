@@ -4847,6 +4847,41 @@ impl From<crate::operation::get_flow_permissions::GetFlowPermissionsError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_identity_context::GetIdentityContextError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_identity_context::GetIdentityContextError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_identity_context::GetIdentityContextError> for Error {
+    fn from(err: crate::operation::get_identity_context::GetIdentityContextError) -> Self {
+        match err {
+            crate::operation::get_identity_context::GetIdentityContextError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_identity_context::GetIdentityContextError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::get_identity_context::GetIdentityContextError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_identity_context::GetIdentityContextError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::get_identity_context::GetIdentityContextError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_identity_context::GetIdentityContextError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_identity_context::GetIdentityContextError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session_embed_url::GetSessionEmbedUrlError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

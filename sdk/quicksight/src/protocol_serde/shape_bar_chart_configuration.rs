@@ -63,53 +63,71 @@ pub fn ser_bar_chart_configuration(
         crate::protocol_serde::shape_chart_axis_label_options::ser_chart_axis_label_options(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.legend {
+    if let Some(var_21) = &input.default_series_settings {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("Legend").start_object();
-        crate::protocol_serde::shape_legend_options::ser_legend_options(&mut object_22, var_21)?;
+        let mut object_22 = object.key("DefaultSeriesSettings").start_object();
+        crate::protocol_serde::shape_bar_chart_default_series_settings::ser_bar_chart_default_series_settings(&mut object_22, var_21)?;
         object_22.finish();
     }
-    if let Some(var_23) = &input.data_labels {
-        #[allow(unused_mut)]
-        let mut object_24 = object.key("DataLabels").start_object();
-        crate::protocol_serde::shape_data_label_options::ser_data_label_options(&mut object_24, var_23)?;
-        object_24.finish();
-    }
-    if let Some(var_25) = &input.tooltip {
-        #[allow(unused_mut)]
-        let mut object_26 = object.key("Tooltip").start_object();
-        crate::protocol_serde::shape_tooltip_options::ser_tooltip_options(&mut object_26, var_25)?;
-        object_26.finish();
-    }
-    if let Some(var_27) = &input.reference_lines {
-        let mut array_28 = object.key("ReferenceLines").start_array();
-        for item_29 in var_27 {
+    if let Some(var_23) = &input.series {
+        let mut array_24 = object.key("Series").start_array();
+        for item_25 in var_23 {
             {
                 #[allow(unused_mut)]
-                let mut object_30 = array_28.value().start_object();
-                crate::protocol_serde::shape_reference_line::ser_reference_line(&mut object_30, item_29)?;
-                object_30.finish();
+                let mut object_26 = array_24.value().start_object();
+                crate::protocol_serde::shape_bar_series_item::ser_bar_series_item(&mut object_26, item_25)?;
+                object_26.finish();
             }
         }
-        array_28.finish();
+        array_24.finish();
     }
-    if let Some(var_31) = &input.contribution_analysis_defaults {
-        let mut array_32 = object.key("ContributionAnalysisDefaults").start_array();
-        for item_33 in var_31 {
+    if let Some(var_27) = &input.legend {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("Legend").start_object();
+        crate::protocol_serde::shape_legend_options::ser_legend_options(&mut object_28, var_27)?;
+        object_28.finish();
+    }
+    if let Some(var_29) = &input.data_labels {
+        #[allow(unused_mut)]
+        let mut object_30 = object.key("DataLabels").start_object();
+        crate::protocol_serde::shape_data_label_options::ser_data_label_options(&mut object_30, var_29)?;
+        object_30.finish();
+    }
+    if let Some(var_31) = &input.tooltip {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("Tooltip").start_object();
+        crate::protocol_serde::shape_tooltip_options::ser_tooltip_options(&mut object_32, var_31)?;
+        object_32.finish();
+    }
+    if let Some(var_33) = &input.reference_lines {
+        let mut array_34 = object.key("ReferenceLines").start_array();
+        for item_35 in var_33 {
             {
                 #[allow(unused_mut)]
-                let mut object_34 = array_32.value().start_object();
-                crate::protocol_serde::shape_contribution_analysis_default::ser_contribution_analysis_default(&mut object_34, item_33)?;
-                object_34.finish();
+                let mut object_36 = array_34.value().start_object();
+                crate::protocol_serde::shape_reference_line::ser_reference_line(&mut object_36, item_35)?;
+                object_36.finish();
             }
         }
-        array_32.finish();
+        array_34.finish();
     }
-    if let Some(var_35) = &input.interactions {
+    if let Some(var_37) = &input.contribution_analysis_defaults {
+        let mut array_38 = object.key("ContributionAnalysisDefaults").start_array();
+        for item_39 in var_37 {
+            {
+                #[allow(unused_mut)]
+                let mut object_40 = array_38.value().start_object();
+                crate::protocol_serde::shape_contribution_analysis_default::ser_contribution_analysis_default(&mut object_40, item_39)?;
+                object_40.finish();
+            }
+        }
+        array_38.finish();
+    }
+    if let Some(var_41) = &input.interactions {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("Interactions").start_object();
-        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_36, var_35)?;
-        object_36.finish();
+        let mut object_42 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_42, var_41)?;
+        object_42.finish();
     }
     Ok(())
 }
@@ -179,6 +197,14 @@ where
                             builder = builder.set_color_label_options(
                                 crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
                             );
+                        }
+                        "DefaultSeriesSettings" => {
+                            builder = builder.set_default_series_settings(
+                                crate::protocol_serde::shape_bar_chart_default_series_settings::de_bar_chart_default_series_settings(tokens)?,
+                            );
+                        }
+                        "Series" => {
+                            builder = builder.set_series(crate::protocol_serde::shape_bar_series_item_list::de_bar_series_item_list(tokens)?);
                         }
                         "Legend" => {
                             builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens)?);

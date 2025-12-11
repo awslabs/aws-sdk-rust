@@ -34,6 +34,10 @@ pub struct ComboChartConfiguration {
     pub single_axis_options: ::std::option::Option<crate::types::SingleAxisOptions>,
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's color field well.</p>
     pub color_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    /// <p>The options that determine the default presentation of all series in <code>ComboChartVisual</code>.</p>
+    pub default_series_settings: ::std::option::Option<crate::types::ComboChartDefaultSeriesSettings>,
+    /// <p>The series item configuration of a <code>ComboChartVisual</code>.</p>
+    pub series: ::std::option::Option<::std::vec::Vec<crate::types::ComboSeriesItem>>,
     /// <p>The legend display setup of the visual.</p>
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The options that determine if visual data labels are displayed.</p>
@@ -104,6 +108,16 @@ impl ComboChartConfiguration {
     pub fn color_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.color_label_options.as_ref()
     }
+    /// <p>The options that determine the default presentation of all series in <code>ComboChartVisual</code>.</p>
+    pub fn default_series_settings(&self) -> ::std::option::Option<&crate::types::ComboChartDefaultSeriesSettings> {
+        self.default_series_settings.as_ref()
+    }
+    /// <p>The series item configuration of a <code>ComboChartVisual</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.series.is_none()`.
+    pub fn series(&self) -> &[crate::types::ComboSeriesItem] {
+        self.series.as_deref().unwrap_or_default()
+    }
     /// <p>The legend display setup of the visual.</p>
     pub fn legend(&self) -> ::std::option::Option<&crate::types::LegendOptions> {
         self.legend.as_ref()
@@ -159,6 +173,8 @@ pub struct ComboChartConfigurationBuilder {
     pub(crate) secondary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) single_axis_options: ::std::option::Option<crate::types::SingleAxisOptions>,
     pub(crate) color_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub(crate) default_series_settings: ::std::option::Option<crate::types::ComboChartDefaultSeriesSettings>,
+    pub(crate) series: ::std::option::Option<::std::vec::Vec<crate::types::ComboSeriesItem>>,
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
     pub(crate) bar_data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     pub(crate) line_data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
@@ -346,6 +362,40 @@ impl ComboChartConfigurationBuilder {
     pub fn get_color_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
         &self.color_label_options
     }
+    /// <p>The options that determine the default presentation of all series in <code>ComboChartVisual</code>.</p>
+    pub fn default_series_settings(mut self, input: crate::types::ComboChartDefaultSeriesSettings) -> Self {
+        self.default_series_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options that determine the default presentation of all series in <code>ComboChartVisual</code>.</p>
+    pub fn set_default_series_settings(mut self, input: ::std::option::Option<crate::types::ComboChartDefaultSeriesSettings>) -> Self {
+        self.default_series_settings = input;
+        self
+    }
+    /// <p>The options that determine the default presentation of all series in <code>ComboChartVisual</code>.</p>
+    pub fn get_default_series_settings(&self) -> &::std::option::Option<crate::types::ComboChartDefaultSeriesSettings> {
+        &self.default_series_settings
+    }
+    /// Appends an item to `series`.
+    ///
+    /// To override the contents of this collection use [`set_series`](Self::set_series).
+    ///
+    /// <p>The series item configuration of a <code>ComboChartVisual</code>.</p>
+    pub fn series(mut self, input: crate::types::ComboSeriesItem) -> Self {
+        let mut v = self.series.unwrap_or_default();
+        v.push(input);
+        self.series = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The series item configuration of a <code>ComboChartVisual</code>.</p>
+    pub fn set_series(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComboSeriesItem>>) -> Self {
+        self.series = input;
+        self
+    }
+    /// <p>The series item configuration of a <code>ComboChartVisual</code>.</p>
+    pub fn get_series(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComboSeriesItem>> {
+        &self.series
+    }
     /// <p>The legend display setup of the visual.</p>
     pub fn legend(mut self, input: crate::types::LegendOptions) -> Self {
         self.legend = ::std::option::Option::Some(input);
@@ -470,6 +520,8 @@ impl ComboChartConfigurationBuilder {
             secondary_y_axis_label_options: self.secondary_y_axis_label_options,
             single_axis_options: self.single_axis_options,
             color_label_options: self.color_label_options,
+            default_series_settings: self.default_series_settings,
+            series: self.series,
             legend: self.legend,
             bar_data_labels: self.bar_data_labels,
             line_data_labels: self.line_data_labels,

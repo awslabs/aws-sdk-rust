@@ -18,6 +18,8 @@ pub struct TableConfiguration {
     pub paginated_report_options: ::std::option::Option<crate::types::TablePaginatedReportOptions>,
     /// <p>A collection of inline visualizations to display within a chart.</p>
     pub table_inline_visualizations: ::std::option::Option<::std::vec::Vec<crate::types::TableInlineVisualization>>,
+    /// <p>The options that define customizations available to dashboard readers for a specific visual</p>
+    pub dashboard_customization_visual_options: ::std::option::Option<crate::types::DashboardCustomizationVisualOptions>,
     /// <p>The general visual interactions setup for a visual.</p>
     pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
@@ -52,6 +54,10 @@ impl TableConfiguration {
     pub fn table_inline_visualizations(&self) -> &[crate::types::TableInlineVisualization] {
         self.table_inline_visualizations.as_deref().unwrap_or_default()
     }
+    /// <p>The options that define customizations available to dashboard readers for a specific visual</p>
+    pub fn dashboard_customization_visual_options(&self) -> ::std::option::Option<&crate::types::DashboardCustomizationVisualOptions> {
+        self.dashboard_customization_visual_options.as_ref()
+    }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
         self.interactions.as_ref()
@@ -75,6 +81,7 @@ pub struct TableConfigurationBuilder {
     pub(crate) field_options: ::std::option::Option<crate::types::TableFieldOptions>,
     pub(crate) paginated_report_options: ::std::option::Option<crate::types::TablePaginatedReportOptions>,
     pub(crate) table_inline_visualizations: ::std::option::Option<::std::vec::Vec<crate::types::TableInlineVisualization>>,
+    pub(crate) dashboard_customization_visual_options: ::std::option::Option<crate::types::DashboardCustomizationVisualOptions>,
     pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl TableConfigurationBuilder {
@@ -182,6 +189,23 @@ impl TableConfigurationBuilder {
     pub fn get_table_inline_visualizations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableInlineVisualization>> {
         &self.table_inline_visualizations
     }
+    /// <p>The options that define customizations available to dashboard readers for a specific visual</p>
+    pub fn dashboard_customization_visual_options(mut self, input: crate::types::DashboardCustomizationVisualOptions) -> Self {
+        self.dashboard_customization_visual_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options that define customizations available to dashboard readers for a specific visual</p>
+    pub fn set_dashboard_customization_visual_options(
+        mut self,
+        input: ::std::option::Option<crate::types::DashboardCustomizationVisualOptions>,
+    ) -> Self {
+        self.dashboard_customization_visual_options = input;
+        self
+    }
+    /// <p>The options that define customizations available to dashboard readers for a specific visual</p>
+    pub fn get_dashboard_customization_visual_options(&self) -> &::std::option::Option<crate::types::DashboardCustomizationVisualOptions> {
+        &self.dashboard_customization_visual_options
+    }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
         self.interactions = ::std::option::Option::Some(input);
@@ -206,6 +230,7 @@ impl TableConfigurationBuilder {
             field_options: self.field_options,
             paginated_report_options: self.paginated_report_options,
             table_inline_visualizations: self.table_inline_visualizations,
+            dashboard_customization_visual_options: self.dashboard_customization_visual_options,
             interactions: self.interactions,
         }
     }

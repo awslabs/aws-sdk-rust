@@ -16,6 +16,8 @@ pub struct PivotTableConfiguration {
     pub field_options: ::std::option::Option<crate::types::PivotTableFieldOptions>,
     /// <p>The paginated report options for a pivot table visual.</p>
     pub paginated_report_options: ::std::option::Option<crate::types::PivotTablePaginatedReportOptions>,
+    /// <p>The options that define customizations available to dashboard readers for a specific visual</p>
+    pub dashboard_customization_visual_options: ::std::option::Option<crate::types::DashboardCustomizationVisualOptions>,
     /// <p>The general visual interactions setup for a visual.</p>
     pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
@@ -44,6 +46,10 @@ impl PivotTableConfiguration {
     pub fn paginated_report_options(&self) -> ::std::option::Option<&crate::types::PivotTablePaginatedReportOptions> {
         self.paginated_report_options.as_ref()
     }
+    /// <p>The options that define customizations available to dashboard readers for a specific visual</p>
+    pub fn dashboard_customization_visual_options(&self) -> ::std::option::Option<&crate::types::DashboardCustomizationVisualOptions> {
+        self.dashboard_customization_visual_options.as_ref()
+    }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
         self.interactions.as_ref()
@@ -66,6 +72,7 @@ pub struct PivotTableConfigurationBuilder {
     pub(crate) total_options: ::std::option::Option<crate::types::PivotTableTotalOptions>,
     pub(crate) field_options: ::std::option::Option<crate::types::PivotTableFieldOptions>,
     pub(crate) paginated_report_options: ::std::option::Option<crate::types::PivotTablePaginatedReportOptions>,
+    pub(crate) dashboard_customization_visual_options: ::std::option::Option<crate::types::DashboardCustomizationVisualOptions>,
     pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl PivotTableConfigurationBuilder {
@@ -153,6 +160,23 @@ impl PivotTableConfigurationBuilder {
     pub fn get_paginated_report_options(&self) -> &::std::option::Option<crate::types::PivotTablePaginatedReportOptions> {
         &self.paginated_report_options
     }
+    /// <p>The options that define customizations available to dashboard readers for a specific visual</p>
+    pub fn dashboard_customization_visual_options(mut self, input: crate::types::DashboardCustomizationVisualOptions) -> Self {
+        self.dashboard_customization_visual_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The options that define customizations available to dashboard readers for a specific visual</p>
+    pub fn set_dashboard_customization_visual_options(
+        mut self,
+        input: ::std::option::Option<crate::types::DashboardCustomizationVisualOptions>,
+    ) -> Self {
+        self.dashboard_customization_visual_options = input;
+        self
+    }
+    /// <p>The options that define customizations available to dashboard readers for a specific visual</p>
+    pub fn get_dashboard_customization_visual_options(&self) -> &::std::option::Option<crate::types::DashboardCustomizationVisualOptions> {
+        &self.dashboard_customization_visual_options
+    }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
         self.interactions = ::std::option::Option::Some(input);
@@ -176,6 +200,7 @@ impl PivotTableConfigurationBuilder {
             total_options: self.total_options,
             field_options: self.field_options,
             paginated_report_options: self.paginated_report_options,
+            dashboard_customization_visual_options: self.dashboard_customization_visual_options,
             interactions: self.interactions,
         }
     }

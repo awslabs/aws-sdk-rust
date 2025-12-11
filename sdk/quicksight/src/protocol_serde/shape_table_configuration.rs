@@ -51,11 +51,17 @@ pub fn ser_table_configuration(
         }
         array_14.finish();
     }
-    if let Some(var_17) = &input.interactions {
+    if let Some(var_17) = &input.dashboard_customization_visual_options {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("Interactions").start_object();
-        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_18, var_17)?;
+        let mut object_18 = object.key("DashboardCustomizationVisualOptions").start_object();
+        crate::protocol_serde::shape_dashboard_customization_visual_options::ser_dashboard_customization_visual_options(&mut object_18, var_17)?;
         object_18.finish();
+    }
+    if let Some(var_19) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }
@@ -100,6 +106,13 @@ where
                         "TableInlineVisualizations" => {
                             builder = builder.set_table_inline_visualizations(
                                 crate::protocol_serde::shape_table_inline_visualization_list::de_table_inline_visualization_list(tokens)?,
+                            );
+                        }
+                        "DashboardCustomizationVisualOptions" => {
+                            builder = builder.set_dashboard_customization_visual_options(
+                                crate::protocol_serde::shape_dashboard_customization_visual_options::de_dashboard_customization_visual_options(
+                                    tokens,
+                                )?,
                             );
                         }
                         "Interactions" => {

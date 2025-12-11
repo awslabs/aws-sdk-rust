@@ -24,6 +24,18 @@ impl crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashbo
 ///
 /// <p>Describes an existing snapshot job.</p>
 /// <p>Poll job descriptions after a job starts to know the status of the job. For information on available status codes, see <code>JobStatus</code>.</p>
+/// <p><b>Registered user support</b></p>
+/// <p>This API can be called as before to get status of a job started by the same Quick Sight user.</p>
+/// <p><b>Possible error scenarios</b></p>
+/// <p>Request will fail with an Access Denied error in the following scenarios:</p>
+/// <ul>
+/// <li>
+/// <p>The credentials have expired.</p></li>
+/// <li>
+/// <p>Job has been started by a different user.</p></li>
+/// <li>
+/// <p>Impersonated Quick Sight user doesn't have access to the specified dashboard in the job.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDashboardSnapshotJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

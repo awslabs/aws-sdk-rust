@@ -39,11 +39,17 @@ pub fn ser_pivot_table_configuration(
         crate::protocol_serde::shape_pivot_table_paginated_report_options::ser_pivot_table_paginated_report_options(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.interactions {
+    if let Some(var_13) = &input.dashboard_customization_visual_options {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("Interactions").start_object();
-        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_14, var_13)?;
+        let mut object_14 = object.key("DashboardCustomizationVisualOptions").start_object();
+        crate::protocol_serde::shape_dashboard_customization_visual_options::ser_dashboard_customization_visual_options(&mut object_14, var_13)?;
         object_14.finish();
+    }
+    if let Some(var_15) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }
@@ -88,6 +94,13 @@ where
                         "PaginatedReportOptions" => {
                             builder = builder.set_paginated_report_options(
                                 crate::protocol_serde::shape_pivot_table_paginated_report_options::de_pivot_table_paginated_report_options(tokens)?,
+                            );
+                        }
+                        "DashboardCustomizationVisualOptions" => {
+                            builder = builder.set_dashboard_customization_visual_options(
+                                crate::protocol_serde::shape_dashboard_customization_visual_options::de_dashboard_customization_visual_options(
+                                    tokens,
+                                )?,
                             );
                         }
                         "Interactions" => {

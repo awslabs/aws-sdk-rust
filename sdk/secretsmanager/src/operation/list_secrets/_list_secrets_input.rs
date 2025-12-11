@@ -14,6 +14,8 @@ pub struct ListSecretsInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Secrets are listed by <code>CreatedDate</code>.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
+    /// <p>If not specified, secrets are listed by <code>CreatedDate</code>.</p>
+    pub sort_by: ::std::option::Option<crate::types::SortByType>,
 }
 impl ListSecretsInput {
     /// <p>Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't included.</p>
@@ -39,6 +41,10 @@ impl ListSecretsInput {
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
+    /// <p>If not specified, secrets are listed by <code>CreatedDate</code>.</p>
+    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortByType> {
+        self.sort_by.as_ref()
+    }
 }
 impl ListSecretsInput {
     /// Creates a new builder-style object to manufacture [`ListSecretsInput`](crate::operation::list_secrets::ListSecretsInput).
@@ -56,6 +62,7 @@ pub struct ListSecretsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrderType>,
+    pub(crate) sort_by: ::std::option::Option<crate::types::SortByType>,
 }
 impl ListSecretsInputBuilder {
     /// <p>Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't included.</p>
@@ -137,6 +144,20 @@ impl ListSecretsInputBuilder {
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         &self.sort_order
     }
+    /// <p>If not specified, secrets are listed by <code>CreatedDate</code>.</p>
+    pub fn sort_by(mut self, input: crate::types::SortByType) -> Self {
+        self.sort_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If not specified, secrets are listed by <code>CreatedDate</code>.</p>
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortByType>) -> Self {
+        self.sort_by = input;
+        self
+    }
+    /// <p>If not specified, secrets are listed by <code>CreatedDate</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortByType> {
+        &self.sort_by
+    }
     /// Consumes the builder and constructs a [`ListSecretsInput`](crate::operation::list_secrets::ListSecretsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_secrets::ListSecretsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_secrets::ListSecretsInput {
@@ -145,6 +166,7 @@ impl ListSecretsInputBuilder {
             next_token: self.next_token,
             filters: self.filters,
             sort_order: self.sort_order,
+            sort_by: self.sort_by,
         })
     }
 }

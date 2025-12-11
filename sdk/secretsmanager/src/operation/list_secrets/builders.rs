@@ -198,4 +198,18 @@ impl ListSecretsFluentBuilder {
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         self.inner.get_sort_order()
     }
+    /// <p>If not specified, secrets are listed by <code>CreatedDate</code>.</p>
+    pub fn sort_by(mut self, input: crate::types::SortByType) -> Self {
+        self.inner = self.inner.sort_by(input);
+        self
+    }
+    /// <p>If not specified, secrets are listed by <code>CreatedDate</code>.</p>
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortByType>) -> Self {
+        self.inner = self.inner.set_sort_by(input);
+        self
+    }
+    /// <p>If not specified, secrets are listed by <code>CreatedDate</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortByType> {
+        self.inner.get_sort_by()
+    }
 }

@@ -27,6 +27,13 @@ where
                         "Tokens" => {
                             builder = builder.set_tokens(crate::protocol_serde::shape_dns_token_list::de_dns_token_list(tokens)?);
                         }
+                        "SigningHostedZone" => {
+                            builder = builder.set_signing_hosted_zone(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "SigningAttributesOrigin" => {
                             builder = builder.set_signing_attributes_origin(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

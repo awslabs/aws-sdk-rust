@@ -27,6 +27,36 @@ impl crate::operation::describe_dashboard_snapshot_job_result::builders::Describ
 /// <p>If the job has not finished running, this operation returns a message that says <code>Dashboard Snapshot Job with id <snapshotjobid>
 /// has not reached a terminal state.
 /// </snapshotjobid></code>.</p>
+/// <p><b>Registered user support</b></p>
+/// <p>This API can be called as before to get the result of a job started by the same Quick Sight user. The result for the user will be returned in <code>RegisteredUsers</code> response attribute. The attribute will contain a list with at most one object in it.</p>
+/// <p><b>Possible error scenarios</b></p>
+/// <p>The request fails with an Access Denied error in the following scenarios:</p>
+/// <ul>
+/// <li>
+/// <p>The credentials have expired.</p></li>
+/// <li>
+/// <p>The job was started by a different user.</p></li>
+/// <li>
+/// <p>The registered user doesn't have access to the specified dashboard.</p></li>
+/// </ul>
+/// <p>The request succeeds but the job fails in the following scenarios:</p>
+/// <ul>
+/// <li>
+/// <p><code>DASHBOARD_ACCESS_DENIED</code> - The registered user lost access to the dashboard.</p></li>
+/// <li>
+/// <p><code>CAPABILITY_RESTRICTED</code> - The registered user is restricted from exporting data in <b>all</b> selected formats.</p></li>
+/// </ul>
+/// <p>The request succeeds but the response contains an error code in the following scenarios:</p>
+/// <ul>
+/// <li>
+/// <p><code>CAPABILITY_RESTRICTED</code> - The registered user is restricted from exporting data in <b>some</b> selected formats.</p></li>
+/// <li>
+/// <p><code>RLS_CHANGED</code> - Row-level security settings have changed. Re-run the job with current settings.</p></li>
+/// <li>
+/// <p><code>CLS_CHANGED</code> - Column-level security settings have changed. Re-run the job with current settings.</p></li>
+/// <li>
+/// <p><code>DATASET_DELETED</code> - The dataset has been deleted. Verify the dataset exists before re-running the job.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDashboardSnapshotJobResultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

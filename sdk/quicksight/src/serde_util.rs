@@ -89,6 +89,18 @@ pub(crate) fn get_flow_permissions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_identity_context_output_output_correct_errors(
+    mut builder: crate::operation::get_identity_context::builders::GetIdentityContextOutputBuilder,
+) -> crate::operation::get_identity_context::builders::GetIdentityContextOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_action_connectors_output_output_correct_errors(
     mut builder: crate::operation::list_action_connectors::builders::ListActionConnectorsOutputBuilder,
 ) -> crate::operation::list_action_connectors::builders::ListActionConnectorsOutputBuilder {
@@ -3340,6 +3352,21 @@ pub(crate) fn filter_list_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn geocode_preference_correct_errors(
+    mut builder: crate::types::builders::GeocodePreferenceBuilder,
+) -> crate::types::builders::GeocodePreferenceBuilder {
+    if builder.request_key.is_none() {
+        builder.request_key = {
+            let builder = crate::types::builders::GeocoderHierarchyBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.preference.is_none() {
+        builder.preference = Some(crate::types::GeocodePreferenceValue::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn negative_value_configuration_correct_errors(
     mut builder: crate::types::builders::NegativeValueConfigurationBuilder,
 ) -> crate::types::builders::NegativeValueConfigurationBuilder {
@@ -3602,6 +3629,16 @@ pub(crate) fn y_axis_options_correct_errors(mut builder: crate::types::builders:
     builder
 }
 
+pub(crate) fn coordinate_correct_errors(mut builder: crate::types::builders::CoordinateBuilder) -> crate::types::builders::CoordinateBuilder {
+    if builder.latitude.is_none() {
+        builder.latitude = Some(Default::default())
+    }
+    if builder.longitude.is_none() {
+        builder.longitude = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn custom_action_set_parameters_operation_correct_errors(
     mut builder: crate::types::builders::CustomActionSetParametersOperationBuilder,
 ) -> crate::types::builders::CustomActionSetParametersOperationBuilder {
@@ -3632,6 +3669,24 @@ pub(crate) fn data_bars_options_correct_errors(
     builder
 }
 
+pub(crate) fn data_field_bar_series_item_correct_errors(
+    mut builder: crate::types::builders::DataFieldBarSeriesItemBuilder,
+) -> crate::types::builders::DataFieldBarSeriesItemBuilder {
+    if builder.field_id.is_none() {
+        builder.field_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_field_combo_series_item_correct_errors(
+    mut builder: crate::types::builders::DataFieldComboSeriesItemBuilder,
+) -> crate::types::builders::DataFieldComboSeriesItemBuilder {
+    if builder.field_id.is_none() {
+        builder.field_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn data_field_series_item_correct_errors(
     mut builder: crate::types::builders::DataFieldSeriesItemBuilder,
 ) -> crate::types::builders::DataFieldSeriesItemBuilder {
@@ -3655,6 +3710,24 @@ pub(crate) fn data_path_color_correct_errors(
     }
     if builder.color.is_none() {
         builder.color = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn field_bar_series_item_correct_errors(
+    mut builder: crate::types::builders::FieldBarSeriesItemBuilder,
+) -> crate::types::builders::FieldBarSeriesItemBuilder {
+    if builder.field_id.is_none() {
+        builder.field_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn field_combo_series_item_correct_errors(
+    mut builder: crate::types::builders::FieldComboSeriesItemBuilder,
+) -> crate::types::builders::FieldComboSeriesItemBuilder {
+    if builder.field_id.is_none() {
+        builder.field_id = Some(Default::default())
     }
     builder
 }

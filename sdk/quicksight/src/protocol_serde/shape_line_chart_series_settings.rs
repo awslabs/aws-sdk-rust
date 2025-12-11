@@ -15,6 +15,12 @@ pub fn ser_line_chart_series_settings(
         crate::protocol_serde::shape_line_chart_marker_style_settings::ser_line_chart_marker_style_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.decal_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("DecalSettings").start_object();
+        crate::protocol_serde::shape_decal_settings::ser_decal_settings(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -42,6 +48,9 @@ where
                             builder = builder.set_marker_style_settings(
                                 crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(tokens)?,
                             );
+                        }
+                        "DecalSettings" => {
+                            builder = builder.set_decal_settings(crate::protocol_serde::shape_decal_settings::de_decal_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

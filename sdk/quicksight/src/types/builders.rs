@@ -155,6 +155,10 @@ pub use crate::types::_grid_layout_screen_canvas_size_options::GridLayoutScreenC
 
 pub use crate::types::_column_configuration::ColumnConfigurationBuilder;
 
+pub use crate::types::_decal_settings_configuration::DecalSettingsConfigurationBuilder;
+
+pub use crate::types::_decal_settings::DecalSettingsBuilder;
+
 pub use crate::types::_colors_configuration::ColorsConfigurationBuilder;
 
 pub use crate::types::_custom_color::CustomColorBuilder;
@@ -717,6 +721,22 @@ pub use crate::types::_combo_chart_visual::ComboChartVisualBuilder;
 
 pub use crate::types::_combo_chart_configuration::ComboChartConfigurationBuilder;
 
+pub use crate::types::_combo_series_item::ComboSeriesItemBuilder;
+
+pub use crate::types::_data_field_combo_series_item::DataFieldComboSeriesItemBuilder;
+
+pub use crate::types::_combo_chart_series_settings::ComboChartSeriesSettingsBuilder;
+
+pub use crate::types::_border_settings::BorderSettingsBuilder;
+
+pub use crate::types::_line_chart_marker_style_settings::LineChartMarkerStyleSettingsBuilder;
+
+pub use crate::types::_line_chart_line_style_settings::LineChartLineStyleSettingsBuilder;
+
+pub use crate::types::_field_combo_series_item::FieldComboSeriesItemBuilder;
+
+pub use crate::types::_combo_chart_default_series_settings::ComboChartDefaultSeriesSettingsBuilder;
+
 pub use crate::types::_single_axis_options::SingleAxisOptionsBuilder;
 
 pub use crate::types::_y_axis_options::YAxisOptionsBuilder;
@@ -817,6 +837,12 @@ pub use crate::types::_geospatial_static_file_source::GeospatialStaticFileSource
 
 pub use crate::types::_filled_map_visual::FilledMapVisualBuilder;
 
+pub use crate::types::_geocode_preference::GeocodePreferenceBuilder;
+
+pub use crate::types::_coordinate::CoordinateBuilder;
+
+pub use crate::types::_geocoder_hierarchy::GeocoderHierarchyBuilder;
+
 pub use crate::types::_filled_map_conditional_formatting::FilledMapConditionalFormattingBuilder;
 
 pub use crate::types::_filled_map_conditional_formatting_option::FilledMapConditionalFormattingOptionBuilder;
@@ -904,10 +930,6 @@ pub use crate::types::_series_item::SeriesItemBuilder;
 pub use crate::types::_data_field_series_item::DataFieldSeriesItemBuilder;
 
 pub use crate::types::_line_chart_series_settings::LineChartSeriesSettingsBuilder;
-
-pub use crate::types::_line_chart_marker_style_settings::LineChartMarkerStyleSettingsBuilder;
-
-pub use crate::types::_line_chart_line_style_settings::LineChartLineStyleSettingsBuilder;
 
 pub use crate::types::_field_series_item::FieldSeriesItemBuilder;
 
@@ -1033,6 +1055,16 @@ pub use crate::types::_bar_chart_visual::BarChartVisualBuilder;
 
 pub use crate::types::_bar_chart_configuration::BarChartConfigurationBuilder;
 
+pub use crate::types::_bar_series_item::BarSeriesItemBuilder;
+
+pub use crate::types::_data_field_bar_series_item::DataFieldBarSeriesItemBuilder;
+
+pub use crate::types::_bar_chart_series_settings::BarChartSeriesSettingsBuilder;
+
+pub use crate::types::_field_bar_series_item::FieldBarSeriesItemBuilder;
+
+pub use crate::types::_bar_chart_default_series_settings::BarChartDefaultSeriesSettingsBuilder;
+
 pub use crate::types::_bar_chart_sort_configuration::BarChartSortConfigurationBuilder;
 
 pub use crate::types::_bar_chart_field_wells::BarChartFieldWellsBuilder;
@@ -1052,6 +1084,10 @@ pub use crate::types::_pivot_table_conditional_formatting_scope::PivotTableCondi
 pub use crate::types::_text_conditional_format::TextConditionalFormatBuilder;
 
 pub use crate::types::_pivot_table_configuration::PivotTableConfigurationBuilder;
+
+pub use crate::types::_dashboard_customization_visual_options::DashboardCustomizationVisualOptionsBuilder;
+
+pub use crate::types::_visual_customization_fields_configuration::VisualCustomizationFieldsConfigurationBuilder;
 
 pub use crate::types::_pivot_table_paginated_report_options::PivotTablePaginatedReportOptionsBuilder;
 
@@ -1236,6 +1272,8 @@ pub use crate::types::_vpc_connection_properties::VpcConnectionPropertiesBuilder
 pub use crate::types::_data_source_credentials::DataSourceCredentialsBuilder;
 
 pub use crate::types::_web_proxy_credentials::WebProxyCredentialsBuilder;
+
+pub use crate::types::_key_pair_credentials::KeyPairCredentialsBuilder;
 
 pub use crate::types::_credential_pair::CredentialPairBuilder;
 
@@ -1941,13 +1979,15 @@ pub use crate::types::_snapshot_job_error_info::SnapshotJobErrorInfoBuilder;
 
 pub use crate::types::_snapshot_job_result::SnapshotJobResultBuilder;
 
-pub use crate::types::_anonymous_user_snapshot_job_result::AnonymousUserSnapshotJobResultBuilder;
+pub use crate::types::_registered_user_snapshot_job_result::RegisteredUserSnapshotJobResultBuilder;
 
 pub use crate::types::_snapshot_job_result_file_group::SnapshotJobResultFileGroupBuilder;
 
 pub use crate::types::_snapshot_job_s3_result::SnapshotJobS3ResultBuilder;
 
 pub use crate::types::_snapshot_job_result_error_info::SnapshotJobResultErrorInfoBuilder;
+
+pub use crate::types::_anonymous_user_snapshot_job_result::AnonymousUserSnapshotJobResultBuilder;
 
 pub use crate::types::_snapshot_user_configuration_redacted::SnapshotUserConfigurationRedactedBuilder;
 

@@ -13,16 +13,23 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "AnonymousUsers" => {
-                            builder = builder.set_anonymous_users(
-                                crate::protocol_serde::shape_anonymous_user_snapshot_job_result_list::de_anonymous_user_snapshot_job_result_list(
-                                    tokens,
-                                )?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "AnonymousUsers" => {
+                                builder = builder.set_anonymous_users(
+                                    crate::protocol_serde::shape_anonymous_user_snapshot_job_result_list::de_anonymous_user_snapshot_job_result_list(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "RegisteredUsers" => {
+                                builder = builder.set_registered_users(
+                                    crate::protocol_serde::shape_registered_user_snapshot_job_result_list::de_registered_user_snapshot_job_result_list(tokens)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

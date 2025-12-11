@@ -25,6 +25,15 @@ pub struct PutEmailIdentityDkimSigningAttributesOutput {
     /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
     pub dkim_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The hosted zone where Amazon SES publishes the DKIM public key TXT records for this email identity. This value indicates the DNS zone that customers must reference when configuring their CNAME records for DKIM authentication.</p>
+    /// <p>When configuring DKIM for your domain, create CNAME records in your DNS that point to the selectors in this hosted zone. For example:</p>
+    /// <p><code> selector1._domainkey.yourdomain.com CNAME selector1.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    /// <p><code> selector2._domainkey.yourdomain.com CNAME selector2.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    /// <p><code> selector3._domainkey.yourdomain.com CNAME selector3.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    pub signing_hosted_zone: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutEmailIdentityDkimSigningAttributesOutput {
@@ -54,6 +63,17 @@ impl PutEmailIdentityDkimSigningAttributesOutput {
     pub fn dkim_tokens(&self) -> &[::std::string::String] {
         self.dkim_tokens.as_deref().unwrap_or_default()
     }
+    /// <p>The hosted zone where Amazon SES publishes the DKIM public key TXT records for this email identity. This value indicates the DNS zone that customers must reference when configuring their CNAME records for DKIM authentication.</p>
+    /// <p>When configuring DKIM for your domain, create CNAME records in your DNS that point to the selectors in this hosted zone. For example:</p>
+    /// <p><code> selector1._domainkey.yourdomain.com CNAME selector1.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    /// <p><code> selector2._domainkey.yourdomain.com CNAME selector2.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    /// <p><code> selector3._domainkey.yourdomain.com CNAME selector3.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    pub fn signing_hosted_zone(&self) -> ::std::option::Option<&str> {
+        self.signing_hosted_zone.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for PutEmailIdentityDkimSigningAttributesOutput {
     fn request_id(&self) -> Option<&str> {
@@ -73,6 +93,7 @@ impl PutEmailIdentityDkimSigningAttributesOutput {
 pub struct PutEmailIdentityDkimSigningAttributesOutputBuilder {
     pub(crate) dkim_status: ::std::option::Option<crate::types::DkimStatus>,
     pub(crate) dkim_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) signing_hosted_zone: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutEmailIdentityDkimSigningAttributesOutputBuilder {
@@ -158,6 +179,41 @@ impl PutEmailIdentityDkimSigningAttributesOutputBuilder {
     pub fn get_dkim_tokens(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dkim_tokens
     }
+    /// <p>The hosted zone where Amazon SES publishes the DKIM public key TXT records for this email identity. This value indicates the DNS zone that customers must reference when configuring their CNAME records for DKIM authentication.</p>
+    /// <p>When configuring DKIM for your domain, create CNAME records in your DNS that point to the selectors in this hosted zone. For example:</p>
+    /// <p><code> selector1._domainkey.yourdomain.com CNAME selector1.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    /// <p><code> selector2._domainkey.yourdomain.com CNAME selector2.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    /// <p><code> selector3._domainkey.yourdomain.com CNAME selector3.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    pub fn signing_hosted_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signing_hosted_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The hosted zone where Amazon SES publishes the DKIM public key TXT records for this email identity. This value indicates the DNS zone that customers must reference when configuring their CNAME records for DKIM authentication.</p>
+    /// <p>When configuring DKIM for your domain, create CNAME records in your DNS that point to the selectors in this hosted zone. For example:</p>
+    /// <p><code> selector1._domainkey.yourdomain.com CNAME selector1.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    /// <p><code> selector2._domainkey.yourdomain.com CNAME selector2.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    /// <p><code> selector3._domainkey.yourdomain.com CNAME selector3.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    pub fn set_signing_hosted_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.signing_hosted_zone = input;
+        self
+    }
+    /// <p>The hosted zone where Amazon SES publishes the DKIM public key TXT records for this email identity. This value indicates the DNS zone that customers must reference when configuring their CNAME records for DKIM authentication.</p>
+    /// <p>When configuring DKIM for your domain, create CNAME records in your DNS that point to the selectors in this hosted zone. For example:</p>
+    /// <p><code> selector1._domainkey.yourdomain.com CNAME selector1.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    /// <p><code> selector2._domainkey.yourdomain.com CNAME selector2.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    /// <p><code> selector3._domainkey.yourdomain.com CNAME selector3.<signinghostedzone>
+    /// </signinghostedzone></code></p>
+    pub fn get_signing_hosted_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_hosted_zone
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -172,6 +228,7 @@ impl PutEmailIdentityDkimSigningAttributesOutputBuilder {
         crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesOutput {
             dkim_status: self.dkim_status,
             dkim_tokens: self.dkim_tokens,
+            signing_hosted_zone: self.signing_hosted_zone,
             _request_id: self._request_id,
         }
     }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let runtime = unimplemented!();
 /// match runtime {
+///     Runtime::Dotnet10 => { /* ... */ },
 ///     Runtime::Dotnet6 => { /* ... */ },
 ///     Runtime::Dotnet8 => { /* ... */ },
 ///     Runtime::Dotnetcore10 => { /* ... */ },
@@ -84,6 +85,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Runtime {
+    #[allow(missing_docs)] // documentation missing in model
+    Dotnet10,
     #[allow(missing_docs)] // documentation missing in model
     Dotnet6,
     #[allow(missing_docs)] // documentation missing in model
@@ -179,6 +182,7 @@ pub enum Runtime {
 impl ::std::convert::From<&str> for Runtime {
     fn from(s: &str) -> Self {
         match s {
+            "dotnet10" => Runtime::Dotnet10,
             "dotnet6" => Runtime::Dotnet6,
             "dotnet8" => Runtime::Dotnet8,
             "dotnetcore1.0" => Runtime::Dotnetcore10,
@@ -238,6 +242,7 @@ impl Runtime {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Runtime::Dotnet10 => "dotnet10",
             Runtime::Dotnet6 => "dotnet6",
             Runtime::Dotnet8 => "dotnet8",
             Runtime::Dotnetcore10 => "dotnetcore1.0",
@@ -288,6 +293,7 @@ impl Runtime {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "dotnet10",
             "dotnet6",
             "dotnet8",
             "dotnetcore1.0",
@@ -355,6 +361,7 @@ impl Runtime {
 impl ::std::fmt::Display for Runtime {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Runtime::Dotnet10 => write!(f, "dotnet10"),
             Runtime::Dotnet6 => write!(f, "dotnet6"),
             Runtime::Dotnet8 => write!(f, "dotnet8"),
             Runtime::Dotnetcore10 => write!(f, "dotnetcore1.0"),
