@@ -21,43 +21,55 @@ pub fn ser_update_location_smb_input_input(
     if let Some(var_6) = &input.password {
         object.key("Password").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.agent_arns {
-        let mut array_8 = object.key("AgentArns").start_array();
-        for item_9 in var_7 {
-            {
-                array_8.value().string(item_9.as_str());
-            }
-        }
-        array_8.finish();
-    }
-    if let Some(var_10) = &input.mount_options {
+    if let Some(var_7) = &input.cmk_secret_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("MountOptions").start_object();
-        crate::protocol_serde::shape_smb_mount_options::ser_smb_mount_options(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_8 = object.key("CmkSecretConfig").start_object();
+        crate::protocol_serde::shape_cmk_secret_config::ser_cmk_secret_config(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_12) = &input.authentication_type {
-        object.key("AuthenticationType").string(var_12.as_str());
+    if let Some(var_9) = &input.custom_secret_config {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("CustomSecretConfig").start_object();
+        crate::protocol_serde::shape_custom_secret_config::ser_custom_secret_config(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_13) = &input.dns_ip_addresses {
-        let mut array_14 = object.key("DnsIpAddresses").start_array();
-        for item_15 in var_13 {
+    if let Some(var_11) = &input.agent_arns {
+        let mut array_12 = object.key("AgentArns").start_array();
+        for item_13 in var_11 {
             {
-                array_14.value().string(item_15.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_14.finish();
+        array_12.finish();
     }
-    if let Some(var_16) = &input.kerberos_principal {
-        object.key("KerberosPrincipal").string(var_16.as_str());
+    if let Some(var_14) = &input.mount_options {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("MountOptions").start_object();
+        crate::protocol_serde::shape_smb_mount_options::ser_smb_mount_options(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_17) = &input.kerberos_keytab {
-        object.key("KerberosKeytab").string_unchecked(&::aws_smithy_types::base64::encode(var_17));
+    if let Some(var_16) = &input.authentication_type {
+        object.key("AuthenticationType").string(var_16.as_str());
     }
-    if let Some(var_18) = &input.kerberos_krb5_conf {
+    if let Some(var_17) = &input.dns_ip_addresses {
+        let mut array_18 = object.key("DnsIpAddresses").start_array();
+        for item_19 in var_17 {
+            {
+                array_18.value().string(item_19.as_str());
+            }
+        }
+        array_18.finish();
+    }
+    if let Some(var_20) = &input.kerberos_principal {
+        object.key("KerberosPrincipal").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.kerberos_keytab {
+        object.key("KerberosKeytab").string_unchecked(&::aws_smithy_types::base64::encode(var_21));
+    }
+    if let Some(var_22) = &input.kerberos_krb5_conf {
         object
             .key("KerberosKrb5Conf")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_18));
+            .string_unchecked(&::aws_smithy_types::base64::encode(var_22));
     }
     Ok(())
 }

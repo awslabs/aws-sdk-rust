@@ -285,4 +285,18 @@ impl UpdateUserSettingsFluentBuilder {
     pub fn get_toolbar_configuration(&self) -> &::std::option::Option<crate::types::ToolbarConfiguration> {
         self.inner.get_toolbar_configuration()
     }
+    /// <p>The branding configuration that customizes the appearance of the web portal for end users. When updating user settings without an existing branding configuration, all fields (logo, favicon, wallpaper, localized strings, and color theme) are required except for terms of service. When updating user settings with an existing branding configuration, all fields are optional.</p>
+    pub fn branding_configuration_input(mut self, input: crate::types::BrandingConfigurationUpdateInput) -> Self {
+        self.inner = self.inner.branding_configuration_input(input);
+        self
+    }
+    /// <p>The branding configuration that customizes the appearance of the web portal for end users. When updating user settings without an existing branding configuration, all fields (logo, favicon, wallpaper, localized strings, and color theme) are required except for terms of service. When updating user settings with an existing branding configuration, all fields are optional.</p>
+    pub fn set_branding_configuration_input(mut self, input: ::std::option::Option<crate::types::BrandingConfigurationUpdateInput>) -> Self {
+        self.inner = self.inner.set_branding_configuration_input(input);
+        self
+    }
+    /// <p>The branding configuration that customizes the appearance of the web portal for end users. When updating user settings without an existing branding configuration, all fields (logo, favicon, wallpaper, localized strings, and color theme) are required except for terms of service. When updating user settings with an existing branding configuration, all fields are optional.</p>
+    pub fn get_branding_configuration_input(&self) -> &::std::option::Option<crate::types::BrandingConfigurationUpdateInput> {
+        self.inner.get_branding_configuration_input()
+    }
 }

@@ -475,6 +475,8 @@ pub use crate::types::_contact_media_processing_failure_mode::ContactMediaProces
 
 pub use crate::types::_auto_evaluation_configuration::AutoEvaluationConfiguration;
 
+pub use crate::types::_disconnect_on_customer_exit_participant_type::DisconnectOnCustomerExitParticipantType;
+
 pub use crate::types::_persistent_chat::PersistentChat;
 
 pub use crate::types::_rehydration_type::RehydrationType;
@@ -1620,6 +1622,8 @@ mod _dimensions;
 mod _directory_type;
 
 mod _disconnect_details;
+
+mod _disconnect_on_customer_exit_participant_type;
 
 mod _disconnect_reason;
 

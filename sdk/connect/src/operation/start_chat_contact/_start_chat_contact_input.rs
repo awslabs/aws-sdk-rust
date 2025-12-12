@@ -40,6 +40,10 @@ pub struct StartChatContactInput {
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
     /// <p>The customer's identification number. For example, the <code>CustomerId</code> may be a customer number from your CRM.</p>
     pub customer_id: ::std::option::Option<::std::string::String>,
+    /// <p>A list of participant types to automatically disconnect when the end customer ends the chat session, allowing them to continue through disconnect flows such as surveys or feedback forms.</p>
+    /// <p>Valid value: <code>AGENT</code>.</p>
+    /// <p>With the <code>DisconnectOnCustomerExit</code> parameter, you can configure automatic agent disconnection when end customers end the chat, ensuring that disconnect flows are triggered consistently regardless of which participant disconnects first.</p>
+    pub disconnect_on_customer_exit: ::std::option::Option<::std::vec::Vec<crate::types::DisconnectOnCustomerExitParticipantType>>,
 }
 impl StartChatContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -109,6 +113,14 @@ impl StartChatContactInput {
     pub fn customer_id(&self) -> ::std::option::Option<&str> {
         self.customer_id.as_deref()
     }
+    /// <p>A list of participant types to automatically disconnect when the end customer ends the chat session, allowing them to continue through disconnect flows such as surveys or feedback forms.</p>
+    /// <p>Valid value: <code>AGENT</code>.</p>
+    /// <p>With the <code>DisconnectOnCustomerExit</code> parameter, you can configure automatic agent disconnection when end customers end the chat, ensuring that disconnect flows are triggered consistently regardless of which participant disconnects first.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disconnect_on_customer_exit.is_none()`.
+    pub fn disconnect_on_customer_exit(&self) -> &[crate::types::DisconnectOnCustomerExitParticipantType] {
+        self.disconnect_on_customer_exit.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for StartChatContactInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -126,6 +138,7 @@ impl ::std::fmt::Debug for StartChatContactInput {
         formatter.field("related_contact_id", &self.related_contact_id);
         formatter.field("segment_attributes", &self.segment_attributes);
         formatter.field("customer_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("disconnect_on_customer_exit", &self.disconnect_on_customer_exit);
         formatter.finish()
     }
 }
@@ -153,6 +166,7 @@ pub struct StartChatContactInputBuilder {
     pub(crate) related_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
     pub(crate) customer_id: ::std::option::Option<::std::string::String>,
+    pub(crate) disconnect_on_customer_exit: ::std::option::Option<::std::vec::Vec<crate::types::DisconnectOnCustomerExitParticipantType>>,
 }
 impl StartChatContactInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -396,6 +410,35 @@ impl StartChatContactInputBuilder {
     pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_id
     }
+    /// Appends an item to `disconnect_on_customer_exit`.
+    ///
+    /// To override the contents of this collection use [`set_disconnect_on_customer_exit`](Self::set_disconnect_on_customer_exit).
+    ///
+    /// <p>A list of participant types to automatically disconnect when the end customer ends the chat session, allowing them to continue through disconnect flows such as surveys or feedback forms.</p>
+    /// <p>Valid value: <code>AGENT</code>.</p>
+    /// <p>With the <code>DisconnectOnCustomerExit</code> parameter, you can configure automatic agent disconnection when end customers end the chat, ensuring that disconnect flows are triggered consistently regardless of which participant disconnects first.</p>
+    pub fn disconnect_on_customer_exit(mut self, input: crate::types::DisconnectOnCustomerExitParticipantType) -> Self {
+        let mut v = self.disconnect_on_customer_exit.unwrap_or_default();
+        v.push(input);
+        self.disconnect_on_customer_exit = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of participant types to automatically disconnect when the end customer ends the chat session, allowing them to continue through disconnect flows such as surveys or feedback forms.</p>
+    /// <p>Valid value: <code>AGENT</code>.</p>
+    /// <p>With the <code>DisconnectOnCustomerExit</code> parameter, you can configure automatic agent disconnection when end customers end the chat, ensuring that disconnect flows are triggered consistently regardless of which participant disconnects first.</p>
+    pub fn set_disconnect_on_customer_exit(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DisconnectOnCustomerExitParticipantType>>,
+    ) -> Self {
+        self.disconnect_on_customer_exit = input;
+        self
+    }
+    /// <p>A list of participant types to automatically disconnect when the end customer ends the chat session, allowing them to continue through disconnect flows such as surveys or feedback forms.</p>
+    /// <p>Valid value: <code>AGENT</code>.</p>
+    /// <p>With the <code>DisconnectOnCustomerExit</code> parameter, you can configure automatic agent disconnection when end customers end the chat, ensuring that disconnect flows are triggered consistently regardless of which participant disconnects first.</p>
+    pub fn get_disconnect_on_customer_exit(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DisconnectOnCustomerExitParticipantType>> {
+        &self.disconnect_on_customer_exit
+    }
     /// Consumes the builder and constructs a [`StartChatContactInput`](crate::operation::start_chat_contact::StartChatContactInput).
     pub fn build(
         self,
@@ -414,6 +457,7 @@ impl StartChatContactInputBuilder {
             related_contact_id: self.related_contact_id,
             segment_attributes: self.segment_attributes,
             customer_id: self.customer_id,
+            disconnect_on_customer_exit: self.disconnect_on_customer_exit,
         })
     }
 }
@@ -433,6 +477,7 @@ impl ::std::fmt::Debug for StartChatContactInputBuilder {
         formatter.field("related_contact_id", &self.related_contact_id);
         formatter.field("segment_attributes", &self.segment_attributes);
         formatter.field("customer_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("disconnect_on_customer_exit", &self.disconnect_on_customer_exit);
         formatter.finish()
     }
 }

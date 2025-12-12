@@ -313,6 +313,10 @@ pub(crate) mod shape_task_execution_files_failed_detail;
 
 pub(crate) mod shape_task_execution_files_listed_detail;
 
+pub(crate) mod shape_task_execution_folders_failed_detail;
+
+pub(crate) mod shape_task_execution_folders_listed_detail;
+
 pub(crate) mod shape_task_execution_list;
 
 pub(crate) mod shape_task_execution_result_detail;

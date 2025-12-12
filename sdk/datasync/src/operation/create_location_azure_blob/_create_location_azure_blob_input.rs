@@ -25,12 +25,12 @@ pub struct CreateLocationAzureBlobInput {
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your transfer location.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     /// <p>Specifies configuration information for a DataSync-managed secret, which includes the authentication token that DataSync uses to access a specific AzureBlob storage location, with a customer-managed KMS key.</p>
-    /// <p>When you include this paramater as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
-    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>When you include this parameter as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
-    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
@@ -78,14 +78,14 @@ impl CreateLocationAzureBlobInput {
         self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specifies configuration information for a DataSync-managed secret, which includes the authentication token that DataSync uses to access a specific AzureBlob storage location, with a customer-managed KMS key.</p>
-    /// <p>When you include this paramater as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
-    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>When you include this parameter as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn cmk_secret_config(&self) -> ::std::option::Option<&crate::types::CmkSecretConfig> {
         self.cmk_secret_config.as_ref()
     }
-    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn custom_secret_config(&self) -> ::std::option::Option<&crate::types::CustomSecretConfig> {
@@ -257,8 +257,8 @@ impl CreateLocationAzureBlobInputBuilder {
         &self.tags
     }
     /// <p>Specifies configuration information for a DataSync-managed secret, which includes the authentication token that DataSync uses to access a specific AzureBlob storage location, with a customer-managed KMS key.</p>
-    /// <p>When you include this paramater as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
-    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>When you include this parameter as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn cmk_secret_config(mut self, input: crate::types::CmkSecretConfig) -> Self {
@@ -266,8 +266,8 @@ impl CreateLocationAzureBlobInputBuilder {
         self
     }
     /// <p>Specifies configuration information for a DataSync-managed secret, which includes the authentication token that DataSync uses to access a specific AzureBlob storage location, with a customer-managed KMS key.</p>
-    /// <p>When you include this paramater as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
-    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>When you include this parameter as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn set_cmk_secret_config(mut self, input: ::std::option::Option<crate::types::CmkSecretConfig>) -> Self {
@@ -275,28 +275,28 @@ impl CreateLocationAzureBlobInputBuilder {
         self
     }
     /// <p>Specifies configuration information for a DataSync-managed secret, which includes the authentication token that DataSync uses to access a specific AzureBlob storage location, with a customer-managed KMS key.</p>
-    /// <p>When you include this paramater as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
-    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>When you include this parameter as part of a <code>CreateLocationAzureBlob</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the authentication token you specify for <code>SasConfiguration</code> to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
         &self.cmk_secret_config
     }
-    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
         self.custom_secret_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
         self.custom_secret_config = input;
         self
     }
-    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the authentication token for an AzureBlob storage location is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {

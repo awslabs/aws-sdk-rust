@@ -86,6 +86,10 @@ where
                             builder = builder
                                 .set_toolbar_configuration(crate::protocol_serde::shape_toolbar_configuration::de_toolbar_configuration(tokens)?);
                         }
+                        "brandingConfiguration" => {
+                            builder = builder
+                                .set_branding_configuration(crate::protocol_serde::shape_branding_configuration::de_branding_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -751,6 +751,9 @@ impl From<crate::operation::create_user_settings::CreateUserSettingsError> for E
             crate::operation::create_user_settings::CreateUserSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_user_settings::CreateUserSettingsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_user_settings::CreateUserSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_user_settings::CreateUserSettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::create_user_settings::CreateUserSettingsError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }

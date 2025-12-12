@@ -3,11 +3,21 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_user_settings::UserSettingsBuilder;
 
+pub use crate::types::_branding_configuration::BrandingConfigurationBuilder;
+
+pub use crate::types::_localized_branding_strings::LocalizedBrandingStringsBuilder;
+
+pub use crate::types::_image_metadata::ImageMetadataBuilder;
+
 pub use crate::types::_toolbar_configuration::ToolbarConfigurationBuilder;
 
 pub use crate::types::_cookie_synchronization_configuration::CookieSynchronizationConfigurationBuilder;
 
 pub use crate::types::_cookie_specification::CookieSpecificationBuilder;
+
+pub use crate::types::_branding_configuration_update_input::BrandingConfigurationUpdateInputBuilder;
+
+pub use crate::types::_branding_configuration_create_input::BrandingConfigurationCreateInputBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 

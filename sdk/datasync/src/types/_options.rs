@@ -105,9 +105,7 @@ pub struct Options {
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
     pub posix_permissions: ::std::option::Option<crate::types::PosixPermissions>,
-    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p><note>
-    /// <p>Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
-    /// </note>
+    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
     pub bytes_per_second: ::std::option::Option<i64>,
     /// <p>Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
     pub task_queueing: ::std::option::Option<crate::types::TaskQueueing>,
@@ -277,9 +275,7 @@ impl Options {
     pub fn posix_permissions(&self) -> ::std::option::Option<&crate::types::PosixPermissions> {
         self.posix_permissions.as_ref()
     }
-    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p><note>
-    /// <p>Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
-    /// </note>
+    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
     pub fn bytes_per_second(&self) -> ::std::option::Option<i64> {
         self.bytes_per_second
     }
@@ -740,23 +736,17 @@ impl OptionsBuilder {
     pub fn get_posix_permissions(&self) -> &::std::option::Option<crate::types::PosixPermissions> {
         &self.posix_permissions
     }
-    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p><note>
-    /// <p>Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
-    /// </note>
+    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
     pub fn bytes_per_second(mut self, input: i64) -> Self {
         self.bytes_per_second = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p><note>
-    /// <p>Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
-    /// </note>
+    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
     pub fn set_bytes_per_second(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_per_second = input;
         self
     }
-    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p><note>
-    /// <p>Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced mode tasks</a>.</p>
-    /// </note>
+    /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
     pub fn get_bytes_per_second(&self) -> &::std::option::Option<i64> {
         &self.bytes_per_second
     }

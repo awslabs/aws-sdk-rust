@@ -32,6 +32,8 @@ pub struct UserSettings {
     pub deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
     /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
     pub toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
+    /// <p>The branding configuration output that customizes the appearance of the web portal for end users.</p>
+    pub branding_configuration: ::std::option::Option<crate::types::BrandingConfiguration>,
 }
 impl UserSettings {
     /// <p>The ARN of the user settings.</p>
@@ -93,6 +95,10 @@ impl UserSettings {
     pub fn toolbar_configuration(&self) -> ::std::option::Option<&crate::types::ToolbarConfiguration> {
         self.toolbar_configuration.as_ref()
     }
+    /// <p>The branding configuration output that customizes the appearance of the web portal for end users.</p>
+    pub fn branding_configuration(&self) -> ::std::option::Option<&crate::types::BrandingConfiguration> {
+        self.branding_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UserSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -111,6 +117,7 @@ impl ::std::fmt::Debug for UserSettings {
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.field("toolbar_configuration", &self.toolbar_configuration);
+        formatter.field("branding_configuration", &self.branding_configuration);
         formatter.finish()
     }
 }
@@ -139,6 +146,7 @@ pub struct UserSettingsBuilder {
     pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
     pub(crate) toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
+    pub(crate) branding_configuration: ::std::option::Option<crate::types::BrandingConfiguration>,
 }
 impl UserSettingsBuilder {
     /// <p>The ARN of the user settings.</p>
@@ -362,6 +370,20 @@ impl UserSettingsBuilder {
     pub fn get_toolbar_configuration(&self) -> &::std::option::Option<crate::types::ToolbarConfiguration> {
         &self.toolbar_configuration
     }
+    /// <p>The branding configuration output that customizes the appearance of the web portal for end users.</p>
+    pub fn branding_configuration(mut self, input: crate::types::BrandingConfiguration) -> Self {
+        self.branding_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The branding configuration output that customizes the appearance of the web portal for end users.</p>
+    pub fn set_branding_configuration(mut self, input: ::std::option::Option<crate::types::BrandingConfiguration>) -> Self {
+        self.branding_configuration = input;
+        self
+    }
+    /// <p>The branding configuration output that customizes the appearance of the web portal for end users.</p>
+    pub fn get_branding_configuration(&self) -> &::std::option::Option<crate::types::BrandingConfiguration> {
+        &self.branding_configuration
+    }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_settings_arn`](crate::types::builders::UserSettingsBuilder::user_settings_arn)
@@ -386,6 +408,7 @@ impl UserSettingsBuilder {
             additional_encryption_context: self.additional_encryption_context,
             deep_link_allowed: self.deep_link_allowed,
             toolbar_configuration: self.toolbar_configuration,
+            branding_configuration: self.branding_configuration,
         })
     }
 }
@@ -406,6 +429,7 @@ impl ::std::fmt::Debug for UserSettingsBuilder {
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.field("toolbar_configuration", &self.toolbar_configuration);
+        formatter.field("branding_configuration", &self.branding_configuration);
         formatter.finish()
     }
 }

@@ -13,65 +13,71 @@ pub fn ser_create_user_settings_input_input(
         }
         object_2.finish();
     }
-    if let Some(var_5) = &input.client_token {
-        object.key("clientToken").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.cookie_synchronization_configuration {
+    if let Some(var_5) = &input.branding_configuration_input {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("cookieSynchronizationConfiguration").start_object();
-        crate::protocol_serde::shape_cookie_synchronization_configuration::ser_cookie_synchronization_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("brandingConfigurationInput").start_object();
+        crate::protocol_serde::shape_branding_configuration_create_input::ser_branding_configuration_create_input(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.copy_allowed {
-        object.key("copyAllowed").string(var_8.as_str());
+    if let Some(var_7) = &input.client_token {
+        object.key("clientToken").string(var_7.as_str());
     }
-    if let Some(var_9) = &input.customer_managed_key {
-        object.key("customerManagedKey").string(var_9.as_str());
+    if let Some(var_8) = &input.cookie_synchronization_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("cookieSynchronizationConfiguration").start_object();
+        crate::protocol_serde::shape_cookie_synchronization_configuration::ser_cookie_synchronization_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_10) = &input.deep_link_allowed {
-        object.key("deepLinkAllowed").string(var_10.as_str());
+    if let Some(var_10) = &input.copy_allowed {
+        object.key("copyAllowed").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.disconnect_timeout_in_minutes {
+    if let Some(var_11) = &input.customer_managed_key {
+        object.key("customerManagedKey").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.deep_link_allowed {
+        object.key("deepLinkAllowed").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.disconnect_timeout_in_minutes {
         object.key("disconnectTimeoutInMinutes").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
-        );
-    }
-    if let Some(var_12) = &input.download_allowed {
-        object.key("downloadAllowed").string(var_12.as_str());
-    }
-    if let Some(var_13) = &input.idle_disconnect_timeout_in_minutes {
-        object.key("idleDisconnectTimeoutInMinutes").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_14) = &input.paste_allowed {
-        object.key("pasteAllowed").string(var_14.as_str());
+    if let Some(var_14) = &input.download_allowed {
+        object.key("downloadAllowed").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.print_allowed {
-        object.key("printAllowed").string(var_15.as_str());
+    if let Some(var_15) = &input.idle_disconnect_timeout_in_minutes {
+        object.key("idleDisconnectTimeoutInMinutes").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
     }
-    if let Some(var_16) = &input.tags {
-        let mut array_17 = object.key("tags").start_array();
-        for item_18 in var_16 {
+    if let Some(var_16) = &input.paste_allowed {
+        object.key("pasteAllowed").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.print_allowed {
+        object.key("printAllowed").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.tags {
+        let mut array_19 = object.key("tags").start_array();
+        for item_20 in var_18 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
-                object_19.finish();
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_21, item_20)?;
+                object_21.finish();
             }
         }
-        array_17.finish();
+        array_19.finish();
     }
-    if let Some(var_20) = &input.toolbar_configuration {
+    if let Some(var_22) = &input.toolbar_configuration {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("toolbarConfiguration").start_object();
-        crate::protocol_serde::shape_toolbar_configuration::ser_toolbar_configuration(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_23 = object.key("toolbarConfiguration").start_object();
+        crate::protocol_serde::shape_toolbar_configuration::ser_toolbar_configuration(&mut object_23, var_22)?;
+        object_23.finish();
     }
-    if let Some(var_22) = &input.upload_allowed {
-        object.key("uploadAllowed").string(var_22.as_str());
+    if let Some(var_24) = &input.upload_allowed {
+        object.key("uploadAllowed").string(var_24.as_str());
     }
     Ok(())
 }

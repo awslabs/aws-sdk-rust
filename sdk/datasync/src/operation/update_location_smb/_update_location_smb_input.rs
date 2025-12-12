@@ -20,6 +20,10 @@ pub struct UpdateLocationSmbInput {
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub password: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    /// <p>Specifies configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
     /// <p>Specifies the DataSync agent (or agents) that can connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
@@ -71,6 +75,14 @@ impl UpdateLocationSmbInput {
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn cmk_secret_config(&self) -> ::std::option::Option<&crate::types::CmkSecretConfig> {
+        self.cmk_secret_config.as_ref()
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn custom_secret_config(&self) -> ::std::option::Option<&crate::types::CustomSecretConfig> {
+        self.custom_secret_config.as_ref()
+    }
     /// <p>Specifies the DataSync agent (or agents) that can connect to your SMB file server. You specify an agent by using its Amazon Resource Name (ARN).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
@@ -119,6 +131,8 @@ impl ::std::fmt::Debug for UpdateLocationSmbInput {
         formatter.field("user", &self.user);
         formatter.field("domain", &self.domain);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("cmk_secret_config", &self.cmk_secret_config);
+        formatter.field("custom_secret_config", &self.custom_secret_config);
         formatter.field("agent_arns", &self.agent_arns);
         formatter.field("mount_options", &self.mount_options);
         formatter.field("authentication_type", &self.authentication_type);
@@ -146,6 +160,8 @@ pub struct UpdateLocationSmbInputBuilder {
     pub(crate) user: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
+    pub(crate) cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    pub(crate) custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     pub(crate) authentication_type: ::std::option::Option<crate::types::SmbAuthenticationType>,
@@ -254,6 +270,34 @@ impl UpdateLocationSmbInputBuilder {
     /// <p>Specifies the password of the user who can mount your SMB file server and has permission to access the files and folders involved in your transfer. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn cmk_secret_config(mut self, input: crate::types::CmkSecretConfig) -> Self {
+        self.cmk_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn set_cmk_secret_config(mut self, input: ::std::option::Option<crate::types::CmkSecretConfig>) -> Self {
+        self.cmk_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
+        &self.cmk_secret_config
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
+        self.custom_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
+        self.custom_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {
+        &self.custom_secret_config
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -394,6 +438,8 @@ impl UpdateLocationSmbInputBuilder {
             user: self.user,
             domain: self.domain,
             password: self.password,
+            cmk_secret_config: self.cmk_secret_config,
+            custom_secret_config: self.custom_secret_config,
             agent_arns: self.agent_arns,
             mount_options: self.mount_options,
             authentication_type: self.authentication_type,
@@ -413,6 +459,8 @@ impl ::std::fmt::Debug for UpdateLocationSmbInputBuilder {
         formatter.field("user", &self.user);
         formatter.field("domain", &self.domain);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("cmk_secret_config", &self.cmk_secret_config);
+        formatter.field("custom_secret_config", &self.custom_secret_config);
         formatter.field("agent_arns", &self.agent_arns);
         formatter.field("mount_options", &self.mount_options);
         formatter.field("authentication_type", &self.authentication_type);

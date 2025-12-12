@@ -308,8 +308,8 @@ impl CreateLocationObjectStorageFluentBuilder {
         self.inner.get_server_certificate()
     }
     /// <p>Specifies configuration information for a DataSync-managed secret, which includes the <code>SecretKey</code> that DataSync uses to access a specific object storage location, with a customer-managed KMS key.</p>
-    /// <p>When you include this paramater as part of a <code>CreateLocationObjectStorage</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the value you specify for the <code>SecretKey</code> parameter to create a DataSync-managed secret to store the location access credentials.</p>
-    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>When you include this parameter as part of a <code>CreateLocationObjectStorage</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the value you specify for the <code>SecretKey</code> parameter to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn cmk_secret_config(mut self, input: crate::types::CmkSecretConfig) -> Self {
@@ -317,8 +317,8 @@ impl CreateLocationObjectStorageFluentBuilder {
         self
     }
     /// <p>Specifies configuration information for a DataSync-managed secret, which includes the <code>SecretKey</code> that DataSync uses to access a specific object storage location, with a customer-managed KMS key.</p>
-    /// <p>When you include this paramater as part of a <code>CreateLocationObjectStorage</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the value you specify for the <code>SecretKey</code> parameter to create a DataSync-managed secret to store the location access credentials.</p>
-    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>When you include this parameter as part of a <code>CreateLocationObjectStorage</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the value you specify for the <code>SecretKey</code> parameter to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn set_cmk_secret_config(mut self, input: ::std::option::Option<crate::types::CmkSecretConfig>) -> Self {
@@ -326,28 +326,28 @@ impl CreateLocationObjectStorageFluentBuilder {
         self
     }
     /// <p>Specifies configuration information for a DataSync-managed secret, which includes the <code>SecretKey</code> that DataSync uses to access a specific object storage location, with a customer-managed KMS key.</p>
-    /// <p>When you include this paramater as part of a <code>CreateLocationObjectStorage</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the value you specify for the <code>SecretKey</code> parameter to create a DataSync-managed secret to store the location access credentials.</p>
-    /// <p>Make sure the DataSync has permission to access the KMS key that you specify.</p><note>
+    /// <p>When you include this parameter as part of a <code>CreateLocationObjectStorage</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the value you specify for the <code>SecretKey</code> parameter to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
         self.inner.get_cmk_secret_config()
     }
-    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the secret key for a specific object storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the secret key for a specific object storage location is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
         self.inner = self.inner.custom_secret_config(input);
         self
     }
-    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the secret key for a specific object storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the secret key for a specific object storage location is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
         self.inner = self.inner.set_custom_secret_config(input);
         self
     }
-    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the secret key for a specific object storage location is stored in plain text. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the secret key for a specific object storage location is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p><note>
     /// <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide credentials for a <code>CreateLocationObjectStorage</code> request. Do not provide both parameters for the same request.</p>
     /// </note>
     pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {

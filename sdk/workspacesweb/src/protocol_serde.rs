@@ -239,6 +239,10 @@ pub(crate) mod shape_update_user_settings_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_branding_configuration_create_input;
+
+pub(crate) mod shape_branding_configuration_update_input;
+
 pub(crate) mod shape_browser_settings;
 
 pub(crate) mod shape_browser_settings_list;
@@ -309,6 +313,8 @@ pub(crate) mod shape_web_content_filtering_policy;
 
 pub(crate) mod shape_arn_list;
 
+pub(crate) mod shape_branding_configuration;
+
 pub(crate) mod shape_browser_settings_summary;
 
 pub(crate) mod shape_certificate_summary;
@@ -318,6 +324,8 @@ pub(crate) mod shape_cookie_specification;
 pub(crate) mod shape_data_protection_settings_summary;
 
 pub(crate) mod shape_encryption_context_map;
+
+pub(crate) mod shape_icon_image_input;
 
 pub(crate) mod shape_identity_provider_details;
 
@@ -330,6 +338,8 @@ pub(crate) mod shape_ip_access_settings_summary;
 pub(crate) mod shape_ip_address_list;
 
 pub(crate) mod shape_ip_rule_list;
+
+pub(crate) mod shape_localized_branding_strings;
 
 pub(crate) mod shape_network_settings_summary;
 
@@ -353,6 +363,8 @@ pub(crate) mod shape_user_settings_summary;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_wallpaper_image_input;
+
 pub(crate) mod shape_blocked_categories;
 
 pub(crate) mod shape_cookie_specifications;
@@ -365,7 +377,11 @@ pub(crate) mod shape_global_inline_redaction_urls;
 
 pub(crate) mod shape_hidden_toolbar_item_list;
 
+pub(crate) mod shape_image_metadata;
+
 pub(crate) mod shape_inline_redaction_patterns;
+
+pub(crate) mod shape_localized_branding_string_map;
 
 pub(crate) mod shape_redaction_place_holder;
 

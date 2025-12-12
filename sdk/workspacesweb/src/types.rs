@@ -5,6 +5,18 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_user_settings::UserSettings;
 
+pub use crate::types::_branding_configuration::BrandingConfiguration;
+
+pub use crate::types::_color_theme::ColorTheme;
+
+pub use crate::types::_localized_branding_strings::LocalizedBrandingStrings;
+
+pub use crate::types::_locale::Locale;
+
+pub use crate::types::_image_metadata::ImageMetadata;
+
+pub use crate::types::_mime_type::MimeType;
+
 pub use crate::types::_toolbar_configuration::ToolbarConfiguration;
 
 pub use crate::types::_max_display_resolution::MaxDisplayResolution;
@@ -20,6 +32,14 @@ pub use crate::types::_enabled_type::EnabledType;
 pub use crate::types::_cookie_synchronization_configuration::CookieSynchronizationConfiguration;
 
 pub use crate::types::_cookie_specification::CookieSpecification;
+
+pub use crate::types::_branding_configuration_update_input::BrandingConfigurationUpdateInput;
+
+pub use crate::types::_icon_image_input::IconImageInput;
+
+pub use crate::types::_wallpaper_image_input::WallpaperImageInput;
+
+pub use crate::types::_branding_configuration_create_input::BrandingConfigurationCreateInput;
 
 pub use crate::types::_tag::Tag;
 
@@ -117,6 +137,12 @@ pub use crate::types::_session::Session;
 
 mod _authentication_type;
 
+mod _branding_configuration;
+
+mod _branding_configuration_create_input;
+
+mod _branding_configuration_update_input;
+
 mod _browser_settings;
 
 mod _browser_settings_summary;
@@ -128,6 +154,8 @@ mod _category;
 mod _certificate;
 
 mod _certificate_summary;
+
+mod _color_theme;
 
 mod _cookie_specification;
 
@@ -147,11 +175,15 @@ mod _event_filter;
 
 mod _folder_structure;
 
+mod _icon_image_input;
+
 mod _identity_provider;
 
 mod _identity_provider_summary;
 
 mod _identity_provider_type;
+
+mod _image_metadata;
 
 mod _inline_redaction_configuration;
 
@@ -165,11 +197,17 @@ mod _ip_access_settings_summary;
 
 mod _ip_rule;
 
+mod _locale;
+
+mod _localized_branding_strings;
+
 mod _log_configuration;
 
 mod _log_file_format;
 
 mod _max_display_resolution;
+
+mod _mime_type;
 
 mod _network_settings;
 
@@ -228,6 +266,8 @@ mod _validation_exception_field;
 mod _validation_exception_reason;
 
 mod _visual_mode;
+
+mod _wallpaper_image_input;
 
 mod _web_content_filtering_policy;
 

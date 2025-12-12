@@ -232,6 +232,65 @@ pub(crate) fn de_describe_task_execution(
                         crate::protocol_serde::shape_task_execution_files_failed_detail::de_task_execution_files_failed_detail(tokens)?,
                     );
                 }
+                "EstimatedFoldersToDelete" => {
+                    builder = builder.set_estimated_folders_to_delete(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "EstimatedFoldersToTransfer" => {
+                    builder = builder.set_estimated_folders_to_transfer(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "FoldersSkipped" => {
+                    builder = builder.set_folders_skipped(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "FoldersPrepared" => {
+                    builder = builder.set_folders_prepared(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "FoldersTransferred" => {
+                    builder = builder.set_folders_transferred(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "FoldersVerified" => {
+                    builder = builder.set_folders_verified(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "FoldersDeleted" => {
+                    builder = builder.set_folders_deleted(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "FoldersListed" => {
+                    builder = builder.set_folders_listed(
+                        crate::protocol_serde::shape_task_execution_folders_listed_detail::de_task_execution_folders_listed_detail(tokens)?,
+                    );
+                }
+                "FoldersFailed" => {
+                    builder = builder.set_folders_failed(
+                        crate::protocol_serde::shape_task_execution_folders_failed_detail::de_task_execution_folders_failed_detail(tokens)?,
+                    );
+                }
                 "LaunchTime" => {
                     builder = builder.set_launch_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

@@ -3,50 +3,56 @@ pub fn ser_update_user_settings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_user_settings::UpdateUserSettingsInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.cookie_synchronization_configuration {
+    if let Some(var_1) = &input.branding_configuration_input {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("cookieSynchronizationConfiguration").start_object();
-        crate::protocol_serde::shape_cookie_synchronization_configuration::ser_cookie_synchronization_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("brandingConfigurationInput").start_object();
+        crate::protocol_serde::shape_branding_configuration_update_input::ser_branding_configuration_update_input(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.copy_allowed {
-        object.key("copyAllowed").string(var_4.as_str());
+    if let Some(var_3) = &input.client_token {
+        object.key("clientToken").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.deep_link_allowed {
-        object.key("deepLinkAllowed").string(var_5.as_str());
+    if let Some(var_4) = &input.cookie_synchronization_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("cookieSynchronizationConfiguration").start_object();
+        crate::protocol_serde::shape_cookie_synchronization_configuration::ser_cookie_synchronization_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_6) = &input.disconnect_timeout_in_minutes {
+    if let Some(var_6) = &input.copy_allowed {
+        object.key("copyAllowed").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.deep_link_allowed {
+        object.key("deepLinkAllowed").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.disconnect_timeout_in_minutes {
         object.key("disconnectTimeoutInMinutes").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
-        );
-    }
-    if let Some(var_7) = &input.download_allowed {
-        object.key("downloadAllowed").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.idle_disconnect_timeout_in_minutes {
-        object.key("idleDisconnectTimeoutInMinutes").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_9) = &input.paste_allowed {
-        object.key("pasteAllowed").string(var_9.as_str());
+    if let Some(var_9) = &input.download_allowed {
+        object.key("downloadAllowed").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.print_allowed {
-        object.key("printAllowed").string(var_10.as_str());
+    if let Some(var_10) = &input.idle_disconnect_timeout_in_minutes {
+        object.key("idleDisconnectTimeoutInMinutes").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
     }
-    if let Some(var_11) = &input.toolbar_configuration {
+    if let Some(var_11) = &input.paste_allowed {
+        object.key("pasteAllowed").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.print_allowed {
+        object.key("printAllowed").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.toolbar_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("toolbarConfiguration").start_object();
-        crate::protocol_serde::shape_toolbar_configuration::ser_toolbar_configuration(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_14 = object.key("toolbarConfiguration").start_object();
+        crate::protocol_serde::shape_toolbar_configuration::ser_toolbar_configuration(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_13) = &input.upload_allowed {
-        object.key("uploadAllowed").string(var_13.as_str());
+    if let Some(var_15) = &input.upload_allowed {
+        object.key("uploadAllowed").string(var_15.as_str());
     }
     Ok(())
 }

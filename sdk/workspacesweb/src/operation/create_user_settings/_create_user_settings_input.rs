@@ -32,6 +32,8 @@ pub struct CreateUserSettingsInput {
     pub deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
     /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
     pub toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
+    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, wallpaper, localized strings, color theme, and an optional terms of service.</p>
+    pub branding_configuration_input: ::std::option::Option<crate::types::BrandingConfigurationCreateInput>,
 }
 impl CreateUserSettingsInput {
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
@@ -93,6 +95,10 @@ impl CreateUserSettingsInput {
     pub fn toolbar_configuration(&self) -> ::std::option::Option<&crate::types::ToolbarConfiguration> {
         self.toolbar_configuration.as_ref()
     }
+    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, wallpaper, localized strings, color theme, and an optional terms of service.</p>
+    pub fn branding_configuration_input(&self) -> ::std::option::Option<&crate::types::BrandingConfigurationCreateInput> {
+        self.branding_configuration_input.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateUserSettingsInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -111,6 +117,7 @@ impl ::std::fmt::Debug for CreateUserSettingsInput {
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.field("toolbar_configuration", &self.toolbar_configuration);
+        formatter.field("branding_configuration_input", &self.branding_configuration_input);
         formatter.finish()
     }
 }
@@ -139,6 +146,7 @@ pub struct CreateUserSettingsInputBuilder {
     pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
     pub(crate) toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
+    pub(crate) branding_configuration_input: ::std::option::Option<crate::types::BrandingConfigurationCreateInput>,
 }
 impl CreateUserSettingsInputBuilder {
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
@@ -369,6 +377,20 @@ impl CreateUserSettingsInputBuilder {
     pub fn get_toolbar_configuration(&self) -> &::std::option::Option<crate::types::ToolbarConfiguration> {
         &self.toolbar_configuration
     }
+    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, wallpaper, localized strings, color theme, and an optional terms of service.</p>
+    pub fn branding_configuration_input(mut self, input: crate::types::BrandingConfigurationCreateInput) -> Self {
+        self.branding_configuration_input = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, wallpaper, localized strings, color theme, and an optional terms of service.</p>
+    pub fn set_branding_configuration_input(mut self, input: ::std::option::Option<crate::types::BrandingConfigurationCreateInput>) -> Self {
+        self.branding_configuration_input = input;
+        self
+    }
+    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, wallpaper, localized strings, color theme, and an optional terms of service.</p>
+    pub fn get_branding_configuration_input(&self) -> &::std::option::Option<crate::types::BrandingConfigurationCreateInput> {
+        &self.branding_configuration_input
+    }
     /// Consumes the builder and constructs a [`CreateUserSettingsInput`](crate::operation::create_user_settings::CreateUserSettingsInput).
     pub fn build(
         self,
@@ -389,6 +411,7 @@ impl CreateUserSettingsInputBuilder {
             additional_encryption_context: self.additional_encryption_context,
             deep_link_allowed: self.deep_link_allowed,
             toolbar_configuration: self.toolbar_configuration,
+            branding_configuration_input: self.branding_configuration_input,
         })
     }
 }
@@ -409,6 +432,7 @@ impl ::std::fmt::Debug for CreateUserSettingsInputBuilder {
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.field("toolbar_configuration", &self.toolbar_configuration);
+        formatter.field("branding_configuration_input", &self.branding_configuration_input);
         formatter.finish()
     }
 }

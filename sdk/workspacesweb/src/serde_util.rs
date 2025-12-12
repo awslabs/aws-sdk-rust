@@ -413,6 +413,36 @@ pub(crate) fn trust_store_correct_errors(mut builder: crate::types::builders::Tr
     builder
 }
 
+pub(crate) fn branding_configuration_correct_errors(
+    mut builder: crate::types::builders::BrandingConfigurationBuilder,
+) -> crate::types::builders::BrandingConfigurationBuilder {
+    if builder.logo.is_none() {
+        builder.logo = {
+            let builder = crate::types::builders::ImageMetadataBuilder::default();
+            crate::serde_util::image_metadata_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.wallpaper.is_none() {
+        builder.wallpaper = {
+            let builder = crate::types::builders::ImageMetadataBuilder::default();
+            crate::serde_util::image_metadata_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.favicon.is_none() {
+        builder.favicon = {
+            let builder = crate::types::builders::ImageMetadataBuilder::default();
+            crate::serde_util::image_metadata_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.localized_strings.is_none() {
+        builder.localized_strings = Some(Default::default())
+    }
+    if builder.color_theme.is_none() {
+        builder.color_theme = "no value was set".parse::<crate::types::ColorTheme>().ok()
+    }
+    builder
+}
+
 pub(crate) fn browser_settings_summary_correct_errors(
     mut builder: crate::types::builders::BrowserSettingsSummaryBuilder,
 ) -> crate::types::builders::BrowserSettingsSummaryBuilder {
@@ -534,6 +564,21 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
+pub(crate) fn image_metadata_correct_errors(
+    mut builder: crate::types::builders::ImageMetadataBuilder,
+) -> crate::types::builders::ImageMetadataBuilder {
+    if builder.mime_type.is_none() {
+        builder.mime_type = "no value was set".parse::<crate::types::MimeType>().ok()
+    }
+    if builder.file_extension.is_none() {
+        builder.file_extension = Some(Default::default())
+    }
+    if builder.last_upload_timestamp.is_none() {
+        builder.last_upload_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn ip_rule_correct_errors(mut builder: crate::types::builders::IpRuleBuilder) -> crate::types::builders::IpRuleBuilder {
     if builder.ip_range.is_none() {
         builder.ip_range = Some(Default::default())
@@ -573,6 +618,18 @@ pub(crate) fn inline_redaction_pattern_correct_errors(
             let builder = crate::types::builders::RedactionPlaceHolderBuilder::default();
             crate::serde_util::redaction_place_holder_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn localized_branding_strings_correct_errors(
+    mut builder: crate::types::builders::LocalizedBrandingStringsBuilder,
+) -> crate::types::builders::LocalizedBrandingStringsBuilder {
+    if builder.browser_tab_title.is_none() {
+        builder.browser_tab_title = Some(Default::default())
+    }
+    if builder.welcome_text.is_none() {
+        builder.welcome_text = Some(Default::default())
     }
     builder
 }

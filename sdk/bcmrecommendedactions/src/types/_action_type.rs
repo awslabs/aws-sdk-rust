@@ -24,6 +24,8 @@
 ///     ActionType::ReviewBudgetAlerts => { /* ... */ },
 ///     ActionType::ReviewExpiringRi => { /* ... */ },
 ///     ActionType::ReviewExpiringSp => { /* ... */ },
+///     ActionType::ReviewFreetierCreditsRemaining => { /* ... */ },
+///     ActionType::ReviewFreetierDaysRemaining => { /* ... */ },
 ///     ActionType::ReviewFreetierUsageAlerts => { /* ... */ },
 ///     ActionType::ReviewSavingsOpportunityRecommendations => { /* ... */ },
 ///     ActionType::UpdateExpiredPaymentMethod => { /* ... */ },
@@ -83,6 +85,10 @@ pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     ReviewExpiringSp,
     #[allow(missing_docs)] // documentation missing in model
+    ReviewFreetierCreditsRemaining,
+    #[allow(missing_docs)] // documentation missing in model
+    ReviewFreetierDaysRemaining,
+    #[allow(missing_docs)] // documentation missing in model
     ReviewFreetierUsageAlerts,
     #[allow(missing_docs)] // documentation missing in model
     ReviewSavingsOpportunityRecommendations,
@@ -113,6 +119,8 @@ impl ::std::convert::From<&str> for ActionType {
             "REVIEW_BUDGET_ALERTS" => ActionType::ReviewBudgetAlerts,
             "REVIEW_EXPIRING_RI" => ActionType::ReviewExpiringRi,
             "REVIEW_EXPIRING_SP" => ActionType::ReviewExpiringSp,
+            "REVIEW_FREETIER_CREDITS_REMAINING" => ActionType::ReviewFreetierCreditsRemaining,
+            "REVIEW_FREETIER_DAYS_REMAINING" => ActionType::ReviewFreetierDaysRemaining,
             "REVIEW_FREETIER_USAGE_ALERTS" => ActionType::ReviewFreetierUsageAlerts,
             "REVIEW_SAVINGS_OPPORTUNITY_RECOMMENDATIONS" => ActionType::ReviewSavingsOpportunityRecommendations,
             "UPDATE_EXPIRED_PAYMENT_METHOD" => ActionType::UpdateExpiredPaymentMethod,
@@ -146,6 +154,8 @@ impl ActionType {
             ActionType::ReviewBudgetAlerts => "REVIEW_BUDGET_ALERTS",
             ActionType::ReviewExpiringRi => "REVIEW_EXPIRING_RI",
             ActionType::ReviewExpiringSp => "REVIEW_EXPIRING_SP",
+            ActionType::ReviewFreetierCreditsRemaining => "REVIEW_FREETIER_CREDITS_REMAINING",
+            ActionType::ReviewFreetierDaysRemaining => "REVIEW_FREETIER_DAYS_REMAINING",
             ActionType::ReviewFreetierUsageAlerts => "REVIEW_FREETIER_USAGE_ALERTS",
             ActionType::ReviewSavingsOpportunityRecommendations => "REVIEW_SAVINGS_OPPORTUNITY_RECOMMENDATIONS",
             ActionType::UpdateExpiredPaymentMethod => "UPDATE_EXPIRED_PAYMENT_METHOD",
@@ -170,6 +180,8 @@ impl ActionType {
             "REVIEW_BUDGET_ALERTS",
             "REVIEW_EXPIRING_RI",
             "REVIEW_EXPIRING_SP",
+            "REVIEW_FREETIER_CREDITS_REMAINING",
+            "REVIEW_FREETIER_DAYS_REMAINING",
             "REVIEW_FREETIER_USAGE_ALERTS",
             "REVIEW_SAVINGS_OPPORTUNITY_RECOMMENDATIONS",
             "UPDATE_EXPIRED_PAYMENT_METHOD",
@@ -211,6 +223,8 @@ impl ::std::fmt::Display for ActionType {
             ActionType::ReviewBudgetAlerts => write!(f, "REVIEW_BUDGET_ALERTS"),
             ActionType::ReviewExpiringRi => write!(f, "REVIEW_EXPIRING_RI"),
             ActionType::ReviewExpiringSp => write!(f, "REVIEW_EXPIRING_SP"),
+            ActionType::ReviewFreetierCreditsRemaining => write!(f, "REVIEW_FREETIER_CREDITS_REMAINING"),
+            ActionType::ReviewFreetierDaysRemaining => write!(f, "REVIEW_FREETIER_DAYS_REMAINING"),
             ActionType::ReviewFreetierUsageAlerts => write!(f, "REVIEW_FREETIER_USAGE_ALERTS"),
             ActionType::ReviewSavingsOpportunityRecommendations => write!(f, "REVIEW_SAVINGS_OPPORTUNITY_RECOMMENDATIONS"),
             ActionType::UpdateExpiredPaymentMethod => write!(f, "UPDATE_EXPIRED_PAYMENT_METHOD"),

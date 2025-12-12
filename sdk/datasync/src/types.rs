@@ -69,13 +69,13 @@ pub use crate::types::_smb_mount_options::SmbMountOptions;
 
 pub use crate::types::_smb_version::SmbVersion;
 
-pub use crate::types::_s3_config::S3Config;
-
-pub use crate::types::_s3_storage_class::S3StorageClass;
-
 pub use crate::types::_custom_secret_config::CustomSecretConfig;
 
 pub use crate::types::_cmk_secret_config::CmkSecretConfig;
+
+pub use crate::types::_s3_config::S3Config;
+
+pub use crate::types::_s3_storage_class::S3StorageClass;
 
 pub use crate::types::_object_storage_server_protocol::ObjectStorageServerProtocol;
 
@@ -144,6 +144,10 @@ pub use crate::types::_agent_list_entry::AgentListEntry;
 pub use crate::types::_platform::Platform;
 
 pub use crate::types::_agent_status::AgentStatus;
+
+pub use crate::types::_task_execution_folders_failed_detail::TaskExecutionFoldersFailedDetail;
+
+pub use crate::types::_task_execution_folders_listed_detail::TaskExecutionFoldersListedDetail;
 
 pub use crate::types::_task_execution_files_failed_detail::TaskExecutionFilesFailedDetail;
 
@@ -304,6 +308,10 @@ mod _tag_list_entry;
 mod _task_execution_files_failed_detail;
 
 mod _task_execution_files_listed_detail;
+
+mod _task_execution_folders_failed_detail;
+
+mod _task_execution_folders_listed_detail;
 
 mod _task_execution_list_entry;
 

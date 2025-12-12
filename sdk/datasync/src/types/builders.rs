@@ -23,11 +23,11 @@ pub use crate::types::_task_schedule::TaskScheduleBuilder;
 
 pub use crate::types::_smb_mount_options::SmbMountOptionsBuilder;
 
-pub use crate::types::_s3_config::S3ConfigBuilder;
-
 pub use crate::types::_custom_secret_config::CustomSecretConfigBuilder;
 
 pub use crate::types::_cmk_secret_config::CmkSecretConfigBuilder;
+
+pub use crate::types::_s3_config::S3ConfigBuilder;
 
 pub use crate::types::_nfs_mount_options::NfsMountOptionsBuilder;
 
@@ -64,6 +64,10 @@ pub use crate::types::_location_filter::LocationFilterBuilder;
 pub use crate::types::_agent_list_entry::AgentListEntryBuilder;
 
 pub use crate::types::_platform::PlatformBuilder;
+
+pub use crate::types::_task_execution_folders_failed_detail::TaskExecutionFoldersFailedDetailBuilder;
+
+pub use crate::types::_task_execution_folders_listed_detail::TaskExecutionFoldersListedDetailBuilder;
 
 pub use crate::types::_task_execution_files_failed_detail::TaskExecutionFilesFailedDetailBuilder;
 

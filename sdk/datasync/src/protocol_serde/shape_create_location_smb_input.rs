@@ -18,55 +18,67 @@ pub fn ser_create_location_smb_input_input(
     if let Some(var_5) = &input.password {
         object.key("Password").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.agent_arns {
-        let mut array_7 = object.key("AgentArns").start_array();
-        for item_8 in var_6 {
+    if let Some(var_6) = &input.cmk_secret_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("CmkSecretConfig").start_object();
+        crate::protocol_serde::shape_cmk_secret_config::ser_cmk_secret_config(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.custom_secret_config {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("CustomSecretConfig").start_object();
+        crate::protocol_serde::shape_custom_secret_config::ser_custom_secret_config(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.agent_arns {
+        let mut array_11 = object.key("AgentArns").start_array();
+        for item_12 in var_10 {
             {
-                array_7.value().string(item_8.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_7.finish();
+        array_11.finish();
     }
-    if let Some(var_9) = &input.mount_options {
+    if let Some(var_13) = &input.mount_options {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("MountOptions").start_object();
-        crate::protocol_serde::shape_smb_mount_options::ser_smb_mount_options(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_14 = object.key("MountOptions").start_object();
+        crate::protocol_serde::shape_smb_mount_options::ser_smb_mount_options(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_11) = &input.tags {
-        let mut array_12 = object.key("Tags").start_array();
-        for item_13 in var_11 {
+    if let Some(var_15) = &input.tags {
+        let mut array_16 = object.key("Tags").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_tag_list_entry::ser_tag_list_entry(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_12.finish();
+        array_16.finish();
     }
-    if let Some(var_15) = &input.authentication_type {
-        object.key("AuthenticationType").string(var_15.as_str());
+    if let Some(var_19) = &input.authentication_type {
+        object.key("AuthenticationType").string(var_19.as_str());
     }
-    if let Some(var_16) = &input.dns_ip_addresses {
-        let mut array_17 = object.key("DnsIpAddresses").start_array();
-        for item_18 in var_16 {
+    if let Some(var_20) = &input.dns_ip_addresses {
+        let mut array_21 = object.key("DnsIpAddresses").start_array();
+        for item_22 in var_20 {
             {
-                array_17.value().string(item_18.as_str());
+                array_21.value().string(item_22.as_str());
             }
         }
-        array_17.finish();
+        array_21.finish();
     }
-    if let Some(var_19) = &input.kerberos_principal {
-        object.key("KerberosPrincipal").string(var_19.as_str());
+    if let Some(var_23) = &input.kerberos_principal {
+        object.key("KerberosPrincipal").string(var_23.as_str());
     }
-    if let Some(var_20) = &input.kerberos_keytab {
-        object.key("KerberosKeytab").string_unchecked(&::aws_smithy_types::base64::encode(var_20));
+    if let Some(var_24) = &input.kerberos_keytab {
+        object.key("KerberosKeytab").string_unchecked(&::aws_smithy_types::base64::encode(var_24));
     }
-    if let Some(var_21) = &input.kerberos_krb5_conf {
+    if let Some(var_25) = &input.kerberos_krb5_conf {
         object
             .key("KerberosKrb5Conf")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_21));
+            .string_unchecked(&::aws_smithy_types::base64::encode(var_25));
     }
     Ok(())
 }
