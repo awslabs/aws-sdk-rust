@@ -29,6 +29,8 @@ pub use crate::types::_resolution_type::ResolutionType;
 
 pub use crate::types::_output_source::OutputSource;
 
+pub use crate::types::_customer_profiles_integration_config::CustomerProfilesIntegrationConfig;
+
 pub use crate::types::_output_attribute::OutputAttribute;
 
 pub use crate::types::_input_source::InputSource;
@@ -124,6 +126,8 @@ pub use crate::types::_delete_unique_id_status::DeleteUniqueIdStatus;
 pub use crate::types::_statement_effect::StatementEffect;
 
 mod _attribute_matching_model;
+
+mod _customer_profiles_integration_config;
 
 mod _delete_unique_id_error;
 

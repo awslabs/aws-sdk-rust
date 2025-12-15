@@ -118,6 +118,14 @@ where
                         "Protocols" => {
                             builder = builder.set_protocols(crate::protocol_serde::shape_protocol_list::de_protocol_list(tokens)?);
                         }
+                        "RniEnhancedMetricsEnabled" => {
+                            builder =
+                                builder.set_rni_enhanced_metrics_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "TargetNameServerMetricsEnabled" => {
+                            builder = builder
+                                .set_target_name_server_metrics_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

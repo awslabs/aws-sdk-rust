@@ -43,6 +43,14 @@ pub struct UpdateResolverEndpointInput {
     /// <p>You can't change the protocol of an inbound endpoint directly from only Do53 to only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming traffic that relies on Do53. To change the protocol from Do53 to DoH, or DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make sure that all incoming traffic has transferred to using the DoH protocol, or DoH-FIPS, and then remove the Do53.</p>
     /// </important>
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    /// <p>Updates whether RNI enhanced metrics are enabled for the Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When set to false, metrics are not published.</p><note>
+    /// <p>Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint RNI enhanced metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed metrics</a>.</p>
+    /// </note>
+    pub rni_enhanced_metrics_enabled: ::std::option::Option<bool>,
+    /// <p>Updates whether target name server metrics are enabled for the outbound Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When set to false, metrics are not published. This setting is not supported for inbound Resolver endpoints.</p><note>
+    /// <p>Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint target name server metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed metrics</a>.</p>
+    /// </note>
+    pub target_name_server_metrics_enabled: ::std::option::Option<bool>,
 }
 impl UpdateResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
@@ -99,6 +107,18 @@ impl UpdateResolverEndpointInput {
     pub fn protocols(&self) -> &[crate::types::Protocol] {
         self.protocols.as_deref().unwrap_or_default()
     }
+    /// <p>Updates whether RNI enhanced metrics are enabled for the Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When set to false, metrics are not published.</p><note>
+    /// <p>Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint RNI enhanced metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed metrics</a>.</p>
+    /// </note>
+    pub fn rni_enhanced_metrics_enabled(&self) -> ::std::option::Option<bool> {
+        self.rni_enhanced_metrics_enabled
+    }
+    /// <p>Updates whether target name server metrics are enabled for the outbound Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When set to false, metrics are not published. This setting is not supported for inbound Resolver endpoints.</p><note>
+    /// <p>Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint target name server metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed metrics</a>.</p>
+    /// </note>
+    pub fn target_name_server_metrics_enabled(&self) -> ::std::option::Option<bool> {
+        self.target_name_server_metrics_enabled
+    }
 }
 impl UpdateResolverEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
@@ -116,6 +136,8 @@ pub struct UpdateResolverEndpointInputBuilder {
     pub(crate) resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
     pub(crate) update_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>>,
     pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    pub(crate) rni_enhanced_metrics_enabled: ::std::option::Option<bool>,
+    pub(crate) target_name_server_metrics_enabled: ::std::option::Option<bool>,
 }
 impl UpdateResolverEndpointInputBuilder {
     /// <p>The ID of the Resolver endpoint that you want to update.</p>
@@ -291,6 +313,46 @@ impl UpdateResolverEndpointInputBuilder {
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
         &self.protocols
     }
+    /// <p>Updates whether RNI enhanced metrics are enabled for the Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When set to false, metrics are not published.</p><note>
+    /// <p>Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint RNI enhanced metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed metrics</a>.</p>
+    /// </note>
+    pub fn rni_enhanced_metrics_enabled(mut self, input: bool) -> Self {
+        self.rni_enhanced_metrics_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates whether RNI enhanced metrics are enabled for the Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When set to false, metrics are not published.</p><note>
+    /// <p>Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint RNI enhanced metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed metrics</a>.</p>
+    /// </note>
+    pub fn set_rni_enhanced_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.rni_enhanced_metrics_enabled = input;
+        self
+    }
+    /// <p>Updates whether RNI enhanced metrics are enabled for the Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When set to false, metrics are not published.</p><note>
+    /// <p>Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint RNI enhanced metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed metrics</a>.</p>
+    /// </note>
+    pub fn get_rni_enhanced_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.rni_enhanced_metrics_enabled
+    }
+    /// <p>Updates whether target name server metrics are enabled for the outbound Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When set to false, metrics are not published. This setting is not supported for inbound Resolver endpoints.</p><note>
+    /// <p>Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint target name server metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed metrics</a>.</p>
+    /// </note>
+    pub fn target_name_server_metrics_enabled(mut self, input: bool) -> Self {
+        self.target_name_server_metrics_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates whether target name server metrics are enabled for the outbound Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When set to false, metrics are not published. This setting is not supported for inbound Resolver endpoints.</p><note>
+    /// <p>Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint target name server metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed metrics</a>.</p>
+    /// </note>
+    pub fn set_target_name_server_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.target_name_server_metrics_enabled = input;
+        self
+    }
+    /// <p>Updates whether target name server metrics are enabled for the outbound Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When set to false, metrics are not published. This setting is not supported for inbound Resolver endpoints.</p><note>
+    /// <p>Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint target name server metrics. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed metrics</a>.</p>
+    /// </note>
+    pub fn get_target_name_server_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.target_name_server_metrics_enabled
+    }
     /// Consumes the builder and constructs a [`UpdateResolverEndpointInput`](crate::operation::update_resolver_endpoint::UpdateResolverEndpointInput).
     pub fn build(
         self,
@@ -304,6 +366,8 @@ impl UpdateResolverEndpointInputBuilder {
             resolver_endpoint_type: self.resolver_endpoint_type,
             update_ip_addresses: self.update_ip_addresses,
             protocols: self.protocols,
+            rni_enhanced_metrics_enabled: self.rni_enhanced_metrics_enabled,
+            target_name_server_metrics_enabled: self.target_name_server_metrics_enabled,
         })
     }
 }

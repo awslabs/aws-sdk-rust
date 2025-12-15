@@ -109,6 +109,12 @@ impl ListAggregateLogGroupSummariesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_aggregate_log_group_summaries::paginator::ListAggregateLogGroupSummariesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_aggregate_log_group_summaries::paginator::ListAggregateLogGroupSummariesPaginator {
+        crate::operation::list_aggregate_log_group_summaries::paginator::ListAggregateLogGroupSummariesPaginator::new(self.handle, self.inner)
+    }
     ///
     /// Appends an item to `accountIdentifiers`.
     ///

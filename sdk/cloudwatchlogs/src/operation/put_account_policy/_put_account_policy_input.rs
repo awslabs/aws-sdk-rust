@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountPolicyInput {
-    /// <p>A name for the policy. This must be unique within the account.</p>
+    /// <p>A name for the policy. This must be unique within the account and cannot start with <code>aws/</code>.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the policy, in JSON.</p>
     /// <p><b>Data protection policy</b></p>
@@ -50,25 +50,41 @@ pub struct PutAccountPolicyInput {
     /// <ul>
     /// <li>
     /// <p><b>Fields</b> The array of field indexes to create.</p></li>
+    /// <li>
+    /// <p><b>FieldsV2</b> The object of field indexes to create along with it's type.</p></li>
     /// </ul>
     /// <p>It must contain at least one field index.</p>
-    /// <p>The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
-    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"RequestId\", \"TransactionId\" \] }"</code></p>
+    /// <p>The following is an example of an index policy document that creates indexes with different types.</p>
+    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"TransactionId\" \], \"FieldsV2\": {\"RequestId\": {\"type\": \"FIELD_INDEX\"}, \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\": \"FACET\"}}}"</code></p>
+    /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The type of policy that you're creating or updating.</p>
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is used.</p>
     pub scope: ::std::option::Option<crate::types::Scope>,
-    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account.</p>
+    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account or a data source name and type combination.</p>
     /// <p>Specifying <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
-    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p>
-    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code>, the supported <code>selectionCriteria</code> filters are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LogGroupNamePrefix</code></p></li>
+    /// <li>
+    /// <p><code>DataSourceName</code> AND <code>DataSourceType</code></p></li>
+    /// </ul>
+    /// <p>When you specify <code>selectionCriteria</code> for a field index policy you can use either <code>LogGroupNamePrefix</code> by itself or <code>DataSourceName</code> and <code>DataSourceType</code> together.</p></li>
+    /// </ul>
     /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     pub selection_criteria: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountPolicyInput {
-    /// <p>A name for the policy. This must be unique within the account.</p>
+    /// <p>A name for the policy. This must be unique within the account and cannot start with <code>aws/</code>.</p>
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
@@ -117,10 +133,13 @@ impl PutAccountPolicyInput {
     /// <ul>
     /// <li>
     /// <p><b>Fields</b> The array of field indexes to create.</p></li>
+    /// <li>
+    /// <p><b>FieldsV2</b> The object of field indexes to create along with it's type.</p></li>
     /// </ul>
     /// <p>It must contain at least one field index.</p>
-    /// <p>The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
-    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"RequestId\", \"TransactionId\" \] }"</code></p>
+    /// <p>The following is an example of an index policy document that creates indexes with different types.</p>
+    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"TransactionId\" \], \"FieldsV2\": {\"RequestId\": {\"type\": \"FIELD_INDEX\"}, \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\": \"FACET\"}}}"</code></p>
+    /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
@@ -132,10 +151,23 @@ impl PutAccountPolicyInput {
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
-    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account.</p>
+    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account or a data source name and type combination.</p>
     /// <p>Specifying <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
-    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p>
-    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code>, the supported <code>selectionCriteria</code> filters are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LogGroupNamePrefix</code></p></li>
+    /// <li>
+    /// <p><code>DataSourceName</code> AND <code>DataSourceType</code></p></li>
+    /// </ul>
+    /// <p>When you specify <code>selectionCriteria</code> for a field index policy you can use either <code>LogGroupNamePrefix</code> by itself or <code>DataSourceName</code> and <code>DataSourceType</code> together.</p></li>
+    /// </ul>
     /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     pub fn selection_criteria(&self) -> ::std::option::Option<&str> {
@@ -160,18 +192,18 @@ pub struct PutAccountPolicyInputBuilder {
     pub(crate) selection_criteria: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountPolicyInputBuilder {
-    /// <p>A name for the policy. This must be unique within the account.</p>
+    /// <p>A name for the policy. This must be unique within the account and cannot start with <code>aws/</code>.</p>
     /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for the policy. This must be unique within the account.</p>
+    /// <p>A name for the policy. This must be unique within the account and cannot start with <code>aws/</code>.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
-    /// <p>A name for the policy. This must be unique within the account.</p>
+    /// <p>A name for the policy. This must be unique within the account and cannot start with <code>aws/</code>.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
@@ -220,10 +252,13 @@ impl PutAccountPolicyInputBuilder {
     /// <ul>
     /// <li>
     /// <p><b>Fields</b> The array of field indexes to create.</p></li>
+    /// <li>
+    /// <p><b>FieldsV2</b> The object of field indexes to create along with it's type.</p></li>
     /// </ul>
     /// <p>It must contain at least one field index.</p>
-    /// <p>The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
-    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"RequestId\", \"TransactionId\" \] }"</code></p>
+    /// <p>The following is an example of an index policy document that creates indexes with different types.</p>
+    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"TransactionId\" \], \"FieldsV2\": {\"RequestId\": {\"type\": \"FIELD_INDEX\"}, \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\": \"FACET\"}}}"</code></p>
+    /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
     /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
@@ -274,10 +309,13 @@ impl PutAccountPolicyInputBuilder {
     /// <ul>
     /// <li>
     /// <p><b>Fields</b> The array of field indexes to create.</p></li>
+    /// <li>
+    /// <p><b>FieldsV2</b> The object of field indexes to create along with it's type.</p></li>
     /// </ul>
     /// <p>It must contain at least one field index.</p>
-    /// <p>The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
-    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"RequestId\", \"TransactionId\" \] }"</code></p>
+    /// <p>The following is an example of an index policy document that creates indexes with different types.</p>
+    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"TransactionId\" \], \"FieldsV2\": {\"RequestId\": {\"type\": \"FIELD_INDEX\"}, \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\": \"FACET\"}}}"</code></p>
+    /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
@@ -327,10 +365,13 @@ impl PutAccountPolicyInputBuilder {
     /// <ul>
     /// <li>
     /// <p><b>Fields</b> The array of field indexes to create.</p></li>
+    /// <li>
+    /// <p><b>FieldsV2</b> The object of field indexes to create along with it's type.</p></li>
     /// </ul>
     /// <p>It must contain at least one field index.</p>
-    /// <p>The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
-    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"RequestId\", \"TransactionId\" \] }"</code></p>
+    /// <p>The following is an example of an index policy document that creates indexes with different types.</p>
+    /// <p><code>"policyDocument": "{ \"Fields\": \[ \"TransactionId\" \], \"FieldsV2\": {\"RequestId\": {\"type\": \"FIELD_INDEX\"}, \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\": \"FACET\"}}}"</code></p>
+    /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_document
     }
@@ -363,30 +404,69 @@ impl PutAccountPolicyInputBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope
     }
-    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account.</p>
+    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account or a data source name and type combination.</p>
     /// <p>Specifying <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
-    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p>
-    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code>, the supported <code>selectionCriteria</code> filters are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LogGroupNamePrefix</code></p></li>
+    /// <li>
+    /// <p><code>DataSourceName</code> AND <code>DataSourceType</code></p></li>
+    /// </ul>
+    /// <p>When you specify <code>selectionCriteria</code> for a field index policy you can use either <code>LogGroupNamePrefix</code> by itself or <code>DataSourceName</code> and <code>DataSourceType</code> together.</p></li>
+    /// </ul>
     /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     pub fn selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_criteria = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account.</p>
+    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account or a data source name and type combination.</p>
     /// <p>Specifying <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
-    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p>
-    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code>, the supported <code>selectionCriteria</code> filters are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LogGroupNamePrefix</code></p></li>
+    /// <li>
+    /// <p><code>DataSourceName</code> AND <code>DataSourceType</code></p></li>
+    /// </ul>
+    /// <p>When you specify <code>selectionCriteria</code> for a field index policy you can use either <code>LogGroupNamePrefix</code> by itself or <code>DataSourceName</code> and <code>DataSourceType</code> together.</p></li>
+    /// </ul>
     /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     pub fn set_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_criteria = input;
         self
     }
-    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account.</p>
+    /// <p>Use this parameter to apply the new policy to a subset of log groups in the account or a data source name and type combination.</p>
     /// <p>Specifying <code>selectionCriteria</code> is valid only when you specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p>
-    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p>
-    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code> or <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN \[\]</code></p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>TRANSFORMER_POLICY</code>, the only supported <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code></p></li>
+    /// <li>
+    /// <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code>, the supported <code>selectionCriteria</code> filters are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>LogGroupNamePrefix</code></p></li>
+    /// <li>
+    /// <p><code>DataSourceName</code> AND <code>DataSourceType</code></p></li>
+    /// </ul>
+    /// <p>When you specify <code>selectionCriteria</code> for a field index policy you can use either <code>LogGroupNamePrefix</code> by itself or <code>DataSourceName</code> and <code>DataSourceType</code> together.</p></li>
+    /// </ul>
     /// <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter with <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     pub fn get_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {

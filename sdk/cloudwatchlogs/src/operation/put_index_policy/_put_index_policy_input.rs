@@ -5,8 +5,9 @@
 pub struct PutIndexPolicyInput {
     /// <p>Specify either the log group name or log group ARN to apply this field index policy to. If you specify an ARN, use the format arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i> Don't include an * at the end.</p>
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The index policy document, in JSON format. The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
-    /// <p><code>"policyDocument": "{ "Fields": \[ "RequestId", "TransactionId" \] }"</code></p>
+    /// <p>The index policy document, in JSON format. The following is an example of an index policy document that creates indexes with different types.</p>
+    /// <p><code>"policyDocument": "{"Fields": \[ "TransactionId" \], "FieldsV2": {"RequestId": {"type": "FIELD_INDEX"}, "APIName": {"type": "FACET"}, "StatusCode": {"type": "FACET"}}}"</code></p>
+    /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
     /// <p>The policy document must include at least one field index. For more information about the fields that can be included and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax.html">Field index syntax and quotas</a>.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
@@ -15,8 +16,9 @@ impl PutIndexPolicyInput {
     pub fn log_group_identifier(&self) -> ::std::option::Option<&str> {
         self.log_group_identifier.as_deref()
     }
-    /// <p>The index policy document, in JSON format. The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
-    /// <p><code>"policyDocument": "{ "Fields": \[ "RequestId", "TransactionId" \] }"</code></p>
+    /// <p>The index policy document, in JSON format. The following is an example of an index policy document that creates indexes with different types.</p>
+    /// <p><code>"policyDocument": "{"Fields": \[ "TransactionId" \], "FieldsV2": {"RequestId": {"type": "FIELD_INDEX"}, "APIName": {"type": "FACET"}, "StatusCode": {"type": "FACET"}}}"</code></p>
+    /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
     /// <p>The policy document must include at least one field index. For more information about the fields that can be included and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax.html">Field index syntax and quotas</a>.</p>
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
@@ -52,23 +54,26 @@ impl PutIndexPolicyInputBuilder {
     pub fn get_log_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_group_identifier
     }
-    /// <p>The index policy document, in JSON format. The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
-    /// <p><code>"policyDocument": "{ "Fields": \[ "RequestId", "TransactionId" \] }"</code></p>
+    /// <p>The index policy document, in JSON format. The following is an example of an index policy document that creates indexes with different types.</p>
+    /// <p><code>"policyDocument": "{"Fields": \[ "TransactionId" \], "FieldsV2": {"RequestId": {"type": "FIELD_INDEX"}, "APIName": {"type": "FACET"}, "StatusCode": {"type": "FACET"}}}"</code></p>
+    /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
     /// <p>The policy document must include at least one field index. For more information about the fields that can be included and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax.html">Field index syntax and quotas</a>.</p>
     /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The index policy document, in JSON format. The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
-    /// <p><code>"policyDocument": "{ "Fields": \[ "RequestId", "TransactionId" \] }"</code></p>
+    /// <p>The index policy document, in JSON format. The following is an example of an index policy document that creates indexes with different types.</p>
+    /// <p><code>"policyDocument": "{"Fields": \[ "TransactionId" \], "FieldsV2": {"RequestId": {"type": "FIELD_INDEX"}, "APIName": {"type": "FACET"}, "StatusCode": {"type": "FACET"}}}"</code></p>
+    /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
     /// <p>The policy document must include at least one field index. For more information about the fields that can be included and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax.html">Field index syntax and quotas</a>.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
-    /// <p>The index policy document, in JSON format. The following is an example of an index policy document that creates two indexes, <code>RequestId</code> and <code>TransactionId</code>.</p>
-    /// <p><code>"policyDocument": "{ "Fields": \[ "RequestId", "TransactionId" \] }"</code></p>
+    /// <p>The index policy document, in JSON format. The following is an example of an index policy document that creates indexes with different types.</p>
+    /// <p><code>"policyDocument": "{"Fields": \[ "TransactionId" \], "FieldsV2": {"RequestId": {"type": "FIELD_INDEX"}, "APIName": {"type": "FACET"}, "StatusCode": {"type": "FACET"}}}"</code></p>
+    /// <p>You can use <code>FieldsV2</code> to specify the type for each field. Supported types are <code>FIELD_INDEX</code> and <code>FACET</code>. Field names within <code>Fields</code> and <code>FieldsV2</code> must be mutually exclusive.</p>
     /// <p>The policy document must include at least one field index. For more information about the fields that can be included and other restrictions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax.html">Field index syntax and quotas</a>.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_document

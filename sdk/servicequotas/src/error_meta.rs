@@ -419,6 +419,43 @@ impl From<crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQ
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError> for Error {
+    fn from(err: crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError) -> Self {
+        match err {
+            crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::NoSuchResourceException(inner) => {
+                Error::NoSuchResourceException(inner)
+            }
+            crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -910,6 +947,52 @@ impl From<crate::operation::start_auto_management::StartAutoManagementError> for
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::start_auto_management::StartAutoManagementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_quota_utilization_report::StartQuotaUtilizationReportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_quota_utilization_report::StartQuotaUtilizationReportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_quota_utilization_report::StartQuotaUtilizationReportError> for Error {
+    fn from(err: crate::operation::start_quota_utilization_report::StartQuotaUtilizationReportError) -> Self {
+        match err {
+            crate::operation::start_quota_utilization_report::StartQuotaUtilizationReportError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_quota_utilization_report::StartQuotaUtilizationReportError::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::operation::start_quota_utilization_report::StartQuotaUtilizationReportError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::start_quota_utilization_report::StartQuotaUtilizationReportError::NoSuchResourceException(inner) => {
+                Error::NoSuchResourceException(inner)
+            }
+            crate::operation::start_quota_utilization_report::StartQuotaUtilizationReportError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::start_quota_utilization_report::StartQuotaUtilizationReportError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_quota_utilization_report::StartQuotaUtilizationReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

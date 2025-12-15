@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPolicyGenerationInput {
-    /// <p>The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_StartPolicyGeneration.html">StartPolicyGeneration</a> call.</p>
+    /// <p>The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html">StartPolicyGeneration</a> call.</p>
     pub policy_generation_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the policy engine associated with the policy generation request. This provides the context for the generation operation and schema validation.</p>
     pub policy_engine_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPolicyGenerationInput {
-    /// <p>The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_StartPolicyGeneration.html">StartPolicyGeneration</a> call.</p>
+    /// <p>The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html">StartPolicyGeneration</a> call.</p>
     pub fn policy_generation_id(&self) -> ::std::option::Option<&str> {
         self.policy_generation_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct GetPolicyGenerationInputBuilder {
     pub(crate) policy_engine_id: ::std::option::Option<::std::string::String>,
 }
 impl GetPolicyGenerationInputBuilder {
-    /// <p>The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_StartPolicyGeneration.html">StartPolicyGeneration</a> call.</p>
+    /// <p>The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html">StartPolicyGeneration</a> call.</p>
     /// This field is required.
     pub fn policy_generation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_generation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_StartPolicyGeneration.html">StartPolicyGeneration</a> call.</p>
+    /// <p>The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html">StartPolicyGeneration</a> call.</p>
     pub fn set_policy_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_generation_id = input;
         self
     }
-    /// <p>The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_StartPolicyGeneration.html">StartPolicyGeneration</a> call.</p>
+    /// <p>The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html">StartPolicyGeneration</a> call.</p>
     pub fn get_policy_generation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_generation_id
     }

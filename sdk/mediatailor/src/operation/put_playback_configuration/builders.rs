@@ -355,4 +355,18 @@ impl PutPlaybackConfigurationFluentBuilder {
     pub fn get_ad_conditioning_configuration(&self) -> &::std::option::Option<crate::types::AdConditioningConfiguration> {
         self.inner.get_ad_conditioning_configuration()
     }
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub fn ad_decision_server_configuration(mut self, input: crate::types::AdDecisionServerConfiguration) -> Self {
+        self.inner = self.inner.ad_decision_server_configuration(input);
+        self
+    }
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub fn set_ad_decision_server_configuration(mut self, input: ::std::option::Option<crate::types::AdDecisionServerConfiguration>) -> Self {
+        self.inner = self.inner.set_ad_decision_server_configuration(input);
+        self
+    }
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub fn get_ad_decision_server_configuration(&self) -> &::std::option::Option<crate::types::AdDecisionServerConfiguration> {
+        self.inner.get_ad_decision_server_configuration()
+    }
 }

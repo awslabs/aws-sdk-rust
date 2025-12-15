@@ -19,7 +19,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! Amazon S3 Glacier (Glacier) is a storage solution for "cold data."
+//! Amazon Glacier (Glacier) is a storage solution for "cold data."
 //!
 //! Glacier is an extremely low-cost storage service that provides secure, durable, and easy-to-use storage for data backup and archival. With Glacier, customers can store their data cost effectively for months, years, or decades. Glacier also enables customers to offload the administrative burdens of operating and scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data replication, hardware failure and recovery, or time-consuming hardware migrations.
 //!
@@ -27,9 +27,9 @@
 //!
 //! You can store any kind of data in any format. There is no maximum limit on the total amount of data you can store in Glacier.
 //!
-//! If you are a first-time user of Glacier, we recommend that you begin by reading the following sections in the _Amazon S3 Glacier Developer Guide_:
-//!   - [What is Amazon S3 Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html) - This section of the Developer Guide describes the underlying data model, the operations it supports, and the AWS SDKs that you can use to interact with the service.
-//!   - [Getting Started with Amazon S3 Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html) - The Getting Started section walks you through the process of creating a vault, uploading archives, creating jobs to download archives, retrieving the job output, and deleting archives.
+//! If you are a first-time user of Glacier, we recommend that you begin by reading the following sections in the _Amazon Glacier Developer Guide_:
+//!   - [What is Amazon Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html) - This section of the Developer Guide describes the underlying data model, the operations it supports, and the AWS SDKs that you can use to interact with the service.
+//!   - [Getting Started with Amazon Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html) - The Getting Started section walks you through the process of creating a vault, uploading archives, creating jobs to download archives, retrieving the job output, and deleting archives.
 //!
 //! ## Getting Started
 //!
@@ -43,7 +43,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-glacier = "1.91.0"
+//! aws-sdk-glacier = "1.92.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

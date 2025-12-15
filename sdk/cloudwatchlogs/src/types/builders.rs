@@ -193,6 +193,14 @@ pub use crate::types::_log_stream::LogStreamBuilder;
 
 pub use crate::types::_log_group::LogGroupBuilder;
 
+pub use crate::types::_import::ImportBuilder;
+
+pub use crate::types::_import_filter::ImportFilterBuilder;
+
+pub use crate::types::_import_statistics::ImportStatisticsBuilder;
+
+pub use crate::types::_import_batch::ImportBatchBuilder;
+
 pub use crate::types::_field_index::FieldIndexBuilder;
 
 pub use crate::types::_export_task::ExportTaskBuilder;

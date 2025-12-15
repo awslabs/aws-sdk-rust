@@ -31,6 +31,8 @@ pub struct StartOutboundChatContactInput {
     pub participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
     /// <p>A chat message.</p>
     pub initial_system_message: ::std::option::Option<crate::types::ChatMessage>,
+    /// <p>Information about template message configuration.</p>
+    pub initial_templated_system_message: ::std::option::Option<crate::types::TemplatedMessageConfig>,
     /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The supported chat message content types. Supported types are:</p>
@@ -106,6 +108,10 @@ impl StartOutboundChatContactInput {
     pub fn initial_system_message(&self) -> ::std::option::Option<&crate::types::ChatMessage> {
         self.initial_system_message.as_ref()
     }
+    /// <p>Information about template message configuration.</p>
+    pub fn initial_templated_system_message(&self) -> ::std::option::Option<&crate::types::TemplatedMessageConfig> {
+        self.initial_templated_system_message.as_ref()
+    }
     /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
         self.related_contact_id.as_deref()
@@ -160,6 +166,7 @@ pub struct StartOutboundChatContactInputBuilder {
     pub(crate) chat_duration_in_minutes: ::std::option::Option<i32>,
     pub(crate) participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
     pub(crate) initial_system_message: ::std::option::Option<crate::types::ChatMessage>,
+    pub(crate) initial_templated_system_message: ::std::option::Option<crate::types::TemplatedMessageConfig>,
     pub(crate) related_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) supported_messaging_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -342,6 +349,20 @@ impl StartOutboundChatContactInputBuilder {
     pub fn get_initial_system_message(&self) -> &::std::option::Option<crate::types::ChatMessage> {
         &self.initial_system_message
     }
+    /// <p>Information about template message configuration.</p>
+    pub fn initial_templated_system_message(mut self, input: crate::types::TemplatedMessageConfig) -> Self {
+        self.initial_templated_system_message = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about template message configuration.</p>
+    pub fn set_initial_templated_system_message(mut self, input: ::std::option::Option<crate::types::TemplatedMessageConfig>) -> Self {
+        self.initial_templated_system_message = input;
+        self
+    }
+    /// <p>Information about template message configuration.</p>
+    pub fn get_initial_templated_system_message(&self) -> &::std::option::Option<crate::types::TemplatedMessageConfig> {
+        &self.initial_templated_system_message
+    }
     /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_contact_id = ::std::option::Option::Some(input.into());
@@ -464,6 +485,7 @@ impl StartOutboundChatContactInputBuilder {
             chat_duration_in_minutes: self.chat_duration_in_minutes,
             participant_details: self.participant_details,
             initial_system_message: self.initial_system_message,
+            initial_templated_system_message: self.initial_templated_system_message,
             related_contact_id: self.related_contact_id,
             supported_messaging_content_types: self.supported_messaging_content_types,
             client_token: self.client_token,

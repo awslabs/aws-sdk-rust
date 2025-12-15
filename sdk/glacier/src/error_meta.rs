@@ -11,9 +11,11 @@ pub enum Error {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::types::error::MissingParameterValueException),
+    #[allow(missing_docs)] // documentation missing in model
+    NoLongerSupportedException(crate::types::error::NoLongerSupportedException),
     /// <p>Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about data retrieval policies,</p>
     PolicyEnforcedException(crate::types::error::PolicyEnforcedException),
-    /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
+    /// <p>Returned if, when uploading an archive, Amazon Glacier times out while receiving the upload.</p>
     RequestTimeoutException(crate::types::error::RequestTimeoutException),
     /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
@@ -35,6 +37,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::MissingParameterValueException(inner) => inner.fmt(f),
+            Error::NoLongerSupportedException(inner) => inner.fmt(f),
             Error::PolicyEnforcedException(inner) => inner.fmt(f),
             Error::RequestTimeoutException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -64,6 +67,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidParameterValueException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
             Self::MissingParameterValueException(inner) => inner.meta(),
+            Self::NoLongerSupportedException(inner) => inner.meta(),
             Self::PolicyEnforcedException(inner) => inner.meta(),
             Self::RequestTimeoutException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -94,6 +98,9 @@ impl From<crate::operation::abort_multipart_upload::AbortMultipartUploadError> f
             }
             crate::operation::abort_multipart_upload::AbortMultipartUploadError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
+            }
+            crate::operation::abort_multipart_upload::AbortMultipartUploadError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
             }
             crate::operation::abort_multipart_upload::AbortMultipartUploadError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -128,6 +135,7 @@ impl From<crate::operation::abort_vault_lock::AbortVaultLockError> for Error {
             crate::operation::abort_vault_lock::AbortVaultLockError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::abort_vault_lock::AbortVaultLockError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::abort_vault_lock::AbortVaultLockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::abort_vault_lock::AbortVaultLockError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::abort_vault_lock::AbortVaultLockError::Unhandled(inner) => Error::Unhandled(inner),
@@ -158,6 +166,7 @@ impl From<crate::operation::add_tags_to_vault::AddTagsToVaultError> for Error {
             crate::operation::add_tags_to_vault::AddTagsToVaultError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::add_tags_to_vault::AddTagsToVaultError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::add_tags_to_vault::AddTagsToVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::add_tags_to_vault::AddTagsToVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::add_tags_to_vault::AddTagsToVaultError::Unhandled(inner) => Error::Unhandled(inner),
@@ -189,6 +198,9 @@ impl From<crate::operation::complete_multipart_upload::CompleteMultipartUploadEr
             }
             crate::operation::complete_multipart_upload::CompleteMultipartUploadError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
+            }
+            crate::operation::complete_multipart_upload::CompleteMultipartUploadError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
             }
             crate::operation::complete_multipart_upload::CompleteMultipartUploadError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -223,6 +235,9 @@ impl From<crate::operation::complete_vault_lock::CompleteVaultLockError> for Err
             crate::operation::complete_vault_lock::CompleteVaultLockError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::complete_vault_lock::CompleteVaultLockError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
+            }
             crate::operation::complete_vault_lock::CompleteVaultLockError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -253,6 +268,7 @@ impl From<crate::operation::create_vault::CreateVaultError> for Error {
             crate::operation::create_vault::CreateVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::create_vault::CreateVaultError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_vault::CreateVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::create_vault::CreateVaultError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::create_vault::CreateVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::create_vault::CreateVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -281,6 +297,7 @@ impl From<crate::operation::delete_archive::DeleteArchiveError> for Error {
             crate::operation::delete_archive::DeleteArchiveError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::delete_archive::DeleteArchiveError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::delete_archive::DeleteArchiveError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_archive::DeleteArchiveError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_archive::DeleteArchiveError::Unhandled(inner) => Error::Unhandled(inner),
@@ -306,6 +323,7 @@ impl From<crate::operation::delete_vault::DeleteVaultError> for Error {
         match err {
             crate::operation::delete_vault::DeleteVaultError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::delete_vault::DeleteVaultError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::delete_vault::DeleteVaultError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::delete_vault::DeleteVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_vault::DeleteVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_vault::DeleteVaultError::Unhandled(inner) => Error::Unhandled(inner),
@@ -337,6 +355,9 @@ impl From<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyE
             }
             crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
+            }
+            crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
             }
             crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -374,6 +395,9 @@ impl From<crate::operation::delete_vault_notifications::DeleteVaultNotifications
             crate::operation::delete_vault_notifications::DeleteVaultNotificationsError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::delete_vault_notifications::DeleteVaultNotificationsError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
+            }
             crate::operation::delete_vault_notifications::DeleteVaultNotificationsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -403,6 +427,7 @@ impl From<crate::operation::describe_job::DescribeJobError> for Error {
         match err {
             crate::operation::describe_job::DescribeJobError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::describe_job::DescribeJobError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::describe_job::DescribeJobError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::describe_job::DescribeJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_job::DescribeJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::describe_job::DescribeJobError::Unhandled(inner) => Error::Unhandled(inner),
@@ -432,6 +457,7 @@ impl From<crate::operation::describe_vault::DescribeVaultError> for Error {
             crate::operation::describe_vault::DescribeVaultError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::describe_vault::DescribeVaultError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::describe_vault::DescribeVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_vault::DescribeVaultError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::describe_vault::DescribeVaultError::Unhandled(inner) => Error::Unhandled(inner),
@@ -464,6 +490,9 @@ impl From<crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyErr
             crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
+            }
             crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
@@ -494,6 +523,7 @@ impl From<crate::operation::get_job_output::GetJobOutputError> for Error {
             crate::operation::get_job_output::GetJobOutputError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::get_job_output::GetJobOutputError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::get_job_output::GetJobOutputError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_job_output::GetJobOutputError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_job_output::GetJobOutputError::Unhandled(inner) => Error::Unhandled(inner),
@@ -524,6 +554,9 @@ impl From<crate::operation::get_vault_access_policy::GetVaultAccessPolicyError> 
             }
             crate::operation::get_vault_access_policy::GetVaultAccessPolicyError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
+            }
+            crate::operation::get_vault_access_policy::GetVaultAccessPolicyError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
             }
             crate::operation::get_vault_access_policy::GetVaultAccessPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -558,6 +591,7 @@ impl From<crate::operation::get_vault_lock::GetVaultLockError> for Error {
             crate::operation::get_vault_lock::GetVaultLockError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::get_vault_lock::GetVaultLockError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::get_vault_lock::GetVaultLockError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_vault_lock::GetVaultLockError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_vault_lock::GetVaultLockError::Unhandled(inner) => Error::Unhandled(inner),
@@ -589,6 +623,9 @@ impl From<crate::operation::get_vault_notifications::GetVaultNotificationsError>
             crate::operation::get_vault_notifications::GetVaultNotificationsError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::get_vault_notifications::GetVaultNotificationsError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
+            }
             crate::operation::get_vault_notifications::GetVaultNotificationsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -619,6 +656,7 @@ impl From<crate::operation::initiate_job::InitiateJobError> for Error {
             crate::operation::initiate_job::InitiateJobError::InsufficientCapacityException(inner) => Error::InsufficientCapacityException(inner),
             crate::operation::initiate_job::InitiateJobError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::initiate_job::InitiateJobError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::initiate_job::InitiateJobError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::initiate_job::InitiateJobError::PolicyEnforcedException(inner) => Error::PolicyEnforcedException(inner),
             crate::operation::initiate_job::InitiateJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::initiate_job::InitiateJobError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
@@ -651,6 +689,9 @@ impl From<crate::operation::initiate_multipart_upload::InitiateMultipartUploadEr
             }
             crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
+            }
+            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
             }
             crate::operation::initiate_multipart_upload::InitiateMultipartUploadError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -685,6 +726,9 @@ impl From<crate::operation::initiate_vault_lock::InitiateVaultLockError> for Err
             crate::operation::initiate_vault_lock::InitiateVaultLockError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::initiate_vault_lock::InitiateVaultLockError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
+            }
             crate::operation::initiate_vault_lock::InitiateVaultLockError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -714,6 +758,7 @@ impl From<crate::operation::list_jobs::ListJobsError> for Error {
         match err {
             crate::operation::list_jobs::ListJobsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::list_jobs::ListJobsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::list_jobs::ListJobsError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::list_jobs::ListJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_jobs::ListJobsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_jobs::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -742,6 +787,9 @@ impl From<crate::operation::list_multipart_uploads::ListMultipartUploadsError> f
             }
             crate::operation::list_multipart_uploads::ListMultipartUploadsError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
+            }
+            crate::operation::list_multipart_uploads::ListMultipartUploadsError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
             }
             crate::operation::list_multipart_uploads::ListMultipartUploadsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -772,6 +820,7 @@ impl From<crate::operation::list_parts::ListPartsError> for Error {
         match err {
             crate::operation::list_parts::ListPartsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::list_parts::ListPartsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::list_parts::ListPartsError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::list_parts::ListPartsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_parts::ListPartsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_parts::ListPartsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -804,6 +853,9 @@ impl From<crate::operation::list_provisioned_capacity::ListProvisionedCapacityEr
             crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
+            }
             crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
@@ -834,6 +886,9 @@ impl From<crate::operation::list_tags_for_vault::ListTagsForVaultError> for Erro
             crate::operation::list_tags_for_vault::ListTagsForVaultError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::list_tags_for_vault::ListTagsForVaultError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
+            }
             crate::operation::list_tags_for_vault::ListTagsForVaultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_tags_for_vault::ListTagsForVaultError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -861,6 +916,7 @@ impl From<crate::operation::list_vaults::ListVaultsError> for Error {
         match err {
             crate::operation::list_vaults::ListVaultsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::list_vaults::ListVaultsError::MissingParameterValueException(inner) => Error::MissingParameterValueException(inner),
+            crate::operation::list_vaults::ListVaultsError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::list_vaults::ListVaultsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_vaults::ListVaultsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_vaults::ListVaultsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -896,6 +952,9 @@ impl From<crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCa
             crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
+            }
             crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
@@ -925,6 +984,9 @@ impl From<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError> fo
             }
             crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
+            }
+            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
             }
             crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -962,6 +1024,9 @@ impl From<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyErr
             crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
+            }
             crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
@@ -993,6 +1058,9 @@ impl From<crate::operation::set_vault_access_policy::SetVaultAccessPolicyError> 
             }
             crate::operation::set_vault_access_policy::SetVaultAccessPolicyError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
+            }
+            crate::operation::set_vault_access_policy::SetVaultAccessPolicyError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
             }
             crate::operation::set_vault_access_policy::SetVaultAccessPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1029,6 +1097,9 @@ impl From<crate::operation::set_vault_notifications::SetVaultNotificationsError>
             crate::operation::set_vault_notifications::SetVaultNotificationsError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::set_vault_notifications::SetVaultNotificationsError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
+            }
             crate::operation::set_vault_notifications::SetVaultNotificationsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -1062,6 +1133,7 @@ impl From<crate::operation::upload_archive::UploadArchiveError> for Error {
             crate::operation::upload_archive::UploadArchiveError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
             }
+            crate::operation::upload_archive::UploadArchiveError::NoLongerSupportedException(inner) => Error::NoLongerSupportedException(inner),
             crate::operation::upload_archive::UploadArchiveError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
             crate::operation::upload_archive::UploadArchiveError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::upload_archive::UploadArchiveError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
@@ -1091,6 +1163,9 @@ impl From<crate::operation::upload_multipart_part::UploadMultipartPartError> for
             }
             crate::operation::upload_multipart_part::UploadMultipartPartError::MissingParameterValueException(inner) => {
                 Error::MissingParameterValueException(inner)
+            }
+            crate::operation::upload_multipart_part::UploadMultipartPartError::NoLongerSupportedException(inner) => {
+                Error::NoLongerSupportedException(inner)
             }
             crate::operation::upload_multipart_part::UploadMultipartPartError::RequestTimeoutException(inner) => {
                 Error::RequestTimeoutException(inner)
@@ -1124,6 +1199,7 @@ impl ::std::error::Error for Error {
             Error::InvalidParameterValueException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
             Error::MissingParameterValueException(inner) => inner.source(),
+            Error::NoLongerSupportedException(inner) => inner.source(),
             Error::PolicyEnforcedException(inner) => inner.source(),
             Error::RequestTimeoutException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -1139,6 +1215,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidParameterValueException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
             Self::MissingParameterValueException(e) => e.request_id(),
+            Self::NoLongerSupportedException(e) => e.request_id(),
             Self::PolicyEnforcedException(e) => e.request_id(),
             Self::RequestTimeoutException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

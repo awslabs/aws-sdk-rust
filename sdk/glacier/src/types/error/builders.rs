@@ -5,6 +5,8 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_request_timeout_exception::RequestTimeoutExceptionBuilder;
 
+pub use crate::types::error::_no_longer_supported_exception::NoLongerSupportedExceptionBuilder;
+
 pub use crate::types::error::_missing_parameter_value_exception::MissingParameterValueExceptionBuilder;
 
 pub use crate::types::error::_invalid_parameter_value_exception::InvalidParameterValueExceptionBuilder;

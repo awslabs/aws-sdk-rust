@@ -119,6 +119,16 @@ pub(crate) fn reflens_get_scheduled_query_history_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_aggregate_log_group_summaries_output_output_next_token(
+    input: &crate::operation::list_aggregate_log_group_summaries::ListAggregateLogGroupSummariesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_anomalies_output_output_next_token(
     input: &crate::operation::list_anomalies::ListAnomaliesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -243,6 +253,13 @@ pub(crate) fn lens_get_scheduled_query_history_output_output_trigger_history(
     input: crate::operation::get_scheduled_query_history::GetScheduledQueryHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TriggerHistoryRecord>> {
     let input = input.trigger_history?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_aggregate_log_group_summaries_output_output_aggregate_log_group_summaries(
+    input: crate::operation::list_aggregate_log_group_summaries::ListAggregateLogGroupSummariesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AggregateLogGroupSummary>> {
+    let input = input.aggregate_log_group_summaries?;
     ::std::option::Option::Some(input)
 }
 

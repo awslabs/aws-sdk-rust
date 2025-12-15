@@ -9,6 +9,7 @@ pub struct ResolverRuleAssociation {
     /// <p>The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.</p>
     pub resolver_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of an association between a Resolver rule and a VPC.</p>
+    /// <p>The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC that you associated the Resolver rule with.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -27,6 +28,7 @@ impl ResolverRuleAssociation {
         self.resolver_rule_id.as_deref()
     }
     /// <p>The name of an association between a Resolver rule and a VPC.</p>
+    /// <p>The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -91,16 +93,19 @@ impl ResolverRuleAssociationBuilder {
         &self.resolver_rule_id
     }
     /// <p>The name of an association between a Resolver rule and a VPC.</p>
+    /// <p>The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an association between a Resolver rule and a VPC.</p>
+    /// <p>The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of an association between a Resolver rule and a VPC.</p>
+    /// <p>The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

@@ -6,7 +6,7 @@
 pub struct VaultNotificationConfig {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</p>
     pub sns_topic: ::std::option::Option<::std::string::String>,
-    /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
+    /// <p>A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.</p>
     pub events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VaultNotificationConfig {
@@ -14,7 +14,7 @@ impl VaultNotificationConfig {
     pub fn sns_topic(&self) -> ::std::option::Option<&str> {
         self.sns_topic.as_deref()
     }
-    /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
+    /// <p>A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
     pub fn events(&self) -> &[::std::string::String] {
@@ -54,19 +54,19 @@ impl VaultNotificationConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
     ///
-    /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
+    /// <p>A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.</p>
     pub fn events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input.into());
         self.events = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
+    /// <p>A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.</p>
     pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.events = input;
         self
     }
-    /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
+    /// <p>A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.</p>
     pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.events
     }

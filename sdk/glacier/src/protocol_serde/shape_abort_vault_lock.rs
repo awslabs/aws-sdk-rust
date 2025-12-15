@@ -53,6 +53,22 @@ pub fn de_abort_vault_lock_http_error(
             }
             tmp
         }),
+        "NoLongerSupportedException" => crate::operation::abort_vault_lock::AbortVaultLockError::NoLongerSupportedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoLongerSupportedExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_no_longer_supported_exception::de_no_longer_supported_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::abort_vault_lock::AbortVaultLockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::abort_vault_lock::AbortVaultLockError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -19,6 +19,7 @@
 ///     InventoryOptionalField::IntelligentTieringAccessTier => { /* ... */ },
 ///     InventoryOptionalField::IsMultipartUploaded => { /* ... */ },
 ///     InventoryOptionalField::LastModifiedDate => { /* ... */ },
+///     InventoryOptionalField::LifecycleExpirationDate => { /* ... */ },
 ///     InventoryOptionalField::ObjectAccessControlList => { /* ... */ },
 ///     InventoryOptionalField::ObjectLockLegalHoldStatus => { /* ... */ },
 ///     InventoryOptionalField::ObjectLockMode => { /* ... */ },
@@ -70,6 +71,8 @@ pub enum InventoryOptionalField {
     #[allow(missing_docs)] // documentation missing in model
     LastModifiedDate,
     #[allow(missing_docs)] // documentation missing in model
+    LifecycleExpirationDate,
+    #[allow(missing_docs)] // documentation missing in model
     ObjectAccessControlList,
     #[allow(missing_docs)] // documentation missing in model
     ObjectLockLegalHoldStatus,
@@ -99,6 +102,7 @@ impl ::std::convert::From<&str> for InventoryOptionalField {
             "IntelligentTieringAccessTier" => InventoryOptionalField::IntelligentTieringAccessTier,
             "IsMultipartUploaded" => InventoryOptionalField::IsMultipartUploaded,
             "LastModifiedDate" => InventoryOptionalField::LastModifiedDate,
+            "LifecycleExpirationDate" => InventoryOptionalField::LifecycleExpirationDate,
             "ObjectAccessControlList" => InventoryOptionalField::ObjectAccessControlList,
             "ObjectLockLegalHoldStatus" => InventoryOptionalField::ObjectLockLegalHoldStatus,
             "ObjectLockMode" => InventoryOptionalField::ObjectLockMode,
@@ -129,6 +133,7 @@ impl InventoryOptionalField {
             InventoryOptionalField::IntelligentTieringAccessTier => "IntelligentTieringAccessTier",
             InventoryOptionalField::IsMultipartUploaded => "IsMultipartUploaded",
             InventoryOptionalField::LastModifiedDate => "LastModifiedDate",
+            InventoryOptionalField::LifecycleExpirationDate => "LifecycleExpirationDate",
             InventoryOptionalField::ObjectAccessControlList => "ObjectAccessControlList",
             InventoryOptionalField::ObjectLockLegalHoldStatus => "ObjectLockLegalHoldStatus",
             InventoryOptionalField::ObjectLockMode => "ObjectLockMode",
@@ -150,6 +155,7 @@ impl InventoryOptionalField {
             "IntelligentTieringAccessTier",
             "IsMultipartUploaded",
             "LastModifiedDate",
+            "LifecycleExpirationDate",
             "ObjectAccessControlList",
             "ObjectLockLegalHoldStatus",
             "ObjectLockMode",
@@ -188,6 +194,7 @@ impl ::std::fmt::Display for InventoryOptionalField {
             InventoryOptionalField::IntelligentTieringAccessTier => write!(f, "IntelligentTieringAccessTier"),
             InventoryOptionalField::IsMultipartUploaded => write!(f, "IsMultipartUploaded"),
             InventoryOptionalField::LastModifiedDate => write!(f, "LastModifiedDate"),
+            InventoryOptionalField::LifecycleExpirationDate => write!(f, "LifecycleExpirationDate"),
             InventoryOptionalField::ObjectAccessControlList => write!(f, "ObjectAccessControlList"),
             InventoryOptionalField::ObjectLockLegalHoldStatus => write!(f, "ObjectLockLegalHoldStatus"),
             InventoryOptionalField::ObjectLockMode => write!(f, "ObjectLockMode"),

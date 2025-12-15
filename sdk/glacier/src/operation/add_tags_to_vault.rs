@@ -298,6 +298,8 @@ pub enum AddTagsToVaultError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::types::error::MissingParameterValueException),
+    #[allow(missing_docs)] // documentation missing in model
+    NoLongerSupportedException(crate::types::error::NoLongerSupportedException),
     /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Returned if the service cannot complete the request.</p>
@@ -338,6 +340,7 @@ impl AddTagsToVaultError {
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MissingParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoLongerSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -355,6 +358,10 @@ impl AddTagsToVaultError {
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(self, Self::MissingParameterValueException(_))
     }
+    /// Returns `true` if the error kind is `AddTagsToVaultError::NoLongerSupportedException`.
+    pub fn is_no_longer_supported_exception(&self) -> bool {
+        matches!(self, Self::NoLongerSupportedException(_))
+    }
     /// Returns `true` if the error kind is `AddTagsToVaultError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -370,6 +377,7 @@ impl ::std::error::Error for AddTagsToVaultError {
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::MissingParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NoLongerSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -382,6 +390,7 @@ impl ::std::fmt::Display for AddTagsToVaultError {
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::MissingParameterValueException(_inner) => _inner.fmt(f),
+            Self::NoLongerSupportedException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -408,6 +417,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AddTagsToVaul
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MissingParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoLongerSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

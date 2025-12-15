@@ -4,24 +4,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputSource {
-    /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    pub output_s3_path: ::std::string::String,
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
     pub kms_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The S3 path to which Entity Resolution will write the output table.</p>
+    pub output_s3_path: ::std::string::String,
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
     pub output: ::std::vec::Vec<crate::types::OutputAttribute>,
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
     pub apply_normalization: ::std::option::Option<bool>,
+    /// <p>Specifies the Customer Profiles integration configuration for sending matched output directly to Customer Profiles. When configured, Entity Resolution automatically creates and updates customer profiles based on match clusters, eliminating the need for manual Amazon S3 integration setup.</p>
+    pub customer_profiles_integration_config: ::std::option::Option<crate::types::CustomerProfilesIntegrationConfig>,
 }
 impl OutputSource {
+    /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
+    pub fn kms_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_arn.as_deref()
+    }
     /// <p>The S3 path to which Entity Resolution will write the output table.</p>
     pub fn output_s3_path(&self) -> &str {
         use std::ops::Deref;
         self.output_s3_path.deref()
-    }
-    /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
-    pub fn kms_arn(&self) -> ::std::option::Option<&str> {
-        self.kms_arn.as_deref()
     }
     /// <p>A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code> and <code>Hashed</code>. Each of these objects selects a column to be included in the output table, and whether the values of the column should be hashed.</p>
     pub fn output(&self) -> &[crate::types::OutputAttribute] {
@@ -31,6 +33,10 @@ impl OutputSource {
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
     pub fn apply_normalization(&self) -> ::std::option::Option<bool> {
         self.apply_normalization
+    }
+    /// <p>Specifies the Customer Profiles integration configuration for sending matched output directly to Customer Profiles. When configured, Entity Resolution automatically creates and updates customer profiles based on match clusters, eliminating the need for manual Amazon S3 integration setup.</p>
+    pub fn customer_profiles_integration_config(&self) -> ::std::option::Option<&crate::types::CustomerProfilesIntegrationConfig> {
+        self.customer_profiles_integration_config.as_ref()
     }
 }
 impl OutputSource {
@@ -44,27 +50,13 @@ impl OutputSource {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct OutputSourceBuilder {
-    pub(crate) output_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) kms_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) output_s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<::std::vec::Vec<crate::types::OutputAttribute>>,
     pub(crate) apply_normalization: ::std::option::Option<bool>,
+    pub(crate) customer_profiles_integration_config: ::std::option::Option<crate::types::CustomerProfilesIntegrationConfig>,
 }
 impl OutputSourceBuilder {
-    /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    /// This field is required.
-    pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.output_s3_path = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    pub fn set_output_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_path = input;
-        self
-    }
-    /// <p>The S3 path to which Entity Resolution will write the output table.</p>
-    pub fn get_output_s3_path(&self) -> &::std::option::Option<::std::string::String> {
-        &self.output_s3_path
-    }
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
     pub fn kms_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_arn = ::std::option::Option::Some(input.into());
@@ -78,6 +70,20 @@ impl OutputSourceBuilder {
     /// <p>Customer KMS ARN for encryption at rest. If not provided, system will use an Entity Resolution managed KMS key.</p>
     pub fn get_kms_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_arn
+    }
+    /// <p>The S3 path to which Entity Resolution will write the output table.</p>
+    pub fn output_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output_s3_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The S3 path to which Entity Resolution will write the output table.</p>
+    pub fn set_output_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.output_s3_path = input;
+        self
+    }
+    /// <p>The S3 path to which Entity Resolution will write the output table.</p>
+    pub fn get_output_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_path
     }
     /// Appends an item to `output`.
     ///
@@ -113,19 +119,27 @@ impl OutputSourceBuilder {
     pub fn get_apply_normalization(&self) -> &::std::option::Option<bool> {
         &self.apply_normalization
     }
+    /// <p>Specifies the Customer Profiles integration configuration for sending matched output directly to Customer Profiles. When configured, Entity Resolution automatically creates and updates customer profiles based on match clusters, eliminating the need for manual Amazon S3 integration setup.</p>
+    pub fn customer_profiles_integration_config(mut self, input: crate::types::CustomerProfilesIntegrationConfig) -> Self {
+        self.customer_profiles_integration_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the Customer Profiles integration configuration for sending matched output directly to Customer Profiles. When configured, Entity Resolution automatically creates and updates customer profiles based on match clusters, eliminating the need for manual Amazon S3 integration setup.</p>
+    pub fn set_customer_profiles_integration_config(mut self, input: ::std::option::Option<crate::types::CustomerProfilesIntegrationConfig>) -> Self {
+        self.customer_profiles_integration_config = input;
+        self
+    }
+    /// <p>Specifies the Customer Profiles integration configuration for sending matched output directly to Customer Profiles. When configured, Entity Resolution automatically creates and updates customer profiles based on match clusters, eliminating the need for manual Amazon S3 integration setup.</p>
+    pub fn get_customer_profiles_integration_config(&self) -> &::std::option::Option<crate::types::CustomerProfilesIntegrationConfig> {
+        &self.customer_profiles_integration_config
+    }
     /// Consumes the builder and constructs a [`OutputSource`](crate::types::OutputSource).
     /// This method will fail if any of the following fields are not set:
-    /// - [`output_s3_path`](crate::types::builders::OutputSourceBuilder::output_s3_path)
     /// - [`output`](crate::types::builders::OutputSourceBuilder::output)
     pub fn build(self) -> ::std::result::Result<crate::types::OutputSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OutputSource {
-            output_s3_path: self.output_s3_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "output_s3_path",
-                    "output_s3_path was not specified but it is required when building OutputSource",
-                )
-            })?,
             kms_arn: self.kms_arn,
+            output_s3_path: self.output_s3_path.unwrap_or_default(),
             output: self.output.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output",
@@ -133,6 +147,7 @@ impl OutputSourceBuilder {
                 )
             })?,
             apply_normalization: self.apply_normalization,
+            customer_profiles_integration_config: self.customer_profiles_integration_config,
         })
     }
 }

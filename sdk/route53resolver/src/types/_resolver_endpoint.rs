@@ -91,6 +91,10 @@ pub struct ResolverEndpoint {
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    /// <p>Indicates whether RNI enhanced metrics are enabled for the Resolver endpoint. When enabled, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When disabled, these metrics are not published.</p>
+    pub rni_enhanced_metrics_enabled: ::std::option::Option<bool>,
+    /// <p>Indicates whether target name server metrics are enabled for the outbound Resolver endpoint. When enabled, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When disabled, these metrics are not published. This feature is not supported for inbound Resolver endpoint.</p>
+    pub target_name_server_metrics_enabled: ::std::option::Option<bool>,
 }
 impl ResolverEndpoint {
     /// <p>The ID of the Resolver endpoint.</p>
@@ -216,6 +220,14 @@ impl ResolverEndpoint {
     pub fn protocols(&self) -> &[crate::types::Protocol] {
         self.protocols.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether RNI enhanced metrics are enabled for the Resolver endpoint. When enabled, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When disabled, these metrics are not published.</p>
+    pub fn rni_enhanced_metrics_enabled(&self) -> ::std::option::Option<bool> {
+        self.rni_enhanced_metrics_enabled
+    }
+    /// <p>Indicates whether target name server metrics are enabled for the outbound Resolver endpoint. When enabled, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When disabled, these metrics are not published. This feature is not supported for inbound Resolver endpoint.</p>
+    pub fn target_name_server_metrics_enabled(&self) -> ::std::option::Option<bool> {
+        self.target_name_server_metrics_enabled
+    }
 }
 impl ResolverEndpoint {
     /// Creates a new builder-style object to manufacture [`ResolverEndpoint`](crate::types::ResolverEndpoint).
@@ -244,6 +256,8 @@ pub struct ResolverEndpointBuilder {
     pub(crate) preferred_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
     pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
+    pub(crate) rni_enhanced_metrics_enabled: ::std::option::Option<bool>,
+    pub(crate) target_name_server_metrics_enabled: ::std::option::Option<bool>,
 }
 impl ResolverEndpointBuilder {
     /// <p>The ID of the Resolver endpoint.</p>
@@ -647,6 +661,34 @@ impl ResolverEndpointBuilder {
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
         &self.protocols
     }
+    /// <p>Indicates whether RNI enhanced metrics are enabled for the Resolver endpoint. When enabled, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When disabled, these metrics are not published.</p>
+    pub fn rni_enhanced_metrics_enabled(mut self, input: bool) -> Self {
+        self.rni_enhanced_metrics_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether RNI enhanced metrics are enabled for the Resolver endpoint. When enabled, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When disabled, these metrics are not published.</p>
+    pub fn set_rni_enhanced_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.rni_enhanced_metrics_enabled = input;
+        self
+    }
+    /// <p>Indicates whether RNI enhanced metrics are enabled for the Resolver endpoint. When enabled, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When disabled, these metrics are not published.</p>
+    pub fn get_rni_enhanced_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.rni_enhanced_metrics_enabled
+    }
+    /// <p>Indicates whether target name server metrics are enabled for the outbound Resolver endpoint. When enabled, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When disabled, these metrics are not published. This feature is not supported for inbound Resolver endpoint.</p>
+    pub fn target_name_server_metrics_enabled(mut self, input: bool) -> Self {
+        self.target_name_server_metrics_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether target name server metrics are enabled for the outbound Resolver endpoint. When enabled, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When disabled, these metrics are not published. This feature is not supported for inbound Resolver endpoint.</p>
+    pub fn set_target_name_server_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.target_name_server_metrics_enabled = input;
+        self
+    }
+    /// <p>Indicates whether target name server metrics are enabled for the outbound Resolver endpoint. When enabled, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When disabled, these metrics are not published. This feature is not supported for inbound Resolver endpoint.</p>
+    pub fn get_target_name_server_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.target_name_server_metrics_enabled
+    }
     /// Consumes the builder and constructs a [`ResolverEndpoint`](crate::types::ResolverEndpoint).
     pub fn build(self) -> crate::types::ResolverEndpoint {
         crate::types::ResolverEndpoint {
@@ -666,6 +708,8 @@ impl ResolverEndpointBuilder {
             preferred_instance_type: self.preferred_instance_type,
             resolver_endpoint_type: self.resolver_endpoint_type,
             protocols: self.protocols,
+            rni_enhanced_metrics_enabled: self.rni_enhanced_metrics_enabled,
+            target_name_server_metrics_enabled: self.target_name_server_metrics_enabled,
         }
     }
 }

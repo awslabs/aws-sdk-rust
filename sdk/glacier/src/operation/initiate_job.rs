@@ -291,6 +291,8 @@ pub enum InitiateJobError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::types::error::MissingParameterValueException),
+    #[allow(missing_docs)] // documentation missing in model
+    NoLongerSupportedException(crate::types::error::NoLongerSupportedException),
     /// <p>Returned if a retrieval job would exceed the current data policy's retrieval rate limit. For more information about data retrieval policies,</p>
     PolicyEnforcedException(crate::types::error::PolicyEnforcedException),
     /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
@@ -333,6 +335,7 @@ impl InitiateJobError {
             Self::InsufficientCapacityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MissingParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoLongerSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PolicyEnforcedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -350,6 +353,10 @@ impl InitiateJobError {
     /// Returns `true` if the error kind is `InitiateJobError::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(self, Self::MissingParameterValueException(_))
+    }
+    /// Returns `true` if the error kind is `InitiateJobError::NoLongerSupportedException`.
+    pub fn is_no_longer_supported_exception(&self) -> bool {
+        matches!(self, Self::NoLongerSupportedException(_))
     }
     /// Returns `true` if the error kind is `InitiateJobError::PolicyEnforcedException`.
     pub fn is_policy_enforced_exception(&self) -> bool {
@@ -370,6 +377,7 @@ impl ::std::error::Error for InitiateJobError {
             Self::InsufficientCapacityException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::MissingParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NoLongerSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::PolicyEnforcedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
@@ -383,6 +391,7 @@ impl ::std::fmt::Display for InitiateJobError {
             Self::InsufficientCapacityException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::MissingParameterValueException(_inner) => _inner.fmt(f),
+            Self::NoLongerSupportedException(_inner) => _inner.fmt(f),
             Self::PolicyEnforcedException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
@@ -410,6 +419,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InitiateJobEr
             Self::InsufficientCapacityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MissingParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoLongerSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PolicyEnforcedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

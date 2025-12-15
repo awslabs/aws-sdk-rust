@@ -47,6 +47,8 @@ pub struct PutPlaybackConfigurationOutput {
     pub video_content_source_url: ::std::option::Option<::std::string::String>,
     /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting ads.</p>
     pub ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
     _request_id: Option<String>,
 }
 impl PutPlaybackConfigurationOutput {
@@ -138,6 +140,10 @@ impl PutPlaybackConfigurationOutput {
     pub fn ad_conditioning_configuration(&self) -> ::std::option::Option<&crate::types::AdConditioningConfiguration> {
         self.ad_conditioning_configuration.as_ref()
     }
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub fn ad_decision_server_configuration(&self) -> ::std::option::Option<&crate::types::AdDecisionServerConfiguration> {
+        self.ad_decision_server_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for PutPlaybackConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -178,6 +184,7 @@ pub struct PutPlaybackConfigurationOutputBuilder {
     pub(crate) transcode_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) video_content_source_url: ::std::option::Option<::std::string::String>,
     pub(crate) ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
+    pub(crate) ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
     _request_id: Option<String>,
 }
 impl PutPlaybackConfigurationOutputBuilder {
@@ -500,6 +507,20 @@ impl PutPlaybackConfigurationOutputBuilder {
     pub fn get_ad_conditioning_configuration(&self) -> &::std::option::Option<crate::types::AdConditioningConfiguration> {
         &self.ad_conditioning_configuration
     }
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub fn ad_decision_server_configuration(mut self, input: crate::types::AdDecisionServerConfiguration) -> Self {
+        self.ad_decision_server_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub fn set_ad_decision_server_configuration(mut self, input: ::std::option::Option<crate::types::AdDecisionServerConfiguration>) -> Self {
+        self.ad_decision_server_configuration = input;
+        self
+    }
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub fn get_ad_decision_server_configuration(&self) -> &::std::option::Option<crate::types::AdDecisionServerConfiguration> {
+        &self.ad_decision_server_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -537,6 +558,7 @@ impl PutPlaybackConfigurationOutputBuilder {
             transcode_profile_name: self.transcode_profile_name,
             video_content_source_url: self.video_content_source_url,
             ad_conditioning_configuration: self.ad_conditioning_configuration,
+            ad_decision_server_configuration: self.ad_decision_server_configuration,
             _request_id: self._request_id,
         }
     }

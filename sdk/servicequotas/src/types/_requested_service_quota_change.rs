@@ -6,6 +6,13 @@
 pub struct RequestedServiceQuotaChange {
     /// <p>The unique identifier.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of quota increase request. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AutomaticManagement</code> - The request was automatically created by Service Quotas Automatic Management when quota utilization approached the limit.</p></li>
+    /// </ul>
+    /// <p>If this field is not present, the request was manually created by a user.</p>
+    pub request_type: ::std::option::Option<crate::types::RequestType>,
     /// <p>The case ID.</p>
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
@@ -57,6 +64,15 @@ impl RequestedServiceQuotaChange {
     /// <p>The unique identifier.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The type of quota increase request. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AutomaticManagement</code> - The request was automatically created by Service Quotas Automatic Management when quota utilization approached the limit.</p></li>
+    /// </ul>
+    /// <p>If this field is not present, the request was manually created by a user.</p>
+    pub fn request_type(&self) -> ::std::option::Option<&crate::types::RequestType> {
+        self.request_type.as_ref()
     }
     /// <p>The case ID.</p>
     pub fn case_id(&self) -> ::std::option::Option<&str> {
@@ -147,6 +163,7 @@ impl RequestedServiceQuotaChange {
 #[non_exhaustive]
 pub struct RequestedServiceQuotaChangeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) request_type: ::std::option::Option<crate::types::RequestType>,
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
@@ -177,6 +194,35 @@ impl RequestedServiceQuotaChangeBuilder {
     /// <p>The unique identifier.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The type of quota increase request. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AutomaticManagement</code> - The request was automatically created by Service Quotas Automatic Management when quota utilization approached the limit.</p></li>
+    /// </ul>
+    /// <p>If this field is not present, the request was manually created by a user.</p>
+    pub fn request_type(mut self, input: crate::types::RequestType) -> Self {
+        self.request_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of quota increase request. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AutomaticManagement</code> - The request was automatically created by Service Quotas Automatic Management when quota utilization approached the limit.</p></li>
+    /// </ul>
+    /// <p>If this field is not present, the request was manually created by a user.</p>
+    pub fn set_request_type(mut self, input: ::std::option::Option<crate::types::RequestType>) -> Self {
+        self.request_type = input;
+        self
+    }
+    /// <p>The type of quota increase request. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AutomaticManagement</code> - The request was automatically created by Service Quotas Automatic Management when quota utilization approached the limit.</p></li>
+    /// </ul>
+    /// <p>If this field is not present, the request was manually created by a user.</p>
+    pub fn get_request_type(&self) -> &::std::option::Option<crate::types::RequestType> {
+        &self.request_type
     }
     /// <p>The case ID.</p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -440,6 +486,7 @@ impl RequestedServiceQuotaChangeBuilder {
     pub fn build(self) -> crate::types::RequestedServiceQuotaChange {
         crate::types::RequestedServiceQuotaChange {
             id: self.id,
+            request_type: self.request_type,
             case_id: self.case_id,
             service_code: self.service_code,
             service_name: self.service_name,

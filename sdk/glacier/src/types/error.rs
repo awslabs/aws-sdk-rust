@@ -5,6 +5,8 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_request_timeout_exception::RequestTimeoutException;
 
+pub use crate::types::error::_no_longer_supported_exception::NoLongerSupportedException;
+
 pub use crate::types::error::_missing_parameter_value_exception::MissingParameterValueException;
 
 pub use crate::types::error::_invalid_parameter_value_exception::InvalidParameterValueException;
@@ -22,6 +24,8 @@ mod _invalid_parameter_value_exception;
 mod _limit_exceeded_exception;
 
 mod _missing_parameter_value_exception;
+
+mod _no_longer_supported_exception;
 
 mod _policy_enforced_exception;
 

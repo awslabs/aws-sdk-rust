@@ -29,9 +29,13 @@ pub(crate) mod shape_associate_source_to_s3_table_integration;
 
 pub(crate) mod shape_cancel_export_task;
 
+pub(crate) mod shape_cancel_import_task;
+
 pub(crate) mod shape_create_delivery;
 
 pub(crate) mod shape_create_export_task;
+
+pub(crate) mod shape_create_import_task;
 
 pub(crate) mod shape_create_log_anomaly_detector;
 
@@ -94,6 +98,10 @@ pub(crate) mod shape_describe_destinations;
 pub(crate) mod shape_describe_export_tasks;
 
 pub(crate) mod shape_describe_field_indexes;
+
+pub(crate) mod shape_describe_import_task_batches;
+
+pub(crate) mod shape_describe_import_tasks;
 
 pub(crate) mod shape_describe_index_policies;
 
@@ -245,11 +253,15 @@ pub(crate) mod shape_associate_source_to_s3_table_integration_input;
 
 pub(crate) mod shape_cancel_export_task_input;
 
+pub(crate) mod shape_cancel_import_task_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_delivery_input;
 
 pub(crate) mod shape_create_export_task_input;
+
+pub(crate) mod shape_create_import_task_input;
 
 pub(crate) mod shape_create_log_anomaly_detector_input;
 
@@ -314,6 +326,10 @@ pub(crate) mod shape_describe_destinations_input;
 pub(crate) mod shape_describe_export_tasks_input;
 
 pub(crate) mod shape_describe_field_indexes_input;
+
+pub(crate) mod shape_describe_import_task_batches_input;
+
+pub(crate) mod shape_describe_import_tasks_input;
 
 pub(crate) mod shape_describe_index_policies_input;
 
@@ -539,6 +555,14 @@ pub(crate) mod shape_field_indexes;
 
 pub(crate) mod shape_filtered_log_events;
 
+pub(crate) mod shape_import_batch_list;
+
+pub(crate) mod shape_import_filter;
+
+pub(crate) mod shape_import_list;
+
+pub(crate) mod shape_import_statistics;
+
 pub(crate) mod shape_index_policies;
 
 pub(crate) mod shape_index_policy;
@@ -646,6 +670,10 @@ pub(crate) mod shape_fields_data;
 pub(crate) mod shape_filtered_log_event;
 
 pub(crate) mod shape_grok;
+
+pub(crate) mod shape_import;
+
+pub(crate) mod shape_import_batch;
 
 pub(crate) mod shape_integration_summary;
 

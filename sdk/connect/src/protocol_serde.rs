@@ -1647,6 +1647,8 @@ pub(crate) mod shape_task_template_list;
 
 pub(crate) mod shape_telephony_config;
 
+pub(crate) mod shape_templated_message_config;
+
 pub(crate) mod shape_traffic_distribution_group;
 
 pub(crate) mod shape_traffic_distribution_group_summary_list;
@@ -2085,7 +2087,7 @@ pub(crate) mod shape_task_template_info_v2;
 
 pub(crate) mod shape_task_template_metadata;
 
-pub(crate) mod shape_templated_message_config;
+pub(crate) mod shape_template_attributes;
 
 pub(crate) mod shape_threshold;
 
@@ -2286,8 +2288,6 @@ pub(crate) mod shape_steps;
 pub(crate) mod shape_string_reference;
 
 pub(crate) mod shape_tag_condition;
-
-pub(crate) mod shape_template_attributes;
 
 pub(crate) mod shape_transcript;
 

@@ -22,6 +22,7 @@ pub struct ResolverRule {
     /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
     pub rule_type: ::std::option::Option<crate::types::RuleTypeOption>,
     /// <p>The name for the Resolver rule, which you specified when you created the Resolver rule.</p>
+    /// <p>The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers on your network.</p>
     pub target_ips: ::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>>,
@@ -71,6 +72,7 @@ impl ResolverRule {
         self.rule_type.as_ref()
     }
     /// <p>The name for the Resolver rule, which you specified when you created the Resolver rule.</p>
+    /// <p>The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -241,16 +243,19 @@ impl ResolverRuleBuilder {
         &self.rule_type
     }
     /// <p>The name for the Resolver rule, which you specified when you created the Resolver rule.</p>
+    /// <p>The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the Resolver rule, which you specified when you created the Resolver rule.</p>
+    /// <p>The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name for the Resolver rule, which you specified when you created the Resolver rule.</p>
+    /// <p>The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

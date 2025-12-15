@@ -64,6 +64,22 @@ pub fn de_set_data_retrieval_policy_http_error(
                 tmp
             })
         }
+        "NoLongerSupportedException" => crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError::NoLongerSupportedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoLongerSupportedExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_no_longer_supported_exception::de_no_longer_supported_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ServiceUnavailableException" => crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp = {

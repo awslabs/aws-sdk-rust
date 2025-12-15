@@ -399,3 +399,6 @@ mod _list_aggregate_log_group_summaries_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

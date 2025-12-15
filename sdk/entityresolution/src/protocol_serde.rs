@@ -233,6 +233,8 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_aws_account_id_list;
 
+pub(crate) mod shape_customer_profiles_integration_config;
+
 pub(crate) mod shape_delete_unique_id_error;
 
 pub(crate) mod shape_deleted_unique_id;

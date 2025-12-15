@@ -48,6 +48,8 @@ pub struct PlaybackConfiguration {
     pub video_content_source_url: ::std::option::Option<::std::string::String>,
     /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting ads.</p>
     pub ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
+    /// <p>Configuration parameters for customizing HTTP requests sent to the ad decision server (ADS). This allows you to specify the HTTP method, headers, request body, and compression settings for ADS requests.</p>
+    pub ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
 }
 impl PlaybackConfiguration {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -138,6 +140,10 @@ impl PlaybackConfiguration {
     pub fn ad_conditioning_configuration(&self) -> ::std::option::Option<&crate::types::AdConditioningConfiguration> {
         self.ad_conditioning_configuration.as_ref()
     }
+    /// <p>Configuration parameters for customizing HTTP requests sent to the ad decision server (ADS). This allows you to specify the HTTP method, headers, request body, and compression settings for ADS requests.</p>
+    pub fn ad_decision_server_configuration(&self) -> ::std::option::Option<&crate::types::AdDecisionServerConfiguration> {
+        self.ad_decision_server_configuration.as_ref()
+    }
 }
 impl PlaybackConfiguration {
     /// Creates a new builder-style object to manufacture [`PlaybackConfiguration`](crate::types::PlaybackConfiguration).
@@ -173,6 +179,7 @@ pub struct PlaybackConfigurationBuilder {
     pub(crate) transcode_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) video_content_source_url: ::std::option::Option<::std::string::String>,
     pub(crate) ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
+    pub(crate) ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
 }
 impl PlaybackConfigurationBuilder {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -494,6 +501,20 @@ impl PlaybackConfigurationBuilder {
     pub fn get_ad_conditioning_configuration(&self) -> &::std::option::Option<crate::types::AdConditioningConfiguration> {
         &self.ad_conditioning_configuration
     }
+    /// <p>Configuration parameters for customizing HTTP requests sent to the ad decision server (ADS). This allows you to specify the HTTP method, headers, request body, and compression settings for ADS requests.</p>
+    pub fn ad_decision_server_configuration(mut self, input: crate::types::AdDecisionServerConfiguration) -> Self {
+        self.ad_decision_server_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration parameters for customizing HTTP requests sent to the ad decision server (ADS). This allows you to specify the HTTP method, headers, request body, and compression settings for ADS requests.</p>
+    pub fn set_ad_decision_server_configuration(mut self, input: ::std::option::Option<crate::types::AdDecisionServerConfiguration>) -> Self {
+        self.ad_decision_server_configuration = input;
+        self
+    }
+    /// <p>Configuration parameters for customizing HTTP requests sent to the ad decision server (ADS). This allows you to specify the HTTP method, headers, request body, and compression settings for ADS requests.</p>
+    pub fn get_ad_decision_server_configuration(&self) -> &::std::option::Option<crate::types::AdDecisionServerConfiguration> {
+        &self.ad_decision_server_configuration
+    }
     /// Consumes the builder and constructs a [`PlaybackConfiguration`](crate::types::PlaybackConfiguration).
     pub fn build(self) -> crate::types::PlaybackConfiguration {
         crate::types::PlaybackConfiguration {
@@ -522,6 +543,7 @@ impl PlaybackConfigurationBuilder {
             transcode_profile_name: self.transcode_profile_name,
             video_content_source_url: self.video_content_source_url,
             ad_conditioning_configuration: self.ad_conditioning_configuration,
+            ad_decision_server_configuration: self.ad_decision_server_configuration,
         }
     }
 }

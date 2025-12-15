@@ -3,11 +3,11 @@ pub fn ser_output_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutputSource,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("outputS3Path").string(input.output_s3_path.as_str());
-    }
     if let Some(var_1) = &input.kms_arn {
         object.key("KMSArn").string(var_1.as_str());
+    }
+    {
+        object.key("outputS3Path").string(input.output_s3_path.as_str());
     }
     {
         let mut array_2 = object.key("output").start_array();
@@ -23,6 +23,12 @@ pub fn ser_output_source(
     }
     if let Some(var_5) = &input.apply_normalization {
         object.key("applyNormalization").boolean(*var_5);
+    }
+    if let Some(var_6) = &input.customer_profiles_integration_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("customerProfilesIntegrationConfig").start_object();
+        crate::protocol_serde::shape_customer_profiles_integration_config::ser_customer_profiles_integration_config(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }
@@ -42,15 +48,15 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "outputS3Path" => {
-                            builder = builder.set_output_s3_path(
+                        "KMSArn" => {
+                            builder = builder.set_kms_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
-                        "KMSArn" => {
-                            builder = builder.set_kms_arn(
+                        "outputS3Path" => {
+                            builder = builder.set_output_s3_path(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
@@ -61,6 +67,11 @@ where
                         }
                         "applyNormalization" => {
                             builder = builder.set_apply_normalization(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "customerProfilesIntegrationConfig" => {
+                            builder = builder.set_customer_profiles_integration_config(
+                                crate::protocol_serde::shape_customer_profiles_integration_config::de_customer_profiles_integration_config(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

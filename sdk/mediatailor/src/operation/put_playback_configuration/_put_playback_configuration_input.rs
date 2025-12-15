@@ -37,6 +37,8 @@ pub struct PutPlaybackConfigurationInput {
     pub video_content_source_url: ::std::option::Option<::std::string::String>,
     /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting ads.</p>
     pub ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
 }
 impl PutPlaybackConfigurationInput {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -107,6 +109,10 @@ impl PutPlaybackConfigurationInput {
     pub fn ad_conditioning_configuration(&self) -> ::std::option::Option<&crate::types::AdConditioningConfiguration> {
         self.ad_conditioning_configuration.as_ref()
     }
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub fn ad_decision_server_configuration(&self) -> ::std::option::Option<&crate::types::AdDecisionServerConfiguration> {
+        self.ad_decision_server_configuration.as_ref()
+    }
 }
 impl PutPlaybackConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutPlaybackConfigurationInput`](crate::operation::put_playback_configuration::PutPlaybackConfigurationInput).
@@ -137,6 +143,7 @@ pub struct PutPlaybackConfigurationInputBuilder {
     pub(crate) transcode_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) video_content_source_url: ::std::option::Option<::std::string::String>,
     pub(crate) ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
+    pub(crate) ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
 }
 impl PutPlaybackConfigurationInputBuilder {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -389,6 +396,20 @@ impl PutPlaybackConfigurationInputBuilder {
     pub fn get_ad_conditioning_configuration(&self) -> &::std::option::Option<crate::types::AdConditioningConfiguration> {
         &self.ad_conditioning_configuration
     }
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub fn ad_decision_server_configuration(mut self, input: crate::types::AdDecisionServerConfiguration) -> Self {
+        self.ad_decision_server_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub fn set_ad_decision_server_configuration(mut self, input: ::std::option::Option<crate::types::AdDecisionServerConfiguration>) -> Self {
+        self.ad_decision_server_configuration = input;
+        self
+    }
+    /// <p>The configuration for customizing HTTP requests to the ad decision server (ADS). This includes settings for request method, headers, body content, and compression options.</p>
+    pub fn get_ad_decision_server_configuration(&self) -> &::std::option::Option<crate::types::AdDecisionServerConfiguration> {
+        &self.ad_decision_server_configuration
+    }
     /// Consumes the builder and constructs a [`PutPlaybackConfigurationInput`](crate::operation::put_playback_configuration::PutPlaybackConfigurationInput).
     pub fn build(
         self,
@@ -413,6 +434,7 @@ impl PutPlaybackConfigurationInputBuilder {
             transcode_profile_name: self.transcode_profile_name,
             video_content_source_url: self.video_content_source_url,
             ad_conditioning_configuration: self.ad_conditioning_configuration,
+            ad_decision_server_configuration: self.ad_decision_server_configuration,
         })
     }
 }

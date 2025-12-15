@@ -6,7 +6,7 @@
 pub struct PartListElement {
     /// <p>The byte range of a part, inclusive of the upper value of the range.</p>
     pub range_in_bytes: ::std::option::Option<::std::string::String>,
-    /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
+    /// <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.</p>
     pub sha256_tree_hash: ::std::option::Option<::std::string::String>,
 }
 impl PartListElement {
@@ -14,7 +14,7 @@ impl PartListElement {
     pub fn range_in_bytes(&self) -> ::std::option::Option<&str> {
         self.range_in_bytes.as_deref()
     }
-    /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
+    /// <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.</p>
     pub fn sha256_tree_hash(&self) -> ::std::option::Option<&str> {
         self.sha256_tree_hash.as_deref()
     }
@@ -48,17 +48,17 @@ impl PartListElementBuilder {
     pub fn get_range_in_bytes(&self) -> &::std::option::Option<::std::string::String> {
         &self.range_in_bytes
     }
-    /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
+    /// <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.</p>
     pub fn sha256_tree_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sha256_tree_hash = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
+    /// <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.</p>
     pub fn set_sha256_tree_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sha256_tree_hash = input;
         self
     }
-    /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
+    /// <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This field is never <code>null</code>.</p>
     pub fn get_sha256_tree_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.sha256_tree_hash
     }

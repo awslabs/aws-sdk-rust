@@ -10,11 +10,17 @@ pub mod associate_source_to_s3_table_integration;
 /// Types for the `CancelExportTask` operation.
 pub mod cancel_export_task;
 
+/// Types for the `CancelImportTask` operation.
+pub mod cancel_import_task;
+
 /// Types for the `CreateDelivery` operation.
 pub mod create_delivery;
 
 /// Types for the `CreateExportTask` operation.
 pub mod create_export_task;
+
+/// Types for the `CreateImportTask` operation.
+pub mod create_import_task;
 
 /// Types for the `CreateLogAnomalyDetector` operation.
 pub mod create_log_anomaly_detector;
@@ -108,6 +114,12 @@ pub mod describe_export_tasks;
 
 /// Types for the `DescribeFieldIndexes` operation.
 pub mod describe_field_indexes;
+
+/// Types for the `DescribeImportTaskBatches` operation.
+pub mod describe_import_task_batches;
+
+/// Types for the `DescribeImportTasks` operation.
+pub mod describe_import_tasks;
 
 /// Types for the `DescribeIndexPolicies` operation.
 pub mod describe_index_policies;

@@ -56,6 +56,22 @@ pub fn de_upload_multipart_part_http_error(
             }
             tmp
         }),
+        "NoLongerSupportedException" => crate::operation::upload_multipart_part::UploadMultipartPartError::NoLongerSupportedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoLongerSupportedExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_no_longer_supported_exception::de_no_longer_supported_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::upload_multipart_part::UploadMultipartPartError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "RequestTimeoutException" => crate::operation::upload_multipart_part::UploadMultipartPartError::RequestTimeoutException({
             #[allow(unused_mut)]
             let mut tmp = {

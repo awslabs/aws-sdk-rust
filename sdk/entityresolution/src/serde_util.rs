@@ -697,9 +697,6 @@ pub(crate) fn matching_workflow_summary_correct_errors(
 }
 
 pub(crate) fn output_source_correct_errors(mut builder: crate::types::builders::OutputSourceBuilder) -> crate::types::builders::OutputSourceBuilder {
-    if builder.output_s3_path.is_none() {
-        builder.output_s3_path = Some(Default::default())
-    }
     if builder.output.is_none() {
         builder.output = Some(Default::default())
     }
@@ -804,6 +801,18 @@ pub(crate) fn schema_mapping_summary_correct_errors(
     }
     if builder.has_workflows.is_none() {
         builder.has_workflows = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn customer_profiles_integration_config_correct_errors(
+    mut builder: crate::types::builders::CustomerProfilesIntegrationConfigBuilder,
+) -> crate::types::builders::CustomerProfilesIntegrationConfigBuilder {
+    if builder.domain_arn.is_none() {
+        builder.domain_arn = Some(Default::default())
+    }
+    if builder.object_type_arn.is_none() {
+        builder.object_type_arn = Some(Default::default())
     }
     builder
 }

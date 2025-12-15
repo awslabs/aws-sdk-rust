@@ -100,6 +100,22 @@ pub fn de_get_job_output_http_error(
             }
             tmp
         }),
+        "NoLongerSupportedException" => crate::operation::get_job_output::GetJobOutputError::NoLongerSupportedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoLongerSupportedExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_no_longer_supported_exception::de_no_longer_supported_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_job_output::GetJobOutputError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::get_job_output::GetJobOutputError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -139,6 +139,8 @@ pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_missing_parameter_value_exception;
 
+pub(crate) mod shape_no_longer_supported_exception;
+
 pub(crate) mod shape_policy_enforced_exception;
 
 pub(crate) mod shape_purchase_provisioned_capacity_output;

@@ -11,11 +11,11 @@ pub struct PrefetchRetrieval {
     pub end_time: ::aws_smithy_types::DateTime,
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Indicates the type of traffic shaping used for prefetch traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used to limit the number of requests to the ADS at one time.</p>
     pub traffic_shaping_type: ::std::option::Option<crate::types::TrafficShapingType>,
-    /// <p>Configuration for spreading ADS traffic across a set window instead of sending ADS requests for all sessions at the same time.</p>
+    /// <p>The configuration that tells Elemental MediaTailor how many seconds to spread out requests to the ad decision server (ADS). Instead of sending ADS requests for all sessions at the same time, MediaTailor spreads the requests across the amount of time specified in the retrieval window.</p>
     pub traffic_shaping_retrieval_window: ::std::option::Option<crate::types::TrafficShapingRetrievalWindow>,
-    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    /// <p>The configuration for TPS-based traffic shaping. This approach limits requests to the ad decision server (ADS) based on transactions per second and concurrent users.</p>
     pub traffic_shaping_tps_configuration: ::std::option::Option<crate::types::TrafficShapingTpsConfiguration>,
 }
 impl PrefetchRetrieval {
@@ -32,15 +32,15 @@ impl PrefetchRetrieval {
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>Indicates the type of traffic shaping used for prefetch traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used to limit the number of requests to the ADS at one time.</p>
     pub fn traffic_shaping_type(&self) -> ::std::option::Option<&crate::types::TrafficShapingType> {
         self.traffic_shaping_type.as_ref()
     }
-    /// <p>Configuration for spreading ADS traffic across a set window instead of sending ADS requests for all sessions at the same time.</p>
+    /// <p>The configuration that tells Elemental MediaTailor how many seconds to spread out requests to the ad decision server (ADS). Instead of sending ADS requests for all sessions at the same time, MediaTailor spreads the requests across the amount of time specified in the retrieval window.</p>
     pub fn traffic_shaping_retrieval_window(&self) -> ::std::option::Option<&crate::types::TrafficShapingRetrievalWindow> {
         self.traffic_shaping_retrieval_window.as_ref()
     }
-    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    /// <p>The configuration for TPS-based traffic shaping. This approach limits requests to the ad decision server (ADS) based on transactions per second and concurrent users.</p>
     pub fn traffic_shaping_tps_configuration(&self) -> ::std::option::Option<&crate::types::TrafficShapingTpsConfiguration> {
         self.traffic_shaping_tps_configuration.as_ref()
     }
@@ -123,45 +123,45 @@ impl PrefetchRetrievalBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>Indicates the type of traffic shaping used for prefetch traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used to limit the number of requests to the ADS at one time.</p>
     pub fn traffic_shaping_type(mut self, input: crate::types::TrafficShapingType) -> Self {
         self.traffic_shaping_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the type of traffic shaping used for prefetch traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used to limit the number of requests to the ADS at one time.</p>
     pub fn set_traffic_shaping_type(mut self, input: ::std::option::Option<crate::types::TrafficShapingType>) -> Self {
         self.traffic_shaping_type = input;
         self
     }
-    /// <p>Indicates the type of traffic shaping used for prefetch traffic shaping and limiting the number of requests to the ADS at one time.</p>
+    /// <p>Indicates the type of traffic shaping used to limit the number of requests to the ADS at one time.</p>
     pub fn get_traffic_shaping_type(&self) -> &::std::option::Option<crate::types::TrafficShapingType> {
         &self.traffic_shaping_type
     }
-    /// <p>Configuration for spreading ADS traffic across a set window instead of sending ADS requests for all sessions at the same time.</p>
+    /// <p>The configuration that tells Elemental MediaTailor how many seconds to spread out requests to the ad decision server (ADS). Instead of sending ADS requests for all sessions at the same time, MediaTailor spreads the requests across the amount of time specified in the retrieval window.</p>
     pub fn traffic_shaping_retrieval_window(mut self, input: crate::types::TrafficShapingRetrievalWindow) -> Self {
         self.traffic_shaping_retrieval_window = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration for spreading ADS traffic across a set window instead of sending ADS requests for all sessions at the same time.</p>
+    /// <p>The configuration that tells Elemental MediaTailor how many seconds to spread out requests to the ad decision server (ADS). Instead of sending ADS requests for all sessions at the same time, MediaTailor spreads the requests across the amount of time specified in the retrieval window.</p>
     pub fn set_traffic_shaping_retrieval_window(mut self, input: ::std::option::Option<crate::types::TrafficShapingRetrievalWindow>) -> Self {
         self.traffic_shaping_retrieval_window = input;
         self
     }
-    /// <p>Configuration for spreading ADS traffic across a set window instead of sending ADS requests for all sessions at the same time.</p>
+    /// <p>The configuration that tells Elemental MediaTailor how many seconds to spread out requests to the ad decision server (ADS). Instead of sending ADS requests for all sessions at the same time, MediaTailor spreads the requests across the amount of time specified in the retrieval window.</p>
     pub fn get_traffic_shaping_retrieval_window(&self) -> &::std::option::Option<crate::types::TrafficShapingRetrievalWindow> {
         &self.traffic_shaping_retrieval_window
     }
-    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    /// <p>The configuration for TPS-based traffic shaping. This approach limits requests to the ad decision server (ADS) based on transactions per second and concurrent users.</p>
     pub fn traffic_shaping_tps_configuration(mut self, input: crate::types::TrafficShapingTpsConfiguration) -> Self {
         self.traffic_shaping_tps_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    /// <p>The configuration for TPS-based traffic shaping. This approach limits requests to the ad decision server (ADS) based on transactions per second and concurrent users.</p>
     pub fn set_traffic_shaping_tps_configuration(mut self, input: ::std::option::Option<crate::types::TrafficShapingTpsConfiguration>) -> Self {
         self.traffic_shaping_tps_configuration = input;
         self
     }
-    /// <p>The configuration for TPS-based traffic shaping that limits the number of requests to the ad decision server (ADS) based on transactions per second instead of time windows.</p>
+    /// <p>The configuration for TPS-based traffic shaping. This approach limits requests to the ad decision server (ADS) based on transactions per second and concurrent users.</p>
     pub fn get_traffic_shaping_tps_configuration(&self) -> &::std::option::Option<crate::types::TrafficShapingTpsConfiguration> {
         &self.traffic_shaping_tps_configuration
     }

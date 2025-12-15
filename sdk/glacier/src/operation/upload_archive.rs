@@ -435,7 +435,9 @@ pub enum UploadArchiveError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::types::error::MissingParameterValueException),
-    /// <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while receiving the upload.</p>
+    #[allow(missing_docs)] // documentation missing in model
+    NoLongerSupportedException(crate::types::error::NoLongerSupportedException),
+    /// <p>Returned if, when uploading an archive, Amazon Glacier times out while receiving the upload.</p>
     RequestTimeoutException(crate::types::error::RequestTimeoutException),
     /// <p>Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
@@ -476,6 +478,7 @@ impl UploadArchiveError {
         match self {
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MissingParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoLongerSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RequestTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -489,6 +492,10 @@ impl UploadArchiveError {
     /// Returns `true` if the error kind is `UploadArchiveError::MissingParameterValueException`.
     pub fn is_missing_parameter_value_exception(&self) -> bool {
         matches!(self, Self::MissingParameterValueException(_))
+    }
+    /// Returns `true` if the error kind is `UploadArchiveError::NoLongerSupportedException`.
+    pub fn is_no_longer_supported_exception(&self) -> bool {
+        matches!(self, Self::NoLongerSupportedException(_))
     }
     /// Returns `true` if the error kind is `UploadArchiveError::RequestTimeoutException`.
     pub fn is_request_timeout_exception(&self) -> bool {
@@ -508,6 +515,7 @@ impl ::std::error::Error for UploadArchiveError {
         match self {
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::MissingParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NoLongerSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::RequestTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
@@ -520,6 +528,7 @@ impl ::std::fmt::Display for UploadArchiveError {
         match self {
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::MissingParameterValueException(_inner) => _inner.fmt(f),
+            Self::NoLongerSupportedException(_inner) => _inner.fmt(f),
             Self::RequestTimeoutException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
@@ -546,6 +555,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UploadArchive
         match self {
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MissingParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoLongerSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RequestTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

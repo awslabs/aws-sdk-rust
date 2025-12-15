@@ -63,5 +63,11 @@ pub fn ser_create_resolver_endpoint_input_input(
         }
         array_19.finish();
     }
+    if let Some(var_21) = &input.rni_enhanced_metrics_enabled {
+        object.key("RniEnhancedMetricsEnabled").boolean(*var_21);
+    }
+    if let Some(var_22) = &input.target_name_server_metrics_enabled {
+        object.key("TargetNameServerMetricsEnabled").boolean(*var_22);
+    }
     Ok(())
 }

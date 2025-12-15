@@ -17,4 +17,6 @@ pub use crate::types::_quota_period::QuotaPeriodBuilder;
 
 pub use crate::types::_metric_info::MetricInfoBuilder;
 
+pub use crate::types::_quota_utilization_info::QuotaUtilizationInfoBuilder;
+
 pub use crate::types::_quota_info::QuotaInfoBuilder;

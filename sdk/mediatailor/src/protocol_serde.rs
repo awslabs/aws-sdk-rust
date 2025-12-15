@@ -163,6 +163,8 @@ pub(crate) mod shape_ad_break_opportunities;
 
 pub(crate) mod shape_ad_conditioning_configuration;
 
+pub(crate) mod shape_ad_decision_server_configuration;
+
 pub(crate) mod shape_ads_interaction_log;
 
 pub(crate) mod shape_audience_media;
@@ -271,6 +273,8 @@ pub(crate) mod shape_dash_playlist_settings;
 
 pub(crate) mod shape_hls_playlist_settings;
 
+pub(crate) mod shape_http_request;
+
 pub(crate) mod shape_key_value_pair;
 
 pub(crate) mod shape_list_of_avail_matching_criteria;
@@ -318,6 +322,8 @@ pub(crate) mod shape_list_of_schedule_ad_break;
 pub(crate) mod shape_list_of_string;
 
 pub(crate) mod shape_segmentation_descriptor;
+
+pub(crate) mod shape_string_map;
 
 pub(crate) mod shape_ad_markup_types;
 

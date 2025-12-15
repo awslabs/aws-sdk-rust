@@ -37,6 +37,8 @@ pub(crate) mod shape_get_auto_management_configuration;
 
 pub(crate) mod shape_get_aws_default_service_quota;
 
+pub(crate) mod shape_get_quota_utilization_report;
+
 pub(crate) mod shape_get_requested_service_quota_change;
 
 pub(crate) mod shape_get_service_quota;
@@ -62,6 +64,8 @@ pub(crate) mod shape_put_service_quota_increase_request_into_template;
 pub(crate) mod shape_request_service_quota_increase;
 
 pub(crate) mod shape_start_auto_management;
+
+pub(crate) mod shape_start_quota_utilization_report;
 
 pub(crate) mod shape_stop_auto_management;
 
@@ -90,6 +94,8 @@ pub(crate) mod shape_delete_service_quota_increase_request_from_template_input;
 pub(crate) mod shape_dependency_access_denied_exception;
 
 pub(crate) mod shape_get_aws_default_service_quota_input;
+
+pub(crate) mod shape_get_quota_utilization_report_input;
 
 pub(crate) mod shape_get_requested_service_quota_change_input;
 
@@ -155,6 +161,8 @@ pub(crate) mod shape_exclusion_quota_list;
 
 pub(crate) mod shape_output_tags;
 
+pub(crate) mod shape_quota_utilization_info_list;
+
 pub(crate) mod shape_requested_service_quota_change;
 
 pub(crate) mod shape_requested_service_quota_change_history_list_definition;
@@ -180,6 +188,8 @@ pub(crate) mod shape_quota_context_info;
 pub(crate) mod shape_quota_info_list;
 
 pub(crate) mod shape_quota_period;
+
+pub(crate) mod shape_quota_utilization_info;
 
 pub(crate) mod shape_service_info;
 

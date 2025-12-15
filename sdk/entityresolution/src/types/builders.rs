@@ -19,6 +19,8 @@ pub use crate::types::_rule::RuleBuilder;
 
 pub use crate::types::_output_source::OutputSourceBuilder;
 
+pub use crate::types::_customer_profiles_integration_config::CustomerProfilesIntegrationConfigBuilder;
+
 pub use crate::types::_output_attribute::OutputAttributeBuilder;
 
 pub use crate::types::_input_source::InputSourceBuilder;

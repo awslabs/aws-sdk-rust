@@ -288,6 +288,20 @@ impl StartOutboundChatContactFluentBuilder {
     pub fn get_initial_system_message(&self) -> &::std::option::Option<crate::types::ChatMessage> {
         self.inner.get_initial_system_message()
     }
+    /// <p>Information about template message configuration.</p>
+    pub fn initial_templated_system_message(mut self, input: crate::types::TemplatedMessageConfig) -> Self {
+        self.inner = self.inner.initial_templated_system_message(input);
+        self
+    }
+    /// <p>Information about template message configuration.</p>
+    pub fn set_initial_templated_system_message(mut self, input: ::std::option::Option<crate::types::TemplatedMessageConfig>) -> Self {
+        self.inner = self.inner.set_initial_templated_system_message(input);
+        self
+    }
+    /// <p>Information about template message configuration.</p>
+    pub fn get_initial_templated_system_message(&self) -> &::std::option::Option<crate::types::TemplatedMessageConfig> {
+        self.inner.get_initial_templated_system_message()
+    }
     /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.related_contact_id(input.into());

@@ -13,6 +13,8 @@ pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
 pub use crate::types::error::_tag_policy_violation_exception::TagPolicyViolationException;
 
+pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenException;
+
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
 
 pub use crate::types::error::_quota_exceeded_exception::QuotaExceededException;
@@ -26,8 +28,6 @@ pub use crate::types::error::_templates_not_available_in_region_exception::Templ
 pub use crate::types::error::_no_available_organization_exception::NoAvailableOrganizationException;
 
 pub use crate::types::error::_aws_service_access_not_enabled_exception::AwsServiceAccessNotEnabledException;
-
-pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenException;
 
 pub use crate::types::error::_service_quota_template_not_in_use_exception::ServiceQuotaTemplateNotInUseException;
 

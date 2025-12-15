@@ -142,9 +142,13 @@ mod associate_source_to_s3_table_integration;
 
 mod cancel_export_task;
 
+mod cancel_import_task;
+
 mod create_delivery;
 
 mod create_export_task;
+
+mod create_import_task;
 
 mod create_log_anomaly_detector;
 
@@ -234,6 +238,10 @@ mod describe_destinations;
 mod describe_export_tasks;
 
 mod describe_field_indexes;
+
+mod describe_import_task_batches;
+
+mod describe_import_tasks;
 
 mod describe_index_policies;
 

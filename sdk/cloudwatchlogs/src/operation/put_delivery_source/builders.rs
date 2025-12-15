@@ -177,9 +177,13 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Network Firewall Proxy, the valid values are <code>ALERT_LOGS</code>, <code>ALLOW_LOGS</code>, and <code>DENY_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p></li>
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code> and <code>PCS_JOBCOMP_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Quick Suite, the valid values are <code>CHAT_LOGS</code> and <code>FEEDBACK_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
@@ -222,9 +226,13 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Network Firewall Proxy, the valid values are <code>ALERT_LOGS</code>, <code>ALLOW_LOGS</code>, and <code>DENY_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p></li>
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code> and <code>PCS_JOBCOMP_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Quick Suite, the valid values are <code>CHAT_LOGS</code> and <code>FEEDBACK_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
@@ -267,9 +275,13 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Network Firewall Proxy, the valid values are <code>ALERT_LOGS</code>, <code>ALLOW_LOGS</code>, and <code>DENY_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p></li>
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code> and <code>PCS_JOBCOMP_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Quick Suite, the valid values are <code>CHAT_LOGS</code> and <code>FEEDBACK_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>

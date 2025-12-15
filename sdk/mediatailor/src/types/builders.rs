@@ -35,6 +35,10 @@ pub use crate::types::_prefetch_consumption::PrefetchConsumptionBuilder;
 
 pub use crate::types::_prefetch_schedule::PrefetchScheduleBuilder;
 
+pub use crate::types::_ad_decision_server_configuration::AdDecisionServerConfigurationBuilder;
+
+pub use crate::types::_http_request::HttpRequestBuilder;
+
 pub use crate::types::_ad_conditioning_configuration::AdConditioningConfigurationBuilder;
 
 pub use crate::types::_manifest_processing_rules::ManifestProcessingRulesBuilder;

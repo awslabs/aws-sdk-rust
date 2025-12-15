@@ -72,6 +72,16 @@ pub(crate) fn delivery_destination_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn import_batch_correct_errors(mut builder: crate::types::builders::ImportBatchBuilder) -> crate::types::builders::ImportBatchBuilder {
+    if builder.batch_id.is_none() {
+        builder.batch_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ImportStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn s3_configuration_correct_errors(
     mut builder: crate::types::builders::S3ConfigurationBuilder,
 ) -> crate::types::builders::S3ConfigurationBuilder {

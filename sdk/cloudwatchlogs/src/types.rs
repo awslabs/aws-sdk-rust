@@ -269,6 +269,16 @@ pub use crate::types::_inherited_property::InheritedProperty;
 
 pub use crate::types::_data_protection_status::DataProtectionStatus;
 
+pub use crate::types::_import::Import;
+
+pub use crate::types::_import_filter::ImportFilter;
+
+pub use crate::types::_import_statistics::ImportStatistics;
+
+pub use crate::types::_import_status::ImportStatus;
+
+pub use crate::types::_import_batch::ImportBatch;
+
 pub use crate::types::_field_index::FieldIndex;
 
 pub use crate::types::_index_type::IndexType;
@@ -370,6 +380,16 @@ mod _get_log_object_response_stream;
 mod _grok;
 
 mod _grouping_identifier;
+
+mod _import;
+
+mod _import_batch;
+
+mod _import_filter;
+
+mod _import_statistics;
+
+mod _import_status;
 
 mod _index_policy;
 

@@ -177,6 +177,8 @@ mod get_auto_management_configuration;
 
 mod get_aws_default_service_quota;
 
+mod get_quota_utilization_report;
+
 mod get_requested_service_quota_change;
 
 mod get_service_quota;
@@ -202,6 +204,8 @@ mod put_service_quota_increase_request_into_template;
 mod request_service_quota_increase;
 
 mod start_auto_management;
+
+mod start_quota_utilization_report;
 
 mod stop_auto_management;
 

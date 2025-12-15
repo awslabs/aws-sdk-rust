@@ -232,6 +232,32 @@ impl From<crate::operation::cancel_export_task::CancelExportTaskError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_import_task::CancelImportTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_import_task::CancelImportTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_import_task::CancelImportTaskError> for Error {
+    fn from(err: crate::operation::cancel_import_task::CancelImportTaskError) -> Self {
+        match err {
+            crate::operation::cancel_import_task::CancelImportTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_import_task::CancelImportTaskError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::cancel_import_task::CancelImportTaskError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::cancel_import_task::CancelImportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_import_task::CancelImportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_import_task::CancelImportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_delivery::CreateDeliveryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -290,6 +316,34 @@ impl From<crate::operation::create_export_task::CreateExportTaskError> for Error
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::create_export_task::CreateExportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_import_task::CreateImportTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_import_task::CreateImportTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_import_task::CreateImportTaskError> for Error {
+    fn from(err: crate::operation::create_import_task::CreateImportTaskError) -> Self {
+        match err {
+            crate::operation::create_import_task::CreateImportTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_import_task::CreateImportTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_import_task::CreateImportTaskError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::create_import_task::CreateImportTaskError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_import_task::CreateImportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_import_task::CreateImportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_import_task::CreateImportTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_import_task::CreateImportTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1317,6 +1371,77 @@ impl From<crate::operation::describe_field_indexes::DescribeFieldIndexesError> f
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::describe_field_indexes::DescribeFieldIndexesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_import_task_batches::DescribeImportTaskBatchesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_import_task_batches::DescribeImportTaskBatchesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_import_task_batches::DescribeImportTaskBatchesError> for Error {
+    fn from(err: crate::operation::describe_import_task_batches::DescribeImportTaskBatchesError) -> Self {
+        match err {
+            crate::operation::describe_import_task_batches::DescribeImportTaskBatchesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_import_task_batches::DescribeImportTaskBatchesError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::describe_import_task_batches::DescribeImportTaskBatchesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_import_task_batches::DescribeImportTaskBatchesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_import_task_batches::DescribeImportTaskBatchesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_import_task_batches::DescribeImportTaskBatchesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_import_tasks::DescribeImportTasksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_import_tasks::DescribeImportTasksError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_import_tasks::DescribeImportTasksError> for Error {
+    fn from(err: crate::operation::describe_import_tasks::DescribeImportTasksError) -> Self {
+        match err {
+            crate::operation::describe_import_tasks::DescribeImportTasksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_import_tasks::DescribeImportTasksError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::describe_import_tasks::DescribeImportTasksError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_import_tasks::DescribeImportTasksError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_import_tasks::DescribeImportTasksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_import_tasks::DescribeImportTasksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

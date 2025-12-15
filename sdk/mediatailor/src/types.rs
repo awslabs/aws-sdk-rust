@@ -47,6 +47,14 @@ pub use crate::types::_prefetch_schedule::PrefetchSchedule;
 
 pub use crate::types::_list_prefetch_schedule_type::ListPrefetchScheduleType;
 
+pub use crate::types::_ad_decision_server_configuration::AdDecisionServerConfiguration;
+
+pub use crate::types::_http_request::HttpRequest;
+
+pub use crate::types::_compression_method::CompressionMethod;
+
+pub use crate::types::_method::Method;
+
 pub use crate::types::_ad_conditioning_configuration::AdConditioningConfiguration;
 
 pub use crate::types::_streaming_media_file_conditioning::StreamingMediaFileConditioning;
@@ -169,6 +177,8 @@ mod _ad_break_opportunity;
 
 mod _ad_conditioning_configuration;
 
+mod _ad_decision_server_configuration;
+
 mod _ad_marker_passthrough;
 
 mod _ad_markup_type;
@@ -201,6 +211,8 @@ mod _channel_state;
 
 mod _clip_range;
 
+mod _compression_method;
+
 mod _dash_configuration;
 
 mod _dash_configuration_for_put;
@@ -218,6 +230,8 @@ mod _hls_playlist_settings;
 mod _http_configuration;
 
 mod _http_package_configuration;
+
+mod _http_request;
 
 mod _insertion_mode;
 
@@ -244,6 +258,8 @@ mod _manifest_service_exclude_event_type;
 mod _manifest_service_interaction_log;
 
 mod _message_type;
+
+mod _method;
 
 mod _mode;
 

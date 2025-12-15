@@ -56,6 +56,11 @@ pub(crate) fn de_get_playback_configuration(
                         crate::protocol_serde::shape_ad_conditioning_configuration::de_ad_conditioning_configuration(tokens)?,
                     );
                 }
+                "AdDecisionServerConfiguration" => {
+                    builder = builder.set_ad_decision_server_configuration(
+                        crate::protocol_serde::shape_ad_decision_server_configuration::de_ad_decision_server_configuration(tokens)?,
+                    );
+                }
                 "AdDecisionServerUrl" => {
                     builder = builder.set_ad_decision_server_url(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

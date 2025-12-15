@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "RequestType" => {
+                            builder = builder.set_request_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RequestType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "CaseId" => {
                             builder = builder.set_case_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

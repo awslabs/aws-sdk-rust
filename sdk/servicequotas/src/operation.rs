@@ -22,6 +22,9 @@ pub mod get_auto_management_configuration;
 /// Types for the `GetAWSDefaultServiceQuota` operation.
 pub mod get_aws_default_service_quota;
 
+/// Types for the `GetQuotaUtilizationReport` operation.
+pub mod get_quota_utilization_report;
+
 /// Types for the `GetRequestedServiceQuotaChange` operation.
 pub mod get_requested_service_quota_change;
 
@@ -60,6 +63,9 @@ pub mod request_service_quota_increase;
 
 /// Types for the `StartAutoManagement` operation.
 pub mod start_auto_management;
+
+/// Types for the `StartQuotaUtilizationReport` operation.
+pub mod start_quota_utilization_report;
 
 /// Types for the `StopAutoManagement` operation.
 pub mod stop_auto_management;

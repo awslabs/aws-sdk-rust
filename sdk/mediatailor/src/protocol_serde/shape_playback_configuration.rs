@@ -125,6 +125,11 @@ where
                                 crate::protocol_serde::shape_ad_conditioning_configuration::de_ad_conditioning_configuration(tokens)?,
                             );
                         }
+                        "AdDecisionServerConfiguration" => {
+                            builder = builder.set_ad_decision_server_configuration(
+                                crate::protocol_serde::shape_ad_decision_server_configuration::de_ad_decision_server_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
