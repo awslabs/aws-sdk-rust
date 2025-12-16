@@ -189,6 +189,10 @@ mod list_db_parameter_groups;
 
 mod list_tags_for_resource;
 
+mod reboot_db_cluster;
+
+mod reboot_db_instance;
+
 mod tag_resource;
 
 mod untag_resource;

@@ -166,8 +166,18 @@ pub(crate) fn de_get_command(
                 "payload" => {
                     builder = builder.set_payload(crate::protocol_serde::shape_command_payload::de_command_payload(tokens)?);
                 }
+                "payloadTemplate" => {
+                    builder = builder.set_payload_template(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "pendingDeletion" => {
                     builder = builder.set_pending_deletion(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "preprocessor" => {
+                    builder = builder.set_preprocessor(crate::protocol_serde::shape_command_preprocessor::de_command_preprocessor(tokens)?);
                 }
                 "roleArn" => {
                     builder = builder.set_role_arn(

@@ -49,6 +49,10 @@ pub(crate) mod shape_list_db_parameter_groups;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_reboot_db_cluster;
+
+pub(crate) mod shape_reboot_db_instance;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -96,6 +100,10 @@ pub(crate) mod shape_list_db_instances_input;
 pub(crate) mod shape_list_db_parameter_groups_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_reboot_db_cluster_input;
+
+pub(crate) mod shape_reboot_db_instance_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 

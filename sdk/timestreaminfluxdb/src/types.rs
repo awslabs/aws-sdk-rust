@@ -43,9 +43,9 @@ pub use crate::types::_status::Status;
 
 pub use crate::types::_db_instance_summary::DbInstanceSummary;
 
-pub use crate::types::_db_instance_for_cluster_summary::DbInstanceForClusterSummary;
-
 pub use crate::types::_cluster_status::ClusterStatus;
+
+pub use crate::types::_db_instance_for_cluster_summary::DbInstanceForClusterSummary;
 
 pub use crate::types::_failover_mode::FailoverMode;
 

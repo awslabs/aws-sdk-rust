@@ -6,20 +6,35 @@ pub fn ser_command_parameter(
     {
         object.key("name").string(input.name.as_str());
     }
-    if let Some(var_1) = &input.value {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("value").start_object();
-        crate::protocol_serde::shape_command_parameter_value::ser_command_parameter_value(&mut object_2, var_1)?;
-        object_2.finish();
+    if let Some(var_1) = &input.r#type {
+        object.key("type").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.default_value {
+    if let Some(var_2) = &input.value {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("defaultValue").start_object();
-        crate::protocol_serde::shape_command_parameter_value::ser_command_parameter_value(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("value").start_object();
+        crate::protocol_serde::shape_command_parameter_value::ser_command_parameter_value(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.description {
-        object.key("description").string(var_5.as_str());
+    if let Some(var_4) = &input.default_value {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("defaultValue").start_object();
+        crate::protocol_serde::shape_command_parameter_value::ser_command_parameter_value(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.value_conditions {
+        let mut array_7 = object.key("valueConditions").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_command_parameter_value_condition::ser_command_parameter_value_condition(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.description {
+        object.key("description").string(var_10.as_str());
     }
     Ok(())
 }
@@ -46,12 +61,26 @@ where
                                     .transpose()?,
                             );
                         }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CommandParameterType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "value" => {
                             builder = builder.set_value(crate::protocol_serde::shape_command_parameter_value::de_command_parameter_value(tokens)?);
                         }
                         "defaultValue" => {
                             builder =
                                 builder.set_default_value(crate::protocol_serde::shape_command_parameter_value::de_command_parameter_value(tokens)?);
+                        }
+                        "valueConditions" => {
+                            builder = builder.set_value_conditions(
+                                crate::protocol_serde::shape_command_parameter_value_condition_list::de_command_parameter_value_condition_list(
+                                    tokens,
+                                )?,
+                            );
                         }
                         "description" => {
                             builder = builder.set_description(

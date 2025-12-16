@@ -212,6 +212,24 @@ pub(crate) fn list_db_parameter_groups_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn reboot_db_instance_output_output_correct_errors(
+    mut builder: crate::operation::reboot_db_instance::builders::RebootDbInstanceOutputBuilder,
+) -> crate::operation::reboot_db_instance::builders::RebootDbInstanceOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.vpc_subnet_ids.is_none() {
+        builder.vpc_subnet_ids = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_db_instance_output_output_correct_errors(
     mut builder: crate::operation::update_db_instance::builders::UpdateDbInstanceOutputBuilder,
 ) -> crate::operation::update_db_instance::builders::UpdateDbInstanceOutputBuilder {

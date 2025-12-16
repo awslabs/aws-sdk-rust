@@ -387,9 +387,19 @@ pub use crate::types::_command_execution_result::CommandExecutionResultBuilder;
 
 pub use crate::types::_status_reason::StatusReasonBuilder;
 
+pub use crate::types::_command_preprocessor::CommandPreprocessorBuilder;
+
+pub use crate::types::_aws_json_substitution_command_preprocessor_config::AwsJsonSubstitutionCommandPreprocessorConfigBuilder;
+
 pub use crate::types::_command_payload::CommandPayloadBuilder;
 
 pub use crate::types::_command_parameter::CommandParameterBuilder;
+
+pub use crate::types::_command_parameter_value_condition::CommandParameterValueConditionBuilder;
+
+pub use crate::types::_command_parameter_value_comparison_operand::CommandParameterValueComparisonOperandBuilder;
+
+pub use crate::types::_command_parameter_value_number_range::CommandParameterValueNumberRangeBuilder;
 
 pub use crate::types::_bucket::BucketBuilder;
 

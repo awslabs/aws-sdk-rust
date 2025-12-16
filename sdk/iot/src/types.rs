@@ -539,9 +539,25 @@ pub use crate::types::_command_execution_result::CommandExecutionResult;
 
 pub use crate::types::_status_reason::StatusReason;
 
+pub use crate::types::_command_preprocessor::CommandPreprocessor;
+
+pub use crate::types::_aws_json_substitution_command_preprocessor_config::AwsJsonSubstitutionCommandPreprocessorConfig;
+
+pub use crate::types::_output_format::OutputFormat;
+
 pub use crate::types::_command_payload::CommandPayload;
 
 pub use crate::types::_command_parameter::CommandParameter;
+
+pub use crate::types::_command_parameter_value_condition::CommandParameterValueCondition;
+
+pub use crate::types::_command_parameter_value_comparison_operand::CommandParameterValueComparisonOperand;
+
+pub use crate::types::_command_parameter_value_number_range::CommandParameterValueNumberRange;
+
+pub use crate::types::_command_parameter_value_comparison_operator::CommandParameterValueComparisonOperator;
+
+pub use crate::types::_command_parameter_type::CommandParameterType;
 
 pub use crate::types::_bucket::Bucket;
 
@@ -733,6 +749,8 @@ mod _aws_job_rate_increase_criteria;
 
 mod _aws_job_timeout_config;
 
+mod _aws_json_substitution_command_preprocessor_config;
+
 mod _behavior;
 
 mod _behavior_criteria;
@@ -797,9 +815,21 @@ mod _command_namespace;
 
 mod _command_parameter;
 
+mod _command_parameter_type;
+
 mod _command_parameter_value;
 
+mod _command_parameter_value_comparison_operand;
+
+mod _command_parameter_value_comparison_operator;
+
+mod _command_parameter_value_condition;
+
+mod _command_parameter_value_number_range;
+
 mod _command_payload;
+
+mod _command_preprocessor;
 
 mod _command_summary;
 
@@ -1026,6 +1056,8 @@ mod _ota_update_status;
 mod _ota_update_summary;
 
 mod _outgoing_certificate;
+
+mod _output_format;
 
 mod _package_summary;
 

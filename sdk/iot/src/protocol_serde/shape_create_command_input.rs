@@ -30,20 +30,29 @@ pub fn ser_create_command_input_input(
         crate::protocol_serde::shape_command_payload::ser_command_payload(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.role_arn {
-        object.key("roleArn").string(var_10.as_str());
+    if let Some(var_10) = &input.payload_template {
+        object.key("payloadTemplate").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.tags {
-        let mut array_12 = object.key("tags").start_array();
-        for item_13 in var_11 {
+    if let Some(var_11) = &input.preprocessor {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("preprocessor").start_object();
+        crate::protocol_serde::shape_command_preprocessor::ser_command_preprocessor(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.role_arn {
+        object.key("roleArn").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_12.finish();
+        array_15.finish();
     }
     Ok(())
 }

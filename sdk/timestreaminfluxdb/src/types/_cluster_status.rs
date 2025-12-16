@@ -18,7 +18,11 @@
 ///     ClusterStatus::Deleting => { /* ... */ },
 ///     ClusterStatus::Failed => { /* ... */ },
 ///     ClusterStatus::Maintenance => { /* ... */ },
+///     ClusterStatus::PartiallyAvailable => { /* ... */ },
+///     ClusterStatus::Rebooting => { /* ... */ },
+///     ClusterStatus::RebootFailed => { /* ... */ },
 ///     ClusterStatus::Updating => { /* ... */ },
+///     ClusterStatus::UpdatingInstanceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -60,7 +64,15 @@ pub enum ClusterStatus {
     #[allow(missing_docs)] // documentation missing in model
     Maintenance,
     #[allow(missing_docs)] // documentation missing in model
+    PartiallyAvailable,
+    #[allow(missing_docs)] // documentation missing in model
+    Rebooting,
+    #[allow(missing_docs)] // documentation missing in model
+    RebootFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdatingInstanceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -74,7 +86,11 @@ impl ::std::convert::From<&str> for ClusterStatus {
             "DELETING" => ClusterStatus::Deleting,
             "FAILED" => ClusterStatus::Failed,
             "MAINTENANCE" => ClusterStatus::Maintenance,
+            "PARTIALLY_AVAILABLE" => ClusterStatus::PartiallyAvailable,
+            "REBOOTING" => ClusterStatus::Rebooting,
+            "REBOOT_FAILED" => ClusterStatus::RebootFailed,
             "UPDATING" => ClusterStatus::Updating,
+            "UPDATING_INSTANCE_TYPE" => ClusterStatus::UpdatingInstanceType,
             other => ClusterStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -96,13 +112,29 @@ impl ClusterStatus {
             ClusterStatus::Deleting => "DELETING",
             ClusterStatus::Failed => "FAILED",
             ClusterStatus::Maintenance => "MAINTENANCE",
+            ClusterStatus::PartiallyAvailable => "PARTIALLY_AVAILABLE",
+            ClusterStatus::Rebooting => "REBOOTING",
+            ClusterStatus::RebootFailed => "REBOOT_FAILED",
             ClusterStatus::Updating => "UPDATING",
+            ClusterStatus::UpdatingInstanceType => "UPDATING_INSTANCE_TYPE",
             ClusterStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "CREATING", "DELETED", "DELETING", "FAILED", "MAINTENANCE", "UPDATING"]
+        &[
+            "AVAILABLE",
+            "CREATING",
+            "DELETED",
+            "DELETING",
+            "FAILED",
+            "MAINTENANCE",
+            "PARTIALLY_AVAILABLE",
+            "REBOOTING",
+            "REBOOT_FAILED",
+            "UPDATING",
+            "UPDATING_INSTANCE_TYPE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ClusterStatus {
@@ -131,7 +163,11 @@ impl ::std::fmt::Display for ClusterStatus {
             ClusterStatus::Deleting => write!(f, "DELETING"),
             ClusterStatus::Failed => write!(f, "FAILED"),
             ClusterStatus::Maintenance => write!(f, "MAINTENANCE"),
+            ClusterStatus::PartiallyAvailable => write!(f, "PARTIALLY_AVAILABLE"),
+            ClusterStatus::Rebooting => write!(f, "REBOOTING"),
+            ClusterStatus::RebootFailed => write!(f, "REBOOT_FAILED"),
             ClusterStatus::Updating => write!(f, "UPDATING"),
+            ClusterStatus::UpdatingInstanceType => write!(f, "UPDATING_INSTANCE_TYPE"),
             ClusterStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

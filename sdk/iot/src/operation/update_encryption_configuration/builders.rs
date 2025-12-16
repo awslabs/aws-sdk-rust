@@ -22,7 +22,8 @@ impl crate::operation::update_encryption_configuration::builders::UpdateEncrypti
 }
 /// Fluent builder constructing a request to `UpdateEncryptionConfiguration`.
 ///
-/// <p>Updates the encryption configuration. By default, all Amazon Web Services IoT Core data at rest is encrypted using Amazon Web Services owned keys. Amazon Web Services IoT Core also supports symmetric customer managed keys from Amazon Web Services Key Management Service (KMS). With customer managed keys, you create, own, and manage the KMS keys in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/data-encryption.html">Data encryption</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+/// <p>Updates the encryption configuration. By default, Amazon Web Services IoT Core encrypts your data at rest using Amazon Web Services owned keys. Amazon Web Services IoT Core also supports symmetric customer managed keys from Key Management Service (KMS). With customer managed keys, you create, own, and manage the KMS keys in your Amazon Web Services account.</p>
+/// <p>Before using this API, you must set up permissions for Amazon Web Services IoT Core to access KMS. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/encryption-at-rest.html">Data encryption at rest</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEncryptionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +109,31 @@ impl UpdateEncryptionConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The type of the Amazon Web Services Key Management Service (KMS) key.</p>
+    /// <p>The type of the KMS key.</p>
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.inner = self.inner.encryption_type(input);
         self
     }
-    /// <p>The type of the Amazon Web Services Key Management Service (KMS) key.</p>
+    /// <p>The type of the KMS key.</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.inner = self.inner.set_encryption_type(input);
         self
     }
-    /// <p>The type of the Amazon Web Services Key Management Service (KMS) key.</p>
+    /// <p>The type of the KMS key.</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
         self.inner.get_encryption_type()
     }
-    /// <p>The ARN of the customer-managed KMS key.</p>
+    /// <p>The ARN of the customer managedKMS key.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
         self
     }
-    /// <p>The ARN of the customer-managed KMS key.</p>
+    /// <p>The ARN of the customer managedKMS key.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_arn(input);
         self
     }
-    /// <p>The ARN of the customer-managed KMS key.</p>
+    /// <p>The ARN of the customer managedKMS key.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
     }

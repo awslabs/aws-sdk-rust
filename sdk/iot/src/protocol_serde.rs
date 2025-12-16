@@ -957,6 +957,8 @@ pub(crate) mod shape_command_parameter_list;
 
 pub(crate) mod shape_command_payload;
 
+pub(crate) mod shape_command_preprocessor;
+
 pub(crate) mod shape_command_summary_list;
 
 pub(crate) mod shape_configuration;
@@ -1219,6 +1221,8 @@ pub(crate) mod shape_aws_job_abort_criteria;
 
 pub(crate) mod shape_aws_job_exponential_rollout_rate;
 
+pub(crate) mod shape_aws_json_substitution_command_preprocessor_config;
+
 pub(crate) mod shape_behavior_criteria;
 
 pub(crate) mod shape_behavior_model_training_summary;
@@ -1240,6 +1244,8 @@ pub(crate) mod shape_command_execution_result;
 pub(crate) mod shape_command_execution_summary;
 
 pub(crate) mod shape_command_parameter_value;
+
+pub(crate) mod shape_command_parameter_value_condition;
 
 pub(crate) mod shape_command_summary;
 
@@ -1419,6 +1425,10 @@ pub(crate) mod shape_cloudwatch_logs_action;
 
 pub(crate) mod shape_cloudwatch_metric_action;
 
+pub(crate) mod shape_command_parameter_value_comparison_operand;
+
+pub(crate) mod shape_command_parameter_value_condition_list;
+
 pub(crate) mod shape_custom_code_signing;
 
 pub(crate) mod shape_denied;
@@ -1527,6 +1537,8 @@ pub(crate) mod shape_code_signing_certificate_chain;
 
 pub(crate) mod shape_code_signing_signature;
 
+pub(crate) mod shape_command_parameter_value_number_range;
+
 pub(crate) mod shape_destination;
 
 pub(crate) mod shape_explicit_deny;
@@ -1584,3 +1596,5 @@ pub(crate) mod shape_asset_property_timestamp;
 pub(crate) mod shape_asset_property_value_list;
 
 pub(crate) mod shape_asset_property_variant;
+
+pub(crate) mod shape_command_parameter_value_string_list;

@@ -6,10 +6,14 @@
 pub struct CommandParameter {
     /// <p>The name of a specific parameter used in a command and command execution.</p>
     pub name: ::std::string::String,
-    /// <p>The value used to describe the command. When you assign a value to a parameter, it will override any default value that you had already specified.</p>
+    /// <p>The type of the command parameter.</p>
+    pub r#type: ::std::option::Option<crate::types::CommandParameterType>,
+    /// <p>Parameter value that overrides the default value, if set.</p>
     pub value: ::std::option::Option<crate::types::CommandParameterValue>,
     /// <p>The default value used to describe the command. This is the value assumed by the parameter if no other value is assigned to it.</p>
     pub default_value: ::std::option::Option<crate::types::CommandParameterValue>,
+    /// <p>The list of conditions that a command parameter value must satisfy to create a command execution.</p>
+    pub value_conditions: ::std::option::Option<::std::vec::Vec<crate::types::CommandParameterValueCondition>>,
     /// <p>The description of the command parameter.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
@@ -19,13 +23,23 @@ impl CommandParameter {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The value used to describe the command. When you assign a value to a parameter, it will override any default value that you had already specified.</p>
+    /// <p>The type of the command parameter.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CommandParameterType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Parameter value that overrides the default value, if set.</p>
     pub fn value(&self) -> ::std::option::Option<&crate::types::CommandParameterValue> {
         self.value.as_ref()
     }
     /// <p>The default value used to describe the command. This is the value assumed by the parameter if no other value is assigned to it.</p>
     pub fn default_value(&self) -> ::std::option::Option<&crate::types::CommandParameterValue> {
         self.default_value.as_ref()
+    }
+    /// <p>The list of conditions that a command parameter value must satisfy to create a command execution.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value_conditions.is_none()`.
+    pub fn value_conditions(&self) -> &[crate::types::CommandParameterValueCondition] {
+        self.value_conditions.as_deref().unwrap_or_default()
     }
     /// <p>The description of the command parameter.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -44,8 +58,10 @@ impl CommandParameter {
 #[non_exhaustive]
 pub struct CommandParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::CommandParameterType>,
     pub(crate) value: ::std::option::Option<crate::types::CommandParameterValue>,
     pub(crate) default_value: ::std::option::Option<crate::types::CommandParameterValue>,
+    pub(crate) value_conditions: ::std::option::Option<::std::vec::Vec<crate::types::CommandParameterValueCondition>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl CommandParameterBuilder {
@@ -64,17 +80,31 @@ impl CommandParameterBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The value used to describe the command. When you assign a value to a parameter, it will override any default value that you had already specified.</p>
+    /// <p>The type of the command parameter.</p>
+    pub fn r#type(mut self, input: crate::types::CommandParameterType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the command parameter.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::CommandParameterType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the command parameter.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CommandParameterType> {
+        &self.r#type
+    }
+    /// <p>Parameter value that overrides the default value, if set.</p>
     pub fn value(mut self, input: crate::types::CommandParameterValue) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The value used to describe the command. When you assign a value to a parameter, it will override any default value that you had already specified.</p>
+    /// <p>Parameter value that overrides the default value, if set.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::CommandParameterValue>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The value used to describe the command. When you assign a value to a parameter, it will override any default value that you had already specified.</p>
+    /// <p>Parameter value that overrides the default value, if set.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::CommandParameterValue> {
         &self.value
     }
@@ -91,6 +121,26 @@ impl CommandParameterBuilder {
     /// <p>The default value used to describe the command. This is the value assumed by the parameter if no other value is assigned to it.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<crate::types::CommandParameterValue> {
         &self.default_value
+    }
+    /// Appends an item to `value_conditions`.
+    ///
+    /// To override the contents of this collection use [`set_value_conditions`](Self::set_value_conditions).
+    ///
+    /// <p>The list of conditions that a command parameter value must satisfy to create a command execution.</p>
+    pub fn value_conditions(mut self, input: crate::types::CommandParameterValueCondition) -> Self {
+        let mut v = self.value_conditions.unwrap_or_default();
+        v.push(input);
+        self.value_conditions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of conditions that a command parameter value must satisfy to create a command execution.</p>
+    pub fn set_value_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandParameterValueCondition>>) -> Self {
+        self.value_conditions = input;
+        self
+    }
+    /// <p>The list of conditions that a command parameter value must satisfy to create a command execution.</p>
+    pub fn get_value_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandParameterValueCondition>> {
+        &self.value_conditions
     }
     /// <p>The description of the command parameter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,8 +167,10 @@ impl CommandParameterBuilder {
                     "name was not specified but it is required when building CommandParameter",
                 )
             })?,
+            r#type: self.r#type,
             value: self.value,
             default_value: self.default_value,
+            value_conditions: self.value_conditions,
             description: self.description,
         })
     }

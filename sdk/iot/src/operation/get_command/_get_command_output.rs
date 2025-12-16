@@ -23,6 +23,10 @@ pub struct GetCommandOutput {
     pub mandatory_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CommandParameter>>,
     /// <p>The payload object that you provided for the command.</p>
     pub payload: ::std::option::Option<crate::types::CommandPayload>,
+    /// <p>The payload template for the dynamic command.</p>
+    pub payload_template: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration that determines how <code>payloadTemplate</code> is processed to generate command execution payload.</p>
+    pub preprocessor: ::std::option::Option<crate::types::CommandPreprocessor>,
     /// <p>The IAM role that you provided when creating the command with <code>AWS-IoT-FleetWise</code> as the namespace.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp, when the command was created.</p>
@@ -72,6 +76,14 @@ impl GetCommandOutput {
     pub fn payload(&self) -> ::std::option::Option<&crate::types::CommandPayload> {
         self.payload.as_ref()
     }
+    /// <p>The payload template for the dynamic command.</p>
+    pub fn payload_template(&self) -> ::std::option::Option<&str> {
+        self.payload_template.as_deref()
+    }
+    /// <p>Configuration that determines how <code>payloadTemplate</code> is processed to generate command execution payload.</p>
+    pub fn preprocessor(&self) -> ::std::option::Option<&crate::types::CommandPreprocessor> {
+        self.preprocessor.as_ref()
+    }
     /// <p>The IAM role that you provided when creating the command with <code>AWS-IoT-FleetWise</code> as the namespace.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
@@ -116,6 +128,8 @@ pub struct GetCommandOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) mandatory_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CommandParameter>>,
     pub(crate) payload: ::std::option::Option<crate::types::CommandPayload>,
+    pub(crate) payload_template: ::std::option::Option<::std::string::String>,
+    pub(crate) preprocessor: ::std::option::Option<crate::types::CommandPreprocessor>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -246,6 +260,34 @@ impl GetCommandOutputBuilder {
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::CommandPayload> {
         &self.payload
     }
+    /// <p>The payload template for the dynamic command.</p>
+    pub fn payload_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.payload_template = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The payload template for the dynamic command.</p>
+    pub fn set_payload_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.payload_template = input;
+        self
+    }
+    /// <p>The payload template for the dynamic command.</p>
+    pub fn get_payload_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload_template
+    }
+    /// <p>Configuration that determines how <code>payloadTemplate</code> is processed to generate command execution payload.</p>
+    pub fn preprocessor(mut self, input: crate::types::CommandPreprocessor) -> Self {
+        self.preprocessor = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration that determines how <code>payloadTemplate</code> is processed to generate command execution payload.</p>
+    pub fn set_preprocessor(mut self, input: ::std::option::Option<crate::types::CommandPreprocessor>) -> Self {
+        self.preprocessor = input;
+        self
+    }
+    /// <p>Configuration that determines how <code>payloadTemplate</code> is processed to generate command execution payload.</p>
+    pub fn get_preprocessor(&self) -> &::std::option::Option<crate::types::CommandPreprocessor> {
+        &self.preprocessor
+    }
     /// <p>The IAM role that you provided when creating the command with <code>AWS-IoT-FleetWise</code> as the namespace.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -335,6 +377,8 @@ impl GetCommandOutputBuilder {
             description: self.description,
             mandatory_parameters: self.mandatory_parameters,
             payload: self.payload,
+            payload_template: self.payload_template,
+            preprocessor: self.preprocessor,
             role_arn: self.role_arn,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,

@@ -11,12 +11,20 @@ pub struct CreateCommandInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A short text decription of the command.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The payload object for the command. You must specify this information when using the <code>AWS-IoT</code> namespace.</p>
+    /// <p>The payload object for the static command.</p>
     /// <p>You can upload a static payload file from your local storage that contains the instructions for the device to process. The payload file can use any format. To make sure that the device correctly interprets the payload, we recommend you to specify the payload content type.</p>
     pub payload: ::std::option::Option<crate::types::CommandPayload>,
-    /// <p>A list of parameters that are required by the <code>StartCommandExecution</code> API. These parameters need to be specified only when using the <code>AWS-IoT-FleetWise</code> namespace. You can either specify them here or when running the command using the <code>StartCommandExecution</code> API.</p>
+    /// <p>The payload template for the dynamic command.</p><note>
+    /// <p>This parameter is required for dynamic commands where the command execution placeholders are supplied either from <code>mandatoryParameters</code> or when <code>StartCommandExecution</code> is invoked.</p>
+    /// </note>
+    pub payload_template: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration that determines how <code>payloadTemplate</code> is processed to generate command execution payload.</p><note>
+    /// <p>This parameter is required for dynamic commands, along with <code>payloadTemplate</code>, and <code>mandatoryParameters</code>.</p>
+    /// </note>
+    pub preprocessor: ::std::option::Option<crate::types::CommandPreprocessor>,
+    /// <p>A list of parameters that are used by <code>StartCommandExecution</code> API for execution payload generation.</p>
     pub mandatory_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CommandParameter>>,
-    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not required when you use the <code>AWS-IoT</code> namespace.</p>
+    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not supported when you use the <code>AWS-IoT</code> namespace.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name-value pairs that are used as metadata to manage a command.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -38,18 +46,30 @@ impl CreateCommandInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The payload object for the command. You must specify this information when using the <code>AWS-IoT</code> namespace.</p>
+    /// <p>The payload object for the static command.</p>
     /// <p>You can upload a static payload file from your local storage that contains the instructions for the device to process. The payload file can use any format. To make sure that the device correctly interprets the payload, we recommend you to specify the payload content type.</p>
     pub fn payload(&self) -> ::std::option::Option<&crate::types::CommandPayload> {
         self.payload.as_ref()
     }
-    /// <p>A list of parameters that are required by the <code>StartCommandExecution</code> API. These parameters need to be specified only when using the <code>AWS-IoT-FleetWise</code> namespace. You can either specify them here or when running the command using the <code>StartCommandExecution</code> API.</p>
+    /// <p>The payload template for the dynamic command.</p><note>
+    /// <p>This parameter is required for dynamic commands where the command execution placeholders are supplied either from <code>mandatoryParameters</code> or when <code>StartCommandExecution</code> is invoked.</p>
+    /// </note>
+    pub fn payload_template(&self) -> ::std::option::Option<&str> {
+        self.payload_template.as_deref()
+    }
+    /// <p>Configuration that determines how <code>payloadTemplate</code> is processed to generate command execution payload.</p><note>
+    /// <p>This parameter is required for dynamic commands, along with <code>payloadTemplate</code>, and <code>mandatoryParameters</code>.</p>
+    /// </note>
+    pub fn preprocessor(&self) -> ::std::option::Option<&crate::types::CommandPreprocessor> {
+        self.preprocessor.as_ref()
+    }
+    /// <p>A list of parameters that are used by <code>StartCommandExecution</code> API for execution payload generation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mandatory_parameters.is_none()`.
     pub fn mandatory_parameters(&self) -> &[crate::types::CommandParameter] {
         self.mandatory_parameters.as_deref().unwrap_or_default()
     }
-    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not required when you use the <code>AWS-IoT</code> namespace.</p>
+    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not supported when you use the <code>AWS-IoT</code> namespace.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -76,6 +96,8 @@ pub struct CreateCommandInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<crate::types::CommandPayload>,
+    pub(crate) payload_template: ::std::option::Option<::std::string::String>,
+    pub(crate) preprocessor: ::std::option::Option<crate::types::CommandPreprocessor>,
     pub(crate) mandatory_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CommandParameter>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -138,54 +160,94 @@ impl CreateCommandInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The payload object for the command. You must specify this information when using the <code>AWS-IoT</code> namespace.</p>
+    /// <p>The payload object for the static command.</p>
     /// <p>You can upload a static payload file from your local storage that contains the instructions for the device to process. The payload file can use any format. To make sure that the device correctly interprets the payload, we recommend you to specify the payload content type.</p>
     pub fn payload(mut self, input: crate::types::CommandPayload) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The payload object for the command. You must specify this information when using the <code>AWS-IoT</code> namespace.</p>
+    /// <p>The payload object for the static command.</p>
     /// <p>You can upload a static payload file from your local storage that contains the instructions for the device to process. The payload file can use any format. To make sure that the device correctly interprets the payload, we recommend you to specify the payload content type.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::CommandPayload>) -> Self {
         self.payload = input;
         self
     }
-    /// <p>The payload object for the command. You must specify this information when using the <code>AWS-IoT</code> namespace.</p>
+    /// <p>The payload object for the static command.</p>
     /// <p>You can upload a static payload file from your local storage that contains the instructions for the device to process. The payload file can use any format. To make sure that the device correctly interprets the payload, we recommend you to specify the payload content type.</p>
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::CommandPayload> {
         &self.payload
+    }
+    /// <p>The payload template for the dynamic command.</p><note>
+    /// <p>This parameter is required for dynamic commands where the command execution placeholders are supplied either from <code>mandatoryParameters</code> or when <code>StartCommandExecution</code> is invoked.</p>
+    /// </note>
+    pub fn payload_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.payload_template = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The payload template for the dynamic command.</p><note>
+    /// <p>This parameter is required for dynamic commands where the command execution placeholders are supplied either from <code>mandatoryParameters</code> or when <code>StartCommandExecution</code> is invoked.</p>
+    /// </note>
+    pub fn set_payload_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.payload_template = input;
+        self
+    }
+    /// <p>The payload template for the dynamic command.</p><note>
+    /// <p>This parameter is required for dynamic commands where the command execution placeholders are supplied either from <code>mandatoryParameters</code> or when <code>StartCommandExecution</code> is invoked.</p>
+    /// </note>
+    pub fn get_payload_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload_template
+    }
+    /// <p>Configuration that determines how <code>payloadTemplate</code> is processed to generate command execution payload.</p><note>
+    /// <p>This parameter is required for dynamic commands, along with <code>payloadTemplate</code>, and <code>mandatoryParameters</code>.</p>
+    /// </note>
+    pub fn preprocessor(mut self, input: crate::types::CommandPreprocessor) -> Self {
+        self.preprocessor = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration that determines how <code>payloadTemplate</code> is processed to generate command execution payload.</p><note>
+    /// <p>This parameter is required for dynamic commands, along with <code>payloadTemplate</code>, and <code>mandatoryParameters</code>.</p>
+    /// </note>
+    pub fn set_preprocessor(mut self, input: ::std::option::Option<crate::types::CommandPreprocessor>) -> Self {
+        self.preprocessor = input;
+        self
+    }
+    /// <p>Configuration that determines how <code>payloadTemplate</code> is processed to generate command execution payload.</p><note>
+    /// <p>This parameter is required for dynamic commands, along with <code>payloadTemplate</code>, and <code>mandatoryParameters</code>.</p>
+    /// </note>
+    pub fn get_preprocessor(&self) -> &::std::option::Option<crate::types::CommandPreprocessor> {
+        &self.preprocessor
     }
     /// Appends an item to `mandatory_parameters`.
     ///
     /// To override the contents of this collection use [`set_mandatory_parameters`](Self::set_mandatory_parameters).
     ///
-    /// <p>A list of parameters that are required by the <code>StartCommandExecution</code> API. These parameters need to be specified only when using the <code>AWS-IoT-FleetWise</code> namespace. You can either specify them here or when running the command using the <code>StartCommandExecution</code> API.</p>
+    /// <p>A list of parameters that are used by <code>StartCommandExecution</code> API for execution payload generation.</p>
     pub fn mandatory_parameters(mut self, input: crate::types::CommandParameter) -> Self {
         let mut v = self.mandatory_parameters.unwrap_or_default();
         v.push(input);
         self.mandatory_parameters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of parameters that are required by the <code>StartCommandExecution</code> API. These parameters need to be specified only when using the <code>AWS-IoT-FleetWise</code> namespace. You can either specify them here or when running the command using the <code>StartCommandExecution</code> API.</p>
+    /// <p>A list of parameters that are used by <code>StartCommandExecution</code> API for execution payload generation.</p>
     pub fn set_mandatory_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommandParameter>>) -> Self {
         self.mandatory_parameters = input;
         self
     }
-    /// <p>A list of parameters that are required by the <code>StartCommandExecution</code> API. These parameters need to be specified only when using the <code>AWS-IoT-FleetWise</code> namespace. You can either specify them here or when running the command using the <code>StartCommandExecution</code> API.</p>
+    /// <p>A list of parameters that are used by <code>StartCommandExecution</code> API for execution payload generation.</p>
     pub fn get_mandatory_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommandParameter>> {
         &self.mandatory_parameters
     }
-    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not required when you use the <code>AWS-IoT</code> namespace.</p>
+    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not supported when you use the <code>AWS-IoT</code> namespace.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not required when you use the <code>AWS-IoT</code> namespace.</p>
+    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not supported when you use the <code>AWS-IoT</code> namespace.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not required when you use the <code>AWS-IoT</code> namespace.</p>
+    /// <p>The IAM role that you must provide when using the <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management the permission to access IoT FleetWise resources for generating the payload for the command. This field is not supported when you use the <code>AWS-IoT</code> namespace.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -219,6 +281,8 @@ impl CreateCommandInputBuilder {
             display_name: self.display_name,
             description: self.description,
             payload: self.payload,
+            payload_template: self.payload_template,
+            preprocessor: self.preprocessor,
             mandatory_parameters: self.mandatory_parameters,
             role_arn: self.role_arn,
             tags: self.tags,

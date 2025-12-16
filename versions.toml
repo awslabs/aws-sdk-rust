@@ -1140,9 +1140,9 @@ model_hash = '2062d53aa7e7ff3dc1abe1a639e78957bd9c5598c82fa7528555b10fda0e8596'
 
 [crates.aws-sdk-iot]
 category = 'AwsSdk'
-version = '1.102.0'
-source_hash = '661279ff623342a85173c242ac9e9b24aa756eab21526bb7c2a32c0f2b05366f'
-model_hash = '77c0e3a1d97257d9a3cc5c72ba328c57fea4a3548579696742d549d056893670'
+version = '1.103.0'
+source_hash = '8fcd42bb3938f87152e92faf1a0ebb1e91e5801ef2c8be2257dea20e9c634c84'
+model_hash = '64d4f8f0d4dfb2d0717b61fbd53318ac85f9aafd152a69c9be31ac7684677e99'
 
 [crates.aws-sdk-iotanalytics]
 category = 'AwsSdk'
@@ -2364,9 +2364,9 @@ model_hash = 'e66e84b04276c0fa5c8213514f422153844975af9eba80b5c81854c4dbf4f161'
 
 [crates.aws-sdk-timestreaminfluxdb]
 category = 'AwsSdk'
-version = '1.80.0'
-source_hash = 'a6f88de0801ad213de8b0963691d051f3de276cb5cfdf04b77729f088ea9d3a6'
-model_hash = '78a9e48786a244961dc5be67635f704d0579a62400bdc63a83cebdf9689b3c33'
+version = '1.81.0'
+source_hash = '091373920af76b196611de4bf7b9be0703755cf28a58b4b9d81533e8bc42d852'
+model_hash = '81080f125a0d49cf008ab341de71d427b4ef5b6ac300235cc2463407db7d42d0'
 
 [crates.aws-sdk-timestreamquery]
 category = 'AwsSdk'
@@ -2656,19 +2656,6 @@ source_hash = 'e53cd06ca8aa22890f0b286c8dedbb51e665b9894c55a46da5f010392b9ad092'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '0d58dd1d4735add17d8978e6a963bbaeaec2859e73c5aef928dc3b539a45a84b'
-
-[release]
-tag = 'release-2025-12-15'
-
 [release.crates]
-aws-sdk-bedrockagentcorecontrol = '1.25.1'
-aws-sdk-cloudwatchlogs = '1.114.0'
-aws-sdk-connect = '1.145.0'
-aws-sdk-ec2 = '1.197.0'
-aws-sdk-entityresolution = '1.101.0'
-aws-sdk-glacier = '1.92.0'
-aws-sdk-health = '1.93.0'
-aws-sdk-mediatailor = '1.100.0'
-aws-sdk-route53resolver = '1.99.0'
-aws-sdk-s3 = '1.118.0'
-aws-sdk-servicequotas = '1.93.0'
+aws-sdk-iot = '1.103.0'
+aws-sdk-timestreaminfluxdb = '1.81.0'

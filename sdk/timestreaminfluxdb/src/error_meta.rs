@@ -452,6 +452,60 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_db_cluster::RebootDbClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_db_cluster::RebootDbClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reboot_db_cluster::RebootDbClusterError> for Error {
+    fn from(err: crate::operation::reboot_db_cluster::RebootDbClusterError) -> Self {
+        match err {
+            crate::operation::reboot_db_cluster::RebootDbClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::reboot_db_cluster::RebootDbClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::reboot_db_cluster::RebootDbClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::reboot_db_cluster::RebootDbClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::reboot_db_cluster::RebootDbClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::reboot_db_cluster::RebootDbClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::reboot_db_cluster::RebootDbClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_db_instance::RebootDbInstanceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_db_instance::RebootDbInstanceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reboot_db_instance::RebootDbInstanceError> for Error {
+    fn from(err: crate::operation::reboot_db_instance::RebootDbInstanceError) -> Self {
+        match err {
+            crate::operation::reboot_db_instance::RebootDbInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::reboot_db_instance::RebootDbInstanceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::reboot_db_instance::RebootDbInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::reboot_db_instance::RebootDbInstanceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::reboot_db_instance::RebootDbInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::reboot_db_instance::RebootDbInstanceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::reboot_db_instance::RebootDbInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

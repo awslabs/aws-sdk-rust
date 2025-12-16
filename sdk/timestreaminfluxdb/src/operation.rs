@@ -40,6 +40,12 @@ pub mod list_db_parameter_groups;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `RebootDbCluster` operation.
+pub mod reboot_db_cluster;
+
+/// Types for the `RebootDbInstance` operation.
+pub mod reboot_db_instance;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

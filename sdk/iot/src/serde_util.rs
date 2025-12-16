@@ -104,6 +104,15 @@ pub(crate) fn audit_suppression_correct_errors(
     builder
 }
 
+pub(crate) fn aws_json_substitution_command_preprocessor_config_correct_errors(
+    mut builder: crate::types::builders::AwsJsonSubstitutionCommandPreprocessorConfigBuilder,
+) -> crate::types::builders::AwsJsonSubstitutionCommandPreprocessorConfigBuilder {
+    if builder.output_format.is_none() {
+        builder.output_format = "no value was set".parse::<crate::types::OutputFormat>().ok()
+    }
+    builder
+}
+
 pub(crate) fn behavior_correct_errors(mut builder: crate::types::builders::BehaviorBuilder) -> crate::types::builders::BehaviorBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -645,6 +654,21 @@ pub(crate) fn timestream_action_correct_errors(
     builder
 }
 
+pub(crate) fn command_parameter_value_condition_correct_errors(
+    mut builder: crate::types::builders::CommandParameterValueConditionBuilder,
+) -> crate::types::builders::CommandParameterValueConditionBuilder {
+    if builder.comparison_operator.is_none() {
+        builder.comparison_operator = "no value was set".parse::<crate::types::CommandParameterValueComparisonOperator>().ok()
+    }
+    if builder.operand.is_none() {
+        builder.operand = {
+            let builder = crate::types::builders::CommandParameterValueComparisonOperandBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn location_timestamp_correct_errors(
     mut builder: crate::types::builders::LocationTimestampBuilder,
 ) -> crate::types::builders::LocationTimestampBuilder {
@@ -738,6 +762,18 @@ pub(crate) fn timestream_dimension_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn command_parameter_value_number_range_correct_errors(
+    mut builder: crate::types::builders::CommandParameterValueNumberRangeBuilder,
+) -> crate::types::builders::CommandParameterValueNumberRangeBuilder {
+    if builder.min.is_none() {
+        builder.min = Some(Default::default())
+    }
+    if builder.max.is_none() {
+        builder.max = Some(Default::default())
     }
     builder
 }

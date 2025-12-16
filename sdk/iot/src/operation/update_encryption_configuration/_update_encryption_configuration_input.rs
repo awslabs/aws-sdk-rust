@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEncryptionConfigurationInput {
-    /// <p>The type of the Amazon Web Services Key Management Service (KMS) key.</p>
+    /// <p>The type of the KMS key.</p>
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
-    /// <p>The ARN of the customer-managed KMS key.</p>
+    /// <p>The ARN of the customer managedKMS key.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role assumed by Amazon Web Services IoT Core to call KMS on behalf of the customer.</p>
     pub kms_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEncryptionConfigurationInput {
-    /// <p>The type of the Amazon Web Services Key Management Service (KMS) key.</p>
+    /// <p>The type of the KMS key.</p>
     pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The ARN of the customer-managed KMS key.</p>
+    /// <p>The ARN of the customer managedKMS key.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -40,32 +40,32 @@ pub struct UpdateEncryptionConfigurationInputBuilder {
     pub(crate) kms_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEncryptionConfigurationInputBuilder {
-    /// <p>The type of the Amazon Web Services Key Management Service (KMS) key.</p>
+    /// <p>The type of the KMS key.</p>
     /// This field is required.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the Amazon Web Services Key Management Service (KMS) key.</p>
+    /// <p>The type of the KMS key.</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
         self
     }
-    /// <p>The type of the Amazon Web Services Key Management Service (KMS) key.</p>
+    /// <p>The type of the KMS key.</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
         &self.encryption_type
     }
-    /// <p>The ARN of the customer-managed KMS key.</p>
+    /// <p>The ARN of the customer managedKMS key.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the customer-managed KMS key.</p>
+    /// <p>The ARN of the customer managedKMS key.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
-    /// <p>The ARN of the customer-managed KMS key.</p>
+    /// <p>The ARN of the customer managedKMS key.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
