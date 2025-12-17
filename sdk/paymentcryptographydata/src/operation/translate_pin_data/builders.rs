@@ -256,4 +256,18 @@ impl TranslatePinDataFluentBuilder {
     pub fn get_outgoing_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
         self.inner.get_outgoing_wrapped_key()
     }
+    /// <p>The attributes and values to use for incoming AS2805 encryption key for PIN block translation.</p>
+    pub fn incoming_as2805_attributes(mut self, input: crate::types::As2805PekDerivationAttributes) -> Self {
+        self.inner = self.inner.incoming_as2805_attributes(input);
+        self
+    }
+    /// <p>The attributes and values to use for incoming AS2805 encryption key for PIN block translation.</p>
+    pub fn set_incoming_as2805_attributes(mut self, input: ::std::option::Option<crate::types::As2805PekDerivationAttributes>) -> Self {
+        self.inner = self.inner.set_incoming_as2805_attributes(input);
+        self
+    }
+    /// <p>The attributes and values to use for incoming AS2805 encryption key for PIN block translation.</p>
+    pub fn get_incoming_as2805_attributes(&self) -> &::std::option::Option<crate::types::As2805PekDerivationAttributes> {
+        self.inner.get_incoming_as2805_attributes()
+    }
 }

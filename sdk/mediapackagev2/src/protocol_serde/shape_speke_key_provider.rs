@@ -43,6 +43,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CertificateArn" => {
+                            builder = builder.set_certificate_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -89,6 +96,9 @@ pub fn ser_speke_key_provider(
     }
     {
         object.key("Url").string(input.url.as_str());
+    }
+    if let Some(var_5) = &input.certificate_arn {
+        object.key("CertificateArn").string(var_5.as_str());
     }
     Ok(())
 }

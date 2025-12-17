@@ -7,7 +7,7 @@ pub struct TranslateKeyMaterialInput {
     pub incoming_key_material: ::std::option::Option<crate::types::IncomingKeyMaterial>,
     /// <p>Parameter information of the wrapping key used to wrap the transaction key in the outgoing TR31WrappedKeyBlock.</p>
     pub outgoing_key_material: ::std::option::Option<crate::types::OutgoingKeyMaterial>,
-    /// <p>The key check value (KCV) algorithm used for calculating the KCV.</p>
+    /// <p>The key check value (KCV) algorithm used for calculating the KCV of the derived key.</p>
     pub key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
 }
 impl TranslateKeyMaterialInput {
@@ -19,7 +19,7 @@ impl TranslateKeyMaterialInput {
     pub fn outgoing_key_material(&self) -> ::std::option::Option<&crate::types::OutgoingKeyMaterial> {
         self.outgoing_key_material.as_ref()
     }
-    /// <p>The key check value (KCV) algorithm used for calculating the KCV.</p>
+    /// <p>The key check value (KCV) algorithm used for calculating the KCV of the derived key.</p>
     pub fn key_check_value_algorithm(&self) -> ::std::option::Option<&crate::types::KeyCheckValueAlgorithm> {
         self.key_check_value_algorithm.as_ref()
     }
@@ -70,17 +70,17 @@ impl TranslateKeyMaterialInputBuilder {
     pub fn get_outgoing_key_material(&self) -> &::std::option::Option<crate::types::OutgoingKeyMaterial> {
         &self.outgoing_key_material
     }
-    /// <p>The key check value (KCV) algorithm used for calculating the KCV.</p>
+    /// <p>The key check value (KCV) algorithm used for calculating the KCV of the derived key.</p>
     pub fn key_check_value_algorithm(mut self, input: crate::types::KeyCheckValueAlgorithm) -> Self {
         self.key_check_value_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The key check value (KCV) algorithm used for calculating the KCV.</p>
+    /// <p>The key check value (KCV) algorithm used for calculating the KCV of the derived key.</p>
     pub fn set_key_check_value_algorithm(mut self, input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>) -> Self {
         self.key_check_value_algorithm = input;
         self
     }
-    /// <p>The key check value (KCV) algorithm used for calculating the KCV.</p>
+    /// <p>The key check value (KCV) algorithm used for calculating the KCV of the derived key.</p>
     pub fn get_key_check_value_algorithm(&self) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
         &self.key_check_value_algorithm
     }

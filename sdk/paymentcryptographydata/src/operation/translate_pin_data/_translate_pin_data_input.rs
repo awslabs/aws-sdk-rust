@@ -23,6 +23,8 @@ pub struct TranslatePinDataInput {
     pub incoming_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
     /// <p>The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block data.</p>
     pub outgoing_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
+    /// <p>The attributes and values to use for incoming AS2805 encryption key for PIN block translation.</p>
+    pub incoming_as2805_attributes: ::std::option::Option<crate::types::As2805PekDerivationAttributes>,
 }
 impl TranslatePinDataInput {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
@@ -63,6 +65,10 @@ impl TranslatePinDataInput {
     pub fn outgoing_wrapped_key(&self) -> ::std::option::Option<&crate::types::WrappedKey> {
         self.outgoing_wrapped_key.as_ref()
     }
+    /// <p>The attributes and values to use for incoming AS2805 encryption key for PIN block translation.</p>
+    pub fn incoming_as2805_attributes(&self) -> ::std::option::Option<&crate::types::As2805PekDerivationAttributes> {
+        self.incoming_as2805_attributes.as_ref()
+    }
 }
 impl ::std::fmt::Debug for TranslatePinDataInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -76,6 +82,7 @@ impl ::std::fmt::Debug for TranslatePinDataInput {
         formatter.field("outgoing_dukpt_attributes", &self.outgoing_dukpt_attributes);
         formatter.field("incoming_wrapped_key", &self.incoming_wrapped_key);
         formatter.field("outgoing_wrapped_key", &self.outgoing_wrapped_key);
+        formatter.field("incoming_as2805_attributes", &self.incoming_as2805_attributes);
         formatter.finish()
     }
 }
@@ -99,6 +106,7 @@ pub struct TranslatePinDataInputBuilder {
     pub(crate) outgoing_dukpt_attributes: ::std::option::Option<crate::types::DukptDerivationAttributes>,
     pub(crate) incoming_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
     pub(crate) outgoing_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
+    pub(crate) incoming_as2805_attributes: ::std::option::Option<crate::types::As2805PekDerivationAttributes>,
 }
 impl TranslatePinDataInputBuilder {
     /// <p>The <code>keyARN</code> of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.</p>
@@ -238,6 +246,20 @@ impl TranslatePinDataInputBuilder {
     pub fn get_outgoing_wrapped_key(&self) -> &::std::option::Option<crate::types::WrappedKey> {
         &self.outgoing_wrapped_key
     }
+    /// <p>The attributes and values to use for incoming AS2805 encryption key for PIN block translation.</p>
+    pub fn incoming_as2805_attributes(mut self, input: crate::types::As2805PekDerivationAttributes) -> Self {
+        self.incoming_as2805_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The attributes and values to use for incoming AS2805 encryption key for PIN block translation.</p>
+    pub fn set_incoming_as2805_attributes(mut self, input: ::std::option::Option<crate::types::As2805PekDerivationAttributes>) -> Self {
+        self.incoming_as2805_attributes = input;
+        self
+    }
+    /// <p>The attributes and values to use for incoming AS2805 encryption key for PIN block translation.</p>
+    pub fn get_incoming_as2805_attributes(&self) -> &::std::option::Option<crate::types::As2805PekDerivationAttributes> {
+        &self.incoming_as2805_attributes
+    }
     /// Consumes the builder and constructs a [`TranslatePinDataInput`](crate::operation::translate_pin_data::TranslatePinDataInput).
     pub fn build(
         self,
@@ -252,6 +274,7 @@ impl TranslatePinDataInputBuilder {
             outgoing_dukpt_attributes: self.outgoing_dukpt_attributes,
             incoming_wrapped_key: self.incoming_wrapped_key,
             outgoing_wrapped_key: self.outgoing_wrapped_key,
+            incoming_as2805_attributes: self.incoming_as2805_attributes,
         })
     }
 }
@@ -267,6 +290,7 @@ impl ::std::fmt::Debug for TranslatePinDataInputBuilder {
         formatter.field("outgoing_dukpt_attributes", &self.outgoing_dukpt_attributes);
         formatter.field("incoming_wrapped_key", &self.incoming_wrapped_key);
         formatter.field("outgoing_wrapped_key", &self.outgoing_wrapped_key);
+        formatter.field("incoming_as2805_attributes", &self.incoming_as2805_attributes);
         formatter.finish()
     }
 }

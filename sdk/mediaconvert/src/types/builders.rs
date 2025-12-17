@@ -299,6 +299,10 @@ pub use crate::types::_video_overlay_input::VideoOverlayInputBuilder;
 
 pub use crate::types::_video_overlay_input_clipping::VideoOverlayInputClippingBuilder;
 
+pub use crate::types::_audio_selector::AudioSelectorBuilder;
+
+pub use crate::types::_hls_rendition_group_settings::HlsRenditionGroupSettingsBuilder;
+
 pub use crate::types::_video_overlay_crop::VideoOverlayCropBuilder;
 
 pub use crate::types::_input_clipping::InputClippingBuilder;
@@ -324,10 +328,6 @@ pub use crate::types::_embedded_source_settings::EmbeddedSourceSettingsBuilder;
 pub use crate::types::_dvb_sub_source_settings::DvbSubSourceSettingsBuilder;
 
 pub use crate::types::_ancillary_source_settings::AncillarySourceSettingsBuilder;
-
-pub use crate::types::_audio_selector::AudioSelectorBuilder;
-
-pub use crate::types::_hls_rendition_group_settings::HlsRenditionGroupSettingsBuilder;
 
 pub use crate::types::_audio_selector_group::AudioSelectorGroupBuilder;
 

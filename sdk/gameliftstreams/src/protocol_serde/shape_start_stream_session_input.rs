@@ -46,20 +46,26 @@ pub fn ser_start_stream_session_input_input(
         }
         array_13.finish();
     }
-    if let Some(var_15) = &input.protocol {
-        object.key("Protocol").string(var_15.as_str());
+    if let Some(var_15) = &input.performance_stats_configuration {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("PerformanceStatsConfiguration").start_object();
+        crate::protocol_serde::shape_performance_stats_configuration::ser_performance_stats_configuration(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_16) = &input.session_length_seconds {
+    if let Some(var_17) = &input.protocol {
+        object.key("Protocol").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.session_length_seconds {
         object.key("SessionLengthSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if let Some(var_17) = &input.signal_request {
-        object.key("SignalRequest").string(var_17.as_str());
+    if let Some(var_19) = &input.signal_request {
+        object.key("SignalRequest").string(var_19.as_str());
     }
-    if let Some(var_18) = &input.user_id {
-        object.key("UserId").string(var_18.as_str());
+    if let Some(var_20) = &input.user_id {
+        object.key("UserId").string(var_20.as_str());
     }
     Ok(())
 }

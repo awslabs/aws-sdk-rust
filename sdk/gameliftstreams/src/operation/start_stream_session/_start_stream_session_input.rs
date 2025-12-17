@@ -34,6 +34,8 @@ pub struct StartStreamSessionInput {
     /// </note>
     /// <p><code>AdditionalEnvironmentVariables</code> and <code>AdditionalLaunchArgs</code> have similar purposes. <code>AdditionalEnvironmentVariables</code> passes data using environment variables; while <code>AdditionalLaunchArgs</code> passes data using command-line arguments.</p>
     pub additional_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Configuration settings for sharing the stream session's performance stats with the client</p>
+    pub performance_stats_configuration: ::std::option::Option<crate::types::PerformanceStatsConfiguration>,
 }
 impl StartStreamSessionInput {
     /// <p>A unique identifier that represents a client request. The request is idempotent, which ensures that an API request completes only once. When users send a request, Amazon GameLift Streams automatically populates this field.</p>
@@ -97,6 +99,10 @@ impl StartStreamSessionInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_environment_variables.as_ref()
     }
+    /// <p>Configuration settings for sharing the stream session's performance stats with the client</p>
+    pub fn performance_stats_configuration(&self) -> ::std::option::Option<&crate::types::PerformanceStatsConfiguration> {
+        self.performance_stats_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for StartStreamSessionInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -113,6 +119,7 @@ impl ::std::fmt::Debug for StartStreamSessionInput {
         formatter.field("session_length_seconds", &self.session_length_seconds);
         formatter.field("additional_launch_args", &self.additional_launch_args);
         formatter.field("additional_environment_variables", &self.additional_environment_variables);
+        formatter.field("performance_stats_configuration", &self.performance_stats_configuration);
         formatter.finish()
     }
 }
@@ -139,6 +146,7 @@ pub struct StartStreamSessionInputBuilder {
     pub(crate) session_length_seconds: ::std::option::Option<i32>,
     pub(crate) additional_launch_args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) additional_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) performance_stats_configuration: ::std::option::Option<crate::types::PerformanceStatsConfiguration>,
 }
 impl StartStreamSessionInputBuilder {
     /// <p>A unique identifier that represents a client request. The request is idempotent, which ensures that an API request completes only once. When users send a request, Amazon GameLift Streams automatically populates this field.</p>
@@ -361,6 +369,20 @@ impl StartStreamSessionInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_environment_variables
     }
+    /// <p>Configuration settings for sharing the stream session's performance stats with the client</p>
+    pub fn performance_stats_configuration(mut self, input: crate::types::PerformanceStatsConfiguration) -> Self {
+        self.performance_stats_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for sharing the stream session's performance stats with the client</p>
+    pub fn set_performance_stats_configuration(mut self, input: ::std::option::Option<crate::types::PerformanceStatsConfiguration>) -> Self {
+        self.performance_stats_configuration = input;
+        self
+    }
+    /// <p>Configuration settings for sharing the stream session's performance stats with the client</p>
+    pub fn get_performance_stats_configuration(&self) -> &::std::option::Option<crate::types::PerformanceStatsConfiguration> {
+        &self.performance_stats_configuration
+    }
     /// Consumes the builder and constructs a [`StartStreamSessionInput`](crate::operation::start_stream_session::StartStreamSessionInput).
     pub fn build(
         self,
@@ -379,6 +401,7 @@ impl StartStreamSessionInputBuilder {
             session_length_seconds: self.session_length_seconds,
             additional_launch_args: self.additional_launch_args,
             additional_environment_variables: self.additional_environment_variables,
+            performance_stats_configuration: self.performance_stats_configuration,
         })
     }
 }
@@ -397,6 +420,7 @@ impl ::std::fmt::Debug for StartStreamSessionInputBuilder {
         formatter.field("session_length_seconds", &self.session_length_seconds);
         formatter.field("additional_launch_args", &self.additional_launch_args);
         formatter.field("additional_environment_variables", &self.additional_environment_variables);
+        formatter.field("performance_stats_configuration", &self.performance_stats_configuration);
         formatter.finish()
     }
 }

@@ -25,6 +25,7 @@
 ///     CaptionSourceType::Stl => { /* ... */ },
 ///     CaptionSourceType::Teletext => { /* ... */ },
 ///     CaptionSourceType::Ttml => { /* ... */ },
+///     CaptionSourceType::Tt3Gpp => { /* ... */ },
 ///     CaptionSourceType::Webvtt => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -81,6 +82,8 @@ pub enum CaptionSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Ttml,
     #[allow(missing_docs)] // documentation missing in model
+    Tt3Gpp,
+    #[allow(missing_docs)] // documentation missing in model
     Webvtt,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -102,6 +105,7 @@ impl ::std::convert::From<&str> for CaptionSourceType {
             "STL" => CaptionSourceType::Stl,
             "TELETEXT" => CaptionSourceType::Teletext,
             "TTML" => CaptionSourceType::Ttml,
+            "TT_3GPP" => CaptionSourceType::Tt3Gpp,
             "WEBVTT" => CaptionSourceType::Webvtt,
             other => CaptionSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -131,6 +135,7 @@ impl CaptionSourceType {
             CaptionSourceType::Stl => "STL",
             CaptionSourceType::Teletext => "TELETEXT",
             CaptionSourceType::Ttml => "TTML",
+            CaptionSourceType::Tt3Gpp => "TT_3GPP",
             CaptionSourceType::Webvtt => "WEBVTT",
             CaptionSourceType::Unknown(value) => value.as_str(),
         }
@@ -151,6 +156,7 @@ impl CaptionSourceType {
             "STL",
             "TELETEXT",
             "TTML",
+            "TT_3GPP",
             "WEBVTT",
         ]
     }
@@ -188,6 +194,7 @@ impl ::std::fmt::Display for CaptionSourceType {
             CaptionSourceType::Stl => write!(f, "STL"),
             CaptionSourceType::Teletext => write!(f, "TELETEXT"),
             CaptionSourceType::Ttml => write!(f, "TTML"),
+            CaptionSourceType::Tt3Gpp => write!(f, "TT_3GPP"),
             CaptionSourceType::Webvtt => write!(f, "WEBVTT"),
             CaptionSourceType::Unknown(value) => write!(f, "{value}"),
         }

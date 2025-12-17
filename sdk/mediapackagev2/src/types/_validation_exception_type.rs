@@ -14,12 +14,15 @@
 /// match validationexceptiontype {
 ///     ValidationExceptionType::BatchGetSecretValueDenied => { /* ... */ },
 ///     ValidationExceptionType::CencIvIncompatible => { /* ... */ },
+///     ValidationExceptionType::CertificateAccessDenied => { /* ... */ },
+///     ValidationExceptionType::CertificateResourceNotFound => { /* ... */ },
 ///     ValidationExceptionType::ClipStartTimeWithStartOrEnd => { /* ... */ },
 ///     ValidationExceptionType::CmafContainerTypeWithMssManifest => { /* ... */ },
 ///     ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType => { /* ... */ },
 ///     ValidationExceptionType::ContainerTypeImmutable => { /* ... */ },
 ///     ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => { /* ... */ },
 ///     ValidationExceptionType::DecryptSecretFailed => { /* ... */ },
+///     ValidationExceptionType::DescribeCertificateFailed => { /* ... */ },
 ///     ValidationExceptionType::DescribeSecretDenied => { /* ... */ },
 ///     ValidationExceptionType::DirectModeWithTimingSource => { /* ... */ },
 ///     ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => { /* ... */ },
@@ -41,6 +44,10 @@
 ///     ValidationExceptionType::IncompatibleDashCompactnessConfiguration => { /* ... */ },
 ///     ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration => { /* ... */ },
 ///     ValidationExceptionType::IncompatibleXmlEncoding => { /* ... */ },
+///     ValidationExceptionType::InvalidArn => { /* ... */ },
+///     ValidationExceptionType::InvalidCertificateKeyAlgorithm => { /* ... */ },
+///     ValidationExceptionType::InvalidCertificateSignatureAlgorithm => { /* ... */ },
+///     ValidationExceptionType::InvalidCertificateStatus => { /* ... */ },
 ///     ValidationExceptionType::InvalidDrmSettings => { /* ... */ },
 ///     ValidationExceptionType::InvalidHarvestJobDuration => { /* ... */ },
 ///     ValidationExceptionType::InvalidManifestFilter => { /* ... */ },
@@ -69,6 +76,7 @@
 ///     ValidationExceptionType::MemberMinLength => { /* ... */ },
 ///     ValidationExceptionType::MemberMinValue => { /* ... */ },
 ///     ValidationExceptionType::MemberMissing => { /* ... */ },
+///     ValidationExceptionType::MissingCertificateDomainName => { /* ... */ },
 ///     ValidationExceptionType::NoneModeWithTimingSource => { /* ... */ },
 ///     ValidationExceptionType::NumManifestsHigh => { /* ... */ },
 ///     ValidationExceptionType::NumManifestsLow => { /* ... */ },
@@ -77,6 +85,7 @@
 ///     ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration => { /* ... */ },
 ///     ValidationExceptionType::OnlyCmafInputTypeAllowPreferredInputConfiguration => { /* ... */ },
 ///     ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => { /* ... */ },
+///     ValidationExceptionType::ResourceNotInSameRegion => { /* ... */ },
 ///     ValidationExceptionType::RoleArnInvalidFormat => { /* ... */ },
 ///     ValidationExceptionType::RoleArnLengthOutOfRange => { /* ... */ },
 ///     ValidationExceptionType::RoleArnNotAssumable => { /* ... */ },
@@ -134,6 +143,10 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     CencIvIncompatible,
     #[allow(missing_docs)] // documentation missing in model
+    CertificateAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    CertificateResourceNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     ClipStartTimeWithStartOrEnd,
     #[allow(missing_docs)] // documentation missing in model
     CmafContainerTypeWithMssManifest,
@@ -145,6 +158,8 @@ pub enum ValidationExceptionType {
     DashDvbAttributesWithoutDvbDashProfile,
     #[allow(missing_docs)] // documentation missing in model
     DecryptSecretFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    DescribeCertificateFailed,
     #[allow(missing_docs)] // documentation missing in model
     DescribeSecretDenied,
     #[allow(missing_docs)] // documentation missing in model
@@ -187,6 +202,14 @@ pub enum ValidationExceptionType {
     IncompatibleDashProfileDvbDashConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     IncompatibleXmlEncoding,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidArn,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidCertificateKeyAlgorithm,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidCertificateSignatureAlgorithm,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidCertificateStatus,
     #[allow(missing_docs)] // documentation missing in model
     InvalidDrmSettings,
     #[allow(missing_docs)] // documentation missing in model
@@ -244,6 +267,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     MemberMissing,
     #[allow(missing_docs)] // documentation missing in model
+    MissingCertificateDomainName,
+    #[allow(missing_docs)] // documentation missing in model
     NoneModeWithTimingSource,
     #[allow(missing_docs)] // documentation missing in model
     NumManifestsHigh,
@@ -259,6 +284,8 @@ pub enum ValidationExceptionType {
     OnlyCmafInputTypeAllowPreferredInputConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     PeriodTriggersNoneSpecifiedWithAdditionalValues,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceNotInSameRegion,
     #[allow(missing_docs)] // documentation missing in model
     RoleArnInvalidFormat,
     #[allow(missing_docs)] // documentation missing in model
@@ -316,6 +343,8 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
         match s {
             "BATCH_GET_SECRET_VALUE_DENIED" => ValidationExceptionType::BatchGetSecretValueDenied,
             "CENC_IV_INCOMPATIBLE" => ValidationExceptionType::CencIvIncompatible,
+            "CERTIFICATE_ACCESS_DENIED" => ValidationExceptionType::CertificateAccessDenied,
+            "CERTIFICATE_RESOURCE_NOT_FOUND" => ValidationExceptionType::CertificateResourceNotFound,
             "CLIP_START_TIME_WITH_START_OR_END" => ValidationExceptionType::ClipStartTimeWithStartOrEnd,
             "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST" => ValidationExceptionType::CmafContainerTypeWithMssManifest,
             "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE" => {
@@ -324,6 +353,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "CONTAINER_TYPE_IMMUTABLE" => ValidationExceptionType::ContainerTypeImmutable,
             "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE" => ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile,
             "DECRYPT_SECRET_FAILED" => ValidationExceptionType::DecryptSecretFailed,
+            "DESCRIBE_CERTIFICATE_FAILED" => ValidationExceptionType::DescribeCertificateFailed,
             "DESCRIBE_SECRET_DENIED" => ValidationExceptionType::DescribeSecretDenied,
             "DIRECT_MODE_WITH_TIMING_SOURCE" => ValidationExceptionType::DirectModeWithTimingSource,
             "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS" => ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus,
@@ -347,6 +377,10 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION" => ValidationExceptionType::IncompatibleDashCompactnessConfiguration,
             "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION" => ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration,
             "INCOMPATIBLE_XML_ENCODING" => ValidationExceptionType::IncompatibleXmlEncoding,
+            "INVALID_ARN" => ValidationExceptionType::InvalidArn,
+            "INVALID_CERTIFICATE_KEY_ALGORITHM" => ValidationExceptionType::InvalidCertificateKeyAlgorithm,
+            "INVALID_CERTIFICATE_SIGNATURE_ALGORITHM" => ValidationExceptionType::InvalidCertificateSignatureAlgorithm,
+            "INVALID_CERTIFICATE_STATUS" => ValidationExceptionType::InvalidCertificateStatus,
             "INVALID_DRM_SETTINGS" => ValidationExceptionType::InvalidDrmSettings,
             "INVALID_HARVEST_JOB_DURATION" => ValidationExceptionType::InvalidHarvestJobDuration,
             "INVALID_MANIFEST_FILTER" => ValidationExceptionType::InvalidManifestFilter,
@@ -375,6 +409,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "MEMBER_MIN_LENGTH" => ValidationExceptionType::MemberMinLength,
             "MEMBER_MIN_VALUE" => ValidationExceptionType::MemberMinValue,
             "MEMBER_MISSING" => ValidationExceptionType::MemberMissing,
+            "MISSING_CERTIFICATE_DOMAIN_NAME" => ValidationExceptionType::MissingCertificateDomainName,
             "NONE_MODE_WITH_TIMING_SOURCE" => ValidationExceptionType::NoneModeWithTimingSource,
             "NUM_MANIFESTS_HIGH" => ValidationExceptionType::NumManifestsHigh,
             "NUM_MANIFESTS_LOW" => ValidationExceptionType::NumManifestsLow,
@@ -385,6 +420,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION" => ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration,
             "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION" => ValidationExceptionType::OnlyCmafInputTypeAllowPreferredInputConfiguration,
             "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES" => ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues,
+            "RESOURCE_NOT_IN_SAME_REGION" => ValidationExceptionType::ResourceNotInSameRegion,
             "ROLE_ARN_INVALID_FORMAT" => ValidationExceptionType::RoleArnInvalidFormat,
             "ROLE_ARN_LENGTH_OUT_OF_RANGE" => ValidationExceptionType::RoleArnLengthOutOfRange,
             "ROLE_ARN_NOT_ASSUMABLE" => ValidationExceptionType::RoleArnNotAssumable,
@@ -426,6 +462,8 @@ impl ValidationExceptionType {
         match self {
             ValidationExceptionType::BatchGetSecretValueDenied => "BATCH_GET_SECRET_VALUE_DENIED",
             ValidationExceptionType::CencIvIncompatible => "CENC_IV_INCOMPATIBLE",
+            ValidationExceptionType::CertificateAccessDenied => "CERTIFICATE_ACCESS_DENIED",
+            ValidationExceptionType::CertificateResourceNotFound => "CERTIFICATE_RESOURCE_NOT_FOUND",
             ValidationExceptionType::ClipStartTimeWithStartOrEnd => "CLIP_START_TIME_WITH_START_OR_END",
             ValidationExceptionType::CmafContainerTypeWithMssManifest => "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST",
             ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType => {
@@ -434,6 +472,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::ContainerTypeImmutable => "CONTAINER_TYPE_IMMUTABLE",
             ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
             ValidationExceptionType::DecryptSecretFailed => "DECRYPT_SECRET_FAILED",
+            ValidationExceptionType::DescribeCertificateFailed => "DESCRIBE_CERTIFICATE_FAILED",
             ValidationExceptionType::DescribeSecretDenied => "DESCRIBE_SECRET_DENIED",
             ValidationExceptionType::DirectModeWithTimingSource => "DIRECT_MODE_WITH_TIMING_SOURCE",
             ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS",
@@ -457,6 +496,10 @@ impl ValidationExceptionType {
             ValidationExceptionType::IncompatibleDashCompactnessConfiguration => "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION",
             ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration => "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION",
             ValidationExceptionType::IncompatibleXmlEncoding => "INCOMPATIBLE_XML_ENCODING",
+            ValidationExceptionType::InvalidArn => "INVALID_ARN",
+            ValidationExceptionType::InvalidCertificateKeyAlgorithm => "INVALID_CERTIFICATE_KEY_ALGORITHM",
+            ValidationExceptionType::InvalidCertificateSignatureAlgorithm => "INVALID_CERTIFICATE_SIGNATURE_ALGORITHM",
+            ValidationExceptionType::InvalidCertificateStatus => "INVALID_CERTIFICATE_STATUS",
             ValidationExceptionType::InvalidDrmSettings => "INVALID_DRM_SETTINGS",
             ValidationExceptionType::InvalidHarvestJobDuration => "INVALID_HARVEST_JOB_DURATION",
             ValidationExceptionType::InvalidManifestFilter => "INVALID_MANIFEST_FILTER",
@@ -485,6 +528,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::MemberMinLength => "MEMBER_MIN_LENGTH",
             ValidationExceptionType::MemberMinValue => "MEMBER_MIN_VALUE",
             ValidationExceptionType::MemberMissing => "MEMBER_MISSING",
+            ValidationExceptionType::MissingCertificateDomainName => "MISSING_CERTIFICATE_DOMAIN_NAME",
             ValidationExceptionType::NoneModeWithTimingSource => "NONE_MODE_WITH_TIMING_SOURCE",
             ValidationExceptionType::NumManifestsHigh => "NUM_MANIFESTS_HIGH",
             ValidationExceptionType::NumManifestsLow => "NUM_MANIFESTS_LOW",
@@ -495,6 +539,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration => "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION",
             ValidationExceptionType::OnlyCmafInputTypeAllowPreferredInputConfiguration => "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION",
             ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
+            ValidationExceptionType::ResourceNotInSameRegion => "RESOURCE_NOT_IN_SAME_REGION",
             ValidationExceptionType::RoleArnInvalidFormat => "ROLE_ARN_INVALID_FORMAT",
             ValidationExceptionType::RoleArnLengthOutOfRange => "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             ValidationExceptionType::RoleArnNotAssumable => "ROLE_ARN_NOT_ASSUMABLE",
@@ -527,12 +572,15 @@ impl ValidationExceptionType {
         &[
             "BATCH_GET_SECRET_VALUE_DENIED",
             "CENC_IV_INCOMPATIBLE",
+            "CERTIFICATE_ACCESS_DENIED",
+            "CERTIFICATE_RESOURCE_NOT_FOUND",
             "CLIP_START_TIME_WITH_START_OR_END",
             "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST",
             "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE",
             "CONTAINER_TYPE_IMMUTABLE",
             "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
             "DECRYPT_SECRET_FAILED",
+            "DESCRIBE_CERTIFICATE_FAILED",
             "DESCRIBE_SECRET_DENIED",
             "DIRECT_MODE_WITH_TIMING_SOURCE",
             "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS",
@@ -554,6 +602,10 @@ impl ValidationExceptionType {
             "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION",
             "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION",
             "INCOMPATIBLE_XML_ENCODING",
+            "INVALID_ARN",
+            "INVALID_CERTIFICATE_KEY_ALGORITHM",
+            "INVALID_CERTIFICATE_SIGNATURE_ALGORITHM",
+            "INVALID_CERTIFICATE_STATUS",
             "INVALID_DRM_SETTINGS",
             "INVALID_HARVEST_JOB_DURATION",
             "INVALID_MANIFEST_FILTER",
@@ -582,6 +634,7 @@ impl ValidationExceptionType {
             "MEMBER_MIN_LENGTH",
             "MEMBER_MIN_VALUE",
             "MEMBER_MISSING",
+            "MISSING_CERTIFICATE_DOMAIN_NAME",
             "NONE_MODE_WITH_TIMING_SOURCE",
             "NUM_MANIFESTS_HIGH",
             "NUM_MANIFESTS_LOW",
@@ -590,6 +643,7 @@ impl ValidationExceptionType {
             "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION",
             "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION",
             "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
+            "RESOURCE_NOT_IN_SAME_REGION",
             "ROLE_ARN_INVALID_FORMAT",
             "ROLE_ARN_LENGTH_OUT_OF_RANGE",
             "ROLE_ARN_NOT_ASSUMABLE",
@@ -639,6 +693,8 @@ impl ::std::fmt::Display for ValidationExceptionType {
         match self {
             ValidationExceptionType::BatchGetSecretValueDenied => write!(f, "BATCH_GET_SECRET_VALUE_DENIED"),
             ValidationExceptionType::CencIvIncompatible => write!(f, "CENC_IV_INCOMPATIBLE"),
+            ValidationExceptionType::CertificateAccessDenied => write!(f, "CERTIFICATE_ACCESS_DENIED"),
+            ValidationExceptionType::CertificateResourceNotFound => write!(f, "CERTIFICATE_RESOURCE_NOT_FOUND"),
             ValidationExceptionType::ClipStartTimeWithStartOrEnd => write!(f, "CLIP_START_TIME_WITH_START_OR_END"),
             ValidationExceptionType::CmafContainerTypeWithMssManifest => write!(f, "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST"),
             ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType => {
@@ -647,6 +703,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::ContainerTypeImmutable => write!(f, "CONTAINER_TYPE_IMMUTABLE"),
             ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => write!(f, "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE"),
             ValidationExceptionType::DecryptSecretFailed => write!(f, "DECRYPT_SECRET_FAILED"),
+            ValidationExceptionType::DescribeCertificateFailed => write!(f, "DESCRIBE_CERTIFICATE_FAILED"),
             ValidationExceptionType::DescribeSecretDenied => write!(f, "DESCRIBE_SECRET_DENIED"),
             ValidationExceptionType::DirectModeWithTimingSource => write!(f, "DIRECT_MODE_WITH_TIMING_SOURCE"),
             ValidationExceptionType::DrmSignalingMismatchSegmentEncryptionStatus => write!(f, "DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS"),
@@ -674,6 +731,10 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::IncompatibleDashCompactnessConfiguration => write!(f, "INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION"),
             ValidationExceptionType::IncompatibleDashProfileDvbDashConfiguration => write!(f, "INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION"),
             ValidationExceptionType::IncompatibleXmlEncoding => write!(f, "INCOMPATIBLE_XML_ENCODING"),
+            ValidationExceptionType::InvalidArn => write!(f, "INVALID_ARN"),
+            ValidationExceptionType::InvalidCertificateKeyAlgorithm => write!(f, "INVALID_CERTIFICATE_KEY_ALGORITHM"),
+            ValidationExceptionType::InvalidCertificateSignatureAlgorithm => write!(f, "INVALID_CERTIFICATE_SIGNATURE_ALGORITHM"),
+            ValidationExceptionType::InvalidCertificateStatus => write!(f, "INVALID_CERTIFICATE_STATUS"),
             ValidationExceptionType::InvalidDrmSettings => write!(f, "INVALID_DRM_SETTINGS"),
             ValidationExceptionType::InvalidHarvestJobDuration => write!(f, "INVALID_HARVEST_JOB_DURATION"),
             ValidationExceptionType::InvalidManifestFilter => write!(f, "INVALID_MANIFEST_FILTER"),
@@ -702,6 +763,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::MemberMinLength => write!(f, "MEMBER_MIN_LENGTH"),
             ValidationExceptionType::MemberMinValue => write!(f, "MEMBER_MIN_VALUE"),
             ValidationExceptionType::MemberMissing => write!(f, "MEMBER_MISSING"),
+            ValidationExceptionType::MissingCertificateDomainName => write!(f, "MISSING_CERTIFICATE_DOMAIN_NAME"),
             ValidationExceptionType::NoneModeWithTimingSource => write!(f, "NONE_MODE_WITH_TIMING_SOURCE"),
             ValidationExceptionType::NumManifestsHigh => write!(f, "NUM_MANIFESTS_HIGH"),
             ValidationExceptionType::NumManifestsLow => write!(f, "NUM_MANIFESTS_LOW"),
@@ -718,6 +780,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => {
                 write!(f, "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES")
             }
+            ValidationExceptionType::ResourceNotInSameRegion => write!(f, "RESOURCE_NOT_IN_SAME_REGION"),
             ValidationExceptionType::RoleArnInvalidFormat => write!(f, "ROLE_ARN_INVALID_FORMAT"),
             ValidationExceptionType::RoleArnLengthOutOfRange => write!(f, "ROLE_ARN_LENGTH_OUT_OF_RANGE"),
             ValidationExceptionType::RoleArnNotAssumable => write!(f, "ROLE_ARN_NOT_ASSUMABLE"),

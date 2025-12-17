@@ -39,6 +39,8 @@ pub use crate::types::_plugin_description::PluginDescription;
 
 pub use crate::types::_custom_plugin_description::CustomPluginDescription;
 
+pub use crate::types::_network_type::NetworkType;
+
 pub use crate::types::_log_delivery_description::LogDeliveryDescription;
 
 pub use crate::types::_worker_log_delivery_description::WorkerLogDeliveryDescription;
@@ -208,6 +210,8 @@ mod _kafka_cluster_encryption_in_transit_type;
 mod _log_delivery;
 
 mod _log_delivery_description;
+
+mod _network_type;
 
 mod _plugin;
 

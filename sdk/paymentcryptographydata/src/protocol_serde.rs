@@ -27,6 +27,8 @@ pub(crate) mod shape_decrypt_data;
 
 pub(crate) mod shape_encrypt_data;
 
+pub(crate) mod shape_generate_as2805_kek_validation;
+
 pub(crate) mod shape_generate_card_validation_data;
 
 pub(crate) mod shape_generate_mac;
@@ -63,6 +65,8 @@ pub(crate) mod shape_decrypt_data_input;
 
 pub(crate) mod shape_encrypt_data_input;
 
+pub(crate) mod shape_generate_as2805_kek_validation_input;
+
 pub(crate) mod shape_generate_card_validation_data_input;
 
 pub(crate) mod shape_generate_mac_emv_pin_change_input;
@@ -94,6 +98,10 @@ pub(crate) mod shape_verify_card_validation_data_input;
 pub(crate) mod shape_verify_mac_input;
 
 pub(crate) mod shape_verify_pin_data_input;
+
+pub(crate) mod shape_as2805_kek_validation_type;
+
+pub(crate) mod shape_as2805_pek_derivation_attributes;
 
 pub(crate) mod shape_card_generation_attributes;
 
@@ -179,6 +187,10 @@ pub(crate) mod shape_ibm3624_random_pin;
 
 pub(crate) mod shape_incoming_diffie_hellman_tr31_key_block;
 
+pub(crate) mod shape_kek_validation_request;
+
+pub(crate) mod shape_kek_validation_response;
+
 pub(crate) mod shape_mac_algorithm_dukpt;
 
 pub(crate) mod shape_mac_algorithm_emv;
@@ -198,6 +210,8 @@ pub(crate) mod shape_session_key_mastercard;
 pub(crate) mod shape_session_key_visa;
 
 pub(crate) mod shape_symmetric_encryption_attributes;
+
+pub(crate) mod shape_translation_pin_data_as2805_format0;
 
 pub(crate) mod shape_translation_pin_data_iso_format034;
 

@@ -18,6 +18,13 @@
 ///     StreamClass::Gen5nHigh => { /* ... */ },
 ///     StreamClass::Gen5nUltra => { /* ... */ },
 ///     StreamClass::Gen5nWin2022 => { /* ... */ },
+///     StreamClass::Gen6nHigh => { /* ... */ },
+///     StreamClass::Gen6nMedium => { /* ... */ },
+///     StreamClass::Gen6nPro => { /* ... */ },
+///     StreamClass::Gen6nProWin2022 => { /* ... */ },
+///     StreamClass::Gen6nSmall => { /* ... */ },
+///     StreamClass::Gen6nUltra => { /* ... */ },
+///     StreamClass::Gen6nUltraWin2022 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -58,6 +65,20 @@ pub enum StreamClass {
     Gen5nUltra,
     #[allow(missing_docs)] // documentation missing in model
     Gen5nWin2022,
+    #[allow(missing_docs)] // documentation missing in model
+    Gen6nHigh,
+    #[allow(missing_docs)] // documentation missing in model
+    Gen6nMedium,
+    #[allow(missing_docs)] // documentation missing in model
+    Gen6nPro,
+    #[allow(missing_docs)] // documentation missing in model
+    Gen6nProWin2022,
+    #[allow(missing_docs)] // documentation missing in model
+    Gen6nSmall,
+    #[allow(missing_docs)] // documentation missing in model
+    Gen6nUltra,
+    #[allow(missing_docs)] // documentation missing in model
+    Gen6nUltraWin2022,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -71,6 +92,13 @@ impl ::std::convert::From<&str> for StreamClass {
             "gen5n_high" => StreamClass::Gen5nHigh,
             "gen5n_ultra" => StreamClass::Gen5nUltra,
             "gen5n_win2022" => StreamClass::Gen5nWin2022,
+            "gen6n_high" => StreamClass::Gen6nHigh,
+            "gen6n_medium" => StreamClass::Gen6nMedium,
+            "gen6n_pro" => StreamClass::Gen6nPro,
+            "gen6n_pro_win2022" => StreamClass::Gen6nProWin2022,
+            "gen6n_small" => StreamClass::Gen6nSmall,
+            "gen6n_ultra" => StreamClass::Gen6nUltra,
+            "gen6n_ultra_win2022" => StreamClass::Gen6nUltraWin2022,
             other => StreamClass::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -92,12 +120,33 @@ impl StreamClass {
             StreamClass::Gen5nHigh => "gen5n_high",
             StreamClass::Gen5nUltra => "gen5n_ultra",
             StreamClass::Gen5nWin2022 => "gen5n_win2022",
+            StreamClass::Gen6nHigh => "gen6n_high",
+            StreamClass::Gen6nMedium => "gen6n_medium",
+            StreamClass::Gen6nPro => "gen6n_pro",
+            StreamClass::Gen6nProWin2022 => "gen6n_pro_win2022",
+            StreamClass::Gen6nSmall => "gen6n_small",
+            StreamClass::Gen6nUltra => "gen6n_ultra",
+            StreamClass::Gen6nUltraWin2022 => "gen6n_ultra_win2022",
             StreamClass::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["gen4n_high", "gen4n_ultra", "gen4n_win2022", "gen5n_high", "gen5n_ultra", "gen5n_win2022"]
+        &[
+            "gen4n_high",
+            "gen4n_ultra",
+            "gen4n_win2022",
+            "gen5n_high",
+            "gen5n_ultra",
+            "gen5n_win2022",
+            "gen6n_high",
+            "gen6n_medium",
+            "gen6n_pro",
+            "gen6n_pro_win2022",
+            "gen6n_small",
+            "gen6n_ultra",
+            "gen6n_ultra_win2022",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for StreamClass {
@@ -126,6 +175,13 @@ impl ::std::fmt::Display for StreamClass {
             StreamClass::Gen5nHigh => write!(f, "gen5n_high"),
             StreamClass::Gen5nUltra => write!(f, "gen5n_ultra"),
             StreamClass::Gen5nWin2022 => write!(f, "gen5n_win2022"),
+            StreamClass::Gen6nHigh => write!(f, "gen6n_high"),
+            StreamClass::Gen6nMedium => write!(f, "gen6n_medium"),
+            StreamClass::Gen6nPro => write!(f, "gen6n_pro"),
+            StreamClass::Gen6nProWin2022 => write!(f, "gen6n_pro_win2022"),
+            StreamClass::Gen6nSmall => write!(f, "gen6n_small"),
+            StreamClass::Gen6nUltra => write!(f, "gen6n_ultra"),
+            StreamClass::Gen6nUltraWin2022 => write!(f, "gen6n_ultra_win2022"),
             StreamClass::Unknown(value) => write!(f, "{value}"),
         }
     }

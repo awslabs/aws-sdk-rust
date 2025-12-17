@@ -167,6 +167,8 @@ mod decrypt_data;
 
 mod encrypt_data;
 
+mod generate_as2805_kek_validation;
+
 mod generate_card_validation_data;
 
 mod generate_mac;

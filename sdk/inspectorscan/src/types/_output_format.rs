@@ -14,6 +14,7 @@
 /// match outputformat {
 ///     OutputFormat::CycloneDx15 => { /* ... */ },
 ///     OutputFormat::Inspector => { /* ... */ },
+///     OutputFormat::InspectorAlt => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum OutputFormat {
     CycloneDx15,
     #[allow(missing_docs)] // documentation missing in model
     Inspector,
+    #[allow(missing_docs)] // documentation missing in model
+    InspectorAlt,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for OutputFormat {
         match s {
             "CYCLONE_DX_1_5" => OutputFormat::CycloneDx15,
             "INSPECTOR" => OutputFormat::Inspector,
+            "INSPECTOR_ALT" => OutputFormat::InspectorAlt,
             other => OutputFormat::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl OutputFormat {
         match self {
             OutputFormat::CycloneDx15 => "CYCLONE_DX_1_5",
             OutputFormat::Inspector => "INSPECTOR",
+            OutputFormat::InspectorAlt => "INSPECTOR_ALT",
             OutputFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CYCLONE_DX_1_5", "INSPECTOR"]
+        &["CYCLONE_DX_1_5", "INSPECTOR", "INSPECTOR_ALT"]
     }
 }
 impl ::std::convert::AsRef<str> for OutputFormat {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for OutputFormat {
         match self {
             OutputFormat::CycloneDx15 => write!(f, "CYCLONE_DX_1_5"),
             OutputFormat::Inspector => write!(f, "INSPECTOR"),
+            OutputFormat::InspectorAlt => write!(f, "INSPECTOR_ALT"),
             OutputFormat::Unknown(value) => write!(f, "{value}"),
         }
     }

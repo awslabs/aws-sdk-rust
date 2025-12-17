@@ -52,6 +52,10 @@ pub struct H265Settings {
     pub max_bitrate: ::std::option::Option<i32>,
     /// Specify the minimum number of frames allowed between two IDR-frames in your output. This includes frames created at the start of a GOP or a scene change. Use Min I-Interval to improve video compression by varying GOP size when two IDR-frames would be created near each other. For example, if a regular cadence-driven IDR-frame would fall within 5 frames of a scene-change IDR-frame, and you set Min I-interval to 5, then the encoder would only write an IDR-frame for the scene-change. In this way, one GOP is shortened or extended. If a cadence-driven IDR-frame would be further than 5 frames from a scene-change IDR-frame, then the encoder leaves all IDR-frames in place. To use an automatically determined interval: We recommend that you keep this value blank. This allows for MediaConvert to use an optimal setting according to the characteristics of your input video, and results in better video compression. To manually specify an interval: Enter a value from 1 to 30. Use when your downstream systems have specific GOP size requirements. To disable GOP size variance: Enter 0. MediaConvert will only create IDR-frames at the start of your output's cadence-driven GOP. Use when your downstream systems require a regular GOP size.
     pub min_i_interval: ::std::option::Option<i32>,
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you typically enter "enabled".
+    pub mv_over_picture_boundaries: ::std::option::Option<crate::types::H265MvOverPictureBoundaries>,
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you typically enter "enabled".
+    pub mv_temporal_predictor: ::std::option::Option<crate::types::H265MvTemporalPredictor>,
     /// Specify the number of B-frames between reference frames in this output. For the best video quality: Leave blank. MediaConvert automatically determines the number of B-frames to use based on the characteristics of your input video. To manually specify the number of B-frames between reference frames: Enter an integer from 0 to 7.
     pub number_b_frames_between_reference_frames: ::std::option::Option<i32>,
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
@@ -88,8 +92,16 @@ pub struct H265Settings {
     pub temporal_adaptive_quantization: ::std::option::Option<crate::types::H265TemporalAdaptiveQuantization>,
     /// Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are supported depending on GOP structure: I- and P-frames form one layer, reference B-frames can form a second layer and non-reference b-frames can form a third layer. Decoders can optionally decode only the lower temporal layers to generate a lower frame rate output. For example, given a bitstream with temporal IDs and with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the frames for full frame rate output or only the I and P frames (lowest temporal layer) for a half frame rate output.
     pub temporal_ids: ::std::option::Option<crate::types::H265TemporalIds>,
+    /// Set this field to set up the picture as a tile. You must also set TileWidth. The tile height must result in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product of the column count and row count must be 64 or less. If the tile width and height are specified, MediaConvert will override the video codec slices field with a value that MediaConvert calculates.
+    pub tile_height: ::std::option::Option<i32>,
+    /// Set to "padded" to force MediaConvert to add padding to the frame, to obtain a frame that is a whole multiple of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you typically enter "none".
+    pub tile_padding: ::std::option::Option<crate::types::H265TilePadding>,
+    /// Set this field to set up the picture as a tile. See TileHeight for more information.
+    pub tile_width: ::std::option::Option<i32>,
     /// Enable use of tiles, allowing horizontal as well as vertical subdivision of the encoded pictures.
     pub tiles: ::std::option::Option<crate::types::H265Tiles>,
+    /// Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically enter "auto".
+    pub tree_block_size: ::std::option::Option<crate::types::H265TreeBlockSize>,
     /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
     pub unregistered_sei_timecode: ::std::option::Option<crate::types::H265UnregisteredSeiTimecode>,
     /// If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting only with CMAF or DASH outputs, or with standalone file outputs in an MPEG-4 container (MP4 outputs). Choose HVC1 to mark your output as HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. For MP4 outputs, when you choose HVC1, your output video might not work properly with some downstream systems and video players. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
@@ -192,6 +204,14 @@ impl H265Settings {
     pub fn min_i_interval(&self) -> ::std::option::Option<i32> {
         self.min_i_interval
     }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you typically enter "enabled".
+    pub fn mv_over_picture_boundaries(&self) -> ::std::option::Option<&crate::types::H265MvOverPictureBoundaries> {
+        self.mv_over_picture_boundaries.as_ref()
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you typically enter "enabled".
+    pub fn mv_temporal_predictor(&self) -> ::std::option::Option<&crate::types::H265MvTemporalPredictor> {
+        self.mv_temporal_predictor.as_ref()
+    }
     /// Specify the number of B-frames between reference frames in this output. For the best video quality: Leave blank. MediaConvert automatically determines the number of B-frames to use based on the characteristics of your input video. To manually specify the number of B-frames between reference frames: Enter an integer from 0 to 7.
     pub fn number_b_frames_between_reference_frames(&self) -> ::std::option::Option<i32> {
         self.number_b_frames_between_reference_frames
@@ -266,9 +286,25 @@ impl H265Settings {
     pub fn temporal_ids(&self) -> ::std::option::Option<&crate::types::H265TemporalIds> {
         self.temporal_ids.as_ref()
     }
+    /// Set this field to set up the picture as a tile. You must also set TileWidth. The tile height must result in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product of the column count and row count must be 64 or less. If the tile width and height are specified, MediaConvert will override the video codec slices field with a value that MediaConvert calculates.
+    pub fn tile_height(&self) -> ::std::option::Option<i32> {
+        self.tile_height
+    }
+    /// Set to "padded" to force MediaConvert to add padding to the frame, to obtain a frame that is a whole multiple of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you typically enter "none".
+    pub fn tile_padding(&self) -> ::std::option::Option<&crate::types::H265TilePadding> {
+        self.tile_padding.as_ref()
+    }
+    /// Set this field to set up the picture as a tile. See TileHeight for more information.
+    pub fn tile_width(&self) -> ::std::option::Option<i32> {
+        self.tile_width
+    }
     /// Enable use of tiles, allowing horizontal as well as vertical subdivision of the encoded pictures.
     pub fn tiles(&self) -> ::std::option::Option<&crate::types::H265Tiles> {
         self.tiles.as_ref()
+    }
+    /// Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically enter "auto".
+    pub fn tree_block_size(&self) -> ::std::option::Option<&crate::types::H265TreeBlockSize> {
+        self.tree_block_size.as_ref()
     }
     /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
     pub fn unregistered_sei_timecode(&self) -> ::std::option::Option<&crate::types::H265UnregisteredSeiTimecode> {
@@ -314,6 +350,8 @@ pub struct H265SettingsBuilder {
     pub(crate) interlace_mode: ::std::option::Option<crate::types::H265InterlaceMode>,
     pub(crate) max_bitrate: ::std::option::Option<i32>,
     pub(crate) min_i_interval: ::std::option::Option<i32>,
+    pub(crate) mv_over_picture_boundaries: ::std::option::Option<crate::types::H265MvOverPictureBoundaries>,
+    pub(crate) mv_temporal_predictor: ::std::option::Option<crate::types::H265MvTemporalPredictor>,
     pub(crate) number_b_frames_between_reference_frames: ::std::option::Option<i32>,
     pub(crate) number_reference_frames: ::std::option::Option<i32>,
     pub(crate) par_control: ::std::option::Option<crate::types::H265ParControl>,
@@ -332,7 +370,11 @@ pub struct H265SettingsBuilder {
     pub(crate) telecine: ::std::option::Option<crate::types::H265Telecine>,
     pub(crate) temporal_adaptive_quantization: ::std::option::Option<crate::types::H265TemporalAdaptiveQuantization>,
     pub(crate) temporal_ids: ::std::option::Option<crate::types::H265TemporalIds>,
+    pub(crate) tile_height: ::std::option::Option<i32>,
+    pub(crate) tile_padding: ::std::option::Option<crate::types::H265TilePadding>,
+    pub(crate) tile_width: ::std::option::Option<i32>,
     pub(crate) tiles: ::std::option::Option<crate::types::H265Tiles>,
+    pub(crate) tree_block_size: ::std::option::Option<crate::types::H265TreeBlockSize>,
     pub(crate) unregistered_sei_timecode: ::std::option::Option<crate::types::H265UnregisteredSeiTimecode>,
     pub(crate) write_mp4_packaging_type: ::std::option::Option<crate::types::H265WriteMp4PackagingType>,
 }
@@ -673,6 +715,34 @@ impl H265SettingsBuilder {
     pub fn get_min_i_interval(&self) -> &::std::option::Option<i32> {
         &self.min_i_interval
     }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you typically enter "enabled".
+    pub fn mv_over_picture_boundaries(mut self, input: crate::types::H265MvOverPictureBoundaries) -> Self {
+        self.mv_over_picture_boundaries = ::std::option::Option::Some(input);
+        self
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you typically enter "enabled".
+    pub fn set_mv_over_picture_boundaries(mut self, input: ::std::option::Option<crate::types::H265MvOverPictureBoundaries>) -> Self {
+        self.mv_over_picture_boundaries = input;
+        self
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you typically enter "enabled".
+    pub fn get_mv_over_picture_boundaries(&self) -> &::std::option::Option<crate::types::H265MvOverPictureBoundaries> {
+        &self.mv_over_picture_boundaries
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you typically enter "enabled".
+    pub fn mv_temporal_predictor(mut self, input: crate::types::H265MvTemporalPredictor) -> Self {
+        self.mv_temporal_predictor = ::std::option::Option::Some(input);
+        self
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you typically enter "enabled".
+    pub fn set_mv_temporal_predictor(mut self, input: ::std::option::Option<crate::types::H265MvTemporalPredictor>) -> Self {
+        self.mv_temporal_predictor = input;
+        self
+    }
+    /// If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you typically enter "enabled".
+    pub fn get_mv_temporal_predictor(&self) -> &::std::option::Option<crate::types::H265MvTemporalPredictor> {
+        &self.mv_temporal_predictor
+    }
     /// Specify the number of B-frames between reference frames in this output. For the best video quality: Leave blank. MediaConvert automatically determines the number of B-frames to use based on the characteristics of your input video. To manually specify the number of B-frames between reference frames: Enter an integer from 0 to 7.
     pub fn number_b_frames_between_reference_frames(mut self, input: i32) -> Self {
         self.number_b_frames_between_reference_frames = ::std::option::Option::Some(input);
@@ -931,6 +1001,48 @@ impl H265SettingsBuilder {
     pub fn get_temporal_ids(&self) -> &::std::option::Option<crate::types::H265TemporalIds> {
         &self.temporal_ids
     }
+    /// Set this field to set up the picture as a tile. You must also set TileWidth. The tile height must result in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product of the column count and row count must be 64 or less. If the tile width and height are specified, MediaConvert will override the video codec slices field with a value that MediaConvert calculates.
+    pub fn tile_height(mut self, input: i32) -> Self {
+        self.tile_height = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set this field to set up the picture as a tile. You must also set TileWidth. The tile height must result in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product of the column count and row count must be 64 or less. If the tile width and height are specified, MediaConvert will override the video codec slices field with a value that MediaConvert calculates.
+    pub fn set_tile_height(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.tile_height = input;
+        self
+    }
+    /// Set this field to set up the picture as a tile. You must also set TileWidth. The tile height must result in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product of the column count and row count must be 64 or less. If the tile width and height are specified, MediaConvert will override the video codec slices field with a value that MediaConvert calculates.
+    pub fn get_tile_height(&self) -> &::std::option::Option<i32> {
+        &self.tile_height
+    }
+    /// Set to "padded" to force MediaConvert to add padding to the frame, to obtain a frame that is a whole multiple of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you typically enter "none".
+    pub fn tile_padding(mut self, input: crate::types::H265TilePadding) -> Self {
+        self.tile_padding = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set to "padded" to force MediaConvert to add padding to the frame, to obtain a frame that is a whole multiple of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you typically enter "none".
+    pub fn set_tile_padding(mut self, input: ::std::option::Option<crate::types::H265TilePadding>) -> Self {
+        self.tile_padding = input;
+        self
+    }
+    /// Set to "padded" to force MediaConvert to add padding to the frame, to obtain a frame that is a whole multiple of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you typically enter "none".
+    pub fn get_tile_padding(&self) -> &::std::option::Option<crate::types::H265TilePadding> {
+        &self.tile_padding
+    }
+    /// Set this field to set up the picture as a tile. See TileHeight for more information.
+    pub fn tile_width(mut self, input: i32) -> Self {
+        self.tile_width = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set this field to set up the picture as a tile. See TileHeight for more information.
+    pub fn set_tile_width(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.tile_width = input;
+        self
+    }
+    /// Set this field to set up the picture as a tile. See TileHeight for more information.
+    pub fn get_tile_width(&self) -> &::std::option::Option<i32> {
+        &self.tile_width
+    }
     /// Enable use of tiles, allowing horizontal as well as vertical subdivision of the encoded pictures.
     pub fn tiles(mut self, input: crate::types::H265Tiles) -> Self {
         self.tiles = ::std::option::Option::Some(input);
@@ -944,6 +1056,20 @@ impl H265SettingsBuilder {
     /// Enable use of tiles, allowing horizontal as well as vertical subdivision of the encoded pictures.
     pub fn get_tiles(&self) -> &::std::option::Option<crate::types::H265Tiles> {
         &self.tiles
+    }
+    /// Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically enter "auto".
+    pub fn tree_block_size(mut self, input: crate::types::H265TreeBlockSize) -> Self {
+        self.tree_block_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically enter "auto".
+    pub fn set_tree_block_size(mut self, input: ::std::option::Option<crate::types::H265TreeBlockSize>) -> Self {
+        self.tree_block_size = input;
+        self
+    }
+    /// Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically enter "auto".
+    pub fn get_tree_block_size(&self) -> &::std::option::Option<crate::types::H265TreeBlockSize> {
+        &self.tree_block_size
     }
     /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
     pub fn unregistered_sei_timecode(mut self, input: crate::types::H265UnregisteredSeiTimecode) -> Self {
@@ -1000,6 +1126,8 @@ impl H265SettingsBuilder {
             interlace_mode: self.interlace_mode,
             max_bitrate: self.max_bitrate,
             min_i_interval: self.min_i_interval,
+            mv_over_picture_boundaries: self.mv_over_picture_boundaries,
+            mv_temporal_predictor: self.mv_temporal_predictor,
             number_b_frames_between_reference_frames: self.number_b_frames_between_reference_frames,
             number_reference_frames: self.number_reference_frames,
             par_control: self.par_control,
@@ -1018,7 +1146,11 @@ impl H265SettingsBuilder {
             telecine: self.telecine,
             temporal_adaptive_quantization: self.temporal_adaptive_quantization,
             temporal_ids: self.temporal_ids,
+            tile_height: self.tile_height,
+            tile_padding: self.tile_padding,
+            tile_width: self.tile_width,
             tiles: self.tiles,
+            tree_block_size: self.tree_block_size,
             unregistered_sei_timecode: self.unregistered_sei_timecode,
             write_mp4_packaging_type: self.write_mp4_packaging_type,
         }

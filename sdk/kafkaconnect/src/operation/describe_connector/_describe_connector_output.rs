@@ -29,6 +29,8 @@ pub struct DescribeConnectorOutput {
     pub kafka_connect_version: ::std::option::Option<::std::string::String>,
     /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
     pub log_delivery: ::std::option::Option<crate::types::LogDeliveryDescription>,
+    /// <p>The network type of the connector. It gives connectors connectivity to either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
     /// <p>Specifies which plugins were used for this connector.</p>
     pub plugins: ::std::option::Option<::std::vec::Vec<crate::types::PluginDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
@@ -92,6 +94,10 @@ impl DescribeConnectorOutput {
     pub fn log_delivery(&self) -> ::std::option::Option<&crate::types::LogDeliveryDescription> {
         self.log_delivery.as_ref()
     }
+    /// <p>The network type of the connector. It gives connectors connectivity to either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
     /// <p>Specifies which plugins were used for this connector.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.plugins.is_none()`.
@@ -127,6 +133,7 @@ impl ::std::fmt::Debug for DescribeConnectorOutput {
         formatter.field("kafka_cluster_encryption_in_transit", &self.kafka_cluster_encryption_in_transit);
         formatter.field("kafka_connect_version", &self.kafka_connect_version);
         formatter.field("log_delivery", &self.log_delivery);
+        formatter.field("network_type", &self.network_type);
         formatter.field("plugins", &self.plugins);
         formatter.field("service_execution_role_arn", &self.service_execution_role_arn);
         formatter.field("worker_configuration", &self.worker_configuration);
@@ -164,6 +171,7 @@ pub struct DescribeConnectorOutputBuilder {
     pub(crate) kafka_cluster_encryption_in_transit: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitDescription>,
     pub(crate) kafka_connect_version: ::std::option::Option<::std::string::String>,
     pub(crate) log_delivery: ::std::option::Option<crate::types::LogDeliveryDescription>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) plugins: ::std::option::Option<::std::vec::Vec<crate::types::PluginDescription>>,
     pub(crate) service_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) worker_configuration: ::std::option::Option<crate::types::WorkerConfigurationDescription>,
@@ -372,6 +380,20 @@ impl DescribeConnectorOutputBuilder {
     pub fn get_log_delivery(&self) -> &::std::option::Option<crate::types::LogDeliveryDescription> {
         &self.log_delivery
     }
+    /// <p>The network type of the connector. It gives connectors connectivity to either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type of the connector. It gives connectors connectivity to either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the connector. It gives connectors connectivity to either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Appends an item to `plugins`.
     ///
     /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
@@ -459,6 +481,7 @@ impl DescribeConnectorOutputBuilder {
             kafka_cluster_encryption_in_transit: self.kafka_cluster_encryption_in_transit,
             kafka_connect_version: self.kafka_connect_version,
             log_delivery: self.log_delivery,
+            network_type: self.network_type,
             plugins: self.plugins,
             service_execution_role_arn: self.service_execution_role_arn,
             worker_configuration: self.worker_configuration,
@@ -483,6 +506,7 @@ impl ::std::fmt::Debug for DescribeConnectorOutputBuilder {
         formatter.field("kafka_cluster_encryption_in_transit", &self.kafka_cluster_encryption_in_transit);
         formatter.field("kafka_connect_version", &self.kafka_connect_version);
         formatter.field("log_delivery", &self.log_delivery);
+        formatter.field("network_type", &self.network_type);
         formatter.field("plugins", &self.plugins);
         formatter.field("service_execution_role_arn", &self.service_execution_role_arn);
         formatter.field("worker_configuration", &self.worker_configuration);

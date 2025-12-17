@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ImportKeyMaterial {
+    /// <p>Parameter information for key material import using AS2805 key cryptogram format.</p>
+    As2805KeyCryptogram(crate::types::ImportAs2805KeyCryptogram),
     /// <p>Key derivation parameter information for key material import using asymmetric ECDH key exchange method.</p>
     DiffieHellmanTr31KeyBlock(crate::types::ImportDiffieHellmanTr31KeyBlock),
     /// <p>Parameter information for key material import using asymmetric RSA wrap and unwrap key exchange method.</p>
@@ -27,6 +29,19 @@ pub enum ImportKeyMaterial {
     Unknown,
 }
 impl ImportKeyMaterial {
+    /// Tries to convert the enum instance into [`As2805KeyCryptogram`](crate::types::ImportKeyMaterial::As2805KeyCryptogram), extracting the inner [`ImportAs2805KeyCryptogram`](crate::types::ImportAs2805KeyCryptogram).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_as2805_key_cryptogram(&self) -> ::std::result::Result<&crate::types::ImportAs2805KeyCryptogram, &Self> {
+        if let ImportKeyMaterial::As2805KeyCryptogram(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`As2805KeyCryptogram`](crate::types::ImportKeyMaterial::As2805KeyCryptogram).
+    pub fn is_as2805_key_cryptogram(&self) -> bool {
+        self.as_as2805_key_cryptogram().is_ok()
+    }
     /// Tries to convert the enum instance into [`DiffieHellmanTr31KeyBlock`](crate::types::ImportKeyMaterial::DiffieHellmanTr31KeyBlock), extracting the inner [`ImportDiffieHellmanTr31KeyBlock`](crate::types::ImportDiffieHellmanTr31KeyBlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_diffie_hellman_tr31_key_block(&self) -> ::std::result::Result<&crate::types::ImportDiffieHellmanTr31KeyBlock, &Self> {

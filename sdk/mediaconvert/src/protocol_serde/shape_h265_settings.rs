@@ -108,92 +108,116 @@ pub fn ser_h265_settings(
             ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_26) = &input.number_b_frames_between_reference_frames {
+    if let Some(var_26) = &input.mv_over_picture_boundaries {
+        object.key("mvOverPictureBoundaries").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.mv_temporal_predictor {
+        object.key("mvTemporalPredictor").string(var_27.as_str());
+    }
+    if let Some(var_28) = &input.number_b_frames_between_reference_frames {
         object.key("numberBFramesBetweenReferenceFrames").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_26).into()),
+            ::aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
-    if let Some(var_27) = &input.number_reference_frames {
+    if let Some(var_29) = &input.number_reference_frames {
         object.key("numberReferenceFrames").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_27).into()),
-        );
-    }
-    if let Some(var_28) = &input.par_control {
-        object.key("parControl").string(var_28.as_str());
-    }
-    if let Some(var_29) = &input.par_denominator {
-        object.key("parDenominator").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
-    if let Some(var_30) = &input.par_numerator {
+    if let Some(var_30) = &input.par_control {
+        object.key("parControl").string(var_30.as_str());
+    }
+    if let Some(var_31) = &input.par_denominator {
+        object.key("parDenominator").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_31).into()),
+        );
+    }
+    if let Some(var_32) = &input.par_numerator {
         object.key("parNumerator").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_30).into()),
+            ::aws_smithy_types::Number::NegInt((*var_32).into()),
         );
     }
-    if let Some(var_31) = &input.per_frame_metrics {
-        let mut array_32 = object.key("perFrameMetrics").start_array();
-        for item_33 in var_31 {
+    if let Some(var_33) = &input.per_frame_metrics {
+        let mut array_34 = object.key("perFrameMetrics").start_array();
+        for item_35 in var_33 {
             {
-                array_32.value().string(item_33.as_str());
+                array_34.value().string(item_35.as_str());
             }
         }
-        array_32.finish();
+        array_34.finish();
     }
-    if let Some(var_34) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_34.as_str());
+    if let Some(var_36) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_36.as_str());
     }
-    if let Some(var_35) = &input.qvbr_settings {
+    if let Some(var_37) = &input.qvbr_settings {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("qvbrSettings").start_object();
-        crate::protocol_serde::shape_h265_qvbr_settings::ser_h265_qvbr_settings(&mut object_36, var_35)?;
-        object_36.finish();
+        let mut object_38 = object.key("qvbrSettings").start_object();
+        crate::protocol_serde::shape_h265_qvbr_settings::ser_h265_qvbr_settings(&mut object_38, var_37)?;
+        object_38.finish();
     }
-    if let Some(var_37) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_37.as_str());
+    if let Some(var_39) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_39.as_str());
     }
-    if let Some(var_38) = &input.sample_adaptive_offset_filter_mode {
-        object.key("sampleAdaptiveOffsetFilterMode").string(var_38.as_str());
+    if let Some(var_40) = &input.sample_adaptive_offset_filter_mode {
+        object.key("sampleAdaptiveOffsetFilterMode").string(var_40.as_str());
     }
-    if let Some(var_39) = &input.scan_type_conversion_mode {
-        object.key("scanTypeConversionMode").string(var_39.as_str());
+    if let Some(var_41) = &input.scan_type_conversion_mode {
+        object.key("scanTypeConversionMode").string(var_41.as_str());
     }
-    if let Some(var_40) = &input.scene_change_detect {
-        object.key("sceneChangeDetect").string(var_40.as_str());
+    if let Some(var_42) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_42.as_str());
     }
-    if let Some(var_41) = &input.slices {
+    if let Some(var_43) = &input.slices {
         object.key("slices").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_41).into()),
+            ::aws_smithy_types::Number::NegInt((*var_43).into()),
         );
     }
-    if let Some(var_42) = &input.slow_pal {
-        object.key("slowPal").string(var_42.as_str());
+    if let Some(var_44) = &input.slow_pal {
+        object.key("slowPal").string(var_44.as_str());
     }
-    if let Some(var_43) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_43.as_str());
+    if let Some(var_45) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_45.as_str());
     }
-    if let Some(var_44) = &input.telecine {
-        object.key("telecine").string(var_44.as_str());
+    if let Some(var_46) = &input.telecine {
+        object.key("telecine").string(var_46.as_str());
     }
-    if let Some(var_45) = &input.temporal_adaptive_quantization {
-        object.key("temporalAdaptiveQuantization").string(var_45.as_str());
+    if let Some(var_47) = &input.temporal_adaptive_quantization {
+        object.key("temporalAdaptiveQuantization").string(var_47.as_str());
     }
-    if let Some(var_46) = &input.temporal_ids {
-        object.key("temporalIds").string(var_46.as_str());
+    if let Some(var_48) = &input.temporal_ids {
+        object.key("temporalIds").string(var_48.as_str());
     }
-    if let Some(var_47) = &input.tiles {
-        object.key("tiles").string(var_47.as_str());
+    if let Some(var_49) = &input.tile_height {
+        object.key("tileHeight").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_49).into()),
+        );
     }
-    if let Some(var_48) = &input.unregistered_sei_timecode {
-        object.key("unregisteredSeiTimecode").string(var_48.as_str());
+    if let Some(var_50) = &input.tile_padding {
+        object.key("tilePadding").string(var_50.as_str());
     }
-    if let Some(var_49) = &input.write_mp4_packaging_type {
-        object.key("writeMp4PackagingType").string(var_49.as_str());
+    if let Some(var_51) = &input.tile_width {
+        object.key("tileWidth").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_51).into()),
+        );
+    }
+    if let Some(var_52) = &input.tiles {
+        object.key("tiles").string(var_52.as_str());
+    }
+    if let Some(var_53) = &input.tree_block_size {
+        object.key("treeBlockSize").string(var_53.as_str());
+    }
+    if let Some(var_54) = &input.unregistered_sei_timecode {
+        object.key("unregisteredSeiTimecode").string(var_54.as_str());
+    }
+    if let Some(var_55) = &input.write_mp4_packaging_type {
+        object.key("writeMp4PackagingType").string(var_55.as_str());
     }
     Ok(())
 }
@@ -376,6 +400,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "mvOverPictureBoundaries" => {
+                            builder = builder.set_mv_over_picture_boundaries(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265MvOverPictureBoundaries::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "mvTemporalPredictor" => {
+                            builder = builder.set_mv_temporal_predictor(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265MvTemporalPredictor::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "numberBFramesBetweenReferenceFrames" => {
                             builder = builder.set_number_b_frames_between_reference_frames(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
@@ -499,10 +537,38 @@ where
                                     .transpose()?,
                             );
                         }
+                        "tileHeight" => {
+                            builder = builder.set_tile_height(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "tilePadding" => {
+                            builder = builder.set_tile_padding(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265TilePadding::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "tileWidth" => {
+                            builder = builder.set_tile_width(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "tiles" => {
                             builder = builder.set_tiles(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::H265Tiles::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "treeBlockSize" => {
+                            builder = builder.set_tree_block_size(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::H265TreeBlockSize::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

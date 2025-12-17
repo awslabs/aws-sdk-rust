@@ -12,6 +12,7 @@
 /// ```text
 /// # let macalgorithm = unimplemented!();
 /// match macalgorithm {
+///     MacAlgorithm::As280541 => { /* ... */ },
 ///     MacAlgorithm::Cmac => { /* ... */ },
 ///     MacAlgorithm::Hmac => { /* ... */ },
 ///     MacAlgorithm::HmacSha224 => { /* ... */ },
@@ -49,6 +50,8 @@
 )]
 pub enum MacAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
+    As280541,
+    #[allow(missing_docs)] // documentation missing in model
     Cmac,
     #[allow(missing_docs)] // documentation missing in model
     Hmac,
@@ -71,6 +74,7 @@ pub enum MacAlgorithm {
 impl ::std::convert::From<&str> for MacAlgorithm {
     fn from(s: &str) -> Self {
         match s {
+            "AS2805_4_1" => MacAlgorithm::As280541,
             "CMAC" => MacAlgorithm::Cmac,
             "HMAC" => MacAlgorithm::Hmac,
             "HMAC_SHA224" => MacAlgorithm::HmacSha224,
@@ -94,6 +98,7 @@ impl MacAlgorithm {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            MacAlgorithm::As280541 => "AS2805_4_1",
             MacAlgorithm::Cmac => "CMAC",
             MacAlgorithm::Hmac => "HMAC",
             MacAlgorithm::HmacSha224 => "HMAC_SHA224",
@@ -108,6 +113,7 @@ impl MacAlgorithm {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AS2805_4_1",
             "CMAC",
             "HMAC",
             "HMAC_SHA224",
@@ -139,6 +145,7 @@ impl MacAlgorithm {
 impl ::std::fmt::Display for MacAlgorithm {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            MacAlgorithm::As280541 => write!(f, "AS2805_4_1"),
             MacAlgorithm::Cmac => write!(f, "CMAC"),
             MacAlgorithm::Hmac => write!(f, "HMAC"),
             MacAlgorithm::HmacSha224 => write!(f, "HMAC_SHA224"),

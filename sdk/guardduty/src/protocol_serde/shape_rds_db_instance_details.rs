@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "dbiResourceId" => {
+                            builder = builder.set_dbi_resource_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                         }

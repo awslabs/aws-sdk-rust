@@ -3,26 +3,39 @@ pub fn ser_video_overlay_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoOverlayInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.file_input {
-        object.key("fileInput").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.input_clippings {
-        let mut array_3 = object.key("inputClippings").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.audio_selectors {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("audioSelectors").start_object();
+        for (key_3, value_4) in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_video_overlay_input_clipping::ser_video_overlay_input_clipping(&mut object_5, item_4)?;
+                let mut object_5 = object_2.key(key_3.as_str()).start_object();
+                crate::protocol_serde::shape_audio_selector::ser_audio_selector(&mut object_5, value_4)?;
                 object_5.finish();
             }
         }
-        array_3.finish();
+        object_2.finish();
     }
-    if let Some(var_6) = &input.timecode_source {
-        object.key("timecodeSource").string(var_6.as_str());
+    if let Some(var_6) = &input.file_input {
+        object.key("fileInput").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.timecode_start {
-        object.key("timecodeStart").string(var_7.as_str());
+    if let Some(var_7) = &input.input_clippings {
+        let mut array_8 = object.key("inputClippings").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_video_overlay_input_clipping::ser_video_overlay_input_clipping(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
+    if let Some(var_11) = &input.timecode_source {
+        object.key("timecodeSource").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.timecode_start {
+        object.key("timecodeStart").string(var_12.as_str());
     }
     Ok(())
 }
@@ -42,6 +55,10 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioSelectors" => {
+                            builder =
+                                builder.set_audio_selectors(crate::protocol_serde::shape_map_of_audio_selector::de_map_of_audio_selector(tokens)?);
+                        }
                         "fileInput" => {
                             builder = builder.set_file_input(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

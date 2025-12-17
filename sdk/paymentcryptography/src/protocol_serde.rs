@@ -175,6 +175,8 @@ pub(crate) mod shape_tags;
 
 pub(crate) mod shape_wrapped_key;
 
+pub(crate) mod shape_export_as2805_key_cryptogram;
+
 pub(crate) mod shape_export_diffie_hellman_tr31_key_block;
 
 pub(crate) mod shape_export_dukpt_initial_key;
@@ -184,6 +186,8 @@ pub(crate) mod shape_export_key_cryptogram;
 pub(crate) mod shape_export_tr31_key_block;
 
 pub(crate) mod shape_export_tr34_key_block;
+
+pub(crate) mod shape_import_as2805_key_cryptogram;
 
 pub(crate) mod shape_import_diffie_hellman_tr31_key_block;
 

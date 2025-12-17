@@ -235,6 +235,13 @@ pub(crate) fn de_describe_connector(
                         tokens,
                     )?);
                 }
+                "networkType" => {
+                    builder = builder.set_network_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::NetworkType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "plugins" => {
                     builder = builder.set_plugins(crate::protocol_serde::shape_list_of_plugin_description::de_list_of_plugin_description(
                         tokens,

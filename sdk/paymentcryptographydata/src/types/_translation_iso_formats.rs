@@ -4,13 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum TranslationIsoFormats {
-    /// <p>Parameters that are required for ISO9564 PIN format 0 tranlation.</p>
+    /// <p>Parameters that are required for AS2805 PIN format 0 translation.</p>
+    As2805Format0(crate::types::TranslationPinDataAs2805Format0),
+    /// <p>Parameters that are required for ISO9564 PIN format 0 translation.</p>
     IsoFormat0(crate::types::TranslationPinDataIsoFormat034),
-    /// <p>Parameters that are required for ISO9564 PIN format 1 tranlation.</p>
+    /// <p>Parameters that are required for ISO9564 PIN format 1 translation.</p>
     IsoFormat1(crate::types::TranslationPinDataIsoFormat1),
-    /// <p>Parameters that are required for ISO9564 PIN format 3 tranlation.</p>
+    /// <p>Parameters that are required for ISO9564 PIN format 3 translation.</p>
     IsoFormat3(crate::types::TranslationPinDataIsoFormat034),
-    /// <p>Parameters that are required for ISO9564 PIN format 4 tranlation.</p>
+    /// <p>Parameters that are required for ISO9564 PIN format 4 translation.</p>
     IsoFormat4(crate::types::TranslationPinDataIsoFormat034),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -23,6 +25,19 @@ pub enum TranslationIsoFormats {
     Unknown,
 }
 impl TranslationIsoFormats {
+    /// Tries to convert the enum instance into [`As2805Format0`](crate::types::TranslationIsoFormats::As2805Format0), extracting the inner [`TranslationPinDataAs2805Format0`](crate::types::TranslationPinDataAs2805Format0).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_as2805_format0(&self) -> ::std::result::Result<&crate::types::TranslationPinDataAs2805Format0, &Self> {
+        if let TranslationIsoFormats::As2805Format0(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`As2805Format0`](crate::types::TranslationIsoFormats::As2805Format0).
+    pub fn is_as2805_format0(&self) -> bool {
+        self.as_as2805_format0().is_ok()
+    }
     /// Tries to convert the enum instance into [`IsoFormat0`](crate::types::TranslationIsoFormats::IsoFormat0), extracting the inner [`TranslationPinDataIsoFormat034`](crate::types::TranslationPinDataIsoFormat034).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iso_format0(&self) -> ::std::result::Result<&crate::types::TranslationPinDataIsoFormat034, &Self> {

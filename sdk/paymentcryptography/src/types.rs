@@ -33,6 +33,10 @@ pub use crate::types::_alias::Alias;
 
 pub use crate::types::_import_key_material::ImportKeyMaterial;
 
+pub use crate::types::_import_as2805_key_cryptogram::ImportAs2805KeyCryptogram;
+
+pub use crate::types::_as2805_key_variant::As2805KeyVariant;
+
 pub use crate::types::_import_diffie_hellman_tr31_key_block::ImportDiffieHellmanTr31KeyBlock;
 
 pub use crate::types::_diffie_hellman_derivation_data::DiffieHellmanDerivationData;
@@ -73,6 +77,8 @@ pub use crate::types::_export_dukpt_initial_key::ExportDukptInitialKey;
 
 pub use crate::types::_export_key_material::ExportKeyMaterial;
 
+pub use crate::types::_export_as2805_key_cryptogram::ExportAs2805KeyCryptogram;
+
 pub use crate::types::_export_diffie_hellman_tr31_key_block::ExportDiffieHellmanTr31KeyBlock;
 
 pub use crate::types::_key_block_headers::KeyBlockHeaders;
@@ -87,11 +93,15 @@ pub use crate::types::_export_tr31_key_block::ExportTr31KeyBlock;
 
 mod _alias;
 
+mod _as2805_key_variant;
+
 mod _certificate_subject_type;
 
 mod _derive_key_usage;
 
 mod _diffie_hellman_derivation_data;
+
+mod _export_as2805_key_cryptogram;
 
 mod _export_attributes;
 
@@ -106,6 +116,8 @@ mod _export_key_material;
 mod _export_tr31_key_block;
 
 mod _export_tr34_key_block;
+
+mod _import_as2805_key_cryptogram;
 
 mod _import_diffie_hellman_tr31_key_block;
 

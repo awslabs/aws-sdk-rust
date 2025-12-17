@@ -12,7 +12,7 @@ pub struct CertificateSubjectType {
     pub organization: ::std::option::Option<::std::string::String>,
     /// <p>The city you provide to create the certificate signing request.</p>
     pub city: ::std::option::Option<::std::string::String>,
-    /// <p>The city you provide to create the certificate signing request.</p>
+    /// <p>The country you provide to create the certificate signing request.</p>
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The state or province you provide to create the certificate signing request.</p>
     pub state_or_province: ::std::option::Option<::std::string::String>,
@@ -37,7 +37,7 @@ impl CertificateSubjectType {
     pub fn city(&self) -> ::std::option::Option<&str> {
         self.city.as_deref()
     }
-    /// <p>The city you provide to create the certificate signing request.</p>
+    /// <p>The country you provide to create the certificate signing request.</p>
     pub fn country(&self) -> ::std::option::Option<&str> {
         self.country.as_deref()
     }
@@ -127,17 +127,17 @@ impl CertificateSubjectTypeBuilder {
     pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
         &self.city
     }
-    /// <p>The city you provide to create the certificate signing request.</p>
+    /// <p>The country you provide to create the certificate signing request.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The city you provide to create the certificate signing request.</p>
+    /// <p>The country you provide to create the certificate signing request.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country = input;
         self
     }
-    /// <p>The city you provide to create the certificate signing request.</p>
+    /// <p>The country you provide to create the certificate signing request.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
         &self.country
     }

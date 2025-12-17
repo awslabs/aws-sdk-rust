@@ -186,6 +186,11 @@ pub(crate) fn de_get_stream_session(
                             .transpose()?,
                     );
                 }
+                "PerformanceStatsConfiguration" => {
+                    builder = builder.set_performance_stats_configuration(
+                        crate::protocol_serde::shape_performance_stats_configuration::de_performance_stats_configuration(tokens)?,
+                    );
+                }
                 "Protocol" => {
                     builder = builder.set_protocol(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

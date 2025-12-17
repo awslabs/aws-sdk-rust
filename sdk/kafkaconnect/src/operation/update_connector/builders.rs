@@ -22,7 +22,7 @@ impl crate::operation::update_connector::builders::UpdateConnectorInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateConnector`.
 ///
-/// <p>Updates the specified connector.</p>
+/// <p>Updates the specified connector. For request body, specify only one parameter: either <code>capacity</code> or <code>connectorConfiguration</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

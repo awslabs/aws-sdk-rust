@@ -81,9 +81,13 @@ pub use crate::types::_session_key_mastercard::SessionKeyMastercard;
 
 pub use crate::types::_session_key_emv_common::SessionKeyEmvCommon;
 
+pub use crate::types::_as2805_pek_derivation_attributes::As2805PekDerivationAttributes;
+
 pub use crate::types::_dukpt_derivation_attributes::DukptDerivationAttributes;
 
 pub use crate::types::_translation_iso_formats::TranslationIsoFormats;
+
+pub use crate::types::_translation_pin_data_as2805_format0::TranslationPinDataAs2805Format0;
 
 pub use crate::types::_translation_pin_data_iso_format034::TranslationPinDataIsoFormat034;
 
@@ -157,6 +161,14 @@ pub use crate::types::_pin_block_format_for_emv_pin_change::PinBlockFormatForEmv
 
 pub use crate::types::_card_generation_attributes::CardGenerationAttributes;
 
+pub use crate::types::_random_key_send_variant_mask::RandomKeySendVariantMask;
+
+pub use crate::types::_as2805_kek_validation_type::As2805KekValidationType;
+
+pub use crate::types::_kek_validation_response::KekValidationResponse;
+
+pub use crate::types::_kek_validation_request::KekValidationRequest;
+
 pub use crate::types::_encryption_decryption_attributes::EncryptionDecryptionAttributes;
 
 pub use crate::types::_emv_encryption_attributes::EmvEncryptionAttributes;
@@ -170,6 +182,10 @@ mod _amex_attributes;
 mod _amex_card_security_code_version1;
 
 mod _amex_card_security_code_version2;
+
+mod _as2805_kek_validation_type;
+
+mod _as2805_pek_derivation_attributes;
 
 mod _asymmetric_encryption_attributes;
 
@@ -243,6 +259,10 @@ mod _incoming_diffie_hellman_tr31_key_block;
 
 mod _incoming_key_material;
 
+mod _kek_validation_request;
+
+mod _kek_validation_response;
+
 mod _key_check_value_algorithm;
 
 mod _key_derivation_function;
@@ -281,6 +301,8 @@ mod _pin_generation_attributes;
 
 mod _pin_verification_attributes;
 
+mod _random_key_send_variant_mask;
+
 mod _re_encryption_attributes;
 
 mod _session_key_amex;
@@ -304,6 +326,8 @@ mod _symmetric_encryption_attributes;
 mod _symmetric_key_algorithm;
 
 mod _translation_iso_formats;
+
+mod _translation_pin_data_as2805_format0;
 
 mod _translation_pin_data_iso_format034;
 

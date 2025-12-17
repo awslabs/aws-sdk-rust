@@ -285,7 +285,11 @@ pub use crate::types::_h265_write_mp4_packaging_type::H265WriteMp4PackagingType;
 
 pub use crate::types::_h265_unregistered_sei_timecode::H265UnregisteredSeiTimecode;
 
+pub use crate::types::_h265_tree_block_size::H265TreeBlockSize;
+
 pub use crate::types::_h265_tiles::H265Tiles;
+
+pub use crate::types::_h265_tile_padding::H265TilePadding;
 
 pub use crate::types::_h265_temporal_ids::H265TemporalIds;
 
@@ -310,6 +314,10 @@ pub use crate::types::_h265_qvbr_settings::H265QvbrSettings;
 pub use crate::types::_h265_quality_tuning_level::H265QualityTuningLevel;
 
 pub use crate::types::_h265_par_control::H265ParControl;
+
+pub use crate::types::_h265_mv_temporal_predictor::H265MvTemporalPredictor;
+
+pub use crate::types::_h265_mv_over_picture_boundaries::H265MvOverPictureBoundaries;
 
 pub use crate::types::_h265_interlace_mode::H265InterlaceMode;
 
@@ -1117,6 +1125,16 @@ pub use crate::types::_input_timecode_source::InputTimecodeSource;
 
 pub use crate::types::_video_overlay_input_clipping::VideoOverlayInputClipping;
 
+pub use crate::types::_audio_selector::AudioSelector;
+
+pub use crate::types::_audio_selector_type::AudioSelectorType;
+
+pub use crate::types::_hls_rendition_group_settings::HlsRenditionGroupSettings;
+
+pub use crate::types::_audio_default_selection::AudioDefaultSelection;
+
+pub use crate::types::_audio_duration_correction::AudioDurationCorrection;
+
 pub use crate::types::_video_overlay_crop::VideoOverlayCrop;
 
 pub use crate::types::_input_psi_control::InputPsiControl;
@@ -1130,8 +1148,6 @@ pub use crate::types::_input_filter_enable::InputFilterEnable;
 pub use crate::types::_dynamic_audio_selector::DynamicAudioSelector;
 
 pub use crate::types::_dynamic_audio_selector_type::DynamicAudioSelectorType;
-
-pub use crate::types::_audio_duration_correction::AudioDurationCorrection;
 
 pub use crate::types::_input_denoise_filter::InputDenoiseFilter;
 
@@ -1176,14 +1192,6 @@ pub use crate::types::_ancillary_source_settings::AncillarySourceSettings;
 pub use crate::types::_ancillary_terminate_captions::AncillaryTerminateCaptions;
 
 pub use crate::types::_ancillary_convert608_to708::AncillaryConvert608To708;
-
-pub use crate::types::_audio_selector::AudioSelector;
-
-pub use crate::types::_audio_selector_type::AudioSelectorType;
-
-pub use crate::types::_hls_rendition_group_settings::HlsRenditionGroupSettings;
-
-pub use crate::types::_audio_default_selection::AudioDefaultSelection;
 
 pub use crate::types::_audio_selector_group::AudioSelectorGroup;
 
@@ -1913,6 +1921,10 @@ mod _h265_gop_size_units;
 
 mod _h265_interlace_mode;
 
+mod _h265_mv_over_picture_boundaries;
+
+mod _h265_mv_temporal_predictor;
+
 mod _h265_par_control;
 
 mod _h265_quality_tuning_level;
@@ -1939,7 +1951,11 @@ mod _h265_temporal_adaptive_quantization;
 
 mod _h265_temporal_ids;
 
+mod _h265_tile_padding;
+
 mod _h265_tiles;
+
+mod _h265_tree_block_size;
 
 mod _h265_unregistered_sei_timecode;
 

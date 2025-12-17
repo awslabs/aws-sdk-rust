@@ -35,6 +35,24 @@ pub(crate) fn encrypt_data_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn generate_as2805_kek_validation_output_output_correct_errors(
+    mut builder: crate::operation::generate_as2805_kek_validation::builders::GenerateAs2805KekValidationOutputBuilder,
+) -> crate::operation::generate_as2805_kek_validation::builders::GenerateAs2805KekValidationOutputBuilder {
+    if builder.key_arn.is_none() {
+        builder.key_arn = Some(Default::default())
+    }
+    if builder.key_check_value.is_none() {
+        builder.key_check_value = Some(Default::default())
+    }
+    if builder.random_key_send.is_none() {
+        builder.random_key_send = Some(Default::default())
+    }
+    if builder.random_key_receive.is_none() {
+        builder.random_key_receive = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn generate_card_validation_data_output_output_correct_errors(
     mut builder: crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder,
 ) -> crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder {

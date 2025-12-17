@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoOverlayInput {
+    /// Use Audio selectors to specify audio to use during your Video overlay. You can use multiple Audio selectors per Video overlay. When you include an Audio selector within a Video overlay, MediaConvert mutes any Audio selectors with the same name from the underlying input. For example, if your underlying input has Audio selector 1 and Audio selector 2, and your Video overlay only has Audio selector 1, then MediaConvert replaces all audio for Audio selector 1 during the Video overlay. To replace all audio for all Audio selectors from the underlying input by using a single Audio selector in your overlay, set DefaultSelection to DEFAULT (Check \"Use as default\" in the MediaConvert console).
+    pub audio_selectors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>>,
     /// Specify the input file S3, HTTP, or HTTPS URL for your video overlay. To specify one or more Transitions for your base input video instead: Leave blank.
     pub file_input: ::std::option::Option<::std::string::String>,
     /// Specify one or more clips to use from your video overlay. When you include an input clip, you must also specify its start timecode, end timecode, or both start and end timecode.
@@ -14,6 +16,10 @@ pub struct VideoOverlayInput {
     pub timecode_start: ::std::option::Option<::std::string::String>,
 }
 impl VideoOverlayInput {
+    /// Use Audio selectors to specify audio to use during your Video overlay. You can use multiple Audio selectors per Video overlay. When you include an Audio selector within a Video overlay, MediaConvert mutes any Audio selectors with the same name from the underlying input. For example, if your underlying input has Audio selector 1 and Audio selector 2, and your Video overlay only has Audio selector 1, then MediaConvert replaces all audio for Audio selector 1 during the Video overlay. To replace all audio for all Audio selectors from the underlying input by using a single Audio selector in your overlay, set DefaultSelection to DEFAULT (Check \"Use as default\" in the MediaConvert console).
+    pub fn audio_selectors(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>> {
+        self.audio_selectors.as_ref()
+    }
     /// Specify the input file S3, HTTP, or HTTPS URL for your video overlay. To specify one or more Transitions for your base input video instead: Leave blank.
     pub fn file_input(&self) -> ::std::option::Option<&str> {
         self.file_input.as_deref()
@@ -44,12 +50,36 @@ impl VideoOverlayInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct VideoOverlayInputBuilder {
+    pub(crate) audio_selectors: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>>,
     pub(crate) file_input: ::std::option::Option<::std::string::String>,
     pub(crate) input_clippings: ::std::option::Option<::std::vec::Vec<crate::types::VideoOverlayInputClipping>>,
     pub(crate) timecode_source: ::std::option::Option<crate::types::InputTimecodeSource>,
     pub(crate) timecode_start: ::std::option::Option<::std::string::String>,
 }
 impl VideoOverlayInputBuilder {
+    /// Adds a key-value pair to `audio_selectors`.
+    ///
+    /// To override the contents of this collection use [`set_audio_selectors`](Self::set_audio_selectors).
+    ///
+    /// Use Audio selectors to specify audio to use during your Video overlay. You can use multiple Audio selectors per Video overlay. When you include an Audio selector within a Video overlay, MediaConvert mutes any Audio selectors with the same name from the underlying input. For example, if your underlying input has Audio selector 1 and Audio selector 2, and your Video overlay only has Audio selector 1, then MediaConvert replaces all audio for Audio selector 1 during the Video overlay. To replace all audio for all Audio selectors from the underlying input by using a single Audio selector in your overlay, set DefaultSelection to DEFAULT (Check \"Use as default\" in the MediaConvert console).
+    pub fn audio_selectors(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AudioSelector) -> Self {
+        let mut hash_map = self.audio_selectors.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.audio_selectors = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// Use Audio selectors to specify audio to use during your Video overlay. You can use multiple Audio selectors per Video overlay. When you include an Audio selector within a Video overlay, MediaConvert mutes any Audio selectors with the same name from the underlying input. For example, if your underlying input has Audio selector 1 and Audio selector 2, and your Video overlay only has Audio selector 1, then MediaConvert replaces all audio for Audio selector 1 during the Video overlay. To replace all audio for all Audio selectors from the underlying input by using a single Audio selector in your overlay, set DefaultSelection to DEFAULT (Check \"Use as default\" in the MediaConvert console).
+    pub fn set_audio_selectors(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>>,
+    ) -> Self {
+        self.audio_selectors = input;
+        self
+    }
+    /// Use Audio selectors to specify audio to use during your Video overlay. You can use multiple Audio selectors per Video overlay. When you include an Audio selector within a Video overlay, MediaConvert mutes any Audio selectors with the same name from the underlying input. For example, if your underlying input has Audio selector 1 and Audio selector 2, and your Video overlay only has Audio selector 1, then MediaConvert replaces all audio for Audio selector 1 during the Video overlay. To replace all audio for all Audio selectors from the underlying input by using a single Audio selector in your overlay, set DefaultSelection to DEFAULT (Check \"Use as default\" in the MediaConvert console).
+    pub fn get_audio_selectors(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>> {
+        &self.audio_selectors
+    }
     /// Specify the input file S3, HTTP, or HTTPS URL for your video overlay. To specify one or more Transitions for your base input video instead: Leave blank.
     pub fn file_input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_input = ::std::option::Option::Some(input.into());
@@ -115,6 +145,7 @@ impl VideoOverlayInputBuilder {
     /// Consumes the builder and constructs a [`VideoOverlayInput`](crate::types::VideoOverlayInput).
     pub fn build(self) -> crate::types::VideoOverlayInput {
         crate::types::VideoOverlayInput {
+            audio_selectors: self.audio_selectors,
             file_input: self.file_input,
             input_clippings: self.input_clippings,
             timecode_source: self.timecode_source,

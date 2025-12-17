@@ -8,7 +8,7 @@ pub struct AudioSelector {
     pub audio_duration_correction: ::std::option::Option<crate::types::AudioDurationCorrection>,
     /// Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
     pub custom_language_code: ::std::option::Option<::std::string::String>,
-    /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+    /// Specify a fallback audio selector for this input. Use to ensure outputs have audio even when the audio selector you specify in your output is missing from the source. DEFAULT (Checked in the MediaConvert console): If your output settings specify an audio selector that does not exist in this input, MediaConvert uses this audio selector instead. This is useful when you have multiple inputs with a different number of audio tracks. NOT_DEFAULT (Unchecked in the MediaConvert console): MediaConvert will not fallback from any missing audio selector. Any output specifying a missing audio selector will be silent.
     pub default_selection: ::std::option::Option<crate::types::AudioDefaultSelection>,
     /// Specify the S3, HTTP, or HTTPS URL for your external audio file input.
     pub external_audio_file_input: ::std::option::Option<::std::string::String>,
@@ -40,7 +40,7 @@ impl AudioSelector {
     pub fn custom_language_code(&self) -> ::std::option::Option<&str> {
         self.custom_language_code.as_deref()
     }
-    /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+    /// Specify a fallback audio selector for this input. Use to ensure outputs have audio even when the audio selector you specify in your output is missing from the source. DEFAULT (Checked in the MediaConvert console): If your output settings specify an audio selector that does not exist in this input, MediaConvert uses this audio selector instead. This is useful when you have multiple inputs with a different number of audio tracks. NOT_DEFAULT (Unchecked in the MediaConvert console): MediaConvert will not fallback from any missing audio selector. Any output specifying a missing audio selector will be silent.
     pub fn default_selection(&self) -> ::std::option::Option<&crate::types::AudioDefaultSelection> {
         self.default_selection.as_ref()
     }
@@ -145,17 +145,17 @@ impl AudioSelectorBuilder {
     pub fn get_custom_language_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_language_code
     }
-    /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+    /// Specify a fallback audio selector for this input. Use to ensure outputs have audio even when the audio selector you specify in your output is missing from the source. DEFAULT (Checked in the MediaConvert console): If your output settings specify an audio selector that does not exist in this input, MediaConvert uses this audio selector instead. This is useful when you have multiple inputs with a different number of audio tracks. NOT_DEFAULT (Unchecked in the MediaConvert console): MediaConvert will not fallback from any missing audio selector. Any output specifying a missing audio selector will be silent.
     pub fn default_selection(mut self, input: crate::types::AudioDefaultSelection) -> Self {
         self.default_selection = ::std::option::Option::Some(input);
         self
     }
-    /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+    /// Specify a fallback audio selector for this input. Use to ensure outputs have audio even when the audio selector you specify in your output is missing from the source. DEFAULT (Checked in the MediaConvert console): If your output settings specify an audio selector that does not exist in this input, MediaConvert uses this audio selector instead. This is useful when you have multiple inputs with a different number of audio tracks. NOT_DEFAULT (Unchecked in the MediaConvert console): MediaConvert will not fallback from any missing audio selector. Any output specifying a missing audio selector will be silent.
     pub fn set_default_selection(mut self, input: ::std::option::Option<crate::types::AudioDefaultSelection>) -> Self {
         self.default_selection = input;
         self
     }
-    /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
+    /// Specify a fallback audio selector for this input. Use to ensure outputs have audio even when the audio selector you specify in your output is missing from the source. DEFAULT (Checked in the MediaConvert console): If your output settings specify an audio selector that does not exist in this input, MediaConvert uses this audio selector instead. This is useful when you have multiple inputs with a different number of audio tracks. NOT_DEFAULT (Unchecked in the MediaConvert console): MediaConvert will not fallback from any missing audio selector. Any output specifying a missing audio selector will be silent.
     pub fn get_default_selection(&self) -> &::std::option::Option<crate::types::AudioDefaultSelection> {
         &self.default_selection
     }

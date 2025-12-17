@@ -19,13 +19,17 @@ pub struct LocationState {
     /// <p><code>REMOVING</code>: Amazon GameLift Streams is working to remove this location. This will release all provisioned capacity for this location in this stream group.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::StreamGroupLocationStatus>,
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
+    /// <p>This setting, if non-zero, indicates minimum streaming capacity which is allocated to you and is never released back to the service. You pay for this base level of capacity at all times, whether used or idle.</p>
     pub always_on_capacity: ::std::option::Option<i32>,
     /// <p>The streaming capacity that Amazon GameLift Streams can allocate in response to stream requests, and then de-allocate when the session has terminated. This offers a cost control measure at the expense of a greater startup time (typically under 5 minutes). Default is 0 when creating a stream group or adding a location.</p>
     pub on_demand_capacity: ::std::option::Option<i32>,
+    /// <p>This indicates idle capacity which the service pre-allocates and holds for you in anticipation of future activity. This helps to insulate your users from capacity-allocation delays. You pay for capacity which is held in this intentional idle state.</p>
+    pub target_idle_capacity: ::std::option::Option<i32>,
+    /// <p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>
+    pub maximum_capacity: ::std::option::Option<i32>,
     /// <p>This value is the always-on capacity that you most recently requested for a stream group. You request capacity separately for each location in a stream group. In response to an increase in requested capacity, Amazon GameLift Streams attempts to provision compute resources to make the stream group's allocated capacity meet requested capacity. When always-on capacity is decreased, it can take a few minutes to deprovision allocated capacity to match the requested capacity.</p>
     pub requested_capacity: ::std::option::Option<i32>,
-    /// <p>This value is the stream capacity that Amazon GameLift Streams has provisioned in a stream group that can respond immediately to stream requests. It includes resources that are currently streaming and resources that are idle and ready to respond to stream requests. You pay for this capacity whether it's in use or not. After making changes to capacity, it can take a few minutes for the allocated capacity count to reflect the change while compute resources are allocated or deallocated. Similarly, when allocated on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift Streams to spin down the allocated capacity.</p>
+    /// <p>This value is the stream capacity that Amazon GameLift Streams has provisioned in a stream group that can respond immediately to stream requests. It includes resources that are currently streaming and resources that are idle and ready to respond to stream requests. When target-idle capacity is configured, the idle resources include the capacity buffer maintained beyond ongoing sessions. You pay for this capacity whether it's in use or not. After making changes to capacity, it can take a few minutes for the allocated capacity count to reflect the change while compute resources are allocated or deallocated. Similarly, when allocated on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift Streams to spin down the allocated capacity.</p>
     pub allocated_capacity: ::std::option::Option<i32>,
     /// <p>This value is the amount of allocated capacity that is not currently streaming. It represents the stream group's ability to respond immediately to new stream requests with near-instant startup time.</p>
     pub idle_capacity: ::std::option::Option<i32>,
@@ -50,7 +54,7 @@ impl LocationState {
     pub fn status(&self) -> ::std::option::Option<&crate::types::StreamGroupLocationStatus> {
         self.status.as_ref()
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
+    /// <p>This setting, if non-zero, indicates minimum streaming capacity which is allocated to you and is never released back to the service. You pay for this base level of capacity at all times, whether used or idle.</p>
     pub fn always_on_capacity(&self) -> ::std::option::Option<i32> {
         self.always_on_capacity
     }
@@ -58,11 +62,19 @@ impl LocationState {
     pub fn on_demand_capacity(&self) -> ::std::option::Option<i32> {
         self.on_demand_capacity
     }
+    /// <p>This indicates idle capacity which the service pre-allocates and holds for you in anticipation of future activity. This helps to insulate your users from capacity-allocation delays. You pay for capacity which is held in this intentional idle state.</p>
+    pub fn target_idle_capacity(&self) -> ::std::option::Option<i32> {
+        self.target_idle_capacity
+    }
+    /// <p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>
+    pub fn maximum_capacity(&self) -> ::std::option::Option<i32> {
+        self.maximum_capacity
+    }
     /// <p>This value is the always-on capacity that you most recently requested for a stream group. You request capacity separately for each location in a stream group. In response to an increase in requested capacity, Amazon GameLift Streams attempts to provision compute resources to make the stream group's allocated capacity meet requested capacity. When always-on capacity is decreased, it can take a few minutes to deprovision allocated capacity to match the requested capacity.</p>
     pub fn requested_capacity(&self) -> ::std::option::Option<i32> {
         self.requested_capacity
     }
-    /// <p>This value is the stream capacity that Amazon GameLift Streams has provisioned in a stream group that can respond immediately to stream requests. It includes resources that are currently streaming and resources that are idle and ready to respond to stream requests. You pay for this capacity whether it's in use or not. After making changes to capacity, it can take a few minutes for the allocated capacity count to reflect the change while compute resources are allocated or deallocated. Similarly, when allocated on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift Streams to spin down the allocated capacity.</p>
+    /// <p>This value is the stream capacity that Amazon GameLift Streams has provisioned in a stream group that can respond immediately to stream requests. It includes resources that are currently streaming and resources that are idle and ready to respond to stream requests. When target-idle capacity is configured, the idle resources include the capacity buffer maintained beyond ongoing sessions. You pay for this capacity whether it's in use or not. After making changes to capacity, it can take a few minutes for the allocated capacity count to reflect the change while compute resources are allocated or deallocated. Similarly, when allocated on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift Streams to spin down the allocated capacity.</p>
     pub fn allocated_capacity(&self) -> ::std::option::Option<i32> {
         self.allocated_capacity
     }
@@ -86,6 +98,8 @@ pub struct LocationStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StreamGroupLocationStatus>,
     pub(crate) always_on_capacity: ::std::option::Option<i32>,
     pub(crate) on_demand_capacity: ::std::option::Option<i32>,
+    pub(crate) target_idle_capacity: ::std::option::Option<i32>,
+    pub(crate) maximum_capacity: ::std::option::Option<i32>,
     pub(crate) requested_capacity: ::std::option::Option<i32>,
     pub(crate) allocated_capacity: ::std::option::Option<i32>,
     pub(crate) idle_capacity: ::std::option::Option<i32>,
@@ -152,17 +166,17 @@ impl LocationStateBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StreamGroupLocationStatus> {
         &self.status
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
+    /// <p>This setting, if non-zero, indicates minimum streaming capacity which is allocated to you and is never released back to the service. You pay for this base level of capacity at all times, whether used or idle.</p>
     pub fn always_on_capacity(mut self, input: i32) -> Self {
         self.always_on_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
+    /// <p>This setting, if non-zero, indicates minimum streaming capacity which is allocated to you and is never released back to the service. You pay for this base level of capacity at all times, whether used or idle.</p>
     pub fn set_always_on_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.always_on_capacity = input;
         self
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
+    /// <p>This setting, if non-zero, indicates minimum streaming capacity which is allocated to you and is never released back to the service. You pay for this base level of capacity at all times, whether used or idle.</p>
     pub fn get_always_on_capacity(&self) -> &::std::option::Option<i32> {
         &self.always_on_capacity
     }
@@ -180,6 +194,34 @@ impl LocationStateBuilder {
     pub fn get_on_demand_capacity(&self) -> &::std::option::Option<i32> {
         &self.on_demand_capacity
     }
+    /// <p>This indicates idle capacity which the service pre-allocates and holds for you in anticipation of future activity. This helps to insulate your users from capacity-allocation delays. You pay for capacity which is held in this intentional idle state.</p>
+    pub fn target_idle_capacity(mut self, input: i32) -> Self {
+        self.target_idle_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This indicates idle capacity which the service pre-allocates and holds for you in anticipation of future activity. This helps to insulate your users from capacity-allocation delays. You pay for capacity which is held in this intentional idle state.</p>
+    pub fn set_target_idle_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.target_idle_capacity = input;
+        self
+    }
+    /// <p>This indicates idle capacity which the service pre-allocates and holds for you in anticipation of future activity. This helps to insulate your users from capacity-allocation delays. You pay for capacity which is held in this intentional idle state.</p>
+    pub fn get_target_idle_capacity(&self) -> &::std::option::Option<i32> {
+        &self.target_idle_capacity
+    }
+    /// <p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>
+    pub fn maximum_capacity(mut self, input: i32) -> Self {
+        self.maximum_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>
+    pub fn set_maximum_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_capacity = input;
+        self
+    }
+    /// <p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>
+    pub fn get_maximum_capacity(&self) -> &::std::option::Option<i32> {
+        &self.maximum_capacity
+    }
     /// <p>This value is the always-on capacity that you most recently requested for a stream group. You request capacity separately for each location in a stream group. In response to an increase in requested capacity, Amazon GameLift Streams attempts to provision compute resources to make the stream group's allocated capacity meet requested capacity. When always-on capacity is decreased, it can take a few minutes to deprovision allocated capacity to match the requested capacity.</p>
     pub fn requested_capacity(mut self, input: i32) -> Self {
         self.requested_capacity = ::std::option::Option::Some(input);
@@ -194,17 +236,17 @@ impl LocationStateBuilder {
     pub fn get_requested_capacity(&self) -> &::std::option::Option<i32> {
         &self.requested_capacity
     }
-    /// <p>This value is the stream capacity that Amazon GameLift Streams has provisioned in a stream group that can respond immediately to stream requests. It includes resources that are currently streaming and resources that are idle and ready to respond to stream requests. You pay for this capacity whether it's in use or not. After making changes to capacity, it can take a few minutes for the allocated capacity count to reflect the change while compute resources are allocated or deallocated. Similarly, when allocated on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift Streams to spin down the allocated capacity.</p>
+    /// <p>This value is the stream capacity that Amazon GameLift Streams has provisioned in a stream group that can respond immediately to stream requests. It includes resources that are currently streaming and resources that are idle and ready to respond to stream requests. When target-idle capacity is configured, the idle resources include the capacity buffer maintained beyond ongoing sessions. You pay for this capacity whether it's in use or not. After making changes to capacity, it can take a few minutes for the allocated capacity count to reflect the change while compute resources are allocated or deallocated. Similarly, when allocated on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift Streams to spin down the allocated capacity.</p>
     pub fn allocated_capacity(mut self, input: i32) -> Self {
         self.allocated_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This value is the stream capacity that Amazon GameLift Streams has provisioned in a stream group that can respond immediately to stream requests. It includes resources that are currently streaming and resources that are idle and ready to respond to stream requests. You pay for this capacity whether it's in use or not. After making changes to capacity, it can take a few minutes for the allocated capacity count to reflect the change while compute resources are allocated or deallocated. Similarly, when allocated on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift Streams to spin down the allocated capacity.</p>
+    /// <p>This value is the stream capacity that Amazon GameLift Streams has provisioned in a stream group that can respond immediately to stream requests. It includes resources that are currently streaming and resources that are idle and ready to respond to stream requests. When target-idle capacity is configured, the idle resources include the capacity buffer maintained beyond ongoing sessions. You pay for this capacity whether it's in use or not. After making changes to capacity, it can take a few minutes for the allocated capacity count to reflect the change while compute resources are allocated or deallocated. Similarly, when allocated on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift Streams to spin down the allocated capacity.</p>
     pub fn set_allocated_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_capacity = input;
         self
     }
-    /// <p>This value is the stream capacity that Amazon GameLift Streams has provisioned in a stream group that can respond immediately to stream requests. It includes resources that are currently streaming and resources that are idle and ready to respond to stream requests. You pay for this capacity whether it's in use or not. After making changes to capacity, it can take a few minutes for the allocated capacity count to reflect the change while compute resources are allocated or deallocated. Similarly, when allocated on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift Streams to spin down the allocated capacity.</p>
+    /// <p>This value is the stream capacity that Amazon GameLift Streams has provisioned in a stream group that can respond immediately to stream requests. It includes resources that are currently streaming and resources that are idle and ready to respond to stream requests. When target-idle capacity is configured, the idle resources include the capacity buffer maintained beyond ongoing sessions. You pay for this capacity whether it's in use or not. After making changes to capacity, it can take a few minutes for the allocated capacity count to reflect the change while compute resources are allocated or deallocated. Similarly, when allocated on-demand capacity is no longer needed, it can take a few minutes for Amazon GameLift Streams to spin down the allocated capacity.</p>
     pub fn get_allocated_capacity(&self) -> &::std::option::Option<i32> {
         &self.allocated_capacity
     }
@@ -229,6 +271,8 @@ impl LocationStateBuilder {
             status: self.status,
             always_on_capacity: self.always_on_capacity,
             on_demand_capacity: self.on_demand_capacity,
+            target_idle_capacity: self.target_idle_capacity,
+            maximum_capacity: self.maximum_capacity,
             requested_capacity: self.requested_capacity,
             allocated_capacity: self.allocated_capacity,
             idle_capacity: self.idle_capacity,

@@ -14,6 +14,8 @@ pub struct RdsDbInstanceDetails {
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that identifies the database instance involved in the finding.</p>
     pub db_instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The unique ID of the database resource involved in the activity that prompted GuardDuty to generate the finding.</p>
+    pub dbi_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the tag key-value pairs.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -38,6 +40,10 @@ impl RdsDbInstanceDetails {
     pub fn db_instance_arn(&self) -> ::std::option::Option<&str> {
         self.db_instance_arn.as_deref()
     }
+    /// <p>The unique ID of the database resource involved in the activity that prompted GuardDuty to generate the finding.</p>
+    pub fn dbi_resource_id(&self) -> ::std::option::Option<&str> {
+        self.dbi_resource_id.as_deref()
+    }
     /// <p>Information about the tag key-value pairs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -61,6 +67,7 @@ pub struct RdsDbInstanceDetailsBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) dbi_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RdsDbInstanceDetailsBuilder {
@@ -134,6 +141,20 @@ impl RdsDbInstanceDetailsBuilder {
     pub fn get_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_arn
     }
+    /// <p>The unique ID of the database resource involved in the activity that prompted GuardDuty to generate the finding.</p>
+    pub fn dbi_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dbi_resource_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique ID of the database resource involved in the activity that prompted GuardDuty to generate the finding.</p>
+    pub fn set_dbi_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dbi_resource_id = input;
+        self
+    }
+    /// <p>The unique ID of the database resource involved in the activity that prompted GuardDuty to generate the finding.</p>
+    pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dbi_resource_id
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -162,6 +183,7 @@ impl RdsDbInstanceDetailsBuilder {
             engine_version: self.engine_version,
             db_cluster_identifier: self.db_cluster_identifier,
             db_instance_arn: self.db_instance_arn,
+            dbi_resource_id: self.dbi_resource_id,
             tags: self.tags,
         }
     }

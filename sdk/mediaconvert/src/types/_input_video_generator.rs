@@ -14,6 +14,8 @@ pub struct InputVideoGenerator {
     pub framerate_numerator: ::std::option::Option<i32>,
     /// Specify the height, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a height: Enter an even integer from 32 to 8192. When you do, you must also specify a value for width.
     pub height: ::std::option::Option<i32>,
+    /// Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+    pub image_input: ::std::option::Option<::std::string::String>,
     /// Specify the audio sample rate, in Hz, for the silent audio in your video generator input. Enter an integer from 32000 to 48000.
     pub sample_rate: ::std::option::Option<i32>,
     /// Specify the width, in pixels, for your video generator input. This is useful for positioning when you include one or more video overlays for this input. To use the default resolution 540x360: Leave both width and height blank. To specify a width: Enter an even integer from 32 to 8192. When you do, you must also specify a value for height.
@@ -40,6 +42,10 @@ impl InputVideoGenerator {
     pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
     }
+    /// Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+    pub fn image_input(&self) -> ::std::option::Option<&str> {
+        self.image_input.as_deref()
+    }
     /// Specify the audio sample rate, in Hz, for the silent audio in your video generator input. Enter an integer from 32000 to 48000.
     pub fn sample_rate(&self) -> ::std::option::Option<i32> {
         self.sample_rate
@@ -65,6 +71,7 @@ pub struct InputVideoGeneratorBuilder {
     pub(crate) framerate_denominator: ::std::option::Option<i32>,
     pub(crate) framerate_numerator: ::std::option::Option<i32>,
     pub(crate) height: ::std::option::Option<i32>,
+    pub(crate) image_input: ::std::option::Option<::std::string::String>,
     pub(crate) sample_rate: ::std::option::Option<i32>,
     pub(crate) width: ::std::option::Option<i32>,
 }
@@ -139,6 +146,20 @@ impl InputVideoGeneratorBuilder {
     pub fn get_height(&self) -> &::std::option::Option<i32> {
         &self.height
     }
+    /// Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+    pub fn image_input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_input = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+    pub fn set_image_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.image_input = input;
+        self
+    }
+    /// Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+    pub fn get_image_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_input
+    }
     /// Specify the audio sample rate, in Hz, for the silent audio in your video generator input. Enter an integer from 32000 to 48000.
     pub fn sample_rate(mut self, input: i32) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
@@ -175,6 +196,7 @@ impl InputVideoGeneratorBuilder {
             framerate_denominator: self.framerate_denominator,
             framerate_numerator: self.framerate_numerator,
             height: self.height,
+            image_input: self.image_input,
             sample_rate: self.sample_rate,
             width: self.width,
         }

@@ -33,6 +33,8 @@ pub use crate::types::_export_files_metadata::ExportFilesMetadata;
 
 pub use crate::types::_export_files_status::ExportFilesStatus;
 
+pub use crate::types::_performance_stats_configuration::PerformanceStatsConfiguration;
+
 pub use crate::types::_protocol::Protocol;
 
 pub use crate::types::_stream_session_status_reason::StreamSessionStatusReason;
@@ -56,6 +58,8 @@ mod _export_files_status;
 mod _location_configuration;
 
 mod _location_state;
+
+mod _performance_stats_configuration;
 
 mod _protocol;
 

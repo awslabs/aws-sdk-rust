@@ -26,6 +26,7 @@
 ///     KeyUsage::Tr31K1KeyBlockProtectionKey => { /* ... */ },
 ///     KeyUsage::Tr31K2Tr34AsymmetricKey => { /* ... */ },
 ///     KeyUsage::Tr31K3AsymmetricKeyForKeyAgreement => { /* ... */ },
+///     KeyUsage::Tr31M0Iso16609MacKey => { /* ... */ },
 ///     KeyUsage::Tr31M1Iso97971MacKey => { /* ... */ },
 ///     KeyUsage::Tr31M3Iso97973MacKey => { /* ... */ },
 ///     KeyUsage::Tr31M6Iso97975CmacKey => { /* ... */ },
@@ -92,6 +93,8 @@ pub enum KeyUsage {
     #[allow(missing_docs)] // documentation missing in model
     Tr31K3AsymmetricKeyForKeyAgreement,
     #[allow(missing_docs)] // documentation missing in model
+    Tr31M0Iso16609MacKey,
+    #[allow(missing_docs)] // documentation missing in model
     Tr31M1Iso97971MacKey,
     #[allow(missing_docs)] // documentation missing in model
     Tr31M3Iso97973MacKey,
@@ -130,6 +133,7 @@ impl ::std::convert::From<&str> for KeyUsage {
             "TR31_K1_KEY_BLOCK_PROTECTION_KEY" => KeyUsage::Tr31K1KeyBlockProtectionKey,
             "TR31_K2_TR34_ASYMMETRIC_KEY" => KeyUsage::Tr31K2Tr34AsymmetricKey,
             "TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT" => KeyUsage::Tr31K3AsymmetricKeyForKeyAgreement,
+            "TR31_M0_ISO_16609_MAC_KEY" => KeyUsage::Tr31M0Iso16609MacKey,
             "TR31_M1_ISO_9797_1_MAC_KEY" => KeyUsage::Tr31M1Iso97971MacKey,
             "TR31_M3_ISO_9797_3_MAC_KEY" => KeyUsage::Tr31M3Iso97973MacKey,
             "TR31_M6_ISO_9797_5_CMAC_KEY" => KeyUsage::Tr31M6Iso97975CmacKey,
@@ -168,6 +172,7 @@ impl KeyUsage {
             KeyUsage::Tr31K1KeyBlockProtectionKey => "TR31_K1_KEY_BLOCK_PROTECTION_KEY",
             KeyUsage::Tr31K2Tr34AsymmetricKey => "TR31_K2_TR34_ASYMMETRIC_KEY",
             KeyUsage::Tr31K3AsymmetricKeyForKeyAgreement => "TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT",
+            KeyUsage::Tr31M0Iso16609MacKey => "TR31_M0_ISO_16609_MAC_KEY",
             KeyUsage::Tr31M1Iso97971MacKey => "TR31_M1_ISO_9797_1_MAC_KEY",
             KeyUsage::Tr31M3Iso97973MacKey => "TR31_M3_ISO_9797_3_MAC_KEY",
             KeyUsage::Tr31M6Iso97975CmacKey => "TR31_M6_ISO_9797_5_CMAC_KEY",
@@ -197,6 +202,7 @@ impl KeyUsage {
             "TR31_K1_KEY_BLOCK_PROTECTION_KEY",
             "TR31_K2_TR34_ASYMMETRIC_KEY",
             "TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT",
+            "TR31_M0_ISO_16609_MAC_KEY",
             "TR31_M1_ISO_9797_1_MAC_KEY",
             "TR31_M3_ISO_9797_3_MAC_KEY",
             "TR31_M6_ISO_9797_5_CMAC_KEY",
@@ -243,6 +249,7 @@ impl ::std::fmt::Display for KeyUsage {
             KeyUsage::Tr31K1KeyBlockProtectionKey => write!(f, "TR31_K1_KEY_BLOCK_PROTECTION_KEY"),
             KeyUsage::Tr31K2Tr34AsymmetricKey => write!(f, "TR31_K2_TR34_ASYMMETRIC_KEY"),
             KeyUsage::Tr31K3AsymmetricKeyForKeyAgreement => write!(f, "TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT"),
+            KeyUsage::Tr31M0Iso16609MacKey => write!(f, "TR31_M0_ISO_16609_MAC_KEY"),
             KeyUsage::Tr31M1Iso97971MacKey => write!(f, "TR31_M1_ISO_9797_1_MAC_KEY"),
             KeyUsage::Tr31M3Iso97973MacKey => write!(f, "TR31_M3_ISO_9797_3_MAC_KEY"),
             KeyUsage::Tr31M6Iso97975CmacKey => write!(f, "TR31_M6_ISO_9797_5_CMAC_KEY"),

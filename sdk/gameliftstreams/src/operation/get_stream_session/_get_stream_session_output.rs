@@ -79,6 +79,8 @@ pub struct GetStreamSessionOutput {
     /// </note>
     /// <p><code>AdditionalEnvironmentVariables</code> and <code>AdditionalLaunchArgs</code> have similar purposes. <code>AdditionalEnvironmentVariables</code> passes data using environment variables; while <code>AdditionalLaunchArgs</code> passes data using command-line arguments.</p>
     pub additional_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The performance stats configuration for the stream session</p>
+    pub performance_stats_configuration: ::std::option::Option<crate::types::PerformanceStatsConfiguration>,
     /// <p>Access location for log files that your content generates during a stream session. These log files are uploaded to cloud storage location at the end of a stream session. The Amazon GameLift Streams application resource defines which log files to upload.</p>
     pub log_file_location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an S3 bucket that stores Amazon GameLift Streams WebSDK files. The URL is used to establish connection with the client.</p>
@@ -203,6 +205,10 @@ impl GetStreamSessionOutput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_environment_variables.as_ref()
     }
+    /// <p>The performance stats configuration for the stream session</p>
+    pub fn performance_stats_configuration(&self) -> ::std::option::Option<&crate::types::PerformanceStatsConfiguration> {
+        self.performance_stats_configuration.as_ref()
+    }
     /// <p>Access location for log files that your content generates during a stream session. These log files are uploaded to cloud storage location at the end of a stream session. The Amazon GameLift Streams application resource defines which log files to upload.</p>
     pub fn log_file_location_uri(&self) -> ::std::option::Option<&str> {
         self.log_file_location_uri.as_deref()
@@ -246,6 +252,7 @@ impl ::std::fmt::Debug for GetStreamSessionOutput {
         formatter.field("session_length_seconds", &self.session_length_seconds);
         formatter.field("additional_launch_args", &self.additional_launch_args);
         formatter.field("additional_environment_variables", &self.additional_environment_variables);
+        formatter.field("performance_stats_configuration", &self.performance_stats_configuration);
         formatter.field("log_file_location_uri", &self.log_file_location_uri);
         formatter.field("web_sdk_protocol_url", &self.web_sdk_protocol_url);
         formatter.field("last_updated_at", &self.last_updated_at);
@@ -286,6 +293,7 @@ pub struct GetStreamSessionOutputBuilder {
     pub(crate) session_length_seconds: ::std::option::Option<i32>,
     pub(crate) additional_launch_args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) additional_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) performance_stats_configuration: ::std::option::Option<crate::types::PerformanceStatsConfiguration>,
     pub(crate) log_file_location_uri: ::std::option::Option<::std::string::String>,
     pub(crate) web_sdk_protocol_url: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -656,6 +664,20 @@ impl GetStreamSessionOutputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_environment_variables
     }
+    /// <p>The performance stats configuration for the stream session</p>
+    pub fn performance_stats_configuration(mut self, input: crate::types::PerformanceStatsConfiguration) -> Self {
+        self.performance_stats_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The performance stats configuration for the stream session</p>
+    pub fn set_performance_stats_configuration(mut self, input: ::std::option::Option<crate::types::PerformanceStatsConfiguration>) -> Self {
+        self.performance_stats_configuration = input;
+        self
+    }
+    /// <p>The performance stats configuration for the stream session</p>
+    pub fn get_performance_stats_configuration(&self) -> &::std::option::Option<crate::types::PerformanceStatsConfiguration> {
+        &self.performance_stats_configuration
+    }
     /// <p>Access location for log files that your content generates during a stream session. These log files are uploaded to cloud storage location at the end of a stream session. The Amazon GameLift Streams application resource defines which log files to upload.</p>
     pub fn log_file_location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_file_location_uri = ::std::option::Option::Some(input.into());
@@ -769,6 +791,7 @@ impl GetStreamSessionOutputBuilder {
             session_length_seconds: self.session_length_seconds,
             additional_launch_args: self.additional_launch_args,
             additional_environment_variables: self.additional_environment_variables,
+            performance_stats_configuration: self.performance_stats_configuration,
             log_file_location_uri: self.log_file_location_uri,
             web_sdk_protocol_url: self.web_sdk_protocol_url,
             last_updated_at: self.last_updated_at,
@@ -796,6 +819,7 @@ impl ::std::fmt::Debug for GetStreamSessionOutputBuilder {
         formatter.field("session_length_seconds", &self.session_length_seconds);
         formatter.field("additional_launch_args", &self.additional_launch_args);
         formatter.field("additional_environment_variables", &self.additional_environment_variables);
+        formatter.field("performance_stats_configuration", &self.performance_stats_configuration);
         formatter.field("log_file_location_uri", &self.log_file_location_uri);
         formatter.field("web_sdk_protocol_url", &self.web_sdk_protocol_url);
         formatter.field("last_updated_at", &self.last_updated_at);

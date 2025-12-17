@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ScanSbom`](crate::operation::scan_sbom::builders::ScanSbomFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`sbom(Document)`](crate::operation::scan_sbom::builders::ScanSbomFluentBuilder::sbom) / [`set_sbom(Option<Document>)`](crate::operation::scan_sbom::builders::ScanSbomFluentBuilder::set_sbom):<br>required: **true**<br><p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p><br>
+    ///   - [`sbom(Document)`](crate::operation::scan_sbom::builders::ScanSbomFluentBuilder::sbom) / [`set_sbom(Option<Document>)`](crate::operation::scan_sbom::builders::ScanSbomFluentBuilder::set_sbom):<br>required: **true**<br><p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format. This format limits you to passing 2000 components before throwing a <code>ValidException</code> error.</p><br>
     ///   - [`output_format(OutputFormat)`](crate::operation::scan_sbom::builders::ScanSbomFluentBuilder::output_format) / [`set_output_format(Option<OutputFormat>)`](crate::operation::scan_sbom::builders::ScanSbomFluentBuilder::set_output_format):<br>required: **false**<br><p>The output format for the vulnerability report.</p><br>
     /// - On success, responds with [`ScanSbomOutput`](crate::operation::scan_sbom::ScanSbomOutput) with field(s):
     ///   - [`sbom(Option<Document>)`](crate::operation::scan_sbom::ScanSbomOutput::sbom): <p>The vulnerability report for the scanned SBOM.</p>

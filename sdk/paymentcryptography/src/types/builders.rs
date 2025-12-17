@@ -13,6 +13,8 @@ pub use crate::types::_key_summary::KeySummaryBuilder;
 
 pub use crate::types::_alias::AliasBuilder;
 
+pub use crate::types::_import_as2805_key_cryptogram::ImportAs2805KeyCryptogramBuilder;
+
 pub use crate::types::_import_diffie_hellman_tr31_key_block::ImportDiffieHellmanTr31KeyBlockBuilder;
 
 pub use crate::types::_import_key_cryptogram::ImportKeyCryptogramBuilder;
@@ -32,6 +34,8 @@ pub use crate::types::_wrapped_key::WrappedKeyBuilder;
 pub use crate::types::_export_attributes::ExportAttributesBuilder;
 
 pub use crate::types::_export_dukpt_initial_key::ExportDukptInitialKeyBuilder;
+
+pub use crate::types::_export_as2805_key_cryptogram::ExportAs2805KeyCryptogramBuilder;
 
 pub use crate::types::_export_diffie_hellman_tr31_key_block::ExportDiffieHellmanTr31KeyBlockBuilder;
 

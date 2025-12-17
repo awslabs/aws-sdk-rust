@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanSbomInput {
-    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
+    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format. This format limits you to passing 2000 components before throwing a <code>ValidException</code> error.</p>
     pub sbom: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>The output format for the vulnerability report.</p>
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
 }
 impl ScanSbomInput {
-    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
+    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format. This format limits you to passing 2000 components before throwing a <code>ValidException</code> error.</p>
     pub fn sbom(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.sbom.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct ScanSbomInputBuilder {
     pub(crate) output_format: ::std::option::Option<crate::types::OutputFormat>,
 }
 impl ScanSbomInputBuilder {
-    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
+    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format. This format limits you to passing 2000 components before throwing a <code>ValidException</code> error.</p>
     /// This field is required.
     pub fn sbom(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.sbom = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
+    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format. This format limits you to passing 2000 components before throwing a <code>ValidException</code> error.</p>
     pub fn set_sbom(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.sbom = input;
         self
     }
-    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
+    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format. This format limits you to passing 2000 components before throwing a <code>ValidException</code> error.</p>
     pub fn get_sbom(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.sbom
     }

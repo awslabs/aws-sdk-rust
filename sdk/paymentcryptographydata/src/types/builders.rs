@@ -45,7 +45,11 @@ pub use crate::types::_session_key_mastercard::SessionKeyMastercardBuilder;
 
 pub use crate::types::_session_key_emv_common::SessionKeyEmvCommonBuilder;
 
+pub use crate::types::_as2805_pek_derivation_attributes::As2805PekDerivationAttributesBuilder;
+
 pub use crate::types::_dukpt_derivation_attributes::DukptDerivationAttributesBuilder;
+
+pub use crate::types::_translation_pin_data_as2805_format0::TranslationPinDataAs2805Format0Builder;
 
 pub use crate::types::_translation_pin_data_iso_format034::TranslationPinDataIsoFormat034Builder;
 
@@ -86,6 +90,10 @@ pub use crate::types::_current_pin_attributes::CurrentPinAttributesBuilder;
 pub use crate::types::_amex_attributes::AmexAttributesBuilder;
 
 pub use crate::types::_emv_common_attributes::EmvCommonAttributesBuilder;
+
+pub use crate::types::_kek_validation_response::KekValidationResponseBuilder;
+
+pub use crate::types::_kek_validation_request::KekValidationRequestBuilder;
 
 pub use crate::types::_emv_encryption_attributes::EmvEncryptionAttributesBuilder;
 

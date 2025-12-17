@@ -16,7 +16,7 @@ pub struct GeneratePinDataInput {
     /// <p>The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports <code>ISO_Format_0</code>, <code>ISO_Format_3</code> and <code>ISO_Format_4</code>.</p>
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
-    /// <p>The <code>ISO_Format_4</code> PIN block format is the only one supporting AES encryption. It is similar to <code>ISO_Format_3</code> but doubles the pin block length by padding with fill digit A and random values from 10 to 15.</p>
+    /// <p>The <code>ISO_Format_4</code> PIN block format is the only one supporting AES encryption.</p>
     pub pin_block_format: ::std::option::Option<crate::types::PinBlockFormatForPinData>,
     /// <p>Parameter information of a WrappedKeyBlock for encryption key exchange.</p>
     pub encryption_wrapped_key: ::std::option::Option<crate::types::WrappedKey>,
@@ -45,7 +45,7 @@ impl GeneratePinDataInput {
     /// <p>The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports <code>ISO_Format_0</code>, <code>ISO_Format_3</code> and <code>ISO_Format_4</code>.</p>
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
-    /// <p>The <code>ISO_Format_4</code> PIN block format is the only one supporting AES encryption. It is similar to <code>ISO_Format_3</code> but doubles the pin block length by padding with fill digit A and random values from 10 to 15.</p>
+    /// <p>The <code>ISO_Format_4</code> PIN block format is the only one supporting AES encryption.</p>
     pub fn pin_block_format(&self) -> ::std::option::Option<&crate::types::PinBlockFormatForPinData> {
         self.pin_block_format.as_ref()
     }
@@ -163,7 +163,7 @@ impl GeneratePinDataInputBuilder {
     /// <p>The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports <code>ISO_Format_0</code>, <code>ISO_Format_3</code> and <code>ISO_Format_4</code>.</p>
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
-    /// <p>The <code>ISO_Format_4</code> PIN block format is the only one supporting AES encryption. It is similar to <code>ISO_Format_3</code> but doubles the pin block length by padding with fill digit A and random values from 10 to 15.</p>
+    /// <p>The <code>ISO_Format_4</code> PIN block format is the only one supporting AES encryption.</p>
     /// This field is required.
     pub fn pin_block_format(mut self, input: crate::types::PinBlockFormatForPinData) -> Self {
         self.pin_block_format = ::std::option::Option::Some(input);
@@ -172,7 +172,7 @@ impl GeneratePinDataInputBuilder {
     /// <p>The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports <code>ISO_Format_0</code>, <code>ISO_Format_3</code> and <code>ISO_Format_4</code>.</p>
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
-    /// <p>The <code>ISO_Format_4</code> PIN block format is the only one supporting AES encryption. It is similar to <code>ISO_Format_3</code> but doubles the pin block length by padding with fill digit A and random values from 10 to 15.</p>
+    /// <p>The <code>ISO_Format_4</code> PIN block format is the only one supporting AES encryption.</p>
     pub fn set_pin_block_format(mut self, input: ::std::option::Option<crate::types::PinBlockFormatForPinData>) -> Self {
         self.pin_block_format = input;
         self
@@ -180,7 +180,7 @@ impl GeneratePinDataInputBuilder {
     /// <p>The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports <code>ISO_Format_0</code>, <code>ISO_Format_3</code> and <code>ISO_Format_4</code>.</p>
     /// <p>The <code>ISO_Format_0</code> PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.</p>
     /// <p>The <code>ISO_Format_3</code> PIN block format is the same as <code>ISO_Format_0</code> except that the fill digits are random values from 10 to 15.</p>
-    /// <p>The <code>ISO_Format_4</code> PIN block format is the only one supporting AES encryption. It is similar to <code>ISO_Format_3</code> but doubles the pin block length by padding with fill digit A and random values from 10 to 15.</p>
+    /// <p>The <code>ISO_Format_4</code> PIN block format is the only one supporting AES encryption.</p>
     pub fn get_pin_block_format(&self) -> &::std::option::Option<crate::types::PinBlockFormatForPinData> {
         &self.pin_block_format
     }

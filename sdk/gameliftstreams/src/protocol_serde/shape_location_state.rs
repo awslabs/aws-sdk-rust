@@ -42,6 +42,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TargetIdleCapacity" => {
+                            builder = builder.set_target_idle_capacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "MaximumCapacity" => {
+                            builder = builder.set_maximum_capacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "RequestedCapacity" => {
                             builder = builder.set_requested_capacity(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

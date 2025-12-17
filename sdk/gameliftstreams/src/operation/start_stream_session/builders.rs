@@ -388,4 +388,18 @@ impl StartStreamSessionFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_additional_environment_variables()
     }
+    /// <p>Configuration settings for sharing the stream session's performance stats with the client</p>
+    pub fn performance_stats_configuration(mut self, input: crate::types::PerformanceStatsConfiguration) -> Self {
+        self.inner = self.inner.performance_stats_configuration(input);
+        self
+    }
+    /// <p>Configuration settings for sharing the stream session's performance stats with the client</p>
+    pub fn set_performance_stats_configuration(mut self, input: ::std::option::Option<crate::types::PerformanceStatsConfiguration>) -> Self {
+        self.inner = self.inner.set_performance_stats_configuration(input);
+        self
+    }
+    /// <p>Configuration settings for sharing the stream session's performance stats with the client</p>
+    pub fn get_performance_stats_configuration(&self) -> &::std::option::Option<crate::types::PerformanceStatsConfiguration> {
+        self.inner.get_performance_stats_configuration()
+    }
 }

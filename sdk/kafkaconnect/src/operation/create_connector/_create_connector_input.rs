@@ -21,6 +21,8 @@ pub struct CreateConnectorInput {
     pub kafka_connect_version: ::std::option::Option<::std::string::String>,
     /// <p>Details about log delivery.</p>
     pub log_delivery: ::std::option::Option<crate::types::LogDelivery>,
+    /// <p>The network type of the connector. It gives connectors connectivity to either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
     /// <important>
     /// <p>Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins together.</p>
     /// </important>
@@ -70,6 +72,10 @@ impl CreateConnectorInput {
     pub fn log_delivery(&self) -> ::std::option::Option<&crate::types::LogDelivery> {
         self.log_delivery.as_ref()
     }
+    /// <p>The network type of the connector. It gives connectors connectivity to either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
     /// <important>
     /// <p>Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins together.</p>
     /// </important>
@@ -104,6 +110,7 @@ impl ::std::fmt::Debug for CreateConnectorInput {
         formatter.field("kafka_cluster_encryption_in_transit", &self.kafka_cluster_encryption_in_transit);
         formatter.field("kafka_connect_version", &self.kafka_connect_version);
         formatter.field("log_delivery", &self.log_delivery);
+        formatter.field("network_type", &self.network_type);
         formatter.field("plugins", &self.plugins);
         formatter.field("service_execution_role_arn", &self.service_execution_role_arn);
         formatter.field("worker_configuration", &self.worker_configuration);
@@ -131,6 +138,7 @@ pub struct CreateConnectorInputBuilder {
     pub(crate) kafka_cluster_encryption_in_transit: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransit>,
     pub(crate) kafka_connect_version: ::std::option::Option<::std::string::String>,
     pub(crate) log_delivery: ::std::option::Option<crate::types::LogDelivery>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) plugins: ::std::option::Option<::std::vec::Vec<crate::types::Plugin>>,
     pub(crate) service_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) worker_configuration: ::std::option::Option<crate::types::WorkerConfiguration>,
@@ -282,6 +290,20 @@ impl CreateConnectorInputBuilder {
     pub fn get_log_delivery(&self) -> &::std::option::Option<crate::types::LogDelivery> {
         &self.log_delivery
     }
+    /// <p>The network type of the connector. It gives connectors connectivity to either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type of the connector. It gives connectors connectivity to either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the connector. It gives connectors connectivity to either IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Appends an item to `plugins`.
     ///
     /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
@@ -374,6 +396,7 @@ impl CreateConnectorInputBuilder {
             kafka_cluster_encryption_in_transit: self.kafka_cluster_encryption_in_transit,
             kafka_connect_version: self.kafka_connect_version,
             log_delivery: self.log_delivery,
+            network_type: self.network_type,
             plugins: self.plugins,
             service_execution_role_arn: self.service_execution_role_arn,
             worker_configuration: self.worker_configuration,
@@ -393,6 +416,7 @@ impl ::std::fmt::Debug for CreateConnectorInputBuilder {
         formatter.field("kafka_cluster_encryption_in_transit", &self.kafka_cluster_encryption_in_transit);
         formatter.field("kafka_connect_version", &self.kafka_connect_version);
         formatter.field("log_delivery", &self.log_delivery);
+        formatter.field("network_type", &self.network_type);
         formatter.field("plugins", &self.plugins);
         formatter.field("service_execution_role_arn", &self.service_execution_role_arn);
         formatter.field("worker_configuration", &self.worker_configuration);

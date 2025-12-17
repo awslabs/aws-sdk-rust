@@ -15,4 +15,6 @@ pub use crate::types::_application_summary::ApplicationSummaryBuilder;
 
 pub use crate::types::_export_files_metadata::ExportFilesMetadataBuilder;
 
+pub use crate::types::_performance_stats_configuration::PerformanceStatsConfigurationBuilder;
+
 pub use crate::types::_stream_session_summary::StreamSessionSummaryBuilder;

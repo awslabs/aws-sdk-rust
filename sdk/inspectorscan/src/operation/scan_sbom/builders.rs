@@ -22,7 +22,9 @@ impl crate::operation::scan_sbom::builders::ScanSbomInputBuilder {
 }
 /// Fluent builder constructing a request to `ScanSbom`.
 ///
-/// <p>Scans a provided CycloneDX 1.5 SBOM and reports on any vulnerabilities discovered in that SBOM. You can generate compatible SBOMs for your resources using the <code>Amazon Inspector SBOM generator</code>.</p>
+/// <p>Scans a provided CycloneDX 1.5 SBOM and reports on any vulnerabilities discovered in that SBOM. You can generate compatible SBOMs for your resources using the <a href="https://docs.aws.amazon.com/inspector/latest/user/sbom-generator.html">Amazon Inspector SBOM generator</a>.</p><note>
+/// <p>The output of this action reports NVD and CVSS scores when NVD and CVSS scores are available. Because the output reports both scores, you might notice a discrepency between them. However, you can triage the severity of either score depending on the vendor of your choosing.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ScanSbomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +101,17 @@ impl ScanSbomFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
+    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format. This format limits you to passing 2000 components before throwing a <code>ValidException</code> error.</p>
     pub fn sbom(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.inner = self.inner.sbom(input);
         self
     }
-    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
+    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format. This format limits you to passing 2000 components before throwing a <code>ValidException</code> error.</p>
     pub fn set_sbom(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.inner = self.inner.set_sbom(input);
         self
     }
-    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
+    /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format. This format limits you to passing 2000 components before throwing a <code>ValidException</code> error.</p>
     pub fn get_sbom(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_sbom()
     }

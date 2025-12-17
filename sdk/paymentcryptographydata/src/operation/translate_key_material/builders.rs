@@ -22,9 +22,9 @@ impl crate::operation::translate_key_material::builders::TranslateKeyMaterialInp
 }
 /// Fluent builder constructing a request to `TranslateKeyMaterial`.
 ///
-/// <p>Translates an encryption key between different wrapping keys without importing the key into Amazon Web Services Payment Cryptography.</p>
-/// <p>This operation can be used when key material is frequently rotated, such as during every card transaction, and there is a need to avoid importing short-lived keys into Amazon Web Services Payment Cryptography. It translates short-lived transaction keys such as Pin Encryption Key (PEK) generated for each transaction and wrapped with an ECDH (Elliptic Curve Diffie-Hellman) derived wrapping key to another KEK (Key Encryption Key) wrapping key.</p>
-/// <p>Before using this operation, you must first request the public key certificate of the ECC key pair generated within Amazon Web Services Payment Cryptography to establish an ECDH key agreement. In <code>TranslateKeyData</code>, the service uses its own ECC key pair, public certificate of receiving ECC key pair, and the key derivation parameters to generate a derived key. The service uses this derived key to unwrap the incoming transaction key received as a TR31WrappedKeyBlock and re-wrap using a user provided KEK to generate an outgoing Tr31WrappedKeyBlock. For more information on establishing ECDH derived keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Creating keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+/// <p>Translates an cryptographic key between different wrapping keys without importing the key into Amazon Web Services Payment Cryptography.</p>
+/// <p>This operation can be used when key material is frequently rotated, such as during every card transaction, and there is a need to avoid importing short-lived keys into Amazon Web Services Payment Cryptography. It translates short-lived transaction keys such as <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/terminology.html#terms.pek">PEK</a> generated for each transaction and wrapped with an <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/terminology.html#terms.ecdh">ECDH</a> derived wrapping key to another <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/terminology.html#terms.kek">KEK</a> wrapping key.</p>
+/// <p>Before using this operation, you must first request the public key certificate of the ECC key pair generated within Amazon Web Services Payment Cryptography to establish an ECDH key agreement. In <code>TranslateKeyData</code>, the service uses its own ECC key pair, public certificate of receiving ECC key pair, and the key derivation parameters to generate a derived key. The service uses this derived key to unwrap the incoming transaction key received as a TR31WrappedKeyBlock and re-wrap using a user provided KEK to generate an outgoing Tr31WrappedKeyBlock.</p>
 /// <p>For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
 /// <p><b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
@@ -149,17 +149,17 @@ impl TranslateKeyMaterialFluentBuilder {
     pub fn get_outgoing_key_material(&self) -> &::std::option::Option<crate::types::OutgoingKeyMaterial> {
         self.inner.get_outgoing_key_material()
     }
-    /// <p>The key check value (KCV) algorithm used for calculating the KCV.</p>
+    /// <p>The key check value (KCV) algorithm used for calculating the KCV of the derived key.</p>
     pub fn key_check_value_algorithm(mut self, input: crate::types::KeyCheckValueAlgorithm) -> Self {
         self.inner = self.inner.key_check_value_algorithm(input);
         self
     }
-    /// <p>The key check value (KCV) algorithm used for calculating the KCV.</p>
+    /// <p>The key check value (KCV) algorithm used for calculating the KCV of the derived key.</p>
     pub fn set_key_check_value_algorithm(mut self, input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>) -> Self {
         self.inner = self.inner.set_key_check_value_algorithm(input);
         self
     }
-    /// <p>The key check value (KCV) algorithm used for calculating the KCV.</p>
+    /// <p>The key check value (KCV) algorithm used for calculating the KCV of the derived key.</p>
     pub fn get_key_check_value_algorithm(&self) -> &::std::option::Option<crate::types::KeyCheckValueAlgorithm> {
         self.inner.get_key_check_value_algorithm()
     }

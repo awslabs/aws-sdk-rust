@@ -100,6 +100,7 @@
 ///     ClusterInstanceType::MlP5E48Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlP5En48Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlP6B20048Xlarge => { /* ... */ },
+///     ClusterInstanceType::MlP6B30048Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlP6EGb20036Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlR6I12Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlR6I16Xlarge => { /* ... */ },
@@ -332,6 +333,8 @@ pub enum ClusterInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP6B20048Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP6B30048Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlP6EGb20036Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR6I12Xlarge,
@@ -480,6 +483,7 @@ impl ::std::convert::From<&str> for ClusterInstanceType {
             "ml.p5e.48xlarge" => ClusterInstanceType::MlP5E48Xlarge,
             "ml.p5en.48xlarge" => ClusterInstanceType::MlP5En48Xlarge,
             "ml.p6-b200.48xlarge" => ClusterInstanceType::MlP6B20048Xlarge,
+            "ml.p6-b300.48xlarge" => ClusterInstanceType::MlP6B30048Xlarge,
             "ml.p6e-gb200.36xlarge" => ClusterInstanceType::MlP6EGb20036Xlarge,
             "ml.r6i.12xlarge" => ClusterInstanceType::MlR6I12Xlarge,
             "ml.r6i.16xlarge" => ClusterInstanceType::MlR6I16Xlarge,
@@ -610,6 +614,7 @@ impl ClusterInstanceType {
             ClusterInstanceType::MlP5E48Xlarge => "ml.p5e.48xlarge",
             ClusterInstanceType::MlP5En48Xlarge => "ml.p5en.48xlarge",
             ClusterInstanceType::MlP6B20048Xlarge => "ml.p6-b200.48xlarge",
+            ClusterInstanceType::MlP6B30048Xlarge => "ml.p6-b300.48xlarge",
             ClusterInstanceType::MlP6EGb20036Xlarge => "ml.p6e-gb200.36xlarge",
             ClusterInstanceType::MlR6I12Xlarge => "ml.r6i.12xlarge",
             ClusterInstanceType::MlR6I16Xlarge => "ml.r6i.16xlarge",
@@ -731,6 +736,7 @@ impl ClusterInstanceType {
             "ml.p5e.48xlarge",
             "ml.p5en.48xlarge",
             "ml.p6-b200.48xlarge",
+            "ml.p6-b300.48xlarge",
             "ml.p6e-gb200.36xlarge",
             "ml.r6i.12xlarge",
             "ml.r6i.16xlarge",
@@ -869,6 +875,7 @@ impl ::std::fmt::Display for ClusterInstanceType {
             ClusterInstanceType::MlP5E48Xlarge => write!(f, "ml.p5e.48xlarge"),
             ClusterInstanceType::MlP5En48Xlarge => write!(f, "ml.p5en.48xlarge"),
             ClusterInstanceType::MlP6B20048Xlarge => write!(f, "ml.p6-b200.48xlarge"),
+            ClusterInstanceType::MlP6B30048Xlarge => write!(f, "ml.p6-b300.48xlarge"),
             ClusterInstanceType::MlP6EGb20036Xlarge => write!(f, "ml.p6e-gb200.36xlarge"),
             ClusterInstanceType::MlR6I12Xlarge => write!(f, "ml.r6i.12xlarge"),
             ClusterInstanceType::MlR6I16Xlarge => write!(f, "ml.r6i.16xlarge"),

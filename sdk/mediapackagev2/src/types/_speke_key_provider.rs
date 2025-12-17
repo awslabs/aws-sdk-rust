@@ -17,6 +17,8 @@ pub struct SpekeKeyProvider {
     /// <p>The URL of the API Gateway proxy that you set up to talk to your key server. The API Gateway proxy must reside in the same AWS Region as MediaPackage and must start with https://.</p>
     /// <p>The following example shows a URL: <code>https://1wm2dx1f33.execute-api.us-west-2.amazonaws.com/SpekeSample/copyProtection</code></p>
     pub url: ::std::string::String,
+    /// <p>The ARN for the certificate that you imported to AWS Certificate Manager to add content key encryption to this endpoint. For this feature to work, your DRM key provider must support content key encryption.</p>
+    pub certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl SpekeKeyProvider {
     /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
@@ -46,6 +48,10 @@ impl SpekeKeyProvider {
         use std::ops::Deref;
         self.url.deref()
     }
+    /// <p>The ARN for the certificate that you imported to AWS Certificate Manager to add content key encryption to this endpoint. For this feature to work, your DRM key provider must support content key encryption.</p>
+    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+        self.certificate_arn.as_deref()
+    }
 }
 impl SpekeKeyProvider {
     /// Creates a new builder-style object to manufacture [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
@@ -63,6 +69,7 @@ pub struct SpekeKeyProviderBuilder {
     pub(crate) drm_systems: ::std::option::Option<::std::vec::Vec<crate::types::DrmSystem>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl SpekeKeyProviderBuilder {
     /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
@@ -154,6 +161,20 @@ impl SpekeKeyProviderBuilder {
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
+    /// <p>The ARN for the certificate that you imported to AWS Certificate Manager to add content key encryption to this endpoint. For this feature to work, your DRM key provider must support content key encryption.</p>
+    pub fn certificate_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN for the certificate that you imported to AWS Certificate Manager to add content key encryption to this endpoint. For this feature to work, your DRM key provider must support content key encryption.</p>
+    pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.certificate_arn = input;
+        self
+    }
+    /// <p>The ARN for the certificate that you imported to AWS Certificate Manager to add content key encryption to this endpoint. For this feature to work, your DRM key provider must support content key encryption.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// Consumes the builder and constructs a [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_id`](crate::types::builders::SpekeKeyProviderBuilder::resource_id)
@@ -187,6 +208,7 @@ impl SpekeKeyProviderBuilder {
                     "url was not specified but it is required when building SpekeKeyProvider",
                 )
             })?,
+            certificate_arn: self.certificate_arn,
         })
     }
 }

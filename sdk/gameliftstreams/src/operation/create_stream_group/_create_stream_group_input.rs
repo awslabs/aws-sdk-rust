@@ -9,7 +9,31 @@ pub struct CreateStreamGroupInput {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_pro_win2022</code> (NVIDIA, pro)</b> Supports applications with extremely high 3D scene complexity which require maximum resources. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_pro</code> (NVIDIA, pro)</b> Supports applications with extremely high 3D scene complexity which require maximum resources. Uses dedicated NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_ultra_win2022</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -21,7 +45,19 @@ pub struct CreateStreamGroupInput {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -33,7 +69,31 @@ pub struct CreateStreamGroupInput {
     /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen5n_ultra</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Uses dedicated NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_medium</code> (NVIDIA, medium)</b> Supports applications with moderate 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 2 vCPUs, 8 GB RAM, 6 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 4 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_small</code> (NVIDIA, small)</b> Supports applications with lightweight 3D scene complexity and low CPU usage. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 1 vCPUs, 4 GB RAM, 2 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 12 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -45,7 +105,31 @@ pub struct CreateStreamGroupInput {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 4 vCPUs, 16 GB RAM, 12 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen5n_ultra</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Uses dedicated NVIDIA A10G Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -57,7 +141,7 @@ pub struct CreateStreamGroupInput {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -69,7 +153,7 @@ pub struct CreateStreamGroupInput {
     /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -102,7 +186,31 @@ impl CreateStreamGroupInput {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_pro_win2022</code> (NVIDIA, pro)</b> Supports applications with extremely high 3D scene complexity which require maximum resources. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_pro</code> (NVIDIA, pro)</b> Supports applications with extremely high 3D scene complexity which require maximum resources. Uses dedicated NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_ultra_win2022</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -114,7 +222,19 @@ impl CreateStreamGroupInput {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -126,7 +246,31 @@ impl CreateStreamGroupInput {
     /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen5n_ultra</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Uses dedicated NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_medium</code> (NVIDIA, medium)</b> Supports applications with moderate 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 2 vCPUs, 8 GB RAM, 6 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 4 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_small</code> (NVIDIA, small)</b> Supports applications with lightweight 3D scene complexity and low CPU usage. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 1 vCPUs, 4 GB RAM, 2 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 12 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -138,7 +282,31 @@ impl CreateStreamGroupInput {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 4 vCPUs, 16 GB RAM, 12 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen5n_ultra</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Uses dedicated NVIDIA A10G Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -150,7 +318,7 @@ impl CreateStreamGroupInput {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -162,7 +330,7 @@ impl CreateStreamGroupInput {
     /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -236,7 +404,31 @@ impl CreateStreamGroupInputBuilder {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_pro_win2022</code> (NVIDIA, pro)</b> Supports applications with extremely high 3D scene complexity which require maximum resources. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_pro</code> (NVIDIA, pro)</b> Supports applications with extremely high 3D scene complexity which require maximum resources. Uses dedicated NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_ultra_win2022</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -248,7 +440,19 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -260,7 +464,31 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen5n_ultra</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Uses dedicated NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_medium</code> (NVIDIA, medium)</b> Supports applications with moderate 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 2 vCPUs, 8 GB RAM, 6 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 4 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_small</code> (NVIDIA, small)</b> Supports applications with lightweight 3D scene complexity and low CPU usage. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 1 vCPUs, 4 GB RAM, 2 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 12 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -272,7 +500,31 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 4 vCPUs, 16 GB RAM, 12 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen5n_ultra</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Uses dedicated NVIDIA A10G Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -284,7 +536,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -296,7 +548,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -317,7 +569,31 @@ impl CreateStreamGroupInputBuilder {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_pro_win2022</code> (NVIDIA, pro)</b> Supports applications with extremely high 3D scene complexity which require maximum resources. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_pro</code> (NVIDIA, pro)</b> Supports applications with extremely high 3D scene complexity which require maximum resources. Uses dedicated NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_ultra_win2022</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -329,7 +605,19 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -341,7 +629,31 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen5n_ultra</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Uses dedicated NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_medium</code> (NVIDIA, medium)</b> Supports applications with moderate 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 2 vCPUs, 8 GB RAM, 6 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 4 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_small</code> (NVIDIA, small)</b> Supports applications with lightweight 3D scene complexity and low CPU usage. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 1 vCPUs, 4 GB RAM, 2 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 12 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -353,7 +665,31 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 4 vCPUs, 16 GB RAM, 12 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen5n_ultra</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Uses dedicated NVIDIA A10G Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -365,7 +701,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -377,7 +713,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -397,7 +733,31 @@ impl CreateStreamGroupInputBuilder {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_pro_win2022</code> (NVIDIA, pro)</b> Supports applications with extremely high 3D scene complexity which require maximum resources. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_pro</code> (NVIDIA, pro)</b> Supports applications with extremely high 3D scene complexity which require maximum resources. Uses dedicated NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 16 vCPUs, 64 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_ultra_win2022</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA L4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -409,7 +769,19 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -421,7 +793,31 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen5n_ultra</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Uses dedicated NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen6n_medium</code> (NVIDIA, medium)</b> Supports applications with moderate 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 2 vCPUs, 8 GB RAM, 6 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 4 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen6n_small</code> (NVIDIA, small)</b> Supports applications with lightweight 3D scene complexity and low CPU usage. Uses NVIDIA L4 Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 1 vCPUs, 4 GB RAM, 2 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 12 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -433,7 +829,31 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen5n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA A10G Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 4 vCPUs, 16 GB RAM, 12 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen5n_ultra</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Uses dedicated NVIDIA A10G Tensor Core GPU.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Reference resolution: 1080p</p></li>
+    /// <li>
+    /// <p>Reference frame rate: 60 fps</p></li>
+    /// <li>
+    /// <p>Workload specifications: 8 vCPUs, 32 GB RAM, 24 GB VRAM</p></li>
+    /// <li>
+    /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -445,7 +865,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_high</code> (NVIDIA, high)</b> Supports applications with moderate to high 3D scene complexity. Uses NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -457,7 +877,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports up to 2 concurrent stream sessions</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_ultra</code> (NVIDIA, ultra)</b> Supports applications with high 3D scene complexity. Uses dedicated NVIDIA T4 Tensor Core GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>

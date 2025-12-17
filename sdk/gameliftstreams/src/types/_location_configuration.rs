@@ -6,10 +6,19 @@
 pub struct LocationConfiguration {
     /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub location_name: ::std::string::String,
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
+    /// <p>This setting, if non-zero, indicates minimum streaming capacity which is allocated to you and is never released back to the service. You pay for this base level of capacity at all times, whether used or idle.</p>
     pub always_on_capacity: ::std::option::Option<i32>,
+    /// <p>This field is deprecated. Use <code>MaximumCapacity</code> instead. This parameter cannot be used with <code>MaximumCapacity</code> or <code>TargetIdleCapacity</code> in the same location configuration.</p>
     /// <p>The streaming capacity that Amazon GameLift Streams can allocate in response to stream requests, and then de-allocate when the session has terminated. This offers a cost control measure at the expense of a greater startup time (typically under 5 minutes). Default is 0 when creating a stream group or adding a location.</p>
+    #[deprecated(
+        note = "This input field is deprecated in favor of explicit MaximumCapacity values.",
+        since = "2025-12-17"
+    )]
     pub on_demand_capacity: ::std::option::Option<i32>,
+    /// <p>This indicates idle capacity which the service pre-allocates and holds for you in anticipation of future activity. This helps to insulate your users from capacity-allocation delays. You pay for capacity which is held in this intentional idle state.</p>
+    pub target_idle_capacity: ::std::option::Option<i32>,
+    /// <p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>
+    pub maximum_capacity: ::std::option::Option<i32>,
 }
 impl LocationConfiguration {
     /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
@@ -17,13 +26,26 @@ impl LocationConfiguration {
         use std::ops::Deref;
         self.location_name.deref()
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
+    /// <p>This setting, if non-zero, indicates minimum streaming capacity which is allocated to you and is never released back to the service. You pay for this base level of capacity at all times, whether used or idle.</p>
     pub fn always_on_capacity(&self) -> ::std::option::Option<i32> {
         self.always_on_capacity
     }
+    /// <p>This field is deprecated. Use <code>MaximumCapacity</code> instead. This parameter cannot be used with <code>MaximumCapacity</code> or <code>TargetIdleCapacity</code> in the same location configuration.</p>
     /// <p>The streaming capacity that Amazon GameLift Streams can allocate in response to stream requests, and then de-allocate when the session has terminated. This offers a cost control measure at the expense of a greater startup time (typically under 5 minutes). Default is 0 when creating a stream group or adding a location.</p>
+    #[deprecated(
+        note = "This input field is deprecated in favor of explicit MaximumCapacity values.",
+        since = "2025-12-17"
+    )]
     pub fn on_demand_capacity(&self) -> ::std::option::Option<i32> {
         self.on_demand_capacity
+    }
+    /// <p>This indicates idle capacity which the service pre-allocates and holds for you in anticipation of future activity. This helps to insulate your users from capacity-allocation delays. You pay for capacity which is held in this intentional idle state.</p>
+    pub fn target_idle_capacity(&self) -> ::std::option::Option<i32> {
+        self.target_idle_capacity
+    }
+    /// <p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>
+    pub fn maximum_capacity(&self) -> ::std::option::Option<i32> {
+        self.maximum_capacity
     }
 }
 impl LocationConfiguration {
@@ -40,6 +62,8 @@ pub struct LocationConfigurationBuilder {
     pub(crate) location_name: ::std::option::Option<::std::string::String>,
     pub(crate) always_on_capacity: ::std::option::Option<i32>,
     pub(crate) on_demand_capacity: ::std::option::Option<i32>,
+    pub(crate) target_idle_capacity: ::std::option::Option<i32>,
+    pub(crate) maximum_capacity: ::std::option::Option<i32>,
 }
 impl LocationConfigurationBuilder {
     /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
@@ -57,33 +81,76 @@ impl LocationConfigurationBuilder {
     pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_name
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
+    /// <p>This setting, if non-zero, indicates minimum streaming capacity which is allocated to you and is never released back to the service. You pay for this base level of capacity at all times, whether used or idle.</p>
     pub fn always_on_capacity(mut self, input: i32) -> Self {
         self.always_on_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
+    /// <p>This setting, if non-zero, indicates minimum streaming capacity which is allocated to you and is never released back to the service. You pay for this base level of capacity at all times, whether used or idle.</p>
     pub fn set_always_on_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.always_on_capacity = input;
         self
     }
-    /// <p>The streaming capacity that is allocated and ready to handle stream requests without delay. You pay for this capacity whether it's in use or not. Best for quickest time from streaming request to streaming session. Default is 1 (2 for high stream classes) when creating a stream group or adding a location.</p>
+    /// <p>This setting, if non-zero, indicates minimum streaming capacity which is allocated to you and is never released back to the service. You pay for this base level of capacity at all times, whether used or idle.</p>
     pub fn get_always_on_capacity(&self) -> &::std::option::Option<i32> {
         &self.always_on_capacity
     }
+    /// <p>This field is deprecated. Use <code>MaximumCapacity</code> instead. This parameter cannot be used with <code>MaximumCapacity</code> or <code>TargetIdleCapacity</code> in the same location configuration.</p>
     /// <p>The streaming capacity that Amazon GameLift Streams can allocate in response to stream requests, and then de-allocate when the session has terminated. This offers a cost control measure at the expense of a greater startup time (typically under 5 minutes). Default is 0 when creating a stream group or adding a location.</p>
+    #[deprecated(
+        note = "This input field is deprecated in favor of explicit MaximumCapacity values.",
+        since = "2025-12-17"
+    )]
     pub fn on_demand_capacity(mut self, input: i32) -> Self {
         self.on_demand_capacity = ::std::option::Option::Some(input);
         self
     }
+    /// <p>This field is deprecated. Use <code>MaximumCapacity</code> instead. This parameter cannot be used with <code>MaximumCapacity</code> or <code>TargetIdleCapacity</code> in the same location configuration.</p>
     /// <p>The streaming capacity that Amazon GameLift Streams can allocate in response to stream requests, and then de-allocate when the session has terminated. This offers a cost control measure at the expense of a greater startup time (typically under 5 minutes). Default is 0 when creating a stream group or adding a location.</p>
+    #[deprecated(
+        note = "This input field is deprecated in favor of explicit MaximumCapacity values.",
+        since = "2025-12-17"
+    )]
     pub fn set_on_demand_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.on_demand_capacity = input;
         self
     }
+    /// <p>This field is deprecated. Use <code>MaximumCapacity</code> instead. This parameter cannot be used with <code>MaximumCapacity</code> or <code>TargetIdleCapacity</code> in the same location configuration.</p>
     /// <p>The streaming capacity that Amazon GameLift Streams can allocate in response to stream requests, and then de-allocate when the session has terminated. This offers a cost control measure at the expense of a greater startup time (typically under 5 minutes). Default is 0 when creating a stream group or adding a location.</p>
+    #[deprecated(
+        note = "This input field is deprecated in favor of explicit MaximumCapacity values.",
+        since = "2025-12-17"
+    )]
     pub fn get_on_demand_capacity(&self) -> &::std::option::Option<i32> {
         &self.on_demand_capacity
+    }
+    /// <p>This indicates idle capacity which the service pre-allocates and holds for you in anticipation of future activity. This helps to insulate your users from capacity-allocation delays. You pay for capacity which is held in this intentional idle state.</p>
+    pub fn target_idle_capacity(mut self, input: i32) -> Self {
+        self.target_idle_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This indicates idle capacity which the service pre-allocates and holds for you in anticipation of future activity. This helps to insulate your users from capacity-allocation delays. You pay for capacity which is held in this intentional idle state.</p>
+    pub fn set_target_idle_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.target_idle_capacity = input;
+        self
+    }
+    /// <p>This indicates idle capacity which the service pre-allocates and holds for you in anticipation of future activity. This helps to insulate your users from capacity-allocation delays. You pay for capacity which is held in this intentional idle state.</p>
+    pub fn get_target_idle_capacity(&self) -> &::std::option::Option<i32> {
+        &self.target_idle_capacity
+    }
+    /// <p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>
+    pub fn maximum_capacity(mut self, input: i32) -> Self {
+        self.maximum_capacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>
+    pub fn set_maximum_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_capacity = input;
+        self
+    }
+    /// <p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>
+    pub fn get_maximum_capacity(&self) -> &::std::option::Option<i32> {
+        &self.maximum_capacity
     }
     /// Consumes the builder and constructs a [`LocationConfiguration`](crate::types::LocationConfiguration).
     /// This method will fail if any of the following fields are not set:
@@ -98,6 +165,8 @@ impl LocationConfigurationBuilder {
             })?,
             always_on_capacity: self.always_on_capacity,
             on_demand_capacity: self.on_demand_capacity,
+            target_idle_capacity: self.target_idle_capacity,
+            maximum_capacity: self.maximum_capacity,
         })
     }
 }

@@ -133,6 +133,8 @@ pub(crate) mod shape_location_configuration;
 
 pub(crate) mod shape_location_states;
 
+pub(crate) mod shape_performance_stats_configuration;
+
 pub(crate) mod shape_replication_statuses;
 
 pub(crate) mod shape_runtime_environment;
