@@ -2656,6 +2656,10 @@ source_hash = 'e53cd06ca8aa22890f0b286c8dedbb51e665b9894c55a46da5f010392b9ad092'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '0d58dd1d4735add17d8978e6a963bbaeaec2859e73c5aef928dc3b539a45a84b'
+
+[release]
+tag = 'release-2025-12-17'
+
 [release.crates]
 aws-sdk-gameliftstreams = '1.34.0'
 aws-sdk-guardduty = '1.110.0'
