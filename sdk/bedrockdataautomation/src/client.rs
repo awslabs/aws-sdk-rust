@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateBlueprint`](crate::operation::create_blueprint) operation has
-/// a [`Client::create_blueprint`], function which returns a builder for that operation.
+/// For example, the [`CopyBlueprintStage`](crate::operation::copy_blueprint_stage) operation has
+/// a [`Client::copy_blueprint_stage`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_blueprint()
-///     .blueprint_name("example")
+/// let result = client.copy_blueprint_stage()
+///     .blueprint_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod copy_blueprint_stage;
+
 mod create_blueprint;
 
 mod create_blueprint_version;
@@ -153,7 +155,7 @@ mod create_data_automation_project;
 /// # let client: aws_sdk_bedrockdataautomation::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_blueprint()
+/// let result = client.copy_blueprint_stage()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -175,7 +177,11 @@ mod delete_data_automation_project;
 
 mod get_blueprint;
 
+mod get_blueprint_optimization_status;
+
 mod get_data_automation_project;
+
+mod invoke_blueprint_optimization_async;
 
 mod list_blueprints;
 

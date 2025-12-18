@@ -34,6 +34,12 @@ where
                         "auth" => {
                             builder = builder.set_auth(crate::protocol_serde::shape_http_authorization::de_http_authorization(tokens)?);
                         }
+                        "enableBatching" => {
+                            builder = builder.set_enable_batching(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "batchConfig" => {
+                            builder = builder.set_batch_config(crate::protocol_serde::shape_batch_config::de_batch_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -80,6 +86,15 @@ pub fn ser_http_action(
         let mut object_7 = object.key("auth").start_object();
         crate::protocol_serde::shape_http_authorization::ser_http_authorization(&mut object_7, var_6)?;
         object_7.finish();
+    }
+    if let Some(var_8) = &input.enable_batching {
+        object.key("enableBatching").boolean(*var_8);
+    }
+    if let Some(var_9) = &input.batch_config {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("batchConfig").start_object();
+        crate::protocol_serde::shape_batch_config::ser_batch_config(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

@@ -16,6 +16,7 @@
 ///     SettingName::ContainerInsights => { /* ... */ },
 ///     SettingName::ContainerInstanceLongArnFormat => { /* ... */ },
 ///     SettingName::DefaultLogDriverMode => { /* ... */ },
+///     SettingName::FargateEventWindows => { /* ... */ },
 ///     SettingName::FargateFipsMode => { /* ... */ },
 ///     SettingName::FargateTaskRetirementWaitPeriod => { /* ... */ },
 ///     SettingName::GuardDutyActivate => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum SettingName {
     #[allow(missing_docs)] // documentation missing in model
     DefaultLogDriverMode,
     #[allow(missing_docs)] // documentation missing in model
+    FargateEventWindows,
+    #[allow(missing_docs)] // documentation missing in model
     FargateFipsMode,
     #[allow(missing_docs)] // documentation missing in model
     FargateTaskRetirementWaitPeriod,
@@ -81,6 +84,7 @@ impl ::std::convert::From<&str> for SettingName {
             "containerInsights" => SettingName::ContainerInsights,
             "containerInstanceLongArnFormat" => SettingName::ContainerInstanceLongArnFormat,
             "defaultLogDriverMode" => SettingName::DefaultLogDriverMode,
+            "fargateEventWindows" => SettingName::FargateEventWindows,
             "fargateFIPSMode" => SettingName::FargateFipsMode,
             "fargateTaskRetirementWaitPeriod" => SettingName::FargateTaskRetirementWaitPeriod,
             "guardDutyActivate" => SettingName::GuardDutyActivate,
@@ -106,6 +110,7 @@ impl SettingName {
             SettingName::ContainerInsights => "containerInsights",
             SettingName::ContainerInstanceLongArnFormat => "containerInstanceLongArnFormat",
             SettingName::DefaultLogDriverMode => "defaultLogDriverMode",
+            SettingName::FargateEventWindows => "fargateEventWindows",
             SettingName::FargateFipsMode => "fargateFIPSMode",
             SettingName::FargateTaskRetirementWaitPeriod => "fargateTaskRetirementWaitPeriod",
             SettingName::GuardDutyActivate => "guardDutyActivate",
@@ -122,6 +127,7 @@ impl SettingName {
             "containerInsights",
             "containerInstanceLongArnFormat",
             "defaultLogDriverMode",
+            "fargateEventWindows",
             "fargateFIPSMode",
             "fargateTaskRetirementWaitPeriod",
             "guardDutyActivate",
@@ -155,6 +161,7 @@ impl ::std::fmt::Display for SettingName {
             SettingName::ContainerInsights => write!(f, "containerInsights"),
             SettingName::ContainerInstanceLongArnFormat => write!(f, "containerInstanceLongArnFormat"),
             SettingName::DefaultLogDriverMode => write!(f, "defaultLogDriverMode"),
+            SettingName::FargateEventWindows => write!(f, "fargateEventWindows"),
             SettingName::FargateFipsMode => write!(f, "fargateFIPSMode"),
             SettingName::FargateTaskRetirementWaitPeriod => write!(f, "fargateTaskRetirementWaitPeriod"),
             SettingName::GuardDutyActivate => write!(f, "guardDutyActivate"),

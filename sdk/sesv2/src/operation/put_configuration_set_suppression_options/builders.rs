@@ -162,4 +162,18 @@ impl PutConfigurationSetSuppressionOptionsFluentBuilder {
     pub fn get_suppressed_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
         self.inner.get_suppressed_reasons()
     }
+    /// <p>An object that contains information about the email address suppression preferences for the configuration set in the current Amazon Web Services Region.</p>
+    pub fn validation_options(mut self, input: crate::types::SuppressionValidationOptions) -> Self {
+        self.inner = self.inner.validation_options(input);
+        self
+    }
+    /// <p>An object that contains information about the email address suppression preferences for the configuration set in the current Amazon Web Services Region.</p>
+    pub fn set_validation_options(mut self, input: ::std::option::Option<crate::types::SuppressionValidationOptions>) -> Self {
+        self.inner = self.inner.set_validation_options(input);
+        self
+    }
+    /// <p>An object that contains information about the email address suppression preferences for the configuration set in the current Amazon Web Services Region.</p>
+    pub fn get_validation_options(&self) -> &::std::option::Option<crate::types::SuppressionValidationOptions> {
+        self.inner.get_validation_options()
+    }
 }

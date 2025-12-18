@@ -192,14 +192,6 @@ impl CreateImageBuilderFluentBuilder {
     /// <li>
     /// <p>stream.memory.z1d.12xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -299,14 +291,6 @@ impl CreateImageBuilderFluentBuilder {
     /// <li>
     /// <p>stream.memory.z1d.12xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -405,14 +389,6 @@ impl CreateImageBuilderFluentBuilder {
     /// <p>stream.memory.z1d.6xlarge</p></li>
     /// <li>
     /// <p>stream.memory.z1d.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>

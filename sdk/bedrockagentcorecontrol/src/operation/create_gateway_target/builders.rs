@@ -200,4 +200,18 @@ impl CreateGatewayTargetFluentBuilder {
     pub fn get_credential_provider_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>> {
         self.inner.get_credential_provider_configurations()
     }
+    /// <p>Optional configuration for HTTP header and query parameter propagation to and from the gateway target.</p>
+    pub fn metadata_configuration(mut self, input: crate::types::MetadataConfiguration) -> Self {
+        self.inner = self.inner.metadata_configuration(input);
+        self
+    }
+    /// <p>Optional configuration for HTTP header and query parameter propagation to and from the gateway target.</p>
+    pub fn set_metadata_configuration(mut self, input: ::std::option::Option<crate::types::MetadataConfiguration>) -> Self {
+        self.inner = self.inner.set_metadata_configuration(input);
+        self
+    }
+    /// <p>Optional configuration for HTTP header and query parameter propagation to and from the gateway target.</p>
+    pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::MetadataConfiguration> {
+        self.inner.get_metadata_configuration()
+    }
 }

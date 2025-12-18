@@ -93,6 +93,14 @@ pub use crate::types::_blueprint_filter::BlueprintFilterBuilder;
 
 pub use crate::types::_blueprint::BlueprintBuilder;
 
+pub use crate::types::_blueprint_optimization_sample::BlueprintOptimizationSampleBuilder;
+
+pub use crate::types::_s3_object::S3ObjectBuilder;
+
 pub use crate::types::_blueprint_summary::BlueprintSummaryBuilder;
 
 pub use crate::types::_data_automation_project_filter::DataAutomationProjectFilterBuilder;
+
+pub use crate::types::_blueprint_optimization_output_configuration::BlueprintOptimizationOutputConfigurationBuilder;
+
+pub use crate::types::_blueprint_optimization_object::BlueprintOptimizationObjectBuilder;

@@ -97,6 +97,14 @@ pub use crate::types::_dashboard_options::DashboardOptions;
 
 pub use crate::types::_https_policy::HttpsPolicy;
 
+pub use crate::types::_suppression_validation_options::SuppressionValidationOptions;
+
+pub use crate::types::_suppression_condition_threshold::SuppressionConditionThreshold;
+
+pub use crate::types::_suppression_confidence_threshold::SuppressionConfidenceThreshold;
+
+pub use crate::types::_suppression_confidence_verdict_threshold::SuppressionConfidenceVerdictThreshold;
+
 pub use crate::types::_tls_policy::TlsPolicy;
 
 pub use crate::types::_vdm_attributes::VdmAttributes;
@@ -104,6 +112,8 @@ pub use crate::types::_vdm_attributes::VdmAttributes;
 pub use crate::types::_guardian_attributes::GuardianAttributes;
 
 pub use crate::types::_dashboard_attributes::DashboardAttributes;
+
+pub use crate::types::_suppression_validation_attributes::SuppressionValidationAttributes;
 
 pub use crate::types::_contact_language::ContactLanguage;
 
@@ -248,6 +258,14 @@ pub use crate::types::_mail_from_attributes::MailFromAttributes;
 pub use crate::types::_mail_from_domain_status::MailFromDomainStatus;
 
 pub use crate::types::_dkim_attributes::DkimAttributes;
+
+pub use crate::types::_mailbox_validation::MailboxValidation;
+
+pub use crate::types::_email_address_insights_mailbox_evaluations::EmailAddressInsightsMailboxEvaluations;
+
+pub use crate::types::_email_address_insights_verdict::EmailAddressInsightsVerdict;
+
+pub use crate::types::_email_address_insights_confidence_verdict::EmailAddressInsightsConfidenceVerdict;
 
 pub use crate::types::_daily_volume::DailyVolume;
 
@@ -401,6 +419,12 @@ mod _domain_deliverability_tracking_option;
 
 mod _domain_isp_placement;
 
+mod _email_address_insights_confidence_verdict;
+
+mod _email_address_insights_mailbox_evaluations;
+
+mod _email_address_insights_verdict;
+
 mod _email_content;
 
 mod _email_insights;
@@ -478,6 +502,8 @@ mod _mail_from_attributes;
 mod _mail_from_domain_status;
 
 mod _mail_type;
+
+mod _mailbox_validation;
 
 mod _message;
 
@@ -573,6 +599,12 @@ mod _suppressed_destination_summary;
 
 mod _suppression_attributes;
 
+mod _suppression_condition_threshold;
+
+mod _suppression_confidence_threshold;
+
+mod _suppression_confidence_verdict_threshold;
+
 mod _suppression_list_destination;
 
 mod _suppression_list_import_action;
@@ -580,6 +612,10 @@ mod _suppression_list_import_action;
 mod _suppression_list_reason;
 
 mod _suppression_options;
+
+mod _suppression_validation_attributes;
+
+mod _suppression_validation_options;
 
 mod _tag;
 

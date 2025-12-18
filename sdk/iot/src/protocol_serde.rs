@@ -1529,6 +1529,8 @@ pub(crate) mod shape_vpc_destination_summary;
 
 pub(crate) mod shape_attributes_map;
 
+pub(crate) mod shape_batch_config;
+
 pub(crate) mod shape_cidrs;
 
 pub(crate) mod shape_client_properties;

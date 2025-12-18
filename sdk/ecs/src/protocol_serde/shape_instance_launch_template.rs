@@ -21,11 +21,14 @@ pub fn ser_instance_launch_template(
     if let Some(var_5) = &input.monitoring {
         object.key("monitoring").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.instance_requirements {
+    if let Some(var_6) = &input.capacity_option_type {
+        object.key("capacityOptionType").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.instance_requirements {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("instanceRequirements").start_object();
-        crate::protocol_serde::shape_instance_requirements_request::ser_instance_requirements_request(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("instanceRequirements").start_object();
+        crate::protocol_serde::shape_instance_requirements_request::ser_instance_requirements_request(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }
@@ -73,6 +76,13 @@ where
                                         s.to_unescaped()
                                             .map(|u| crate::types::ManagedInstancesMonitoringOptions::from(u.as_ref()))
                                     })
+                                    .transpose()?,
+                            );
+                        }
+                        "capacityOptionType" => {
+                            builder = builder.set_capacity_option_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapacityOptionType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

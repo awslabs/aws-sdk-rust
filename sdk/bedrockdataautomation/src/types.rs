@@ -137,6 +137,10 @@ pub use crate::types::_data_automation_project_stage_filter::DataAutomationProje
 
 pub use crate::types::_blueprint::Blueprint;
 
+pub use crate::types::_blueprint_optimization_sample::BlueprintOptimizationSample;
+
+pub use crate::types::_s3_object::S3Object;
+
 pub use crate::types::_type_::Type;
 
 pub use crate::types::_blueprint_summary::BlueprintSummary;
@@ -144,6 +148,12 @@ pub use crate::types::_blueprint_summary::BlueprintSummary;
 pub use crate::types::_data_automation_project_filter::DataAutomationProjectFilter;
 
 pub use crate::types::_blueprint_stage_filter::BlueprintStageFilter;
+
+pub use crate::types::_blueprint_optimization_output_configuration::BlueprintOptimizationOutputConfiguration;
+
+pub use crate::types::_blueprint_optimization_job_status::BlueprintOptimizationJobStatus;
+
+pub use crate::types::_blueprint_optimization_object::BlueprintOptimizationObject;
 
 mod _audio_extraction_category;
 
@@ -170,6 +180,14 @@ mod _blueprint;
 mod _blueprint_filter;
 
 mod _blueprint_item;
+
+mod _blueprint_optimization_job_status;
+
+mod _blueprint_optimization_object;
+
+mod _blueprint_optimization_output_configuration;
+
+mod _blueprint_optimization_sample;
 
 mod _blueprint_stage;
 
@@ -252,6 +270,8 @@ mod _pii_entity_type;
 mod _pii_redaction_mask_mode;
 
 mod _resource_owner;
+
+mod _s3_object;
 
 mod _sensitive_data_configuration;
 

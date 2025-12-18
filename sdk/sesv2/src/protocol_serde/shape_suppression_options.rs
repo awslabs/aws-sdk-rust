@@ -12,6 +12,12 @@ pub fn ser_suppression_options(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.validation_options {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ValidationOptions").start_object();
+        crate::protocol_serde::shape_suppression_validation_options::ser_suppression_validation_options(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -33,6 +39,11 @@ where
                         "SuppressedReasons" => {
                             builder = builder.set_suppressed_reasons(
                                 crate::protocol_serde::shape_suppression_list_reasons::de_suppression_list_reasons(tokens)?,
+                            );
+                        }
+                        "ValidationOptions" => {
+                            builder = builder.set_validation_options(
+                                crate::protocol_serde::shape_suppression_validation_options::de_suppression_validation_options(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

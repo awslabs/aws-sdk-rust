@@ -369,6 +369,8 @@ pub(crate) mod shape_memory_strategy_input;
 
 pub(crate) mod shape_memory_summary_list;
 
+pub(crate) mod shape_metadata_configuration;
+
 pub(crate) mod shape_modify_memory_strategies;
 
 pub(crate) mod shape_network_configuration;
@@ -426,6 +428,12 @@ pub(crate) mod shape_workload_identity_list;
 pub(crate) mod shape_agent_runtime;
 
 pub(crate) mod shape_agent_runtime_endpoint;
+
+pub(crate) mod shape_allowed_query_parameters;
+
+pub(crate) mod shape_allowed_request_headers;
+
+pub(crate) mod shape_allowed_response_headers;
 
 pub(crate) mod shape_api_key_credential_provider_item;
 

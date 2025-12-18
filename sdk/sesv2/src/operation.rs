@@ -133,6 +133,9 @@ pub mod get_domain_deliverability_campaign;
 /// Types for the `GetDomainStatisticsReport` operation.
 pub mod get_domain_statistics_report;
 
+/// Types for the `GetEmailAddressInsights` operation.
+pub mod get_email_address_insights;
+
 /// Types for the `GetEmailIdentity` operation.
 pub mod get_email_identity;
 

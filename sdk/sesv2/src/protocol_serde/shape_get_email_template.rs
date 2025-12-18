@@ -98,6 +98,9 @@ pub(crate) fn de_get_email_template(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "Tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                }
                 "TemplateContent" => {
                     builder = builder.set_template_content(crate::protocol_serde::shape_email_template_content::de_email_template_content(tokens)?);
                 }

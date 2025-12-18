@@ -65,11 +65,19 @@ pub use crate::types::_guardian_options::GuardianOptionsBuilder;
 
 pub use crate::types::_dashboard_options::DashboardOptionsBuilder;
 
+pub use crate::types::_suppression_validation_options::SuppressionValidationOptionsBuilder;
+
+pub use crate::types::_suppression_condition_threshold::SuppressionConditionThresholdBuilder;
+
+pub use crate::types::_suppression_confidence_threshold::SuppressionConfidenceThresholdBuilder;
+
 pub use crate::types::_vdm_attributes::VdmAttributesBuilder;
 
 pub use crate::types::_guardian_attributes::GuardianAttributesBuilder;
 
 pub use crate::types::_dashboard_attributes::DashboardAttributesBuilder;
+
+pub use crate::types::_suppression_validation_attributes::SuppressionValidationAttributesBuilder;
 
 pub use crate::types::_tenant_info::TenantInfoBuilder;
 
@@ -158,6 +166,12 @@ pub use crate::types::_soa_record::SoaRecordBuilder;
 pub use crate::types::_mail_from_attributes::MailFromAttributesBuilder;
 
 pub use crate::types::_dkim_attributes::DkimAttributesBuilder;
+
+pub use crate::types::_mailbox_validation::MailboxValidationBuilder;
+
+pub use crate::types::_email_address_insights_mailbox_evaluations::EmailAddressInsightsMailboxEvaluationsBuilder;
+
+pub use crate::types::_email_address_insights_verdict::EmailAddressInsightsVerdictBuilder;
 
 pub use crate::types::_daily_volume::DailyVolumeBuilder;
 

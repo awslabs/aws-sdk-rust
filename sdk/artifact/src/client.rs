@@ -173,6 +173,8 @@ mod get_term_for_report;
 
 mod list_customer_agreements;
 
+mod list_report_versions;
+
 mod list_reports;
 
 mod put_account_settings;

@@ -10,6 +10,8 @@ pub struct Route53HealthCheck {
     pub record_name: ::std::string::String,
     /// <p>The Amazon Route 53 health check ID.</p>
     pub health_check_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Route 53 health check status.</p>
+    pub status: ::std::option::Option<crate::types::Route53HealthCheckStatus>,
     /// <p>The Amazon Route 53 Region.</p>
     pub region: ::std::string::String,
 }
@@ -27,6 +29,10 @@ impl Route53HealthCheck {
     /// <p>The Amazon Route 53 health check ID.</p>
     pub fn health_check_id(&self) -> ::std::option::Option<&str> {
         self.health_check_id.as_deref()
+    }
+    /// <p>The Amazon Route 53 health check status.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Route53HealthCheckStatus> {
+        self.status.as_ref()
     }
     /// <p>The Amazon Route 53 Region.</p>
     pub fn region(&self) -> &str {
@@ -48,6 +54,7 @@ pub struct Route53HealthCheckBuilder {
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) record_name: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::Route53HealthCheckStatus>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
 }
 impl Route53HealthCheckBuilder {
@@ -95,6 +102,20 @@ impl Route53HealthCheckBuilder {
     pub fn get_health_check_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_check_id
     }
+    /// <p>The Amazon Route 53 health check status.</p>
+    pub fn status(mut self, input: crate::types::Route53HealthCheckStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Route 53 health check status.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Route53HealthCheckStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The Amazon Route 53 health check status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Route53HealthCheckStatus> {
+        &self.status
+    }
     /// <p>The Amazon Route 53 Region.</p>
     /// This field is required.
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +151,7 @@ impl Route53HealthCheckBuilder {
                 )
             })?,
             health_check_id: self.health_check_id,
+            status: self.status,
             region: self.region.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region",

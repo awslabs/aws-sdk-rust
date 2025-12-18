@@ -3,15 +3,15 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
-pub use crate::types::_report_detail::ReportDetail;
-
-pub use crate::types::_upload_state::UploadState;
+pub use crate::types::_report_summary::ReportSummary;
 
 pub use crate::types::_acceptance_type::AcceptanceType;
 
+pub use crate::types::_upload_state::UploadState;
+
 pub use crate::types::_published_state::PublishedState;
 
-pub use crate::types::_report_summary::ReportSummary;
+pub use crate::types::_report_detail::ReportDetail;
 
 pub use crate::types::_customer_agreement_summary::CustomerAgreementSummary;
 

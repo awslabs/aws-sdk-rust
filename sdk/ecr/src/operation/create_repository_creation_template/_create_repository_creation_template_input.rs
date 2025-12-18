@@ -22,7 +22,7 @@ pub struct CreateRepositoryCreationTemplateInput {
     pub repository_policy: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle policy to use for repositories created using the template.</p>
     pub lifecycle_policy: ::std::option::Option<::std::string::String>,
-    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The two supported scenarios are <code>PULL_THROUGH_CACHE</code> and <code>REPLICATION</code></p>
+    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The supported scenarios are <code>PULL_THROUGH_CACHE</code>, <code>REPLICATION</code>, and <code>CREATE_ON_PUSH</code></p>
     pub applied_for: ::std::option::Option<::std::vec::Vec<crate::types::RctAppliedFor>>,
     /// <p>The ARN of the role to be assumed by Amazon ECR. This role must be in the same account as the registry that you are configuring. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.</p>
     pub custom_role_arn: ::std::option::Option<::std::string::String>,
@@ -67,7 +67,7 @@ impl CreateRepositoryCreationTemplateInput {
     pub fn lifecycle_policy(&self) -> ::std::option::Option<&str> {
         self.lifecycle_policy.as_deref()
     }
-    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The two supported scenarios are <code>PULL_THROUGH_CACHE</code> and <code>REPLICATION</code></p>
+    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The supported scenarios are <code>PULL_THROUGH_CACHE</code>, <code>REPLICATION</code>, and <code>CREATE_ON_PUSH</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applied_for.is_none()`.
     pub fn applied_for(&self) -> &[crate::types::RctAppliedFor] {
@@ -247,19 +247,19 @@ impl CreateRepositoryCreationTemplateInputBuilder {
     ///
     /// To override the contents of this collection use [`set_applied_for`](Self::set_applied_for).
     ///
-    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The two supported scenarios are <code>PULL_THROUGH_CACHE</code> and <code>REPLICATION</code></p>
+    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The supported scenarios are <code>PULL_THROUGH_CACHE</code>, <code>REPLICATION</code>, and <code>CREATE_ON_PUSH</code></p>
     pub fn applied_for(mut self, input: crate::types::RctAppliedFor) -> Self {
         let mut v = self.applied_for.unwrap_or_default();
         v.push(input);
         self.applied_for = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The two supported scenarios are <code>PULL_THROUGH_CACHE</code> and <code>REPLICATION</code></p>
+    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The supported scenarios are <code>PULL_THROUGH_CACHE</code>, <code>REPLICATION</code>, and <code>CREATE_ON_PUSH</code></p>
     pub fn set_applied_for(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RctAppliedFor>>) -> Self {
         self.applied_for = input;
         self
     }
-    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The two supported scenarios are <code>PULL_THROUGH_CACHE</code> and <code>REPLICATION</code></p>
+    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The supported scenarios are <code>PULL_THROUGH_CACHE</code>, <code>REPLICATION</code>, and <code>CREATE_ON_PUSH</code></p>
     pub fn get_applied_for(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RctAppliedFor>> {
         &self.applied_for
     }

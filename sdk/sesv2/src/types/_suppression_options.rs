@@ -12,6 +12,8 @@ pub struct SuppressionOptions {
     /// <p><code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p></li>
     /// </ul>
     pub suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
+    /// <p>Contains validation options for email address suppression.</p>
+    pub validation_options: ::std::option::Option<crate::types::SuppressionValidationOptions>,
 }
 impl SuppressionOptions {
     /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
@@ -26,6 +28,10 @@ impl SuppressionOptions {
     pub fn suppressed_reasons(&self) -> &[crate::types::SuppressionListReason] {
         self.suppressed_reasons.as_deref().unwrap_or_default()
     }
+    /// <p>Contains validation options for email address suppression.</p>
+    pub fn validation_options(&self) -> ::std::option::Option<&crate::types::SuppressionValidationOptions> {
+        self.validation_options.as_ref()
+    }
 }
 impl SuppressionOptions {
     /// Creates a new builder-style object to manufacture [`SuppressionOptions`](crate::types::SuppressionOptions).
@@ -39,6 +45,7 @@ impl SuppressionOptions {
 #[non_exhaustive]
 pub struct SuppressionOptionsBuilder {
     pub(crate) suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
+    pub(crate) validation_options: ::std::option::Option<crate::types::SuppressionValidationOptions>,
 }
 impl SuppressionOptionsBuilder {
     /// Appends an item to `suppressed_reasons`.
@@ -79,10 +86,25 @@ impl SuppressionOptionsBuilder {
     pub fn get_suppressed_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
         &self.suppressed_reasons
     }
+    /// <p>Contains validation options for email address suppression.</p>
+    pub fn validation_options(mut self, input: crate::types::SuppressionValidationOptions) -> Self {
+        self.validation_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains validation options for email address suppression.</p>
+    pub fn set_validation_options(mut self, input: ::std::option::Option<crate::types::SuppressionValidationOptions>) -> Self {
+        self.validation_options = input;
+        self
+    }
+    /// <p>Contains validation options for email address suppression.</p>
+    pub fn get_validation_options(&self) -> &::std::option::Option<crate::types::SuppressionValidationOptions> {
+        &self.validation_options
+    }
     /// Consumes the builder and constructs a [`SuppressionOptions`](crate::types::SuppressionOptions).
     pub fn build(self) -> crate::types::SuppressionOptions {
         crate::types::SuppressionOptions {
             suppressed_reasons: self.suppressed_reasons,
+            validation_options: self.validation_options,
         }
     }
 }

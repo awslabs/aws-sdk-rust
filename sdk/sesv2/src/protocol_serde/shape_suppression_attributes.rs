@@ -19,6 +19,11 @@ where
                                 crate::protocol_serde::shape_suppression_list_reasons::de_suppression_list_reasons(tokens)?,
                             );
                         }
+                        "ValidationAttributes" => {
+                            builder = builder.set_validation_attributes(
+                                crate::protocol_serde::shape_suppression_validation_attributes::de_suppression_validation_attributes(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

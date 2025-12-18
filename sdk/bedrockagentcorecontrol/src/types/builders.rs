@@ -167,6 +167,8 @@ pub use crate::types::_semantic_memory_strategy_input::SemanticMemoryStrategyInp
 
 pub use crate::types::_memory_summary::MemorySummaryBuilder;
 
+pub use crate::types::_metadata_configuration::MetadataConfigurationBuilder;
+
 pub use crate::types::_credential_provider_configuration::CredentialProviderConfigurationBuilder;
 
 pub use crate::types::_gateway_api_key_credential_provider::GatewayApiKeyCredentialProviderBuilder;

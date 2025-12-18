@@ -13,6 +13,17 @@ pub struct InstanceLaunchTemplate {
     pub storage_configuration: ::std::option::Option<crate::types::ManagedInstancesStorageConfiguration>,
     /// <p>CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring. By default, your managed instance is configured for basic monitoring. You can optionally enable detailed monitoring to help you more quickly identify and act on operational issues. You can enable or turn off detailed monitoring at launch or when the managed instance is running or stopped. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/detailed-monitoring-managed-instances.html">Detailed monitoring for Amazon ECS Managed Instances</a> in the Amazon ECS Developer Guide.</p>
     pub monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
+    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand or Spot Instances for your managed instance capacity provider.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ON_DEMAND</code> - Launches standard On-Demand Instances. On-Demand Instances provide predictable pricing and availability.</p></li>
+    /// <li>
+    /// <p><code>SPOT</code> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification when the capacity is needed back.</p></li>
+    /// </ul>
+    /// <p>The default is On-Demand</p>
+    /// <p>For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub capacity_option_type: ::std::option::Option<crate::types::CapacityOptionType>,
     /// <p>The instance requirements. You can specify:</p>
     /// <ul>
     /// <li>
@@ -42,6 +53,19 @@ impl InstanceLaunchTemplate {
     pub fn monitoring(&self) -> ::std::option::Option<&crate::types::ManagedInstancesMonitoringOptions> {
         self.monitoring.as_ref()
     }
+    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand or Spot Instances for your managed instance capacity provider.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ON_DEMAND</code> - Launches standard On-Demand Instances. On-Demand Instances provide predictable pricing and availability.</p></li>
+    /// <li>
+    /// <p><code>SPOT</code> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification when the capacity is needed back.</p></li>
+    /// </ul>
+    /// <p>The default is On-Demand</p>
+    /// <p>For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn capacity_option_type(&self) -> ::std::option::Option<&crate::types::CapacityOptionType> {
+        self.capacity_option_type.as_ref()
+    }
     /// <p>The instance requirements. You can specify:</p>
     /// <ul>
     /// <li>
@@ -69,6 +93,7 @@ pub struct InstanceLaunchTemplateBuilder {
     pub(crate) network_configuration: ::std::option::Option<crate::types::ManagedInstancesNetworkConfiguration>,
     pub(crate) storage_configuration: ::std::option::Option<crate::types::ManagedInstancesStorageConfiguration>,
     pub(crate) monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
+    pub(crate) capacity_option_type: ::std::option::Option<crate::types::CapacityOptionType>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
 }
 impl InstanceLaunchTemplateBuilder {
@@ -133,6 +158,47 @@ impl InstanceLaunchTemplateBuilder {
     pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::ManagedInstancesMonitoringOptions> {
         &self.monitoring
     }
+    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand or Spot Instances for your managed instance capacity provider.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ON_DEMAND</code> - Launches standard On-Demand Instances. On-Demand Instances provide predictable pricing and availability.</p></li>
+    /// <li>
+    /// <p><code>SPOT</code> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification when the capacity is needed back.</p></li>
+    /// </ul>
+    /// <p>The default is On-Demand</p>
+    /// <p>For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn capacity_option_type(mut self, input: crate::types::CapacityOptionType) -> Self {
+        self.capacity_option_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand or Spot Instances for your managed instance capacity provider.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ON_DEMAND</code> - Launches standard On-Demand Instances. On-Demand Instances provide predictable pricing and availability.</p></li>
+    /// <li>
+    /// <p><code>SPOT</code> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification when the capacity is needed back.</p></li>
+    /// </ul>
+    /// <p>The default is On-Demand</p>
+    /// <p>For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_capacity_option_type(mut self, input: ::std::option::Option<crate::types::CapacityOptionType>) -> Self {
+        self.capacity_option_type = input;
+        self
+    }
+    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand or Spot Instances for your managed instance capacity provider.</p>
+    /// <p>Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ON_DEMAND</code> - Launches standard On-Demand Instances. On-Demand Instances provide predictable pricing and availability.</p></li>
+    /// <li>
+    /// <p><code>SPOT</code> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification when the capacity is needed back.</p></li>
+    /// </ul>
+    /// <p>The default is On-Demand</p>
+    /// <p>For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_capacity_option_type(&self) -> &::std::option::Option<crate::types::CapacityOptionType> {
+        &self.capacity_option_type
+    }
     /// <p>The instance requirements. You can specify:</p>
     /// <ul>
     /// <li>
@@ -182,6 +248,7 @@ impl InstanceLaunchTemplateBuilder {
             network_configuration: self.network_configuration,
             storage_configuration: self.storage_configuration,
             monitoring: self.monitoring,
+            capacity_option_type: self.capacity_option_type,
             instance_requirements: self.instance_requirements,
         })
     }

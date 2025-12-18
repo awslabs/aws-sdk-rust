@@ -14,6 +14,8 @@ pub struct PutConfigurationSetSuppressionOptionsInput {
     /// <p><code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p></li>
     /// </ul>
     pub suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
+    /// <p>An object that contains information about the email address suppression preferences for the configuration set in the current Amazon Web Services Region.</p>
+    pub validation_options: ::std::option::Option<crate::types::SuppressionValidationOptions>,
 }
 impl PutConfigurationSetSuppressionOptionsInput {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
@@ -32,6 +34,10 @@ impl PutConfigurationSetSuppressionOptionsInput {
     pub fn suppressed_reasons(&self) -> &[crate::types::SuppressionListReason] {
         self.suppressed_reasons.as_deref().unwrap_or_default()
     }
+    /// <p>An object that contains information about the email address suppression preferences for the configuration set in the current Amazon Web Services Region.</p>
+    pub fn validation_options(&self) -> ::std::option::Option<&crate::types::SuppressionValidationOptions> {
+        self.validation_options.as_ref()
+    }
 }
 impl PutConfigurationSetSuppressionOptionsInput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetSuppressionOptionsInput`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput).
@@ -46,6 +52,7 @@ impl PutConfigurationSetSuppressionOptionsInput {
 pub struct PutConfigurationSetSuppressionOptionsInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) suppressed_reasons: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
+    pub(crate) validation_options: ::std::option::Option<crate::types::SuppressionValidationOptions>,
 }
 impl PutConfigurationSetSuppressionOptionsInputBuilder {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
@@ -101,6 +108,20 @@ impl PutConfigurationSetSuppressionOptionsInputBuilder {
     pub fn get_suppressed_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
         &self.suppressed_reasons
     }
+    /// <p>An object that contains information about the email address suppression preferences for the configuration set in the current Amazon Web Services Region.</p>
+    pub fn validation_options(mut self, input: crate::types::SuppressionValidationOptions) -> Self {
+        self.validation_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains information about the email address suppression preferences for the configuration set in the current Amazon Web Services Region.</p>
+    pub fn set_validation_options(mut self, input: ::std::option::Option<crate::types::SuppressionValidationOptions>) -> Self {
+        self.validation_options = input;
+        self
+    }
+    /// <p>An object that contains information about the email address suppression preferences for the configuration set in the current Amazon Web Services Region.</p>
+    pub fn get_validation_options(&self) -> &::std::option::Option<crate::types::SuppressionValidationOptions> {
+        &self.validation_options
+    }
     /// Consumes the builder and constructs a [`PutConfigurationSetSuppressionOptionsInput`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput).
     pub fn build(
         self,
@@ -112,6 +133,7 @@ impl PutConfigurationSetSuppressionOptionsInputBuilder {
             crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput {
                 configuration_set_name: self.configuration_set_name,
                 suppressed_reasons: self.suppressed_reasons,
+                validation_options: self.validation_options,
             },
         )
     }

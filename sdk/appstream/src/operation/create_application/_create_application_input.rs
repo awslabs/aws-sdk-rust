@@ -17,7 +17,7 @@ pub struct CreateApplicationInput {
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>The launch parameters of the application.</p>
     pub launch_parameters: ::std::option::Option<::std::string::String>,
-    /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub platforms: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
     /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
     pub instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -55,7 +55,7 @@ impl CreateApplicationInput {
     pub fn launch_parameters(&self) -> ::std::option::Option<&str> {
         self.launch_parameters.as_deref()
     }
-    /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platforms.is_none()`.
     pub fn platforms(&self) -> &[crate::types::PlatformType] {
@@ -205,19 +205,19 @@ impl CreateApplicationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
     ///
-    /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn platforms(mut self, input: crate::types::PlatformType) -> Self {
         let mut v = self.platforms.unwrap_or_default();
         v.push(input);
         self.platforms = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>) -> Self {
         self.platforms = input;
         self
     }
-    /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
         &self.platforms
     }

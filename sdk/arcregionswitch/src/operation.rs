@@ -40,6 +40,9 @@ pub mod list_plans_in_region;
 /// Types for the `ListRoute53HealthChecks` operation.
 pub mod list_route53_health_checks;
 
+/// Types for the `ListRoute53HealthChecksInRegion` operation.
+pub mod list_route53_health_checks_in_region;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 

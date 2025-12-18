@@ -79,6 +79,10 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "metadataConfiguration" => {
+                            builder = builder
+                                .set_metadata_configuration(crate::protocol_serde::shape_metadata_configuration::de_metadata_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

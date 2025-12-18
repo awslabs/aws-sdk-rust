@@ -714,6 +714,18 @@ pub(crate) fn update_collaboration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_collaboration_change_request_output_output_correct_errors(
+    mut builder: crate::operation::update_collaboration_change_request::builders::UpdateCollaborationChangeRequestOutputBuilder,
+) -> crate::operation::update_collaboration_change_request::builders::UpdateCollaborationChangeRequestOutputBuilder {
+    if builder.collaboration_change_request.is_none() {
+        builder.collaboration_change_request = {
+            let builder = crate::types::builders::CollaborationChangeRequestBuilder::default();
+            crate::serde_util::collaboration_change_request_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_configured_audience_model_association_output_output_correct_errors(
     mut builder: crate::operation::update_configured_audience_model_association::builders::UpdateConfiguredAudienceModelAssociationOutputBuilder,
 ) -> crate::operation::update_configured_audience_model_association::builders::UpdateConfiguredAudienceModelAssociationOutputBuilder {
@@ -2565,6 +2577,15 @@ pub(crate) fn analysis_template_validation_status_detail_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::AnalysisTemplateValidationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn approval_status_details_correct_errors(
+    mut builder: crate::types::builders::ApprovalStatusDetailsBuilder,
+) -> crate::types::builders::ApprovalStatusDetailsBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ApprovalStatus>().ok()
     }
     builder
 }

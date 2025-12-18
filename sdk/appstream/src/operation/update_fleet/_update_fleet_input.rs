@@ -54,14 +54,6 @@ pub struct UpdateFleetInput {
     /// <li>
     /// <p>stream.memory.z1d.12xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -164,7 +156,7 @@ pub struct UpdateFleetInput {
     /// <p>The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     pub stream_view: ::std::option::Option<crate::types::StreamView>,
-    /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub platform: ::std::option::Option<crate::types::PlatformType>,
     /// <p>The maximum number of concurrent sessions for a fleet.</p>
     pub max_concurrent_sessions: ::std::option::Option<i32>,
@@ -234,14 +226,6 @@ impl UpdateFleetInput {
     /// <p>stream.memory.z1d.6xlarge</p></li>
     /// <li>
     /// <p>stream.memory.z1d.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
@@ -375,7 +359,7 @@ impl UpdateFleetInput {
     pub fn stream_view(&self) -> ::std::option::Option<&crate::types::StreamView> {
         self.stream_view.as_ref()
     }
-    /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformType> {
         self.platform.as_ref()
     }
@@ -525,14 +509,6 @@ impl UpdateFleetInputBuilder {
     /// <li>
     /// <p>stream.memory.z1d.12xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -649,14 +625,6 @@ impl UpdateFleetInputBuilder {
     /// <li>
     /// <p>stream.memory.z1d.12xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -772,14 +740,6 @@ impl UpdateFleetInputBuilder {
     /// <p>stream.memory.z1d.6xlarge</p></li>
     /// <li>
     /// <p>stream.memory.z1d.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
@@ -1063,17 +1023,17 @@ impl UpdateFleetInputBuilder {
     pub fn get_stream_view(&self) -> &::std::option::Option<crate::types::StreamView> {
         &self.stream_view
     }
-    /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn platform(mut self, input: crate::types::PlatformType) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformType>) -> Self {
         self.platform = input;
         self
     }
-    /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformType> {
         &self.platform
     }

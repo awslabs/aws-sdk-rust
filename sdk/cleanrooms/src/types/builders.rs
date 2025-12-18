@@ -199,6 +199,16 @@ pub use crate::types::_configured_audience_model_association::ConfiguredAudience
 
 pub use crate::types::_configured_audience_model_association_summary::ConfiguredAudienceModelAssociationSummaryBuilder;
 
+pub use crate::types::_collaboration_change_request::CollaborationChangeRequestBuilder;
+
+pub use crate::types::_approval_status_details::ApprovalStatusDetailsBuilder;
+
+pub use crate::types::_change::ChangeBuilder;
+
+pub use crate::types::_collaboration_change_specification::CollaborationChangeSpecificationBuilder;
+
+pub use crate::types::_member_change_specification::MemberChangeSpecificationBuilder;
+
 pub use crate::types::_schema_summary::SchemaSummaryBuilder;
 
 pub use crate::types::_member_summary::MemberSummaryBuilder;
@@ -226,10 +236,6 @@ pub use crate::types::_collaboration_id_namespace_association_summary::Collabora
 pub use crate::types::_collaboration_configured_audience_model_association_summary::CollaborationConfiguredAudienceModelAssociationSummaryBuilder;
 
 pub use crate::types::_collaboration_change_request_summary::CollaborationChangeRequestSummaryBuilder;
-
-pub use crate::types::_change::ChangeBuilder;
-
-pub use crate::types::_member_change_specification::MemberChangeSpecificationBuilder;
 
 pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummaryBuilder;
 
@@ -260,8 +266,6 @@ pub use crate::types::_collaboration_privacy_budget_template::CollaborationPriva
 pub use crate::types::_collaboration_id_namespace_association::CollaborationIdNamespaceAssociationBuilder;
 
 pub use crate::types::_collaboration_configured_audience_model_association::CollaborationConfiguredAudienceModelAssociationBuilder;
-
-pub use crate::types::_collaboration_change_request::CollaborationChangeRequestBuilder;
 
 pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplateBuilder;
 

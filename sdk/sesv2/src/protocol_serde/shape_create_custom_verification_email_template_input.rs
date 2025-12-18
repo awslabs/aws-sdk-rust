@@ -12,14 +12,26 @@ pub fn ser_create_custom_verification_email_template_input_input(
     if let Some(var_3) = &input.success_redirection_url {
         object.key("SuccessRedirectionURL").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.template_content {
-        object.key("TemplateContent").string(var_4.as_str());
+    if let Some(var_4) = &input.tags {
+        let mut array_5 = object.key("Tags").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
     }
-    if let Some(var_5) = &input.template_name {
-        object.key("TemplateName").string(var_5.as_str());
+    if let Some(var_8) = &input.template_content {
+        object.key("TemplateContent").string(var_8.as_str());
     }
-    if let Some(var_6) = &input.template_subject {
-        object.key("TemplateSubject").string(var_6.as_str());
+    if let Some(var_9) = &input.template_name {
+        object.key("TemplateName").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.template_subject {
+        object.key("TemplateSubject").string(var_10.as_str());
     }
     Ok(())
 }

@@ -69,6 +69,16 @@ pub(crate) fn reflens_list_route53_health_checks_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_route53_health_checks_in_region_output_output_next_token(
+    input: &crate::operation::list_route53_health_checks_in_region::ListRoute53HealthChecksInRegionOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_plan_evaluation_status_output_output_warnings(
     input: crate::operation::get_plan_evaluation_status::GetPlanEvaluationStatusOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceWarning>> {
@@ -113,6 +123,13 @@ pub(crate) fn lens_list_plans_in_region_output_output_plans(
 
 pub(crate) fn lens_list_route53_health_checks_output_output_health_checks(
     input: crate::operation::list_route53_health_checks::ListRoute53HealthChecksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Route53HealthCheck>> {
+    let input = input.health_checks?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_route53_health_checks_in_region_output_output_health_checks(
+    input: crate::operation::list_route53_health_checks_in_region::ListRoute53HealthChecksInRegionOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Route53HealthCheck>> {
     let input = input.health_checks?;
     ::std::option::Option::Some(input)

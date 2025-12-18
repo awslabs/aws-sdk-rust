@@ -97,6 +97,8 @@ pub use crate::types::_execution_action::ExecutionAction;
 
 pub use crate::types::_route53_health_check::Route53HealthCheck;
 
+pub use crate::types::_route53_health_check_status::Route53HealthCheckStatus;
+
 pub use crate::types::_abbreviated_execution::AbbreviatedExecution;
 
 pub use crate::types::_execution_state::ExecutionState;
@@ -214,6 +216,8 @@ mod _resource_warning_status;
 mod _route53_health_check;
 
 mod _route53_health_check_configuration;
+
+mod _route53_health_check_status;
 
 mod _route53_resource_record_set;
 

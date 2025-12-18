@@ -245,6 +245,8 @@ pub use crate::types::_semantic_memory_strategy_input::SemanticMemoryStrategyInp
 
 pub use crate::types::_memory_summary::MemorySummary;
 
+pub use crate::types::_metadata_configuration::MetadataConfiguration;
+
 pub use crate::types::_credential_provider_configuration::CredentialProviderConfiguration;
 
 pub use crate::types::_credential_provider::CredentialProvider;
@@ -676,6 +678,8 @@ mod _memory_summary;
 mod _message_based_trigger;
 
 mod _message_based_trigger_input;
+
+mod _metadata_configuration;
 
 mod _microsoft_oauth2_provider_config_input;
 

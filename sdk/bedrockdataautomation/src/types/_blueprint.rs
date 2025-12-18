@@ -24,6 +24,10 @@ pub struct Blueprint {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// KMS Encryption Context
     pub kms_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// List of Blueprint Optimization Samples
+    pub optimization_samples: ::std::option::Option<::std::vec::Vec<crate::types::BlueprintOptimizationSample>>,
+    /// Time Stamp
+    pub optimization_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Blueprint {
     /// ARN of a Blueprint
@@ -69,6 +73,16 @@ impl Blueprint {
     pub fn kms_encryption_context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.kms_encryption_context.as_ref()
     }
+    /// List of Blueprint Optimization Samples
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.optimization_samples.is_none()`.
+    pub fn optimization_samples(&self) -> &[crate::types::BlueprintOptimizationSample] {
+        self.optimization_samples.as_deref().unwrap_or_default()
+    }
+    /// Time Stamp
+    pub fn optimization_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.optimization_time.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Blueprint {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -83,6 +97,8 @@ impl ::std::fmt::Debug for Blueprint {
         formatter.field("blueprint_stage", &self.blueprint_stage);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("kms_encryption_context", &self.kms_encryption_context);
+        formatter.field("optimization_samples", &self.optimization_samples);
+        formatter.field("optimization_time", &self.optimization_time);
         formatter.finish()
     }
 }
@@ -107,6 +123,8 @@ pub struct BlueprintBuilder {
     pub(crate) blueprint_stage: ::std::option::Option<crate::types::BlueprintStage>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) optimization_samples: ::std::option::Option<::std::vec::Vec<crate::types::BlueprintOptimizationSample>>,
+    pub(crate) optimization_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BlueprintBuilder {
     /// ARN of a Blueprint
@@ -268,6 +286,40 @@ impl BlueprintBuilder {
     pub fn get_kms_encryption_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.kms_encryption_context
     }
+    /// Appends an item to `optimization_samples`.
+    ///
+    /// To override the contents of this collection use [`set_optimization_samples`](Self::set_optimization_samples).
+    ///
+    /// List of Blueprint Optimization Samples
+    pub fn optimization_samples(mut self, input: crate::types::BlueprintOptimizationSample) -> Self {
+        let mut v = self.optimization_samples.unwrap_or_default();
+        v.push(input);
+        self.optimization_samples = ::std::option::Option::Some(v);
+        self
+    }
+    /// List of Blueprint Optimization Samples
+    pub fn set_optimization_samples(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlueprintOptimizationSample>>) -> Self {
+        self.optimization_samples = input;
+        self
+    }
+    /// List of Blueprint Optimization Samples
+    pub fn get_optimization_samples(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlueprintOptimizationSample>> {
+        &self.optimization_samples
+    }
+    /// Time Stamp
+    pub fn optimization_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.optimization_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// Time Stamp
+    pub fn set_optimization_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.optimization_time = input;
+        self
+    }
+    /// Time Stamp
+    pub fn get_optimization_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.optimization_time
+    }
     /// Consumes the builder and constructs a [`Blueprint`](crate::types::Blueprint).
     /// This method will fail if any of the following fields are not set:
     /// - [`blueprint_arn`](crate::types::builders::BlueprintBuilder::blueprint_arn)
@@ -318,6 +370,8 @@ impl BlueprintBuilder {
             blueprint_stage: self.blueprint_stage,
             kms_key_id: self.kms_key_id,
             kms_encryption_context: self.kms_encryption_context,
+            optimization_samples: self.optimization_samples,
+            optimization_time: self.optimization_time,
         })
     }
 }
@@ -334,6 +388,8 @@ impl ::std::fmt::Debug for BlueprintBuilder {
         formatter.field("blueprint_stage", &self.blueprint_stage);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("kms_encryption_context", &self.kms_encryption_context);
+        formatter.field("optimization_samples", &self.optimization_samples);
+        formatter.field("optimization_time", &self.optimization_time);
         formatter.finish()
     }
 }

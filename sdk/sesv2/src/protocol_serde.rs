@@ -111,6 +111,8 @@ pub(crate) mod shape_get_domain_deliverability_campaign;
 
 pub(crate) mod shape_get_domain_statistics_report;
 
+pub(crate) mod shape_get_email_address_insights;
+
 pub(crate) mod shape_get_email_identity;
 
 pub(crate) mod shape_get_email_identity_policies;
@@ -294,6 +296,8 @@ pub(crate) mod shape_create_tenant_resource_association_input;
 pub(crate) mod shape_delete_tenant_input;
 
 pub(crate) mod shape_delete_tenant_resource_association_input;
+
+pub(crate) mod shape_get_email_address_insights_input;
 
 pub(crate) mod shape_get_tenant_input;
 
@@ -493,6 +497,8 @@ pub(crate) mod shape_list_of_dedicated_ip_pools;
 
 pub(crate) mod shape_mail_from_attributes;
 
+pub(crate) mod shape_mailbox_validation;
+
 pub(crate) mod shape_message_tag;
 
 pub(crate) mod shape_message_tag_list;
@@ -532,6 +538,10 @@ pub(crate) mod shape_suppressed_destination_summaries;
 pub(crate) mod shape_suppression_attributes;
 
 pub(crate) mod shape_suppression_options;
+
+pub(crate) mod shape_suppression_validation_attributes;
+
+pub(crate) mod shape_suppression_validation_options;
 
 pub(crate) mod shape_tag;
 
@@ -582,6 +592,10 @@ pub(crate) mod shape_dashboard_attributes;
 pub(crate) mod shape_dashboard_options;
 
 pub(crate) mod shape_domain_isp_placements;
+
+pub(crate) mod shape_email_address_insights_mailbox_evaluations;
+
+pub(crate) mod shape_email_address_insights_verdict;
 
 pub(crate) mod shape_email_insights;
 
@@ -651,6 +665,8 @@ pub(crate) mod shape_suppressed_destination_attributes;
 
 pub(crate) mod shape_suppressed_destination_summary;
 
+pub(crate) mod shape_suppression_condition_threshold;
+
 pub(crate) mod shape_suppression_list_destination;
 
 pub(crate) mod shape_suppression_list_reasons;
@@ -694,6 +710,8 @@ pub(crate) mod shape_metric_value_list;
 pub(crate) mod shape_regions;
 
 pub(crate) mod shape_replacement_template;
+
+pub(crate) mod shape_suppression_confidence_threshold;
 
 pub(crate) mod shape_timestamp_list;
 

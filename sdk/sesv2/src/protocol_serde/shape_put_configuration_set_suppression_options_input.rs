@@ -12,5 +12,11 @@ pub fn ser_put_configuration_set_suppression_options_input_input(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.validation_options {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ValidationOptions").start_object();
+        crate::protocol_serde::shape_suppression_validation_options::ser_suppression_validation_options(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

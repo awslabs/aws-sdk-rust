@@ -133,6 +133,19 @@ pub fn de_fleet_launch_template_overrides(
                 builder = builder.set_block_device_mappings(var_10);
             }
             ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#FleetLaunchTemplateOverrides$AvailabilityZoneId */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_11);
+            }
+            ,
             _ => {}
         }
     }

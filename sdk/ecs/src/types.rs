@@ -243,6 +243,8 @@ pub use crate::types::_memory_mib_request::MemoryMiBRequest;
 
 pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequest;
 
+pub use crate::types::_capacity_option_type::CapacityOptionType;
+
 pub use crate::types::_managed_instances_monitoring_options::ManagedInstancesMonitoringOptions;
 
 pub use crate::types::_managed_instances_storage_configuration::ManagedInstancesStorageConfiguration;
@@ -546,6 +548,8 @@ mod _baseline_ebs_bandwidth_mbps_request;
 mod _burstable_performance;
 
 mod _canary_configuration;
+
+mod _capacity_option_type;
 
 mod _capacity_provider;
 

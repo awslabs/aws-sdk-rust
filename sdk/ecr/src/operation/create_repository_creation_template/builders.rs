@@ -252,17 +252,17 @@ impl CreateRepositoryCreationTemplateFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_applied_for`](Self::set_applied_for).
     ///
-    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The two supported scenarios are <code>PULL_THROUGH_CACHE</code> and <code>REPLICATION</code></p>
+    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The supported scenarios are <code>PULL_THROUGH_CACHE</code>, <code>REPLICATION</code>, and <code>CREATE_ON_PUSH</code></p>
     pub fn applied_for(mut self, input: crate::types::RctAppliedFor) -> Self {
         self.inner = self.inner.applied_for(input);
         self
     }
-    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The two supported scenarios are <code>PULL_THROUGH_CACHE</code> and <code>REPLICATION</code></p>
+    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The supported scenarios are <code>PULL_THROUGH_CACHE</code>, <code>REPLICATION</code>, and <code>CREATE_ON_PUSH</code></p>
     pub fn set_applied_for(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RctAppliedFor>>) -> Self {
         self.inner = self.inner.set_applied_for(input);
         self
     }
-    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The two supported scenarios are <code>PULL_THROUGH_CACHE</code> and <code>REPLICATION</code></p>
+    /// <p>A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The supported scenarios are <code>PULL_THROUGH_CACHE</code>, <code>REPLICATION</code>, and <code>CREATE_ON_PUSH</code></p>
     pub fn get_applied_for(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RctAppliedFor>> {
         self.inner.get_applied_for()
     }

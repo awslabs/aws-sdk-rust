@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_copy_blueprint_stage;
+
 pub(crate) mod shape_create_blueprint;
 
 pub(crate) mod shape_create_blueprint_version;
@@ -35,7 +37,11 @@ pub(crate) mod shape_delete_data_automation_project;
 
 pub(crate) mod shape_get_blueprint;
 
+pub(crate) mod shape_get_blueprint_optimization_status;
+
 pub(crate) mod shape_get_data_automation_project;
+
+pub(crate) mod shape_invoke_blueprint_optimization_async;
 
 pub(crate) mod shape_list_blueprints;
 
@@ -63,6 +69,8 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_copy_blueprint_stage_input;
+
 pub(crate) mod shape_create_blueprint_input;
 
 pub(crate) mod shape_create_blueprint_version_input;
@@ -74,6 +82,8 @@ pub(crate) mod shape_get_blueprint_input;
 pub(crate) mod shape_get_data_automation_project_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_invoke_blueprint_optimization_async_input;
 
 pub(crate) mod shape_list_blueprints_input;
 
@@ -100,6 +110,12 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_blueprint;
 
 pub(crate) mod shape_blueprint_filter;
+
+pub(crate) mod shape_blueprint_optimization_object;
+
+pub(crate) mod shape_blueprint_optimization_output_configuration;
+
+pub(crate) mod shape_blueprint_optimization_sample;
 
 pub(crate) mod shape_blueprints;
 
@@ -129,6 +145,8 @@ pub(crate) mod shape_audio_standard_output_configuration;
 
 pub(crate) mod shape_blueprint_item;
 
+pub(crate) mod shape_blueprint_optimization_samples;
+
 pub(crate) mod shape_blueprint_summary;
 
 pub(crate) mod shape_data_automation_project_summary;
@@ -144,6 +162,8 @@ pub(crate) mod shape_image_standard_output_configuration;
 pub(crate) mod shape_kms_encryption_context;
 
 pub(crate) mod shape_modality_routing_configuration;
+
+pub(crate) mod shape_s3_object;
 
 pub(crate) mod shape_validation_exception_field;
 

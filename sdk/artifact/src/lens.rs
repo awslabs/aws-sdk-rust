@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_customer_agreements_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_report_versions_output_output_next_token(
+    input: &crate::operation::list_report_versions::ListReportVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_reports_output_output_next_token(
     input: &crate::operation::list_reports::ListReportsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -23,6 +33,13 @@ pub(crate) fn lens_list_customer_agreements_output_output_customer_agreements(
     input: crate::operation::list_customer_agreements::ListCustomerAgreementsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CustomerAgreementSummary>> {
     let input = input.customer_agreements;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_report_versions_output_output_reports(
+    input: crate::operation::list_report_versions::ListReportVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ReportSummary>> {
+    let input = input.reports;
     ::std::option::Option::Some(input)
 }
 

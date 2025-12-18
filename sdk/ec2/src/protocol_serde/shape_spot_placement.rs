@@ -19,6 +19,11 @@ pub fn ser_spot_placement(
     if let Some(var_6) = &input.tenancy {
         scope_5.string(var_6.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_8) = &input.availability_zone_id {
+        scope_7.string(var_8);
+    }
     Ok(())
 }
 
@@ -31,7 +36,7 @@ pub fn de_spot_placement(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#SpotPlacement$AvailabilityZone */ =>  {
-                let var_7 =
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -40,11 +45,11 @@ pub fn de_spot_placement(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_7);
+                builder = builder.set_availability_zone(var_9);
             }
             ,
             s if s.matches("groupName") /* GroupName com.amazonaws.ec2#SpotPlacement$GroupName */ =>  {
-                let var_8 =
+                let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -53,11 +58,11 @@ pub fn de_spot_placement(
                         ?
                     )
                 ;
-                builder = builder.set_group_name(var_8);
+                builder = builder.set_group_name(var_10);
             }
             ,
             s if s.matches("tenancy") /* Tenancy com.amazonaws.ec2#SpotPlacement$Tenancy */ =>  {
-                let var_9 =
+                let var_11 =
                     Some(
                         Result::<crate::types::Tenancy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::Tenancy::from(
@@ -67,7 +72,20 @@ pub fn de_spot_placement(
                         ?
                     )
                 ;
-                builder = builder.set_tenancy(var_9);
+                builder = builder.set_tenancy(var_11);
+            }
+            ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#SpotPlacement$AvailabilityZoneId */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_12);
             }
             ,
             _ => {}

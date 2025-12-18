@@ -137,4 +137,23 @@ impl CreateEmailTemplateFluentBuilder {
     pub fn get_template_content(&self) -> &::std::option::Option<crate::types::EmailTemplateContent> {
         self.inner.get_template_content()
     }
+    ///
+    /// Appends an item to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>An array of objects that define the tags (keys and values) to associate with the email template.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>An array of objects that define the tags (keys and values) to associate with the email template.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>An array of objects that define the tags (keys and values) to associate with the email template.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }

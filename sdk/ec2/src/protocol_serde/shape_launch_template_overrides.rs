@@ -45,6 +45,11 @@ pub fn ser_launch_template_overrides(
     if let Some(var_14) = &input.instance_requirements {
         crate::protocol_serde::shape_instance_requirements::ser_instance_requirements(scope_13, var_14)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_16) = &input.availability_zone_id {
+        scope_15.string(var_16);
+    }
     Ok(())
 }
 
@@ -57,7 +62,7 @@ pub fn de_launch_template_overrides(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#LaunchTemplateOverrides$InstanceType */ =>  {
-                let var_15 =
+                let var_17 =
                     Some(
                         Result::<crate::types::InstanceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::InstanceType::from(
@@ -67,36 +72,10 @@ pub fn de_launch_template_overrides(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_15);
+                builder = builder.set_instance_type(var_17);
             }
             ,
             s if s.matches("spotPrice") /* SpotPrice com.amazonaws.ec2#LaunchTemplateOverrides$SpotPrice */ =>  {
-                let var_16 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_spot_price(var_16);
-            }
-            ,
-            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#LaunchTemplateOverrides$SubnetId */ =>  {
-                let var_17 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_subnet_id(var_17);
-            }
-            ,
-            s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#LaunchTemplateOverrides$AvailabilityZone */ =>  {
                 let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -106,11 +85,37 @@ pub fn de_launch_template_overrides(
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone(var_18);
+                builder = builder.set_spot_price(var_18);
+            }
+            ,
+            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#LaunchTemplateOverrides$SubnetId */ =>  {
+                let var_19 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_subnet_id(var_19);
+            }
+            ,
+            s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#LaunchTemplateOverrides$AvailabilityZone */ =>  {
+                let var_20 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone(var_20);
             }
             ,
             s if s.matches("weightedCapacity") /* WeightedCapacity com.amazonaws.ec2#LaunchTemplateOverrides$WeightedCapacity */ =>  {
-                let var_19 =
+                let var_21 =
                     Some(
                          {
                             <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -121,11 +126,11 @@ pub fn de_launch_template_overrides(
                         ?
                     )
                 ;
-                builder = builder.set_weighted_capacity(var_19);
+                builder = builder.set_weighted_capacity(var_21);
             }
             ,
             s if s.matches("priority") /* Priority com.amazonaws.ec2#LaunchTemplateOverrides$Priority */ =>  {
-                let var_20 =
+                let var_22 =
                     Some(
                          {
                             <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -136,17 +141,30 @@ pub fn de_launch_template_overrides(
                         ?
                     )
                 ;
-                builder = builder.set_priority(var_20);
+                builder = builder.set_priority(var_22);
             }
             ,
             s if s.matches("instanceRequirements") /* InstanceRequirements com.amazonaws.ec2#LaunchTemplateOverrides$InstanceRequirements */ =>  {
-                let var_21 =
+                let var_23 =
                     Some(
                         crate::protocol_serde::shape_instance_requirements::de_instance_requirements(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_requirements(var_21);
+                builder = builder.set_instance_requirements(var_23);
+            }
+            ,
+            s if s.matches("availabilityZoneId") /* AvailabilityZoneId com.amazonaws.ec2#LaunchTemplateOverrides$AvailabilityZoneId */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_24);
             }
             ,
             _ => {}

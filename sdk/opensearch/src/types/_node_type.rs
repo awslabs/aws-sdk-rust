@@ -15,6 +15,7 @@
 ///     NodeType::Data => { /* ... */ },
 ///     NodeType::Master => { /* ... */ },
 ///     NodeType::Ultrawarm => { /* ... */ },
+///     NodeType::Warm => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum NodeType {
     Master,
     #[allow(missing_docs)] // documentation missing in model
     Ultrawarm,
+    #[allow(missing_docs)] // documentation missing in model
+    Warm,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for NodeType {
             "Data" => NodeType::Data,
             "Master" => NodeType::Master,
             "Ultrawarm" => NodeType::Ultrawarm,
+            "Warm" => NodeType::Warm,
             other => NodeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl NodeType {
             NodeType::Data => "Data",
             NodeType::Master => "Master",
             NodeType::Ultrawarm => "Ultrawarm",
+            NodeType::Warm => "Warm",
             NodeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Data", "Master", "Ultrawarm"]
+        &["Data", "Master", "Ultrawarm", "Warm"]
     }
 }
 impl ::std::convert::AsRef<str> for NodeType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for NodeType {
             NodeType::Data => write!(f, "Data"),
             NodeType::Master => write!(f, "Master"),
             NodeType::Ultrawarm => write!(f, "Ultrawarm"),
+            NodeType::Warm => write!(f, "Warm"),
             NodeType::Unknown(value) => write!(f, "{value}"),
         }
     }

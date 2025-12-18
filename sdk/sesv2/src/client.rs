@@ -251,6 +251,8 @@ mod get_domain_deliverability_campaign;
 
 mod get_domain_statistics_report;
 
+mod get_email_address_insights;
+
 mod get_email_identity;
 
 mod get_email_identity_policies;

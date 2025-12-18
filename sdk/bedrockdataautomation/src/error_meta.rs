@@ -68,6 +68,34 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_blueprint_stage::CopyBlueprintStageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_blueprint_stage::CopyBlueprintStageError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::copy_blueprint_stage::CopyBlueprintStageError> for Error {
+    fn from(err: crate::operation::copy_blueprint_stage::CopyBlueprintStageError) -> Self {
+        match err {
+            crate::operation::copy_blueprint_stage::CopyBlueprintStageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::copy_blueprint_stage::CopyBlueprintStageError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::copy_blueprint_stage::CopyBlueprintStageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::copy_blueprint_stage::CopyBlueprintStageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::copy_blueprint_stage::CopyBlueprintStageError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::copy_blueprint_stage::CopyBlueprintStageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_blueprint::CreateBlueprintError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -275,6 +303,53 @@ impl From<crate::operation::get_blueprint::GetBlueprintError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_blueprint_optimization_status::GetBlueprintOptimizationStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_blueprint_optimization_status::GetBlueprintOptimizationStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_blueprint_optimization_status::GetBlueprintOptimizationStatusError> for Error {
+    fn from(err: crate::operation::get_blueprint_optimization_status::GetBlueprintOptimizationStatusError) -> Self {
+        match err {
+            crate::operation::get_blueprint_optimization_status::GetBlueprintOptimizationStatusError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_blueprint_optimization_status::GetBlueprintOptimizationStatusError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_blueprint_optimization_status::GetBlueprintOptimizationStatusError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_blueprint_optimization_status::GetBlueprintOptimizationStatusError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_blueprint_optimization_status::GetBlueprintOptimizationStatusError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_blueprint_optimization_status::GetBlueprintOptimizationStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_automation_project::GetDataAutomationProjectError, R>>
     for Error
 where
@@ -311,6 +386,56 @@ impl From<crate::operation::get_data_automation_project::GetDataAutomationProjec
                 Error::ValidationException(inner)
             }
             crate::operation::get_data_automation_project::GetDataAutomationProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::invoke_blueprint_optimization_async::InvokeBlueprintOptimizationAsyncError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::invoke_blueprint_optimization_async::InvokeBlueprintOptimizationAsyncError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_blueprint_optimization_async::InvokeBlueprintOptimizationAsyncError> for Error {
+    fn from(err: crate::operation::invoke_blueprint_optimization_async::InvokeBlueprintOptimizationAsyncError) -> Self {
+        match err {
+            crate::operation::invoke_blueprint_optimization_async::InvokeBlueprintOptimizationAsyncError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::invoke_blueprint_optimization_async::InvokeBlueprintOptimizationAsyncError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::invoke_blueprint_optimization_async::InvokeBlueprintOptimizationAsyncError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::invoke_blueprint_optimization_async::InvokeBlueprintOptimizationAsyncError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::invoke_blueprint_optimization_async::InvokeBlueprintOptimizationAsyncError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::invoke_blueprint_optimization_async::InvokeBlueprintOptimizationAsyncError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::invoke_blueprint_optimization_async::InvokeBlueprintOptimizationAsyncError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

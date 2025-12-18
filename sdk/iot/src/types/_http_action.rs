@@ -12,6 +12,10 @@ pub struct HttpAction {
     pub headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpActionHeader>>,
     /// <p>The authentication method to use when sending data to an HTTPS endpoint.</p>
     pub auth: ::std::option::Option<crate::types::HttpAuthorization>,
+    /// <p>Whether to process the HTTP action messages into a single request. Value can be true or false.</p>
+    pub enable_batching: ::std::option::Option<bool>,
+    /// <p>The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching HTTP action messages</a>.</p>
+    pub batch_config: ::std::option::Option<crate::types::BatchConfig>,
 }
 impl HttpAction {
     /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
@@ -33,6 +37,14 @@ impl HttpAction {
     pub fn auth(&self) -> ::std::option::Option<&crate::types::HttpAuthorization> {
         self.auth.as_ref()
     }
+    /// <p>Whether to process the HTTP action messages into a single request. Value can be true or false.</p>
+    pub fn enable_batching(&self) -> ::std::option::Option<bool> {
+        self.enable_batching
+    }
+    /// <p>The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching HTTP action messages</a>.</p>
+    pub fn batch_config(&self) -> ::std::option::Option<&crate::types::BatchConfig> {
+        self.batch_config.as_ref()
+    }
 }
 impl HttpAction {
     /// Creates a new builder-style object to manufacture [`HttpAction`](crate::types::HttpAction).
@@ -49,6 +61,8 @@ pub struct HttpActionBuilder {
     pub(crate) confirmation_url: ::std::option::Option<::std::string::String>,
     pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpActionHeader>>,
     pub(crate) auth: ::std::option::Option<crate::types::HttpAuthorization>,
+    pub(crate) enable_batching: ::std::option::Option<bool>,
+    pub(crate) batch_config: ::std::option::Option<crate::types::BatchConfig>,
 }
 impl HttpActionBuilder {
     /// <p>The endpoint URL. If substitution templates are used in the URL, you must also specify a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code> is created if possible.</p>
@@ -114,6 +128,34 @@ impl HttpActionBuilder {
     pub fn get_auth(&self) -> &::std::option::Option<crate::types::HttpAuthorization> {
         &self.auth
     }
+    /// <p>Whether to process the HTTP action messages into a single request. Value can be true or false.</p>
+    pub fn enable_batching(mut self, input: bool) -> Self {
+        self.enable_batching = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to process the HTTP action messages into a single request. Value can be true or false.</p>
+    pub fn set_enable_batching(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_batching = input;
+        self
+    }
+    /// <p>Whether to process the HTTP action messages into a single request. Value can be true or false.</p>
+    pub fn get_enable_batching(&self) -> &::std::option::Option<bool> {
+        &self.enable_batching
+    }
+    /// <p>The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching HTTP action messages</a>.</p>
+    pub fn batch_config(mut self, input: crate::types::BatchConfig) -> Self {
+        self.batch_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching HTTP action messages</a>.</p>
+    pub fn set_batch_config(mut self, input: ::std::option::Option<crate::types::BatchConfig>) -> Self {
+        self.batch_config = input;
+        self
+    }
+    /// <p>The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching HTTP action messages</a>.</p>
+    pub fn get_batch_config(&self) -> &::std::option::Option<crate::types::BatchConfig> {
+        &self.batch_config
+    }
     /// Consumes the builder and constructs a [`HttpAction`](crate::types::HttpAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`url`](crate::types::builders::HttpActionBuilder::url)
@@ -128,6 +170,8 @@ impl HttpActionBuilder {
             confirmation_url: self.confirmation_url,
             headers: self.headers,
             auth: self.auth,
+            enable_batching: self.enable_batching,
+            batch_config: self.batch_config,
         })
     }
 }

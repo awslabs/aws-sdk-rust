@@ -325,6 +325,30 @@ pub use crate::types::_configured_audience_model_association::ConfiguredAudience
 
 pub use crate::types::_configured_audience_model_association_summary::ConfiguredAudienceModelAssociationSummary;
 
+pub use crate::types::_collaboration_change_request::CollaborationChangeRequest;
+
+pub use crate::types::_approval_status_details::ApprovalStatusDetails;
+
+pub use crate::types::_approval_status::ApprovalStatus;
+
+pub use crate::types::_change::Change;
+
+pub use crate::types::_change_type::ChangeType;
+
+pub use crate::types::_change_specification::ChangeSpecification;
+
+pub use crate::types::_collaboration_change_specification::CollaborationChangeSpecification;
+
+pub use crate::types::_auto_approved_change_type::AutoApprovedChangeType;
+
+pub use crate::types::_member_change_specification::MemberChangeSpecification;
+
+pub use crate::types::_change_specification_type::ChangeSpecificationType;
+
+pub use crate::types::_change_request_status::ChangeRequestStatus;
+
+pub use crate::types::_change_request_action::ChangeRequestAction;
+
 pub use crate::types::_schema_summary::SchemaSummary;
 
 pub use crate::types::_analysis_rule_type::AnalysisRuleType;
@@ -358,18 +382,6 @@ pub use crate::types::_collaboration_id_namespace_association_summary::Collabora
 pub use crate::types::_collaboration_configured_audience_model_association_summary::CollaborationConfiguredAudienceModelAssociationSummary;
 
 pub use crate::types::_collaboration_change_request_summary::CollaborationChangeRequestSummary;
-
-pub use crate::types::_change::Change;
-
-pub use crate::types::_change_type::ChangeType;
-
-pub use crate::types::_change_specification::ChangeSpecification;
-
-pub use crate::types::_member_change_specification::MemberChangeSpecification;
-
-pub use crate::types::_change_specification_type::ChangeSpecificationType;
-
-pub use crate::types::_change_request_status::ChangeRequestStatus;
 
 pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummary;
 
@@ -418,8 +430,6 @@ pub use crate::types::_collaboration_privacy_budget_template::CollaborationPriva
 pub use crate::types::_collaboration_id_namespace_association::CollaborationIdNamespaceAssociation;
 
 pub use crate::types::_collaboration_configured_audience_model_association::CollaborationConfiguredAudienceModelAssociation;
-
-pub use crate::types::_collaboration_change_request::CollaborationChangeRequest;
 
 pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplate;
 
@@ -480,8 +490,6 @@ pub use crate::types::_batch_get_collaboration_analysis_template_error::BatchGet
 pub use crate::types::_collaboration::Collaboration;
 
 pub use crate::types::_supported_s3_region::SupportedS3Region;
-
-pub use crate::types::_auto_approved_change_type::AutoApprovedChangeType;
 
 pub use crate::types::_analytics_engine::AnalyticsEngine;
 
@@ -575,6 +583,10 @@ mod _analysis_type;
 
 mod _analytics_engine;
 
+mod _approval_status;
+
+mod _approval_status_details;
+
 mod _athena_table_reference;
 
 mod _auto_approved_change_type;
@@ -597,6 +609,8 @@ mod _change;
 
 mod _change_input;
 
+mod _change_request_action;
+
 mod _change_request_status;
 
 mod _change_specification;
@@ -614,6 +628,8 @@ mod _collaboration_analysis_template_summary;
 mod _collaboration_change_request;
 
 mod _collaboration_change_request_summary;
+
+mod _collaboration_change_specification;
 
 mod _collaboration_configured_audience_model_association;
 

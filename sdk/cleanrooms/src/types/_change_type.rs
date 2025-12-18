@@ -13,6 +13,9 @@
 /// # let changetype = unimplemented!();
 /// match changetype {
 ///     ChangeType::AddMember => { /* ... */ },
+///     ChangeType::EditAutoApprovedChangeTypes => { /* ... */ },
+///     ChangeType::GrantReceiveResultsAbility => { /* ... */ },
+///     ChangeType::RevokeReceiveResultsAbility => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +46,12 @@
 pub enum ChangeType {
     #[allow(missing_docs)] // documentation missing in model
     AddMember,
+    #[allow(missing_docs)] // documentation missing in model
+    EditAutoApprovedChangeTypes,
+    #[allow(missing_docs)] // documentation missing in model
+    GrantReceiveResultsAbility,
+    #[allow(missing_docs)] // documentation missing in model
+    RevokeReceiveResultsAbility,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +60,9 @@ impl ::std::convert::From<&str> for ChangeType {
     fn from(s: &str) -> Self {
         match s {
             "ADD_MEMBER" => ChangeType::AddMember,
+            "EDIT_AUTO_APPROVED_CHANGE_TYPES" => ChangeType::EditAutoApprovedChangeTypes,
+            "GRANT_RECEIVE_RESULTS_ABILITY" => ChangeType::GrantReceiveResultsAbility,
+            "REVOKE_RECEIVE_RESULTS_ABILITY" => ChangeType::RevokeReceiveResultsAbility,
             other => ChangeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +79,20 @@ impl ChangeType {
     pub fn as_str(&self) -> &str {
         match self {
             ChangeType::AddMember => "ADD_MEMBER",
+            ChangeType::EditAutoApprovedChangeTypes => "EDIT_AUTO_APPROVED_CHANGE_TYPES",
+            ChangeType::GrantReceiveResultsAbility => "GRANT_RECEIVE_RESULTS_ABILITY",
+            ChangeType::RevokeReceiveResultsAbility => "REVOKE_RECEIVE_RESULTS_ABILITY",
             ChangeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ADD_MEMBER"]
+        &[
+            "ADD_MEMBER",
+            "EDIT_AUTO_APPROVED_CHANGE_TYPES",
+            "GRANT_RECEIVE_RESULTS_ABILITY",
+            "REVOKE_RECEIVE_RESULTS_ABILITY",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ChangeType {
@@ -96,6 +116,9 @@ impl ::std::fmt::Display for ChangeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ChangeType::AddMember => write!(f, "ADD_MEMBER"),
+            ChangeType::EditAutoApprovedChangeTypes => write!(f, "EDIT_AUTO_APPROVED_CHANGE_TYPES"),
+            ChangeType::GrantReceiveResultsAbility => write!(f, "GRANT_RECEIVE_RESULTS_ABILITY"),
+            ChangeType::RevokeReceiveResultsAbility => write!(f, "REVOKE_RECEIVE_RESULTS_ABILITY"),
             ChangeType::Unknown(value) => write!(f, "{value}"),
         }
     }

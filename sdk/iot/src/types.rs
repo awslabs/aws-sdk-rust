@@ -243,6 +243,8 @@ pub use crate::types::_kafka_action_header::KafkaActionHeader;
 
 pub use crate::types::_http_action::HttpAction;
 
+pub use crate::types::_batch_config::BatchConfig;
+
 pub use crate::types::_http_authorization::HttpAuthorization;
 
 pub use crate::types::_sigv4_authorization::SigV4Authorization;
@@ -750,6 +752,8 @@ mod _aws_job_rate_increase_criteria;
 mod _aws_job_timeout_config;
 
 mod _aws_json_substitution_command_preprocessor_config;
+
+mod _batch_config;
 
 mod _behavior;
 

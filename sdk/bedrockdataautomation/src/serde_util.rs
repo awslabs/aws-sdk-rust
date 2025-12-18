@@ -65,6 +65,15 @@ pub(crate) fn get_data_automation_project_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn invoke_blueprint_optimization_async_output_output_correct_errors(
+    mut builder: crate::operation::invoke_blueprint_optimization_async::builders::InvokeBlueprintOptimizationAsyncOutputBuilder,
+) -> crate::operation::invoke_blueprint_optimization_async::builders::InvokeBlueprintOptimizationAsyncOutputBuilder {
+    if builder.invocation_arn.is_none() {
+        builder.invocation_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_blueprints_output_output_correct_errors(
     mut builder: crate::operation::list_blueprints::builders::ListBlueprintsOutputBuilder,
 ) -> crate::operation::list_blueprints::builders::ListBlueprintsOutputBuilder {
@@ -147,6 +156,18 @@ pub(crate) fn data_automation_project_correct_errors(
     builder
 }
 
+pub(crate) fn blueprint_optimization_output_configuration_correct_errors(
+    mut builder: crate::types::builders::BlueprintOptimizationOutputConfigurationBuilder,
+) -> crate::types::builders::BlueprintOptimizationOutputConfigurationBuilder {
+    if builder.s3_object.is_none() {
+        builder.s3_object = {
+            let builder = crate::types::builders::S3ObjectBuilder::default();
+            crate::serde_util::s3_object_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn blueprint_summary_correct_errors(
     mut builder: crate::types::builders::BlueprintSummaryBuilder,
 ) -> crate::types::builders::BlueprintSummaryBuilder {
@@ -171,6 +192,13 @@ pub(crate) fn data_automation_project_summary_correct_errors(
     builder
 }
 
+pub(crate) fn s3_object_correct_errors(mut builder: crate::types::builders::S3ObjectBuilder) -> crate::types::builders::S3ObjectBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -189,6 +217,24 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn blueprint_optimization_sample_correct_errors(
+    mut builder: crate::types::builders::BlueprintOptimizationSampleBuilder,
+) -> crate::types::builders::BlueprintOptimizationSampleBuilder {
+    if builder.asset_s3_object.is_none() {
+        builder.asset_s3_object = {
+            let builder = crate::types::builders::S3ObjectBuilder::default();
+            crate::serde_util::s3_object_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.ground_truth_s3_object.is_none() {
+        builder.ground_truth_s3_object = {
+            let builder = crate::types::builders::S3ObjectBuilder::default();
+            crate::serde_util::s3_object_correct_errors(builder).build().ok()
+        }
     }
     builder
 }

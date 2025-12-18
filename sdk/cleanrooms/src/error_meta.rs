@@ -2836,6 +2836,56 @@ impl From<crate::operation::update_collaboration::UpdateCollaborationError> for 
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_collaboration_change_request::UpdateCollaborationChangeRequestError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_collaboration_change_request::UpdateCollaborationChangeRequestError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_collaboration_change_request::UpdateCollaborationChangeRequestError> for Error {
+    fn from(err: crate::operation::update_collaboration_change_request::UpdateCollaborationChangeRequestError) -> Self {
+        match err {
+            crate::operation::update_collaboration_change_request::UpdateCollaborationChangeRequestError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_collaboration_change_request::UpdateCollaborationChangeRequestError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_collaboration_change_request::UpdateCollaborationChangeRequestError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_collaboration_change_request::UpdateCollaborationChangeRequestError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_collaboration_change_request::UpdateCollaborationChangeRequestError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_collaboration_change_request::UpdateCollaborationChangeRequestError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_collaboration_change_request::UpdateCollaborationChangeRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationError,
             R,
         >,

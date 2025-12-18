@@ -145,4 +145,18 @@ impl PutAccountSuppressionAttributesFluentBuilder {
     pub fn get_suppressed_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
         self.inner.get_suppressed_reasons()
     }
+    /// <p>An object that contains additional suppression attributes for your account.</p>
+    pub fn validation_attributes(mut self, input: crate::types::SuppressionValidationAttributes) -> Self {
+        self.inner = self.inner.validation_attributes(input);
+        self
+    }
+    /// <p>An object that contains additional suppression attributes for your account.</p>
+    pub fn set_validation_attributes(mut self, input: ::std::option::Option<crate::types::SuppressionValidationAttributes>) -> Self {
+        self.inner = self.inner.set_validation_attributes(input);
+        self
+    }
+    /// <p>An object that contains additional suppression attributes for your account.</p>
+    pub fn get_validation_attributes(&self) -> &::std::option::Option<crate::types::SuppressionValidationAttributes> {
+        self.inner.get_validation_attributes()
+    }
 }

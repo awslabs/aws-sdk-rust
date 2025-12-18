@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrockagentcorecontrol = "1.25.1"
+//! aws-sdk-bedrockagentcorecontrol = "1.26.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

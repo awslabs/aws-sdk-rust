@@ -16,7 +16,8 @@ pub struct FleetLaunchTemplateOverrides {
     pub max_price: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet in which to launch the instances.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Availability Zone in which to launch the instances.</p>
+    /// <p>The Availability Zone in which to launch the instances. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.</p>
     /// <p>If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to the next whole number. If this value is not specified, the default is 1.</p><note>
@@ -67,6 +68,9 @@ pub struct FleetLaunchTemplateOverrides {
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMappingResponse>>,
+    /// <p>The ID of the Availability Zone in which to launch the instances. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl FleetLaunchTemplateOverrides {
     /// <p>The instance type.</p>
@@ -87,7 +91,8 @@ impl FleetLaunchTemplateOverrides {
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The Availability Zone in which to launch the instances.</p>
+    /// <p>The Availability Zone in which to launch the instances. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -154,6 +159,11 @@ impl FleetLaunchTemplateOverrides {
     pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMappingResponse] {
         self.block_device_mappings.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the Availability Zone in which to launch the instances. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
 }
 impl FleetLaunchTemplateOverrides {
     /// Creates a new builder-style object to manufacture [`FleetLaunchTemplateOverrides`](crate::types::FleetLaunchTemplateOverrides).
@@ -176,6 +186,7 @@ pub struct FleetLaunchTemplateOverridesBuilder {
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMappingResponse>>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl FleetLaunchTemplateOverridesBuilder {
     /// <p>The instance type.</p>
@@ -238,17 +249,20 @@ impl FleetLaunchTemplateOverridesBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
-    /// <p>The Availability Zone in which to launch the instances.</p>
+    /// <p>The Availability Zone in which to launch the instances. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone in which to launch the instances.</p>
+    /// <p>The Availability Zone in which to launch the instances. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p>The Availability Zone in which to launch the instances.</p>
+    /// <p>The Availability Zone in which to launch the instances. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
@@ -453,6 +467,23 @@ impl FleetLaunchTemplateOverridesBuilder {
     pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMappingResponse>> {
         &self.block_device_mappings
     }
+    /// <p>The ID of the Availability Zone in which to launch the instances. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone in which to launch the instances. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone in which to launch the instances. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Consumes the builder and constructs a [`FleetLaunchTemplateOverrides`](crate::types::FleetLaunchTemplateOverrides).
     pub fn build(self) -> crate::types::FleetLaunchTemplateOverrides {
         crate::types::FleetLaunchTemplateOverrides {
@@ -466,6 +497,7 @@ impl FleetLaunchTemplateOverridesBuilder {
             instance_requirements: self.instance_requirements,
             image_id: self.image_id,
             block_device_mappings: self.block_device_mappings,
+            availability_zone_id: self.availability_zone_id,
         }
     }
 }

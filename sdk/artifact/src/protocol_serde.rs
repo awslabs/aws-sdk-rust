@@ -33,6 +33,8 @@ pub(crate) mod shape_get_term_for_report;
 
 pub(crate) mod shape_list_customer_agreements;
 
+pub(crate) mod shape_list_report_versions;
+
 pub(crate) mod shape_list_reports;
 
 pub(crate) mod shape_put_account_settings;

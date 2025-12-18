@@ -213,17 +213,17 @@ impl CreateApplicationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
     ///
-    /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn platforms(mut self, input: crate::types::PlatformType) -> Self {
         self.inner = self.inner.platforms(input);
         self
     }
-    /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>) -> Self {
         self.inner = self.inner.set_platforms(input);
         self
     }
-    /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
         self.inner.get_platforms()
     }

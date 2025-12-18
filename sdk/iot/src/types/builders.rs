@@ -161,6 +161,8 @@ pub use crate::types::_kafka_action_header::KafkaActionHeaderBuilder;
 
 pub use crate::types::_http_action::HttpActionBuilder;
 
+pub use crate::types::_batch_config::BatchConfigBuilder;
+
 pub use crate::types::_http_authorization::HttpAuthorizationBuilder;
 
 pub use crate::types::_sigv4_authorization::SigV4AuthorizationBuilder;

@@ -341,6 +341,30 @@ pub(crate) fn suppression_list_destination_correct_errors(
     builder
 }
 
+pub(crate) fn suppression_validation_attributes_correct_errors(
+    mut builder: crate::types::builders::SuppressionValidationAttributesBuilder,
+) -> crate::types::builders::SuppressionValidationAttributesBuilder {
+    if builder.condition_threshold.is_none() {
+        builder.condition_threshold = {
+            let builder = crate::types::builders::SuppressionConditionThresholdBuilder::default();
+            crate::serde_util::suppression_condition_threshold_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn suppression_validation_options_correct_errors(
+    mut builder: crate::types::builders::SuppressionValidationOptionsBuilder,
+) -> crate::types::builders::SuppressionValidationOptionsBuilder {
+    if builder.condition_threshold.is_none() {
+        builder.condition_threshold = {
+            let builder = crate::types::builders::SuppressionConditionThresholdBuilder::default();
+            crate::serde_util::suppression_condition_threshold_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -411,6 +435,24 @@ pub(crate) fn sns_destination_correct_errors(
 ) -> crate::types::builders::SnsDestinationBuilder {
     if builder.topic_arn.is_none() {
         builder.topic_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn suppression_condition_threshold_correct_errors(
+    mut builder: crate::types::builders::SuppressionConditionThresholdBuilder,
+) -> crate::types::builders::SuppressionConditionThresholdBuilder {
+    if builder.condition_threshold_enabled.is_none() {
+        builder.condition_threshold_enabled = "no value was set".parse::<crate::types::FeatureStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn suppression_confidence_threshold_correct_errors(
+    mut builder: crate::types::builders::SuppressionConfidenceThresholdBuilder,
+) -> crate::types::builders::SuppressionConfidenceThresholdBuilder {
+    if builder.confidence_verdict_threshold.is_none() {
+        builder.confidence_verdict_threshold = "no value was set".parse::<crate::types::SuppressionConfidenceVerdictThreshold>().ok()
     }
     builder
 }

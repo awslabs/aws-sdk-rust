@@ -98,6 +98,15 @@ pub(crate) fn list_customer_agreements_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_report_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_report_versions::builders::ListReportVersionsOutputBuilder,
+) -> crate::operation::list_report_versions::builders::ListReportVersionsOutputBuilder {
+    if builder.reports.is_none() {
+        builder.reports = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {

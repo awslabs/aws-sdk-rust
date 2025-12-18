@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ChangeSpecification {
+    /// <p>The collaboration configuration changes being requested. Currently, this only supports modifying which change types are auto-approved for the collaboration.</p>
+    Collaboration(crate::types::CollaborationChangeSpecification),
     /// <p>The member change specification when the change type is <code>MEMBER</code>.</p>
     Member(crate::types::MemberChangeSpecification),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum ChangeSpecification {
     Unknown,
 }
 impl ChangeSpecification {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Collaboration`](crate::types::ChangeSpecification::Collaboration), extracting the inner [`CollaborationChangeSpecification`](crate::types::CollaborationChangeSpecification).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_collaboration(&self) -> ::std::result::Result<&crate::types::CollaborationChangeSpecification, &Self> {
+        if let ChangeSpecification::Collaboration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Collaboration`](crate::types::ChangeSpecification::Collaboration).
+    pub fn is_collaboration(&self) -> bool {
+        self.as_collaboration().is_ok()
+    }
     /// Tries to convert the enum instance into [`Member`](crate::types::ChangeSpecification::Member), extracting the inner [`MemberChangeSpecification`](crate::types::MemberChangeSpecification).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_member(&self) -> ::std::result::Result<&crate::types::MemberChangeSpecification, &Self> {

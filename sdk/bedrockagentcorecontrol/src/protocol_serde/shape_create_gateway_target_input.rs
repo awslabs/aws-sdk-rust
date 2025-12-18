@@ -21,14 +21,20 @@ pub fn ser_create_gateway_target_input_input(
     if let Some(var_6) = &input.description {
         object.key("description").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.target_configuration {
+    if let Some(var_7) = &input.metadata_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("targetConfiguration").start_object();
-        crate::protocol_serde::shape_target_configuration::ser_target_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("metadataConfiguration").start_object();
+        crate::protocol_serde::shape_metadata_configuration::ser_metadata_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.name {
+        object.key("name").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.target_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("targetConfiguration").start_object();
+        crate::protocol_serde::shape_target_configuration::ser_target_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

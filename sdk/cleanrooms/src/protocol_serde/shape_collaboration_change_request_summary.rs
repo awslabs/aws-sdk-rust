@@ -53,6 +53,9 @@ where
                         "changes" => {
                             builder = builder.set_changes(crate::protocol_serde::shape_change_list::de_change_list(tokens)?);
                         }
+                        "approvals" => {
+                            builder = builder.set_approvals(crate::protocol_serde::shape_approval_statuses::de_approval_statuses(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -195,14 +195,6 @@ impl CreateFleetFluentBuilder {
     /// <li>
     /// <p>stream.memory.z1d.12xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -319,14 +311,6 @@ impl CreateFleetFluentBuilder {
     /// <li>
     /// <p>stream.memory.z1d.12xlarge</p></li>
     /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
-    /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.2xlarge</p></li>
@@ -442,14 +426,6 @@ impl CreateFleetFluentBuilder {
     /// <p>stream.memory.z1d.6xlarge</p></li>
     /// <li>
     /// <p>stream.memory.z1d.12xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p></li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p></li>
     /// <li>
     /// <p>stream.graphics.g4dn.xlarge</p></li>
     /// <li>
@@ -783,17 +759,17 @@ impl CreateFleetFluentBuilder {
     pub fn get_stream_view(&self) -> &::std::option::Option<crate::types::StreamView> {
         self.inner.get_stream_view()
     }
-    /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The fleet platform. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn platform(mut self, input: crate::types::PlatformType) -> Self {
         self.inner = self.inner.platform(input);
         self
     }
-    /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The fleet platform. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformType>) -> Self {
         self.inner = self.inner.set_platform(input);
         self
     }
-    /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    /// <p>The fleet platform. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformType> {
         self.inner.get_platform()
     }

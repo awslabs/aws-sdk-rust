@@ -12,7 +12,8 @@ pub struct LaunchTemplateOverrides {
     pub spot_price: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet in which to launch the instances.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Availability Zone in which to launch the instances.</p>
+    /// <p>The Availability Zone in which to launch the instances. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The number of units provided by the specified instance type. These are the same units that you chose to set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.</p>
     /// <p>If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to the next whole number. If this value is not specified, the default is 1.</p><note>
@@ -28,6 +29,9 @@ pub struct LaunchTemplateOverrides {
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
     /// </note>
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
+    /// <p>The ID of the Availability Zone in which to launch the instances. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplateOverrides {
     /// <p>The instance type.</p>
@@ -44,7 +48,8 @@ impl LaunchTemplateOverrides {
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The Availability Zone in which to launch the instances.</p>
+    /// <p>The Availability Zone in which to launch the instances. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -68,6 +73,11 @@ impl LaunchTemplateOverrides {
     pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirements> {
         self.instance_requirements.as_ref()
     }
+    /// <p>The ID of the Availability Zone in which to launch the instances. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
 }
 impl LaunchTemplateOverrides {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateOverrides`](crate::types::LaunchTemplateOverrides).
@@ -87,6 +97,7 @@ pub struct LaunchTemplateOverridesBuilder {
     pub(crate) weighted_capacity: ::std::option::Option<f64>,
     pub(crate) priority: ::std::option::Option<f64>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplateOverridesBuilder {
     /// <p>The instance type.</p>
@@ -137,17 +148,20 @@ impl LaunchTemplateOverridesBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
-    /// <p>The Availability Zone in which to launch the instances.</p>
+    /// <p>The Availability Zone in which to launch the instances. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone in which to launch the instances.</p>
+    /// <p>The Availability Zone in which to launch the instances. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p>The Availability Zone in which to launch the instances.</p>
+    /// <p>The Availability Zone in which to launch the instances. For example, <code>us-east-2a</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
@@ -217,6 +231,23 @@ impl LaunchTemplateOverridesBuilder {
     pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirements> {
         &self.instance_requirements
     }
+    /// <p>The ID of the Availability Zone in which to launch the instances. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone in which to launch the instances. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone in which to launch the instances. For example, <code>use2-az1</code>.</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateOverrides`](crate::types::LaunchTemplateOverrides).
     pub fn build(self) -> crate::types::LaunchTemplateOverrides {
         crate::types::LaunchTemplateOverrides {
@@ -227,6 +258,7 @@ impl LaunchTemplateOverridesBuilder {
             weighted_capacity: self.weighted_capacity,
             priority: self.priority,
             instance_requirements: self.instance_requirements,
+            availability_zone_id: self.availability_zone_id,
         }
     }
 }

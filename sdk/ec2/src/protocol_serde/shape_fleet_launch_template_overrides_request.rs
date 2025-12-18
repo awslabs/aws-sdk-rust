@@ -68,5 +68,10 @@ pub fn ser_fleet_launch_template_overrides_request(
     if let Some(var_23) = &input.image_id {
         scope_22.string(var_23);
     }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("AvailabilityZoneId");
+    if let Some(var_25) = &input.availability_zone_id {
+        scope_24.string(var_25);
+    }
     Ok(())
 }

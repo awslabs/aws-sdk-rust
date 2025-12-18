@@ -229,6 +229,9 @@ pub mod update_analysis_template;
 /// Types for the `UpdateCollaboration` operation.
 pub mod update_collaboration;
 
+/// Types for the `UpdateCollaborationChangeRequest` operation.
+pub mod update_collaboration_change_request;
+
 /// Types for the `UpdateConfiguredAudienceModelAssociation` operation.
 pub mod update_configured_audience_model_association;
 

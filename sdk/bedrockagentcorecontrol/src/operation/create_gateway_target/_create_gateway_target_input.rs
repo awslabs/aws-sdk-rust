@@ -15,6 +15,8 @@ pub struct CreateGatewayTargetInput {
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     /// <p>The credential provider configurations for the target. These configurations specify how the gateway authenticates with the target endpoint.</p>
     pub credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
+    /// <p>Optional configuration for HTTP header and query parameter propagation to and from the gateway target.</p>
+    pub metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
 }
 impl CreateGatewayTargetInput {
     /// <p>The identifier of the gateway to create a target for.</p>
@@ -43,6 +45,10 @@ impl CreateGatewayTargetInput {
     pub fn credential_provider_configurations(&self) -> &[crate::types::CredentialProviderConfiguration] {
         self.credential_provider_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>Optional configuration for HTTP header and query parameter propagation to and from the gateway target.</p>
+    pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::MetadataConfiguration> {
+        self.metadata_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateGatewayTargetInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -53,6 +59,7 @@ impl ::std::fmt::Debug for CreateGatewayTargetInput {
         formatter.field("client_token", &self.client_token);
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
+        formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.finish()
     }
 }
@@ -73,6 +80,7 @@ pub struct CreateGatewayTargetInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
+    pub(crate) metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
 }
 impl CreateGatewayTargetInputBuilder {
     /// <p>The identifier of the gateway to create a target for.</p>
@@ -171,6 +179,20 @@ impl CreateGatewayTargetInputBuilder {
     pub fn get_credential_provider_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>> {
         &self.credential_provider_configurations
     }
+    /// <p>Optional configuration for HTTP header and query parameter propagation to and from the gateway target.</p>
+    pub fn metadata_configuration(mut self, input: crate::types::MetadataConfiguration) -> Self {
+        self.metadata_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional configuration for HTTP header and query parameter propagation to and from the gateway target.</p>
+    pub fn set_metadata_configuration(mut self, input: ::std::option::Option<crate::types::MetadataConfiguration>) -> Self {
+        self.metadata_configuration = input;
+        self
+    }
+    /// <p>Optional configuration for HTTP header and query parameter propagation to and from the gateway target.</p>
+    pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::MetadataConfiguration> {
+        &self.metadata_configuration
+    }
     /// Consumes the builder and constructs a [`CreateGatewayTargetInput`](crate::operation::create_gateway_target::CreateGatewayTargetInput).
     pub fn build(
         self,
@@ -183,6 +205,7 @@ impl CreateGatewayTargetInputBuilder {
             client_token: self.client_token,
             target_configuration: self.target_configuration,
             credential_provider_configurations: self.credential_provider_configurations,
+            metadata_configuration: self.metadata_configuration,
         })
     }
 }
@@ -195,6 +218,7 @@ impl ::std::fmt::Debug for CreateGatewayTargetInputBuilder {
         formatter.field("client_token", &self.client_token);
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
+        formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.finish()
     }
 }

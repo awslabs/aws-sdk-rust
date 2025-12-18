@@ -12,5 +12,11 @@ pub fn ser_put_account_suppression_attributes_input_input(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.validation_attributes {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ValidationAttributes").start_object();
+        crate::protocol_serde::shape_suppression_validation_attributes::ser_suppression_validation_attributes(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

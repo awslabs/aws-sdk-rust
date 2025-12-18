@@ -8,6 +8,8 @@ pub struct GetEmailTemplateOutput {
     pub template_name: ::std::string::String,
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub template_content: ::std::option::Option<crate::types::EmailTemplateContent>,
+    /// <p>An array of objects that define the tags (keys and values) that are associated with the email template.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl GetEmailTemplateOutput {
@@ -19,6 +21,12 @@ impl GetEmailTemplateOutput {
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn template_content(&self) -> ::std::option::Option<&crate::types::EmailTemplateContent> {
         self.template_content.as_ref()
+    }
+    /// <p>An array of objects that define the tags (keys and values) that are associated with the email template.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEmailTemplateOutput {
@@ -39,6 +47,7 @@ impl GetEmailTemplateOutput {
 pub struct GetEmailTemplateOutputBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_content: ::std::option::Option<crate::types::EmailTemplateContent>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl GetEmailTemplateOutputBuilder {
@@ -72,6 +81,26 @@ impl GetEmailTemplateOutputBuilder {
     pub fn get_template_content(&self) -> &::std::option::Option<crate::types::EmailTemplateContent> {
         &self.template_content
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>An array of objects that define the tags (keys and values) that are associated with the email template.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of objects that define the tags (keys and values) that are associated with the email template.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>An array of objects that define the tags (keys and values) that are associated with the email template.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -95,6 +124,7 @@ impl GetEmailTemplateOutputBuilder {
                 )
             })?,
             template_content: self.template_content,
+            tags: self.tags,
             _request_id: self._request_id,
         })
     }

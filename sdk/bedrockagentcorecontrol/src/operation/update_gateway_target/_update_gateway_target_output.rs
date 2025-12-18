@@ -25,6 +25,8 @@ pub struct UpdateGatewayTargetOutput {
     pub credential_provider_configurations: ::std::vec::Vec<crate::types::CredentialProviderConfiguration>,
     /// <p>The date and time at which the targets were last synchronized.</p>
     pub last_synchronized_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The metadata configuration that was applied to the gateway target.</p>
+    pub metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateGatewayTargetOutput {
@@ -78,6 +80,10 @@ impl UpdateGatewayTargetOutput {
     pub fn last_synchronized_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_synchronized_at.as_ref()
     }
+    /// <p>The metadata configuration that was applied to the gateway target.</p>
+    pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::MetadataConfiguration> {
+        self.metadata_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateGatewayTargetOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -93,6 +99,7 @@ impl ::std::fmt::Debug for UpdateGatewayTargetOutput {
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
         formatter.field("last_synchronized_at", &self.last_synchronized_at);
+        formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -124,6 +131,7 @@ pub struct UpdateGatewayTargetOutputBuilder {
     pub(crate) target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
     pub(crate) last_synchronized_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateGatewayTargetOutputBuilder {
@@ -303,6 +311,20 @@ impl UpdateGatewayTargetOutputBuilder {
     pub fn get_last_synchronized_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_synchronized_at
     }
+    /// <p>The metadata configuration that was applied to the gateway target.</p>
+    pub fn metadata_configuration(mut self, input: crate::types::MetadataConfiguration) -> Self {
+        self.metadata_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata configuration that was applied to the gateway target.</p>
+    pub fn set_metadata_configuration(mut self, input: ::std::option::Option<crate::types::MetadataConfiguration>) -> Self {
+        self.metadata_configuration = input;
+        self
+    }
+    /// <p>The metadata configuration that was applied to the gateway target.</p>
+    pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::MetadataConfiguration> {
+        &self.metadata_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -372,6 +394,7 @@ impl UpdateGatewayTargetOutputBuilder {
                 )
             })?,
             last_synchronized_at: self.last_synchronized_at,
+            metadata_configuration: self.metadata_configuration,
             _request_id: self._request_id,
         })
     }
@@ -390,6 +413,7 @@ impl ::std::fmt::Debug for UpdateGatewayTargetOutputBuilder {
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
         formatter.field("last_synchronized_at", &self.last_synchronized_at);
+        formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

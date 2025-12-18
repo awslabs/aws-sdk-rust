@@ -4,17 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotPlacement {
-    /// <p>The Availability Zone.</p>
-    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+    /// <p>The Availability Zone. For example, <code>us-east-2a</code>.</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-east-2a, us-east-2b".</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot Instances.</p>
     pub tenancy: ::std::option::Option<crate::types::Tenancy>,
+    /// <p>The ID of the Availability Zone. For example, <code>use2-az1</code>.</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "use2-az1, use2-bz1".</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl SpotPlacement {
-    /// <p>The Availability Zone.</p>
-    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+    /// <p>The Availability Zone. For example, <code>us-east-2a</code>.</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-east-2a, us-east-2b".</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -25,6 +31,12 @@ impl SpotPlacement {
     /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot Instances.</p>
     pub fn tenancy(&self) -> ::std::option::Option<&crate::types::Tenancy> {
         self.tenancy.as_ref()
+    }
+    /// <p>The ID of the Availability Zone. For example, <code>use2-az1</code>.</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "use2-az1, use2-bz1".</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
 }
 impl SpotPlacement {
@@ -41,22 +53,26 @@ pub struct SpotPlacementBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) tenancy: ::std::option::Option<crate::types::Tenancy>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl SpotPlacementBuilder {
-    /// <p>The Availability Zone.</p>
-    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+    /// <p>The Availability Zone. For example, <code>us-east-2a</code>.</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-east-2a, us-east-2b".</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone.</p>
-    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+    /// <p>The Availability Zone. For example, <code>us-east-2a</code>.</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-east-2a, us-east-2b".</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p>The Availability Zone.</p>
-    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+    /// <p>The Availability Zone. For example, <code>us-east-2a</code>.</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "us-east-2a, us-east-2b".</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
@@ -88,12 +104,33 @@ impl SpotPlacementBuilder {
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::Tenancy> {
         &self.tenancy
     }
+    /// <p>The ID of the Availability Zone. For example, <code>use2-az1</code>.</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "use2-az1, use2-bz1".</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone. For example, <code>use2-az1</code>.</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "use2-az1, use2-bz1".</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone. For example, <code>use2-az1</code>.</p>
+    /// <p>\[Spot Fleet only\] To specify multiple Availability Zones, separate them using commas; for example, "use2-az1, use2-bz1".</p>
+    /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified in the request, but not both.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// Consumes the builder and constructs a [`SpotPlacement`](crate::types::SpotPlacement).
     pub fn build(self) -> crate::types::SpotPlacement {
         crate::types::SpotPlacement {
             availability_zone: self.availability_zone,
             group_name: self.group_name,
             tenancy: self.tenancy,
+            availability_zone_id: self.availability_zone_id,
         }
     }
 }

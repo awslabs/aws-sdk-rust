@@ -158,6 +158,10 @@ pub(crate) fn de_get_gateway_target(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "metadataConfiguration" => {
+                    builder =
+                        builder.set_metadata_configuration(crate::protocol_serde::shape_metadata_configuration::de_metadata_configuration(tokens)?);
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

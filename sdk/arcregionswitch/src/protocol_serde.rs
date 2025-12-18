@@ -41,6 +41,8 @@ pub(crate) mod shape_list_plans_in_region;
 
 pub(crate) mod shape_list_route53_health_checks;
 
+pub(crate) mod shape_list_route53_health_checks_in_region;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_start_plan_execution;
@@ -86,6 +88,8 @@ pub(crate) mod shape_list_plan_executions_input;
 pub(crate) mod shape_list_plans_in_region_input;
 
 pub(crate) mod shape_list_plans_input;
+
+pub(crate) mod shape_list_route53_health_checks_in_region_input;
 
 pub(crate) mod shape_list_route53_health_checks_input;
 

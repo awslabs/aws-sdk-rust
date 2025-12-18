@@ -18,14 +18,20 @@ pub fn ser_update_gateway_target_input_input(
     if let Some(var_5) = &input.description {
         object.key("description").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.target_configuration {
+    if let Some(var_6) = &input.metadata_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("targetConfiguration").start_object();
-        crate::protocol_serde::shape_target_configuration::ser_target_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("metadataConfiguration").start_object();
+        crate::protocol_serde::shape_metadata_configuration::ser_metadata_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.target_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("targetConfiguration").start_object();
+        crate::protocol_serde::shape_target_configuration::ser_target_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

@@ -315,6 +315,8 @@ mod update_analysis_template;
 
 mod update_collaboration;
 
+mod update_collaboration_change_request;
+
 mod update_configured_audience_model_association;
 
 mod update_configured_table;

@@ -12,6 +12,7 @@
 /// ```text
 /// # let rctappliedfor = unimplemented!();
 /// match rctappliedfor {
+///     RctAppliedFor::CreateOnPush => { /* ... */ },
 ///     RctAppliedFor::PullThroughCache => { /* ... */ },
 ///     RctAppliedFor::Replication => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum RctAppliedFor {
     #[allow(missing_docs)] // documentation missing in model
+    CreateOnPush,
+    #[allow(missing_docs)] // documentation missing in model
     PullThroughCache,
     #[allow(missing_docs)] // documentation missing in model
     Replication,
@@ -53,6 +56,7 @@ pub enum RctAppliedFor {
 impl ::std::convert::From<&str> for RctAppliedFor {
     fn from(s: &str) -> Self {
         match s {
+            "CREATE_ON_PUSH" => RctAppliedFor::CreateOnPush,
             "PULL_THROUGH_CACHE" => RctAppliedFor::PullThroughCache,
             "REPLICATION" => RctAppliedFor::Replication,
             other => RctAppliedFor::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl RctAppliedFor {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RctAppliedFor::CreateOnPush => "CREATE_ON_PUSH",
             RctAppliedFor::PullThroughCache => "PULL_THROUGH_CACHE",
             RctAppliedFor::Replication => "REPLICATION",
             RctAppliedFor::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl RctAppliedFor {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PULL_THROUGH_CACHE", "REPLICATION"]
+        &["CREATE_ON_PUSH", "PULL_THROUGH_CACHE", "REPLICATION"]
     }
 }
 impl ::std::convert::AsRef<str> for RctAppliedFor {
@@ -100,6 +105,7 @@ impl RctAppliedFor {
 impl ::std::fmt::Display for RctAppliedFor {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RctAppliedFor::CreateOnPush => write!(f, "CREATE_ON_PUSH"),
             RctAppliedFor::PullThroughCache => write!(f, "PULL_THROUGH_CACHE"),
             RctAppliedFor::Replication => write!(f, "REPLICATION"),
             RctAppliedFor::Unknown(value) => write!(f, "{value}"),

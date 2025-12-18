@@ -132,6 +132,9 @@ pub(crate) fn de_get_custom_verification_email_template(
                             .transpose()?,
                     );
                 }
+                "Tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                }
                 "TemplateContent" => {
                     builder = builder.set_template_content(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

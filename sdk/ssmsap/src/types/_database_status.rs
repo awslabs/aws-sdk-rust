@@ -16,6 +16,7 @@
 ///     DatabaseStatus::Running => { /* ... */ },
 ///     DatabaseStatus::Starting => { /* ... */ },
 ///     DatabaseStatus::Stopped => { /* ... */ },
+///     DatabaseStatus::Stopping => { /* ... */ },
 ///     DatabaseStatus::UnknownValue => { /* ... */ },
 ///     DatabaseStatus::Warning => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -55,6 +56,8 @@ pub enum DatabaseStatus {
     Starting,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
     ///
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
@@ -71,6 +74,7 @@ impl ::std::convert::From<&str> for DatabaseStatus {
             "RUNNING" => DatabaseStatus::Running,
             "STARTING" => DatabaseStatus::Starting,
             "STOPPED" => DatabaseStatus::Stopped,
+            "STOPPING" => DatabaseStatus::Stopping,
             "UNKNOWN" => DatabaseStatus::UnknownValue,
             "WARNING" => DatabaseStatus::Warning,
             other => DatabaseStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -92,6 +96,7 @@ impl DatabaseStatus {
             DatabaseStatus::Running => "RUNNING",
             DatabaseStatus::Starting => "STARTING",
             DatabaseStatus::Stopped => "STOPPED",
+            DatabaseStatus::Stopping => "STOPPING",
             DatabaseStatus::UnknownValue => "UNKNOWN",
             DatabaseStatus::Warning => "WARNING",
             DatabaseStatus::Unknown(value) => value.as_str(),
@@ -99,7 +104,7 @@ impl DatabaseStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "RUNNING", "STARTING", "STOPPED", "UNKNOWN", "WARNING"]
+        &["ERROR", "RUNNING", "STARTING", "STOPPED", "STOPPING", "UNKNOWN", "WARNING"]
     }
 }
 impl ::std::convert::AsRef<str> for DatabaseStatus {
@@ -126,6 +131,7 @@ impl ::std::fmt::Display for DatabaseStatus {
             DatabaseStatus::Running => write!(f, "RUNNING"),
             DatabaseStatus::Starting => write!(f, "STARTING"),
             DatabaseStatus::Stopped => write!(f, "STOPPED"),
+            DatabaseStatus::Stopping => write!(f, "STOPPING"),
             DatabaseStatus::UnknownValue => write!(f, "UNKNOWN"),
             DatabaseStatus::Warning => write!(f, "WARNING"),
             DatabaseStatus::Unknown(value) => write!(f, "{value}"),

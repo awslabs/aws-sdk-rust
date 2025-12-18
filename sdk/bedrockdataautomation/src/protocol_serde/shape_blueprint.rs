@@ -79,6 +79,17 @@ where
                             builder = builder
                                 .set_kms_encryption_context(crate::protocol_serde::shape_kms_encryption_context::de_kms_encryption_context(tokens)?);
                         }
+                        "optimizationSamples" => {
+                            builder = builder.set_optimization_samples(
+                                crate::protocol_serde::shape_blueprint_optimization_samples::de_blueprint_optimization_samples(tokens)?,
+                            );
+                        }
+                        "optimizationTime" => {
+                            builder = builder.set_optimization_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

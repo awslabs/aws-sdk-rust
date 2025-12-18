@@ -175,6 +175,8 @@ pub(crate) mod shape_update_analysis_template;
 
 pub(crate) mod shape_update_collaboration;
 
+pub(crate) mod shape_update_collaboration_change_request;
+
 pub(crate) mod shape_update_configured_audience_model_association;
 
 pub(crate) mod shape_update_configured_table;
@@ -258,6 +260,8 @@ pub(crate) mod shape_tag_resource_input;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_analysis_template_input;
+
+pub(crate) mod shape_update_collaboration_change_request_input;
 
 pub(crate) mod shape_update_collaboration_input;
 
@@ -463,6 +467,8 @@ pub(crate) mod shape_analysis_template_summary;
 
 pub(crate) mod shape_analysis_template_validation_status_detail_list;
 
+pub(crate) mod shape_approval_statuses;
+
 pub(crate) mod shape_athena_table_reference;
 
 pub(crate) mod shape_auto_approved_change_type_list;
@@ -613,6 +619,8 @@ pub(crate) mod shape_analysis_template_artifact_metadata;
 
 pub(crate) mod shape_analysis_template_validation_status_detail;
 
+pub(crate) mod shape_approval_status_details;
+
 pub(crate) mod shape_billed_job_resource_utilization;
 
 pub(crate) mod shape_billed_resource_utilization;
@@ -620,6 +628,8 @@ pub(crate) mod shape_billed_resource_utilization;
 pub(crate) mod shape_budget_parameter;
 
 pub(crate) mod shape_change;
+
+pub(crate) mod shape_collaboration_change_specification;
 
 pub(crate) mod shape_column;
 

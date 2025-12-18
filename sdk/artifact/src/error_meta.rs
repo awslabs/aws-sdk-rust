@@ -247,6 +247,37 @@ impl From<crate::operation::list_reports::ListReportsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_report_versions::ListReportVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_report_versions::ListReportVersionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_report_versions::ListReportVersionsError> for Error {
+    fn from(err: crate::operation::list_report_versions::ListReportVersionsError) -> Self {
+        match err {
+            crate::operation::list_report_versions::ListReportVersionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_report_versions::ListReportVersionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_report_versions::ListReportVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_report_versions::ListReportVersionsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_report_versions::ListReportVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_report_versions::ListReportVersionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_report_versions::ListReportVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_settings::PutAccountSettingsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

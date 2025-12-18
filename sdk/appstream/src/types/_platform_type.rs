@@ -15,10 +15,12 @@
 ///     PlatformType::AmazonLinux2 => { /* ... */ },
 ///     PlatformType::Rhel8 => { /* ... */ },
 ///     PlatformType::RockyLinux8 => { /* ... */ },
+///     PlatformType::UbuntuPro2404 => { /* ... */ },
 ///     PlatformType::Windows => { /* ... */ },
 ///     PlatformType::WindowsServer2016 => { /* ... */ },
 ///     PlatformType::WindowsServer2019 => { /* ... */ },
 ///     PlatformType::WindowsServer2022 => { /* ... */ },
+///     PlatformType::WindowsServer2025 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +56,8 @@ pub enum PlatformType {
     #[allow(missing_docs)] // documentation missing in model
     RockyLinux8,
     #[allow(missing_docs)] // documentation missing in model
+    UbuntuPro2404,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2016,
@@ -61,6 +65,8 @@ pub enum PlatformType {
     WindowsServer2019,
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2022,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2025,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -71,10 +77,12 @@ impl ::std::convert::From<&str> for PlatformType {
             "AMAZON_LINUX2" => PlatformType::AmazonLinux2,
             "RHEL8" => PlatformType::Rhel8,
             "ROCKY_LINUX8" => PlatformType::RockyLinux8,
+            "UBUNTU_PRO_2404" => PlatformType::UbuntuPro2404,
             "WINDOWS" => PlatformType::Windows,
             "WINDOWS_SERVER_2016" => PlatformType::WindowsServer2016,
             "WINDOWS_SERVER_2019" => PlatformType::WindowsServer2019,
             "WINDOWS_SERVER_2022" => PlatformType::WindowsServer2022,
+            "WINDOWS_SERVER_2025" => PlatformType::WindowsServer2025,
             other => PlatformType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -93,10 +101,12 @@ impl PlatformType {
             PlatformType::AmazonLinux2 => "AMAZON_LINUX2",
             PlatformType::Rhel8 => "RHEL8",
             PlatformType::RockyLinux8 => "ROCKY_LINUX8",
+            PlatformType::UbuntuPro2404 => "UBUNTU_PRO_2404",
             PlatformType::Windows => "WINDOWS",
             PlatformType::WindowsServer2016 => "WINDOWS_SERVER_2016",
             PlatformType::WindowsServer2019 => "WINDOWS_SERVER_2019",
             PlatformType::WindowsServer2022 => "WINDOWS_SERVER_2022",
+            PlatformType::WindowsServer2025 => "WINDOWS_SERVER_2025",
             PlatformType::Unknown(value) => value.as_str(),
         }
     }
@@ -106,10 +116,12 @@ impl PlatformType {
             "AMAZON_LINUX2",
             "RHEL8",
             "ROCKY_LINUX8",
+            "UBUNTU_PRO_2404",
             "WINDOWS",
             "WINDOWS_SERVER_2016",
             "WINDOWS_SERVER_2019",
             "WINDOWS_SERVER_2022",
+            "WINDOWS_SERVER_2025",
         ]
     }
 }
@@ -136,10 +148,12 @@ impl ::std::fmt::Display for PlatformType {
             PlatformType::AmazonLinux2 => write!(f, "AMAZON_LINUX2"),
             PlatformType::Rhel8 => write!(f, "RHEL8"),
             PlatformType::RockyLinux8 => write!(f, "ROCKY_LINUX8"),
+            PlatformType::UbuntuPro2404 => write!(f, "UBUNTU_PRO_2404"),
             PlatformType::Windows => write!(f, "WINDOWS"),
             PlatformType::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
             PlatformType::WindowsServer2019 => write!(f, "WINDOWS_SERVER_2019"),
             PlatformType::WindowsServer2022 => write!(f, "WINDOWS_SERVER_2022"),
+            PlatformType::WindowsServer2025 => write!(f, "WINDOWS_SERVER_2025"),
             PlatformType::Unknown(value) => write!(f, "{value}"),
         }
     }

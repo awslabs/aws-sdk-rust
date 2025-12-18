@@ -49,15 +49,11 @@ pub struct Image {
     /// <li>
     /// <p>Memory Optimized</p></li>
     /// <li>
-    /// <p>Graphics</p></li>
-    /// <li>
-    /// <p>Graphics Design</p></li>
-    /// <li>
-    /// <p>Graphics Pro</p></li>
-    /// <li>
     /// <p>Graphics G4</p></li>
     /// <li>
     /// <p>Graphics G5</p></li>
+    /// <li>
+    /// <p>Graphics G6</p></li>
     /// </ul>
     pub supported_instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether dynamic app providers are enabled within an WorkSpaces Applications image or not.</p>
@@ -155,15 +151,11 @@ impl Image {
     /// <li>
     /// <p>Memory Optimized</p></li>
     /// <li>
-    /// <p>Graphics</p></li>
-    /// <li>
-    /// <p>Graphics Design</p></li>
-    /// <li>
-    /// <p>Graphics Pro</p></li>
-    /// <li>
     /// <p>Graphics G4</p></li>
     /// <li>
     /// <p>Graphics G5</p></li>
+    /// <li>
+    /// <p>Graphics G6</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_instance_families.is_none()`.
@@ -501,15 +493,11 @@ impl ImageBuilder {
     /// <li>
     /// <p>Memory Optimized</p></li>
     /// <li>
-    /// <p>Graphics</p></li>
-    /// <li>
-    /// <p>Graphics Design</p></li>
-    /// <li>
-    /// <p>Graphics Pro</p></li>
-    /// <li>
     /// <p>Graphics G4</p></li>
     /// <li>
     /// <p>Graphics G5</p></li>
+    /// <li>
+    /// <p>Graphics G6</p></li>
     /// </ul>
     pub fn supported_instance_families(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_instance_families.unwrap_or_default();
@@ -526,15 +514,11 @@ impl ImageBuilder {
     /// <li>
     /// <p>Memory Optimized</p></li>
     /// <li>
-    /// <p>Graphics</p></li>
-    /// <li>
-    /// <p>Graphics Design</p></li>
-    /// <li>
-    /// <p>Graphics Pro</p></li>
-    /// <li>
     /// <p>Graphics G4</p></li>
     /// <li>
     /// <p>Graphics G5</p></li>
+    /// <li>
+    /// <p>Graphics G6</p></li>
     /// </ul>
     pub fn set_supported_instance_families(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_instance_families = input;
@@ -549,15 +533,11 @@ impl ImageBuilder {
     /// <li>
     /// <p>Memory Optimized</p></li>
     /// <li>
-    /// <p>Graphics</p></li>
-    /// <li>
-    /// <p>Graphics Design</p></li>
-    /// <li>
-    /// <p>Graphics Pro</p></li>
-    /// <li>
     /// <p>Graphics G4</p></li>
     /// <li>
     /// <p>Graphics G5</p></li>
+    /// <li>
+    /// <p>Graphics G6</p></li>
     /// </ul>
     pub fn get_supported_instance_families(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_instance_families

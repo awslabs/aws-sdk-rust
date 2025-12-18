@@ -16,6 +16,9 @@ pub mod get_term_for_report;
 /// Types for the `ListCustomerAgreements` operation.
 pub mod list_customer_agreements;
 
+/// Types for the `ListReportVersions` operation.
+pub mod list_report_versions;
+
 /// Types for the `ListReports` operation.
 pub mod list_reports;
 

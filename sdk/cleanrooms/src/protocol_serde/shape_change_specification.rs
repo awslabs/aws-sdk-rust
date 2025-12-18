@@ -10,6 +10,12 @@ pub fn ser_change_specification(
             crate::protocol_serde::shape_member_change_specification::ser_member_change_specification(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::ChangeSpecification::Collaboration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_2.key("collaboration").start_object();
+            crate::protocol_serde::shape_collaboration_change_specification::ser_collaboration_change_specification(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::ChangeSpecification::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ChangeSpecification",
@@ -53,6 +59,12 @@ where
                             crate::protocol_serde::shape_member_change_specification::de_member_change_specification(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'member' cannot be null")
                             })?,
+                        )),
+                        "collaboration" => Some(crate::types::ChangeSpecification::Collaboration(
+                            crate::protocol_serde::shape_collaboration_change_specification::de_collaboration_change_specification(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'collaboration' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

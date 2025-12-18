@@ -15,6 +15,8 @@ pub struct UpdateGatewayTargetInput {
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     /// <p>The updated credential provider configurations for the gateway target.</p>
     pub credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
+    /// <p>Configuration for HTTP header and query parameter propagation to the gateway target.</p>
+    pub metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
 }
 impl UpdateGatewayTargetInput {
     /// <p>The unique identifier of the gateway associated with the target.</p>
@@ -43,6 +45,10 @@ impl UpdateGatewayTargetInput {
     pub fn credential_provider_configurations(&self) -> &[crate::types::CredentialProviderConfiguration] {
         self.credential_provider_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>Configuration for HTTP header and query parameter propagation to the gateway target.</p>
+    pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::MetadataConfiguration> {
+        self.metadata_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateGatewayTargetInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -53,6 +59,7 @@ impl ::std::fmt::Debug for UpdateGatewayTargetInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
+        formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.finish()
     }
 }
@@ -73,6 +80,7 @@ pub struct UpdateGatewayTargetInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
+    pub(crate) metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
 }
 impl UpdateGatewayTargetInputBuilder {
     /// <p>The unique identifier of the gateway associated with the target.</p>
@@ -172,6 +180,20 @@ impl UpdateGatewayTargetInputBuilder {
     pub fn get_credential_provider_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>> {
         &self.credential_provider_configurations
     }
+    /// <p>Configuration for HTTP header and query parameter propagation to the gateway target.</p>
+    pub fn metadata_configuration(mut self, input: crate::types::MetadataConfiguration) -> Self {
+        self.metadata_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for HTTP header and query parameter propagation to the gateway target.</p>
+    pub fn set_metadata_configuration(mut self, input: ::std::option::Option<crate::types::MetadataConfiguration>) -> Self {
+        self.metadata_configuration = input;
+        self
+    }
+    /// <p>Configuration for HTTP header and query parameter propagation to the gateway target.</p>
+    pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::MetadataConfiguration> {
+        &self.metadata_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateGatewayTargetInput`](crate::operation::update_gateway_target::UpdateGatewayTargetInput).
     pub fn build(
         self,
@@ -184,6 +206,7 @@ impl UpdateGatewayTargetInputBuilder {
             description: self.description,
             target_configuration: self.target_configuration,
             credential_provider_configurations: self.credential_provider_configurations,
+            metadata_configuration: self.metadata_configuration,
         })
     }
 }
@@ -196,6 +219,7 @@ impl ::std::fmt::Debug for UpdateGatewayTargetInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
+        formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.finish()
     }
 }

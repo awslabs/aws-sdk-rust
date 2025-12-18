@@ -1534,6 +1534,36 @@ impl From<crate::operation::get_domain_statistics_report::GetDomainStatisticsRep
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_email_address_insights::GetEmailAddressInsightsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_email_address_insights::GetEmailAddressInsightsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_email_address_insights::GetEmailAddressInsightsError> for Error {
+    fn from(err: crate::operation::get_email_address_insights::GetEmailAddressInsightsError) -> Self {
+        match err {
+            crate::operation::get_email_address_insights::GetEmailAddressInsightsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_email_address_insights::GetEmailAddressInsightsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_email_address_insights::GetEmailAddressInsightsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_email_identity::GetEmailIdentityError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

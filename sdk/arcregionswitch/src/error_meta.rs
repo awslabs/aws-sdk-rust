@@ -392,6 +392,50 @@ impl From<crate::operation::list_route53_health_checks::ListRoute53HealthChecksE
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_route53_health_checks_in_region::ListRoute53HealthChecksInRegionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_route53_health_checks_in_region::ListRoute53HealthChecksInRegionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_route53_health_checks_in_region::ListRoute53HealthChecksInRegionError> for Error {
+    fn from(err: crate::operation::list_route53_health_checks_in_region::ListRoute53HealthChecksInRegionError) -> Self {
+        match err {
+            crate::operation::list_route53_health_checks_in_region::ListRoute53HealthChecksInRegionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_route53_health_checks_in_region::ListRoute53HealthChecksInRegionError::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::operation::list_route53_health_checks_in_region::ListRoute53HealthChecksInRegionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_route53_health_checks_in_region::ListRoute53HealthChecksInRegionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_route53_health_checks_in_region::ListRoute53HealthChecksInRegionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

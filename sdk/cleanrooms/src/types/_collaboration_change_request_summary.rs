@@ -18,6 +18,8 @@ pub struct CollaborationChangeRequestSummary {
     pub is_auto_approved: bool,
     /// <p>Summary of the changes in this change request.</p>
     pub changes: ::std::vec::Vec<crate::types::Change>,
+    /// <p>Summary of approval statuses from all collaboration members for this change request.</p>
+    pub approvals: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ApprovalStatusDetails>>,
 }
 impl CollaborationChangeRequestSummary {
     /// <p>The unique identifier for the change request.</p>
@@ -51,6 +53,10 @@ impl CollaborationChangeRequestSummary {
         use std::ops::Deref;
         self.changes.deref()
     }
+    /// <p>Summary of approval statuses from all collaboration members for this change request.</p>
+    pub fn approvals(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ApprovalStatusDetails>> {
+        self.approvals.as_ref()
+    }
 }
 impl CollaborationChangeRequestSummary {
     /// Creates a new builder-style object to manufacture [`CollaborationChangeRequestSummary`](crate::types::CollaborationChangeRequestSummary).
@@ -70,6 +76,7 @@ pub struct CollaborationChangeRequestSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ChangeRequestStatus>,
     pub(crate) is_auto_approved: ::std::option::Option<bool>,
     pub(crate) changes: ::std::option::Option<::std::vec::Vec<crate::types::Change>>,
+    pub(crate) approvals: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ApprovalStatusDetails>>,
 }
 impl CollaborationChangeRequestSummaryBuilder {
     /// <p>The unique identifier for the change request.</p>
@@ -182,6 +189,29 @@ impl CollaborationChangeRequestSummaryBuilder {
     pub fn get_changes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Change>> {
         &self.changes
     }
+    /// Adds a key-value pair to `approvals`.
+    ///
+    /// To override the contents of this collection use [`set_approvals`](Self::set_approvals).
+    ///
+    /// <p>Summary of approval statuses from all collaboration members for this change request.</p>
+    pub fn approvals(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ApprovalStatusDetails) -> Self {
+        let mut hash_map = self.approvals.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.approvals = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Summary of approval statuses from all collaboration members for this change request.</p>
+    pub fn set_approvals(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ApprovalStatusDetails>>,
+    ) -> Self {
+        self.approvals = input;
+        self
+    }
+    /// <p>Summary of approval statuses from all collaboration members for this change request.</p>
+    pub fn get_approvals(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ApprovalStatusDetails>> {
+        &self.approvals
+    }
     /// Consumes the builder and constructs a [`CollaborationChangeRequestSummary`](crate::types::CollaborationChangeRequestSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CollaborationChangeRequestSummaryBuilder::id)
@@ -235,6 +265,7 @@ impl CollaborationChangeRequestSummaryBuilder {
                     "changes was not specified but it is required when building CollaborationChangeRequestSummary",
                 )
             })?,
+            approvals: self.approvals,
         })
     }
 }
