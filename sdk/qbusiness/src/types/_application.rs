@@ -16,7 +16,7 @@ pub struct Application {
     pub status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>The authentication type being used by a Amazon Q Business application.</p>
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
-    /// <p>The Amazon QuickSight configuration for an Amazon Q Business application that uses QuickSight as the identity provider.</p>
+    /// <p>The Amazon Quick Suite configuration for an Amazon Q Business application that uses Quick Suite as the identity provider.</p>
     pub quick_sight_configuration: ::std::option::Option<crate::types::QuickSightConfiguration>,
 }
 impl Application {
@@ -44,7 +44,7 @@ impl Application {
     pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
-    /// <p>The Amazon QuickSight configuration for an Amazon Q Business application that uses QuickSight as the identity provider.</p>
+    /// <p>The Amazon Quick Suite configuration for an Amazon Q Business application that uses Quick Suite as the identity provider.</p>
     pub fn quick_sight_configuration(&self) -> ::std::option::Option<&crate::types::QuickSightConfiguration> {
         self.quick_sight_configuration.as_ref()
     }
@@ -153,17 +153,17 @@ impl ApplicationBuilder {
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
         &self.identity_type
     }
-    /// <p>The Amazon QuickSight configuration for an Amazon Q Business application that uses QuickSight as the identity provider.</p>
+    /// <p>The Amazon Quick Suite configuration for an Amazon Q Business application that uses Quick Suite as the identity provider.</p>
     pub fn quick_sight_configuration(mut self, input: crate::types::QuickSightConfiguration) -> Self {
         self.quick_sight_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon QuickSight configuration for an Amazon Q Business application that uses QuickSight as the identity provider.</p>
+    /// <p>The Amazon Quick Suite configuration for an Amazon Q Business application that uses Quick Suite as the identity provider.</p>
     pub fn set_quick_sight_configuration(mut self, input: ::std::option::Option<crate::types::QuickSightConfiguration>) -> Self {
         self.quick_sight_configuration = input;
         self
     }
-    /// <p>The Amazon QuickSight configuration for an Amazon Q Business application that uses QuickSight as the identity provider.</p>
+    /// <p>The Amazon Quick Suite configuration for an Amazon Q Business application that uses Quick Suite as the identity provider.</p>
     pub fn get_quick_sight_configuration(&self) -> &::std::option::Option<crate::types::QuickSightConfiguration> {
         &self.quick_sight_configuration
     }

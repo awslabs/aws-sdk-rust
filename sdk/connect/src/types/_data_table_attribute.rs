@@ -24,7 +24,7 @@ pub struct DataTableAttribute {
     pub lock_version: ::std::option::Option<crate::types::DataTableLockVersion>,
     /// <p>The timestamp when this attribute was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The AWS region where this attribute was last modified, used for region replication.</p>
+    /// <p>The Amazon Web Services Region where this attribute was last modified, used for region replication.</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
     /// <p>The validation rules applied to values of this attribute. Based on JSON Schema Draft 2020-12 with additional Connect-specific validations for data integrity.</p>
     pub validation: ::std::option::Option<crate::types::Validation>,
@@ -71,7 +71,7 @@ impl DataTableAttribute {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>The AWS region where this attribute was last modified, used for region replication.</p>
+    /// <p>The Amazon Web Services Region where this attribute was last modified, used for region replication.</p>
     pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
         self.last_modified_region.as_deref()
     }
@@ -247,17 +247,17 @@ impl DataTableAttributeBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p>The AWS region where this attribute was last modified, used for region replication.</p>
+    /// <p>The Amazon Web Services Region where this attribute was last modified, used for region replication.</p>
     pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS region where this attribute was last modified, used for region replication.</p>
+    /// <p>The Amazon Web Services Region where this attribute was last modified, used for region replication.</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_region = input;
         self
     }
-    /// <p>The AWS region where this attribute was last modified, used for region replication.</p>
+    /// <p>The Amazon Web Services Region where this attribute was last modified, used for region replication.</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified_region
     }

@@ -14,6 +14,10 @@ pub struct Dimensions {
     pub routing_step_expression: ::std::option::Option<::std::string::String>,
     /// <p>Information about the agent status assigned to the user.</p>
     pub agent_status: ::std::option::Option<crate::types::AgentStatusIdentifier>,
+    /// <p>The subtype of the channel used for the contact.</p>
+    pub subtype: ::std::option::Option<::std::string::String>,
+    /// <p>The testing and simulation type</p>
+    pub validation_test_type: ::std::option::Option<::std::string::String>,
 }
 impl Dimensions {
     /// <p>Information about the queue for which metrics are returned.</p>
@@ -36,6 +40,14 @@ impl Dimensions {
     pub fn agent_status(&self) -> ::std::option::Option<&crate::types::AgentStatusIdentifier> {
         self.agent_status.as_ref()
     }
+    /// <p>The subtype of the channel used for the contact.</p>
+    pub fn subtype(&self) -> ::std::option::Option<&str> {
+        self.subtype.as_deref()
+    }
+    /// <p>The testing and simulation type</p>
+    pub fn validation_test_type(&self) -> ::std::option::Option<&str> {
+        self.validation_test_type.as_deref()
+    }
 }
 impl Dimensions {
     /// Creates a new builder-style object to manufacture [`Dimensions`](crate::types::Dimensions).
@@ -53,6 +65,8 @@ pub struct DimensionsBuilder {
     pub(crate) routing_profile: ::std::option::Option<crate::types::RoutingProfileReference>,
     pub(crate) routing_step_expression: ::std::option::Option<::std::string::String>,
     pub(crate) agent_status: ::std::option::Option<crate::types::AgentStatusIdentifier>,
+    pub(crate) subtype: ::std::option::Option<::std::string::String>,
+    pub(crate) validation_test_type: ::std::option::Option<::std::string::String>,
 }
 impl DimensionsBuilder {
     /// <p>Information about the queue for which metrics are returned.</p>
@@ -125,6 +139,34 @@ impl DimensionsBuilder {
     pub fn get_agent_status(&self) -> &::std::option::Option<crate::types::AgentStatusIdentifier> {
         &self.agent_status
     }
+    /// <p>The subtype of the channel used for the contact.</p>
+    pub fn subtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subtype = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The subtype of the channel used for the contact.</p>
+    pub fn set_subtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subtype = input;
+        self
+    }
+    /// <p>The subtype of the channel used for the contact.</p>
+    pub fn get_subtype(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subtype
+    }
+    /// <p>The testing and simulation type</p>
+    pub fn validation_test_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.validation_test_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The testing and simulation type</p>
+    pub fn set_validation_test_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.validation_test_type = input;
+        self
+    }
+    /// <p>The testing and simulation type</p>
+    pub fn get_validation_test_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_test_type
+    }
     /// Consumes the builder and constructs a [`Dimensions`](crate::types::Dimensions).
     pub fn build(self) -> crate::types::Dimensions {
         crate::types::Dimensions {
@@ -133,6 +175,8 @@ impl DimensionsBuilder {
             routing_profile: self.routing_profile,
             routing_step_expression: self.routing_step_expression,
             agent_status: self.agent_status,
+            subtype: self.subtype,
+            validation_test_type: self.validation_test_type,
         }
     }
 }

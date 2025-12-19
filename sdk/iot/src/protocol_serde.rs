@@ -1013,6 +1013,10 @@ pub(crate) mod shape_job_template_summary_list;
 
 pub(crate) mod shape_key_pair;
 
+pub(crate) mod shape_log_event_configuration;
+
+pub(crate) mod shape_log_event_configurations;
+
 pub(crate) mod shape_log_target;
 
 pub(crate) mod shape_log_target_configurations;

@@ -159,6 +159,15 @@ pub(crate) fn exponential_rollout_rate_correct_errors(
     builder
 }
 
+pub(crate) fn log_event_configuration_correct_errors(
+    mut builder: crate::types::builders::LogEventConfigurationBuilder,
+) -> crate::types::builders::LogEventConfigurationBuilder {
+    if builder.event_type.is_none() {
+        builder.event_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn maintenance_window_correct_errors(
     mut builder: crate::types::builders::MaintenanceWindowBuilder,
 ) -> crate::types::builders::MaintenanceWindowBuilder {

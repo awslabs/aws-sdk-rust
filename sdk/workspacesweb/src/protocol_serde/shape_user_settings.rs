@@ -105,6 +105,13 @@ where
                             builder = builder
                                 .set_branding_configuration(crate::protocol_serde::shape_branding_configuration::de_branding_configuration(tokens)?);
                         }
+                        "webAuthnAllowed" => {
+                            builder = builder.set_web_authn_allowed(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EnabledType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

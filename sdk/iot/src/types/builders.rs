@@ -135,6 +135,8 @@ pub use crate::types::_detect_mitigation_actions_task_target::DetectMitigationAc
 
 pub use crate::types::_audit_mitigation_actions_task_target::AuditMitigationActionsTaskTargetBuilder;
 
+pub use crate::types::_log_event_configuration::LogEventConfigurationBuilder;
+
 pub use crate::types::_log_target::LogTargetBuilder;
 
 pub use crate::types::_logging_options_payload::LoggingOptionsPayloadBuilder;

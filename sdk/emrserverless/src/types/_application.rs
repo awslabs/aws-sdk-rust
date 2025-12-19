@@ -50,6 +50,8 @@ pub struct Application {
     pub scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
     /// <p>The IAM Identity Center configuration applied to enable trusted identity propagation.</p>
     pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub job_level_cost_allocation_configuration: ::std::option::Option<crate::types::JobLevelCostAllocationConfiguration>,
 }
 impl Application {
     /// <p>The ID of the application.</p>
@@ -154,6 +156,10 @@ impl Application {
     pub fn identity_center_configuration(&self) -> ::std::option::Option<&crate::types::IdentityCenterConfiguration> {
         self.identity_center_configuration.as_ref()
     }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn job_level_cost_allocation_configuration(&self) -> ::std::option::Option<&crate::types::JobLevelCostAllocationConfiguration> {
+        self.job_level_cost_allocation_configuration.as_ref()
+    }
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::types::Application).
@@ -190,6 +196,7 @@ pub struct ApplicationBuilder {
     pub(crate) interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
     pub(crate) scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
     pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
+    pub(crate) job_level_cost_allocation_configuration: ::std::option::Option<crate::types::JobLevelCostAllocationConfiguration>,
 }
 impl ApplicationBuilder {
     /// <p>The ID of the application.</p>
@@ -559,6 +566,23 @@ impl ApplicationBuilder {
     pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfiguration> {
         &self.identity_center_configuration
     }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn job_level_cost_allocation_configuration(mut self, input: crate::types::JobLevelCostAllocationConfiguration) -> Self {
+        self.job_level_cost_allocation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn set_job_level_cost_allocation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::JobLevelCostAllocationConfiguration>,
+    ) -> Self {
+        self.job_level_cost_allocation_configuration = input;
+        self
+    }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn get_job_level_cost_allocation_configuration(&self) -> &::std::option::Option<crate::types::JobLevelCostAllocationConfiguration> {
+        &self.job_level_cost_allocation_configuration
+    }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_id`](crate::types::builders::ApplicationBuilder::application_id)
@@ -628,6 +652,7 @@ impl ApplicationBuilder {
             interactive_configuration: self.interactive_configuration,
             scheduler_configuration: self.scheduler_configuration,
             identity_center_configuration: self.identity_center_configuration,
+            job_level_cost_allocation_configuration: self.job_level_cost_allocation_configuration,
         })
     }
 }

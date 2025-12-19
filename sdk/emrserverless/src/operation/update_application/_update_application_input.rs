@@ -36,6 +36,8 @@ pub struct UpdateApplicationInput {
     pub scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
     /// <p>Specifies the IAM Identity Center configuration used to enable or disable trusted identity propagation. When provided, this configuration determines how the application interacts with IAM Identity Center for user authentication and access control.</p>
     pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfigurationInput>,
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub job_level_cost_allocation_configuration: ::std::option::Option<crate::types::JobLevelCostAllocationConfiguration>,
 }
 impl UpdateApplicationInput {
     /// <p>The ID of the application to update.</p>
@@ -108,6 +110,10 @@ impl UpdateApplicationInput {
     pub fn identity_center_configuration(&self) -> ::std::option::Option<&crate::types::IdentityCenterConfigurationInput> {
         self.identity_center_configuration.as_ref()
     }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn job_level_cost_allocation_configuration(&self) -> ::std::option::Option<&crate::types::JobLevelCostAllocationConfiguration> {
+        self.job_level_cost_allocation_configuration.as_ref()
+    }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
@@ -137,6 +143,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
     pub(crate) scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
     pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfigurationInput>,
+    pub(crate) job_level_cost_allocation_configuration: ::std::option::Option<crate::types::JobLevelCostAllocationConfiguration>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The ID of the application to update.</p>
@@ -397,6 +404,23 @@ impl UpdateApplicationInputBuilder {
     pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfigurationInput> {
         &self.identity_center_configuration
     }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn job_level_cost_allocation_configuration(mut self, input: crate::types::JobLevelCostAllocationConfiguration) -> Self {
+        self.job_level_cost_allocation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn set_job_level_cost_allocation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::JobLevelCostAllocationConfiguration>,
+    ) -> Self {
+        self.job_level_cost_allocation_configuration = input;
+        self
+    }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn get_job_level_cost_allocation_configuration(&self) -> &::std::option::Option<crate::types::JobLevelCostAllocationConfiguration> {
+        &self.job_level_cost_allocation_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -418,6 +442,7 @@ impl UpdateApplicationInputBuilder {
             monitoring_configuration: self.monitoring_configuration,
             scheduler_configuration: self.scheduler_configuration,
             identity_center_configuration: self.identity_center_configuration,
+            job_level_cost_allocation_configuration: self.job_level_cost_allocation_configuration,
         })
     }
 }

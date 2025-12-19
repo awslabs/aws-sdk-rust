@@ -215,6 +215,8 @@ pub use crate::types::_detect_mitigation_actions_task_target::DetectMitigationAc
 
 pub use crate::types::_audit_mitigation_actions_task_target::AuditMitigationActionsTaskTarget;
 
+pub use crate::types::_log_event_configuration::LogEventConfiguration;
+
 pub use crate::types::_log_target::LogTarget;
 
 pub use crate::types::_log_target_type::LogTargetType;
@@ -1000,6 +1002,8 @@ mod _lambda_action;
 mod _location_action;
 
 mod _location_timestamp;
+
+mod _log_event_configuration;
 
 mod _log_level;
 

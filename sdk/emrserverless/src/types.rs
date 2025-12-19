@@ -41,6 +41,8 @@ pub use crate::types::_job_run_summary::JobRunSummary;
 
 pub use crate::types::_application::Application;
 
+pub use crate::types::_job_level_cost_allocation_configuration::JobLevelCostAllocationConfiguration;
+
 pub use crate::types::_identity_center_configuration::IdentityCenterConfiguration;
 
 pub use crate::types::_scheduler_configuration::SchedulerConfiguration;
@@ -106,6 +108,8 @@ mod _initial_capacity_config;
 mod _interactive_configuration;
 
 mod _job_driver;
+
+mod _job_level_cost_allocation_configuration;
 
 mod _job_run;
 

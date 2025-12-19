@@ -224,4 +224,18 @@ impl UpdatePlanFluentBuilder {
     pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trigger>> {
         self.inner.get_triggers()
     }
+    /// <p>The updated report configuration for the plan.</p>
+    pub fn report_configuration(mut self, input: crate::types::ReportConfiguration) -> Self {
+        self.inner = self.inner.report_configuration(input);
+        self
+    }
+    /// <p>The updated report configuration for the plan.</p>
+    pub fn set_report_configuration(mut self, input: ::std::option::Option<crate::types::ReportConfiguration>) -> Self {
+        self.inner = self.inner.set_report_configuration(input);
+        self
+    }
+    /// <p>The updated report configuration for the plan.</p>
+    pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ReportConfiguration> {
+        self.inner.get_report_configuration()
+    }
 }

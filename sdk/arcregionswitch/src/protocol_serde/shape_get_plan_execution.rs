@@ -91,47 +91,53 @@ pub(crate) fn de_get_plan_execution(
         crate::operation::get_plan_execution::builders::GetPlanExecutionOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
-        builder = match decoder.str()?.as_ref() {
-            "planArn" => builder.set_plan_arn(Some(decoder.string()?)),
-            "executionId" => builder.set_execution_id(Some(decoder.string()?)),
-            "version" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_version(Some(decoder.string()?))))?
-            }
-            "updatedAt" => {
-                ::aws_smithy_cbor::decode::set_optional(
-                    builder,
-                    decoder,
-                    |builder, decoder| Ok(builder.set_updated_at(Some(decoder.timestamp()?))),
-                )?
-            }
-            "comment" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_comment(Some(decoder.string()?))))?
-            }
-            "startTime" => builder.set_start_time(Some(decoder.timestamp()?)),
-            "endTime" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_end_time(Some(decoder.timestamp()?))))?
-            }
-            "mode" => builder.set_mode(Some(decoder.string().map(|s| crate::types::ExecutionMode::from(s.as_ref()))?)),
-            "executionState" => builder.set_execution_state(Some(decoder.string().map(|s| crate::types::ExecutionState::from(s.as_ref()))?)),
-            "executionAction" => builder.set_execution_action(Some(decoder.string().map(|s| crate::types::ExecutionAction::from(s.as_ref()))?)),
-            "executionRegion" => builder.set_execution_region(Some(decoder.string()?)),
-            "stepStates" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_step_states(Some(crate::protocol_serde::shape_step_states::de_step_states(decoder)?)))
-            })?,
-            "plan" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_plan(Some(crate::protocol_serde::shape_plan::de_plan(decoder)?)))
-            })?,
-            "actualRecoveryTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_actual_recovery_time(Some(decoder.string()?)))
-            })?,
-            "nextToken" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
-            }
-            _ => {
-                decoder.skip()?;
-                builder
-            }
-        };
+        builder =
+            match decoder.str()?.as_ref() {
+                "planArn" => builder.set_plan_arn(Some(decoder.string()?)),
+                "executionId" => builder.set_execution_id(Some(decoder.string()?)),
+                "version" => {
+                    ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_version(Some(decoder.string()?))))?
+                }
+                "updatedAt" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_updated_at(Some(decoder.timestamp()?)))
+                })?,
+                "comment" => {
+                    ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_comment(Some(decoder.string()?))))?
+                }
+                "startTime" => builder.set_start_time(Some(decoder.timestamp()?)),
+                "endTime" => {
+                    ::aws_smithy_cbor::decode::set_optional(
+                        builder,
+                        decoder,
+                        |builder, decoder| Ok(builder.set_end_time(Some(decoder.timestamp()?))),
+                    )?
+                }
+                "mode" => builder.set_mode(Some(decoder.string().map(|s| crate::types::ExecutionMode::from(s.as_ref()))?)),
+                "executionState" => builder.set_execution_state(Some(decoder.string().map(|s| crate::types::ExecutionState::from(s.as_ref()))?)),
+                "executionAction" => builder.set_execution_action(Some(decoder.string().map(|s| crate::types::ExecutionAction::from(s.as_ref()))?)),
+                "executionRegion" => builder.set_execution_region(Some(decoder.string()?)),
+                "stepStates" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_step_states(Some(crate::protocol_serde::shape_step_states::de_step_states(decoder)?)))
+                })?,
+                "plan" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_plan(Some(crate::protocol_serde::shape_plan::de_plan(decoder)?)))
+                })?,
+                "actualRecoveryTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_actual_recovery_time(Some(decoder.string()?)))
+                })?,
+                "generatedReportDetails" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_generated_report_details(Some(
+                        crate::protocol_serde::shape_generated_report_details::de_generated_report_details(decoder)?,
+                    )))
+                })?,
+                "nextToken" => {
+                    ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
+                }
+                _ => {
+                    decoder.skip()?;
+                    builder
+                }
+            };
         Ok(builder)
     }
 

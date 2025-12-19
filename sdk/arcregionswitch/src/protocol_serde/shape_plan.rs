@@ -23,6 +23,9 @@ pub(crate) fn de_plan(
             "triggers" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_triggers(Some(crate::protocol_serde::shape_trigger_list::de_trigger_list(decoder)?)))
             })?,
+            "reportConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_report_configuration(Some(crate::protocol_serde::shape_report_configuration::de_report_configuration(decoder)?)))
+            })?,
             "name" => builder.set_name(Some(decoder.string()?)),
             "regions" => builder.set_regions(Some(crate::protocol_serde::shape_region_list::de_region_list(decoder)?)),
             "recoveryApproach" => builder.set_recovery_approach(Some(decoder.string().map(|s| crate::types::RecoveryApproach::from(s.as_ref()))?)),

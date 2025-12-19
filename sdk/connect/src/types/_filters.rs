@@ -14,6 +14,10 @@ pub struct Filters {
     pub routing_step_expressions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of up to 50 agent status IDs or ARNs.</p>
     pub agent_statuses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of up to 10 subtypes can be provided.</p>
+    pub subtypes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of up to 10 validationTestTypes can be provided.</p>
+    pub validation_test_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filters {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request.</p>
@@ -46,6 +50,18 @@ impl Filters {
     pub fn agent_statuses(&self) -> &[::std::string::String] {
         self.agent_statuses.as_deref().unwrap_or_default()
     }
+    /// <p>A list of up to 10 subtypes can be provided.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subtypes.is_none()`.
+    pub fn subtypes(&self) -> &[::std::string::String] {
+        self.subtypes.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of up to 10 validationTestTypes can be provided.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_test_types.is_none()`.
+    pub fn validation_test_types(&self) -> &[::std::string::String] {
+        self.validation_test_types.as_deref().unwrap_or_default()
+    }
 }
 impl Filters {
     /// Creates a new builder-style object to manufacture [`Filters`](crate::types::Filters).
@@ -63,6 +79,8 @@ pub struct FiltersBuilder {
     pub(crate) routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) routing_step_expressions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) agent_statuses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subtypes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) validation_test_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FiltersBuilder {
     /// Appends an item to `queues`.
@@ -165,6 +183,46 @@ impl FiltersBuilder {
     pub fn get_agent_statuses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_statuses
     }
+    /// Appends an item to `subtypes`.
+    ///
+    /// To override the contents of this collection use [`set_subtypes`](Self::set_subtypes).
+    ///
+    /// <p>A list of up to 10 subtypes can be provided.</p>
+    pub fn subtypes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.subtypes.unwrap_or_default();
+        v.push(input.into());
+        self.subtypes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of up to 10 subtypes can be provided.</p>
+    pub fn set_subtypes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.subtypes = input;
+        self
+    }
+    /// <p>A list of up to 10 subtypes can be provided.</p>
+    pub fn get_subtypes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subtypes
+    }
+    /// Appends an item to `validation_test_types`.
+    ///
+    /// To override the contents of this collection use [`set_validation_test_types`](Self::set_validation_test_types).
+    ///
+    /// <p>A list of up to 10 validationTestTypes can be provided.</p>
+    pub fn validation_test_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.validation_test_types.unwrap_or_default();
+        v.push(input.into());
+        self.validation_test_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of up to 10 validationTestTypes can be provided.</p>
+    pub fn set_validation_test_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.validation_test_types = input;
+        self
+    }
+    /// <p>A list of up to 10 validationTestTypes can be provided.</p>
+    pub fn get_validation_test_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.validation_test_types
+    }
     /// Consumes the builder and constructs a [`Filters`](crate::types::Filters).
     pub fn build(self) -> crate::types::Filters {
         crate::types::Filters {
@@ -173,6 +231,8 @@ impl FiltersBuilder {
             routing_profiles: self.routing_profiles,
             routing_step_expressions: self.routing_step_expressions,
             agent_statuses: self.agent_statuses,
+            subtypes: self.subtypes,
+            validation_test_types: self.validation_test_types,
         }
     }
 }

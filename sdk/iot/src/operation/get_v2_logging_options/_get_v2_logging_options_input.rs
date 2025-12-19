@@ -2,7 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetV2LoggingOptionsInput {}
+pub struct GetV2LoggingOptionsInput {
+    /// <p>The flag is used to get all the event types and their respective configuration that event-based logging supports.</p>
+    pub verbose: ::std::option::Option<bool>,
+}
+impl GetV2LoggingOptionsInput {
+    /// <p>The flag is used to get all the event types and their respective configuration that event-based logging supports.</p>
+    pub fn verbose(&self) -> ::std::option::Option<bool> {
+        self.verbose
+    }
+}
 impl GetV2LoggingOptionsInput {
     /// Creates a new builder-style object to manufacture [`GetV2LoggingOptionsInput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput).
     pub fn builder() -> crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsInputBuilder {
@@ -13,13 +22,29 @@ impl GetV2LoggingOptionsInput {
 /// A builder for [`GetV2LoggingOptionsInput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct GetV2LoggingOptionsInputBuilder {}
+pub struct GetV2LoggingOptionsInputBuilder {
+    pub(crate) verbose: ::std::option::Option<bool>,
+}
 impl GetV2LoggingOptionsInputBuilder {
+    /// <p>The flag is used to get all the event types and their respective configuration that event-based logging supports.</p>
+    pub fn verbose(mut self, input: bool) -> Self {
+        self.verbose = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The flag is used to get all the event types and their respective configuration that event-based logging supports.</p>
+    pub fn set_verbose(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.verbose = input;
+        self
+    }
+    /// <p>The flag is used to get all the event types and their respective configuration that event-based logging supports.</p>
+    pub fn get_verbose(&self) -> &::std::option::Option<bool> {
+        &self.verbose
+    }
     /// Consumes the builder and constructs a [`GetV2LoggingOptionsInput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput {})
+        ::std::result::Result::Ok(crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput { verbose: self.verbose })
     }
 }

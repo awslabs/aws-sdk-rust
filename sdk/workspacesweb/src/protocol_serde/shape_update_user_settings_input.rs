@@ -54,5 +54,8 @@ pub fn ser_update_user_settings_input_input(
     if let Some(var_15) = &input.upload_allowed {
         object.key("uploadAllowed").string(var_15.as_str());
     }
+    if let Some(var_16) = &input.web_authn_allowed {
+        object.key("webAuthnAllowed").string(var_16.as_str());
+    }
     Ok(())
 }

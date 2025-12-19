@@ -365,15 +365,11 @@ impl StartChatContactFluentBuilder {
     /// To override the contents of this collection use [`set_disconnect_on_customer_exit`](Self::set_disconnect_on_customer_exit).
     ///
     /// <p>A list of participant types to automatically disconnect when the end customer ends the chat session, allowing them to continue through disconnect flows such as surveys or feedback forms.</p>
-    /// <p>Valid value: <code>AGENT</code>.</p>
-    /// <p>With the <code>DisconnectOnCustomerExit</code> parameter, you can configure automatic agent disconnection when end customers end the chat, ensuring that disconnect flows are triggered consistently regardless of which participant disconnects first.</p>
     pub fn disconnect_on_customer_exit(mut self, input: crate::types::DisconnectOnCustomerExitParticipantType) -> Self {
         self.inner = self.inner.disconnect_on_customer_exit(input);
         self
     }
     /// <p>A list of participant types to automatically disconnect when the end customer ends the chat session, allowing them to continue through disconnect flows such as surveys or feedback forms.</p>
-    /// <p>Valid value: <code>AGENT</code>.</p>
-    /// <p>With the <code>DisconnectOnCustomerExit</code> parameter, you can configure automatic agent disconnection when end customers end the chat, ensuring that disconnect flows are triggered consistently regardless of which participant disconnects first.</p>
     pub fn set_disconnect_on_customer_exit(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DisconnectOnCustomerExitParticipantType>>,
@@ -382,8 +378,6 @@ impl StartChatContactFluentBuilder {
         self
     }
     /// <p>A list of participant types to automatically disconnect when the end customer ends the chat session, allowing them to continue through disconnect flows such as surveys or feedback forms.</p>
-    /// <p>Valid value: <code>AGENT</code>.</p>
-    /// <p>With the <code>DisconnectOnCustomerExit</code> parameter, you can configure automatic agent disconnection when end customers end the chat, ensuring that disconnect flows are triggered consistently regardless of which participant disconnects first.</p>
     pub fn get_disconnect_on_customer_exit(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DisconnectOnCustomerExitParticipantType>> {
         self.inner.get_disconnect_on_customer_exit()
     }

@@ -15,6 +15,8 @@ pub struct CreatePlanInput {
     pub associated_alarms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssociatedAlarm>>,
     /// <p>The triggers associated with a Region switch plan.</p>
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
+    /// <p>Configuration for automatic report generation for plan executions. When configured, Region switch automatically generates a report after each plan execution that includes execution events, plan configuration, and CloudWatch alarm states.</p>
+    pub report_configuration: ::std::option::Option<crate::types::ReportConfiguration>,
     /// <p>The name of a Region switch plan.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An array that specifies the Amazon Web Services Regions for a Region switch plan. Specify two Regions.</p>
@@ -54,6 +56,10 @@ impl CreatePlanInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
     pub fn triggers(&self) -> &[crate::types::Trigger] {
         self.triggers.as_deref().unwrap_or_default()
+    }
+    /// <p>Configuration for automatic report generation for plan executions. When configured, Region switch automatically generates a report after each plan execution that includes execution events, plan configuration, and CloudWatch alarm states.</p>
+    pub fn report_configuration(&self) -> ::std::option::Option<&crate::types::ReportConfiguration> {
+        self.report_configuration.as_ref()
     }
     /// <p>The name of a Region switch plan.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -95,6 +101,7 @@ pub struct CreatePlanInputBuilder {
     pub(crate) recovery_time_objective_minutes: ::std::option::Option<i32>,
     pub(crate) associated_alarms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssociatedAlarm>>,
     pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
+    pub(crate) report_configuration: ::std::option::Option<crate::types::ReportConfiguration>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) recovery_approach: ::std::option::Option<crate::types::RecoveryApproach>,
@@ -208,6 +215,20 @@ impl CreatePlanInputBuilder {
     pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trigger>> {
         &self.triggers
     }
+    /// <p>Configuration for automatic report generation for plan executions. When configured, Region switch automatically generates a report after each plan execution that includes execution events, plan configuration, and CloudWatch alarm states.</p>
+    pub fn report_configuration(mut self, input: crate::types::ReportConfiguration) -> Self {
+        self.report_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for automatic report generation for plan executions. When configured, Region switch automatically generates a report after each plan execution that includes execution events, plan configuration, and CloudWatch alarm states.</p>
+    pub fn set_report_configuration(mut self, input: ::std::option::Option<crate::types::ReportConfiguration>) -> Self {
+        self.report_configuration = input;
+        self
+    }
+    /// <p>Configuration for automatic report generation for plan executions. When configured, Region switch automatically generates a report after each plan execution that includes execution events, plan configuration, and CloudWatch alarm states.</p>
+    pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ReportConfiguration> {
+        &self.report_configuration
+    }
     /// <p>The name of a Region switch plan.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -301,6 +322,7 @@ impl CreatePlanInputBuilder {
             recovery_time_objective_minutes: self.recovery_time_objective_minutes,
             associated_alarms: self.associated_alarms,
             triggers: self.triggers,
+            report_configuration: self.report_configuration,
             name: self.name,
             regions: self.regions,
             recovery_approach: self.recovery_approach,

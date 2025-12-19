@@ -140,6 +140,13 @@ where
                                 crate::protocol_serde::shape_identity_center_configuration::de_identity_center_configuration(tokens)?,
                             );
                         }
+                        "jobLevelCostAllocationConfiguration" => {
+                            builder = builder.set_job_level_cost_allocation_configuration(
+                                crate::protocol_serde::shape_job_level_cost_allocation_configuration::de_job_level_cost_allocation_configuration(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

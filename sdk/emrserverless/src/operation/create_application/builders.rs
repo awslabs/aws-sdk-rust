@@ -394,4 +394,21 @@ impl CreateApplicationFluentBuilder {
     pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfigurationInput> {
         self.inner.get_identity_center_configuration()
     }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn job_level_cost_allocation_configuration(mut self, input: crate::types::JobLevelCostAllocationConfiguration) -> Self {
+        self.inner = self.inner.job_level_cost_allocation_configuration(input);
+        self
+    }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn set_job_level_cost_allocation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::JobLevelCostAllocationConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_job_level_cost_allocation_configuration(input);
+        self
+    }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn get_job_level_cost_allocation_configuration(&self) -> &::std::option::Option<crate::types::JobLevelCostAllocationConfiguration> {
+        self.inner.get_job_level_cost_allocation_configuration()
+    }
 }

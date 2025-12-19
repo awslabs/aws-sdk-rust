@@ -35,6 +35,8 @@ pub use crate::types::_job_run_summary::JobRunSummaryBuilder;
 
 pub use crate::types::_application::ApplicationBuilder;
 
+pub use crate::types::_job_level_cost_allocation_configuration::JobLevelCostAllocationConfigurationBuilder;
+
 pub use crate::types::_identity_center_configuration::IdentityCenterConfigurationBuilder;
 
 pub use crate::types::_scheduler_configuration::SchedulerConfigurationBuilder;

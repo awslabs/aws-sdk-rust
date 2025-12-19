@@ -48,5 +48,23 @@ pub fn ser_filters(
         }
         array_14.finish();
     }
+    if let Some(var_16) = &input.subtypes {
+        let mut array_17 = object.key("Subtypes").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_19) = &input.validation_test_types {
+        let mut array_20 = object.key("ValidationTestTypes").start_array();
+        for item_21 in var_19 {
+            {
+                array_20.value().string(item_21.as_str());
+            }
+        }
+        array_20.finish();
+    }
     Ok(())
 }

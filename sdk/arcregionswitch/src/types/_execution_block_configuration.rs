@@ -8,6 +8,8 @@ pub enum ExecutionBlockConfiguration {
     ArcRoutingControlConfig(crate::types::ArcRoutingControlConfiguration),
     /// <p>An Amazon Web Services Lambda execution block.</p>
     CustomActionLambdaConfig(crate::types::CustomActionLambdaConfiguration),
+    /// <p>Configuration for Amazon DocumentDB global clusters used in a Region switch plan.</p>
+    DocumentDbConfig(crate::types::DocumentDbConfiguration),
     /// <p>An EC2 Auto Scaling group execution block.</p>
     Ec2AsgCapacityIncreaseConfig(crate::types::Ec2AsgCapacityIncreaseConfiguration),
     /// <p>The capacity increase specified for the configuration.</p>
@@ -60,6 +62,19 @@ impl ExecutionBlockConfiguration {
     /// Returns true if this is a [`CustomActionLambdaConfig`](crate::types::ExecutionBlockConfiguration::CustomActionLambdaConfig).
     pub fn is_custom_action_lambda_config(&self) -> bool {
         self.as_custom_action_lambda_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`DocumentDbConfig`](crate::types::ExecutionBlockConfiguration::DocumentDbConfig), extracting the inner [`DocumentDbConfiguration`](crate::types::DocumentDbConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_document_db_config(&self) -> ::std::result::Result<&crate::types::DocumentDbConfiguration, &Self> {
+        if let ExecutionBlockConfiguration::DocumentDbConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DocumentDbConfig`](crate::types::ExecutionBlockConfiguration::DocumentDbConfig).
+    pub fn is_document_db_config(&self) -> bool {
+        self.as_document_db_config().is_ok()
     }
     /// Tries to convert the enum instance into [`Ec2AsgCapacityIncreaseConfig`](crate::types::ExecutionBlockConfiguration::Ec2AsgCapacityIncreaseConfig), extracting the inner [`Ec2AsgCapacityIncreaseConfiguration`](crate::types::Ec2AsgCapacityIncreaseConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -25,6 +25,7 @@
 ///     ExecutionEventType::ExecutionStarted => { /* ... */ },
 ///     ExecutionEventType::ExecutionSucceeded => { /* ... */ },
 ///     ExecutionEventType::ExecutionSuccessMonitoringApplicationHealth => { /* ... */ },
+///     ExecutionEventType::PlanEvaluationWarning => { /* ... */ },
 ///     ExecutionEventType::StepCanceled => { /* ... */ },
 ///     ExecutionEventType::StepExecutionBehaviorChangedToUngraceful => { /* ... */ },
 ///     ExecutionEventType::StepFailed => { /* ... */ },
@@ -93,6 +94,8 @@ pub enum ExecutionEventType {
     #[allow(missing_docs)] // documentation missing in model
     ExecutionSuccessMonitoringApplicationHealth,
     #[allow(missing_docs)] // documentation missing in model
+    PlanEvaluationWarning,
+    #[allow(missing_docs)] // documentation missing in model
     StepCanceled,
     #[allow(missing_docs)] // documentation missing in model
     StepExecutionBehaviorChangedToUngraceful,
@@ -137,6 +140,7 @@ impl ::std::convert::From<&str> for ExecutionEventType {
             "executionStarted" => ExecutionEventType::ExecutionStarted,
             "executionSucceeded" => ExecutionEventType::ExecutionSucceeded,
             "executionSuccessMonitoringApplicationHealth" => ExecutionEventType::ExecutionSuccessMonitoringApplicationHealth,
+            "planEvaluationWarning" => ExecutionEventType::PlanEvaluationWarning,
             "stepCanceled" => ExecutionEventType::StepCanceled,
             "stepExecutionBehaviorChangedToUngraceful" => ExecutionEventType::StepExecutionBehaviorChangedToUngraceful,
             "stepFailed" => ExecutionEventType::StepFailed,
@@ -177,6 +181,7 @@ impl ExecutionEventType {
             ExecutionEventType::ExecutionStarted => "executionStarted",
             ExecutionEventType::ExecutionSucceeded => "executionSucceeded",
             ExecutionEventType::ExecutionSuccessMonitoringApplicationHealth => "executionSuccessMonitoringApplicationHealth",
+            ExecutionEventType::PlanEvaluationWarning => "planEvaluationWarning",
             ExecutionEventType::StepCanceled => "stepCanceled",
             ExecutionEventType::StepExecutionBehaviorChangedToUngraceful => "stepExecutionBehaviorChangedToUngraceful",
             ExecutionEventType::StepFailed => "stepFailed",
@@ -208,6 +213,7 @@ impl ExecutionEventType {
             "executionStarted",
             "executionSucceeded",
             "executionSuccessMonitoringApplicationHealth",
+            "planEvaluationWarning",
             "stepCanceled",
             "stepExecutionBehaviorChangedToUngraceful",
             "stepFailed",
@@ -256,6 +262,7 @@ impl ::std::fmt::Display for ExecutionEventType {
             ExecutionEventType::ExecutionStarted => write!(f, "executionStarted"),
             ExecutionEventType::ExecutionSucceeded => write!(f, "executionSucceeded"),
             ExecutionEventType::ExecutionSuccessMonitoringApplicationHealth => write!(f, "executionSuccessMonitoringApplicationHealth"),
+            ExecutionEventType::PlanEvaluationWarning => write!(f, "planEvaluationWarning"),
             ExecutionEventType::StepCanceled => write!(f, "stepCanceled"),
             ExecutionEventType::StepExecutionBehaviorChangedToUngraceful => write!(f, "stepExecutionBehaviorChangedToUngraceful"),
             ExecutionEventType::StepFailed => write!(f, "stepFailed"),

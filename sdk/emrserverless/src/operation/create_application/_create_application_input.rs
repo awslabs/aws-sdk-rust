@@ -40,6 +40,8 @@ pub struct CreateApplicationInput {
     pub scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
     /// <p>The IAM Identity Center Configuration accepts the Identity Center instance parameter required to enable trusted identity propagation. This configuration allows identity propagation between integrated services and the Identity Center instance.</p>
     pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfigurationInput>,
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub job_level_cost_allocation_configuration: ::std::option::Option<crate::types::JobLevelCostAllocationConfiguration>,
 }
 impl CreateApplicationInput {
     /// <p>The name of the application.</p>
@@ -120,6 +122,10 @@ impl CreateApplicationInput {
     pub fn identity_center_configuration(&self) -> ::std::option::Option<&crate::types::IdentityCenterConfigurationInput> {
         self.identity_center_configuration.as_ref()
     }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn job_level_cost_allocation_configuration(&self) -> ::std::option::Option<&crate::types::JobLevelCostAllocationConfiguration> {
+        self.job_level_cost_allocation_configuration.as_ref()
+    }
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
@@ -151,6 +157,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
     pub(crate) scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
     pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfigurationInput>,
+    pub(crate) job_level_cost_allocation_configuration: ::std::option::Option<crate::types::JobLevelCostAllocationConfiguration>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application.</p>
@@ -446,6 +453,23 @@ impl CreateApplicationInputBuilder {
     pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfigurationInput> {
         &self.identity_center_configuration
     }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn job_level_cost_allocation_configuration(mut self, input: crate::types::JobLevelCostAllocationConfiguration) -> Self {
+        self.job_level_cost_allocation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn set_job_level_cost_allocation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::JobLevelCostAllocationConfiguration>,
+    ) -> Self {
+        self.job_level_cost_allocation_configuration = input;
+        self
+    }
+    /// <p>The configuration object that enables job level cost allocation.</p>
+    pub fn get_job_level_cost_allocation_configuration(&self) -> &::std::option::Option<crate::types::JobLevelCostAllocationConfiguration> {
+        &self.job_level_cost_allocation_configuration
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -469,6 +493,7 @@ impl CreateApplicationInputBuilder {
             interactive_configuration: self.interactive_configuration,
             scheduler_configuration: self.scheduler_configuration,
             identity_center_configuration: self.identity_center_configuration,
+            job_level_cost_allocation_configuration: self.job_level_cost_allocation_configuration,
         })
     }
 }

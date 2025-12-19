@@ -211,6 +211,20 @@ impl CreatePlanFluentBuilder {
     pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trigger>> {
         self.inner.get_triggers()
     }
+    /// <p>Configuration for automatic report generation for plan executions. When configured, Region switch automatically generates a report after each plan execution that includes execution events, plan configuration, and CloudWatch alarm states.</p>
+    pub fn report_configuration(mut self, input: crate::types::ReportConfiguration) -> Self {
+        self.inner = self.inner.report_configuration(input);
+        self
+    }
+    /// <p>Configuration for automatic report generation for plan executions. When configured, Region switch automatically generates a report after each plan execution that includes execution events, plan configuration, and CloudWatch alarm states.</p>
+    pub fn set_report_configuration(mut self, input: ::std::option::Option<crate::types::ReportConfiguration>) -> Self {
+        self.inner = self.inner.set_report_configuration(input);
+        self
+    }
+    /// <p>Configuration for automatic report generation for plan executions. When configured, Region switch automatically generates a report after each plan execution that includes execution events, plan configuration, and CloudWatch alarm states.</p>
+    pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ReportConfiguration> {
+        self.inner.get_report_configuration()
+    }
     /// <p>The name of a Region switch plan.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

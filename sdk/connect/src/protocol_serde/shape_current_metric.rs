@@ -6,8 +6,11 @@ pub fn ser_current_metric(
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.unit {
-        object.key("Unit").string(var_2.as_str());
+    if let Some(var_2) = &input.metric_id {
+        object.key("MetricId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.unit {
+        object.key("Unit").string(var_3.as_str());
     }
     Ok(())
 }
@@ -31,6 +34,13 @@ where
                             builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CurrentMetricName::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "MetricId" => {
+                            builder = builder.set_metric_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

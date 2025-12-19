@@ -34,6 +34,8 @@ pub struct UserSettings {
     pub toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
     /// <p>The branding configuration output that customizes the appearance of the web portal for end users.</p>
     pub branding_configuration: ::std::option::Option<crate::types::BrandingConfiguration>,
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub web_authn_allowed: ::std::option::Option<crate::types::EnabledType>,
 }
 impl UserSettings {
     /// <p>The ARN of the user settings.</p>
@@ -99,6 +101,10 @@ impl UserSettings {
     pub fn branding_configuration(&self) -> ::std::option::Option<&crate::types::BrandingConfiguration> {
         self.branding_configuration.as_ref()
     }
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub fn web_authn_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+        self.web_authn_allowed.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UserSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -118,6 +124,7 @@ impl ::std::fmt::Debug for UserSettings {
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.field("toolbar_configuration", &self.toolbar_configuration);
         formatter.field("branding_configuration", &self.branding_configuration);
+        formatter.field("web_authn_allowed", &self.web_authn_allowed);
         formatter.finish()
     }
 }
@@ -147,6 +154,7 @@ pub struct UserSettingsBuilder {
     pub(crate) deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
     pub(crate) toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
     pub(crate) branding_configuration: ::std::option::Option<crate::types::BrandingConfiguration>,
+    pub(crate) web_authn_allowed: ::std::option::Option<crate::types::EnabledType>,
 }
 impl UserSettingsBuilder {
     /// <p>The ARN of the user settings.</p>
@@ -384,6 +392,20 @@ impl UserSettingsBuilder {
     pub fn get_branding_configuration(&self) -> &::std::option::Option<crate::types::BrandingConfiguration> {
         &self.branding_configuration
     }
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub fn web_authn_allowed(mut self, input: crate::types::EnabledType) -> Self {
+        self.web_authn_allowed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub fn set_web_authn_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.web_authn_allowed = input;
+        self
+    }
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub fn get_web_authn_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        &self.web_authn_allowed
+    }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_settings_arn`](crate::types::builders::UserSettingsBuilder::user_settings_arn)
@@ -409,6 +431,7 @@ impl UserSettingsBuilder {
             deep_link_allowed: self.deep_link_allowed,
             toolbar_configuration: self.toolbar_configuration,
             branding_configuration: self.branding_configuration,
+            web_authn_allowed: self.web_authn_allowed,
         })
     }
 }
@@ -430,6 +453,7 @@ impl ::std::fmt::Debug for UserSettingsBuilder {
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.field("toolbar_configuration", &self.toolbar_configuration);
         formatter.field("branding_configuration", &self.branding_configuration);
+        formatter.field("web_authn_allowed", &self.web_authn_allowed);
         formatter.finish()
     }
 }

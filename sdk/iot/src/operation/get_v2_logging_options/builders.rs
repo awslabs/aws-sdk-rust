@@ -109,4 +109,18 @@ impl GetV2LoggingOptionsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The flag is used to get all the event types and their respective configuration that event-based logging supports.</p>
+    pub fn verbose(mut self, input: bool) -> Self {
+        self.inner = self.inner.verbose(input);
+        self
+    }
+    /// <p>The flag is used to get all the event types and their respective configuration that event-based logging supports.</p>
+    pub fn set_verbose(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_verbose(input);
+        self
+    }
+    /// <p>The flag is used to get all the event types and their respective configuration that event-based logging supports.</p>
+    pub fn get_verbose(&self) -> &::std::option::Option<bool> {
+        self.inner.get_verbose()
+    }
 }

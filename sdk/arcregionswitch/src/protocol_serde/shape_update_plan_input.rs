@@ -44,6 +44,10 @@ pub fn ser_update_plan_input_input(
             }
         }
     }
+    if let Some(var_12) = &input.report_configuration {
+        encoder.str("reportConfiguration");
+        crate::protocol_serde::shape_report_configuration::ser_report_configuration(encoder, var_12)?;
+    }
     encoder.end();
     Ok(())
 }

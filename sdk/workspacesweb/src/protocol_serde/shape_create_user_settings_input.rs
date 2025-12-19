@@ -79,5 +79,8 @@ pub fn ser_create_user_settings_input_input(
     if let Some(var_24) = &input.upload_allowed {
         object.key("uploadAllowed").string(var_24.as_str());
     }
+    if let Some(var_25) = &input.web_authn_allowed {
+        object.key("webAuthnAllowed").string(var_25.as_str());
+    }
     Ok(())
 }

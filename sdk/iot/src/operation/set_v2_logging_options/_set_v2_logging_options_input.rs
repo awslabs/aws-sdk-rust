@@ -9,6 +9,8 @@ pub struct SetV2LoggingOptionsInput {
     pub default_log_level: ::std::option::Option<crate::types::LogLevel>,
     /// <p>If true all logs are disabled. The default is false.</p>
     pub disable_all_logs: ::std::option::Option<bool>,
+    /// <p>The list of event configurations that override account-level logging.</p>
+    pub event_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogEventConfiguration>>,
 }
 impl SetV2LoggingOptionsInput {
     /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
@@ -22,6 +24,12 @@ impl SetV2LoggingOptionsInput {
     /// <p>If true all logs are disabled. The default is false.</p>
     pub fn disable_all_logs(&self) -> ::std::option::Option<bool> {
         self.disable_all_logs
+    }
+    /// <p>The list of event configurations that override account-level logging.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_configurations.is_none()`.
+    pub fn event_configurations(&self) -> &[crate::types::LogEventConfiguration] {
+        self.event_configurations.as_deref().unwrap_or_default()
     }
 }
 impl SetV2LoggingOptionsInput {
@@ -38,6 +46,7 @@ pub struct SetV2LoggingOptionsInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_log_level: ::std::option::Option<crate::types::LogLevel>,
     pub(crate) disable_all_logs: ::std::option::Option<bool>,
+    pub(crate) event_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogEventConfiguration>>,
 }
 impl SetV2LoggingOptionsInputBuilder {
     /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
@@ -82,6 +91,26 @@ impl SetV2LoggingOptionsInputBuilder {
     pub fn get_disable_all_logs(&self) -> &::std::option::Option<bool> {
         &self.disable_all_logs
     }
+    /// Appends an item to `event_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_event_configurations`](Self::set_event_configurations).
+    ///
+    /// <p>The list of event configurations that override account-level logging.</p>
+    pub fn event_configurations(mut self, input: crate::types::LogEventConfiguration) -> Self {
+        let mut v = self.event_configurations.unwrap_or_default();
+        v.push(input);
+        self.event_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of event configurations that override account-level logging.</p>
+    pub fn set_event_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogEventConfiguration>>) -> Self {
+        self.event_configurations = input;
+        self
+    }
+    /// <p>The list of event configurations that override account-level logging.</p>
+    pub fn get_event_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogEventConfiguration>> {
+        &self.event_configurations
+    }
     /// Consumes the builder and constructs a [`SetV2LoggingOptionsInput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput).
     pub fn build(
         self,
@@ -91,6 +120,7 @@ impl SetV2LoggingOptionsInputBuilder {
             role_arn: self.role_arn,
             default_log_level: self.default_log_level,
             disable_all_logs: self.disable_all_logs,
+            event_configurations: self.event_configurations,
         })
     }
 }

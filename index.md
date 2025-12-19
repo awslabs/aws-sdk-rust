@@ -171,6 +171,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS WAF Regional | [aws-sdk-wafregional](https://crates.io/crates/aws-sdk-wafregional) ([docs](https://docs.rs/aws-sdk-wafregional)) |
 | AWS WAFV2 | [aws-sdk-wafv2](https://crates.io/crates/aws-sdk-wafv2) ([docs](https://docs.rs/aws-sdk-wafv2)) |
 | AWS Well-Architected Tool | [aws-sdk-wellarchitected](https://crates.io/crates/aws-sdk-wellarchitected) ([docs](https://docs.rs/aws-sdk-wellarchitected)) |
+| AWS Wickr Admin API | [aws-sdk-wickr](https://crates.io/crates/aws-sdk-wickr) ([docs](https://docs.rs/aws-sdk-wickr)) |
 | AWS X-Ray | [aws-sdk-xray](https://crates.io/crates/aws-sdk-xray) ([docs](https://docs.rs/aws-sdk-xray)) |
 | AWS re:Post Private | [aws-sdk-repostspace](https://crates.io/crates/aws-sdk-repostspace) ([docs](https://docs.rs/aws-sdk-repostspace)) |
 | AWSBillingConductor | [aws-sdk-billingconductor](https://crates.io/crates/aws-sdk-billingconductor) ([docs](https://docs.rs/aws-sdk-billingconductor)) |

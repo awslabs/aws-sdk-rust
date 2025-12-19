@@ -3,6 +3,12 @@ pub use crate::types::_plan::Plan;
 
 pub use crate::types::_recovery_approach::RecoveryApproach;
 
+pub use crate::types::_report_configuration::ReportConfiguration;
+
+pub use crate::types::_report_output_configuration::ReportOutputConfiguration;
+
+pub use crate::types::_s3_report_output_configuration::S3ReportOutputConfiguration;
+
 pub use crate::types::_trigger::Trigger;
 
 pub use crate::types::_trigger_condition::TriggerCondition;
@@ -22,6 +28,14 @@ pub use crate::types::_step::Step;
 pub use crate::types::_execution_block_type::ExecutionBlockType;
 
 pub use crate::types::_execution_block_configuration::ExecutionBlockConfiguration;
+
+pub use crate::types::_document_db_configuration::DocumentDbConfiguration;
+
+pub use crate::types::_document_db_ungraceful::DocumentDbUngraceful;
+
+pub use crate::types::_document_db_ungraceful_behavior::DocumentDbUngracefulBehavior;
+
+pub use crate::types::_document_db_default_behavior::DocumentDbDefaultBehavior;
 
 pub use crate::types::_route53_health_check_configuration::Route53HealthCheckConfiguration;
 
@@ -107,6 +121,16 @@ pub use crate::types::_execution_event::ExecutionEvent;
 
 pub use crate::types::_execution_event_type::ExecutionEventType;
 
+pub use crate::types::_generated_report::GeneratedReport;
+
+pub use crate::types::_report_output::ReportOutput;
+
+pub use crate::types::_failed_report_output::FailedReportOutput;
+
+pub use crate::types::_failed_report_error_code::FailedReportErrorCode;
+
+pub use crate::types::_s3_report_output::S3ReportOutput;
+
 pub use crate::types::_step_state::StepState;
 
 pub use crate::types::_step_status::StepStatus;
@@ -140,6 +164,14 @@ mod _asg;
 mod _associated_alarm;
 
 mod _custom_action_lambda_configuration;
+
+mod _document_db_configuration;
+
+mod _document_db_default_behavior;
+
+mod _document_db_ungraceful;
+
+mod _document_db_ungraceful_behavior;
 
 mod _ec2_asg_capacity_increase_configuration;
 
@@ -179,6 +211,12 @@ mod _execution_mode;
 
 mod _execution_state;
 
+mod _failed_report_error_code;
+
+mod _failed_report_output;
+
+mod _generated_report;
+
 mod _global_aurora_configuration;
 
 mod _global_aurora_default_behavior;
@@ -209,6 +247,12 @@ mod _region_switch_plan_configuration;
 
 mod _region_to_run_in;
 
+mod _report_configuration;
+
+mod _report_output;
+
+mod _report_output_configuration;
+
 mod _resource_warning;
 
 mod _resource_warning_status;
@@ -222,6 +266,10 @@ mod _route53_health_check_status;
 mod _route53_resource_record_set;
 
 mod _routing_control_state_change;
+
+mod _s3_report_output;
+
+mod _s3_report_output_configuration;
 
 mod _service;
 

@@ -31,6 +31,8 @@ pub struct GetPlanExecutionOutput {
     pub plan: ::std::option::Option<crate::types::Plan>,
     /// <p>The actual recovery time that Region switch calculates for a plan execution. Actual recovery time includes the time for the plan to run added to the time elapsed until the application health alarms that you've specified are healthy again.</p>
     pub actual_recovery_time: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the location of a generated report, or the cause of its failure.</p>
+    pub generated_report_details: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedReport>>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>nextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>nextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -97,6 +99,12 @@ impl GetPlanExecutionOutput {
     pub fn actual_recovery_time(&self) -> ::std::option::Option<&str> {
         self.actual_recovery_time.as_deref()
     }
+    /// <p>Information about the location of a generated report, or the cause of its failure.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.generated_report_details.is_none()`.
+    pub fn generated_report_details(&self) -> &[crate::types::GeneratedReport] {
+        self.generated_report_details.as_deref().unwrap_or_default()
+    }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>nextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>nextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -132,6 +140,7 @@ pub struct GetPlanExecutionOutputBuilder {
     pub(crate) step_states: ::std::option::Option<::std::vec::Vec<crate::types::StepState>>,
     pub(crate) plan: ::std::option::Option<crate::types::Plan>,
     pub(crate) actual_recovery_time: ::std::option::Option<::std::string::String>,
+    pub(crate) generated_report_details: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedReport>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -345,6 +354,26 @@ impl GetPlanExecutionOutputBuilder {
     pub fn get_actual_recovery_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.actual_recovery_time
     }
+    /// Appends an item to `generated_report_details`.
+    ///
+    /// To override the contents of this collection use [`set_generated_report_details`](Self::set_generated_report_details).
+    ///
+    /// <p>Information about the location of a generated report, or the cause of its failure.</p>
+    pub fn generated_report_details(mut self, input: crate::types::GeneratedReport) -> Self {
+        let mut v = self.generated_report_details.unwrap_or_default();
+        v.push(input);
+        self.generated_report_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the location of a generated report, or the cause of its failure.</p>
+    pub fn set_generated_report_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedReport>>) -> Self {
+        self.generated_report_details = input;
+        self
+    }
+    /// <p>Information about the location of a generated report, or the cause of its failure.</p>
+    pub fn get_generated_report_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeneratedReport>> {
+        &self.generated_report_details
+    }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>nextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>nextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -430,6 +459,7 @@ impl GetPlanExecutionOutputBuilder {
             step_states: self.step_states,
             plan: self.plan,
             actual_recovery_time: self.actual_recovery_time,
+            generated_report_details: self.generated_report_details,
             next_token: self.next_token,
             _request_id: self._request_id,
         })

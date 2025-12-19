@@ -279,6 +279,21 @@ pub(crate) fn custom_action_lambda_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn document_db_configuration_correct_errors(
+    mut builder: crate::types::builders::DocumentDbConfigurationBuilder,
+) -> crate::types::builders::DocumentDbConfigurationBuilder {
+    if builder.behavior.is_none() {
+        builder.behavior = "no value was set".parse::<crate::types::DocumentDbDefaultBehavior>().ok()
+    }
+    if builder.global_cluster_identifier.is_none() {
+        builder.global_cluster_identifier = Some(Default::default())
+    }
+    if builder.database_cluster_arns.is_none() {
+        builder.database_cluster_arns = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ec2_asg_capacity_increase_configuration_correct_errors(
     mut builder: crate::types::builders::Ec2AsgCapacityIncreaseConfigurationBuilder,
 ) -> crate::types::builders::Ec2AsgCapacityIncreaseConfigurationBuilder {

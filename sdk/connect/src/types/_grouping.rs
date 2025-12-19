@@ -17,6 +17,8 @@
 ///     Grouping::Queue => { /* ... */ },
 ///     Grouping::RoutingProfile => { /* ... */ },
 ///     Grouping::RoutingStepExpression => { /* ... */ },
+///     Grouping::Subtype => { /* ... */ },
+///     Grouping::ValidationTestType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +57,10 @@ pub enum Grouping {
     RoutingProfile,
     #[allow(missing_docs)] // documentation missing in model
     RoutingStepExpression,
+    #[allow(missing_docs)] // documentation missing in model
+    Subtype,
+    #[allow(missing_docs)] // documentation missing in model
+    ValidationTestType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +73,8 @@ impl ::std::convert::From<&str> for Grouping {
             "QUEUE" => Grouping::Queue,
             "ROUTING_PROFILE" => Grouping::RoutingProfile,
             "ROUTING_STEP_EXPRESSION" => Grouping::RoutingStepExpression,
+            "SUBTYPE" => Grouping::Subtype,
+            "VALIDATION_TEST_TYPE" => Grouping::ValidationTestType,
             other => Grouping::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,12 +95,22 @@ impl Grouping {
             Grouping::Queue => "QUEUE",
             Grouping::RoutingProfile => "ROUTING_PROFILE",
             Grouping::RoutingStepExpression => "ROUTING_STEP_EXPRESSION",
+            Grouping::Subtype => "SUBTYPE",
+            Grouping::ValidationTestType => "VALIDATION_TEST_TYPE",
             Grouping::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGENT_STATUS", "CHANNEL", "QUEUE", "ROUTING_PROFILE", "ROUTING_STEP_EXPRESSION"]
+        &[
+            "AGENT_STATUS",
+            "CHANNEL",
+            "QUEUE",
+            "ROUTING_PROFILE",
+            "ROUTING_STEP_EXPRESSION",
+            "SUBTYPE",
+            "VALIDATION_TEST_TYPE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for Grouping {
@@ -120,6 +138,8 @@ impl ::std::fmt::Display for Grouping {
             Grouping::Queue => write!(f, "QUEUE"),
             Grouping::RoutingProfile => write!(f, "ROUTING_PROFILE"),
             Grouping::RoutingStepExpression => write!(f, "ROUTING_STEP_EXPRESSION"),
+            Grouping::Subtype => write!(f, "SUBTYPE"),
+            Grouping::ValidationTestType => write!(f, "VALIDATION_TEST_TYPE"),
             Grouping::Unknown(value) => write!(f, "{value}"),
         }
     }

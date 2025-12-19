@@ -151,4 +151,23 @@ impl SetV2LoggingOptionsFluentBuilder {
     pub fn get_disable_all_logs(&self) -> &::std::option::Option<bool> {
         self.inner.get_disable_all_logs()
     }
+    ///
+    /// Appends an item to `eventConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_event_configurations`](Self::set_event_configurations).
+    ///
+    /// <p>The list of event configurations that override account-level logging.</p>
+    pub fn event_configurations(mut self, input: crate::types::LogEventConfiguration) -> Self {
+        self.inner = self.inner.event_configurations(input);
+        self
+    }
+    /// <p>The list of event configurations that override account-level logging.</p>
+    pub fn set_event_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogEventConfiguration>>) -> Self {
+        self.inner = self.inner.set_event_configurations(input);
+        self
+    }
+    /// <p>The list of event configurations that override account-level logging.</p>
+    pub fn get_event_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogEventConfiguration>> {
+        self.inner.get_event_configurations()
+    }
 }

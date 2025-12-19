@@ -14,7 +14,7 @@ pub struct StartOutboundChatContactInput {
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
     /// <li>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code> and <code>connect:SMS</code>.</p></li>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:SMS</code> and <code>connect:WhatsApp</code>.</p></li>
     /// </ul>
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
@@ -56,7 +56,7 @@ pub struct StartOutboundChatContactInput {
     /// <p><code>\[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response\]</code></p></li>
     /// </ul>
     pub supported_messaging_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartOutboundChatContactInput {
@@ -77,7 +77,7 @@ impl StartOutboundChatContactInput {
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
     /// <li>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code> and <code>connect:SMS</code>.</p></li>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:SMS</code> and <code>connect:WhatsApp</code>.</p></li>
     /// </ul>
     pub fn segment_attributes(
         &self,
@@ -141,7 +141,7 @@ impl StartOutboundChatContactInput {
     pub fn supported_messaging_content_types(&self) -> &[::std::string::String] {
         self.supported_messaging_content_types.as_deref().unwrap_or_default()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -226,7 +226,7 @@ impl StartOutboundChatContactInputBuilder {
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
     /// <li>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code> and <code>connect:SMS</code>.</p></li>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:SMS</code> and <code>connect:WhatsApp</code>.</p></li>
     /// </ul>
     pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
         let mut hash_map = self.segment_attributes.unwrap_or_default();
@@ -239,7 +239,7 @@ impl StartOutboundChatContactInputBuilder {
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
     /// <li>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code> and <code>connect:SMS</code>.</p></li>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:SMS</code> and <code>connect:WhatsApp</code>.</p></li>
     /// </ul>
     pub fn set_segment_attributes(
         mut self,
@@ -253,7 +253,7 @@ impl StartOutboundChatContactInputBuilder {
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
     /// <li>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code> and <code>connect:SMS</code>.</p></li>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:SMS</code> and <code>connect:WhatsApp</code>.</p></li>
     /// </ul>
     pub fn get_segment_attributes(
         &self,
@@ -454,17 +454,17 @@ impl StartOutboundChatContactInputBuilder {
     pub fn get_supported_messaging_content_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_messaging_content_types
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

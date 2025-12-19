@@ -113,6 +113,11 @@ pub(crate) fn de_get_v2_logging_options(
                 "disableAllLogs" => {
                     builder = builder.set_disable_all_logs(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "eventConfigurations" => {
+                    builder = builder.set_event_configurations(crate::protocol_serde::shape_log_event_configurations::de_log_event_configurations(
+                        tokens,
+                    )?);
+                }
                 "roleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

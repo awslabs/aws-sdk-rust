@@ -17,9 +17,15 @@ pub struct GetCurrentMetricDataInput {
     /// <p>RoutingStepExpressions: 50</p></li>
     /// <li>
     /// <p>AgentStatuses: 50</p></li>
+    /// <li>
+    /// <p>Subtypes: 10</p></li>
+    /// <li>
+    /// <p>ValidationTestTypes: 10</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>When using <code>AgentStatuses</code> as filter make sure Queues is added as primary filter.</p>
+    /// <p>When using <code>Subtypes</code> as filter make sure Queues is added as primary filter.</p>
+    /// <p>When using <code>ValidationTestTypes</code> as filter make sure Queues is added as primary filter.</p>
     /// <p>When using the <code>RoutingStepExpression</code> filter, you need to pass exactly one <code>QueueId</code>. The filter is also case sensitive so when using the <code>RoutingStepExpression</code> filter, grouping by <code>ROUTING_STEP_EXPRESSION</code> is required.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub filters: ::std::option::Option<crate::types::Filters>,
@@ -31,12 +37,16 @@ pub struct GetCurrentMetricDataInput {
     /// <li>
     /// <p>If you group by <code>AGENT_STATUS</code>, you must include the <code>QUEUE</code> as the primary grouping and use queue filter. When you group by <code>AGENT_STATUS</code>, the only metric available is the <code>AGENTS_ONLINE</code> metric.</p></li>
     /// <li>
+    /// <p>If you group by <code>SUBTYPE</code> or <code>VALIDATION_TEST_TYPE</code> as secondary grouping then you must include <code>QUEUE</code> as primary grouping and use Queue as filter</p></li>
+    /// <li>
     /// <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
     /// <li>
     /// <p>When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is required.</p></li>
     /// </ul>
     pub groupings: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>,
-    /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The metrics to retrieve. Specify the name or metricId, and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
+    /// <p>MetricId should be used to reference custom metrics or out of the box metrics as Arn. If using MetricId, the limit is 10 MetricId per request.</p>
+    /// </note>
     /// <dl>
     /// <dt>
     /// AGENTS_AFTER_CONTACT_WORK
@@ -166,9 +176,15 @@ impl GetCurrentMetricDataInput {
     /// <p>RoutingStepExpressions: 50</p></li>
     /// <li>
     /// <p>AgentStatuses: 50</p></li>
+    /// <li>
+    /// <p>Subtypes: 10</p></li>
+    /// <li>
+    /// <p>ValidationTestTypes: 10</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>When using <code>AgentStatuses</code> as filter make sure Queues is added as primary filter.</p>
+    /// <p>When using <code>Subtypes</code> as filter make sure Queues is added as primary filter.</p>
+    /// <p>When using <code>ValidationTestTypes</code> as filter make sure Queues is added as primary filter.</p>
     /// <p>When using the <code>RoutingStepExpression</code> filter, you need to pass exactly one <code>QueueId</code>. The filter is also case sensitive so when using the <code>RoutingStepExpression</code> filter, grouping by <code>ROUTING_STEP_EXPRESSION</code> is required.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::Filters> {
@@ -182,6 +198,8 @@ impl GetCurrentMetricDataInput {
     /// <li>
     /// <p>If you group by <code>AGENT_STATUS</code>, you must include the <code>QUEUE</code> as the primary grouping and use queue filter. When you group by <code>AGENT_STATUS</code>, the only metric available is the <code>AGENTS_ONLINE</code> metric.</p></li>
     /// <li>
+    /// <p>If you group by <code>SUBTYPE</code> or <code>VALIDATION_TEST_TYPE</code> as secondary grouping then you must include <code>QUEUE</code> as primary grouping and use Queue as filter</p></li>
+    /// <li>
     /// <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
     /// <li>
     /// <p>When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is required.</p></li>
@@ -191,7 +209,9 @@ impl GetCurrentMetricDataInput {
     pub fn groupings(&self) -> &[crate::types::Grouping] {
         self.groupings.as_deref().unwrap_or_default()
     }
-    /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The metrics to retrieve. Specify the name or metricId, and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
+    /// <p>MetricId should be used to reference custom metrics or out of the box metrics as Arn. If using MetricId, the limit is 10 MetricId per request.</p>
+    /// </note>
     /// <dl>
     /// <dt>
     /// AGENTS_AFTER_CONTACT_WORK
@@ -363,9 +383,15 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>RoutingStepExpressions: 50</p></li>
     /// <li>
     /// <p>AgentStatuses: 50</p></li>
+    /// <li>
+    /// <p>Subtypes: 10</p></li>
+    /// <li>
+    /// <p>ValidationTestTypes: 10</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>When using <code>AgentStatuses</code> as filter make sure Queues is added as primary filter.</p>
+    /// <p>When using <code>Subtypes</code> as filter make sure Queues is added as primary filter.</p>
+    /// <p>When using <code>ValidationTestTypes</code> as filter make sure Queues is added as primary filter.</p>
     /// <p>When using the <code>RoutingStepExpression</code> filter, you need to pass exactly one <code>QueueId</code>. The filter is also case sensitive so when using the <code>RoutingStepExpression</code> filter, grouping by <code>ROUTING_STEP_EXPRESSION</code> is required.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     /// This field is required.
@@ -385,9 +411,15 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>RoutingStepExpressions: 50</p></li>
     /// <li>
     /// <p>AgentStatuses: 50</p></li>
+    /// <li>
+    /// <p>Subtypes: 10</p></li>
+    /// <li>
+    /// <p>ValidationTestTypes: 10</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>When using <code>AgentStatuses</code> as filter make sure Queues is added as primary filter.</p>
+    /// <p>When using <code>Subtypes</code> as filter make sure Queues is added as primary filter.</p>
+    /// <p>When using <code>ValidationTestTypes</code> as filter make sure Queues is added as primary filter.</p>
     /// <p>When using the <code>RoutingStepExpression</code> filter, you need to pass exactly one <code>QueueId</code>. The filter is also case sensitive so when using the <code>RoutingStepExpression</code> filter, grouping by <code>ROUTING_STEP_EXPRESSION</code> is required.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::Filters>) -> Self {
@@ -406,9 +438,15 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>RoutingStepExpressions: 50</p></li>
     /// <li>
     /// <p>AgentStatuses: 50</p></li>
+    /// <li>
+    /// <p>Subtypes: 10</p></li>
+    /// <li>
+    /// <p>ValidationTestTypes: 10</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>When using <code>AgentStatuses</code> as filter make sure Queues is added as primary filter.</p>
+    /// <p>When using <code>Subtypes</code> as filter make sure Queues is added as primary filter.</p>
+    /// <p>When using <code>ValidationTestTypes</code> as filter make sure Queues is added as primary filter.</p>
     /// <p>When using the <code>RoutingStepExpression</code> filter, you need to pass exactly one <code>QueueId</code>. The filter is also case sensitive so when using the <code>RoutingStepExpression</code> filter, grouping by <code>ROUTING_STEP_EXPRESSION</code> is required.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::Filters> {
@@ -425,6 +463,8 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
     /// <li>
     /// <p>If you group by <code>AGENT_STATUS</code>, you must include the <code>QUEUE</code> as the primary grouping and use queue filter. When you group by <code>AGENT_STATUS</code>, the only metric available is the <code>AGENTS_ONLINE</code> metric.</p></li>
+    /// <li>
+    /// <p>If you group by <code>SUBTYPE</code> or <code>VALIDATION_TEST_TYPE</code> as secondary grouping then you must include <code>QUEUE</code> as primary grouping and use Queue as filter</p></li>
     /// <li>
     /// <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
     /// <li>
@@ -444,6 +484,8 @@ impl GetCurrentMetricDataInputBuilder {
     /// <li>
     /// <p>If you group by <code>AGENT_STATUS</code>, you must include the <code>QUEUE</code> as the primary grouping and use queue filter. When you group by <code>AGENT_STATUS</code>, the only metric available is the <code>AGENTS_ONLINE</code> metric.</p></li>
     /// <li>
+    /// <p>If you group by <code>SUBTYPE</code> or <code>VALIDATION_TEST_TYPE</code> as secondary grouping then you must include <code>QUEUE</code> as primary grouping and use Queue as filter</p></li>
+    /// <li>
     /// <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
     /// <li>
     /// <p>When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is required.</p></li>
@@ -460,6 +502,8 @@ impl GetCurrentMetricDataInputBuilder {
     /// <li>
     /// <p>If you group by <code>AGENT_STATUS</code>, you must include the <code>QUEUE</code> as the primary grouping and use queue filter. When you group by <code>AGENT_STATUS</code>, the only metric available is the <code>AGENTS_ONLINE</code> metric.</p></li>
     /// <li>
+    /// <p>If you group by <code>SUBTYPE</code> or <code>VALIDATION_TEST_TYPE</code> as secondary grouping then you must include <code>QUEUE</code> as primary grouping and use Queue as filter</p></li>
+    /// <li>
     /// <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
     /// <li>
     /// <p>When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is required.</p></li>
@@ -471,7 +515,9 @@ impl GetCurrentMetricDataInputBuilder {
     ///
     /// To override the contents of this collection use [`set_current_metrics`](Self::set_current_metrics).
     ///
-    /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The metrics to retrieve. Specify the name or metricId, and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
+    /// <p>MetricId should be used to reference custom metrics or out of the box metrics as Arn. If using MetricId, the limit is 10 MetricId per request.</p>
+    /// </note>
     /// <dl>
     /// <dt>
     /// AGENTS_AFTER_CONTACT_WORK
@@ -576,7 +622,9 @@ impl GetCurrentMetricDataInputBuilder {
         self.current_metrics = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The metrics to retrieve. Specify the name or metricId, and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
+    /// <p>MetricId should be used to reference custom metrics or out of the box metrics as Arn. If using MetricId, the limit is 10 MetricId per request.</p>
+    /// </note>
     /// <dl>
     /// <dt>
     /// AGENTS_AFTER_CONTACT_WORK
@@ -679,7 +727,9 @@ impl GetCurrentMetricDataInputBuilder {
         self.current_metrics = input;
         self
     }
-    /// <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The metrics to retrieve. Specify the name or metricId, and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><note>
+    /// <p>MetricId should be used to reference custom metrics or out of the box metrics as Arn. If using MetricId, the limit is 10 MetricId per request.</p>
+    /// </note>
     /// <dl>
     /// <dt>
     /// AGENTS_AFTER_CONTACT_WORK

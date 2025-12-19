@@ -2,11 +2,13 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetV2LoggingOptions`](crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsFluentBuilder) operation.
     ///
-    /// - The fluent builder takes no input, just [`send`](crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsFluentBuilder::send) it.
+    /// - The fluent builder is configurable:
+    ///   - [`verbose(bool)`](crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsFluentBuilder::verbose) / [`set_verbose(Option<bool>)`](crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsFluentBuilder::set_verbose):<br>required: **false**<br><p>The flag is used to get all the event types and their respective configuration that event-based logging supports.</p><br>
     /// - On success, responds with [`GetV2LoggingOptionsOutput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput) with field(s):
     ///   - [`role_arn(Option<String>)`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput::role_arn): <p>The IAM role ARN IoT uses to write to your CloudWatch logs.</p>
     ///   - [`default_log_level(Option<LogLevel>)`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput::default_log_level): <p>The default log level.</p>
     ///   - [`disable_all_logs(bool)`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput::disable_all_logs): <p>Disables all logs.</p>
+    ///   - [`event_configurations(Option<Vec::<LogEventConfiguration>>)`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput::event_configurations): <p>The list of event configurations that override account-level logging.</p>
     /// - On failure, responds with [`SdkError<GetV2LoggingOptionsError>`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsError)
     pub fn get_v2_logging_options(&self) -> crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsFluentBuilder {
         crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsFluentBuilder::new(self.handle.clone())

@@ -45,6 +45,10 @@ pub fn ser_execution_block_configuration(
             encoder.str("route53HealthCheckConfig");
             crate::protocol_serde::shape_route53_health_check_configuration::ser_route53_health_check_configuration(encoder, inner)?;
         }
+        crate::types::ExecutionBlockConfiguration::DocumentDbConfig(inner) => {
+            encoder.str("documentDbConfig");
+            crate::protocol_serde::shape_document_db_configuration::ser_document_db_configuration(encoder, inner)?;
+        }
         crate::types::ExecutionBlockConfiguration::Unknown => {
             return ::std::result::Result::Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ExecutionBlockConfiguration",
@@ -90,6 +94,9 @@ pub(crate) fn de_execution_block_configuration(
             ),
             "route53HealthCheckConfig" => crate::types::ExecutionBlockConfiguration::Route53HealthCheckConfig(
                 crate::protocol_serde::shape_route53_health_check_configuration::de_route53_health_check_configuration(decoder)?,
+            ),
+            "documentDbConfig" => crate::types::ExecutionBlockConfiguration::DocumentDbConfig(
+                crate::protocol_serde::shape_document_db_configuration::de_document_db_configuration(decoder)?,
             ),
             _ => {
                 decoder.skip()?;

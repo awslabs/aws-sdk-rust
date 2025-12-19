@@ -12,7 +12,7 @@ pub struct WorkspaceSummary {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the workspace was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The AWS Region where the workspace was last modified.</p>
+    /// <p>The Amazon Web Services Region where the workspace was last modified.</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceSummary {
@@ -32,7 +32,7 @@ impl WorkspaceSummary {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>The AWS Region where the workspace was last modified.</p>
+    /// <p>The Amazon Web Services Region where the workspace was last modified.</p>
     pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
         self.last_modified_region.as_deref()
     }
@@ -111,17 +111,17 @@ impl WorkspaceSummaryBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
-    /// <p>The AWS Region where the workspace was last modified.</p>
+    /// <p>The Amazon Web Services Region where the workspace was last modified.</p>
     pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region where the workspace was last modified.</p>
+    /// <p>The Amazon Web Services Region where the workspace was last modified.</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_region = input;
         self
     }
-    /// <p>The AWS Region where the workspace was last modified.</p>
+    /// <p>The Amazon Web Services Region where the workspace was last modified.</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified_region
     }

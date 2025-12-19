@@ -14,7 +14,7 @@ pub struct HttpAction {
     pub auth: ::std::option::Option<crate::types::HttpAuthorization>,
     /// <p>Whether to process the HTTP action messages into a single request. Value can be true or false.</p>
     pub enable_batching: ::std::option::Option<bool>,
-    /// <p>The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching HTTP action messages</a>.</p>
+    /// <p>The configuration settings for batching. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/http_batching.html"> Batching HTTP action messages</a>.</p>
     pub batch_config: ::std::option::Option<crate::types::BatchConfig>,
 }
 impl HttpAction {
@@ -41,7 +41,7 @@ impl HttpAction {
     pub fn enable_batching(&self) -> ::std::option::Option<bool> {
         self.enable_batching
     }
-    /// <p>The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching HTTP action messages</a>.</p>
+    /// <p>The configuration settings for batching. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/http_batching.html"> Batching HTTP action messages</a>.</p>
     pub fn batch_config(&self) -> ::std::option::Option<&crate::types::BatchConfig> {
         self.batch_config.as_ref()
     }
@@ -142,17 +142,17 @@ impl HttpActionBuilder {
     pub fn get_enable_batching(&self) -> &::std::option::Option<bool> {
         &self.enable_batching
     }
-    /// <p>The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching HTTP action messages</a>.</p>
+    /// <p>The configuration settings for batching. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/http_batching.html"> Batching HTTP action messages</a>.</p>
     pub fn batch_config(mut self, input: crate::types::BatchConfig) -> Self {
         self.batch_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching HTTP action messages</a>.</p>
+    /// <p>The configuration settings for batching. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/http_batching.html"> Batching HTTP action messages</a>.</p>
     pub fn set_batch_config(mut self, input: ::std::option::Option<crate::types::BatchConfig>) -> Self {
         self.batch_config = input;
         self
     }
-    /// <p>The configuration settings for batching. For more information, see <a href="/iot/latest/developerguide/http_batching.html">Batching HTTP action messages</a>.</p>
+    /// <p>The configuration settings for batching. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/http_batching.html"> Batching HTTP action messages</a>.</p>
     pub fn get_batch_config(&self) -> &::std::option::Option<crate::types::BatchConfig> {
         &self.batch_config
     }

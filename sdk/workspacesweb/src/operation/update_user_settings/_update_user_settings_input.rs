@@ -31,6 +31,8 @@ pub struct UpdateUserSettingsInput {
     pub toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
     /// <p>The branding configuration that customizes the appearance of the web portal for end users. When updating user settings without an existing branding configuration, all fields (logo, favicon, wallpaper, localized strings, and color theme) are required except for terms of service. When updating user settings with an existing branding configuration, all fields are optional.</p>
     pub branding_configuration_input: ::std::option::Option<crate::types::BrandingConfigurationUpdateInput>,
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub web_authn_allowed: ::std::option::Option<crate::types::EnabledType>,
 }
 impl UpdateUserSettingsInput {
     /// <p>The ARN of the user settings.</p>
@@ -87,6 +89,10 @@ impl UpdateUserSettingsInput {
     pub fn branding_configuration_input(&self) -> ::std::option::Option<&crate::types::BrandingConfigurationUpdateInput> {
         self.branding_configuration_input.as_ref()
     }
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub fn web_authn_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
+        self.web_authn_allowed.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateUserSettingsInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -104,6 +110,7 @@ impl ::std::fmt::Debug for UpdateUserSettingsInput {
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.field("toolbar_configuration", &self.toolbar_configuration);
         formatter.field("branding_configuration_input", &self.branding_configuration_input);
+        formatter.field("web_authn_allowed", &self.web_authn_allowed);
         formatter.finish()
     }
 }
@@ -131,6 +138,7 @@ pub struct UpdateUserSettingsInputBuilder {
     pub(crate) deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
     pub(crate) toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
     pub(crate) branding_configuration_input: ::std::option::Option<crate::types::BrandingConfigurationUpdateInput>,
+    pub(crate) web_authn_allowed: ::std::option::Option<crate::types::EnabledType>,
 }
 impl UpdateUserSettingsInputBuilder {
     /// <p>The ARN of the user settings.</p>
@@ -325,6 +333,20 @@ impl UpdateUserSettingsInputBuilder {
     pub fn get_branding_configuration_input(&self) -> &::std::option::Option<crate::types::BrandingConfigurationUpdateInput> {
         &self.branding_configuration_input
     }
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub fn web_authn_allowed(mut self, input: crate::types::EnabledType) -> Self {
+        self.web_authn_allowed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub fn set_web_authn_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.web_authn_allowed = input;
+        self
+    }
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub fn get_web_authn_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        &self.web_authn_allowed
+    }
     /// Consumes the builder and constructs a [`UpdateUserSettingsInput`](crate::operation::update_user_settings::UpdateUserSettingsInput).
     pub fn build(
         self,
@@ -344,6 +366,7 @@ impl UpdateUserSettingsInputBuilder {
             deep_link_allowed: self.deep_link_allowed,
             toolbar_configuration: self.toolbar_configuration,
             branding_configuration_input: self.branding_configuration_input,
+            web_authn_allowed: self.web_authn_allowed,
         })
     }
 }
@@ -363,6 +386,7 @@ impl ::std::fmt::Debug for UpdateUserSettingsInputBuilder {
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
         formatter.field("toolbar_configuration", &self.toolbar_configuration);
         formatter.field("branding_configuration_input", &self.branding_configuration_input);
+        formatter.field("web_authn_allowed", &self.web_authn_allowed);
         formatter.finish()
     }
 }

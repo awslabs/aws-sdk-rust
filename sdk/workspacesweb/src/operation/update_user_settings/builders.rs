@@ -299,4 +299,18 @@ impl UpdateUserSettingsFluentBuilder {
     pub fn get_branding_configuration_input(&self) -> &::std::option::Option<crate::types::BrandingConfigurationUpdateInput> {
         self.inner.get_branding_configuration_input()
     }
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub fn web_authn_allowed(mut self, input: crate::types::EnabledType) -> Self {
+        self.inner = self.inner.web_authn_allowed(input);
+        self
+    }
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub fn set_web_authn_allowed(mut self, input: ::std::option::Option<crate::types::EnabledType>) -> Self {
+        self.inner = self.inner.set_web_authn_allowed(input);
+        self
+    }
+    /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
+    pub fn get_web_authn_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
+        self.inner.get_web_authn_allowed()
+    }
 }

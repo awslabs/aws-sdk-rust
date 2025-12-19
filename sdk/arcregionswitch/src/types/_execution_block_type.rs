@@ -16,6 +16,7 @@
 ///     ExecutionBlockType::RoutingControl => { /* ... */ },
 ///     ExecutionBlockType::Aurora => { /* ... */ },
 ///     ExecutionBlockType::CustomActionLambda => { /* ... */ },
+///     ExecutionBlockType::Documentdb => { /* ... */ },
 ///     ExecutionBlockType::Ec2Asg => { /* ... */ },
 ///     ExecutionBlockType::Ecs => { /* ... */ },
 ///     ExecutionBlockType::EksResourceScaling => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum ExecutionBlockType {
     #[allow(missing_docs)] // documentation missing in model
     CustomActionLambda,
     #[allow(missing_docs)] // documentation missing in model
+    Documentdb,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2Asg,
     #[allow(missing_docs)] // documentation missing in model
     Ecs,
@@ -81,6 +84,7 @@ impl ::std::convert::From<&str> for ExecutionBlockType {
             "ARCRoutingControl" => ExecutionBlockType::RoutingControl,
             "AuroraGlobalDatabase" => ExecutionBlockType::Aurora,
             "CustomActionLambda" => ExecutionBlockType::CustomActionLambda,
+            "DocumentDb" => ExecutionBlockType::Documentdb,
             "EC2AutoScaling" => ExecutionBlockType::Ec2Asg,
             "ECSServiceScaling" => ExecutionBlockType::Ecs,
             "EKSResourceScaling" => ExecutionBlockType::EksResourceScaling,
@@ -106,6 +110,7 @@ impl ExecutionBlockType {
             ExecutionBlockType::RoutingControl => "ARCRoutingControl",
             ExecutionBlockType::Aurora => "AuroraGlobalDatabase",
             ExecutionBlockType::CustomActionLambda => "CustomActionLambda",
+            ExecutionBlockType::Documentdb => "DocumentDb",
             ExecutionBlockType::Ec2Asg => "EC2AutoScaling",
             ExecutionBlockType::Ecs => "ECSServiceScaling",
             ExecutionBlockType::EksResourceScaling => "EKSResourceScaling",
@@ -122,6 +127,7 @@ impl ExecutionBlockType {
             "ARCRoutingControl",
             "AuroraGlobalDatabase",
             "CustomActionLambda",
+            "DocumentDb",
             "EC2AutoScaling",
             "ECSServiceScaling",
             "EKSResourceScaling",
@@ -155,6 +161,7 @@ impl ::std::fmt::Display for ExecutionBlockType {
             ExecutionBlockType::RoutingControl => write!(f, "ARCRoutingControl"),
             ExecutionBlockType::Aurora => write!(f, "AuroraGlobalDatabase"),
             ExecutionBlockType::CustomActionLambda => write!(f, "CustomActionLambda"),
+            ExecutionBlockType::Documentdb => write!(f, "DocumentDb"),
             ExecutionBlockType::Ec2Asg => write!(f, "EC2AutoScaling"),
             ExecutionBlockType::Ecs => write!(f, "ECSServiceScaling"),
             ExecutionBlockType::EksResourceScaling => write!(f, "EKSResourceScaling"),

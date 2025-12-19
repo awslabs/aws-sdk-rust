@@ -5,6 +5,8 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_user_settings::UserSettings;
 
+pub use crate::types::_enabled_type::EnabledType;
+
 pub use crate::types::_branding_configuration::BrandingConfiguration;
 
 pub use crate::types::_color_theme::ColorTheme;
@@ -26,8 +28,6 @@ pub use crate::types::_toolbar_item::ToolbarItem;
 pub use crate::types::_visual_mode::VisualMode;
 
 pub use crate::types::_toolbar_type::ToolbarType;
-
-pub use crate::types::_enabled_type::EnabledType;
 
 pub use crate::types::_cookie_synchronization_configuration::CookieSynchronizationConfiguration;
 

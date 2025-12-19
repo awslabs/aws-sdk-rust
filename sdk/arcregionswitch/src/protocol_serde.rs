@@ -115,11 +115,15 @@ pub(crate) mod shape_associated_alarm;
 
 pub(crate) mod shape_execution_event_list;
 
+pub(crate) mod shape_generated_report_details;
+
 pub(crate) mod shape_plan;
 
 pub(crate) mod shape_plan_list;
 
 pub(crate) mod shape_plan_warnings;
+
+pub(crate) mod shape_report_configuration;
 
 pub(crate) mod shape_route53_health_check_list;
 
@@ -139,7 +143,11 @@ pub(crate) mod shape_associated_alarm_map;
 
 pub(crate) mod shape_execution_event;
 
+pub(crate) mod shape_generated_report;
+
 pub(crate) mod shape_region_list;
+
+pub(crate) mod shape_report_output_configuration;
 
 pub(crate) mod shape_resource_warning;
 
@@ -159,11 +167,19 @@ pub(crate) mod shape_execution_block_configuration;
 
 pub(crate) mod shape_minimal_workflow;
 
+pub(crate) mod shape_report_output;
+
+pub(crate) mod shape_report_output_list;
+
 pub(crate) mod shape_resources;
+
+pub(crate) mod shape_s3_report_output_configuration;
 
 pub(crate) mod shape_arc_routing_control_configuration;
 
 pub(crate) mod shape_custom_action_lambda_configuration;
+
+pub(crate) mod shape_document_db_configuration;
 
 pub(crate) mod shape_ec2_asg_capacity_increase_configuration;
 
@@ -173,6 +189,8 @@ pub(crate) mod shape_eks_resource_scaling_configuration;
 
 pub(crate) mod shape_execution_approval_configuration;
 
+pub(crate) mod shape_failed_report_output;
+
 pub(crate) mod shape_global_aurora_configuration;
 
 pub(crate) mod shape_parallel_execution_block_configuration;
@@ -181,6 +199,8 @@ pub(crate) mod shape_region_switch_plan_configuration;
 
 pub(crate) mod shape_route53_health_check_configuration;
 
+pub(crate) mod shape_s3_report_output;
+
 pub(crate) mod shape_steps;
 
 pub(crate) mod shape_trigger_condition_list;
@@ -188,6 +208,8 @@ pub(crate) mod shape_trigger_condition_list;
 pub(crate) mod shape_arc_routing_control_state;
 
 pub(crate) mod shape_asg;
+
+pub(crate) mod shape_document_db_ungraceful;
 
 pub(crate) mod shape_ec2_ungraceful;
 
@@ -214,6 +236,8 @@ pub(crate) mod shape_service;
 pub(crate) mod shape_asg_list;
 
 pub(crate) mod shape_aurora_cluster_arns;
+
+pub(crate) mod shape_document_db_cluster_arns;
 
 pub(crate) mod shape_eks_clusters;
 

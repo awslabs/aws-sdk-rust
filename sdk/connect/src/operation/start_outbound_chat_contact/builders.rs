@@ -22,15 +22,17 @@ impl crate::operation::start_outbound_chat_contact::builders::StartOutboundChatC
 }
 /// Fluent builder constructing a request to `StartOutboundChatContact`.
 ///
-/// <p>Initiates a new outbound SMS contact to a customer. Response of this API provides the <code>ContactId</code> of the outbound SMS contact created.</p>
-/// <p><b>SourceEndpoint</b> only supports Endpoints with <code>CONNECT_PHONENUMBER_ARN</code> as Type and <b>DestinationEndpoint</b> only supports Endpoints with <code>TELEPHONE_NUMBER</code> as Type. <b>ContactFlowId</b> initiates the flow to manage the new SMS contact created.</p>
-/// <p>This API can be used to initiate outbound SMS contacts for an agent, or it can also deflect an ongoing contact to an outbound SMS contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a> Flow Action.</p>
-/// <p>For more information about using SMS in Amazon Connect, see the following topics in the <i>Amazon Connect Administrator Guide</i>:</p>
+/// <p>Initiates a new outbound SMS or WhatsApp contact to a customer. Response of this API provides the <code>ContactId</code> of the outbound SMS or WhatsApp contact created.</p>
+/// <p><b>SourceEndpoint</b> only supports Endpoints with <code>CONNECT_PHONENUMBER_ARN</code> as Type and <b>DestinationEndpoint</b> only supports Endpoints with <code>TELEPHONE_NUMBER</code> as Type. <b>ContactFlowId</b> initiates the flow to manage the new contact created.</p>
+/// <p>This API can be used to initiate outbound SMS or WhatsApp contacts for an agent, or it can also deflect an ongoing contact to an outbound SMS or WhatsApp contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a> Flow Action.</p>
+/// <p>For more information about using SMS or WhatsApp in Amazon Connect, see the following topics in the <i>Amazon Connect Administrator Guide</i>:</p>
 /// <ul>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-sms-messaging.html">Set up SMS messaging</a></p></li>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request an SMS-enabled phone number through AWS End User Messaging SMS</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request an SMS-enabled phone number through Amazon Web Services End User Messaging SMS</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/adminguide/whatsapp-integration.html">Set up WhatsApp Business messaging</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartOutboundChatContactFluentBuilder {
@@ -169,7 +171,7 @@ impl StartOutboundChatContactFluentBuilder {
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
     /// <li>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code> and <code>connect:SMS</code>.</p></li>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:SMS</code> and <code>connect:WhatsApp</code>.</p></li>
     /// </ul>
     pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
         self.inner = self.inner.segment_attributes(k.into(), v);
@@ -180,7 +182,7 @@ impl StartOutboundChatContactFluentBuilder {
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
     /// <li>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code> and <code>connect:SMS</code>.</p></li>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:SMS</code> and <code>connect:WhatsApp</code>.</p></li>
     /// </ul>
     pub fn set_segment_attributes(
         mut self,
@@ -194,7 +196,7 @@ impl StartOutboundChatContactFluentBuilder {
     /// <li>
     /// <p>Attribute keys can include only alphanumeric, <code>-</code>, and <code>_</code>.</p></li>
     /// <li>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code> and <code>connect:SMS</code>.</p></li>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:SMS</code> and <code>connect:WhatsApp</code>.</p></li>
     /// </ul>
     pub fn get_segment_attributes(
         &self,
@@ -392,17 +394,17 @@ impl StartOutboundChatContactFluentBuilder {
     pub fn get_supported_messaging_content_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_supported_messaging_content_types()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the AWS SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

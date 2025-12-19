@@ -17,6 +17,8 @@ pub struct UpdatePlanInput {
     pub associated_alarms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssociatedAlarm>>,
     /// <p>The updated conditions that can automatically trigger the execution of the plan.</p>
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
+    /// <p>The updated report configuration for the plan.</p>
+    pub report_configuration: ::std::option::Option<crate::types::ReportConfiguration>,
 }
 impl UpdatePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the plan.</p>
@@ -51,6 +53,10 @@ impl UpdatePlanInput {
     pub fn triggers(&self) -> &[crate::types::Trigger] {
         self.triggers.as_deref().unwrap_or_default()
     }
+    /// <p>The updated report configuration for the plan.</p>
+    pub fn report_configuration(&self) -> ::std::option::Option<&crate::types::ReportConfiguration> {
+        self.report_configuration.as_ref()
+    }
 }
 impl UpdatePlanInput {
     /// Creates a new builder-style object to manufacture [`UpdatePlanInput`](crate::operation::update_plan::UpdatePlanInput).
@@ -70,6 +76,7 @@ pub struct UpdatePlanInputBuilder {
     pub(crate) recovery_time_objective_minutes: ::std::option::Option<i32>,
     pub(crate) associated_alarms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssociatedAlarm>>,
     pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
+    pub(crate) report_configuration: ::std::option::Option<crate::types::ReportConfiguration>,
 }
 impl UpdatePlanInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the plan.</p>
@@ -193,6 +200,20 @@ impl UpdatePlanInputBuilder {
     pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trigger>> {
         &self.triggers
     }
+    /// <p>The updated report configuration for the plan.</p>
+    pub fn report_configuration(mut self, input: crate::types::ReportConfiguration) -> Self {
+        self.report_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated report configuration for the plan.</p>
+    pub fn set_report_configuration(mut self, input: ::std::option::Option<crate::types::ReportConfiguration>) -> Self {
+        self.report_configuration = input;
+        self
+    }
+    /// <p>The updated report configuration for the plan.</p>
+    pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ReportConfiguration> {
+        &self.report_configuration
+    }
     /// Consumes the builder and constructs a [`UpdatePlanInput`](crate::operation::update_plan::UpdatePlanInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_plan::UpdatePlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_plan::UpdatePlanInput {
@@ -203,6 +224,7 @@ impl UpdatePlanInputBuilder {
             recovery_time_objective_minutes: self.recovery_time_objective_minutes,
             associated_alarms: self.associated_alarms,
             triggers: self.triggers,
+            report_configuration: self.report_configuration,
         })
     }
 }

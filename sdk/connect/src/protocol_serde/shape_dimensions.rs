@@ -40,6 +40,20 @@ where
                             builder =
                                 builder.set_agent_status(crate::protocol_serde::shape_agent_status_identifier::de_agent_status_identifier(tokens)?);
                         }
+                        "Subtype" => {
+                            builder = builder.set_subtype(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ValidationTestType" => {
+                            builder = builder.set_validation_test_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -103,6 +103,8 @@ pub(crate) mod shape_interactive_configuration;
 
 pub(crate) mod shape_job_driver;
 
+pub(crate) mod shape_job_level_cost_allocation_configuration;
+
 pub(crate) mod shape_job_run;
 
 pub(crate) mod shape_job_run_attempts;
