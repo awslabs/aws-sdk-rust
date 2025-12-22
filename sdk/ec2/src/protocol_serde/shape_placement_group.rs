@@ -113,6 +113,19 @@ pub fn de_placement_group(
                 builder = builder.set_spread_level(var_8);
             }
             ,
+            s if s.matches("linkedGroupId") /* LinkedGroupId com.amazonaws.ec2#PlacementGroup$LinkedGroupId */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_linked_group_id(var_9);
+            }
+            ,
             _ => {}
         }
     }

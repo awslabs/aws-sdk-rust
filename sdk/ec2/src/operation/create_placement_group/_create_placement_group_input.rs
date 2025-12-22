@@ -15,6 +15,8 @@ pub struct CreatePlacementGroupInput {
     /// <p>Rack – No usage restrictions.</p></li>
     /// </ul>
     pub spread_level: ::std::option::Option<crate::types::SpreadLevel>,
+    /// <p>Reserved for future use.</p>
+    pub linked_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
@@ -44,6 +46,10 @@ impl CreatePlacementGroupInput {
     pub fn spread_level(&self) -> ::std::option::Option<&crate::types::SpreadLevel> {
         self.spread_level.as_ref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn linked_group_id(&self) -> ::std::option::Option<&str> {
+        self.linked_group_id.as_deref()
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -72,6 +78,7 @@ pub struct CreatePlacementGroupInputBuilder {
     pub(crate) partition_count: ::std::option::Option<i32>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) spread_level: ::std::option::Option<crate::types::SpreadLevel>,
+    pub(crate) linked_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) strategy: ::std::option::Option<crate::types::PlacementStrategy>,
@@ -143,6 +150,20 @@ impl CreatePlacementGroupInputBuilder {
     pub fn get_spread_level(&self) -> &::std::option::Option<crate::types::SpreadLevel> {
         &self.spread_level
     }
+    /// <p>Reserved for future use.</p>
+    pub fn linked_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.linked_group_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_linked_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.linked_group_id = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_linked_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linked_group_id
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -197,6 +218,7 @@ impl CreatePlacementGroupInputBuilder {
             partition_count: self.partition_count,
             tag_specifications: self.tag_specifications,
             spread_level: self.spread_level,
+            linked_group_id: self.linked_group_id,
             dry_run: self.dry_run,
             group_name: self.group_name,
             strategy: self.strategy,

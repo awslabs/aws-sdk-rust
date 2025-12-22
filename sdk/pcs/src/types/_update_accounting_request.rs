@@ -10,7 +10,7 @@ pub struct UpdateAccountingRequest {
     /// <p><code>0</code> isn't a valid value.</p>
     /// </important>
     pub default_purge_time_in_days: ::std::option::Option<i32>,
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
+    /// <p>The default value for <code>mode</code> is <code>NONE</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
     pub mode: ::std::option::Option<crate::types::AccountingMode>,
 }
 impl UpdateAccountingRequest {
@@ -22,7 +22,7 @@ impl UpdateAccountingRequest {
     pub fn default_purge_time_in_days(&self) -> ::std::option::Option<i32> {
         self.default_purge_time_in_days
     }
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
+    /// <p>The default value for <code>mode</code> is <code>NONE</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::AccountingMode> {
         self.mode.as_ref()
     }
@@ -68,17 +68,17 @@ impl UpdateAccountingRequestBuilder {
     pub fn get_default_purge_time_in_days(&self) -> &::std::option::Option<i32> {
         &self.default_purge_time_in_days
     }
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
+    /// <p>The default value for <code>mode</code> is <code>NONE</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
     pub fn mode(mut self, input: crate::types::AccountingMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
+    /// <p>The default value for <code>mode</code> is <code>NONE</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::AccountingMode>) -> Self {
         self.mode = input;
         self
     }
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
+    /// <p>The default value for <code>mode</code> is <code>NONE</code>. A value of <code>STANDARD</code> means Slurm accounting is enabled.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::AccountingMode> {
         &self.mode
     }

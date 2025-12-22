@@ -32,19 +32,24 @@ pub fn ser_create_placement_group_input_input_input(
         scope_8.string(var_9.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("DryRun");
-    if let Some(var_11) = &input.dry_run {
-        scope_10.boolean(*var_11);
+    let mut scope_10 = writer.prefix("LinkedGroupId");
+    if let Some(var_11) = &input.linked_group_id {
+        scope_10.string(var_11);
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("GroupName");
-    if let Some(var_13) = &input.group_name {
-        scope_12.string(var_13);
+    let mut scope_12 = writer.prefix("DryRun");
+    if let Some(var_13) = &input.dry_run {
+        scope_12.boolean(*var_13);
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("Strategy");
-    if let Some(var_15) = &input.strategy {
-        scope_14.string(var_15.as_str());
+    let mut scope_14 = writer.prefix("GroupName");
+    if let Some(var_15) = &input.group_name {
+        scope_14.string(var_15);
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("Strategy");
+    if let Some(var_17) = &input.strategy {
+        scope_16.string(var_17.as_str());
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

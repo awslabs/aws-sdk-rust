@@ -175,6 +175,20 @@ impl CreatePlacementGroupFluentBuilder {
     pub fn get_spread_level(&self) -> &::std::option::Option<crate::types::SpreadLevel> {
         self.inner.get_spread_level()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn linked_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.linked_group_id(input.into());
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_linked_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_linked_group_id(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_linked_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_linked_group_id()
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

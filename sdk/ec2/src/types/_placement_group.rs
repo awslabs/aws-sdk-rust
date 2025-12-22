@@ -20,6 +20,8 @@ pub struct PlacementGroup {
     pub group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.</p>
     pub spread_level: ::std::option::Option<crate::types::SpreadLevel>,
+    /// <p>Reserved for future use.</p>
+    pub linked_group_id: ::std::option::Option<::std::string::String>,
 }
 impl PlacementGroup {
     /// <p>The name of the placement group.</p>
@@ -56,6 +58,10 @@ impl PlacementGroup {
     pub fn spread_level(&self) -> ::std::option::Option<&crate::types::SpreadLevel> {
         self.spread_level.as_ref()
     }
+    /// <p>Reserved for future use.</p>
+    pub fn linked_group_id(&self) -> ::std::option::Option<&str> {
+        self.linked_group_id.as_deref()
+    }
 }
 impl PlacementGroup {
     /// Creates a new builder-style object to manufacture [`PlacementGroup`](crate::types::PlacementGroup).
@@ -76,6 +82,7 @@ pub struct PlacementGroupBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) spread_level: ::std::option::Option<crate::types::SpreadLevel>,
+    pub(crate) linked_group_id: ::std::option::Option<::std::string::String>,
 }
 impl PlacementGroupBuilder {
     /// <p>The name of the placement group.</p>
@@ -196,6 +203,20 @@ impl PlacementGroupBuilder {
     pub fn get_spread_level(&self) -> &::std::option::Option<crate::types::SpreadLevel> {
         &self.spread_level
     }
+    /// <p>Reserved for future use.</p>
+    pub fn linked_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.linked_group_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_linked_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.linked_group_id = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_linked_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linked_group_id
+    }
     /// Consumes the builder and constructs a [`PlacementGroup`](crate::types::PlacementGroup).
     pub fn build(self) -> crate::types::PlacementGroup {
         crate::types::PlacementGroup {
@@ -207,6 +228,7 @@ impl PlacementGroupBuilder {
             tags: self.tags,
             group_arn: self.group_arn,
             spread_level: self.spread_level,
+            linked_group_id: self.linked_group_id,
         }
     }
 }

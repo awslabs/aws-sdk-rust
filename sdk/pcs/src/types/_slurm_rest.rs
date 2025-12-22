@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlurmRest {
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means the Slurm REST API is enabled.</p>
+    /// <p>The default value for <code>mode</code> is <code>NONE</code>. A value of <code>STANDARD</code> means the Slurm REST API is enabled.</p>
     pub mode: crate::types::SlurmRestMode,
 }
 impl SlurmRest {
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means the Slurm REST API is enabled.</p>
+    /// <p>The default value for <code>mode</code> is <code>NONE</code>. A value of <code>STANDARD</code> means the Slurm REST API is enabled.</p>
     pub fn mode(&self) -> &crate::types::SlurmRestMode {
         &self.mode
     }
@@ -27,18 +27,18 @@ pub struct SlurmRestBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::SlurmRestMode>,
 }
 impl SlurmRestBuilder {
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means the Slurm REST API is enabled.</p>
+    /// <p>The default value for <code>mode</code> is <code>NONE</code>. A value of <code>STANDARD</code> means the Slurm REST API is enabled.</p>
     /// This field is required.
     pub fn mode(mut self, input: crate::types::SlurmRestMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means the Slurm REST API is enabled.</p>
+    /// <p>The default value for <code>mode</code> is <code>NONE</code>. A value of <code>STANDARD</code> means the Slurm REST API is enabled.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::SlurmRestMode>) -> Self {
         self.mode = input;
         self
     }
-    /// <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of <code>STANDARD</code> means the Slurm REST API is enabled.</p>
+    /// <p>The default value for <code>mode</code> is <code>NONE</code>. A value of <code>STANDARD</code> means the Slurm REST API is enabled.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::SlurmRestMode> {
         &self.mode
     }
