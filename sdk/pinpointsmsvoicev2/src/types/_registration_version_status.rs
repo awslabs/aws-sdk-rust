@@ -14,6 +14,7 @@
 /// match registrationversionstatus {
 ///     RegistrationVersionStatus::Approved => { /* ... */ },
 ///     RegistrationVersionStatus::Archived => { /* ... */ },
+///     RegistrationVersionStatus::AwsReviewing => { /* ... */ },
 ///     RegistrationVersionStatus::Denied => { /* ... */ },
 ///     RegistrationVersionStatus::Discarded => { /* ... */ },
 ///     RegistrationVersionStatus::Draft => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum RegistrationVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Archived,
     #[allow(missing_docs)] // documentation missing in model
+    AwsReviewing,
+    #[allow(missing_docs)] // documentation missing in model
     Denied,
     #[allow(missing_docs)] // documentation missing in model
     Discarded,
@@ -76,6 +79,7 @@ impl ::std::convert::From<&str> for RegistrationVersionStatus {
         match s {
             "APPROVED" => RegistrationVersionStatus::Approved,
             "ARCHIVED" => RegistrationVersionStatus::Archived,
+            "AWS_REVIEWING" => RegistrationVersionStatus::AwsReviewing,
             "DENIED" => RegistrationVersionStatus::Denied,
             "DISCARDED" => RegistrationVersionStatus::Discarded,
             "DRAFT" => RegistrationVersionStatus::Draft,
@@ -100,6 +104,7 @@ impl RegistrationVersionStatus {
         match self {
             RegistrationVersionStatus::Approved => "APPROVED",
             RegistrationVersionStatus::Archived => "ARCHIVED",
+            RegistrationVersionStatus::AwsReviewing => "AWS_REVIEWING",
             RegistrationVersionStatus::Denied => "DENIED",
             RegistrationVersionStatus::Discarded => "DISCARDED",
             RegistrationVersionStatus::Draft => "DRAFT",
@@ -115,6 +120,7 @@ impl RegistrationVersionStatus {
         &[
             "APPROVED",
             "ARCHIVED",
+            "AWS_REVIEWING",
             "DENIED",
             "DISCARDED",
             "DRAFT",
@@ -147,6 +153,7 @@ impl ::std::fmt::Display for RegistrationVersionStatus {
         match self {
             RegistrationVersionStatus::Approved => write!(f, "APPROVED"),
             RegistrationVersionStatus::Archived => write!(f, "ARCHIVED"),
+            RegistrationVersionStatus::AwsReviewing => write!(f, "AWS_REVIEWING"),
             RegistrationVersionStatus::Denied => write!(f, "DENIED"),
             RegistrationVersionStatus::Discarded => write!(f, "DISCARDED"),
             RegistrationVersionStatus::Draft => write!(f, "DRAFT"),

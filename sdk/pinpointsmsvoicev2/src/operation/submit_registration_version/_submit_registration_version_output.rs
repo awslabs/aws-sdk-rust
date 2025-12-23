@@ -33,6 +33,8 @@ pub struct SubmitRegistrationVersionOutput {
     pub registration_version_status: crate::types::RegistrationVersionStatus,
     /// <p>The <b>RegistrationVersionStatusHistory</b> object contains the time stamps for when the reservations status changes.</p>
     pub registration_version_status_history: ::std::option::Option<crate::types::RegistrationVersionStatusHistory>,
+    /// <p>Indicates whether AWS review was requested for this registration submission.</p>
+    pub aws_review: bool,
     _request_id: Option<String>,
 }
 impl SubmitRegistrationVersionOutput {
@@ -78,6 +80,10 @@ impl SubmitRegistrationVersionOutput {
     pub fn registration_version_status_history(&self) -> ::std::option::Option<&crate::types::RegistrationVersionStatusHistory> {
         self.registration_version_status_history.as_ref()
     }
+    /// <p>Indicates whether AWS review was requested for this registration submission.</p>
+    pub fn aws_review(&self) -> bool {
+        self.aws_review
+    }
 }
 impl ::aws_types::request_id::RequestId for SubmitRegistrationVersionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -100,6 +106,7 @@ pub struct SubmitRegistrationVersionOutputBuilder {
     pub(crate) version_number: ::std::option::Option<i64>,
     pub(crate) registration_version_status: ::std::option::Option<crate::types::RegistrationVersionStatus>,
     pub(crate) registration_version_status_history: ::std::option::Option<crate::types::RegistrationVersionStatusHistory>,
+    pub(crate) aws_review: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl SubmitRegistrationVersionOutputBuilder {
@@ -238,6 +245,21 @@ impl SubmitRegistrationVersionOutputBuilder {
     pub fn get_registration_version_status_history(&self) -> &::std::option::Option<crate::types::RegistrationVersionStatusHistory> {
         &self.registration_version_status_history
     }
+    /// <p>Indicates whether AWS review was requested for this registration submission.</p>
+    /// This field is required.
+    pub fn aws_review(mut self, input: bool) -> Self {
+        self.aws_review = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether AWS review was requested for this registration submission.</p>
+    pub fn set_aws_review(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.aws_review = input;
+        self
+    }
+    /// <p>Indicates whether AWS review was requested for this registration submission.</p>
+    pub fn get_aws_review(&self) -> &::std::option::Option<bool> {
+        &self.aws_review
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -285,6 +307,7 @@ impl SubmitRegistrationVersionOutputBuilder {
                 )
             })?,
             registration_version_status_history: self.registration_version_status_history,
+            aws_review: self.aws_review.unwrap_or_default(),
             _request_id: self._request_id,
         })
     }

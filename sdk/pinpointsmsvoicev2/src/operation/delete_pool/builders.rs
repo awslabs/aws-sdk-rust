@@ -111,21 +111,21 @@ impl DeletePoolFluentBuilder {
         self
     }
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_id()

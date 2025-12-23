@@ -23,6 +23,7 @@ impl crate::operation::search_nearby::builders::SearchNearbyInputBuilder {
 /// Fluent builder constructing a request to `SearchNearby`.
 ///
 /// <p><code>SearchNearby</code> queries for points of interest within a radius from a central coordinates, returning place results with optional filters such as categories, business chains, food types and more. The API returns details such as a place name, address, phone, category, food type, contact, opening hours. Also, the API can return phonemes, time zones and more based on requested parameters.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/search-nearby.html">Search Nearby</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchNearbyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +114,17 @@ impl SearchNearbyFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_query_position`](Self::set_query_position).
     ///
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn query_position(mut self, input: f64) -> Self {
         self.inner = self.inner.query_position(input);
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn set_query_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_query_position(input);
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn get_query_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_query_position()
     }
@@ -148,16 +149,19 @@ impl SearchNearbyFluentBuilder {
         self.inner.get_query_radius()
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

@@ -38,6 +38,13 @@ where
                                     crate::protocol_serde::shape_registration_denied_reason_information_list::de_registration_denied_reason_information_list(tokens)?
                                 );
                         }
+                        "Feedback" => {
+                            builder = builder.set_feedback(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

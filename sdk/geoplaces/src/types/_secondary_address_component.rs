@@ -6,6 +6,9 @@
 pub struct SecondaryAddressComponent {
     /// <p>Number that uniquely identifies a secondary address.</p>
     pub number: ::std::string::String,
+    /// <p>The designator of the secondary address component.</p>
+    /// <p>Example: <code>Apt</code>.</p>
+    pub designator: ::std::option::Option<::std::string::String>,
 }
 impl SecondaryAddressComponent {
     /// <p>Number that uniquely identifies a secondary address.</p>
@@ -13,11 +16,17 @@ impl SecondaryAddressComponent {
         use std::ops::Deref;
         self.number.deref()
     }
+    /// <p>The designator of the secondary address component.</p>
+    /// <p>Example: <code>Apt</code>.</p>
+    pub fn designator(&self) -> ::std::option::Option<&str> {
+        self.designator.as_deref()
+    }
 }
 impl ::std::fmt::Debug for SecondaryAddressComponent {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SecondaryAddressComponent");
         formatter.field("number", &"*** Sensitive Data Redacted ***");
+        formatter.field("designator", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -33,6 +42,7 @@ impl SecondaryAddressComponent {
 #[non_exhaustive]
 pub struct SecondaryAddressComponentBuilder {
     pub(crate) number: ::std::option::Option<::std::string::String>,
+    pub(crate) designator: ::std::option::Option<::std::string::String>,
 }
 impl SecondaryAddressComponentBuilder {
     /// <p>Number that uniquely identifies a secondary address.</p>
@@ -50,6 +60,23 @@ impl SecondaryAddressComponentBuilder {
     pub fn get_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.number
     }
+    /// <p>The designator of the secondary address component.</p>
+    /// <p>Example: <code>Apt</code>.</p>
+    pub fn designator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.designator = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The designator of the secondary address component.</p>
+    /// <p>Example: <code>Apt</code>.</p>
+    pub fn set_designator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.designator = input;
+        self
+    }
+    /// <p>The designator of the secondary address component.</p>
+    /// <p>Example: <code>Apt</code>.</p>
+    pub fn get_designator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.designator
+    }
     /// Consumes the builder and constructs a [`SecondaryAddressComponent`](crate::types::SecondaryAddressComponent).
     /// This method will fail if any of the following fields are not set:
     /// - [`number`](crate::types::builders::SecondaryAddressComponentBuilder::number)
@@ -61,6 +88,7 @@ impl SecondaryAddressComponentBuilder {
                     "number was not specified but it is required when building SecondaryAddressComponent",
                 )
             })?,
+            designator: self.designator,
         })
     }
 }
@@ -68,6 +96,7 @@ impl ::std::fmt::Debug for SecondaryAddressComponentBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SecondaryAddressComponentBuilder");
         formatter.field("number", &"*** Sensitive Data Redacted ***");
+        formatter.field("designator", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

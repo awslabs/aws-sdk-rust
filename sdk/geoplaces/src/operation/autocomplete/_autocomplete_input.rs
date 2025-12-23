@@ -8,8 +8,9 @@ pub struct AutocompleteInput {
     /// </note>
     pub query_text: ::std::option::Option<::std::string::String>,
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 5</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The position in longitude and latitude that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
+    /// <p>The position in longitude and latitude that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
     /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
     /// </note>
     pub bias_position: ::std::option::Option<::std::vec::Vec<f64>>,
@@ -67,10 +68,11 @@ impl AutocompleteInput {
         self.query_text.as_deref()
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 5</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The position in longitude and latitude that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
+    /// <p>The position in longitude and latitude that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
     /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
     /// </note>
     ///
@@ -201,16 +203,19 @@ impl AutocompleteInputBuilder {
         &self.query_text
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 5</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 5</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 5</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
@@ -218,7 +223,7 @@ impl AutocompleteInputBuilder {
     ///
     /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
     ///
-    /// <p>The position in longitude and latitude that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
+    /// <p>The position in longitude and latitude that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
     /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
     /// </note>
     pub fn bias_position(mut self, input: f64) -> Self {
@@ -227,14 +232,14 @@ impl AutocompleteInputBuilder {
         self.bias_position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The position in longitude and latitude that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
+    /// <p>The position in longitude and latitude that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
     /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
     /// </note>
     pub fn set_bias_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.bias_position = input;
         self
     }
-    /// <p>The position in longitude and latitude that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
+    /// <p>The position in longitude and latitude that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
     /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
     /// </note>
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {

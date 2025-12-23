@@ -33,7 +33,10 @@ pub struct GeocodeParsedQueryAddressComponents {
     pub address_number: ::std::option::Option<::std::vec::Vec<crate::types::ParsedQueryComponent>>,
     /// <p>The name of the building at the address.</p>
     pub building: ::std::option::Option<::std::vec::Vec<crate::types::ParsedQueryComponent>>,
-    /// <p>Parsed secondary address components from the provided query text.</p>
+    /// <p>Parsed secondary address components from the provided query text.</p><note>
+    /// <p>Coverage for <code>ParsedQuery.Address.SecondaryAddressComponents</code> is available in the following countries:</p>
+    /// <p>AUS, AUT, BRA, CAN, ESP, FRA, GBR, HKG, IDN, IND, NZL, TUR, TWN, USA</p>
+    /// </note>
     pub secondary_address_components: ::std::option::Option<::std::vec::Vec<crate::types::ParsedQuerySecondaryAddressComponent>>,
 }
 impl GeocodeParsedQueryAddressComponents {
@@ -114,7 +117,10 @@ impl GeocodeParsedQueryAddressComponents {
     pub fn building(&self) -> &[crate::types::ParsedQueryComponent] {
         self.building.as_deref().unwrap_or_default()
     }
-    /// <p>Parsed secondary address components from the provided query text.</p>
+    /// <p>Parsed secondary address components from the provided query text.</p><note>
+    /// <p>Coverage for <code>ParsedQuery.Address.SecondaryAddressComponents</code> is available in the following countries:</p>
+    /// <p>AUS, AUT, BRA, CAN, ESP, FRA, GBR, HKG, IDN, IND, NZL, TUR, TWN, USA</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_address_components.is_none()`.
     pub fn secondary_address_components(&self) -> &[crate::types::ParsedQuerySecondaryAddressComponent] {
@@ -406,14 +412,20 @@ impl GeocodeParsedQueryAddressComponentsBuilder {
     ///
     /// To override the contents of this collection use [`set_secondary_address_components`](Self::set_secondary_address_components).
     ///
-    /// <p>Parsed secondary address components from the provided query text.</p>
+    /// <p>Parsed secondary address components from the provided query text.</p><note>
+    /// <p>Coverage for <code>ParsedQuery.Address.SecondaryAddressComponents</code> is available in the following countries:</p>
+    /// <p>AUS, AUT, BRA, CAN, ESP, FRA, GBR, HKG, IDN, IND, NZL, TUR, TWN, USA</p>
+    /// </note>
     pub fn secondary_address_components(mut self, input: crate::types::ParsedQuerySecondaryAddressComponent) -> Self {
         let mut v = self.secondary_address_components.unwrap_or_default();
         v.push(input);
         self.secondary_address_components = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Parsed secondary address components from the provided query text.</p>
+    /// <p>Parsed secondary address components from the provided query text.</p><note>
+    /// <p>Coverage for <code>ParsedQuery.Address.SecondaryAddressComponents</code> is available in the following countries:</p>
+    /// <p>AUS, AUT, BRA, CAN, ESP, FRA, GBR, HKG, IDN, IND, NZL, TUR, TWN, USA</p>
+    /// </note>
     pub fn set_secondary_address_components(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ParsedQuerySecondaryAddressComponent>>,
@@ -421,7 +433,10 @@ impl GeocodeParsedQueryAddressComponentsBuilder {
         self.secondary_address_components = input;
         self
     }
-    /// <p>Parsed secondary address components from the provided query text.</p>
+    /// <p>Parsed secondary address components from the provided query text.</p><note>
+    /// <p>Coverage for <code>ParsedQuery.Address.SecondaryAddressComponents</code> is available in the following countries:</p>
+    /// <p>AUS, AUT, BRA, CAN, ESP, FRA, GBR, HKG, IDN, IND, NZL, TUR, TWN, USA</p>
+    /// </note>
     pub fn get_secondary_address_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParsedQuerySecondaryAddressComponent>> {
         &self.secondary_address_components
     }

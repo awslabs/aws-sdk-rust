@@ -41,7 +41,10 @@ pub struct Address {
     pub address_number: ::std::option::Option<::std::string::String>,
     /// <p>The name of the building at the address.</p>
     pub building: ::std::option::Option<::std::string::String>,
-    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p>
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p><note>
+    /// <p>Coverage for <code>Address.SecondaryAddressComponents</code> is available in the following countries:</p>
+    /// <p>AUS, CAN, NZL, USA, PRI</p>
+    /// </note>
     pub secondary_address_components: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponent>>,
 }
 impl Address {
@@ -116,7 +119,10 @@ impl Address {
     pub fn building(&self) -> ::std::option::Option<&str> {
         self.building.as_deref()
     }
-    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p>
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p><note>
+    /// <p>Coverage for <code>Address.SecondaryAddressComponents</code> is available in the following countries:</p>
+    /// <p>AUS, CAN, NZL, USA, PRI</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_address_components.is_none()`.
     pub fn secondary_address_components(&self) -> &[crate::types::SecondaryAddressComponent] {
@@ -421,14 +427,20 @@ impl AddressBuilder {
     ///
     /// To override the contents of this collection use [`set_secondary_address_components`](Self::set_secondary_address_components).
     ///
-    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p>
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p><note>
+    /// <p>Coverage for <code>Address.SecondaryAddressComponents</code> is available in the following countries:</p>
+    /// <p>AUS, CAN, NZL, USA, PRI</p>
+    /// </note>
     pub fn secondary_address_components(mut self, input: crate::types::SecondaryAddressComponent) -> Self {
         let mut v = self.secondary_address_components.unwrap_or_default();
         v.push(input);
         self.secondary_address_components = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p>
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p><note>
+    /// <p>Coverage for <code>Address.SecondaryAddressComponents</code> is available in the following countries:</p>
+    /// <p>AUS, CAN, NZL, USA, PRI</p>
+    /// </note>
     pub fn set_secondary_address_components(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponent>>,
@@ -436,7 +448,10 @@ impl AddressBuilder {
         self.secondary_address_components = input;
         self
     }
-    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p>
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p><note>
+    /// <p>Coverage for <code>Address.SecondaryAddressComponents</code> is available in the following countries:</p>
+    /// <p>AUS, CAN, NZL, USA, PRI</p>
+    /// </note>
     pub fn get_secondary_address_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponent>> {
         &self.secondary_address_components
     }

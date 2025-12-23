@@ -34,7 +34,9 @@ pub struct AddressComponentMatchScores {
     pub address_number: f64,
     /// <p>The name of the building at the address.</p>
     pub building: f64,
-    /// <p>Match scores for the secondary address components in the result.</p>
+    /// <p>Match scores for the secondary address components in the result.</p><note>
+    /// <p>Coverage for this functionality is available in the following countries: AUS, AUT, BRA, CAN, ESP, FRA, GBR, IDN, IND, NZL, TUR, TWN, USA.</p>
+    /// </note>
     pub secondary_address_components: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponentMatchScore>>,
 }
 impl AddressComponentMatchScores {
@@ -94,7 +96,9 @@ impl AddressComponentMatchScores {
     pub fn building(&self) -> f64 {
         self.building
     }
-    /// <p>Match scores for the secondary address components in the result.</p>
+    /// <p>Match scores for the secondary address components in the result.</p><note>
+    /// <p>Coverage for this functionality is available in the following countries: AUS, AUT, BRA, CAN, ESP, FRA, GBR, IDN, IND, NZL, TUR, TWN, USA.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_address_components.is_none()`.
     pub fn secondary_address_components(&self) -> &[crate::types::SecondaryAddressComponentMatchScore] {
@@ -323,14 +327,18 @@ impl AddressComponentMatchScoresBuilder {
     ///
     /// To override the contents of this collection use [`set_secondary_address_components`](Self::set_secondary_address_components).
     ///
-    /// <p>Match scores for the secondary address components in the result.</p>
+    /// <p>Match scores for the secondary address components in the result.</p><note>
+    /// <p>Coverage for this functionality is available in the following countries: AUS, AUT, BRA, CAN, ESP, FRA, GBR, IDN, IND, NZL, TUR, TWN, USA.</p>
+    /// </note>
     pub fn secondary_address_components(mut self, input: crate::types::SecondaryAddressComponentMatchScore) -> Self {
         let mut v = self.secondary_address_components.unwrap_or_default();
         v.push(input);
         self.secondary_address_components = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Match scores for the secondary address components in the result.</p>
+    /// <p>Match scores for the secondary address components in the result.</p><note>
+    /// <p>Coverage for this functionality is available in the following countries: AUS, AUT, BRA, CAN, ESP, FRA, GBR, IDN, IND, NZL, TUR, TWN, USA.</p>
+    /// </note>
     pub fn set_secondary_address_components(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponentMatchScore>>,
@@ -338,7 +346,9 @@ impl AddressComponentMatchScoresBuilder {
         self.secondary_address_components = input;
         self
     }
-    /// <p>Match scores for the secondary address components in the result.</p>
+    /// <p>Match scores for the secondary address components in the result.</p><note>
+    /// <p>Coverage for this functionality is available in the following countries: AUS, AUT, BRA, CAN, ESP, FRA, GBR, IDN, IND, NZL, TUR, TWN, USA.</p>
+    /// </note>
     pub fn get_secondary_address_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecondaryAddressComponentMatchScore>> {
         &self.secondary_address_components
     }

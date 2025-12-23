@@ -1020,9 +1020,9 @@ model_hash = 'ba5201dd3525ff43ace79ac7859aa62548640a8339354a50aa5d60c25517cc33'
 
 [crates.aws-sdk-geoplaces]
 category = 'AwsSdk'
-version = '1.45.0'
-source_hash = '9d9e8d1f1538381f6eff283c42f284297ad2d79903ebb33561c8e8c539935d88'
-model_hash = 'b76697f86928bd5308408d5f047fc66c4d1d2d58627d7cad8bb4840e91600dae'
+version = '1.46.0'
+source_hash = '61d426ac4257ed7373f198bc1a2081d967630478df2f1a4ec63a5f9be6cf8231'
+model_hash = '2b07ec4241404c18592195adf78a243b610feadf1a35a8bc4fdd0e7d5e107c54'
 
 [crates.aws-sdk-georoutes]
 category = 'AwsSdk'
@@ -1836,9 +1836,9 @@ model_hash = '11459708a529f7111973b30fd670f4e5a955e4e926e017842c4bcefdc357927e'
 
 [crates.aws-sdk-pinpointsmsvoicev2]
 category = 'AwsSdk'
-version = '1.99.0'
-source_hash = '95fb82cafe851ffe095a29e903a4a2fa626413192158a68f1db0875e2f1f173b'
-model_hash = '0b694ad3968f2f51574911b4dcd19e8db7eaee565c8fbdfc2daeb73eb2d2f39e'
+version = '1.100.0'
+source_hash = 'b1f301d4bf5fa77c9a8ecfa986c226fba3de917ccdd4e70609cb36c235e864d8'
+model_hash = '57f4375f8312fb96ae02494ac5e95172f6322193a2b5aae21c01d1a016d46d3f'
 
 [crates.aws-sdk-pipes]
 category = 'AwsSdk'
@@ -2034,9 +2034,9 @@ model_hash = 'a56eb357c2e7e43b2c0d56bc8a1b61732d0735a82b3de055ef01a46ec4e54f8b'
 
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
-version = '1.118.0'
-source_hash = '81beb8db502e048deda00412922450a6fa116c695e8e4e0851bc0a5ec872f828'
-model_hash = '474020174972b14e1977bc650976075fcf0651f369a71a321fa421e3299269cb'
+version = '1.119.0'
+source_hash = '04953e30f99be9a72a4b111a97a0cf4db5c5b9717644730f124f71bf9515ba01'
+model_hash = 'bfef977d8d97b60e00731c40167a8e53cf9a34aa25de64ccabdc63624081b279'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
@@ -2576,7 +2576,7 @@ source_hash = '6635bc552072fa3668b1d6f3b6d64d8dd0fba10acf29362a37c6fc361420322a'
 [crates.aws-smithy-http-fuzz]
 category = 'SmithyRuntime'
 version = '0.0.0'
-source_hash = 'a8f73b36423c7549ae8bd9cb426658b7c988020d2eebb7e23bfa1c7a8d647d8b'
+source_hash = '0ea607ec1cedf2e8135d249c049a634bf5a5764221ced1a9f66f817ac13256d4'
 
 [crates.aws-smithy-json]
 category = 'SmithyRuntime'
@@ -2662,12 +2662,7 @@ source_hash = 'e53cd06ca8aa22890f0b286c8dedbb51e665b9894c55a46da5f010392b9ad092'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '0d58dd1d4735add17d8978e6a963bbaeaec2859e73c5aef928dc3b539a45a84b'
-
-[release]
-tag = 'release-2025-12-22'
-
 [release.crates]
-aws-sdk-config = '1.97.0'
-aws-sdk-ec2 = '1.199.0'
-aws-sdk-guardduty = '1.111.0'
-aws-sdk-pcs = '1.61.1'
+aws-sdk-geoplaces = '1.46.0'
+aws-sdk-pinpointsmsvoicev2 = '1.100.0'
+aws-sdk-s3 = '1.119.0'

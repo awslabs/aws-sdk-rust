@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPoolOriginationIdentitiesInput {
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
@@ -16,7 +16,7 @@ pub struct ListPoolOriginationIdentitiesInput {
 }
 impl ListPoolOriginationIdentitiesInput {
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
@@ -54,7 +54,7 @@ pub struct ListPoolOriginationIdentitiesInputBuilder {
 }
 impl ListPoolOriginationIdentitiesInputBuilder {
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     /// This field is required.
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -62,14 +62,14 @@ impl ListPoolOriginationIdentitiesInputBuilder {
         self
     }
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
     }
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pool_id

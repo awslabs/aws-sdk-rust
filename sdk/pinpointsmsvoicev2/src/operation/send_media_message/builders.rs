@@ -123,21 +123,21 @@ impl SendMediaMessageFluentBuilder {
         self.inner.get_destination_phone_number()
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn origination_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origination_identity(input.into());
         self
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_origination_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_origination_identity()

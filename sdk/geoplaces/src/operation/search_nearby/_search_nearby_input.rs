@@ -3,13 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchNearbyInput {
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub query_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The maximum distance in meters from the QueryPosition from which a result will be returned.</p><note>
     /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
     /// </note>
     pub query_radius: ::std::option::Option<i64>,
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub filter: ::std::option::Option<crate::types::SearchNearbyFilter>,
@@ -29,7 +30,7 @@ pub struct SearchNearbyInput {
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl SearchNearbyInput {
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_position.is_none()`.
     pub fn query_position(&self) -> &[f64] {
@@ -42,6 +43,7 @@ impl SearchNearbyInput {
         self.query_radius
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -121,19 +123,19 @@ impl SearchNearbyInputBuilder {
     ///
     /// To override the contents of this collection use [`set_query_position`](Self::set_query_position).
     ///
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn query_position(mut self, input: f64) -> Self {
         let mut v = self.query_position.unwrap_or_default();
         v.push(input);
         self.query_position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn set_query_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.query_position = input;
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn get_query_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.query_position
     }
@@ -158,16 +160,19 @@ impl SearchNearbyInputBuilder {
         &self.query_radius
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

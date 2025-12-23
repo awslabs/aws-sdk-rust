@@ -5,11 +5,11 @@
 pub struct CarrierLookupOutput {
     /// <p>The phone number in E164 format, sanitized from the original input by removing any formatting characters.</p>
     pub e164_phone_number: ::std::string::String,
-    /// <p>The numeric dialing code for the country or region where the phone number was originally registered.</p>
+    /// <p>The country or region numeric dialing code for the phone number.</p>
     pub dialing_country_code: ::std::option::Option<::std::string::String>,
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
+    /// <p>The two-character country or region code, in ISO 3166-1 alpha-2 format, for the phone number.</p>
     pub iso_country_code: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the country where the phone number was originally registered.</p>
+    /// <p>The name of the country or region for the phone number.</p>
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>The phone number's mobile country code, for mobile phone number types</p>
     pub mcc: ::std::option::Option<::std::string::String>,
@@ -27,15 +27,15 @@ impl CarrierLookupOutput {
         use std::ops::Deref;
         self.e164_phone_number.deref()
     }
-    /// <p>The numeric dialing code for the country or region where the phone number was originally registered.</p>
+    /// <p>The country or region numeric dialing code for the phone number.</p>
     pub fn dialing_country_code(&self) -> ::std::option::Option<&str> {
         self.dialing_country_code.as_deref()
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
+    /// <p>The two-character country or region code, in ISO 3166-1 alpha-2 format, for the phone number.</p>
     pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
-    /// <p>The name of the country where the phone number was originally registered.</p>
+    /// <p>The name of the country or region for the phone number.</p>
     pub fn country(&self) -> ::std::option::Option<&str> {
         self.country.as_deref()
     }
@@ -98,45 +98,45 @@ impl CarrierLookupOutputBuilder {
     pub fn get_e164_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.e164_phone_number
     }
-    /// <p>The numeric dialing code for the country or region where the phone number was originally registered.</p>
+    /// <p>The country or region numeric dialing code for the phone number.</p>
     pub fn dialing_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dialing_country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The numeric dialing code for the country or region where the phone number was originally registered.</p>
+    /// <p>The country or region numeric dialing code for the phone number.</p>
     pub fn set_dialing_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dialing_country_code = input;
         self
     }
-    /// <p>The numeric dialing code for the country or region where the phone number was originally registered.</p>
+    /// <p>The country or region numeric dialing code for the phone number.</p>
     pub fn get_dialing_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.dialing_country_code
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
+    /// <p>The two-character country or region code, in ISO 3166-1 alpha-2 format, for the phone number.</p>
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
+    /// <p>The two-character country or region code, in ISO 3166-1 alpha-2 format, for the phone number.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
-    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
+    /// <p>The two-character country or region code, in ISO 3166-1 alpha-2 format, for the phone number.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.iso_country_code
     }
-    /// <p>The name of the country where the phone number was originally registered.</p>
+    /// <p>The name of the country or region for the phone number.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the country where the phone number was originally registered.</p>
+    /// <p>The name of the country or region for the phone number.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country = input;
         self
     }
-    /// <p>The name of the country where the phone number was originally registered.</p>
+    /// <p>The name of the country or region for the phone number.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
         &self.country
     }

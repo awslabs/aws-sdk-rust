@@ -17,20 +17,20 @@ impl super::Client {
     ///   - [`address(Option<Address>)`](crate::operation::get_place::GetPlaceOutput::address): <p>The place's address.</p>
     ///   - [`address_number_corrected(Option<bool>)`](crate::operation::get_place::GetPlaceOutput::address_number_corrected): <p>Boolean indicating if the address provided has been corrected.</p>
     ///   - [`postal_code_details(Option<Vec::<PostalCodeDetails>>)`](crate::operation::get_place::GetPlaceOutput::postal_code_details): <p>Contains details about the postal code of the place/result.</p>
-    ///   - [`position(Option<Vec::<f64>>)`](crate::operation::get_place::GetPlaceOutput::position): <p>The position, in longitude and latitude.</p>
+    ///   - [`position(Option<Vec::<f64>>)`](crate::operation::get_place::GetPlaceOutput::position): <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     ///   - [`map_view(Option<Vec::<f64>>)`](crate::operation::get_place::GetPlaceOutput::map_view): <p>The bounding box enclosing the geometric shape (area or line) that an individual result covers.</p> <p>The bounding box formed is defined as a set of four coordinates: <code>\[{westward lng}, {southern lat}, {eastward lng}, {northern lat}\]</code></p>
     ///   - [`categories(Option<Vec::<Category>>)`](crate::operation::get_place::GetPlaceOutput::categories): <p>Categories of results that results must belong to.</p>
     ///   - [`food_types(Option<Vec::<FoodType>>)`](crate::operation::get_place::GetPlaceOutput::food_types): <p>List of food types offered by this result.</p>
     ///   - [`business_chains(Option<Vec::<BusinessChain>>)`](crate::operation::get_place::GetPlaceOutput::business_chains): <p>The Business Chains associated with the place.</p>
     ///   - [`contacts(Option<Contacts>)`](crate::operation::get_place::GetPlaceOutput::contacts): <p>List of potential contact methods for the result/place.</p>
     ///   - [`opening_hours(Option<Vec::<OpeningHours>>)`](crate::operation::get_place::GetPlaceOutput::opening_hours): <p>List of opening hours objects.</p>
-    ///   - [`access_points(Option<Vec::<AccessPoint>>)`](crate::operation::get_place::GetPlaceOutput::access_points): <p>Position of the access point in <code>(lng,lat)</code>.</p>
+    ///   - [`access_points(Option<Vec::<AccessPoint>>)`](crate::operation::get_place::GetPlaceOutput::access_points): <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     ///   - [`access_restrictions(Option<Vec::<AccessRestriction>>)`](crate::operation::get_place::GetPlaceOutput::access_restrictions): <p>Indicates known access restrictions on a vehicle access point. The index correlates to an access point and indicates if access through this point has some form of restriction.</p>
     ///   - [`time_zone(Option<TimeZone>)`](crate::operation::get_place::GetPlaceOutput::time_zone): <p>The time zone in which the place is located.</p>
     ///   - [`political_view(Option<String>)`](crate::operation::get_place::GetPlaceOutput::political_view): <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
     ///   - [`phonemes(Option<PhonemeDetails>)`](crate::operation::get_place::GetPlaceOutput::phonemes): <p>How the various components of the result's address are pronounced in various languages.</p>
     ///   - [`main_address(Option<RelatedPlace>)`](crate::operation::get_place::GetPlaceOutput::main_address): <p>The main address corresponding to a place of type Secondary Address.</p>
-    ///   - [`secondary_addresses(Option<Vec::<RelatedPlace>>)`](crate::operation::get_place::GetPlaceOutput::secondary_addresses): <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    ///   - [`secondary_addresses(Option<Vec::<RelatedPlace>>)`](crate::operation::get_place::GetPlaceOutput::secondary_addresses): <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p><note>  <p>Coverage for this functionality is available in the following countries: AUS, CAN, NZL, USA, PRI.</p> </note>
     /// - On failure, responds with [`SdkError<GetPlaceError>`](crate::operation::get_place::GetPlaceError)
     pub fn get_place(&self) -> crate::operation::get_place::builders::GetPlaceFluentBuilder {
         crate::operation::get_place::builders::GetPlaceFluentBuilder::new(self.handle.clone())

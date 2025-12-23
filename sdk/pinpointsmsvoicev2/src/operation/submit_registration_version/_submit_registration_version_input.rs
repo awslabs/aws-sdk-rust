@@ -5,11 +5,17 @@
 pub struct SubmitRegistrationVersionInput {
     /// <p>The unique identifier for the registration.</p>
     pub registration_id: ::std::option::Option<::std::string::String>,
+    /// <p>Set to true to request AWS review of the registration. When enabled, AWS will perform additional validation and review of the registration submission before processing.</p>
+    pub aws_review: ::std::option::Option<bool>,
 }
 impl SubmitRegistrationVersionInput {
     /// <p>The unique identifier for the registration.</p>
     pub fn registration_id(&self) -> ::std::option::Option<&str> {
         self.registration_id.as_deref()
+    }
+    /// <p>Set to true to request AWS review of the registration. When enabled, AWS will perform additional validation and review of the registration submission before processing.</p>
+    pub fn aws_review(&self) -> ::std::option::Option<bool> {
+        self.aws_review
     }
 }
 impl SubmitRegistrationVersionInput {
@@ -24,6 +30,7 @@ impl SubmitRegistrationVersionInput {
 #[non_exhaustive]
 pub struct SubmitRegistrationVersionInputBuilder {
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_review: ::std::option::Option<bool>,
 }
 impl SubmitRegistrationVersionInputBuilder {
     /// <p>The unique identifier for the registration.</p>
@@ -41,6 +48,20 @@ impl SubmitRegistrationVersionInputBuilder {
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registration_id
     }
+    /// <p>Set to true to request AWS review of the registration. When enabled, AWS will perform additional validation and review of the registration submission before processing.</p>
+    pub fn aws_review(mut self, input: bool) -> Self {
+        self.aws_review = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to true to request AWS review of the registration. When enabled, AWS will perform additional validation and review of the registration submission before processing.</p>
+    pub fn set_aws_review(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.aws_review = input;
+        self
+    }
+    /// <p>Set to true to request AWS review of the registration. When enabled, AWS will perform additional validation and review of the registration submission before processing.</p>
+    pub fn get_aws_review(&self) -> &::std::option::Option<bool> {
+        &self.aws_review
+    }
     /// Consumes the builder and constructs a [`SubmitRegistrationVersionInput`](crate::operation::submit_registration_version::SubmitRegistrationVersionInput).
     pub fn build(
         self,
@@ -50,6 +71,7 @@ impl SubmitRegistrationVersionInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::submit_registration_version::SubmitRegistrationVersionInput {
             registration_id: self.registration_id,
+            aws_review: self.aws_review,
         })
     }
 }

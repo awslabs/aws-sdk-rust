@@ -23,6 +23,7 @@ impl crate::operation::geocode::builders::GeocodeInputBuilder {
 /// Fluent builder constructing a request to `Geocode`.
 ///
 /// <p><code>Geocode</code> converts a textual address or place into geographic coordinates. You can obtain geographic coordinates, address component, and other related information. It supports flexible queries, including free-form text or structured queries with components like street names, postal codes, and regions. The Geocode API can also provide additional features such as time zone information and the inclusion of political views.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/geocode.html">Geocode</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GeocodeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,23 +100,17 @@ impl GeocodeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_text(input.into());
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_text(input);
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_text()
     }
@@ -134,16 +129,19 @@ impl GeocodeFluentBuilder {
         self.inner.get_query_components()
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
@@ -152,23 +150,17 @@ impl GeocodeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
     ///
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
-    /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p>
     pub fn bias_position(mut self, input: f64) -> Self {
         self.inner = self.inner.bias_position(input);
         self
     }
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
-    /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p>
     pub fn set_bias_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_bias_position(input);
         self
     }
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
-    /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p>
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_bias_position()
     }

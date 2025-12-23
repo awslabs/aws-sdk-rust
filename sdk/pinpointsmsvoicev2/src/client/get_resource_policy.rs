@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResourcePolicy`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource attached to the resource-based policy.</p><br>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::set_resource_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the End User Messaging SMS resource attached to the resource-based policy.</p><br>
     /// - On success, responds with [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource attached to the resource-based policy.</p>
-    ///   - [`policy(Option<String>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::policy): <p>The JSON formatted string that contains the resource-based policy attached to the End User MessagingSMS resource.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the End User Messaging SMS resource attached to the resource-based policy.</p>
+    ///   - [`policy(Option<String>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::policy): <p>The JSON formatted string that contains the resource-based policy attached to the End User Messaging SMS resource.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::created_timestamp): <p>The time when the resource-based policy was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     /// - On failure, responds with [`SdkError<GetResourcePolicyError>`](crate::operation::get_resource_policy::GetResourcePolicyError)
     pub fn get_resource_policy(&self) -> crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder {

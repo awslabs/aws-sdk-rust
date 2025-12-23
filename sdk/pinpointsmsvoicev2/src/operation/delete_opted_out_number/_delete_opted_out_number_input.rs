@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOptedOutNumberInput {
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
@@ -12,7 +12,7 @@ pub struct DeleteOptedOutNumberInput {
 }
 impl DeleteOptedOutNumberInput {
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
@@ -38,7 +38,7 @@ pub struct DeleteOptedOutNumberInputBuilder {
 }
 impl DeleteOptedOutNumberInputBuilder {
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     /// This field is required.
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -46,14 +46,14 @@ impl DeleteOptedOutNumberInputBuilder {
         self
     }
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out_list_name = input;
         self
     }
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_out_list_name

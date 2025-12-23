@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AccessPoint {
-    /// <p>The position, in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl AccessPoint {
-    /// <p>The position, in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.position.is_none()`.
     pub fn position(&self) -> &[f64] {
@@ -40,19 +40,19 @@ impl AccessPointBuilder {
     ///
     /// To override the contents of this collection use [`set_position`](Self::set_position).
     ///
-    /// <p>The position, in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
         v.push(input);
         self.position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The position, in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
-    /// <p>The position, in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.position
     }

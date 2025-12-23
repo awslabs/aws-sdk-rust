@@ -16,7 +16,7 @@ pub struct GeocodeResultItem {
     pub address_number_corrected: ::std::option::Option<bool>,
     /// <p>Contains details about the postal code of the place/result.</p>
     pub postal_code_details: ::std::option::Option<::std::vec::Vec<crate::types::PostalCodeDetails>>,
-    /// <p>The position in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The distance in meters from the QueryPosition.</p>
     pub distance: i64,
@@ -27,7 +27,7 @@ pub struct GeocodeResultItem {
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
     /// <p>List of food types offered by this result.</p>
     pub food_types: ::std::option::Option<::std::vec::Vec<crate::types::FoodType>>,
-    /// <p>Position of the access point represented by longitude and latitude.</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub access_points: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
     /// <p>The time zone in which the place is located.</p>
     pub time_zone: ::std::option::Option<crate::types::TimeZone>,
@@ -41,7 +41,9 @@ pub struct GeocodeResultItem {
     pub intersections: ::std::option::Option<::std::vec::Vec<crate::types::Intersection>>,
     /// <p>The main address corresponding to a place of type Secondary Address.</p>
     pub main_address: ::std::option::Option<crate::types::RelatedPlace>,
-    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p><note>
+    /// <p>Coverage for this functionality is available in the following countries: AUS, CAN, NZL, USA, PRI.</p>
+    /// </note>
     pub secondary_addresses: ::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>>,
 }
 impl GeocodeResultItem {
@@ -73,7 +75,7 @@ impl GeocodeResultItem {
     pub fn postal_code_details(&self) -> &[crate::types::PostalCodeDetails] {
         self.postal_code_details.as_deref().unwrap_or_default()
     }
-    /// <p>The position in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.position.is_none()`.
     pub fn position(&self) -> &[f64] {
@@ -102,7 +104,7 @@ impl GeocodeResultItem {
     pub fn food_types(&self) -> &[crate::types::FoodType] {
         self.food_types.as_deref().unwrap_or_default()
     }
-    /// <p>Position of the access point represented by longitude and latitude.</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_points.is_none()`.
     pub fn access_points(&self) -> &[crate::types::AccessPoint] {
@@ -134,7 +136,9 @@ impl GeocodeResultItem {
     pub fn main_address(&self) -> ::std::option::Option<&crate::types::RelatedPlace> {
         self.main_address.as_ref()
     }
-    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p><note>
+    /// <p>Coverage for this functionality is available in the following countries: AUS, CAN, NZL, USA, PRI.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_addresses.is_none()`.
     pub fn secondary_addresses(&self) -> &[crate::types::RelatedPlace] {
@@ -295,19 +299,19 @@ impl GeocodeResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_position`](Self::set_position).
     ///
-    /// <p>The position in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
         v.push(input);
         self.position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The position in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
-    /// <p>The position in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.position
     }
@@ -392,19 +396,19 @@ impl GeocodeResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
     ///
-    /// <p>Position of the access point represented by longitude and latitude.</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn access_points(mut self, input: crate::types::AccessPoint) -> Self {
         let mut v = self.access_points.unwrap_or_default();
         v.push(input);
         self.access_points = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position of the access point represented by longitude and latitude.</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_access_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>) -> Self {
         self.access_points = input;
         self
     }
-    /// <p>Position of the access point represented by longitude and latitude.</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_access_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>> {
         &self.access_points
     }
@@ -502,19 +506,25 @@ impl GeocodeResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_secondary_addresses`](Self::set_secondary_addresses).
     ///
-    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p><note>
+    /// <p>Coverage for this functionality is available in the following countries: AUS, CAN, NZL, USA, PRI.</p>
+    /// </note>
     pub fn secondary_addresses(mut self, input: crate::types::RelatedPlace) -> Self {
         let mut v = self.secondary_addresses.unwrap_or_default();
         v.push(input);
         self.secondary_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p><note>
+    /// <p>Coverage for this functionality is available in the following countries: AUS, CAN, NZL, USA, PRI.</p>
+    /// </note>
     pub fn set_secondary_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>>) -> Self {
         self.secondary_addresses = input;
         self
     }
-    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p>
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p><note>
+    /// <p>Coverage for this functionality is available in the following countries: AUS, CAN, NZL, USA, PRI.</p>
+    /// </note>
     pub fn get_secondary_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>> {
         &self.secondary_addresses
     }

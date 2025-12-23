@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SuggestQueryResult {
-    /// <p>QueryId can be used to complete a follow up query through the SearchText API. The QueryId retains context from the original Suggest request such as filters, political view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/latest/APIReference/API_geoplaces_SearchText.html">SearchText API docs</a>.</p><note>
+    /// <p>QueryId can be used to complete a follow up query through the SearchText API. The QueryId retains context from the original Suggest request such as filters, political view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchText.html">SearchText API docs</a>.</p><note>
     /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
     /// </note>
     pub query_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct SuggestQueryResult {
     pub query_type: ::std::option::Option<crate::types::QueryType>,
 }
 impl SuggestQueryResult {
-    /// <p>QueryId can be used to complete a follow up query through the SearchText API. The QueryId retains context from the original Suggest request such as filters, political view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/latest/APIReference/API_geoplaces_SearchText.html">SearchText API docs</a>.</p><note>
+    /// <p>QueryId can be used to complete a follow up query through the SearchText API. The QueryId retains context from the original Suggest request such as filters, political view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchText.html">SearchText API docs</a>.</p><note>
     /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
     /// </note>
     pub fn query_id(&self) -> ::std::option::Option<&str> {
@@ -46,21 +46,21 @@ pub struct SuggestQueryResultBuilder {
     pub(crate) query_type: ::std::option::Option<crate::types::QueryType>,
 }
 impl SuggestQueryResultBuilder {
-    /// <p>QueryId can be used to complete a follow up query through the SearchText API. The QueryId retains context from the original Suggest request such as filters, political view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/latest/APIReference/API_geoplaces_SearchText.html">SearchText API docs</a>.</p><note>
+    /// <p>QueryId can be used to complete a follow up query through the SearchText API. The QueryId retains context from the original Suggest request such as filters, political view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchText.html">SearchText API docs</a>.</p><note>
     /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
     /// </note>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>QueryId can be used to complete a follow up query through the SearchText API. The QueryId retains context from the original Suggest request such as filters, political view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/latest/APIReference/API_geoplaces_SearchText.html">SearchText API docs</a>.</p><note>
+    /// <p>QueryId can be used to complete a follow up query through the SearchText API. The QueryId retains context from the original Suggest request such as filters, political view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchText.html">SearchText API docs</a>.</p><note>
     /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
     /// </note>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
     }
-    /// <p>QueryId can be used to complete a follow up query through the SearchText API. The QueryId retains context from the original Suggest request such as filters, political view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/latest/APIReference/API_geoplaces_SearchText.html">SearchText API docs</a>.</p><note>
+    /// <p>QueryId can be used to complete a follow up query through the SearchText API. The QueryId retains context from the original Suggest request such as filters, political view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchText.html">SearchText API docs</a>.</p><note>
     /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
     /// </note>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {

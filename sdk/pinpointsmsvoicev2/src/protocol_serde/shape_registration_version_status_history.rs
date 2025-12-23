@@ -26,6 +26,12 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "AwsReviewingTimestamp" => {
+                            builder = builder.set_aws_reviewing_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "ReviewingTimestamp" => {
                             builder = builder.set_reviewing_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

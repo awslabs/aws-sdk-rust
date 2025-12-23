@@ -22,7 +22,7 @@ impl crate::operation::request_phone_number::builders::RequestPhoneNumberInputBu
 }
 /// Fluent builder constructing a request to `RequestPhoneNumber`.
 ///
-/// <p>Request an origination phone number for use in your account. For more information on phone number request see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-request.html">Request a phone number</a> in the <i>End User MessagingSMS User Guide</i>.</p>
+/// <p>Request an origination phone number for use in your account. For more information on phone number request see <a href="https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-request.html">Request a phone number</a> in the <i>End User Messaging SMS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RequestPhoneNumberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -173,41 +173,41 @@ impl RequestPhoneNumberFluentBuilder {
         self.inner.get_number_type()
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn opt_out_list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_opt_out_list_name()
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pool_id()

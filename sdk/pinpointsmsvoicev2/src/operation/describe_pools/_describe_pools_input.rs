@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePoolsInput {
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub pool_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of PoolFilter objects to filter the results.</p>
@@ -18,7 +18,7 @@ pub struct DescribePoolsInput {
 }
 impl DescribePoolsInput {
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pool_ids.is_none()`.
@@ -67,7 +67,7 @@ impl DescribePoolsInputBuilder {
     /// To override the contents of this collection use [`set_pool_ids`](Self::set_pool_ids).
     ///
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn pool_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pool_ids.unwrap_or_default();
@@ -76,14 +76,14 @@ impl DescribePoolsInputBuilder {
         self
     }
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_pool_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.pool_ids = input;
         self
     }
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.pool_ids

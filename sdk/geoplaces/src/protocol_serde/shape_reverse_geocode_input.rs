@@ -18,37 +18,43 @@ pub fn ser_reverse_geocode_input_input(
         crate::protocol_serde::shape_reverse_geocode_filter::ser_reverse_geocode_filter(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.intended_use {
-        object.key("IntendedUse").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.language {
-        object.key("Language").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.max_results {
-        object.key("MaxResults").number(
+    if let Some(var_6) = &input.heading {
+        object.key("Heading").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::Float((*var_6).into()),
         );
     }
-    if let Some(var_9) = &input.political_view {
-        object.key("PoliticalView").string(var_9.as_str());
+    if let Some(var_7) = &input.intended_use {
+        object.key("IntendedUse").string(var_7.as_str());
     }
-    if let Some(var_10) = &input.query_position {
-        let mut array_11 = object.key("QueryPosition").start_array();
-        for item_12 in var_10 {
+    if let Some(var_8) = &input.language {
+        object.key("Language").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.max_results {
+        object.key("MaxResults").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
+    }
+    if let Some(var_10) = &input.political_view {
+        object.key("PoliticalView").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.query_position {
+        let mut array_12 = object.key("QueryPosition").start_array();
+        for item_13 in var_11 {
             {
-                array_11.value().number(
+                array_12.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::Float((*item_12).into()),
+                    ::aws_smithy_types::Number::Float((*item_13).into()),
                 );
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.query_radius {
+    if let Some(var_14) = &input.query_radius {
         object.key("QueryRadius").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
     Ok(())

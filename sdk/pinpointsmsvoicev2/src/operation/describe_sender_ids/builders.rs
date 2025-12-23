@@ -122,21 +122,21 @@ impl DescribeSenderIdsFluentBuilder {
     /// To override the contents of this collection use [`set_sender_ids`](Self::set_sender_ids).
     ///
     /// <p>An array of SenderIdAndCountry objects to search for.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn sender_ids(mut self, input: crate::types::SenderIdAndCountry) -> Self {
         self.inner = self.inner.sender_ids(input);
         self
     }
     /// <p>An array of SenderIdAndCountry objects to search for.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_sender_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>>) -> Self {
         self.inner = self.inner.set_sender_ids(input);
         self
     }
     /// <p>An array of SenderIdAndCountry objects to search for.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_sender_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>> {
         self.inner.get_sender_ids()

@@ -14,6 +14,8 @@ pub struct RegistrationFieldValueInformation {
     pub registration_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of why the registration was denied.</p>
     pub denied_reason: ::std::option::Option<::std::string::String>,
+    /// <p>Feedback provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
+    pub feedback: ::std::option::Option<::std::string::String>,
 }
 impl RegistrationFieldValueInformation {
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
@@ -39,6 +41,10 @@ impl RegistrationFieldValueInformation {
     pub fn denied_reason(&self) -> ::std::option::Option<&str> {
         self.denied_reason.as_deref()
     }
+    /// <p>Feedback provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
+    pub fn feedback(&self) -> ::std::option::Option<&str> {
+        self.feedback.as_deref()
+    }
 }
 impl RegistrationFieldValueInformation {
     /// Creates a new builder-style object to manufacture [`RegistrationFieldValueInformation`](crate::types::RegistrationFieldValueInformation).
@@ -56,6 +62,7 @@ pub struct RegistrationFieldValueInformationBuilder {
     pub(crate) text_value: ::std::option::Option<::std::string::String>,
     pub(crate) registration_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) denied_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) feedback: ::std::option::Option<::std::string::String>,
 }
 impl RegistrationFieldValueInformationBuilder {
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
@@ -135,6 +142,20 @@ impl RegistrationFieldValueInformationBuilder {
     pub fn get_denied_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.denied_reason
     }
+    /// <p>Feedback provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
+    pub fn feedback(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.feedback = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Feedback provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
+    pub fn set_feedback(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.feedback = input;
+        self
+    }
+    /// <p>Feedback provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
+    pub fn get_feedback(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feedback
+    }
     /// Consumes the builder and constructs a [`RegistrationFieldValueInformation`](crate::types::RegistrationFieldValueInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_path`](crate::types::builders::RegistrationFieldValueInformationBuilder::field_path)
@@ -150,6 +171,7 @@ impl RegistrationFieldValueInformationBuilder {
             text_value: self.text_value,
             registration_attachment_id: self.registration_attachment_id,
             denied_reason: self.denied_reason,
+            feedback: self.feedback,
         })
     }
 }

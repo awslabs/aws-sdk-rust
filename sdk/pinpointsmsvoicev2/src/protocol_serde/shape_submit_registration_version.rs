@@ -196,6 +196,9 @@ pub(crate) fn de_submit_registration_version(
                         crate::protocol_serde::shape_registration_version_status_history::de_registration_version_status_history(tokens)?,
                     );
                 }
+                "AwsReview" => {
+                    builder = builder.set_aws_review(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

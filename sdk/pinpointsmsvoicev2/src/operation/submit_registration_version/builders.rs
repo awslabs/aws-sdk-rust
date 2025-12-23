@@ -122,4 +122,18 @@ impl SubmitRegistrationVersionFluentBuilder {
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_registration_id()
     }
+    /// <p>Set to true to request AWS review of the registration. When enabled, AWS will perform additional validation and review of the registration submission before processing.</p>
+    pub fn aws_review(mut self, input: bool) -> Self {
+        self.inner = self.inner.aws_review(input);
+        self
+    }
+    /// <p>Set to true to request AWS review of the registration. When enabled, AWS will perform additional validation and review of the registration submission before processing.</p>
+    pub fn set_aws_review(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_aws_review(input);
+        self
+    }
+    /// <p>Set to true to request AWS review of the registration. When enabled, AWS will perform additional validation and review of the registration submission before processing.</p>
+    pub fn get_aws_review(&self) -> &::std::option::Option<bool> {
+        self.inner.get_aws_review()
+    }
 }

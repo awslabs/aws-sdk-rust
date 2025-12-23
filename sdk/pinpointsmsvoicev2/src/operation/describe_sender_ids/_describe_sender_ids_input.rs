@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSenderIdsInput {
     /// <p>An array of SenderIdAndCountry objects to search for.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub sender_ids: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>>,
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
@@ -18,7 +18,7 @@ pub struct DescribeSenderIdsInput {
 }
 impl DescribeSenderIdsInput {
     /// <p>An array of SenderIdAndCountry objects to search for.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sender_ids.is_none()`.
@@ -67,7 +67,7 @@ impl DescribeSenderIdsInputBuilder {
     /// To override the contents of this collection use [`set_sender_ids`](Self::set_sender_ids).
     ///
     /// <p>An array of SenderIdAndCountry objects to search for.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn sender_ids(mut self, input: crate::types::SenderIdAndCountry) -> Self {
         let mut v = self.sender_ids.unwrap_or_default();
@@ -76,14 +76,14 @@ impl DescribeSenderIdsInputBuilder {
         self
     }
     /// <p>An array of SenderIdAndCountry objects to search for.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_sender_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>>) -> Self {
         self.sender_ids = input;
         self
     }
     /// <p>An array of SenderIdAndCountry objects to search for.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_sender_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SenderIdAndCountry>> {
         &self.sender_ids

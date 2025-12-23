@@ -3,11 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ReverseGeocodeInput {
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub query_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The maximum distance in meters from the QueryPosition from which a result will be returned.</p>
     pub query_radius: ::std::option::Option<i64>,
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 1</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub filter: ::std::option::Option<crate::types::ReverseGeocodeFilter>,
@@ -23,9 +24,12 @@ pub struct ReverseGeocodeInput {
     pub intended_use: ::std::option::Option<crate::types::ReverseGeocodeIntendedUse>,
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub key: ::std::option::Option<::std::string::String>,
+    /// <p>The heading in degrees from true north in a navigation context. The heading is measured as the angle clockwise from the North direction.</p>
+    /// <p>Example: North is <code>0</code> degrees, East is <code>90</code> degrees, South is <code>180</code> degrees, and West is <code>270</code> degrees.</p>
+    pub heading: ::std::option::Option<f64>,
 }
 impl ReverseGeocodeInput {
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_position.is_none()`.
     pub fn query_position(&self) -> &[f64] {
@@ -36,6 +40,7 @@ impl ReverseGeocodeInput {
         self.query_radius
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 1</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -67,6 +72,11 @@ impl ReverseGeocodeInput {
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
+    /// <p>The heading in degrees from true north in a navigation context. The heading is measured as the angle clockwise from the North direction.</p>
+    /// <p>Example: North is <code>0</code> degrees, East is <code>90</code> degrees, South is <code>180</code> degrees, and West is <code>270</code> degrees.</p>
+    pub fn heading(&self) -> ::std::option::Option<f64> {
+        self.heading
+    }
 }
 impl ::std::fmt::Debug for ReverseGeocodeInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -80,6 +90,7 @@ impl ::std::fmt::Debug for ReverseGeocodeInput {
         formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("intended_use", &self.intended_use);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -103,25 +114,26 @@ pub struct ReverseGeocodeInputBuilder {
     pub(crate) political_view: ::std::option::Option<::std::string::String>,
     pub(crate) intended_use: ::std::option::Option<crate::types::ReverseGeocodeIntendedUse>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) heading: ::std::option::Option<f64>,
 }
 impl ReverseGeocodeInputBuilder {
     /// Appends an item to `query_position`.
     ///
     /// To override the contents of this collection use [`set_query_position`](Self::set_query_position).
     ///
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn query_position(mut self, input: f64) -> Self {
         let mut v = self.query_position.unwrap_or_default();
         v.push(input);
         self.query_position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn set_query_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.query_position = input;
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn get_query_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.query_position
     }
@@ -140,16 +152,19 @@ impl ReverseGeocodeInputBuilder {
         &self.query_radius
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 1</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 1</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 1</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
@@ -249,6 +264,23 @@ impl ReverseGeocodeInputBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
+    /// <p>The heading in degrees from true north in a navigation context. The heading is measured as the angle clockwise from the North direction.</p>
+    /// <p>Example: North is <code>0</code> degrees, East is <code>90</code> degrees, South is <code>180</code> degrees, and West is <code>270</code> degrees.</p>
+    pub fn heading(mut self, input: f64) -> Self {
+        self.heading = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The heading in degrees from true north in a navigation context. The heading is measured as the angle clockwise from the North direction.</p>
+    /// <p>Example: North is <code>0</code> degrees, East is <code>90</code> degrees, South is <code>180</code> degrees, and West is <code>270</code> degrees.</p>
+    pub fn set_heading(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.heading = input;
+        self
+    }
+    /// <p>The heading in degrees from true north in a navigation context. The heading is measured as the angle clockwise from the North direction.</p>
+    /// <p>Example: North is <code>0</code> degrees, East is <code>90</code> degrees, South is <code>180</code> degrees, and West is <code>270</code> degrees.</p>
+    pub fn get_heading(&self) -> &::std::option::Option<f64> {
+        &self.heading
+    }
     /// Consumes the builder and constructs a [`ReverseGeocodeInput`](crate::operation::reverse_geocode::ReverseGeocodeInput).
     pub fn build(
         self,
@@ -263,6 +295,7 @@ impl ReverseGeocodeInputBuilder {
             political_view: self.political_view,
             intended_use: self.intended_use,
             key: self.key,
+            heading: self.heading,
         })
     }
 }
@@ -278,6 +311,7 @@ impl ::std::fmt::Debug for ReverseGeocodeInputBuilder {
         formatter.field("political_view", &"*** Sensitive Data Redacted ***");
         formatter.field("intended_use", &self.intended_use);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
+        formatter.field("heading", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

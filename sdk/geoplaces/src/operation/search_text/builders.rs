@@ -23,6 +23,7 @@ impl crate::operation::search_text::builders::SearchTextInputBuilder {
 /// Fluent builder constructing a request to `SearchText`.
 ///
 /// <p><code>SearchText</code> searches for geocode and place information. You can then complete a follow-up query suggested from the <code>Suggest</code> API via a query id.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/search-text.html">Search Text</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchTextFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,56 +110,59 @@ impl SearchTextFluentBuilder {
         self
     }
     /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// <p>Exactly one of the following fields must be set: <code>QueryText</code> or <code>QueryId</code>.</p>
     /// </note>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_text(input.into());
         self
     }
     /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// <p>Exactly one of the following fields must be set: <code>QueryText</code> or <code>QueryId</code>.</p>
     /// </note>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_text(input);
         self
     }
     /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// <p>Exactly one of the following fields must be set: <code>QueryText</code> or <code>QueryId</code>.</p>
     /// </note>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_text()
     }
     /// <p>The query Id returned by the suggest API. If passed in the request, the SearchText API will preform a SearchText query with the improved query terms for the original query made to the suggest API.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// <p>Exactly one of the following fields must be set: <code>QueryText</code> or <code>QueryId</code>.</p>
     /// </note>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_id(input.into());
         self
     }
     /// <p>The query Id returned by the suggest API. If passed in the request, the SearchText API will preform a SearchText query with the improved query terms for the original query made to the suggest API.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// <p>Exactly one of the following fields must be set: <code>QueryText</code> or <code>QueryId</code>.</p>
     /// </note>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_id(input);
         self
     }
     /// <p>The query Id returned by the suggest API. If passed in the request, the SearchText API will preform a SearchText query with the improved query terms for the original query made to the suggest API.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// <p>Exactly one of the following fields must be set: <code>QueryText</code> or <code>QueryId</code>.</p>
     /// </note>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_id()
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
@@ -167,22 +171,22 @@ impl SearchTextFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
     ///
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
-    /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
+    /// <p>Exactly one of the following fields must be set: <code>BiasPosition</code>, <code>Filter.BoundingBox</code>, or <code>Filter.Circle</code>.</p>
     /// </note>
     pub fn bias_position(mut self, input: f64) -> Self {
         self.inner = self.inner.bias_position(input);
         self
     }
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
-    /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
+    /// <p>Exactly one of the following fields must be set: <code>BiasPosition</code>, <code>Filter.BoundingBox</code>, or <code>Filter.Circle</code>.</p>
     /// </note>
     pub fn set_bias_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_bias_position(input);
         self
     }
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
-    /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
+    /// <p>Exactly one of the following fields must be set: <code>BiasPosition</code>, <code>Filter.BoundingBox</code>, or <code>Filter.Circle</code>.</p>
     /// </note>
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_bias_position()

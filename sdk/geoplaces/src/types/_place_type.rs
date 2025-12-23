@@ -15,6 +15,7 @@
 ///     PlaceType::Block => { /* ... */ },
 ///     PlaceType::Country => { /* ... */ },
 ///     PlaceType::District => { /* ... */ },
+///     PlaceType::InferredSecondaryAddress => { /* ... */ },
 ///     PlaceType::InterpolatedAddress => { /* ... */ },
 ///     PlaceType::Intersection => { /* ... */ },
 ///     PlaceType::Locality => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum PlaceType {
     #[allow(missing_docs)] // documentation missing in model
     District,
     #[allow(missing_docs)] // documentation missing in model
+    InferredSecondaryAddress,
+    #[allow(missing_docs)] // documentation missing in model
     InterpolatedAddress,
     #[allow(missing_docs)] // documentation missing in model
     Intersection,
@@ -93,6 +96,7 @@ impl ::std::convert::From<&str> for PlaceType {
             "Block" => PlaceType::Block,
             "Country" => PlaceType::Country,
             "District" => PlaceType::District,
+            "InferredSecondaryAddress" => PlaceType::InferredSecondaryAddress,
             "InterpolatedAddress" => PlaceType::InterpolatedAddress,
             "Intersection" => PlaceType::Intersection,
             "Locality" => PlaceType::Locality,
@@ -123,6 +127,7 @@ impl PlaceType {
             PlaceType::Block => "Block",
             PlaceType::Country => "Country",
             PlaceType::District => "District",
+            PlaceType::InferredSecondaryAddress => "InferredSecondaryAddress",
             PlaceType::InterpolatedAddress => "InterpolatedAddress",
             PlaceType::Intersection => "Intersection",
             PlaceType::Locality => "Locality",
@@ -144,6 +149,7 @@ impl PlaceType {
             "Block",
             "Country",
             "District",
+            "InferredSecondaryAddress",
             "InterpolatedAddress",
             "Intersection",
             "Locality",
@@ -182,6 +188,7 @@ impl ::std::fmt::Display for PlaceType {
             PlaceType::Block => write!(f, "Block"),
             PlaceType::Country => write!(f, "Country"),
             PlaceType::District => write!(f, "District"),
+            PlaceType::InferredSecondaryAddress => write!(f, "InferredSecondaryAddress"),
             PlaceType::InterpolatedAddress => write!(f, "InterpolatedAddress"),
             PlaceType::Intersection => write!(f, "Intersection"),
             PlaceType::Locality => write!(f, "Locality"),

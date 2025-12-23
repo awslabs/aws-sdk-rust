@@ -4,14 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SuggestInput {
     /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// <p>The fields <code>QueryText</code> and <code>QueryID</code> are mutually exclusive.</p>
     /// </note>
     pub query_text: ::std::option::Option<::std::string::String>,
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Maximum number of query terms to be returned for use with a search text query.</p>
     pub max_query_refinements: ::std::option::Option<i32>,
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
     /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
     /// </note>
     pub bias_position: ::std::option::Option<::std::vec::Vec<f64>>,
@@ -30,12 +31,13 @@ pub struct SuggestInput {
 }
 impl SuggestInput {
     /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// <p>The fields <code>QueryText</code> and <code>QueryID</code> are mutually exclusive.</p>
     /// </note>
     pub fn query_text(&self) -> ::std::option::Option<&str> {
         self.query_text.as_deref()
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -43,7 +45,7 @@ impl SuggestInput {
     pub fn max_query_refinements(&self) -> ::std::option::Option<i32> {
         self.max_query_refinements
     }
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
     /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
     /// </note>
     ///
@@ -118,7 +120,7 @@ pub struct SuggestInputBuilder {
 }
 impl SuggestInputBuilder {
     /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// <p>The fields <code>QueryText</code> and <code>QueryID</code> are mutually exclusive.</p>
     /// </note>
     /// This field is required.
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,29 +128,32 @@ impl SuggestInputBuilder {
         self
     }
     /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// <p>The fields <code>QueryText</code> and <code>QueryID</code> are mutually exclusive.</p>
     /// </note>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_text = input;
         self
     }
     /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
+    /// <p>The fields <code>QueryText</code> and <code>QueryID</code> are mutually exclusive.</p>
     /// </note>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_text
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
@@ -170,7 +175,7 @@ impl SuggestInputBuilder {
     ///
     /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
     ///
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
     /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
     /// </note>
     pub fn bias_position(mut self, input: f64) -> Self {
@@ -179,14 +184,14 @@ impl SuggestInputBuilder {
         self.bias_position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
     /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
     /// </note>
     pub fn set_bias_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.bias_position = input;
         self
     }
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p><note>
     /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
     /// </note>
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {

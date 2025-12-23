@@ -12,6 +12,7 @@
 /// ```text
 /// # let registrationstatus = unimplemented!();
 /// match registrationstatus {
+///     RegistrationStatus::AwsReviewing => { /* ... */ },
 ///     RegistrationStatus::Closed => { /* ... */ },
 ///     RegistrationStatus::Complete => { /* ... */ },
 ///     RegistrationStatus::Created => { /* ... */ },
@@ -50,6 +51,8 @@
 )]
 pub enum RegistrationStatus {
     #[allow(missing_docs)] // documentation missing in model
+    AwsReviewing,
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
     #[allow(missing_docs)] // documentation missing in model
     Complete,
@@ -74,6 +77,7 @@ pub enum RegistrationStatus {
 impl ::std::convert::From<&str> for RegistrationStatus {
     fn from(s: &str) -> Self {
         match s {
+            "AWS_REVIEWING" => RegistrationStatus::AwsReviewing,
             "CLOSED" => RegistrationStatus::Closed,
             "COMPLETE" => RegistrationStatus::Complete,
             "CREATED" => RegistrationStatus::Created,
@@ -98,6 +102,7 @@ impl RegistrationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RegistrationStatus::AwsReviewing => "AWS_REVIEWING",
             RegistrationStatus::Closed => "CLOSED",
             RegistrationStatus::Complete => "COMPLETE",
             RegistrationStatus::Created => "CREATED",
@@ -113,6 +118,7 @@ impl RegistrationStatus {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AWS_REVIEWING",
             "CLOSED",
             "COMPLETE",
             "CREATED",
@@ -145,6 +151,7 @@ impl RegistrationStatus {
 impl ::std::fmt::Display for RegistrationStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RegistrationStatus::AwsReviewing => write!(f, "AWS_REVIEWING"),
             RegistrationStatus::Closed => write!(f, "CLOSED"),
             RegistrationStatus::Complete => write!(f, "COMPLETE"),
             RegistrationStatus::Created => write!(f, "CREATED"),

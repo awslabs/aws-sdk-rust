@@ -6,5 +6,8 @@ pub fn ser_submit_registration_version_input_input(
     if let Some(var_1) = &input.registration_id {
         object.key("RegistrationId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.aws_review {
+        object.key("AwsReview").boolean(*var_2);
+    }
     Ok(())
 }

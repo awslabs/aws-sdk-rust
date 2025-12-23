@@ -10,7 +10,7 @@ pub struct Intersection {
     pub title: ::std::string::String,
     /// <p>The place address.</p>
     pub address: ::std::option::Option<crate::types::Address>,
-    /// <p>The position, in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The distance in meters from the QueryPosition.</p>
     pub distance: ::std::option::Option<i64>,
@@ -19,7 +19,7 @@ pub struct Intersection {
     /// <p>The bounding box enclosing the geometric shape (area or line) that an individual result covers.</p>
     /// <p>The bounding box formed is defined as a set of four coordinates: <code>\[{westward lng}, {southern lat}, {eastward lng}, {northern lat}\]</code></p>
     pub map_view: ::std::option::Option<::std::vec::Vec<f64>>,
-    /// <p>Position of the access point represented by longitude and latitude.</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub access_points: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
 }
 impl Intersection {
@@ -37,7 +37,7 @@ impl Intersection {
     pub fn address(&self) -> ::std::option::Option<&crate::types::Address> {
         self.address.as_ref()
     }
-    /// <p>The position, in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.position.is_none()`.
     pub fn position(&self) -> &[f64] {
@@ -58,7 +58,7 @@ impl Intersection {
     pub fn map_view(&self) -> &[f64] {
         self.map_view.as_deref().unwrap_or_default()
     }
-    /// <p>Position of the access point represented by longitude and latitude.</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_points.is_none()`.
     pub fn access_points(&self) -> &[crate::types::AccessPoint] {
@@ -148,19 +148,19 @@ impl IntersectionBuilder {
     ///
     /// To override the contents of this collection use [`set_position`](Self::set_position).
     ///
-    /// <p>The position, in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
         v.push(input);
         self.position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The position, in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
-    /// <p>The position, in longitude and latitude.</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.position
     }
@@ -219,19 +219,19 @@ impl IntersectionBuilder {
     ///
     /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
     ///
-    /// <p>Position of the access point represented by longitude and latitude.</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn access_points(mut self, input: crate::types::AccessPoint) -> Self {
         let mut v = self.access_points.unwrap_or_default();
         v.push(input);
         self.access_points = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position of the access point represented by longitude and latitude.</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_access_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>) -> Self {
         self.access_points = input;
         self
     }
-    /// <p>Position of the access point represented by longitude and latitude.</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_access_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>> {
         &self.access_points
     }

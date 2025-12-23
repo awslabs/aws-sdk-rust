@@ -23,6 +23,7 @@ impl crate::operation::get_place::builders::GetPlaceInputBuilder {
 /// Fluent builder constructing a request to `GetPlace`.
 ///
 /// <p><code>GetPlace</code> finds a place by its unique ID. A <code>PlaceId</code> is returned by other place operations.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/get-place.html">GetPlace</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPlaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -3,17 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GeocodeInput {
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
     pub query_text: ::std::option::Option<::std::string::String>,
     /// <p>A structured free text query allows you to search for places by the name or text representation of specific properties of the place.</p>
     pub query_components: ::std::option::Option<crate::types::GeocodeQueryComponents>,
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
-    /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p>
     pub bias_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>A structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
     pub filter: ::std::option::Option<crate::types::GeocodeFilter>,
@@ -31,9 +28,7 @@ pub struct GeocodeInput {
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl GeocodeInput {
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
     pub fn query_text(&self) -> ::std::option::Option<&str> {
         self.query_text.as_deref()
     }
@@ -42,12 +37,11 @@ impl GeocodeInput {
         self.query_components.as_ref()
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
-    /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bias_position.is_none()`.
     pub fn bias_position(&self) -> &[f64] {
@@ -121,23 +115,17 @@ pub struct GeocodeInputBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl GeocodeInputBuilder {
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_text = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_text = input;
         self
     }
-    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p><note>
-    /// <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The free-form text query to match addresses against. This is usually a partially typed address from an end user in an address box or form.</p>
     pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_text
     }
@@ -156,16 +144,19 @@ impl GeocodeInputBuilder {
         &self.query_components
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 20</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
@@ -173,25 +164,19 @@ impl GeocodeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
     ///
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
-    /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p>
     pub fn bias_position(mut self, input: f64) -> Self {
         let mut v = self.bias_position.unwrap_or_default();
         v.push(input);
         self.bias_position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
-    /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p>
     pub fn set_bias_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.bias_position = input;
         self
     }
-    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WSG84 format.</p><note>
-    /// <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and <code>FilterCircle</code> are mutually exclusive.</p>
-    /// </note>
+    /// <p>The position, in longitude and latitude, that the results should be close to. Typically, place results returned are ranked higher the closer they are to this position. Stored in <code>\[lng, lat\]</code> and in the WGS 84 format.</p>
     pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.bias_position
     }

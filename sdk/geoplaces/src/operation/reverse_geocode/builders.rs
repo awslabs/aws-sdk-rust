@@ -23,6 +23,7 @@ impl crate::operation::reverse_geocode::builders::ReverseGeocodeInputBuilder {
 /// Fluent builder constructing a request to `ReverseGeocode`.
 ///
 /// <p><code>ReverseGeocode</code> converts geographic coordinates into a human-readable address or place. You can obtain address component, and other related information such as place type, category, street information. The Reverse Geocode API supports filtering to on place type so that you can refine result based on your need. Also, The Reverse Geocode API can also provide additional features such as time zone information and the inclusion of political views.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/reverse-geocode.html">Reverse Geocode</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReverseGeocodeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +114,17 @@ impl ReverseGeocodeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_query_position`](Self::set_query_position).
     ///
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn query_position(mut self, input: f64) -> Self {
         self.inner = self.inner.query_position(input);
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn set_query_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_query_position(input);
         self
     }
-    /// <p>The position, in <code>\[lng, lat\]</code> for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
+    /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\] for which you are querying nearby results for. Results closer to the position will be ranked higher then results further away from the position</p>
     pub fn get_query_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_query_position()
     }
@@ -142,16 +143,19 @@ impl ReverseGeocodeFluentBuilder {
         self.inner.get_query_radius()
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 1</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 1</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>An optional limit for the number of results returned in a single call.</p>
+    /// <p>Default value: 1</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
@@ -249,5 +253,22 @@ impl ReverseGeocodeFluentBuilder {
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key()
+    }
+    /// <p>The heading in degrees from true north in a navigation context. The heading is measured as the angle clockwise from the North direction.</p>
+    /// <p>Example: North is <code>0</code> degrees, East is <code>90</code> degrees, South is <code>180</code> degrees, and West is <code>270</code> degrees.</p>
+    pub fn heading(mut self, input: f64) -> Self {
+        self.inner = self.inner.heading(input);
+        self
+    }
+    /// <p>The heading in degrees from true north in a navigation context. The heading is measured as the angle clockwise from the North direction.</p>
+    /// <p>Example: North is <code>0</code> degrees, East is <code>90</code> degrees, South is <code>180</code> degrees, and West is <code>270</code> degrees.</p>
+    pub fn set_heading(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.inner = self.inner.set_heading(input);
+        self
+    }
+    /// <p>The heading in degrees from true north in a navigation context. The heading is measured as the angle clockwise from the North direction.</p>
+    /// <p>Example: North is <code>0</code> degrees, East is <code>90</code> degrees, South is <code>180</code> degrees, and West is <code>270</code> degrees.</p>
+    pub fn get_heading(&self) -> &::std::option::Option<f64> {
+        self.inner.get_heading()
     }
 }

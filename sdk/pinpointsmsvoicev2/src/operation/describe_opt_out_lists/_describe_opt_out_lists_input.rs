@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptOutListsInput {
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub opt_out_list_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -16,7 +16,7 @@ pub struct DescribeOptOutListsInput {
 }
 impl DescribeOptOutListsInput {
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.opt_out_list_names.is_none()`.
@@ -58,7 +58,7 @@ impl DescribeOptOutListsInputBuilder {
     /// To override the contents of this collection use [`set_opt_out_list_names`](Self::set_opt_out_list_names).
     ///
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn opt_out_list_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.opt_out_list_names.unwrap_or_default();
@@ -67,14 +67,14 @@ impl DescribeOptOutListsInputBuilder {
         self
     }
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_opt_out_list_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.opt_out_list_names = input;
         self
     }
     /// <p>The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_opt_out_list_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.opt_out_list_names

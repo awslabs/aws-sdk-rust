@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePhoneNumbersInput {
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub phone_number_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of PhoneNumberFilter objects to filter the results.</p>
@@ -18,7 +18,7 @@ pub struct DescribePhoneNumbersInput {
 }
 impl DescribePhoneNumbersInput {
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_ids.is_none()`.
@@ -67,7 +67,7 @@ impl DescribePhoneNumbersInputBuilder {
     /// To override the contents of this collection use [`set_phone_number_ids`](Self::set_phone_number_ids).
     ///
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn phone_number_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phone_number_ids.unwrap_or_default();
@@ -76,14 +76,14 @@ impl DescribePhoneNumbersInputBuilder {
         self
     }
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn set_phone_number_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.phone_number_ids = input;
         self
     }
     /// <p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p><important>
-    /// <p>If you are using a shared End User MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+    /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub fn get_phone_number_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.phone_number_ids

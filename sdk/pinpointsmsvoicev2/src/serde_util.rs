@@ -626,6 +626,9 @@ pub(crate) fn submit_registration_version_output_output_correct_errors(
                 .ok()
         }
     }
+    if builder.aws_review.is_none() {
+        builder.aws_review = Some(Default::default())
+    }
     builder
 }
 

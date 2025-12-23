@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FilterCircle {
-    /// <p>The center position, in longitude and latitude, of the <code>FilterCircle</code>.</p>
+    /// <p>The center position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub center: ::std::vec::Vec<f64>,
     /// <p>The radius, in meters, of the <code>FilterCircle</code>.</p>
     pub radius: i64,
 }
 impl FilterCircle {
-    /// <p>The center position, in longitude and latitude, of the <code>FilterCircle</code>.</p>
+    /// <p>The center position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn center(&self) -> &[f64] {
         use std::ops::Deref;
         self.center.deref()
@@ -47,19 +47,19 @@ impl FilterCircleBuilder {
     ///
     /// To override the contents of this collection use [`set_center`](Self::set_center).
     ///
-    /// <p>The center position, in longitude and latitude, of the <code>FilterCircle</code>.</p>
+    /// <p>The center position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn center(mut self, input: f64) -> Self {
         let mut v = self.center.unwrap_or_default();
         v.push(input);
         self.center = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The center position, in longitude and latitude, of the <code>FilterCircle</code>.</p>
+    /// <p>The center position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_center(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.center = input;
         self
     }
-    /// <p>The center position, in longitude and latitude, of the <code>FilterCircle</code>.</p>
+    /// <p>The center position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_center(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.center
     }

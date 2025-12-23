@@ -32,6 +32,8 @@ pub struct RegistrationVersionInformation {
     pub registration_version_status_history: ::std::option::Option<crate::types::RegistrationVersionStatusHistory>,
     /// <p>An array of RegistrationDeniedReasonInformation objects.</p>
     pub denied_reasons: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationDeniedReasonInformation>>,
+    /// <p>Feedback information provided during the registration review process. This includes comments, suggestions, or additional requirements.</p>
+    pub feedback: ::std::option::Option<::std::string::String>,
 }
 impl RegistrationVersionInformation {
     /// <p>The version number of the registration.</p>
@@ -72,6 +74,10 @@ impl RegistrationVersionInformation {
     pub fn denied_reasons(&self) -> &[crate::types::RegistrationDeniedReasonInformation] {
         self.denied_reasons.as_deref().unwrap_or_default()
     }
+    /// <p>Feedback information provided during the registration review process. This includes comments, suggestions, or additional requirements.</p>
+    pub fn feedback(&self) -> ::std::option::Option<&str> {
+        self.feedback.as_deref()
+    }
 }
 impl RegistrationVersionInformation {
     /// Creates a new builder-style object to manufacture [`RegistrationVersionInformation`](crate::types::RegistrationVersionInformation).
@@ -88,6 +94,7 @@ pub struct RegistrationVersionInformationBuilder {
     pub(crate) registration_version_status: ::std::option::Option<crate::types::RegistrationVersionStatus>,
     pub(crate) registration_version_status_history: ::std::option::Option<crate::types::RegistrationVersionStatusHistory>,
     pub(crate) denied_reasons: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationDeniedReasonInformation>>,
+    pub(crate) feedback: ::std::option::Option<::std::string::String>,
 }
 impl RegistrationVersionInformationBuilder {
     /// <p>The version number of the registration.</p>
@@ -215,6 +222,20 @@ impl RegistrationVersionInformationBuilder {
     pub fn get_denied_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationDeniedReasonInformation>> {
         &self.denied_reasons
     }
+    /// <p>Feedback information provided during the registration review process. This includes comments, suggestions, or additional requirements.</p>
+    pub fn feedback(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.feedback = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Feedback information provided during the registration review process. This includes comments, suggestions, or additional requirements.</p>
+    pub fn set_feedback(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.feedback = input;
+        self
+    }
+    /// <p>Feedback information provided during the registration review process. This includes comments, suggestions, or additional requirements.</p>
+    pub fn get_feedback(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feedback
+    }
     /// Consumes the builder and constructs a [`RegistrationVersionInformation`](crate::types::RegistrationVersionInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`version_number`](crate::types::builders::RegistrationVersionInformationBuilder::version_number)
@@ -235,6 +256,7 @@ impl RegistrationVersionInformationBuilder {
             })?,
             registration_version_status_history: self.registration_version_status_history,
             denied_reasons: self.denied_reasons,
+            feedback: self.feedback,
         })
     }
 }
