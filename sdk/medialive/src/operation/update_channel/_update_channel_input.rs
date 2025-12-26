@@ -30,6 +30,8 @@ pub struct UpdateChannelInput {
     pub dry_run: ::std::option::Option<bool>,
     /// The Elemental Anywhere settings for this channel.
     pub anywhere_settings: ::std::option::Option<crate::types::AnywhereSettings>,
+    /// The linked channel settings for the channel.
+    pub linked_channel_settings: ::std::option::Option<crate::types::LinkedChannelSettings>,
 }
 impl UpdateChannelInput {
     /// Specification of CDI inputs for this channel
@@ -88,6 +90,10 @@ impl UpdateChannelInput {
     pub fn anywhere_settings(&self) -> ::std::option::Option<&crate::types::AnywhereSettings> {
         self.anywhere_settings.as_ref()
     }
+    /// The linked channel settings for the channel.
+    pub fn linked_channel_settings(&self) -> ::std::option::Option<&crate::types::LinkedChannelSettings> {
+        self.linked_channel_settings.as_ref()
+    }
 }
 impl UpdateChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
@@ -113,6 +119,7 @@ pub struct UpdateChannelInputBuilder {
     pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionRequest>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) anywhere_settings: ::std::option::Option<crate::types::AnywhereSettings>,
+    pub(crate) linked_channel_settings: ::std::option::Option<crate::types::LinkedChannelSettings>,
 }
 impl UpdateChannelInputBuilder {
     /// Specification of CDI inputs for this channel
@@ -310,6 +317,20 @@ impl UpdateChannelInputBuilder {
     pub fn get_anywhere_settings(&self) -> &::std::option::Option<crate::types::AnywhereSettings> {
         &self.anywhere_settings
     }
+    /// The linked channel settings for the channel.
+    pub fn linked_channel_settings(mut self, input: crate::types::LinkedChannelSettings) -> Self {
+        self.linked_channel_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// The linked channel settings for the channel.
+    pub fn set_linked_channel_settings(mut self, input: ::std::option::Option<crate::types::LinkedChannelSettings>) -> Self {
+        self.linked_channel_settings = input;
+        self
+    }
+    /// The linked channel settings for the channel.
+    pub fn get_linked_channel_settings(&self) -> &::std::option::Option<crate::types::LinkedChannelSettings> {
+        &self.linked_channel_settings
+    }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
@@ -328,6 +349,7 @@ impl UpdateChannelInputBuilder {
             channel_engine_version: self.channel_engine_version,
             dry_run: self.dry_run,
             anywhere_settings: self.anywhere_settings,
+            linked_channel_settings: self.linked_channel_settings,
         })
     }
 }

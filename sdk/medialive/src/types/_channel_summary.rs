@@ -42,6 +42,8 @@ pub struct ChannelSummary {
     pub channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
     /// The engine version that the running pipelines are using.
     pub used_channel_engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEngineVersionResponse>>,
+    /// Linked Channel Settings for this channel.
+    pub linked_channel_settings: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>,
 }
 impl ChannelSummary {
     /// The unique arn of the channel.
@@ -128,6 +130,10 @@ impl ChannelSummary {
     pub fn used_channel_engine_versions(&self) -> &[crate::types::ChannelEngineVersionResponse] {
         self.used_channel_engine_versions.as_deref().unwrap_or_default()
     }
+    /// Linked Channel Settings for this channel.
+    pub fn linked_channel_settings(&self) -> ::std::option::Option<&crate::types::DescribeLinkedChannelSettings> {
+        self.linked_channel_settings.as_ref()
+    }
 }
 impl ChannelSummary {
     /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::types::ChannelSummary).
@@ -159,6 +165,7 @@ pub struct ChannelSummaryBuilder {
     pub(crate) anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
     pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
     pub(crate) used_channel_engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEngineVersionResponse>>,
+    pub(crate) linked_channel_settings: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>,
 }
 impl ChannelSummaryBuilder {
     /// The unique arn of the channel.
@@ -460,6 +467,20 @@ impl ChannelSummaryBuilder {
     pub fn get_used_channel_engine_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelEngineVersionResponse>> {
         &self.used_channel_engine_versions
     }
+    /// Linked Channel Settings for this channel.
+    pub fn linked_channel_settings(mut self, input: crate::types::DescribeLinkedChannelSettings) -> Self {
+        self.linked_channel_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Linked Channel Settings for this channel.
+    pub fn set_linked_channel_settings(mut self, input: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>) -> Self {
+        self.linked_channel_settings = input;
+        self
+    }
+    /// Linked Channel Settings for this channel.
+    pub fn get_linked_channel_settings(&self) -> &::std::option::Option<crate::types::DescribeLinkedChannelSettings> {
+        &self.linked_channel_settings
+    }
     /// Consumes the builder and constructs a [`ChannelSummary`](crate::types::ChannelSummary).
     pub fn build(self) -> crate::types::ChannelSummary {
         crate::types::ChannelSummary {
@@ -482,6 +503,7 @@ impl ChannelSummaryBuilder {
             anywhere_settings: self.anywhere_settings,
             channel_engine_version: self.channel_engine_version,
             used_channel_engine_versions: self.used_channel_engine_versions,
+            linked_channel_settings: self.linked_channel_settings,
         }
     }
 }

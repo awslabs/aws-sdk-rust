@@ -364,4 +364,18 @@ impl CreateChannelFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    /// The linked channel settings for the channel.
+    pub fn linked_channel_settings(mut self, input: crate::types::LinkedChannelSettings) -> Self {
+        self.inner = self.inner.linked_channel_settings(input);
+        self
+    }
+    /// The linked channel settings for the channel.
+    pub fn set_linked_channel_settings(mut self, input: ::std::option::Option<crate::types::LinkedChannelSettings>) -> Self {
+        self.inner = self.inner.set_linked_channel_settings(input);
+        self
+    }
+    /// The linked channel settings for the channel.
+    pub fn get_linked_channel_settings(&self) -> &::std::option::Option<crate::types::LinkedChannelSettings> {
+        self.inner.get_linked_channel_settings()
+    }
 }

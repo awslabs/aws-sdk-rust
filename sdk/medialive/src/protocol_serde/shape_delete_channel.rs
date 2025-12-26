@@ -228,6 +228,11 @@ pub(crate) fn de_delete_channel(
                 "inputSpecification" => {
                     builder = builder.set_input_specification(crate::protocol_serde::shape_input_specification::de_input_specification(tokens)?);
                 }
+                "linkedChannelSettings" => {
+                    builder = builder.set_linked_channel_settings(
+                        crate::protocol_serde::shape_describe_linked_channel_settings::de_describe_linked_channel_settings(tokens)?,
+                    );
+                }
                 "logLevel" => {
                     builder = builder.set_log_level(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

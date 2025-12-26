@@ -44,6 +44,8 @@ pub struct DeleteChannelOutput {
     pub anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
     /// Requested engine version for this channel.
     pub channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
+    /// Linked Channel Settings for this channel.
+    pub linked_channel_settings: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>,
     _request_id: Option<String>,
 }
 impl DeleteChannelOutput {
@@ -135,6 +137,10 @@ impl DeleteChannelOutput {
     pub fn channel_engine_version(&self) -> ::std::option::Option<&crate::types::ChannelEngineVersionResponse> {
         self.channel_engine_version.as_ref()
     }
+    /// Linked Channel Settings for this channel.
+    pub fn linked_channel_settings(&self) -> ::std::option::Option<&crate::types::DescribeLinkedChannelSettings> {
+        self.linked_channel_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DeleteChannelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -172,6 +178,7 @@ pub struct DeleteChannelOutputBuilder {
     pub(crate) vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     pub(crate) anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
     pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
+    pub(crate) linked_channel_settings: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>,
     _request_id: Option<String>,
 }
 impl DeleteChannelOutputBuilder {
@@ -485,6 +492,20 @@ impl DeleteChannelOutputBuilder {
     pub fn get_channel_engine_version(&self) -> &::std::option::Option<crate::types::ChannelEngineVersionResponse> {
         &self.channel_engine_version
     }
+    /// Linked Channel Settings for this channel.
+    pub fn linked_channel_settings(mut self, input: crate::types::DescribeLinkedChannelSettings) -> Self {
+        self.linked_channel_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Linked Channel Settings for this channel.
+    pub fn set_linked_channel_settings(mut self, input: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>) -> Self {
+        self.linked_channel_settings = input;
+        self
+    }
+    /// Linked Channel Settings for this channel.
+    pub fn get_linked_channel_settings(&self) -> &::std::option::Option<crate::types::DescribeLinkedChannelSettings> {
+        &self.linked_channel_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -517,6 +538,7 @@ impl DeleteChannelOutputBuilder {
             vpc: self.vpc,
             anywhere_settings: self.anywhere_settings,
             channel_engine_version: self.channel_engine_version,
+            linked_channel_settings: self.linked_channel_settings,
             _request_id: self._request_id,
         }
     }

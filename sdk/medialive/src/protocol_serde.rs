@@ -421,6 +421,8 @@ pub(crate) mod shape_cluster_network_settings_update_request;
 
 pub(crate) mod shape_describe_anywhere_settings;
 
+pub(crate) mod shape_describe_linked_channel_settings;
+
 pub(crate) mod shape_encoder_settings;
 
 pub(crate) mod shape_event_bridge_rule_template_target;
@@ -460,6 +462,8 @@ pub(crate) mod shape_input_whitelist_rule_cidr;
 pub(crate) mod shape_ip_pool_create_request;
 
 pub(crate) mod shape_ip_pool_update_request;
+
+pub(crate) mod shape_linked_channel_settings;
 
 pub(crate) mod shape_list_of_batch_failed_result_model;
 
@@ -657,15 +661,21 @@ pub(crate) mod shape_describe_channel_placement_group_summary;
 
 pub(crate) mod shape_describe_cluster_summary;
 
+pub(crate) mod shape_describe_follower_channel_settings;
+
 pub(crate) mod shape_describe_network_summary;
 
 pub(crate) mod shape_describe_node_summary;
+
+pub(crate) mod shape_describe_primary_channel_settings;
 
 pub(crate) mod shape_event_bridge_rule_template_group_summary;
 
 pub(crate) mod shape_event_bridge_rule_template_summary;
 
 pub(crate) mod shape_feature_activations;
+
+pub(crate) mod shape_follower_channel_settings;
 
 pub(crate) mod shape_global_configuration;
 
@@ -752,6 +762,8 @@ pub(crate) mod shape_output_destination_settings;
 pub(crate) mod shape_output_group;
 
 pub(crate) mod shape_pipeline_detail;
+
+pub(crate) mod shape_primary_channel_settings;
 
 pub(crate) mod shape_route;
 

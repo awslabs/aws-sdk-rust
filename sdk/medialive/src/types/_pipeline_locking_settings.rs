@@ -3,7 +3,16 @@
 /// Pipeline Locking Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineLockingSettings {}
+pub struct PipelineLockingSettings {
+    /// The method to use to lock the video frames in the pipelines. sourceTimecode (default): Use the timecode in the source. videoAlignment: Lock frames that the encoder identifies as having matching content. If videoAlignment is selected, existing timecodes will not be used for any locking decisions.
+    pub pipeline_locking_method: ::std::option::Option<crate::types::PipelineLockingMethod>,
+}
+impl PipelineLockingSettings {
+    /// The method to use to lock the video frames in the pipelines. sourceTimecode (default): Use the timecode in the source. videoAlignment: Lock frames that the encoder identifies as having matching content. If videoAlignment is selected, existing timecodes will not be used for any locking decisions.
+    pub fn pipeline_locking_method(&self) -> ::std::option::Option<&crate::types::PipelineLockingMethod> {
+        self.pipeline_locking_method.as_ref()
+    }
+}
 impl PipelineLockingSettings {
     /// Creates a new builder-style object to manufacture [`PipelineLockingSettings`](crate::types::PipelineLockingSettings).
     pub fn builder() -> crate::types::builders::PipelineLockingSettingsBuilder {
@@ -14,10 +23,28 @@ impl PipelineLockingSettings {
 /// A builder for [`PipelineLockingSettings`](crate::types::PipelineLockingSettings).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct PipelineLockingSettingsBuilder {}
+pub struct PipelineLockingSettingsBuilder {
+    pub(crate) pipeline_locking_method: ::std::option::Option<crate::types::PipelineLockingMethod>,
+}
 impl PipelineLockingSettingsBuilder {
+    /// The method to use to lock the video frames in the pipelines. sourceTimecode (default): Use the timecode in the source. videoAlignment: Lock frames that the encoder identifies as having matching content. If videoAlignment is selected, existing timecodes will not be used for any locking decisions.
+    pub fn pipeline_locking_method(mut self, input: crate::types::PipelineLockingMethod) -> Self {
+        self.pipeline_locking_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// The method to use to lock the video frames in the pipelines. sourceTimecode (default): Use the timecode in the source. videoAlignment: Lock frames that the encoder identifies as having matching content. If videoAlignment is selected, existing timecodes will not be used for any locking decisions.
+    pub fn set_pipeline_locking_method(mut self, input: ::std::option::Option<crate::types::PipelineLockingMethod>) -> Self {
+        self.pipeline_locking_method = input;
+        self
+    }
+    /// The method to use to lock the video frames in the pipelines. sourceTimecode (default): Use the timecode in the source. videoAlignment: Lock frames that the encoder identifies as having matching content. If videoAlignment is selected, existing timecodes will not be used for any locking decisions.
+    pub fn get_pipeline_locking_method(&self) -> &::std::option::Option<crate::types::PipelineLockingMethod> {
+        &self.pipeline_locking_method
+    }
     /// Consumes the builder and constructs a [`PipelineLockingSettings`](crate::types::PipelineLockingSettings).
     pub fn build(self) -> crate::types::PipelineLockingSettings {
-        crate::types::PipelineLockingSettings {}
+        crate::types::PipelineLockingSettings {
+            pipeline_locking_method: self.pipeline_locking_method,
+        }
     }
 }

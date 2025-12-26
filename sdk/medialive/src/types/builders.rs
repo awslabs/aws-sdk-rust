@@ -137,6 +137,12 @@ pub use crate::types::_interface_mapping_update_request::InterfaceMappingUpdateR
 
 pub use crate::types::_channel::ChannelBuilder;
 
+pub use crate::types::_describe_linked_channel_settings::DescribeLinkedChannelSettingsBuilder;
+
+pub use crate::types::_describe_primary_channel_settings::DescribePrimaryChannelSettingsBuilder;
+
+pub use crate::types::_describe_follower_channel_settings::DescribeFollowerChannelSettingsBuilder;
+
 pub use crate::types::_channel_engine_version_response::ChannelEngineVersionResponseBuilder;
 
 pub use crate::types::_describe_anywhere_settings::DescribeAnywhereSettingsBuilder;
@@ -500,6 +506,12 @@ pub use crate::types::_multiplex_program_channel_destination_settings::Multiplex
 pub use crate::types::_media_package_output_destination_settings::MediaPackageOutputDestinationSettingsBuilder;
 
 pub use crate::types::_cdi_input_specification::CdiInputSpecificationBuilder;
+
+pub use crate::types::_linked_channel_settings::LinkedChannelSettingsBuilder;
+
+pub use crate::types::_primary_channel_settings::PrimaryChannelSettingsBuilder;
+
+pub use crate::types::_follower_channel_settings::FollowerChannelSettingsBuilder;
 
 pub use crate::types::_anywhere_settings::AnywhereSettingsBuilder;
 

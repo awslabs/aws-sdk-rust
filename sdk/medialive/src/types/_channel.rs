@@ -44,6 +44,8 @@ pub struct Channel {
     pub anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
     /// Requested engine version for this channel.
     pub channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
+    /// Linked Channel Settings for this channel.
+    pub linked_channel_settings: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>,
 }
 impl Channel {
     /// The unique arn of the channel.
@@ -134,6 +136,10 @@ impl Channel {
     pub fn channel_engine_version(&self) -> ::std::option::Option<&crate::types::ChannelEngineVersionResponse> {
         self.channel_engine_version.as_ref()
     }
+    /// Linked Channel Settings for this channel.
+    pub fn linked_channel_settings(&self) -> ::std::option::Option<&crate::types::DescribeLinkedChannelSettings> {
+        self.linked_channel_settings.as_ref()
+    }
 }
 impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::types::Channel).
@@ -166,6 +172,7 @@ pub struct ChannelBuilder {
     pub(crate) vpc: ::std::option::Option<crate::types::VpcOutputSettingsDescription>,
     pub(crate) anywhere_settings: ::std::option::Option<crate::types::DescribeAnywhereSettings>,
     pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
+    pub(crate) linked_channel_settings: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>,
 }
 impl ChannelBuilder {
     /// The unique arn of the channel.
@@ -478,6 +485,20 @@ impl ChannelBuilder {
     pub fn get_channel_engine_version(&self) -> &::std::option::Option<crate::types::ChannelEngineVersionResponse> {
         &self.channel_engine_version
     }
+    /// Linked Channel Settings for this channel.
+    pub fn linked_channel_settings(mut self, input: crate::types::DescribeLinkedChannelSettings) -> Self {
+        self.linked_channel_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Linked Channel Settings for this channel.
+    pub fn set_linked_channel_settings(mut self, input: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>) -> Self {
+        self.linked_channel_settings = input;
+        self
+    }
+    /// Linked Channel Settings for this channel.
+    pub fn get_linked_channel_settings(&self) -> &::std::option::Option<crate::types::DescribeLinkedChannelSettings> {
+        &self.linked_channel_settings
+    }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {
         crate::types::Channel {
@@ -501,6 +522,7 @@ impl ChannelBuilder {
             vpc: self.vpc,
             anywhere_settings: self.anywhere_settings,
             channel_engine_version: self.channel_engine_version,
+            linked_channel_settings: self.linked_channel_settings,
         }
     }
 }

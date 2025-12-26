@@ -241,6 +241,14 @@ pub use crate::types::_channel_placement_group_state::ChannelPlacementGroupState
 
 pub use crate::types::_channel::Channel;
 
+pub use crate::types::_describe_linked_channel_settings::DescribeLinkedChannelSettings;
+
+pub use crate::types::_describe_primary_channel_settings::DescribePrimaryChannelSettings;
+
+pub use crate::types::_linked_channel_type::LinkedChannelType;
+
+pub use crate::types::_describe_follower_channel_settings::DescribeFollowerChannelSettings;
+
 pub use crate::types::_channel_engine_version_response::ChannelEngineVersionResponse;
 
 pub use crate::types::_describe_anywhere_settings::DescribeAnywhereSettings;
@@ -873,6 +881,8 @@ pub use crate::types::_output_locking_settings::OutputLockingSettings;
 
 pub use crate::types::_pipeline_locking_settings::PipelineLockingSettings;
 
+pub use crate::types::_pipeline_locking_method::PipelineLockingMethod;
+
 pub use crate::types::_epoch_locking_settings::EpochLockingSettings;
 
 pub use crate::types::_global_configuration_low_framerate_inputs::GlobalConfigurationLowFramerateInputs;
@@ -1126,6 +1136,12 @@ pub use crate::types::_media_package_output_destination_settings::MediaPackageOu
 pub use crate::types::_cdi_input_specification::CdiInputSpecification;
 
 pub use crate::types::_cdi_input_resolution::CdiInputResolution;
+
+pub use crate::types::_linked_channel_settings::LinkedChannelSettings;
+
+pub use crate::types::_primary_channel_settings::PrimaryChannelSettings;
+
+pub use crate::types::_follower_channel_settings::FollowerChannelSettings;
 
 pub use crate::types::_anywhere_settings::AnywhereSettings;
 
@@ -1605,9 +1621,15 @@ mod _describe_channel_placement_group_summary;
 
 mod _describe_cluster_summary;
 
+mod _describe_follower_channel_settings;
+
+mod _describe_linked_channel_settings;
+
 mod _describe_network_summary;
 
 mod _describe_node_summary;
+
+mod _describe_primary_channel_settings;
 
 mod _device_settings_sync_state;
 
@@ -1742,6 +1764,8 @@ mod _fmp4_timed_metadata_behavior;
 mod _follow_mode_schedule_action_start_settings;
 
 mod _follow_point;
+
+mod _follower_channel_settings;
 
 mod _frame_capture_cdn_settings;
 
@@ -2105,6 +2129,10 @@ mod _key_provider_settings;
 
 mod _last_frame_clipping_behavior;
 
+mod _linked_channel_settings;
+
+mod _linked_channel_type;
+
 mod _log_level;
 
 mod _m2ts_absent_input_audio_behavior;
@@ -2349,11 +2377,15 @@ mod _pipeline_detail;
 
 mod _pipeline_id;
 
+mod _pipeline_locking_method;
+
 mod _pipeline_locking_settings;
 
 mod _pipeline_pause_state_settings;
 
 mod _preferred_channel_pipeline;
+
+mod _primary_channel_settings;
 
 mod _raw_settings;
 

@@ -25,6 +25,7 @@ impl super::Client {
     ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::operation::describe_channel::DescribeChannelOutput::vpc): Settings for VPC output
     ///   - [`anywhere_settings(Option<DescribeAnywhereSettings>)`](crate::operation::describe_channel::DescribeChannelOutput::anywhere_settings): Anywhere settings for this channel.
     ///   - [`channel_engine_version(Option<ChannelEngineVersionResponse>)`](crate::operation::describe_channel::DescribeChannelOutput::channel_engine_version): Requested engine version for this channel.
+    ///   - [`linked_channel_settings(Option<DescribeLinkedChannelSettings>)`](crate::operation::describe_channel::DescribeChannelOutput::linked_channel_settings): Linked Channel Settings for this channel.
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::operation::describe_channel::DescribeChannelError)
     pub fn describe_channel(&self) -> crate::operation::describe_channel::builders::DescribeChannelFluentBuilder {
         crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::new(self.handle.clone())

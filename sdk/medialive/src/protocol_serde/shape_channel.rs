@@ -121,6 +121,11 @@ where
                                 crate::protocol_serde::shape_channel_engine_version_response::de_channel_engine_version_response(tokens)?,
                             );
                         }
+                        "linkedChannelSettings" => {
+                            builder = builder.set_linked_channel_settings(
+                                crate::protocol_serde::shape_describe_linked_channel_settings::de_describe_linked_channel_settings(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
