@@ -253,6 +253,11 @@ where
                         "NextContacts" => {
                             builder = builder.set_next_contacts(crate::protocol_serde::shape_next_contacts::de_next_contacts(tokens)?);
                         }
+                        "GlobalResiliencyMetadata" => {
+                            builder = builder.set_global_resiliency_metadata(
+                                crate::protocol_serde::shape_global_resiliency_metadata::de_global_resiliency_metadata(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

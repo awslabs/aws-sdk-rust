@@ -21,6 +21,8 @@ pub enum Error {
     IdempotencyException(crate::types::error::IdempotencyException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
+    /// <p>This exception occurs when an API request is made to a non-active region in an Amazon Connect instance configured with Amazon Connect Global Resiliency. For example, if the active region is US West (Oregon) and a request is made to US East (N. Virginia), the exception will be returned.</p>
+    InvalidActiveRegionException(crate::types::error::InvalidActiveRegionException),
     /// <p>The flow is not valid.</p>
     InvalidContactFlowException(crate::types::error::InvalidContactFlowException),
     /// <p>The problems with the module. Please fix before trying again.</p>
@@ -76,6 +78,7 @@ impl ::std::fmt::Display for Error {
             Error::DuplicateResourceException(inner) => inner.fmt(f),
             Error::IdempotencyException(inner) => inner.fmt(f),
             Error::InternalServiceException(inner) => inner.fmt(f),
+            Error::InvalidActiveRegionException(inner) => inner.fmt(f),
             Error::InvalidContactFlowException(inner) => inner.fmt(f),
             Error::InvalidContactFlowModuleException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
@@ -123,6 +126,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DuplicateResourceException(inner) => inner.meta(),
             Self::IdempotencyException(inner) => inner.meta(),
             Self::InternalServiceException(inner) => inner.meta(),
+            Self::InvalidActiveRegionException(inner) => inner.meta(),
             Self::InvalidContactFlowException(inner) => inner.meta(),
             Self::InvalidContactFlowModuleException(inner) => inner.meta(),
             Self::InvalidParameterException(inner) => inner.meta(),
@@ -8671,6 +8675,9 @@ impl From<crate::operation::resume_contact_recording::ResumeContactRecordingErro
             crate::operation::resume_contact_recording::ResumeContactRecordingError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
+            crate::operation::resume_contact_recording::ResumeContactRecordingError::InvalidActiveRegionException(inner) => {
+                Error::InvalidActiveRegionException(inner)
+            }
             crate::operation::resume_contact_recording::ResumeContactRecordingError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -9741,6 +9748,9 @@ impl From<crate::operation::start_contact_recording::StartContactRecordingError>
             crate::operation::start_contact_recording::StartContactRecordingError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
+            crate::operation::start_contact_recording::StartContactRecordingError::InvalidActiveRegionException(inner) => {
+                Error::InvalidActiveRegionException(inner)
+            }
             crate::operation::start_contact_recording::StartContactRecordingError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
@@ -10070,6 +10080,7 @@ impl From<crate::operation::stop_contact::StopContactError> for Error {
         match err {
             crate::operation::stop_contact::StopContactError::ContactNotFoundException(inner) => Error::ContactNotFoundException(inner),
             crate::operation::stop_contact::StopContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::stop_contact::StopContactError::InvalidActiveRegionException(inner) => Error::InvalidActiveRegionException(inner),
             crate::operation::stop_contact::StopContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::stop_contact::StopContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::stop_contact::StopContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -10138,6 +10149,9 @@ impl From<crate::operation::stop_contact_recording::StopContactRecordingError> f
         match err {
             crate::operation::stop_contact_recording::StopContactRecordingError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
+            }
+            crate::operation::stop_contact_recording::StopContactRecordingError::InvalidActiveRegionException(inner) => {
+                Error::InvalidActiveRegionException(inner)
             }
             crate::operation::stop_contact_recording::StopContactRecordingError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
@@ -10244,6 +10258,9 @@ impl From<crate::operation::suspend_contact_recording::SuspendContactRecordingEr
             crate::operation::suspend_contact_recording::SuspendContactRecordingError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
+            crate::operation::suspend_contact_recording::SuspendContactRecordingError::InvalidActiveRegionException(inner) => {
+                Error::InvalidActiveRegionException(inner)
+            }
             crate::operation::suspend_contact_recording::SuspendContactRecordingError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -10272,6 +10289,7 @@ impl From<crate::operation::tag_contact::TagContactError> for Error {
     fn from(err: crate::operation::tag_contact::TagContactError) -> Self {
         match err {
             crate::operation::tag_contact::TagContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::tag_contact::TagContactError::InvalidActiveRegionException(inner) => Error::InvalidActiveRegionException(inner),
             crate::operation::tag_contact::TagContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::tag_contact::TagContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::tag_contact::TagContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -10354,6 +10372,7 @@ impl From<crate::operation::untag_contact::UntagContactError> for Error {
     fn from(err: crate::operation::untag_contact::UntagContactError) -> Self {
         match err {
             crate::operation::untag_contact::UntagContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::untag_contact::UntagContactError::InvalidActiveRegionException(inner) => Error::InvalidActiveRegionException(inner),
             crate::operation::untag_contact::UntagContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::untag_contact::UntagContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::untag_contact::UntagContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -10481,6 +10500,7 @@ impl From<crate::operation::update_contact::UpdateContactError> for Error {
             crate::operation::update_contact::UpdateContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_contact::UpdateContactError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_contact::UpdateContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_contact::UpdateContactError::InvalidActiveRegionException(inner) => Error::InvalidActiveRegionException(inner),
             crate::operation::update_contact::UpdateContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::update_contact::UpdateContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::update_contact::UpdateContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -10511,6 +10531,9 @@ impl From<crate::operation::update_contact_attributes::UpdateContactAttributesEr
         match err {
             crate::operation::update_contact_attributes::UpdateContactAttributesError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
+            }
+            crate::operation::update_contact_attributes::UpdateContactAttributesError::InvalidActiveRegionException(inner) => {
+                Error::InvalidActiveRegionException(inner)
             }
             crate::operation::update_contact_attributes::UpdateContactAttributesError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
@@ -10867,6 +10890,9 @@ impl From<crate::operation::update_contact_routing_data::UpdateContactRoutingDat
             }
             crate::operation::update_contact_routing_data::UpdateContactRoutingDataError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
+            }
+            crate::operation::update_contact_routing_data::UpdateContactRoutingDataError::InvalidActiveRegionException(inner) => {
+                Error::InvalidActiveRegionException(inner)
             }
             crate::operation::update_contact_routing_data::UpdateContactRoutingDataError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
@@ -12784,6 +12810,7 @@ impl ::std::error::Error for Error {
             Error::DuplicateResourceException(inner) => inner.source(),
             Error::IdempotencyException(inner) => inner.source(),
             Error::InternalServiceException(inner) => inner.source(),
+            Error::InvalidActiveRegionException(inner) => inner.source(),
             Error::InvalidContactFlowException(inner) => inner.source(),
             Error::InvalidContactFlowModuleException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
@@ -12817,6 +12844,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DuplicateResourceException(e) => e.request_id(),
             Self::IdempotencyException(e) => e.request_id(),
             Self::InternalServiceException(e) => e.request_id(),
+            Self::InvalidActiveRegionException(e) => e.request_id(),
             Self::InvalidContactFlowException(e) => e.request_id(),
             Self::InvalidContactFlowModuleException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),

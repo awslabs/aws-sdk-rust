@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`GetIdentityContextOutput`](crate::operation::get_identity_context::GetIdentityContextOutput) with field(s):
     ///   - [`status(i32)`](crate::operation::get_identity_context::GetIdentityContextOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`request_id(String)`](crate::operation::get_identity_context::GetIdentityContextOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
-    ///   - [`context(Option<String>)`](crate::operation::get_identity_context::GetIdentityContextOutput::context): <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced AWS credentials.</p>
+    ///   - [`context(Option<String>)`](crate::operation::get_identity_context::GetIdentityContextOutput::context): <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced Amazon Web Services credentials.</p>
     /// - On failure, responds with [`SdkError<GetIdentityContextError>`](crate::operation::get_identity_context::GetIdentityContextError)
     pub fn get_identity_context(&self) -> crate::operation::get_identity_context::builders::GetIdentityContextFluentBuilder {
         crate::operation::get_identity_context::builders::GetIdentityContextFluentBuilder::new(self.handle.clone())

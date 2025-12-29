@@ -31,6 +31,8 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
+pub use crate::types::error::_invalid_active_region_exception::InvalidActiveRegionException;
+
 pub use crate::types::error::_invalid_contact_flow_module_exception::InvalidContactFlowModuleException;
 
 pub use crate::types::error::_invalid_contact_flow_exception::InvalidContactFlowException;
@@ -68,6 +70,8 @@ mod _duplicate_resource_exception;
 mod _idempotency_exception;
 
 mod _internal_service_exception;
+
+mod _invalid_active_region_exception;
 
 mod _invalid_contact_flow_exception;
 

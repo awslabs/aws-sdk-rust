@@ -1249,6 +1249,8 @@ pub use crate::types::_template_source_analysis::TemplateSourceAnalysisBuilder;
 
 pub use crate::types::_data_set_reference::DataSetReferenceBuilder;
 
+pub use crate::types::_self_upgrade_request_detail::SelfUpgradeRequestDetailBuilder;
+
 pub use crate::types::_refresh_schedule::RefreshScheduleBuilder;
 
 pub use crate::types::_refresh_frequency::RefreshFrequencyBuilder;
@@ -1964,6 +1966,8 @@ pub use crate::types::_template::TemplateBuilder;
 pub use crate::types::_template_version::TemplateVersionBuilder;
 
 pub use crate::types::_sheet::SheetBuilder;
+
+pub use crate::types::_self_upgrade_configuration::SelfUpgradeConfigurationBuilder;
 
 pub use crate::types::_q_data_key::QDataKeyBuilder;
 

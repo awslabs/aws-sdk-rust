@@ -895,6 +895,8 @@ pub(crate) mod shape_import_workspace_media_input;
 
 pub(crate) mod shape_internal_service_exception;
 
+pub(crate) mod shape_invalid_active_region_exception;
+
 pub(crate) mod shape_invalid_contact_flow_exception;
 
 pub(crate) mod shape_invalid_contact_flow_module_exception;
@@ -1902,6 +1904,8 @@ pub(crate) mod shape_filter_v2_string_condition;
 pub(crate) mod shape_flow_association_summary;
 
 pub(crate) mod shape_flow_quick_connect_config;
+
+pub(crate) mod shape_global_resiliency_metadata;
 
 pub(crate) mod shape_hierarchy_group_condition;
 

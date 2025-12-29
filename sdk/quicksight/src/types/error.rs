@@ -21,6 +21,10 @@ pub use crate::types::error::_precondition_not_met_exception::PreconditionNotMet
 
 pub use crate::types::error::_resource_exists_exception::ResourceExistsException;
 
+pub use crate::types::error::_invalid_parameter_exception::InvalidParameterException;
+
+pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
+
 pub use crate::types::error::_unsupported_pricing_plan_exception::UnsupportedPricingPlanException;
 
 pub use crate::types::error::_concurrent_updating_exception::ConcurrentUpdatingException;
@@ -32,8 +36,6 @@ pub use crate::types::error::_invalid_data_set_parameter_value_exception::Invali
 pub use crate::types::error::_invalid_request_exception::InvalidRequestException;
 
 pub use crate::types::error::_internal_server_exception::InternalServerException;
-
-pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
 
 pub use crate::types::error::_session_lifetime_in_minutes_invalid_exception::SessionLifetimeInMinutesInvalidException;
 
@@ -62,6 +64,8 @@ mod _internal_server_exception;
 mod _invalid_data_set_parameter_value_exception;
 
 mod _invalid_next_token_exception;
+
+mod _invalid_parameter_exception;
 
 mod _invalid_parameter_value_exception;
 

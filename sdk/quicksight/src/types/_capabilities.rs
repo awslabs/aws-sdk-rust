@@ -78,6 +78,8 @@ pub struct Capabilities {
     pub create_chat_agents: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform research-related actions.</p>
     pub research: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to enable users to upgrade their user role.</p>
+    pub self_upgrade_user_role: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl Capabilities {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -228,6 +230,10 @@ impl Capabilities {
     pub fn research(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.research.as_ref()
     }
+    /// <p>The ability to enable users to upgrade their user role.</p>
+    pub fn self_upgrade_user_role(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.self_upgrade_user_role.as_ref()
+    }
 }
 impl Capabilities {
     /// Creates a new builder-style object to manufacture [`Capabilities`](crate::types::Capabilities).
@@ -277,6 +283,7 @@ pub struct CapabilitiesBuilder {
     pub(crate) chat_agent: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) create_chat_agents: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) research: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) self_upgrade_user_role: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl CapabilitiesBuilder {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -797,6 +804,20 @@ impl CapabilitiesBuilder {
     pub fn get_research(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.research
     }
+    /// <p>The ability to enable users to upgrade their user role.</p>
+    pub fn self_upgrade_user_role(mut self, input: crate::types::CapabilityState) -> Self {
+        self.self_upgrade_user_role = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to enable users to upgrade their user role.</p>
+    pub fn set_self_upgrade_user_role(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.self_upgrade_user_role = input;
+        self
+    }
+    /// <p>The ability to enable users to upgrade their user role.</p>
+    pub fn get_self_upgrade_user_role(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.self_upgrade_user_role
+    }
     /// Consumes the builder and constructs a [`Capabilities`](crate::types::Capabilities).
     pub fn build(self) -> crate::types::Capabilities {
         crate::types::Capabilities {
@@ -837,6 +858,7 @@ impl CapabilitiesBuilder {
             chat_agent: self.chat_agent,
             create_chat_agents: self.create_chat_agents,
             research: self.research,
+            self_upgrade_user_role: self.self_upgrade_user_role,
         }
     }
 }

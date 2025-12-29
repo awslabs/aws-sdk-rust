@@ -98,6 +98,8 @@ pub struct Contact {
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>List of next contact entries for the contact.</p>
     pub next_contacts: ::std::option::Option<::std::vec::Vec<crate::types::NextContactEntry>>,
+    /// <p>Information about the global resiliency configuration for the contact, including traffic distribution details.</p>
+    pub global_resiliency_metadata: ::std::option::Option<crate::types::GlobalResiliencyMetadata>,
 }
 impl Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -294,6 +296,10 @@ impl Contact {
     pub fn next_contacts(&self) -> &[crate::types::NextContactEntry] {
         self.next_contacts.as_deref().unwrap_or_default()
     }
+    /// <p>Information about the global resiliency configuration for the contact, including traffic distribution details.</p>
+    pub fn global_resiliency_metadata(&self) -> ::std::option::Option<&crate::types::GlobalResiliencyMetadata> {
+        self.global_resiliency_metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Contact {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -345,6 +351,7 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("outbound_strategy", &self.outbound_strategy);
         formatter.field("attributes", &self.attributes);
         formatter.field("next_contacts", &self.next_contacts);
+        formatter.field("global_resiliency_metadata", &self.global_resiliency_metadata);
         formatter.finish()
     }
 }
@@ -406,6 +413,7 @@ pub struct ContactBuilder {
     pub(crate) outbound_strategy: ::std::option::Option<crate::types::OutboundStrategy>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) next_contacts: ::std::option::Option<::std::vec::Vec<crate::types::NextContactEntry>>,
+    pub(crate) global_resiliency_metadata: ::std::option::Option<crate::types::GlobalResiliencyMetadata>,
 }
 impl ContactBuilder {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -1112,6 +1120,20 @@ impl ContactBuilder {
     pub fn get_next_contacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NextContactEntry>> {
         &self.next_contacts
     }
+    /// <p>Information about the global resiliency configuration for the contact, including traffic distribution details.</p>
+    pub fn global_resiliency_metadata(mut self, input: crate::types::GlobalResiliencyMetadata) -> Self {
+        self.global_resiliency_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the global resiliency configuration for the contact, including traffic distribution details.</p>
+    pub fn set_global_resiliency_metadata(mut self, input: ::std::option::Option<crate::types::GlobalResiliencyMetadata>) -> Self {
+        self.global_resiliency_metadata = input;
+        self
+    }
+    /// <p>Information about the global resiliency configuration for the contact, including traffic distribution details.</p>
+    pub fn get_global_resiliency_metadata(&self) -> &::std::option::Option<crate::types::GlobalResiliencyMetadata> {
+        &self.global_resiliency_metadata
+    }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {
@@ -1162,6 +1184,7 @@ impl ContactBuilder {
             outbound_strategy: self.outbound_strategy,
             attributes: self.attributes,
             next_contacts: self.next_contacts,
+            global_resiliency_metadata: self.global_resiliency_metadata,
         }
     }
 }
@@ -1215,6 +1238,7 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("outbound_strategy", &self.outbound_strategy);
         formatter.field("attributes", &self.attributes);
         formatter.field("next_contacts", &self.next_contacts);
+        formatter.field("global_resiliency_metadata", &self.global_resiliency_metadata);
         formatter.finish()
     }
 }

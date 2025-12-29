@@ -35,6 +35,22 @@ pub fn de_stop_contact_recording_http_error(
             }
             tmp
         }),
+        "InvalidActiveRegionException" => crate::operation::stop_contact_recording::StopContactRecordingError::InvalidActiveRegionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidActiveRegionExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_active_region_exception::de_invalid_active_region_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::stop_contact_recording::StopContactRecordingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidRequestException" => crate::operation::stop_contact_recording::StopContactRecordingError::InvalidRequestException({
             #[allow(unused_mut)]
             let mut tmp = {

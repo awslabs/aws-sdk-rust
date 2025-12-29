@@ -23,6 +23,8 @@ pub enum Error {
     InvalidDataSetParameterValueException(crate::types::error::InvalidDataSetParameterValueException),
     /// <p>The <code>NextToken</code> value isn't valid.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
+    /// <p>One or more parameter has a value that isn't valid.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>One or more parameters has a value that isn't valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>You don't have this feature activated for your account. To fix this issue, contact Amazon Web Services support.</p>
@@ -70,6 +72,7 @@ impl ::std::fmt::Display for Error {
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidDataSetParameterValueException(inner) => inner.fmt(f),
             Error::InvalidNextTokenException(inner) => inner.fmt(f),
+            Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
@@ -113,6 +116,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InternalServerException(inner) => inner.meta(),
             Self::InvalidDataSetParameterValueException(inner) => inner.meta(),
             Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
             Self::InvalidParameterValueException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
@@ -4131,6 +4135,62 @@ impl From<crate::operation::describe_role_custom_permission::DescribeRoleCustomP
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError> for Error {
+    fn from(err: crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_self_upgrade_configuration::DescribeSelfUpgradeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_template::DescribeTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5729,6 +5789,42 @@ impl From<crate::operation::list_role_memberships::ListRoleMembershipsError> for
             }
             crate::operation::list_role_memberships::ListRoleMembershipsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_role_memberships::ListRoleMembershipsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_self_upgrades::ListSelfUpgradesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_self_upgrades::ListSelfUpgradesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_self_upgrades::ListSelfUpgradesError> for Error {
+    fn from(err: crate::operation::list_self_upgrades::ListSelfUpgradesError) -> Self {
+        match err {
+            crate::operation::list_self_upgrades::ListSelfUpgradesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_self_upgrades::ListSelfUpgradesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_self_upgrades::ListSelfUpgradesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_self_upgrades::ListSelfUpgradesError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_self_upgrades::ListSelfUpgradesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_self_upgrades::ListSelfUpgradesError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::list_self_upgrades::ListSelfUpgradesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_self_upgrades::ListSelfUpgradesError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::list_self_upgrades::ListSelfUpgradesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_self_upgrades::ListSelfUpgradesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8270,6 +8366,102 @@ impl From<crate::operation::update_role_custom_permission::UpdateRoleCustomPermi
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_self_upgrade::UpdateSelfUpgradeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_self_upgrade::UpdateSelfUpgradeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_self_upgrade::UpdateSelfUpgradeError> for Error {
+    fn from(err: crate::operation::update_self_upgrade::UpdateSelfUpgradeError) -> Self {
+        match err {
+            crate::operation::update_self_upgrade::UpdateSelfUpgradeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_self_upgrade::UpdateSelfUpgradeError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_self_upgrade::UpdateSelfUpgradeError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::update_self_upgrade::UpdateSelfUpgradeError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_self_upgrade::UpdateSelfUpgradeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_self_upgrade::UpdateSelfUpgradeError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::update_self_upgrade::UpdateSelfUpgradeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_self_upgrade::UpdateSelfUpgradeError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::update_self_upgrade::UpdateSelfUpgradeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_self_upgrade::UpdateSelfUpgradeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError> for Error {
+    fn from(err: crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError) -> Self {
+        match err {
+            crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError::PreconditionNotMetException(inner) => {
+                Error::PreconditionNotMetException(inner)
+            }
+            crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError::ResourceUnavailableException(inner) => {
+                Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_self_upgrade_configuration::UpdateSelfUpgradeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -8776,6 +8968,7 @@ impl ::std::error::Error for Error {
             Error::InternalServerException(inner) => inner.source(),
             Error::InvalidDataSetParameterValueException(inner) => inner.source(),
             Error::InvalidNextTokenException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
             Error::InvalidParameterValueException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
@@ -8805,6 +8998,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InternalServerException(e) => e.request_id(),
             Self::InvalidDataSetParameterValueException(e) => e.request_id(),
             Self::InvalidNextTokenException(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
             Self::InvalidParameterValueException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),

@@ -1573,6 +1573,14 @@ pub use crate::types::_data_set_reference::DataSetReference;
 
 pub use crate::types::_purchase_mode::PurchaseMode;
 
+pub use crate::types::_self_upgrade_status::SelfUpgradeStatus;
+
+pub use crate::types::_self_upgrade_request_detail::SelfUpgradeRequestDetail;
+
+pub use crate::types::_self_upgrade_request_status::SelfUpgradeRequestStatus;
+
+pub use crate::types::_self_upgrade_admin_action::SelfUpgradeAdminAction;
+
 pub use crate::types::_role::Role;
 
 pub use crate::types::_refresh_schedule::RefreshSchedule;
@@ -2516,6 +2524,8 @@ pub use crate::types::_template::Template;
 pub use crate::types::_template_version::TemplateVersion;
 
 pub use crate::types::_sheet::Sheet;
+
+pub use crate::types::_self_upgrade_configuration::SelfUpgradeConfiguration;
 
 pub use crate::types::_q_data_key::QDataKey;
 
@@ -4622,6 +4632,16 @@ mod _selected_field_options;
 mod _selected_sheets_filter_scope_configuration;
 
 mod _selected_tooltip_type;
+
+mod _self_upgrade_admin_action;
+
+mod _self_upgrade_configuration;
+
+mod _self_upgrade_request_detail;
+
+mod _self_upgrade_request_status;
+
+mod _self_upgrade_status;
 
 mod _semantic_entity_type;
 

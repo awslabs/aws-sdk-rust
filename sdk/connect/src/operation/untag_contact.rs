@@ -293,6 +293,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UntagContactE
 pub enum UntagContactError {
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
+    /// <p>This exception occurs when an API request is made to a non-active region in an Amazon Connect instance configured with Amazon Connect Global Resiliency. For example, if the active region is US West (Oregon) and a request is made to US East (N. Virginia), the exception will be returned.</p>
+    InvalidActiveRegionException(crate::types::error::InvalidActiveRegionException),
     /// <p>One or more of the specified parameters are not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The request is not valid.</p>
@@ -335,6 +337,7 @@ impl UntagContactError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidActiveRegionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -345,6 +348,10 @@ impl UntagContactError {
     /// Returns `true` if the error kind is `UntagContactError::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(self, Self::InternalServiceException(_))
+    }
+    /// Returns `true` if the error kind is `UntagContactError::InvalidActiveRegionException`.
+    pub fn is_invalid_active_region_exception(&self) -> bool {
+        matches!(self, Self::InvalidActiveRegionException(_))
     }
     /// Returns `true` if the error kind is `UntagContactError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
@@ -367,6 +374,7 @@ impl ::std::error::Error for UntagContactError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidActiveRegionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -379,6 +387,7 @@ impl ::std::fmt::Display for UntagContactError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InternalServiceException(_inner) => _inner.fmt(f),
+            Self::InvalidActiveRegionException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -405,6 +414,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UntagContactE
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidActiveRegionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -227,6 +227,8 @@ pub(crate) mod shape_describe_refresh_schedule;
 
 pub(crate) mod shape_describe_role_custom_permission;
 
+pub(crate) mod shape_describe_self_upgrade_configuration;
+
 pub(crate) mod shape_describe_template;
 
 pub(crate) mod shape_describe_template_alias;
@@ -314,6 +316,8 @@ pub(crate) mod shape_list_namespaces;
 pub(crate) mod shape_list_refresh_schedules;
 
 pub(crate) mod shape_list_role_memberships;
+
+pub(crate) mod shape_list_self_upgrades;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -449,6 +453,10 @@ pub(crate) mod shape_update_refresh_schedule;
 
 pub(crate) mod shape_update_role_custom_permission;
 
+pub(crate) mod shape_update_self_upgrade;
+
+pub(crate) mod shape_update_self_upgrade_configuration;
+
 pub(crate) mod shape_update_spice_capacity_configuration;
 
 pub(crate) mod shape_update_template;
@@ -558,6 +566,8 @@ pub(crate) mod shape_internal_server_exception;
 pub(crate) mod shape_invalid_data_set_parameter_value_exception;
 
 pub(crate) mod shape_invalid_next_token_exception;
+
+pub(crate) mod shape_invalid_parameter_exception;
 
 pub(crate) mod shape_invalid_parameter_value_exception;
 
@@ -680,6 +690,10 @@ pub(crate) mod shape_update_quick_sight_q_search_configuration_input;
 pub(crate) mod shape_update_refresh_schedule_input;
 
 pub(crate) mod shape_update_role_custom_permission_input;
+
+pub(crate) mod shape_update_self_upgrade_configuration_input;
+
+pub(crate) mod shape_update_self_upgrade_input;
 
 pub(crate) mod shape_update_spice_capacity_configuration_input;
 
@@ -922,6 +936,12 @@ pub(crate) mod shape_row_level_permission_data_set;
 pub(crate) mod shape_row_level_permission_tag_configuration;
 
 pub(crate) mod shape_search_flows_filter;
+
+pub(crate) mod shape_self_upgrade_configuration;
+
+pub(crate) mod shape_self_upgrade_request_detail;
+
+pub(crate) mod shape_self_upgrade_request_detail_list;
 
 pub(crate) mod shape_semantic_model_configuration;
 

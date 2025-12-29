@@ -289,6 +289,8 @@ pub enum UpdateContactRoutingDataError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
+    /// <p>This exception occurs when an API request is made to a non-active region in an Amazon Connect instance configured with Amazon Connect Global Resiliency. For example, if the active region is US West (Oregon) and a request is made to US East (N. Virginia), the exception will be returned.</p>
+    InvalidActiveRegionException(crate::types::error::InvalidActiveRegionException),
     /// <p>One or more of the specified parameters are not valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>A resource already has that name.</p>
@@ -332,6 +334,7 @@ impl UpdateContactRoutingDataError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidActiveRegionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -346,6 +349,10 @@ impl UpdateContactRoutingDataError {
     /// Returns `true` if the error kind is `UpdateContactRoutingDataError::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(self, Self::InternalServiceException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateContactRoutingDataError::InvalidActiveRegionException`.
+    pub fn is_invalid_active_region_exception(&self) -> bool {
+        matches!(self, Self::InvalidActiveRegionException(_))
     }
     /// Returns `true` if the error kind is `UpdateContactRoutingDataError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
@@ -369,6 +376,7 @@ impl ::std::error::Error for UpdateContactRoutingDataError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidActiveRegionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -382,6 +390,7 @@ impl ::std::fmt::Display for UpdateContactRoutingDataError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServiceException(_inner) => _inner.fmt(f),
+            Self::InvalidActiveRegionException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -409,6 +418,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateContact
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidActiveRegionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

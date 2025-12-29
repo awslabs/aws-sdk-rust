@@ -839,6 +839,8 @@ pub use crate::types::_auto_evaluation_details::AutoEvaluationDetailsBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
 
+pub use crate::types::_global_resiliency_metadata::GlobalResiliencyMetadataBuilder;
+
 pub use crate::types::_next_contact_entry::NextContactEntryBuilder;
 
 pub use crate::types::_quick_connect_contact_data::QuickConnectContactDataBuilder;

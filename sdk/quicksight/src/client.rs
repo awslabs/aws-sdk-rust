@@ -367,6 +367,8 @@ mod describe_refresh_schedule;
 
 mod describe_role_custom_permission;
 
+mod describe_self_upgrade_configuration;
+
 mod describe_template;
 
 mod describe_template_alias;
@@ -454,6 +456,8 @@ mod list_namespaces;
 mod list_refresh_schedules;
 
 mod list_role_memberships;
+
+mod list_self_upgrades;
 
 mod list_tags_for_resource;
 
@@ -588,6 +592,10 @@ mod update_quick_sight_q_search_configuration;
 mod update_refresh_schedule;
 
 mod update_role_custom_permission;
+
+mod update_self_upgrade;
+
+mod update_self_upgrade_configuration;
 
 mod update_spice_capacity_configuration;
 

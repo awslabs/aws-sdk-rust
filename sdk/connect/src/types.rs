@@ -1169,6 +1169,8 @@ pub use crate::types::_auto_evaluation_details::AutoEvaluationDetails;
 
 pub use crate::types::_contact::Contact;
 
+pub use crate::types::_global_resiliency_metadata::GlobalResiliencyMetadata;
+
 pub use crate::types::_next_contact_entry::NextContactEntry;
 
 pub use crate::types::_next_contact_metadata::NextContactMetadata;
@@ -1866,6 +1868,8 @@ mod _flow_module_type;
 mod _flow_quick_connect_config;
 
 mod _font_family;
+
+mod _global_resiliency_metadata;
 
 mod _granular_access_control_configuration;
 

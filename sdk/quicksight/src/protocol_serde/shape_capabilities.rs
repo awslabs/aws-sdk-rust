@@ -114,6 +114,9 @@ pub fn ser_capabilities(
     if let Some(var_37) = &input.research {
         object.key("Research").string(var_37.as_str());
     }
+    if let Some(var_38) = &input.self_upgrade_user_role {
+        object.key("SelfUpgradeUserRole").string(var_38.as_str());
+    }
     Ok(())
 }
 
@@ -386,6 +389,13 @@ where
                         }
                         "Research" => {
                             builder = builder.set_research(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SelfUpgradeUserRole" => {
+                            builder = builder.set_self_upgrade_user_role(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

@@ -307,6 +307,9 @@ pub mod describe_refresh_schedule;
 /// Types for the `DescribeRoleCustomPermission` operation.
 pub mod describe_role_custom_permission;
 
+/// Types for the `DescribeSelfUpgradeConfiguration` operation.
+pub mod describe_self_upgrade_configuration;
+
 /// Types for the `DescribeTemplate` operation.
 pub mod describe_template;
 
@@ -438,6 +441,9 @@ pub mod list_refresh_schedules;
 
 /// Types for the `ListRoleMemberships` operation.
 pub mod list_role_memberships;
+
+/// Types for the `ListSelfUpgrades` operation.
+pub mod list_self_upgrades;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -639,6 +645,12 @@ pub mod update_refresh_schedule;
 
 /// Types for the `UpdateRoleCustomPermission` operation.
 pub mod update_role_custom_permission;
+
+/// Types for the `UpdateSelfUpgrade` operation.
+pub mod update_self_upgrade;
+
+/// Types for the `UpdateSelfUpgradeConfiguration` operation.
+pub mod update_self_upgrade_configuration;
 
 /// Types for the `UpdateSPICECapacityConfiguration` operation.
 pub mod update_spice_capacity_configuration;

@@ -7,7 +7,7 @@ pub struct GetIdentityContextOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::string::String,
-    /// <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced AWS credentials.</p>
+    /// <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced Amazon Web Services credentials.</p>
     pub context: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -21,7 +21,7 @@ impl GetIdentityContextOutput {
         use std::ops::Deref;
         self.request_id.deref()
     }
-    /// <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced AWS credentials.</p>
+    /// <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced Amazon Web Services credentials.</p>
     pub fn context(&self) -> ::std::option::Option<&str> {
         self.context.as_deref()
     }
@@ -78,17 +78,17 @@ impl GetIdentityContextOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced AWS credentials.</p>
+    /// <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced Amazon Web Services credentials.</p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced AWS credentials.</p>
+    /// <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced Amazon Web Services credentials.</p>
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context = input;
         self
     }
-    /// <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced AWS credentials.</p>
+    /// <p>The identity context information for the user. This is an identity token that should be used as the ContextAssertion parameter in the <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS AssumeRole API</a> call to obtain identity enhanced Amazon Web Services credentials.</p>
     pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.context
     }

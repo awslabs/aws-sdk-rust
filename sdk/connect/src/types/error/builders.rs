@@ -31,6 +31,8 @@ pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
 
+pub use crate::types::error::_invalid_active_region_exception::InvalidActiveRegionExceptionBuilder;
+
 pub use crate::types::error::_invalid_contact_flow_module_exception::InvalidContactFlowModuleExceptionBuilder;
 
 pub use crate::types::error::_invalid_contact_flow_exception::InvalidContactFlowExceptionBuilder;
