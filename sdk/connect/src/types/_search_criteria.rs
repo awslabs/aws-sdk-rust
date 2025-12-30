@@ -28,6 +28,8 @@ pub struct SearchCriteria {
     pub searchable_contact_attributes: ::std::option::Option<crate::types::SearchableContactAttributes>,
     /// <p>The search criteria based on searchable segment attributes of a contact.</p>
     pub searchable_segment_attributes: ::std::option::Option<crate::types::SearchableSegmentAttributes>,
+    /// <p>The list of active regions for contacts in ACGR instances.</p>
+    pub active_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchCriteria {
     /// <p>Name of the contact.</p>
@@ -84,6 +86,12 @@ impl SearchCriteria {
     pub fn searchable_segment_attributes(&self) -> ::std::option::Option<&crate::types::SearchableSegmentAttributes> {
         self.searchable_segment_attributes.as_ref()
     }
+    /// <p>The list of active regions for contacts in ACGR instances.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_regions.is_none()`.
+    pub fn active_regions(&self) -> &[::std::string::String] {
+        self.active_regions.as_deref().unwrap_or_default()
+    }
 }
 impl SearchCriteria {
     /// Creates a new builder-style object to manufacture [`SearchCriteria`](crate::types::SearchCriteria).
@@ -107,6 +115,7 @@ pub struct SearchCriteriaBuilder {
     pub(crate) additional_time_range: ::std::option::Option<crate::types::SearchContactsAdditionalTimeRange>,
     pub(crate) searchable_contact_attributes: ::std::option::Option<crate::types::SearchableContactAttributes>,
     pub(crate) searchable_segment_attributes: ::std::option::Option<crate::types::SearchableSegmentAttributes>,
+    pub(crate) active_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchCriteriaBuilder {
     /// <p>Name of the contact.</p>
@@ -293,6 +302,26 @@ impl SearchCriteriaBuilder {
     pub fn get_searchable_segment_attributes(&self) -> &::std::option::Option<crate::types::SearchableSegmentAttributes> {
         &self.searchable_segment_attributes
     }
+    /// Appends an item to `active_regions`.
+    ///
+    /// To override the contents of this collection use [`set_active_regions`](Self::set_active_regions).
+    ///
+    /// <p>The list of active regions for contacts in ACGR instances.</p>
+    pub fn active_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.active_regions.unwrap_or_default();
+        v.push(input.into());
+        self.active_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of active regions for contacts in ACGR instances.</p>
+    pub fn set_active_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.active_regions = input;
+        self
+    }
+    /// <p>The list of active regions for contacts in ACGR instances.</p>
+    pub fn get_active_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.active_regions
+    }
     /// Consumes the builder and constructs a [`SearchCriteria`](crate::types::SearchCriteria).
     pub fn build(self) -> crate::types::SearchCriteria {
         crate::types::SearchCriteria {
@@ -307,6 +336,7 @@ impl SearchCriteriaBuilder {
             additional_time_range: self.additional_time_range,
             searchable_contact_attributes: self.searchable_contact_attributes,
             searchable_segment_attributes: self.searchable_segment_attributes,
+            active_regions: self.active_regions,
         }
     }
 }

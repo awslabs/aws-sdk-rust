@@ -108,6 +108,12 @@ impl ListEntitySecurityProfilesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_entity_security_profiles::paginator::ListEntitySecurityProfilesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_entity_security_profiles::paginator::ListEntitySecurityProfilesPaginator {
+        crate::operation::list_entity_security_profiles::paginator::ListEntitySecurityProfilesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());

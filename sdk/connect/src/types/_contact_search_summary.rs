@@ -33,6 +33,8 @@ pub struct ContactSearchSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Latest routing criteria on the contact.</p>
     pub routing_criteria: ::std::option::Option<crate::types::RoutingCriteria>,
+    /// <p>Additional routing information for contacts created in ACGR instances.</p>
+    pub global_resiliency_metadata: ::std::option::Option<crate::types::GlobalResiliencyMetadata>,
 }
 impl ContactSearchSummary {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
@@ -93,6 +95,10 @@ impl ContactSearchSummary {
     pub fn routing_criteria(&self) -> ::std::option::Option<&crate::types::RoutingCriteria> {
         self.routing_criteria.as_ref()
     }
+    /// <p>Additional routing information for contacts created in ACGR instances.</p>
+    pub fn global_resiliency_metadata(&self) -> ::std::option::Option<&crate::types::GlobalResiliencyMetadata> {
+        self.global_resiliency_metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ContactSearchSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -111,6 +117,7 @@ impl ::std::fmt::Debug for ContactSearchSummary {
         formatter.field("segment_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("routing_criteria", &self.routing_criteria);
+        formatter.field("global_resiliency_metadata", &self.global_resiliency_metadata);
         formatter.finish()
     }
 }
@@ -140,6 +147,7 @@ pub struct ContactSearchSummaryBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) routing_criteria: ::std::option::Option<crate::types::RoutingCriteria>,
+    pub(crate) global_resiliency_metadata: ::std::option::Option<crate::types::GlobalResiliencyMetadata>,
 }
 impl ContactSearchSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
@@ -353,6 +361,20 @@ impl ContactSearchSummaryBuilder {
     pub fn get_routing_criteria(&self) -> &::std::option::Option<crate::types::RoutingCriteria> {
         &self.routing_criteria
     }
+    /// <p>Additional routing information for contacts created in ACGR instances.</p>
+    pub fn global_resiliency_metadata(mut self, input: crate::types::GlobalResiliencyMetadata) -> Self {
+        self.global_resiliency_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional routing information for contacts created in ACGR instances.</p>
+    pub fn set_global_resiliency_metadata(mut self, input: ::std::option::Option<crate::types::GlobalResiliencyMetadata>) -> Self {
+        self.global_resiliency_metadata = input;
+        self
+    }
+    /// <p>Additional routing information for contacts created in ACGR instances.</p>
+    pub fn get_global_resiliency_metadata(&self) -> &::std::option::Option<crate::types::GlobalResiliencyMetadata> {
+        &self.global_resiliency_metadata
+    }
     /// Consumes the builder and constructs a [`ContactSearchSummary`](crate::types::ContactSearchSummary).
     pub fn build(self) -> crate::types::ContactSearchSummary {
         crate::types::ContactSearchSummary {
@@ -370,6 +392,7 @@ impl ContactSearchSummaryBuilder {
             segment_attributes: self.segment_attributes,
             name: self.name,
             routing_criteria: self.routing_criteria,
+            global_resiliency_metadata: self.global_resiliency_metadata,
         }
     }
 }
@@ -390,6 +413,7 @@ impl ::std::fmt::Debug for ContactSearchSummaryBuilder {
         formatter.field("segment_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("routing_criteria", &self.routing_criteria);
+        formatter.field("global_resiliency_metadata", &self.global_resiliency_metadata);
         formatter.finish()
     }
 }

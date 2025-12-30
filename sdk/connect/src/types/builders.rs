@@ -457,6 +457,8 @@ pub use crate::types::_data_table_search_filter::DataTableSearchFilterBuilder;
 
 pub use crate::types::_contact_search_summary::ContactSearchSummaryBuilder;
 
+pub use crate::types::_global_resiliency_metadata::GlobalResiliencyMetadataBuilder;
+
 pub use crate::types::_routing_criteria::RoutingCriteriaBuilder;
 
 pub use crate::types::_step::StepBuilder;
@@ -838,8 +840,6 @@ pub use crate::types::_evaluation_acknowledgement::EvaluationAcknowledgementBuil
 pub use crate::types::_auto_evaluation_details::AutoEvaluationDetailsBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
-
-pub use crate::types::_global_resiliency_metadata::GlobalResiliencyMetadataBuilder;
 
 pub use crate::types::_next_contact_entry::NextContactEntryBuilder;
 

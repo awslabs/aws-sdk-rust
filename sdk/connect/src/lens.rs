@@ -209,6 +209,16 @@ pub(crate) fn reflens_list_default_vocabularies_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_entity_security_profiles_output_output_next_token(
+    input: &crate::operation::list_entity_security_profiles::ListEntitySecurityProfilesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_evaluation_form_versions_output_output_next_token(
     input: &crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -451,6 +461,16 @@ pub(crate) fn reflens_list_security_keys_output_output_next_token(
 
 pub(crate) fn reflens_list_security_profile_applications_output_output_next_token(
     input: &crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_security_profile_flow_modules_output_output_next_token(
+    input: &crate::operation::list_security_profile_flow_modules::ListSecurityProfileFlowModulesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -911,6 +931,13 @@ pub(crate) fn lens_list_default_vocabularies_output_output_default_vocabulary_li
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_entity_security_profiles_output_output_security_profiles(
+    input: crate::operation::list_entity_security_profiles::ListEntitySecurityProfilesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileItem>> {
+    let input = input.security_profiles?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_evaluation_form_versions_output_output_evaluation_form_version_summary_list(
     input: crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormVersionSummary>> {
@@ -1076,6 +1103,13 @@ pub(crate) fn lens_list_security_profile_applications_output_output_applications
     input: crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Application>> {
     let input = input.applications?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_security_profile_flow_modules_output_output_allowed_flow_modules(
+    input: crate::operation::list_security_profile_flow_modules::ListSecurityProfileFlowModulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowModule>> {
+    let input = input.allowed_flow_modules?;
     ::std::option::Option::Some(input)
 }
 

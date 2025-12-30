@@ -81,5 +81,14 @@ pub fn ser_search_criteria(
         crate::protocol_serde::shape_searchable_segment_attributes::ser_searchable_segment_attributes(&mut object_26, var_25)?;
         object_26.finish();
     }
+    if let Some(var_27) = &input.active_regions {
+        let mut array_28 = object.key("ActiveRegions").start_array();
+        for item_29 in var_27 {
+            {
+                array_28.value().string(item_29.as_str());
+            }
+        }
+        array_28.finish();
+    }
     Ok(())
 }

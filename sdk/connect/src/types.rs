@@ -663,6 +663,8 @@ pub use crate::types::_data_table_search_filter::DataTableSearchFilter;
 
 pub use crate::types::_contact_search_summary::ContactSearchSummary;
 
+pub use crate::types::_global_resiliency_metadata::GlobalResiliencyMetadata;
+
 pub use crate::types::_routing_criteria::RoutingCriteria;
 
 pub use crate::types::_step::Step;
@@ -1168,8 +1170,6 @@ pub use crate::types::_evaluation_acknowledgement::EvaluationAcknowledgement;
 pub use crate::types::_auto_evaluation_details::AutoEvaluationDetails;
 
 pub use crate::types::_contact::Contact;
-
-pub use crate::types::_global_resiliency_metadata::GlobalResiliencyMetadata;
 
 pub use crate::types::_next_contact_entry::NextContactEntry;
 

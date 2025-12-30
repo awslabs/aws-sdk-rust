@@ -108,6 +108,12 @@ impl ListSecurityProfileFlowModulesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_security_profile_flow_modules::paginator::ListSecurityProfileFlowModulesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_security_profile_flow_modules::paginator::ListSecurityProfileFlowModulesPaginator {
+        crate::operation::list_security_profile_flow_modules::paginator::ListSecurityProfileFlowModulesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The identifier for the security profile.</p>
     pub fn security_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_profile_id(input.into());

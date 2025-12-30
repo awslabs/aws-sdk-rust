@@ -100,6 +100,11 @@ where
                             "RoutingCriteria" => {
                                 builder = builder.set_routing_criteria(crate::protocol_serde::shape_routing_criteria::de_routing_criteria(tokens)?);
                             }
+                            "GlobalResiliencyMetadata" => {
+                                builder = builder.set_global_resiliency_metadata(
+                                    crate::protocol_serde::shape_global_resiliency_metadata::de_global_resiliency_metadata(tokens)?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
