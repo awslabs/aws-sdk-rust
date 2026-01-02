@@ -37,6 +37,8 @@ pub struct CreateUserInput {
     pub website: ::std::option::Option<::std::string::String>,
     /// <p>The user's birthdate in YYYY-MM-DD format. This field supports standard date format for storing personal information.</p>
     pub birthdate: ::std::option::Option<::std::string::String>,
+    /// <p>A list of <code>Role</code> objects containing roles associated with the user.</p>
+    pub roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     /// <p>A map with additional attribute extensions for the user. Each map key corresponds to an extension name, while map values represent extension data in <code>Document</code> type (not supported by Java V1, Go V1 and older versions of the CLI). <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
     pub extensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
@@ -117,6 +119,12 @@ impl CreateUserInput {
     pub fn birthdate(&self) -> ::std::option::Option<&str> {
         self.birthdate.as_deref()
     }
+    /// <p>A list of <code>Role</code> objects containing roles associated with the user.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
+    pub fn roles(&self) -> &[crate::types::Role] {
+        self.roles.as_deref().unwrap_or_default()
+    }
     /// <p>A map with additional attribute extensions for the user. Each map key corresponds to an extension name, while map values represent extension data in <code>Document</code> type (not supported by Java V1, Go V1 and older versions of the CLI). <code>aws:identitystore:enterprise</code> is the only supported extension name.</p>
     pub fn extensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
         self.extensions.as_ref()
@@ -142,6 +150,7 @@ impl ::std::fmt::Debug for CreateUserInput {
         formatter.field("photos", &self.photos);
         formatter.field("website", &"*** Sensitive Data Redacted ***");
         formatter.field("birthdate", &"*** Sensitive Data Redacted ***");
+        formatter.field("roles", &self.roles);
         formatter.field("extensions", &self.extensions);
         formatter.finish()
     }
@@ -174,6 +183,7 @@ pub struct CreateUserInputBuilder {
     pub(crate) photos: ::std::option::Option<::std::vec::Vec<crate::types::Photo>>,
     pub(crate) website: ::std::option::Option<::std::string::String>,
     pub(crate) birthdate: ::std::option::Option<::std::string::String>,
+    pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     pub(crate) extensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl CreateUserInputBuilder {
@@ -440,6 +450,26 @@ impl CreateUserInputBuilder {
     pub fn get_birthdate(&self) -> &::std::option::Option<::std::string::String> {
         &self.birthdate
     }
+    /// Appends an item to `roles`.
+    ///
+    /// To override the contents of this collection use [`set_roles`](Self::set_roles).
+    ///
+    /// <p>A list of <code>Role</code> objects containing roles associated with the user.</p>
+    pub fn roles(mut self, input: crate::types::Role) -> Self {
+        let mut v = self.roles.unwrap_or_default();
+        v.push(input);
+        self.roles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>Role</code> objects containing roles associated with the user.</p>
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
+        self.roles = input;
+        self
+    }
+    /// <p>A list of <code>Role</code> objects containing roles associated with the user.</p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+        &self.roles
+    }
     /// Adds a key-value pair to `extensions`.
     ///
     /// To override the contents of this collection use [`set_extensions`](Self::set_extensions).
@@ -483,6 +513,7 @@ impl CreateUserInputBuilder {
             photos: self.photos,
             website: self.website,
             birthdate: self.birthdate,
+            roles: self.roles,
             extensions: self.extensions,
         })
     }
@@ -507,6 +538,7 @@ impl ::std::fmt::Debug for CreateUserInputBuilder {
         formatter.field("photos", &self.photos);
         formatter.field("website", &"*** Sensitive Data Redacted ***");
         formatter.field("birthdate", &"*** Sensitive Data Redacted ***");
+        formatter.field("roles", &self.roles);
         formatter.field("extensions", &self.extensions);
         formatter.finish()
     }

@@ -229,4 +229,24 @@ impl CreateMembershipFluentBuilder {
     pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::MembershipPaymentConfiguration> {
         self.inner.get_payment_configuration()
     }
+    /// <p>An indicator as to whether Amazon CloudWatch metrics have been enabled or disabled for the membership.</p>
+    /// <p>Amazon CloudWatch metrics are only available when the collaboration has metrics enabled. This option can be set by collaboration members who have the ability to run queries (analysis runners) or by members who are configured as payers.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch. The default value is <code>false</code>.</p>
+    pub fn is_metrics_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.is_metrics_enabled(input);
+        self
+    }
+    /// <p>An indicator as to whether Amazon CloudWatch metrics have been enabled or disabled for the membership.</p>
+    /// <p>Amazon CloudWatch metrics are only available when the collaboration has metrics enabled. This option can be set by collaboration members who have the ability to run queries (analysis runners) or by members who are configured as payers.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch. The default value is <code>false</code>.</p>
+    pub fn set_is_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_is_metrics_enabled(input);
+        self
+    }
+    /// <p>An indicator as to whether Amazon CloudWatch metrics have been enabled or disabled for the membership.</p>
+    /// <p>Amazon CloudWatch metrics are only available when the collaboration has metrics enabled. This option can be set by collaboration members who have the ability to run queries (analysis runners) or by members who are configured as payers.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch. The default value is <code>false</code>.</p>
+    pub fn get_is_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_is_metrics_enabled()
+    }
 }

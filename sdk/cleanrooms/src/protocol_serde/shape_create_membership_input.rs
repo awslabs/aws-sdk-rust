@@ -24,27 +24,30 @@ pub fn ser_create_membership_input_input(
         )?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.job_log_status {
-        object.key("jobLogStatus").string(var_6.as_str());
+    if let Some(var_6) = &input.is_metrics_enabled {
+        object.key("isMetricsEnabled").boolean(*var_6);
     }
-    if let Some(var_7) = &input.payment_configuration {
+    if let Some(var_7) = &input.job_log_status {
+        object.key("jobLogStatus").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.payment_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("paymentConfiguration").start_object();
-        crate::protocol_serde::shape_membership_payment_configuration::ser_membership_payment_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("paymentConfiguration").start_object();
+        crate::protocol_serde::shape_membership_payment_configuration::ser_membership_payment_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.query_log_status {
-        object.key("queryLogStatus").string(var_9.as_str());
+    if let Some(var_10) = &input.query_log_status {
+        object.key("queryLogStatus").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_11) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_11.finish();
+        object_12.finish();
     }
     Ok(())
 }

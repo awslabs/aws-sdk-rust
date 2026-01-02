@@ -13,6 +13,8 @@ pub use crate::types::_conflict_exception_reason::ConflictExceptionReason;
 
 pub use crate::types::_attribute_operation::AttributeOperation;
 
+pub use crate::types::_role::Role;
+
 pub use crate::types::_photo::Photo;
 
 pub use crate::types::_user_status::UserStatus;
@@ -76,6 +78,8 @@ mod _photo;
 mod _resource_not_found_exception_reason;
 
 mod _resource_type;
+
+mod _role;
 
 mod _throttling_exception_reason;
 

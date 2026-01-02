@@ -254,6 +254,9 @@ pub(crate) fn de_describe_user(
                             .transpose()?,
                     );
                 }
+                "Roles" => {
+                    builder = builder.set_roles(crate::protocol_serde::shape_roles::de_roles(tokens)?);
+                }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

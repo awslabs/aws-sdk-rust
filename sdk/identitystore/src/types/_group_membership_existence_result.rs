@@ -2,7 +2,7 @@
 
 /// <p>Indicates whether a resource is a member of a group in the identity store.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupMembershipExistenceResult {
     /// <p>The identifier for a group in the identity store.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
@@ -25,15 +25,6 @@ impl GroupMembershipExistenceResult {
         self.membership_exists
     }
 }
-impl ::std::fmt::Debug for GroupMembershipExistenceResult {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupMembershipExistenceResult");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("membership_exists", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
-    }
-}
 impl GroupMembershipExistenceResult {
     /// Creates a new builder-style object to manufacture [`GroupMembershipExistenceResult`](crate::types::GroupMembershipExistenceResult).
     pub fn builder() -> crate::types::builders::GroupMembershipExistenceResultBuilder {
@@ -42,7 +33,7 @@ impl GroupMembershipExistenceResult {
 }
 
 /// A builder for [`GroupMembershipExistenceResult`](crate::types::GroupMembershipExistenceResult).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GroupMembershipExistenceResultBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
@@ -99,14 +90,5 @@ impl GroupMembershipExistenceResultBuilder {
             member_id: self.member_id,
             membership_exists: self.membership_exists.unwrap_or_default(),
         }
-    }
-}
-impl ::std::fmt::Debug for GroupMembershipExistenceResultBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupMembershipExistenceResultBuilder");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("membership_exists", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
     }
 }

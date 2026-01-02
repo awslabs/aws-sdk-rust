@@ -367,6 +367,25 @@ impl CreateUserFluentBuilder {
         self.inner.get_birthdate()
     }
     ///
+    /// Appends an item to `Roles`.
+    ///
+    /// To override the contents of this collection use [`set_roles`](Self::set_roles).
+    ///
+    /// <p>A list of <code>Role</code> objects containing roles associated with the user.</p>
+    pub fn roles(mut self, input: crate::types::Role) -> Self {
+        self.inner = self.inner.roles(input);
+        self
+    }
+    /// <p>A list of <code>Role</code> objects containing roles associated with the user.</p>
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
+        self.inner = self.inner.set_roles(input);
+        self
+    }
+    /// <p>A list of <code>Role</code> objects containing roles associated with the user.</p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+        self.inner.get_roles()
+    }
+    ///
     /// Adds a key-value pair to `Extensions`.
     ///
     /// To override the contents of this collection use [`set_extensions`](Self::set_extensions).

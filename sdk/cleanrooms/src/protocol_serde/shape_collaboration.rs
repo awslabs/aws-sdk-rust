@@ -124,6 +124,9 @@ where
                             builder = builder
                                 .set_allowed_result_regions(crate::protocol_serde::shape_allowed_result_regions::de_allowed_result_regions(tokens)?);
                         }
+                        "isMetricsEnabled" => {
+                            builder = builder.set_is_metrics_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -43,6 +43,8 @@ pub struct DescribeUserOutput {
     pub website: ::std::option::Option<::std::string::String>,
     /// <p>The user's birthdate in YYYY-MM-DD format. This field returns the stored birthdate information for the user.</p>
     pub birthdate: ::std::option::Option<::std::string::String>,
+    /// <p>The roles of the user.</p>
+    pub roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     /// <p>The date and time the user was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the user or system that created the user.</p>
@@ -148,6 +150,12 @@ impl DescribeUserOutput {
     pub fn birthdate(&self) -> ::std::option::Option<&str> {
         self.birthdate.as_deref()
     }
+    /// <p>The roles of the user.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.roles.is_none()`.
+    pub fn roles(&self) -> &[crate::types::Role] {
+        self.roles.as_deref().unwrap_or_default()
+    }
     /// <p>The date and time the user was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -192,6 +200,7 @@ impl ::std::fmt::Debug for DescribeUserOutput {
         formatter.field("photos", &self.photos);
         formatter.field("website", &"*** Sensitive Data Redacted ***");
         formatter.field("birthdate", &"*** Sensitive Data Redacted ***");
+        formatter.field("roles", &self.roles);
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);
@@ -237,6 +246,7 @@ pub struct DescribeUserOutputBuilder {
     pub(crate) photos: ::std::option::Option<::std::vec::Vec<crate::types::Photo>>,
     pub(crate) website: ::std::option::Option<::std::string::String>,
     pub(crate) birthdate: ::std::option::Option<::std::string::String>,
+    pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -557,6 +567,26 @@ impl DescribeUserOutputBuilder {
     pub fn get_birthdate(&self) -> &::std::option::Option<::std::string::String> {
         &self.birthdate
     }
+    /// Appends an item to `roles`.
+    ///
+    /// To override the contents of this collection use [`set_roles`](Self::set_roles).
+    ///
+    /// <p>The roles of the user.</p>
+    pub fn roles(mut self, input: crate::types::Role) -> Self {
+        let mut v = self.roles.unwrap_or_default();
+        v.push(input);
+        self.roles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The roles of the user.</p>
+    pub fn set_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>) -> Self {
+        self.roles = input;
+        self
+    }
+    /// <p>The roles of the user.</p>
+    pub fn get_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Role>> {
+        &self.roles
+    }
     /// <p>The date and time the user was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -683,6 +713,7 @@ impl DescribeUserOutputBuilder {
             photos: self.photos,
             website: self.website,
             birthdate: self.birthdate,
+            roles: self.roles,
             created_at: self.created_at,
             created_by: self.created_by,
             updated_at: self.updated_at,
@@ -715,6 +746,7 @@ impl ::std::fmt::Debug for DescribeUserOutputBuilder {
         formatter.field("photos", &self.photos);
         formatter.field("website", &"*** Sensitive Data Redacted ***");
         formatter.field("birthdate", &"*** Sensitive Data Redacted ***");
+        formatter.field("roles", &self.roles);
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);

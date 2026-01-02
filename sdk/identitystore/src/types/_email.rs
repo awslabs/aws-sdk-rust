@@ -30,7 +30,7 @@ impl ::std::fmt::Debug for Email {
         let mut formatter = f.debug_struct("Email");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
-        formatter.field("primary", &"*** Sensitive Data Redacted ***");
+        formatter.field("primary", &self.primary);
         formatter.finish()
     }
 }
@@ -106,7 +106,7 @@ impl ::std::fmt::Debug for EmailBuilder {
         let mut formatter = f.debug_struct("EmailBuilder");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
-        formatter.field("primary", &"*** Sensitive Data Redacted ***");
+        formatter.field("primary", &self.primary);
         formatter.finish()
     }
 }

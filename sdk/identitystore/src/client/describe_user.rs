@@ -27,6 +27,7 @@ impl super::Client {
     ///   - [`photos(Option<Vec::<Photo>>)`](crate::operation::describe_user::DescribeUserOutput::photos): <p>A list of photos associated with the user. Returns up to 3 photos with their associated metadata including type, display name, and primary designation.</p>
     ///   - [`website(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::website): <p>The user's personal website or blog URL. Returns the stored website information for the user.</p>
     ///   - [`birthdate(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::birthdate): <p>The user's birthdate in YYYY-MM-DD format. This field returns the stored birthdate information for the user.</p>
+    ///   - [`roles(Option<Vec::<Role>>)`](crate::operation::describe_user::DescribeUserOutput::roles): <p>The roles of the user.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::describe_user::DescribeUserOutput::created_at): <p>The date and time the user was created.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::created_by): <p>The identifier of the user or system that created the user.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::describe_user::DescribeUserOutput::updated_at): <p>The date and time the user was last updated.</p>

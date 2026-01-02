@@ -93,15 +93,27 @@ pub fn ser_create_user_input_input(
     if let Some(var_30) = &input.birthdate {
         object.key("Birthdate").string(var_30.as_str());
     }
-    if let Some(var_31) = &input.extensions {
-        #[allow(unused_mut)]
-        let mut object_32 = object.key("Extensions").start_object();
-        for (key_33, value_34) in var_31 {
+    if let Some(var_31) = &input.roles {
+        let mut array_32 = object.key("Roles").start_array();
+        for item_33 in var_31 {
             {
-                object_32.key(key_33.as_str()).document(value_34);
+                #[allow(unused_mut)]
+                let mut object_34 = array_32.value().start_object();
+                crate::protocol_serde::shape_role::ser_role(&mut object_34, item_33)?;
+                object_34.finish();
             }
         }
-        object_32.finish();
+        array_32.finish();
+    }
+    if let Some(var_35) = &input.extensions {
+        #[allow(unused_mut)]
+        let mut object_36 = object.key("Extensions").start_object();
+        for (key_37, value_38) in var_35 {
+            {
+                object_36.key(key_37.as_str()).document(value_38);
+            }
+        }
+        object_36.finish();
     }
     Ok(())
 }

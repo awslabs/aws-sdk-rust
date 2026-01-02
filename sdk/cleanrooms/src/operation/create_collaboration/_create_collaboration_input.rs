@@ -36,6 +36,9 @@ pub struct CreateCollaborationInput {
     pub auto_approved_change_request_types: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>,
     /// <p>The Amazon Web Services Regions where collaboration query results can be stored. When specified, results can only be written to these Regions. This parameter enables you to meet your compliance and data governance requirements, and implement regional data governance policies.</p>
     pub allowed_result_regions: ::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>>,
+    /// <p>An indicator as to whether metrics have been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>true</code>, collaboration members can opt in to Amazon CloudWatch metrics for their membership queries. The default value is <code>false</code>.</p>
+    pub is_metrics_enabled: ::std::option::Option<bool>,
 }
 impl CreateCollaborationInput {
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
@@ -107,6 +110,11 @@ impl CreateCollaborationInput {
     pub fn allowed_result_regions(&self) -> &[crate::types::SupportedS3Region] {
         self.allowed_result_regions.as_deref().unwrap_or_default()
     }
+    /// <p>An indicator as to whether metrics have been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>true</code>, collaboration members can opt in to Amazon CloudWatch metrics for their membership queries. The default value is <code>false</code>.</p>
+    pub fn is_metrics_enabled(&self) -> ::std::option::Option<bool> {
+        self.is_metrics_enabled
+    }
 }
 impl CreateCollaborationInput {
     /// Creates a new builder-style object to manufacture [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
@@ -133,6 +141,7 @@ pub struct CreateCollaborationInputBuilder {
     pub(crate) analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
     pub(crate) auto_approved_change_request_types: ::std::option::Option<::std::vec::Vec<crate::types::AutoApprovedChangeType>>,
     pub(crate) allowed_result_regions: ::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>>,
+    pub(crate) is_metrics_enabled: ::std::option::Option<bool>,
 }
 impl CreateCollaborationInputBuilder {
     /// Appends an item to `members`.
@@ -383,6 +392,23 @@ impl CreateCollaborationInputBuilder {
     pub fn get_allowed_result_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>> {
         &self.allowed_result_regions
     }
+    /// <p>An indicator as to whether metrics have been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>true</code>, collaboration members can opt in to Amazon CloudWatch metrics for their membership queries. The default value is <code>false</code>.</p>
+    pub fn is_metrics_enabled(mut self, input: bool) -> Self {
+        self.is_metrics_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An indicator as to whether metrics have been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>true</code>, collaboration members can opt in to Amazon CloudWatch metrics for their membership queries. The default value is <code>false</code>.</p>
+    pub fn set_is_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_metrics_enabled = input;
+        self
+    }
+    /// <p>An indicator as to whether metrics have been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>true</code>, collaboration members can opt in to Amazon CloudWatch metrics for their membership queries. The default value is <code>false</code>.</p>
+    pub fn get_is_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_metrics_enabled
+    }
     /// Consumes the builder and constructs a [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
     pub fn build(
         self,
@@ -403,6 +429,7 @@ impl CreateCollaborationInputBuilder {
             analytics_engine: self.analytics_engine,
             auto_approved_change_request_types: self.auto_approved_change_request_types,
             allowed_result_regions: self.allowed_result_regions,
+            is_metrics_enabled: self.is_metrics_enabled,
         })
     }
 }

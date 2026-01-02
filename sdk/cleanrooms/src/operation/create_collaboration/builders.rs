@@ -347,4 +347,21 @@ impl CreateCollaborationFluentBuilder {
     pub fn get_allowed_result_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedS3Region>> {
         self.inner.get_allowed_result_regions()
     }
+    /// <p>An indicator as to whether metrics have been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>true</code>, collaboration members can opt in to Amazon CloudWatch metrics for their membership queries. The default value is <code>false</code>.</p>
+    pub fn is_metrics_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.is_metrics_enabled(input);
+        self
+    }
+    /// <p>An indicator as to whether metrics have been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>true</code>, collaboration members can opt in to Amazon CloudWatch metrics for their membership queries. The default value is <code>false</code>.</p>
+    pub fn set_is_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_is_metrics_enabled(input);
+        self
+    }
+    /// <p>An indicator as to whether metrics have been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>true</code>, collaboration members can opt in to Amazon CloudWatch metrics for their membership queries. The default value is <code>false</code>.</p>
+    pub fn get_is_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_is_metrics_enabled()
+    }
 }

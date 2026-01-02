@@ -65,7 +65,7 @@ impl ::std::fmt::Debug for Address {
         formatter.field("country", &"*** Sensitive Data Redacted ***");
         formatter.field("formatted", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
-        formatter.field("primary", &"*** Sensitive Data Redacted ***");
+        formatter.field("primary", &self.primary);
         formatter.finish()
     }
 }
@@ -226,7 +226,7 @@ impl ::std::fmt::Debug for AddressBuilder {
         formatter.field("country", &"*** Sensitive Data Redacted ***");
         formatter.field("formatted", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
-        formatter.field("primary", &"*** Sensitive Data Redacted ***");
+        formatter.field("primary", &self.primary);
         formatter.finish()
     }
 }

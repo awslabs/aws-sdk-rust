@@ -157,6 +157,10 @@ pub(crate) mod shape_photo;
 
 pub(crate) mod shape_photos;
 
+pub(crate) mod shape_role;
+
+pub(crate) mod shape_roles;
+
 pub(crate) mod shape_users;
 
 pub(crate) mod shape_external_id;

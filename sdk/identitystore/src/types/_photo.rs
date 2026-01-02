@@ -38,7 +38,7 @@ impl ::std::fmt::Debug for Photo {
         formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.field("display", &"*** Sensitive Data Redacted ***");
-        formatter.field("primary", &"*** Sensitive Data Redacted ***");
+        formatter.field("primary", &self.primary);
         formatter.finish()
     }
 }
@@ -139,7 +139,7 @@ impl ::std::fmt::Debug for PhotoBuilder {
         formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
         formatter.field("display", &"*** Sensitive Data Redacted ***");
-        formatter.field("primary", &"*** Sensitive Data Redacted ***");
+        formatter.field("primary", &self.primary);
         formatter.finish()
     }
 }

@@ -40,6 +40,9 @@ pub struct Membership {
     pub default_job_result_configuration: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     pub payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
+    /// <p>An indicator as to whether Amazon CloudWatch metrics are enabled for the membership.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch.</p>
+    pub is_metrics_enabled: ::std::option::Option<bool>,
 }
 impl Membership {
     /// <p>The unique ID of the membership.</p>
@@ -120,6 +123,11 @@ impl Membership {
     pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::MembershipPaymentConfiguration> {
         self.payment_configuration.as_ref()
     }
+    /// <p>An indicator as to whether Amazon CloudWatch metrics are enabled for the membership.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch.</p>
+    pub fn is_metrics_enabled(&self) -> ::std::option::Option<bool> {
+        self.is_metrics_enabled
+    }
 }
 impl Membership {
     /// Creates a new builder-style object to manufacture [`Membership`](crate::types::Membership).
@@ -149,6 +157,7 @@ pub struct MembershipBuilder {
     pub(crate) default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
     pub(crate) default_job_result_configuration: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
     pub(crate) payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
+    pub(crate) is_metrics_enabled: ::std::option::Option<bool>,
 }
 impl MembershipBuilder {
     /// <p>The unique ID of the membership.</p>
@@ -419,6 +428,23 @@ impl MembershipBuilder {
     pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::MembershipPaymentConfiguration> {
         &self.payment_configuration
     }
+    /// <p>An indicator as to whether Amazon CloudWatch metrics are enabled for the membership.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch.</p>
+    pub fn is_metrics_enabled(mut self, input: bool) -> Self {
+        self.is_metrics_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An indicator as to whether Amazon CloudWatch metrics are enabled for the membership.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch.</p>
+    pub fn set_is_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_metrics_enabled = input;
+        self
+    }
+    /// <p>An indicator as to whether Amazon CloudWatch metrics are enabled for the membership.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch.</p>
+    pub fn get_is_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_metrics_enabled
+    }
     /// Consumes the builder and constructs a [`Membership`](crate::types::Membership).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::MembershipBuilder::id)
@@ -512,6 +538,7 @@ impl MembershipBuilder {
             default_result_configuration: self.default_result_configuration,
             default_job_result_configuration: self.default_job_result_configuration,
             payment_configuration: self.payment_configuration,
+            is_metrics_enabled: self.is_metrics_enabled,
         })
     }
 }

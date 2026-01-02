@@ -21,6 +21,10 @@ pub struct CreateMembershipInput {
     /// <p>Not required if the collaboration member has the member ability to run queries.</p>
     /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator.</p>
     pub payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
+    /// <p>An indicator as to whether Amazon CloudWatch metrics have been enabled or disabled for the membership.</p>
+    /// <p>Amazon CloudWatch metrics are only available when the collaboration has metrics enabled. This option can be set by collaboration members who have the ability to run queries (analysis runners) or by members who are configured as payers.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch. The default value is <code>false</code>.</p>
+    pub is_metrics_enabled: ::std::option::Option<bool>,
 }
 impl CreateMembershipInput {
     /// <p>The unique ID for the associated collaboration.</p>
@@ -55,6 +59,12 @@ impl CreateMembershipInput {
     pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::MembershipPaymentConfiguration> {
         self.payment_configuration.as_ref()
     }
+    /// <p>An indicator as to whether Amazon CloudWatch metrics have been enabled or disabled for the membership.</p>
+    /// <p>Amazon CloudWatch metrics are only available when the collaboration has metrics enabled. This option can be set by collaboration members who have the ability to run queries (analysis runners) or by members who are configured as payers.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch. The default value is <code>false</code>.</p>
+    pub fn is_metrics_enabled(&self) -> ::std::option::Option<bool> {
+        self.is_metrics_enabled
+    }
 }
 impl CreateMembershipInput {
     /// Creates a new builder-style object to manufacture [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
@@ -74,6 +84,7 @@ pub struct CreateMembershipInputBuilder {
     pub(crate) default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
     pub(crate) default_job_result_configuration: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
     pub(crate) payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
+    pub(crate) is_metrics_enabled: ::std::option::Option<bool>,
 }
 impl CreateMembershipInputBuilder {
     /// <p>The unique ID for the associated collaboration.</p>
@@ -200,6 +211,26 @@ impl CreateMembershipInputBuilder {
     pub fn get_payment_configuration(&self) -> &::std::option::Option<crate::types::MembershipPaymentConfiguration> {
         &self.payment_configuration
     }
+    /// <p>An indicator as to whether Amazon CloudWatch metrics have been enabled or disabled for the membership.</p>
+    /// <p>Amazon CloudWatch metrics are only available when the collaboration has metrics enabled. This option can be set by collaboration members who have the ability to run queries (analysis runners) or by members who are configured as payers.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch. The default value is <code>false</code>.</p>
+    pub fn is_metrics_enabled(mut self, input: bool) -> Self {
+        self.is_metrics_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An indicator as to whether Amazon CloudWatch metrics have been enabled or disabled for the membership.</p>
+    /// <p>Amazon CloudWatch metrics are only available when the collaboration has metrics enabled. This option can be set by collaboration members who have the ability to run queries (analysis runners) or by members who are configured as payers.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch. The default value is <code>false</code>.</p>
+    pub fn set_is_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_metrics_enabled = input;
+        self
+    }
+    /// <p>An indicator as to whether Amazon CloudWatch metrics have been enabled or disabled for the membership.</p>
+    /// <p>Amazon CloudWatch metrics are only available when the collaboration has metrics enabled. This option can be set by collaboration members who have the ability to run queries (analysis runners) or by members who are configured as payers.</p>
+    /// <p>When <code>true</code>, metrics about query execution are collected in Amazon CloudWatch. The default value is <code>false</code>.</p>
+    pub fn get_is_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_metrics_enabled
+    }
     /// Consumes the builder and constructs a [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
     pub fn build(
         self,
@@ -212,6 +243,7 @@ impl CreateMembershipInputBuilder {
             default_result_configuration: self.default_result_configuration,
             default_job_result_configuration: self.default_job_result_configuration,
             payment_configuration: self.payment_configuration,
+            is_metrics_enabled: self.is_metrics_enabled,
         })
     }
 }

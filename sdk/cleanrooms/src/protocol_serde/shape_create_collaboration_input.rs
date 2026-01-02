@@ -57,36 +57,39 @@ pub fn ser_create_collaboration_input_input(
     if let Some(var_18) = &input.description {
         object.key("description").string(var_18.as_str());
     }
-    if let Some(var_19) = &input.job_log_status {
-        object.key("jobLogStatus").string(var_19.as_str());
+    if let Some(var_19) = &input.is_metrics_enabled {
+        object.key("isMetricsEnabled").boolean(*var_19);
     }
-    if let Some(var_20) = &input.members {
-        let mut array_21 = object.key("members").start_array();
-        for item_22 in var_20 {
+    if let Some(var_20) = &input.job_log_status {
+        object.key("jobLogStatus").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.members {
+        let mut array_22 = object.key("members").start_array();
+        for item_23 in var_21 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_member_specification::ser_member_specification(&mut object_23, item_22)?;
-                object_23.finish();
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_member_specification::ser_member_specification(&mut object_24, item_23)?;
+                object_24.finish();
             }
         }
-        array_21.finish();
+        array_22.finish();
     }
-    if let Some(var_24) = &input.name {
-        object.key("name").string(var_24.as_str());
+    if let Some(var_25) = &input.name {
+        object.key("name").string(var_25.as_str());
     }
-    if let Some(var_25) = &input.query_log_status {
-        object.key("queryLogStatus").string(var_25.as_str());
+    if let Some(var_26) = &input.query_log_status {
+        object.key("queryLogStatus").string(var_26.as_str());
     }
-    if let Some(var_26) = &input.tags {
+    if let Some(var_27) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("tags").start_object();
-        for (key_28, value_29) in var_26 {
+        let mut object_28 = object.key("tags").start_object();
+        for (key_29, value_30) in var_27 {
             {
-                object_27.key(key_28.as_str()).string(value_29.as_str());
+                object_28.key(key_29.as_str()).string(value_30.as_str());
             }
         }
-        object_27.finish();
+        object_28.finish();
     }
     Ok(())
 }
