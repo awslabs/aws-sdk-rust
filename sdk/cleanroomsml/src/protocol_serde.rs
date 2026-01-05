@@ -409,11 +409,15 @@ pub(crate) mod shape_trained_model_exports_max_size;
 
 pub(crate) mod shape_trained_model_inference_max_output_size;
 
+pub(crate) mod shape_worker_compute_configuration_properties;
+
 pub(crate) mod shape_access_budget_details;
 
 pub(crate) mod shape_log_redaction_configuration;
 
 pub(crate) mod shape_membership_inference_attack_score;
+
+pub(crate) mod shape_spark_properties;
 
 pub(crate) mod shape_synthetic_data_column_properties;
 

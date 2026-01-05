@@ -105,6 +105,8 @@ pub use crate::types::_compute_configuration::ComputeConfiguration;
 
 pub use crate::types::_worker_compute_configuration::WorkerComputeConfiguration;
 
+pub use crate::types::_worker_compute_configuration_properties::WorkerComputeConfigurationProperties;
+
 pub use crate::types::_worker_compute_type::WorkerComputeType;
 
 pub use crate::types::_protected_query_sql_parameters::ProtectedQuerySqlParameters;
@@ -428,6 +430,8 @@ mod _training_dataset_summary;
 mod _training_input_mode;
 
 mod _worker_compute_configuration;
+
+mod _worker_compute_configuration_properties;
 
 mod _worker_compute_type;
 

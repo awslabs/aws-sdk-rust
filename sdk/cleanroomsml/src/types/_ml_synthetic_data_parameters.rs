@@ -72,7 +72,6 @@ impl MlSyntheticDataParametersBuilder {
         &self.max_membership_inference_attack_score
     }
     /// <p>Classification details for data columns that specify how each column should be treated during synthetic data generation.</p>
-    /// This field is required.
     pub fn column_classification(mut self, input: crate::types::ColumnClassificationDetails) -> Self {
         self.column_classification = ::std::option::Option::Some(input);
         self

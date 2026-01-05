@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "properties" => {
+                            builder = builder.set_properties(
+                                crate::protocol_serde::shape_worker_compute_configuration_properties::de_worker_compute_configuration_properties(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -57,6 +64,12 @@ pub fn ser_worker_compute_configuration(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.number).into()),
         );
+    }
+    if let Some(var_1) = &input.properties {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("properties").start_object();
+        crate::protocol_serde::shape_worker_compute_configuration_properties::ser_worker_compute_configuration_properties(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

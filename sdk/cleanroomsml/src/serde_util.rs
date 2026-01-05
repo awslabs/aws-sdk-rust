@@ -1279,12 +1279,6 @@ pub(crate) fn ml_synthetic_data_parameters_correct_errors(
     if builder.max_membership_inference_attack_score.is_none() {
         builder.max_membership_inference_attack_score = Some(Default::default())
     }
-    if builder.column_classification.is_none() {
-        builder.column_classification = {
-            let builder = crate::types::builders::ColumnClassificationDetailsBuilder::default();
-            crate::serde_util::column_classification_details_correct_errors(builder).build().ok()
-        }
-    }
     builder
 }
 

@@ -8,7 +8,7 @@ pub struct ResourceConfig {
     pub instance_count: i32,
     /// <p>The instance type that is used to train the model.</p>
     pub instance_type: crate::types::InstanceType,
-    /// <p>The maximum size of the instance that is used to train the model.</p>
+    /// <p>The volume size of the instance that is used to train the model. Please see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-volumes.html">EC2 volume limit</a> for volume size limitations on different instance types.</p>
     pub volume_size_in_gb: i32,
 }
 impl ResourceConfig {
@@ -20,7 +20,7 @@ impl ResourceConfig {
     pub fn instance_type(&self) -> &crate::types::InstanceType {
         &self.instance_type
     }
-    /// <p>The maximum size of the instance that is used to train the model.</p>
+    /// <p>The volume size of the instance that is used to train the model. Please see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-volumes.html">EC2 volume limit</a> for volume size limitations on different instance types.</p>
     pub fn volume_size_in_gb(&self) -> i32 {
         self.volume_size_in_gb
     }
@@ -70,18 +70,18 @@ impl ResourceConfigBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type
     }
-    /// <p>The maximum size of the instance that is used to train the model.</p>
+    /// <p>The volume size of the instance that is used to train the model. Please see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-volumes.html">EC2 volume limit</a> for volume size limitations on different instance types.</p>
     /// This field is required.
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
         self.volume_size_in_gb = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum size of the instance that is used to train the model.</p>
+    /// <p>The volume size of the instance that is used to train the model. Please see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-volumes.html">EC2 volume limit</a> for volume size limitations on different instance types.</p>
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size_in_gb = input;
         self
     }
-    /// <p>The maximum size of the instance that is used to train the model.</p>
+    /// <p>The volume size of the instance that is used to train the model. Please see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-volumes.html">EC2 volume limit</a> for volume size limitations on different instance types.</p>
     pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
         &self.volume_size_in_gb
     }
