@@ -352,6 +352,20 @@ impl CreateApplicationFluentBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         self.inner.get_monitoring_configuration()
     }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn disk_encryption_configuration(mut self, input: crate::types::DiskEncryptionConfiguration) -> Self {
+        self.inner = self.inner.disk_encryption_configuration(input);
+        self
+    }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn set_disk_encryption_configuration(mut self, input: ::std::option::Option<crate::types::DiskEncryptionConfiguration>) -> Self {
+        self.inner = self.inner.set_disk_encryption_configuration(input);
+        self
+    }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn get_disk_encryption_configuration(&self) -> &::std::option::Option<crate::types::DiskEncryptionConfiguration> {
+        self.inner.get_disk_encryption_configuration()
+    }
     /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
     pub fn interactive_configuration(mut self, input: crate::types::InteractiveConfiguration) -> Self {
         self.inner = self.inner.interactive_configuration(input);

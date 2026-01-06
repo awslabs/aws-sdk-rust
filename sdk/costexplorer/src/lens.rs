@@ -49,6 +49,26 @@ pub(crate) fn reflens_get_cost_comparison_drivers_output_output_next_page_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_reservation_purchase_recommendation_output_output_next_page_token(
+    input: &crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_page_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_get_rightsizing_recommendation_output_output_next_page_token(
+    input: &crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_page_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_savings_plans_coverage_output_output_next_token(
     input: &crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -63,6 +83,16 @@ pub(crate) fn reflens_get_savings_plans_utilization_details_output_output_next_t
     input: &crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_commitment_purchase_analyses_output_output_next_page_token(
+    input: &crate::operation::list_commitment_purchase_analyses::ListCommitmentPurchaseAnalysesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_page_token {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -109,6 +139,16 @@ pub(crate) fn reflens_list_cost_category_resource_associations_output_output_nex
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_savings_plans_purchase_recommendation_generation_output_output_next_page_token(
+    input: &crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_page_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_anomalies_output_output_anomalies(
     input: crate::operation::get_anomalies::GetAnomaliesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>> {
@@ -144,6 +184,27 @@ pub(crate) fn lens_get_cost_comparison_drivers_output_output_cost_comparison_dri
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_get_reservation_purchase_recommendation_output_output_recommendations(
+    input: crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ReservationPurchaseRecommendation>> {
+    let input = input.recommendations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_rightsizing_recommendation_output_output_rightsizing_recommendations(
+    input: crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RightsizingRecommendation>> {
+    let input = input.rightsizing_recommendations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_commitment_purchase_analyses_output_output_analysis_summary_list(
+    input: crate::operation::list_commitment_purchase_analyses::ListCommitmentPurchaseAnalysesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>> {
+    let input = input.analysis_summary_list?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_cost_allocation_tag_backfill_history_output_output_backfill_requests(
     input: crate::operation::list_cost_allocation_tag_backfill_history::ListCostAllocationTagBackfillHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CostAllocationTagBackfillRequest>> {
@@ -169,5 +230,12 @@ pub(crate) fn lens_list_cost_category_resource_associations_output_output_cost_c
     input: crate::operation::list_cost_category_resource_associations::ListCostCategoryResourceAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryResourceAssociation>> {
     let input = input.cost_category_resource_associations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_savings_plans_purchase_recommendation_generation_output_output_generation_summary_list(
+    input: crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GenerationSummary>> {
+    let input = input.generation_summary_list?;
     ::std::option::Option::Some(input)
 }

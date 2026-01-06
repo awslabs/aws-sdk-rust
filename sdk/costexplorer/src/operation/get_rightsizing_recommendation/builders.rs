@@ -109,6 +109,12 @@ impl GetRightsizingRecommendationFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_rightsizing_recommendation::paginator::GetRightsizingRecommendationPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::get_rightsizing_recommendation::paginator::GetRightsizingRecommendationPaginator {
+        crate::operation::get_rightsizing_recommendation::paginator::GetRightsizingRecommendationPaginator::new(self.handle, self.inner)
+    }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>There are two patterns:</p>

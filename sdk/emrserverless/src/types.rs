@@ -23,6 +23,8 @@ pub use crate::types::_spark_submit::SparkSubmit;
 
 pub use crate::types::_configuration_overrides::ConfigurationOverrides;
 
+pub use crate::types::_disk_encryption_configuration::DiskEncryptionConfiguration;
+
 pub use crate::types::_monitoring_configuration::MonitoringConfiguration;
 
 pub use crate::types::_prometheus_monitoring_configuration::PrometheusMonitoringConfiguration;
@@ -92,6 +94,8 @@ mod _cloud_watch_logging_configuration;
 mod _configuration;
 
 mod _configuration_overrides;
+
+mod _disk_encryption_configuration;
 
 mod _hive;
 

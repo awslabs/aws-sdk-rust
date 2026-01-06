@@ -32,6 +32,8 @@ pub struct UpdateApplicationInput {
     pub runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The configuration setting for monitoring.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub disk_encryption_configuration: ::std::option::Option<crate::types::DiskEncryptionConfiguration>,
     /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
     pub scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
     /// <p>Specifies the IAM Identity Center configuration used to enable or disable trusted identity propagation. When provided, this configuration determines how the application interacts with IAM Identity Center for user authentication and access control.</p>
@@ -102,6 +104,10 @@ impl UpdateApplicationInput {
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn disk_encryption_configuration(&self) -> ::std::option::Option<&crate::types::DiskEncryptionConfiguration> {
+        self.disk_encryption_configuration.as_ref()
+    }
     /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
     pub fn scheduler_configuration(&self) -> ::std::option::Option<&crate::types::SchedulerConfiguration> {
         self.scheduler_configuration.as_ref()
@@ -141,6 +147,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    pub(crate) disk_encryption_configuration: ::std::option::Option<crate::types::DiskEncryptionConfiguration>,
     pub(crate) scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
     pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfigurationInput>,
     pub(crate) job_level_cost_allocation_configuration: ::std::option::Option<crate::types::JobLevelCostAllocationConfiguration>,
@@ -376,6 +383,20 @@ impl UpdateApplicationInputBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         &self.monitoring_configuration
     }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn disk_encryption_configuration(mut self, input: crate::types::DiskEncryptionConfiguration) -> Self {
+        self.disk_encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn set_disk_encryption_configuration(mut self, input: ::std::option::Option<crate::types::DiskEncryptionConfiguration>) -> Self {
+        self.disk_encryption_configuration = input;
+        self
+    }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn get_disk_encryption_configuration(&self) -> &::std::option::Option<crate::types::DiskEncryptionConfiguration> {
+        &self.disk_encryption_configuration
+    }
     /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
     pub fn scheduler_configuration(mut self, input: crate::types::SchedulerConfiguration) -> Self {
         self.scheduler_configuration = ::std::option::Option::Some(input);
@@ -440,6 +461,7 @@ impl UpdateApplicationInputBuilder {
             release_label: self.release_label,
             runtime_configuration: self.runtime_configuration,
             monitoring_configuration: self.monitoring_configuration,
+            disk_encryption_configuration: self.disk_encryption_configuration,
             scheduler_configuration: self.scheduler_configuration,
             identity_center_configuration: self.identity_center_configuration,
             job_level_cost_allocation_configuration: self.job_level_cost_allocation_configuration,

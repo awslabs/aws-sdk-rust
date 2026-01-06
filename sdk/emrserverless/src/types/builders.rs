@@ -17,6 +17,8 @@ pub use crate::types::_spark_submit::SparkSubmitBuilder;
 
 pub use crate::types::_configuration_overrides::ConfigurationOverridesBuilder;
 
+pub use crate::types::_disk_encryption_configuration::DiskEncryptionConfigurationBuilder;
+
 pub use crate::types::_monitoring_configuration::MonitoringConfigurationBuilder;
 
 pub use crate::types::_prometheus_monitoring_configuration::PrometheusMonitoringConfigurationBuilder;

@@ -108,6 +108,12 @@ impl ListCommitmentPurchaseAnalysesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_commitment_purchase_analyses::paginator::ListCommitmentPurchaseAnalysesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_commitment_purchase_analyses::paginator::ListCommitmentPurchaseAnalysesPaginator {
+        crate::operation::list_commitment_purchase_analyses::paginator::ListCommitmentPurchaseAnalysesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The status of the analysis.</p>
     pub fn analysis_status(mut self, input: crate::types::AnalysisStatus) -> Self {
         self.inner = self.inner.analysis_status(input);

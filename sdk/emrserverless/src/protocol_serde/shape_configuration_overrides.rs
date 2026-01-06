@@ -21,6 +21,12 @@ pub fn ser_configuration_overrides(
         crate::protocol_serde::shape_monitoring_configuration::ser_monitoring_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.disk_encryption_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("diskEncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_disk_encryption_configuration::ser_disk_encryption_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -46,6 +52,11 @@ where
                         "monitoringConfiguration" => {
                             builder = builder.set_monitoring_configuration(
                                 crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens)?,
+                            );
+                        }
+                        "diskEncryptionConfiguration" => {
+                            builder = builder.set_disk_encryption_configuration(
+                                crate::protocol_serde::shape_disk_encryption_configuration::de_disk_encryption_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

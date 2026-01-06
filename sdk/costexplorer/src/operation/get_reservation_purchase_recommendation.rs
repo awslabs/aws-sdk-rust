@@ -401,3 +401,6 @@ mod _get_reservation_purchase_recommendation_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

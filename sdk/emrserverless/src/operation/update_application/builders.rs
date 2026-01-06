@@ -333,6 +333,20 @@ impl UpdateApplicationFluentBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         self.inner.get_monitoring_configuration()
     }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn disk_encryption_configuration(mut self, input: crate::types::DiskEncryptionConfiguration) -> Self {
+        self.inner = self.inner.disk_encryption_configuration(input);
+        self
+    }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn set_disk_encryption_configuration(mut self, input: ::std::option::Option<crate::types::DiskEncryptionConfiguration>) -> Self {
+        self.inner = self.inner.set_disk_encryption_configuration(input);
+        self
+    }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn get_disk_encryption_configuration(&self) -> &::std::option::Option<crate::types::DiskEncryptionConfiguration> {
+        self.inner.get_disk_encryption_configuration()
+    }
     /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
     pub fn scheduler_configuration(mut self, input: crate::types::SchedulerConfiguration) -> Self {
         self.inner = self.inner.scheduler_configuration(input);

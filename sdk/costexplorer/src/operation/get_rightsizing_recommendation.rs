@@ -387,3 +387,6 @@ mod _get_rightsizing_recommendation_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

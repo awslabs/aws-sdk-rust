@@ -125,6 +125,11 @@ where
                                 crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens)?,
                             );
                         }
+                        "diskEncryptionConfiguration" => {
+                            builder = builder.set_disk_encryption_configuration(
+                                crate::protocol_serde::shape_disk_encryption_configuration::de_disk_encryption_configuration(tokens)?,
+                            );
+                        }
                         "interactiveConfiguration" => {
                             builder = builder.set_interactive_configuration(
                                 crate::protocol_serde::shape_interactive_configuration::de_interactive_configuration(tokens)?,

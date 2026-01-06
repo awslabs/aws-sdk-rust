@@ -112,6 +112,15 @@ impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_savings_plans_purchase_recommendation_generation::paginator::ListSavingsPlansPurchaseRecommendationGenerationPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_savings_plans_purchase_recommendation_generation::paginator::ListSavingsPlansPurchaseRecommendationGenerationPaginator
+    {
+        crate::operation::list_savings_plans_purchase_recommendation_generation::paginator::ListSavingsPlansPurchaseRecommendationGenerationPaginator::new(self.handle, self.inner)
+    }
     /// <p>The status of the recommendation generation.</p>
     pub fn generation_status(mut self, input: crate::types::GenerationStatus) -> Self {
         self.inner = self.inner.generation_status(input);

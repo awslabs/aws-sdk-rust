@@ -111,6 +111,17 @@ impl GetReservationPurchaseRecommendationFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_reservation_purchase_recommendation::paginator::GetReservationPurchaseRecommendationPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_reservation_purchase_recommendation::paginator::GetReservationPurchaseRecommendationPaginator {
+        crate::operation::get_reservation_purchase_recommendation::paginator::GetReservationPurchaseRecommendationPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The account ID that's associated with the recommendation.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());

@@ -8,6 +8,8 @@ pub struct ConfigurationOverrides {
     pub application_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The override configurations for monitoring.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    /// <p>The override configuration to encrypt local disks.</p>
+    pub disk_encryption_configuration: ::std::option::Option<crate::types::DiskEncryptionConfiguration>,
 }
 impl ConfigurationOverrides {
     /// <p>The override configurations for the application.</p>
@@ -19,6 +21,10 @@ impl ConfigurationOverrides {
     /// <p>The override configurations for monitoring.</p>
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
+    }
+    /// <p>The override configuration to encrypt local disks.</p>
+    pub fn disk_encryption_configuration(&self) -> ::std::option::Option<&crate::types::DiskEncryptionConfiguration> {
+        self.disk_encryption_configuration.as_ref()
     }
 }
 impl ConfigurationOverrides {
@@ -34,6 +40,7 @@ impl ConfigurationOverrides {
 pub struct ConfigurationOverridesBuilder {
     pub(crate) application_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    pub(crate) disk_encryption_configuration: ::std::option::Option<crate::types::DiskEncryptionConfiguration>,
 }
 impl ConfigurationOverridesBuilder {
     /// Appends an item to `application_configuration`.
@@ -70,11 +77,26 @@ impl ConfigurationOverridesBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         &self.monitoring_configuration
     }
+    /// <p>The override configuration to encrypt local disks.</p>
+    pub fn disk_encryption_configuration(mut self, input: crate::types::DiskEncryptionConfiguration) -> Self {
+        self.disk_encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The override configuration to encrypt local disks.</p>
+    pub fn set_disk_encryption_configuration(mut self, input: ::std::option::Option<crate::types::DiskEncryptionConfiguration>) -> Self {
+        self.disk_encryption_configuration = input;
+        self
+    }
+    /// <p>The override configuration to encrypt local disks.</p>
+    pub fn get_disk_encryption_configuration(&self) -> &::std::option::Option<crate::types::DiskEncryptionConfiguration> {
+        &self.disk_encryption_configuration
+    }
     /// Consumes the builder and constructs a [`ConfigurationOverrides`](crate::types::ConfigurationOverrides).
     pub fn build(self) -> crate::types::ConfigurationOverrides {
         crate::types::ConfigurationOverrides {
             application_configuration: self.application_configuration,
             monitoring_configuration: self.monitoring_configuration,
+            disk_encryption_configuration: self.disk_encryption_configuration,
         }
     }
 }

@@ -22,6 +22,8 @@ pub struct RdsInstanceDetails {
     pub current_generation: bool,
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub size_flex_eligible: bool,
+    /// <p>Determines whether the recommendation is for a reservation for RDS Custom.</p>
+    pub deployment_model: ::std::option::Option<::std::string::String>,
 }
 impl RdsInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
@@ -60,6 +62,10 @@ impl RdsInstanceDetails {
     pub fn size_flex_eligible(&self) -> bool {
         self.size_flex_eligible
     }
+    /// <p>Determines whether the recommendation is for a reservation for RDS Custom.</p>
+    pub fn deployment_model(&self) -> ::std::option::Option<&str> {
+        self.deployment_model.as_deref()
+    }
 }
 impl RdsInstanceDetails {
     /// Creates a new builder-style object to manufacture [`RdsInstanceDetails`](crate::types::RdsInstanceDetails).
@@ -81,6 +87,7 @@ pub struct RdsInstanceDetailsBuilder {
     pub(crate) license_model: ::std::option::Option<::std::string::String>,
     pub(crate) current_generation: ::std::option::Option<bool>,
     pub(crate) size_flex_eligible: ::std::option::Option<bool>,
+    pub(crate) deployment_model: ::std::option::Option<::std::string::String>,
 }
 impl RdsInstanceDetailsBuilder {
     /// <p>The instance family of the recommended reservation.</p>
@@ -209,6 +216,20 @@ impl RdsInstanceDetailsBuilder {
     pub fn get_size_flex_eligible(&self) -> &::std::option::Option<bool> {
         &self.size_flex_eligible
     }
+    /// <p>Determines whether the recommendation is for a reservation for RDS Custom.</p>
+    pub fn deployment_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.deployment_model = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Determines whether the recommendation is for a reservation for RDS Custom.</p>
+    pub fn set_deployment_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_model = input;
+        self
+    }
+    /// <p>Determines whether the recommendation is for a reservation for RDS Custom.</p>
+    pub fn get_deployment_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_model
+    }
     /// Consumes the builder and constructs a [`RdsInstanceDetails`](crate::types::RdsInstanceDetails).
     pub fn build(self) -> crate::types::RdsInstanceDetails {
         crate::types::RdsInstanceDetails {
@@ -221,6 +242,7 @@ impl RdsInstanceDetailsBuilder {
             license_model: self.license_model,
             current_generation: self.current_generation.unwrap_or_default(),
             size_flex_eligible: self.size_flex_eligible.unwrap_or_default(),
+            deployment_model: self.deployment_model,
         }
     }
 }

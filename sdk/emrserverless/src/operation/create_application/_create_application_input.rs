@@ -34,6 +34,8 @@ pub struct CreateApplicationInput {
     pub runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The configuration setting for monitoring.</p>
     pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub disk_encryption_configuration: ::std::option::Option<crate::types::DiskEncryptionConfiguration>,
     /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
     pub interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
     /// <p>The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.</p>
@@ -110,6 +112,10 @@ impl CreateApplicationInput {
     pub fn monitoring_configuration(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn disk_encryption_configuration(&self) -> ::std::option::Option<&crate::types::DiskEncryptionConfiguration> {
+        self.disk_encryption_configuration.as_ref()
+    }
     /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
     pub fn interactive_configuration(&self) -> ::std::option::Option<&crate::types::InteractiveConfiguration> {
         self.interactive_configuration.as_ref()
@@ -154,6 +160,7 @@ pub struct CreateApplicationInputBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecificationInput>>,
     pub(crate) runtime_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
+    pub(crate) disk_encryption_configuration: ::std::option::Option<crate::types::DiskEncryptionConfiguration>,
     pub(crate) interactive_configuration: ::std::option::Option<crate::types::InteractiveConfiguration>,
     pub(crate) scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
     pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfigurationInput>,
@@ -411,6 +418,20 @@ impl CreateApplicationInputBuilder {
     pub fn get_monitoring_configuration(&self) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
         &self.monitoring_configuration
     }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn disk_encryption_configuration(mut self, input: crate::types::DiskEncryptionConfiguration) -> Self {
+        self.disk_encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn set_disk_encryption_configuration(mut self, input: ::std::option::Option<crate::types::DiskEncryptionConfiguration>) -> Self {
+        self.disk_encryption_configuration = input;
+        self
+    }
+    /// <p>The configuration object that allows encrypting local disks.</p>
+    pub fn get_disk_encryption_configuration(&self) -> &::std::option::Option<crate::types::DiskEncryptionConfiguration> {
+        &self.disk_encryption_configuration
+    }
     /// <p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>
     pub fn interactive_configuration(mut self, input: crate::types::InteractiveConfiguration) -> Self {
         self.interactive_configuration = ::std::option::Option::Some(input);
@@ -490,6 +511,7 @@ impl CreateApplicationInputBuilder {
             worker_type_specifications: self.worker_type_specifications,
             runtime_configuration: self.runtime_configuration,
             monitoring_configuration: self.monitoring_configuration,
+            disk_encryption_configuration: self.disk_encryption_configuration,
             interactive_configuration: self.interactive_configuration,
             scheduler_configuration: self.scheduler_configuration,
             identity_center_configuration: self.identity_center_configuration,
