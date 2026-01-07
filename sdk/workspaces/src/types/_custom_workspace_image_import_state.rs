@@ -13,9 +13,19 @@
 /// # let customworkspaceimageimportstate = unimplemented!();
 /// match customworkspaceimageimportstate {
 ///     CustomWorkspaceImageImportState::Completed => { /* ... */ },
+///     CustomWorkspaceImageImportState::CreatingTestInstance => { /* ... */ },
 ///     CustomWorkspaceImageImportState::Error => { /* ... */ },
+///     CustomWorkspaceImageImportState::Generalizing => { /* ... */ },
+///     CustomWorkspaceImageImportState::ImageCompatibilityChecking => { /* ... */ },
+///     CustomWorkspaceImageImportState::ImageTestingGeneralization => { /* ... */ },
+///     CustomWorkspaceImageImportState::ImageTestingStart => { /* ... */ },
+///     CustomWorkspaceImageImportState::InstallingComponents => { /* ... */ },
 ///     CustomWorkspaceImageImportState::InProgress => { /* ... */ },
 ///     CustomWorkspaceImageImportState::Pending => { /* ... */ },
+///     CustomWorkspaceImageImportState::ProcessingSourceImage => { /* ... */ },
+///     CustomWorkspaceImageImportState::Publishing => { /* ... */ },
+///     CustomWorkspaceImageImportState::UpdatingOperatingSystem => { /* ... */ },
+///     CustomWorkspaceImageImportState::Validating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -47,11 +57,31 @@ pub enum CustomWorkspaceImageImportState {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
+    CreatingTestInstance,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Generalizing,
+    #[allow(missing_docs)] // documentation missing in model
+    ImageCompatibilityChecking,
+    #[allow(missing_docs)] // documentation missing in model
+    ImageTestingGeneralization,
+    #[allow(missing_docs)] // documentation missing in model
+    ImageTestingStart,
+    #[allow(missing_docs)] // documentation missing in model
+    InstallingComponents,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    ProcessingSourceImage,
+    #[allow(missing_docs)] // documentation missing in model
+    Publishing,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdatingOperatingSystem,
+    #[allow(missing_docs)] // documentation missing in model
+    Validating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -60,9 +90,19 @@ impl ::std::convert::From<&str> for CustomWorkspaceImageImportState {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => CustomWorkspaceImageImportState::Completed,
+            "CREATING_TEST_INSTANCE" => CustomWorkspaceImageImportState::CreatingTestInstance,
             "ERROR" => CustomWorkspaceImageImportState::Error,
+            "GENERALIZING" => CustomWorkspaceImageImportState::Generalizing,
+            "IMAGE_COMPATIBILITY_CHECKING" => CustomWorkspaceImageImportState::ImageCompatibilityChecking,
+            "IMAGE_TESTING_GENERALIZATION" => CustomWorkspaceImageImportState::ImageTestingGeneralization,
+            "IMAGE_TESTING_START" => CustomWorkspaceImageImportState::ImageTestingStart,
+            "INSTALLING_COMPONENTS" => CustomWorkspaceImageImportState::InstallingComponents,
             "IN_PROGRESS" => CustomWorkspaceImageImportState::InProgress,
             "PENDING" => CustomWorkspaceImageImportState::Pending,
+            "PROCESSING_SOURCE_IMAGE" => CustomWorkspaceImageImportState::ProcessingSourceImage,
+            "PUBLISHING" => CustomWorkspaceImageImportState::Publishing,
+            "UPDATING_OPERATING_SYSTEM" => CustomWorkspaceImageImportState::UpdatingOperatingSystem,
+            "VALIDATING" => CustomWorkspaceImageImportState::Validating,
             other => CustomWorkspaceImageImportState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -79,15 +119,40 @@ impl CustomWorkspaceImageImportState {
     pub fn as_str(&self) -> &str {
         match self {
             CustomWorkspaceImageImportState::Completed => "COMPLETED",
+            CustomWorkspaceImageImportState::CreatingTestInstance => "CREATING_TEST_INSTANCE",
             CustomWorkspaceImageImportState::Error => "ERROR",
+            CustomWorkspaceImageImportState::Generalizing => "GENERALIZING",
+            CustomWorkspaceImageImportState::ImageCompatibilityChecking => "IMAGE_COMPATIBILITY_CHECKING",
+            CustomWorkspaceImageImportState::ImageTestingGeneralization => "IMAGE_TESTING_GENERALIZATION",
+            CustomWorkspaceImageImportState::ImageTestingStart => "IMAGE_TESTING_START",
+            CustomWorkspaceImageImportState::InstallingComponents => "INSTALLING_COMPONENTS",
             CustomWorkspaceImageImportState::InProgress => "IN_PROGRESS",
             CustomWorkspaceImageImportState::Pending => "PENDING",
+            CustomWorkspaceImageImportState::ProcessingSourceImage => "PROCESSING_SOURCE_IMAGE",
+            CustomWorkspaceImageImportState::Publishing => "PUBLISHING",
+            CustomWorkspaceImageImportState::UpdatingOperatingSystem => "UPDATING_OPERATING_SYSTEM",
+            CustomWorkspaceImageImportState::Validating => "VALIDATING",
             CustomWorkspaceImageImportState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "ERROR", "IN_PROGRESS", "PENDING"]
+        &[
+            "COMPLETED",
+            "CREATING_TEST_INSTANCE",
+            "ERROR",
+            "GENERALIZING",
+            "IMAGE_COMPATIBILITY_CHECKING",
+            "IMAGE_TESTING_GENERALIZATION",
+            "IMAGE_TESTING_START",
+            "INSTALLING_COMPONENTS",
+            "IN_PROGRESS",
+            "PENDING",
+            "PROCESSING_SOURCE_IMAGE",
+            "PUBLISHING",
+            "UPDATING_OPERATING_SYSTEM",
+            "VALIDATING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for CustomWorkspaceImageImportState {
@@ -111,9 +176,19 @@ impl ::std::fmt::Display for CustomWorkspaceImageImportState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CustomWorkspaceImageImportState::Completed => write!(f, "COMPLETED"),
+            CustomWorkspaceImageImportState::CreatingTestInstance => write!(f, "CREATING_TEST_INSTANCE"),
             CustomWorkspaceImageImportState::Error => write!(f, "ERROR"),
+            CustomWorkspaceImageImportState::Generalizing => write!(f, "GENERALIZING"),
+            CustomWorkspaceImageImportState::ImageCompatibilityChecking => write!(f, "IMAGE_COMPATIBILITY_CHECKING"),
+            CustomWorkspaceImageImportState::ImageTestingGeneralization => write!(f, "IMAGE_TESTING_GENERALIZATION"),
+            CustomWorkspaceImageImportState::ImageTestingStart => write!(f, "IMAGE_TESTING_START"),
+            CustomWorkspaceImageImportState::InstallingComponents => write!(f, "INSTALLING_COMPONENTS"),
             CustomWorkspaceImageImportState::InProgress => write!(f, "IN_PROGRESS"),
             CustomWorkspaceImageImportState::Pending => write!(f, "PENDING"),
+            CustomWorkspaceImageImportState::ProcessingSourceImage => write!(f, "PROCESSING_SOURCE_IMAGE"),
+            CustomWorkspaceImageImportState::Publishing => write!(f, "PUBLISHING"),
+            CustomWorkspaceImageImportState::UpdatingOperatingSystem => write!(f, "UPDATING_OPERATING_SYSTEM"),
+            CustomWorkspaceImageImportState::Validating => write!(f, "VALIDATING"),
             CustomWorkspaceImageImportState::Unknown(value) => write!(f, "{value}"),
         }
     }

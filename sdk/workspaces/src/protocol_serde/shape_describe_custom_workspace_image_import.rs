@@ -128,6 +128,20 @@ pub(crate) fn de_describe_custom_workspace_image_import(
                             .transpose()?,
                     );
                 }
+                "StateMessage" => {
+                    builder = builder.set_state_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ProgressPercentage" => {
+                    builder = builder.set_progress_percentage(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 "Created" => {
                     builder = builder.set_created(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

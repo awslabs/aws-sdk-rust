@@ -2490,9 +2490,9 @@ model_hash = '40967828c13afe680d7a500dc0514233f981dcf50b5da60e56e844a4bd6f17ed'
 
 [crates.aws-sdk-workspaces]
 category = 'AwsSdk'
-version = '1.107.0'
-source_hash = '9d6a51c542f7cf7e455bc5642c414ebbaa5c796653dad6a554993ead91e15e29'
-model_hash = '8038f21a9663154fcec4c9f16c0ec762a5a370191cc082ff01cb2ff94eec587d'
+version = '1.108.0'
+source_hash = '937aa65a79f53a75bd647f418286b10e33234f0cbe7193d55d512406aff6872d'
+model_hash = '45feb61c11a4fac130d7d4c33e62b408cbbdfd16611e3688c9e55dad33a8f634'
 
 [crates.aws-sdk-workspacesinstances]
 category = 'AwsSdk'
@@ -2576,7 +2576,7 @@ source_hash = '6635bc552072fa3668b1d6f3b6d64d8dd0fba10acf29362a37c6fc361420322a'
 [crates.aws-smithy-http-fuzz]
 category = 'SmithyRuntime'
 version = '0.0.0'
-source_hash = 'a8f73b36423c7549ae8bd9cb426658b7c988020d2eebb7e23bfa1c7a8d647d8b'
+source_hash = '0ea607ec1cedf2e8135d249c049a634bf5a5764221ced1a9f66f817ac13256d4'
 
 [crates.aws-smithy-json]
 category = 'SmithyRuntime'
@@ -2662,10 +2662,5 @@ source_hash = 'e53cd06ca8aa22890f0b286c8dedbb51e665b9894c55a46da5f010392b9ad092'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '0d58dd1d4735add17d8978e6a963bbaeaec2859e73c5aef928dc3b539a45a84b'
-
-[release]
-tag = 'release-2026-01-06'
-
 [release.crates]
-aws-sdk-costexplorer = '1.107.0'
-aws-sdk-emrserverless = '1.101.0'
+aws-sdk-workspaces = '1.108.0'

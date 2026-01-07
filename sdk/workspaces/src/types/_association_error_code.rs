@@ -14,6 +14,7 @@
 /// match associationerrorcode {
 ///     AssociationErrorCode::InternalServerError => { /* ... */ },
 ///     AssociationErrorCode::WorkspaceUnreachable => { /* ... */ },
+///     AssociationErrorCode::ApplicationOldversionexistFailure => { /* ... */ },
 ///     AssociationErrorCode::InsufficientDiskspace => { /* ... */ },
 ///     AssociationErrorCode::InsufficientMemory => { /* ... */ },
 ///     AssociationErrorCode::UnsupportedOperatingSystem => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum AssociationErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     WorkspaceUnreachable,
     #[allow(missing_docs)] // documentation missing in model
+    ApplicationOldversionexistFailure,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientDiskspace,
     #[allow(missing_docs)] // documentation missing in model
     InsufficientMemory,
@@ -64,6 +67,7 @@ impl ::std::convert::From<&str> for AssociationErrorCode {
         match s {
             "DeploymentError.InternalServerError" => AssociationErrorCode::InternalServerError,
             "DeploymentError.WorkspaceUnreachable" => AssociationErrorCode::WorkspaceUnreachable,
+            "ValidationError.ApplicationOldVersionExists" => AssociationErrorCode::ApplicationOldversionexistFailure,
             "ValidationError.InsufficientDiskSpace" => AssociationErrorCode::InsufficientDiskspace,
             "ValidationError.InsufficientMemory" => AssociationErrorCode::InsufficientMemory,
             "ValidationError.UnsupportedOperatingSystem" => AssociationErrorCode::UnsupportedOperatingSystem,
@@ -84,6 +88,7 @@ impl AssociationErrorCode {
         match self {
             AssociationErrorCode::InternalServerError => "DeploymentError.InternalServerError",
             AssociationErrorCode::WorkspaceUnreachable => "DeploymentError.WorkspaceUnreachable",
+            AssociationErrorCode::ApplicationOldversionexistFailure => "ValidationError.ApplicationOldVersionExists",
             AssociationErrorCode::InsufficientDiskspace => "ValidationError.InsufficientDiskSpace",
             AssociationErrorCode::InsufficientMemory => "ValidationError.InsufficientMemory",
             AssociationErrorCode::UnsupportedOperatingSystem => "ValidationError.UnsupportedOperatingSystem",
@@ -95,6 +100,7 @@ impl AssociationErrorCode {
         &[
             "DeploymentError.InternalServerError",
             "DeploymentError.WorkspaceUnreachable",
+            "ValidationError.ApplicationOldVersionExists",
             "ValidationError.InsufficientDiskSpace",
             "ValidationError.InsufficientMemory",
             "ValidationError.UnsupportedOperatingSystem",
@@ -123,6 +129,7 @@ impl ::std::fmt::Display for AssociationErrorCode {
         match self {
             AssociationErrorCode::InternalServerError => write!(f, "DeploymentError.InternalServerError"),
             AssociationErrorCode::WorkspaceUnreachable => write!(f, "DeploymentError.WorkspaceUnreachable"),
+            AssociationErrorCode::ApplicationOldversionexistFailure => write!(f, "ValidationError.ApplicationOldVersionExists"),
             AssociationErrorCode::InsufficientDiskspace => write!(f, "ValidationError.InsufficientDiskSpace"),
             AssociationErrorCode::InsufficientMemory => write!(f, "ValidationError.InsufficientMemory"),
             AssociationErrorCode::UnsupportedOperatingSystem => write!(f, "ValidationError.UnsupportedOperatingSystem"),

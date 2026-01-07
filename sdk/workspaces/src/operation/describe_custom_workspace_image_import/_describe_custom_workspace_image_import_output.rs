@@ -9,6 +9,10 @@ pub struct DescribeCustomWorkspaceImageImportOutput {
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the WorkSpace image.</p>
     pub state: ::std::option::Option<crate::types::CustomWorkspaceImageImportState>,
+    /// <p>The state message of the WorkSpace image import workflow.</p>
+    pub state_message: ::std::option::Option<::std::string::String>,
+    /// <p>The estimated progress percentage of the WorkSpace image import workflow.</p>
+    pub progress_percentage: ::std::option::Option<i32>,
     /// <p>The timestamp when the WorkSpace image import was created.</p>
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the WorkSpace image import was last updated.</p>
@@ -33,6 +37,14 @@ impl DescribeCustomWorkspaceImageImportOutput {
     /// <p>The state of the WorkSpace image.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::CustomWorkspaceImageImportState> {
         self.state.as_ref()
+    }
+    /// <p>The state message of the WorkSpace image import workflow.</p>
+    pub fn state_message(&self) -> ::std::option::Option<&str> {
+        self.state_message.as_deref()
+    }
+    /// <p>The estimated progress percentage of the WorkSpace image import workflow.</p>
+    pub fn progress_percentage(&self) -> ::std::option::Option<i32> {
+        self.progress_percentage
     }
     /// <p>The timestamp when the WorkSpace image import was created.</p>
     pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -76,6 +88,8 @@ pub struct DescribeCustomWorkspaceImageImportOutputBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::CustomWorkspaceImageImportState>,
+    pub(crate) state_message: ::std::option::Option<::std::string::String>,
+    pub(crate) progress_percentage: ::std::option::Option<i32>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) image_source: ::std::option::Option<crate::types::ImageSourceIdentifier>,
@@ -125,6 +139,34 @@ impl DescribeCustomWorkspaceImageImportOutputBuilder {
     /// <p>The state of the WorkSpace image.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CustomWorkspaceImageImportState> {
         &self.state
+    }
+    /// <p>The state message of the WorkSpace image import workflow.</p>
+    pub fn state_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The state message of the WorkSpace image import workflow.</p>
+    pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state_message = input;
+        self
+    }
+    /// <p>The state message of the WorkSpace image import workflow.</p>
+    pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_message
+    }
+    /// <p>The estimated progress percentage of the WorkSpace image import workflow.</p>
+    pub fn progress_percentage(mut self, input: i32) -> Self {
+        self.progress_percentage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The estimated progress percentage of the WorkSpace image import workflow.</p>
+    pub fn set_progress_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.progress_percentage = input;
+        self
+    }
+    /// <p>The estimated progress percentage of the WorkSpace image import workflow.</p>
+    pub fn get_progress_percentage(&self) -> &::std::option::Option<i32> {
+        &self.progress_percentage
     }
     /// <p>The timestamp when the WorkSpace image import was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -217,6 +259,8 @@ impl DescribeCustomWorkspaceImageImportOutputBuilder {
             image_id: self.image_id,
             infrastructure_configuration_arn: self.infrastructure_configuration_arn,
             state: self.state,
+            state_message: self.state_message,
+            progress_percentage: self.progress_percentage,
             created: self.created,
             last_updated_time: self.last_updated_time,
             image_source: self.image_source,
