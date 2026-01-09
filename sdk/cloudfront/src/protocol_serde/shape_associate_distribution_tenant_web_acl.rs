@@ -35,6 +35,23 @@ pub fn de_associate_distribution_tenant_web_acl_http_error(
             }
             tmp
         }),
+        "EntityLimitExceeded" => {
+            crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::EntityLimitExceeded({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::EntityLimitExceededBuilder::default();
+                    output = crate::protocol_serde::shape_entity_limit_exceeded::de_entity_limit_exceeded_xml_err(_response_body, output)
+                        .map_err(crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "EntityNotFound" => crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::EntityNotFound({
             #[allow(unused_mut)]
             let mut tmp = {

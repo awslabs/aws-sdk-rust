@@ -12,6 +12,12 @@ pub fn ser_media_package_output_destination_settings(
     if let Some(var_3) = &input.channel_name {
         object.key("channelName").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.channel_endpoint_id {
+        object.key("channelEndpointId").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.media_package_region_name {
+        object.key("mediaPackageRegionName").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -46,6 +52,20 @@ where
                         }
                         "channelName" => {
                             builder = builder.set_channel_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "channelEndpointId" => {
+                            builder = builder.set_channel_endpoint_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "mediaPackageRegionName" => {
+                            builder = builder.set_media_package_region_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

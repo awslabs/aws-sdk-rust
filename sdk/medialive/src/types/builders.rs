@@ -363,6 +363,8 @@ pub use crate::types::_media_package_group_settings::MediaPackageGroupSettingsBu
 
 pub use crate::types::_media_package_v2_group_settings::MediaPackageV2GroupSettingsBuilder;
 
+pub use crate::types::_media_package_additional_destinations::MediaPackageAdditionalDestinationsBuilder;
+
 pub use crate::types::_caption_language_mapping::CaptionLanguageMappingBuilder;
 
 pub use crate::types::_hls_group_settings::HlsGroupSettingsBuilder;

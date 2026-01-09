@@ -49,6 +49,10 @@ pub use crate::types::error::_illegal_workflow_state_exception::IllegalWorkflowS
 
 pub use crate::types::error::_illegal_session_state_exception::IllegalSessionStateException;
 
+pub use crate::types::error::_materialized_view_refresh_task_stopping_exception::MaterializedViewRefreshTaskStoppingException;
+
+pub use crate::types::error::_materialized_view_refresh_task_not_running_exception::MaterializedViewRefreshTaskNotRunningException;
+
 pub use crate::types::error::_scheduler_not_running_exception::SchedulerNotRunningException;
 
 pub use crate::types::error::_crawler_stopping_exception::CrawlerStoppingException;
@@ -62,6 +66,8 @@ pub use crate::types::error::_column_statistics_task_not_running_exception::Colu
 pub use crate::types::error::_concurrent_runs_exceeded_exception::ConcurrentRunsExceededException;
 
 pub use crate::types::error::_ml_transform_not_ready_exception::MlTransformNotReadyException;
+
+pub use crate::types::error::_materialized_view_refresh_task_running_exception::MaterializedViewRefreshTaskRunningException;
 
 pub use crate::types::error::_scheduler_running_exception::SchedulerRunningException;
 
@@ -148,6 +154,12 @@ mod _invalid_integration_state_fault;
 mod _invalid_state_exception;
 
 mod _kms_key_not_accessible_fault;
+
+mod _materialized_view_refresh_task_not_running_exception;
+
+mod _materialized_view_refresh_task_running_exception;
+
+mod _materialized_view_refresh_task_stopping_exception;
 
 mod _ml_transform_not_ready_exception;
 

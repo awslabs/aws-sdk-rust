@@ -5,11 +5,17 @@
 pub struct GetMemoryInput {
     /// <p>The unique identifier of the memory to retrieve.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
+    /// <p>The level of detail to return for the memory.</p>
+    pub view: ::std::option::Option<crate::types::MemoryView>,
 }
 impl GetMemoryInput {
     /// <p>The unique identifier of the memory to retrieve.</p>
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
+    }
+    /// <p>The level of detail to return for the memory.</p>
+    pub fn view(&self) -> ::std::option::Option<&crate::types::MemoryView> {
+        self.view.as_ref()
     }
 }
 impl GetMemoryInput {
@@ -24,6 +30,7 @@ impl GetMemoryInput {
 #[non_exhaustive]
 pub struct GetMemoryInputBuilder {
     pub(crate) memory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) view: ::std::option::Option<crate::types::MemoryView>,
 }
 impl GetMemoryInputBuilder {
     /// <p>The unique identifier of the memory to retrieve.</p>
@@ -41,8 +48,25 @@ impl GetMemoryInputBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }
+    /// <p>The level of detail to return for the memory.</p>
+    pub fn view(mut self, input: crate::types::MemoryView) -> Self {
+        self.view = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The level of detail to return for the memory.</p>
+    pub fn set_view(mut self, input: ::std::option::Option<crate::types::MemoryView>) -> Self {
+        self.view = input;
+        self
+    }
+    /// <p>The level of detail to return for the memory.</p>
+    pub fn get_view(&self) -> &::std::option::Option<crate::types::MemoryView> {
+        &self.view
+    }
     /// Consumes the builder and constructs a [`GetMemoryInput`](crate::operation::get_memory::GetMemoryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_memory::GetMemoryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_memory::GetMemoryInput { memory_id: self.memory_id })
+        ::std::result::Result::Ok(crate::operation::get_memory::GetMemoryInput {
+            memory_id: self.memory_id,
+            view: self.view,
+        })
     }
 }

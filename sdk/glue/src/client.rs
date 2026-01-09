@@ -423,6 +423,8 @@ mod get_jobs;
 
 mod get_mapping;
 
+mod get_materialized_view_refresh_task_run;
+
 mod get_ml_task_run;
 
 mod get_ml_task_runs;
@@ -531,6 +533,8 @@ mod list_integration_resource_properties;
 
 mod list_jobs;
 
+mod list_materialized_view_refresh_task_runs;
+
 mod list_ml_transforms;
 
 mod list_registries;
@@ -597,6 +601,8 @@ mod start_import_labels_task_run;
 
 mod start_job_run;
 
+mod start_materialized_view_refresh_task_run;
+
 mod start_ml_evaluation_task_run;
 
 mod start_ml_labeling_set_generation_task_run;
@@ -612,6 +618,8 @@ mod stop_column_statistics_task_run_schedule;
 mod stop_crawler;
 
 mod stop_crawler_schedule;
+
+mod stop_materialized_view_refresh_task_run;
 
 mod stop_session;
 

@@ -712,6 +712,9 @@ impl From<crate::operation::associate_distribution_tenant_web_acl::AssociateDist
             crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::AccessDenied(inner) => {
                 Error::AccessDenied(inner)
             }
+            crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::EntityLimitExceeded(inner) => {
+                Error::EntityLimitExceeded(inner)
+            }
             crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::EntityNotFound(inner) => {
                 Error::EntityNotFound(inner)
             }
@@ -755,6 +758,9 @@ impl From<crate::operation::associate_distribution_web_acl::AssociateDistributio
     fn from(err: crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError) -> Self {
         match err {
             crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError::EntityLimitExceeded(inner) => {
+                Error::EntityLimitExceeded(inner)
+            }
             crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::associate_distribution_web_acl::AssociateDistributionWebACLError::InvalidArgument(inner) => {
                 Error::InvalidArgument(inner)
@@ -6063,6 +6069,7 @@ impl From<crate::operation::update_distribution_with_staging_config::UpdateDistr
         match err {
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::AccessDenied(inner) => Error::AccessDenied(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::EntityLimitExceeded(inner) => Error::EntityLimitExceeded(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),

@@ -48,6 +48,21 @@ pub fn ser_media_package_v2_group_settings(
     if let Some(var_13) = &input.timed_metadata_passthrough {
         object.key("timedMetadataPassthrough").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.additional_destinations {
+        let mut array_15 = object.key("additionalDestinations").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_media_package_additional_destinations::ser_media_package_additional_destinations(
+                    &mut object_17,
+                    item_16,
+                )?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
+    }
     Ok(())
 }
 
@@ -133,6 +148,11 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CmafTimedMetadataPassthrough::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "additionalDestinations" => {
+                            builder = builder.set_additional_destinations(
+                                    crate::protocol_serde::shape_list_of_media_package_additional_destinations::de_list_of_media_package_additional_destinations(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

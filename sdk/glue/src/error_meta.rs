@@ -65,6 +65,12 @@ pub enum Error {
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
     /// <p>The machine learning transform is not ready to run.</p>
     MlTransformNotReadyException(crate::types::error::MlTransformNotReadyException),
+    /// <p>Exception thrown when stopping a task that is not in running state.</p>
+    MaterializedViewRefreshTaskNotRunningException(crate::types::error::MaterializedViewRefreshTaskNotRunningException),
+    /// <p>Exception thrown when a task is already in running state.</p>
+    MaterializedViewRefreshTaskRunningException(crate::types::error::MaterializedViewRefreshTaskRunningException),
+    /// <p>Exception thrown when a task is already in stopping state.</p>
+    MaterializedViewRefreshTaskStoppingException(crate::types::error::MaterializedViewRefreshTaskStoppingException),
     /// <p>There is no applicable schedule.</p>
     NoScheduleException(crate::types::error::NoScheduleException),
     /// <p>The operation is not available in the region.</p>
@@ -136,6 +142,9 @@ impl ::std::fmt::Display for Error {
             Error::InvalidStateException(inner) => inner.fmt(f),
             Error::KmsKeyNotAccessibleFault(inner) => inner.fmt(f),
             Error::MlTransformNotReadyException(inner) => inner.fmt(f),
+            Error::MaterializedViewRefreshTaskNotRunningException(inner) => inner.fmt(f),
+            Error::MaterializedViewRefreshTaskRunningException(inner) => inner.fmt(f),
+            Error::MaterializedViewRefreshTaskStoppingException(inner) => inner.fmt(f),
             Error::NoScheduleException(inner) => inner.fmt(f),
             Error::OperationNotSupportedException(inner) => inner.fmt(f),
             Error::OperationTimeoutException(inner) => inner.fmt(f),
@@ -202,6 +211,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidStateException(inner) => inner.meta(),
             Self::KmsKeyNotAccessibleFault(inner) => inner.meta(),
             Self::MlTransformNotReadyException(inner) => inner.meta(),
+            Self::MaterializedViewRefreshTaskNotRunningException(inner) => inner.meta(),
+            Self::MaterializedViewRefreshTaskRunningException(inner) => inner.meta(),
+            Self::MaterializedViewRefreshTaskStoppingException(inner) => inner.meta(),
             Self::NoScheduleException(inner) => inner.meta(),
             Self::OperationNotSupportedException(inner) => inner.meta(),
             Self::OperationTimeoutException(inner) => inner.meta(),
@@ -4521,6 +4533,52 @@ impl From<crate::operation::get_mapping::GetMappingError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_materialized_view_refresh_task_run::GetMaterializedViewRefreshTaskRunError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_materialized_view_refresh_task_run::GetMaterializedViewRefreshTaskRunError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_materialized_view_refresh_task_run::GetMaterializedViewRefreshTaskRunError> for Error {
+    fn from(err: crate::operation::get_materialized_view_refresh_task_run::GetMaterializedViewRefreshTaskRunError) -> Self {
+        match err {
+            crate::operation::get_materialized_view_refresh_task_run::GetMaterializedViewRefreshTaskRunError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_materialized_view_refresh_task_run::GetMaterializedViewRefreshTaskRunError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::get_materialized_view_refresh_task_run::GetMaterializedViewRefreshTaskRunError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_materialized_view_refresh_task_run::GetMaterializedViewRefreshTaskRunError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_materialized_view_refresh_task_run::GetMaterializedViewRefreshTaskRunError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ml_task_run::GetMLTaskRunError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6202,6 +6260,49 @@ impl From<crate::operation::list_jobs::ListJobsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_materialized_view_refresh_task_runs::ListMaterializedViewRefreshTaskRunsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_materialized_view_refresh_task_runs::ListMaterializedViewRefreshTaskRunsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_materialized_view_refresh_task_runs::ListMaterializedViewRefreshTaskRunsError> for Error {
+    fn from(err: crate::operation::list_materialized_view_refresh_task_runs::ListMaterializedViewRefreshTaskRunsError) -> Self {
+        match err {
+            crate::operation::list_materialized_view_refresh_task_runs::ListMaterializedViewRefreshTaskRunsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_materialized_view_refresh_task_runs::ListMaterializedViewRefreshTaskRunsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_materialized_view_refresh_task_runs::ListMaterializedViewRefreshTaskRunsError::OperationTimeoutException(
+                inner,
+            ) => Error::OperationTimeoutException(inner),
+            crate::operation::list_materialized_view_refresh_task_runs::ListMaterializedViewRefreshTaskRunsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ml_transforms::ListMLTransformsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -7313,6 +7414,44 @@ impl From<crate::operation::start_job_run::StartJobRunError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_materialized_view_refresh_task_run::StartMaterializedViewRefreshTaskRunError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_materialized_view_refresh_task_run::StartMaterializedViewRefreshTaskRunError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_materialized_view_refresh_task_run::StartMaterializedViewRefreshTaskRunError> for Error {
+    fn from(err: crate::operation::start_materialized_view_refresh_task_run::StartMaterializedViewRefreshTaskRunError) -> Self {
+        match err {
+            crate::operation::start_materialized_view_refresh_task_run::StartMaterializedViewRefreshTaskRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_materialized_view_refresh_task_run::StartMaterializedViewRefreshTaskRunError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::start_materialized_view_refresh_task_run::StartMaterializedViewRefreshTaskRunError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::start_materialized_view_refresh_task_run::StartMaterializedViewRefreshTaskRunError::MaterializedViewRefreshTaskRunningException(inner) => Error::MaterializedViewRefreshTaskRunningException(inner),
+            crate::operation::start_materialized_view_refresh_task_run::StartMaterializedViewRefreshTaskRunError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::start_materialized_view_refresh_task_run::StartMaterializedViewRefreshTaskRunError::ResourceNumberLimitExceededException(inner) => Error::ResourceNumberLimitExceededException(inner),
+            crate::operation::start_materialized_view_refresh_task_run::StartMaterializedViewRefreshTaskRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRunError, R>>
     for Error
 where
@@ -7592,6 +7731,43 @@ impl From<crate::operation::stop_crawler_schedule::StopCrawlerScheduleError> for
                 Error::SchedulerTransitioningException(inner)
             }
             crate::operation::stop_crawler_schedule::StopCrawlerScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::stop_materialized_view_refresh_task_run::StopMaterializedViewRefreshTaskRunError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::stop_materialized_view_refresh_task_run::StopMaterializedViewRefreshTaskRunError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_materialized_view_refresh_task_run::StopMaterializedViewRefreshTaskRunError> for Error {
+    fn from(err: crate::operation::stop_materialized_view_refresh_task_run::StopMaterializedViewRefreshTaskRunError) -> Self {
+        match err {
+            crate::operation::stop_materialized_view_refresh_task_run::StopMaterializedViewRefreshTaskRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_materialized_view_refresh_task_run::StopMaterializedViewRefreshTaskRunError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::stop_materialized_view_refresh_task_run::StopMaterializedViewRefreshTaskRunError::MaterializedViewRefreshTaskNotRunningException(inner) => Error::MaterializedViewRefreshTaskNotRunningException(inner),
+            crate::operation::stop_materialized_view_refresh_task_run::StopMaterializedViewRefreshTaskRunError::MaterializedViewRefreshTaskStoppingException(inner) => Error::MaterializedViewRefreshTaskStoppingException(inner),
+            crate::operation::stop_materialized_view_refresh_task_run::StopMaterializedViewRefreshTaskRunError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::stop_materialized_view_refresh_task_run::StopMaterializedViewRefreshTaskRunError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8792,6 +8968,9 @@ impl ::std::error::Error for Error {
             Error::InvalidStateException(inner) => inner.source(),
             Error::KmsKeyNotAccessibleFault(inner) => inner.source(),
             Error::MlTransformNotReadyException(inner) => inner.source(),
+            Error::MaterializedViewRefreshTaskNotRunningException(inner) => inner.source(),
+            Error::MaterializedViewRefreshTaskRunningException(inner) => inner.source(),
+            Error::MaterializedViewRefreshTaskStoppingException(inner) => inner.source(),
             Error::NoScheduleException(inner) => inner.source(),
             Error::OperationNotSupportedException(inner) => inner.source(),
             Error::OperationTimeoutException(inner) => inner.source(),
@@ -8844,6 +9023,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidStateException(e) => e.request_id(),
             Self::KmsKeyNotAccessibleFault(e) => e.request_id(),
             Self::MlTransformNotReadyException(e) => e.request_id(),
+            Self::MaterializedViewRefreshTaskNotRunningException(e) => e.request_id(),
+            Self::MaterializedViewRefreshTaskRunningException(e) => e.request_id(),
+            Self::MaterializedViewRefreshTaskStoppingException(e) => e.request_id(),
             Self::NoScheduleException(e) => e.request_id(),
             Self::OperationNotSupportedException(e) => e.request_id(),
             Self::OperationTimeoutException(e) => e.request_id(),

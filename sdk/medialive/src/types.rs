@@ -775,6 +775,8 @@ pub use crate::types::_media_package_group_settings::MediaPackageGroupSettings;
 
 pub use crate::types::_media_package_v2_group_settings::MediaPackageV2GroupSettings;
 
+pub use crate::types::_media_package_additional_destinations::MediaPackageAdditionalDestinations;
+
 pub use crate::types::_caption_language_mapping::CaptionLanguageMapping;
 
 pub use crate::types::_hls_group_settings::HlsGroupSettings;
@@ -2198,6 +2200,8 @@ mod _maintenance_update_settings;
 mod _media_connect_flow;
 
 mod _media_connect_flow_request;
+
+mod _media_package_additional_destinations;
 
 mod _media_package_group_settings;
 

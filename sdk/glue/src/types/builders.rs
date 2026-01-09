@@ -525,6 +525,8 @@ pub use crate::types::_transform_filter_criteria::TransformFilterCriteriaBuilder
 
 pub use crate::types::_schema_column::SchemaColumnBuilder;
 
+pub use crate::types::_materialized_view_refresh_task_run::MaterializedViewRefreshTaskRunBuilder;
+
 pub use crate::types::_integration_resource_property::IntegrationResourcePropertyBuilder;
 
 pub use crate::types::_integration_resource_property_filter::IntegrationResourcePropertyFilterBuilder;

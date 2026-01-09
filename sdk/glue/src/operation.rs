@@ -391,6 +391,9 @@ pub mod get_jobs;
 /// Types for the `GetMapping` operation.
 pub mod get_mapping;
 
+/// Types for the `GetMaterializedViewRefreshTaskRun` operation.
+pub mod get_materialized_view_refresh_task_run;
+
 /// Types for the `GetMLTaskRun` operation.
 pub mod get_ml_task_run;
 
@@ -553,6 +556,9 @@ pub mod list_integration_resource_properties;
 /// Types for the `ListJobs` operation.
 pub mod list_jobs;
 
+/// Types for the `ListMaterializedViewRefreshTaskRuns` operation.
+pub mod list_materialized_view_refresh_task_runs;
+
 /// Types for the `ListMLTransforms` operation.
 pub mod list_ml_transforms;
 
@@ -652,6 +658,9 @@ pub mod start_import_labels_task_run;
 /// Types for the `StartJobRun` operation.
 pub mod start_job_run;
 
+/// Types for the `StartMaterializedViewRefreshTaskRun` operation.
+pub mod start_materialized_view_refresh_task_run;
+
 /// Types for the `StartMLEvaluationTaskRun` operation.
 pub mod start_ml_evaluation_task_run;
 
@@ -675,6 +684,9 @@ pub mod stop_crawler;
 
 /// Types for the `StopCrawlerSchedule` operation.
 pub mod stop_crawler_schedule;
+
+/// Types for the `StopMaterializedViewRefreshTaskRun` operation.
+pub mod stop_materialized_view_refresh_task_run;
 
 /// Types for the `StopSession` operation.
 pub mod stop_session;

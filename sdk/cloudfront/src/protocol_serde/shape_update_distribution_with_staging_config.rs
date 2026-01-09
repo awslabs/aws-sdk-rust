@@ -52,6 +52,22 @@ pub fn de_update_distribution_with_staging_config_http_error(
                                                         }
             tmp
         }),
+        "EntityLimitExceeded" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::EntityLimitExceeded({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::EntityLimitExceededBuilder::default();
+                    output = crate::protocol_serde::shape_entity_limit_exceeded::de_entity_limit_exceeded_xml_err(_response_body, output).map_err(crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                            tmp.message = _error_message;
+                                                        }
+            tmp
+        }),
         "EntityNotFound" => crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::EntityNotFound({
             #[allow(unused_mut)]
             let mut tmp =

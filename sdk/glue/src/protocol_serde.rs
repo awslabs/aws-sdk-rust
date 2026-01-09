@@ -283,6 +283,8 @@ pub(crate) mod shape_get_jobs;
 
 pub(crate) mod shape_get_mapping;
 
+pub(crate) mod shape_get_materialized_view_refresh_task_run;
+
 pub(crate) mod shape_get_ml_task_run;
 
 pub(crate) mod shape_get_ml_task_runs;
@@ -391,6 +393,8 @@ pub(crate) mod shape_list_integration_resource_properties;
 
 pub(crate) mod shape_list_jobs;
 
+pub(crate) mod shape_list_materialized_view_refresh_task_runs;
+
 pub(crate) mod shape_list_ml_transforms;
 
 pub(crate) mod shape_list_registries;
@@ -457,6 +461,8 @@ pub(crate) mod shape_start_import_labels_task_run;
 
 pub(crate) mod shape_start_job_run;
 
+pub(crate) mod shape_start_materialized_view_refresh_task_run;
+
 pub(crate) mod shape_start_ml_evaluation_task_run;
 
 pub(crate) mod shape_start_ml_labeling_set_generation_task_run;
@@ -472,6 +478,8 @@ pub(crate) mod shape_stop_column_statistics_task_run_schedule;
 pub(crate) mod shape_stop_crawler;
 
 pub(crate) mod shape_stop_crawler_schedule;
+
+pub(crate) mod shape_stop_materialized_view_refresh_task_run;
 
 pub(crate) mod shape_stop_session;
 
@@ -837,6 +845,8 @@ pub(crate) mod shape_get_jobs_input;
 
 pub(crate) mod shape_get_mapping_input;
 
+pub(crate) mod shape_get_materialized_view_refresh_task_run_input;
+
 pub(crate) mod shape_get_ml_task_run_input;
 
 pub(crate) mod shape_get_ml_task_runs_input;
@@ -973,6 +983,8 @@ pub(crate) mod shape_list_integration_resource_properties_input;
 
 pub(crate) mod shape_list_jobs_input;
 
+pub(crate) mod shape_list_materialized_view_refresh_task_runs_input;
+
 pub(crate) mod shape_list_ml_transforms_input;
 
 pub(crate) mod shape_list_registries_input;
@@ -992,6 +1004,12 @@ pub(crate) mod shape_list_triggers_input;
 pub(crate) mod shape_list_usage_profiles_input;
 
 pub(crate) mod shape_list_workflows_input;
+
+pub(crate) mod shape_materialized_view_refresh_task_not_running_exception;
+
+pub(crate) mod shape_materialized_view_refresh_task_running_exception;
+
+pub(crate) mod shape_materialized_view_refresh_task_stopping_exception;
 
 pub(crate) mod shape_ml_transform_not_ready_exception;
 
@@ -1061,6 +1079,8 @@ pub(crate) mod shape_start_import_labels_task_run_input;
 
 pub(crate) mod shape_start_job_run_input;
 
+pub(crate) mod shape_start_materialized_view_refresh_task_run_input;
+
 pub(crate) mod shape_start_ml_evaluation_task_run_input;
 
 pub(crate) mod shape_start_ml_labeling_set_generation_task_run_input;
@@ -1076,6 +1096,8 @@ pub(crate) mod shape_stop_column_statistics_task_run_schedule_input;
 pub(crate) mod shape_stop_crawler_input;
 
 pub(crate) mod shape_stop_crawler_schedule_input;
+
+pub(crate) mod shape_stop_materialized_view_refresh_task_run_input;
 
 pub(crate) mod shape_stop_session_input;
 
@@ -1400,6 +1422,10 @@ pub(crate) mod shape_map_value;
 pub(crate) mod shape_mapping_entry;
 
 pub(crate) mod shape_mapping_list;
+
+pub(crate) mod shape_materialized_view_refresh_task_run;
+
+pub(crate) mod shape_materialized_view_refresh_task_runs_list;
 
 pub(crate) mod shape_metadata_info_map;
 

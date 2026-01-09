@@ -116,4 +116,18 @@ impl GetMemoryFluentBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }
+    /// <p>The level of detail to return for the memory.</p>
+    pub fn view(mut self, input: crate::types::MemoryView) -> Self {
+        self.inner = self.inner.view(input);
+        self
+    }
+    /// <p>The level of detail to return for the memory.</p>
+    pub fn set_view(mut self, input: ::std::option::Option<crate::types::MemoryView>) -> Self {
+        self.inner = self.inner.set_view(input);
+        self
+    }
+    /// <p>The level of detail to return for the memory.</p>
+    pub fn get_view(&self) -> &::std::option::Option<crate::types::MemoryView> {
+        self.inner.get_view()
+    }
 }

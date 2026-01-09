@@ -278,6 +278,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AssociateDist
 pub enum AssociateDistributionWebACLError {
     /// <p>Access denied.</p>
     AccessDenied(crate::types::error::AccessDenied),
+    /// <p>The entity limit has been exceeded.</p>
+    EntityLimitExceeded(crate::types::error::EntityLimitExceeded),
     /// <p>The entity was not found.</p>
     EntityNotFound(crate::types::error::EntityNotFound),
     /// <p>An argument is invalid.</p>
@@ -320,6 +322,7 @@ impl AssociateDistributionWebACLError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDenied(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EntityLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EntityNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArgument(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidIfMatchVersion(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -330,6 +333,10 @@ impl AssociateDistributionWebACLError {
     /// Returns `true` if the error kind is `AssociateDistributionWebACLError::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(self, Self::AccessDenied(_))
+    }
+    /// Returns `true` if the error kind is `AssociateDistributionWebACLError::EntityLimitExceeded`.
+    pub fn is_entity_limit_exceeded(&self) -> bool {
+        matches!(self, Self::EntityLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `AssociateDistributionWebACLError::EntityNotFound`.
     pub fn is_entity_not_found(&self) -> bool {
@@ -352,6 +359,7 @@ impl ::std::error::Error for AssociateDistributionWebACLError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDenied(_inner) => ::std::option::Option::Some(_inner),
+            Self::EntityLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgument(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidIfMatchVersion(_inner) => ::std::option::Option::Some(_inner),
@@ -364,6 +372,7 @@ impl ::std::fmt::Display for AssociateDistributionWebACLError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDenied(_inner) => _inner.fmt(f),
+            Self::EntityLimitExceeded(_inner) => _inner.fmt(f),
             Self::EntityNotFound(_inner) => _inner.fmt(f),
             Self::InvalidArgument(_inner) => _inner.fmt(f),
             Self::InvalidIfMatchVersion(_inner) => _inner.fmt(f),
@@ -390,6 +399,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AssociateDist
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDenied(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EntityLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EntityNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgument(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidIfMatchVersion(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

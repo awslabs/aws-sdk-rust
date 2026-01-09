@@ -205,6 +205,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMemoryReq
                 ::std::write!(output, "/memories/{memoryId}/details", memoryId = memory_id).expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::get_memory::GetMemoryInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_2) = &_input.view {
+                    {
+                        query.push_kv("view", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::get_memory::GetMemoryInput,
@@ -212,6 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMemoryReq
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;

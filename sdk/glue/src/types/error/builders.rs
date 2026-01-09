@@ -49,6 +49,10 @@ pub use crate::types::error::_illegal_workflow_state_exception::IllegalWorkflowS
 
 pub use crate::types::error::_illegal_session_state_exception::IllegalSessionStateExceptionBuilder;
 
+pub use crate::types::error::_materialized_view_refresh_task_stopping_exception::MaterializedViewRefreshTaskStoppingExceptionBuilder;
+
+pub use crate::types::error::_materialized_view_refresh_task_not_running_exception::MaterializedViewRefreshTaskNotRunningExceptionBuilder;
+
 pub use crate::types::error::_scheduler_not_running_exception::SchedulerNotRunningExceptionBuilder;
 
 pub use crate::types::error::_crawler_stopping_exception::CrawlerStoppingExceptionBuilder;
@@ -62,6 +66,8 @@ pub use crate::types::error::_column_statistics_task_not_running_exception::Colu
 pub use crate::types::error::_concurrent_runs_exceeded_exception::ConcurrentRunsExceededExceptionBuilder;
 
 pub use crate::types::error::_ml_transform_not_ready_exception::MlTransformNotReadyExceptionBuilder;
+
+pub use crate::types::error::_materialized_view_refresh_task_running_exception::MaterializedViewRefreshTaskRunningExceptionBuilder;
 
 pub use crate::types::error::_scheduler_running_exception::SchedulerRunningExceptionBuilder;
 

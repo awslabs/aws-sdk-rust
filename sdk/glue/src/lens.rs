@@ -349,6 +349,16 @@ pub(crate) fn reflens_list_jobs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_materialized_view_refresh_task_runs_output_output_next_token(
+    input: &crate::operation::list_materialized_view_refresh_task_runs::ListMaterializedViewRefreshTaskRunsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_ml_transforms_output_output_next_token(
     input: &crate::operation::list_ml_transforms::ListMlTransformsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -530,6 +540,13 @@ pub(crate) fn lens_list_jobs_output_output_job_names(
     input: crate::operation::list_jobs::ListJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.job_names?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_materialized_view_refresh_task_runs_output_output_materialized_view_refresh_task_runs(
+    input: crate::operation::list_materialized_view_refresh_task_runs::ListMaterializedViewRefreshTaskRunsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MaterializedViewRefreshTaskRun>> {
+    let input = input.materialized_view_refresh_task_runs?;
     ::std::option::Option::Some(input)
 }
 

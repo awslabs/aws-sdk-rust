@@ -243,6 +243,8 @@ pub use crate::types::_summary_memory_strategy_input::SummaryMemoryStrategyInput
 
 pub use crate::types::_semantic_memory_strategy_input::SemanticMemoryStrategyInput;
 
+pub use crate::types::_memory_view::MemoryView;
+
 pub use crate::types::_memory_summary::MemorySummary;
 
 pub use crate::types::_metadata_configuration::MetadataConfiguration;
@@ -674,6 +676,8 @@ mod _memory_strategy_status;
 mod _memory_strategy_type;
 
 mod _memory_summary;
+
+mod _memory_view;
 
 mod _message_based_trigger;
 

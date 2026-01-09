@@ -10,6 +10,10 @@ pub struct MediaPackageOutputDestinationSettings {
     pub channel_group: ::std::option::Option<::std::string::String>,
     /// Name of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
     pub channel_name: ::std::option::Option<::std::string::String>,
+    /// Endpoint 1 or 2 of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub channel_endpoint_id: ::std::option::Option<::std::string::String>,
+    /// Region the channel group and channel are located in for MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub media_package_region_name: ::std::option::Option<::std::string::String>,
 }
 impl MediaPackageOutputDestinationSettings {
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
@@ -23,6 +27,14 @@ impl MediaPackageOutputDestinationSettings {
     /// Name of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
     pub fn channel_name(&self) -> ::std::option::Option<&str> {
         self.channel_name.as_deref()
+    }
+    /// Endpoint 1 or 2 of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn channel_endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.channel_endpoint_id.as_deref()
+    }
+    /// Region the channel group and channel are located in for MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn media_package_region_name(&self) -> ::std::option::Option<&str> {
+        self.media_package_region_name.as_deref()
     }
 }
 impl MediaPackageOutputDestinationSettings {
@@ -39,6 +51,8 @@ pub struct MediaPackageOutputDestinationSettingsBuilder {
     pub(crate) channel_id: ::std::option::Option<::std::string::String>,
     pub(crate) channel_group: ::std::option::Option<::std::string::String>,
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
+    pub(crate) channel_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) media_package_region_name: ::std::option::Option<::std::string::String>,
 }
 impl MediaPackageOutputDestinationSettingsBuilder {
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
@@ -83,12 +97,42 @@ impl MediaPackageOutputDestinationSettingsBuilder {
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_name
     }
+    /// Endpoint 1 or 2 of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn channel_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Endpoint 1 or 2 of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn set_channel_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.channel_endpoint_id = input;
+        self
+    }
+    /// Endpoint 1 or 2 of the channel in MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn get_channel_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_endpoint_id
+    }
+    /// Region the channel group and channel are located in for MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn media_package_region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.media_package_region_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Region the channel group and channel are located in for MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn set_media_package_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.media_package_region_name = input;
+        self
+    }
+    /// Region the channel group and channel are located in for MediaPackageV2. Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses MediaPackage v2.
+    pub fn get_media_package_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_package_region_name
+    }
     /// Consumes the builder and constructs a [`MediaPackageOutputDestinationSettings`](crate::types::MediaPackageOutputDestinationSettings).
     pub fn build(self) -> crate::types::MediaPackageOutputDestinationSettings {
         crate::types::MediaPackageOutputDestinationSettings {
             channel_id: self.channel_id,
             channel_group: self.channel_group,
             channel_name: self.channel_name,
+            channel_endpoint_id: self.channel_endpoint_id,
+            media_package_region_name: self.media_package_region_name,
         }
     }
 }

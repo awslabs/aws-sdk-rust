@@ -703,6 +703,12 @@ pub use crate::types::_schema_column::SchemaColumn;
 
 pub use crate::types::_transform_status_type::TransformStatusType;
 
+pub use crate::types::_materialized_view_refresh_task_run::MaterializedViewRefreshTaskRun;
+
+pub use crate::types::_materialized_view_refresh_type::MaterializedViewRefreshType;
+
+pub use crate::types::_materialized_view_refresh_state::MaterializedViewRefreshState;
+
 pub use crate::types::_integration_resource_property::IntegrationResourceProperty;
 
 pub use crate::types::_integration_resource_property_filter::IntegrationResourcePropertyFilter;
@@ -1680,6 +1686,12 @@ mod _long_column_statistics_data;
 mod _mapping;
 
 mod _mapping_entry;
+
+mod _materialized_view_refresh_state;
+
+mod _materialized_view_refresh_task_run;
+
+mod _materialized_view_refresh_type;
 
 mod _merge;
 

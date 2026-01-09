@@ -24,6 +24,8 @@ pub struct MediaPackageV2GroupSettings {
     pub timed_metadata_id3_period: ::std::option::Option<i32>,
     /// Set to enabled to pass through ID3 metadata from the input sources.
     pub timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
+    /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
+    pub additional_destinations: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageAdditionalDestinations>>,
 }
 impl MediaPackageV2GroupSettings {
     /// Mapping of up to 4 caption channels to caption languages.
@@ -68,6 +70,12 @@ impl MediaPackageV2GroupSettings {
     pub fn timed_metadata_passthrough(&self) -> ::std::option::Option<&crate::types::CmafTimedMetadataPassthrough> {
         self.timed_metadata_passthrough.as_ref()
     }
+    /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_destinations.is_none()`.
+    pub fn additional_destinations(&self) -> &[crate::types::MediaPackageAdditionalDestinations] {
+        self.additional_destinations.as_deref().unwrap_or_default()
+    }
 }
 impl MediaPackageV2GroupSettings {
     /// Creates a new builder-style object to manufacture [`MediaPackageV2GroupSettings`](crate::types::MediaPackageV2GroupSettings).
@@ -90,6 +98,7 @@ pub struct MediaPackageV2GroupSettingsBuilder {
     pub(crate) timed_metadata_id3_frame: ::std::option::Option<crate::types::CmafTimedMetadataId3Frame>,
     pub(crate) timed_metadata_id3_period: ::std::option::Option<i32>,
     pub(crate) timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
+    pub(crate) additional_destinations: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageAdditionalDestinations>>,
 }
 impl MediaPackageV2GroupSettingsBuilder {
     /// Appends an item to `caption_language_mappings`.
@@ -238,6 +247,29 @@ impl MediaPackageV2GroupSettingsBuilder {
     pub fn get_timed_metadata_passthrough(&self) -> &::std::option::Option<crate::types::CmafTimedMetadataPassthrough> {
         &self.timed_metadata_passthrough
     }
+    /// Appends an item to `additional_destinations`.
+    ///
+    /// To override the contents of this collection use [`set_additional_destinations`](Self::set_additional_destinations).
+    ///
+    /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
+    pub fn additional_destinations(mut self, input: crate::types::MediaPackageAdditionalDestinations) -> Self {
+        let mut v = self.additional_destinations.unwrap_or_default();
+        v.push(input);
+        self.additional_destinations = ::std::option::Option::Some(v);
+        self
+    }
+    /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
+    pub fn set_additional_destinations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageAdditionalDestinations>>,
+    ) -> Self {
+        self.additional_destinations = input;
+        self
+    }
+    /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
+    pub fn get_additional_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaPackageAdditionalDestinations>> {
+        &self.additional_destinations
+    }
     /// Consumes the builder and constructs a [`MediaPackageV2GroupSettings`](crate::types::MediaPackageV2GroupSettings).
     pub fn build(self) -> crate::types::MediaPackageV2GroupSettings {
         crate::types::MediaPackageV2GroupSettings {
@@ -251,6 +283,7 @@ impl MediaPackageV2GroupSettingsBuilder {
             timed_metadata_id3_frame: self.timed_metadata_id3_frame,
             timed_metadata_id3_period: self.timed_metadata_id3_period,
             timed_metadata_passthrough: self.timed_metadata_passthrough,
+            additional_destinations: self.additional_destinations,
         }
     }
 }

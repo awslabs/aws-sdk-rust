@@ -1187,6 +1187,8 @@ pub(crate) mod shape_list_of_hls_ad_markers;
 
 pub(crate) mod shape_list_of_rtmp_ad_markers;
 
+pub(crate) mod shape_media_package_additional_destinations;
+
 pub(crate) mod shape_media_package_v2_destination_settings;
 
 pub(crate) mod shape_multiplex_container_settings;
@@ -1214,6 +1216,8 @@ pub(crate) mod shape_fmp4_hls_settings;
 pub(crate) mod shape_frame_capture_hls_settings;
 
 pub(crate) mod shape_list_of_input_channel_level;
+
+pub(crate) mod shape_list_of_media_package_additional_destinations;
 
 pub(crate) mod shape_m2ts_settings;
 

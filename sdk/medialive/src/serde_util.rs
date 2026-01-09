@@ -977,6 +977,18 @@ pub(crate) fn input_channel_level_correct_errors(
     builder
 }
 
+pub(crate) fn media_package_additional_destinations_correct_errors(
+    mut builder: crate::types::builders::MediaPackageAdditionalDestinationsBuilder,
+) -> crate::types::builders::MediaPackageAdditionalDestinationsBuilder {
+    if builder.destination.is_none() {
+        builder.destination = {
+            let builder = crate::types::builders::OutputLocationRefBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn scte35_segmentation_descriptor_correct_errors(
     mut builder: crate::types::builders::Scte35SegmentationDescriptorBuilder,
 ) -> crate::types::builders::Scte35SegmentationDescriptorBuilder {
