@@ -328,6 +328,11 @@ pub(crate) fn de_get_managed_thing(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "WiFiSimpleSetupConfiguration" => {
+                    builder = builder.set_wi_fi_simple_setup_configuration(
+                        crate::protocol_serde::shape_wi_fi_simple_setup_configuration::de_wi_fi_simple_setup_configuration(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

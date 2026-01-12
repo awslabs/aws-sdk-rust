@@ -53,6 +53,8 @@ pub use crate::types::_capability_report_capability::CapabilityReportCapabilityB
 
 pub use crate::types::_capability_schema_item::CapabilitySchemaItemBuilder;
 
+pub use crate::types::_wi_fi_simple_setup_configuration::WiFiSimpleSetupConfigurationBuilder;
+
 pub use crate::types::_managed_thing_summary::ManagedThingSummaryBuilder;
 
 pub use crate::types::_command_endpoint::CommandEndpointBuilder;

@@ -948,6 +948,9 @@ impl From<crate::operation::deregister_account_association::DeregisterAccountAss
             crate::operation::deregister_account_association::DeregisterAccountAssociationError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::deregister_account_association::DeregisterAccountAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::deregister_account_association::DeregisterAccountAssociationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

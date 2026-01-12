@@ -201,6 +201,18 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
+pub(crate) fn cost_category_values_correct_errors(
+    mut builder: crate::types::builders::CostCategoryValuesBuilder,
+) -> crate::types::builders::CostCategoryValuesBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn dimension_values_correct_errors(
     mut builder: crate::types::builders::DimensionValuesBuilder,
 ) -> crate::types::builders::DimensionValuesBuilder {

@@ -11,6 +11,8 @@ pub struct UpdateManagedThingInput {
     pub credential_locker_id: ::std::option::Option<::std::string::String>,
     /// <p>The serial number of the device.</p>
     pub serial_number: ::std::option::Option<::std::string::String>,
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub wi_fi_simple_setup_configuration: ::std::option::Option<crate::types::WiFiSimpleSetupConfiguration>,
     /// <p>The brand of the device.</p>
     pub brand: ::std::option::Option<::std::string::String>,
     /// <p>The model of the device.</p>
@@ -46,6 +48,10 @@ impl UpdateManagedThingInput {
     /// <p>The serial number of the device.</p>
     pub fn serial_number(&self) -> ::std::option::Option<&str> {
         self.serial_number.as_deref()
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn wi_fi_simple_setup_configuration(&self) -> ::std::option::Option<&crate::types::WiFiSimpleSetupConfiguration> {
+        self.wi_fi_simple_setup_configuration.as_ref()
     }
     /// <p>The brand of the device.</p>
     pub fn brand(&self) -> ::std::option::Option<&str> {
@@ -93,6 +99,7 @@ impl ::std::fmt::Debug for UpdateManagedThingInput {
         formatter.field("owner", &"*** Sensitive Data Redacted ***");
         formatter.field("credential_locker_id", &self.credential_locker_id);
         formatter.field("serial_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("wi_fi_simple_setup_configuration", &self.wi_fi_simple_setup_configuration);
         formatter.field("brand", &"*** Sensitive Data Redacted ***");
         formatter.field("model", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
@@ -120,6 +127,7 @@ pub struct UpdateManagedThingInputBuilder {
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) credential_locker_id: ::std::option::Option<::std::string::String>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
+    pub(crate) wi_fi_simple_setup_configuration: ::std::option::Option<crate::types::WiFiSimpleSetupConfiguration>,
     pub(crate) brand: ::std::option::Option<::std::string::String>,
     pub(crate) model: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -187,6 +195,20 @@ impl UpdateManagedThingInputBuilder {
     /// <p>The serial number of the device.</p>
     pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.serial_number
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn wi_fi_simple_setup_configuration(mut self, input: crate::types::WiFiSimpleSetupConfiguration) -> Self {
+        self.wi_fi_simple_setup_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn set_wi_fi_simple_setup_configuration(mut self, input: ::std::option::Option<crate::types::WiFiSimpleSetupConfiguration>) -> Self {
+        self.wi_fi_simple_setup_configuration = input;
+        self
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn get_wi_fi_simple_setup_configuration(&self) -> &::std::option::Option<crate::types::WiFiSimpleSetupConfiguration> {
+        &self.wi_fi_simple_setup_configuration
     }
     /// <p>The brand of the device.</p>
     pub fn brand(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -336,6 +358,7 @@ impl UpdateManagedThingInputBuilder {
             owner: self.owner,
             credential_locker_id: self.credential_locker_id,
             serial_number: self.serial_number,
+            wi_fi_simple_setup_configuration: self.wi_fi_simple_setup_configuration,
             brand: self.brand,
             model: self.model,
             name: self.name,
@@ -355,6 +378,7 @@ impl ::std::fmt::Debug for UpdateManagedThingInputBuilder {
         formatter.field("owner", &"*** Sensitive Data Redacted ***");
         formatter.field("credential_locker_id", &self.credential_locker_id);
         formatter.field("serial_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("wi_fi_simple_setup_configuration", &self.wi_fi_simple_setup_configuration);
         formatter.field("brand", &"*** Sensitive Data Redacted ***");
         formatter.field("model", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);

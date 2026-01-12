@@ -87,6 +87,8 @@ pub use crate::types::_hub_network_mode::HubNetworkMode;
 
 pub use crate::types::_capability_schema_item::CapabilitySchemaItem;
 
+pub use crate::types::_wi_fi_simple_setup_configuration::WiFiSimpleSetupConfiguration;
+
 pub use crate::types::_provisioning_status::ProvisioningStatus;
 
 pub use crate::types::_role::Role;
@@ -120,6 +122,8 @@ pub use crate::types::_discovery_modification::DiscoveryModification;
 pub use crate::types::_device_discovery_status::DeviceDiscoveryStatus;
 
 pub use crate::types::_discovery_type::DiscoveryType;
+
+pub use crate::types::_protocol_type::ProtocolType;
 
 pub use crate::types::_discovery_auth_material_type::DiscoveryAuthMaterialType;
 
@@ -319,6 +323,8 @@ mod _ota_type;
 
 mod _proactive_refresh_token_renewal;
 
+mod _protocol_type;
+
 mod _provisioning_profile_summary;
 
 mod _provisioning_status;
@@ -358,6 +364,8 @@ mod _state_endpoint;
 mod _task_processing_details;
 
 mod _token_endpoint_authentication_scheme;
+
+mod _wi_fi_simple_setup_configuration;
 
 /// Builders
 pub mod builders;

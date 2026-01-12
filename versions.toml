@@ -324,9 +324,9 @@ model_hash = '25f768d67e1ee653c307d8bd62183e30c4b711f8e4336c37f9889af3d822e16d'
 
 [crates.aws-sdk-billing]
 category = 'AwsSdk'
-version = '1.46.0'
-source_hash = '5c65d3ad7612e55d02886a5025fe5842d38542d5ed4e1b4859daf1ccae132be7'
-model_hash = '7fa40ea7e98d3aa3536705c23519217028c5467e656671b8d910841a2baec952'
+version = '1.47.0'
+source_hash = '5937761c3bc8643ec825f0128f8fe9af125749aed47af45039202dc842b547be'
+model_hash = 'cb744839e0c1a535e582add24bd6825bf90cecb4f51524ee5cdb501c87aed01a'
 
 [crates.aws-sdk-billingconductor]
 category = 'AwsSdk'
@@ -1188,9 +1188,9 @@ model_hash = 'efc40f909af8ca9f3f922c72b37c41093c61fc6266275fa281ba9683a66f7974'
 
 [crates.aws-sdk-iotmanagedintegrations]
 category = 'AwsSdk'
-version = '1.33.0'
-source_hash = 'a5ed62484e2e6e1313e9a59cb171d7983d197212aad2a3b9d399f9f03ebc17af'
-model_hash = 'da849acaaa5bd96892b3e41e9e587b73ed3887ad85824507840dd8c17f908a24'
+version = '1.34.0'
+source_hash = '7031744e978e0bd175c01e822df57f96a69c6d3fefdc20ef4a7236a16acc9f8b'
+model_hash = '6bb859bc2588ffe9fe62fd981d855e9dfd01a5e59302beeeba5d96d7d976b296'
 
 [crates.aws-sdk-iotsecuretunneling]
 category = 'AwsSdk'
@@ -2064,9 +2064,9 @@ model_hash = 'b9c7a10439c4cb6f1cc5db1a4298a344d89a53dbfefbd98f25f41e607d6635c9'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.176.0'
-source_hash = '33fae80c19225ab4004d9876841f8b689182b9452c3194630675dd10325399aa'
-model_hash = '3d47e51e65d14e49b57ebf3ebfbefa68010731310e18076fe3c1884824288d29'
+version = '1.177.0'
+source_hash = 'bb6e14d0eec27b606fa07d88376dfd958e9c66441890483f7e03c760a907c16a'
+model_hash = '8548586fbcc604c80ed3abbfd7f127ed6e62a625bab0685ae883f3f72427e24b'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2576,7 +2576,7 @@ source_hash = '6635bc552072fa3668b1d6f3b6d64d8dd0fba10acf29362a37c6fc361420322a'
 [crates.aws-smithy-http-fuzz]
 category = 'SmithyRuntime'
 version = '0.0.0'
-source_hash = 'a8f73b36423c7549ae8bd9cb426658b7c988020d2eebb7e23bfa1c7a8d647d8b'
+source_hash = '0ea607ec1cedf2e8135d249c049a634bf5a5764221ced1a9f66f817ac13256d4'
 
 [crates.aws-smithy-json]
 category = 'SmithyRuntime'
@@ -2662,13 +2662,7 @@ source_hash = 'e53cd06ca8aa22890f0b286c8dedbb51e665b9894c55a46da5f010392b9ad092'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '0d58dd1d4735add17d8978e6a963bbaeaec2859e73c5aef928dc3b539a45a84b'
-
-[release]
-tag = 'release-2026-01-09'
-
 [release.crates]
-aws-sdk-bedrockagentcorecontrol = '1.27.0'
-aws-sdk-cloudfront = '1.107.0'
-aws-sdk-glue = '1.134.0'
-aws-sdk-medialive = '1.121.0'
-aws-sdk-transcribe = '1.97.0'
+aws-sdk-billing = '1.47.0'
+aws-sdk-iotmanagedintegrations = '1.34.0'
+aws-sdk-sagemaker = '1.177.0'

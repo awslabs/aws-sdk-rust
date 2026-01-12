@@ -33,9 +33,9 @@ pub struct ModelPackageContainerDefinition {
     pub additional_s3_data_source: ::std::option::Option<crate::types::AdditionalS3DataSource>,
     /// <p>The ETag associated with Model Data URL.</p>
     pub model_data_e_tag: ::std::option::Option<::std::string::String>,
-    /// <p>The checkpoint of the model package.</p>
+    /// <p>Specifies whether the model data is a training checkpoint.</p>
     pub is_checkpoint: ::std::option::Option<bool>,
-    /// <p>The base model of the package.</p>
+    /// <p>Identifies the foundation model that was used as the starting point for model customization.</p>
     pub base_model: ::std::option::Option<crate::types::BaseModel>,
 }
 impl ModelPackageContainerDefinition {
@@ -94,11 +94,11 @@ impl ModelPackageContainerDefinition {
     pub fn model_data_e_tag(&self) -> ::std::option::Option<&str> {
         self.model_data_e_tag.as_deref()
     }
-    /// <p>The checkpoint of the model package.</p>
+    /// <p>Specifies whether the model data is a training checkpoint.</p>
     pub fn is_checkpoint(&self) -> ::std::option::Option<bool> {
         self.is_checkpoint
     }
-    /// <p>The base model of the package.</p>
+    /// <p>Identifies the foundation model that was used as the starting point for model customization.</p>
     pub fn base_model(&self) -> ::std::option::Option<&crate::types::BaseModel> {
         self.base_model.as_ref()
     }
@@ -331,31 +331,31 @@ impl ModelPackageContainerDefinitionBuilder {
     pub fn get_model_data_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_data_e_tag
     }
-    /// <p>The checkpoint of the model package.</p>
+    /// <p>Specifies whether the model data is a training checkpoint.</p>
     pub fn is_checkpoint(mut self, input: bool) -> Self {
         self.is_checkpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The checkpoint of the model package.</p>
+    /// <p>Specifies whether the model data is a training checkpoint.</p>
     pub fn set_is_checkpoint(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_checkpoint = input;
         self
     }
-    /// <p>The checkpoint of the model package.</p>
+    /// <p>Specifies whether the model data is a training checkpoint.</p>
     pub fn get_is_checkpoint(&self) -> &::std::option::Option<bool> {
         &self.is_checkpoint
     }
-    /// <p>The base model of the package.</p>
+    /// <p>Identifies the foundation model that was used as the starting point for model customization.</p>
     pub fn base_model(mut self, input: crate::types::BaseModel) -> Self {
         self.base_model = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The base model of the package.</p>
+    /// <p>Identifies the foundation model that was used as the starting point for model customization.</p>
     pub fn set_base_model(mut self, input: ::std::option::Option<crate::types::BaseModel>) -> Self {
         self.base_model = input;
         self
     }
-    /// <p>The base model of the package.</p>
+    /// <p>Identifies the foundation model that was used as the starting point for model customization.</p>
     pub fn get_base_model(&self) -> &::std::option::Option<crate::types::BaseModel> {
         &self.base_model
     }

@@ -229,17 +229,17 @@ impl ListManagedThingsFluentBuilder {
     pub fn get_serial_number_filter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_serial_number_filter()
     }
-    /// <p>Filter on the status of the device.</p>
+    /// <p>Filter on the status of the device. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn provisioning_status_filter(mut self, input: crate::types::ProvisioningStatus) -> Self {
         self.inner = self.inner.provisioning_status_filter(input);
         self
     }
-    /// <p>Filter on the status of the device.</p>
+    /// <p>Filter on the status of the device. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn set_provisioning_status_filter(mut self, input: ::std::option::Option<crate::types::ProvisioningStatus>) -> Self {
         self.inner = self.inner.set_provisioning_status_filter(input);
         self
     }
-    /// <p>Filter on the status of the device.</p>
+    /// <p>Filter on the status of the device. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn get_provisioning_status_filter(&self) -> &::std::option::Option<crate::types::ProvisioningStatus> {
         self.inner.get_provisioning_status_filter()
     }

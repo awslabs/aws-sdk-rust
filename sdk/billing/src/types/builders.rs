@@ -5,6 +5,8 @@ pub use crate::types::_expression::ExpressionBuilder;
 
 pub use crate::types::_time_range::TimeRangeBuilder;
 
+pub use crate::types::_cost_category_values::CostCategoryValuesBuilder;
+
 pub use crate::types::_tag_values::TagValuesBuilder;
 
 pub use crate::types::_dimension_values::DimensionValuesBuilder;

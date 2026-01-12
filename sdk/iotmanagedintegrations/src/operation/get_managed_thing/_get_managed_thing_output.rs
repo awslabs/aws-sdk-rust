@@ -15,7 +15,7 @@ pub struct GetManagedThingOutput {
     pub advertised_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of device used. This will be the Amazon Web Services hub controller, cloud device, or IoT device.</p>
     pub role: ::std::option::Option<crate::types::Role>,
-    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations.</p>
+    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub provisioning_status: ::std::option::Option<crate::types::ProvisioningStatus>,
     /// <p>The name of the managed thing representing the physical device.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -64,6 +64,8 @@ pub struct GetManagedThingOutput {
     pub meta_data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A set of key/value pairs that are used to manage the managed thing.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub wi_fi_simple_setup_configuration: ::std::option::Option<crate::types::WiFiSimpleSetupConfiguration>,
     _request_id: Option<String>,
 }
 impl GetManagedThingOutput {
@@ -91,7 +93,7 @@ impl GetManagedThingOutput {
     pub fn role(&self) -> ::std::option::Option<&crate::types::Role> {
         self.role.as_ref()
     }
-    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations.</p>
+    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn provisioning_status(&self) -> ::std::option::Option<&crate::types::ProvisioningStatus> {
         self.provisioning_status.as_ref()
     }
@@ -180,6 +182,10 @@ impl GetManagedThingOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn wi_fi_simple_setup_configuration(&self) -> ::std::option::Option<&crate::types::WiFiSimpleSetupConfiguration> {
+        self.wi_fi_simple_setup_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetManagedThingOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -210,6 +216,7 @@ impl ::std::fmt::Debug for GetManagedThingOutput {
         formatter.field("hub_network_mode", &self.hub_network_mode);
         formatter.field("meta_data", &self.meta_data);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("wi_fi_simple_setup_configuration", &self.wi_fi_simple_setup_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -256,6 +263,7 @@ pub struct GetManagedThingOutputBuilder {
     pub(crate) hub_network_mode: ::std::option::Option<crate::types::HubNetworkMode>,
     pub(crate) meta_data: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) wi_fi_simple_setup_configuration: ::std::option::Option<crate::types::WiFiSimpleSetupConfiguration>,
     _request_id: Option<String>,
 }
 impl GetManagedThingOutputBuilder {
@@ -343,17 +351,17 @@ impl GetManagedThingOutputBuilder {
     pub fn get_role(&self) -> &::std::option::Option<crate::types::Role> {
         &self.role
     }
-    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations.</p>
+    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn provisioning_status(mut self, input: crate::types::ProvisioningStatus) -> Self {
         self.provisioning_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations.</p>
+    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn set_provisioning_status(mut self, input: ::std::option::Option<crate::types::ProvisioningStatus>) -> Self {
         self.provisioning_status = input;
         self
     }
-    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations.</p>
+    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn get_provisioning_status(&self) -> &::std::option::Option<crate::types::ProvisioningStatus> {
         &self.provisioning_status
     }
@@ -662,6 +670,20 @@ impl GetManagedThingOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn wi_fi_simple_setup_configuration(mut self, input: crate::types::WiFiSimpleSetupConfiguration) -> Self {
+        self.wi_fi_simple_setup_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn set_wi_fi_simple_setup_configuration(mut self, input: ::std::option::Option<crate::types::WiFiSimpleSetupConfiguration>) -> Self {
+        self.wi_fi_simple_setup_configuration = input;
+        self
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn get_wi_fi_simple_setup_configuration(&self) -> &::std::option::Option<crate::types::WiFiSimpleSetupConfiguration> {
+        &self.wi_fi_simple_setup_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -700,6 +722,7 @@ impl GetManagedThingOutputBuilder {
             hub_network_mode: self.hub_network_mode,
             meta_data: self.meta_data,
             tags: self.tags,
+            wi_fi_simple_setup_configuration: self.wi_fi_simple_setup_configuration,
             _request_id: self._request_id,
         }
     }
@@ -733,6 +756,7 @@ impl ::std::fmt::Debug for GetManagedThingOutputBuilder {
         formatter.field("hub_network_mode", &self.hub_network_mode);
         formatter.field("meta_data", &self.meta_data);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("wi_fi_simple_setup_configuration", &self.wi_fi_simple_setup_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -263,4 +263,44 @@ impl StartDeviceDiscoveryFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn protocol(mut self, input: crate::types::ProtocolType) -> Self {
+        self.inner = self.inner.protocol(input);
+        self
+    }
+    /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolType>) -> Self {
+        self.inner = self.inner.set_protocol(input);
+        self
+    }
+    /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ProtocolType> {
+        self.inner.get_protocol()
+    }
+    /// <p>The unique id of the end device for capability rediscovery.</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn end_device_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.end_device_identifier(input.into());
+        self
+    }
+    /// <p>The unique id of the end device for capability rediscovery.</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn set_end_device_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_end_device_identifier(input);
+        self
+    }
+    /// <p>The unique id of the end device for capability rediscovery.</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn get_end_device_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_end_device_identifier()
+    }
 }

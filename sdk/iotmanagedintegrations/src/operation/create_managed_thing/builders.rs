@@ -178,6 +178,20 @@ impl CreateManagedThingFluentBuilder {
     pub fn get_authentication_material_type(&self) -> &::std::option::Option<crate::types::AuthMaterialType> {
         self.inner.get_authentication_material_type()
     }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn wi_fi_simple_setup_configuration(mut self, input: crate::types::WiFiSimpleSetupConfiguration) -> Self {
+        self.inner = self.inner.wi_fi_simple_setup_configuration(input);
+        self
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn set_wi_fi_simple_setup_configuration(mut self, input: ::std::option::Option<crate::types::WiFiSimpleSetupConfiguration>) -> Self {
+        self.inner = self.inner.set_wi_fi_simple_setup_configuration(input);
+        self
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn get_wi_fi_simple_setup_configuration(&self) -> &::std::option::Option<crate::types::WiFiSimpleSetupConfiguration> {
+        self.inner.get_wi_fi_simple_setup_configuration()
+    }
     /// <p>The serial number of the device.</p>
     pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serial_number(input.into());

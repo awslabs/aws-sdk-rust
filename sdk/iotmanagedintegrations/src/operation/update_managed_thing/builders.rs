@@ -164,6 +164,20 @@ impl UpdateManagedThingFluentBuilder {
     pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_serial_number()
     }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn wi_fi_simple_setup_configuration(mut self, input: crate::types::WiFiSimpleSetupConfiguration) -> Self {
+        self.inner = self.inner.wi_fi_simple_setup_configuration(input);
+        self
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn set_wi_fi_simple_setup_configuration(mut self, input: ::std::option::Option<crate::types::WiFiSimpleSetupConfiguration>) -> Self {
+        self.inner = self.inner.set_wi_fi_simple_setup_configuration(input);
+        self
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn get_wi_fi_simple_setup_configuration(&self) -> &::std::option::Option<crate::types::WiFiSimpleSetupConfiguration> {
+        self.inner.get_wi_fi_simple_setup_configuration()
+    }
     /// <p>The brand of the device.</p>
     pub fn brand(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.brand(input.into());

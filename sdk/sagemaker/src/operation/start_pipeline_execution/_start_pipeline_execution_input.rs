@@ -19,7 +19,7 @@ pub struct StartPipelineExecutionInput {
     pub selective_execution_config: ::std::option::Option<crate::types::SelectiveExecutionConfig>,
     /// <p>The ID of the pipeline version to start execution from.</p>
     pub pipeline_version_id: ::std::option::Option<i64>,
-    /// <p>The MLflow experiment name of the start execution.</p>
+    /// <p>The MLflow experiment name of the pipeline execution.</p>
     pub mlflow_experiment_name: ::std::option::Option<::std::string::String>,
 }
 impl StartPipelineExecutionInput {
@@ -57,7 +57,7 @@ impl StartPipelineExecutionInput {
     pub fn pipeline_version_id(&self) -> ::std::option::Option<i64> {
         self.pipeline_version_id
     }
-    /// <p>The MLflow experiment name of the start execution.</p>
+    /// <p>The MLflow experiment name of the pipeline execution.</p>
     pub fn mlflow_experiment_name(&self) -> ::std::option::Option<&str> {
         self.mlflow_experiment_name.as_deref()
     }
@@ -204,17 +204,17 @@ impl StartPipelineExecutionInputBuilder {
     pub fn get_pipeline_version_id(&self) -> &::std::option::Option<i64> {
         &self.pipeline_version_id
     }
-    /// <p>The MLflow experiment name of the start execution.</p>
+    /// <p>The MLflow experiment name of the pipeline execution.</p>
     pub fn mlflow_experiment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mlflow_experiment_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The MLflow experiment name of the start execution.</p>
+    /// <p>The MLflow experiment name of the pipeline execution.</p>
     pub fn set_mlflow_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mlflow_experiment_name = input;
         self
     }
-    /// <p>The MLflow experiment name of the start execution.</p>
+    /// <p>The MLflow experiment name of the pipeline execution.</p>
     pub fn get_mlflow_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.mlflow_experiment_name
     }

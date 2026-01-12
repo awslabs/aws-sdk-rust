@@ -7,6 +7,8 @@ pub use crate::types::_expression::Expression;
 
 pub use crate::types::_time_range::TimeRange;
 
+pub use crate::types::_cost_category_values::CostCategoryValues;
+
 pub use crate::types::_tag_values::TagValues;
 
 pub use crate::types::_dimension_values::DimensionValues;
@@ -46,6 +48,8 @@ mod _billing_view_status;
 mod _billing_view_status_reason;
 
 mod _billing_view_type;
+
+mod _cost_category_values;
 
 mod _dimension;
 

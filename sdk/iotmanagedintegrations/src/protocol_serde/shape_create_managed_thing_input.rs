@@ -77,5 +77,11 @@ pub fn ser_create_managed_thing_input_input(
         }
         object_24.finish();
     }
+    if let Some(var_27) = &input.wi_fi_simple_setup_configuration {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("WiFiSimpleSetupConfiguration").start_object();
+        crate::protocol_serde::shape_wi_fi_simple_setup_configuration::ser_wi_fi_simple_setup_configuration(&mut object_28, var_27)?;
+        object_28.finish();
+    }
     Ok(())
 }

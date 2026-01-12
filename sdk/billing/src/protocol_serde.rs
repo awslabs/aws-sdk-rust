@@ -117,6 +117,8 @@ pub(crate) mod shape_billing_view_health_status;
 
 pub(crate) mod shape_billing_view_list_element;
 
+pub(crate) mod shape_cost_category_values;
+
 pub(crate) mod shape_dimension_values;
 
 pub(crate) mod shape_tag_values;

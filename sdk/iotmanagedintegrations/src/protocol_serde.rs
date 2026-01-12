@@ -349,6 +349,8 @@ pub(crate) mod shape_target;
 
 pub(crate) mod shape_task_processing_details;
 
+pub(crate) mod shape_wi_fi_simple_setup_configuration;
+
 pub(crate) mod shape_account_association_item;
 
 pub(crate) mod shape_capability_report_endpoint;

@@ -25,6 +25,14 @@ pub struct StartDeviceDiscoveryInput {
     /// <p>A set of key/value pairs that are used to manage the device discovery request.</p>
     #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub protocol: ::std::option::Option<crate::types::ProtocolType>,
+    /// <p>The unique id of the end device for capability rediscovery.</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub end_device_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartDeviceDiscoveryInput {
     /// <p>The discovery type supporting the type of device to be discovered in the device discovery task request.</p>
@@ -67,6 +75,18 @@ impl StartDeviceDiscoveryInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::ProtocolType> {
+        self.protocol.as_ref()
+    }
+    /// <p>The unique id of the end device for capability rediscovery.</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn end_device_identifier(&self) -> ::std::option::Option<&str> {
+        self.end_device_identifier.as_deref()
+    }
 }
 impl ::std::fmt::Debug for StartDeviceDiscoveryInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -80,6 +100,8 @@ impl ::std::fmt::Debug for StartDeviceDiscoveryInput {
         formatter.field("authentication_material_type", &self.authentication_material_type);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("protocol", &self.protocol);
+        formatter.field("end_device_identifier", &self.end_device_identifier);
         formatter.finish()
     }
 }
@@ -103,6 +125,8 @@ pub struct StartDeviceDiscoveryInputBuilder {
     pub(crate) authentication_material_type: ::std::option::Option<crate::types::DiscoveryAuthMaterialType>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) protocol: ::std::option::Option<crate::types::ProtocolType>,
+    pub(crate) end_device_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartDeviceDiscoveryInputBuilder {
     /// <p>The discovery type supporting the type of device to be discovered in the device discovery task request.</p>
@@ -263,6 +287,46 @@ impl StartDeviceDiscoveryInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn protocol(mut self, input: crate::types::ProtocolType) -> Self {
+        self.protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolType>) -> Self {
+        self.protocol = input;
+        self
+    }
+    /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ProtocolType> {
+        &self.protocol
+    }
+    /// <p>The unique id of the end device for capability rediscovery.</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn end_device_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_device_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique id of the end device for capability rediscovery.</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn set_end_device_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.end_device_identifier = input;
+        self
+    }
+    /// <p>The unique id of the end device for capability rediscovery.</p><note>
+    /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+    /// </note>
+    pub fn get_end_device_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_device_identifier
+    }
     /// Consumes the builder and constructs a [`StartDeviceDiscoveryInput`](crate::operation::start_device_discovery::StartDeviceDiscoveryInput).
     pub fn build(
         self,
@@ -278,6 +342,8 @@ impl StartDeviceDiscoveryInputBuilder {
             authentication_material_type: self.authentication_material_type,
             client_token: self.client_token,
             tags: self.tags,
+            protocol: self.protocol,
+            end_device_identifier: self.end_device_identifier,
         })
     }
 }
@@ -293,6 +359,8 @@ impl ::std::fmt::Debug for StartDeviceDiscoveryInputBuilder {
         formatter.field("authentication_material_type", &self.authentication_material_type);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("protocol", &self.protocol);
+        formatter.field("end_device_identifier", &self.end_device_identifier);
         formatter.finish()
     }
 }

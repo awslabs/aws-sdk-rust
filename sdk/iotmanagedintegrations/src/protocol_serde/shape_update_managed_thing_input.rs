@@ -58,5 +58,11 @@ pub fn ser_update_managed_thing_input_input(
     if let Some(var_19) = &input.serial_number {
         object.key("SerialNumber").string(var_19.as_str());
     }
+    if let Some(var_20) = &input.wi_fi_simple_setup_configuration {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("WiFiSimpleSetupConfiguration").start_object();
+        crate::protocol_serde::shape_wi_fi_simple_setup_configuration::ser_wi_fi_simple_setup_configuration(&mut object_21, var_20)?;
+        object_21.finish();
+    }
     Ok(())
 }

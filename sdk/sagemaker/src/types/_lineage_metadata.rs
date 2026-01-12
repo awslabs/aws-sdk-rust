@@ -4,29 +4,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineageMetadata {
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage action.</p>
     pub action_arns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata artifact.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage artifact.</p>
     pub artifact_arns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata context.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage context.</p>
     pub context_arns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The lineage metadata associations.</p>
+    /// <p>The lineage associations.</p>
     pub associations: ::std::option::Option<::std::vec::Vec<crate::types::AssociationInfo>>,
 }
 impl LineageMetadata {
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage action.</p>
     pub fn action_arns(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.action_arns.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata artifact.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage artifact.</p>
     pub fn artifact_arns(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.artifact_arns.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata context.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage context.</p>
     pub fn context_arns(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.context_arns.as_ref()
     }
-    /// <p>The lineage metadata associations.</p>
+    /// <p>The lineage associations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
     pub fn associations(&self) -> &[crate::types::AssociationInfo] {
@@ -54,14 +54,14 @@ impl LineageMetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_action_arns`](Self::set_action_arns).
     ///
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage action.</p>
     pub fn action_arns(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.action_arns.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.action_arns = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage action.</p>
     pub fn set_action_arns(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -69,7 +69,7 @@ impl LineageMetadataBuilder {
         self.action_arns = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata action.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage action.</p>
     pub fn get_action_arns(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.action_arns
     }
@@ -77,14 +77,14 @@ impl LineageMetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_artifact_arns`](Self::set_artifact_arns).
     ///
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata artifact.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage artifact.</p>
     pub fn artifact_arns(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.artifact_arns.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.artifact_arns = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata artifact.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage artifact.</p>
     pub fn set_artifact_arns(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -92,7 +92,7 @@ impl LineageMetadataBuilder {
         self.artifact_arns = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata artifact.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage artifact.</p>
     pub fn get_artifact_arns(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.artifact_arns
     }
@@ -100,14 +100,14 @@ impl LineageMetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_context_arns`](Self::set_context_arns).
     ///
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata context.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage context.</p>
     pub fn context_arns(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.context_arns.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.context_arns = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata context.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage context.</p>
     pub fn set_context_arns(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -115,7 +115,7 @@ impl LineageMetadataBuilder {
         self.context_arns = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the lineage metadata context.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lineage context.</p>
     pub fn get_context_arns(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.context_arns
     }
@@ -123,19 +123,19 @@ impl LineageMetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_associations`](Self::set_associations).
     ///
-    /// <p>The lineage metadata associations.</p>
+    /// <p>The lineage associations.</p>
     pub fn associations(mut self, input: crate::types::AssociationInfo) -> Self {
         let mut v = self.associations.unwrap_or_default();
         v.push(input);
         self.associations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The lineage metadata associations.</p>
+    /// <p>The lineage associations.</p>
     pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociationInfo>>) -> Self {
         self.associations = input;
         self
     }
-    /// <p>The lineage metadata associations.</p>
+    /// <p>The lineage associations.</p>
     pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationInfo>> {
         &self.associations
     }

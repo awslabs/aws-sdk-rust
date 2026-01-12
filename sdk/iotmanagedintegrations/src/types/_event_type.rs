@@ -22,6 +22,7 @@
 ///     EventType::DeviceLifeCycle => { /* ... */ },
 ///     EventType::DeviceOta => { /* ... */ },
 ///     EventType::DeviceState => { /* ... */ },
+///     EventType::DeviceWss => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -71,6 +72,8 @@ pub enum EventType {
     DeviceOta,
     #[allow(missing_docs)] // documentation missing in model
     DeviceState,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceWss,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -88,6 +91,7 @@ impl ::std::convert::From<&str> for EventType {
             "DEVICE_LIFE_CYCLE" => EventType::DeviceLifeCycle,
             "DEVICE_OTA" => EventType::DeviceOta,
             "DEVICE_STATE" => EventType::DeviceState,
+            "DEVICE_WSS" => EventType::DeviceWss,
             other => EventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -113,6 +117,7 @@ impl EventType {
             EventType::DeviceLifeCycle => "DEVICE_LIFE_CYCLE",
             EventType::DeviceOta => "DEVICE_OTA",
             EventType::DeviceState => "DEVICE_STATE",
+            EventType::DeviceWss => "DEVICE_WSS",
             EventType::Unknown(value) => value.as_str(),
         }
     }
@@ -129,6 +134,7 @@ impl EventType {
             "DEVICE_LIFE_CYCLE",
             "DEVICE_OTA",
             "DEVICE_STATE",
+            "DEVICE_WSS",
         ]
     }
 }
@@ -162,6 +168,7 @@ impl ::std::fmt::Display for EventType {
             EventType::DeviceLifeCycle => write!(f, "DEVICE_LIFE_CYCLE"),
             EventType::DeviceOta => write!(f, "DEVICE_OTA"),
             EventType::DeviceState => write!(f, "DEVICE_STATE"),
+            EventType::DeviceWss => write!(f, "DEVICE_WSS"),
             EventType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -13,6 +13,8 @@ pub struct CreateManagedThingInput {
     pub authentication_material: ::std::option::Option<::std::string::String>,
     /// <p>The type of authentication material used for device connectivity setup requests.</p>
     pub authentication_material_type: ::std::option::Option<crate::types::AuthMaterialType>,
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub wi_fi_simple_setup_configuration: ::std::option::Option<crate::types::WiFiSimpleSetupConfiguration>,
     /// <p>The serial number of the device.</p>
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The brand of the device.</p>
@@ -58,6 +60,10 @@ impl CreateManagedThingInput {
     /// <p>The type of authentication material used for device connectivity setup requests.</p>
     pub fn authentication_material_type(&self) -> ::std::option::Option<&crate::types::AuthMaterialType> {
         self.authentication_material_type.as_ref()
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn wi_fi_simple_setup_configuration(&self) -> ::std::option::Option<&crate::types::WiFiSimpleSetupConfiguration> {
+        self.wi_fi_simple_setup_configuration.as_ref()
     }
     /// <p>The serial number of the device.</p>
     pub fn serial_number(&self) -> ::std::option::Option<&str> {
@@ -116,6 +122,7 @@ impl ::std::fmt::Debug for CreateManagedThingInput {
         formatter.field("credential_locker_id", &self.credential_locker_id);
         formatter.field("authentication_material", &"*** Sensitive Data Redacted ***");
         formatter.field("authentication_material_type", &self.authentication_material_type);
+        formatter.field("wi_fi_simple_setup_configuration", &self.wi_fi_simple_setup_configuration);
         formatter.field("serial_number", &"*** Sensitive Data Redacted ***");
         formatter.field("brand", &"*** Sensitive Data Redacted ***");
         formatter.field("model", &"*** Sensitive Data Redacted ***");
@@ -146,6 +153,7 @@ pub struct CreateManagedThingInputBuilder {
     pub(crate) credential_locker_id: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_material: ::std::option::Option<::std::string::String>,
     pub(crate) authentication_material_type: ::std::option::Option<crate::types::AuthMaterialType>,
+    pub(crate) wi_fi_simple_setup_configuration: ::std::option::Option<crate::types::WiFiSimpleSetupConfiguration>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) brand: ::std::option::Option<::std::string::String>,
     pub(crate) model: ::std::option::Option<::std::string::String>,
@@ -231,6 +239,20 @@ impl CreateManagedThingInputBuilder {
     /// <p>The type of authentication material used for device connectivity setup requests.</p>
     pub fn get_authentication_material_type(&self) -> &::std::option::Option<crate::types::AuthMaterialType> {
         &self.authentication_material_type
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn wi_fi_simple_setup_configuration(mut self, input: crate::types::WiFiSimpleSetupConfiguration) -> Self {
+        self.wi_fi_simple_setup_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn set_wi_fi_simple_setup_configuration(mut self, input: ::std::option::Option<crate::types::WiFiSimpleSetupConfiguration>) -> Self {
+        self.wi_fi_simple_setup_configuration = input;
+        self
+    }
+    /// <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
+    pub fn get_wi_fi_simple_setup_configuration(&self) -> &::std::option::Option<crate::types::WiFiSimpleSetupConfiguration> {
+        &self.wi_fi_simple_setup_configuration
     }
     /// <p>The serial number of the device.</p>
     pub fn serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -421,6 +443,7 @@ impl CreateManagedThingInputBuilder {
             credential_locker_id: self.credential_locker_id,
             authentication_material: self.authentication_material,
             authentication_material_type: self.authentication_material_type,
+            wi_fi_simple_setup_configuration: self.wi_fi_simple_setup_configuration,
             serial_number: self.serial_number,
             brand: self.brand,
             model: self.model,
@@ -443,6 +466,7 @@ impl ::std::fmt::Debug for CreateManagedThingInputBuilder {
         formatter.field("credential_locker_id", &self.credential_locker_id);
         formatter.field("authentication_material", &"*** Sensitive Data Redacted ***");
         formatter.field("authentication_material_type", &self.authentication_material_type);
+        formatter.field("wi_fi_simple_setup_configuration", &self.wi_fi_simple_setup_configuration);
         formatter.field("serial_number", &"*** Sensitive Data Redacted ***");
         formatter.field("brand", &"*** Sensitive Data Redacted ***");
         formatter.field("model", &"*** Sensitive Data Redacted ***");

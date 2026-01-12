@@ -20,7 +20,7 @@ pub struct ListManagedThingsInput {
     pub connector_device_id_filter: ::std::option::Option<::std::string::String>,
     /// <p>Filter on the serial number of the device.</p>
     pub serial_number_filter: ::std::option::Option<::std::string::String>,
-    /// <p>Filter on the status of the device.</p>
+    /// <p>Filter on the status of the device. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub provisioning_status_filter: ::std::option::Option<crate::types::ProvisioningStatus>,
     /// <p>A token that can be used to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -61,7 +61,7 @@ impl ListManagedThingsInput {
     pub fn serial_number_filter(&self) -> ::std::option::Option<&str> {
         self.serial_number_filter.as_deref()
     }
-    /// <p>Filter on the status of the device.</p>
+    /// <p>Filter on the status of the device. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn provisioning_status_filter(&self) -> ::std::option::Option<&crate::types::ProvisioningStatus> {
         self.provisioning_status_filter.as_ref()
     }
@@ -230,17 +230,17 @@ impl ListManagedThingsInputBuilder {
     pub fn get_serial_number_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.serial_number_filter
     }
-    /// <p>Filter on the status of the device.</p>
+    /// <p>Filter on the status of the device. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn provisioning_status_filter(mut self, input: crate::types::ProvisioningStatus) -> Self {
         self.provisioning_status_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filter on the status of the device.</p>
+    /// <p>Filter on the status of the device. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn set_provisioning_status_filter(mut self, input: ::std::option::Option<crate::types::ProvisioningStatus>) -> Self {
         self.provisioning_status_filter = input;
         self
     }
-    /// <p>Filter on the status of the device.</p>
+    /// <p>Filter on the status of the device. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn get_provisioning_status_filter(&self) -> &::std::option::Option<crate::types::ProvisioningStatus> {
         &self.provisioning_status_filter
     }

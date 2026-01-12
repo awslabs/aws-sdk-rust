@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BedrockCustomModelDeploymentMetadata {
-    /// <p>The Amazon Resource Name (ARN) of the metadata for the Amazon Bedrock custom model deployment.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Amazon Bedrock custom model deployment.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl BedrockCustomModelDeploymentMetadata {
-    /// <p>The Amazon Resource Name (ARN) of the metadata for the Amazon Bedrock custom model deployment.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Amazon Bedrock custom model deployment.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct BedrockCustomModelDeploymentMetadataBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl BedrockCustomModelDeploymentMetadataBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the metadata for the Amazon Bedrock custom model deployment.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Amazon Bedrock custom model deployment.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the metadata for the Amazon Bedrock custom model deployment.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Amazon Bedrock custom model deployment.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the metadata for the Amazon Bedrock custom model deployment.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Amazon Bedrock custom model deployment.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

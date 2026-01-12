@@ -9,7 +9,7 @@ pub struct CreateBillingViewInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of billing views used as the data source for the custom billing view.</p>
     pub source_views: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code>, <code>Tags</code>, and <code>CostCategories</code>.</p>
     pub data_filter_expression: ::std::option::Option<crate::types::Expression>,
     /// <p>A unique, case-sensitive identifier you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. If the original request completes successfully, any subsequent retries complete successfully without performing any further actions with an idempotent request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -31,7 +31,7 @@ impl CreateBillingViewInput {
     pub fn source_views(&self) -> &[::std::string::String] {
         self.source_views.as_deref().unwrap_or_default()
     }
-    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code>, <code>Tags</code>, and <code>CostCategories</code>.</p>
     pub fn data_filter_expression(&self) -> ::std::option::Option<&crate::types::Expression> {
         self.data_filter_expression.as_ref()
     }
@@ -126,17 +126,17 @@ impl CreateBillingViewInputBuilder {
     pub fn get_source_views(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_views
     }
-    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code>, <code>Tags</code>, and <code>CostCategories</code>.</p>
     pub fn data_filter_expression(mut self, input: crate::types::Expression) -> Self {
         self.data_filter_expression = ::std::option::Option::Some(input);
         self
     }
-    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code>, <code>Tags</code>, and <code>CostCategories</code>.</p>
     pub fn set_data_filter_expression(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.data_filter_expression = input;
         self
     }
-    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code>, <code>Tags</code>, and <code>CostCategories</code>.</p>
     pub fn get_data_filter_expression(&self) -> &::std::option::Option<crate::types::Expression> {
         &self.data_filter_expression
     }

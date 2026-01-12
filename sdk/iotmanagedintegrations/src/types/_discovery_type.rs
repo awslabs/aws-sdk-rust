@@ -13,6 +13,7 @@
 /// # let discoverytype = unimplemented!();
 /// match discoverytype {
 ///     DiscoveryType::Cloud => { /* ... */ },
+///     DiscoveryType::ControllerCapabilityRediscovery => { /* ... */ },
 ///     DiscoveryType::Custom => { /* ... */ },
 ///     DiscoveryType::Zigbee => { /* ... */ },
 ///     DiscoveryType::Zwave => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum DiscoveryType {
     #[allow(missing_docs)] // documentation missing in model
     Cloud,
     #[allow(missing_docs)] // documentation missing in model
+    ControllerCapabilityRediscovery,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Zigbee,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for DiscoveryType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD" => DiscoveryType::Cloud,
+            "CONTROLLER_CAPABILITY_REDISCOVERY" => DiscoveryType::ControllerCapabilityRediscovery,
             "CUSTOM" => DiscoveryType::Custom,
             "ZIGBEE" => DiscoveryType::Zigbee,
             "ZWAVE" => DiscoveryType::Zwave,
@@ -79,6 +83,7 @@ impl DiscoveryType {
     pub fn as_str(&self) -> &str {
         match self {
             DiscoveryType::Cloud => "CLOUD",
+            DiscoveryType::ControllerCapabilityRediscovery => "CONTROLLER_CAPABILITY_REDISCOVERY",
             DiscoveryType::Custom => "CUSTOM",
             DiscoveryType::Zigbee => "ZIGBEE",
             DiscoveryType::Zwave => "ZWAVE",
@@ -87,7 +92,7 @@ impl DiscoveryType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD", "CUSTOM", "ZIGBEE", "ZWAVE"]
+        &["CLOUD", "CONTROLLER_CAPABILITY_REDISCOVERY", "CUSTOM", "ZIGBEE", "ZWAVE"]
     }
 }
 impl ::std::convert::AsRef<str> for DiscoveryType {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for DiscoveryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DiscoveryType::Cloud => write!(f, "CLOUD"),
+            DiscoveryType::ControllerCapabilityRediscovery => write!(f, "CONTROLLER_CAPABILITY_REDISCOVERY"),
             DiscoveryType::Custom => write!(f, "CUSTOM"),
             DiscoveryType::Zigbee => write!(f, "ZIGBEE"),
             DiscoveryType::Zwave => write!(f, "ZWAVE"),

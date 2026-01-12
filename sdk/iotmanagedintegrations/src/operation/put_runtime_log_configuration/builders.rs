@@ -22,7 +22,7 @@ impl crate::operation::put_runtime_log_configuration::builders::PutRuntimeLogCon
 }
 /// Fluent builder constructing a request to `PutRuntimeLogConfiguration`.
 ///
-/// <p>Set the runtime log configuration for a specific managed thing or for all managed things as a group.</p>
+/// <p>Set the runtime log configuration for a specific managed thing.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRuntimeLogConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

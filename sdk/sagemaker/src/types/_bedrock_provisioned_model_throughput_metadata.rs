@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BedrockProvisionedModelThroughputMetadata {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput metadata.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl BedrockProvisionedModelThroughputMetadata {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput metadata.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct BedrockProvisionedModelThroughputMetadataBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl BedrockProvisionedModelThroughputMetadataBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput metadata.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput metadata.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput metadata.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model throughput.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

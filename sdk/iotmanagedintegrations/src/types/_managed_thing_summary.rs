@@ -35,7 +35,7 @@ pub struct ManagedThingSummary {
     pub credential_locker_id: ::std::option::Option<::std::string::String>,
     /// <p>Id of the controller device used for the discovery job.</p>
     pub parent_controller_id: ::std::option::Option<::std::string::String>,
-    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations.</p>
+    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub provisioning_status: ::std::option::Option<crate::types::ProvisioningStatus>,
     /// <p>The type of device used. This will be the Amazon Web Services hub controller, cloud device, or IoT device.</p>
     pub role: ::std::option::Option<crate::types::Role>,
@@ -106,7 +106,7 @@ impl ManagedThingSummary {
     pub fn parent_controller_id(&self) -> ::std::option::Option<&str> {
         self.parent_controller_id.as_deref()
     }
-    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations.</p>
+    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn provisioning_status(&self) -> ::std::option::Option<&crate::types::ProvisioningStatus> {
         self.provisioning_status.as_ref()
     }
@@ -385,17 +385,17 @@ impl ManagedThingSummaryBuilder {
     pub fn get_parent_controller_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_controller_id
     }
-    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations.</p>
+    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn provisioning_status(mut self, input: crate::types::ProvisioningStatus) -> Self {
         self.provisioning_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations.</p>
+    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn set_provisioning_status(mut self, input: ::std::option::Option<crate::types::ProvisioningStatus>) -> Self {
         self.provisioning_status = input;
         self
     }
-    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations.</p>
+    /// <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     pub fn get_provisioning_status(&self) -> &::std::option::Option<crate::types::ProvisioningStatus> {
         &self.provisioning_status
     }

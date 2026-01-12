@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`credential_locker_id(Option<String>)`](crate::operation::get_managed_thing::GetManagedThingOutput::credential_locker_id): <p>The identifier of the credential locker for the managed thing.</p>
     ///   - [`advertised_product_id(Option<String>)`](crate::operation::get_managed_thing::GetManagedThingOutput::advertised_product_id): <p>The id of the advertised product.</p>
     ///   - [`role(Option<Role>)`](crate::operation::get_managed_thing::GetManagedThingOutput::role): <p>The type of device used. This will be the Amazon Web Services hub controller, cloud device, or IoT device.</p>
-    ///   - [`provisioning_status(Option<ProvisioningStatus>)`](crate::operation::get_managed_thing::GetManagedThingOutput::provisioning_status): <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations.</p>
+    ///   - [`provisioning_status(Option<ProvisioningStatus>)`](crate::operation::get_managed_thing::GetManagedThingOutput::provisioning_status): <p>The provisioning status of the device in the provisioning workflow for onboarding to IoT managed integrations. For more information, see <a href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device Provisioning</a>.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_managed_thing::GetManagedThingOutput::name): <p>The name of the managed thing representing the physical device.</p>
     ///   - [`model(Option<String>)`](crate::operation::get_managed_thing::GetManagedThingOutput::model): <p>The model of the device.</p>
     ///   - [`brand(Option<String>)`](crate::operation::get_managed_thing::GetManagedThingOutput::brand): <p>The brand of the device.</p>
@@ -31,6 +31,7 @@ impl super::Client {
     ///   - [`hub_network_mode(Option<HubNetworkMode>)`](crate::operation::get_managed_thing::GetManagedThingOutput::hub_network_mode): <p>The network mode for the hub-connected device.</p>
     ///   - [`meta_data(Option<HashMap::<String, String>>)`](crate::operation::get_managed_thing::GetManagedThingOutput::meta_data): <p>The metadata for the managed thing.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_managed_thing::GetManagedThingOutput::tags): <p>A set of key/value pairs that are used to manage the managed thing.</p>
+    ///   - [`wi_fi_simple_setup_configuration(Option<WiFiSimpleSetupConfiguration>)`](crate::operation::get_managed_thing::GetManagedThingOutput::wi_fi_simple_setup_configuration): <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines provisioning capabilities and timeout settings.</p>
     /// - On failure, responds with [`SdkError<GetManagedThingError>`](crate::operation::get_managed_thing::GetManagedThingError)
     pub fn get_managed_thing(&self) -> crate::operation::get_managed_thing::builders::GetManagedThingFluentBuilder {
         crate::operation::get_managed_thing::builders::GetManagedThingFluentBuilder::new(self.handle.clone())

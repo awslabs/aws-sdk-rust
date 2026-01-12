@@ -15,11 +15,17 @@ pub fn ser_expression(
         crate::protocol_serde::shape_tag_values::ser_tag_values(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.time_range {
+    if let Some(var_5) = &input.cost_categories {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("timeRange").start_object();
-        crate::protocol_serde::shape_time_range::ser_time_range(&mut object_6, var_5)?;
+        let mut object_6 = object.key("costCategories").start_object();
+        crate::protocol_serde::shape_cost_category_values::ser_cost_category_values(&mut object_6, var_5)?;
         object_6.finish();
+    }
+    if let Some(var_7) = &input.time_range {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("timeRange").start_object();
+        crate::protocol_serde::shape_time_range::ser_time_range(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }
@@ -44,6 +50,10 @@ where
                         }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_values::de_tag_values(tokens)?);
+                        }
+                        "costCategories" => {
+                            builder =
+                                builder.set_cost_categories(crate::protocol_serde::shape_cost_category_values::de_cost_category_values(tokens)?);
                         }
                         "timeRange" => {
                             builder = builder.set_time_range(crate::protocol_serde::shape_time_range::de_time_range(tokens)?);

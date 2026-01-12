@@ -34,15 +34,21 @@ pub fn ser_start_device_discovery_input_input(
     if let Some(var_11) = &input.discovery_type {
         object.key("DiscoveryType").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_12) = &input.end_device_identifier {
+        object.key("EndDeviceIdentifier").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.protocol {
+        object.key("Protocol").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_15 = object.key("Tags").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_13.finish();
+        object_15.finish();
     }
     Ok(())
 }
