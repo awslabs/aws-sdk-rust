@@ -8,7 +8,7 @@ information to effectively respond to your request.
 
 ## The AWS SDK for Rust has three GitHub repositories
 
-1) This repository ([awslabs/aws-sdk-rust](https://github.com/awslabs/aws-sdk-rust)) 
+1) This repository ([awslabs/aws-sdk-rust](https://github.com/awslabs/aws-sdk-rust))
 
     This repository contains code generated from [awslabs/smithy-rs](https://github.com/awslabs/smithy-rs). If you want to contribute to the SDK by submitting feedback to our roadmap or filing a bug report, you can do so using this GitHub repository. However, because this repository is code generated from Smithy models, **please do not submit PRs modifying code or examples to this repository.**
 
@@ -32,8 +32,8 @@ reported the issue. Please try to include as much information as you can. Detail
 * Any modifications you've made relevant to the bug
 * Anything unusual about your environment or deployment
 
-
 ## Contributing via Pull Requests
+
 Contributions via pull requests are much appreciated, however, because all of the code on this repository has been code generated from the [smithy-rs](https://github.com/awslabs/smithy-rs), **please do not submit PRs modifying the `sdk` folder to this repo**. The below instructions are for PR that do not update code, such as documentation changes.
 
 Before sending us a pull request, please ensure that:
@@ -45,27 +45,25 @@ To send us a pull request, please:
 
 1. Fork the repository.
 2. Modify the source; please focus on the specific change you are contributing.
-4. Commit to your fork using clear commit messages.
-5. Send us a pull request, answering any default questions in the pull request interface.
+3. Commit to your fork using clear commit messages.
+4. Send us a pull request, answering any default questions in the pull request interface.
 
 GitHub provides additional document on [forking a repository](https://help.github.com/articles/fork-a-repo/) and
 [creating a pull request](https://help.github.com/articles/creating-a-pull-request/).
-
 
 ## Building High Level Libraries
 
 This is one of the best ways to contribute to the SDK. Looking for an open issue labeled 'help wanted' is a great way to find one that we could use your help with. Please comment on the issue to communicate your interest so we can work with you in its development.
 
-
 ## Code of Conduct
+
 This project has adopted the [Amazon Open Source Code of Conduct](https://aws.github.io/code-of-conduct).
 For more information see the [Code of Conduct FAQ](https://aws.github.io/code-of-conduct-faq) or contact
-opensource-codeofconduct@amazon.com with any additional questions or comments.
-
+`opensource-codeofconduct@amazon.com` with any additional questions or comments.
 
 ## Security issue notifications
-If you discover a potential security issue in this project we ask that you notify AWS/Amazon Security via our [vulnerability reporting page](http://aws.amazon.com/security/vulnerability-reporting/). Please do **not** create a public github issue.
 
+If you discover a potential security issue in this project we ask that you notify AWS/Amazon Security via our [vulnerability reporting page](http://aws.amazon.com/security/vulnerability-reporting/). Please do **not** create a public github issue.
 
 ## Licensing
 
