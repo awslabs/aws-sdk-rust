@@ -23,6 +23,8 @@ pub struct CreateSubscriptionTargetInput {
     pub provider: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub subscription_grant_creation_mode: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>,
 }
 impl CreateSubscriptionTargetInput {
     /// <p>The ID of the Amazon DataZone domain in which subscription target is created.</p>
@@ -71,6 +73,10 @@ impl CreateSubscriptionTargetInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn subscription_grant_creation_mode(&self) -> ::std::option::Option<&crate::types::SubscriptionGrantCreationMode> {
+        self.subscription_grant_creation_mode.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateSubscriptionTargetInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -85,6 +91,7 @@ impl ::std::fmt::Debug for CreateSubscriptionTargetInput {
         formatter.field("applicable_asset_types", &self.applicable_asset_types);
         formatter.field("provider", &self.provider);
         formatter.field("client_token", &self.client_token);
+        formatter.field("subscription_grant_creation_mode", &self.subscription_grant_creation_mode);
         formatter.finish()
     }
 }
@@ -109,6 +116,7 @@ pub struct CreateSubscriptionTargetInputBuilder {
     pub(crate) applicable_asset_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) subscription_grant_creation_mode: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>,
 }
 impl CreateSubscriptionTargetInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which subscription target is created.</p>
@@ -274,6 +282,20 @@ impl CreateSubscriptionTargetInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn subscription_grant_creation_mode(mut self, input: crate::types::SubscriptionGrantCreationMode) -> Self {
+        self.subscription_grant_creation_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn set_subscription_grant_creation_mode(mut self, input: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>) -> Self {
+        self.subscription_grant_creation_mode = input;
+        self
+    }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn get_subscription_grant_creation_mode(&self) -> &::std::option::Option<crate::types::SubscriptionGrantCreationMode> {
+        &self.subscription_grant_creation_mode
+    }
     /// Consumes the builder and constructs a [`CreateSubscriptionTargetInput`](crate::operation::create_subscription_target::CreateSubscriptionTargetInput).
     pub fn build(
         self,
@@ -292,6 +314,7 @@ impl CreateSubscriptionTargetInputBuilder {
             applicable_asset_types: self.applicable_asset_types,
             provider: self.provider,
             client_token: self.client_token,
+            subscription_grant_creation_mode: self.subscription_grant_creation_mode,
         })
     }
 }
@@ -308,6 +331,7 @@ impl ::std::fmt::Debug for CreateSubscriptionTargetInputBuilder {
         formatter.field("applicable_asset_types", &self.applicable_asset_types);
         formatter.field("provider", &self.provider);
         formatter.field("client_token", &self.client_token);
+        formatter.field("subscription_grant_creation_mode", &self.subscription_grant_creation_mode);
         formatter.finish()
     }
 }

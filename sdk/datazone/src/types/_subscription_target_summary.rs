@@ -34,6 +34,8 @@ pub struct SubscriptionTargetSummary {
     pub subscription_target_config: ::std::vec::Vec<crate::types::SubscriptionTargetForm>,
     /// <p>The provider of the subscription target.</p>
     pub provider: ::std::string::String,
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub subscription_grant_creation_mode: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>,
 }
 impl SubscriptionTargetSummary {
     /// <p>The identifier of the subscription target.</p>
@@ -107,6 +109,10 @@ impl SubscriptionTargetSummary {
         use std::ops::Deref;
         self.provider.deref()
     }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn subscription_grant_creation_mode(&self) -> ::std::option::Option<&crate::types::SubscriptionGrantCreationMode> {
+        self.subscription_grant_creation_mode.as_ref()
+    }
 }
 impl ::std::fmt::Debug for SubscriptionTargetSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -126,6 +132,7 @@ impl ::std::fmt::Debug for SubscriptionTargetSummary {
         formatter.field("applicable_asset_types", &self.applicable_asset_types);
         formatter.field("subscription_target_config", &self.subscription_target_config);
         formatter.field("provider", &self.provider);
+        formatter.field("subscription_grant_creation_mode", &self.subscription_grant_creation_mode);
         formatter.finish()
     }
 }
@@ -155,6 +162,7 @@ pub struct SubscriptionTargetSummaryBuilder {
     pub(crate) applicable_asset_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subscription_target_config: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
+    pub(crate) subscription_grant_creation_mode: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>,
 }
 impl SubscriptionTargetSummaryBuilder {
     /// <p>The identifier of the subscription target.</p>
@@ -394,6 +402,20 @@ impl SubscriptionTargetSummaryBuilder {
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider
     }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn subscription_grant_creation_mode(mut self, input: crate::types::SubscriptionGrantCreationMode) -> Self {
+        self.subscription_grant_creation_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn set_subscription_grant_creation_mode(mut self, input: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>) -> Self {
+        self.subscription_grant_creation_mode = input;
+        self
+    }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn get_subscription_grant_creation_mode(&self) -> &::std::option::Option<crate::types::SubscriptionGrantCreationMode> {
+        &self.subscription_grant_creation_mode
+    }
     /// Consumes the builder and constructs a [`SubscriptionTargetSummary`](crate::types::SubscriptionTargetSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::SubscriptionTargetSummaryBuilder::id)
@@ -485,6 +507,7 @@ impl SubscriptionTargetSummaryBuilder {
                     "provider was not specified but it is required when building SubscriptionTargetSummary",
                 )
             })?,
+            subscription_grant_creation_mode: self.subscription_grant_creation_mode,
         })
     }
 }
@@ -506,6 +529,7 @@ impl ::std::fmt::Debug for SubscriptionTargetSummaryBuilder {
         formatter.field("applicable_asset_types", &self.applicable_asset_types);
         formatter.field("subscription_target_config", &self.subscription_target_config);
         formatter.field("provider", &self.provider);
+        formatter.field("subscription_grant_creation_mode", &self.subscription_grant_creation_mode);
         formatter.finish()
     }
 }

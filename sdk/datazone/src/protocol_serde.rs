@@ -1091,6 +1091,10 @@ pub(crate) mod shape_subscribed_group;
 
 pub(crate) mod shape_subscribed_group_input;
 
+pub(crate) mod shape_subscribed_iam_principal;
+
+pub(crate) mod shape_subscribed_iam_principal_input;
+
 pub(crate) mod shape_subscribed_listing_item;
 
 pub(crate) mod shape_subscribed_project;

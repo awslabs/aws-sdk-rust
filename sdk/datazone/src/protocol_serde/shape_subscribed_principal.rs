@@ -42,6 +42,10 @@ where
                             crate::protocol_serde::shape_subscribed_group::de_subscribed_group(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'group' cannot be null"))?,
                         )),
+                        "iam" => Some(crate::types::SubscribedPrincipal::Iam(
+                            crate::protocol_serde::shape_subscribed_iam_principal::de_subscribed_iam_principal(tokens)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'iam' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::SubscribedPrincipal::Unknown)

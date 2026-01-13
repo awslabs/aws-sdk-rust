@@ -190,6 +190,20 @@ impl ListSubscriptionsFluentBuilder {
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_owning_project_id()
     }
+    /// <p>The ARN of the owning IAM principal.</p>
+    pub fn owning_iam_principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.owning_iam_principal_arn(input.into());
+        self
+    }
+    /// <p>The ARN of the owning IAM principal.</p>
+    pub fn set_owning_iam_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_owning_iam_principal_arn(input);
+        self
+    }
+    /// <p>The ARN of the owning IAM principal.</p>
+    pub fn get_owning_iam_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owning_iam_principal_arn()
+    }
     /// <p>The ID of the owning user.</p>
     pub fn owning_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owning_user_id(input.into());

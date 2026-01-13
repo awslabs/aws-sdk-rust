@@ -22,6 +22,12 @@ pub fn ser_subscribed_principal_input(
             crate::protocol_serde::shape_subscribed_group_input::ser_subscribed_group_input(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::SubscribedPrincipalInput::Iam(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_22.key("iam").start_object();
+            crate::protocol_serde::shape_subscribed_iam_principal_input::ser_subscribed_iam_principal_input(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::SubscribedPrincipalInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "SubscribedPrincipalInput",

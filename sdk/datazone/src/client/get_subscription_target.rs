@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`applicable_asset_types(Vec::<String>)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::applicable_asset_types): <p>The asset types associated with the subscription target.</p>
     ///   - [`subscription_target_config(Vec::<SubscriptionTargetForm>)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::subscription_target_config): <p>The configuration of teh subscription target.</p>
     ///   - [`provider(String)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::provider): <p>The provider of the subscription target.</p>
+    ///   - [`subscription_grant_creation_mode(Option<SubscriptionGrantCreationMode>)`](crate::operation::get_subscription_target::GetSubscriptionTargetOutput::subscription_grant_creation_mode): <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
     /// - On failure, responds with [`SdkError<GetSubscriptionTargetError>`](crate::operation::get_subscription_target::GetSubscriptionTargetError)
     pub fn get_subscription_target(&self) -> crate::operation::get_subscription_target::builders::GetSubscriptionTargetFluentBuilder {
         crate::operation::get_subscription_target::builders::GetSubscriptionTargetFluentBuilder::new(self.handle.clone())

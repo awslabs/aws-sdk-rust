@@ -33,20 +33,23 @@ pub fn ser_create_subscription_target_input_input(
     if let Some(var_10) = &input.provider {
         object.key("provider").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.subscription_target_config {
-        let mut array_12 = object.key("subscriptionTargetConfig").start_array();
-        for item_13 in var_11 {
+    if let Some(var_11) = &input.subscription_grant_creation_mode {
+        object.key("subscriptionGrantCreationMode").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.subscription_target_config {
+        let mut array_13 = object.key("subscriptionTargetConfig").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_subscription_target_form::ser_subscription_target_form(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_subscription_target_form::ser_subscription_target_form(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.r#type {
-        object.key("type").string(var_15.as_str());
+    if let Some(var_16) = &input.r#type {
+        object.key("type").string(var_16.as_str());
     }
     Ok(())
 }

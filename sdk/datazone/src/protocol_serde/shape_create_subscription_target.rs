@@ -242,6 +242,13 @@ pub(crate) fn de_create_subscription_target(
                             .transpose()?,
                     );
                 }
+                "subscriptionGrantCreationMode" => {
+                    builder = builder.set_subscription_grant_creation_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SubscriptionGrantCreationMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "subscriptionTargetConfig" => {
                     builder = builder.set_subscription_target_config(
                         crate::protocol_serde::shape_subscription_target_forms::de_subscription_target_forms(tokens)?,

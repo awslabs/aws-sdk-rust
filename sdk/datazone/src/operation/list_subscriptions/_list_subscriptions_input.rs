@@ -15,6 +15,8 @@ pub struct ListSubscriptionsInput {
     pub subscribed_listing_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the owning project.</p>
     pub owning_project_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the owning IAM principal.</p>
+    pub owning_iam_principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the owning user.</p>
     pub owning_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the owning group.</p>
@@ -53,6 +55,10 @@ impl ListSubscriptionsInput {
     /// <p>The identifier of the owning project.</p>
     pub fn owning_project_id(&self) -> ::std::option::Option<&str> {
         self.owning_project_id.as_deref()
+    }
+    /// <p>The ARN of the owning IAM principal.</p>
+    pub fn owning_iam_principal_arn(&self) -> ::std::option::Option<&str> {
+        self.owning_iam_principal_arn.as_deref()
     }
     /// <p>The ID of the owning user.</p>
     pub fn owning_user_id(&self) -> ::std::option::Option<&str> {
@@ -100,6 +106,7 @@ pub struct ListSubscriptionsInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SubscriptionStatus>,
     pub(crate) subscribed_listing_id: ::std::option::Option<::std::string::String>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owning_iam_principal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owning_user_id: ::std::option::Option<::std::string::String>,
     pub(crate) owning_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) approver_project_id: ::std::option::Option<::std::string::String>,
@@ -185,6 +192,20 @@ impl ListSubscriptionsInputBuilder {
     /// <p>The identifier of the owning project.</p>
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owning_project_id
+    }
+    /// <p>The ARN of the owning IAM principal.</p>
+    pub fn owning_iam_principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owning_iam_principal_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the owning IAM principal.</p>
+    pub fn set_owning_iam_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owning_iam_principal_arn = input;
+        self
+    }
+    /// <p>The ARN of the owning IAM principal.</p>
+    pub fn get_owning_iam_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owning_iam_principal_arn
     }
     /// <p>The ID of the owning user.</p>
     pub fn owning_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -297,6 +318,7 @@ impl ListSubscriptionsInputBuilder {
             status: self.status,
             subscribed_listing_id: self.subscribed_listing_id,
             owning_project_id: self.owning_project_id,
+            owning_iam_principal_arn: self.owning_iam_principal_arn,
             owning_user_id: self.owning_user_id,
             owning_group_id: self.owning_group_id,
             approver_project_id: self.approver_project_id,
