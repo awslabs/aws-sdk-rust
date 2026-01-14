@@ -53,6 +53,11 @@ where
                             builder = builder
                                 .set_config(crate::protocol_serde::shape_hours_of_operation_config_list::de_hours_of_operation_config_list(tokens)?);
                         }
+                        "ParentHoursOfOperations" => {
+                            builder = builder.set_parent_hours_of_operations(
+                                crate::protocol_serde::shape_parent_hours_of_operations_list::de_parent_hours_of_operations_list(tokens)?,
+                            );
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }

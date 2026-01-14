@@ -24,6 +24,8 @@ pub struct MetaLibraryTemplateDefinition {
     pub template_buttons: ::std::option::Option<::std::vec::Vec<crate::types::LibraryTemplateButtonList>>,
     /// <p>The ID of the template in Meta's library.</p>
     pub template_id: ::std::option::Option<::std::string::String>,
+    /// <p>Example parameter values for the template body, used to demonstrate how dynamic content appears in the template.</p>
+    pub template_body_example_params: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetaLibraryTemplateDefinition {
     /// <p>The name of the template.</p>
@@ -70,6 +72,12 @@ impl MetaLibraryTemplateDefinition {
     pub fn template_id(&self) -> ::std::option::Option<&str> {
         self.template_id.as_deref()
     }
+    /// <p>Example parameter values for the template body, used to demonstrate how dynamic content appears in the template.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.template_body_example_params.is_none()`.
+    pub fn template_body_example_params(&self) -> &[::std::string::String] {
+        self.template_body_example_params.as_deref().unwrap_or_default()
+    }
 }
 impl MetaLibraryTemplateDefinition {
     /// Creates a new builder-style object to manufacture [`MetaLibraryTemplateDefinition`](crate::types::MetaLibraryTemplateDefinition).
@@ -92,6 +100,7 @@ pub struct MetaLibraryTemplateDefinitionBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) template_buttons: ::std::option::Option<::std::vec::Vec<crate::types::LibraryTemplateButtonList>>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
+    pub(crate) template_body_example_params: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetaLibraryTemplateDefinitionBuilder {
     /// <p>The name of the template.</p>
@@ -246,6 +255,26 @@ impl MetaLibraryTemplateDefinitionBuilder {
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_id
     }
+    /// Appends an item to `template_body_example_params`.
+    ///
+    /// To override the contents of this collection use [`set_template_body_example_params`](Self::set_template_body_example_params).
+    ///
+    /// <p>Example parameter values for the template body, used to demonstrate how dynamic content appears in the template.</p>
+    pub fn template_body_example_params(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.template_body_example_params.unwrap_or_default();
+        v.push(input.into());
+        self.template_body_example_params = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Example parameter values for the template body, used to demonstrate how dynamic content appears in the template.</p>
+    pub fn set_template_body_example_params(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.template_body_example_params = input;
+        self
+    }
+    /// <p>Example parameter values for the template body, used to demonstrate how dynamic content appears in the template.</p>
+    pub fn get_template_body_example_params(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.template_body_example_params
+    }
     /// Consumes the builder and constructs a [`MetaLibraryTemplateDefinition`](crate::types::MetaLibraryTemplateDefinition).
     pub fn build(self) -> crate::types::MetaLibraryTemplateDefinition {
         crate::types::MetaLibraryTemplateDefinition {
@@ -259,6 +288,7 @@ impl MetaLibraryTemplateDefinitionBuilder {
             template_body: self.template_body,
             template_buttons: self.template_buttons,
             template_id: self.template_id,
+            template_body_example_params: self.template_body_example_params,
         }
     }
 }

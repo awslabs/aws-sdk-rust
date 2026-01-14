@@ -149,6 +149,10 @@ pub use crate::types::_encryption_config::EncryptionConfigBuilder;
 
 pub use crate::types::_s3_config::S3ConfigBuilder;
 
+pub use crate::types::_recurrence_config::RecurrenceConfigBuilder;
+
+pub use crate::types::_recurrence_pattern::RecurrencePatternBuilder;
+
 pub use crate::types::_hours_of_operation_override_config::HoursOfOperationOverrideConfigBuilder;
 
 pub use crate::types::_override_time_slice::OverrideTimeSliceBuilder;
@@ -420,6 +424,8 @@ pub use crate::types::_predefined_attribute_configuration::PredefinedAttributeCo
 pub use crate::types::_predefined_attribute_search_criteria::PredefinedAttributeSearchCriteriaBuilder;
 
 pub use crate::types::_hours_of_operation::HoursOfOperationBuilder;
+
+pub use crate::types::_hours_of_operations_identifier::HoursOfOperationsIdentifierBuilder;
 
 pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearchCriteriaBuilder;
 
@@ -735,6 +741,10 @@ pub use crate::types::_filters::FiltersBuilder;
 
 pub use crate::types::_credentials::CredentialsBuilder;
 
+pub use crate::types::_effective_override_hours::EffectiveOverrideHoursBuilder;
+
+pub use crate::types::_override_hour::OverrideHourBuilder;
+
 pub use crate::types::_effective_hours_of_operations::EffectiveHoursOfOperationsBuilder;
 
 pub use crate::types::_operational_hour::OperationalHourBuilder;
@@ -906,6 +916,8 @@ pub use crate::types::_contact_configuration::ContactConfigurationBuilder;
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentialsBuilder;
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAddBuilder;
+
+pub use crate::types::_parent_hours_of_operation_config::ParentHoursOfOperationConfigBuilder;
 
 pub use crate::types::_batch_update_data_table_value_failure_result::BatchUpdateDataTableValueFailureResultBuilder;
 

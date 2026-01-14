@@ -136,6 +136,20 @@ impl UpdateWhatsAppMessageTemplateFluentBuilder {
     pub fn get_meta_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_meta_template_id()
     }
+    /// <p>The format specification for parameters in the template, this can be either 'named' or 'positional'.</p>
+    pub fn parameter_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.parameter_format(input.into());
+        self
+    }
+    /// <p>The format specification for parameters in the template, this can be either 'named' or 'positional'.</p>
+    pub fn set_parameter_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_parameter_format(input);
+        self
+    }
+    /// <p>The format specification for parameters in the template, this can be either 'named' or 'positional'.</p>
+    pub fn get_parameter_format(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_format()
+    }
     /// <p>The new category for the template (for example, UTILITY or MARKETING).</p>
     pub fn template_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_category(input.into());
@@ -163,5 +177,19 @@ impl UpdateWhatsAppMessageTemplateFluentBuilder {
     /// <p>The updated components of the template as a JSON blob (maximum 3000 characters).</p>
     pub fn get_template_components(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_template_components()
+    }
+    /// <p>When true, disables click tracking for call-to-action URL buttons in the template.</p>
+    pub fn cta_url_link_tracking_opted_out(mut self, input: bool) -> Self {
+        self.inner = self.inner.cta_url_link_tracking_opted_out(input);
+        self
+    }
+    /// <p>When true, disables click tracking for call-to-action URL buttons in the template.</p>
+    pub fn set_cta_url_link_tracking_opted_out(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_cta_url_link_tracking_opted_out(input);
+        self
+    }
+    /// <p>When true, disables click tracking for call-to-action URL buttons in the template.</p>
+    pub fn get_cta_url_link_tracking_opted_out(&self) -> &::std::option::Option<bool> {
+        self.inner.get_cta_url_link_tracking_opted_out()
     }
 }

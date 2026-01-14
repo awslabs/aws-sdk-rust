@@ -5,7 +5,7 @@
 pub struct GetWhatsAppMessageMediaOutput {
     /// <p>The MIME type of the media.</p>
     pub mime_type: ::std::option::Option<::std::string::String>,
-    /// <p>The file size of the media, in KB.</p>
+    /// <p>The size of the media file, in KB.</p>
     pub file_size: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl GetWhatsAppMessageMediaOutput {
     pub fn mime_type(&self) -> ::std::option::Option<&str> {
         self.mime_type.as_deref()
     }
-    /// <p>The file size of the media, in KB.</p>
+    /// <p>The size of the media file, in KB.</p>
     pub fn file_size(&self) -> ::std::option::Option<i64> {
         self.file_size
     }
@@ -54,17 +54,17 @@ impl GetWhatsAppMessageMediaOutputBuilder {
     pub fn get_mime_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.mime_type
     }
-    /// <p>The file size of the media, in KB.</p>
+    /// <p>The size of the media file, in KB.</p>
     pub fn file_size(mut self, input: i64) -> Self {
         self.file_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The file size of the media, in KB.</p>
+    /// <p>The size of the media file, in KB.</p>
     pub fn set_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.file_size = input;
         self
     }
-    /// <p>The file size of the media, in KB.</p>
+    /// <p>The size of the media file, in KB.</p>
     pub fn get_file_size(&self) -> &::std::option::Option<i64> {
         &self.file_size
     }

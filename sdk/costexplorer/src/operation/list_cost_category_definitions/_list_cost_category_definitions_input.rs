@@ -9,7 +9,7 @@ pub struct ListCostCategoryDefinitionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of entries a paginated response contains.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code> and <code>billing:billingview</code>.</p>
     pub supported_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListCostCategoryDefinitionsInput {
@@ -25,7 +25,7 @@ impl ListCostCategoryDefinitionsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code> and <code>billing:billingview</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_resource_types.is_none()`.
     pub fn supported_resource_types(&self) -> &[::std::string::String] {
@@ -95,19 +95,19 @@ impl ListCostCategoryDefinitionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_resource_types`](Self::set_supported_resource_types).
     ///
-    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code> and <code>billing:billingview</code>.</p>
     pub fn supported_resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_resource_types.unwrap_or_default();
         v.push(input.into());
         self.supported_resource_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code> and <code>billing:billingview</code>.</p>
     pub fn set_supported_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_resource_types = input;
         self
     }
-    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code>.</p>
+    /// <p>Filter cost category definitions that are supported by given resource types based on the latest version. If the filter is present, the result only includes Cost Categories that supports input resource type. If the filter isn't provided, no filtering is applied. The valid values are <code>billing:rispgroupsharing</code> and <code>billing:billingview</code>.</p>
     pub fn get_supported_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_resource_types
     }

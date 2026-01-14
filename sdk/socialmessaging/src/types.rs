@@ -7,6 +7,18 @@ pub use crate::types::_whats_app_phone_number_detail::WhatsAppPhoneNumberDetail;
 
 pub use crate::types::_whats_app_business_account_event_destination::WhatsAppBusinessAccountEventDestination;
 
+pub use crate::types::_meta_library_template_definition::MetaLibraryTemplateDefinition;
+
+pub use crate::types::_library_template_button_list::LibraryTemplateButtonList;
+
+pub use crate::types::_template_summary::TemplateSummary;
+
+pub use crate::types::_meta_library_template::MetaLibraryTemplate;
+
+pub use crate::types::_library_template_body_inputs::LibraryTemplateBodyInputs;
+
+pub use crate::types::_library_template_button_input::LibraryTemplateButtonInput;
+
 pub use crate::types::_linked_whats_app_business_account::LinkedWhatsAppBusinessAccount;
 
 pub use crate::types::_whats_app_phone_number_summary::WhatsAppPhoneNumberSummary;
@@ -28,18 +40,6 @@ pub use crate::types::_waba_phone_number_setup_finalization::WabaPhoneNumberSetu
 pub use crate::types::_whats_app_signup_callback::WhatsAppSignupCallback;
 
 pub use crate::types::_linked_whats_app_business_account_summary::LinkedWhatsAppBusinessAccountSummary;
-
-pub use crate::types::_meta_library_template_definition::MetaLibraryTemplateDefinition;
-
-pub use crate::types::_library_template_button_list::LibraryTemplateButtonList;
-
-pub use crate::types::_template_summary::TemplateSummary;
-
-pub use crate::types::_meta_library_template::MetaLibraryTemplate;
-
-pub use crate::types::_library_template_body_inputs::LibraryTemplateBodyInputs;
-
-pub use crate::types::_library_template_button_input::LibraryTemplateButtonInput;
 
 mod _library_template_body_inputs;
 

@@ -2,7 +2,7 @@
 
 /// <p>Specifies the settings that control the size and behavior of the connection pool associated with a <code>DBProxyTargetGroup</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConnectionPoolConfiguration {
     /// <p>The maximum size of the connection pool for each target in a target group. The value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
     /// <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.</p>
@@ -89,6 +89,17 @@ impl ConnectionPoolConfiguration {
         self.init_query.as_deref()
     }
 }
+impl ::std::fmt::Debug for ConnectionPoolConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectionPoolConfiguration");
+        formatter.field("max_connections_percent", &self.max_connections_percent);
+        formatter.field("max_idle_connections_percent", &self.max_idle_connections_percent);
+        formatter.field("connection_borrow_timeout", &self.connection_borrow_timeout);
+        formatter.field("session_pinning_filters", &self.session_pinning_filters);
+        formatter.field("init_query", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ConnectionPoolConfiguration {
     /// Creates a new builder-style object to manufacture [`ConnectionPoolConfiguration`](crate::types::ConnectionPoolConfiguration).
     pub fn builder() -> crate::types::builders::ConnectionPoolConfigurationBuilder {
@@ -97,7 +108,7 @@ impl ConnectionPoolConfiguration {
 }
 
 /// A builder for [`ConnectionPoolConfiguration`](crate::types::ConnectionPoolConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ConnectionPoolConfigurationBuilder {
     pub(crate) max_connections_percent: ::std::option::Option<i32>,
@@ -267,5 +278,16 @@ impl ConnectionPoolConfigurationBuilder {
             session_pinning_filters: self.session_pinning_filters,
             init_query: self.init_query,
         }
+    }
+}
+impl ::std::fmt::Debug for ConnectionPoolConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ConnectionPoolConfigurationBuilder");
+        formatter.field("max_connections_percent", &self.max_connections_percent);
+        formatter.field("max_idle_connections_percent", &self.max_idle_connections_percent);
+        formatter.field("connection_borrow_timeout", &self.connection_borrow_timeout);
+        formatter.field("session_pinning_filters", &self.session_pinning_filters);
+        formatter.field("init_query", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -241,6 +241,11 @@ pub fn ser_create_cluster_input_input_input(
     if let Some(var_92) = &input.catalog_name {
         scope_91.string(var_92);
     }
+    #[allow(unused_mut)]
+    let mut scope_93 = writer.prefix("ExtraComputeForAutomaticOptimization");
+    if let Some(var_94) = &input.extra_compute_for_automatic_optimization {
+        scope_93.boolean(*var_94);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

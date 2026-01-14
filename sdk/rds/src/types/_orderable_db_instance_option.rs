@@ -81,10 +81,10 @@ pub struct OrderableDbInstanceOption {
     pub supports_clusters: ::std::option::Option<bool>,
     /// <p>Indicates whether a DB instance supports using a dedicated log volume (DLV).</p>
     pub supports_dedicated_log_volume: ::std::option::Option<bool>,
-    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
-    pub supports_http_endpoint: ::std::option::Option<bool>,
     /// <p>Indicates whether the DB instance class supports additional storage volumes.</p>
     pub supports_additional_storage_volumes: ::std::option::Option<bool>,
+    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+    pub supports_http_endpoint: ::std::option::Option<bool>,
     /// <p>The available options for additional storage volumes for the DB instance class.</p>
     pub available_additional_storage_volumes_options: ::std::option::Option<::std::vec::Vec<crate::types::AvailableAdditionalStorageVolumesOption>>,
 }
@@ -247,13 +247,13 @@ impl OrderableDbInstanceOption {
     pub fn supports_dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.supports_dedicated_log_volume
     }
-    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
-    pub fn supports_http_endpoint(&self) -> ::std::option::Option<bool> {
-        self.supports_http_endpoint
-    }
     /// <p>Indicates whether the DB instance class supports additional storage volumes.</p>
     pub fn supports_additional_storage_volumes(&self) -> ::std::option::Option<bool> {
         self.supports_additional_storage_volumes
+    }
+    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+    pub fn supports_http_endpoint(&self) -> ::std::option::Option<bool> {
+        self.supports_http_endpoint
     }
     /// <p>The available options for additional storage volumes for the DB instance class.</p>
     ///
@@ -309,8 +309,8 @@ pub struct OrderableDbInstanceOptionBuilder {
     pub(crate) supported_network_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supports_clusters: ::std::option::Option<bool>,
     pub(crate) supports_dedicated_log_volume: ::std::option::Option<bool>,
-    pub(crate) supports_http_endpoint: ::std::option::Option<bool>,
     pub(crate) supports_additional_storage_volumes: ::std::option::Option<bool>,
+    pub(crate) supports_http_endpoint: ::std::option::Option<bool>,
     pub(crate) available_additional_storage_volumes_options:
         ::std::option::Option<::std::vec::Vec<crate::types::AvailableAdditionalStorageVolumesOption>>,
 }
@@ -864,20 +864,6 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_supports_dedicated_log_volume(&self) -> &::std::option::Option<bool> {
         &self.supports_dedicated_log_volume
     }
-    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
-    pub fn supports_http_endpoint(mut self, input: bool) -> Self {
-        self.supports_http_endpoint = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
-    pub fn set_supports_http_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_http_endpoint = input;
-        self
-    }
-    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
-    pub fn get_supports_http_endpoint(&self) -> &::std::option::Option<bool> {
-        &self.supports_http_endpoint
-    }
     /// <p>Indicates whether the DB instance class supports additional storage volumes.</p>
     pub fn supports_additional_storage_volumes(mut self, input: bool) -> Self {
         self.supports_additional_storage_volumes = ::std::option::Option::Some(input);
@@ -891,6 +877,20 @@ impl OrderableDbInstanceOptionBuilder {
     /// <p>Indicates whether the DB instance class supports additional storage volumes.</p>
     pub fn get_supports_additional_storage_volumes(&self) -> &::std::option::Option<bool> {
         &self.supports_additional_storage_volumes
+    }
+    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+    pub fn supports_http_endpoint(mut self, input: bool) -> Self {
+        self.supports_http_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+    pub fn set_supports_http_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.supports_http_endpoint = input;
+        self
+    }
+    /// <p>Indicates whether a DB instance supports HTTP endpoints.</p>
+    pub fn get_supports_http_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.supports_http_endpoint
     }
     /// Appends an item to `available_additional_storage_volumes_options`.
     ///
@@ -956,8 +956,8 @@ impl OrderableDbInstanceOptionBuilder {
             supported_network_types: self.supported_network_types,
             supports_clusters: self.supports_clusters,
             supports_dedicated_log_volume: self.supports_dedicated_log_volume,
-            supports_http_endpoint: self.supports_http_endpoint,
             supports_additional_storage_volumes: self.supports_additional_storage_volumes,
+            supports_http_endpoint: self.supports_http_endpoint,
             available_additional_storage_volumes_options: self.available_additional_storage_volumes_options,
         }
     }

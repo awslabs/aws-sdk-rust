@@ -37,6 +37,8 @@ pub struct CreateCustomDbEngineVersionInput {
     pub database_installation_files_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
     pub database_installation_files_s3_prefix: ::std::option::Option<::std::string::String>,
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
+    pub database_installation_files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a> operation.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
@@ -88,8 +90,6 @@ pub struct CreateCustomDbEngineVersionInput {
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
-    pub database_installation_files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateCustomDbEngineVersionInput {
     /// <p>The database engine.</p>
@@ -133,6 +133,12 @@ impl CreateCustomDbEngineVersionInput {
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
     pub fn database_installation_files_s3_prefix(&self) -> ::std::option::Option<&str> {
         self.database_installation_files_s3_prefix.as_deref()
+    }
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_installation_files.is_none()`.
+    pub fn database_installation_files(&self) -> &[::std::string::String] {
+        self.database_installation_files.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a> operation.</p>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
@@ -201,12 +207,6 @@ impl CreateCustomDbEngineVersionInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_installation_files.is_none()`.
-    pub fn database_installation_files(&self) -> &[::std::string::String] {
-        self.database_installation_files.as_deref().unwrap_or_default()
-    }
 }
 impl CreateCustomDbEngineVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomDbEngineVersionInput`](crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput).
@@ -223,6 +223,7 @@ pub struct CreateCustomDbEngineVersionInputBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) database_installation_files_s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_installation_files_s3_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) database_installation_files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_custom_db_engine_version_identifier: ::std::option::Option<::std::string::String>,
@@ -230,7 +231,6 @@ pub struct CreateCustomDbEngineVersionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) manifest: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) database_installation_files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateCustomDbEngineVersionInputBuilder {
     /// <p>The database engine.</p>
@@ -368,6 +368,26 @@ impl CreateCustomDbEngineVersionInputBuilder {
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
     pub fn get_database_installation_files_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_installation_files_s3_prefix
+    }
+    /// Appends an item to `database_installation_files`.
+    ///
+    /// To override the contents of this collection use [`set_database_installation_files`](Self::set_database_installation_files).
+    ///
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
+    pub fn database_installation_files(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.database_installation_files.unwrap_or_default();
+        v.push(input.into());
+        self.database_installation_files = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
+    pub fn set_database_installation_files(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.database_installation_files = input;
+        self
+    }
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
+    pub fn get_database_installation_files(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.database_installation_files
     }
     /// <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a> operation.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -584,26 +604,6 @@ impl CreateCustomDbEngineVersionInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// Appends an item to `database_installation_files`.
-    ///
-    /// To override the contents of this collection use [`set_database_installation_files`](Self::set_database_installation_files).
-    ///
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
-    pub fn database_installation_files(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.database_installation_files.unwrap_or_default();
-        v.push(input.into());
-        self.database_installation_files = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
-    pub fn set_database_installation_files(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.database_installation_files = input;
-        self
-    }
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.</p>
-    pub fn get_database_installation_files(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.database_installation_files
-    }
     /// Consumes the builder and constructs a [`CreateCustomDbEngineVersionInput`](crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput).
     pub fn build(
         self,
@@ -616,6 +616,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
             engine_version: self.engine_version,
             database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name,
             database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
+            database_installation_files: self.database_installation_files,
             image_id: self.image_id,
             kms_key_id: self.kms_key_id,
             source_custom_db_engine_version_identifier: self.source_custom_db_engine_version_identifier,
@@ -623,7 +624,6 @@ impl CreateCustomDbEngineVersionInputBuilder {
             description: self.description,
             manifest: self.manifest,
             tags: self.tags,
-            database_installation_files: self.database_installation_files,
         })
     }
 }

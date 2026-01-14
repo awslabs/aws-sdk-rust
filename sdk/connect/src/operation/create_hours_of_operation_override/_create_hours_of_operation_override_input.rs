@@ -17,6 +17,11 @@ pub struct CreateHoursOfOperationOverrideInput {
     pub effective_from: ::std::option::Option<::std::string::String>,
     /// <p>The date until when the hours of operation override is effective.</p>
     pub effective_till: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration for a recurring event.</p>
+    pub recurrence_config: ::std::option::Option<crate::types::RecurrenceConfig>,
+    /// <p>Whether the override will be defined as a <i>standard</i> or as a <i>recurring event</i>.</p>
+    /// <p>For more information about how override types are applied, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build your list of overrides</a> in the <i> Administrator Guide</i>.</p>
+    pub override_type: ::std::option::Option<crate::types::OverrideType>,
 }
 impl CreateHoursOfOperationOverrideInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
@@ -49,6 +54,15 @@ impl CreateHoursOfOperationOverrideInput {
     pub fn effective_till(&self) -> ::std::option::Option<&str> {
         self.effective_till.as_deref()
     }
+    /// <p>Configuration for a recurring event.</p>
+    pub fn recurrence_config(&self) -> ::std::option::Option<&crate::types::RecurrenceConfig> {
+        self.recurrence_config.as_ref()
+    }
+    /// <p>Whether the override will be defined as a <i>standard</i> or as a <i>recurring event</i>.</p>
+    /// <p>For more information about how override types are applied, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build your list of overrides</a> in the <i> Administrator Guide</i>.</p>
+    pub fn override_type(&self) -> ::std::option::Option<&crate::types::OverrideType> {
+        self.override_type.as_ref()
+    }
 }
 impl CreateHoursOfOperationOverrideInput {
     /// Creates a new builder-style object to manufacture [`CreateHoursOfOperationOverrideInput`](crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideInput).
@@ -68,6 +82,8 @@ pub struct CreateHoursOfOperationOverrideInputBuilder {
     pub(crate) config: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationOverrideConfig>>,
     pub(crate) effective_from: ::std::option::Option<::std::string::String>,
     pub(crate) effective_till: ::std::option::Option<::std::string::String>,
+    pub(crate) recurrence_config: ::std::option::Option<crate::types::RecurrenceConfig>,
+    pub(crate) override_type: ::std::option::Option<crate::types::OverrideType>,
 }
 impl CreateHoursOfOperationOverrideInputBuilder {
     /// <p>The identifier of the Amazon Connect instance.</p>
@@ -179,6 +195,37 @@ impl CreateHoursOfOperationOverrideInputBuilder {
     pub fn get_effective_till(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_till
     }
+    /// <p>Configuration for a recurring event.</p>
+    pub fn recurrence_config(mut self, input: crate::types::RecurrenceConfig) -> Self {
+        self.recurrence_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for a recurring event.</p>
+    pub fn set_recurrence_config(mut self, input: ::std::option::Option<crate::types::RecurrenceConfig>) -> Self {
+        self.recurrence_config = input;
+        self
+    }
+    /// <p>Configuration for a recurring event.</p>
+    pub fn get_recurrence_config(&self) -> &::std::option::Option<crate::types::RecurrenceConfig> {
+        &self.recurrence_config
+    }
+    /// <p>Whether the override will be defined as a <i>standard</i> or as a <i>recurring event</i>.</p>
+    /// <p>For more information about how override types are applied, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build your list of overrides</a> in the <i> Administrator Guide</i>.</p>
+    pub fn override_type(mut self, input: crate::types::OverrideType) -> Self {
+        self.override_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether the override will be defined as a <i>standard</i> or as a <i>recurring event</i>.</p>
+    /// <p>For more information about how override types are applied, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build your list of overrides</a> in the <i> Administrator Guide</i>.</p>
+    pub fn set_override_type(mut self, input: ::std::option::Option<crate::types::OverrideType>) -> Self {
+        self.override_type = input;
+        self
+    }
+    /// <p>Whether the override will be defined as a <i>standard</i> or as a <i>recurring event</i>.</p>
+    /// <p>For more information about how override types are applied, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build your list of overrides</a> in the <i> Administrator Guide</i>.</p>
+    pub fn get_override_type(&self) -> &::std::option::Option<crate::types::OverrideType> {
+        &self.override_type
+    }
     /// Consumes the builder and constructs a [`CreateHoursOfOperationOverrideInput`](crate::operation::create_hours_of_operation_override::CreateHoursOfOperationOverrideInput).
     pub fn build(
         self,
@@ -195,6 +242,8 @@ impl CreateHoursOfOperationOverrideInputBuilder {
                 config: self.config,
                 effective_from: self.effective_from,
                 effective_till: self.effective_till,
+                recurrence_config: self.recurrence_config,
+                override_type: self.override_type,
             },
         )
     }

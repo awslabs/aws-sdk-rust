@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_bots_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_child_hours_of_operations_output_output_next_token(
+    input: &crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_contact_evaluations_output_output_next_token(
     input: &crate::operation::list_contact_evaluations::ListContactEvaluationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -844,6 +854,13 @@ pub(crate) fn lens_list_bots_output_output_lex_bots(
     input: crate::operation::list_bots::ListBotsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LexBotConfig>> {
     let input = input.lex_bots?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_child_hours_of_operations_output_output_child_hours_of_operations_summary_list(
+    input: crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationsIdentifier>> {
+    let input = input.child_hours_of_operations_summary_list?;
     ::std::option::Option::Some(input)
 }
 

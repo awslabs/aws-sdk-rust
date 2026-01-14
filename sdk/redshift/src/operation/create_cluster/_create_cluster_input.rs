@@ -202,6 +202,9 @@ pub struct CreateClusterInput {
     /// <p>Pattern: <code>^\[a-z0-9_-\]*\[a-z\]+\[a-z0-9_-\]*$</code></p>
     /// <p>Example: <code>my-catalog_01</code></p>
     pub catalog_name: ::std::option::Option<::std::string::String>,
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub extra_compute_for_automatic_optimization: ::std::option::Option<bool>,
 }
 impl CreateClusterInput {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -490,6 +493,11 @@ impl CreateClusterInput {
     pub fn catalog_name(&self) -> ::std::option::Option<&str> {
         self.catalog_name.as_deref()
     }
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn extra_compute_for_automatic_optimization(&self) -> ::std::option::Option<bool> {
+        self.extra_compute_for_automatic_optimization
+    }
 }
 impl ::std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -534,6 +542,7 @@ impl ::std::fmt::Debug for CreateClusterInput {
         formatter.field("multi_az", &self.multi_az);
         formatter.field("redshift_idc_application_arn", &self.redshift_idc_application_arn);
         formatter.field("catalog_name", &self.catalog_name);
+        formatter.field("extra_compute_for_automatic_optimization", &self.extra_compute_for_automatic_optimization);
         formatter.finish()
     }
 }
@@ -588,6 +597,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) multi_az: ::std::option::Option<bool>,
     pub(crate) redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
+    pub(crate) extra_compute_for_automatic_optimization: ::std::option::Option<bool>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -1531,6 +1541,23 @@ impl CreateClusterInputBuilder {
     pub fn get_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog_name
     }
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn extra_compute_for_automatic_optimization(mut self, input: bool) -> Self {
+        self.extra_compute_for_automatic_optimization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn set_extra_compute_for_automatic_optimization(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.extra_compute_for_automatic_optimization = input;
+        self
+    }
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn get_extra_compute_for_automatic_optimization(&self) -> &::std::option::Option<bool> {
+        &self.extra_compute_for_automatic_optimization
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -1576,6 +1603,7 @@ impl CreateClusterInputBuilder {
             multi_az: self.multi_az,
             redshift_idc_application_arn: self.redshift_idc_application_arn,
             catalog_name: self.catalog_name,
+            extra_compute_for_automatic_optimization: self.extra_compute_for_automatic_optimization,
         })
     }
 }
@@ -1622,6 +1650,7 @@ impl ::std::fmt::Debug for CreateClusterInputBuilder {
         formatter.field("multi_az", &self.multi_az);
         formatter.field("redshift_idc_application_arn", &self.redshift_idc_application_arn);
         formatter.field("catalog_name", &self.catalog_name);
+        formatter.field("extra_compute_for_automatic_optimization", &self.extra_compute_for_automatic_optimization);
         formatter.finish()
     }
 }

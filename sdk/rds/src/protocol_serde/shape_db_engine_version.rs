@@ -72,20 +72,17 @@ pub fn de_db_engine_version(
                 builder = builder.set_database_installation_files_s3_prefix(var_5);
             }
             ,
-            s if s.matches("CustomDBEngineVersionManifest") /* CustomDBEngineVersionManifest com.amazonaws.rds#DBEngineVersion$CustomDBEngineVersionManifest */ =>  {
+            s if s.matches("DatabaseInstallationFiles") /* DatabaseInstallationFiles com.amazonaws.rds#DBEngineVersion$DatabaseInstallationFiles */ =>  {
                 let var_6 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_custom_db_engine_version_manifest(var_6);
+                builder = builder.set_database_installation_files(var_6);
             }
             ,
-            s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds#DBEngineVersion$DBParameterGroupFamily */ =>  {
+            s if s.matches("CustomDBEngineVersionManifest") /* CustomDBEngineVersionManifest com.amazonaws.rds#DBEngineVersion$CustomDBEngineVersionManifest */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -95,10 +92,10 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_parameter_group_family(var_7);
+                builder = builder.set_custom_db_engine_version_manifest(var_7);
             }
             ,
-            s if s.matches("DBEngineDescription") /* DBEngineDescription com.amazonaws.rds#DBEngineVersion$DBEngineDescription */ =>  {
+            s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds#DBEngineVersion$DBParameterGroupFamily */ =>  {
                 let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -108,10 +105,10 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_description(var_8);
+                builder = builder.set_db_parameter_group_family(var_8);
             }
             ,
-            s if s.matches("DBEngineVersionArn") /* DBEngineVersionArn com.amazonaws.rds#DBEngineVersion$DBEngineVersionArn */ =>  {
+            s if s.matches("DBEngineDescription") /* DBEngineDescription com.amazonaws.rds#DBEngineVersion$DBEngineDescription */ =>  {
                 let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -121,10 +118,10 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_version_arn(var_9);
+                builder = builder.set_db_engine_description(var_9);
             }
             ,
-            s if s.matches("DBEngineVersionDescription") /* DBEngineVersionDescription com.amazonaws.rds#DBEngineVersion$DBEngineVersionDescription */ =>  {
+            s if s.matches("DBEngineVersionArn") /* DBEngineVersionArn com.amazonaws.rds#DBEngineVersion$DBEngineVersionArn */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -134,30 +131,33 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_version_description(var_10);
+                builder = builder.set_db_engine_version_arn(var_10);
+            }
+            ,
+            s if s.matches("DBEngineVersionDescription") /* DBEngineVersionDescription com.amazonaws.rds#DBEngineVersion$DBEngineVersionDescription */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_engine_version_description(var_11);
             }
             ,
             s if s.matches("DefaultCharacterSet") /* DefaultCharacterSet com.amazonaws.rds#DBEngineVersion$DefaultCharacterSet */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_character_set::de_character_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_default_character_set(var_11);
+                builder = builder.set_default_character_set(var_12);
             }
             ,
-            s if s.matches("Image") /* Image com.amazonaws.rds#DBEngineVersion$Image */ =>  {
-                let var_12 =
-                    Some(
-                        crate::protocol_serde::shape_custom_db_engine_version_ami::de_custom_db_engine_version_ami(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_image(var_12);
-            }
-            ,
-            s if s.matches("DBEngineMediaType") /* DBEngineMediaType com.amazonaws.rds#DBEngineVersion$DBEngineMediaType */ =>  {
+            s if s.matches("FailureReason") /* FailureReason com.amazonaws.rds#DBEngineVersion$FailureReason */ =>  {
                 let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -167,11 +167,21 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_db_engine_media_type(var_13);
+                builder = builder.set_failure_reason(var_13);
             }
             ,
-            s if s.matches("KMSKeyId") /* KMSKeyId com.amazonaws.rds#DBEngineVersion$KMSKeyId */ =>  {
+            s if s.matches("Image") /* Image com.amazonaws.rds#DBEngineVersion$Image */ =>  {
                 let var_14 =
+                    Some(
+                        crate::protocol_serde::shape_custom_db_engine_version_ami::de_custom_db_engine_version_ami(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_image(var_14);
+            }
+            ,
+            s if s.matches("DBEngineMediaType") /* DBEngineMediaType com.amazonaws.rds#DBEngineVersion$DBEngineMediaType */ =>  {
+                let var_15 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -180,11 +190,24 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_14);
+                builder = builder.set_db_engine_media_type(var_15);
+            }
+            ,
+            s if s.matches("KMSKeyId") /* KMSKeyId com.amazonaws.rds#DBEngineVersion$KMSKeyId */ =>  {
+                let var_16 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_kms_key_id(var_16);
             }
             ,
             s if s.matches("CreateTime") /* CreateTime com.amazonaws.rds#DBEngineVersion$CreateTime */ =>  {
-                let var_15 =
+                let var_17 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -194,61 +217,61 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_create_time(var_15);
+                builder = builder.set_create_time(var_17);
             }
             ,
             s if s.matches("SupportedCharacterSets") /* SupportedCharacterSets com.amazonaws.rds#DBEngineVersion$SupportedCharacterSets */ =>  {
-                let var_16 =
+                let var_18 =
                     Some(
                         crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_character_sets(var_16);
+                builder = builder.set_supported_character_sets(var_18);
             }
             ,
             s if s.matches("SupportedNcharCharacterSets") /* SupportedNcharCharacterSets com.amazonaws.rds#DBEngineVersion$SupportedNcharCharacterSets */ =>  {
-                let var_17 =
+                let var_19 =
                     Some(
                         crate::protocol_serde::shape_supported_character_sets_list::de_supported_character_sets_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_nchar_character_sets(var_17);
+                builder = builder.set_supported_nchar_character_sets(var_19);
             }
             ,
             s if s.matches("ValidUpgradeTarget") /* ValidUpgradeTarget com.amazonaws.rds#DBEngineVersion$ValidUpgradeTarget */ =>  {
-                let var_18 =
+                let var_20 =
                     Some(
                         crate::protocol_serde::shape_valid_upgrade_target_list::de_valid_upgrade_target_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_valid_upgrade_target(var_18);
+                builder = builder.set_valid_upgrade_target(var_20);
             }
             ,
             s if s.matches("SupportedTimezones") /* SupportedTimezones com.amazonaws.rds#DBEngineVersion$SupportedTimezones */ =>  {
-                let var_19 =
+                let var_21 =
                     Some(
                         crate::protocol_serde::shape_supported_timezones_list::de_supported_timezones_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_timezones(var_19);
+                builder = builder.set_supported_timezones(var_21);
             }
             ,
             s if s.matches("ExportableLogTypes") /* ExportableLogTypes com.amazonaws.rds#DBEngineVersion$ExportableLogTypes */ =>  {
-                let var_20 =
+                let var_22 =
                     Some(
                         crate::protocol_serde::shape_log_type_list::de_log_type_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_exportable_log_types(var_20);
+                builder = builder.set_exportable_log_types(var_22);
             }
             ,
             s if s.matches("SupportsLogExportsToCloudwatchLogs") /* SupportsLogExportsToCloudwatchLogs com.amazonaws.rds#DBEngineVersion$SupportsLogExportsToCloudwatchLogs */ =>  {
-                let var_21 =
+                let var_23 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -259,11 +282,11 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_21);
+                builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_23);
             }
             ,
             s if s.matches("SupportsReadReplica") /* SupportsReadReplica com.amazonaws.rds#DBEngineVersion$SupportsReadReplica */ =>  {
-                let var_22 =
+                let var_24 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -274,31 +297,31 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_read_replica(var_22);
+                builder = builder.set_supports_read_replica(var_24);
             }
             ,
             s if s.matches("SupportedEngineModes") /* SupportedEngineModes com.amazonaws.rds#DBEngineVersion$SupportedEngineModes */ =>  {
-                let var_23 =
+                let var_25 =
                     Some(
                         crate::protocol_serde::shape_engine_mode_list::de_engine_mode_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_engine_modes(var_23);
+                builder = builder.set_supported_engine_modes(var_25);
             }
             ,
             s if s.matches("SupportedFeatureNames") /* SupportedFeatureNames com.amazonaws.rds#DBEngineVersion$SupportedFeatureNames */ =>  {
-                let var_24 =
+                let var_26 =
                     Some(
                         crate::protocol_serde::shape_feature_name_list::de_feature_name_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_supported_feature_names(var_24);
+                builder = builder.set_supported_feature_names(var_26);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.rds#DBEngineVersion$Status */ =>  {
-                let var_25 =
+                let var_27 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -307,11 +330,11 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_25);
+                builder = builder.set_status(var_27);
             }
             ,
             s if s.matches("SupportsParallelQuery") /* SupportsParallelQuery com.amazonaws.rds#DBEngineVersion$SupportsParallelQuery */ =>  {
-                let var_26 =
+                let var_28 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -322,35 +345,10 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_parallel_query(var_26);
+                builder = builder.set_supports_parallel_query(var_28);
             }
             ,
             s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds#DBEngineVersion$SupportsGlobalDatabases */ =>  {
-                let var_27 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_supports_global_databases(var_27);
-            }
-            ,
-            s if s.matches("TagList") /* TagList com.amazonaws.rds#DBEngineVersion$TagList */ =>  {
-                let var_28 =
-                    Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_tag_list(var_28);
-            }
-            ,
-            s if s.matches("SupportsBabelfish") /* SupportsBabelfish com.amazonaws.rds#DBEngineVersion$SupportsBabelfish */ =>  {
                 let var_29 =
                     Some(
                          {
@@ -362,11 +360,21 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_babelfish(var_29);
+                builder = builder.set_supports_global_databases(var_29);
             }
             ,
-            s if s.matches("SupportsLimitlessDatabase") /* SupportsLimitlessDatabase com.amazonaws.rds#DBEngineVersion$SupportsLimitlessDatabase */ =>  {
+            s if s.matches("TagList") /* TagList com.amazonaws.rds#DBEngineVersion$TagList */ =>  {
                 let var_30 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_30);
+            }
+            ,
+            s if s.matches("SupportsBabelfish") /* SupportsBabelfish com.amazonaws.rds#DBEngineVersion$SupportsBabelfish */ =>  {
+                let var_31 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -377,35 +385,25 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_limitless_database(var_30);
+                builder = builder.set_supports_babelfish(var_31);
             }
             ,
-            s if s.matches("SupportsCertificateRotationWithoutRestart") /* SupportsCertificateRotationWithoutRestart com.amazonaws.rds#DBEngineVersion$SupportsCertificateRotationWithoutRestart */ =>  {
-                let var_31 =
+            s if s.matches("SupportsLimitlessDatabase") /* SupportsLimitlessDatabase com.amazonaws.rds#DBEngineVersion$SupportsLimitlessDatabase */ =>  {
+                let var_32 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
                         }
                         ?
                     )
                 ;
-                builder = builder.set_supports_certificate_rotation_without_restart(var_31);
+                builder = builder.set_supports_limitless_database(var_32);
             }
             ,
-            s if s.matches("SupportedCACertificateIdentifiers") /* SupportedCACertificateIdentifiers com.amazonaws.rds#DBEngineVersion$SupportedCACertificateIdentifiers */ =>  {
-                let var_32 =
-                    Some(
-                        crate::protocol_serde::shape_ca_certificate_identifiers_list::de_ca_certificate_identifiers_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_supported_ca_certificate_identifiers(var_32);
-            }
-            ,
-            s if s.matches("SupportsLocalWriteForwarding") /* SupportsLocalWriteForwarding com.amazonaws.rds#DBEngineVersion$SupportsLocalWriteForwarding */ =>  {
+            s if s.matches("SupportsCertificateRotationWithoutRestart") /* SupportsCertificateRotationWithoutRestart com.amazonaws.rds#DBEngineVersion$SupportsCertificateRotationWithoutRestart */ =>  {
                 let var_33 =
                     Some(
                          {
@@ -417,11 +415,36 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_local_write_forwarding(var_33);
+                builder = builder.set_supports_certificate_rotation_without_restart(var_33);
+            }
+            ,
+            s if s.matches("SupportedCACertificateIdentifiers") /* SupportedCACertificateIdentifiers com.amazonaws.rds#DBEngineVersion$SupportedCACertificateIdentifiers */ =>  {
+                let var_34 =
+                    Some(
+                        crate::protocol_serde::shape_ca_certificate_identifiers_list::de_ca_certificate_identifiers_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_ca_certificate_identifiers(var_34);
+            }
+            ,
+            s if s.matches("SupportsLocalWriteForwarding") /* SupportsLocalWriteForwarding com.amazonaws.rds#DBEngineVersion$SupportsLocalWriteForwarding */ =>  {
+                let var_35 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_local_write_forwarding(var_35);
             }
             ,
             s if s.matches("SupportsIntegrations") /* SupportsIntegrations com.amazonaws.rds#DBEngineVersion$SupportsIntegrations */ =>  {
-                let var_34 =
+                let var_36 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -432,40 +455,17 @@ pub fn de_db_engine_version(
                         ?
                     )
                 ;
-                builder = builder.set_supports_integrations(var_34);
+                builder = builder.set_supports_integrations(var_36);
             }
             ,
             s if s.matches("ServerlessV2FeaturesSupport") /* ServerlessV2FeaturesSupport com.amazonaws.rds#DBEngineVersion$ServerlessV2FeaturesSupport */ =>  {
-                let var_35 =
+                let var_37 =
                     Some(
                         crate::protocol_serde::shape_serverless_v2_features_support::de_serverless_v2_features_support(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_serverless_v2_features_support(var_35);
-            }
-            ,
-            s if s.matches("DatabaseInstallationFiles") /* DatabaseInstallationFiles com.amazonaws.rds#DBEngineVersion$DatabaseInstallationFiles */ =>  {
-                let var_36 =
-                    Some(
-                        crate::protocol_serde::shape_string_list::de_string_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_database_installation_files(var_36);
-            }
-            ,
-            s if s.matches("FailureReason") /* FailureReason com.amazonaws.rds#DBEngineVersion$FailureReason */ =>  {
-                let var_37 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_failure_reason(var_37);
+                builder = builder.set_serverless_v2_features_support(var_37);
             }
             ,
             _ => {}

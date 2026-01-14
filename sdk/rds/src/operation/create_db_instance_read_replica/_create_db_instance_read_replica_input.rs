@@ -315,6 +315,8 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
     /// <p>Tags to assign to resources associated with the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -322,8 +324,6 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
     /// </ul>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
-    pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
 }
 impl CreateDbInstanceReadReplicaInput {
     /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
@@ -742,6 +742,12 @@ impl CreateDbInstanceReadReplicaInput {
     pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
     }
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_storage_volumes.is_none()`.
+    pub fn additional_storage_volumes(&self) -> &[crate::types::AdditionalStorageVolume] {
+        self.additional_storage_volumes.as_deref().unwrap_or_default()
+    }
     /// <p>Tags to assign to resources associated with the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -752,12 +758,6 @@ impl CreateDbInstanceReadReplicaInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
-    }
-    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_storage_volumes.is_none()`.
-    pub fn additional_storage_volumes(&self) -> &[crate::types::AdditionalStorageVolume] {
-        self.additional_storage_volumes.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for CreateDbInstanceReadReplicaInput {
@@ -810,8 +810,8 @@ impl ::std::fmt::Debug for CreateDbInstanceReadReplicaInput {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("upgrade_storage_config", &self.upgrade_storage_config);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
-        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.finish()
     }
 }
@@ -873,8 +873,8 @@ pub struct CreateDbInstanceReadReplicaInputBuilder {
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) upgrade_storage_config: ::std::option::Option<bool>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</p>
@@ -2220,6 +2220,26 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.ca_certificate_identifier
     }
+    /// Appends an item to `additional_storage_volumes`.
+    ///
+    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
+    ///
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn additional_storage_volumes(mut self, input: crate::types::AdditionalStorageVolume) -> Self {
+        let mut v = self.additional_storage_volumes.unwrap_or_default();
+        v.push(input);
+        self.additional_storage_volumes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn set_additional_storage_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>) -> Self {
+        self.additional_storage_volumes = input;
+        self
+    }
+    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>> {
+        &self.additional_storage_volumes
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -2254,26 +2274,6 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// </ul>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
-    }
-    /// Appends an item to `additional_storage_volumes`.
-    ///
-    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
-    ///
-    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
-    pub fn additional_storage_volumes(mut self, input: crate::types::AdditionalStorageVolume) -> Self {
-        let mut v = self.additional_storage_volumes.unwrap_or_default();
-        v.push(input);
-        self.additional_storage_volumes = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
-    pub fn set_additional_storage_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>) -> Self {
-        self.additional_storage_volumes = input;
-        self
-    }
-    /// <p>A list of additional storage volumes to create for the DB instance. You can create up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
-    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>> {
-        &self.additional_storage_volumes
     }
     /// Consumes the builder and constructs a [`CreateDbInstanceReadReplicaInput`](crate::operation::create_db_instance_read_replica::CreateDbInstanceReadReplicaInput).
     pub fn build(
@@ -2330,8 +2330,8 @@ impl CreateDbInstanceReadReplicaInputBuilder {
             dedicated_log_volume: self.dedicated_log_volume,
             upgrade_storage_config: self.upgrade_storage_config,
             ca_certificate_identifier: self.ca_certificate_identifier,
-            tag_specifications: self.tag_specifications,
             additional_storage_volumes: self.additional_storage_volumes,
+            tag_specifications: self.tag_specifications,
         })
     }
 }
@@ -2385,8 +2385,8 @@ impl ::std::fmt::Debug for CreateDbInstanceReadReplicaInputBuilder {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("upgrade_storage_config", &self.upgrade_storage_config);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
-        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.finish()
     }
 }

@@ -78,6 +78,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "templateBodyExampleParams" => {
+                            builder = builder.set_template_body_example_params(
+                                crate::protocol_serde::shape_meta_template_body_example_params::de_meta_template_body_example_params(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

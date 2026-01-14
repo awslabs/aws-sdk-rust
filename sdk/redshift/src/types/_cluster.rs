@@ -200,6 +200,9 @@ pub struct Cluster {
     pub lakehouse_registration_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Glue data catalog associated with the cluster enabled with Amazon Redshift federated permissions.</p>
     pub catalog_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A boolean value that, if <code>true</code>, indicates that the cluster allocates additional compute resources to run automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub extra_compute_for_automatic_optimization: ::std::option::Option<::std::string::String>,
 }
 impl Cluster {
     /// <p>The unique identifier of the cluster.</p>
@@ -538,6 +541,11 @@ impl Cluster {
     pub fn catalog_arn(&self) -> ::std::option::Option<&str> {
         self.catalog_arn.as_deref()
     }
+    /// <p>A boolean value that, if <code>true</code>, indicates that the cluster allocates additional compute resources to run automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn extra_compute_for_automatic_optimization(&self) -> ::std::option::Option<&str> {
+        self.extra_compute_for_automatic_optimization.as_deref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -612,6 +620,7 @@ pub struct ClusterBuilder {
     pub(crate) multi_az_secondary: ::std::option::Option<crate::types::SecondaryClusterInfo>,
     pub(crate) lakehouse_registration_status: ::std::option::Option<::std::string::String>,
     pub(crate) catalog_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) extra_compute_for_automatic_optimization: ::std::option::Option<::std::string::String>,
 }
 impl ClusterBuilder {
     /// <p>The unique identifier of the cluster.</p>
@@ -1752,6 +1761,23 @@ impl ClusterBuilder {
     pub fn get_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog_arn
     }
+    /// <p>A boolean value that, if <code>true</code>, indicates that the cluster allocates additional compute resources to run automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn extra_compute_for_automatic_optimization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.extra_compute_for_automatic_optimization = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A boolean value that, if <code>true</code>, indicates that the cluster allocates additional compute resources to run automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn set_extra_compute_for_automatic_optimization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.extra_compute_for_automatic_optimization = input;
+        self
+    }
+    /// <p>A boolean value that, if <code>true</code>, indicates that the cluster allocates additional compute resources to run automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn get_extra_compute_for_automatic_optimization(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extra_compute_for_automatic_optimization
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -1817,6 +1843,7 @@ impl ClusterBuilder {
             multi_az_secondary: self.multi_az_secondary,
             lakehouse_registration_status: self.lakehouse_registration_status,
             catalog_arn: self.catalog_arn,
+            extra_compute_for_automatic_optimization: self.extra_compute_for_automatic_optimization,
         }
     }
 }

@@ -16,6 +16,8 @@ pub struct HoursOfOperation {
     pub time_zone: ::std::option::Option<::std::string::String>,
     /// <p>Configuration information for the hours of operation.</p>
     pub config: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>,
+    /// <p>Information about parent hours of operations.</p>
+    pub parent_hours_of_operations: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationsIdentifier>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp when this resource was last modified.</p>
@@ -50,6 +52,12 @@ impl HoursOfOperation {
     pub fn config(&self) -> &[crate::types::HoursOfOperationConfig] {
         self.config.as_deref().unwrap_or_default()
     }
+    /// <p>Information about parent hours of operations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parent_hours_of_operations.is_none()`.
+    pub fn parent_hours_of_operations(&self) -> &[crate::types::HoursOfOperationsIdentifier] {
+        self.parent_hours_of_operations.as_deref().unwrap_or_default()
+    }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -80,6 +88,7 @@ pub struct HoursOfOperationBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) time_zone: ::std::option::Option<::std::string::String>,
     pub(crate) config: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>>,
+    pub(crate) parent_hours_of_operations: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationsIdentifier>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
@@ -175,6 +184,29 @@ impl HoursOfOperationBuilder {
     pub fn get_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>> {
         &self.config
     }
+    /// Appends an item to `parent_hours_of_operations`.
+    ///
+    /// To override the contents of this collection use [`set_parent_hours_of_operations`](Self::set_parent_hours_of_operations).
+    ///
+    /// <p>Information about parent hours of operations.</p>
+    pub fn parent_hours_of_operations(mut self, input: crate::types::HoursOfOperationsIdentifier) -> Self {
+        let mut v = self.parent_hours_of_operations.unwrap_or_default();
+        v.push(input);
+        self.parent_hours_of_operations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about parent hours of operations.</p>
+    pub fn set_parent_hours_of_operations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationsIdentifier>>,
+    ) -> Self {
+        self.parent_hours_of_operations = input;
+        self
+    }
+    /// <p>Information about parent hours of operations.</p>
+    pub fn get_parent_hours_of_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationsIdentifier>> {
+        &self.parent_hours_of_operations
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -232,6 +264,7 @@ impl HoursOfOperationBuilder {
             description: self.description,
             time_zone: self.time_zone,
             config: self.config,
+            parent_hours_of_operations: self.parent_hours_of_operations,
             tags: self.tags,
             last_modified_time: self.last_modified_time,
             last_modified_region: self.last_modified_region,

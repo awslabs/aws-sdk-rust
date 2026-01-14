@@ -113,6 +113,17 @@ impl DescribeEngineDefaultClusterParametersFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_engine_default_cluster_parameters::paginator::DescribeEngineDefaultClusterParametersPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_engine_default_cluster_parameters::paginator::DescribeEngineDefaultClusterParametersPaginator {
+        crate::operation::describe_engine_default_cluster_parameters::paginator::DescribeEngineDefaultClusterParametersPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The name of the DB cluster parameter group family to return engine parameter information for.</p>
     pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_parameter_group_family(input.into());

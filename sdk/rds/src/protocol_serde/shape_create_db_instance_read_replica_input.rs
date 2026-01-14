@@ -292,24 +292,24 @@ pub fn ser_create_db_instance_read_replica_input_input_input(
         scope_108.string(var_109);
     }
     #[allow(unused_mut)]
-    let mut scope_110 = writer.prefix("TagSpecifications");
-    if let Some(var_111) = &input.tag_specifications {
-        let mut list_113 = scope_110.start_list(false, Some("item"));
+    let mut scope_110 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_111) = &input.additional_storage_volumes {
+        let mut list_113 = scope_110.start_list(false, None);
         for item_112 in var_111 {
             #[allow(unused_mut)]
             let mut entry_114 = list_113.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_114, item_112)?;
+            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_114, item_112)?;
         }
         list_113.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_115 = writer.prefix("AdditionalStorageVolumes");
-    if let Some(var_116) = &input.additional_storage_volumes {
-        let mut list_118 = scope_115.start_list(false, None);
+    let mut scope_115 = writer.prefix("TagSpecifications");
+    if let Some(var_116) = &input.tag_specifications {
+        let mut list_118 = scope_115.start_list(false, Some("item"));
         for item_117 in var_116 {
             #[allow(unused_mut)]
             let mut entry_119 = list_118.entry();
-            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_119, item_117)?;
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_119, item_117)?;
         }
         list_118.finish();
     }

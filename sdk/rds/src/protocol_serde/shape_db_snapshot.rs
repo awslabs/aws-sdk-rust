@@ -491,8 +491,18 @@ pub fn de_db_snapshot(
                 builder = builder.set_dedicated_log_volume(var_36);
             }
             ,
-            s if s.matches("SnapshotAvailabilityZone") /* SnapshotAvailabilityZone com.amazonaws.rds#DBSnapshot$SnapshotAvailabilityZone */ =>  {
+            s if s.matches("AdditionalStorageVolumes") /* AdditionalStorageVolumes com.amazonaws.rds#DBSnapshot$AdditionalStorageVolumes */ =>  {
                 let var_37 =
+                    Some(
+                        crate::protocol_serde::shape_additional_storage_volumes_list::de_additional_storage_volumes_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_additional_storage_volumes(var_37);
+            }
+            ,
+            s if s.matches("SnapshotAvailabilityZone") /* SnapshotAvailabilityZone com.amazonaws.rds#DBSnapshot$SnapshotAvailabilityZone */ =>  {
+                let var_38 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -501,17 +511,7 @@ pub fn de_db_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_availability_zone(var_37);
-            }
-            ,
-            s if s.matches("AdditionalStorageVolumes") /* AdditionalStorageVolumes com.amazonaws.rds#DBSnapshot$AdditionalStorageVolumes */ =>  {
-                let var_38 =
-                    Some(
-                        crate::protocol_serde::shape_additional_storage_volumes_list::de_additional_storage_volumes_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_additional_storage_volumes(var_38);
+                builder = builder.set_snapshot_availability_zone(var_38);
             }
             ,
             _ => {}
