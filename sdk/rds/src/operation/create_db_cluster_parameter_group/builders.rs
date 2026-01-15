@@ -161,7 +161,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Example: <code>postgres13</code></p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine &lt;engine&gt;</code></p>
     /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
     /// <p>The output contains duplicates.</p>
@@ -191,7 +191,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Example: <code>postgres13</code></p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine &lt;engine&gt;</code></p>
     /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
     /// <p>The output contains duplicates.</p>
@@ -221,7 +221,7 @@ impl CreateDBClusterParameterGroupFluentBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Example: <code>postgres13</code></p>
     /// <p>To list all of the available parameter group families for a DB engine, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine</code></p>
+    /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine &lt;engine&gt;</code></p>
     /// <p>For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --query "DBEngineVersions\[\].DBParameterGroupFamily" --engine aurora-postgresql</code></p><note>
     /// <p>The output contains duplicates.</p>

@@ -435,8 +435,6 @@ pub use crate::types::_ai_prompt_data::AiPromptData;
 
 pub use crate::types::_ai_prompt_inference_configuration::AiPromptInferenceConfiguration;
 
-pub use crate::types::_text_ai_prompt_inference_configuration::TextAiPromptInferenceConfiguration;
-
 pub use crate::types::_ai_prompt_template_configuration::AiPromptTemplateConfiguration;
 
 pub use crate::types::_text_full_ai_prompt_edit_template_configuration::TextFullAiPromptEditTemplateConfiguration;
@@ -1032,8 +1030,6 @@ mod _tag_condition;
 mod _tag_filter;
 
 mod _target_type;
-
-mod _text_ai_prompt_inference_configuration;
 
 mod _text_data;
 

@@ -18,7 +18,7 @@ use std::fmt;
 pub use client_rate_limiter::{
     ClientRateLimiter, ClientRateLimiterBuilder, ClientRateLimiterPartition,
 };
-pub use token_bucket::{TokenBucket, TokenBucketBuilder};
+pub use token_bucket::{TokenBucket, TokenBucketBuilder, MAXIMUM_CAPACITY};
 
 use std::borrow::Cow;
 

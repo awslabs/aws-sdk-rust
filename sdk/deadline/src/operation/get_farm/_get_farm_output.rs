@@ -14,7 +14,7 @@ pub struct GetFarmOutput {
     /// </important>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key used on the farm.</p>
-    pub kms_key_arn: ::std::string::String,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the resource was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The user or system that created this resource.</p>
@@ -45,9 +45,8 @@ impl GetFarmOutput {
         self.description.as_deref()
     }
     /// <p>The ARN of the KMS key used on the farm.</p>
-    pub fn kms_key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.kms_key_arn.deref()
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
     }
     /// <p>The date and time the resource was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -166,7 +165,6 @@ impl GetFarmOutputBuilder {
         &self.description
     }
     /// <p>The ARN of the KMS key used on the farm.</p>
-    /// This field is required.
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
@@ -251,7 +249,6 @@ impl GetFarmOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`farm_id`](crate::operation::get_farm::builders::GetFarmOutputBuilder::farm_id)
     /// - [`display_name`](crate::operation::get_farm::builders::GetFarmOutputBuilder::display_name)
-    /// - [`kms_key_arn`](crate::operation::get_farm::builders::GetFarmOutputBuilder::kms_key_arn)
     /// - [`created_at`](crate::operation::get_farm::builders::GetFarmOutputBuilder::created_at)
     /// - [`created_by`](crate::operation::get_farm::builders::GetFarmOutputBuilder::created_by)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_farm::GetFarmOutput, ::aws_smithy_types::error::operation::BuildError> {
@@ -269,12 +266,7 @@ impl GetFarmOutputBuilder {
                 )
             })?,
             description: self.description,
-            kms_key_arn: self.kms_key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kms_key_arn",
-                    "kms_key_arn was not specified but it is required when building GetFarmOutput",
-                )
-            })?,
+            kms_key_arn: self.kms_key_arn,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",

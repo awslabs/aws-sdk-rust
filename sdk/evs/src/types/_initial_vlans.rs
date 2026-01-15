@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitialVlans {
-    /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESXi hosts and communicating with VMware vCenter Server.</p>
+    /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESX hosts and communicating with VMware vCenter Server.</p>
     pub vmk_management: ::std::option::Option<crate::types::InitialVlanInfo>,
     /// <p>The VM management VLAN subnet. This VLAN subnet carries traffic for vSphere virtual machines.</p>
     pub vm_management: ::std::option::Option<crate::types::InitialVlanInfo>,
     /// <p>The vMotion VLAN subnet. This VLAN subnet carries traffic for vSphere vMotion.</p>
     pub v_motion: ::std::option::Option<crate::types::InitialVlanInfo>,
-    /// <p>The vSAN VLAN subnet. This VLAN subnet carries the communication between ESXi hosts to implement a vSAN shared storage pool.</p>
+    /// <p>The vSAN VLAN subnet. This VLAN subnet carries the communication between ESX hosts to implement a vSAN shared storage pool.</p>
     pub v_san: ::std::option::Option<crate::types::InitialVlanInfo>,
     /// <p>The VTEP VLAN subnet. This VLAN subnet handles internal network traffic between virtual machines within a VCF instance.</p>
     pub v_tep: ::std::option::Option<crate::types::InitialVlanInfo>,
@@ -26,7 +26,7 @@ pub struct InitialVlans {
     /// <li>
     /// <p>The HCX public VLAN CIDR block must be added to the VPC as a secondary CIDR block.</p></li>
     /// <li>
-    /// <p>Must have at least three Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
+    /// <p>Must have at least two Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
     /// </ul>
     pub hcx: ::std::option::Option<crate::types::InitialVlanInfo>,
     /// <p>An additional VLAN subnet that can be used to extend VCF capabilities once configured. For example, you can configure an expansion VLAN subnet to use NSX Federation for centralized management and synchronization of multiple NSX deployments across different locations.</p>
@@ -39,7 +39,7 @@ pub struct InitialVlans {
     pub hcx_network_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl InitialVlans {
-    /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESXi hosts and communicating with VMware vCenter Server.</p>
+    /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESX hosts and communicating with VMware vCenter Server.</p>
     pub fn vmk_management(&self) -> ::std::option::Option<&crate::types::InitialVlanInfo> {
         self.vmk_management.as_ref()
     }
@@ -51,7 +51,7 @@ impl InitialVlans {
     pub fn v_motion(&self) -> ::std::option::Option<&crate::types::InitialVlanInfo> {
         self.v_motion.as_ref()
     }
-    /// <p>The vSAN VLAN subnet. This VLAN subnet carries the communication between ESXi hosts to implement a vSAN shared storage pool.</p>
+    /// <p>The vSAN VLAN subnet. This VLAN subnet carries the communication between ESX hosts to implement a vSAN shared storage pool.</p>
     pub fn v_san(&self) -> ::std::option::Option<&crate::types::InitialVlanInfo> {
         self.v_san.as_ref()
     }
@@ -75,7 +75,7 @@ impl InitialVlans {
     /// <li>
     /// <p>The HCX public VLAN CIDR block must be added to the VPC as a secondary CIDR block.</p></li>
     /// <li>
-    /// <p>Must have at least three Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
+    /// <p>Must have at least two Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
     /// </ul>
     pub fn hcx(&self) -> ::std::option::Option<&crate::types::InitialVlanInfo> {
         self.hcx.as_ref()
@@ -122,18 +122,18 @@ pub struct InitialVlansBuilder {
     pub(crate) hcx_network_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl InitialVlansBuilder {
-    /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESXi hosts and communicating with VMware vCenter Server.</p>
+    /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESX hosts and communicating with VMware vCenter Server.</p>
     /// This field is required.
     pub fn vmk_management(mut self, input: crate::types::InitialVlanInfo) -> Self {
         self.vmk_management = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESXi hosts and communicating with VMware vCenter Server.</p>
+    /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESX hosts and communicating with VMware vCenter Server.</p>
     pub fn set_vmk_management(mut self, input: ::std::option::Option<crate::types::InitialVlanInfo>) -> Self {
         self.vmk_management = input;
         self
     }
-    /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESXi hosts and communicating with VMware vCenter Server.</p>
+    /// <p>The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing ESX hosts and communicating with VMware vCenter Server.</p>
     pub fn get_vmk_management(&self) -> &::std::option::Option<crate::types::InitialVlanInfo> {
         &self.vmk_management
     }
@@ -167,18 +167,18 @@ impl InitialVlansBuilder {
     pub fn get_v_motion(&self) -> &::std::option::Option<crate::types::InitialVlanInfo> {
         &self.v_motion
     }
-    /// <p>The vSAN VLAN subnet. This VLAN subnet carries the communication between ESXi hosts to implement a vSAN shared storage pool.</p>
+    /// <p>The vSAN VLAN subnet. This VLAN subnet carries the communication between ESX hosts to implement a vSAN shared storage pool.</p>
     /// This field is required.
     pub fn v_san(mut self, input: crate::types::InitialVlanInfo) -> Self {
         self.v_san = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The vSAN VLAN subnet. This VLAN subnet carries the communication between ESXi hosts to implement a vSAN shared storage pool.</p>
+    /// <p>The vSAN VLAN subnet. This VLAN subnet carries the communication between ESX hosts to implement a vSAN shared storage pool.</p>
     pub fn set_v_san(mut self, input: ::std::option::Option<crate::types::InitialVlanInfo>) -> Self {
         self.v_san = input;
         self
     }
-    /// <p>The vSAN VLAN subnet. This VLAN subnet carries the communication between ESXi hosts to implement a vSAN shared storage pool.</p>
+    /// <p>The vSAN VLAN subnet. This VLAN subnet carries the communication between ESX hosts to implement a vSAN shared storage pool.</p>
     pub fn get_v_san(&self) -> &::std::option::Option<crate::types::InitialVlanInfo> {
         &self.v_san
     }
@@ -235,7 +235,7 @@ impl InitialVlansBuilder {
     /// <li>
     /// <p>The HCX public VLAN CIDR block must be added to the VPC as a secondary CIDR block.</p></li>
     /// <li>
-    /// <p>Must have at least three Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
+    /// <p>Must have at least two Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
     /// </ul>
     /// This field is required.
     pub fn hcx(mut self, input: crate::types::InitialVlanInfo) -> Self {
@@ -250,7 +250,7 @@ impl InitialVlansBuilder {
     /// <li>
     /// <p>The HCX public VLAN CIDR block must be added to the VPC as a secondary CIDR block.</p></li>
     /// <li>
-    /// <p>Must have at least three Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
+    /// <p>Must have at least two Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
     /// </ul>
     pub fn set_hcx(mut self, input: ::std::option::Option<crate::types::InitialVlanInfo>) -> Self {
         self.hcx = input;
@@ -264,7 +264,7 @@ impl InitialVlansBuilder {
     /// <li>
     /// <p>The HCX public VLAN CIDR block must be added to the VPC as a secondary CIDR block.</p></li>
     /// <li>
-    /// <p>Must have at least three Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
+    /// <p>Must have at least two Elastic IP addresses to be allocated from the public IPAM pool for HCX components.</p></li>
     /// </ul>
     pub fn get_hcx(&self) -> &::std::option::Option<crate::types::InitialVlanInfo> {
         &self.hcx

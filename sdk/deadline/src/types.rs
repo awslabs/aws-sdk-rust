@@ -7,13 +7,13 @@ pub use crate::types::_service_quota_exceeded_exception_reason::ServiceQuotaExce
 
 pub use crate::types::_monitor_summary::MonitorSummary;
 
+pub use crate::types::_metered_product_summary::MeteredProductSummary;
+
 pub use crate::types::_conflict_exception_reason::ConflictExceptionReason;
 
 pub use crate::types::_license_endpoint_status::LicenseEndpointStatus;
 
 pub use crate::types::_license_endpoint_summary::LicenseEndpointSummary;
-
-pub use crate::types::_metered_product_summary::MeteredProductSummary;
 
 pub use crate::types::_file_system_location::FileSystemLocation;
 
@@ -108,6 +108,10 @@ pub use crate::types::_job_member::JobMember;
 pub use crate::types::_parameter_space::ParameterSpace;
 
 pub use crate::types::_step_parameter::StepParameter;
+
+pub use crate::types::_step_parameter_chunks::StepParameterChunks;
+
+pub use crate::types::_range_constraint::RangeConstraint;
 
 pub use crate::types::_step_parameter_type::StepParameterType;
 
@@ -341,9 +345,11 @@ pub use crate::types::_logical_operator::LogicalOperator;
 
 pub use crate::types::_search_filter_expression::SearchFilterExpression;
 
-pub use crate::types::_string_filter_expression::StringFilterExpression;
+pub use crate::types::_string_list_filter_expression::StringListFilterExpression;
 
 pub use crate::types::_comparison_operator::ComparisonOperator;
+
+pub use crate::types::_string_filter_expression::StringFilterExpression;
 
 pub use crate::types::_search_term_filter_expression::SearchTermFilterExpression;
 
@@ -599,6 +605,8 @@ mod _queue_status;
 
 mod _queue_summary;
 
+mod _range_constraint;
+
 mod _response_budget_action;
 
 mod _run_as;
@@ -667,6 +675,8 @@ mod _step_lifecycle_status;
 
 mod _step_parameter;
 
+mod _step_parameter_chunks;
+
 mod _step_parameter_type;
 
 mod _step_required_capabilities;
@@ -682,6 +692,8 @@ mod _storage_profile_operating_system_family;
 mod _storage_profile_summary;
 
 mod _string_filter_expression;
+
+mod _string_list_filter_expression;
 
 mod _sync_input_job_attachments_session_action_definition;
 

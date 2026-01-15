@@ -17,6 +17,12 @@ use std::{borrow::Cow, fmt::Debug, sync::Arc};
 pub trait ProvideMeter: Send + Sync + Debug {
     /// Get or create a named [Meter].
     fn get_meter(&self, scope: &'static str, attributes: Option<&Attributes>) -> Meter;
+
+    /// Returns the name of this provider implementation.
+    /// This is used for feature tracking without requiring type imports.
+    fn provider_name(&self) -> &'static str {
+        "unknown"
+    }
 }
 
 /// The entry point to creating instruments. A grouping of related metrics.

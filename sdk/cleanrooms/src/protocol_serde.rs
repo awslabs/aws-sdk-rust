@@ -659,6 +659,8 @@ pub(crate) mod shape_id_mapping_workflows_supported;
 
 pub(crate) mod shape_id_namespace_association_input_reference_properties_summary;
 
+pub(crate) mod shape_job_parameter_map;
+
 pub(crate) mod shape_member_change_specification;
 
 pub(crate) mod shape_membership_model_inference_payment_config;

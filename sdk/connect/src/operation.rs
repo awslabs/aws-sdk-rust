@@ -25,6 +25,9 @@ pub mod associate_email_address_alias;
 /// Types for the `AssociateFlow` operation.
 pub mod associate_flow;
 
+/// Types for the `AssociateHoursOfOperations` operation.
+pub mod associate_hours_of_operations;
+
 /// Types for the `AssociateInstanceStorageConfig` operation.
 pub mod associate_instance_storage_config;
 
@@ -409,6 +412,9 @@ pub mod disassociate_email_address_alias;
 /// Types for the `DisassociateFlow` operation.
 pub mod disassociate_flow;
 
+/// Types for the `DisassociateHoursOfOperations` operation.
+pub mod disassociate_hours_of_operations;
+
 /// Types for the `DisassociateInstanceStorageConfig` operation.
 pub mod disassociate_instance_storage_config;
 
@@ -513,6 +519,9 @@ pub mod list_authentication_profiles;
 
 /// Types for the `ListBots` operation.
 pub mod list_bots;
+
+/// Types for the `ListChildHoursOfOperations` operation.
+pub mod list_child_hours_of_operations;
 
 /// Types for the `ListContactEvaluations` operation.
 pub mod list_contact_evaluations;

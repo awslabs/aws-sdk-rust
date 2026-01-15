@@ -177,6 +177,8 @@ mod disassociate_eip_from_vlan;
 
 mod get_environment;
 
+mod get_versions;
+
 mod list_environment_hosts;
 
 mod list_environment_vlans;

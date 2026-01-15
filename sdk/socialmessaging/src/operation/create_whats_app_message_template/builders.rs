@@ -22,7 +22,9 @@ impl crate::operation::create_whats_app_message_template::builders::CreateWhatsA
 }
 /// Fluent builder constructing a request to `CreateWhatsAppMessageTemplate`.
 ///
-/// <p>Creates a new WhatsApp message template from a custom definition.</p>
+/// <p>Creates a new WhatsApp message template from a custom definition.</p><note>
+/// <p>Amazon Web Services End User Messaging Social does not store any WhatsApp message template content.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWhatsAppMessageTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

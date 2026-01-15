@@ -159,6 +159,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "extraComputeForAutomaticOptimization" => {
+                            builder = builder.set_extra_compute_for_automatic_optimization(
+                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

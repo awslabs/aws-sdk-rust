@@ -1246,6 +1246,18 @@ pub(crate) fn evaluation_summary_correct_errors(
     builder
 }
 
+pub(crate) fn hours_of_operations_identifier_correct_errors(
+    mut builder: crate::types::builders::HoursOfOperationsIdentifierBuilder,
+) -> crate::types::builders::HoursOfOperationsIdentifierBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn kinesis_firehose_config_correct_errors(
     mut builder: crate::types::builders::KinesisFirehoseConfigBuilder,
 ) -> crate::types::builders::KinesisFirehoseConfigBuilder {
@@ -1321,6 +1333,18 @@ pub(crate) fn quick_connect_config_correct_errors(
 ) -> crate::types::builders::QuickConnectConfigBuilder {
     if builder.quick_connect_type.is_none() {
         builder.quick_connect_type = "no value was set".parse::<crate::types::QuickConnectType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn recurrence_config_correct_errors(
+    mut builder: crate::types::builders::RecurrenceConfigBuilder,
+) -> crate::types::builders::RecurrenceConfigBuilder {
+    if builder.recurrence_pattern.is_none() {
+        builder.recurrence_pattern = {
+            let builder = crate::types::builders::RecurrencePatternBuilder::default();
+            crate::serde_util::recurrence_pattern_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -1665,6 +1689,18 @@ pub(crate) fn real_time_contact_analysis_segment_transcript_correct_errors(
     }
     if builder.time.is_none() {
         builder.time = Some(crate::types::RealTimeContactAnalysisTimeData::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn recurrence_pattern_correct_errors(
+    mut builder: crate::types::builders::RecurrencePatternBuilder,
+) -> crate::types::builders::RecurrencePatternBuilder {
+    if builder.frequency.is_none() {
+        builder.frequency = "no value was set".parse::<crate::types::RecurrenceFrequency>().ok()
+    }
+    if builder.interval.is_none() {
+        builder.interval = Some(Default::default())
     }
     builder
 }

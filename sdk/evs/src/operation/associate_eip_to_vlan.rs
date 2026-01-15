@@ -268,7 +268,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AssociateEipT
 pub enum AssociateEipToVlanError {
     /// <p>A service resource associated with the request could not be found. The resource might not be specified correctly, or it may have a <code>state</code> of <code>DELETED</code>.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The operation couldn't be performed because the service is throttling requests. This exception is thrown when there are too many requests accepted concurrently from the service endpoint.</p>
+    /// <p>The operation could not be performed because the service is throttling requests. This exception is thrown when the service endpoint receives too many concurrent requests.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the specified constraints. You will see this exception if invalid inputs are provided for any of the Amazon EVS environment operations, or if a list operation is performed on an environment resource that is still initializing.</p>
     ValidationException(crate::types::error::ValidationException),

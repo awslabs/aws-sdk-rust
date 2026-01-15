@@ -298,6 +298,9 @@ mod delete_object_tagging_test {
         let (http_client, request_receiver) = ::aws_smithy_http_client::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder()
             .with_test_defaults()
+            // TODO(https://github.com/smithy-lang/smithy-rs/issues/4177):
+            //  Until the incorrect separation is addressed, we need to rely on this workaround.
+            .allow_no_auth()
             .endpoint_url("https://s3.us-west-2.amazonaws.com");
 
         let mut config_builder = config_builder;
@@ -335,6 +338,9 @@ mod delete_object_tagging_test {
         let (http_client, request_receiver) = ::aws_smithy_http_client::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder()
             .with_test_defaults()
+            // TODO(https://github.com/smithy-lang/smithy-rs/issues/4177):
+            //  Until the incorrect separation is addressed, we need to rely on this workaround.
+            .allow_no_auth()
             .endpoint_url("https://s3.us-west-2.amazonaws.com");
 
         let mut config_builder = config_builder;

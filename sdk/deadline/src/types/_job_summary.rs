@@ -50,7 +50,7 @@ pub struct JobSummary {
     /// <p><code>SUCCEEDED</code>–the task has succeeded.</p></li>
     /// </ul>
     pub task_run_status: ::std::option::Option<crate::types::TaskRunStatus>,
-    /// <p>The task status to start with on the job.</p>
+    /// <p>The task status to update the job's tasks to.</p>
     pub target_task_run_status: ::std::option::Option<crate::types::JobTargetTaskRunStatus>,
     /// <p>The number of tasks running on the job.</p>
     pub task_run_status_counts: ::std::option::Option<::std::collections::HashMap<crate::types::TaskRunStatus, i32>>,
@@ -142,7 +142,7 @@ impl JobSummary {
     pub fn task_run_status(&self) -> ::std::option::Option<&crate::types::TaskRunStatus> {
         self.task_run_status.as_ref()
     }
-    /// <p>The task status to start with on the job.</p>
+    /// <p>The task status to update the job's tasks to.</p>
     pub fn target_task_run_status(&self) -> ::std::option::Option<&crate::types::JobTargetTaskRunStatus> {
         self.target_task_run_status.as_ref()
     }
@@ -446,17 +446,17 @@ impl JobSummaryBuilder {
     pub fn get_task_run_status(&self) -> &::std::option::Option<crate::types::TaskRunStatus> {
         &self.task_run_status
     }
-    /// <p>The task status to start with on the job.</p>
+    /// <p>The task status to update the job's tasks to.</p>
     pub fn target_task_run_status(mut self, input: crate::types::JobTargetTaskRunStatus) -> Self {
         self.target_task_run_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The task status to start with on the job.</p>
+    /// <p>The task status to update the job's tasks to.</p>
     pub fn set_target_task_run_status(mut self, input: ::std::option::Option<crate::types::JobTargetTaskRunStatus>) -> Self {
         self.target_task_run_status = input;
         self
     }
-    /// <p>The task status to start with on the job.</p>
+    /// <p>The task status to update the job's tasks to.</p>
     pub fn get_target_task_run_status(&self) -> &::std::option::Option<crate::types::JobTargetTaskRunStatus> {
         &self.target_task_run_status
     }

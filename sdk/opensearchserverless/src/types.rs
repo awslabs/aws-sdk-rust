@@ -41,6 +41,18 @@ pub use crate::types::_lifecycle_policy_detail::LifecyclePolicyDetail;
 
 pub use crate::types::_lifecycle_policy_summary::LifecyclePolicySummary;
 
+pub use crate::types::_update_collection_group_detail::UpdateCollectionGroupDetail;
+
+pub use crate::types::_collection_group_capacity_limits::CollectionGroupCapacityLimits;
+
+pub use crate::types::_create_collection_group_detail::CreateCollectionGroupDetail;
+
+pub use crate::types::_tag::Tag;
+
+pub use crate::types::_standby_replicas::StandbyReplicas;
+
+pub use crate::types::_collection_group_summary::CollectionGroupSummary;
+
 pub use crate::types::_delete_collection_detail::DeleteCollectionDetail;
 
 pub use crate::types::_collection_status::CollectionStatus;
@@ -55,9 +67,7 @@ pub use crate::types::_vector_options::VectorOptions;
 
 pub use crate::types::_serverless_vector_acceleration_status::ServerlessVectorAccelerationStatus;
 
-pub use crate::types::_standby_replicas::StandbyReplicas;
-
-pub use crate::types::_tag::Tag;
+pub use crate::types::_encryption_config::EncryptionConfig;
 
 pub use crate::types::_collection_summary::CollectionSummary;
 
@@ -99,6 +109,10 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_lifecycle_policy_resource_identifier::LifecyclePolicyResourceIdentifier;
 
+pub use crate::types::_collection_group_error_detail::CollectionGroupErrorDetail;
+
+pub use crate::types::_collection_group_detail::CollectionGroupDetail;
+
 pub use crate::types::_collection_error_detail::CollectionErrorDetail;
 
 pub use crate::types::_collection_detail::CollectionDetail;
@@ -123,6 +137,14 @@ mod _collection_error_detail;
 
 mod _collection_filters;
 
+mod _collection_group_capacity_limits;
+
+mod _collection_group_detail;
+
+mod _collection_group_error_detail;
+
+mod _collection_group_summary;
+
 mod _collection_status;
 
 mod _collection_summary;
@@ -130,6 +152,8 @@ mod _collection_summary;
 mod _collection_type;
 
 mod _create_collection_detail;
+
+mod _create_collection_group_detail;
 
 mod _create_iam_identity_center_config_options;
 
@@ -142,6 +166,8 @@ mod _delete_vpc_endpoint_detail;
 mod _effective_lifecycle_policy_detail;
 
 mod _effective_lifecycle_policy_error_detail;
+
+mod _encryption_config;
 
 mod _fips_endpoints;
 
@@ -194,6 +220,8 @@ mod _standby_replicas;
 mod _tag;
 
 mod _update_collection_detail;
+
+mod _update_collection_group_detail;
 
 mod _update_iam_identity_center_config_options;
 

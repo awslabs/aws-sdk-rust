@@ -81,6 +81,7 @@ async fn get_request_id_from_unmodeled_error() {
         .http_client(http_client)
         .credentials_provider(Credentials::for_tests())
         .region(Region::new("us-east-1"))
+        .retry_config(aws_smithy_types::retry::RetryConfig::disabled())
         .build();
     let client = Client::from_conf(config);
     let err = client

@@ -28,11 +28,17 @@ pub fn ser_search_filter_expression(
             crate::protocol_serde::shape_string_filter_expression::ser_string_filter_expression(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::SearchFilterExpression::StringListFilter(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_3.key("stringListFilter").start_object();
+            crate::protocol_serde::shape_string_list_filter_expression::ser_string_list_filter_expression(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::SearchFilterExpression::GroupFilter(inner) => {
             #[allow(unused_mut)]
-            let mut object_5 = object_3.key("groupFilter").start_object();
-            crate::protocol_serde::shape_search_grouped_filter_expressions::ser_search_grouped_filter_expressions(&mut object_5, inner)?;
-            object_5.finish();
+            let mut object_6 = object_3.key("groupFilter").start_object();
+            crate::protocol_serde::shape_search_grouped_filter_expressions::ser_search_grouped_filter_expressions(&mut object_6, inner)?;
+            object_6.finish();
         }
         crate::types::SearchFilterExpression::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

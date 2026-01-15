@@ -47,6 +47,10 @@ pub use crate::types::_initial_vlans::InitialVlans;
 
 pub use crate::types::_initial_vlan_info::InitialVlanInfo;
 
+pub use crate::types::_instance_type_esx_versions_info::InstanceTypeEsxVersionsInfo;
+
+pub use crate::types::_vcf_version_info::VcfVersionInfo;
+
 mod _check;
 
 mod _check_result;
@@ -75,6 +79,8 @@ mod _initial_vlans;
 
 mod _instance_type;
 
+mod _instance_type_esx_versions_info;
+
 mod _license_info;
 
 mod _network_interface;
@@ -90,6 +96,8 @@ mod _validation_exception_reason;
 mod _vcf_hostnames;
 
 mod _vcf_version;
+
+mod _vcf_version_info;
 
 mod _vlan;
 

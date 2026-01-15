@@ -225,9 +225,9 @@ pub use crate::types::_user_auth_config::UserAuthConfig;
 
 pub use crate::types::_default_auth_scheme::DefaultAuthScheme;
 
-pub use crate::types::_modify_additional_storage_volume::ModifyAdditionalStorageVolume;
-
 pub use crate::types::_master_user_authentication_type::MasterUserAuthenticationType;
+
+pub use crate::types::_modify_additional_storage_volume::ModifyAdditionalStorageVolume;
 
 pub use crate::types::_cloudwatch_logs_export_configuration::CloudwatchLogsExportConfiguration;
 

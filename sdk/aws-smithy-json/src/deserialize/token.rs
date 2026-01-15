@@ -186,6 +186,53 @@ pub fn expect_number_or_null(
     }
 }
 
+/// Expects a [Token::ValueNumber] or [Token::ValueNull], and returns the number as a string
+/// to preserve arbitrary precision.
+///
+/// This function extracts the raw JSON number string without converting it to u64/i64/f64,
+/// which would cause precision loss for numbers larger than those types can represent.
+/// This is essential for BigInteger and BigDecimal support.
+///
+/// # Arguments
+/// * `token` - The token to extract the number from
+/// * `input` - The original JSON input bytes (needed to extract the raw number string)
+///
+/// # Returns
+/// * `Ok(Some(string))` - The number as a string slice
+/// * `Ok(None)` - If the token is null
+/// * `Err` - If the token is not a number or null
+pub fn expect_number_as_string_or_null<'a>(
+    token: Option<Result<Token<'a>, Error>>,
+    input: &'a [u8],
+) -> Result<Option<&'a str>, Error> {
+    match token.transpose()? {
+        Some(Token::ValueNull { .. }) => Ok(None),
+        Some(Token::ValueNumber { offset, .. }) => {
+            let start = offset.0;
+            let mut end = start;
+
+            // Skip optional minus sign
+            if end < input.len() && input[end] == b'-' {
+                end += 1;
+            }
+
+            // Scan digits, decimal point, exponent
+            while end < input.len() {
+                match input[end] {
+                    b'0'..=b'9' | b'.' | b'e' | b'E' | b'+' | b'-' => end += 1,
+                    _ => break,
+                }
+            }
+
+            let number_slice = &input[start..end];
+            let number_str = std::str::from_utf8(number_slice)
+                .map_err(|_| Error::custom("invalid UTF-8 in number"))?;
+            Ok(Some(number_str))
+        }
+        _ => Err(Error::custom("expected ValueNumber or ValueNull")),
+    }
+}
+
 /// Expects a [Token::ValueString] or [Token::ValueNull]. If the value is a string, it interprets it as a base64 encoded [Blob] value.
 pub fn expect_blob_or_null(token: Option<Result<Token<'_>, Error>>) -> Result<Option<Blob>, Error> {
     Ok(match expect_string_or_null(token)? {
@@ -718,5 +765,150 @@ pub mod test {
             None,
             expect_document(&mut json_token_iter(value.as_bytes()).peekable()),
         );
+    }
+
+    #[test]
+    fn test_expect_number_as_string_preserves_precision() {
+        use crate::deserialize::json_token_iter;
+
+        // Test large integer that fits in u64 but would lose precision in f64
+        // f64 has 53 bits of precision, so numbers > 2^53 lose precision
+        let input = b"18450000000000000000"; // 2^53 + 1, loses precision in f64
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input).unwrap();
+        assert_eq!(result, Some("18450000000000000000"));
+
+        // Test large negative integer
+        let input = b"-9007199254740993";
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input).unwrap();
+        assert_eq!(result, Some("-9007199254740993"));
+
+        // Test decimal with many digits
+        let input = b"123456789.123456789";
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input).unwrap();
+        assert_eq!(result, Some("123456789.123456789"));
+
+        // Test scientific notation
+        let input = b"1.23e+50";
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input).unwrap();
+        assert_eq!(result, Some("1.23e+50"));
+
+        // Test negative scientific notation
+        let input = b"-1.23e-50";
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input).unwrap();
+        assert_eq!(result, Some("-1.23e-50"));
+
+        // Test null
+        let input = b"null";
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input).unwrap();
+        assert_eq!(result, None);
+
+        // Test small numbers still work
+        let input = b"42";
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input).unwrap();
+        assert_eq!(result, Some("42"));
+
+        // Test zero
+        let input = b"0";
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input).unwrap();
+        assert_eq!(result, Some("0"));
+    }
+
+    #[test]
+    fn test_expect_number_as_string_error_cases() {
+        use crate::deserialize::json_token_iter;
+
+        // Test error when token is a string (not a number)
+        let input = b"\"not a number\"";
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input);
+        assert!(result.is_err());
+
+        // Test error when token is a boolean
+        let input = b"true";
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input);
+        assert!(result.is_err());
+
+        // Test error when token is an object
+        let input = b"{}";
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input);
+        assert!(result.is_err());
+
+        // Test error when token is an array
+        let input = b"[]";
+        let mut iter = json_token_iter(input);
+        let result = expect_number_as_string_or_null(iter.next(), input);
+        assert!(result.is_err());
+    }
+
+    // Property-based tests to validate with random inputs
+    mod proptest_tests {
+        use super::*;
+        use crate::deserialize::json_token_iter;
+        use proptest::prelude::*;
+
+        proptest! {
+            #[test]
+            fn extracted_large_integer_matches_input(
+                // Generate 20-100 digit numbers (way bigger than i64 max: 19 digits)
+                num_str in "[1-9][0-9]{19,99}"
+            ) {
+                let input_bytes = num_str.as_bytes();
+                let mut iter = json_token_iter(input_bytes);
+                let result = expect_number_as_string_or_null(iter.next(), input_bytes)?;
+
+                prop_assert_eq!(result, Some(num_str.as_str()));
+            }
+
+            #[test]
+            fn extracted_large_negative_integer_matches_input(
+                // Generate negative numbers with 20-100 digits
+                num_str in "-[1-9][0-9]{19,99}"
+            ) {
+                let input_bytes = num_str.as_bytes();
+                let mut iter = json_token_iter(input_bytes);
+                let result = expect_number_as_string_or_null(iter.next(), input_bytes)?;
+
+                prop_assert_eq!(result, Some(num_str.as_str()));
+            }
+
+            #[test]
+            fn extracted_scientific_notation_matches_input(
+                mantissa in -999999999i64..999999999i64,
+                exponent in -100i32..100i32
+            ) {
+                let input = format!("{}e{}", mantissa, exponent);
+                let input_bytes = input.as_bytes();
+
+                let mut iter = json_token_iter(input_bytes);
+                let result = expect_number_as_string_or_null(iter.next(), input_bytes)?;
+
+                prop_assert_eq!(result, Some(input.as_str()));
+            }
+
+            #[test]
+            fn null_always_returns_none(
+                // Generate random whitespace/formatting around null
+                prefix in "[ \t\n\r]*",
+                suffix in "[ \t\n\r]*"
+            ) {
+                let input = format!("{}null{}", prefix, suffix);
+                let input_bytes = input.as_bytes();
+
+                let mut iter = json_token_iter(input_bytes);
+                let result = expect_number_as_string_or_null(iter.next(), input_bytes)?;
+
+                prop_assert_eq!(result, None);
+            }
+        }
     }
 }

@@ -2,37 +2,135 @@
 
 /// <p>The configuration for inference parameters when using AI Prompts.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub enum AiPromptInferenceConfiguration {
-    /// <p>The inference configuration for text-based AI Prompts.</p>
-    TextAiPromptInferenceConfiguration(crate::types::TextAiPromptInferenceConfiguration),
-    /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
-    /// An unknown enum variant
-    ///
-    /// _Note: If you encounter this error, consider upgrading your SDK to the latest version._
-    /// The `Unknown` variant represents cases where the server sent a value that wasn't recognized
-    /// by the client. This can happen when the server adds new functionality, but the client has not been updated.
-    /// To investigate this, consider turning on debug logging to print the raw HTTP response.
-    #[non_exhaustive]
-    Unknown,
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+pub struct AiPromptInferenceConfiguration {
+    /// <p>The temperature setting for controlling randomness in the generated response.</p>
+    pub temperature: ::std::option::Option<f32>,
+    /// <p>The top-P sampling parameter for nucleus sampling.</p>
+    pub top_p: ::std::option::Option<f32>,
+    /// <p>The top-K sampling parameter for token selection.</p>
+    pub top_k: ::std::option::Option<i32>,
+    /// <p>The maximum number of tokens to generate in the response.</p>
+    pub max_tokens_to_sample: ::std::option::Option<i32>,
 }
 impl AiPromptInferenceConfiguration {
-    #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`TextAiPromptInferenceConfiguration`](crate::types::AiPromptInferenceConfiguration::TextAiPromptInferenceConfiguration), extracting the inner [`TextAiPromptInferenceConfiguration`](crate::types::TextAiPromptInferenceConfiguration).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_text_ai_prompt_inference_configuration(&self) -> ::std::result::Result<&crate::types::TextAiPromptInferenceConfiguration, &Self> {
-        if let AiPromptInferenceConfiguration::TextAiPromptInferenceConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
+    /// <p>The temperature setting for controlling randomness in the generated response.</p>
+    pub fn temperature(&self) -> ::std::option::Option<f32> {
+        self.temperature
+    }
+    /// <p>The top-P sampling parameter for nucleus sampling.</p>
+    pub fn top_p(&self) -> ::std::option::Option<f32> {
+        self.top_p
+    }
+    /// <p>The top-K sampling parameter for token selection.</p>
+    pub fn top_k(&self) -> ::std::option::Option<i32> {
+        self.top_k
+    }
+    /// <p>The maximum number of tokens to generate in the response.</p>
+    pub fn max_tokens_to_sample(&self) -> ::std::option::Option<i32> {
+        self.max_tokens_to_sample
+    }
+}
+impl ::std::fmt::Debug for AiPromptInferenceConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AiPromptInferenceConfiguration");
+        formatter.field("temperature", &"*** Sensitive Data Redacted ***");
+        formatter.field("top_p", &"*** Sensitive Data Redacted ***");
+        formatter.field("top_k", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_tokens_to_sample", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+impl AiPromptInferenceConfiguration {
+    /// Creates a new builder-style object to manufacture [`AiPromptInferenceConfiguration`](crate::types::AiPromptInferenceConfiguration).
+    pub fn builder() -> crate::types::builders::AiPromptInferenceConfigurationBuilder {
+        crate::types::builders::AiPromptInferenceConfigurationBuilder::default()
+    }
+}
+
+/// A builder for [`AiPromptInferenceConfiguration`](crate::types::AiPromptInferenceConfiguration).
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[non_exhaustive]
+pub struct AiPromptInferenceConfigurationBuilder {
+    pub(crate) temperature: ::std::option::Option<f32>,
+    pub(crate) top_p: ::std::option::Option<f32>,
+    pub(crate) top_k: ::std::option::Option<i32>,
+    pub(crate) max_tokens_to_sample: ::std::option::Option<i32>,
+}
+impl AiPromptInferenceConfigurationBuilder {
+    /// <p>The temperature setting for controlling randomness in the generated response.</p>
+    pub fn temperature(mut self, input: f32) -> Self {
+        self.temperature = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The temperature setting for controlling randomness in the generated response.</p>
+    pub fn set_temperature(mut self, input: ::std::option::Option<f32>) -> Self {
+        self.temperature = input;
+        self
+    }
+    /// <p>The temperature setting for controlling randomness in the generated response.</p>
+    pub fn get_temperature(&self) -> &::std::option::Option<f32> {
+        &self.temperature
+    }
+    /// <p>The top-P sampling parameter for nucleus sampling.</p>
+    pub fn top_p(mut self, input: f32) -> Self {
+        self.top_p = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The top-P sampling parameter for nucleus sampling.</p>
+    pub fn set_top_p(mut self, input: ::std::option::Option<f32>) -> Self {
+        self.top_p = input;
+        self
+    }
+    /// <p>The top-P sampling parameter for nucleus sampling.</p>
+    pub fn get_top_p(&self) -> &::std::option::Option<f32> {
+        &self.top_p
+    }
+    /// <p>The top-K sampling parameter for token selection.</p>
+    pub fn top_k(mut self, input: i32) -> Self {
+        self.top_k = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The top-K sampling parameter for token selection.</p>
+    pub fn set_top_k(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.top_k = input;
+        self
+    }
+    /// <p>The top-K sampling parameter for token selection.</p>
+    pub fn get_top_k(&self) -> &::std::option::Option<i32> {
+        &self.top_k
+    }
+    /// <p>The maximum number of tokens to generate in the response.</p>
+    pub fn max_tokens_to_sample(mut self, input: i32) -> Self {
+        self.max_tokens_to_sample = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of tokens to generate in the response.</p>
+    pub fn set_max_tokens_to_sample(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_tokens_to_sample = input;
+        self
+    }
+    /// <p>The maximum number of tokens to generate in the response.</p>
+    pub fn get_max_tokens_to_sample(&self) -> &::std::option::Option<i32> {
+        &self.max_tokens_to_sample
+    }
+    /// Consumes the builder and constructs a [`AiPromptInferenceConfiguration`](crate::types::AiPromptInferenceConfiguration).
+    pub fn build(self) -> crate::types::AiPromptInferenceConfiguration {
+        crate::types::AiPromptInferenceConfiguration {
+            temperature: self.temperature,
+            top_p: self.top_p,
+            top_k: self.top_k,
+            max_tokens_to_sample: self.max_tokens_to_sample,
         }
     }
-    /// Returns true if this is a [`TextAiPromptInferenceConfiguration`](crate::types::AiPromptInferenceConfiguration::TextAiPromptInferenceConfiguration).
-    pub fn is_text_ai_prompt_inference_configuration(&self) -> bool {
-        self.as_text_ai_prompt_inference_configuration().is_ok()
-    }
-    /// Returns true if the enum instance is the `Unknown` variant.
-    pub fn is_unknown(&self) -> bool {
-        matches!(self, Self::Unknown)
+}
+impl ::std::fmt::Debug for AiPromptInferenceConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AiPromptInferenceConfigurationBuilder");
+        formatter.field("temperature", &"*** Sensitive Data Redacted ***");
+        formatter.field("top_p", &"*** Sensitive Data Redacted ***");
+        formatter.field("top_k", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_tokens_to_sample", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -8,6 +8,8 @@ pub struct StepParameter {
     pub name: ::std::string::String,
     /// <p>The data type of the parameter.</p>
     pub r#type: crate::types::StepParameterType,
+    /// <p>The configuration for task chunking.</p>
+    pub chunks: ::std::option::Option<crate::types::StepParameterChunks>,
 }
 impl StepParameter {
     /// <p>The name of the parameter.</p>
@@ -18,6 +20,10 @@ impl StepParameter {
     /// <p>The data type of the parameter.</p>
     pub fn r#type(&self) -> &crate::types::StepParameterType {
         &self.r#type
+    }
+    /// <p>The configuration for task chunking.</p>
+    pub fn chunks(&self) -> ::std::option::Option<&crate::types::StepParameterChunks> {
+        self.chunks.as_ref()
     }
 }
 impl StepParameter {
@@ -33,6 +39,7 @@ impl StepParameter {
 pub struct StepParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::StepParameterType>,
+    pub(crate) chunks: ::std::option::Option<crate::types::StepParameterChunks>,
 }
 impl StepParameterBuilder {
     /// <p>The name of the parameter.</p>
@@ -65,6 +72,20 @@ impl StepParameterBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::StepParameterType> {
         &self.r#type
     }
+    /// <p>The configuration for task chunking.</p>
+    pub fn chunks(mut self, input: crate::types::StepParameterChunks) -> Self {
+        self.chunks = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for task chunking.</p>
+    pub fn set_chunks(mut self, input: ::std::option::Option<crate::types::StepParameterChunks>) -> Self {
+        self.chunks = input;
+        self
+    }
+    /// <p>The configuration for task chunking.</p>
+    pub fn get_chunks(&self) -> &::std::option::Option<crate::types::StepParameterChunks> {
+        &self.chunks
+    }
     /// Consumes the builder and constructs a [`StepParameter`](crate::types::StepParameter).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::StepParameterBuilder::name)
@@ -83,6 +104,7 @@ impl StepParameterBuilder {
                     "r#type was not specified but it is required when building StepParameter",
                 )
             })?,
+            chunks: self.chunks,
         })
     }
 }

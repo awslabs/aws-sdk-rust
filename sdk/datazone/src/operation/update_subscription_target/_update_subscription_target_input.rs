@@ -21,6 +21,8 @@ pub struct UpdateSubscriptionTargetInput {
     pub manage_access_role: ::std::option::Option<::std::string::String>,
     /// <p>The provider to be updated as part of the <code>UpdateSubscriptionTarget</code> action.</p>
     pub provider: ::std::option::Option<::std::string::String>,
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub subscription_grant_creation_mode: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>,
 }
 impl UpdateSubscriptionTargetInput {
     /// <p>The identifier of the Amazon DataZone domain in which a subscription target is to be updated.</p>
@@ -65,6 +67,10 @@ impl UpdateSubscriptionTargetInput {
     pub fn provider(&self) -> ::std::option::Option<&str> {
         self.provider.as_deref()
     }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn subscription_grant_creation_mode(&self) -> ::std::option::Option<&crate::types::SubscriptionGrantCreationMode> {
+        self.subscription_grant_creation_mode.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateSubscriptionTargetInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -78,6 +84,7 @@ impl ::std::fmt::Debug for UpdateSubscriptionTargetInput {
         formatter.field("subscription_target_config", &self.subscription_target_config);
         formatter.field("manage_access_role", &self.manage_access_role);
         formatter.field("provider", &self.provider);
+        formatter.field("subscription_grant_creation_mode", &self.subscription_grant_creation_mode);
         formatter.finish()
     }
 }
@@ -101,6 +108,7 @@ pub struct UpdateSubscriptionTargetInputBuilder {
     pub(crate) subscription_target_config: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>>,
     pub(crate) manage_access_role: ::std::option::Option<::std::string::String>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
+    pub(crate) subscription_grant_creation_mode: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>,
 }
 impl UpdateSubscriptionTargetInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a subscription target is to be updated.</p>
@@ -250,6 +258,20 @@ impl UpdateSubscriptionTargetInputBuilder {
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider
     }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn subscription_grant_creation_mode(mut self, input: crate::types::SubscriptionGrantCreationMode) -> Self {
+        self.subscription_grant_creation_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn set_subscription_grant_creation_mode(mut self, input: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>) -> Self {
+        self.subscription_grant_creation_mode = input;
+        self
+    }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn get_subscription_grant_creation_mode(&self) -> &::std::option::Option<crate::types::SubscriptionGrantCreationMode> {
+        &self.subscription_grant_creation_mode
+    }
     /// Consumes the builder and constructs a [`UpdateSubscriptionTargetInput`](crate::operation::update_subscription_target::UpdateSubscriptionTargetInput).
     pub fn build(
         self,
@@ -267,6 +289,7 @@ impl UpdateSubscriptionTargetInputBuilder {
             subscription_target_config: self.subscription_target_config,
             manage_access_role: self.manage_access_role,
             provider: self.provider,
+            subscription_grant_creation_mode: self.subscription_grant_creation_mode,
         })
     }
 }
@@ -282,6 +305,7 @@ impl ::std::fmt::Debug for UpdateSubscriptionTargetInputBuilder {
         formatter.field("subscription_target_config", &self.subscription_target_config);
         formatter.field("manage_access_role", &self.manage_access_role);
         formatter.field("provider", &self.provider);
+        formatter.field("subscription_grant_creation_mode", &self.subscription_grant_creation_mode);
         formatter.finish()
     }
 }

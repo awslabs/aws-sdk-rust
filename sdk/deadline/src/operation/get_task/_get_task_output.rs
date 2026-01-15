@@ -25,7 +25,7 @@ pub struct GetTaskOutput {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user or system that updated this resource.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
-    /// <p>The latest session ID for the task.</p>
+    /// <p>The latest session action ID for the task.</p>
     pub latest_session_action_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -76,7 +76,7 @@ impl GetTaskOutput {
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
-    /// <p>The latest session ID for the task.</p>
+    /// <p>The latest session action ID for the task.</p>
     pub fn latest_session_action_id(&self) -> ::std::option::Option<&str> {
         self.latest_session_action_id.as_deref()
     }
@@ -298,17 +298,17 @@ impl GetTaskOutputBuilder {
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
-    /// <p>The latest session ID for the task.</p>
+    /// <p>The latest session action ID for the task.</p>
     pub fn latest_session_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.latest_session_action_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The latest session ID for the task.</p>
+    /// <p>The latest session action ID for the task.</p>
     pub fn set_latest_session_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_session_action_id = input;
         self
     }
-    /// <p>The latest session ID for the task.</p>
+    /// <p>The latest session action ID for the task.</p>
     pub fn get_latest_session_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_session_action_id
     }

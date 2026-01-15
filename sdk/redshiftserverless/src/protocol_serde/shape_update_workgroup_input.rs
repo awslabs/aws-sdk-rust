@@ -72,5 +72,8 @@ pub fn ser_update_workgroup_input_input(
     if let Some(var_20) = &input.track_name {
         object.key("trackName").string(var_20.as_str());
     }
+    if let Some(var_21) = &input.extra_compute_for_automatic_optimization {
+        object.key("extraComputeForAutomaticOptimization").boolean(*var_21);
+    }
     Ok(())
 }

@@ -30,3 +30,7 @@ pub use crate::types::_license_info::LicenseInfoBuilder;
 pub use crate::types::_initial_vlans::InitialVlansBuilder;
 
 pub use crate::types::_initial_vlan_info::InitialVlanInfoBuilder;
+
+pub use crate::types::_instance_type_esx_versions_info::InstanceTypeEsxVersionsInfoBuilder;
+
+pub use crate::types::_vcf_version_info::VcfVersionInfoBuilder;

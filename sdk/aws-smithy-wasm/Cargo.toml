@@ -23,7 +23,7 @@ wasi = "0.12.1"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["http-1x"]
-version = "1.9.3"
+version = "1.10.0"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
@@ -31,4 +31,4 @@ version = "0.62.6"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.3.5"
+version = "1.3.6"

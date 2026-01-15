@@ -695,6 +695,8 @@ pub(crate) mod shape_step_parameter;
 
 pub(crate) mod shape_string_filter_expression;
 
+pub(crate) mod shape_string_list_filter_expression;
+
 pub(crate) mod shape_vpc_configuration;
 
 pub(crate) mod shape_accelerator_capabilities;
@@ -730,6 +732,8 @@ pub(crate) mod shape_memory_mib_range;
 pub(crate) mod shape_output_relative_directories_list;
 
 pub(crate) mod shape_path_mapping_rules;
+
+pub(crate) mod shape_step_parameter_chunks;
 
 pub(crate) mod shape_sync_input_job_attachments_session_action_definition_summary;
 

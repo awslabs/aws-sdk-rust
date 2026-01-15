@@ -766,4 +766,21 @@ impl ModifyClusterFluentBuilder {
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_az()
     }
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn extra_compute_for_automatic_optimization(mut self, input: bool) -> Self {
+        self.inner = self.inner.extra_compute_for_automatic_optimization(input);
+        self
+    }
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn set_extra_compute_for_automatic_optimization(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_extra_compute_for_automatic_optimization(input);
+        self
+    }
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn get_extra_compute_for_automatic_optimization(&self) -> &::std::option::Option<bool> {
+        self.inner.get_extra_compute_for_automatic_optimization()
+    }
 }

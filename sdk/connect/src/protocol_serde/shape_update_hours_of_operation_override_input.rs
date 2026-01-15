@@ -27,5 +27,14 @@ pub fn ser_update_hours_of_operation_override_input_input(
     if let Some(var_8) = &input.name {
         object.key("Name").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.override_type {
+        object.key("OverrideType").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.recurrence_config {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("RecurrenceConfig").start_object();
+        crate::protocol_serde::shape_recurrence_config::ser_recurrence_config(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

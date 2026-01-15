@@ -227,6 +227,8 @@ mod get_resource_lf_tags;
 
 mod get_table_objects;
 
+mod get_temporary_data_location_credentials;
+
 mod get_temporary_glue_partition_credentials;
 
 mod get_temporary_glue_table_credentials;

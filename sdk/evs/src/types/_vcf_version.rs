@@ -13,6 +13,7 @@
 /// # let vcfversion = unimplemented!();
 /// match vcfversion {
 ///     VcfVersion::Vcf521 => { /* ... */ },
+///     VcfVersion::Vcf522 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum VcfVersion {
     #[allow(missing_docs)] // documentation missing in model
     Vcf521,
+    #[allow(missing_docs)] // documentation missing in model
+    Vcf522,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for VcfVersion {
     fn from(s: &str) -> Self {
         match s {
             "VCF-5.2.1" => VcfVersion::Vcf521,
+            "VCF-5.2.2" => VcfVersion::Vcf522,
             other => VcfVersion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl VcfVersion {
     pub fn as_str(&self) -> &str {
         match self {
             VcfVersion::Vcf521 => "VCF-5.2.1",
+            VcfVersion::Vcf522 => "VCF-5.2.2",
             VcfVersion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["VCF-5.2.1"]
+        &["VCF-5.2.1", "VCF-5.2.2"]
     }
 }
 impl ::std::convert::AsRef<str> for VcfVersion {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for VcfVersion {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VcfVersion::Vcf521 => write!(f, "VCF-5.2.1"),
+            VcfVersion::Vcf522 => write!(f, "VCF-5.2.2"),
             VcfVersion::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -655,8 +655,6 @@ pub(crate) mod shape_system_attributes;
 
 pub(crate) mod shape_tag_condition;
 
-pub(crate) mod shape_text_ai_prompt_inference_configuration;
-
 pub(crate) mod shape_text_full_ai_prompt_edit_template_configuration;
 
 pub(crate) mod shape_whats_app_message_template_content;

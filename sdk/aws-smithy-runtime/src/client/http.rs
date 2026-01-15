@@ -97,6 +97,7 @@ pub(crate) fn default_https_client(options: DefaultClientOptions) -> Option<Shar
             conn_builder.set_sleep_impl(components.sleep_impl());
         }
 
+        #[expect(deprecated)]
         if options
             .behavior_version
             .is_at_least(BehaviorVersion::v2025_08_07())

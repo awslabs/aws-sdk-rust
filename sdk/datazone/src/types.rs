@@ -191,6 +191,8 @@ pub use crate::types::_user_profile_status::UserProfileStatus;
 
 pub use crate::types::_user_profile_type::UserProfileType;
 
+pub use crate::types::_subscription_grant_creation_mode::SubscriptionGrantCreationMode;
+
 pub use crate::types::_subscription_target_form::SubscriptionTargetForm;
 
 pub use crate::types::_subscribed_listing::SubscribedListing;
@@ -210,6 +212,8 @@ pub use crate::types::_s3_permission::S3Permission;
 pub use crate::types::_asset_scope::AssetScope;
 
 pub use crate::types::_subscribed_principal::SubscribedPrincipal;
+
+pub use crate::types::_subscribed_iam_principal::SubscribedIamPrincipal;
 
 pub use crate::types::_subscribed_group::SubscribedGroup;
 
@@ -720,6 +724,8 @@ pub use crate::types::_asset_permission::AssetPermission;
 pub use crate::types::_subscribed_listing_input::SubscribedListingInput;
 
 pub use crate::types::_subscribed_principal_input::SubscribedPrincipalInput;
+
+pub use crate::types::_subscribed_iam_principal_input::SubscribedIamPrincipalInput;
 
 pub use crate::types::_subscribed_group_input::SubscribedGroupInput;
 
@@ -1477,6 +1483,10 @@ mod _subscribed_group;
 
 mod _subscribed_group_input;
 
+mod _subscribed_iam_principal;
+
+mod _subscribed_iam_principal_input;
+
 mod _subscribed_listing;
 
 mod _subscribed_listing_input;
@@ -1496,6 +1506,8 @@ mod _subscribed_project_input;
 mod _subscribed_user;
 
 mod _subscribed_user_input;
+
+mod _subscription_grant_creation_mode;
 
 mod _subscription_grant_overall_status;
 

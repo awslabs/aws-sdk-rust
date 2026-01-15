@@ -510,23 +510,8 @@ pub fn de_orderable_db_instance_option(
                 builder = builder.set_supports_dedicated_log_volume(var_36);
             }
             ,
-            s if s.matches("SupportsHttpEndpoint") /* SupportsHttpEndpoint com.amazonaws.rds#OrderableDBInstanceOption$SupportsHttpEndpoint */ =>  {
-                let var_37 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_supports_http_endpoint(var_37);
-            }
-            ,
             s if s.matches("SupportsAdditionalStorageVolumes") /* SupportsAdditionalStorageVolumes com.amazonaws.rds#OrderableDBInstanceOption$SupportsAdditionalStorageVolumes */ =>  {
-                let var_38 =
+                let var_37 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -537,7 +522,22 @@ pub fn de_orderable_db_instance_option(
                         ?
                     )
                 ;
-                builder = builder.set_supports_additional_storage_volumes(var_38);
+                builder = builder.set_supports_additional_storage_volumes(var_37);
+            }
+            ,
+            s if s.matches("SupportsHttpEndpoint") /* SupportsHttpEndpoint com.amazonaws.rds#OrderableDBInstanceOption$SupportsHttpEndpoint */ =>  {
+                let var_38 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_supports_http_endpoint(var_38);
             }
             ,
             s if s.matches("AvailableAdditionalStorageVolumesOptions") /* AvailableAdditionalStorageVolumesOptions com.amazonaws.rds#OrderableDBInstanceOption$AvailableAdditionalStorageVolumesOptions */ =>  {

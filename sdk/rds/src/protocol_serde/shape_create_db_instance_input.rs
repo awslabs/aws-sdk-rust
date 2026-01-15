@@ -389,31 +389,31 @@ pub fn ser_create_db_instance_input_input_input(
         scope_145.string(var_146);
     }
     #[allow(unused_mut)]
-    let mut scope_147 = writer.prefix("TagSpecifications");
-    if let Some(var_148) = &input.tag_specifications {
-        let mut list_150 = scope_147.start_list(false, Some("item"));
+    let mut scope_147 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_148) = &input.additional_storage_volumes {
+        let mut list_150 = scope_147.start_list(false, None);
         for item_149 in var_148 {
             #[allow(unused_mut)]
             let mut entry_151 = list_150.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_151, item_149)?;
+            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_151, item_149)?;
         }
         list_150.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_152 = writer.prefix("MasterUserAuthenticationType");
-    if let Some(var_153) = &input.master_user_authentication_type {
-        scope_152.string(var_153.as_str());
+    let mut scope_152 = writer.prefix("TagSpecifications");
+    if let Some(var_153) = &input.tag_specifications {
+        let mut list_155 = scope_152.start_list(false, Some("item"));
+        for item_154 in var_153 {
+            #[allow(unused_mut)]
+            let mut entry_156 = list_155.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_156, item_154)?;
+        }
+        list_155.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_154 = writer.prefix("AdditionalStorageVolumes");
-    if let Some(var_155) = &input.additional_storage_volumes {
-        let mut list_157 = scope_154.start_list(false, None);
-        for item_156 in var_155 {
-            #[allow(unused_mut)]
-            let mut entry_158 = list_157.entry();
-            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_158, item_156)?;
-        }
-        list_157.finish();
+    let mut scope_157 = writer.prefix("MasterUserAuthenticationType");
+    if let Some(var_158) = &input.master_user_authentication_type {
+        scope_157.string(var_158.as_str());
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

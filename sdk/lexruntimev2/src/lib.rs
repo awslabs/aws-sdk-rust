@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-lexruntimev2 = "1.91.0"
+//! aws-sdk-lexruntimev2 = "1.92.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -190,6 +190,8 @@ pub mod types;
 mod event_receiver;
 
 mod event_stream_serde;
+
+mod observability_feature;
 
 pub(crate) mod protocol_serde;
 

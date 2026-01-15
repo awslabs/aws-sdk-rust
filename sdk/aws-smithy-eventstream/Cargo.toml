@@ -34,7 +34,7 @@ optional = true
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.3.5"
+version = "1.3.6"
 
 [dependencies.derive_arbitrary]
 version = "1.3"

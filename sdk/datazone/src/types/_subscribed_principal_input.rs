@@ -6,6 +6,8 @@
 pub enum SubscribedPrincipalInput {
     /// <p>The subscribed group.</p>
     Group(crate::types::SubscribedGroupInput),
+    /// <p>The subscribed IAM principal.</p>
+    Iam(crate::types::SubscribedIamPrincipalInput),
     /// <p>The project that is to be given a subscription grant.</p>
     Project(crate::types::SubscribedProjectInput),
     /// <p>The subscribed user.</p>
@@ -33,6 +35,19 @@ impl SubscribedPrincipalInput {
     /// Returns true if this is a [`Group`](crate::types::SubscribedPrincipalInput::Group).
     pub fn is_group(&self) -> bool {
         self.as_group().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Iam`](crate::types::SubscribedPrincipalInput::Iam), extracting the inner [`SubscribedIamPrincipalInput`](crate::types::SubscribedIamPrincipalInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_iam(&self) -> ::std::result::Result<&crate::types::SubscribedIamPrincipalInput, &Self> {
+        if let SubscribedPrincipalInput::Iam(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Iam`](crate::types::SubscribedPrincipalInput::Iam).
+    pub fn is_iam(&self) -> bool {
+        self.as_iam().is_ok()
     }
     /// Tries to convert the enum instance into [`Project`](crate::types::SubscribedPrincipalInput::Project), extracting the inner [`SubscribedProjectInput`](crate::types::SubscribedProjectInput).
     /// Returns `Err(&Self)` if it can't be converted.

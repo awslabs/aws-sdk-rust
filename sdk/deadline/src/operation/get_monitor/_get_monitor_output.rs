@@ -13,11 +13,11 @@ pub struct GetMonitorOutput {
     pub subdomain: ::std::string::String,
     /// <p>The complete URL of the monitor. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
     pub url: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role for the monitor. Users of the monitor use this role to access Deadline Cloud resources.</p>
+    /// <p>The Amazon Resource Name of the IAM role for the monitor. Users of the monitor use this role to access Deadline Cloud resources.</p>
     pub role_arn: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance responsible for authenticating monitor users.</p>
+    /// <p>The Amazon Resource Name of the IAM Identity Center instance responsible for authenticating monitor users.</p>
     pub identity_center_instance_arn: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) that the IAM Identity Center assigned to the monitor when it was created.</p>
+    /// <p>The Amazon Resource Name that the IAM Identity Center assigned to the monitor when it was created.</p>
     pub identity_center_application_arn: ::std::string::String,
     /// <p>The UNIX timestamp of the date and time that the monitor was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -52,17 +52,17 @@ impl GetMonitorOutput {
         use std::ops::Deref;
         self.url.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role for the monitor. Users of the monitor use this role to access Deadline Cloud resources.</p>
+    /// <p>The Amazon Resource Name of the IAM role for the monitor. Users of the monitor use this role to access Deadline Cloud resources.</p>
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance responsible for authenticating monitor users.</p>
+    /// <p>The Amazon Resource Name of the IAM Identity Center instance responsible for authenticating monitor users.</p>
     pub fn identity_center_instance_arn(&self) -> &str {
         use std::ops::Deref;
         self.identity_center_instance_arn.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that the IAM Identity Center assigned to the monitor when it was created.</p>
+    /// <p>The Amazon Resource Name that the IAM Identity Center assigned to the monitor when it was created.</p>
     pub fn identity_center_application_arn(&self) -> &str {
         use std::ops::Deref;
         self.identity_center_application_arn.deref()
@@ -181,48 +181,48 @@ impl GetMonitorOutputBuilder {
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role for the monitor. Users of the monitor use this role to access Deadline Cloud resources.</p>
+    /// <p>The Amazon Resource Name of the IAM role for the monitor. Users of the monitor use this role to access Deadline Cloud resources.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role for the monitor. Users of the monitor use this role to access Deadline Cloud resources.</p>
+    /// <p>The Amazon Resource Name of the IAM role for the monitor. Users of the monitor use this role to access Deadline Cloud resources.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role for the monitor. Users of the monitor use this role to access Deadline Cloud resources.</p>
+    /// <p>The Amazon Resource Name of the IAM role for the monitor. Users of the monitor use this role to access Deadline Cloud resources.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance responsible for authenticating monitor users.</p>
+    /// <p>The Amazon Resource Name of the IAM Identity Center instance responsible for authenticating monitor users.</p>
     /// This field is required.
     pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_center_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance responsible for authenticating monitor users.</p>
+    /// <p>The Amazon Resource Name of the IAM Identity Center instance responsible for authenticating monitor users.</p>
     pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_center_instance_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance responsible for authenticating monitor users.</p>
+    /// <p>The Amazon Resource Name of the IAM Identity Center instance responsible for authenticating monitor users.</p>
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_instance_arn
     }
-    /// <p>The Amazon Resource Name (ARN) that the IAM Identity Center assigned to the monitor when it was created.</p>
+    /// <p>The Amazon Resource Name that the IAM Identity Center assigned to the monitor when it was created.</p>
     /// This field is required.
     pub fn identity_center_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_center_application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that the IAM Identity Center assigned to the monitor when it was created.</p>
+    /// <p>The Amazon Resource Name that the IAM Identity Center assigned to the monitor when it was created.</p>
     pub fn set_identity_center_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_center_application_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that the IAM Identity Center assigned to the monitor when it was created.</p>
+    /// <p>The Amazon Resource Name that the IAM Identity Center assigned to the monitor when it was created.</p>
     pub fn get_identity_center_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_application_arn
     }

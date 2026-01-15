@@ -271,7 +271,7 @@ pub use crate::types::_ai_prompt_summary::AiPromptSummaryBuilder;
 
 pub use crate::types::_ai_prompt_data::AiPromptDataBuilder;
 
-pub use crate::types::_text_ai_prompt_inference_configuration::TextAiPromptInferenceConfigurationBuilder;
+pub use crate::types::_ai_prompt_inference_configuration::AiPromptInferenceConfigurationBuilder;
 
 pub use crate::types::_text_full_ai_prompt_edit_template_configuration::TextFullAiPromptEditTemplateConfigurationBuilder;
 

@@ -117,7 +117,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-proton = "1.90.0"
+//! aws-sdk-proton = "1.91.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -288,6 +288,8 @@ pub mod types;
 pub(crate) mod client_idempotency_token;
 
 mod idempotency_token;
+
+mod observability_feature;
 
 pub(crate) mod protocol_serde;
 

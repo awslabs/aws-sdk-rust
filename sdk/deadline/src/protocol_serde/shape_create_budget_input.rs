@@ -33,11 +33,21 @@ pub fn ser_create_budget_input_input(
         crate::protocol_serde::shape_budget_schedule::ser_budget_schedule(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.usage_tracking_resource {
+    if let Some(var_10) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("usageTrackingResource").start_object();
-        crate::protocol_serde::shape_usage_tracking_resource::ser_usage_tracking_resource(&mut object_11, var_10)?;
+        let mut object_11 = object.key("tags").start_object();
+        for (key_12, value_13) in var_10 {
+            {
+                object_11.key(key_12.as_str()).string(value_13.as_str());
+            }
+        }
         object_11.finish();
+    }
+    if let Some(var_14) = &input.usage_tracking_resource {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("usageTrackingResource").start_object();
+        crate::protocol_serde::shape_usage_tracking_resource::ser_usage_tracking_resource(&mut object_15, var_14)?;
+        object_15.finish();
     }
     Ok(())
 }

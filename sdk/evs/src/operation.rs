@@ -22,6 +22,9 @@ pub mod disassociate_eip_from_vlan;
 /// Types for the `GetEnvironment` operation.
 pub mod get_environment;
 
+/// Types for the `GetVersions` operation.
+pub mod get_versions;
+
 /// Types for the `ListEnvironmentHosts` operation.
 pub mod list_environment_hosts;
 

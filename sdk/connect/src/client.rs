@@ -152,6 +152,8 @@ mod associate_email_address_alias;
 
 mod associate_flow;
 
+mod associate_hours_of_operations;
+
 mod associate_instance_storage_config;
 
 mod associate_lambda_function;
@@ -435,6 +437,8 @@ mod disassociate_email_address_alias;
 
 mod disassociate_flow;
 
+mod disassociate_hours_of_operations;
+
 mod disassociate_instance_storage_config;
 
 mod disassociate_lambda_function;
@@ -504,6 +508,8 @@ mod list_associated_contacts;
 mod list_authentication_profiles;
 
 mod list_bots;
+
+mod list_child_hours_of_operations;
 
 mod list_contact_evaluations;
 

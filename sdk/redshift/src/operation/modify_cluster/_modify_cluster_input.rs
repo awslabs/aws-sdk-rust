@@ -138,6 +138,9 @@ pub struct ModifyClusterInput {
     pub ip_address_type: ::std::option::Option<::std::string::String>,
     /// <p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>
     pub multi_az: ::std::option::Option<bool>,
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub extra_compute_for_automatic_optimization: ::std::option::Option<bool>,
 }
 impl ModifyClusterInput {
     /// <p>The unique identifier of the cluster to be modified.</p>
@@ -336,6 +339,11 @@ impl ModifyClusterInput {
     pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn extra_compute_for_automatic_optimization(&self) -> ::std::option::Option<bool> {
+        self.extra_compute_for_automatic_optimization
+    }
 }
 impl ::std::fmt::Debug for ModifyClusterInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -369,6 +377,7 @@ impl ::std::fmt::Debug for ModifyClusterInput {
         formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
         formatter.field("ip_address_type", &self.ip_address_type);
         formatter.field("multi_az", &self.multi_az);
+        formatter.field("extra_compute_for_automatic_optimization", &self.extra_compute_for_automatic_optimization);
         formatter.finish()
     }
 }
@@ -412,6 +421,7 @@ pub struct ModifyClusterInputBuilder {
     pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<bool>,
+    pub(crate) extra_compute_for_automatic_optimization: ::std::option::Option<bool>,
 }
 impl ModifyClusterInputBuilder {
     /// <p>The unique identifier of the cluster to be modified.</p>
@@ -1061,6 +1071,23 @@ impl ModifyClusterInputBuilder {
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         &self.multi_az
     }
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn extra_compute_for_automatic_optimization(mut self, input: bool) -> Self {
+        self.extra_compute_for_automatic_optimization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn set_extra_compute_for_automatic_optimization(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.extra_compute_for_automatic_optimization = input;
+        self
+    }
+    /// <p>If <code>true</code>, allocates additional compute resources for running automatic optimization operations.</p>
+    /// <p>Default: false</p>
+    pub fn get_extra_compute_for_automatic_optimization(&self) -> &::std::option::Option<bool> {
+        &self.extra_compute_for_automatic_optimization
+    }
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
     pub fn build(
         self,
@@ -1095,6 +1122,7 @@ impl ModifyClusterInputBuilder {
             master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
             ip_address_type: self.ip_address_type,
             multi_az: self.multi_az,
+            extra_compute_for_automatic_optimization: self.extra_compute_for_automatic_optimization,
         })
     }
 }
@@ -1130,6 +1158,7 @@ impl ::std::fmt::Debug for ModifyClusterInputBuilder {
         formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
         formatter.field("ip_address_type", &self.ip_address_type);
         formatter.field("multi_az", &self.multi_az);
+        formatter.field("extra_compute_for_automatic_optimization", &self.extra_compute_for_automatic_optimization);
         formatter.finish()
     }
 }

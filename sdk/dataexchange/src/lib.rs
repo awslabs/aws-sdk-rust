@@ -39,7 +39,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-dataexchange = "1.94.0"
+//! aws-sdk-dataexchange = "1.95.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -196,6 +196,8 @@ pub mod types;
 pub(crate) mod client_idempotency_token;
 
 mod idempotency_token;
+
+mod observability_feature;
 
 pub(crate) mod protocol_serde;
 

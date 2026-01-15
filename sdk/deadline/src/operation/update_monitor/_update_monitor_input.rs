@@ -11,7 +11,7 @@ pub struct UpdateMonitorInput {
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the new IAM role to use with the monitor.</p>
+    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMonitorInput {
@@ -29,7 +29,7 @@ impl UpdateMonitorInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the new IAM role to use with the monitor.</p>
+    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -100,17 +100,17 @@ impl UpdateMonitorInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the new IAM role to use with the monitor.</p>
+    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the new IAM role to use with the monitor.</p>
+    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the new IAM role to use with the monitor.</p>
+    /// <p>The Amazon Resource Name of the new IAM role to use with the monitor.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

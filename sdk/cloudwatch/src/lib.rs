@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-cloudwatch = "1.100.0"
+//! aws-sdk-cloudwatch = "1.101.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -206,6 +206,8 @@ pub mod primitives;
 pub mod types;
 
 mod client_request_compression;
+
+mod observability_feature;
 
 pub(crate) mod protocol_serde;
 

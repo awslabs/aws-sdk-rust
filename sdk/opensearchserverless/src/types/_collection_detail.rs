@@ -36,6 +36,8 @@ pub struct CollectionDetail {
     pub failure_code: ::std::option::Option<::std::string::String>,
     /// <p>A message associated with the failure code.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub collection_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CollectionDetail {
     /// <p>A unique identifier for the collection.</p>
@@ -102,6 +104,10 @@ impl CollectionDetail {
     pub fn failure_message(&self) -> ::std::option::Option<&str> {
         self.failure_message.as_deref()
     }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn collection_group_name(&self) -> ::std::option::Option<&str> {
+        self.collection_group_name.as_deref()
+    }
 }
 impl CollectionDetail {
     /// Creates a new builder-style object to manufacture [`CollectionDetail`](crate::types::CollectionDetail).
@@ -130,6 +136,7 @@ pub struct CollectionDetailBuilder {
     pub(crate) fips_endpoints: ::std::option::Option<crate::types::FipsEndpoints>,
     pub(crate) failure_code: ::std::option::Option<::std::string::String>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
+    pub(crate) collection_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CollectionDetailBuilder {
     /// <p>A unique identifier for the collection.</p>
@@ -356,6 +363,20 @@ impl CollectionDetailBuilder {
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_message
     }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn collection_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.collection_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn set_collection_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.collection_group_name = input;
+        self
+    }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn get_collection_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_group_name
+    }
     /// Consumes the builder and constructs a [`CollectionDetail`](crate::types::CollectionDetail).
     pub fn build(self) -> crate::types::CollectionDetail {
         crate::types::CollectionDetail {
@@ -375,6 +396,7 @@ impl CollectionDetailBuilder {
             fips_endpoints: self.fips_endpoints,
             failure_code: self.failure_code,
             failure_message: self.failure_message,
+            collection_group_name: self.collection_group_name,
         }
     }
 }

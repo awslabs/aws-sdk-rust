@@ -5,20 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceleratorSelection {
     /// <p>The name of the chip used by the GPU accelerator.</p>
-    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r570</code> as the runtime.</p>
     /// <p>The available GPU accelerators are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>t4</code> - NVIDIA T4 Tensor Core GPU</p></li>
+    /// <p><code>t4</code> - NVIDIA T4 Tensor Core GPU (16 GiB memory)</p></li>
     /// <li>
-    /// <p><code>a10g</code> - NVIDIA A10G Tensor Core GPU</p></li>
+    /// <p><code>a10g</code> - NVIDIA A10G Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
-    /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU</p></li>
+    /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
-    /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU</p></li>
+    /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU (48 GiB memory)</p></li>
     /// </ul>
     pub name: crate::types::AcceleratorName,
-    /// <p>Specifies the runtime driver to use for the GPU accelerator. You must use the same runtime for all GPUs.</p>
+    /// <p>Specifies the runtime driver to use for the GPU accelerator. You must use the same runtime for all GPUs in a fleet.</p>
     /// <p>You can choose from the following runtimes:</p>
     /// <ul>
     /// <li>
@@ -28,27 +27,37 @@ pub struct AcceleratorSelection {
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
     /// </ul>
-    /// <p>If you don't specify a runtime, Deadline Cloud uses <code>latest</code> as the default. However, if you have multiple accelerators and specify <code>latest</code> for some and leave others blank, Deadline Cloud raises an exception.</p>
+    /// <p>If you don't specify a runtime, Amazon Web Services Deadline Cloud uses <code>latest</code> as the default. However, if you have multiple accelerators and specify <code>latest</code> for some and leave others blank, Amazon Web Services Deadline Cloud raises an exception.</p><important>
+    /// <p>Not all runtimes are compatible with all accelerator types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r570</code>, <code>grid:r535</code>)</p></li>
+    /// <li>
+    /// <p><code>l4</code> and <code>l40s</code>: Only support <code>grid:r570</code> and newer</p></li>
+    /// </ul>
+    /// <p>All accelerators in a fleet must use the same runtime version. You cannot mix different runtime versions within a single fleet.</p>
+    /// </important> <note>
+    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r570</code> for all currently supported accelerators.</p>
+    /// </note>
     pub runtime: ::std::string::String,
 }
 impl AcceleratorSelection {
     /// <p>The name of the chip used by the GPU accelerator.</p>
-    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r570</code> as the runtime.</p>
     /// <p>The available GPU accelerators are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>t4</code> - NVIDIA T4 Tensor Core GPU</p></li>
+    /// <p><code>t4</code> - NVIDIA T4 Tensor Core GPU (16 GiB memory)</p></li>
     /// <li>
-    /// <p><code>a10g</code> - NVIDIA A10G Tensor Core GPU</p></li>
+    /// <p><code>a10g</code> - NVIDIA A10G Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
-    /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU</p></li>
+    /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
-    /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU</p></li>
+    /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU (48 GiB memory)</p></li>
     /// </ul>
     pub fn name(&self) -> &crate::types::AcceleratorName {
         &self.name
     }
-    /// <p>Specifies the runtime driver to use for the GPU accelerator. You must use the same runtime for all GPUs.</p>
+    /// <p>Specifies the runtime driver to use for the GPU accelerator. You must use the same runtime for all GPUs in a fleet.</p>
     /// <p>You can choose from the following runtimes:</p>
     /// <ul>
     /// <li>
@@ -58,7 +67,18 @@ impl AcceleratorSelection {
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
     /// </ul>
-    /// <p>If you don't specify a runtime, Deadline Cloud uses <code>latest</code> as the default. However, if you have multiple accelerators and specify <code>latest</code> for some and leave others blank, Deadline Cloud raises an exception.</p>
+    /// <p>If you don't specify a runtime, Amazon Web Services Deadline Cloud uses <code>latest</code> as the default. However, if you have multiple accelerators and specify <code>latest</code> for some and leave others blank, Amazon Web Services Deadline Cloud raises an exception.</p><important>
+    /// <p>Not all runtimes are compatible with all accelerator types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r570</code>, <code>grid:r535</code>)</p></li>
+    /// <li>
+    /// <p><code>l4</code> and <code>l40s</code>: Only support <code>grid:r570</code> and newer</p></li>
+    /// </ul>
+    /// <p>All accelerators in a fleet must use the same runtime version. You cannot mix different runtime versions within a single fleet.</p>
+    /// </important> <note>
+    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r570</code> for all currently supported accelerators.</p>
+    /// </note>
     pub fn runtime(&self) -> &str {
         use std::ops::Deref;
         self.runtime.deref()
@@ -80,17 +100,16 @@ pub struct AcceleratorSelectionBuilder {
 }
 impl AcceleratorSelectionBuilder {
     /// <p>The name of the chip used by the GPU accelerator.</p>
-    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r570</code> as the runtime.</p>
     /// <p>The available GPU accelerators are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>t4</code> - NVIDIA T4 Tensor Core GPU</p></li>
+    /// <p><code>t4</code> - NVIDIA T4 Tensor Core GPU (16 GiB memory)</p></li>
     /// <li>
-    /// <p><code>a10g</code> - NVIDIA A10G Tensor Core GPU</p></li>
+    /// <p><code>a10g</code> - NVIDIA A10G Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
-    /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU</p></li>
+    /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
-    /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU</p></li>
+    /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU (48 GiB memory)</p></li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: crate::types::AcceleratorName) -> Self {
@@ -98,39 +117,37 @@ impl AcceleratorSelectionBuilder {
         self
     }
     /// <p>The name of the chip used by the GPU accelerator.</p>
-    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r570</code> as the runtime.</p>
     /// <p>The available GPU accelerators are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>t4</code> - NVIDIA T4 Tensor Core GPU</p></li>
+    /// <p><code>t4</code> - NVIDIA T4 Tensor Core GPU (16 GiB memory)</p></li>
     /// <li>
-    /// <p><code>a10g</code> - NVIDIA A10G Tensor Core GPU</p></li>
+    /// <p><code>a10g</code> - NVIDIA A10G Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
-    /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU</p></li>
+    /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
-    /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU</p></li>
+    /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU (48 GiB memory)</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AcceleratorName>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the chip used by the GPU accelerator.</p>
-    /// <p>If you specify <code>l4</code> as the name of the accelerator, you must specify <code>latest</code> or <code>grid:r570</code> as the runtime.</p>
     /// <p>The available GPU accelerators are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>t4</code> - NVIDIA T4 Tensor Core GPU</p></li>
+    /// <p><code>t4</code> - NVIDIA T4 Tensor Core GPU (16 GiB memory)</p></li>
     /// <li>
-    /// <p><code>a10g</code> - NVIDIA A10G Tensor Core GPU</p></li>
+    /// <p><code>a10g</code> - NVIDIA A10G Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
-    /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU</p></li>
+    /// <p><code>l4</code> - NVIDIA L4 Tensor Core GPU (24 GiB memory)</p></li>
     /// <li>
-    /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU</p></li>
+    /// <p><code>l40s</code> - NVIDIA L40S Tensor Core GPU (48 GiB memory)</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AcceleratorName> {
         &self.name
     }
-    /// <p>Specifies the runtime driver to use for the GPU accelerator. You must use the same runtime for all GPUs.</p>
+    /// <p>Specifies the runtime driver to use for the GPU accelerator. You must use the same runtime for all GPUs in a fleet.</p>
     /// <p>You can choose from the following runtimes:</p>
     /// <ul>
     /// <li>
@@ -140,12 +157,23 @@ impl AcceleratorSelectionBuilder {
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
     /// </ul>
-    /// <p>If you don't specify a runtime, Deadline Cloud uses <code>latest</code> as the default. However, if you have multiple accelerators and specify <code>latest</code> for some and leave others blank, Deadline Cloud raises an exception.</p>
+    /// <p>If you don't specify a runtime, Amazon Web Services Deadline Cloud uses <code>latest</code> as the default. However, if you have multiple accelerators and specify <code>latest</code> for some and leave others blank, Amazon Web Services Deadline Cloud raises an exception.</p><important>
+    /// <p>Not all runtimes are compatible with all accelerator types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r570</code>, <code>grid:r535</code>)</p></li>
+    /// <li>
+    /// <p><code>l4</code> and <code>l40s</code>: Only support <code>grid:r570</code> and newer</p></li>
+    /// </ul>
+    /// <p>All accelerators in a fleet must use the same runtime version. You cannot mix different runtime versions within a single fleet.</p>
+    /// </important> <note>
+    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r570</code> for all currently supported accelerators.</p>
+    /// </note>
     pub fn runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the runtime driver to use for the GPU accelerator. You must use the same runtime for all GPUs.</p>
+    /// <p>Specifies the runtime driver to use for the GPU accelerator. You must use the same runtime for all GPUs in a fleet.</p>
     /// <p>You can choose from the following runtimes:</p>
     /// <ul>
     /// <li>
@@ -155,12 +183,23 @@ impl AcceleratorSelectionBuilder {
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
     /// </ul>
-    /// <p>If you don't specify a runtime, Deadline Cloud uses <code>latest</code> as the default. However, if you have multiple accelerators and specify <code>latest</code> for some and leave others blank, Deadline Cloud raises an exception.</p>
+    /// <p>If you don't specify a runtime, Amazon Web Services Deadline Cloud uses <code>latest</code> as the default. However, if you have multiple accelerators and specify <code>latest</code> for some and leave others blank, Amazon Web Services Deadline Cloud raises an exception.</p><important>
+    /// <p>Not all runtimes are compatible with all accelerator types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r570</code>, <code>grid:r535</code>)</p></li>
+    /// <li>
+    /// <p><code>l4</code> and <code>l40s</code>: Only support <code>grid:r570</code> and newer</p></li>
+    /// </ul>
+    /// <p>All accelerators in a fleet must use the same runtime version. You cannot mix different runtime versions within a single fleet.</p>
+    /// </important> <note>
+    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r570</code> for all currently supported accelerators.</p>
+    /// </note>
     pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime = input;
         self
     }
-    /// <p>Specifies the runtime driver to use for the GPU accelerator. You must use the same runtime for all GPUs.</p>
+    /// <p>Specifies the runtime driver to use for the GPU accelerator. You must use the same runtime for all GPUs in a fleet.</p>
     /// <p>You can choose from the following runtimes:</p>
     /// <ul>
     /// <li>
@@ -170,7 +209,18 @@ impl AcceleratorSelectionBuilder {
     /// <li>
     /// <p><code>grid:r535</code> - <a href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a></p></li>
     /// </ul>
-    /// <p>If you don't specify a runtime, Deadline Cloud uses <code>latest</code> as the default. However, if you have multiple accelerators and specify <code>latest</code> for some and leave others blank, Deadline Cloud raises an exception.</p>
+    /// <p>If you don't specify a runtime, Amazon Web Services Deadline Cloud uses <code>latest</code> as the default. However, if you have multiple accelerators and specify <code>latest</code> for some and leave others blank, Amazon Web Services Deadline Cloud raises an exception.</p><important>
+    /// <p>Not all runtimes are compatible with all accelerator types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>t4</code> and <code>a10g</code>: Support all runtimes (<code>grid:r570</code>, <code>grid:r535</code>)</p></li>
+    /// <li>
+    /// <p><code>l4</code> and <code>l40s</code>: Only support <code>grid:r570</code> and newer</p></li>
+    /// </ul>
+    /// <p>All accelerators in a fleet must use the same runtime version. You cannot mix different runtime versions within a single fleet.</p>
+    /// </important> <note>
+    /// <p>When you specify <code>latest</code>, it resolves to <code>grid:r570</code> for all currently supported accelerators.</p>
+    /// </note>
     pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
         &self.runtime
     }

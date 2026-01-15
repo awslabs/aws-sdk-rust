@@ -33,8 +33,17 @@ pub fn ser_create_collection_input_input(
         crate::protocol_serde::shape_vector_options::ser_vector_options(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.client_token {
-        object.key("clientToken").string(var_11.as_str());
+    if let Some(var_11) = &input.collection_group_name {
+        object.key("collectionGroupName").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.encryption_config {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("encryptionConfig").start_object();
+        crate::protocol_serde::shape_encryption_config::ser_encryption_config(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.client_token {
+        object.key("clientToken").string(var_14.as_str());
     }
     Ok(())
 }

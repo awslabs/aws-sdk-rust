@@ -26,54 +26,54 @@ pub fn ser_create_custom_db_engine_version_input_input_input(
         scope_7.string(var_8);
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("ImageId");
-    if let Some(var_10) = &input.image_id {
-        scope_9.string(var_10);
-    }
-    #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("KMSKeyId");
-    if let Some(var_12) = &input.kms_key_id {
-        scope_11.string(var_12);
-    }
-    #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("SourceCustomDbEngineVersionIdentifier");
-    if let Some(var_14) = &input.source_custom_db_engine_version_identifier {
-        scope_13.string(var_14);
-    }
-    #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("UseAwsProvidedLatestImage");
-    if let Some(var_16) = &input.use_aws_provided_latest_image {
-        scope_15.boolean(*var_16);
-    }
-    #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("Description");
-    if let Some(var_18) = &input.description {
-        scope_17.string(var_18);
-    }
-    #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("Manifest");
-    if let Some(var_20) = &input.manifest {
-        scope_19.string(var_20);
-    }
-    #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("Tags");
-    if let Some(var_22) = &input.tags {
-        let mut list_24 = scope_21.start_list(false, Some("Tag"));
-        for item_23 in var_22 {
+    let mut scope_9 = writer.prefix("DatabaseInstallationFiles");
+    if let Some(var_10) = &input.database_installation_files {
+        let mut list_12 = scope_9.start_list(false, None);
+        for item_11 in var_10 {
             #[allow(unused_mut)]
-            let mut entry_25 = list_24.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_25, item_23)?;
+            let mut entry_13 = list_12.entry();
+            entry_13.string(item_11);
         }
-        list_24.finish();
+        list_12.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("DatabaseInstallationFiles");
-    if let Some(var_27) = &input.database_installation_files {
-        let mut list_29 = scope_26.start_list(false, None);
+    let mut scope_14 = writer.prefix("ImageId");
+    if let Some(var_15) = &input.image_id {
+        scope_14.string(var_15);
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("KMSKeyId");
+    if let Some(var_17) = &input.kms_key_id {
+        scope_16.string(var_17);
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("SourceCustomDbEngineVersionIdentifier");
+    if let Some(var_19) = &input.source_custom_db_engine_version_identifier {
+        scope_18.string(var_19);
+    }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("UseAwsProvidedLatestImage");
+    if let Some(var_21) = &input.use_aws_provided_latest_image {
+        scope_20.boolean(*var_21);
+    }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("Description");
+    if let Some(var_23) = &input.description {
+        scope_22.string(var_23);
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("Manifest");
+    if let Some(var_25) = &input.manifest {
+        scope_24.string(var_25);
+    }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("Tags");
+    if let Some(var_27) = &input.tags {
+        let mut list_29 = scope_26.start_list(false, Some("Tag"));
         for item_28 in var_27 {
             #[allow(unused_mut)]
             let mut entry_30 = list_29.entry();
-            entry_30.string(item_28);
+            crate::protocol_serde::shape_tag::ser_tag(entry_30, item_28)?;
         }
         list_29.finish();
     }

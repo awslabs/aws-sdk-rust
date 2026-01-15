@@ -39,6 +39,8 @@ pub(crate) mod shape_associate_email_address_alias;
 
 pub(crate) mod shape_associate_flow;
 
+pub(crate) mod shape_associate_hours_of_operations;
+
 pub(crate) mod shape_associate_instance_storage_config;
 
 pub(crate) mod shape_associate_lambda_function;
@@ -295,6 +297,8 @@ pub(crate) mod shape_disassociate_email_address_alias;
 
 pub(crate) mod shape_disassociate_flow;
 
+pub(crate) mod shape_disassociate_hours_of_operations;
+
 pub(crate) mod shape_disassociate_instance_storage_config;
 
 pub(crate) mod shape_disassociate_lambda_function;
@@ -364,6 +368,8 @@ pub(crate) mod shape_list_associated_contacts;
 pub(crate) mod shape_list_authentication_profiles;
 
 pub(crate) mod shape_list_bots;
+
+pub(crate) mod shape_list_child_hours_of_operations;
 
 pub(crate) mod shape_list_contact_evaluations;
 
@@ -731,6 +737,8 @@ pub(crate) mod shape_associate_email_address_alias_input;
 
 pub(crate) mod shape_associate_flow_input;
 
+pub(crate) mod shape_associate_hours_of_operations_input;
+
 pub(crate) mod shape_associate_instance_storage_config_input;
 
 pub(crate) mod shape_associate_lambda_function_input;
@@ -860,6 +868,8 @@ pub(crate) mod shape_disassociate_analytics_data_set_input;
 pub(crate) mod shape_disassociate_bot_input;
 
 pub(crate) mod shape_disassociate_email_address_alias_input;
+
+pub(crate) mod shape_disassociate_hours_of_operations_input;
 
 pub(crate) mod shape_disassociate_queue_quick_connects_input;
 
@@ -1245,6 +1255,8 @@ pub(crate) mod shape_chat_message;
 
 pub(crate) mod shape_chat_streaming_configuration;
 
+pub(crate) mod shape_child_hours_of_operations_list;
+
 pub(crate) mod shape_claimed_phone_number_summary;
 
 pub(crate) mod shape_connection_data;
@@ -1334,6 +1346,8 @@ pub(crate) mod shape_disconnect_reason;
 pub(crate) mod shape_download_url_metadata;
 
 pub(crate) mod shape_effective_hours_of_operation_list;
+
+pub(crate) mod shape_effective_override_hours_list;
 
 pub(crate) mod shape_email_address_info;
 
@@ -1491,6 +1505,8 @@ pub(crate) mod shape_outbound_email_content;
 
 pub(crate) mod shape_outbound_strategy;
 
+pub(crate) mod shape_parent_hours_of_operation_config;
+
 pub(crate) mod shape_participant_configuration;
 
 pub(crate) mod shape_participant_details;
@@ -1560,6 +1576,8 @@ pub(crate) mod shape_quick_connect_search_summary_list;
 pub(crate) mod shape_quick_connect_summary_list;
 
 pub(crate) mod shape_realtime_contact_analysis_segments;
+
+pub(crate) mod shape_recurrence_config;
 
 pub(crate) mod shape_reference;
 
@@ -1859,6 +1877,8 @@ pub(crate) mod shape_distribution_list;
 
 pub(crate) mod shape_effective_hours_of_operations;
 
+pub(crate) mod shape_effective_override_hours;
+
 pub(crate) mod shape_email_address_metadata;
 
 pub(crate) mod shape_end_associated_tasks_action_definition;
@@ -1929,6 +1949,8 @@ pub(crate) mod shape_hours_of_operation_summary;
 
 pub(crate) mod shape_hours_of_operation_time_slice;
 
+pub(crate) mod shape_hours_of_operations_identifier;
+
 pub(crate) mod shape_inbound_raw_message;
 
 pub(crate) mod shape_instance_status_reason;
@@ -1977,6 +1999,8 @@ pub(crate) mod shape_outbound_strategy_config;
 
 pub(crate) mod shape_override_time_slice;
 
+pub(crate) mod shape_parent_hours_of_operations_list;
+
 pub(crate) mod shape_participant_capabilities;
 
 pub(crate) mod shape_phone_number_quick_connect_config;
@@ -2016,6 +2040,8 @@ pub(crate) mod shape_realtime_contact_analysis_segment;
 pub(crate) mod shape_record_primary_value;
 
 pub(crate) mod shape_recordings;
+
+pub(crate) mod shape_recurrence_pattern;
 
 pub(crate) mod shape_reference_summary;
 
@@ -2243,6 +2269,8 @@ pub(crate) mod shape_number_reference;
 
 pub(crate) mod shape_operational_hours;
 
+pub(crate) mod shape_override_hours;
+
 pub(crate) mod shape_participant_metrics;
 
 pub(crate) mod shape_participant_timer_configuration;
@@ -2355,9 +2383,15 @@ pub(crate) mod shape_images_logo;
 
 pub(crate) mod shape_metric_data_v2;
 
+pub(crate) mod shape_month_day_list;
+
+pub(crate) mod shape_month_list;
+
 pub(crate) mod shape_next_contact_metadata;
 
 pub(crate) mod shape_operational_hour;
+
+pub(crate) mod shape_override_hour;
 
 pub(crate) mod shape_palette_canvas;
 
@@ -2402,6 +2436,8 @@ pub(crate) mod shape_step;
 pub(crate) mod shape_transcript_criteria;
 
 pub(crate) mod shape_validation_enum_values;
+
+pub(crate) mod shape_weekday_occurrence_list;
 
 pub(crate) mod shape_contact_references;
 

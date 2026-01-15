@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-timestreamquery = "1.95.0"
+//! aws-sdk-timestreamquery = "1.96.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -192,6 +192,8 @@ pub(crate) mod client_idempotency_token;
 pub mod endpoint_discovery;
 
 mod idempotency_token;
+
+mod observability_feature;
 
 pub(crate) mod protocol_serde;
 

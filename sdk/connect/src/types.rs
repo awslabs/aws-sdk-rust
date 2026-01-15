@@ -227,6 +227,14 @@ pub use crate::types::_instance_storage_resource_type::InstanceStorageResourceTy
 
 pub use crate::types::_instance_attribute_type::InstanceAttributeType;
 
+pub use crate::types::_override_type::OverrideType;
+
+pub use crate::types::_recurrence_config::RecurrenceConfig;
+
+pub use crate::types::_recurrence_pattern::RecurrencePattern;
+
+pub use crate::types::_recurrence_frequency::RecurrenceFrequency;
+
 pub use crate::types::_hours_of_operation_override_config::HoursOfOperationOverrideConfig;
 
 pub use crate::types::_override_time_slice::OverrideTimeSlice;
@@ -616,6 +624,8 @@ pub use crate::types::_predefined_attribute_configuration::PredefinedAttributeCo
 pub use crate::types::_predefined_attribute_search_criteria::PredefinedAttributeSearchCriteria;
 
 pub use crate::types::_hours_of_operation::HoursOfOperation;
+
+pub use crate::types::_hours_of_operations_identifier::HoursOfOperationsIdentifier;
 
 pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearchCriteria;
 
@@ -1043,6 +1053,12 @@ pub use crate::types::_flow_association_resource_type::FlowAssociationResourceTy
 
 pub use crate::types::_credentials::Credentials;
 
+pub use crate::types::_effective_override_hours::EffectiveOverrideHours;
+
+pub use crate::types::_override_hour::OverrideHour;
+
+pub use crate::types::_operational_status::OperationalStatus;
+
 pub use crate::types::_effective_hours_of_operations::EffectiveHoursOfOperations;
 
 pub use crate::types::_operational_hour::OperationalHour;
@@ -1256,6 +1272,8 @@ pub use crate::types::_device_type::DeviceType;
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentials;
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAdd;
+
+pub use crate::types::_parent_hours_of_operation_config::ParentHoursOfOperationConfig;
 
 pub use crate::types::_initiate_as::InitiateAs;
 
@@ -1635,6 +1653,8 @@ mod _download_url_metadata;
 
 mod _effective_hours_of_operations;
 
+mod _effective_override_hours;
+
 mod _email_address_info;
 
 mod _email_address_metadata;
@@ -1927,6 +1947,8 @@ mod _hours_of_operation_summary;
 
 mod _hours_of_operation_time_slice;
 
+mod _hours_of_operations_identifier;
+
 mod _images_logo;
 
 mod _inbound_additional_recipients;
@@ -2053,6 +2075,8 @@ mod _numeric_question_property_value_automation;
 
 mod _operational_hour;
 
+mod _operational_status;
+
 mod _outbound_additional_recipients;
 
 mod _outbound_caller_config;
@@ -2073,7 +2097,11 @@ mod _outbound_strategy_type;
 
 mod _override_days;
 
+mod _override_hour;
+
 mod _override_time_slice;
+
+mod _override_type;
 
 mod _palette_canvas;
 
@@ -2082,6 +2110,8 @@ mod _palette_header;
 mod _palette_navigation;
 
 mod _palette_primary;
+
+mod _parent_hours_of_operation_config;
 
 mod _participant_capabilities;
 
@@ -2256,6 +2286,12 @@ mod _record_primary_value;
 mod _recording_info;
 
 mod _recording_status;
+
+mod _recurrence_config;
+
+mod _recurrence_frequency;
+
+mod _recurrence_pattern;
 
 mod _reference;
 

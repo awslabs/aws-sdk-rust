@@ -3,9 +3,9 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_monitor_summary::MonitorSummaryBuilder;
 
-pub use crate::types::_license_endpoint_summary::LicenseEndpointSummaryBuilder;
-
 pub use crate::types::_metered_product_summary::MeteredProductSummaryBuilder;
+
+pub use crate::types::_license_endpoint_summary::LicenseEndpointSummaryBuilder;
 
 pub use crate::types::_file_system_location::FileSystemLocationBuilder;
 
@@ -62,6 +62,8 @@ pub use crate::types::_job_member::JobMemberBuilder;
 pub use crate::types::_parameter_space::ParameterSpaceBuilder;
 
 pub use crate::types::_step_parameter::StepParameterBuilder;
+
+pub use crate::types::_step_parameter_chunks::StepParameterChunksBuilder;
 
 pub use crate::types::_step_required_capabilities::StepRequiredCapabilitiesBuilder;
 
@@ -206,6 +208,8 @@ pub use crate::types::_field_sort_expression::FieldSortExpressionBuilder;
 pub use crate::types::_user_jobs_first::UserJobsFirstBuilder;
 
 pub use crate::types::_search_grouped_filter_expressions::SearchGroupedFilterExpressionsBuilder;
+
+pub use crate::types::_string_list_filter_expression::StringListFilterExpressionBuilder;
 
 pub use crate::types::_string_filter_expression::StringFilterExpressionBuilder;
 

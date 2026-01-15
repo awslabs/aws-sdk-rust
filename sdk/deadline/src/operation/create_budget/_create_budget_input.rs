@@ -23,6 +23,8 @@ pub struct CreateBudgetInput {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::BudgetActionToAdd>>,
     /// <p>The schedule to associate with this budget.</p>
     pub schedule: ::std::option::Option<crate::types::BudgetSchedule>,
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateBudgetInput {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
@@ -63,6 +65,10 @@ impl CreateBudgetInput {
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::BudgetSchedule> {
         self.schedule.as_ref()
     }
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateBudgetInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -75,6 +81,7 @@ impl ::std::fmt::Debug for CreateBudgetInput {
         formatter.field("approximate_dollar_limit", &self.approximate_dollar_limit);
         formatter.field("actions", &self.actions);
         formatter.field("schedule", &self.schedule);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -97,6 +104,7 @@ pub struct CreateBudgetInputBuilder {
     pub(crate) approximate_dollar_limit: ::std::option::Option<f32>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::BudgetActionToAdd>>,
     pub(crate) schedule: ::std::option::Option<crate::types::BudgetSchedule>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateBudgetInputBuilder {
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
@@ -234,6 +242,26 @@ impl CreateBudgetInputBuilder {
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::BudgetSchedule> {
         &self.schedule
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateBudgetInput`](crate::operation::create_budget::CreateBudgetInput).
     pub fn build(
         self,
@@ -247,6 +275,7 @@ impl CreateBudgetInputBuilder {
             approximate_dollar_limit: self.approximate_dollar_limit,
             actions: self.actions,
             schedule: self.schedule,
+            tags: self.tags,
         })
     }
 }
@@ -261,6 +290,7 @@ impl ::std::fmt::Debug for CreateBudgetInputBuilder {
         formatter.field("approximate_dollar_limit", &self.approximate_dollar_limit);
         formatter.field("actions", &self.actions);
         formatter.field("schedule", &self.schedule);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

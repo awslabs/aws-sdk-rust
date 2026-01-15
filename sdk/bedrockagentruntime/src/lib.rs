@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrockagentruntime = "1.119.0"
+//! aws-sdk-bedrockagentruntime = "1.120.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -188,6 +188,8 @@ pub mod primitives;
 pub mod types;
 
 mod event_receiver;
+
+mod observability_feature;
 
 pub(crate) mod protocol_serde;
 

@@ -37,6 +37,8 @@ pub(crate) mod shape_disassociate_eip_from_vlan;
 
 pub(crate) mod shape_get_environment;
 
+pub(crate) mod shape_get_versions;
+
 pub(crate) mod shape_list_environment_hosts;
 
 pub(crate) mod shape_list_environment_vlans;
@@ -70,6 +72,8 @@ pub(crate) mod shape_delete_environment_input;
 pub(crate) mod shape_disassociate_eip_from_vlan_input;
 
 pub(crate) mod shape_get_environment_input;
+
+pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_environment_hosts_input;
 
@@ -111,6 +115,8 @@ pub(crate) mod shape_host_list;
 
 pub(crate) mod shape_initial_vlans;
 
+pub(crate) mod shape_instance_type_esx_versions_list;
+
 pub(crate) mod shape_license_info;
 
 pub(crate) mod shape_response_tag_map;
@@ -120,6 +126,8 @@ pub(crate) mod shape_service_access_security_groups;
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_vcf_hostnames;
+
+pub(crate) mod shape_vcf_version_list;
 
 pub(crate) mod shape_vlan;
 
@@ -131,6 +139,8 @@ pub(crate) mod shape_eip_association_list;
 
 pub(crate) mod shape_initial_vlan_info;
 
+pub(crate) mod shape_instance_type_esx_versions_info;
+
 pub(crate) mod shape_license_info_list;
 
 pub(crate) mod shape_network_interface_list;
@@ -139,9 +149,15 @@ pub(crate) mod shape_secret_list;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_vcf_version_info;
+
 pub(crate) mod shape_check;
 
 pub(crate) mod shape_eip_association;
+
+pub(crate) mod shape_esx_version_list;
+
+pub(crate) mod shape_instance_type_list;
 
 pub(crate) mod shape_network_interface;
 

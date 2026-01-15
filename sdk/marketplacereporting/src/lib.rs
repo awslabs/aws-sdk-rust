@@ -40,7 +40,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-marketplacereporting = "1.47.0"
+//! aws-sdk-marketplacereporting = "1.48.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -190,6 +190,8 @@ pub mod operation;
 
 /// Primitives such as `Blob` or `DateTime` used by other types.
 pub mod primitives;
+
+mod observability_feature;
 
 pub(crate) mod protocol_serde;
 

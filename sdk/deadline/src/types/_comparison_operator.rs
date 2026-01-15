@@ -12,6 +12,8 @@
 /// ```text
 /// # let comparisonoperator = unimplemented!();
 /// match comparisonoperator {
+///     ComparisonOperator::AllNotEquals => { /* ... */ },
+///     ComparisonOperator::AnyEquals => { /* ... */ },
 ///     ComparisonOperator::Equal => { /* ... */ },
 ///     ComparisonOperator::GreaterThan => { /* ... */ },
 ///     ComparisonOperator::GreaterThanEqualTo => { /* ... */ },
@@ -47,6 +49,10 @@
 )]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
+    AllNotEquals,
+    #[allow(missing_docs)] // documentation missing in model
+    AnyEquals,
+    #[allow(missing_docs)] // documentation missing in model
     Equal,
     #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
@@ -65,6 +71,8 @@ pub enum ComparisonOperator {
 impl ::std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
         match s {
+            "ALL_NOT_EQUALS" => ComparisonOperator::AllNotEquals,
+            "ANY_EQUALS" => ComparisonOperator::AnyEquals,
             "EQUAL" => ComparisonOperator::Equal,
             "GREATER_THAN" => ComparisonOperator::GreaterThan,
             "GREATER_THAN_EQUAL_TO" => ComparisonOperator::GreaterThanEqualTo,
@@ -86,6 +94,8 @@ impl ComparisonOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ComparisonOperator::AllNotEquals => "ALL_NOT_EQUALS",
+            ComparisonOperator::AnyEquals => "ANY_EQUALS",
             ComparisonOperator::Equal => "EQUAL",
             ComparisonOperator::GreaterThan => "GREATER_THAN",
             ComparisonOperator::GreaterThanEqualTo => "GREATER_THAN_EQUAL_TO",
@@ -98,6 +108,8 @@ impl ComparisonOperator {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ALL_NOT_EQUALS",
+            "ANY_EQUALS",
             "EQUAL",
             "GREATER_THAN",
             "GREATER_THAN_EQUAL_TO",
@@ -127,6 +139,8 @@ impl ComparisonOperator {
 impl ::std::fmt::Display for ComparisonOperator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ComparisonOperator::AllNotEquals => write!(f, "ALL_NOT_EQUALS"),
+            ComparisonOperator::AnyEquals => write!(f, "ANY_EQUALS"),
             ComparisonOperator::Equal => write!(f, "EQUAL"),
             ComparisonOperator::GreaterThan => write!(f, "GREATER_THAN"),
             ComparisonOperator::GreaterThanEqualTo => write!(f, "GREATER_THAN_EQUAL_TO"),

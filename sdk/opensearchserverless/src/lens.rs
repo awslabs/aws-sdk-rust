@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_access_policies_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_collection_groups_output_output_next_token(
+    input: &crate::operation::list_collection_groups::ListCollectionGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_collections_output_output_next_token(
     input: &crate::operation::list_collections::ListCollectionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {

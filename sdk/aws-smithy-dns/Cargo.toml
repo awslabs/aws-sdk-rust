@@ -19,7 +19,7 @@ hickory-dns = ["dep:hickory-resolver", "dep:tokio", "tokio/rt"]
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.9.3"
+version = "1.10.0"
 
 [dependencies.tokio]
 version = "1.40.0"

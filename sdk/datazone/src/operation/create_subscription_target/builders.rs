@@ -263,4 +263,18 @@ impl CreateSubscriptionTargetFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn subscription_grant_creation_mode(mut self, input: crate::types::SubscriptionGrantCreationMode) -> Self {
+        self.inner = self.inner.subscription_grant_creation_mode(input);
+        self
+    }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn set_subscription_grant_creation_mode(mut self, input: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>) -> Self {
+        self.inner = self.inner.set_subscription_grant_creation_mode(input);
+        self
+    }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn get_subscription_grant_creation_mode(&self) -> &::std::option::Option<crate::types::SubscriptionGrantCreationMode> {
+        self.inner.get_subscription_grant_creation_mode()
+    }
 }

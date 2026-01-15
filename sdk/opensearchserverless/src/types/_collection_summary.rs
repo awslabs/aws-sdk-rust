@@ -12,6 +12,10 @@ pub struct CollectionSummary {
     pub status: ::std::option::Option<crate::types::CollectionStatus>,
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the Amazon Web Services Key Management Service key used to encrypt the collection.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub collection_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CollectionSummary {
     /// <p>The unique identifier of the collection.</p>
@@ -30,6 +34,14 @@ impl CollectionSummary {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>The ARN of the Amazon Web Services Key Management Service key used to encrypt the collection.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn collection_group_name(&self) -> ::std::option::Option<&str> {
+        self.collection_group_name.as_deref()
+    }
 }
 impl CollectionSummary {
     /// Creates a new builder-style object to manufacture [`CollectionSummary`](crate::types::CollectionSummary).
@@ -46,6 +58,8 @@ pub struct CollectionSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CollectionStatus>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) collection_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CollectionSummaryBuilder {
     /// <p>The unique identifier of the collection.</p>
@@ -104,6 +118,34 @@ impl CollectionSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The ARN of the Amazon Web Services Key Management Service key used to encrypt the collection.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Amazon Web Services Key Management Service key used to encrypt the collection.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The ARN of the Amazon Web Services Key Management Service key used to encrypt the collection.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn collection_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.collection_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn set_collection_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.collection_group_name = input;
+        self
+    }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn get_collection_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_group_name
+    }
     /// Consumes the builder and constructs a [`CollectionSummary`](crate::types::CollectionSummary).
     pub fn build(self) -> crate::types::CollectionSummary {
         crate::types::CollectionSummary {
@@ -111,6 +153,8 @@ impl CollectionSummaryBuilder {
             name: self.name,
             status: self.status,
             arn: self.arn,
+            kms_key_arn: self.kms_key_arn,
+            collection_group_name: self.collection_group_name,
         }
     }
 }

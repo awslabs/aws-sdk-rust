@@ -141,17 +141,17 @@ impl SearchWorkersFluentBuilder {
     pub fn get_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_fleet_ids()
     }
-    /// <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when searching among a group of search strings in a resource. You can use two groupings per search each within parenthesis <code>()</code>.</p>
+    /// <p>The search terms for a resource.</p>
     pub fn filter_expressions(mut self, input: crate::types::SearchGroupedFilterExpressions) -> Self {
         self.inner = self.inner.filter_expressions(input);
         self
     }
-    /// <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when searching among a group of search strings in a resource. You can use two groupings per search each within parenthesis <code>()</code>.</p>
+    /// <p>The search terms for a resource.</p>
     pub fn set_filter_expressions(mut self, input: ::std::option::Option<crate::types::SearchGroupedFilterExpressions>) -> Self {
         self.inner = self.inner.set_filter_expressions(input);
         self
     }
-    /// <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when searching among a group of search strings in a resource. You can use two groupings per search each within parenthesis <code>()</code>.</p>
+    /// <p>The search terms for a resource.</p>
     pub fn get_filter_expressions(&self) -> &::std::option::Option<crate::types::SearchGroupedFilterExpressions> {
         self.inner.get_filter_expressions()
     }
@@ -174,31 +174,31 @@ impl SearchWorkersFluentBuilder {
     pub fn get_sort_expressions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchSortExpression>> {
         self.inner.get_sort_expressions()
     }
-    /// <p>Defines how far into the scrollable list to start the return of results.</p>
+    /// <p>The offset for the search results.</p>
     pub fn item_offset(mut self, input: i32) -> Self {
         self.inner = self.inner.item_offset(input);
         self
     }
-    /// <p>Defines how far into the scrollable list to start the return of results.</p>
+    /// <p>The offset for the search results.</p>
     pub fn set_item_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_item_offset(input);
         self
     }
-    /// <p>Defines how far into the scrollable list to start the return of results.</p>
+    /// <p>The offset for the search results.</p>
     pub fn get_item_offset(&self) -> &::std::option::Option<i32> {
         self.inner.get_item_offset()
     }
-    /// <p>Specifies the number of items per page for the resource.</p>
+    /// <p>Specifies the number of results to return.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
         self
     }
-    /// <p>Specifies the number of items per page for the resource.</p>
+    /// <p>Specifies the number of results to return.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
     }
-    /// <p>Specifies the number of items per page for the resource.</p>
+    /// <p>Specifies the number of results to return.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_page_size()
     }

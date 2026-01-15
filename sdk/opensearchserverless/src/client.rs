@@ -138,6 +138,8 @@ impl Client {
 
 mod batch_get_collection;
 
+mod batch_get_collection_group;
+
 mod batch_get_effective_lifecycle_policy;
 
 mod batch_get_lifecycle_policy;
@@ -147,6 +149,8 @@ mod batch_get_vpc_endpoint;
 mod create_access_policy;
 
 mod create_collection;
+
+mod create_collection_group;
 
 mod create_index;
 
@@ -189,6 +193,8 @@ mod delete_access_policy;
 
 mod delete_collection;
 
+mod delete_collection_group;
+
 mod delete_index;
 
 mod delete_lifecycle_policy;
@@ -213,6 +219,8 @@ mod get_security_policy;
 
 mod list_access_policies;
 
+mod list_collection_groups;
+
 mod list_collections;
 
 mod list_lifecycle_policies;
@@ -234,6 +242,8 @@ mod update_access_policy;
 mod update_account_settings;
 
 mod update_collection;
+
+mod update_collection_group;
 
 mod update_index;
 

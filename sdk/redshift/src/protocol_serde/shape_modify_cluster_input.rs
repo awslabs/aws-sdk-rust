@@ -174,6 +174,11 @@ pub fn ser_modify_cluster_input_input_input(
     if let Some(var_64) = &input.multi_az {
         scope_63.boolean(*var_64);
     }
+    #[allow(unused_mut)]
+    let mut scope_65 = writer.prefix("ExtraComputeForAutomaticOptimization");
+    if let Some(var_66) = &input.extra_compute_for_automatic_optimization {
+        scope_65.boolean(*var_66);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

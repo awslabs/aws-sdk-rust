@@ -16,6 +16,18 @@ pub struct ResourceInfo {
     pub hybrid_access_enabled: ::std::option::Option<bool>,
     /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
     pub with_privileged_access: ::std::option::Option<bool>,
+    /// <p>Indicates whether the registered role has sufficient permissions to access registered Amazon S3 location. Verification Status can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>VERIFIED - Registered role has sufficient permissions to access registered Amazon S3 location.</p></li>
+    /// <li>
+    /// <p>NOT_VERIFIED - Registered role does not have sufficient permissions to access registered Amazon S3 location.</p></li>
+    /// <li>
+    /// <p>VERIFICATION_FAILED - Unable to verify if the registered role can access the registered Amazon S3 location.</p></li>
+    /// </ul>
+    pub verification_status: ::std::option::Option<crate::types::VerificationStatus>,
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub expected_resource_owner_account: ::std::option::Option<::std::string::String>,
 }
 impl ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -42,6 +54,22 @@ impl ResourceInfo {
     pub fn with_privileged_access(&self) -> ::std::option::Option<bool> {
         self.with_privileged_access
     }
+    /// <p>Indicates whether the registered role has sufficient permissions to access registered Amazon S3 location. Verification Status can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>VERIFIED - Registered role has sufficient permissions to access registered Amazon S3 location.</p></li>
+    /// <li>
+    /// <p>NOT_VERIFIED - Registered role does not have sufficient permissions to access registered Amazon S3 location.</p></li>
+    /// <li>
+    /// <p>VERIFICATION_FAILED - Unable to verify if the registered role can access the registered Amazon S3 location.</p></li>
+    /// </ul>
+    pub fn verification_status(&self) -> ::std::option::Option<&crate::types::VerificationStatus> {
+        self.verification_status.as_ref()
+    }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn expected_resource_owner_account(&self) -> ::std::option::Option<&str> {
+        self.expected_resource_owner_account.as_deref()
+    }
 }
 impl ResourceInfo {
     /// Creates a new builder-style object to manufacture [`ResourceInfo`](crate::types::ResourceInfo).
@@ -60,6 +88,8 @@ pub struct ResourceInfoBuilder {
     pub(crate) with_federation: ::std::option::Option<bool>,
     pub(crate) hybrid_access_enabled: ::std::option::Option<bool>,
     pub(crate) with_privileged_access: ::std::option::Option<bool>,
+    pub(crate) verification_status: ::std::option::Option<crate::types::VerificationStatus>,
+    pub(crate) expected_resource_owner_account: ::std::option::Option<::std::string::String>,
 }
 impl ResourceInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -146,6 +176,58 @@ impl ResourceInfoBuilder {
     pub fn get_with_privileged_access(&self) -> &::std::option::Option<bool> {
         &self.with_privileged_access
     }
+    /// <p>Indicates whether the registered role has sufficient permissions to access registered Amazon S3 location. Verification Status can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>VERIFIED - Registered role has sufficient permissions to access registered Amazon S3 location.</p></li>
+    /// <li>
+    /// <p>NOT_VERIFIED - Registered role does not have sufficient permissions to access registered Amazon S3 location.</p></li>
+    /// <li>
+    /// <p>VERIFICATION_FAILED - Unable to verify if the registered role can access the registered Amazon S3 location.</p></li>
+    /// </ul>
+    pub fn verification_status(mut self, input: crate::types::VerificationStatus) -> Self {
+        self.verification_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the registered role has sufficient permissions to access registered Amazon S3 location. Verification Status can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>VERIFIED - Registered role has sufficient permissions to access registered Amazon S3 location.</p></li>
+    /// <li>
+    /// <p>NOT_VERIFIED - Registered role does not have sufficient permissions to access registered Amazon S3 location.</p></li>
+    /// <li>
+    /// <p>VERIFICATION_FAILED - Unable to verify if the registered role can access the registered Amazon S3 location.</p></li>
+    /// </ul>
+    pub fn set_verification_status(mut self, input: ::std::option::Option<crate::types::VerificationStatus>) -> Self {
+        self.verification_status = input;
+        self
+    }
+    /// <p>Indicates whether the registered role has sufficient permissions to access registered Amazon S3 location. Verification Status can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>VERIFIED - Registered role has sufficient permissions to access registered Amazon S3 location.</p></li>
+    /// <li>
+    /// <p>NOT_VERIFIED - Registered role does not have sufficient permissions to access registered Amazon S3 location.</p></li>
+    /// <li>
+    /// <p>VERIFICATION_FAILED - Unable to verify if the registered role can access the registered Amazon S3 location.</p></li>
+    /// </ul>
+    pub fn get_verification_status(&self) -> &::std::option::Option<crate::types::VerificationStatus> {
+        &self.verification_status
+    }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn expected_resource_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_resource_owner_account = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn set_expected_resource_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_resource_owner_account = input;
+        self
+    }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn get_expected_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_resource_owner_account
+    }
     /// Consumes the builder and constructs a [`ResourceInfo`](crate::types::ResourceInfo).
     pub fn build(self) -> crate::types::ResourceInfo {
         crate::types::ResourceInfo {
@@ -155,6 +237,8 @@ impl ResourceInfoBuilder {
             with_federation: self.with_federation,
             hybrid_access_enabled: self.hybrid_access_enabled,
             with_privileged_access: self.with_privileged_access,
+            verification_status: self.verification_status,
+            expected_resource_owner_account: self.expected_resource_owner_account,
         }
     }
 }

@@ -249,6 +249,20 @@ pub(crate) fn reflens_describe_db_subnet_groups_output_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_engine_default_cluster_parameters_output_output_engine_defaults_marker(
+    input: &crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.engine_defaults {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_engine_default_parameters_output_output_engine_defaults_marker(
     input: &crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -575,6 +589,14 @@ pub(crate) fn lens_describe_db_subnet_groups_output_output_db_subnet_groups(
     input: crate::operation::describe_db_subnet_groups::DescribeDbSubnetGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DbSubnetGroup>> {
     let input = input.db_subnet_groups?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_engine_default_cluster_parameters_output_output_engine_defaults_parameters(
+    input: crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    let input = input.engine_defaults?;
+    let input = input.parameters?;
     ::std::option::Option::Some(input)
 }
 

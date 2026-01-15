@@ -169,6 +169,8 @@ pub(crate) mod shape_meta_industries;
 
 pub(crate) mod shape_meta_library_template_button_list;
 
+pub(crate) mod shape_meta_template_body_example_params;
+
 pub(crate) mod shape_whats_app_phone_number_summary;
 
 pub(crate) mod shape_library_template_button_list;

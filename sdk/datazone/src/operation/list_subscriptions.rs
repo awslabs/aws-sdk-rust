@@ -231,39 +231,44 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSubscrip
                         query.push_kv("owningProjectId", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.owning_user_id {
+                if let ::std::option::Option::Some(inner_6) = &_input.owning_iam_principal_arn {
                     {
-                        query.push_kv("owningUserId", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("owningIamPrincipalArn", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
-                if let ::std::option::Option::Some(inner_7) = &_input.owning_group_id {
+                if let ::std::option::Option::Some(inner_7) = &_input.owning_user_id {
                     {
-                        query.push_kv("owningGroupId", &::aws_smithy_http::query::fmt_string(inner_7));
+                        query.push_kv("owningUserId", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
-                if let ::std::option::Option::Some(inner_8) = &_input.approver_project_id {
+                if let ::std::option::Option::Some(inner_8) = &_input.owning_group_id {
                     {
-                        query.push_kv("approverProjectId", &::aws_smithy_http::query::fmt_string(inner_8));
+                        query.push_kv("owningGroupId", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
-                if let ::std::option::Option::Some(inner_9) = &_input.sort_by {
+                if let ::std::option::Option::Some(inner_9) = &_input.approver_project_id {
                     {
-                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_9));
+                        query.push_kv("approverProjectId", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
-                if let ::std::option::Option::Some(inner_10) = &_input.sort_order {
+                if let ::std::option::Option::Some(inner_10) = &_input.sort_by {
                     {
-                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_10));
+                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
-                if let ::std::option::Option::Some(inner_11) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_11) = &_input.sort_order {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_11).encode());
+                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_11));
                     }
                 }
-                if let ::std::option::Option::Some(inner_12) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_12) = &_input.max_results {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_12));
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_12).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_13) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_13));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -33,6 +33,8 @@ pub struct CreateSubscriptionTargetOutput {
     pub subscription_target_config: ::std::vec::Vec<crate::types::SubscriptionTargetForm>,
     /// <p>The provider of the subscription target.</p>
     pub provider: ::std::string::String,
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub subscription_grant_creation_mode: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>,
     _request_id: Option<String>,
 }
 impl CreateSubscriptionTargetOutput {
@@ -107,6 +109,10 @@ impl CreateSubscriptionTargetOutput {
         use std::ops::Deref;
         self.provider.deref()
     }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn subscription_grant_creation_mode(&self) -> ::std::option::Option<&crate::types::SubscriptionGrantCreationMode> {
+        self.subscription_grant_creation_mode.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateSubscriptionTargetOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -126,6 +132,7 @@ impl ::std::fmt::Debug for CreateSubscriptionTargetOutput {
         formatter.field("applicable_asset_types", &self.applicable_asset_types);
         formatter.field("subscription_target_config", &self.subscription_target_config);
         formatter.field("provider", &self.provider);
+        formatter.field("subscription_grant_creation_mode", &self.subscription_grant_creation_mode);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -161,6 +168,7 @@ pub struct CreateSubscriptionTargetOutputBuilder {
     pub(crate) applicable_asset_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subscription_target_config: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionTargetForm>>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
+    pub(crate) subscription_grant_creation_mode: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>,
     _request_id: Option<String>,
 }
 impl CreateSubscriptionTargetOutputBuilder {
@@ -401,6 +409,20 @@ impl CreateSubscriptionTargetOutputBuilder {
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider
     }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn subscription_grant_creation_mode(mut self, input: crate::types::SubscriptionGrantCreationMode) -> Self {
+        self.subscription_grant_creation_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn set_subscription_grant_creation_mode(mut self, input: ::std::option::Option<crate::types::SubscriptionGrantCreationMode>) -> Self {
+        self.subscription_grant_creation_mode = input;
+        self
+    }
+    /// <p>Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.</p>
+    pub fn get_subscription_grant_creation_mode(&self) -> &::std::option::Option<crate::types::SubscriptionGrantCreationMode> {
+        &self.subscription_grant_creation_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -506,6 +528,7 @@ impl CreateSubscriptionTargetOutputBuilder {
                     "provider was not specified but it is required when building CreateSubscriptionTargetOutput",
                 )
             })?,
+            subscription_grant_creation_mode: self.subscription_grant_creation_mode,
             _request_id: self._request_id,
         })
     }
@@ -528,6 +551,7 @@ impl ::std::fmt::Debug for CreateSubscriptionTargetOutputBuilder {
         formatter.field("applicable_asset_types", &self.applicable_asset_types);
         formatter.field("subscription_target_config", &self.subscription_target_config);
         formatter.field("provider", &self.provider);
+        formatter.field("subscription_grant_creation_mode", &self.subscription_grant_creation_mode);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

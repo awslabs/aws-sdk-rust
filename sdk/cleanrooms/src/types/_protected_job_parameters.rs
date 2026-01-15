@@ -2,16 +2,30 @@
 
 /// <p>The parameters for the protected job.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ProtectedJobParameters {
     /// <p>The ARN of the analysis template.</p>
     pub analysis_template_arn: ::std::string::String,
+    /// <p>Runtime configuration values passed to the PySpark analysis script. Parameter names and types must match those defined in the analysis template.</p>
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProtectedJobParameters {
     /// <p>The ARN of the analysis template.</p>
     pub fn analysis_template_arn(&self) -> &str {
         use std::ops::Deref;
         self.analysis_template_arn.deref()
+    }
+    /// <p>Runtime configuration values passed to the PySpark analysis script. Parameter names and types must match those defined in the analysis template.</p>
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.parameters.as_ref()
+    }
+}
+impl ::std::fmt::Debug for ProtectedJobParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ProtectedJobParameters");
+        formatter.field("analysis_template_arn", &self.analysis_template_arn);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl ProtectedJobParameters {
@@ -22,10 +36,11 @@ impl ProtectedJobParameters {
 }
 
 /// A builder for [`ProtectedJobParameters`](crate::types::ProtectedJobParameters).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ProtectedJobParametersBuilder {
     pub(crate) analysis_template_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ProtectedJobParametersBuilder {
     /// <p>The ARN of the analysis template.</p>
@@ -43,6 +58,26 @@ impl ProtectedJobParametersBuilder {
     pub fn get_analysis_template_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_template_arn
     }
+    /// Adds a key-value pair to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>Runtime configuration values passed to the PySpark analysis script. Parameter names and types must match those defined in the analysis template.</p>
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.parameters.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.parameters = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Runtime configuration values passed to the PySpark analysis script. Parameter names and types must match those defined in the analysis template.</p>
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input;
+        self
+    }
+    /// <p>Runtime configuration values passed to the PySpark analysis script. Parameter names and types must match those defined in the analysis template.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.parameters
+    }
     /// Consumes the builder and constructs a [`ProtectedJobParameters`](crate::types::ProtectedJobParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`analysis_template_arn`](crate::types::builders::ProtectedJobParametersBuilder::analysis_template_arn)
@@ -54,6 +89,15 @@ impl ProtectedJobParametersBuilder {
                     "analysis_template_arn was not specified but it is required when building ProtectedJobParameters",
                 )
             })?,
+            parameters: self.parameters,
         })
+    }
+}
+impl ::std::fmt::Debug for ProtectedJobParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ProtectedJobParametersBuilder");
+        formatter.field("analysis_template_arn", &self.analysis_template_arn);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

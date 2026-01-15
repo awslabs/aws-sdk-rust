@@ -9,11 +9,11 @@ pub struct CreateMonitorInput {
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance that authenticates monitor users.</p>
+    /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
     pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
     pub subdomain: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
+    /// <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags to add to your monitor. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -29,7 +29,7 @@ impl CreateMonitorInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance that authenticates monitor users.</p>
+    /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
     pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
         self.identity_center_instance_arn.as_deref()
     }
@@ -37,7 +37,7 @@ impl CreateMonitorInput {
     pub fn subdomain(&self) -> ::std::option::Option<&str> {
         self.subdomain.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
+    /// <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -100,18 +100,18 @@ impl CreateMonitorInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance that authenticates monitor users.</p>
+    /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
     /// This field is required.
     pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_center_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance that authenticates monitor users.</p>
+    /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
     pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_center_instance_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance that authenticates monitor users.</p>
+    /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_instance_arn
     }
@@ -130,18 +130,18 @@ impl CreateMonitorInputBuilder {
     pub fn get_subdomain(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdomain
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
+    /// <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
+    /// <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
+    /// <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

@@ -14,6 +14,8 @@ pub struct DeleteCustomDbEngineVersionOutput {
     pub database_installation_files_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
     pub database_installation_files_s3_prefix: ::std::option::Option<::std::string::String>,
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    pub database_installation_files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group family for the database engine.</p>
@@ -26,6 +28,8 @@ pub struct DeleteCustomDbEngineVersionOutput {
     pub db_engine_version_description: ::std::option::Option<::std::string::String>,
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub default_character_set: ::std::option::Option<crate::types::CharacterSet>,
+    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 image</p>
     pub image: ::std::option::Option<crate::types::CustomDbEngineVersionAmi>,
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
@@ -53,10 +57,7 @@ pub struct DeleteCustomDbEngineVersionOutput {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
-    /// --engine-version
-    /// <engine_version></engine_version>
-    /// </engine_name></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code></p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
@@ -86,10 +87,6 @@ pub struct DeleteCustomDbEngineVersionOutput {
     pub supports_integrations: ::std::option::Option<bool>,
     /// <p>Specifies any Aurora Serverless v2 properties or limits that differ between Aurora engine versions. You can test the values of this attribute when deciding which Aurora version to use in a new or upgraded DB cluster. You can also retrieve the version of an existing DB cluster and check whether that version supports certain Aurora Serverless v2 features before you attempt to use those features.</p>
     pub serverless_v2_features_support: ::std::option::Option<crate::types::ServerlessV2FeaturesSupport>,
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
-    pub database_installation_files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
-    pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteCustomDbEngineVersionOutput {
@@ -112,6 +109,12 @@ impl DeleteCustomDbEngineVersionOutput {
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
     pub fn database_installation_files_s3_prefix(&self) -> ::std::option::Option<&str> {
         self.database_installation_files_s3_prefix.as_deref()
+    }
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_installation_files.is_none()`.
+    pub fn database_installation_files(&self) -> &[::std::string::String] {
+        self.database_installation_files.as_deref().unwrap_or_default()
     }
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn custom_db_engine_version_manifest(&self) -> ::std::option::Option<&str> {
@@ -136,6 +139,10 @@ impl DeleteCustomDbEngineVersionOutput {
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub fn default_character_set(&self) -> ::std::option::Option<&crate::types::CharacterSet> {
         self.default_character_set.as_ref()
+    }
+    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+        self.failure_reason.as_deref()
     }
     /// <p>The EC2 image</p>
     pub fn image(&self) -> ::std::option::Option<&crate::types::CustomDbEngineVersionAmi> {
@@ -200,10 +207,7 @@ impl DeleteCustomDbEngineVersionOutput {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
-    /// --engine-version
-    /// <engine_version></engine_version>
-    /// </engine_name></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code></p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
@@ -263,16 +267,6 @@ impl DeleteCustomDbEngineVersionOutput {
     pub fn serverless_v2_features_support(&self) -> ::std::option::Option<&crate::types::ServerlessV2FeaturesSupport> {
         self.serverless_v2_features_support.as_ref()
     }
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.database_installation_files.is_none()`.
-    pub fn database_installation_files(&self) -> &[::std::string::String] {
-        self.database_installation_files.as_deref().unwrap_or_default()
-    }
-    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
-        self.failure_reason.as_deref()
-    }
 }
 impl ::aws_types::request_id::RequestId for DeleteCustomDbEngineVersionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -295,12 +289,14 @@ pub struct DeleteCustomDbEngineVersionOutputBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) database_installation_files_s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_installation_files_s3_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) database_installation_files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) custom_db_engine_version_manifest: ::std::option::Option<::std::string::String>,
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) db_engine_description: ::std::option::Option<::std::string::String>,
     pub(crate) db_engine_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_engine_version_description: ::std::option::Option<::std::string::String>,
     pub(crate) default_character_set: ::std::option::Option<crate::types::CharacterSet>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) image: ::std::option::Option<crate::types::CustomDbEngineVersionAmi>,
     pub(crate) db_engine_media_type: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -325,8 +321,6 @@ pub struct DeleteCustomDbEngineVersionOutputBuilder {
     pub(crate) supports_local_write_forwarding: ::std::option::Option<bool>,
     pub(crate) supports_integrations: ::std::option::Option<bool>,
     pub(crate) serverless_v2_features_support: ::std::option::Option<crate::types::ServerlessV2FeaturesSupport>,
-    pub(crate) database_installation_files: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteCustomDbEngineVersionOutputBuilder {
@@ -399,6 +393,26 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
     pub fn get_database_installation_files_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_installation_files_s3_prefix
+    }
+    /// Appends an item to `database_installation_files`.
+    ///
+    /// To override the contents of this collection use [`set_database_installation_files`](Self::set_database_installation_files).
+    ///
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    pub fn database_installation_files(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.database_installation_files.unwrap_or_default();
+        v.push(input.into());
+        self.database_installation_files = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    pub fn set_database_installation_files(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.database_installation_files = input;
+        self
+    }
+    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
+    pub fn get_database_installation_files(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.database_installation_files
     }
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn custom_db_engine_version_manifest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -483,6 +497,20 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub fn get_default_character_set(&self) -> &::std::option::Option<crate::types::CharacterSet> {
         &self.default_character_set
+    }
+    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input;
+        self
+    }
+    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>The EC2 image</p>
     pub fn image(mut self, input: crate::types::CustomDbEngineVersionAmi) -> Self {
@@ -695,10 +723,7 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
-    /// --engine-version
-    /// <engine_version></engine_version>
-    /// </engine_name></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code></p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
@@ -711,10 +736,7 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
-    /// --engine-version
-    /// <engine_version></engine_version>
-    /// </engine_name></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code></p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
@@ -725,10 +747,7 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     /// <p>A list of features supported by the DB engine.</p>
     /// <p>The supported features vary by DB engine and DB engine version.</p>
     /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p><code>aws rds describe-db-engine-versions --engine <engine_name>
-    /// --engine-version
-    /// <engine_version></engine_version>
-    /// </engine_name></code></p>
+    /// <p><code>aws rds describe-db-engine-versions --engine &lt;engine_name&gt; --engine-version &lt;engine_version&gt;</code></p>
     /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
     /// <p><code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code></p>
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
@@ -910,40 +929,6 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn get_serverless_v2_features_support(&self) -> &::std::option::Option<crate::types::ServerlessV2FeaturesSupport> {
         &self.serverless_v2_features_support
     }
-    /// Appends an item to `database_installation_files`.
-    ///
-    /// To override the contents of this collection use [`set_database_installation_files`](Self::set_database_installation_files).
-    ///
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
-    pub fn database_installation_files(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.database_installation_files.unwrap_or_default();
-        v.push(input.into());
-        self.database_installation_files = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
-    pub fn set_database_installation_files(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.database_installation_files = input;
-        self
-    }
-    /// <p>The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS. Required for <code>sqlserver-dev-ee</code>.</p>
-    pub fn get_database_installation_files(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.database_installation_files
-    }
-    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
-    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.failure_reason = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
-    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
-    }
-    /// <p>The reason that the custom engine version creation for <code>sqlserver-dev-ee</code> failed with an <code>incompatible-installation-media</code> status.</p>
-    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
-        &self.failure_reason
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -961,12 +946,14 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
             engine_version: self.engine_version,
             database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name,
             database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
+            database_installation_files: self.database_installation_files,
             custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
             db_parameter_group_family: self.db_parameter_group_family,
             db_engine_description: self.db_engine_description,
             db_engine_version_arn: self.db_engine_version_arn,
             db_engine_version_description: self.db_engine_version_description,
             default_character_set: self.default_character_set,
+            failure_reason: self.failure_reason,
             image: self.image,
             db_engine_media_type: self.db_engine_media_type,
             kms_key_id: self.kms_key_id,
@@ -991,8 +978,6 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
             supports_local_write_forwarding: self.supports_local_write_forwarding,
             supports_integrations: self.supports_integrations,
             serverless_v2_features_support: self.serverless_v2_features_support,
-            database_installation_files: self.database_installation_files,
-            failure_reason: self.failure_reason,
             _request_id: self._request_id,
         }
     }

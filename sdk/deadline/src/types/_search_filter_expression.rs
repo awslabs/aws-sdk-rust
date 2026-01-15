@@ -14,6 +14,8 @@ pub enum SearchFilterExpression {
     SearchTermFilter(crate::types::SearchTermFilterExpression),
     /// <p>Filters by a string.</p>
     StringFilter(crate::types::StringFilterExpression),
+    /// <p>Filters by a list of string values.</p>
+    StringListFilter(crate::types::StringListFilterExpression),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -89,6 +91,19 @@ impl SearchFilterExpression {
     /// Returns true if this is a [`StringFilter`](crate::types::SearchFilterExpression::StringFilter).
     pub fn is_string_filter(&self) -> bool {
         self.as_string_filter().is_ok()
+    }
+    /// Tries to convert the enum instance into [`StringListFilter`](crate::types::SearchFilterExpression::StringListFilter), extracting the inner [`StringListFilterExpression`](crate::types::StringListFilterExpression).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_string_list_filter(&self) -> ::std::result::Result<&crate::types::StringListFilterExpression, &Self> {
+        if let SearchFilterExpression::StringListFilter(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`StringListFilter`](crate::types::SearchFilterExpression::StringListFilter).
+    pub fn is_string_list_filter(&self) -> bool {
+        self.as_string_list_filter().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

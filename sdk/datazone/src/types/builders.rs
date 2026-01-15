@@ -123,6 +123,8 @@ pub use crate::types::_subscribed_asset_listing::SubscribedAssetListingBuilder;
 
 pub use crate::types::_asset_scope::AssetScopeBuilder;
 
+pub use crate::types::_subscribed_iam_principal::SubscribedIamPrincipalBuilder;
+
 pub use crate::types::_subscribed_group::SubscribedGroupBuilder;
 
 pub use crate::types::_subscribed_user::SubscribedUserBuilder;
@@ -456,6 +458,8 @@ pub use crate::types::_accepted_asset_scope::AcceptedAssetScopeBuilder;
 pub use crate::types::_asset_permission::AssetPermissionBuilder;
 
 pub use crate::types::_subscribed_listing_input::SubscribedListingInputBuilder;
+
+pub use crate::types::_subscribed_iam_principal_input::SubscribedIamPrincipalInputBuilder;
 
 pub use crate::types::_subscribed_group_input::SubscribedGroupInputBuilder;
 

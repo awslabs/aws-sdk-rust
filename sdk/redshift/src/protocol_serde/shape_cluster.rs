@@ -777,6 +777,19 @@ pub fn de_cluster(
                 builder = builder.set_catalog_arn(var_62);
             }
             ,
+            s if s.matches("ExtraComputeForAutomaticOptimization") /* ExtraComputeForAutomaticOptimization com.amazonaws.redshift#Cluster$ExtraComputeForAutomaticOptimization */ =>  {
+                let var_63 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_extra_compute_for_automatic_optimization(var_63);
+            }
+            ,
             _ => {}
         }
     }

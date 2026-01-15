@@ -9,5 +9,8 @@ pub fn ser_collection_filters(
     if let Some(var_2) = &input.status {
         object.key("status").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.collection_group_name {
+        object.key("collectionGroupName").string(var_3.as_str());
+    }
     Ok(())
 }

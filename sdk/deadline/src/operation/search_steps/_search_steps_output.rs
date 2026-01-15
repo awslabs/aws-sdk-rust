@@ -5,7 +5,7 @@
 pub struct SearchStepsOutput {
     /// <p>The steps in the search.</p>
     pub steps: ::std::vec::Vec<crate::types::StepSearchSummary>,
-    /// <p>The next incremental starting point after the defined <code>itemOffset</code>.</p>
+    /// <p>The next item offset for the search results.</p>
     pub next_item_offset: ::std::option::Option<i32>,
     /// <p>The total number of results in the search.</p>
     pub total_results: i32,
@@ -17,7 +17,7 @@ impl SearchStepsOutput {
         use std::ops::Deref;
         self.steps.deref()
     }
-    /// <p>The next incremental starting point after the defined <code>itemOffset</code>.</p>
+    /// <p>The next item offset for the search results.</p>
     pub fn next_item_offset(&self) -> ::std::option::Option<i32> {
         self.next_item_offset
     }
@@ -68,17 +68,17 @@ impl SearchStepsOutputBuilder {
     pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepSearchSummary>> {
         &self.steps
     }
-    /// <p>The next incremental starting point after the defined <code>itemOffset</code>.</p>
+    /// <p>The next item offset for the search results.</p>
     pub fn next_item_offset(mut self, input: i32) -> Self {
         self.next_item_offset = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The next incremental starting point after the defined <code>itemOffset</code>.</p>
+    /// <p>The next item offset for the search results.</p>
     pub fn set_next_item_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.next_item_offset = input;
         self
     }
-    /// <p>The next incremental starting point after the defined <code>itemOffset</code>.</p>
+    /// <p>The next item offset for the search results.</p>
     pub fn get_next_item_offset(&self) -> &::std::option::Option<i32> {
         &self.next_item_offset
     }

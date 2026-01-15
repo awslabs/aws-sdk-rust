@@ -197,6 +197,34 @@ impl CreateCollectionFluentBuilder {
     pub fn get_vector_options(&self) -> &::std::option::Option<crate::types::VectorOptions> {
         self.inner.get_vector_options()
     }
+    /// <p>The name of the collection group to associate with the collection.</p>
+    pub fn collection_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.collection_group_name(input.into());
+        self
+    }
+    /// <p>The name of the collection group to associate with the collection.</p>
+    pub fn set_collection_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_collection_group_name(input);
+        self
+    }
+    /// <p>The name of the collection group to associate with the collection.</p>
+    pub fn get_collection_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_group_name()
+    }
+    /// <p>Encryption settings for the collection.</p>
+    pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
+        self.inner = self.inner.encryption_config(input);
+        self
+    }
+    /// <p>Encryption settings for the collection.</p>
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
+        self.inner = self.inner.set_encryption_config(input);
+        self
+    }
+    /// <p>Encryption settings for the collection.</p>
+    pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
+        self.inner.get_encryption_config()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

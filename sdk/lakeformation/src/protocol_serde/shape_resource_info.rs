@@ -43,6 +43,20 @@ where
                         "WithPrivilegedAccess" => {
                             builder = builder.set_with_privileged_access(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "VerificationStatus" => {
+                            builder = builder.set_verification_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VerificationStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ExpectedResourceOwnerAccount" => {
+                            builder = builder.set_expected_resource_owner_account(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

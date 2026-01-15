@@ -6,7 +6,9 @@
 pub struct S3File {
     /// <p>The bucket name.</p>
     pub bucket_name: ::std::string::String,
-    /// <p>The object key of the media file.</p>
+    /// <p>The S3 key prefix that defines the storage location of your media files. The prefix works like a folder path in S3, and is combined with the WhatsApp mediaId to create the final file path.</p>
+    /// <p>For example, if a media file's WhatsApp mediaId is <code>123.ogg</code>, and the key is <code>audio/example.ogg</code>, the final file path is <code>audio/example.ogg123.ogg</code>.</p>
+    /// <p>For the same mediaId, a key of <code>audio/</code> results in the file path <code>audio/123.ogg</code>.</p>
     pub key: ::std::string::String,
 }
 impl S3File {
@@ -15,7 +17,9 @@ impl S3File {
         use std::ops::Deref;
         self.bucket_name.deref()
     }
-    /// <p>The object key of the media file.</p>
+    /// <p>The S3 key prefix that defines the storage location of your media files. The prefix works like a folder path in S3, and is combined with the WhatsApp mediaId to create the final file path.</p>
+    /// <p>For example, if a media file's WhatsApp mediaId is <code>123.ogg</code>, and the key is <code>audio/example.ogg</code>, the final file path is <code>audio/example.ogg123.ogg</code>.</p>
+    /// <p>For the same mediaId, a key of <code>audio/</code> results in the file path <code>audio/123.ogg</code>.</p>
     pub fn key(&self) -> &str {
         use std::ops::Deref;
         self.key.deref()
@@ -59,18 +63,24 @@ impl S3FileBuilder {
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_name
     }
-    /// <p>The object key of the media file.</p>
+    /// <p>The S3 key prefix that defines the storage location of your media files. The prefix works like a folder path in S3, and is combined with the WhatsApp mediaId to create the final file path.</p>
+    /// <p>For example, if a media file's WhatsApp mediaId is <code>123.ogg</code>, and the key is <code>audio/example.ogg</code>, the final file path is <code>audio/example.ogg123.ogg</code>.</p>
+    /// <p>For the same mediaId, a key of <code>audio/</code> results in the file path <code>audio/123.ogg</code>.</p>
     /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The object key of the media file.</p>
+    /// <p>The S3 key prefix that defines the storage location of your media files. The prefix works like a folder path in S3, and is combined with the WhatsApp mediaId to create the final file path.</p>
+    /// <p>For example, if a media file's WhatsApp mediaId is <code>123.ogg</code>, and the key is <code>audio/example.ogg</code>, the final file path is <code>audio/example.ogg123.ogg</code>.</p>
+    /// <p>For the same mediaId, a key of <code>audio/</code> results in the file path <code>audio/123.ogg</code>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The object key of the media file.</p>
+    /// <p>The S3 key prefix that defines the storage location of your media files. The prefix works like a folder path in S3, and is combined with the WhatsApp mediaId to create the final file path.</p>
+    /// <p>For example, if a media file's WhatsApp mediaId is <code>123.ogg</code>, and the key is <code>audio/example.ogg</code>, the final file path is <code>audio/example.ogg123.ogg</code>.</p>
+    /// <p>For the same mediaId, a key of <code>audio/</code> results in the file path <code>audio/123.ogg</code>.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }

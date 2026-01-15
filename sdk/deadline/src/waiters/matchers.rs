@@ -63,6 +63,132 @@ pub(crate) fn match_get_fleet_24f097a036b033c45(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"taskRunStatus","expected":"SUCCEEDED","comparator":"stringEquals"}}
+pub(crate) fn match_get_job_2b46431f554297e45(
+    _result: ::std::result::Result<&crate::operation::get_job::GetJobOutput, &crate::operation::get_job::GetJobError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_job::GetJobOutput) -> ::std::option::Option<&'a crate::types::TaskRunStatus> {
+        let _fld_1 = _output.task_run_status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "SUCCEEDED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"taskRunStatus","expected":"FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_job_267d2d187afc1a85d(
+    _result: ::std::result::Result<&crate::operation::get_job::GetJobOutput, &crate::operation::get_job::GetJobError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_job::GetJobOutput) -> ::std::option::Option<&'a crate::types::TaskRunStatus> {
+        let _fld_1 = _output.task_run_status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"taskRunStatus","expected":"CANCELED","comparator":"stringEquals"}}
+pub(crate) fn match_get_job_7e3993f2c9870131b(
+    _result: ::std::result::Result<&crate::operation::get_job::GetJobOutput, &crate::operation::get_job::GetJobError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_job::GetJobOutput) -> ::std::option::Option<&'a crate::types::TaskRunStatus> {
+        let _fld_1 = _output.task_run_status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CANCELED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"taskRunStatus","expected":"SUSPENDED","comparator":"stringEquals"}}
+pub(crate) fn match_get_job_34799e60d40ba3363(
+    _result: ::std::result::Result<&crate::operation::get_job::GetJobOutput, &crate::operation::get_job::GetJobError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_job::GetJobOutput) -> ::std::option::Option<&'a crate::types::TaskRunStatus> {
+        let _fld_1 = _output.task_run_status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "SUSPENDED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"taskRunStatus","expected":"NOT_COMPATIBLE","comparator":"stringEquals"}}
+pub(crate) fn match_get_job_2bccfa073e6474d41(
+    _result: ::std::result::Result<&crate::operation::get_job::GetJobOutput, &crate::operation::get_job::GetJobError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_job::GetJobOutput) -> ::std::option::Option<&'a crate::types::TaskRunStatus> {
+        let _fld_1 = _output.task_run_status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "NOT_COMPATIBLE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"lifecycleStatus","expected":"ARCHIVED","comparator":"stringEquals"}}
+pub(crate) fn match_get_job_540aa8ea12c50fd79(
+    _result: ::std::result::Result<&crate::operation::get_job::GetJobOutput, &crate::operation::get_job::GetJobError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_job::GetJobOutput) -> ::std::option::Option<&'a crate::types::JobLifecycleStatus> {
+        let _fld_1 = &_output.lifecycle_status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ARCHIVED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"lifecycleStatus","expected":"CREATE_COMPLETE","comparator":"stringEquals"}}
 pub(crate) fn match_get_job_2307992268de7b47c(
     _result: ::std::result::Result<&crate::operation::get_job::GetJobOutput, &crate::operation::get_job::GetJobError>,

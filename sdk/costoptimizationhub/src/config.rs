@@ -430,6 +430,24 @@ impl Builder {
             .set_auth_scheme_option_resolver(::std::option::Option::Some(auth_scheme_resolver.into_shared_resolver()));
         self
     }
+
+    /// Enable no authentication regardless of what authentication mechanisms operations support
+    ///
+    /// This adds [NoAuthScheme](aws_smithy_runtime::client::auth::no_auth::NoAuthScheme) as a fallback
+    /// and the auth scheme resolver will use it when no other auth schemes are applicable.
+    pub fn allow_no_auth(mut self) -> Self {
+        self.set_allow_no_auth();
+        self
+    }
+
+    /// Enable no authentication regardless of what authentication mechanisms operations support
+    ///
+    /// This adds [NoAuthScheme](aws_smithy_runtime::client::auth::no_auth::NoAuthScheme) as a fallback
+    /// and the auth scheme resolver will use it when no other auth schemes are applicable.
+    pub fn set_allow_no_auth(&mut self) -> &mut Self {
+        self.push_runtime_plugin(::aws_smithy_runtime::client::auth::no_auth::NoAuthRuntimePluginV2::new().into_shared());
+        self
+    }
     /// Set the auth scheme preference for an auth scheme resolver
     /// (typically the default auth scheme resolver).
     ///
@@ -1305,6 +1323,7 @@ impl ServiceRuntimePlugin {
             ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
         ));
         runtime_components.push_interceptor(crate::config::endpoint::EndpointOverrideFeatureTrackerInterceptor);
+        runtime_components.push_interceptor(crate::observability_feature::ObservabilityFeatureTrackerInterceptor);
         Self { config, runtime_components }
     }
 }
@@ -1467,12 +1486,14 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
 
     let scope = "aws-sdk-costoptimizationhub";
 
-    let mut plugins = ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins::new()
+    #[allow(deprecated)]
+                    let mut plugins = ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins::new()
                         // defaults
                         .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
                             ::aws_smithy_runtime::client::defaults::DefaultPluginParams::new()
                                 .with_retry_partition_name(default_retry_partition)
                                 .with_behavior_version(config.behavior_version.expect("Invalid client configuration: A behavior major version must be set when sending a request or constructing a client. You must set it during client construction or by enabling the `behavior-version-latest` cargo feature."))
+                                .with_is_aws_sdk(true)
                         ))
                         // user config
                         .with_client_plugin(

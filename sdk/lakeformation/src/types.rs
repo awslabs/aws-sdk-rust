@@ -91,6 +91,8 @@ pub use crate::types::_storage_optimizer::StorageOptimizer;
 
 pub use crate::types::_resource_info::ResourceInfo;
 
+pub use crate::types::_verification_status::VerificationStatus;
+
 pub use crate::types::_filter_condition::FilterCondition;
 
 pub use crate::types::_comparison_operator::ComparisonOperator;
@@ -118,6 +120,10 @@ pub use crate::types::_permission_type::PermissionType;
 pub use crate::types::_audit_context::AuditContext;
 
 pub use crate::types::_partition_value_list::PartitionValueList;
+
+pub use crate::types::_credentials_scope::CredentialsScope;
+
+pub use crate::types::_temporary_credentials::TemporaryCredentials;
 
 pub use crate::types::_partition_objects::PartitionObjects;
 
@@ -156,6 +162,8 @@ mod _column_wildcard;
 mod _comparison_operator;
 
 mod _condition;
+
+mod _credentials_scope;
 
 mod _data_cells_filter;
 
@@ -257,6 +265,8 @@ mod _tagged_database;
 
 mod _tagged_table;
 
+mod _temporary_credentials;
+
 mod _transaction_description;
 
 mod _transaction_status;
@@ -264,6 +274,8 @@ mod _transaction_status;
 mod _transaction_status_filter;
 
 mod _transaction_type;
+
+mod _verification_status;
 
 mod _virtual_object;
 

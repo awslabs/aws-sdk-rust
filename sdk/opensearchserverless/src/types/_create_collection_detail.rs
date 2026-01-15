@@ -26,6 +26,8 @@ pub struct CreateCollectionDetail {
     pub created_date: ::std::option::Option<i64>,
     /// <p>The date and time when the collection was last modified.</p>
     pub last_modified_date: ::std::option::Option<i64>,
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub collection_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateCollectionDetail {
     /// <p>The unique identifier of the collection.</p>
@@ -72,6 +74,10 @@ impl CreateCollectionDetail {
     pub fn last_modified_date(&self) -> ::std::option::Option<i64> {
         self.last_modified_date
     }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn collection_group_name(&self) -> ::std::option::Option<&str> {
+        self.collection_group_name.as_deref()
+    }
 }
 impl CreateCollectionDetail {
     /// Creates a new builder-style object to manufacture [`CreateCollectionDetail`](crate::types::CreateCollectionDetail).
@@ -95,6 +101,7 @@ pub struct CreateCollectionDetailBuilder {
     pub(crate) vector_options: ::std::option::Option<crate::types::VectorOptions>,
     pub(crate) created_date: ::std::option::Option<i64>,
     pub(crate) last_modified_date: ::std::option::Option<i64>,
+    pub(crate) collection_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateCollectionDetailBuilder {
     /// <p>The unique identifier of the collection.</p>
@@ -251,6 +258,20 @@ impl CreateCollectionDetailBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<i64> {
         &self.last_modified_date
     }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn collection_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.collection_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn set_collection_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.collection_group_name = input;
+        self
+    }
+    /// <p>The name of the collection group that contains this collection.</p>
+    pub fn get_collection_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_group_name
+    }
     /// Consumes the builder and constructs a [`CreateCollectionDetail`](crate::types::CreateCollectionDetail).
     pub fn build(self) -> crate::types::CreateCollectionDetail {
         crate::types::CreateCollectionDetail {
@@ -265,6 +286,7 @@ impl CreateCollectionDetailBuilder {
             vector_options: self.vector_options,
             created_date: self.created_date,
             last_modified_date: self.last_modified_date,
+            collection_group_name: self.collection_group_name,
         }
     }
 }

@@ -452,6 +452,51 @@ impl From<crate::operation::associate_flow::AssociateFlowError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError> for Error {
+    fn from(err: crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError) -> Self {
+        match err {
+            crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError::ConditionalOperationFailedException(inner) => {
+                Error::ConditionalOperationFailedException(inner)
+            }
+            crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_hours_of_operations::AssociateHoursOfOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1888,6 +1933,9 @@ impl From<crate::operation::create_hours_of_operation::CreateHoursOfOperationErr
             }
             crate::operation::create_hours_of_operation::CreateHoursOfOperationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_hours_of_operation::CreateHoursOfOperationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::create_hours_of_operation::CreateHoursOfOperationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_hours_of_operation::CreateHoursOfOperationError::Unhandled(inner) => Error::Unhandled(inner),
@@ -5297,6 +5345,53 @@ impl From<crate::operation::disassociate_flow::DisassociateFlowError> for Error 
 }
 impl<R>
     From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_hours_of_operations::DisassociateHoursOfOperationsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_hours_of_operations::DisassociateHoursOfOperationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_hours_of_operations::DisassociateHoursOfOperationsError> for Error {
+    fn from(err: crate::operation::disassociate_hours_of_operations::DisassociateHoursOfOperationsError) -> Self {
+        match err {
+            crate::operation::disassociate_hours_of_operations::DisassociateHoursOfOperationsError::ConditionalOperationFailedException(inner) => {
+                Error::ConditionalOperationFailedException(inner)
+            }
+            crate::operation::disassociate_hours_of_operations::DisassociateHoursOfOperationsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::disassociate_hours_of_operations::DisassociateHoursOfOperationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::disassociate_hours_of_operations::DisassociateHoursOfOperationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::disassociate_hours_of_operations::DisassociateHoursOfOperationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_hours_of_operations::DisassociateHoursOfOperationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_hours_of_operations::DisassociateHoursOfOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigError,
             R,
@@ -6566,6 +6661,45 @@ impl From<crate::operation::list_bots::ListBotsError> for Error {
             crate::operation::list_bots::ListBotsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_bots::ListBotsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_bots::ListBotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsError> for Error {
+    fn from(err: crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsError) -> Self {
+        match err {
+            crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_child_hours_of_operations::ListChildHoursOfOperationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

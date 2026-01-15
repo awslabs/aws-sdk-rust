@@ -258,6 +258,8 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code></p>
     /// <p>Default: <code>open-source-rds-extended-support</code></p>
     pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can modify or delete up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
     /// <p>Tags to assign to resources associated with the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -265,8 +267,6 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
     /// </ul>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can modify or delete up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
-    pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
 }
 impl RestoreDbInstanceFromS3Input {
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
@@ -638,6 +638,12 @@ impl RestoreDbInstanceFromS3Input {
     pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
         self.engine_lifecycle_support.as_deref()
     }
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can modify or delete up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_storage_volumes.is_none()`.
+    pub fn additional_storage_volumes(&self) -> &[crate::types::AdditionalStorageVolume] {
+        self.additional_storage_volumes.as_deref().unwrap_or_default()
+    }
     /// <p>Tags to assign to resources associated with the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -648,12 +654,6 @@ impl RestoreDbInstanceFromS3Input {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
-    }
-    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can modify or delete up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_storage_volumes.is_none()`.
-    pub fn additional_storage_volumes(&self) -> &[crate::types::AdditionalStorageVolume] {
-        self.additional_storage_volumes.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for RestoreDbInstanceFromS3Input {
@@ -711,8 +711,8 @@ impl ::std::fmt::Debug for RestoreDbInstanceFromS3Input {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
-        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.finish()
     }
 }
@@ -779,8 +779,8 @@ pub struct RestoreDbInstanceFromS3InputBuilder {
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl RestoreDbInstanceFromS3InputBuilder {
     /// <p>The name of the database to create when the DB instance is created. Follow the naming rules specified in <code>CreateDBInstance</code>.</p>
@@ -2001,6 +2001,26 @@ impl RestoreDbInstanceFromS3InputBuilder {
     pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_lifecycle_support
     }
+    /// Appends an item to `additional_storage_volumes`.
+    ///
+    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
+    ///
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can modify or delete up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn additional_storage_volumes(mut self, input: crate::types::AdditionalStorageVolume) -> Self {
+        let mut v = self.additional_storage_volumes.unwrap_or_default();
+        v.push(input);
+        self.additional_storage_volumes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can modify or delete up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn set_additional_storage_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>) -> Self {
+        self.additional_storage_volumes = input;
+        self
+    }
+    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can modify or delete up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
+    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>> {
+        &self.additional_storage_volumes
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -2035,26 +2055,6 @@ impl RestoreDbInstanceFromS3InputBuilder {
     /// </ul>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
-    }
-    /// Appends an item to `additional_storage_volumes`.
-    ///
-    /// To override the contents of this collection use [`set_additional_storage_volumes`](Self::set_additional_storage_volumes).
-    ///
-    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can modify or delete up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
-    pub fn additional_storage_volumes(mut self, input: crate::types::AdditionalStorageVolume) -> Self {
-        let mut v = self.additional_storage_volumes.unwrap_or_default();
-        v.push(input);
-        self.additional_storage_volumes = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can modify or delete up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
-    pub fn set_additional_storage_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>) -> Self {
-        self.additional_storage_volumes = input;
-        self
-    }
-    /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can modify or delete up to three additional storage volumes using the names <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
-    pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>> {
-        &self.additional_storage_volumes
     }
     /// Consumes the builder and constructs a [`RestoreDbInstanceFromS3Input`](crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Input).
     pub fn build(
@@ -2116,8 +2116,8 @@ impl RestoreDbInstanceFromS3InputBuilder {
             dedicated_log_volume: self.dedicated_log_volume,
             ca_certificate_identifier: self.ca_certificate_identifier,
             engine_lifecycle_support: self.engine_lifecycle_support,
-            tag_specifications: self.tag_specifications,
             additional_storage_volumes: self.additional_storage_volumes,
+            tag_specifications: self.tag_specifications,
         })
     }
 }
@@ -2176,8 +2176,8 @@ impl ::std::fmt::Debug for RestoreDbInstanceFromS3InputBuilder {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
-        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.finish()
     }
 }

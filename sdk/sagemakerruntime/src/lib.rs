@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-sagemakerruntime = "1.93.0"
+//! aws-sdk-sagemakerruntime = "1.94.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -188,6 +188,8 @@ pub mod primitives;
 pub mod types;
 
 mod event_receiver;
+
+mod observability_feature;
 
 pub(crate) mod protocol_serde;
 

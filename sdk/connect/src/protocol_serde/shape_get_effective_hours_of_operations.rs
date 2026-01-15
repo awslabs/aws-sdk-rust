@@ -147,6 +147,11 @@ pub(crate) fn de_get_effective_hours_of_operations(
                         crate::protocol_serde::shape_effective_hours_of_operation_list::de_effective_hours_of_operation_list(tokens)?,
                     );
                 }
+                "EffectiveOverrideHoursList" => {
+                    builder = builder.set_effective_override_hours_list(
+                        crate::protocol_serde::shape_effective_override_hours_list::de_effective_override_hours_list(tokens)?,
+                    );
+                }
                 "TimeZone" => {
                     builder = builder.set_time_zone(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

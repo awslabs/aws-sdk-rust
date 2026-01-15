@@ -9,7 +9,7 @@ pub struct GetLicenseEndpointOutput {
     pub status: crate::types::LicenseEndpointStatus,
     /// <p>The status message of the license endpoint.</p>
     pub status_message: ::std::string::String,
-    /// <p>The VCP(virtual private cloud) ID associated with the license endpoint.</p>
+    /// <p>The VPC (virtual private cloud) ID associated with the license endpoint.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl GetLicenseEndpointOutput {
         use std::ops::Deref;
         self.status_message.deref()
     }
-    /// <p>The VCP(virtual private cloud) ID associated with the license endpoint.</p>
+    /// <p>The VPC (virtual private cloud) ID associated with the license endpoint.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -126,17 +126,17 @@ impl GetLicenseEndpointOutputBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>The VCP(virtual private cloud) ID associated with the license endpoint.</p>
+    /// <p>The VPC (virtual private cloud) ID associated with the license endpoint.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The VCP(virtual private cloud) ID associated with the license endpoint.</p>
+    /// <p>The VPC (virtual private cloud) ID associated with the license endpoint.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
-    /// <p>The VCP(virtual private cloud) ID associated with the license endpoint.</p>
+    /// <p>The VPC (virtual private cloud) ID associated with the license endpoint.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }

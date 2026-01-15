@@ -12,6 +12,8 @@ pub struct CreateEnvironmentHostInput {
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The host that is created and added to the environment.</p>
     pub host: ::std::option::Option<crate::types::HostInfoForCreate>,
+    /// <p>The ESX version to use for the host.</p>
+    pub esx_version: ::std::option::Option<::std::string::String>,
 }
 impl CreateEnvironmentHostInput {
     /// <note>
@@ -29,6 +31,10 @@ impl CreateEnvironmentHostInput {
     pub fn host(&self) -> ::std::option::Option<&crate::types::HostInfoForCreate> {
         self.host.as_ref()
     }
+    /// <p>The ESX version to use for the host.</p>
+    pub fn esx_version(&self) -> ::std::option::Option<&str> {
+        self.esx_version.as_deref()
+    }
 }
 impl CreateEnvironmentHostInput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentHostInput`](crate::operation::create_environment_host::CreateEnvironmentHostInput).
@@ -44,6 +50,7 @@ pub struct CreateEnvironmentHostInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) host: ::std::option::Option<crate::types::HostInfoForCreate>,
+    pub(crate) esx_version: ::std::option::Option<::std::string::String>,
 }
 impl CreateEnvironmentHostInputBuilder {
     /// <note>
@@ -99,6 +106,20 @@ impl CreateEnvironmentHostInputBuilder {
     pub fn get_host(&self) -> &::std::option::Option<crate::types::HostInfoForCreate> {
         &self.host
     }
+    /// <p>The ESX version to use for the host.</p>
+    pub fn esx_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.esx_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ESX version to use for the host.</p>
+    pub fn set_esx_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.esx_version = input;
+        self
+    }
+    /// <p>The ESX version to use for the host.</p>
+    pub fn get_esx_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.esx_version
+    }
     /// Consumes the builder and constructs a [`CreateEnvironmentHostInput`](crate::operation::create_environment_host::CreateEnvironmentHostInput).
     pub fn build(
         self,
@@ -108,6 +129,7 @@ impl CreateEnvironmentHostInputBuilder {
             client_token: self.client_token,
             environment_id: self.environment_id,
             host: self.host,
+            esx_version: self.esx_version,
         })
     }
 }

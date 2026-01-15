@@ -164,4 +164,18 @@ impl UpdateResourceFluentBuilder {
     pub fn get_hybrid_access_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_hybrid_access_enabled()
     }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn expected_resource_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.expected_resource_owner_account(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn set_expected_resource_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_expected_resource_owner_account(input);
+        self
+    }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn get_expected_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_resource_owner_account()
+    }
 }

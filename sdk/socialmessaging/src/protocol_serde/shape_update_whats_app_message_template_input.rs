@@ -3,19 +3,25 @@ pub fn ser_update_whats_app_message_template_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_whats_app_message_template::UpdateWhatsAppMessageTemplateInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.id {
-        object.key("id").string(var_1.as_str());
+    if let Some(var_1) = &input.cta_url_link_tracking_opted_out {
+        object.key("ctaUrlLinkTrackingOptedOut").boolean(*var_1);
     }
-    if let Some(var_2) = &input.meta_template_id {
-        object.key("metaTemplateId").string(var_2.as_str());
+    if let Some(var_2) = &input.id {
+        object.key("id").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.template_category {
-        object.key("templateCategory").string(var_3.as_str());
+    if let Some(var_3) = &input.meta_template_id {
+        object.key("metaTemplateId").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.template_components {
+    if let Some(var_4) = &input.parameter_format {
+        object.key("parameterFormat").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.template_category {
+        object.key("templateCategory").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.template_components {
         object
             .key("templateComponents")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_4));
+            .string_unchecked(&::aws_smithy_types::base64::encode(var_6));
     }
     Ok(())
 }

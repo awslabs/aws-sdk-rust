@@ -6,6 +6,8 @@
 pub enum SubscribedPrincipal {
     /// <p>The subscribed group.</p>
     Group(crate::types::SubscribedGroup),
+    /// <p>The subscribed IAM principal.</p>
+    Iam(crate::types::SubscribedIamPrincipal),
     /// <p>The project that has the subscription grant.</p>
     Project(crate::types::SubscribedProject),
     /// <p>The subscribed user.</p>
@@ -33,6 +35,19 @@ impl SubscribedPrincipal {
     /// Returns true if this is a [`Group`](crate::types::SubscribedPrincipal::Group).
     pub fn is_group(&self) -> bool {
         self.as_group().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Iam`](crate::types::SubscribedPrincipal::Iam), extracting the inner [`SubscribedIamPrincipal`](crate::types::SubscribedIamPrincipal).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_iam(&self) -> ::std::result::Result<&crate::types::SubscribedIamPrincipal, &Self> {
+        if let SubscribedPrincipal::Iam(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Iam`](crate::types::SubscribedPrincipal::Iam).
+    pub fn is_iam(&self) -> bool {
+        self.as_iam().is_ok()
     }
     /// Tries to convert the enum instance into [`Project`](crate::types::SubscribedPrincipal::Project), extracting the inner [`SubscribedProject`](crate::types::SubscribedProject).
     /// Returns `Err(&Self)` if it can't be converted.

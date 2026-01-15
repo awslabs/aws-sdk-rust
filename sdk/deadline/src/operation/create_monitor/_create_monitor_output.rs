@@ -5,7 +5,7 @@
 pub struct CreateMonitorOutput {
     /// <p>The unique identifier of the monitor.</p>
     pub monitor_id: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) that IAM Identity Center assigns to the monitor.</p>
+    /// <p>The Amazon Resource Name that IAM Identity Center assigns to the monitor.</p>
     pub identity_center_application_arn: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl CreateMonitorOutput {
         use std::ops::Deref;
         self.monitor_id.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that IAM Identity Center assigns to the monitor.</p>
+    /// <p>The Amazon Resource Name that IAM Identity Center assigns to the monitor.</p>
     pub fn identity_center_application_arn(&self) -> &str {
         use std::ops::Deref;
         self.identity_center_application_arn.deref()
@@ -57,18 +57,18 @@ impl CreateMonitorOutputBuilder {
     pub fn get_monitor_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_id
     }
-    /// <p>The Amazon Resource Name (ARN) that IAM Identity Center assigns to the monitor.</p>
+    /// <p>The Amazon Resource Name that IAM Identity Center assigns to the monitor.</p>
     /// This field is required.
     pub fn identity_center_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_center_application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that IAM Identity Center assigns to the monitor.</p>
+    /// <p>The Amazon Resource Name that IAM Identity Center assigns to the monitor.</p>
     pub fn set_identity_center_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_center_application_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that IAM Identity Center assigns to the monitor.</p>
+    /// <p>The Amazon Resource Name that IAM Identity Center assigns to the monitor.</p>
     pub fn get_identity_center_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_application_arn
     }
